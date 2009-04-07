@@ -41,13 +41,13 @@ EmissionValueSource = Enum("calculated", "measured")
 
 FuelType = Enum("coal", "gas", "oil")
 
-SpillwayGateType = Enum()
+SpillwayGateType = Str
 
 EmissionType = Enum("hydrogenSulfide", "sulfurDioxide", "chlorine", "carbonDioxide", "carbonDisulfide", "nitrogenOxide")
 
 GeneratorOperatingMode = Enum("REG", "Off", "LFC", "MRN", "AGC", "Fixed", "EDC", "Manual")
 
-PenstockType = Enum()
+PenstockType = Str
 
 GeneratorControlSource = Enum("Unavailable", "offAGC", "PlantControl", "onAGC")
 
@@ -55,7 +55,7 @@ HydroPlantType = Enum("runOfRiver", "majorStorage", "pumpedStorage", "minorStora
 
 GeneratorControlMode = Enum("pulse", "setpoint")
 
-SurgeTankCode = Enum()
+SurgeTankCode = Str
 
 HydroEnergyConversionKind = Enum("generator", "pumpAndGenerator")
 
@@ -86,122 +86,122 @@ class GeneratingUnit(Equipment):
     GenUnitOpCostCurves = List(Instance("CIM13.Generation.Production.GenUnitOpCostCurve"))
 
     # The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity
-    ratedNetMaxP = EFloat
+    ratedNetMaxP = Float
 
     # Defined as: 1 / ( 1 - Incremental Transmission Loss); with the Incremental Transmission Loss expressed as a plus or minus value. The typical range of penalty factors is (0.9 to 1.1).
-    penaltyFactor = EFloat
+    penaltyFactor = Float
 
-    stepChange = EFloat
+    stepChange = Float
 
-    energyMinP = EFloat
+    energyMinP = Float
 
     # The efficiency of the unit in converting mechanical energy, from the prime mover, into electrical energy.
-    efficiency = EFloat
+    efficiency = Float
 
-    raiseRampRate = EFloat
+    raiseRampRate = Float
 
-    dispReserveFlag = EBoolean
+    dispReserveFlag = Bool
 
     # The initial startup cost incurred for each start of the GeneratingUnit.
-    startupCost = EFloat
+    startupCost = Float
 
     # High limit for secondary (AGC) control
-    highControlLimit = EFloat
+    highControlLimit = Float
 
-    spinReserveRamp = EFloat
+    spinReserveRamp = Float
 
     # Pulse low limit which is the smallest control pulse that the unit can respond to
-    controlPulseLow = EFloat
+    controlPulseLow = Float
 
     # The source of controls for a generating unit.
     genControlSource = GeneratorControlSource
 
     # Governor Speed Changer Droop
-    governorSCD = EFloat
+    governorSCD = Float
 
     # For dispatchable units, this value represents the economic active power basepoint, for units that are not dispatchable, this value represents the fixed generation value. The value must be between the operating low and high limits.
-    baseP = EFloat
+    baseP = Float
 
-    fuelPriority = EInt
+    fuelPriority = Int
 
     # This is the maximum operating active power limit the dispatcher can enter for this unit
-    maxOperatingP = EFloat
+    maxOperatingP = Float
 
     # The unit control mode.
     genControlMode = GeneratorControlMode
 
     # The variable cost component of production per unit of ActivePower.
-    variableCost = EFloat
+    variableCost = Float
 
     # Low limit for secondary (AGC) control
-    lowControlLimit = EFloat
+    lowControlLimit = Float
 
     # Pulse high limit which is the largest control pulse that the unit can respond to
-    controlPulseHigh = EFloat
+    controlPulseHigh = Float
 
     # Maximum high economic active power limit, that should not exceed the maximum operating active power limit
-    maxEconomicP = EFloat
+    maxEconomicP = Float
 
     # Unit control error deadband. When a unit's desired active power change is less than this deadband, then no control pulses will be sent to the unit.
-    controlDeadband = EFloat
+    controlDeadband = Float
 
     # Governor Motor Position Limit
-    governorMPL = EFloat
+    governorMPL = Float
 
     # Low economic active power limit that must be greater than or equal to the minimum operating active power limit
-    minEconomicP = EFloat
+    minEconomicP = Float
 
     # This is the minimum operating active power limit the dispatcher can enter for this unit.
-    minOperatingP = EFloat
+    minOperatingP = Float
 
     # Unit response rate which specifies the active power change for a control pulse of one second in the most responsive loading level of the unit.
-    controlResponseRate = EFloat
+    controlResponseRate = Float
 
     # Detail level of the generator model data
-    modelDetail = EInt
+    modelDetail = Int
 
     # The planned unused capacity which can be used to support automatic control overruns.
-    autoCntrlMarginP = EFloat
+    autoCntrlMarginP = Float
 
     # The unit's gross rated maximum capacity (Book Value).
-    ratedGrossMaxP = EFloat
+    ratedGrossMaxP = Float
 
     # Operating mode for secondary control.
     genOperatingMode = GeneratorOperatingMode
 
-    fastStartFlag = EBoolean
+    fastStartFlag = Bool
 
     # Generating unit economic participation factor
-    longPF = EFloat
+    longPF = Float
 
     # Generating unit economic participation factor
-    normalPF = EFloat
+    normalPF = Float
 
     # Maximum allowable spinning reserve. Spinning reserve will never be considered greater than this value regardless of the current operating point.
-    maximumAllowableSpinningReserve = EFloat
+    maximumAllowableSpinningReserve = Float
 
     # The gross rated minimum generation level which the unit can safely operate at while delivering power to the transmission grid
-    ratedGrossMinP = EFloat
+    ratedGrossMinP = Float
 
     # The planned unused capacity (spinning reserve) which can be used to support emergency load
-    allocSpinResP = EFloat
+    allocSpinResP = Float
 
     # Time it takes to get the unit on-line, from the time that the prime mover mechanical power is applied
-    startupTime = EFloat
+    startupTime = Float
 
     # Default Initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration
-    initialP = EFloat
+    initialP = Float
 
     # Generating unit economic participation factor
-    tieLinePF = EFloat
+    tieLinePF = Float
 
     # Minimum time interval between unit shutdown and startup
-    minimumOffTime = EFloat
+    minimumOffTime = Float
 
-    lowerRampRate = EFloat
+    lowerRampRate = Float
 
     # Generating unit economic participation factor
-    shortPF = EFloat
+    shortPF = Float
 
     #--------------------------------------------------------------------------
     #  Begin generatingUnit user definitions:
@@ -276,10 +276,10 @@ class TargetLevelSchedule(Curve):
     Reservoir = Instance("CIM13.Generation.Production.Reservoir")
 
     # Low target level limit, below which the reservoir operation will be penalized
-    lowLevelLimit = EFloat
+    lowLevelLimit = Float
 
     # High target level limit, above which the reservoir operation will be penalized
-    highLevelLimit = EFloat
+    highLevelLimit = Float
 
     #--------------------------------------------------------------------------
     #  Begin targetLevelSchedule user definitions:
@@ -328,7 +328,7 @@ class IncrementalHeatRateCurve(Curve):
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
 
     # Flag is set to true when output is expressed in net active power
-    isNetGrossP = EBoolean
+    isNetGrossP = Bool
 
     #--------------------------------------------------------------------------
     #  Begin incrementalHeatRateCurve user definitions:
@@ -354,19 +354,19 @@ class HeatInputCurve(Curve):
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
 
     # Power output - auxiliary power offset adjustment factor
-    auxPowerOffset = EFloat
+    auxPowerOffset = Float
 
     # Heat input - offset adjustment factor.
-    heatInputOffset = EFloat
+    heatInputOffset = Float
 
     # Power output - auxiliary power multiplier adjustment factor.
-    auxPowerMult = EFloat
+    auxPowerMult = Float
 
     # Heat input - efficiency multiplier adjustment factor.
-    heatInputEff = EFloat
+    heatInputEff = Float
 
     # Flag is set to true when output is expressed in net active power
-    isNetGrossP = EBoolean
+    isNetGrossP = Bool
 
     #--------------------------------------------------------------------------
     #  Begin heatInputCurve user definitions:
@@ -392,7 +392,7 @@ class StartRampCurve(Curve):
     StartupModel = Instance("CIM13.Generation.Production.StartupModel")
 
     # The startup ramp rate in gross for a unit that is on hot standby
-    hotStandbyRamp = EFloat
+    hotStandbyRamp = Float
 
     #--------------------------------------------------------------------------
     #  Begin startRampCurve user definitions:
@@ -421,7 +421,7 @@ class AirCompressor(PowerSystemResource):
     MemberOf_CAESPlant = Instance("CIM13.Generation.Production.CAESPlant")
 
     # Rating of the CAES air compressor
-    airCompressorRating = EFloat
+    airCompressorRating = Float
 
     #--------------------------------------------------------------------------
     #  Begin airCompressor user definitions:
@@ -447,10 +447,10 @@ class ShutdownCurve(Curve):
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
 
     # Fixed shutdown cost
-    shutdownCost = EFloat
+    shutdownCost = Float
 
     # The date and time of the most recent generating unit shutdown
-    shutdownDate = EString
+    shutdownDate = Str
 
     #--------------------------------------------------------------------------
     #  Begin shutdownCurve user definitions:
@@ -476,7 +476,7 @@ class CombinedCyclePlant(PowerSystemResource):
     Contain_ThermalGeneratingUnits = List(Instance("CIM13.Generation.Production.ThermalGeneratingUnit"))
 
     # The combined cycle plant's active power output rating
-    combCyclePlantRating = EFloat
+    combCyclePlantRating = Float
 
     #--------------------------------------------------------------------------
     #  Begin combinedCyclePlant user definitions:
@@ -511,34 +511,34 @@ class StartupModel(IdentifiedObject):
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
 
     # The minimum number of hours the unit must be operating before being allowed to shut down
-    minimumRunTime = EFloat
+    minimumRunTime = Float
 
     # The date and time of the most recent generating unit startup
-    startupDate = EString
+    startupDate = Str
 
     # The minimum number of hours the unit must be down before restart
-    minimumDownTime = EFloat
+    minimumDownTime = Float
 
     # Startup priority within control area where lower numbers indicate higher priorities.  More than one unit in an area may be assigned the same priority.
-    startupPriority = EInt
+    startupPriority = Int
 
     # The unit's auxiliary active power consumption to maintain standby mode
-    stbyAuxP = EFloat
+    stbyAuxP = Float
 
     # Total miscellaneous start up costs
-    startupCost = EFloat
+    startupCost = Float
 
     # The amount of heat input per time uint required for hot standby operation
-    hotStandbyHeat = EFloat
+    hotStandbyHeat = Float
 
     # The opportunity cost associated with the return in monetary unit. This represents the restart's 'share' of the unit depreciation and risk of an event which would damage the unit.
-    riskFactorCost = EFloat
+    riskFactorCost = Float
 
     # Fixed Maintenance Cost
-    fixedMaintCost = EFloat
+    fixedMaintCost = Float
 
     # Incremental Maintenance Cost
-    incrementalMaintCost = EFloat
+    incrementalMaintCost = Float
 
     #--------------------------------------------------------------------------
     #  Begin startupModel user definitions:
@@ -570,16 +570,16 @@ class HydroPump(PowerSystemResource):
     DrivenBy_SynchronousMachine = Instance("CIM13.Wires.SynchronousMachine")
 
     # The pumping power under minimum head conditions, usually at full gate.
-    pumpPowerAtMinHead = EFloat
+    pumpPowerAtMinHead = Float
 
     # The pumping discharge (m3/sec) under maximum head conditions, usually at full gate
-    pumpDischAtMaxHead = EFloat
+    pumpDischAtMaxHead = Float
 
     # The pumping discharge (m3/sec) under minimum head conditions, usually at full gate
-    pumpDischAtMinHead = EFloat
+    pumpDischAtMinHead = Float
 
     # The pumping power under maximum head conditions, usually at full gate
-    pumpPowerAtMaxHead = EFloat
+    pumpPowerAtMaxHead = Float
 
     #--------------------------------------------------------------------------
     #  Begin hydroPump user definitions:
@@ -605,13 +605,13 @@ class EmissionCurve(Curve):
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
 
     # Flag is set to true when output is expressed in net active power
-    isNetGrossP = EBoolean
+    isNetGrossP = Bool
 
     # The type of emission, which also gives the production rate measurement unit. The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide).
     emissionType = EmissionType
 
     # The emission content per quantity of fuel burned
-    emissionContent = EFloat
+    emissionContent = Float
 
     #--------------------------------------------------------------------------
     #  Begin emissionCurve user definitions:
@@ -637,7 +637,7 @@ class GenUnitOpCostCurve(Curve):
     GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit")
 
     # Flag is set to true when output is expressed in net active power
-    isNetGrossP = EBoolean
+    isNetGrossP = Bool
 
     #--------------------------------------------------------------------------
     #  Begin genUnitOpCostCurve user definitions:
@@ -672,19 +672,19 @@ class HydroPowerPlant(PowerSystemResource):
     Contain_HydroPumps = List(Instance("CIM13.Generation.Production.HydroPump"))
 
     # Water travel delay from tailbay to next downstream hydro power station
-    dischargeTravelDelay = EFloat
+    dischargeTravelDelay = Float
 
     # The hydro plant's pumping rating active power for rated head conditions
-    pumpRatedP = EFloat
+    pumpRatedP = Float
 
     # Type and configuration of hydro plant penstock(s)
     penstockType = PenstockType
 
     # The plant's rated gross head in meters
-    plantRatedHead = EFloat
+    plantRatedHead = Float
 
     # Total plant discharge capacity in cubic meters per second
-    plantDischargeCapacity = EFloat
+    plantDischargeCapacity = Float
 
     # The type of hydro power plant.
     hydroPlantType = HydroPlantType
@@ -693,10 +693,10 @@ class HydroPowerPlant(PowerSystemResource):
     surgeTankCode = SurgeTankCode
 
     # The hydro plant's generating rating active power for rated head conditions
-    genRatedP = EFloat
+    genRatedP = Float
 
     # The level at which the surge tank spills
-    surgeTankCrestLevel = EFloat
+    surgeTankCrestLevel = Float
 
     #--------------------------------------------------------------------------
     #  Begin hydroPowerPlant user definitions:
@@ -725,10 +725,10 @@ class CAESPlant(PowerSystemResource):
     Contain_ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
 
     # The CAES plant's gross rated generating capacity
-    ratedCapacityP = EFloat
+    ratedCapacityP = Float
 
     # The rated energy storage capacity.
-    energyStorageCapacity = EFloat
+    energyStorageCapacity = Float
 
     #--------------------------------------------------------------------------
     #  Begin cAESPlant user definitions:
@@ -829,31 +829,31 @@ class FossilFuel(IdentifiedObject):
     fossilFuelType = FuelType
 
     # The active power output level of the unit at which the given type of fuel is switched off. This fuel (e.g., oil) is sometimes used to stabilize the base fuel (e.g., coal) at low active power output levels.
-    lowBreakpointP = EFloat
+    lowBreakpointP = Float
 
     # The cost of fuel used for economic dispatching which includes: fuel cost, transportation cost,  and incremental maintenance cost
-    fuelDispatchCost = EFloat
+    fuelDispatchCost = Float
 
     # The efficiency factor for the fuel (per unit) in terms of the effective energy absorbed
-    fuelEffFactor = EFloat
+    fuelEffFactor = Float
 
     # The cost in terms of heat value for the given type of fuel
-    fuelCost = EFloat
+    fuelCost = Float
 
     # The amount of heat per weight (or volume) of the given type of fuel
-    fuelHeatContent = EFloat
+    fuelHeatContent = Float
 
     # Handling and processing cost associated with this fuel
-    fuelHandlingCost = EFloat
+    fuelHandlingCost = Float
 
     # Relative amount of the given type of fuel, when multiple fuels are being consumed.
-    fuelMixture = EFloat
+    fuelMixture = Float
 
     # The active power output level of the unit at which the given type of fuel is switched on. This fuel (e.g., oil) is sometimes used to supplement the base fuel (e.g., coal) at high active power output levels.
-    highBreakpointP = EFloat
+    highBreakpointP = Float
 
     # The fuel's fraction of pollution credit per unit of heat content
-    fuelSulfur = EFloat
+    fuelSulfur = Float
 
     #--------------------------------------------------------------------------
     #  Begin fossilFuel user definitions:
@@ -882,19 +882,19 @@ class FuelAllocationSchedule(Curve):
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
 
     # The minimum amount fuel that is allocated for consumption for the scheduled time period, e.g., based on a 'take-or-pay' contract
-    minFuelAllocation = EFloat
+    minFuelAllocation = Float
 
     # The start time and date of the fuel allocation schedule
-    fuelAllocationStartDate = EString
+    fuelAllocationStartDate = Str
 
     # The end time and date of the fuel allocation schedule
-    fuelAllocationEndDate = EString
+    fuelAllocationEndDate = Str
 
     # The type of fuel, which also indicates the corresponding measurement unit
     fuelType = FuelType
 
     # The maximum amount fuel that is allocated for consumption for the scheduled time period
-    maxFuelAllocation = EFloat
+    maxFuelAllocation = Float
 
     #--------------------------------------------------------------------------
     #  Begin fuelAllocationSchedule user definitions:
@@ -1039,37 +1039,37 @@ class Reservoir(PowerSystemResource):
     TargetLevelSchedule = Instance("CIM13.Generation.Production.TargetLevelSchedule")
 
     # River outlet works for riparian right releases or other purposes
-    riverOutletWorks = EString
+    riverOutletWorks = Str
 
     # Type of spillway gate, including parameters
     spillWayGateType = SpillwayGateType
 
     # The flow capacity of the spillway in cubic meters per second
-    spillwayCapacity = EFloat
+    spillwayCapacity = Float
 
     # The length of the spillway crest in meters
-    spillwayCrestLength = EFloat
+    spillwayCrestLength = Float
 
     # Storage volume between the full supply level and the normal minimum operating level
-    activeStorageCapacity = EFloat
+    activeStorageCapacity = Float
 
     # The spillway water travel delay to the next downstream reservoir
-    spillTravelDelay = EFloat
+    spillTravelDelay = Float
 
     # The reservoir's energy storage rating in energy for given head conditions
-    energyStorageRating = EFloat
+    energyStorageRating = Float
 
     # Total capacity of reservoir
-    grossCapacity = EFloat
+    grossCapacity = Float
 
     # Spillway crest level above which water will spill
-    spillwayCrestLevel = EFloat
+    spillwayCrestLevel = Float
 
     # Full supply level, above which water will spill. This can be the spillway crest level or the top of closed gates.
-    fullSupplyLevel = EFloat
+    fullSupplyLevel = Float
 
     # Normal minimum operating level below which the penstocks will draw air
-    normalMinOperateLevel = EFloat
+    normalMinOperateLevel = Float
 
     #--------------------------------------------------------------------------
     #  Begin reservoir user definitions:
@@ -1118,7 +1118,7 @@ class HeatRateCurve(Curve):
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
 
     # Flag is set to true when output is expressed in net active power
-    isNetGrossP = EBoolean
+    isNetGrossP = Bool
 
     #--------------------------------------------------------------------------
     #  Begin heatRateCurve user definitions:
@@ -1170,19 +1170,19 @@ class CogenerationPlant(PowerSystemResource):
     SteamSendoutSchedule = Instance("CIM13.Generation.Production.SteamSendoutSchedule")
 
     # The high pressure steam rating
-    cogenHPSteamRating = EFloat
+    cogenHPSteamRating = Float
 
     # The rated output active power of the cogeneration plant
-    ratedP = EFloat
+    ratedP = Float
 
     # The low pressure steam sendout
-    cogenLPSendoutRating = EFloat
+    cogenLPSendoutRating = Float
 
     # The high pressure steam sendout
-    cogenHPSendoutRating = EFloat
+    cogenHPSendoutRating = Float
 
     # The low pressure steam rating
-    cogenLPSteamRating = EFloat
+    cogenLPSteamRating = Float
 
     #--------------------------------------------------------------------------
     #  Begin cogenerationPlant user definitions:
@@ -1241,7 +1241,7 @@ class HydroGeneratingUnit(GeneratingUnit):
     energyConversionCapability = HydroEnergyConversionKind
 
     # The equivalent cost of water that drives the hydro turbine, expressed as cost per volume.
-    hydroUnitWaterCost = EFloat
+    hydroUnitWaterCost = Float
 
     #--------------------------------------------------------------------------
     #  Begin hydroGeneratingUnit user definitions:
@@ -1300,7 +1300,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
     MemberOf_CombinedCyclePlant = Instance("CIM13.Generation.Production.CombinedCyclePlant")
 
     # Operating and maintenance cost for the thermal unit
-    oMCost = EFloat
+    oMCost = Float
 
     #--------------------------------------------------------------------------
     #  Begin thermalGeneratingUnit user definitions:

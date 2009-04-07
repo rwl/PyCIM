@@ -1,14 +1,37 @@
-# @copyright: 2009 Richard W. Lincoln
-# @contact: r.w.lincoln@gmail.com
-# @license: GPLv3
+#------------------------------------------------------------------------------
+# Copyright (C) 2009 Richard W. Lincoln
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; version 2 dated June, 1991.
+#
+# This software is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANDABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software Foundation,
+# Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+#------------------------------------------------------------------------------
 
 """ The domain package is a data dictionary of quantities and units that define datatypes for attributes (properties) that may be used by any class in any other package.  This package contains the definition of primitive datatypes, including units of measure and permissible values. Each datatype contains a value attribute and an optional unit of measure, which is specified as a static variable initialized to the textual description of the unit of measure. The value of the 'units' string may be country or customer specific. Typical values are given. Permissible values for enumerations are listed in the documentation for the attribute using UML constraint syntax inside curly braces. Lengths of variable strings are listed in the descriptive text where required.
 """
+#------------------------------------------------------------------------------
+#  Imports:
+#------------------------------------------------------------------------------
+
 
 
 
 from enthought.traits.api import HasTraits, Str, Enum
+# <<< imports
 
+# >>> imports
+
+#------------------------------------------------------------------------------
+#  Trait definitions:
+#------------------------------------------------------------------------------
 AbsoluteDateTime = Str(desc="Date and time as 'yyyy-mm-ddThh:mm:ss.sss', which conforms with ISO 8601. UTC time zone is specified as 'yyyy-mm-ddThh:mm:ss.sssZ'. A local timezone relative UTC is specified as 'yyyy-mm-ddThh:mm:ss.sss-hh:mm'. AbsoluteDateTime can be used both for calender time, e.g. 2007-02-07T10:30, and for relative time, e.g. 10:30.")
 ActivePower = Str(desc="Product of RMS value of the voltage and the RMS value of the in-phase component of the current")
 ApparentPower = Str(desc="Product of the RMS value of the voltage and the RMS value of the current")
@@ -62,8 +85,23 @@ MonetaryAmountPerHeatUnit = Enum("USD_per_J", "EUR_per_J", desc="Moneraty amount
 
 MonetaryAmountRate = Enum("USD_per_s", "EUR_per_s")
 
+#------------------------------------------------------------------------------
+#  "DomainVersion" class:
+#------------------------------------------------------------------------------
+
 class DomainVersion(HasTraits):
     version = String
+
     date = AbsoluteDateTime
 
+    #--------------------------------------------------------------------------
+    #  Begin domainVersion user definitions:
+    #--------------------------------------------------------------------------
 
+    #--------------------------------------------------------------------------
+    #  End domainVersion user definitions:
+    #--------------------------------------------------------------------------
+
+
+
+# EOF -------------------------------------------------------------------------

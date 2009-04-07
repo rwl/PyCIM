@@ -126,13 +126,13 @@ class RemoteControl(RemotePoint):
     Control = Instance("CIM13.Meas.Control")
 
     # Set to true if the actuator is remotely controlled.
-    remoteControlled = EBoolean
+    remoteControlled = Bool
 
     # The minimum set point value accepted by the remote control point.
-    actuatorMinimum = EFloat
+    actuatorMinimum = Float
 
     # The maximum set point value accepted by the remote control point.
-    actuatorMaximum = EFloat
+    actuatorMaximum = Float
 
     #--------------------------------------------------------------------------
     #  Begin remoteControl user definitions:
@@ -158,16 +158,16 @@ class RemoteSource(RemotePoint):
     MeasurementValue = Instance("CIM13.Meas.MeasurementValue")
 
     # The minimum value the telemetry item can return.
-    sensorMinimum = EFloat
+    sensorMinimum = Float
 
     # The maximum value the telemetry item can return.
-    sensorMaximum = EFloat
+    sensorMaximum = Float
 
     # The time interval between scans.
-    scanInterval = EFloat
+    scanInterval = Float
 
     # The smallest change in value to be reported.
-    deadband = EFloat
+    deadband = Float
 
     #--------------------------------------------------------------------------
     #  Begin remoteSource user definitions:

@@ -54,37 +54,37 @@ class LoadResponseCharacteristic(IdentifiedObject):
     EnergyConsumer = List(Instance("CIM13.Wires.EnergyConsumer"))
 
     # Portion of reactive power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.
-    qConstantPower = EFloat
+    qConstantPower = Float
 
     # Exponent of per unit voltage effecting real power.   This model used only when 'useExponentModel' is true.
-    pVoltageExponent = EFloat
+    pVoltageExponent = Float
 
     # Exponent of per unit frequency effecting active power
-    pFrequencyExponent = EFloat
+    pFrequencyExponent = Float
 
     # Portion of reactive power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.
-    qConstantImpedance = EFloat
+    qConstantImpedance = Float
 
     # Portion of active power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.
-    pConstantPower = EFloat
+    pConstantPower = Float
 
     # Portion of active power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.
-    pConstantImpedance = EFloat
+    pConstantImpedance = Float
 
     # Portion of reactive power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.
-    qConstantCurrent = EFloat
+    qConstantCurrent = Float
 
     # Exponent of per unit frequency effecting reactive power
-    qFrequencyExponent = EFloat
+    qFrequencyExponent = Float
 
     # Indicates the exponential voltage dependency model (pVoltateExponent and qVoltageExponent) is to be used.   If false, the coeficient model (consisting of pConstantImpedance, pConstantCurrent, pConstantPower, qConstantImpedance, qConstantCurrent, and qConstantPower) is to be used.
-    exponentModel = EBoolean
+    exponentModel = Bool
 
     # Exponent of per unit voltage effecting reactive power.   This model used only when 'useExponentModel' is true.
-    qVoltageExponent = EFloat
+    qVoltageExponent = Float
 
     # Portion of active power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.
-    pConstantCurrent = EFloat
+    pConstantCurrent = Float
 
     #--------------------------------------------------------------------------
     #  Begin loadResponseCharacteristic user definitions:
@@ -110,13 +110,13 @@ class Season(Root):
     SeasonDayTypeSchedules = List(Instance("CIM13.LoadModel.SeasonDayTypeSchedule"))
 
     # Date season ends
-    endDate = EString
+    endDate = Str
 
     # Name of the Season
     name = SeasonName
 
     # Date season starts
-    startDate = EString
+    startDate = Str
 
     #--------------------------------------------------------------------------
     #  Begin season user definitions:
@@ -165,10 +165,10 @@ class PowerCutZone(PowerSystemResource):
     EnergyConsumers = List(Instance("CIM13.Wires.EnergyConsumer"))
 
     # First level (amount) of load to cut as a percentage of total zone load
-    cutLevel1 = EFloat
+    cutLevel1 = Float
 
     # Second level (amount) of load to cut as a percentage of total zone load
-    cutLevel2 = EFloat
+    cutLevel2 = Float
 
     #--------------------------------------------------------------------------
     #  Begin powerCutZone user definitions:
@@ -352,19 +352,19 @@ class Load(ConformLoad):
     #--------------------------------------------------------------------------
 
     # The feeder's contribution to load management.
-    feederLoadMgtFactor = EFloat
+    feederLoadMgtFactor = Float
 
     # The rated individual phase current.
-    phaseRatedCurrent = EFloat
+    phaseRatedCurrent = Float
 
     # The amount of nominal feeder active power that is picked up cold.
-    coldPickUpFactorP = EFloat
+    coldPickUpFactorP = Float
 
     # The amount of nominal feeder reactive power that is picked up cold.
-    coldPickUpFactorQ = EFloat
+    coldPickUpFactorQ = Float
 
     # Permit assignment of loads on a participation factor basis. Given three equivalent loads with factors of 10, 25 and 15, a feeder load of 100 amps could be allocated on the feeder as 20, 50 and 30 amps.
-    loadAllocationFactor = EFloat
+    loadAllocationFactor = Float
 
     #--------------------------------------------------------------------------
     #  Begin load user definitions:

@@ -43,7 +43,7 @@ from enthought.traits.api import Instance, List, Enum, Float, Bool, Int, Str
 
 WindingConnection = Enum("D", "Z", "Y")
 
-TransformerCoolingType = Enum()
+TransformerCoolingType = Str
 
 SVCControlMode = Enum("voltage", "reactivePower", "off")
 
@@ -79,13 +79,13 @@ class RegulationSchedule(RegularIntervalSchedule):
     VoltageControlZones = List(Instance("CIM13.Wires.VoltageControlZone"))
 
     # Line drop resistance.
-    lineDropR = EFloat
+    lineDropR = Float
 
     # Flag to indicate that line drop compensation is to be applied
-    lineDropCompensation = EBoolean
+    lineDropCompensation = Bool
 
     # Line drop reactance.
-    lineDropX = EFloat
+    lineDropX = Float
 
     #--------------------------------------------------------------------------
     #  Begin regulationSchedule user definitions:
@@ -120,55 +120,55 @@ class TransformerWinding(ConductingEquipment):
     MemberOf_PowerTransformer = Instance("CIM13.Wires.PowerTransformer")
 
     # The rated voltage (phase-to-phase) of the winding, usually the same as the neutral voltage.
-    ratedU = EFloat
+    ratedU = Float
 
     # Ground resistance path through connected grounding transformer.
-    rground = EFloat
+    rground = Float
 
     # Zero sequence magnetizing branch susceptance.
-    b0 = EFloat
+    b0 = Float
 
     # Positive sequence series resistance of the winding.
-    r = EFloat
+    r = Float
 
     # Ground reactance path through connected grounding transformer.
-    xground = EFloat
+    xground = Float
 
     # Magnetizing branch susceptance (B mag).
-    b = EFloat
+    b = Float
 
     # Zero sequence series resistance of the winding.
-    r0 = EFloat
+    r0 = Float
 
     # Set if the winding is grounded.
-    grounded = EBoolean
+    grounded = Bool
 
     # Apparent power that the winding can carry for a short period of time.
-    shortTermS = EFloat
+    shortTermS = Float
 
     # The normal apparent power rating for the winding
-    ratedS = EFloat
+    ratedS = Float
 
     # Positive sequence series reactance of the winding.
-    x = EFloat
+    x = Float
 
     # The type of winding.
     windingType = WindingType
 
     # The apparent power that the winding can carry  under emergency conditions.
-    emergencyS = EFloat
+    emergencyS = Float
 
     # Basic insulation level voltage rating
-    insulationU = EFloat
+    insulationU = Float
 
     # Magnetizing branch conductance (G mag).
-    g = EFloat
+    g = Float
 
     # Zero sequence magnetizing branch conductance.
-    g0 = EFloat
+    g0 = Float
 
     # Zero sequence series reactance of the winding.
-    x0 = EFloat
+    x0 = Float
 
     # The type of connection of the winding.
     connectionType = WindingConnection
@@ -194,34 +194,34 @@ class EnergySource(ConductingEquipment):
     #--------------------------------------------------------------------------
 
     # Zero sequence Thevenin resistance.
-    r0 = EFloat
+    r0 = Float
 
     # Phase-to-phase nominal voltage.
-    nominalVoltage = EFloat
+    nominalVoltage = Float
 
     # Positive sequence Thevenin resistance.
-    r = EFloat
+    r = Float
 
     # Phase-to-phase open circuit voltage magnitude.
-    voltageMagnitude = EFloat
+    voltageMagnitude = Float
 
     # Positive sequence Thevenin reactance.
-    x = EFloat
+    x = Float
 
     # Phase angle of a-phase open circuit.
-    voltageAngle = EFloat
+    voltageAngle = Float
 
     # Negative sequence Thevenin resistance.
-    rn = EFloat
+    rn = Float
 
     # High voltage source load
-    activePower = EFloat
+    activePower = Float
 
     # Negative sequence Thevenin reactance.
-    xn = EFloat
+    xn = Float
 
     # Zero sequence Thevenin reactance.
-    x0 = EFloat
+    x0 = Float
 
     #--------------------------------------------------------------------------
     #  Begin energySource user definitions:
@@ -244,10 +244,10 @@ class SeriesCompensator(ConductingEquipment):
     #--------------------------------------------------------------------------
 
     # Positive sequence reactance.
-    x = EFloat
+    x = Float
 
     # Positive sequence resistance.
-    r = EFloat
+    r = Float
 
     #--------------------------------------------------------------------------
     #  Begin seriesCompensator user definitions:
@@ -273,22 +273,22 @@ class WireType(IdentifiedObject):
     WireArrangements = List(Instance("CIM13.Wires.WireArrangement"))
 
     # Number of conductor strands in the (symmetrical) bundle (1-12)
-    phaseConductorCount = EInt
+    phaseConductorCount = Int
 
     # Geometric Mean Radius. If we replace the conductor by a thin walled tube of radius GMR, then its reactance is identical to the reactance of the actual conductor.
-    gMR = EFloat
+    gMR = Float
 
     # Distance between conductor strands in a (symmetrical) bundle.
-    phaseConductorSpacing = EFloat
+    phaseConductorSpacing = Float
 
     # Current carrying capacity of a wire or cable under stated thermal conditions
-    ratedCurrent = EFloat
+    ratedCurrent = Float
 
     # The radius of the conductor
-    radius = EFloat
+    radius = Float
 
     # The resistance per unit length of the conductor
-    resistance = EFloat
+    resistance = Float
 
     #--------------------------------------------------------------------------
     #  Begin wireType user definitions:
@@ -365,31 +365,31 @@ class Conductor(ConductingEquipment):
     ConductorType = Instance("CIM13.Wires.ConductorType")
 
     # Zero sequence series resistance of the entire line section.
-    r0 = EFloat
+    r0 = Float
 
     # Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section.
-    g0ch = EFloat
+    g0ch = Float
 
     # Segment length for calculating line section capabilities
-    length = EFloat
+    length = Float
 
     # Positive sequence series reactance of the entire line section.
-    x = EFloat
+    x = Float
 
     # Positive sequence shunt (charging) conductance, uniformly distributed, of the entire line section.
-    gch = EFloat
+    gch = Float
 
     # Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.
-    b0ch = EFloat
+    b0ch = Float
 
     # Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.
-    bch = EFloat
+    bch = Float
 
     # Zero sequence series reactance of the entire line section.
-    x0 = EFloat
+    x0 = Float
 
     # Positive sequence series resistance of the entire line section.
-    r = EFloat
+    r = Float
 
     #--------------------------------------------------------------------------
     #  Begin conductor user definitions:
@@ -461,37 +461,37 @@ class TapChanger(PowerSystemResource):
     RegulatingControl = Instance("CIM13.Wires.RegulatingControl")
 
     # The neutral tap step position for this winding.
-    neutralStep = EInt
+    neutralStep = Int
 
     # Lowest possible tap step position, retard from neutral
-    lowStep = EInt
+    lowStep = Int
 
     # For an LTC, the tap changer control mode.
     tculControlMode = TransformerControlMode
 
     # Voltage at which the winding operates at the neutral tap setting.
-    neutralU = EFloat
+    neutralU = Float
 
     # The tap step position used in 'normal' network operation for this winding. For a 'Fixed' tap changer indicates the current physical tap setting.
-    normalStep = EInt
+    normalStep = Int
 
     # Highest possible tap step position, advance from neutral
-    highStep = EInt
+    highStep = Int
 
     # The type of tap changer. Indicates the ability of the transformer to perform various regulation tasks. The tap changer must be also be associated wtih a RegulationControl object before any regulation is possible.
     type = TapChangerKind
 
     # Tap step increment, in per cent of nominal voltage, per step position.
-    stepVoltageIncrement = EFloat
+    stepVoltageIncrement = Float
 
     # For an LTC, the delay for subsequent tap changer operation (second and later step changes)
-    subsequentDelay = EFloat
+    subsequentDelay = Float
 
     # For an LTC, the delay for initial tap changer operation (first step change)
-    initialDelay = EFloat
+    initialDelay = Float
 
     # Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer).
-    stepPhaseShiftIncrement = EFloat
+    stepPhaseShiftIncrement = Float
 
     #--------------------------------------------------------------------------
     #  Begin tapChanger user definitions:
@@ -516,7 +516,7 @@ class CompositeSwitch(Equipment):
     Switches = List(Instance("CIM13.Wires.Switch"))
 
     # An alphanumeric code that can be used as a reference to extar information such as the description of the interlocking scheme if any
-    compositeSwitchType = EString
+    compositeSwitchType = Str
 
     #--------------------------------------------------------------------------
     #  Begin compositeSwitch user definitions:
@@ -545,10 +545,10 @@ class WireArrangement(IdentifiedObject):
     WireType = Instance("CIM13.Wires.WireType")
 
     # Mounting point where wire One is mounted.
-    mountingPointX = EInt
+    mountingPointX = Int
 
     # Mounting point where wire One is mounted.
-    mountingPointY = EInt
+    mountingPointY = Int
 
     #--------------------------------------------------------------------------
     #  Begin wireArrangement user definitions:
@@ -583,13 +583,13 @@ class PowerTransformer(Equipment):
     phases = PhaseCode
 
     # Core shunt magnetizing susceptance in the saturation region.
-    bmagSat = EFloat
+    bmagSat = Float
 
     # Core magnetizing saturation curve knee flux level.
-    magSatFlux = EFloat
+    magSatFlux = Float
 
     # The reference voltage at which the magnetizing saturation measurements were made
-    magBaseU = EFloat
+    magBaseU = Float
 
     #--------------------------------------------------------------------------
     #  Begin powerTransformer user definitions:
@@ -616,28 +616,28 @@ class MutualCoupling(Root):
     Second_ACLineSegment = Instance("CIM13.Wires.ACLineSegment")
 
     # Zero sequence branch-to-branch mutual impedance coupling, reactance
-    x0 = EFloat
+    x0 = Float
 
     # Distance from the second line's from bus to end of coupled region
-    distance22 = EFloat
+    distance22 = Float
 
     # Distance from the first line's from bus to start of coupled region
-    distance11 = EFloat
+    distance11 = Float
 
     # Distance from the first line's from bus to end of coupled region
-    distance12 = EFloat
+    distance12 = Float
 
     # Zero sequence branch-to-branch mutual impedance coupling, resistance
-    r0 = EFloat
+    r0 = Float
 
     # Zero sequence mutual coupling shunt (charging) susceptance, uniformly distributed, of the entire line section.
-    b0ch = EFloat
+    b0ch = Float
 
     # Zero sequence mutual coupling shunt (charging) conductance, uniformly distributed, of the entire line section.
-    g0ch = EFloat
+    g0ch = Float
 
     # Distance from the second line's from bus to start of coupled region
-    distance21 = EFloat
+    distance21 = Float
 
     #--------------------------------------------------------------------------
     #  Begin mutualCoupling user definitions:
@@ -660,40 +660,40 @@ class RectifierInverter(ConductingEquipment):
     #--------------------------------------------------------------------------
 
     # Rectifier/inverter primary base voltage
-    ratedU = EFloat
+    ratedU = Float
 
     # Operating mode for the converter.
-    operatingMode = EString
+    operatingMode = Str
 
     # Frequency on the AC side.
-    frequency = EFloat
+    frequency = Float
 
     # The maximum voltage on the DC side at which the converter should operate.
-    maxU = EFloat
+    maxU = Float
 
     # Commutating resistance.
-    commutatingResistance = EFloat
+    commutatingResistance = Float
 
     # The minimum active power on the DC side at which the converter should operate.
-    minP = EFloat
+    minP = Float
 
     # Number of bridges
-    bridges = EInt
+    bridges = Int
 
     # Commutating reactance at AC bus frequency.
-    commutatingReactance = EFloat
+    commutatingReactance = Float
 
     # The maximum active power on the DC side at which the fconverter should operate.
-    maxP = EFloat
+    maxP = Float
 
     # Minimum compounded DC voltage
-    minCompoundVoltage = EFloat
+    minCompoundVoltage = Float
 
     # Compounding resistance.
-    compoundResistance = EFloat
+    compoundResistance = Float
 
     # The minimum voltage on the DC side at which the converter should operate.
-    minU = EFloat
+    minU = Float
 
     #--------------------------------------------------------------------------
     #  Begin rectifierInverter user definitions:
@@ -744,19 +744,19 @@ class EnergyConsumer(ConductingEquipment):
     LoadResponse = Instance("CIM13.LoadModel.LoadResponseCharacteristic")
 
     # Number of individual customers represented by this Demand
-    customerCount = EInt
+    customerCount = Int
 
     # Reactive power of the load that is a fixed quantity.
-    qfixed = EFloat
+    qfixed = Float
 
     # Active power of the load that is a fixed quantity.
-    pfixed = EFloat
+    pfixed = Float
 
     # Fixed reactive power as per cent of load group fixed reactive power.
-    qfixedPct = EFloat
+    qfixedPct = Float
 
     # Fixed active power as per cent of load group fixed active power
-    pfixedPct = EFloat
+    pfixedPct = Float
 
     #--------------------------------------------------------------------------
     #  Begin energyConsumer user definitions:
@@ -784,16 +784,16 @@ class Switch(ConductingEquipment):
     CompositeSwitch = Instance("CIM13.Wires.CompositeSwitch")
 
     # Branch is retained in a bus branch model.
-    retained = EBoolean
+    retained = Bool
 
     # The date and time when the switch was last switched on.
-    switchOnDate = EString
+    switchOnDate = Str
 
     # The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurment the Discrete.normalValue is expected to match with the Switch.normalOpen.
-    normalOpen = EBoolean
+    normalOpen = Bool
 
     # The switch on count since the switch was last reset or initialized.
-    switchOnCount = EInt
+    switchOnCount = Int
 
     #--------------------------------------------------------------------------
     #  Begin switch user definitions:
@@ -824,13 +824,13 @@ class RegulatingControl(PowerSystemResource):
     RegulationSchedule = Instance("CIM13.Wires.RegulationSchedule")
 
     # The target value specified for case input.   This value can be used for the target value wihout the use of schedules. The value has the units appropriate to the mode attribute.
-    targetValue = EFloat
+    targetValue = Float
 
     # The regulation is performed in a discrete mode.
-    discrete = EBoolean
+    discrete = Bool
 
     # This is the case input target range.   This performs the same function as the value2 attribute on the regulation schedule in the case that schedules are not used.   The units of those appropriate for the mode.
-    targetRange = EFloat
+    targetRange = Float
 
     # The regulating control mode presently available.  This specifications allows for determining the kind of regualation without need for obtaining the units from a schedule.
     mode = RegulatingControlModeKind
@@ -883,28 +883,28 @@ class WindingTest(IdentifiedObject):
     From_TransformerWinding = Instance("CIM13.Wires.TransformerWinding")
 
     # The load loss kW ('to' winding short-circuited) from the test report.
-    loadLoss = EFloat
+    loadLoss = Float
 
     # The tap step number for the 'to' winding of the test pair.
-    toTapStep = EInt
+    toTapStep = Int
 
     # The tap step number for the 'from' winding of the test pair.
-    fromTapStep = EInt
+    fromTapStep = Int
 
     # The no load loss kW 'to' winding open-circuited) from the test report.
-    noLoadLoss = EFloat
+    noLoadLoss = Float
 
     # The voltage measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited.
-    voltage = EFloat
+    voltage = Float
 
     # The phase shift measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited.
-    phaseShift = EFloat
+    phaseShift = Float
 
     # The leakage impedance measured at the 'from' winding  with the 'to' winding short-circuited and all other windings open-circuited.  Leakage impedance is expressed in units based on the apparent power and voltage ratings of the 'from' winding.
-    leakageImpedance = EFloat
+    leakageImpedance = Float
 
     # The exciting current on open-circuit test, expressed as a percentage of rated current, at nominal voltage
-    excitingCurrent = EFloat
+    excitingCurrent = Float
 
     #--------------------------------------------------------------------------
     #  Begin windingTest user definitions:
@@ -933,10 +933,10 @@ class ConductorType(IdentifiedObject):
     WireArrangements = List(Instance("CIM13.Wires.WireArrangement"))
 
     # Reactance of the sheath for cable conductors.
-    sheathReactance = EFloat
+    sheathReactance = Float
 
     # Resistance of the sheath for cable conductors.
-    sheathResistance = EFloat
+    sheathResistance = Float
 
     #--------------------------------------------------------------------------
     #  Begin conductorType user definitions:
@@ -985,10 +985,10 @@ class ReactiveCapabilityCurve(Curve):
     InitiallyUsedBySynchronousMachine = List(Instance("CIM13.Wires.SynchronousMachine"))
 
     # The machine's coolant temperature (e.g., ambient air or stator circulating water).
-    coolantTemperature = EFloat
+    coolantTemperature = Float
 
     # The hydrogen coolant pressure
-    hydrogenPressure = EFloat
+    hydrogenPressure = Float
 
     #--------------------------------------------------------------------------
     #  Begin reactiveCapabilityCurve user definitions:
@@ -1032,22 +1032,22 @@ class FrequencyConverter(RegulatingCondEq):
     #--------------------------------------------------------------------------
 
     # The maximum active power on the DC side at which the frequence converter should operate.
-    maxP = EFloat
+    maxP = Float
 
     # Frequency on the AC side.
-    frequency = EFloat
+    frequency = Float
 
     # The minimum voltage on the DC side at which the frequency converter should operate.
-    minU = EFloat
+    minU = Float
 
     # The minimum active power on the DC side at which the frequence converter should operate.
-    minP = EFloat
+    minP = Float
 
     # Operating mode for the frequency converter
-    operatingMode = EString
+    operatingMode = Str
 
     # The maximum voltage on the DC side at which the frequency converter should operate.
-    maxU = EFloat
+    maxU = Float
 
     #--------------------------------------------------------------------------
     #  Begin frequencyConverter user definitions:
@@ -1117,10 +1117,10 @@ class DCLineSegment(Conductor):
     #--------------------------------------------------------------------------
 
     # Inductance of the DC line segment.
-    dcSegmentInductance = EFloat
+    dcSegmentInductance = Float
 
     # Resistance of the DC line segment.
-    dcSegmentResistance = EFloat
+    dcSegmentResistance = Float
 
     #--------------------------------------------------------------------------
     #  Begin dCLineSegment user definitions:
@@ -1190,46 +1190,46 @@ class ShuntCompensator(RegulatingCondEq):
     #--------------------------------------------------------------------------
 
     # The date and time when the capacitor bank was last switched on.
-    switchOnDate = EString
+    switchOnDate = Str
 
     # The maximum voltage at which the capacitor bank should operate.
-    maxU = EFloat
+    maxU = Float
 
     # Time delay required for the device to be connected or disconnected by automatic voltage regulation (AVR).
-    aVRDelay = EFloat
+    aVRDelay = Float
 
     # For a capacitor bank, the maximum number of sections that may be switched in.
-    maximumSections = EInt
+    maximumSections = Int
 
     # For a capacitor bank, the admittance of each switchable section. Calculated using the reactive power per section and corrected for network voltage.
-    yPerSection = EFloat
+    yPerSection = Float
 
     # Voltage sensitivity required for the device to regulate the bus voltage, in voltage/reactive power.
-    voltageSensitivity = EFloat
+    voltageSensitivity = Float
 
     # The switch on count since the capacitor count was last reset or initialized.
-    switchOnCount = EInt
+    switchOnCount = Int
 
     # For a capacitor bank, the normal number of sections switched in. This number should correspond to the nominal reactive power (nomQ).
-    normalSections = EInt
+    normalSections = Int
 
     # Nominal reactive power output of the capacitor bank at the nominal voltage. This number should be positive.
-    nomQ = EFloat
+    nomQ = Float
 
     # For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage.
-    reactivePerSection = EFloat
+    reactivePerSection = Float
 
     # Zero sequence shunt (charging) conductance per section
-    g0PerSection = EFloat
+    g0PerSection = Float
 
     # The nominal voltage at which the nominal reactive power was measured. This should normally be within 10% of the voltage at which the capacitor is connected to the network.
-    nomU = EFloat
+    nomU = Float
 
     # The minimum voltage at which the capacitor bank should operate.
-    minU = EFloat
+    minU = Float
 
     # Zero sequence shunt (charging) susceptance per section
-    b0PerSection = EFloat
+    b0PerSection = Float
 
     #--------------------------------------------------------------------------
     #  Begin shuntCompensator user definitions:
@@ -1252,7 +1252,7 @@ class Fuse(Switch):
     #--------------------------------------------------------------------------
 
     # Fault interrupting current rating.
-    ampRating = EFloat
+    ampRating = Float
 
     #--------------------------------------------------------------------------
     #  Begin fuse user definitions:
@@ -1288,94 +1288,94 @@ class SynchronousMachine(RegulatingCondEq):
     DrivenBy_PrimeMover = List(Instance("CIM13.Generation.GenerationDynamics.PrimeMover"))
 
     # Maximum reactive power limit. This is the maximum (nameplate) limit for the unit.
-    maxQ = EFloat
+    maxQ = Float
 
     # Method of cooling the machine.
     coolantType = CoolantType
 
     # Quadrature-axis subtransient reactance, also known as X'q.
-    xQuadSubtrans = EFloat
+    xQuadSubtrans = Float
 
     # Quadrature-axis synchronous reactance (Xq) , the ratio of the component of reactive armature voltage, due to the quadrature-axis component of armature current, to this component of current, under steady state conditions and at rated frequency.
-    xQuadSync = EFloat
+    xQuadSync = Float
 
     # Current mode of operation.
     operatingMode = SynchronousMachineOperatingMode
 
     # Minimum reactive power limit for the unit.
-    minQ = EFloat
+    minQ = Float
 
     # Zero sequence reactance of the synchronous machine.
-    x0 = EFloat
+    x0 = Float
 
     # Time delay required when switching from Manual to Automatic Voltage Regulation. This value is used in the accelerating power reference frame for powerflow solutions
-    manualToAVR = EFloat
+    manualToAVR = Float
 
     # Maximum voltage limit for the unit.
-    maxU = EFloat
+    maxU = Float
 
     # Negative sequence resistance.
-    r2 = EFloat
+    r2 = Float
 
     # Direct-axis transient reactance, also known as X'd.
-    xDirectTrans = EFloat
+    xDirectTrans = Float
 
     # Damping torque coefficient, a proportionality constant that, when multiplied by the angular velocity of the rotor poles with respect to the magnetic field (frequency), results in the damping torque.
-    damping = EFloat
+    damping = Float
 
     # Time delay required when switching from Automatic Voltage Regulation (AVR) to Manual for a lagging MVAr violation.
-    aVRToManualLag = EFloat
+    aVRToManualLag = Float
 
     # Positive sequence reactance of the synchronous machine.
-    x = EFloat
+    x = Float
 
     # Minimum voltage  limit for the unit.
-    minU = EFloat
+    minU = Float
 
     # The energy stored in the rotor when operating at rated speed. This value is used in the accelerating power reference frame for  operator training simulator solutions.
-    inertia = EFloat
+    inertia = Float
 
     # Time delay required when switching from Automatic Voltage Regulation (AVR) to Manual for a leading MVAr violation.
-    aVRToManualLead = EFloat
+    aVRToManualLead = Float
 
     # Positive sequence resistance of the synchronous machine.
-    r = EFloat
+    r = Float
 
     # Nameplate apparent power rating for the unit
-    ratedS = EFloat
+    ratedS = Float
 
     # Active power consumed when in condenser mode operation.
-    condenserP = EFloat
+    condenserP = Float
 
     # Default base reactive power value. This value represents the initial reactive power that can be used by any application function.
-    baseQ = EFloat
+    baseQ = Float
 
     # Quadrature-axis transient reactance, also known as X'q.
-    xQuadTrans = EFloat
+    xQuadTrans = Float
 
     # Zero sequence resistance of the synchronous machine.
-    r0 = EFloat
+    r0 = Float
 
     # Priority of unit for reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on.
-    referencePriority = EInt
+    referencePriority = Int
 
     # Percent of the coordinated reactive control that comes from this machine.
-    qPercent = EFloat
+    qPercent = Float
 
     # Direct-axis synchronous reactance. The quotient of a sustained value of that AC component of armature voltage that is produced by the total direct-axis flux due to direct-axis armature current and the value of the AC component of this current, the machine running at rated speed. (Xd)
-    xDirectSync = EFloat
+    xDirectSync = Float
 
     # Negative sequence reactance.
-    x2 = EFloat
+    x2 = Float
 
     # Temperature or pressure of coolant medium
-    coolantCondition = EFloat
+    coolantCondition = Float
 
     # Modes that this synchronous machine can operate in.
     type = SynchronousMachineType
 
     # Direct-axis subtransient reactance, also known as X'd.
-    xDirectSubtrans = EFloat
+    xDirectSubtrans = Float
 
     #--------------------------------------------------------------------------
     #  Begin synchronousMachine user definitions:
@@ -1398,19 +1398,19 @@ class StaticVarCompensator(RegulatingCondEq):
     #--------------------------------------------------------------------------
 
     # The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero.
-    voltageSetPoint = EFloat
+    voltageSetPoint = Float
 
     # Maximum available capacitive reactive power
-    capacitiveRating = EFloat
+    capacitiveRating = Float
 
     # SVC control mode.
     sVCControlMode = SVCControlMode
 
     # The characteristics slope of an SVC defines how the reactive power output changes in proportion to the difference between the regulated bus voltage and the voltage setpoint.
-    slope = EFloat
+    slope = Float
 
     # Maximum available inductive reactive power
-    inductiveRating = EFloat
+    inductiveRating = Float
 
     #--------------------------------------------------------------------------
     #  Begin staticVarCompensator user definitions:
@@ -1475,10 +1475,10 @@ class Breaker(ProtectedSwitch):
     #--------------------------------------------------------------------------
 
     # The transition time from open to close.
-    inTransitTime = EFloat
+    inTransitTime = Float
 
     # Fault interrupting current rating.
-    ratedCurrent = EFloat
+    ratedCurrent = Float
 
     #--------------------------------------------------------------------------
     #  Begin breaker user definitions:
@@ -1501,7 +1501,7 @@ class LoadBreakSwitch(ProtectedSwitch):
     #--------------------------------------------------------------------------
 
     # Current carrying capacity of a wire or cable under stated thermal conditions.
-    ratedCurrent = EFloat
+    ratedCurrent = Float
 
     #--------------------------------------------------------------------------
     #  Begin loadBreakSwitch user definitions:

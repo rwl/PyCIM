@@ -76,7 +76,7 @@ class PrimeMover(PowerSystemResource):
     Drives_SynchronousMachines = List(Instance("CIM13.Wires.SynchronousMachine"))
 
     # Rating of prime mover
-    primeMoverRating = EFloat
+    primeMoverRating = Float
 
     #--------------------------------------------------------------------------
     #  Begin primeMover user definitions:
@@ -102,7 +102,7 @@ class SteamSupply(PowerSystemResource):
     SteamTurbines = List(Instance("CIM13.Generation.GenerationDynamics.SteamTurbine"))
 
     # Rating of steam supply
-    steamSupplyRating = EFloat
+    steamSupplyRating = Float
 
     #--------------------------------------------------------------------------
     #  Begin steamSupply user definitions:
@@ -128,40 +128,40 @@ class SteamTurbine(PrimeMover):
     SteamSupplys = List(Instance("CIM13.Generation.GenerationDynamics.SteamSupply"))
 
     # Fraction Of Power From Shaft 2 Intermediate Pressure Turbine output
-    shaft2PowerIP = EFloat
+    shaft2PowerIP = Float
 
     # Fraction Of Power From Shaft 2 First Low Pressure Turbine output
-    shaft2PowerLP1 = EFloat
+    shaft2PowerLP1 = Float
 
     # Fraction Of Power From Shaft 2 Second Low Pressure Turbine output
-    shaft2PowerLP2 = EFloat
+    shaft2PowerLP2 = Float
 
     # Fraction Of Power From Shaft 2 High Pressure Turbine output
-    shaft2PowerHP = EFloat
+    shaft2PowerHP = Float
 
     # Second Reheater Time Constant
-    reheater2TC = EFloat
+    reheater2TC = Float
 
     # Fraction Of Power From Shaft 1 Intermediate Pressure Turbine output
-    shaft1PowerIP = EFloat
+    shaft1PowerIP = Float
 
     # Steam Chest Time Constant
-    steamChestTC = EFloat
+    steamChestTC = Float
 
     # Fraction Of Power From Shaft 1 First Low Pressure Turbine output
-    shaft1PowerLP1 = EFloat
+    shaft1PowerLP1 = Float
 
     # Crossover Time Constant
-    crossoverTC = EFloat
+    crossoverTC = Float
 
     # First Reheater Time Constant
-    reheater1TC = EFloat
+    reheater1TC = Float
 
     # Fraction Of Power From Shaft 1 High Pressure Turbine output
-    shaft1PowerHP = EFloat
+    shaft1PowerHP = Float
 
     # Fraction Of Power From Shaft 1 Second Low Pressure Turbine output
-    shaft1PowerLP2 = EFloat
+    shaft1PowerLP2 = Float
 
     #--------------------------------------------------------------------------
     #  Begin steamTurbine user definitions:
@@ -184,64 +184,64 @@ class PWRSteamSupply(SteamSupply):
     #--------------------------------------------------------------------------
 
     # Cold Leg Feedback Gain 2
-    coldLegFG2 = EFloat
+    coldLegFG2 = Float
 
     # Steam Pressure Drop Lag Time Constant
-    steamPressureDropLagTC = EFloat
+    steamPressureDropLagTC = Float
 
     # Cold Leg Feedback Lead Time Constant
-    coldLegFBLeadTC2 = EFloat
+    coldLegFBLeadTC2 = Float
 
     # Cold Leg Feedback Lag Time Constant
-    coldLegFBLagTC = EFloat
+    coldLegFBLagTC = Float
 
     # Hot Leg To Cold Leg Gain
-    hotLegToColdLegGain = EFloat
+    hotLegToColdLegGain = Float
 
     # Feedback Factor
-    feedbackFactor = EFloat
+    feedbackFactor = Float
 
     # Core Neutronics And Heat Transfer
-    coreNeutronicsHT = EFloat
+    coreNeutronicsHT = Float
 
     # Throttle Pressure Factor
-    throttlePressureFactor = EFloat
+    throttlePressureFactor = Float
 
     # Core Heat Transfer Lag Time Constant
-    coreHTLagTC1 = EFloat
+    coreHTLagTC1 = Float
 
     # Throttle Pressure Setpoint
-    throttlePressureSP = EFloat
+    throttlePressureSP = Float
 
     # Core Neutronics Effective Time Constant
-    coreNeutronicsEffTC = EFloat
+    coreNeutronicsEffTC = Float
 
     # Cold Leg Feedback Gain 1
-    coldLegFG1 = EFloat
+    coldLegFG1 = Float
 
     # Steam Pressure Feedback Gain
-    steamPressureFG = EFloat
+    steamPressureFG = Float
 
     # Hot Leg Steam Gain
-    hotLegSteamGain = EFloat
+    hotLegSteamGain = Float
 
     # Core Heat Transfer Lag Time Constant
-    coreHTLagTC2 = EFloat
+    coreHTLagTC2 = Float
 
     # Cold Leg Lag Time Constant
-    coldLegLagTC = EFloat
+    coldLegLagTC = Float
 
     # Pressure Control Gain
-    pressureCG = EFloat
+    pressureCG = Float
 
     # Cold Leg Feedback Lead Time Constant
-    coldLegFBLeadTC1 = EFloat
+    coldLegFBLeadTC1 = Float
 
     # Steam Flow Feedback Gain
-    steamFlowFG = EFloat
+    steamFlowFG = Float
 
     # Hot Leg Lag Time Constant
-    hotLegLagTC = EFloat
+    hotLegLagTC = Float
 
     #--------------------------------------------------------------------------
     #  Begin pWRSteamSupply user definitions:
@@ -273,28 +273,28 @@ class CombustionTurbine(PrimeMover):
     HeatRecoveryBoiler = Instance("CIM13.Generation.GenerationDynamics.HeatRecoveryBoiler")
 
     # Reference temperature at which the output of the turbine was defined.
-    referenceTemp = EFloat
+    referenceTemp = Float
 
     # Per unit change in power per (versus) unit change in ambient temperature
-    powerVariationByTemp = EFloat
+    powerVariationByTemp = Float
 
     # Flag that is set to true if the combustion turbine is associated with a heat recovery boiler
-    heatRecoveryFlag = EBoolean
+    heatRecoveryFlag = Bool
 
     # Off-nominal voltage effect on turbine auxiliaries. Per unit reduction in auxiliary active power consumption versus per unit reduction in auxiliary bus voltage (from a specified voltage level).
-    auxPowerVersusVoltage = EFloat
+    auxPowerVersusVoltage = Float
 
     # Default ambient temperature to be used in modeling applications
-    ambientTemp = EFloat
+    ambientTemp = Float
 
     # The time constant for the turbine.
-    timeConstant = EFloat
+    timeConstant = Float
 
     # Off-nominal frequency effect on turbine auxiliaries. Per unit reduction in auxiliary active power consumption versus per unit reduction in frequency (from rated frequency).
-    auxPowerVersusFrequency = EFloat
+    auxPowerVersusFrequency = Float
 
     # Off-nominal frequency effect on turbine capability. Per unit reduction in unit active power capability versus per unit reduction in frequency (from rated frequency).
-    capabilityVersusFrequency = EFloat
+    capabilityVersusFrequency = Float
 
     #--------------------------------------------------------------------------
     #  Begin combustionTurbine user definitions:
@@ -317,67 +317,67 @@ class BWRSteamSupply(SteamSupply):
     #--------------------------------------------------------------------------
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux2 = EFloat
+    rfAux2 = Float
 
     # Initial Lower Limit
-    lowerLimit = EFloat
+    lowerLimit = Float
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux6 = EFloat
+    rfAux6 = Float
 
     # Pressure Limit
-    pressureLimit = EFloat
+    pressureLimit = Float
 
     # Initial Upper Limit
-    upperLimit = EFloat
+    upperLimit = Float
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux3 = EFloat
+    rfAux3 = Float
 
     # Rod Pattern
-    rodPattern = EFloat
+    rodPattern = Float
 
     # Proportional Gain
-    proportionalGain = EFloat
+    proportionalGain = Float
 
     # In-Core Thermal Time Constant
-    inCoreThermalTC = EFloat
+    inCoreThermalTC = Float
 
     # High Power Limit
-    highPowerLimit = EFloat
+    highPowerLimit = Float
 
     # Constant Associated With Rod Pattern
-    rodPatternConstant = EFloat
+    rodPatternConstant = Float
 
     # Low Power Limit
-    lowPowerLimit = EFloat
+    lowPowerLimit = Float
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux7 = EFloat
+    rfAux7 = Float
 
     # Pressure Setpoint Time Constant
-    pressureSetpointTC1 = EFloat
+    pressureSetpointTC1 = Float
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux4 = EFloat
+    rfAux4 = Float
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux1 = EFloat
+    rfAux1 = Float
 
     # Integral Gain
-    integralGain = EFloat
+    integralGain = Float
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux8 = EFloat
+    rfAux8 = Float
 
     # Pressure Setpoint Gain Adjuster
-    pressureSetpointGA = EFloat
+    pressureSetpointGA = Float
 
     # Pressure Setpoint Time Constant
-    pressureSetpointTC2 = EFloat
+    pressureSetpointTC2 = Float
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux5 = EFloat
+    rfAux5 = Float
 
     #--------------------------------------------------------------------------
     #  Begin bWRSteamSupply user definitions:
@@ -400,37 +400,37 @@ class HydroTurbine(PrimeMover):
     #--------------------------------------------------------------------------
 
     # Maximum efficiency active power at minimum head conditions
-    minHeadMaxP = EFloat
+    minHeadMaxP = Float
 
     # Gate Rate Limit
-    gateRateLimit = EFloat
+    gateRateLimit = Float
 
     # Speed Regulation
-    speedRegulation = EFloat
+    speedRegulation = Float
 
     # Transient Regulation
-    transientRegulation = EFloat
+    transientRegulation = Float
 
     # Transient Droop Time Constant
-    transientDroopTime = EFloat
+    transientDroopTime = Float
 
     # Maximum efficiency active power at maximum head conditions
-    maxHeadMaxP = EFloat
+    maxHeadMaxP = Float
 
     # Rated turbine active power
-    turbineRating = EFloat
+    turbineRating = Float
 
     # Water Starting Time
-    waterStartingTime = EFloat
+    waterStartingTime = Float
 
     # Type of turbine.
     turbineType = TurbineType
 
     # Gate Upper Limit
-    gateUpperLimit = EFloat
+    gateUpperLimit = Float
 
     # Rated speed in number of revolutions.
-    speedRating = EFloat
+    speedRating = Float
 
     #--------------------------------------------------------------------------
     #  Begin hydroTurbine user definitions:
@@ -453,82 +453,82 @@ class FossilSteamSupply(SteamSupply):
     #--------------------------------------------------------------------------
 
     # Superheater Pipe Pressure Drop Constant
-    superHeaterPipePD = EFloat
+    superHeaterPipePD = Float
 
     # Active power Maximum Error Rate Limit
-    maxErrorRateP = EFloat
+    maxErrorRateP = Float
 
     # Off nominal voltage effect on auxiliary real power. Per unit active power variation versus per unit voltage variation.
-    auxPowerversusVoltage = EFloat
+    auxPowerversusVoltage = Float
 
     # Pressure Control Proportional Gain ratio
-    pressureCtrlPG = EFloat
+    pressureCtrlPG = Float
 
     # Secondary Superheater Capacity
-    superHeater2Capacity = EFloat
+    superHeater2Capacity = Float
 
     # The control mode of the boiler
     boilerControlMode = BoilerControlMode
 
     # Mechanical Power Sensor Lag
-    mechPowerSensorLag = EFloat
+    mechPowerSensorLag = Float
 
     # Pressure Error Bias ratio
-    controlPEB = EFloat
+    controlPEB = Float
 
     # Fuel Demand Limit
-    fuelDemandLimit = EFloat
+    fuelDemandLimit = Float
 
     # Proportional Constant
-    controlPC = EFloat
+    controlPC = Float
 
     # Pressure Feedback Indicator
-    pressureFeedback = EInt
+    pressureFeedback = Int
 
     # Off nominal frequency effect on auxiliary real power. Per unit active power variation versus per unit frequency variation.
-    auxPowerVersusFrequency = EFloat
+    auxPowerVersusFrequency = Float
 
     # Feedwater Integral Gain ratio
-    feedWaterIG = EFloat
+    feedWaterIG = Float
 
     # Time Constant
-    controlTC = EFloat
+    controlTC = Float
 
     # Active power Error Bias ratio
-    controlErrorBiasP = EFloat
+    controlErrorBiasP = Float
 
     # Feedwater Time Constant rato
-    feedWaterTC = EFloat
+    feedWaterTC = Float
 
     # Feedwater Proportional Gain ratio
-    feedWaterPG = EFloat
+    feedWaterPG = Float
 
     # Fuel Delay
-    fuelSupplyDelay = EFloat
+    fuelSupplyDelay = Float
 
     # Pressure Control Derivative Gain ratio
-    pressureCtrlDG = EFloat
+    pressureCtrlDG = Float
 
     # Pressure Control Integral Gain ratio
-    pressureCtrlIG = EFloat
+    pressureCtrlIG = Float
 
     # Fuel Supply Time Constant
-    fuelSupplyTC = EFloat
+    fuelSupplyTC = Float
 
     # Integral Constant
-    controlIC = EFloat
+    controlIC = Float
 
     # Throttle Pressure Setpoint
-    throttlePressureSP = EFloat
+    throttlePressureSP = Float
 
     # Drum/Primary Superheater Capacity
-    superHeater1Capacity = EFloat
+    superHeater1Capacity = Float
 
     # Pressure Error Deadband
-    controlPED = EFloat
+    controlPED = Float
 
     # Active power Minimum Error Rate Limit
-    minErrorRateP = EFloat
+    minErrorRateP = Float
 
     #--------------------------------------------------------------------------
     #  Begin fossilSteamSupply user definitions:
@@ -596,7 +596,7 @@ class HeatRecoveryBoiler(FossilSteamSupply):
     CombustionTurbines = List(Instance("CIM13.Generation.GenerationDynamics.CombustionTurbine"))
 
     # The steam supply rating in kilopounds per hour, if dual pressure boiler
-    steamSupplyRating2 = EFloat
+    steamSupplyRating2 = Float
 
     #--------------------------------------------------------------------------
     #  Begin heatRecoveryBoiler user definitions:
@@ -619,7 +619,7 @@ class DrumBoiler(FossilSteamSupply):
     #--------------------------------------------------------------------------
 
     # Rating of drum boiler in steam units
-    drumBoilerRating = EFloat
+    drumBoilerRating = Float
 
     #--------------------------------------------------------------------------
     #  Begin drumBoiler user definitions:

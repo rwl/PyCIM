@@ -53,7 +53,7 @@ class OperationalLimit(IdentifiedObject):
     OperationalLimitSet = Instance("CIM13.OperationalLimits.OperationalLimitSet")
 
     # Used to specify high/low and limit levels.
-    type = EString
+    type = Str
 
     #--------------------------------------------------------------------------
     #  Begin operationalLimit user definitions:
@@ -78,22 +78,22 @@ class BranchGroup(IdentifiedObject):
     BranchGroupTerminal = List(Instance("CIM13.OperationalLimits.BranchGroupTerminal"))
 
     # Monitor the active power flow.
-    monitorActivePower = EBoolean
+    monitorActivePower = Bool
 
     # The maximum active power flow.
-    maximumActivePower = EFloat
+    maximumActivePower = Float
 
     # Monitor the reactive power flow.
-    monitorReactivePower = EBoolean
+    monitorReactivePower = Bool
 
     # The minimum active power flow.
-    minimumActivePower = EFloat
+    minimumActivePower = Float
 
     # The maximum reactive power flow.
-    maximumReactivePower = EFloat
+    maximumReactivePower = Float
 
     # The minimum reactive power flow.
-    minimumReactivePower = EFloat
+    minimumReactivePower = Float
 
     #--------------------------------------------------------------------------
     #  Begin branchGroup user definitions:
@@ -121,7 +121,7 @@ class OperationalLimitType(Root):
     direction = OperationalLimitDirectionKind
 
     # The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed.
-    acceptableDuration = EFloat
+    acceptableDuration = Float
 
     #--------------------------------------------------------------------------
     #  Begin operationalLimitType user definitions:
@@ -174,7 +174,7 @@ class BranchGroupTerminal(Root):
     Terminal = Instance("CIM13.Core.Terminal")
 
     # The flow into the terminal is summed if set true.   The flow out of the terminanl is summed if set false.
-    positiveFlowIn = EBoolean
+    positiveFlowIn = Bool
 
     #--------------------------------------------------------------------------
     #  Begin branchGroupTerminal user definitions:
@@ -197,7 +197,7 @@ class ActivePowerLimit(OperationalLimit):
     #--------------------------------------------------------------------------
 
     # Value of active power limit.
-    value = EFloat
+    value = Float
 
     #--------------------------------------------------------------------------
     #  Begin activePowerLimit user definitions:
@@ -220,7 +220,7 @@ class CurrentLimit(OperationalLimit):
     #--------------------------------------------------------------------------
 
     # Limit on current flow.
-    value = EFloat
+    value = Float
 
     #--------------------------------------------------------------------------
     #  Begin currentLimit user definitions:
@@ -243,7 +243,7 @@ class VoltageLimit(OperationalLimit):
     #--------------------------------------------------------------------------
 
     # Limit on voltage. High or low limit depends on the OperatoinalLimit.limitKind
-    value = EFloat
+    value = Float
 
     #--------------------------------------------------------------------------
     #  Begin voltageLimit user definitions:
@@ -266,7 +266,7 @@ class ApparentPowerLimit(OperationalLimit):
     #--------------------------------------------------------------------------
 
     # The apparent power limit.
-    value = EFloat
+    value = Float
 
     #--------------------------------------------------------------------------
     #  Begin apparentPowerLimit user definitions:

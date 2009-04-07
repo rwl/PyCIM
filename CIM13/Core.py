@@ -27,7 +27,7 @@ from CIM13.Domain import UnitMultiplier
 
 from enthought.traits.api import Instance, List, Enum, Float, Bool, Str, Int
 # <<< imports
-
+from itertools import count
 # >>> imports
 
 #------------------------------------------------------------------------------
@@ -61,13 +61,13 @@ class IrregularTimePoint(Root):
     IntervalSchedule = Instance("CIM13.Core.IrregularIntervalSchedule")
 
     # The time is relative the BasicTimeSchedule.startTime.
-    time = EFloat
+    time = Float
 
     # The second value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule.
-    value2 = EFloat
+    value2 = Float
 
     # The first value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule.
-    value1 = EFloat
+    value1 = Float
 
     #--------------------------------------------------------------------------
     #  Begin irregularTimePoint user definitions:
@@ -94,7 +94,7 @@ class OperatingShare(Root):
     PowerSystemResource = Instance("CIM13.Core.PowerSystemResource")
 
     # Percentage ownership for this device.   The percentage indicates the percentage ownership of the PSROwner for the PowerSystemResource.  The total percentage ownership for a PowerSystemResource should add to 100%.
-    percentage = EFloat
+    percentage = Float
 
     #--------------------------------------------------------------------------
     #  Begin operatingShare user definitions:
@@ -120,13 +120,13 @@ class CurveData(Root):
     CurveSchedule = Instance("CIM13.Core.Curve")
 
     # The data value of the X-axis variable,  depending on the X-axis units
-    xvalue = EFloat
+    xvalue = Float
 
     # The data value of the  first Y-axis variable, depending on the Y-axis units
-    y1value = EFloat
+    y1value = Float
 
     # The data value of the second Y-axis variable (if present), depending on the Y-axis units
-    y2value = EFloat
+    y2value = Float
 
     #--------------------------------------------------------------------------
     #  Begin curveData user definitions:
@@ -152,13 +152,13 @@ class RegularTimePoint(Root):
     IntervalSchedule = Instance("CIM13.Core.RegularIntervalSchedule")
 
     # The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.
-    value1 = EFloat
+    value1 = Float
 
     # The second value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.
-    value2 = EFloat
+    value2 = Float
 
     # The position of the RegularTimePoint in the sequence. Note that time points don't have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the RegularIntervalSchedule.timeStep with the RegularTimePoint.sequenceNumber and add the BasicIntervalSchedule.startTime.
-    sequenceNumber = EInt
+    sequenceNumber = Int
 
     #--------------------------------------------------------------------------
     #  Begin regularTimePoint user definitions:
@@ -184,26 +184,59 @@ class IdentifiedObject(Root):
     ModelingAuthoritySet = Instance("CIM13.Core.ModelingAuthoritySet")
 
     # The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy.
-    name = EString
+    name = Str
 
     # The localName is a human readable name of the object. It is only used with objects organized in a naming hierarchy. The simplest naming hierarchy has just one parent (the root) giving a flat naming hierarchy. However, the naming hierarchy usually has several levels, e.g. Substation, VoltageLevel, Equipment etc. Children of the same parent have names that are unique among them. If the uniqueness requirement cannot be met IdentifiedObject.localName shall not be used, use IdentifiedObject.name  instead.
-    localName = EString
+    localName = Str
 
     # The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.
-    description = EString
+    description = Str
 
     # The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.
-    aliasName = EString
+    aliasName = Str
 
     # A Model Authority issues mRIDs. Given that each Model Authority has a unique id and this id is part of the mRID, then the mRID is globally unique.
-    mRID = EString
+    mRID = Str
 
     # The pathname is a system unique name composed from all IdentifiedObject.localNames in a naming hierarchy path from the object to the root.
-    pathName = EString
+    pathName = Str
 
     #--------------------------------------------------------------------------
     #  Begin identifiedObject user definitions:
     #--------------------------------------------------------------------------
+
+    _name_ids = count(0)
+
+    def _name_default(self):
+        """ Trait initialiser.
+        """
+        return self._generate_name()
+
+
+    def _get_name(self):
+        """ Returns the name, which is generated if it has not been already.
+        """
+        if self._name is None:
+            self._name = self._generate_name()
+        return self._name
+
+
+    def _set_name(self, newname):
+        """ Change name to newname. Uniqueness is not guaranteed anymore.
+        """
+        self._name = newname
+
+
+    def _generate_name(self):
+        """ Return a unique name for this object.
+        """
+        return "%s-%i" % (self.__class__.__name__,  self._name_ids.next())
+
+
+    def __repr__(self):
+        """ The default representation of a named object is its name.
+        """
+        return "<%s '%s'>" % (self.__class__.__name__, self.name)
 
     #--------------------------------------------------------------------------
     #  End identifiedObject user definitions:
@@ -442,10 +475,10 @@ class BaseVoltage(IdentifiedObject):
     VoltageLevel = List(Instance("CIM13.Core.VoltageLevel"))
 
     # The PowerSystemResource's base voltage.
-    nominalVoltage = EFloat
+    nominalVoltage = Float
 
     # If true, this is a direct current base voltage and items assigned to this base voltage are also associated with a direct current capabilities.   False indicates alternating current.
-    isDC = EBoolean
+    isDC = Bool
 
     #--------------------------------------------------------------------------
     #  Begin baseVoltage user definitions:
@@ -471,7 +504,7 @@ class BasicIntervalSchedule(IdentifiedObject):
     value2Unit = UnitSymbol
 
     # The time for the first time point.
-    startTime = EString
+    startTime = Str
 
     # Multiplier for value2.
     value2Multiplier = UnitMultiplier
@@ -506,10 +539,10 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
     TimePoints = List(Instance("CIM13.Core.RegularTimePoint"))
 
     # The time between each pair of subsequent RegularTimePoints.
-    timeStep = EFloat
+    timeStep = Float
 
     # The time for the last time point.
-    endTime = EString
+    endTime = Str
 
     #--------------------------------------------------------------------------
     #  Begin regularIntervalSchedule user definitions:
@@ -661,7 +694,7 @@ class BasePower(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # Definition of base power.
-    basePower = EFloat
+    basePower = Float
 
     #--------------------------------------------------------------------------
     #  Begin basePower user definitions:
@@ -708,7 +741,7 @@ class PsrList(IdentifiedObject):
     PowerSystemResources = List(Instance("CIM13.Core.PowerSystemResource"))
 
     # Type of power system resources in this list.
-    typePSRList = EString
+    typePSRList = Str
 
     #--------------------------------------------------------------------------
     #  Begin psrList user definitions:
@@ -811,7 +844,7 @@ class Equipment(PowerSystemResource):
     MemberOf_EquipmentContainer = Instance("CIM13.Core.EquipmentContainer")
 
     # The equipment is normally in service.
-    normalIlyInService = EBoolean
+    normalIlyInService = Bool
 
     #--------------------------------------------------------------------------
     #  Begin equipment user definitions:
@@ -843,13 +876,13 @@ class Bay(EquipmentContainer):
     busBarConfiguration = BusbarConfiguration
 
     # Indicates the presence/absence of active/reactive power measurements.
-    bayPowerMeasFlag = EBoolean
+    bayPowerMeasFlag = Bool
 
     # Breaker configuration.
     breakerConfiguration = BreakerConfiguration
 
     # Indicates the presence/absence of energy measurements.
-    bayEnergyMeasFlag = EBoolean
+    bayEnergyMeasFlag = Bool
 
     #--------------------------------------------------------------------------
     #  Begin bay user definitions:
@@ -880,10 +913,10 @@ class VoltageLevel(EquipmentContainer):
     MemberOf_Substation = Instance("CIM13.Core.Substation")
 
     # The bus bar's low voltage limit
-    lowVoltageLimit = EFloat
+    lowVoltageLimit = Float
 
     # The bus bar's high voltage limit
-    highVoltageLimit = EFloat
+    highVoltageLimit = Float
 
     #--------------------------------------------------------------------------
     #  Begin voltageLevel user definitions:

@@ -88,10 +88,10 @@ class ControlArea(PowerSystemResource):
     type = ControlAreaTypeKind
 
     # Active power net interchange tolerance
-    pTolerance = EFloat
+    pTolerance = Float
 
     # The specified positive net interchange into the control area.
-    netInterchange = EFloat
+    netInterchange = Float
 
     #--------------------------------------------------------------------------
     #  Begin controlArea user definitions:
@@ -118,7 +118,7 @@ class AltGeneratingUnitMeas(Root):
     AnalogValue = Instance("CIM13.Meas.AnalogValue")
 
     # Priority of a measurement usage.   Lower numbers have first priority.
-    priority = EInt
+    priority = Int
 
     #--------------------------------------------------------------------------
     #  Begin altGeneratingUnitMeas user definitions:
@@ -148,7 +148,7 @@ class TieFlow(Root):
     ControlArea = Instance("CIM13.ControlArea.ControlArea")
 
     # The flow is positive into the terminal.  A flow is positive if it is an import into the control area.
-    positiveFlowIn = EBoolean
+    positiveFlowIn = Bool
 
     #--------------------------------------------------------------------------
     #  Begin tieFlow user definitions:
@@ -175,7 +175,7 @@ class AltTieMeas(Root):
     AnalogValue = Instance("CIM13.Meas.AnalogValue")
 
     # Priority of a measurement usage.   Lower numbers have first priority.
-    priority = EInt
+    priority = Int
 
     #--------------------------------------------------------------------------
     #  Begin altTieMeas user definitions:

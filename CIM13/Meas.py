@@ -90,10 +90,10 @@ class Control(IdentifiedObject):
     ControlledBy_RegulatingCondEq = Instance("CIM13.Wires.RegulatingCondEq")
 
     # Indicates that a client is currently sending control commands that has not completed
-    operationInProgress = EBoolean
+    operationInProgress = Bool
 
     # The last time a control output was sent
-    timeStamp = EString
+    timeStamp = Str
 
     #--------------------------------------------------------------------------
     #  Begin control user definitions:
@@ -138,7 +138,7 @@ class LimitSet(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # Tells if the limit values are in percentage of normalValue or the specified Unit for Measurements and Controls.
-    isPercentageLimits = EBoolean
+    isPercentageLimits = Bool
 
     #--------------------------------------------------------------------------
     #  Begin limitSet user definitions:
@@ -169,10 +169,10 @@ class MeasurementValue(IdentifiedObject):
     MeasurementValueSource = Instance("CIM13.Meas.MeasurementValueSource")
 
     # The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions.
-    sensorAccuracy = EFloat
+    sensorAccuracy = Float
 
     # The time when the value was last updated
-    timeStamp = EString
+    timeStamp = Str
 
     #--------------------------------------------------------------------------
     #  Begin measurementValue user definitions:
@@ -221,37 +221,37 @@ class Quality61850(Root):
     #--------------------------------------------------------------------------
 
     # Measurement value is beyond a predefined range of value.
-    outOfRange = EBoolean
+    outOfRange = Bool
 
     # Measurement value is beyond the capability of being  represented properly. For example, a counter value overflows from maximum count back to a value of zero.
-    overFlow = EBoolean
+    overFlow = Bool
 
     # Measurement value is blocked and hence unavailable for transmission.
-    operatorBlocked = EBoolean
+    operatorBlocked = Bool
 
     # A correlation function has detected that the value is not consitent with other values. Typically set by a network State Estimator.
-    suspect = EBoolean
+    suspect = Bool
 
     # To prevent some overload of the communication it is sensible to detect and suppress oscillating (fast changing) binary inputs. If a signal changes in a defined time (tosc) twice in the same direction (from 0 to 1 or from 1 to 0) then oscillation is detected and the detail quality identifier 'oscillatory' is set. If it is detected a configured numbers of transient changes could be passed by. In this time the validity status 'questionable' is set. If after this defined numbers of changes the signal is still in the oscillating state the value shall be set either to the opposite state of the previous stable value or to a defined default value. In this case the validity status 'questionable' is reset and 'invalid' is set as long as the signal is oscillating. If it is configured such that no transient changes should be passed by then the validity status 'invalid' is set immediately in addition to the detail quality identifier 'oscillatory' (used for status information only).
-    oscillatory = EBoolean
+    oscillatory = Bool
 
     # Measurement value is transmitted for test purposes.
-    test = EBoolean
+    test = Bool
 
     # Value has been replaced by State Estimator. estimatorReplaced is not an IEC61850 quality bit but has been put in this class for convenience.
-    estimatorReplaced = EBoolean
+    estimatorReplaced = Bool
 
     # Source gives information related to the origin of a value. The value may be acquired from the process, defaulted or substituted.
     source = Source
 
     # This identifier indicates that a supervision function has detected an internal or external failure, e.g. communication failure.
-    failure = EBoolean
+    failure = Bool
 
     # Measurement value is old and possibly invalid, as it has not been successfully updated during a specified time interval.
-    oldData = EBoolean
+    oldData = Bool
 
     # Measurement value may be incorrect due to a reference being out of calibration.
-    badReference = EBoolean
+    badReference = Bool
 
     # Validity of the measurement value.
     validity = Validity
@@ -323,7 +323,7 @@ class ValueToAlias(IdentifiedObject):
     ValueAliasSet = Instance("CIM13.Meas.ValueAliasSet")
 
     # The value that is mapped
-    value = EInt
+    value = Int
 
     #--------------------------------------------------------------------------
     #  Begin valueToAlias user definitions:
@@ -374,13 +374,13 @@ class Discrete(Measurement):
     Contain_MeasurementValues = List(Instance("CIM13.Meas.DiscreteValue"))
 
     # Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.
-    maxValue = EInt
+    maxValue = Int
 
     # Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values
-    minValue = EInt
+    minValue = Int
 
     # Normal measurement value, e.g., used for percentage calculations.
-    normalValue = EInt
+    normalValue = Int
 
     #--------------------------------------------------------------------------
     #  Begin discrete user definitions:
@@ -406,16 +406,16 @@ class SetPoint(Control):
     MeasuredBy_Measurement = Instance("CIM13.Meas.Analog")
 
     # Normal value range maximum for any of the Control.value. Used for scaling, e.g. in bar graphs.
-    maxValue = EFloat
+    maxValue = Float
 
     # Normal value for Control.value e.g. used for percentage scaling
-    normalValue = EFloat
+    normalValue = Float
 
     # Normal value range minimum for any of the Control.value. Used for scaling, e.g. in bar graphs.
-    minValue = EFloat
+    minValue = Float
 
     # The value representing the actuator output
-    value = EFloat
+    value = Float
 
     #--------------------------------------------------------------------------
     #  Begin setPoint user definitions:
@@ -440,7 +440,7 @@ class DiscreteValue(MeasurementValue):
     MemberOf_Measurement = Instance("CIM13.Meas.Discrete")
 
     # The value to supervise.
-    value = EInt
+    value = Int
 
     #--------------------------------------------------------------------------
     #  Begin discreteValue user definitions:
@@ -468,7 +468,7 @@ class Accumulator(Measurement):
     LimitSets = List(Instance("CIM13.Meas.AccumulatorLimitSet"))
 
     # Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.
-    maxValue = EInt
+    maxValue = Int
 
     #--------------------------------------------------------------------------
     #  Begin accumulator user definitions:
@@ -493,7 +493,7 @@ class AnalogLimit(Limit):
     LimitSet = Instance("CIM13.Meas.AnalogLimitSet")
 
     # The value to supervise against.
-    value = EFloat
+    value = Float
 
     #--------------------------------------------------------------------------
     #  Begin analogLimit user definitions:
@@ -518,7 +518,7 @@ class StringMeasurementValue(MeasurementValue):
     MemberOf_Measurement = Instance("CIM13.Meas.StringMeasurement")
 
     # The value to supervise.
-    value = EString
+    value = Str
 
     #--------------------------------------------------------------------------
     #  Begin stringMeasurementValue user definitions:
@@ -543,7 +543,7 @@ class AccumulatorLimit(Limit):
     LimitSet = Instance("CIM13.Meas.AccumulatorLimitSet")
 
     # The value to supervise against. The value is positive.
-    value = EInt
+    value = Int
 
     #--------------------------------------------------------------------------
     #  Begin accumulatorLimit user definitions:
@@ -594,7 +594,7 @@ class AnalogValue(MeasurementValue):
     AltTieMeas = List(Instance("CIM13.ControlArea.AltTieMeas"))
 
     # The value to supervise.
-    value = EFloat
+    value = Float
 
     #--------------------------------------------------------------------------
     #  Begin analogValue user definitions:
@@ -694,10 +694,10 @@ class Command(Control):
     MeasuredBy_Measurement = Instance("CIM13.Meas.Discrete")
 
     # The value representing the actuator output
-    value = EInt
+    value = Int
 
     # Normal value for Control.value e.g. used for percentage scaling
-    normalValue = EInt
+    normalValue = Int
 
     #--------------------------------------------------------------------------
     #  Begin command user definitions:
@@ -728,16 +728,16 @@ class Analog(Measurement):
     ControlledBy_Control = Instance("CIM13.Meas.SetPoint")
 
     # If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource.
-    positiveFlowIn = EBoolean
+    positiveFlowIn = Bool
 
     # Normal measurement value, e.g., used for percentage calculations.
-    normalValue = EFloat
+    normalValue = Float
 
     # Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values
-    minValue = EFloat
+    minValue = Float
 
     # Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.
-    maxValue = EFloat
+    maxValue = Float
 
     #--------------------------------------------------------------------------
     #  Begin analog user definitions:
@@ -762,7 +762,7 @@ class AccumulatorValue(MeasurementValue):
     MemberOf_Measurement = Instance("CIM13.Meas.Accumulator")
 
     # The value to supervise. The value is positive.
-    value = EInt
+    value = Int
 
     #--------------------------------------------------------------------------
     #  Begin accumulatorValue user definitions:

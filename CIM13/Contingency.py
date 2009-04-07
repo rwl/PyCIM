@@ -50,7 +50,7 @@ class Contingency(IdentifiedObject):
     ContingencyElement = List(Instance("CIM13.Contingency.ContingencyElement"))
 
     # Set true if must study this contingency.
-    mustStudy = EBoolean
+    mustStudy = Bool
 
     #--------------------------------------------------------------------------
     #  Begin contingency user definitions:

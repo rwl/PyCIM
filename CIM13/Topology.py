@@ -62,25 +62,25 @@ class TopologicalNode(IdentifiedObject):
     ControlArea = Instance("CIM13.ControlArea.ControlArea")
 
     # True if node energized
-    energized = EBoolean
+    energized = Bool
 
     # Net injection active power
-    netInjectionP = EFloat
+    netInjectionP = Float
 
     # Net injection reactive power
-    netInjectionQ = EFloat
+    netInjectionQ = Float
 
     # Phase angle of node
-    phaseAngle = EFloat
+    phaseAngle = Float
 
     # The observability status of the node.
-    observabilityFlag = EBoolean
+    observabilityFlag = Bool
 
     # Voltage of node
-    voltage = EFloat
+    voltage = Float
 
     # True if node is load carrying
-    loadCarrying = EBoolean
+    loadCarrying = Bool
 
     #--------------------------------------------------------------------------
     #  Begin topologicalNode user definitions:

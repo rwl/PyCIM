@@ -91,10 +91,10 @@ class EquivalentBranch(EquivalentEquipment):
     #--------------------------------------------------------------------------
 
     # Positive sequence series reactance of the reduced branch.
-    x = EFloat
+    x = Float
 
     # Positive sequence series resistance of the reduced branch.
-    r = EFloat
+    r = Float
 
     #--------------------------------------------------------------------------
     #  Begin equivalentBranch user definitions:
@@ -117,10 +117,10 @@ class EquivalentShunt(EquivalentEquipment):
     #--------------------------------------------------------------------------
 
     # Positive sequence shunt conductance.
-    g = EFloat
+    g = Float
 
     # Positive sequence shunt susceptance.
-    b = EFloat
+    b = Float
 
     #--------------------------------------------------------------------------
     #  Begin equivalentShunt user definitions:

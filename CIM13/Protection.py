@@ -56,16 +56,16 @@ class ProtectionEquipment(Equipment):
     Unit = Instance("CIM13.Core.Unit")
 
     # Direction same as positive active power flow value.
-    powerDirectionFlag = EBoolean
+    powerDirectionFlag = Bool
 
     # The minimum allowable value.
-    lowLimit = EFloat
+    lowLimit = Float
 
     # The maximum allowable value.
-    highLimit = EFloat
+    highLimit = Float
 
     # The time delay from detection of abnormal conditions to relay operation.
-    relayDelayTime = EFloat
+    relayDelayTime = Float
 
     #--------------------------------------------------------------------------
     #  Begin protectionEquipment user definitions:
@@ -91,10 +91,10 @@ class RecloseSequence(IdentifiedObject):
     Breaker = Instance("CIM13.Wires.ProtectedSwitch")
 
     # Indicates the time lapse before the reclose step will execute a reclose.
-    recloseDelay = EFloat
+    recloseDelay = Float
 
     # Indicates the ordinal position of the reclose step relative to other steps in the sequence.
-    recloseStep = EInt
+    recloseStep = Int
 
     #--------------------------------------------------------------------------
     #  Begin recloseSequence user definitions:
@@ -117,13 +117,13 @@ class SynchrocheckRelay(ProtectionEquipment):
     #--------------------------------------------------------------------------
 
     # The maximum allowable difference voltage across the open device
-    maxVoltDiff = EFloat
+    maxVoltDiff = Float
 
     # The maximum allowable frequency difference across the open device
-    maxFreqDiff = EFloat
+    maxFreqDiff = Float
 
     # The maximum allowable voltage vector phase angle difference across the open device
-    maxAngleDiff = EFloat
+    maxAngleDiff = Float
 
     #--------------------------------------------------------------------------
     #  Begin synchrocheckRelay user definitions:
@@ -146,25 +146,25 @@ class CurrentRelay(ProtectionEquipment):
     #--------------------------------------------------------------------------
 
     # Current limit #3 for inverse time pickup
-    currentLimit3 = EFloat
+    currentLimit3 = Float
 
     # Current limit #1 for inverse time pickup
-    currentLimit1 = EFloat
+    currentLimit1 = Float
 
     # Inverse time delay #3 for current limit #3
-    timeDelay3 = EFloat
+    timeDelay3 = Float
 
     # Set true if the current relay has inverse time characteristic.
-    inverseTimeFlag = EBoolean
+    inverseTimeFlag = Bool
 
     # Inverse time delay #1 for current limit #1
-    timeDelay1 = EFloat
+    timeDelay1 = Float
 
     # Current limit #2 for inverse time pickup
-    currentLimit2 = EFloat
+    currentLimit2 = Float
 
     # Inverse time delay #2 for current limit #2
-    timeDelay2 = EFloat
+    timeDelay2 = Float
 
     #--------------------------------------------------------------------------
     #  Begin currentRelay user definitions:

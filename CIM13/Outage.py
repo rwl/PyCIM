@@ -80,7 +80,7 @@ class SwitchingOperation(IdentifiedObject):
     newState = SwitchState
 
     # Time of operation in same units as OutageSchedule.xAxixUnits.
-    operationTime = EString
+    operationTime = Str
 
     #--------------------------------------------------------------------------
     #  Begin switchingOperation user definitions:
@@ -134,28 +134,28 @@ class ClearanceTag(IdentifiedObject):
     ClearanceTagType = Instance("CIM13.Outage.ClearanceTagType")
 
     # Description of the work to be performed
-    workDescription = EString
+    workDescription = Str
 
     # The time at which the clearance tag is scheduled to be set.
-    workStartTime = EString
+    workStartTime = Str
 
     # The name of the person who is authorized to issue the tag
-    authorityName = EString
+    authorityName = Str
 
     # Set true if equipment must be deenergized
-    deenergizeReqFlag = EBoolean
+    deenergizeReqFlag = Bool
 
     # The time at which the clearance tag is scheduled to be removed
-    workEndTime = EString
+    workEndTime = Str
 
     # The time at which the clearance tag was issued
-    tagIssueTime = EString
+    tagIssueTime = Str
 
     # Set true if equipment must be grounded
-    groundReqFlag = EBoolean
+    groundReqFlag = Bool
 
     # Set true if equipment phasing must be checked
-    phaseCheckReqFlag = EBoolean
+    phaseCheckReqFlag = Bool
 
     #--------------------------------------------------------------------------
     #  Begin clearanceTag user definitions:
