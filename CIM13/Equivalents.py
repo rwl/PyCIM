@@ -24,10 +24,10 @@ from CIM13.Core import ConductingEquipment
 
 
 
-from enthought.traits.api import Instance, List, Float
+from enthought.traits.api import Instance, List, Property, Float
 # <<< imports
 # @generated
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -81,7 +81,20 @@ class EquivalentEquipment(ConductingEquipment):
     #--------------------------------------------------------------------------
 
     EquivalentNetwork = Instance("CIM13.Equivalents.EquivalentNetwork",
-        opposite="EquivalentEquipments")
+        transient=True,
+        opposite="EquivalentEquipments",
+        editor=InstanceEditor(name="_EquivalentNetworks"))
+
+    _EquivalentNetworks = Property( List(Instance("CIM.Root")) )
+
+    def _get__EquivalentNetworks(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, EquivalentNetwork)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "EquivalentEquipment" user definitions:

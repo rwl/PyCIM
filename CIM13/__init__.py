@@ -22,11 +22,11 @@
 
 
 
-from enthought.traits.api import HasTraits, Instance, List, Str
+from enthought.traits.api import HasTraits, Instance, List, Property, Str
 # <<< imports
 from enthought.traits.api import TraitListEvent
 
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -38,7 +38,21 @@ from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, V
 #------------------------------------------------------------------------------
 
 class Root(HasTraits):
-    ContainedBy = Instance("CIM13.Model")
+    ContainedBy = Instance("CIM13.Model",
+        transient=True,
+        editor=InstanceEditor(name="_Models"),
+        opposite="Contains")
+
+    _Models = Property( List(Instance("CIM.Root")) )
+
+    def _get__Models(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Model)]
+        else:
+            return []
 
     URI = Str
 
@@ -46,7 +60,6 @@ class Root(HasTraits):
     #  Begin "Root" user definitions:
     #--------------------------------------------------------------------------
 
-    # @generated
     traits_view = View(Tabbed(
             VGroup("URI",
                 label="Attributes"),
@@ -55,30 +68,6 @@ class Root(HasTraits):
             dock="tab"),
         id="CIM13.Root",
         title="Root",
-        buttons=["OK", "Cancel", "Help"],
-        resizable=False)
-
-    #--------------------------------------------------------------------------
-    #  End "Root" user definitions:
-    #--------------------------------------------------------------------------
-
-#------------------------------------------------------------------------------
-#  "Model" class:
-#------------------------------------------------------------------------------
-
-class Model(HasTraits):
-    Contains = List(Instance("CIM13.Root"))
-
-    #--------------------------------------------------------------------------
-    #  Begin "Model" user definitions:
-    #--------------------------------------------------------------------------
-
-    traits_view = View(Tabbed(
-            VGroup("Contains",
-                label="References"),
-            dock="tab"),
-        id="CIM13.Model",
-        title="Model",
         buttons=["OK", "Cancel", "Help"],
         resizable=False)
 
@@ -105,7 +94,8 @@ class Model(HasTraits):
 
         # Fire trait change events for any traits specified.
         for trait_name, value in traits.iteritems():
-            self.trait_property_changed(name, getattr(self, trait_name), value)
+            self.trait_property_changed(trait_name,
+                getattr(self, trait_name), value)
 
     #--------------------------------------------------------------------------
     #  Event handlers:
@@ -181,6 +171,31 @@ class Model(HasTraits):
                 (new_obj not in getattr(new_obj, opposite)):
                 print "Setting many-to-many:", getattr(new_obj, opposite)
                 getattr(new_obj, opposite).append(obj)
+
+    #--------------------------------------------------------------------------
+    #  End "Root" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "Model" class:
+#------------------------------------------------------------------------------
+
+class Model(Root):
+    Contains = List(Instance("CIM13.Root"), opposite="ContainedBy")
+
+    #--------------------------------------------------------------------------
+    #  Begin "Model" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("Contains",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Model",
+        title="Model",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
 
     #--------------------------------------------------------------------------
     #  End "Model" user definitions:

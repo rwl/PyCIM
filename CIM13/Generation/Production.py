@@ -27,10 +27,10 @@ from CIM13.Core import RegularIntervalSchedule
 
 
 
-from enthought.traits.api import Instance, List, Enum, Float, Bool, Int, Str
+from enthought.traits.api import Instance, List, Property, Enum, Float, Bool, Int, Str
 # <<< imports
 # @generated
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -84,7 +84,20 @@ class GeneratingUnit(Equipment):
     # A generating unit may have an operating schedule, indicating the planned operation of the unit
     GenUnitOpSchedule = Instance("CIM13.Generation.Production.GenUnitOpSchedule",
         desc="A generating unit may have an operating schedule, indicating the planned operation of the unit",
-        opposite="GeneratingUnit")
+        transient=True,
+        opposite="GeneratingUnit",
+        editor=InstanceEditor(name="_GenUnitOpSchedules"))
+
+    _GenUnitOpSchedules = Property( List(Instance("CIM.Root")) )
+
+    def _get__GenUnitOpSchedules(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, GenUnitOpSchedule)]
+        else:
+            return []
 
     # A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.
     GenUnitOpCostCurves = List(Instance("CIM13.Generation.Production.GenUnitOpCostCurve"),
@@ -243,7 +256,20 @@ class StartIgnFuelCurve(Curve):
     # The unit's startup model may have a startup ignition fuel curve
     StartupModel = Instance("CIM13.Generation.Production.StartupModel",
         desc="The unit's startup model may have a startup ignition fuel curve",
-        opposite="StartIgnFuelCurve")
+        transient=True,
+        opposite="StartIgnFuelCurve",
+        editor=InstanceEditor(name="_StartupModels"))
+
+    _StartupModels = Property( List(Instance("CIM.Root")) )
+
+    def _get__StartupModels(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, StartupModel)]
+        else:
+            return []
 
     # Type of ignition fuel
     ignitionFuelType = FuelType(desc="Type of ignition fuel")
@@ -283,7 +309,20 @@ class HydroGeneratingEfficiencyCurve(Curve):
     # A hydro generating unit has an efficiency curve
     HydroGeneratingUnit = Instance("CIM13.Generation.Production.HydroGeneratingUnit",
         desc="A hydro generating unit has an efficiency curve",
-        opposite="HydroGeneratingEfficiencyCurves")
+        transient=True,
+        opposite="HydroGeneratingEfficiencyCurves",
+        editor=InstanceEditor(name="_HydroGeneratingUnits"))
+
+    _HydroGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__HydroGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, HydroGeneratingUnit)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "HydroGeneratingEfficiencyCurve" user definitions:
@@ -320,7 +359,20 @@ class TargetLevelSchedule(Curve):
     # A reservoir may have a water level target schedule.
     Reservoir = Instance("CIM13.Generation.Production.Reservoir",
         desc="A reservoir may have a water level target schedule.",
-        opposite="TargetLevelSchedule")
+        transient=True,
+        opposite="TargetLevelSchedule",
+        editor=InstanceEditor(name="_Reservoirs"))
+
+    _Reservoirs = Property( List(Instance("CIM.Root")) )
+
+    def _get__Reservoirs(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Reservoir)]
+        else:
+            return []
 
     # Low target level limit, below which the reservoir operation will be penalized
     lowLevelLimit = Float(desc="Low target level limit, below which the reservoir operation will be penalized")
@@ -363,7 +415,20 @@ class GrossToNetActivePowerCurve(Curve):
     # A generating unit may have a gross active power to net active power curve, describing the losses and auxiliary power requirements of the unit
     GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit",
         desc="A generating unit may have a gross active power to net active power curve, describing the losses and auxiliary power requirements of the unit",
-        opposite="GrossToNetActivePowerCurves")
+        transient=True,
+        opposite="GrossToNetActivePowerCurves",
+        editor=InstanceEditor(name="_GeneratingUnits"))
+
+    _GeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__GeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, GeneratingUnit)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "GrossToNetActivePowerCurve" user definitions:
@@ -400,7 +465,20 @@ class IncrementalHeatRateCurve(Curve):
     # A thermal generating unit may have an incremental heat rate curve
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
         desc="A thermal generating unit may have an incremental heat rate curve",
-        opposite="IncrementalHeatRateCurve")
+        transient=True,
+        opposite="IncrementalHeatRateCurve",
+        editor=InstanceEditor(name="_ThermalGeneratingUnits"))
+
+    _ThermalGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__ThermalGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ThermalGeneratingUnit)]
+        else:
+            return []
 
     # Flag is set to true when output is expressed in net active power
     isNetGrossP = Bool(desc="Flag is set to true when output is expressed in net active power")
@@ -440,7 +518,20 @@ class HeatInputCurve(Curve):
     # A thermal generating unit may have a heat input curve
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
         desc="A thermal generating unit may have a heat input curve",
-        opposite="HeatInputCurve")
+        transient=True,
+        opposite="HeatInputCurve",
+        editor=InstanceEditor(name="_ThermalGeneratingUnits"))
+
+    _ThermalGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__ThermalGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ThermalGeneratingUnit)]
+        else:
+            return []
 
     # Power output - auxiliary power offset adjustment factor
     auxPowerOffset = Float(desc="Power output - auxiliary power offset adjustment factor")
@@ -492,7 +583,20 @@ class StartRampCurve(Curve):
     # The unit's startup model may have a startup ramp curve
     StartupModel = Instance("CIM13.Generation.Production.StartupModel",
         desc="The unit's startup model may have a startup ramp curve",
-        opposite="StartRampCurve")
+        transient=True,
+        opposite="StartRampCurve",
+        editor=InstanceEditor(name="_StartupModels"))
+
+    _StartupModels = Property( List(Instance("CIM.Root")) )
+
+    def _get__StartupModels(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, StartupModel)]
+        else:
+            return []
 
     # The startup ramp rate in gross for a unit that is on hot standby
     hotStandbyRamp = Float(desc="The startup ramp rate in gross for a unit that is on hot standby")
@@ -532,12 +636,38 @@ class AirCompressor(PowerSystemResource):
     # A CAES air compressor is driven by combustion turbine
     DrivenBy_CombustionTurbine = Instance("CIM13.Generation.GenerationDynamics.CombustionTurbine",
         desc="A CAES air compressor is driven by combustion turbine",
-        opposite="Drives_AirCompressor")
+        transient=True,
+        opposite="Drives_AirCompressor",
+        editor=InstanceEditor(name="_CombustionTurbines"))
+
+    _CombustionTurbines = Property( List(Instance("CIM.Root")) )
+
+    def _get__CombustionTurbines(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, DrivenBy_CombustionTurbine)]
+        else:
+            return []
 
     # An air compressor may be a member of a compressed air energy storage plant
     MemberOf_CAESPlant = Instance("CIM13.Generation.Production.CAESPlant",
         desc="An air compressor may be a member of a compressed air energy storage plant",
-        opposite="Contain_AirCompressor")
+        transient=True,
+        opposite="Contain_AirCompressor",
+        editor=InstanceEditor(name="_CAESPlants"))
+
+    _CAESPlants = Property( List(Instance("CIM.Root")) )
+
+    def _get__CAESPlants(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_CAESPlant)]
+        else:
+            return []
 
     # Rating of the CAES air compressor
     airCompressorRating = Float(desc="Rating of the CAES air compressor")
@@ -577,7 +707,20 @@ class ShutdownCurve(Curve):
     # A thermal generating unit may have a shutdown curve
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
         desc="A thermal generating unit may have a shutdown curve",
-        opposite="ShutdownCurve")
+        transient=True,
+        opposite="ShutdownCurve",
+        editor=InstanceEditor(name="_ThermalGeneratingUnits"))
+
+    _ThermalGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__ThermalGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ThermalGeneratingUnit)]
+        else:
+            return []
 
     # Fixed shutdown cost
     shutdownCost = Float(desc="Fixed shutdown cost")
@@ -659,22 +802,74 @@ class StartupModel(IdentifiedObject):
     # The unit's startup model may have a startup ignition fuel curve
     StartIgnFuelCurve = Instance("CIM13.Generation.Production.StartIgnFuelCurve",
         desc="The unit's startup model may have a startup ignition fuel curve",
-        opposite="StartupModel")
+        transient=True,
+        opposite="StartupModel",
+        editor=InstanceEditor(name="_StartIgnFuelCurves"))
+
+    _StartIgnFuelCurves = Property( List(Instance("CIM.Root")) )
+
+    def _get__StartIgnFuelCurves(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, StartIgnFuelCurve)]
+        else:
+            return []
 
     # The unit's startup model may have a startup ramp curve
     StartRampCurve = Instance("CIM13.Generation.Production.StartRampCurve",
         desc="The unit's startup model may have a startup ramp curve",
-        opposite="StartupModel")
+        transient=True,
+        opposite="StartupModel",
+        editor=InstanceEditor(name="_StartRampCurves"))
+
+    _StartRampCurves = Property( List(Instance("CIM.Root")) )
+
+    def _get__StartRampCurves(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, StartRampCurve)]
+        else:
+            return []
 
     # The unit's startup model may have a startup main fuel curve
     StartMainFuelCurve = Instance("CIM13.Generation.Production.StartMainFuelCurve",
         desc="The unit's startup model may have a startup main fuel curve",
-        opposite="StartupModel")
+        transient=True,
+        opposite="StartupModel",
+        editor=InstanceEditor(name="_StartMainFuelCurves"))
+
+    _StartMainFuelCurves = Property( List(Instance("CIM.Root")) )
+
+    def _get__StartMainFuelCurves(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, StartMainFuelCurve)]
+        else:
+            return []
 
     # A thermal generating unit may have a startup model
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
         desc="A thermal generating unit may have a startup model",
-        opposite="StartupModel")
+        transient=True,
+        opposite="StartupModel",
+        editor=InstanceEditor(name="_ThermalGeneratingUnits"))
+
+    _ThermalGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__ThermalGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ThermalGeneratingUnit)]
+        else:
+            return []
 
     # The minimum number of hours the unit must be operating before being allowed to shut down
     minimumRunTime = Float(desc="The minimum number of hours the unit must be operating before being allowed to shut down")
@@ -741,17 +936,56 @@ class HydroPump(PowerSystemResource):
     # The hydro pump may be a member of a pumped storage plant or a pump for distributing water
     MemberOf_HydroPowerPlant = Instance("CIM13.Generation.Production.HydroPowerPlant",
         desc="The hydro pump may be a member of a pumped storage plant or a pump for distributing water",
-        opposite="Contain_HydroPumps")
+        transient=True,
+        opposite="Contain_HydroPumps",
+        editor=InstanceEditor(name="_HydroPowerPlants"))
+
+    _HydroPowerPlants = Property( List(Instance("CIM.Root")) )
+
+    def _get__HydroPowerPlants(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_HydroPowerPlant)]
+        else:
+            return []
 
     # The hydro pump has a pumping schedule over time, indicating when pumping is to occur.
     HydroPumpOpSchedule = Instance("CIM13.Generation.Production.HydroPumpOpSchedule",
         desc="The hydro pump has a pumping schedule over time, indicating when pumping is to occur.",
-        opposite="HydroPump")
+        transient=True,
+        opposite="HydroPump",
+        editor=InstanceEditor(name="_HydroPumpOpSchedules"))
+
+    _HydroPumpOpSchedules = Property( List(Instance("CIM.Root")) )
+
+    def _get__HydroPumpOpSchedules(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, HydroPumpOpSchedule)]
+        else:
+            return []
 
     # The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating.
     DrivenBy_SynchronousMachine = Instance("CIM13.Wires.SynchronousMachine",
         desc="The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating.",
-        opposite="Drives_HydroPump")
+        transient=True,
+        opposite="Drives_HydroPump",
+        editor=InstanceEditor(name="_SynchronousMachines"))
+
+    _SynchronousMachines = Property( List(Instance("CIM.Root")) )
+
+    def _get__SynchronousMachines(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, DrivenBy_SynchronousMachine)]
+        else:
+            return []
 
     # The pumping power under minimum head conditions, usually at full gate.
     pumpPowerAtMinHead = Float(desc="The pumping power under minimum head conditions, usually at full gate.")
@@ -800,7 +1034,20 @@ class EmissionCurve(Curve):
     # A thermal generating unit may have  one or more emission curves
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
         desc="A thermal generating unit may have  one or more emission curves",
-        opposite="EmissionCurves")
+        transient=True,
+        opposite="EmissionCurves",
+        editor=InstanceEditor(name="_ThermalGeneratingUnits"))
+
+    _ThermalGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__ThermalGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ThermalGeneratingUnit)]
+        else:
+            return []
 
     # Flag is set to true when output is expressed in net active power
     isNetGrossP = Bool(desc="Flag is set to true when output is expressed in net active power")
@@ -846,7 +1093,20 @@ class GenUnitOpCostCurve(Curve):
     # A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.
     GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit",
         desc="A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.",
-        opposite="GenUnitOpCostCurves")
+        transient=True,
+        opposite="GenUnitOpCostCurves",
+        editor=InstanceEditor(name="_GeneratingUnits"))
+
+    _GeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__GeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, GeneratingUnit)]
+        else:
+            return []
 
     # Flag is set to true when output is expressed in net active power
     isNetGrossP = Bool(desc="Flag is set to true when output is expressed in net active power")
@@ -890,12 +1150,38 @@ class HydroPowerPlant(PowerSystemResource):
     # Generators discharge water to or pumps are supplied water from a downstream reservoir
     Reservoir = Instance("CIM13.Generation.Production.Reservoir",
         desc="Generators discharge water to or pumps are supplied water from a downstream reservoir",
-        opposite="HydroPowerPlants")
+        transient=True,
+        opposite="HydroPowerPlants",
+        editor=InstanceEditor(name="_Reservoirs"))
+
+    _Reservoirs = Property( List(Instance("CIM.Root")) )
+
+    def _get__Reservoirs(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Reservoir)]
+        else:
+            return []
 
     # Generators are supplied water from or pumps discharge water to an upstream reservoir
     GenSourcePumpDischarge = Instance("CIM13.Generation.Production.Reservoir",
         desc="Generators are supplied water from or pumps discharge water to an upstream reservoir",
-        opposite="UpstreamFrom")
+        transient=True,
+        opposite="UpstreamFrom",
+        editor=InstanceEditor(name="_Reservoirs"))
+
+    _Reservoirs = Property( List(Instance("CIM.Root")) )
+
+    def _get__Reservoirs(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, GenSourcePumpDischarge)]
+        else:
+            return []
 
     # The hydro pump may be a member of a pumped storage plant or a pump for distributing water
     Contain_HydroPumps = List(Instance("CIM13.Generation.Production.HydroPump"),
@@ -963,12 +1249,38 @@ class CAESPlant(PowerSystemResource):
     # An air compressor may be a member of a compressed air energy storage plant
     Contain_AirCompressor = Instance("CIM13.Generation.Production.AirCompressor",
         desc="An air compressor may be a member of a compressed air energy storage plant",
-        opposite="MemberOf_CAESPlant")
+        transient=True,
+        opposite="MemberOf_CAESPlant",
+        editor=InstanceEditor(name="_AirCompressors"))
+
+    _AirCompressors = Property( List(Instance("CIM.Root")) )
+
+    def _get__AirCompressors(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Contain_AirCompressor)]
+        else:
+            return []
 
     # A thermal generating unit may be a member of a compressed air energy storage plant
     Contain_ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
         desc="A thermal generating unit may be a member of a compressed air energy storage plant",
-        opposite="MemberOf_CAESPlant")
+        transient=True,
+        opposite="MemberOf_CAESPlant",
+        editor=InstanceEditor(name="_ThermalGeneratingUnits"))
+
+    _ThermalGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__ThermalGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Contain_ThermalGeneratingUnit)]
+        else:
+            return []
 
     # The CAES plant's gross rated generating capacity
     ratedCapacityP = Float(desc="The CAES plant's gross rated generating capacity")
@@ -1011,7 +1323,20 @@ class LevelVsVolumeCurve(Curve):
     # A reservoir may have a level versus volume relationship.
     Reservoir = Instance("CIM13.Generation.Production.Reservoir",
         desc="A reservoir may have a level versus volume relationship.",
-        opposite="LevelVsVolumeCurve")
+        transient=True,
+        opposite="LevelVsVolumeCurve",
+        editor=InstanceEditor(name="_Reservoirs"))
+
+    _Reservoirs = Property( List(Instance("CIM.Root")) )
+
+    def _get__Reservoirs(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Reservoir)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "LevelVsVolumeCurve" user definitions:
@@ -1048,7 +1373,20 @@ class InflowForecast(RegularIntervalSchedule):
     # A reservoir may have a 'natural' inflow forecast.
     Reservoir = Instance("CIM13.Generation.Production.Reservoir",
         desc="A reservoir may have a 'natural' inflow forecast.",
-        opposite="InflowForecast")
+        transient=True,
+        opposite="InflowForecast",
+        editor=InstanceEditor(name="_Reservoirs"))
+
+    _Reservoirs = Property( List(Instance("CIM.Root")) )
+
+    def _get__Reservoirs(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Reservoir)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "InflowForecast" user definitions:
@@ -1085,7 +1423,20 @@ class SteamSendoutSchedule(RegularIntervalSchedule):
     # A cogeneration plant has a steam sendout schedule
     CogenerationPlant = Instance("CIM13.Generation.Production.CogenerationPlant",
         desc="A cogeneration plant has a steam sendout schedule",
-        opposite="SteamSendoutSchedule")
+        transient=True,
+        opposite="SteamSendoutSchedule",
+        editor=InstanceEditor(name="_CogenerationPlants"))
+
+    _CogenerationPlants = Property( List(Instance("CIM.Root")) )
+
+    def _get__CogenerationPlants(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, CogenerationPlant)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "SteamSendoutSchedule" user definitions:
@@ -1126,7 +1477,20 @@ class FossilFuel(IdentifiedObject):
     # A thermal generating unit may have one or more fossil fuels
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
         desc="A thermal generating unit may have one or more fossil fuels",
-        opposite="FossilFuels")
+        transient=True,
+        opposite="FossilFuels",
+        editor=InstanceEditor(name="_ThermalGeneratingUnits"))
+
+    _ThermalGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__ThermalGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ThermalGeneratingUnit)]
+        else:
+            return []
 
     # The type of fossil fuel, such as coal, oil, or gas.
     fossilFuelType = FuelType(desc="The type of fossil fuel, such as coal, oil, or gas.")
@@ -1193,12 +1557,38 @@ class FuelAllocationSchedule(Curve):
     # A fuel allocation schedule must have a fossil fuel
     FossilFuel = Instance("CIM13.Generation.Production.FossilFuel",
         desc="A fuel allocation schedule must have a fossil fuel",
-        opposite="FuelAllocationSchedule")
+        transient=True,
+        opposite="FuelAllocationSchedule",
+        editor=InstanceEditor(name="_FossilFuels"))
+
+    _FossilFuels = Property( List(Instance("CIM.Root")) )
+
+    def _get__FossilFuels(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, FossilFuel)]
+        else:
+            return []
 
     # A thermal generating unit may have one or more fuel allocation schedules
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
         desc="A thermal generating unit may have one or more fuel allocation schedules",
-        opposite="FuelAllocationSchedules")
+        transient=True,
+        opposite="FuelAllocationSchedules",
+        editor=InstanceEditor(name="_ThermalGeneratingUnits"))
+
+    _ThermalGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__ThermalGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ThermalGeneratingUnit)]
+        else:
+            return []
 
     # The minimum amount fuel that is allocated for consumption for the scheduled time period, e.g., based on a 'take-or-pay' contract
     minFuelAllocation = Float(desc="The minimum amount fuel that is allocated for consumption for the scheduled time period, e.g., based on a 'take-or-pay' contract")
@@ -1250,7 +1640,20 @@ class EmissionAccount(Curve):
     # A thermal generating unit may have one or more emission allowance accounts
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
         desc="A thermal generating unit may have one or more emission allowance accounts",
-        opposite="EmmissionAccounts")
+        transient=True,
+        opposite="EmmissionAccounts",
+        editor=InstanceEditor(name="_ThermalGeneratingUnits"))
+
+    _ThermalGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__ThermalGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ThermalGeneratingUnit)]
+        else:
+            return []
 
     # The type of emission, for example sulfur dioxide (SO2). The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide).
     emissionType = EmissionType(desc="The type of emission, for example sulfur dioxide (SO2). The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide).")
@@ -1293,7 +1696,20 @@ class TailbayLossCurve(Curve):
     # A hydro generating unit has a tailbay loss curve
     HydroGeneratingUnit = Instance("CIM13.Generation.Production.HydroGeneratingUnit",
         desc="A hydro generating unit has a tailbay loss curve",
-        opposite="TailbayLossCurve")
+        transient=True,
+        opposite="TailbayLossCurve",
+        editor=InstanceEditor(name="_HydroGeneratingUnits"))
+
+    _HydroGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__HydroGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, HydroGeneratingUnit)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "TailbayLossCurve" user definitions:
@@ -1330,7 +1746,20 @@ class PenstockLossCurve(Curve):
     # A hydro generating unit has a penstock loss curve
     HydroGeneratingUnit = Instance("CIM13.Generation.Production.HydroGeneratingUnit",
         desc="A hydro generating unit has a penstock loss curve",
-        opposite="PenstockLossCurve")
+        transient=True,
+        opposite="PenstockLossCurve",
+        editor=InstanceEditor(name="_HydroGeneratingUnits"))
+
+    _HydroGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__HydroGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, HydroGeneratingUnit)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "PenstockLossCurve" user definitions:
@@ -1367,7 +1796,20 @@ class StartMainFuelCurve(Curve):
     # The unit's startup model may have a startup main fuel curve
     StartupModel = Instance("CIM13.Generation.Production.StartupModel",
         desc="The unit's startup model may have a startup main fuel curve",
-        opposite="StartMainFuelCurve")
+        transient=True,
+        opposite="StartMainFuelCurve",
+        editor=InstanceEditor(name="_StartupModels"))
+
+    _StartupModels = Property( List(Instance("CIM.Root")) )
+
+    def _get__StartupModels(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, StartupModel)]
+        else:
+            return []
 
     # Type of main fuel
     mainFuelType = FuelType(desc="Type of main fuel")
@@ -1407,7 +1849,20 @@ class Reservoir(PowerSystemResource):
     # A reservoir may spill into a downstream reservoir
     SpillsFrom = Instance("CIM13.Generation.Production.Reservoir",
         desc="A reservoir may spill into a downstream reservoir",
-        opposite="SpillsInto")
+        transient=True,
+        opposite="SpillsInto",
+        editor=InstanceEditor(name="_Reservoirs"))
+
+    _Reservoirs = Property( List(Instance("CIM.Root")) )
+
+    def _get__Reservoirs(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, SpillsFrom)]
+        else:
+            return []
 
     # A reservoir may have a level versus volume relationship.
     LevelVsVolumeCurve = List(Instance("CIM13.Generation.Production.LevelVsVolumeCurve"),
@@ -1432,7 +1887,20 @@ class Reservoir(PowerSystemResource):
     # A reservoir may have a water level target schedule.
     TargetLevelSchedule = Instance("CIM13.Generation.Production.TargetLevelSchedule",
         desc="A reservoir may have a water level target schedule.",
-        opposite="Reservoir")
+        transient=True,
+        opposite="Reservoir",
+        editor=InstanceEditor(name="_TargetLevelSchedules"))
+
+    _TargetLevelSchedules = Property( List(Instance("CIM.Root")) )
+
+    def _get__TargetLevelSchedules(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, TargetLevelSchedule)]
+        else:
+            return []
 
     # River outlet works for riparian right releases or other purposes
     riverOutletWorks = Str(desc="River outlet works for riparian right releases or other purposes")
@@ -1502,7 +1970,20 @@ class HydroPumpOpSchedule(RegularIntervalSchedule):
     # The hydro pump has a pumping schedule over time, indicating when pumping is to occur.
     HydroPump = Instance("CIM13.Generation.Production.HydroPump",
         desc="The hydro pump has a pumping schedule over time, indicating when pumping is to occur.",
-        opposite="HydroPumpOpSchedule")
+        transient=True,
+        opposite="HydroPumpOpSchedule",
+        editor=InstanceEditor(name="_HydroPumps"))
+
+    _HydroPumps = Property( List(Instance("CIM.Root")) )
+
+    def _get__HydroPumps(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, HydroPump)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "HydroPumpOpSchedule" user definitions:
@@ -1539,7 +2020,20 @@ class HeatRateCurve(Curve):
     # A thermal generating unit may have a heat rate curve
     ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
         desc="A thermal generating unit may have a heat rate curve",
-        opposite="HeatRateCurve")
+        transient=True,
+        opposite="HeatRateCurve",
+        editor=InstanceEditor(name="_ThermalGeneratingUnits"))
+
+    _ThermalGeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__ThermalGeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ThermalGeneratingUnit)]
+        else:
+            return []
 
     # Flag is set to true when output is expressed in net active power
     isNetGrossP = Bool(desc="Flag is set to true when output is expressed in net active power")
@@ -1579,7 +2073,20 @@ class GenUnitOpSchedule(RegularIntervalSchedule):
     # A generating unit may have an operating schedule, indicating the planned operation of the unit
     GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit",
         desc="A generating unit may have an operating schedule, indicating the planned operation of the unit",
-        opposite="GenUnitOpSchedule")
+        transient=True,
+        opposite="GenUnitOpSchedule",
+        editor=InstanceEditor(name="_GeneratingUnits"))
+
+    _GeneratingUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__GeneratingUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, GeneratingUnit)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "GenUnitOpSchedule" user definitions:
@@ -1620,7 +2127,20 @@ class CogenerationPlant(PowerSystemResource):
     # A cogeneration plant has a steam sendout schedule
     SteamSendoutSchedule = Instance("CIM13.Generation.Production.SteamSendoutSchedule",
         desc="A cogeneration plant has a steam sendout schedule",
-        opposite="CogenerationPlant")
+        transient=True,
+        opposite="CogenerationPlant",
+        editor=InstanceEditor(name="_SteamSendoutSchedules"))
+
+    _SteamSendoutSchedules = Property( List(Instance("CIM.Root")) )
+
+    def _get__SteamSendoutSchedules(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, SteamSendoutSchedule)]
+        else:
+            return []
 
     # The high pressure steam rating
     cogenHPSteamRating = Float(desc="The high pressure steam rating")
@@ -1713,12 +2233,38 @@ class HydroGeneratingUnit(GeneratingUnit):
     # The hydro generating unit belongs to a hydro power plant
     MemberOf_HydroPowerPlant = Instance("CIM13.Generation.Production.HydroPowerPlant",
         desc="The hydro generating unit belongs to a hydro power plant",
-        opposite="Contain_HydroGeneratingUnits")
+        transient=True,
+        opposite="Contain_HydroGeneratingUnits",
+        editor=InstanceEditor(name="_HydroPowerPlants"))
+
+    _HydroPowerPlants = Property( List(Instance("CIM.Root")) )
+
+    def _get__HydroPowerPlants(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_HydroPowerPlant)]
+        else:
+            return []
 
     # A hydro generating unit has a penstock loss curve
     PenstockLossCurve = Instance("CIM13.Generation.Production.PenstockLossCurve",
         desc="A hydro generating unit has a penstock loss curve",
-        opposite="HydroGeneratingUnit")
+        transient=True,
+        opposite="HydroGeneratingUnit",
+        editor=InstanceEditor(name="_PenstockLossCurves"))
+
+    _PenstockLossCurves = Property( List(Instance("CIM.Root")) )
+
+    def _get__PenstockLossCurves(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, PenstockLossCurve)]
+        else:
+            return []
 
     # Energy conversion capability for generating.
     energyConversionCapability = HydroEnergyConversionKind(desc="Energy conversion capability for generating.")
@@ -1761,7 +2307,20 @@ class ThermalGeneratingUnit(GeneratingUnit):
     # A thermal generating unit may be a member of a cogeneration plant
     MemberOf_CogenerationPlant = Instance("CIM13.Generation.Production.CogenerationPlant",
         desc="A thermal generating unit may be a member of a cogeneration plant",
-        opposite="Contain_ThermalGeneratingUnits")
+        transient=True,
+        opposite="Contain_ThermalGeneratingUnits",
+        editor=InstanceEditor(name="_CogenerationPlants"))
+
+    _CogenerationPlants = Property( List(Instance("CIM.Root")) )
+
+    def _get__CogenerationPlants(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_CogenerationPlant)]
+        else:
+            return []
 
     # A thermal generating unit may have one or more fuel allocation schedules
     FuelAllocationSchedules = List(Instance("CIM13.Generation.Production.FuelAllocationSchedule"),
@@ -1778,7 +2337,20 @@ class ThermalGeneratingUnit(GeneratingUnit):
     # A thermal generating unit may have a startup model
     StartupModel = Instance("CIM13.Generation.Production.StartupModel",
         desc="A thermal generating unit may have a startup model",
-        opposite="ThermalGeneratingUnit")
+        transient=True,
+        opposite="ThermalGeneratingUnit",
+        editor=InstanceEditor(name="_StartupModels"))
+
+    _StartupModels = Property( List(Instance("CIM.Root")) )
+
+    def _get__StartupModels(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, StartupModel)]
+        else:
+            return []
 
     # A thermal generating unit may have one or more fossil fuels
     FossilFuels = List(Instance("CIM13.Generation.Production.FossilFuel"),
@@ -1787,32 +2359,110 @@ class ThermalGeneratingUnit(GeneratingUnit):
     # A thermal generating unit may have an incremental heat rate curve
     IncrementalHeatRateCurve = Instance("CIM13.Generation.Production.IncrementalHeatRateCurve",
         desc="A thermal generating unit may have an incremental heat rate curve",
-        opposite="ThermalGeneratingUnit")
+        transient=True,
+        opposite="ThermalGeneratingUnit",
+        editor=InstanceEditor(name="_IncrementalHeatRateCurves"))
+
+    _IncrementalHeatRateCurves = Property( List(Instance("CIM.Root")) )
+
+    def _get__IncrementalHeatRateCurves(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, IncrementalHeatRateCurve)]
+        else:
+            return []
 
     # A thermal generating unit may have a shutdown curve
     ShutdownCurve = Instance("CIM13.Generation.Production.ShutdownCurve",
         desc="A thermal generating unit may have a shutdown curve",
-        opposite="ThermalGeneratingUnit")
+        transient=True,
+        opposite="ThermalGeneratingUnit",
+        editor=InstanceEditor(name="_ShutdownCurves"))
+
+    _ShutdownCurves = Property( List(Instance("CIM.Root")) )
+
+    def _get__ShutdownCurves(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ShutdownCurve)]
+        else:
+            return []
 
     # A thermal generating unit may have a heat rate curve
     HeatRateCurve = Instance("CIM13.Generation.Production.HeatRateCurve",
         desc="A thermal generating unit may have a heat rate curve",
-        opposite="ThermalGeneratingUnit")
+        transient=True,
+        opposite="ThermalGeneratingUnit",
+        editor=InstanceEditor(name="_HeatRateCurves"))
+
+    _HeatRateCurves = Property( List(Instance("CIM.Root")) )
+
+    def _get__HeatRateCurves(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, HeatRateCurve)]
+        else:
+            return []
 
     # A thermal generating unit may be a member of a compressed air energy storage plant
     MemberOf_CAESPlant = Instance("CIM13.Generation.Production.CAESPlant",
         desc="A thermal generating unit may be a member of a compressed air energy storage plant",
-        opposite="Contain_ThermalGeneratingUnit")
+        transient=True,
+        opposite="Contain_ThermalGeneratingUnit",
+        editor=InstanceEditor(name="_CAESPlants"))
+
+    _CAESPlants = Property( List(Instance("CIM.Root")) )
+
+    def _get__CAESPlants(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_CAESPlant)]
+        else:
+            return []
 
     # A thermal generating unit may have a heat input curve
     HeatInputCurve = Instance("CIM13.Generation.Production.HeatInputCurve",
         desc="A thermal generating unit may have a heat input curve",
-        opposite="ThermalGeneratingUnit")
+        transient=True,
+        opposite="ThermalGeneratingUnit",
+        editor=InstanceEditor(name="_HeatInputCurves"))
+
+    _HeatInputCurves = Property( List(Instance("CIM.Root")) )
+
+    def _get__HeatInputCurves(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, HeatInputCurve)]
+        else:
+            return []
 
     # A thermal generating unit may be a member of a combined cycle plant
     MemberOf_CombinedCyclePlant = Instance("CIM13.Generation.Production.CombinedCyclePlant",
         desc="A thermal generating unit may be a member of a combined cycle plant",
-        opposite="Contain_ThermalGeneratingUnits")
+        transient=True,
+        opposite="Contain_ThermalGeneratingUnits",
+        editor=InstanceEditor(name="_CombinedCyclePlants"))
+
+    _CombinedCyclePlants = Property( List(Instance("CIM.Root")) )
+
+    def _get__CombinedCyclePlants(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_CombinedCyclePlant)]
+        else:
+            return []
 
     # Operating and maintenance cost for the thermal unit
     oMCost = Float(desc="Operating and maintenance cost for the thermal unit")

@@ -24,10 +24,10 @@ from CIM13 import Root
 
 
 
-from enthought.traits.api import Instance, List, Enum, Str, Bool, Float
+from enthought.traits.api import Instance, List, Property, Enum, Str, Bool, Float
 # <<< imports
 # @generated
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -49,10 +49,36 @@ class OperationalLimit(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     OperationalLimitType = Instance("CIM13.OperationalLimits.OperationalLimitType",
-        opposite="OperationalLimit")
+        transient=True,
+        opposite="OperationalLimit",
+        editor=InstanceEditor(name="_OperationalLimitTypes"))
+
+    _OperationalLimitTypes = Property( List(Instance("CIM.Root")) )
+
+    def _get__OperationalLimitTypes(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, OperationalLimitType)]
+        else:
+            return []
 
     OperationalLimitSet = Instance("CIM13.OperationalLimits.OperationalLimitSet",
-        opposite="OperationalLimitValue")
+        transient=True,
+        opposite="OperationalLimitValue",
+        editor=InstanceEditor(name="_OperationalLimitSets"))
+
+    _OperationalLimitSets = Property( List(Instance("CIM.Root")) )
+
+    def _get__OperationalLimitSets(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, OperationalLimitSet)]
+        else:
+            return []
 
     # Used to specify high/low and limit levels.
     type = Str(desc="Used to specify high/low and limit levels.")
@@ -182,12 +208,38 @@ class OperationalLimitSet(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     Terminal = Instance("CIM13.Core.Terminal",
-        opposite="OperationalLimitSet")
+        transient=True,
+        opposite="OperationalLimitSet",
+        editor=InstanceEditor(name="_Terminals"))
+
+    _Terminals = Property( List(Instance("CIM.Root")) )
+
+    def _get__Terminals(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Terminal)]
+        else:
+            return []
 
     OperationalLimitValue = List(Instance("CIM13.OperationalLimits.OperationalLimit"))
 
     Equipment = Instance("CIM13.Core.Equipment",
-        opposite="OperationalLimitSet")
+        transient=True,
+        opposite="OperationalLimitSet",
+        editor=InstanceEditor(name="_Equipments"))
+
+    _Equipments = Property( List(Instance("CIM.Root")) )
+
+    def _get__Equipments(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Equipment)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "OperationalLimitSet" user definitions:
@@ -222,10 +274,36 @@ class BranchGroupTerminal(Root):
     #--------------------------------------------------------------------------
 
     BranchGroup = Instance("CIM13.OperationalLimits.BranchGroup",
-        opposite="BranchGroupTerminal")
+        transient=True,
+        opposite="BranchGroupTerminal",
+        editor=InstanceEditor(name="_BranchGroups"))
+
+    _BranchGroups = Property( List(Instance("CIM.Root")) )
+
+    def _get__BranchGroups(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, BranchGroup)]
+        else:
+            return []
 
     Terminal = Instance("CIM13.Core.Terminal",
-        opposite="BranchGroupTerminal")
+        transient=True,
+        opposite="BranchGroupTerminal",
+        editor=InstanceEditor(name="_Terminals"))
+
+    _Terminals = Property( List(Instance("CIM.Root")) )
+
+    def _get__Terminals(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Terminal)]
+        else:
+            return []
 
     # The flow into the terminal is summed if set true.   The flow out of the terminanl is summed if set false.
     positiveFlowIn = Bool(desc="The flow into the terminal is summed if set true.   The flow out of the terminanl is summed if set false.")

@@ -28,6 +28,8 @@ import logging
 
 from os.path import join, dirname
 
+from CIM import Model
+
 from CIM.LoadModel import \
     ConformLoadGroup, LoadArea, ConformLoadSchedule, Load
 
@@ -95,12 +97,22 @@ class CIMTestCase(unittest.TestCase):
             self.assertNotEqual(element, None)
 
 
-    def test_load_cim(self):
-        """ Test loading a Common Information Model from a RDF/XML file.
+    def test_references(self):
+        """ Test associations between model elements.
         """
-        model = read_cim(RDFXML_FILE)
-        print "ELEMENTS:", len(model.Contains)
-#        model.Contains[0].configure_traits()
+        load_group = ConformLoadGroup(name="CLG1")
+        load_group2 = ConformLoadGroup(name="CLG2")
+        load = Load(name="Load 1", LoadGroup=load_group)
+        model = Model(Contains=[load_group, load_group2, load])
+        load.configure_traits()
+
+
+#    def test_load_cim(self):
+#        """ Test loading a Common Information Model from a RDF/XML file.
+#        """
+#        model = read_cim(RDFXML_FILE)
+#        print "ELEMENTS:", len(model.Contains)
+#        model.Contains[16].configure_traits()
 
 if __name__ == "__main__":
     unittest.main()

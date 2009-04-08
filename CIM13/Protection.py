@@ -24,10 +24,10 @@ from CIM13.Core import IdentifiedObject
 
 
 
-from enthought.traits.api import Instance, List, Float, Bool, Int
+from enthought.traits.api import Instance, List, Property, Float, Bool, Int
 # <<< imports
 # @generated
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -57,7 +57,20 @@ class ProtectionEquipment(Equipment):
     # The Protection Equipments having the Unit.
     Unit = Instance("CIM13.Core.Unit",
         desc="The Protection Equipments having the Unit.",
-        opposite="ProtectionEquipments")
+        transient=True,
+        opposite="ProtectionEquipments",
+        editor=InstanceEditor(name="_Units"))
+
+    _Units = Property( List(Instance("CIM.Root")) )
+
+    def _get__Units(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Unit)]
+        else:
+            return []
 
     # Direction same as positive active power flow value.
     powerDirectionFlag = Bool(desc="Direction same as positive active power flow value.")
@@ -106,7 +119,20 @@ class RecloseSequence(IdentifiedObject):
     # A breaker may have zero or more automatic reclosures after a trip occurs.
     Breaker = Instance("CIM13.Wires.ProtectedSwitch",
         desc="A breaker may have zero or more automatic reclosures after a trip occurs.",
-        opposite="RecloseSequences")
+        transient=True,
+        opposite="RecloseSequences",
+        editor=InstanceEditor(name="_ProtectedSwitchs"))
+
+    _ProtectedSwitchs = Property( List(Instance("CIM.Root")) )
+
+    def _get__ProtectedSwitchs(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Breaker)]
+        else:
+            return []
 
     # Indicates the time lapse before the reclose step will execute a reclose.
     recloseDelay = Float(desc="Indicates the time lapse before the reclose step will execute a reclose.")

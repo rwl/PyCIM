@@ -27,10 +27,10 @@ from CIM13.Core import RegularIntervalSchedule
 
 
 
-from enthought.traits.api import Instance, List, Enum, Float, Bool, Str
+from enthought.traits.api import Instance, List, Property, Enum, Float, Bool, Str
 # <<< imports
 # @generated
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -166,7 +166,24 @@ class ConformLoad(EnergyConsumer):
     # Consumers may be assigned to a load area.
     LoadGroup = Instance("CIM13.LoadModel.ConformLoadGroup",
         desc="Consumers may be assigned to a load area.",
-        opposite="EnergyConsumers")
+        transient=True,
+        opposite="EnergyConsumers",
+        editor=InstanceEditor(name="_ConformLoadGroups"))
+
+    _ConformLoadGroups = Property( List(Instance("CIM.Root")),
+        depends_on=["ContainedBy.Contains", "ContainedBy.Contains_items"] )
+
+    def _get__ConformLoadGroups(self):
+        """ Property getter.
+        """
+        print "ContainedBy:", self.ContainedBy
+        if self.ContainedBy is not None:
+            for element in self.ContainedBy.Contains:
+                print "ELEMENT:", element
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, LoadGroup)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "ConformLoad" user definitions:
@@ -312,7 +329,20 @@ class LoadGroup(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     SubLoadArea = Instance("CIM13.LoadModel.SubLoadArea",
-        opposite="LoadGroups")
+        transient=True,
+        opposite="LoadGroups",
+        editor=InstanceEditor(name="_SubLoadAreas"))
+
+    _SubLoadAreas = Property( List(Instance("CIM.Root")) )
+
+    def _get__SubLoadAreas(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, SubLoadArea)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "LoadGroup" user definitions:
@@ -347,7 +377,20 @@ class EnergyArea(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     ControlArea = Instance("CIM13.ControlArea.ControlArea",
-        opposite="EnergyArea")
+        transient=True,
+        opposite="EnergyArea",
+        editor=InstanceEditor(name="_ControlAreas"))
+
+    _ControlAreas = Property( List(Instance("CIM.Root")) )
+
+    def _get__ControlAreas(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ControlArea)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "EnergyArea" user definitions:
@@ -384,12 +427,38 @@ class SeasonDayTypeSchedule(RegularIntervalSchedule):
     # Load demand models can be based on day type
     DayType = Instance("CIM13.LoadModel.DayType",
         desc="Load demand models can be based on day type",
-        opposite="SeasonDayTypeSchedules")
+        transient=True,
+        opposite="SeasonDayTypeSchedules",
+        editor=InstanceEditor(name="_DayTypes"))
+
+    _DayTypes = Property( List(Instance("CIM.Root")) )
+
+    def _get__DayTypes(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, DayType)]
+        else:
+            return []
 
     # Load demand models can be based on seasons
     Season = Instance("CIM13.LoadModel.Season",
         desc="Load demand models can be based on seasons",
-        opposite="SeasonDayTypeSchedules")
+        transient=True,
+        opposite="SeasonDayTypeSchedules",
+        editor=InstanceEditor(name="_Seasons"))
+
+    _Seasons = Property( List(Instance("CIM.Root")) )
+
+    def _get__Seasons(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Season)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "SeasonDayTypeSchedule" user definitions:
@@ -424,7 +493,20 @@ class NonConformLoad(EnergyConsumer):
     #--------------------------------------------------------------------------
 
     LoadGroup = Instance("CIM13.LoadModel.NonConformLoadGroup",
-        opposite="EnergyConsumers")
+        transient=True,
+        opposite="EnergyConsumers",
+        editor=InstanceEditor(name="_NonConformLoadGroups"))
+
+    _NonConformLoadGroups = Property( List(Instance("CIM.Root")) )
+
+    def _get__NonConformLoadGroups(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, LoadGroup)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "NonConformLoad" user definitions:
@@ -461,7 +543,20 @@ class SubLoadArea(EnergyArea):
     # The SubLoadAreas in the LoadArea.
     LoadArea = Instance("CIM13.LoadModel.LoadArea",
         desc="The SubLoadAreas in the LoadArea.",
-        opposite="SubLoadAreas")
+        transient=True,
+        opposite="SubLoadAreas",
+        editor=InstanceEditor(name="_LoadAreas"))
+
+    _LoadAreas = Property( List(Instance("CIM.Root")) )
+
+    def _get__LoadAreas(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, LoadArea)]
+        else:
+            return []
 
     LoadGroups = List(Instance("CIM13.LoadModel.LoadGroup"))
 
@@ -520,7 +615,8 @@ class Load(ConformLoad):
     traits_view = View(Tabbed(
             VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "phases", "customerCount", "qfixed", "pfixed", "qfixedPct", "pfixedPct", "feederLoadMgtFactor", "phaseRatedCurrent", "coldPickUpFactorP", "coldPickUpFactorQ", "loadAllocationFactor",
                 label="Attributes", columns=1),
-            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags", "PowerCutZone", "LoadResponse", "LoadGroup",
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags", "PowerCutZone", "LoadResponse",
+                "LoadGroup",
                 label="References", columns=1),
             dock="tab"),
         id="CIM13.LoadModel.Load",
@@ -619,7 +715,20 @@ class ConformLoadSchedule(SeasonDayTypeSchedule):
     #--------------------------------------------------------------------------
 
     ConformLoadGroup = Instance("CIM13.LoadModel.ConformLoadGroup",
-        opposite="ConformLoadSchedules")
+        transient=True,
+        opposite="ConformLoadSchedules",
+        editor=InstanceEditor(name="_ConformLoadGroups"))
+
+    _ConformLoadGroups = Property( List(Instance("CIM.Root")) )
+
+    def _get__ConformLoadGroups(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ConformLoadGroup)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "ConformLoadSchedule" user definitions:
@@ -654,7 +763,20 @@ class NonConformLoadSchedule(SeasonDayTypeSchedule):
     #--------------------------------------------------------------------------
 
     NonConformLoadGroup = Instance("CIM13.LoadModel.NonConformLoadGroup",
-        opposite="NonConformLoadSchedules")
+        transient=True,
+        opposite="NonConformLoadSchedules",
+        editor=InstanceEditor(name="_NonConformLoadGroups"))
+
+    _NonConformLoadGroups = Property( List(Instance("CIM.Root")) )
+
+    def _get__NonConformLoadGroups(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, NonConformLoadGroup)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "NonConformLoadSchedule" user definitions:

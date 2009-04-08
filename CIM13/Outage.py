@@ -24,10 +24,10 @@ from CIM13.Core import IrregularIntervalSchedule
 
 
 
-from enthought.traits.api import Instance, List, Enum, Str, Bool
+from enthought.traits.api import Instance, List, Property, Enum, Str, Bool
 # <<< imports
 # @generated
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -89,7 +89,20 @@ class SwitchingOperation(IdentifiedObject):
     # An OutageSchedule may operate many switches.
     OutageSchedule = Instance("CIM13.Outage.OutageSchedule",
         desc="An OutageSchedule may operate many switches.",
-        opposite="SwitchingOperations")
+        transient=True,
+        opposite="SwitchingOperations",
+        editor=InstanceEditor(name="_OutageSchedules"))
+
+    _OutageSchedules = Property( List(Instance("CIM.Root")) )
+
+    def _get__OutageSchedules(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, OutageSchedule)]
+        else:
+            return []
 
     # The switch position that shall result from this SwitchingOperation
     newState = SwitchState(desc="The switch position that shall result from this SwitchingOperation")
@@ -136,7 +149,20 @@ class OutageSchedule(IrregularIntervalSchedule):
     # A power system resource may have an outage schedule
     PSR = Instance("CIM13.Core.PowerSystemResource",
         desc="A power system resource may have an outage schedule",
-        opposite="OutageSchedule")
+        transient=True,
+        opposite="OutageSchedule",
+        editor=InstanceEditor(name="_PowerSystemResources"))
+
+    _PowerSystemResources = Property( List(Instance("CIM.Root")) )
+
+    def _get__PowerSystemResources(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, PSR)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "OutageSchedule" user definitions:
@@ -173,10 +199,36 @@ class ClearanceTag(IdentifiedObject):
     # Conducting equipment may have multiple clearance tags for authorized field work
     ConductingEquipment = Instance("CIM13.Core.ConductingEquipment",
         desc="Conducting equipment may have multiple clearance tags for authorized field work",
-        opposite="ClearanceTags")
+        transient=True,
+        opposite="ClearanceTags",
+        editor=InstanceEditor(name="_ConductingEquipments"))
+
+    _ConductingEquipments = Property( List(Instance("CIM.Root")) )
+
+    def _get__ConductingEquipments(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ConductingEquipment)]
+        else:
+            return []
 
     ClearanceTagType = Instance("CIM13.Outage.ClearanceTagType",
-        opposite="ClearanceTags")
+        transient=True,
+        opposite="ClearanceTags",
+        editor=InstanceEditor(name="_ClearanceTagTypes"))
+
+    _ClearanceTagTypes = Property( List(Instance("CIM.Root")) )
+
+    def _get__ClearanceTagTypes(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ClearanceTagType)]
+        else:
+            return []
 
     # Description of the work to be performed
     workDescription = Str(desc="Description of the work to be performed")

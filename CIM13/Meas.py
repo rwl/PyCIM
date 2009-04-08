@@ -25,10 +25,10 @@ from CIM13.SCADA import Source
 
 
 
-from enthought.traits.api import Instance, List, Enum, Int, Float, Bool, Str
+from enthought.traits.api import Instance, List, Property, Enum, Int, Float, Bool, Str
 # <<< imports
 # @generated
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -52,20 +52,72 @@ class Measurement(IdentifiedObject):
     # One or more measurements may be associated with a terminal in the network. Measurement-Terminal defines where the measurement is placed in the network topology. Some Measurements represent quantities related to a particular sensor position, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is captured by the Measurement - Terminal association that makes it possible to place the sensing position at a  well defined place. The place is defined by the connection of the Terminal to ConductingEquipment.
     Terminal = Instance("CIM13.Core.Terminal",
         desc="One or more measurements may be associated with a terminal in the network. Measurement-Terminal defines where the measurement is placed in the network topology. Some Measurements represent quantities related to a particular sensor position, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is captured by the Measurement - Terminal association that makes it possible to place the sensing position at a  well defined place. The place is defined by the connection of the Terminal to ConductingEquipment.",
-        opposite="Measurements")
+        transient=True,
+        opposite="Measurements",
+        editor=InstanceEditor(name="_Terminals"))
+
+    _Terminals = Property( List(Instance("CIM.Root")) )
+
+    def _get__Terminals(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Terminal)]
+        else:
+            return []
 
     # Measurement-PSR defines the measurements in the naming hierarchy.
     MemberOf_PSR = Instance("CIM13.Core.PowerSystemResource",
         desc="Measurement-PSR defines the measurements in the naming hierarchy.",
-        opposite="Contains_Measurements")
+        transient=True,
+        opposite="Contains_Measurements",
+        editor=InstanceEditor(name="_PowerSystemResources"))
+
+    _PowerSystemResources = Property( List(Instance("CIM.Root")) )
+
+    def _get__PowerSystemResources(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_PSR)]
+        else:
+            return []
 
     Unit = Instance("CIM13.Core.Unit",
-        opposite="Measurements")
+        transient=True,
+        opposite="Measurements",
+        editor=InstanceEditor(name="_Units"))
+
+    _Units = Property( List(Instance("CIM.Root")) )
+
+    def _get__Units(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Unit)]
+        else:
+            return []
 
     # A measurement has a measurement type.
     MeasurementType = Instance("CIM13.Meas.MeasurementType",
         desc="A measurement has a measurement type.",
-        opposite="Measurements")
+        transient=True,
+        opposite="Measurements",
+        editor=InstanceEditor(name="_MeasurementTypes"))
+
+    _MeasurementTypes = Property( List(Instance("CIM.Root")) )
+
+    def _get__MeasurementTypes(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MeasurementType)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "Measurement" user definitions:
@@ -100,18 +152,70 @@ class Control(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     Unit = Instance("CIM13.Core.Unit",
-        opposite="Controls")
+        transient=True,
+        opposite="Controls",
+        editor=InstanceEditor(name="_Units"))
+
+    _Units = Property( List(Instance("CIM.Root")) )
+
+    def _get__Units(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Unit)]
+        else:
+            return []
 
     ControlType = Instance("CIM13.Meas.ControlType",
-        opposite="Controls")
+        transient=True,
+        opposite="Controls",
+        editor=InstanceEditor(name="_ControlTypes"))
+
+    _ControlTypes = Property( List(Instance("CIM.Root")) )
+
+    def _get__ControlTypes(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ControlType)]
+        else:
+            return []
 
     RemoteControl = Instance("CIM13.SCADA.RemoteControl",
-        opposite="Control")
+        transient=True,
+        opposite="Control",
+        editor=InstanceEditor(name="_RemoteControls"))
+
+    _RemoteControls = Property( List(Instance("CIM.Root")) )
+
+    def _get__RemoteControls(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, RemoteControl)]
+        else:
+            return []
 
     # The association gives the control output that is used to actually govern a regulating device, e.g. the magnetization of a synchronous machine or capacitor bank breaker actuators.
     ControlledBy_RegulatingCondEq = Instance("CIM13.Wires.RegulatingCondEq",
         desc="The association gives the control output that is used to actually govern a regulating device, e.g. the magnetization of a synchronous machine or capacitor bank breaker actuators.",
-        opposite="Controls")
+        transient=True,
+        opposite="Controls",
+        editor=InstanceEditor(name="_RegulatingCondEqs"))
+
+    _RegulatingCondEqs = Property( List(Instance("CIM.Root")) )
+
+    def _get__RegulatingCondEqs(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ControlledBy_RegulatingCondEq)]
+        else:
+            return []
 
     # Indicates that a client is currently sending control commands that has not completed
     operationInProgress = Bool(desc="Indicates that a client is currently sending control commands that has not completed")
@@ -223,15 +327,54 @@ class MeasurementValue(IdentifiedObject):
     # A MeasurementValue has a MeasurementValueQuality associated with it.
     MeasurementValueQuality = Instance("CIM13.Meas.MeasurementValueQuality",
         desc="A MeasurementValue has a MeasurementValueQuality associated with it.",
-        opposite="MeasurementValue")
+        transient=True,
+        opposite="MeasurementValue",
+        editor=InstanceEditor(name="_MeasurementValueQualitys"))
+
+    _MeasurementValueQualitys = Property( List(Instance("CIM.Root")) )
+
+    def _get__MeasurementValueQualitys(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MeasurementValueQuality)]
+        else:
+            return []
 
     # Links to the physical telemetered point associated with this measurement.
     RemoteSource = Instance("CIM13.SCADA.RemoteSource",
         desc="Links to the physical telemetered point associated with this measurement.",
-        opposite="MeasurementValue")
+        transient=True,
+        opposite="MeasurementValue",
+        editor=InstanceEditor(name="_RemoteSources"))
+
+    _RemoteSources = Property( List(Instance("CIM.Root")) )
+
+    def _get__RemoteSources(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, RemoteSource)]
+        else:
+            return []
 
     MeasurementValueSource = Instance("CIM13.Meas.MeasurementValueSource",
-        opposite="MeasurementValues")
+        transient=True,
+        opposite="MeasurementValues",
+        editor=InstanceEditor(name="_MeasurementValueSources"))
+
+    _MeasurementValueSources = Property( List(Instance("CIM.Root")) )
+
+    def _get__MeasurementValueSources(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MeasurementValueSource)]
+        else:
+            return []
 
     # The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions.
     sensorAccuracy = Float(desc="The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions.")
@@ -447,7 +590,20 @@ class ValueToAlias(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     ValueAliasSet = Instance("CIM13.Meas.ValueAliasSet",
-        opposite="Values")
+        transient=True,
+        opposite="Values",
+        editor=InstanceEditor(name="_ValueAliasSets"))
+
+    _ValueAliasSets = Property( List(Instance("CIM.Root")) )
+
+    def _get__ValueAliasSets(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ValueAliasSet)]
+        else:
+            return []
 
     # The value that is mapped
     value = Int(desc="The value that is mapped")
@@ -519,10 +675,36 @@ class Discrete(Measurement):
     #--------------------------------------------------------------------------
 
     ValueAliasSet = Instance("CIM13.Meas.ValueAliasSet",
-        opposite="Measurements")
+        transient=True,
+        opposite="Measurements",
+        editor=InstanceEditor(name="_ValueAliasSets"))
+
+    _ValueAliasSets = Property( List(Instance("CIM.Root")) )
+
+    def _get__ValueAliasSets(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ValueAliasSet)]
+        else:
+            return []
 
     ControlledBy_Control = Instance("CIM13.Meas.Command",
-        opposite="MeasuredBy_Measurement")
+        transient=True,
+        opposite="MeasuredBy_Measurement",
+        editor=InstanceEditor(name="_Commands"))
+
+    _Commands = Property( List(Instance("CIM.Root")) )
+
+    def _get__Commands(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ControlledBy_Control)]
+        else:
+            return []
 
     Contain_MeasurementValues = List(Instance("CIM13.Meas.DiscreteValue"))
 
@@ -570,7 +752,20 @@ class SetPoint(Control):
     # The Control variable associated with the Measurement
     MeasuredBy_Measurement = Instance("CIM13.Meas.Analog",
         desc="The Control variable associated with the Measurement",
-        opposite="ControlledBy_Control")
+        transient=True,
+        opposite="ControlledBy_Control",
+        editor=InstanceEditor(name="_Analogs"))
+
+    _Analogs = Property( List(Instance("CIM.Root")) )
+
+    def _get__Analogs(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MeasuredBy_Measurement)]
+        else:
+            return []
 
     # Normal value range maximum for any of the Control.value. Used for scaling, e.g. in bar graphs.
     maxValue = Float(desc="Normal value range maximum for any of the Control.value. Used for scaling, e.g. in bar graphs.")
@@ -617,7 +812,20 @@ class DiscreteValue(MeasurementValue):
     #--------------------------------------------------------------------------
 
     MemberOf_Measurement = Instance("CIM13.Meas.Discrete",
-        opposite="Contain_MeasurementValues")
+        transient=True,
+        opposite="Contain_MeasurementValues",
+        editor=InstanceEditor(name="_Discretes"))
+
+    _Discretes = Property( List(Instance("CIM.Root")) )
+
+    def _get__Discretes(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_Measurement)]
+        else:
+            return []
 
     # The value to supervise.
     value = Int(desc="The value to supervise.")
@@ -696,7 +904,20 @@ class AnalogLimit(Limit):
     #--------------------------------------------------------------------------
 
     LimitSet = Instance("CIM13.Meas.AnalogLimitSet",
-        opposite="Limits")
+        transient=True,
+        opposite="Limits",
+        editor=InstanceEditor(name="_AnalogLimitSets"))
+
+    _AnalogLimitSets = Property( List(Instance("CIM.Root")) )
+
+    def _get__AnalogLimitSets(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, LimitSet)]
+        else:
+            return []
 
     # The value to supervise against.
     value = Float(desc="The value to supervise against.")
@@ -734,7 +955,20 @@ class StringMeasurementValue(MeasurementValue):
     #--------------------------------------------------------------------------
 
     MemberOf_Measurement = Instance("CIM13.Meas.StringMeasurement",
-        opposite="Contains_MeasurementValues")
+        transient=True,
+        opposite="Contains_MeasurementValues",
+        editor=InstanceEditor(name="_StringMeasurements"))
+
+    _StringMeasurements = Property( List(Instance("CIM.Root")) )
+
+    def _get__StringMeasurements(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_Measurement)]
+        else:
+            return []
 
     # The value to supervise.
     value = Str(desc="The value to supervise.")
@@ -772,7 +1006,20 @@ class AccumulatorLimit(Limit):
     #--------------------------------------------------------------------------
 
     LimitSet = Instance("CIM13.Meas.AccumulatorLimitSet",
-        opposite="Limits")
+        transient=True,
+        opposite="Limits",
+        editor=InstanceEditor(name="_AccumulatorLimitSets"))
+
+    _AccumulatorLimitSets = Property( List(Instance("CIM.Root")) )
+
+    def _get__AccumulatorLimitSets(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, LimitSet)]
+        else:
+            return []
 
     # The value to supervise against. The value is positive.
     value = Int(desc="The value to supervise against. The value is positive.")
@@ -844,7 +1091,20 @@ class AnalogValue(MeasurementValue):
     #--------------------------------------------------------------------------
 
     MemberOf_Measurement = Instance("CIM13.Meas.Analog",
-        opposite="Contain_MeasurementValues")
+        transient=True,
+        opposite="Contain_MeasurementValues",
+        editor=InstanceEditor(name="_Analogs"))
+
+    _Analogs = Property( List(Instance("CIM.Root")) )
+
+    def _get__Analogs(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_Measurement)]
+        else:
+            return []
 
     AltGeneratingUnit = List(Instance("CIM13.ControlArea.AltGeneratingUnitMeas"))
 
@@ -888,7 +1148,20 @@ class MeasurementValueQuality(Quality61850):
     # A MeasurementValue has a MeasurementValueQuality associated with it.
     MeasurementValue = Instance("CIM13.Meas.MeasurementValue",
         desc="A MeasurementValue has a MeasurementValueQuality associated with it.",
-        opposite="MeasurementValueQuality")
+        transient=True,
+        opposite="MeasurementValueQuality",
+        editor=InstanceEditor(name="_MeasurementValues"))
+
+    _MeasurementValues = Property( List(Instance("CIM.Root")) )
+
+    def _get__MeasurementValues(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MeasurementValue)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "MeasurementValueQuality" user definitions:
@@ -999,10 +1272,36 @@ class Command(Control):
     #--------------------------------------------------------------------------
 
     ValueAliasSet = Instance("CIM13.Meas.ValueAliasSet",
-        opposite="Commands")
+        transient=True,
+        opposite="Commands",
+        editor=InstanceEditor(name="_ValueAliasSets"))
+
+    _ValueAliasSets = Property( List(Instance("CIM.Root")) )
+
+    def _get__ValueAliasSets(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ValueAliasSet)]
+        else:
+            return []
 
     MeasuredBy_Measurement = Instance("CIM13.Meas.Discrete",
-        opposite="ControlledBy_Control")
+        transient=True,
+        opposite="ControlledBy_Control",
+        editor=InstanceEditor(name="_Discretes"))
+
+    _Discretes = Property( List(Instance("CIM.Root")) )
+
+    def _get__Discretes(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MeasuredBy_Measurement)]
+        else:
+            return []
 
     # The value representing the actuator output
     value = Int(desc="The value representing the actuator output")
@@ -1051,7 +1350,20 @@ class Analog(Measurement):
     # The Control variable associated with the Measurement
     ControlledBy_Control = Instance("CIM13.Meas.SetPoint",
         desc="The Control variable associated with the Measurement",
-        opposite="MeasuredBy_Measurement")
+        transient=True,
+        opposite="MeasuredBy_Measurement",
+        editor=InstanceEditor(name="_SetPoints"))
+
+    _SetPoints = Property( List(Instance("CIM.Root")) )
+
+    def _get__SetPoints(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, ControlledBy_Control)]
+        else:
+            return []
 
     # If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource.
     positiveFlowIn = Bool(desc="If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource.")
@@ -1098,7 +1410,20 @@ class AccumulatorValue(MeasurementValue):
     #--------------------------------------------------------------------------
 
     MemberOf_Measurement = Instance("CIM13.Meas.Accumulator",
-        opposite="Contain_MeasurementValues")
+        transient=True,
+        opposite="Contain_MeasurementValues",
+        editor=InstanceEditor(name="_Accumulators"))
+
+    _Accumulators = Property( List(Instance("CIM.Root")) )
+
+    def _get__Accumulators(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_Measurement)]
+        else:
+            return []
 
     # The value to supervise. The value is positive.
     value = Int(desc="The value to supervise. The value is positive.")

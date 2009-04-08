@@ -24,10 +24,10 @@ from CIM13.Core import PowerSystemResource
 
 
 
-from enthought.traits.api import Instance, List, Enum, Float, Bool, Int
+from enthought.traits.api import Instance, List, Property, Enum, Float, Bool, Int
 # <<< imports
 # @generated
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -53,7 +53,20 @@ class CTTempActivePowerCurve(Curve):
     # A combustion turbine may have a active power versus ambient temperature relationship
     CombustionTurbine = Instance("CIM13.Generation.GenerationDynamics.CombustionTurbine",
         desc="A combustion turbine may have a active power versus ambient temperature relationship",
-        opposite="CTTempActivePowerCurve")
+        transient=True,
+        opposite="CTTempActivePowerCurve",
+        editor=InstanceEditor(name="_CombustionTurbines"))
+
+    _CombustionTurbines = Property( List(Instance("CIM.Root")) )
+
+    def _get__CombustionTurbines(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, CombustionTurbine)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "CTTempActivePowerCurve" user definitions:
@@ -330,17 +343,56 @@ class CombustionTurbine(PrimeMover):
     # A CAES air compressor is driven by combustion turbine
     Drives_AirCompressor = Instance("CIM13.Generation.Production.AirCompressor",
         desc="A CAES air compressor is driven by combustion turbine",
-        opposite="DrivenBy_CombustionTurbine")
+        transient=True,
+        opposite="DrivenBy_CombustionTurbine",
+        editor=InstanceEditor(name="_AirCompressors"))
+
+    _AirCompressors = Property( List(Instance("CIM.Root")) )
+
+    def _get__AirCompressors(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Drives_AirCompressor)]
+        else:
+            return []
 
     # A combustion turbine may have a active power versus ambient temperature relationship
     CTTempActivePowerCurve = Instance("CIM13.Generation.GenerationDynamics.CTTempActivePowerCurve",
         desc="A combustion turbine may have a active power versus ambient temperature relationship",
-        opposite="CombustionTurbine")
+        transient=True,
+        opposite="CombustionTurbine",
+        editor=InstanceEditor(name="_CTTempActivePowerCurves"))
+
+    _CTTempActivePowerCurves = Property( List(Instance("CIM.Root")) )
+
+    def _get__CTTempActivePowerCurves(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, CTTempActivePowerCurve)]
+        else:
+            return []
 
     # A combustion turbine may have a heat recovery boiler for making steam
     HeatRecoveryBoiler = Instance("CIM13.Generation.GenerationDynamics.HeatRecoveryBoiler",
         desc="A combustion turbine may have a heat recovery boiler for making steam",
-        opposite="CombustionTurbines")
+        transient=True,
+        opposite="CombustionTurbines",
+        editor=InstanceEditor(name="_HeatRecoveryBoilers"))
+
+    _HeatRecoveryBoilers = Property( List(Instance("CIM.Root")) )
+
+    def _get__HeatRecoveryBoilers(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, HeatRecoveryBoiler)]
+        else:
+            return []
 
     # Reference temperature at which the output of the turbine was defined.
     referenceTemp = Float(desc="Reference temperature at which the output of the turbine was defined.")

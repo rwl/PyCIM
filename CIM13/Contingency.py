@@ -23,10 +23,10 @@ from CIM13.Core import IdentifiedObject
 
 
 
-from enthought.traits.api import Instance, List, Enum, Bool
+from enthought.traits.api import Instance, List, Property, Enum, Bool
 # <<< imports
 # @generated
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -85,7 +85,20 @@ class ContingencyElement(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     Contingency = Instance("CIM13.Contingency.Contingency",
-        opposite="ContingencyElement")
+        transient=True,
+        opposite="ContingencyElement",
+        editor=InstanceEditor(name="_Contingencys"))
+
+    _Contingencys = Property( List(Instance("CIM.Root")) )
+
+    def _get__Contingencys(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Contingency)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "ContingencyElement" user definitions:
@@ -120,7 +133,20 @@ class ContingencyEquipment(ContingencyElement):
     #--------------------------------------------------------------------------
 
     Equipment = Instance("CIM13.Core.Equipment",
-        opposite="ContingencyEquipment")
+        transient=True,
+        opposite="ContingencyEquipment",
+        editor=InstanceEditor(name="_Equipments"))
+
+    _Equipments = Property( List(Instance("CIM.Root")) )
+
+    def _get__Equipments(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Equipment)]
+        else:
+            return []
 
     # The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied.
     contingentStatus = ContingencyEquipmentStatusKind(desc="The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied.")

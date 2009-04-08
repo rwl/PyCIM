@@ -24,10 +24,10 @@ from CIM13.Core import PowerSystemResource
 
 
 
-from enthought.traits.api import Instance, List, Enum, Bool, Float
+from enthought.traits.api import Instance, List, Property, Enum, Bool, Float
 # <<< imports
 # @generated
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -51,7 +51,20 @@ class RemotePoint(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     MemberOf_RemoteUnit = Instance("CIM13.SCADA.RemoteUnit",
-        opposite="Contains_RemotePoints")
+        transient=True,
+        opposite="Contains_RemotePoints",
+        editor=InstanceEditor(name="_RemoteUnits"))
+
+    _RemoteUnits = Property( List(Instance("CIM.Root")) )
+
+    def _get__RemoteUnits(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MemberOf_RemoteUnit)]
+        else:
+            return []
 
     #--------------------------------------------------------------------------
     #  Begin "RemotePoint" user definitions:
@@ -163,7 +176,20 @@ class RemoteControl(RemotePoint):
     #--------------------------------------------------------------------------
 
     Control = Instance("CIM13.Meas.Control",
-        opposite="RemoteControl")
+        transient=True,
+        opposite="RemoteControl",
+        editor=InstanceEditor(name="_Controls"))
+
+    _Controls = Property( List(Instance("CIM.Root")) )
+
+    def _get__Controls(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, Control)]
+        else:
+            return []
 
     # Set to true if the actuator is remotely controlled.
     remoteControlled = Bool(desc="Set to true if the actuator is remotely controlled.")
@@ -209,7 +235,20 @@ class RemoteSource(RemotePoint):
     # Links to the physical telemetered point associated with this measurement.
     MeasurementValue = Instance("CIM13.Meas.MeasurementValue",
         desc="Links to the physical telemetered point associated with this measurement.",
-        opposite="RemoteSource")
+        transient=True,
+        opposite="RemoteSource",
+        editor=InstanceEditor(name="_MeasurementValues"))
+
+    _MeasurementValues = Property( List(Instance("CIM.Root")) )
+
+    def _get__MeasurementValues(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [element for element in self.ContainedBy.Contains \
+                if isinstance(element, MeasurementValue)]
+        else:
+            return []
 
     # The minimum value the telemetry item can return.
     sensorMinimum = Float(desc="The minimum value the telemetry item can return.")
