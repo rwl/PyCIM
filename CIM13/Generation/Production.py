@@ -29,9 +29,9 @@ from CIM13.Core import RegularIntervalSchedule
 
 from enthought.traits.api import Instance, List, Enum, Float, Bool, Int, Str
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -74,141 +74,158 @@ class GeneratingUnit(Equipment):
     ControlAreaGeneratingUnit = List(Instance("CIM13.ControlArea.ControlAreaGeneratingUnit"))
 
     # A generating unit may have a gross active power to net active power curve, describing the losses and auxiliary power requirements of the unit
-    GrossToNetActivePowerCurves = List(Instance("CIM13.Generation.Production.GrossToNetActivePowerCurve"))
+    GrossToNetActivePowerCurves = List(Instance("CIM13.Generation.Production.GrossToNetActivePowerCurve"),
+        desc="A generating unit may have a gross active power to net active power curve, describing the losses and auxiliary power requirements of the unit")
 
     # A synchronous machine may operate as a generator and as such becomes a member of a generating unit
-    Contains_SynchronousMachines = List(Instance("CIM13.Wires.SynchronousMachine"))
+    Contains_SynchronousMachines = List(Instance("CIM13.Wires.SynchronousMachine"),
+        desc="A synchronous machine may operate as a generator and as such becomes a member of a generating unit")
 
     # A generating unit may have an operating schedule, indicating the planned operation of the unit
-    GenUnitOpSchedule = Instance("CIM13.Generation.Production.GenUnitOpSchedule")
+    GenUnitOpSchedule = Instance("CIM13.Generation.Production.GenUnitOpSchedule",
+        desc="A generating unit may have an operating schedule, indicating the planned operation of the unit",
+        opposite="GeneratingUnit")
 
     # A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.
-    GenUnitOpCostCurves = List(Instance("CIM13.Generation.Production.GenUnitOpCostCurve"))
+    GenUnitOpCostCurves = List(Instance("CIM13.Generation.Production.GenUnitOpCostCurve"),
+        desc="A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.")
 
     # The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity
-    ratedNetMaxP = Float
+    ratedNetMaxP = Float(desc="The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity")
 
     # Defined as: 1 / ( 1 - Incremental Transmission Loss); with the Incremental Transmission Loss expressed as a plus or minus value. The typical range of penalty factors is (0.9 to 1.1).
-    penaltyFactor = Float
+    penaltyFactor = Float(desc="Defined as: 1 / ( 1 - Incremental Transmission Loss); with the Incremental Transmission Loss expressed as a plus or minus value. The typical range of penalty factors is (0.9 to 1.1).")
 
     stepChange = Float
 
     energyMinP = Float
 
     # The efficiency of the unit in converting mechanical energy, from the prime mover, into electrical energy.
-    efficiency = Float
+    efficiency = Float(desc="The efficiency of the unit in converting mechanical energy, from the prime mover, into electrical energy.")
 
     raiseRampRate = Float
 
     dispReserveFlag = Bool
 
     # The initial startup cost incurred for each start of the GeneratingUnit.
-    startupCost = Float
+    startupCost = Float(desc="The initial startup cost incurred for each start of the GeneratingUnit.")
 
     # High limit for secondary (AGC) control
-    highControlLimit = Float
+    highControlLimit = Float(desc="High limit for secondary (AGC) control")
 
     spinReserveRamp = Float
 
     # Pulse low limit which is the smallest control pulse that the unit can respond to
-    controlPulseLow = Float
+    controlPulseLow = Float(desc="Pulse low limit which is the smallest control pulse that the unit can respond to")
 
     # The source of controls for a generating unit.
-    genControlSource = GeneratorControlSource
+    genControlSource = GeneratorControlSource(desc="The source of controls for a generating unit.")
 
     # Governor Speed Changer Droop
-    governorSCD = Float
+    governorSCD = Float(desc="Governor Speed Changer Droop")
 
     # For dispatchable units, this value represents the economic active power basepoint, for units that are not dispatchable, this value represents the fixed generation value. The value must be between the operating low and high limits.
-    baseP = Float
+    baseP = Float(desc="For dispatchable units, this value represents the economic active power basepoint, for units that are not dispatchable, this value represents the fixed generation value. The value must be between the operating low and high limits.")
 
     fuelPriority = Int
 
     # This is the maximum operating active power limit the dispatcher can enter for this unit
-    maxOperatingP = Float
+    maxOperatingP = Float(desc="This is the maximum operating active power limit the dispatcher can enter for this unit")
 
     # The unit control mode.
-    genControlMode = GeneratorControlMode
+    genControlMode = GeneratorControlMode(desc="The unit control mode.")
 
     # The variable cost component of production per unit of ActivePower.
-    variableCost = Float
+    variableCost = Float(desc="The variable cost component of production per unit of ActivePower.")
 
     # Low limit for secondary (AGC) control
-    lowControlLimit = Float
+    lowControlLimit = Float(desc="Low limit for secondary (AGC) control")
 
     # Pulse high limit which is the largest control pulse that the unit can respond to
-    controlPulseHigh = Float
+    controlPulseHigh = Float(desc="Pulse high limit which is the largest control pulse that the unit can respond to")
 
     # Maximum high economic active power limit, that should not exceed the maximum operating active power limit
-    maxEconomicP = Float
+    maxEconomicP = Float(desc="Maximum high economic active power limit, that should not exceed the maximum operating active power limit")
 
     # Unit control error deadband. When a unit's desired active power change is less than this deadband, then no control pulses will be sent to the unit.
-    controlDeadband = Float
+    controlDeadband = Float(desc="Unit control error deadband. When a unit's desired active power change is less than this deadband, then no control pulses will be sent to the unit.")
 
     # Governor Motor Position Limit
-    governorMPL = Float
+    governorMPL = Float(desc="Governor Motor Position Limit")
 
     # Low economic active power limit that must be greater than or equal to the minimum operating active power limit
-    minEconomicP = Float
+    minEconomicP = Float(desc="Low economic active power limit that must be greater than or equal to the minimum operating active power limit")
 
     # This is the minimum operating active power limit the dispatcher can enter for this unit.
-    minOperatingP = Float
+    minOperatingP = Float(desc="This is the minimum operating active power limit the dispatcher can enter for this unit.")
 
     # Unit response rate which specifies the active power change for a control pulse of one second in the most responsive loading level of the unit.
-    controlResponseRate = Float
+    controlResponseRate = Float(desc="Unit response rate which specifies the active power change for a control pulse of one second in the most responsive loading level of the unit.")
 
     # Detail level of the generator model data
-    modelDetail = Int
+    modelDetail = Int(desc="Detail level of the generator model data")
 
     # The planned unused capacity which can be used to support automatic control overruns.
-    autoCntrlMarginP = Float
+    autoCntrlMarginP = Float(desc="The planned unused capacity which can be used to support automatic control overruns.")
 
     # The unit's gross rated maximum capacity (Book Value).
-    ratedGrossMaxP = Float
+    ratedGrossMaxP = Float(desc="The unit's gross rated maximum capacity (Book Value).")
 
     # Operating mode for secondary control.
-    genOperatingMode = GeneratorOperatingMode
+    genOperatingMode = GeneratorOperatingMode(desc="Operating mode for secondary control.")
 
     fastStartFlag = Bool
 
     # Generating unit economic participation factor
-    longPF = Float
+    longPF = Float(desc="Generating unit economic participation factor")
 
     # Generating unit economic participation factor
-    normalPF = Float
+    normalPF = Float(desc="Generating unit economic participation factor")
 
     # Maximum allowable spinning reserve. Spinning reserve will never be considered greater than this value regardless of the current operating point.
-    maximumAllowableSpinningReserve = Float
+    maximumAllowableSpinningReserve = Float(desc="Maximum allowable spinning reserve. Spinning reserve will never be considered greater than this value regardless of the current operating point.")
 
     # The gross rated minimum generation level which the unit can safely operate at while delivering power to the transmission grid
-    ratedGrossMinP = Float
+    ratedGrossMinP = Float(desc="The gross rated minimum generation level which the unit can safely operate at while delivering power to the transmission grid")
 
     # The planned unused capacity (spinning reserve) which can be used to support emergency load
-    allocSpinResP = Float
+    allocSpinResP = Float(desc="The planned unused capacity (spinning reserve) which can be used to support emergency load")
 
     # Time it takes to get the unit on-line, from the time that the prime mover mechanical power is applied
-    startupTime = Float
+    startupTime = Float(desc="Time it takes to get the unit on-line, from the time that the prime mover mechanical power is applied")
 
     # Default Initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration
-    initialP = Float
+    initialP = Float(desc="Default Initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration")
 
     # Generating unit economic participation factor
-    tieLinePF = Float
+    tieLinePF = Float(desc="Generating unit economic participation factor")
 
     # Minimum time interval between unit shutdown and startup
-    minimumOffTime = Float
+    minimumOffTime = Float(desc="Minimum time interval between unit shutdown and startup")
 
     lowerRampRate = Float
 
     # Generating unit economic participation factor
-    shortPF = Float
+    shortPF = Float(desc="Generating unit economic participation factor")
 
     #--------------------------------------------------------------------------
-    #  Begin generatingUnit user definitions:
+    #  Begin "GeneratingUnit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "ratedNetMaxP", "penaltyFactor", "stepChange", "energyMinP", "efficiency", "raiseRampRate", "dispReserveFlag", "startupCost", "highControlLimit", "spinReserveRamp", "controlPulseLow", "genControlSource", "governorSCD", "baseP", "fuelPriority", "maxOperatingP", "genControlMode", "variableCost", "lowControlLimit", "controlPulseHigh", "maxEconomicP", "controlDeadband", "governorMPL", "minEconomicP", "minOperatingP", "controlResponseRate", "modelDetail", "autoCntrlMarginP", "ratedGrossMaxP", "genOperatingMode", "fastStartFlag", "longPF", "normalPF", "maximumAllowableSpinningReserve", "ratedGrossMinP", "allocSpinResP", "startupTime", "initialP", "tieLinePF", "minimumOffTime", "lowerRampRate", "shortPF",
+                label="Attributes", columns=4),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "ControlAreaGeneratingUnit", "GrossToNetActivePowerCurves", "Contains_SynchronousMachines", "GenUnitOpSchedule", "GenUnitOpCostCurves",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Generation.Production.GeneratingUnit",
+        title="GeneratingUnit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End generatingUnit user definitions:
+    #  End "GeneratingUnit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -224,17 +241,31 @@ class StartIgnFuelCurve(Curve):
     #--------------------------------------------------------------------------
 
     # The unit's startup model may have a startup ignition fuel curve
-    StartupModel = Instance("CIM13.Generation.Production.StartupModel")
+    StartupModel = Instance("CIM13.Generation.Production.StartupModel",
+        desc="The unit's startup model may have a startup ignition fuel curve",
+        opposite="StartIgnFuelCurve")
 
     # Type of ignition fuel
-    ignitionFuelType = FuelType
+    ignitionFuelType = FuelType(desc="Type of ignition fuel")
 
     #--------------------------------------------------------------------------
-    #  Begin startIgnFuelCurve user definitions:
+    #  Begin "StartIgnFuelCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "ignitionFuelType",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "StartupModel",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.StartIgnFuelCurve",
+        title="StartIgnFuelCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End startIgnFuelCurve user definitions:
+    #  End "StartIgnFuelCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -250,14 +281,28 @@ class HydroGeneratingEfficiencyCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A hydro generating unit has an efficiency curve
-    HydroGeneratingUnit = Instance("CIM13.Generation.Production.HydroGeneratingUnit")
+    HydroGeneratingUnit = Instance("CIM13.Generation.Production.HydroGeneratingUnit",
+        desc="A hydro generating unit has an efficiency curve",
+        opposite="HydroGeneratingEfficiencyCurves")
 
     #--------------------------------------------------------------------------
-    #  Begin hydroGeneratingEfficiencyCurve user definitions:
+    #  Begin "HydroGeneratingEfficiencyCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "HydroGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.HydroGeneratingEfficiencyCurve",
+        title="HydroGeneratingEfficiencyCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End hydroGeneratingEfficiencyCurve user definitions:
+    #  End "HydroGeneratingEfficiencyCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -273,20 +318,34 @@ class TargetLevelSchedule(Curve):
     #--------------------------------------------------------------------------
 
     # A reservoir may have a water level target schedule.
-    Reservoir = Instance("CIM13.Generation.Production.Reservoir")
+    Reservoir = Instance("CIM13.Generation.Production.Reservoir",
+        desc="A reservoir may have a water level target schedule.",
+        opposite="TargetLevelSchedule")
 
     # Low target level limit, below which the reservoir operation will be penalized
-    lowLevelLimit = Float
+    lowLevelLimit = Float(desc="Low target level limit, below which the reservoir operation will be penalized")
 
     # High target level limit, above which the reservoir operation will be penalized
-    highLevelLimit = Float
+    highLevelLimit = Float(desc="High target level limit, above which the reservoir operation will be penalized")
 
     #--------------------------------------------------------------------------
-    #  Begin targetLevelSchedule user definitions:
+    #  Begin "TargetLevelSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "lowLevelLimit", "highLevelLimit",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "Reservoir",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.TargetLevelSchedule",
+        title="TargetLevelSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End targetLevelSchedule user definitions:
+    #  End "TargetLevelSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -302,14 +361,28 @@ class GrossToNetActivePowerCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A generating unit may have a gross active power to net active power curve, describing the losses and auxiliary power requirements of the unit
-    GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit")
+    GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit",
+        desc="A generating unit may have a gross active power to net active power curve, describing the losses and auxiliary power requirements of the unit",
+        opposite="GrossToNetActivePowerCurves")
 
     #--------------------------------------------------------------------------
-    #  Begin grossToNetActivePowerCurve user definitions:
+    #  Begin "GrossToNetActivePowerCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "GeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.GrossToNetActivePowerCurve",
+        title="GrossToNetActivePowerCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End grossToNetActivePowerCurve user definitions:
+    #  End "GrossToNetActivePowerCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -325,17 +398,31 @@ class IncrementalHeatRateCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A thermal generating unit may have an incremental heat rate curve
-    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
+    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
+        desc="A thermal generating unit may have an incremental heat rate curve",
+        opposite="IncrementalHeatRateCurve")
 
     # Flag is set to true when output is expressed in net active power
-    isNetGrossP = Bool
+    isNetGrossP = Bool(desc="Flag is set to true when output is expressed in net active power")
 
     #--------------------------------------------------------------------------
-    #  Begin incrementalHeatRateCurve user definitions:
+    #  Begin "IncrementalHeatRateCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "isNetGrossP",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "ThermalGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.IncrementalHeatRateCurve",
+        title="IncrementalHeatRateCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End incrementalHeatRateCurve user definitions:
+    #  End "IncrementalHeatRateCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -351,29 +438,43 @@ class HeatInputCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A thermal generating unit may have a heat input curve
-    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
+    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
+        desc="A thermal generating unit may have a heat input curve",
+        opposite="HeatInputCurve")
 
     # Power output - auxiliary power offset adjustment factor
-    auxPowerOffset = Float
+    auxPowerOffset = Float(desc="Power output - auxiliary power offset adjustment factor")
 
     # Heat input - offset adjustment factor.
-    heatInputOffset = Float
+    heatInputOffset = Float(desc="Heat input - offset adjustment factor.")
 
     # Power output - auxiliary power multiplier adjustment factor.
-    auxPowerMult = Float
+    auxPowerMult = Float(desc="Power output - auxiliary power multiplier adjustment factor.")
 
     # Heat input - efficiency multiplier adjustment factor.
-    heatInputEff = Float
+    heatInputEff = Float(desc="Heat input - efficiency multiplier adjustment factor.")
 
     # Flag is set to true when output is expressed in net active power
-    isNetGrossP = Bool
+    isNetGrossP = Bool(desc="Flag is set to true when output is expressed in net active power")
 
     #--------------------------------------------------------------------------
-    #  Begin heatInputCurve user definitions:
+    #  Begin "HeatInputCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "auxPowerOffset", "heatInputOffset", "auxPowerMult", "heatInputEff", "isNetGrossP",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "ThermalGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.HeatInputCurve",
+        title="HeatInputCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End heatInputCurve user definitions:
+    #  End "HeatInputCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -389,17 +490,31 @@ class StartRampCurve(Curve):
     #--------------------------------------------------------------------------
 
     # The unit's startup model may have a startup ramp curve
-    StartupModel = Instance("CIM13.Generation.Production.StartupModel")
+    StartupModel = Instance("CIM13.Generation.Production.StartupModel",
+        desc="The unit's startup model may have a startup ramp curve",
+        opposite="StartRampCurve")
 
     # The startup ramp rate in gross for a unit that is on hot standby
-    hotStandbyRamp = Float
+    hotStandbyRamp = Float(desc="The startup ramp rate in gross for a unit that is on hot standby")
 
     #--------------------------------------------------------------------------
-    #  Begin startRampCurve user definitions:
+    #  Begin "StartRampCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "hotStandbyRamp",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "StartupModel",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.StartRampCurve",
+        title="StartRampCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End startRampCurve user definitions:
+    #  End "StartRampCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -415,20 +530,36 @@ class AirCompressor(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # A CAES air compressor is driven by combustion turbine
-    DrivenBy_CombustionTurbine = Instance("CIM13.Generation.GenerationDynamics.CombustionTurbine")
+    DrivenBy_CombustionTurbine = Instance("CIM13.Generation.GenerationDynamics.CombustionTurbine",
+        desc="A CAES air compressor is driven by combustion turbine",
+        opposite="Drives_AirCompressor")
 
     # An air compressor may be a member of a compressed air energy storage plant
-    MemberOf_CAESPlant = Instance("CIM13.Generation.Production.CAESPlant")
+    MemberOf_CAESPlant = Instance("CIM13.Generation.Production.CAESPlant",
+        desc="An air compressor may be a member of a compressed air energy storage plant",
+        opposite="Contain_AirCompressor")
 
     # Rating of the CAES air compressor
-    airCompressorRating = Float
+    airCompressorRating = Float(desc="Rating of the CAES air compressor")
 
     #--------------------------------------------------------------------------
-    #  Begin airCompressor user definitions:
+    #  Begin "AirCompressor" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "airCompressorRating",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "DrivenBy_CombustionTurbine", "MemberOf_CAESPlant",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Generation.Production.AirCompressor",
+        title="AirCompressor",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End airCompressor user definitions:
+    #  End "AirCompressor" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -444,20 +575,34 @@ class ShutdownCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A thermal generating unit may have a shutdown curve
-    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
+    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
+        desc="A thermal generating unit may have a shutdown curve",
+        opposite="ShutdownCurve")
 
     # Fixed shutdown cost
-    shutdownCost = Float
+    shutdownCost = Float(desc="Fixed shutdown cost")
 
     # The date and time of the most recent generating unit shutdown
-    shutdownDate = Str
+    shutdownDate = Str(desc="The date and time of the most recent generating unit shutdown")
 
     #--------------------------------------------------------------------------
-    #  Begin shutdownCurve user definitions:
+    #  Begin "ShutdownCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "shutdownCost", "shutdownDate",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "ThermalGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.ShutdownCurve",
+        title="ShutdownCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End shutdownCurve user definitions:
+    #  End "ShutdownCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -473,17 +618,30 @@ class CombinedCyclePlant(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # A thermal generating unit may be a member of a combined cycle plant
-    Contain_ThermalGeneratingUnits = List(Instance("CIM13.Generation.Production.ThermalGeneratingUnit"))
+    Contain_ThermalGeneratingUnits = List(Instance("CIM13.Generation.Production.ThermalGeneratingUnit"),
+        desc="A thermal generating unit may be a member of a combined cycle plant")
 
     # The combined cycle plant's active power output rating
-    combCyclePlantRating = Float
+    combCyclePlantRating = Float(desc="The combined cycle plant's active power output rating")
 
     #--------------------------------------------------------------------------
-    #  Begin combinedCyclePlant user definitions:
+    #  Begin "CombinedCyclePlant" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "combCyclePlantRating",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "Contain_ThermalGeneratingUnits",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.CombinedCyclePlant",
+        title="CombinedCyclePlant",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End combinedCyclePlant user definitions:
+    #  End "CombinedCyclePlant" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -499,53 +657,73 @@ class StartupModel(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # The unit's startup model may have a startup ignition fuel curve
-    StartIgnFuelCurve = Instance("CIM13.Generation.Production.StartIgnFuelCurve")
+    StartIgnFuelCurve = Instance("CIM13.Generation.Production.StartIgnFuelCurve",
+        desc="The unit's startup model may have a startup ignition fuel curve",
+        opposite="StartupModel")
 
     # The unit's startup model may have a startup ramp curve
-    StartRampCurve = Instance("CIM13.Generation.Production.StartRampCurve")
+    StartRampCurve = Instance("CIM13.Generation.Production.StartRampCurve",
+        desc="The unit's startup model may have a startup ramp curve",
+        opposite="StartupModel")
 
     # The unit's startup model may have a startup main fuel curve
-    StartMainFuelCurve = Instance("CIM13.Generation.Production.StartMainFuelCurve")
+    StartMainFuelCurve = Instance("CIM13.Generation.Production.StartMainFuelCurve",
+        desc="The unit's startup model may have a startup main fuel curve",
+        opposite="StartupModel")
 
     # A thermal generating unit may have a startup model
-    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
+    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
+        desc="A thermal generating unit may have a startup model",
+        opposite="StartupModel")
 
     # The minimum number of hours the unit must be operating before being allowed to shut down
-    minimumRunTime = Float
+    minimumRunTime = Float(desc="The minimum number of hours the unit must be operating before being allowed to shut down")
 
     # The date and time of the most recent generating unit startup
-    startupDate = Str
+    startupDate = Str(desc="The date and time of the most recent generating unit startup")
 
     # The minimum number of hours the unit must be down before restart
-    minimumDownTime = Float
+    minimumDownTime = Float(desc="The minimum number of hours the unit must be down before restart")
 
     # Startup priority within control area where lower numbers indicate higher priorities.  More than one unit in an area may be assigned the same priority.
-    startupPriority = Int
+    startupPriority = Int(desc="Startup priority within control area where lower numbers indicate higher priorities.  More than one unit in an area may be assigned the same priority.")
 
     # The unit's auxiliary active power consumption to maintain standby mode
-    stbyAuxP = Float
+    stbyAuxP = Float(desc="The unit's auxiliary active power consumption to maintain standby mode")
 
     # Total miscellaneous start up costs
-    startupCost = Float
+    startupCost = Float(desc="Total miscellaneous start up costs")
 
     # The amount of heat input per time uint required for hot standby operation
-    hotStandbyHeat = Float
+    hotStandbyHeat = Float(desc="The amount of heat input per time uint required for hot standby operation")
 
     # The opportunity cost associated with the return in monetary unit. This represents the restart's 'share' of the unit depreciation and risk of an event which would damage the unit.
-    riskFactorCost = Float
+    riskFactorCost = Float(desc="The opportunity cost associated with the return in monetary unit. This represents the restart's 'share' of the unit depreciation and risk of an event which would damage the unit.")
 
     # Fixed Maintenance Cost
-    fixedMaintCost = Float
+    fixedMaintCost = Float(desc="Fixed Maintenance Cost")
 
     # Incremental Maintenance Cost
-    incrementalMaintCost = Float
+    incrementalMaintCost = Float(desc="Incremental Maintenance Cost")
 
     #--------------------------------------------------------------------------
-    #  Begin startupModel user definitions:
+    #  Begin "StartupModel" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "minimumRunTime", "startupDate", "minimumDownTime", "startupPriority", "stbyAuxP", "startupCost", "hotStandbyHeat", "riskFactorCost", "fixedMaintCost", "incrementalMaintCost",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "StartIgnFuelCurve", "StartRampCurve", "StartMainFuelCurve", "ThermalGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.StartupModel",
+        title="StartupModel",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End startupModel user definitions:
+    #  End "StartupModel" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -561,32 +739,50 @@ class HydroPump(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # The hydro pump may be a member of a pumped storage plant or a pump for distributing water
-    MemberOf_HydroPowerPlant = Instance("CIM13.Generation.Production.HydroPowerPlant")
+    MemberOf_HydroPowerPlant = Instance("CIM13.Generation.Production.HydroPowerPlant",
+        desc="The hydro pump may be a member of a pumped storage plant or a pump for distributing water",
+        opposite="Contain_HydroPumps")
 
     # The hydro pump has a pumping schedule over time, indicating when pumping is to occur.
-    HydroPumpOpSchedule = Instance("CIM13.Generation.Production.HydroPumpOpSchedule")
+    HydroPumpOpSchedule = Instance("CIM13.Generation.Production.HydroPumpOpSchedule",
+        desc="The hydro pump has a pumping schedule over time, indicating when pumping is to occur.",
+        opposite="HydroPump")
 
     # The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating.
-    DrivenBy_SynchronousMachine = Instance("CIM13.Wires.SynchronousMachine")
+    DrivenBy_SynchronousMachine = Instance("CIM13.Wires.SynchronousMachine",
+        desc="The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating.",
+        opposite="Drives_HydroPump")
 
     # The pumping power under minimum head conditions, usually at full gate.
-    pumpPowerAtMinHead = Float
+    pumpPowerAtMinHead = Float(desc="The pumping power under minimum head conditions, usually at full gate.")
 
     # The pumping discharge (m3/sec) under maximum head conditions, usually at full gate
-    pumpDischAtMaxHead = Float
+    pumpDischAtMaxHead = Float(desc="The pumping discharge (m3/sec) under maximum head conditions, usually at full gate")
 
     # The pumping discharge (m3/sec) under minimum head conditions, usually at full gate
-    pumpDischAtMinHead = Float
+    pumpDischAtMinHead = Float(desc="The pumping discharge (m3/sec) under minimum head conditions, usually at full gate")
 
     # The pumping power under maximum head conditions, usually at full gate
-    pumpPowerAtMaxHead = Float
+    pumpPowerAtMaxHead = Float(desc="The pumping power under maximum head conditions, usually at full gate")
 
     #--------------------------------------------------------------------------
-    #  Begin hydroPump user definitions:
+    #  Begin "HydroPump" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "pumpPowerAtMinHead", "pumpDischAtMaxHead", "pumpDischAtMinHead", "pumpPowerAtMaxHead",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "MemberOf_HydroPowerPlant", "HydroPumpOpSchedule", "DrivenBy_SynchronousMachine",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Generation.Production.HydroPump",
+        title="HydroPump",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End hydroPump user definitions:
+    #  End "HydroPump" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -602,23 +798,37 @@ class EmissionCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A thermal generating unit may have  one or more emission curves
-    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
+    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
+        desc="A thermal generating unit may have  one or more emission curves",
+        opposite="EmissionCurves")
 
     # Flag is set to true when output is expressed in net active power
-    isNetGrossP = Bool
+    isNetGrossP = Bool(desc="Flag is set to true when output is expressed in net active power")
 
     # The type of emission, which also gives the production rate measurement unit. The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide).
-    emissionType = EmissionType
+    emissionType = EmissionType(desc="The type of emission, which also gives the production rate measurement unit. The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide).")
 
     # The emission content per quantity of fuel burned
-    emissionContent = Float
+    emissionContent = Float(desc="The emission content per quantity of fuel burned")
 
     #--------------------------------------------------------------------------
-    #  Begin emissionCurve user definitions:
+    #  Begin "EmissionCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "isNetGrossP", "emissionType", "emissionContent",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "ThermalGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.EmissionCurve",
+        title="EmissionCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End emissionCurve user definitions:
+    #  End "EmissionCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -634,17 +844,31 @@ class GenUnitOpCostCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.
-    GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit")
+    GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit",
+        desc="A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.",
+        opposite="GenUnitOpCostCurves")
 
     # Flag is set to true when output is expressed in net active power
-    isNetGrossP = Bool
+    isNetGrossP = Bool(desc="Flag is set to true when output is expressed in net active power")
 
     #--------------------------------------------------------------------------
-    #  Begin genUnitOpCostCurve user definitions:
+    #  Begin "GenUnitOpCostCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "isNetGrossP",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "GeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.GenUnitOpCostCurve",
+        title="GenUnitOpCostCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End genUnitOpCostCurve user definitions:
+    #  End "GenUnitOpCostCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -660,50 +884,68 @@ class HydroPowerPlant(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # The hydro generating unit belongs to a hydro power plant
-    Contain_HydroGeneratingUnits = List(Instance("CIM13.Generation.Production.HydroGeneratingUnit"))
+    Contain_HydroGeneratingUnits = List(Instance("CIM13.Generation.Production.HydroGeneratingUnit"),
+        desc="The hydro generating unit belongs to a hydro power plant")
 
     # Generators discharge water to or pumps are supplied water from a downstream reservoir
-    Reservoir = Instance("CIM13.Generation.Production.Reservoir")
+    Reservoir = Instance("CIM13.Generation.Production.Reservoir",
+        desc="Generators discharge water to or pumps are supplied water from a downstream reservoir",
+        opposite="HydroPowerPlants")
 
     # Generators are supplied water from or pumps discharge water to an upstream reservoir
-    GenSourcePumpDischarge = Instance("CIM13.Generation.Production.Reservoir")
+    GenSourcePumpDischarge = Instance("CIM13.Generation.Production.Reservoir",
+        desc="Generators are supplied water from or pumps discharge water to an upstream reservoir",
+        opposite="UpstreamFrom")
 
     # The hydro pump may be a member of a pumped storage plant or a pump for distributing water
-    Contain_HydroPumps = List(Instance("CIM13.Generation.Production.HydroPump"))
+    Contain_HydroPumps = List(Instance("CIM13.Generation.Production.HydroPump"),
+        desc="The hydro pump may be a member of a pumped storage plant or a pump for distributing water")
 
     # Water travel delay from tailbay to next downstream hydro power station
-    dischargeTravelDelay = Float
+    dischargeTravelDelay = Float(desc="Water travel delay from tailbay to next downstream hydro power station")
 
     # The hydro plant's pumping rating active power for rated head conditions
-    pumpRatedP = Float
+    pumpRatedP = Float(desc="The hydro plant's pumping rating active power for rated head conditions")
 
     # Type and configuration of hydro plant penstock(s)
-    penstockType = PenstockType
+    penstockType = PenstockType(desc="Type and configuration of hydro plant penstock(s)")
 
     # The plant's rated gross head in meters
-    plantRatedHead = Float
+    plantRatedHead = Float(desc="The plant's rated gross head in meters")
 
     # Total plant discharge capacity in cubic meters per second
-    plantDischargeCapacity = Float
+    plantDischargeCapacity = Float(desc="Total plant discharge capacity in cubic meters per second")
 
     # The type of hydro power plant.
-    hydroPlantType = HydroPlantType
+    hydroPlantType = HydroPlantType(desc="The type of hydro power plant.")
 
     # A code describing the type (or absence) of surge tank that is associated with the hydro power plant
-    surgeTankCode = SurgeTankCode
+    surgeTankCode = SurgeTankCode(desc="A code describing the type (or absence) of surge tank that is associated with the hydro power plant")
 
     # The hydro plant's generating rating active power for rated head conditions
-    genRatedP = Float
+    genRatedP = Float(desc="The hydro plant's generating rating active power for rated head conditions")
 
     # The level at which the surge tank spills
-    surgeTankCrestLevel = Float
+    surgeTankCrestLevel = Float(desc="The level at which the surge tank spills")
 
     #--------------------------------------------------------------------------
-    #  Begin hydroPowerPlant user definitions:
+    #  Begin "HydroPowerPlant" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "dischargeTravelDelay", "pumpRatedP", "penstockType", "plantRatedHead", "plantDischargeCapacity", "hydroPlantType", "surgeTankCode", "genRatedP", "surgeTankCrestLevel",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "Contain_HydroGeneratingUnits", "Reservoir", "GenSourcePumpDischarge", "Contain_HydroPumps",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Generation.Production.HydroPowerPlant",
+        title="HydroPowerPlant",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End hydroPowerPlant user definitions:
+    #  End "HydroPowerPlant" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -719,23 +961,39 @@ class CAESPlant(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # An air compressor may be a member of a compressed air energy storage plant
-    Contain_AirCompressor = Instance("CIM13.Generation.Production.AirCompressor")
+    Contain_AirCompressor = Instance("CIM13.Generation.Production.AirCompressor",
+        desc="An air compressor may be a member of a compressed air energy storage plant",
+        opposite="MemberOf_CAESPlant")
 
     # A thermal generating unit may be a member of a compressed air energy storage plant
-    Contain_ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
+    Contain_ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
+        desc="A thermal generating unit may be a member of a compressed air energy storage plant",
+        opposite="MemberOf_CAESPlant")
 
     # The CAES plant's gross rated generating capacity
-    ratedCapacityP = Float
+    ratedCapacityP = Float(desc="The CAES plant's gross rated generating capacity")
 
     # The rated energy storage capacity.
-    energyStorageCapacity = Float
+    energyStorageCapacity = Float(desc="The rated energy storage capacity.")
 
     #--------------------------------------------------------------------------
-    #  Begin cAESPlant user definitions:
+    #  Begin "CAESPlant" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "ratedCapacityP", "energyStorageCapacity",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "Contain_AirCompressor", "Contain_ThermalGeneratingUnit",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Generation.Production.CAESPlant",
+        title="CAESPlant",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End cAESPlant user definitions:
+    #  End "CAESPlant" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -751,14 +1009,28 @@ class LevelVsVolumeCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A reservoir may have a level versus volume relationship.
-    Reservoir = Instance("CIM13.Generation.Production.Reservoir")
+    Reservoir = Instance("CIM13.Generation.Production.Reservoir",
+        desc="A reservoir may have a level versus volume relationship.",
+        opposite="LevelVsVolumeCurve")
 
     #--------------------------------------------------------------------------
-    #  Begin levelVsVolumeCurve user definitions:
+    #  Begin "LevelVsVolumeCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "Reservoir",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.LevelVsVolumeCurve",
+        title="LevelVsVolumeCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End levelVsVolumeCurve user definitions:
+    #  End "LevelVsVolumeCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -774,14 +1046,28 @@ class InflowForecast(RegularIntervalSchedule):
     #--------------------------------------------------------------------------
 
     # A reservoir may have a 'natural' inflow forecast.
-    Reservoir = Instance("CIM13.Generation.Production.Reservoir")
+    Reservoir = Instance("CIM13.Generation.Production.Reservoir",
+        desc="A reservoir may have a 'natural' inflow forecast.",
+        opposite="InflowForecast")
 
     #--------------------------------------------------------------------------
-    #  Begin inflowForecast user definitions:
+    #  Begin "InflowForecast" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value2Unit", "startTime", "value2Multiplier", "value1Unit", "value1Multiplier", "timeStep", "endTime",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "TimePoints", "Reservoir",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.InflowForecast",
+        title="InflowForecast",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End inflowForecast user definitions:
+    #  End "InflowForecast" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -797,14 +1083,28 @@ class SteamSendoutSchedule(RegularIntervalSchedule):
     #--------------------------------------------------------------------------
 
     # A cogeneration plant has a steam sendout schedule
-    CogenerationPlant = Instance("CIM13.Generation.Production.CogenerationPlant")
+    CogenerationPlant = Instance("CIM13.Generation.Production.CogenerationPlant",
+        desc="A cogeneration plant has a steam sendout schedule",
+        opposite="SteamSendoutSchedule")
 
     #--------------------------------------------------------------------------
-    #  Begin steamSendoutSchedule user definitions:
+    #  Begin "SteamSendoutSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value2Unit", "startTime", "value2Multiplier", "value1Unit", "value1Multiplier", "timeStep", "endTime",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "TimePoints", "CogenerationPlant",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.SteamSendoutSchedule",
+        title="SteamSendoutSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End steamSendoutSchedule user definitions:
+    #  End "SteamSendoutSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -820,47 +1120,62 @@ class FossilFuel(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # A fuel allocation schedule must have a fossil fuel
-    FuelAllocationSchedule = List(Instance("CIM13.Generation.Production.FuelAllocationSchedule"))
+    FuelAllocationSchedule = List(Instance("CIM13.Generation.Production.FuelAllocationSchedule"),
+        desc="A fuel allocation schedule must have a fossil fuel")
 
     # A thermal generating unit may have one or more fossil fuels
-    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
+    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
+        desc="A thermal generating unit may have one or more fossil fuels",
+        opposite="FossilFuels")
 
     # The type of fossil fuel, such as coal, oil, or gas.
-    fossilFuelType = FuelType
+    fossilFuelType = FuelType(desc="The type of fossil fuel, such as coal, oil, or gas.")
 
     # The active power output level of the unit at which the given type of fuel is switched off. This fuel (e.g., oil) is sometimes used to stabilize the base fuel (e.g., coal) at low active power output levels.
-    lowBreakpointP = Float
+    lowBreakpointP = Float(desc="The active power output level of the unit at which the given type of fuel is switched off. This fuel (e.g., oil) is sometimes used to stabilize the base fuel (e.g., coal) at low active power output levels.")
 
     # The cost of fuel used for economic dispatching which includes: fuel cost, transportation cost,  and incremental maintenance cost
-    fuelDispatchCost = Float
+    fuelDispatchCost = Float(desc="The cost of fuel used for economic dispatching which includes: fuel cost, transportation cost,  and incremental maintenance cost")
 
     # The efficiency factor for the fuel (per unit) in terms of the effective energy absorbed
-    fuelEffFactor = Float
+    fuelEffFactor = Float(desc="The efficiency factor for the fuel (per unit) in terms of the effective energy absorbed")
 
     # The cost in terms of heat value for the given type of fuel
-    fuelCost = Float
+    fuelCost = Float(desc="The cost in terms of heat value for the given type of fuel")
 
     # The amount of heat per weight (or volume) of the given type of fuel
-    fuelHeatContent = Float
+    fuelHeatContent = Float(desc="The amount of heat per weight (or volume) of the given type of fuel")
 
     # Handling and processing cost associated with this fuel
-    fuelHandlingCost = Float
+    fuelHandlingCost = Float(desc="Handling and processing cost associated with this fuel")
 
     # Relative amount of the given type of fuel, when multiple fuels are being consumed.
-    fuelMixture = Float
+    fuelMixture = Float(desc="Relative amount of the given type of fuel, when multiple fuels are being consumed.")
 
     # The active power output level of the unit at which the given type of fuel is switched on. This fuel (e.g., oil) is sometimes used to supplement the base fuel (e.g., coal) at high active power output levels.
-    highBreakpointP = Float
+    highBreakpointP = Float(desc="The active power output level of the unit at which the given type of fuel is switched on. This fuel (e.g., oil) is sometimes used to supplement the base fuel (e.g., coal) at high active power output levels.")
 
     # The fuel's fraction of pollution credit per unit of heat content
-    fuelSulfur = Float
+    fuelSulfur = Float(desc="The fuel's fraction of pollution credit per unit of heat content")
 
     #--------------------------------------------------------------------------
-    #  Begin fossilFuel user definitions:
+    #  Begin "FossilFuel" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "fossilFuelType", "lowBreakpointP", "fuelDispatchCost", "fuelEffFactor", "fuelCost", "fuelHeatContent", "fuelHandlingCost", "fuelMixture", "highBreakpointP", "fuelSulfur",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "FuelAllocationSchedule", "ThermalGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.FossilFuel",
+        title="FossilFuel",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End fossilFuel user definitions:
+    #  End "FossilFuel" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -876,32 +1191,48 @@ class FuelAllocationSchedule(Curve):
     #--------------------------------------------------------------------------
 
     # A fuel allocation schedule must have a fossil fuel
-    FossilFuel = Instance("CIM13.Generation.Production.FossilFuel")
+    FossilFuel = Instance("CIM13.Generation.Production.FossilFuel",
+        desc="A fuel allocation schedule must have a fossil fuel",
+        opposite="FuelAllocationSchedule")
 
     # A thermal generating unit may have one or more fuel allocation schedules
-    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
+    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
+        desc="A thermal generating unit may have one or more fuel allocation schedules",
+        opposite="FuelAllocationSchedules")
 
     # The minimum amount fuel that is allocated for consumption for the scheduled time period, e.g., based on a 'take-or-pay' contract
-    minFuelAllocation = Float
+    minFuelAllocation = Float(desc="The minimum amount fuel that is allocated for consumption for the scheduled time period, e.g., based on a 'take-or-pay' contract")
 
     # The start time and date of the fuel allocation schedule
-    fuelAllocationStartDate = Str
+    fuelAllocationStartDate = Str(desc="The start time and date of the fuel allocation schedule")
 
     # The end time and date of the fuel allocation schedule
-    fuelAllocationEndDate = Str
+    fuelAllocationEndDate = Str(desc="The end time and date of the fuel allocation schedule")
 
     # The type of fuel, which also indicates the corresponding measurement unit
-    fuelType = FuelType
+    fuelType = FuelType(desc="The type of fuel, which also indicates the corresponding measurement unit")
 
     # The maximum amount fuel that is allocated for consumption for the scheduled time period
-    maxFuelAllocation = Float
+    maxFuelAllocation = Float(desc="The maximum amount fuel that is allocated for consumption for the scheduled time period")
 
     #--------------------------------------------------------------------------
-    #  Begin fuelAllocationSchedule user definitions:
+    #  Begin "FuelAllocationSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "minFuelAllocation", "fuelAllocationStartDate", "fuelAllocationEndDate", "fuelType", "maxFuelAllocation",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "FossilFuel", "ThermalGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.FuelAllocationSchedule",
+        title="FuelAllocationSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End fuelAllocationSchedule user definitions:
+    #  End "FuelAllocationSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -917,20 +1248,34 @@ class EmissionAccount(Curve):
     #--------------------------------------------------------------------------
 
     # A thermal generating unit may have one or more emission allowance accounts
-    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
+    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
+        desc="A thermal generating unit may have one or more emission allowance accounts",
+        opposite="EmmissionAccounts")
 
     # The type of emission, for example sulfur dioxide (SO2). The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide).
-    emissionType = EmissionType
+    emissionType = EmissionType(desc="The type of emission, for example sulfur dioxide (SO2). The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide).")
 
     # The source of the emission value.
-    emissionValueSource = EmissionValueSource
+    emissionValueSource = EmissionValueSource(desc="The source of the emission value.")
 
     #--------------------------------------------------------------------------
-    #  Begin emissionAccount user definitions:
+    #  Begin "EmissionAccount" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "emissionType", "emissionValueSource",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "ThermalGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.EmissionAccount",
+        title="EmissionAccount",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End emissionAccount user definitions:
+    #  End "EmissionAccount" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -946,14 +1291,28 @@ class TailbayLossCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A hydro generating unit has a tailbay loss curve
-    HydroGeneratingUnit = Instance("CIM13.Generation.Production.HydroGeneratingUnit")
+    HydroGeneratingUnit = Instance("CIM13.Generation.Production.HydroGeneratingUnit",
+        desc="A hydro generating unit has a tailbay loss curve",
+        opposite="TailbayLossCurve")
 
     #--------------------------------------------------------------------------
-    #  Begin tailbayLossCurve user definitions:
+    #  Begin "TailbayLossCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "HydroGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.TailbayLossCurve",
+        title="TailbayLossCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End tailbayLossCurve user definitions:
+    #  End "TailbayLossCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -969,14 +1328,28 @@ class PenstockLossCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A hydro generating unit has a penstock loss curve
-    HydroGeneratingUnit = Instance("CIM13.Generation.Production.HydroGeneratingUnit")
+    HydroGeneratingUnit = Instance("CIM13.Generation.Production.HydroGeneratingUnit",
+        desc="A hydro generating unit has a penstock loss curve",
+        opposite="PenstockLossCurve")
 
     #--------------------------------------------------------------------------
-    #  Begin penstockLossCurve user definitions:
+    #  Begin "PenstockLossCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "HydroGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.PenstockLossCurve",
+        title="PenstockLossCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End penstockLossCurve user definitions:
+    #  End "PenstockLossCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -992,17 +1365,31 @@ class StartMainFuelCurve(Curve):
     #--------------------------------------------------------------------------
 
     # The unit's startup model may have a startup main fuel curve
-    StartupModel = Instance("CIM13.Generation.Production.StartupModel")
+    StartupModel = Instance("CIM13.Generation.Production.StartupModel",
+        desc="The unit's startup model may have a startup main fuel curve",
+        opposite="StartMainFuelCurve")
 
     # Type of main fuel
-    mainFuelType = FuelType
+    mainFuelType = FuelType(desc="Type of main fuel")
 
     #--------------------------------------------------------------------------
-    #  Begin startMainFuelCurve user definitions:
+    #  Begin "StartMainFuelCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "mainFuelType",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "StartupModel",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.StartMainFuelCurve",
+        title="StartMainFuelCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End startMainFuelCurve user definitions:
+    #  End "StartMainFuelCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -1018,65 +1405,86 @@ class Reservoir(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # A reservoir may spill into a downstream reservoir
-    SpillsFrom = Instance("CIM13.Generation.Production.Reservoir")
+    SpillsFrom = Instance("CIM13.Generation.Production.Reservoir",
+        desc="A reservoir may spill into a downstream reservoir",
+        opposite="SpillsInto")
 
     # A reservoir may have a level versus volume relationship.
-    LevelVsVolumeCurve = List(Instance("CIM13.Generation.Production.LevelVsVolumeCurve"))
+    LevelVsVolumeCurve = List(Instance("CIM13.Generation.Production.LevelVsVolumeCurve"),
+        desc="A reservoir may have a level versus volume relationship.")
 
     # A reservoir may have a 'natural' inflow forecast.
-    InflowForecast = List(Instance("CIM13.Generation.Production.InflowForecast"))
+    InflowForecast = List(Instance("CIM13.Generation.Production.InflowForecast"),
+        desc="A reservoir may have a 'natural' inflow forecast.")
 
     # A reservoir may spill into a downstream reservoir
-    SpillsInto = List(Instance("CIM13.Generation.Production.Reservoir"))
+    SpillsInto = List(Instance("CIM13.Generation.Production.Reservoir"),
+        desc="A reservoir may spill into a downstream reservoir")
 
     # Generators discharge water to or pumps are supplied water from a downstream reservoir
-    HydroPowerPlants = List(Instance("CIM13.Generation.Production.HydroPowerPlant"))
+    HydroPowerPlants = List(Instance("CIM13.Generation.Production.HydroPowerPlant"),
+        desc="Generators discharge water to or pumps are supplied water from a downstream reservoir")
 
     # Generators are supplied water from or pumps discharge water to an upstream reservoir
-    UpstreamFrom = List(Instance("CIM13.Generation.Production.HydroPowerPlant"))
+    UpstreamFrom = List(Instance("CIM13.Generation.Production.HydroPowerPlant"),
+        desc="Generators are supplied water from or pumps discharge water to an upstream reservoir")
 
     # A reservoir may have a water level target schedule.
-    TargetLevelSchedule = Instance("CIM13.Generation.Production.TargetLevelSchedule")
+    TargetLevelSchedule = Instance("CIM13.Generation.Production.TargetLevelSchedule",
+        desc="A reservoir may have a water level target schedule.",
+        opposite="Reservoir")
 
     # River outlet works for riparian right releases or other purposes
-    riverOutletWorks = Str
+    riverOutletWorks = Str(desc="River outlet works for riparian right releases or other purposes")
 
     # Type of spillway gate, including parameters
-    spillWayGateType = SpillwayGateType
+    spillWayGateType = SpillwayGateType(desc="Type of spillway gate, including parameters")
 
     # The flow capacity of the spillway in cubic meters per second
-    spillwayCapacity = Float
+    spillwayCapacity = Float(desc="The flow capacity of the spillway in cubic meters per second")
 
     # The length of the spillway crest in meters
-    spillwayCrestLength = Float
+    spillwayCrestLength = Float(desc="The length of the spillway crest in meters")
 
     # Storage volume between the full supply level and the normal minimum operating level
-    activeStorageCapacity = Float
+    activeStorageCapacity = Float(desc="Storage volume between the full supply level and the normal minimum operating level")
 
     # The spillway water travel delay to the next downstream reservoir
-    spillTravelDelay = Float
+    spillTravelDelay = Float(desc="The spillway water travel delay to the next downstream reservoir")
 
     # The reservoir's energy storage rating in energy for given head conditions
-    energyStorageRating = Float
+    energyStorageRating = Float(desc="The reservoir's energy storage rating in energy for given head conditions")
 
     # Total capacity of reservoir
-    grossCapacity = Float
+    grossCapacity = Float(desc="Total capacity of reservoir")
 
     # Spillway crest level above which water will spill
-    spillwayCrestLevel = Float
+    spillwayCrestLevel = Float(desc="Spillway crest level above which water will spill")
 
     # Full supply level, above which water will spill. This can be the spillway crest level or the top of closed gates.
-    fullSupplyLevel = Float
+    fullSupplyLevel = Float(desc="Full supply level, above which water will spill. This can be the spillway crest level or the top of closed gates.")
 
     # Normal minimum operating level below which the penstocks will draw air
-    normalMinOperateLevel = Float
+    normalMinOperateLevel = Float(desc="Normal minimum operating level below which the penstocks will draw air")
 
     #--------------------------------------------------------------------------
-    #  Begin reservoir user definitions:
+    #  Begin "Reservoir" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "riverOutletWorks", "spillWayGateType", "spillwayCapacity", "spillwayCrestLength", "activeStorageCapacity", "spillTravelDelay", "energyStorageRating", "grossCapacity", "spillwayCrestLevel", "fullSupplyLevel", "normalMinOperateLevel",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "SpillsFrom", "LevelVsVolumeCurve", "InflowForecast", "SpillsInto", "HydroPowerPlants", "UpstreamFrom", "TargetLevelSchedule",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Generation.Production.Reservoir",
+        title="Reservoir",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End reservoir user definitions:
+    #  End "Reservoir" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -1092,14 +1500,28 @@ class HydroPumpOpSchedule(RegularIntervalSchedule):
     #--------------------------------------------------------------------------
 
     # The hydro pump has a pumping schedule over time, indicating when pumping is to occur.
-    HydroPump = Instance("CIM13.Generation.Production.HydroPump")
+    HydroPump = Instance("CIM13.Generation.Production.HydroPump",
+        desc="The hydro pump has a pumping schedule over time, indicating when pumping is to occur.",
+        opposite="HydroPumpOpSchedule")
 
     #--------------------------------------------------------------------------
-    #  Begin hydroPumpOpSchedule user definitions:
+    #  Begin "HydroPumpOpSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value2Unit", "startTime", "value2Multiplier", "value1Unit", "value1Multiplier", "timeStep", "endTime",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "TimePoints", "HydroPump",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.HydroPumpOpSchedule",
+        title="HydroPumpOpSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End hydroPumpOpSchedule user definitions:
+    #  End "HydroPumpOpSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -1115,17 +1537,31 @@ class HeatRateCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A thermal generating unit may have a heat rate curve
-    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit")
+    ThermalGeneratingUnit = Instance("CIM13.Generation.Production.ThermalGeneratingUnit",
+        desc="A thermal generating unit may have a heat rate curve",
+        opposite="HeatRateCurve")
 
     # Flag is set to true when output is expressed in net active power
-    isNetGrossP = Bool
+    isNetGrossP = Bool(desc="Flag is set to true when output is expressed in net active power")
 
     #--------------------------------------------------------------------------
-    #  Begin heatRateCurve user definitions:
+    #  Begin "HeatRateCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit", "isNetGrossP",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "ThermalGeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.HeatRateCurve",
+        title="HeatRateCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End heatRateCurve user definitions:
+    #  End "HeatRateCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -1141,14 +1577,28 @@ class GenUnitOpSchedule(RegularIntervalSchedule):
     #--------------------------------------------------------------------------
 
     # A generating unit may have an operating schedule, indicating the planned operation of the unit
-    GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit")
+    GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit",
+        desc="A generating unit may have an operating schedule, indicating the planned operation of the unit",
+        opposite="GenUnitOpSchedule")
 
     #--------------------------------------------------------------------------
-    #  Begin genUnitOpSchedule user definitions:
+    #  Begin "GenUnitOpSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value2Unit", "startTime", "value2Multiplier", "value1Unit", "value1Multiplier", "timeStep", "endTime",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "TimePoints", "GeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.Production.GenUnitOpSchedule",
+        title="GenUnitOpSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End genUnitOpSchedule user definitions:
+    #  End "GenUnitOpSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -1164,32 +1614,47 @@ class CogenerationPlant(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # A thermal generating unit may be a member of a cogeneration plant
-    Contain_ThermalGeneratingUnits = List(Instance("CIM13.Generation.Production.ThermalGeneratingUnit"))
+    Contain_ThermalGeneratingUnits = List(Instance("CIM13.Generation.Production.ThermalGeneratingUnit"),
+        desc="A thermal generating unit may be a member of a cogeneration plant")
 
     # A cogeneration plant has a steam sendout schedule
-    SteamSendoutSchedule = Instance("CIM13.Generation.Production.SteamSendoutSchedule")
+    SteamSendoutSchedule = Instance("CIM13.Generation.Production.SteamSendoutSchedule",
+        desc="A cogeneration plant has a steam sendout schedule",
+        opposite="CogenerationPlant")
 
     # The high pressure steam rating
-    cogenHPSteamRating = Float
+    cogenHPSteamRating = Float(desc="The high pressure steam rating")
 
     # The rated output active power of the cogeneration plant
-    ratedP = Float
+    ratedP = Float(desc="The rated output active power of the cogeneration plant")
 
     # The low pressure steam sendout
-    cogenLPSendoutRating = Float
+    cogenLPSendoutRating = Float(desc="The low pressure steam sendout")
 
     # The high pressure steam sendout
-    cogenHPSendoutRating = Float
+    cogenHPSendoutRating = Float(desc="The high pressure steam sendout")
 
     # The low pressure steam rating
-    cogenLPSteamRating = Float
+    cogenLPSteamRating = Float(desc="The low pressure steam rating")
 
     #--------------------------------------------------------------------------
-    #  Begin cogenerationPlant user definitions:
+    #  Begin "CogenerationPlant" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "cogenHPSteamRating", "ratedP", "cogenLPSendoutRating", "cogenHPSendoutRating", "cogenLPSteamRating",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "Contain_ThermalGeneratingUnits", "SteamSendoutSchedule",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Generation.Production.CogenerationPlant",
+        title="CogenerationPlant",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End cogenerationPlant user definitions:
+    #  End "CogenerationPlant" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -1206,11 +1671,23 @@ class NuclearGeneratingUnit(GeneratingUnit):
 
     pass
     #--------------------------------------------------------------------------
-    #  Begin nuclearGeneratingUnit user definitions:
+    #  Begin "NuclearGeneratingUnit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "ratedNetMaxP", "penaltyFactor", "stepChange", "energyMinP", "efficiency", "raiseRampRate", "dispReserveFlag", "startupCost", "highControlLimit", "spinReserveRamp", "controlPulseLow", "genControlSource", "governorSCD", "baseP", "fuelPriority", "maxOperatingP", "genControlMode", "variableCost", "lowControlLimit", "controlPulseHigh", "maxEconomicP", "controlDeadband", "governorMPL", "minEconomicP", "minOperatingP", "controlResponseRate", "modelDetail", "autoCntrlMarginP", "ratedGrossMaxP", "genOperatingMode", "fastStartFlag", "longPF", "normalPF", "maximumAllowableSpinningReserve", "ratedGrossMinP", "allocSpinResP", "startupTime", "initialP", "tieLinePF", "minimumOffTime", "lowerRampRate", "shortPF",
+                label="Attributes", columns=4),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "ControlAreaGeneratingUnit", "GrossToNetActivePowerCurves", "Contains_SynchronousMachines", "GenUnitOpSchedule", "GenUnitOpCostCurves",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Generation.Production.NuclearGeneratingUnit",
+        title="NuclearGeneratingUnit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End nuclearGeneratingUnit user definitions:
+    #  End "NuclearGeneratingUnit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -1226,29 +1703,47 @@ class HydroGeneratingUnit(GeneratingUnit):
     #--------------------------------------------------------------------------
 
     # A hydro generating unit has an efficiency curve
-    HydroGeneratingEfficiencyCurves = List(Instance("CIM13.Generation.Production.HydroGeneratingEfficiencyCurve"))
+    HydroGeneratingEfficiencyCurves = List(Instance("CIM13.Generation.Production.HydroGeneratingEfficiencyCurve"),
+        desc="A hydro generating unit has an efficiency curve")
 
     # A hydro generating unit has a tailbay loss curve
-    TailbayLossCurve = List(Instance("CIM13.Generation.Production.TailbayLossCurve"))
+    TailbayLossCurve = List(Instance("CIM13.Generation.Production.TailbayLossCurve"),
+        desc="A hydro generating unit has a tailbay loss curve")
 
     # The hydro generating unit belongs to a hydro power plant
-    MemberOf_HydroPowerPlant = Instance("CIM13.Generation.Production.HydroPowerPlant")
+    MemberOf_HydroPowerPlant = Instance("CIM13.Generation.Production.HydroPowerPlant",
+        desc="The hydro generating unit belongs to a hydro power plant",
+        opposite="Contain_HydroGeneratingUnits")
 
     # A hydro generating unit has a penstock loss curve
-    PenstockLossCurve = Instance("CIM13.Generation.Production.PenstockLossCurve")
+    PenstockLossCurve = Instance("CIM13.Generation.Production.PenstockLossCurve",
+        desc="A hydro generating unit has a penstock loss curve",
+        opposite="HydroGeneratingUnit")
 
     # Energy conversion capability for generating.
-    energyConversionCapability = HydroEnergyConversionKind
+    energyConversionCapability = HydroEnergyConversionKind(desc="Energy conversion capability for generating.")
 
     # The equivalent cost of water that drives the hydro turbine, expressed as cost per volume.
-    hydroUnitWaterCost = Float
+    hydroUnitWaterCost = Float(desc="The equivalent cost of water that drives the hydro turbine, expressed as cost per volume.")
 
     #--------------------------------------------------------------------------
-    #  Begin hydroGeneratingUnit user definitions:
+    #  Begin "HydroGeneratingUnit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "ratedNetMaxP", "penaltyFactor", "stepChange", "energyMinP", "efficiency", "raiseRampRate", "dispReserveFlag", "startupCost", "highControlLimit", "spinReserveRamp", "controlPulseLow", "genControlSource", "governorSCD", "baseP", "fuelPriority", "maxOperatingP", "genControlMode", "variableCost", "lowControlLimit", "controlPulseHigh", "maxEconomicP", "controlDeadband", "governorMPL", "minEconomicP", "minOperatingP", "controlResponseRate", "modelDetail", "autoCntrlMarginP", "ratedGrossMaxP", "genOperatingMode", "fastStartFlag", "longPF", "normalPF", "maximumAllowableSpinningReserve", "ratedGrossMinP", "allocSpinResP", "startupTime", "initialP", "tieLinePF", "minimumOffTime", "lowerRampRate", "shortPF", "energyConversionCapability", "hydroUnitWaterCost",
+                label="Attributes", columns=4),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "ControlAreaGeneratingUnit", "GrossToNetActivePowerCurves", "Contains_SynchronousMachines", "GenUnitOpSchedule", "GenUnitOpCostCurves", "HydroGeneratingEfficiencyCurves", "TailbayLossCurve", "MemberOf_HydroPowerPlant", "PenstockLossCurve",
+                label="References", columns=2),
+            dock="tab"),
+        id="CIM13.Generation.Production.HydroGeneratingUnit",
+        title="HydroGeneratingUnit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End hydroGeneratingUnit user definitions:
+    #  End "HydroGeneratingUnit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -1264,50 +1759,82 @@ class ThermalGeneratingUnit(GeneratingUnit):
     #--------------------------------------------------------------------------
 
     # A thermal generating unit may be a member of a cogeneration plant
-    MemberOf_CogenerationPlant = Instance("CIM13.Generation.Production.CogenerationPlant")
+    MemberOf_CogenerationPlant = Instance("CIM13.Generation.Production.CogenerationPlant",
+        desc="A thermal generating unit may be a member of a cogeneration plant",
+        opposite="Contain_ThermalGeneratingUnits")
 
     # A thermal generating unit may have one or more fuel allocation schedules
-    FuelAllocationSchedules = List(Instance("CIM13.Generation.Production.FuelAllocationSchedule"))
+    FuelAllocationSchedules = List(Instance("CIM13.Generation.Production.FuelAllocationSchedule"),
+        desc="A thermal generating unit may have one or more fuel allocation schedules")
 
     # A thermal generating unit may have  one or more emission curves
-    EmissionCurves = List(Instance("CIM13.Generation.Production.EmissionCurve"))
+    EmissionCurves = List(Instance("CIM13.Generation.Production.EmissionCurve"),
+        desc="A thermal generating unit may have  one or more emission curves")
 
     # A thermal generating unit may have one or more emission allowance accounts
-    EmmissionAccounts = List(Instance("CIM13.Generation.Production.EmissionAccount"))
+    EmmissionAccounts = List(Instance("CIM13.Generation.Production.EmissionAccount"),
+        desc="A thermal generating unit may have one or more emission allowance accounts")
 
     # A thermal generating unit may have a startup model
-    StartupModel = Instance("CIM13.Generation.Production.StartupModel")
+    StartupModel = Instance("CIM13.Generation.Production.StartupModel",
+        desc="A thermal generating unit may have a startup model",
+        opposite="ThermalGeneratingUnit")
 
     # A thermal generating unit may have one or more fossil fuels
-    FossilFuels = List(Instance("CIM13.Generation.Production.FossilFuel"))
+    FossilFuels = List(Instance("CIM13.Generation.Production.FossilFuel"),
+        desc="A thermal generating unit may have one or more fossil fuels")
 
     # A thermal generating unit may have an incremental heat rate curve
-    IncrementalHeatRateCurve = Instance("CIM13.Generation.Production.IncrementalHeatRateCurve")
+    IncrementalHeatRateCurve = Instance("CIM13.Generation.Production.IncrementalHeatRateCurve",
+        desc="A thermal generating unit may have an incremental heat rate curve",
+        opposite="ThermalGeneratingUnit")
 
     # A thermal generating unit may have a shutdown curve
-    ShutdownCurve = Instance("CIM13.Generation.Production.ShutdownCurve")
+    ShutdownCurve = Instance("CIM13.Generation.Production.ShutdownCurve",
+        desc="A thermal generating unit may have a shutdown curve",
+        opposite="ThermalGeneratingUnit")
 
     # A thermal generating unit may have a heat rate curve
-    HeatRateCurve = Instance("CIM13.Generation.Production.HeatRateCurve")
+    HeatRateCurve = Instance("CIM13.Generation.Production.HeatRateCurve",
+        desc="A thermal generating unit may have a heat rate curve",
+        opposite="ThermalGeneratingUnit")
 
     # A thermal generating unit may be a member of a compressed air energy storage plant
-    MemberOf_CAESPlant = Instance("CIM13.Generation.Production.CAESPlant")
+    MemberOf_CAESPlant = Instance("CIM13.Generation.Production.CAESPlant",
+        desc="A thermal generating unit may be a member of a compressed air energy storage plant",
+        opposite="Contain_ThermalGeneratingUnit")
 
     # A thermal generating unit may have a heat input curve
-    HeatInputCurve = Instance("CIM13.Generation.Production.HeatInputCurve")
+    HeatInputCurve = Instance("CIM13.Generation.Production.HeatInputCurve",
+        desc="A thermal generating unit may have a heat input curve",
+        opposite="ThermalGeneratingUnit")
 
     # A thermal generating unit may be a member of a combined cycle plant
-    MemberOf_CombinedCyclePlant = Instance("CIM13.Generation.Production.CombinedCyclePlant")
+    MemberOf_CombinedCyclePlant = Instance("CIM13.Generation.Production.CombinedCyclePlant",
+        desc="A thermal generating unit may be a member of a combined cycle plant",
+        opposite="Contain_ThermalGeneratingUnits")
 
     # Operating and maintenance cost for the thermal unit
-    oMCost = Float
+    oMCost = Float(desc="Operating and maintenance cost for the thermal unit")
 
     #--------------------------------------------------------------------------
-    #  Begin thermalGeneratingUnit user definitions:
+    #  Begin "ThermalGeneratingUnit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "ratedNetMaxP", "penaltyFactor", "stepChange", "energyMinP", "efficiency", "raiseRampRate", "dispReserveFlag", "startupCost", "highControlLimit", "spinReserveRamp", "controlPulseLow", "genControlSource", "governorSCD", "baseP", "fuelPriority", "maxOperatingP", "genControlMode", "variableCost", "lowControlLimit", "controlPulseHigh", "maxEconomicP", "controlDeadband", "governorMPL", "minEconomicP", "minOperatingP", "controlResponseRate", "modelDetail", "autoCntrlMarginP", "ratedGrossMaxP", "genOperatingMode", "fastStartFlag", "longPF", "normalPF", "maximumAllowableSpinningReserve", "ratedGrossMinP", "allocSpinResP", "startupTime", "initialP", "tieLinePF", "minimumOffTime", "lowerRampRate", "shortPF", "oMCost",
+                label="Attributes", columns=4),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "ControlAreaGeneratingUnit", "GrossToNetActivePowerCurves", "Contains_SynchronousMachines", "GenUnitOpSchedule", "GenUnitOpCostCurves", "MemberOf_CogenerationPlant", "FuelAllocationSchedules", "EmissionCurves", "EmmissionAccounts", "StartupModel", "FossilFuels", "IncrementalHeatRateCurve", "ShutdownCurve", "HeatRateCurve", "MemberOf_CAESPlant", "HeatInputCurve", "MemberOf_CombinedCyclePlant",
+                label="References", columns=2),
+            dock="tab"),
+        id="CIM13.Generation.Production.ThermalGeneratingUnit",
+        title="ThermalGeneratingUnit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End thermalGeneratingUnit user definitions:
+    #  End "ThermalGeneratingUnit" user definitions:
     #--------------------------------------------------------------------------
 
 

@@ -27,9 +27,9 @@ from CIM13.SCADA import Source
 
 from enthought.traits.api import Instance, List, Enum, Int, Float, Bool, Str
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -50,22 +50,41 @@ class Measurement(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # One or more measurements may be associated with a terminal in the network. Measurement-Terminal defines where the measurement is placed in the network topology. Some Measurements represent quantities related to a particular sensor position, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is captured by the Measurement - Terminal association that makes it possible to place the sensing position at a  well defined place. The place is defined by the connection of the Terminal to ConductingEquipment.
-    Terminal = Instance("CIM13.Core.Terminal")
+    Terminal = Instance("CIM13.Core.Terminal",
+        desc="One or more measurements may be associated with a terminal in the network. Measurement-Terminal defines where the measurement is placed in the network topology. Some Measurements represent quantities related to a particular sensor position, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is captured by the Measurement - Terminal association that makes it possible to place the sensing position at a  well defined place. The place is defined by the connection of the Terminal to ConductingEquipment.",
+        opposite="Measurements")
 
     # Measurement-PSR defines the measurements in the naming hierarchy.
-    MemberOf_PSR = Instance("CIM13.Core.PowerSystemResource")
+    MemberOf_PSR = Instance("CIM13.Core.PowerSystemResource",
+        desc="Measurement-PSR defines the measurements in the naming hierarchy.",
+        opposite="Contains_Measurements")
 
-    Unit = Instance("CIM13.Core.Unit")
+    Unit = Instance("CIM13.Core.Unit",
+        opposite="Measurements")
 
     # A measurement has a measurement type.
-    MeasurementType = Instance("CIM13.Meas.MeasurementType")
+    MeasurementType = Instance("CIM13.Meas.MeasurementType",
+        desc="A measurement has a measurement type.",
+        opposite="Measurements")
 
     #--------------------------------------------------------------------------
-    #  Begin measurement user definitions:
+    #  Begin "Measurement" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Terminal", "MemberOf_PSR", "Unit", "MeasurementType",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.Measurement",
+        title="Measurement",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End measurement user definitions:
+    #  End "Measurement" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -80,27 +99,44 @@ class Control(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    Unit = Instance("CIM13.Core.Unit")
+    Unit = Instance("CIM13.Core.Unit",
+        opposite="Controls")
 
-    ControlType = Instance("CIM13.Meas.ControlType")
+    ControlType = Instance("CIM13.Meas.ControlType",
+        opposite="Controls")
 
-    RemoteControl = Instance("CIM13.SCADA.RemoteControl")
+    RemoteControl = Instance("CIM13.SCADA.RemoteControl",
+        opposite="Control")
 
     # The association gives the control output that is used to actually govern a regulating device, e.g. the magnetization of a synchronous machine or capacitor bank breaker actuators.
-    ControlledBy_RegulatingCondEq = Instance("CIM13.Wires.RegulatingCondEq")
+    ControlledBy_RegulatingCondEq = Instance("CIM13.Wires.RegulatingCondEq",
+        desc="The association gives the control output that is used to actually govern a regulating device, e.g. the magnetization of a synchronous machine or capacitor bank breaker actuators.",
+        opposite="Controls")
 
     # Indicates that a client is currently sending control commands that has not completed
-    operationInProgress = Bool
+    operationInProgress = Bool(desc="Indicates that a client is currently sending control commands that has not completed")
 
     # The last time a control output was sent
-    timeStamp = Str
+    timeStamp = Str(desc="The last time a control output was sent")
 
     #--------------------------------------------------------------------------
-    #  Begin control user definitions:
+    #  Begin "Control" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "operationInProgress", "timeStamp",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Unit", "ControlType", "RemoteControl", "ControlledBy_RegulatingCondEq",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.Control",
+        title="Control",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End control user definitions:
+    #  End "Control" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -118,11 +154,23 @@ class ControlType(IdentifiedObject):
     Controls = List(Instance("CIM13.Meas.Control"))
 
     #--------------------------------------------------------------------------
-    #  Begin controlType user definitions:
+    #  Begin "ControlType" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Controls",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.ControlType",
+        title="ControlType",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End controlType user definitions:
+    #  End "ControlType" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -138,14 +186,26 @@ class LimitSet(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # Tells if the limit values are in percentage of normalValue or the specified Unit for Measurements and Controls.
-    isPercentageLimits = Bool
+    isPercentageLimits = Bool(desc="Tells if the limit values are in percentage of normalValue or the specified Unit for Measurements and Controls.")
 
     #--------------------------------------------------------------------------
-    #  Begin limitSet user definitions:
+    #  Begin "LimitSet" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "isPercentageLimits",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.LimitSet",
+        title="LimitSet",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End limitSet user definitions:
+    #  End "LimitSet" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -161,25 +221,42 @@ class MeasurementValue(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # A MeasurementValue has a MeasurementValueQuality associated with it.
-    MeasurementValueQuality = Instance("CIM13.Meas.MeasurementValueQuality")
+    MeasurementValueQuality = Instance("CIM13.Meas.MeasurementValueQuality",
+        desc="A MeasurementValue has a MeasurementValueQuality associated with it.",
+        opposite="MeasurementValue")
 
     # Links to the physical telemetered point associated with this measurement.
-    RemoteSource = Instance("CIM13.SCADA.RemoteSource")
+    RemoteSource = Instance("CIM13.SCADA.RemoteSource",
+        desc="Links to the physical telemetered point associated with this measurement.",
+        opposite="MeasurementValue")
 
-    MeasurementValueSource = Instance("CIM13.Meas.MeasurementValueSource")
+    MeasurementValueSource = Instance("CIM13.Meas.MeasurementValueSource",
+        opposite="MeasurementValues")
 
     # The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions.
-    sensorAccuracy = Float
+    sensorAccuracy = Float(desc="The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions.")
 
     # The time when the value was last updated
-    timeStamp = Str
+    timeStamp = Str(desc="The time when the value was last updated")
 
     #--------------------------------------------------------------------------
-    #  Begin measurementValue user definitions:
+    #  Begin "MeasurementValue" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "sensorAccuracy", "timeStamp",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "MeasurementValueQuality", "RemoteSource", "MeasurementValueSource",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.MeasurementValue",
+        title="MeasurementValue",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End measurementValue user definitions:
+    #  End "MeasurementValue" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -201,11 +278,23 @@ class ValueAliasSet(IdentifiedObject):
     Measurements = List(Instance("CIM13.Meas.Discrete"))
 
     #--------------------------------------------------------------------------
-    #  Begin valueAliasSet user definitions:
+    #  Begin "ValueAliasSet" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Values", "Commands", "Measurements",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.ValueAliasSet",
+        title="ValueAliasSet",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End valueAliasSet user definitions:
+    #  End "ValueAliasSet" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -221,47 +310,59 @@ class Quality61850(Root):
     #--------------------------------------------------------------------------
 
     # Measurement value is beyond a predefined range of value.
-    outOfRange = Bool
+    outOfRange = Bool(desc="Measurement value is beyond a predefined range of value.")
 
     # Measurement value is beyond the capability of being  represented properly. For example, a counter value overflows from maximum count back to a value of zero.
-    overFlow = Bool
+    overFlow = Bool(desc="Measurement value is beyond the capability of being  represented properly. For example, a counter value overflows from maximum count back to a value of zero.")
 
     # Measurement value is blocked and hence unavailable for transmission.
-    operatorBlocked = Bool
+    operatorBlocked = Bool(desc="Measurement value is blocked and hence unavailable for transmission.")
 
     # A correlation function has detected that the value is not consitent with other values. Typically set by a network State Estimator.
-    suspect = Bool
+    suspect = Bool(desc="A correlation function has detected that the value is not consitent with other values. Typically set by a network State Estimator.")
 
     # To prevent some overload of the communication it is sensible to detect and suppress oscillating (fast changing) binary inputs. If a signal changes in a defined time (tosc) twice in the same direction (from 0 to 1 or from 1 to 0) then oscillation is detected and the detail quality identifier 'oscillatory' is set. If it is detected a configured numbers of transient changes could be passed by. In this time the validity status 'questionable' is set. If after this defined numbers of changes the signal is still in the oscillating state the value shall be set either to the opposite state of the previous stable value or to a defined default value. In this case the validity status 'questionable' is reset and 'invalid' is set as long as the signal is oscillating. If it is configured such that no transient changes should be passed by then the validity status 'invalid' is set immediately in addition to the detail quality identifier 'oscillatory' (used for status information only).
-    oscillatory = Bool
+    oscillatory = Bool(desc="To prevent some overload of the communication it is sensible to detect and suppress oscillating (fast changing) binary inputs. If a signal changes in a defined time (tosc) twice in the same direction (from 0 to 1 or from 1 to 0) then oscillation is detected and the detail quality identifier 'oscillatory' is set. If it is detected a configured numbers of transient changes could be passed by. In this time the validity status 'questionable' is set. If after this defined numbers of changes the signal is still in the oscillating state the value shall be set either to the opposite state of the previous stable value or to a defined default value. In this case the validity status 'questionable' is reset and 'invalid' is set as long as the signal is oscillating. If it is configured such that no transient changes should be passed by then the validity status 'invalid' is set immediately in addition to the detail quality identifier 'oscillatory' (used for status information only).")
 
     # Measurement value is transmitted for test purposes.
-    test = Bool
+    test = Bool(desc="Measurement value is transmitted for test purposes.")
 
     # Value has been replaced by State Estimator. estimatorReplaced is not an IEC61850 quality bit but has been put in this class for convenience.
-    estimatorReplaced = Bool
+    estimatorReplaced = Bool(desc="Value has been replaced by State Estimator. estimatorReplaced is not an IEC61850 quality bit but has been put in this class for convenience.")
 
     # Source gives information related to the origin of a value. The value may be acquired from the process, defaulted or substituted.
-    source = Source
+    source = Source(desc="Source gives information related to the origin of a value. The value may be acquired from the process, defaulted or substituted.")
 
     # This identifier indicates that a supervision function has detected an internal or external failure, e.g. communication failure.
-    failure = Bool
+    failure = Bool(desc="This identifier indicates that a supervision function has detected an internal or external failure, e.g. communication failure.")
 
     # Measurement value is old and possibly invalid, as it has not been successfully updated during a specified time interval.
-    oldData = Bool
+    oldData = Bool(desc="Measurement value is old and possibly invalid, as it has not been successfully updated during a specified time interval.")
 
     # Measurement value may be incorrect due to a reference being out of calibration.
-    badReference = Bool
+    badReference = Bool(desc="Measurement value may be incorrect due to a reference being out of calibration.")
 
     # Validity of the measurement value.
-    validity = Validity
+    validity = Validity(desc="Validity of the measurement value.")
 
     #--------------------------------------------------------------------------
-    #  Begin quality61850 user definitions:
+    #  Begin "Quality61850" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "outOfRange", "overFlow", "operatorBlocked", "suspect", "oscillatory", "test", "estimatorReplaced", "source", "failure", "oldData", "badReference", "validity",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.Quality61850",
+        title="Quality61850",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End quality61850 user definitions:
+    #  End "Quality61850" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -278,11 +379,23 @@ class Limit(IdentifiedObject):
 
     pass
     #--------------------------------------------------------------------------
-    #  Begin limit user definitions:
+    #  Begin "Limit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.Limit",
+        title="Limit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End limit user definitions:
+    #  End "Limit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -298,14 +411,27 @@ class MeasurementType(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # A measurement has a measurement type.
-    Measurements = List(Instance("CIM13.Meas.Measurement"))
+    Measurements = List(Instance("CIM13.Meas.Measurement"),
+        desc="A measurement has a measurement type.")
 
     #--------------------------------------------------------------------------
-    #  Begin measurementType user definitions:
+    #  Begin "MeasurementType" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Measurements",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.MeasurementType",
+        title="MeasurementType",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End measurementType user definitions:
+    #  End "MeasurementType" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -320,17 +446,30 @@ class ValueToAlias(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    ValueAliasSet = Instance("CIM13.Meas.ValueAliasSet")
+    ValueAliasSet = Instance("CIM13.Meas.ValueAliasSet",
+        opposite="Values")
 
     # The value that is mapped
-    value = Int
+    value = Int(desc="The value that is mapped")
 
     #--------------------------------------------------------------------------
-    #  Begin valueToAlias user definitions:
+    #  Begin "ValueToAlias" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ValueAliasSet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.ValueToAlias",
+        title="ValueToAlias",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End valueToAlias user definitions:
+    #  End "ValueToAlias" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -348,11 +487,23 @@ class MeasurementValueSource(IdentifiedObject):
     MeasurementValues = List(Instance("CIM13.Meas.MeasurementValue"))
 
     #--------------------------------------------------------------------------
-    #  Begin measurementValueSource user definitions:
+    #  Begin "MeasurementValueSource" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "MeasurementValues",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.MeasurementValueSource",
+        title="MeasurementValueSource",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End measurementValueSource user definitions:
+    #  End "MeasurementValueSource" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -367,27 +518,41 @@ class Discrete(Measurement):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    ValueAliasSet = Instance("CIM13.Meas.ValueAliasSet")
+    ValueAliasSet = Instance("CIM13.Meas.ValueAliasSet",
+        opposite="Measurements")
 
-    ControlledBy_Control = Instance("CIM13.Meas.Command")
+    ControlledBy_Control = Instance("CIM13.Meas.Command",
+        opposite="MeasuredBy_Measurement")
 
     Contain_MeasurementValues = List(Instance("CIM13.Meas.DiscreteValue"))
 
     # Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.
-    maxValue = Int
+    maxValue = Int(desc="Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.")
 
     # Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values
-    minValue = Int
+    minValue = Int(desc="Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values")
 
     # Normal measurement value, e.g., used for percentage calculations.
-    normalValue = Int
+    normalValue = Int(desc="Normal measurement value, e.g., used for percentage calculations.")
 
     #--------------------------------------------------------------------------
-    #  Begin discrete user definitions:
+    #  Begin "Discrete" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "maxValue", "minValue", "normalValue",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Terminal", "MemberOf_PSR", "Unit", "MeasurementType", "ValueAliasSet", "ControlledBy_Control", "Contain_MeasurementValues",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.Discrete",
+        title="Discrete",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End discrete user definitions:
+    #  End "Discrete" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -403,26 +568,40 @@ class SetPoint(Control):
     #--------------------------------------------------------------------------
 
     # The Control variable associated with the Measurement
-    MeasuredBy_Measurement = Instance("CIM13.Meas.Analog")
+    MeasuredBy_Measurement = Instance("CIM13.Meas.Analog",
+        desc="The Control variable associated with the Measurement",
+        opposite="ControlledBy_Control")
 
     # Normal value range maximum for any of the Control.value. Used for scaling, e.g. in bar graphs.
-    maxValue = Float
+    maxValue = Float(desc="Normal value range maximum for any of the Control.value. Used for scaling, e.g. in bar graphs.")
 
     # Normal value for Control.value e.g. used for percentage scaling
-    normalValue = Float
+    normalValue = Float(desc="Normal value for Control.value e.g. used for percentage scaling")
 
     # Normal value range minimum for any of the Control.value. Used for scaling, e.g. in bar graphs.
-    minValue = Float
+    minValue = Float(desc="Normal value range minimum for any of the Control.value. Used for scaling, e.g. in bar graphs.")
 
     # The value representing the actuator output
-    value = Float
+    value = Float(desc="The value representing the actuator output")
 
     #--------------------------------------------------------------------------
-    #  Begin setPoint user definitions:
+    #  Begin "SetPoint" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "operationInProgress", "timeStamp", "maxValue", "normalValue", "minValue", "value",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Unit", "ControlType", "RemoteControl", "ControlledBy_RegulatingCondEq", "MeasuredBy_Measurement",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.SetPoint",
+        title="SetPoint",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End setPoint user definitions:
+    #  End "SetPoint" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -437,17 +616,30 @@ class DiscreteValue(MeasurementValue):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    MemberOf_Measurement = Instance("CIM13.Meas.Discrete")
+    MemberOf_Measurement = Instance("CIM13.Meas.Discrete",
+        opposite="Contain_MeasurementValues")
 
     # The value to supervise.
-    value = Int
+    value = Int(desc="The value to supervise.")
 
     #--------------------------------------------------------------------------
-    #  Begin discreteValue user definitions:
+    #  Begin "DiscreteValue" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "sensorAccuracy", "timeStamp", "value",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "MeasurementValueQuality", "RemoteSource", "MeasurementValueSource", "MemberOf_Measurement",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.DiscreteValue",
+        title="DiscreteValue",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End discreteValue user definitions:
+    #  End "DiscreteValue" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -465,17 +657,30 @@ class Accumulator(Measurement):
     Contain_MeasurementValues = List(Instance("CIM13.Meas.AccumulatorValue"))
 
     # A measurement may have zero or more limit ranges defined for it.
-    LimitSets = List(Instance("CIM13.Meas.AccumulatorLimitSet"))
+    LimitSets = List(Instance("CIM13.Meas.AccumulatorLimitSet"),
+        desc="A measurement may have zero or more limit ranges defined for it.")
 
     # Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.
-    maxValue = Int
+    maxValue = Int(desc="Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.")
 
     #--------------------------------------------------------------------------
-    #  Begin accumulator user definitions:
+    #  Begin "Accumulator" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "maxValue",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Terminal", "MemberOf_PSR", "Unit", "MeasurementType", "Contain_MeasurementValues", "LimitSets",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.Accumulator",
+        title="Accumulator",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End accumulator user definitions:
+    #  End "Accumulator" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -490,17 +695,30 @@ class AnalogLimit(Limit):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    LimitSet = Instance("CIM13.Meas.AnalogLimitSet")
+    LimitSet = Instance("CIM13.Meas.AnalogLimitSet",
+        opposite="Limits")
 
     # The value to supervise against.
-    value = Float
+    value = Float(desc="The value to supervise against.")
 
     #--------------------------------------------------------------------------
-    #  Begin analogLimit user definitions:
+    #  Begin "AnalogLimit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "LimitSet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.AnalogLimit",
+        title="AnalogLimit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End analogLimit user definitions:
+    #  End "AnalogLimit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -515,17 +733,30 @@ class StringMeasurementValue(MeasurementValue):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    MemberOf_Measurement = Instance("CIM13.Meas.StringMeasurement")
+    MemberOf_Measurement = Instance("CIM13.Meas.StringMeasurement",
+        opposite="Contains_MeasurementValues")
 
     # The value to supervise.
-    value = Str
+    value = Str(desc="The value to supervise.")
 
     #--------------------------------------------------------------------------
-    #  Begin stringMeasurementValue user definitions:
+    #  Begin "StringMeasurementValue" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "sensorAccuracy", "timeStamp", "value",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "MeasurementValueQuality", "RemoteSource", "MeasurementValueSource", "MemberOf_Measurement",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.StringMeasurementValue",
+        title="StringMeasurementValue",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End stringMeasurementValue user definitions:
+    #  End "StringMeasurementValue" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -540,17 +771,30 @@ class AccumulatorLimit(Limit):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    LimitSet = Instance("CIM13.Meas.AccumulatorLimitSet")
+    LimitSet = Instance("CIM13.Meas.AccumulatorLimitSet",
+        opposite="Limits")
 
     # The value to supervise against. The value is positive.
-    value = Int
+    value = Int(desc="The value to supervise against. The value is positive.")
 
     #--------------------------------------------------------------------------
-    #  Begin accumulatorLimit user definitions:
+    #  Begin "AccumulatorLimit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "LimitSet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.AccumulatorLimit",
+        title="AccumulatorLimit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End accumulatorLimit user definitions:
+    #  End "AccumulatorLimit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -568,11 +812,23 @@ class StringMeasurement(Measurement):
     Contains_MeasurementValues = List(Instance("CIM13.Meas.StringMeasurementValue"))
 
     #--------------------------------------------------------------------------
-    #  Begin stringMeasurement user definitions:
+    #  Begin "StringMeasurement" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Terminal", "MemberOf_PSR", "Unit", "MeasurementType", "Contains_MeasurementValues",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.StringMeasurement",
+        title="StringMeasurement",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End stringMeasurement user definitions:
+    #  End "StringMeasurement" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -587,21 +843,34 @@ class AnalogValue(MeasurementValue):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    MemberOf_Measurement = Instance("CIM13.Meas.Analog")
+    MemberOf_Measurement = Instance("CIM13.Meas.Analog",
+        opposite="Contain_MeasurementValues")
 
     AltGeneratingUnit = List(Instance("CIM13.ControlArea.AltGeneratingUnitMeas"))
 
     AltTieMeas = List(Instance("CIM13.ControlArea.AltTieMeas"))
 
     # The value to supervise.
-    value = Float
+    value = Float(desc="The value to supervise.")
 
     #--------------------------------------------------------------------------
-    #  Begin analogValue user definitions:
+    #  Begin "AnalogValue" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "sensorAccuracy", "timeStamp", "value",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "MeasurementValueQuality", "RemoteSource", "MeasurementValueSource", "MemberOf_Measurement", "AltGeneratingUnit", "AltTieMeas",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.AnalogValue",
+        title="AnalogValue",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End analogValue user definitions:
+    #  End "AnalogValue" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -617,14 +886,28 @@ class MeasurementValueQuality(Quality61850):
     #--------------------------------------------------------------------------
 
     # A MeasurementValue has a MeasurementValueQuality associated with it.
-    MeasurementValue = Instance("CIM13.Meas.MeasurementValue")
+    MeasurementValue = Instance("CIM13.Meas.MeasurementValue",
+        desc="A MeasurementValue has a MeasurementValueQuality associated with it.",
+        opposite="MeasurementValueQuality")
 
     #--------------------------------------------------------------------------
-    #  Begin measurementValueQuality user definitions:
+    #  Begin "MeasurementValueQuality" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "outOfRange", "overFlow", "operatorBlocked", "suspect", "oscillatory", "test", "estimatorReplaced", "source", "failure", "oldData", "badReference", "validity",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "MeasurementValue",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.MeasurementValueQuality",
+        title="MeasurementValueQuality",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End measurementValueQuality user definitions:
+    #  End "MeasurementValueQuality" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -640,16 +923,29 @@ class AccumulatorLimitSet(LimitSet):
     #--------------------------------------------------------------------------
 
     # A measurement may have zero or more limit ranges defined for it.
-    Measurements = List(Instance("CIM13.Meas.Accumulator"))
+    Measurements = List(Instance("CIM13.Meas.Accumulator"),
+        desc="A measurement may have zero or more limit ranges defined for it.")
 
     Limits = List(Instance("CIM13.Meas.AccumulatorLimit"))
 
     #--------------------------------------------------------------------------
-    #  Begin accumulatorLimitSet user definitions:
+    #  Begin "AccumulatorLimitSet" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "isPercentageLimits",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Measurements", "Limits",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.AccumulatorLimitSet",
+        title="AccumulatorLimitSet",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End accumulatorLimitSet user definitions:
+    #  End "AccumulatorLimitSet" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -667,14 +963,27 @@ class AnalogLimitSet(LimitSet):
     Limits = List(Instance("CIM13.Meas.AnalogLimit"))
 
     # A measurement may have zero or more limit ranges defined for it.
-    Measurements = List(Instance("CIM13.Meas.Analog"))
+    Measurements = List(Instance("CIM13.Meas.Analog"),
+        desc="A measurement may have zero or more limit ranges defined for it.")
 
     #--------------------------------------------------------------------------
-    #  Begin analogLimitSet user definitions:
+    #  Begin "AnalogLimitSet" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "isPercentageLimits",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Limits", "Measurements",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.AnalogLimitSet",
+        title="AnalogLimitSet",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End analogLimitSet user definitions:
+    #  End "AnalogLimitSet" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -689,22 +998,36 @@ class Command(Control):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    ValueAliasSet = Instance("CIM13.Meas.ValueAliasSet")
+    ValueAliasSet = Instance("CIM13.Meas.ValueAliasSet",
+        opposite="Commands")
 
-    MeasuredBy_Measurement = Instance("CIM13.Meas.Discrete")
+    MeasuredBy_Measurement = Instance("CIM13.Meas.Discrete",
+        opposite="ControlledBy_Control")
 
     # The value representing the actuator output
-    value = Int
+    value = Int(desc="The value representing the actuator output")
 
     # Normal value for Control.value e.g. used for percentage scaling
-    normalValue = Int
+    normalValue = Int(desc="Normal value for Control.value e.g. used for percentage scaling")
 
     #--------------------------------------------------------------------------
-    #  Begin command user definitions:
+    #  Begin "Command" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "operationInProgress", "timeStamp", "value", "normalValue",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Unit", "ControlType", "RemoteControl", "ControlledBy_RegulatingCondEq", "ValueAliasSet", "MeasuredBy_Measurement",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.Command",
+        title="Command",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End command user definitions:
+    #  End "Command" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -722,29 +1045,44 @@ class Analog(Measurement):
     Contain_MeasurementValues = List(Instance("CIM13.Meas.AnalogValue"))
 
     # A measurement may have zero or more limit ranges defined for it.
-    LimitSets = List(Instance("CIM13.Meas.AnalogLimitSet"))
+    LimitSets = List(Instance("CIM13.Meas.AnalogLimitSet"),
+        desc="A measurement may have zero or more limit ranges defined for it.")
 
     # The Control variable associated with the Measurement
-    ControlledBy_Control = Instance("CIM13.Meas.SetPoint")
+    ControlledBy_Control = Instance("CIM13.Meas.SetPoint",
+        desc="The Control variable associated with the Measurement",
+        opposite="MeasuredBy_Measurement")
 
     # If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource.
-    positiveFlowIn = Bool
+    positiveFlowIn = Bool(desc="If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource.")
 
     # Normal measurement value, e.g., used for percentage calculations.
-    normalValue = Float
+    normalValue = Float(desc="Normal measurement value, e.g., used for percentage calculations.")
 
     # Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values
-    minValue = Float
+    minValue = Float(desc="Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values")
 
     # Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.
-    maxValue = Float
+    maxValue = Float(desc="Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.")
 
     #--------------------------------------------------------------------------
-    #  Begin analog user definitions:
+    #  Begin "Analog" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "positiveFlowIn", "normalValue", "minValue", "maxValue",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Terminal", "MemberOf_PSR", "Unit", "MeasurementType", "Contain_MeasurementValues", "LimitSets", "ControlledBy_Control",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.Analog",
+        title="Analog",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End analog user definitions:
+    #  End "Analog" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -759,17 +1097,30 @@ class AccumulatorValue(MeasurementValue):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    MemberOf_Measurement = Instance("CIM13.Meas.Accumulator")
+    MemberOf_Measurement = Instance("CIM13.Meas.Accumulator",
+        opposite="Contain_MeasurementValues")
 
     # The value to supervise. The value is positive.
-    value = Int
+    value = Int(desc="The value to supervise. The value is positive.")
 
     #--------------------------------------------------------------------------
-    #  Begin accumulatorValue user definitions:
+    #  Begin "AccumulatorValue" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "sensorAccuracy", "timeStamp", "value",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "MeasurementValueQuality", "RemoteSource", "MeasurementValueSource", "MemberOf_Measurement",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Meas.AccumulatorValue",
+        title="AccumulatorValue",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End accumulatorValue user definitions:
+    #  End "AccumulatorValue" user definitions:
     #--------------------------------------------------------------------------
 
 

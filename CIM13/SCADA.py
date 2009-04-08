@@ -26,9 +26,9 @@ from CIM13.Core import PowerSystemResource
 
 from enthought.traits.api import Instance, List, Enum, Bool, Float
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -50,14 +50,27 @@ class RemotePoint(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    MemberOf_RemoteUnit = Instance("CIM13.SCADA.RemoteUnit")
+    MemberOf_RemoteUnit = Instance("CIM13.SCADA.RemoteUnit",
+        opposite="Contains_RemotePoints")
 
     #--------------------------------------------------------------------------
-    #  Begin remotePoint user definitions:
+    #  Begin "RemotePoint" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "MemberOf_RemoteUnit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.SCADA.RemotePoint",
+        title="RemotePoint",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End remotePoint user definitions:
+    #  End "RemotePoint" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -73,14 +86,27 @@ class CommunicationLink(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # RTUs may be attached to communication links.
-    Contain_RemoteUnits = List(Instance("CIM13.SCADA.RemoteUnit"))
+    Contain_RemoteUnits = List(Instance("CIM13.SCADA.RemoteUnit"),
+        desc="RTUs may be attached to communication links.")
 
     #--------------------------------------------------------------------------
-    #  Begin communicationLink user definitions:
+    #  Begin "CommunicationLink" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "Contain_RemoteUnits",
+                label="References"),
+            dock="tab"),
+        id="CIM13.SCADA.CommunicationLink",
+        title="CommunicationLink",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End communicationLink user definitions:
+    #  End "CommunicationLink" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -96,19 +122,32 @@ class RemoteUnit(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # RTUs may be attached to communication links.
-    MemberOf_CommunicationLinks = List(Instance("CIM13.SCADA.CommunicationLink"))
+    MemberOf_CommunicationLinks = List(Instance("CIM13.SCADA.CommunicationLink"),
+        desc="RTUs may be attached to communication links.")
 
     Contains_RemotePoints = List(Instance("CIM13.SCADA.RemotePoint"))
 
     # Type of remote unit.
-    remoteUnitType = RemoteUnitType
+    remoteUnitType = RemoteUnitType(desc="Type of remote unit.")
 
     #--------------------------------------------------------------------------
-    #  Begin remoteUnit user definitions:
+    #  Begin "RemoteUnit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "remoteUnitType",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "MemberOf_CommunicationLinks", "Contains_RemotePoints",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.SCADA.RemoteUnit",
+        title="RemoteUnit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End remoteUnit user definitions:
+    #  End "RemoteUnit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -123,23 +162,36 @@ class RemoteControl(RemotePoint):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    Control = Instance("CIM13.Meas.Control")
+    Control = Instance("CIM13.Meas.Control",
+        opposite="RemoteControl")
 
     # Set to true if the actuator is remotely controlled.
-    remoteControlled = Bool
+    remoteControlled = Bool(desc="Set to true if the actuator is remotely controlled.")
 
     # The minimum set point value accepted by the remote control point.
-    actuatorMinimum = Float
+    actuatorMinimum = Float(desc="The minimum set point value accepted by the remote control point.")
 
     # The maximum set point value accepted by the remote control point.
-    actuatorMaximum = Float
+    actuatorMaximum = Float(desc="The maximum set point value accepted by the remote control point.")
 
     #--------------------------------------------------------------------------
-    #  Begin remoteControl user definitions:
+    #  Begin "RemoteControl" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "remoteControlled", "actuatorMinimum", "actuatorMaximum",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "MemberOf_RemoteUnit", "Control",
+                label="References"),
+            dock="tab"),
+        id="CIM13.SCADA.RemoteControl",
+        title="RemoteControl",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End remoteControl user definitions:
+    #  End "RemoteControl" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -155,26 +207,40 @@ class RemoteSource(RemotePoint):
     #--------------------------------------------------------------------------
 
     # Links to the physical telemetered point associated with this measurement.
-    MeasurementValue = Instance("CIM13.Meas.MeasurementValue")
+    MeasurementValue = Instance("CIM13.Meas.MeasurementValue",
+        desc="Links to the physical telemetered point associated with this measurement.",
+        opposite="RemoteSource")
 
     # The minimum value the telemetry item can return.
-    sensorMinimum = Float
+    sensorMinimum = Float(desc="The minimum value the telemetry item can return.")
 
     # The maximum value the telemetry item can return.
-    sensorMaximum = Float
+    sensorMaximum = Float(desc="The maximum value the telemetry item can return.")
 
     # The time interval between scans.
-    scanInterval = Float
+    scanInterval = Float(desc="The time interval between scans.")
 
     # The smallest change in value to be reported.
-    deadband = Float
+    deadband = Float(desc="The smallest change in value to be reported.")
 
     #--------------------------------------------------------------------------
-    #  Begin remoteSource user definitions:
+    #  Begin "RemoteSource" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "sensorMinimum", "sensorMaximum", "scanInterval", "deadband",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "MemberOf_RemoteUnit", "MeasurementValue",
+                label="References"),
+            dock="tab"),
+        id="CIM13.SCADA.RemoteSource",
+        title="RemoteSource",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End remoteSource user definitions:
+    #  End "RemoteSource" user definitions:
     #--------------------------------------------------------------------------
 
 

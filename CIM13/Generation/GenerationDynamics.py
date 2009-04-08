@@ -26,9 +26,9 @@ from CIM13.Core import PowerSystemResource
 
 from enthought.traits.api import Instance, List, Enum, Float, Bool, Int
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -51,14 +51,28 @@ class CTTempActivePowerCurve(Curve):
     #--------------------------------------------------------------------------
 
     # A combustion turbine may have a active power versus ambient temperature relationship
-    CombustionTurbine = Instance("CIM13.Generation.GenerationDynamics.CombustionTurbine")
+    CombustionTurbine = Instance("CIM13.Generation.GenerationDynamics.CombustionTurbine",
+        desc="A combustion turbine may have a active power versus ambient temperature relationship",
+        opposite="CTTempActivePowerCurve")
 
     #--------------------------------------------------------------------------
-    #  Begin cTTempActivePowerCurve user definitions:
+    #  Begin "CTTempActivePowerCurve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas", "CombustionTurbine",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.CTTempActivePowerCurve",
+        title="CTTempActivePowerCurve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End cTTempActivePowerCurve user definitions:
+    #  End "CTTempActivePowerCurve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -76,14 +90,26 @@ class PrimeMover(PowerSystemResource):
     Drives_SynchronousMachines = List(Instance("CIM13.Wires.SynchronousMachine"))
 
     # Rating of prime mover
-    primeMoverRating = Float
+    primeMoverRating = Float(desc="Rating of prime mover")
 
     #--------------------------------------------------------------------------
-    #  Begin primeMover user definitions:
+    #  Begin "PrimeMover" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "primeMoverRating",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "Drives_SynchronousMachines",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.PrimeMover",
+        title="PrimeMover",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End primeMover user definitions:
+    #  End "PrimeMover" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -99,17 +125,30 @@ class SteamSupply(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # Steam turbines may have steam supplied by a steam supply
-    SteamTurbines = List(Instance("CIM13.Generation.GenerationDynamics.SteamTurbine"))
+    SteamTurbines = List(Instance("CIM13.Generation.GenerationDynamics.SteamTurbine"),
+        desc="Steam turbines may have steam supplied by a steam supply")
 
     # Rating of steam supply
-    steamSupplyRating = Float
+    steamSupplyRating = Float(desc="Rating of steam supply")
 
     #--------------------------------------------------------------------------
-    #  Begin steamSupply user definitions:
+    #  Begin "SteamSupply" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "steamSupplyRating",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "SteamTurbines",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.SteamSupply",
+        title="SteamSupply",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End steamSupply user definitions:
+    #  End "SteamSupply" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -125,50 +164,63 @@ class SteamTurbine(PrimeMover):
     #--------------------------------------------------------------------------
 
     # Steam turbines may have steam supplied by a steam supply
-    SteamSupplys = List(Instance("CIM13.Generation.GenerationDynamics.SteamSupply"))
+    SteamSupplys = List(Instance("CIM13.Generation.GenerationDynamics.SteamSupply"),
+        desc="Steam turbines may have steam supplied by a steam supply")
 
     # Fraction Of Power From Shaft 2 Intermediate Pressure Turbine output
-    shaft2PowerIP = Float
+    shaft2PowerIP = Float(desc="Fraction Of Power From Shaft 2 Intermediate Pressure Turbine output")
 
     # Fraction Of Power From Shaft 2 First Low Pressure Turbine output
-    shaft2PowerLP1 = Float
+    shaft2PowerLP1 = Float(desc="Fraction Of Power From Shaft 2 First Low Pressure Turbine output")
 
     # Fraction Of Power From Shaft 2 Second Low Pressure Turbine output
-    shaft2PowerLP2 = Float
+    shaft2PowerLP2 = Float(desc="Fraction Of Power From Shaft 2 Second Low Pressure Turbine output")
 
     # Fraction Of Power From Shaft 2 High Pressure Turbine output
-    shaft2PowerHP = Float
+    shaft2PowerHP = Float(desc="Fraction Of Power From Shaft 2 High Pressure Turbine output")
 
     # Second Reheater Time Constant
-    reheater2TC = Float
+    reheater2TC = Float(desc="Second Reheater Time Constant")
 
     # Fraction Of Power From Shaft 1 Intermediate Pressure Turbine output
-    shaft1PowerIP = Float
+    shaft1PowerIP = Float(desc="Fraction Of Power From Shaft 1 Intermediate Pressure Turbine output")
 
     # Steam Chest Time Constant
-    steamChestTC = Float
+    steamChestTC = Float(desc="Steam Chest Time Constant")
 
     # Fraction Of Power From Shaft 1 First Low Pressure Turbine output
-    shaft1PowerLP1 = Float
+    shaft1PowerLP1 = Float(desc="Fraction Of Power From Shaft 1 First Low Pressure Turbine output")
 
     # Crossover Time Constant
-    crossoverTC = Float
+    crossoverTC = Float(desc="Crossover Time Constant")
 
     # First Reheater Time Constant
-    reheater1TC = Float
+    reheater1TC = Float(desc="First Reheater Time Constant")
 
     # Fraction Of Power From Shaft 1 High Pressure Turbine output
-    shaft1PowerHP = Float
+    shaft1PowerHP = Float(desc="Fraction Of Power From Shaft 1 High Pressure Turbine output")
 
     # Fraction Of Power From Shaft 1 Second Low Pressure Turbine output
-    shaft1PowerLP2 = Float
+    shaft1PowerLP2 = Float(desc="Fraction Of Power From Shaft 1 Second Low Pressure Turbine output")
 
     #--------------------------------------------------------------------------
-    #  Begin steamTurbine user definitions:
+    #  Begin "SteamTurbine" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "primeMoverRating", "shaft2PowerIP", "shaft2PowerLP1", "shaft2PowerLP2", "shaft2PowerHP", "reheater2TC", "shaft1PowerIP", "steamChestTC", "shaft1PowerLP1", "crossoverTC", "reheater1TC", "shaft1PowerHP", "shaft1PowerLP2",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "Drives_SynchronousMachines", "SteamSupplys",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.SteamTurbine",
+        title="SteamTurbine",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End steamTurbine user definitions:
+    #  End "SteamTurbine" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -184,71 +236,83 @@ class PWRSteamSupply(SteamSupply):
     #--------------------------------------------------------------------------
 
     # Cold Leg Feedback Gain 2
-    coldLegFG2 = Float
+    coldLegFG2 = Float(desc="Cold Leg Feedback Gain 2")
 
     # Steam Pressure Drop Lag Time Constant
-    steamPressureDropLagTC = Float
+    steamPressureDropLagTC = Float(desc="Steam Pressure Drop Lag Time Constant")
 
     # Cold Leg Feedback Lead Time Constant
-    coldLegFBLeadTC2 = Float
+    coldLegFBLeadTC2 = Float(desc="Cold Leg Feedback Lead Time Constant")
 
     # Cold Leg Feedback Lag Time Constant
-    coldLegFBLagTC = Float
+    coldLegFBLagTC = Float(desc="Cold Leg Feedback Lag Time Constant")
 
     # Hot Leg To Cold Leg Gain
-    hotLegToColdLegGain = Float
+    hotLegToColdLegGain = Float(desc="Hot Leg To Cold Leg Gain")
 
     # Feedback Factor
-    feedbackFactor = Float
+    feedbackFactor = Float(desc="Feedback Factor")
 
     # Core Neutronics And Heat Transfer
-    coreNeutronicsHT = Float
+    coreNeutronicsHT = Float(desc="Core Neutronics And Heat Transfer")
 
     # Throttle Pressure Factor
-    throttlePressureFactor = Float
+    throttlePressureFactor = Float(desc="Throttle Pressure Factor")
 
     # Core Heat Transfer Lag Time Constant
-    coreHTLagTC1 = Float
+    coreHTLagTC1 = Float(desc="Core Heat Transfer Lag Time Constant")
 
     # Throttle Pressure Setpoint
-    throttlePressureSP = Float
+    throttlePressureSP = Float(desc="Throttle Pressure Setpoint")
 
     # Core Neutronics Effective Time Constant
-    coreNeutronicsEffTC = Float
+    coreNeutronicsEffTC = Float(desc="Core Neutronics Effective Time Constant")
 
     # Cold Leg Feedback Gain 1
-    coldLegFG1 = Float
+    coldLegFG1 = Float(desc="Cold Leg Feedback Gain 1")
 
     # Steam Pressure Feedback Gain
-    steamPressureFG = Float
+    steamPressureFG = Float(desc="Steam Pressure Feedback Gain")
 
     # Hot Leg Steam Gain
-    hotLegSteamGain = Float
+    hotLegSteamGain = Float(desc="Hot Leg Steam Gain")
 
     # Core Heat Transfer Lag Time Constant
-    coreHTLagTC2 = Float
+    coreHTLagTC2 = Float(desc="Core Heat Transfer Lag Time Constant")
 
     # Cold Leg Lag Time Constant
-    coldLegLagTC = Float
+    coldLegLagTC = Float(desc="Cold Leg Lag Time Constant")
 
     # Pressure Control Gain
-    pressureCG = Float
+    pressureCG = Float(desc="Pressure Control Gain")
 
     # Cold Leg Feedback Lead Time Constant
-    coldLegFBLeadTC1 = Float
+    coldLegFBLeadTC1 = Float(desc="Cold Leg Feedback Lead Time Constant")
 
     # Steam Flow Feedback Gain
-    steamFlowFG = Float
+    steamFlowFG = Float(desc="Steam Flow Feedback Gain")
 
     # Hot Leg Lag Time Constant
-    hotLegLagTC = Float
+    hotLegLagTC = Float(desc="Hot Leg Lag Time Constant")
 
     #--------------------------------------------------------------------------
-    #  Begin pWRSteamSupply user definitions:
+    #  Begin "PWRSteamSupply" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "steamSupplyRating", "coldLegFG2", "steamPressureDropLagTC", "coldLegFBLeadTC2", "coldLegFBLagTC", "hotLegToColdLegGain", "feedbackFactor", "coreNeutronicsHT", "throttlePressureFactor", "coreHTLagTC1", "throttlePressureSP", "coreNeutronicsEffTC", "coldLegFG1", "steamPressureFG", "hotLegSteamGain", "coreHTLagTC2", "coldLegLagTC", "pressureCG", "coldLegFBLeadTC1", "steamFlowFG", "hotLegLagTC",
+                label="Attributes", columns=2),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "SteamTurbines",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.PWRSteamSupply",
+        title="PWRSteamSupply",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End pWRSteamSupply user definitions:
+    #  End "PWRSteamSupply" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -264,44 +328,62 @@ class CombustionTurbine(PrimeMover):
     #--------------------------------------------------------------------------
 
     # A CAES air compressor is driven by combustion turbine
-    Drives_AirCompressor = Instance("CIM13.Generation.Production.AirCompressor")
+    Drives_AirCompressor = Instance("CIM13.Generation.Production.AirCompressor",
+        desc="A CAES air compressor is driven by combustion turbine",
+        opposite="DrivenBy_CombustionTurbine")
 
     # A combustion turbine may have a active power versus ambient temperature relationship
-    CTTempActivePowerCurve = Instance("CIM13.Generation.GenerationDynamics.CTTempActivePowerCurve")
+    CTTempActivePowerCurve = Instance("CIM13.Generation.GenerationDynamics.CTTempActivePowerCurve",
+        desc="A combustion turbine may have a active power versus ambient temperature relationship",
+        opposite="CombustionTurbine")
 
     # A combustion turbine may have a heat recovery boiler for making steam
-    HeatRecoveryBoiler = Instance("CIM13.Generation.GenerationDynamics.HeatRecoveryBoiler")
+    HeatRecoveryBoiler = Instance("CIM13.Generation.GenerationDynamics.HeatRecoveryBoiler",
+        desc="A combustion turbine may have a heat recovery boiler for making steam",
+        opposite="CombustionTurbines")
 
     # Reference temperature at which the output of the turbine was defined.
-    referenceTemp = Float
+    referenceTemp = Float(desc="Reference temperature at which the output of the turbine was defined.")
 
     # Per unit change in power per (versus) unit change in ambient temperature
-    powerVariationByTemp = Float
+    powerVariationByTemp = Float(desc="Per unit change in power per (versus) unit change in ambient temperature")
 
     # Flag that is set to true if the combustion turbine is associated with a heat recovery boiler
-    heatRecoveryFlag = Bool
+    heatRecoveryFlag = Bool(desc="Flag that is set to true if the combustion turbine is associated with a heat recovery boiler")
 
     # Off-nominal voltage effect on turbine auxiliaries. Per unit reduction in auxiliary active power consumption versus per unit reduction in auxiliary bus voltage (from a specified voltage level).
-    auxPowerVersusVoltage = Float
+    auxPowerVersusVoltage = Float(desc="Off-nominal voltage effect on turbine auxiliaries. Per unit reduction in auxiliary active power consumption versus per unit reduction in auxiliary bus voltage (from a specified voltage level).")
 
     # Default ambient temperature to be used in modeling applications
-    ambientTemp = Float
+    ambientTemp = Float(desc="Default ambient temperature to be used in modeling applications")
 
     # The time constant for the turbine.
-    timeConstant = Float
+    timeConstant = Float(desc="The time constant for the turbine.")
 
     # Off-nominal frequency effect on turbine auxiliaries. Per unit reduction in auxiliary active power consumption versus per unit reduction in frequency (from rated frequency).
-    auxPowerVersusFrequency = Float
+    auxPowerVersusFrequency = Float(desc="Off-nominal frequency effect on turbine auxiliaries. Per unit reduction in auxiliary active power consumption versus per unit reduction in frequency (from rated frequency).")
 
     # Off-nominal frequency effect on turbine capability. Per unit reduction in unit active power capability versus per unit reduction in frequency (from rated frequency).
-    capabilityVersusFrequency = Float
+    capabilityVersusFrequency = Float(desc="Off-nominal frequency effect on turbine capability. Per unit reduction in unit active power capability versus per unit reduction in frequency (from rated frequency).")
 
     #--------------------------------------------------------------------------
-    #  Begin combustionTurbine user definitions:
+    #  Begin "CombustionTurbine" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "primeMoverRating", "referenceTemp", "powerVariationByTemp", "heatRecoveryFlag", "auxPowerVersusVoltage", "ambientTemp", "timeConstant", "auxPowerVersusFrequency", "capabilityVersusFrequency",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "Drives_SynchronousMachines", "Drives_AirCompressor", "CTTempActivePowerCurve", "HeatRecoveryBoiler",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.CombustionTurbine",
+        title="CombustionTurbine",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End combustionTurbine user definitions:
+    #  End "CombustionTurbine" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -317,74 +399,86 @@ class BWRSteamSupply(SteamSupply):
     #--------------------------------------------------------------------------
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux2 = Float
+    rfAux2 = Float(desc="Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.")
 
     # Initial Lower Limit
-    lowerLimit = Float
+    lowerLimit = Float(desc="Initial Lower Limit")
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux6 = Float
+    rfAux6 = Float(desc="Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.")
 
     # Pressure Limit
-    pressureLimit = Float
+    pressureLimit = Float(desc="Pressure Limit")
 
     # Initial Upper Limit
-    upperLimit = Float
+    upperLimit = Float(desc="Initial Upper Limit")
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux3 = Float
+    rfAux3 = Float(desc="Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.")
 
     # Rod Pattern
-    rodPattern = Float
+    rodPattern = Float(desc="Rod Pattern")
 
     # Proportional Gain
-    proportionalGain = Float
+    proportionalGain = Float(desc="Proportional Gain")
 
     # In-Core Thermal Time Constant
-    inCoreThermalTC = Float
+    inCoreThermalTC = Float(desc="In-Core Thermal Time Constant")
 
     # High Power Limit
-    highPowerLimit = Float
+    highPowerLimit = Float(desc="High Power Limit")
 
     # Constant Associated With Rod Pattern
-    rodPatternConstant = Float
+    rodPatternConstant = Float(desc="Constant Associated With Rod Pattern")
 
     # Low Power Limit
-    lowPowerLimit = Float
+    lowPowerLimit = Float(desc="Low Power Limit")
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux7 = Float
+    rfAux7 = Float(desc="Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.")
 
     # Pressure Setpoint Time Constant
-    pressureSetpointTC1 = Float
+    pressureSetpointTC1 = Float(desc="Pressure Setpoint Time Constant")
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux4 = Float
+    rfAux4 = Float(desc="Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.")
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux1 = Float
+    rfAux1 = Float(desc="Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.")
 
     # Integral Gain
-    integralGain = Float
+    integralGain = Float(desc="Integral Gain")
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux8 = Float
+    rfAux8 = Float(desc="Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.")
 
     # Pressure Setpoint Gain Adjuster
-    pressureSetpointGA = Float
+    pressureSetpointGA = Float(desc="Pressure Setpoint Gain Adjuster")
 
     # Pressure Setpoint Time Constant
-    pressureSetpointTC2 = Float
+    pressureSetpointTC2 = Float(desc="Pressure Setpoint Time Constant")
 
     # Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
-    rfAux5 = Float
+    rfAux5 = Float(desc="Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.")
 
     #--------------------------------------------------------------------------
-    #  Begin bWRSteamSupply user definitions:
+    #  Begin "BWRSteamSupply" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "steamSupplyRating", "rfAux2", "lowerLimit", "rfAux6", "pressureLimit", "upperLimit", "rfAux3", "rodPattern", "proportionalGain", "inCoreThermalTC", "highPowerLimit", "rodPatternConstant", "lowPowerLimit", "rfAux7", "pressureSetpointTC1", "rfAux4", "rfAux1", "integralGain", "rfAux8", "pressureSetpointGA", "pressureSetpointTC2", "rfAux5",
+                label="Attributes", columns=2),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "SteamTurbines",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.BWRSteamSupply",
+        title="BWRSteamSupply",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End bWRSteamSupply user definitions:
+    #  End "BWRSteamSupply" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -400,44 +494,56 @@ class HydroTurbine(PrimeMover):
     #--------------------------------------------------------------------------
 
     # Maximum efficiency active power at minimum head conditions
-    minHeadMaxP = Float
+    minHeadMaxP = Float(desc="Maximum efficiency active power at minimum head conditions")
 
     # Gate Rate Limit
-    gateRateLimit = Float
+    gateRateLimit = Float(desc="Gate Rate Limit")
 
     # Speed Regulation
-    speedRegulation = Float
+    speedRegulation = Float(desc="Speed Regulation")
 
     # Transient Regulation
-    transientRegulation = Float
+    transientRegulation = Float(desc="Transient Regulation")
 
     # Transient Droop Time Constant
-    transientDroopTime = Float
+    transientDroopTime = Float(desc="Transient Droop Time Constant")
 
     # Maximum efficiency active power at maximum head conditions
-    maxHeadMaxP = Float
+    maxHeadMaxP = Float(desc="Maximum efficiency active power at maximum head conditions")
 
     # Rated turbine active power
-    turbineRating = Float
+    turbineRating = Float(desc="Rated turbine active power")
 
     # Water Starting Time
-    waterStartingTime = Float
+    waterStartingTime = Float(desc="Water Starting Time")
 
     # Type of turbine.
-    turbineType = TurbineType
+    turbineType = TurbineType(desc="Type of turbine.")
 
     # Gate Upper Limit
-    gateUpperLimit = Float
+    gateUpperLimit = Float(desc="Gate Upper Limit")
 
     # Rated speed in number of revolutions.
-    speedRating = Float
+    speedRating = Float(desc="Rated speed in number of revolutions.")
 
     #--------------------------------------------------------------------------
-    #  Begin hydroTurbine user definitions:
+    #  Begin "HydroTurbine" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "primeMoverRating", "minHeadMaxP", "gateRateLimit", "speedRegulation", "transientRegulation", "transientDroopTime", "maxHeadMaxP", "turbineRating", "waterStartingTime", "turbineType", "gateUpperLimit", "speedRating",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "Drives_SynchronousMachines",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.HydroTurbine",
+        title="HydroTurbine",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End hydroTurbine user definitions:
+    #  End "HydroTurbine" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -453,89 +559,101 @@ class FossilSteamSupply(SteamSupply):
     #--------------------------------------------------------------------------
 
     # Superheater Pipe Pressure Drop Constant
-    superHeaterPipePD = Float
+    superHeaterPipePD = Float(desc="Superheater Pipe Pressure Drop Constant")
 
     # Active power Maximum Error Rate Limit
-    maxErrorRateP = Float
+    maxErrorRateP = Float(desc="Active power Maximum Error Rate Limit")
 
     # Off nominal voltage effect on auxiliary real power. Per unit active power variation versus per unit voltage variation.
-    auxPowerversusVoltage = Float
+    auxPowerversusVoltage = Float(desc="Off nominal voltage effect on auxiliary real power. Per unit active power variation versus per unit voltage variation.")
 
     # Pressure Control Proportional Gain ratio
-    pressureCtrlPG = Float
+    pressureCtrlPG = Float(desc="Pressure Control Proportional Gain ratio")
 
     # Secondary Superheater Capacity
-    superHeater2Capacity = Float
+    superHeater2Capacity = Float(desc="Secondary Superheater Capacity")
 
     # The control mode of the boiler
-    boilerControlMode = BoilerControlMode
+    boilerControlMode = BoilerControlMode(desc="The control mode of the boiler")
 
     # Mechanical Power Sensor Lag
-    mechPowerSensorLag = Float
+    mechPowerSensorLag = Float(desc="Mechanical Power Sensor Lag")
 
     # Pressure Error Bias ratio
-    controlPEB = Float
+    controlPEB = Float(desc="Pressure Error Bias ratio")
 
     # Fuel Demand Limit
-    fuelDemandLimit = Float
+    fuelDemandLimit = Float(desc="Fuel Demand Limit")
 
     # Proportional Constant
-    controlPC = Float
+    controlPC = Float(desc="Proportional Constant")
 
     # Pressure Feedback Indicator
-    pressureFeedback = Int
+    pressureFeedback = Int(desc="Pressure Feedback Indicator")
 
     # Off nominal frequency effect on auxiliary real power. Per unit active power variation versus per unit frequency variation.
-    auxPowerVersusFrequency = Float
+    auxPowerVersusFrequency = Float(desc="Off nominal frequency effect on auxiliary real power. Per unit active power variation versus per unit frequency variation.")
 
     # Feedwater Integral Gain ratio
-    feedWaterIG = Float
+    feedWaterIG = Float(desc="Feedwater Integral Gain ratio")
 
     # Time Constant
-    controlTC = Float
+    controlTC = Float(desc="Time Constant")
 
     # Active power Error Bias ratio
-    controlErrorBiasP = Float
+    controlErrorBiasP = Float(desc="Active power Error Bias ratio")
 
     # Feedwater Time Constant rato
-    feedWaterTC = Float
+    feedWaterTC = Float(desc="Feedwater Time Constant rato")
 
     # Feedwater Proportional Gain ratio
-    feedWaterPG = Float
+    feedWaterPG = Float(desc="Feedwater Proportional Gain ratio")
 
     # Fuel Delay
-    fuelSupplyDelay = Float
+    fuelSupplyDelay = Float(desc="Fuel Delay")
 
     # Pressure Control Derivative Gain ratio
-    pressureCtrlDG = Float
+    pressureCtrlDG = Float(desc="Pressure Control Derivative Gain ratio")
 
     # Pressure Control Integral Gain ratio
-    pressureCtrlIG = Float
+    pressureCtrlIG = Float(desc="Pressure Control Integral Gain ratio")
 
     # Fuel Supply Time Constant
-    fuelSupplyTC = Float
+    fuelSupplyTC = Float(desc="Fuel Supply Time Constant")
 
     # Integral Constant
-    controlIC = Float
+    controlIC = Float(desc="Integral Constant")
 
     # Throttle Pressure Setpoint
-    throttlePressureSP = Float
+    throttlePressureSP = Float(desc="Throttle Pressure Setpoint")
 
     # Drum/Primary Superheater Capacity
-    superHeater1Capacity = Float
+    superHeater1Capacity = Float(desc="Drum/Primary Superheater Capacity")
 
     # Pressure Error Deadband
-    controlPED = Float
+    controlPED = Float(desc="Pressure Error Deadband")
 
     # Active power Minimum Error Rate Limit
-    minErrorRateP = Float
+    minErrorRateP = Float(desc="Active power Minimum Error Rate Limit")
 
     #--------------------------------------------------------------------------
-    #  Begin fossilSteamSupply user definitions:
+    #  Begin "FossilSteamSupply" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "steamSupplyRating", "superHeaterPipePD", "maxErrorRateP", "auxPowerversusVoltage", "pressureCtrlPG", "superHeater2Capacity", "boilerControlMode", "mechPowerSensorLag", "controlPEB", "fuelDemandLimit", "controlPC", "pressureFeedback", "auxPowerVersusFrequency", "feedWaterIG", "controlTC", "controlErrorBiasP", "feedWaterTC", "feedWaterPG", "fuelSupplyDelay", "pressureCtrlDG", "pressureCtrlIG", "fuelSupplyTC", "controlIC", "throttlePressureSP", "superHeater1Capacity", "controlPED", "minErrorRateP",
+                label="Attributes", columns=2),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "SteamTurbines",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.FossilSteamSupply",
+        title="FossilSteamSupply",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End fossilSteamSupply user definitions:
+    #  End "FossilSteamSupply" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -552,11 +670,23 @@ class Subcritical(FossilSteamSupply):
 
     pass
     #--------------------------------------------------------------------------
-    #  Begin subcritical user definitions:
+    #  Begin "Subcritical" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "steamSupplyRating", "superHeaterPipePD", "maxErrorRateP", "auxPowerversusVoltage", "pressureCtrlPG", "superHeater2Capacity", "boilerControlMode", "mechPowerSensorLag", "controlPEB", "fuelDemandLimit", "controlPC", "pressureFeedback", "auxPowerVersusFrequency", "feedWaterIG", "controlTC", "controlErrorBiasP", "feedWaterTC", "feedWaterPG", "fuelSupplyDelay", "pressureCtrlDG", "pressureCtrlIG", "fuelSupplyTC", "controlIC", "throttlePressureSP", "superHeater1Capacity", "controlPED", "minErrorRateP",
+                label="Attributes", columns=2),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "SteamTurbines",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.Subcritical",
+        title="Subcritical",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End subcritical user definitions:
+    #  End "Subcritical" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -573,11 +703,23 @@ class Supercritical(FossilSteamSupply):
 
     pass
     #--------------------------------------------------------------------------
-    #  Begin supercritical user definitions:
+    #  Begin "Supercritical" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "steamSupplyRating", "superHeaterPipePD", "maxErrorRateP", "auxPowerversusVoltage", "pressureCtrlPG", "superHeater2Capacity", "boilerControlMode", "mechPowerSensorLag", "controlPEB", "fuelDemandLimit", "controlPC", "pressureFeedback", "auxPowerVersusFrequency", "feedWaterIG", "controlTC", "controlErrorBiasP", "feedWaterTC", "feedWaterPG", "fuelSupplyDelay", "pressureCtrlDG", "pressureCtrlIG", "fuelSupplyTC", "controlIC", "throttlePressureSP", "superHeater1Capacity", "controlPED", "minErrorRateP",
+                label="Attributes", columns=2),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "SteamTurbines",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.Supercritical",
+        title="Supercritical",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End supercritical user definitions:
+    #  End "Supercritical" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -593,17 +735,30 @@ class HeatRecoveryBoiler(FossilSteamSupply):
     #--------------------------------------------------------------------------
 
     # A combustion turbine may have a heat recovery boiler for making steam
-    CombustionTurbines = List(Instance("CIM13.Generation.GenerationDynamics.CombustionTurbine"))
+    CombustionTurbines = List(Instance("CIM13.Generation.GenerationDynamics.CombustionTurbine"),
+        desc="A combustion turbine may have a heat recovery boiler for making steam")
 
     # The steam supply rating in kilopounds per hour, if dual pressure boiler
-    steamSupplyRating2 = Float
+    steamSupplyRating2 = Float(desc="The steam supply rating in kilopounds per hour, if dual pressure boiler")
 
     #--------------------------------------------------------------------------
-    #  Begin heatRecoveryBoiler user definitions:
+    #  Begin "HeatRecoveryBoiler" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "steamSupplyRating", "superHeaterPipePD", "maxErrorRateP", "auxPowerversusVoltage", "pressureCtrlPG", "superHeater2Capacity", "boilerControlMode", "mechPowerSensorLag", "controlPEB", "fuelDemandLimit", "controlPC", "pressureFeedback", "auxPowerVersusFrequency", "feedWaterIG", "controlTC", "controlErrorBiasP", "feedWaterTC", "feedWaterPG", "fuelSupplyDelay", "pressureCtrlDG", "pressureCtrlIG", "fuelSupplyTC", "controlIC", "throttlePressureSP", "superHeater1Capacity", "controlPED", "minErrorRateP", "steamSupplyRating2",
+                label="Attributes", columns=2),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "SteamTurbines", "CombustionTurbines",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.HeatRecoveryBoiler",
+        title="HeatRecoveryBoiler",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End heatRecoveryBoiler user definitions:
+    #  End "HeatRecoveryBoiler" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -619,14 +774,26 @@ class DrumBoiler(FossilSteamSupply):
     #--------------------------------------------------------------------------
 
     # Rating of drum boiler in steam units
-    drumBoilerRating = Float
+    drumBoilerRating = Float(desc="Rating of drum boiler in steam units")
 
     #--------------------------------------------------------------------------
-    #  Begin drumBoiler user definitions:
+    #  Begin "DrumBoiler" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "steamSupplyRating", "superHeaterPipePD", "maxErrorRateP", "auxPowerversusVoltage", "pressureCtrlPG", "superHeater2Capacity", "boilerControlMode", "mechPowerSensorLag", "controlPEB", "fuelDemandLimit", "controlPC", "pressureFeedback", "auxPowerVersusFrequency", "feedWaterIG", "controlTC", "controlErrorBiasP", "feedWaterTC", "feedWaterPG", "fuelSupplyDelay", "pressureCtrlDG", "pressureCtrlIG", "fuelSupplyTC", "controlIC", "throttlePressureSP", "superHeater1Capacity", "controlPED", "minErrorRateP", "drumBoilerRating",
+                label="Attributes", columns=2),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "SteamTurbines",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Generation.GenerationDynamics.DrumBoiler",
+        title="DrumBoiler",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End drumBoiler user definitions:
+    #  End "DrumBoiler" user definitions:
     #--------------------------------------------------------------------------
 
 

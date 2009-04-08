@@ -25,9 +25,9 @@ from CIM13.Core import IdentifiedObject
 
 from enthought.traits.api import Instance, List, Enum, Bool
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -50,14 +50,26 @@ class Contingency(IdentifiedObject):
     ContingencyElement = List(Instance("CIM13.Contingency.ContingencyElement"))
 
     # Set true if must study this contingency.
-    mustStudy = Bool
+    mustStudy = Bool(desc="Set true if must study this contingency.")
 
     #--------------------------------------------------------------------------
-    #  Begin contingency user definitions:
+    #  Begin "Contingency" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "mustStudy",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ContingencyElement",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Contingency.Contingency",
+        title="Contingency",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End contingency user definitions:
+    #  End "Contingency" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -72,14 +84,27 @@ class ContingencyElement(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    Contingency = Instance("CIM13.Contingency.Contingency")
+    Contingency = Instance("CIM13.Contingency.Contingency",
+        opposite="ContingencyElement")
 
     #--------------------------------------------------------------------------
-    #  Begin contingencyElement user definitions:
+    #  Begin "ContingencyElement" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Contingency",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Contingency.ContingencyElement",
+        title="ContingencyElement",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End contingencyElement user definitions:
+    #  End "ContingencyElement" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -94,17 +119,30 @@ class ContingencyEquipment(ContingencyElement):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    Equipment = Instance("CIM13.Core.Equipment")
+    Equipment = Instance("CIM13.Core.Equipment",
+        opposite="ContingencyEquipment")
 
     # The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied.
-    contingentStatus = ContingencyEquipmentStatusKind
+    contingentStatus = ContingencyEquipmentStatusKind(desc="The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied.")
 
     #--------------------------------------------------------------------------
-    #  Begin contingencyEquipment user definitions:
+    #  Begin "ContingencyEquipment" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "contingentStatus",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Contingency", "Equipment",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Contingency.ContingencyEquipment",
+        title="ContingencyEquipment",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End contingencyEquipment user definitions:
+    #  End "ContingencyEquipment" user definitions:
     #--------------------------------------------------------------------------
 
 

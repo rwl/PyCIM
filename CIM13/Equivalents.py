@@ -26,9 +26,9 @@ from CIM13.Core import ConductingEquipment
 
 from enthought.traits.api import Instance, List, Float
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -49,11 +49,23 @@ class EquivalentNetwork(ConnectivityNodeContainer):
     EquivalentEquipments = List(Instance("CIM13.Equivalents.EquivalentEquipment"))
 
     #--------------------------------------------------------------------------
-    #  Begin equivalentNetwork user definitions:
+    #  Begin "EquivalentNetwork" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "TopologicalNode", "ConnectivityNodes", "EquivalentEquipments",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Equivalents.EquivalentNetwork",
+        title="EquivalentNetwork",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End equivalentNetwork user definitions:
+    #  End "EquivalentNetwork" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -68,14 +80,27 @@ class EquivalentEquipment(ConductingEquipment):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    EquivalentNetwork = Instance("CIM13.Equivalents.EquivalentNetwork")
+    EquivalentNetwork = Instance("CIM13.Equivalents.EquivalentNetwork",
+        opposite="EquivalentEquipments")
 
     #--------------------------------------------------------------------------
-    #  Begin equivalentEquipment user definitions:
+    #  Begin "EquivalentEquipment" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "phases",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags", "EquivalentNetwork",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Equivalents.EquivalentEquipment",
+        title="EquivalentEquipment",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End equivalentEquipment user definitions:
+    #  End "EquivalentEquipment" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -91,17 +116,29 @@ class EquivalentBranch(EquivalentEquipment):
     #--------------------------------------------------------------------------
 
     # Positive sequence series reactance of the reduced branch.
-    x = Float
+    x = Float(desc="Positive sequence series reactance of the reduced branch.")
 
     # Positive sequence series resistance of the reduced branch.
-    r = Float
+    r = Float(desc="Positive sequence series resistance of the reduced branch.")
 
     #--------------------------------------------------------------------------
-    #  Begin equivalentBranch user definitions:
+    #  Begin "EquivalentBranch" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "phases", "x", "r",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags", "EquivalentNetwork",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Equivalents.EquivalentBranch",
+        title="EquivalentBranch",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End equivalentBranch user definitions:
+    #  End "EquivalentBranch" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -117,17 +154,29 @@ class EquivalentShunt(EquivalentEquipment):
     #--------------------------------------------------------------------------
 
     # Positive sequence shunt conductance.
-    g = Float
+    g = Float(desc="Positive sequence shunt conductance.")
 
     # Positive sequence shunt susceptance.
-    b = Float
+    b = Float(desc="Positive sequence shunt susceptance.")
 
     #--------------------------------------------------------------------------
-    #  Begin equivalentShunt user definitions:
+    #  Begin "EquivalentShunt" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "phases", "g", "b",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags", "EquivalentNetwork",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Equivalents.EquivalentShunt",
+        title="EquivalentShunt",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End equivalentShunt user definitions:
+    #  End "EquivalentShunt" user definitions:
     #--------------------------------------------------------------------------
 
 

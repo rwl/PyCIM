@@ -25,9 +25,9 @@ from CIM13.Core import IdentifiedObject
 
 from enthought.traits.api import Instance, List, Bool, Float
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -45,49 +45,68 @@ class TopologicalNode(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    ReportingGroup = Instance("CIM13.Core.ReportingGroup")
+    ReportingGroup = Instance("CIM13.Core.ReportingGroup",
+        opposite="TopologicalNode")
 
-    AngleRef_TopologicalIsland = Instance("CIM13.Topology.TopologicalIsland")
+    AngleRef_TopologicalIsland = Instance("CIM13.Topology.TopologicalIsland",
+        opposite="AngleRef_TopologicalNode")
 
-    ConnectivityNodeContainer = Instance("CIM13.Core.ConnectivityNodeContainer")
+    ConnectivityNodeContainer = Instance("CIM13.Core.ConnectivityNodeContainer",
+        opposite="TopologicalNode")
 
     # A topological node belongs to a topological island
-    TopologicalIsland = Instance("CIM13.Topology.TopologicalIsland")
+    TopologicalIsland = Instance("CIM13.Topology.TopologicalIsland",
+        desc="A topological node belongs to a topological island",
+        opposite="TopologicalNodes")
 
     # Several ConnectivityNode(s) may combine together to form a single TopologicalNode, depending on the current state of the network.
-    ConnectivityNodes = List(Instance("CIM13.Topology.ConnectivityNode"))
+    ConnectivityNodes = List(Instance("CIM13.Topology.ConnectivityNode"),
+        desc="Several ConnectivityNode(s) may combine together to form a single TopologicalNode, depending on the current state of the network.")
 
     Terminal = List(Instance("CIM13.Core.Terminal"))
 
-    ControlArea = Instance("CIM13.ControlArea.ControlArea")
+    ControlArea = Instance("CIM13.ControlArea.ControlArea",
+        opposite="TopologicalNode")
 
     # True if node energized
-    energized = Bool
+    energized = Bool(desc="True if node energized")
 
     # Net injection active power
-    netInjectionP = Float
+    netInjectionP = Float(desc="Net injection active power")
 
     # Net injection reactive power
-    netInjectionQ = Float
+    netInjectionQ = Float(desc="Net injection reactive power")
 
     # Phase angle of node
-    phaseAngle = Float
+    phaseAngle = Float(desc="Phase angle of node")
 
     # The observability status of the node.
-    observabilityFlag = Bool
+    observabilityFlag = Bool(desc="The observability status of the node.")
 
     # Voltage of node
-    voltage = Float
+    voltage = Float(desc="Voltage of node")
 
     # True if node is load carrying
-    loadCarrying = Bool
+    loadCarrying = Bool(desc="True if node is load carrying")
 
     #--------------------------------------------------------------------------
-    #  Begin topologicalNode user definitions:
+    #  Begin "TopologicalNode" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "energized", "netInjectionP", "netInjectionQ", "phaseAngle", "observabilityFlag", "voltage", "loadCarrying",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ReportingGroup", "AngleRef_TopologicalIsland", "ConnectivityNodeContainer", "TopologicalIsland", "ConnectivityNodes", "Terminal", "ControlArea",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Topology.TopologicalNode",
+        title="TopologicalNode",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End topologicalNode user definitions:
+    #  End "TopologicalNode" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -102,17 +121,31 @@ class TopologicalIsland(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    AngleRef_TopologicalNode = Instance("CIM13.Topology.TopologicalNode")
+    AngleRef_TopologicalNode = Instance("CIM13.Topology.TopologicalNode",
+        opposite="AngleRef_TopologicalIsland")
 
     # A topological node belongs to a topological island
-    TopologicalNodes = List(Instance("CIM13.Topology.TopologicalNode"))
+    TopologicalNodes = List(Instance("CIM13.Topology.TopologicalNode"),
+        desc="A topological node belongs to a topological island")
 
     #--------------------------------------------------------------------------
-    #  Begin topologicalIsland user definitions:
+    #  Begin "TopologicalIsland" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "AngleRef_TopologicalNode", "TopologicalNodes",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Topology.TopologicalIsland",
+        title="TopologicalIsland",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End topologicalIsland user definitions:
+    #  End "TopologicalIsland" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -127,22 +160,39 @@ class ConnectivityNode(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    MemberOf_EquipmentContainer = Instance("CIM13.Core.ConnectivityNodeContainer")
+    MemberOf_EquipmentContainer = Instance("CIM13.Core.ConnectivityNodeContainer",
+        opposite="ConnectivityNodes")
 
-    BusNameMarker = Instance("CIM13.Topology.BusNameMarker")
+    BusNameMarker = Instance("CIM13.Topology.BusNameMarker",
+        opposite="ConnectivityNode")
 
     # Terminals interconnect with zero impedance at a node.  Measurements on a node apply to all of its terminals.
-    Terminals = List(Instance("CIM13.Core.Terminal"))
+    Terminals = List(Instance("CIM13.Core.Terminal"),
+        desc="Terminals interconnect with zero impedance at a node.  Measurements on a node apply to all of its terminals.")
 
     # Several ConnectivityNode(s) may combine together to form a single TopologicalNode, depending on the current state of the network.
-    TopologicalNode = Instance("CIM13.Topology.TopologicalNode")
+    TopologicalNode = Instance("CIM13.Topology.TopologicalNode",
+        desc="Several ConnectivityNode(s) may combine together to form a single TopologicalNode, depending on the current state of the network.",
+        opposite="ConnectivityNodes")
 
     #--------------------------------------------------------------------------
-    #  Begin connectivityNode user definitions:
+    #  Begin "ConnectivityNode" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "MemberOf_EquipmentContainer", "BusNameMarker", "Terminals", "TopologicalNode",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Topology.ConnectivityNode",
+        title="ConnectivityNode",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End connectivityNode user definitions:
+    #  End "ConnectivityNode" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -157,18 +207,32 @@ class BusNameMarker(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    ControlArea = Instance("CIM13.ControlArea.ControlArea")
+    ControlArea = Instance("CIM13.ControlArea.ControlArea",
+        opposite="BusNameMarker")
 
     ConnectivityNode = List(Instance("CIM13.Topology.ConnectivityNode"))
 
-    ReportingGroup = Instance("CIM13.Core.ReportingGroup")
+    ReportingGroup = Instance("CIM13.Core.ReportingGroup",
+        opposite="BusNameMarker")
 
     #--------------------------------------------------------------------------
-    #  Begin busNameMarker user definitions:
+    #  Begin "BusNameMarker" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ControlArea", "ConnectivityNode", "ReportingGroup",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Topology.BusNameMarker",
+        title="BusNameMarker",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End busNameMarker user definitions:
+    #  End "BusNameMarker" user definitions:
     #--------------------------------------------------------------------------
 
 

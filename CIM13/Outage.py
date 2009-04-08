@@ -26,9 +26,9 @@ from CIM13.Core import IrregularIntervalSchedule
 
 from enthought.traits.api import Instance, List, Enum, Str, Bool
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -51,11 +51,23 @@ class ClearanceTagType(IdentifiedObject):
     ClearanceTags = List(Instance("CIM13.Outage.ClearanceTag"))
 
     #--------------------------------------------------------------------------
-    #  Begin clearanceTagType user definitions:
+    #  Begin "ClearanceTagType" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ClearanceTags",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Outage.ClearanceTagType",
+        title="ClearanceTagType",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End clearanceTagType user definitions:
+    #  End "ClearanceTagType" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -71,23 +83,38 @@ class SwitchingOperation(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # A switch may be operated by many schedules.
-    Switches = List(Instance("CIM13.Wires.Switch"))
+    Switches = List(Instance("CIM13.Wires.Switch"),
+        desc="A switch may be operated by many schedules.")
 
     # An OutageSchedule may operate many switches.
-    OutageSchedule = Instance("CIM13.Outage.OutageSchedule")
+    OutageSchedule = Instance("CIM13.Outage.OutageSchedule",
+        desc="An OutageSchedule may operate many switches.",
+        opposite="SwitchingOperations")
 
     # The switch position that shall result from this SwitchingOperation
-    newState = SwitchState
+    newState = SwitchState(desc="The switch position that shall result from this SwitchingOperation")
 
     # Time of operation in same units as OutageSchedule.xAxixUnits.
-    operationTime = Str
+    operationTime = Str(desc="Time of operation in same units as OutageSchedule.xAxixUnits.")
 
     #--------------------------------------------------------------------------
-    #  Begin switchingOperation user definitions:
+    #  Begin "SwitchingOperation" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "newState", "operationTime",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Switches", "OutageSchedule",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Outage.SwitchingOperation",
+        title="SwitchingOperation",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End switchingOperation user definitions:
+    #  End "SwitchingOperation" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -103,17 +130,32 @@ class OutageSchedule(IrregularIntervalSchedule):
     #--------------------------------------------------------------------------
 
     # An OutageSchedule may operate many switches.
-    SwitchingOperations = List(Instance("CIM13.Outage.SwitchingOperation"))
+    SwitchingOperations = List(Instance("CIM13.Outage.SwitchingOperation"),
+        desc="An OutageSchedule may operate many switches.")
 
     # A power system resource may have an outage schedule
-    PSR = Instance("CIM13.Core.PowerSystemResource")
+    PSR = Instance("CIM13.Core.PowerSystemResource",
+        desc="A power system resource may have an outage schedule",
+        opposite="OutageSchedule")
 
     #--------------------------------------------------------------------------
-    #  Begin outageSchedule user definitions:
+    #  Begin "OutageSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value2Unit", "startTime", "value2Multiplier", "value1Unit", "value1Multiplier",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "TimePoints", "SwitchingOperations", "PSR",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Outage.OutageSchedule",
+        title="OutageSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End outageSchedule user definitions:
+    #  End "OutageSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -129,40 +171,55 @@ class ClearanceTag(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # Conducting equipment may have multiple clearance tags for authorized field work
-    ConductingEquipment = Instance("CIM13.Core.ConductingEquipment")
+    ConductingEquipment = Instance("CIM13.Core.ConductingEquipment",
+        desc="Conducting equipment may have multiple clearance tags for authorized field work",
+        opposite="ClearanceTags")
 
-    ClearanceTagType = Instance("CIM13.Outage.ClearanceTagType")
+    ClearanceTagType = Instance("CIM13.Outage.ClearanceTagType",
+        opposite="ClearanceTags")
 
     # Description of the work to be performed
-    workDescription = Str
+    workDescription = Str(desc="Description of the work to be performed")
 
     # The time at which the clearance tag is scheduled to be set.
-    workStartTime = Str
+    workStartTime = Str(desc="The time at which the clearance tag is scheduled to be set.")
 
     # The name of the person who is authorized to issue the tag
-    authorityName = Str
+    authorityName = Str(desc="The name of the person who is authorized to issue the tag")
 
     # Set true if equipment must be deenergized
-    deenergizeReqFlag = Bool
+    deenergizeReqFlag = Bool(desc="Set true if equipment must be deenergized")
 
     # The time at which the clearance tag is scheduled to be removed
-    workEndTime = Str
+    workEndTime = Str(desc="The time at which the clearance tag is scheduled to be removed")
 
     # The time at which the clearance tag was issued
-    tagIssueTime = Str
+    tagIssueTime = Str(desc="The time at which the clearance tag was issued")
 
     # Set true if equipment must be grounded
-    groundReqFlag = Bool
+    groundReqFlag = Bool(desc="Set true if equipment must be grounded")
 
     # Set true if equipment phasing must be checked
-    phaseCheckReqFlag = Bool
+    phaseCheckReqFlag = Bool(desc="Set true if equipment phasing must be checked")
 
     #--------------------------------------------------------------------------
-    #  Begin clearanceTag user definitions:
+    #  Begin "ClearanceTag" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "workDescription", "workStartTime", "authorityName", "deenergizeReqFlag", "workEndTime", "tagIssueTime", "groundReqFlag", "phaseCheckReqFlag",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ConductingEquipment", "ClearanceTagType",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Outage.ClearanceTag",
+        title="ClearanceTag",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End clearanceTag user definitions:
+    #  End "ClearanceTag" user definitions:
     #--------------------------------------------------------------------------
 
 

@@ -15,23 +15,14 @@
 # Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #------------------------------------------------------------------------------
 
+""" Dummy package for the latest version of the 'Generation' package Common
+    Information Model.
+"""
+
 #------------------------------------------------------------------------------
 #  Imports:
 #------------------------------------------------------------------------------
 
-
-
-
-
-# <<< imports
-# @generated
-from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
-# >>> imports
-#------------------------------------------------------------------------------
-#  Trait definitions:
-#------------------------------------------------------------------------------
-
-
-
+from CIM13.Generation import *
 
 # EOF -------------------------------------------------------------------------

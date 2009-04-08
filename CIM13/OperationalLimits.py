@@ -26,9 +26,9 @@ from CIM13 import Root
 
 from enthought.traits.api import Instance, List, Enum, Str, Bool, Float
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -48,19 +48,33 @@ class OperationalLimit(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    OperationalLimitType = Instance("CIM13.OperationalLimits.OperationalLimitType")
+    OperationalLimitType = Instance("CIM13.OperationalLimits.OperationalLimitType",
+        opposite="OperationalLimit")
 
-    OperationalLimitSet = Instance("CIM13.OperationalLimits.OperationalLimitSet")
+    OperationalLimitSet = Instance("CIM13.OperationalLimits.OperationalLimitSet",
+        opposite="OperationalLimitValue")
 
     # Used to specify high/low and limit levels.
-    type = Str
+    type = Str(desc="Used to specify high/low and limit levels.")
 
     #--------------------------------------------------------------------------
-    #  Begin operationalLimit user definitions:
+    #  Begin "OperationalLimit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "type",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "OperationalLimitType", "OperationalLimitSet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.OperationalLimits.OperationalLimit",
+        title="OperationalLimit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End operationalLimit user definitions:
+    #  End "OperationalLimit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -78,29 +92,41 @@ class BranchGroup(IdentifiedObject):
     BranchGroupTerminal = List(Instance("CIM13.OperationalLimits.BranchGroupTerminal"))
 
     # Monitor the active power flow.
-    monitorActivePower = Bool
+    monitorActivePower = Bool(desc="Monitor the active power flow.")
 
     # The maximum active power flow.
-    maximumActivePower = Float
+    maximumActivePower = Float(desc="The maximum active power flow.")
 
     # Monitor the reactive power flow.
-    monitorReactivePower = Bool
+    monitorReactivePower = Bool(desc="Monitor the reactive power flow.")
 
     # The minimum active power flow.
-    minimumActivePower = Float
+    minimumActivePower = Float(desc="The minimum active power flow.")
 
     # The maximum reactive power flow.
-    maximumReactivePower = Float
+    maximumReactivePower = Float(desc="The maximum reactive power flow.")
 
     # The minimum reactive power flow.
-    minimumReactivePower = Float
+    minimumReactivePower = Float(desc="The minimum reactive power flow.")
 
     #--------------------------------------------------------------------------
-    #  Begin branchGroup user definitions:
+    #  Begin "BranchGroup" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "monitorActivePower", "maximumActivePower", "monitorReactivePower", "minimumActivePower", "maximumReactivePower", "minimumReactivePower",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "BranchGroupTerminal",
+                label="References"),
+            dock="tab"),
+        id="CIM13.OperationalLimits.BranchGroup",
+        title="BranchGroup",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End branchGroup user definitions:
+    #  End "BranchGroup" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -118,17 +144,29 @@ class OperationalLimitType(Root):
     OperationalLimit = List(Instance("CIM13.OperationalLimits.OperationalLimit"))
 
     # The direction of the limit.
-    direction = OperationalLimitDirectionKind
+    direction = OperationalLimitDirectionKind(desc="The direction of the limit.")
 
     # The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed.
-    acceptableDuration = Float
+    acceptableDuration = Float(desc="The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed.")
 
     #--------------------------------------------------------------------------
-    #  Begin operationalLimitType user definitions:
+    #  Begin "OperationalLimitType" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "direction", "acceptableDuration",
+                label="Attributes"),
+            VGroup("ContainedBy", "OperationalLimit",
+                label="References"),
+            dock="tab"),
+        id="CIM13.OperationalLimits.OperationalLimitType",
+        title="OperationalLimitType",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End operationalLimitType user definitions:
+    #  End "OperationalLimitType" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -143,18 +181,32 @@ class OperationalLimitSet(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    Terminal = Instance("CIM13.Core.Terminal")
+    Terminal = Instance("CIM13.Core.Terminal",
+        opposite="OperationalLimitSet")
 
     OperationalLimitValue = List(Instance("CIM13.OperationalLimits.OperationalLimit"))
 
-    Equipment = Instance("CIM13.Core.Equipment")
+    Equipment = Instance("CIM13.Core.Equipment",
+        opposite="OperationalLimitSet")
 
     #--------------------------------------------------------------------------
-    #  Begin operationalLimitSet user definitions:
+    #  Begin "OperationalLimitSet" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Terminal", "OperationalLimitValue", "Equipment",
+                label="References"),
+            dock="tab"),
+        id="CIM13.OperationalLimits.OperationalLimitSet",
+        title="OperationalLimitSet",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End operationalLimitSet user definitions:
+    #  End "OperationalLimitSet" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -169,19 +221,33 @@ class BranchGroupTerminal(Root):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    BranchGroup = Instance("CIM13.OperationalLimits.BranchGroup")
+    BranchGroup = Instance("CIM13.OperationalLimits.BranchGroup",
+        opposite="BranchGroupTerminal")
 
-    Terminal = Instance("CIM13.Core.Terminal")
+    Terminal = Instance("CIM13.Core.Terminal",
+        opposite="BranchGroupTerminal")
 
     # The flow into the terminal is summed if set true.   The flow out of the terminanl is summed if set false.
-    positiveFlowIn = Bool
+    positiveFlowIn = Bool(desc="The flow into the terminal is summed if set true.   The flow out of the terminanl is summed if set false.")
 
     #--------------------------------------------------------------------------
-    #  Begin branchGroupTerminal user definitions:
+    #  Begin "BranchGroupTerminal" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "positiveFlowIn",
+                label="Attributes"),
+            VGroup("ContainedBy", "BranchGroup", "Terminal",
+                label="References"),
+            dock="tab"),
+        id="CIM13.OperationalLimits.BranchGroupTerminal",
+        title="BranchGroupTerminal",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End branchGroupTerminal user definitions:
+    #  End "BranchGroupTerminal" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -197,14 +263,26 @@ class ActivePowerLimit(OperationalLimit):
     #--------------------------------------------------------------------------
 
     # Value of active power limit.
-    value = Float
+    value = Float(desc="Value of active power limit.")
 
     #--------------------------------------------------------------------------
-    #  Begin activePowerLimit user definitions:
+    #  Begin "ActivePowerLimit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "type", "value",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "OperationalLimitType", "OperationalLimitSet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.OperationalLimits.ActivePowerLimit",
+        title="ActivePowerLimit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End activePowerLimit user definitions:
+    #  End "ActivePowerLimit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -220,14 +298,26 @@ class CurrentLimit(OperationalLimit):
     #--------------------------------------------------------------------------
 
     # Limit on current flow.
-    value = Float
+    value = Float(desc="Limit on current flow.")
 
     #--------------------------------------------------------------------------
-    #  Begin currentLimit user definitions:
+    #  Begin "CurrentLimit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "type", "value",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "OperationalLimitType", "OperationalLimitSet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.OperationalLimits.CurrentLimit",
+        title="CurrentLimit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End currentLimit user definitions:
+    #  End "CurrentLimit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -243,14 +333,26 @@ class VoltageLimit(OperationalLimit):
     #--------------------------------------------------------------------------
 
     # Limit on voltage. High or low limit depends on the OperatoinalLimit.limitKind
-    value = Float
+    value = Float(desc="Limit on voltage. High or low limit depends on the OperatoinalLimit.limitKind")
 
     #--------------------------------------------------------------------------
-    #  Begin voltageLimit user definitions:
+    #  Begin "VoltageLimit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "type", "value",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "OperationalLimitType", "OperationalLimitSet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.OperationalLimits.VoltageLimit",
+        title="VoltageLimit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End voltageLimit user definitions:
+    #  End "VoltageLimit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -266,14 +368,26 @@ class ApparentPowerLimit(OperationalLimit):
     #--------------------------------------------------------------------------
 
     # The apparent power limit.
-    value = Float
+    value = Float(desc="The apparent power limit.")
 
     #--------------------------------------------------------------------------
-    #  Begin apparentPowerLimit user definitions:
+    #  Begin "ApparentPowerLimit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "type", "value",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "OperationalLimitType", "OperationalLimitSet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.OperationalLimits.ApparentPowerLimit",
+        title="ApparentPowerLimit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End apparentPowerLimit user definitions:
+    #  End "ApparentPowerLimit" user definitions:
     #--------------------------------------------------------------------------
 
 

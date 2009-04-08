@@ -27,9 +27,9 @@ from CIM13.Domain import UnitMultiplier
 
 from enthought.traits.api import Instance, List, Enum, Float, Bool, Str, Int
 # <<< imports
-from itertools import count
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -58,23 +58,37 @@ class IrregularTimePoint(Root):
     #--------------------------------------------------------------------------
 
     # An IrregularTimePoint belongs to an IrregularIntervalSchedule.
-    IntervalSchedule = Instance("CIM13.Core.IrregularIntervalSchedule")
+    IntervalSchedule = Instance("CIM13.Core.IrregularIntervalSchedule",
+        desc="An IrregularTimePoint belongs to an IrregularIntervalSchedule.",
+        opposite="TimePoints")
 
     # The time is relative the BasicTimeSchedule.startTime.
-    time = Float
+    time = Float(desc="The time is relative the BasicTimeSchedule.startTime.")
 
     # The second value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule.
-    value2 = Float
+    value2 = Float(desc="The second value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule.")
 
     # The first value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule.
-    value1 = Float
+    value1 = Float(desc="The first value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule.")
 
     #--------------------------------------------------------------------------
-    #  Begin irregularTimePoint user definitions:
+    #  Begin "IrregularTimePoint" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "time", "value2", "value1",
+                label="Attributes"),
+            VGroup("ContainedBy", "IntervalSchedule",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.IrregularTimePoint",
+        title="IrregularTimePoint",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End irregularTimePoint user definitions:
+    #  End "IrregularTimePoint" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -89,19 +103,33 @@ class OperatingShare(Root):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    OperatingParticipant = Instance("CIM13.Core.OperatingParticipant")
+    OperatingParticipant = Instance("CIM13.Core.OperatingParticipant",
+        opposite="OperatingShare")
 
-    PowerSystemResource = Instance("CIM13.Core.PowerSystemResource")
+    PowerSystemResource = Instance("CIM13.Core.PowerSystemResource",
+        opposite="OperatingShare")
 
     # Percentage ownership for this device.   The percentage indicates the percentage ownership of the PSROwner for the PowerSystemResource.  The total percentage ownership for a PowerSystemResource should add to 100%.
-    percentage = Float
+    percentage = Float(desc="Percentage ownership for this device.   The percentage indicates the percentage ownership of the PSROwner for the PowerSystemResource.  The total percentage ownership for a PowerSystemResource should add to 100%.")
 
     #--------------------------------------------------------------------------
-    #  Begin operatingShare user definitions:
+    #  Begin "OperatingShare" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "percentage",
+                label="Attributes"),
+            VGroup("ContainedBy", "OperatingParticipant", "PowerSystemResource",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.OperatingShare",
+        title="OperatingShare",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End operatingShare user definitions:
+    #  End "OperatingShare" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -117,23 +145,37 @@ class CurveData(Root):
     #--------------------------------------------------------------------------
 
     # The point data values that define a curve
-    CurveSchedule = Instance("CIM13.Core.Curve")
+    CurveSchedule = Instance("CIM13.Core.Curve",
+        desc="The point data values that define a curve",
+        opposite="CurveScheduleDatas")
 
     # The data value of the X-axis variable,  depending on the X-axis units
-    xvalue = Float
+    xvalue = Float(desc="The data value of the X-axis variable,  depending on the X-axis units")
 
     # The data value of the  first Y-axis variable, depending on the Y-axis units
-    y1value = Float
+    y1value = Float(desc="The data value of the  first Y-axis variable, depending on the Y-axis units")
 
     # The data value of the second Y-axis variable (if present), depending on the Y-axis units
-    y2value = Float
+    y2value = Float(desc="The data value of the second Y-axis variable (if present), depending on the Y-axis units")
 
     #--------------------------------------------------------------------------
-    #  Begin curveData user definitions:
+    #  Begin "CurveData" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "xvalue", "y1value", "y2value",
+                label="Attributes"),
+            VGroup("ContainedBy", "CurveSchedule",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.CurveData",
+        title="CurveData",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End curveData user definitions:
+    #  End "CurveData" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -149,23 +191,37 @@ class RegularTimePoint(Root):
     #--------------------------------------------------------------------------
 
     # A RegularTimePoint belongs to a RegularIntervalSchedule.
-    IntervalSchedule = Instance("CIM13.Core.RegularIntervalSchedule")
+    IntervalSchedule = Instance("CIM13.Core.RegularIntervalSchedule",
+        desc="A RegularTimePoint belongs to a RegularIntervalSchedule.",
+        opposite="TimePoints")
 
     # The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.
-    value1 = Float
+    value1 = Float(desc="The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.")
 
     # The second value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.
-    value2 = Float
+    value2 = Float(desc="The second value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.")
 
     # The position of the RegularTimePoint in the sequence. Note that time points don't have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the RegularIntervalSchedule.timeStep with the RegularTimePoint.sequenceNumber and add the BasicIntervalSchedule.startTime.
-    sequenceNumber = Int
+    sequenceNumber = Int(desc="The position of the RegularTimePoint in the sequence. Note that time points don't have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the RegularIntervalSchedule.timeStep with the RegularTimePoint.sequenceNumber and add the BasicIntervalSchedule.startTime.")
 
     #--------------------------------------------------------------------------
-    #  Begin regularTimePoint user definitions:
+    #  Begin "RegularTimePoint" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "value1", "value2", "sequenceNumber",
+                label="Attributes"),
+            VGroup("ContainedBy", "IntervalSchedule",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.RegularTimePoint",
+        title="RegularTimePoint",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End regularTimePoint user definitions:
+    #  End "RegularTimePoint" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -181,65 +237,46 @@ class IdentifiedObject(Root):
     #--------------------------------------------------------------------------
 
     # An IdentifiedObject belongs to a Modeling Authority Set for purposes of defining a group of data maintained by the same Modeling Authority.
-    ModelingAuthoritySet = Instance("CIM13.Core.ModelingAuthoritySet")
+    ModelingAuthoritySet = Instance("CIM13.Core.ModelingAuthoritySet",
+        desc="An IdentifiedObject belongs to a Modeling Authority Set for purposes of defining a group of data maintained by the same Modeling Authority.",
+        opposite="IdentifiedObjects")
 
     # The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy.
-    name = Str
+    name = Str(desc="The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy.")
 
     # The localName is a human readable name of the object. It is only used with objects organized in a naming hierarchy. The simplest naming hierarchy has just one parent (the root) giving a flat naming hierarchy. However, the naming hierarchy usually has several levels, e.g. Substation, VoltageLevel, Equipment etc. Children of the same parent have names that are unique among them. If the uniqueness requirement cannot be met IdentifiedObject.localName shall not be used, use IdentifiedObject.name  instead.
-    localName = Str
+    localName = Str(desc="The localName is a human readable name of the object. It is only used with objects organized in a naming hierarchy. The simplest naming hierarchy has just one parent (the root) giving a flat naming hierarchy. However, the naming hierarchy usually has several levels, e.g. Substation, VoltageLevel, Equipment etc. Children of the same parent have names that are unique among them. If the uniqueness requirement cannot be met IdentifiedObject.localName shall not be used, use IdentifiedObject.name  instead.")
 
     # The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.
-    description = Str
+    description = Str(desc="The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.")
 
     # The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.
-    aliasName = Str
+    aliasName = Str(desc="The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.")
 
     # A Model Authority issues mRIDs. Given that each Model Authority has a unique id and this id is part of the mRID, then the mRID is globally unique.
-    mRID = Str
+    mRID = Str(desc="A Model Authority issues mRIDs. Given that each Model Authority has a unique id and this id is part of the mRID, then the mRID is globally unique.")
 
     # The pathname is a system unique name composed from all IdentifiedObject.localNames in a naming hierarchy path from the object to the root.
-    pathName = Str
+    pathName = Str(desc="The pathname is a system unique name composed from all IdentifiedObject.localNames in a naming hierarchy path from the object to the root.")
 
     #--------------------------------------------------------------------------
-    #  Begin identifiedObject user definitions:
+    #  Begin "IdentifiedObject" user definitions:
     #--------------------------------------------------------------------------
 
-    _name_ids = count(0)
-
-    def _name_default(self):
-        """ Trait initialiser.
-        """
-        return self._generate_name()
-
-
-    def _get_name(self):
-        """ Returns the name, which is generated if it has not been already.
-        """
-        if self._name is None:
-            self._name = self._generate_name()
-        return self._name
-
-
-    def _set_name(self, newname):
-        """ Change name to newname. Uniqueness is not guaranteed anymore.
-        """
-        self._name = newname
-
-
-    def _generate_name(self):
-        """ Return a unique name for this object.
-        """
-        return "%s-%i" % (self.__class__.__name__,  self._name_ids.next())
-
-
-    def __repr__(self):
-        """ The default representation of a named object is its name.
-        """
-        return "<%s '%s'>" % (self.__class__.__name__, self.name)
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.IdentifiedObject",
+        title="IdentifiedObject",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
 
     #--------------------------------------------------------------------------
-    #  End identifiedObject user definitions:
+    #  End "IdentifiedObject" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -255,35 +292,48 @@ class Curve(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # The point data values that define a curve
-    CurveScheduleDatas = List(Instance("CIM13.Core.CurveData"))
+    CurveScheduleDatas = List(Instance("CIM13.Core.CurveData"),
+        desc="The point data values that define a curve")
 
     # The Y1-axis units of measure.
-    y1Unit = UnitSymbol
+    y1Unit = UnitSymbol(desc="The Y1-axis units of measure.")
 
     # The style or shape of the curve.
-    curveStyle = CurveStyle
+    curveStyle = CurveStyle(desc="The style or shape of the curve.")
 
     # Multiplier for Y2-axis.
-    y2Multiplier = UnitMultiplier
+    y2Multiplier = UnitMultiplier(desc="Multiplier for Y2-axis.")
 
     # The Y2-axis units of measure.
-    y2Unit = UnitSymbol
+    y2Unit = UnitSymbol(desc="The Y2-axis units of measure.")
 
     # Multiplier for Y1-axis
-    y1Multiplier = UnitMultiplier
+    y1Multiplier = UnitMultiplier(desc="Multiplier for Y1-axis")
 
     # Multiplier for X-axis.
-    xMultiplier = UnitMultiplier
+    xMultiplier = UnitMultiplier(desc="Multiplier for X-axis.")
 
     # The X-axis units of measure.
-    xUnit = UnitSymbol
+    xUnit = UnitSymbol(desc="The X-axis units of measure.")
 
     #--------------------------------------------------------------------------
-    #  Begin curve user definitions:
+    #  Begin "Curve" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "y1Unit", "curveStyle", "y2Multiplier", "y2Unit", "y1Multiplier", "xMultiplier", "xUnit",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "CurveScheduleDatas",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.Curve",
+        title="Curve",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End curve user definitions:
+    #  End "Curve" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -300,18 +350,31 @@ class ReportingGroup(IdentifiedObject):
 
     PowerSystemResource = List(Instance("CIM13.Core.PowerSystemResource"))
 
-    ReportingSuperGroup = Instance("CIM13.Core.ReportingSuperGroup")
+    ReportingSuperGroup = Instance("CIM13.Core.ReportingSuperGroup",
+        opposite="ReportingGroup")
 
     BusNameMarker = List(Instance("CIM13.Topology.BusNameMarker"))
 
     TopologicalNode = List(Instance("CIM13.Topology.TopologicalNode"))
 
     #--------------------------------------------------------------------------
-    #  Begin reportingGroup user definitions:
+    #  Begin "ReportingGroup" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PowerSystemResource", "ReportingSuperGroup", "BusNameMarker", "TopologicalNode",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.ReportingGroup",
+        title="ReportingGroup",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End reportingGroup user definitions:
+    #  End "ReportingGroup" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -327,17 +390,32 @@ class ModelingAuthoritySet(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # An IdentifiedObject belongs to a Modeling Authority Set for purposes of defining a group of data maintained by the same Modeling Authority.
-    IdentifiedObjects = List(Instance("CIM13.Core.IdentifiedObject"))
+    IdentifiedObjects = List(Instance("CIM13.Core.IdentifiedObject"),
+        desc="An IdentifiedObject belongs to a Modeling Authority Set for purposes of defining a group of data maintained by the same Modeling Authority.")
 
     # A Modeling Authority set supplies and maintains the data for the objects in a Modeling Authority Set.
-    ModelingAuthority = Instance("CIM13.Core.ModelingAuthority")
+    ModelingAuthority = Instance("CIM13.Core.ModelingAuthority",
+        desc="A Modeling Authority set supplies and maintains the data for the objects in a Modeling Authority Set.",
+        opposite="ModelingAuthoritySets")
 
     #--------------------------------------------------------------------------
-    #  Begin modelingAuthoritySet user definitions:
+    #  Begin "ModelingAuthoritySet" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "IdentifiedObjects", "ModelingAuthority",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.ModelingAuthoritySet",
+        title="ModelingAuthoritySet",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End modelingAuthoritySet user definitions:
+    #  End "ModelingAuthoritySet" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -355,11 +433,23 @@ class OperatingParticipant(IdentifiedObject):
     OperatingShare = List(Instance("CIM13.Core.OperatingShare"))
 
     #--------------------------------------------------------------------------
-    #  Begin operatingParticipant user definitions:
+    #  Begin "OperatingParticipant" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "OperatingShare",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.OperatingParticipant",
+        title="OperatingParticipant",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End operatingParticipant user definitions:
+    #  End "OperatingParticipant" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -377,11 +467,23 @@ class ReportingSuperGroup(IdentifiedObject):
     ReportingGroup = List(Instance("CIM13.Core.ReportingGroup"))
 
     #--------------------------------------------------------------------------
-    #  Begin reportingSuperGroup user definitions:
+    #  Begin "ReportingSuperGroup" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ReportingGroup",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.ReportingSuperGroup",
+        title="ReportingSuperGroup",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End reportingSuperGroup user definitions:
+    #  End "ReportingSuperGroup" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -397,14 +499,27 @@ class GeographicalRegion(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # The association is used in the naming hierarchy.
-    Regions = List(Instance("CIM13.Core.SubGeographicalRegion"))
+    Regions = List(Instance("CIM13.Core.SubGeographicalRegion"),
+        desc="The association is used in the naming hierarchy.")
 
     #--------------------------------------------------------------------------
-    #  Begin geographicalRegion user definitions:
+    #  Begin "GeographicalRegion" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Regions",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.GeographicalRegion",
+        title="GeographicalRegion",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End geographicalRegion user definitions:
+    #  End "GeographicalRegion" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -422,16 +537,29 @@ class Unit(IdentifiedObject):
     Controls = List(Instance("CIM13.Meas.Control"))
 
     # The Protection Equipments having the Unit.
-    ProtectionEquipments = List(Instance("CIM13.Protection.ProtectionEquipment"))
+    ProtectionEquipments = List(Instance("CIM13.Protection.ProtectionEquipment"),
+        desc="The Protection Equipments having the Unit.")
 
     Measurements = List(Instance("CIM13.Meas.Measurement"))
 
     #--------------------------------------------------------------------------
-    #  Begin unit user definitions:
+    #  Begin "Unit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Controls", "ProtectionEquipments", "Measurements",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.Unit",
+        title="Unit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End unit user definitions:
+    #  End "Unit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -447,14 +575,27 @@ class ModelingAuthority(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # A Modeling Authority set supplies and maintains the data for the objects in a Modeling Authority Set.
-    ModelingAuthoritySets = List(Instance("CIM13.Core.ModelingAuthoritySet"))
+    ModelingAuthoritySets = List(Instance("CIM13.Core.ModelingAuthoritySet"),
+        desc="A Modeling Authority set supplies and maintains the data for the objects in a Modeling Authority Set.")
 
     #--------------------------------------------------------------------------
-    #  Begin modelingAuthority user definitions:
+    #  Begin "ModelingAuthority" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ModelingAuthoritySets",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.ModelingAuthority",
+        title="ModelingAuthority",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End modelingAuthority user definitions:
+    #  End "ModelingAuthority" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -470,22 +611,35 @@ class BaseVoltage(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # Use association to ConductingEquipment only when there is no VoltageLevel container used.
-    ConductingEquipment = List(Instance("CIM13.Core.ConductingEquipment"))
+    ConductingEquipment = List(Instance("CIM13.Core.ConductingEquipment"),
+        desc="Use association to ConductingEquipment only when there is no VoltageLevel container used.")
 
     VoltageLevel = List(Instance("CIM13.Core.VoltageLevel"))
 
     # The PowerSystemResource's base voltage.
-    nominalVoltage = Float
+    nominalVoltage = Float(desc="The PowerSystemResource's base voltage.")
 
     # If true, this is a direct current base voltage and items assigned to this base voltage are also associated with a direct current capabilities.   False indicates alternating current.
-    isDC = Bool
+    isDC = Bool(desc="If true, this is a direct current base voltage and items assigned to this base voltage are also associated with a direct current capabilities.   False indicates alternating current.")
 
     #--------------------------------------------------------------------------
-    #  Begin baseVoltage user definitions:
+    #  Begin "BaseVoltage" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "nominalVoltage", "isDC",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ConductingEquipment", "VoltageLevel",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.BaseVoltage",
+        title="BaseVoltage",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End baseVoltage user definitions:
+    #  End "BaseVoltage" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -501,26 +655,38 @@ class BasicIntervalSchedule(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # Value2 units of measure.
-    value2Unit = UnitSymbol
+    value2Unit = UnitSymbol(desc="Value2 units of measure.")
 
     # The time for the first time point.
-    startTime = Str
+    startTime = Str(desc="The time for the first time point.")
 
     # Multiplier for value2.
-    value2Multiplier = UnitMultiplier
+    value2Multiplier = UnitMultiplier(desc="Multiplier for value2.")
 
     # Value1 units of measure.
-    value1Unit = UnitSymbol
+    value1Unit = UnitSymbol(desc="Value1 units of measure.")
 
     # Multiplier for value1.
-    value1Multiplier = UnitMultiplier
+    value1Multiplier = UnitMultiplier(desc="Multiplier for value1.")
 
     #--------------------------------------------------------------------------
-    #  Begin basicIntervalSchedule user definitions:
+    #  Begin "BasicIntervalSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value2Unit", "startTime", "value2Multiplier", "value1Unit", "value1Multiplier",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.BasicIntervalSchedule",
+        title="BasicIntervalSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End basicIntervalSchedule user definitions:
+    #  End "BasicIntervalSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -536,20 +702,33 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
     #--------------------------------------------------------------------------
 
     # A RegularTimePoint belongs to a RegularIntervalSchedule.
-    TimePoints = List(Instance("CIM13.Core.RegularTimePoint"))
+    TimePoints = List(Instance("CIM13.Core.RegularTimePoint"),
+        desc="A RegularTimePoint belongs to a RegularIntervalSchedule.")
 
     # The time between each pair of subsequent RegularTimePoints.
-    timeStep = Float
+    timeStep = Float(desc="The time between each pair of subsequent RegularTimePoints.")
 
     # The time for the last time point.
-    endTime = Str
+    endTime = Str(desc="The time for the last time point.")
 
     #--------------------------------------------------------------------------
-    #  Begin regularIntervalSchedule user definitions:
+    #  Begin "RegularIntervalSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value2Unit", "startTime", "value2Multiplier", "value1Unit", "value1Multiplier", "timeStep", "endTime",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "TimePoints",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.RegularIntervalSchedule",
+        title="RegularIntervalSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End regularIntervalSchedule user definitions:
+    #  End "RegularIntervalSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -565,14 +744,27 @@ class IrregularIntervalSchedule(BasicIntervalSchedule):
     #--------------------------------------------------------------------------
 
     # An IrregularTimePoint belongs to an IrregularIntervalSchedule.
-    TimePoints = List(Instance("CIM13.Core.IrregularTimePoint"))
+    TimePoints = List(Instance("CIM13.Core.IrregularTimePoint"),
+        desc="An IrregularTimePoint belongs to an IrregularIntervalSchedule.")
 
     #--------------------------------------------------------------------------
-    #  Begin irregularIntervalSchedule user definitions:
+    #  Begin "IrregularIntervalSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value2Unit", "startTime", "value2Multiplier", "value1Unit", "value1Multiplier",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "TimePoints",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.IrregularIntervalSchedule",
+        title="IrregularIntervalSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End irregularIntervalSchedule user definitions:
+    #  End "IrregularIntervalSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -588,31 +780,50 @@ class Terminal(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # A terminal may participate in zero, one, or two control areas as a tie flow.
-    TieFlow = List(Instance("CIM13.ControlArea.TieFlow"))
+    TieFlow = List(Instance("CIM13.ControlArea.TieFlow"),
+        desc="A terminal may participate in zero, one, or two control areas as a tie flow.")
 
     OperationalLimitSet = List(Instance("CIM13.OperationalLimits.OperationalLimitSet"))
 
     BranchGroupTerminal = List(Instance("CIM13.OperationalLimits.BranchGroupTerminal"))
 
     # ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes
-    ConductingEquipment = Instance("CIM13.Core.ConductingEquipment")
+    ConductingEquipment = Instance("CIM13.Core.ConductingEquipment",
+        desc="ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes",
+        opposite="Terminals")
 
     RegulatingControl = List(Instance("CIM13.Wires.RegulatingControl"))
 
     # One or more measurements may be associated with a terminal in the network. Measurement-Terminal defines where the measurement is placed in the network topology. Some Measurements represent quantities related to a particular sensor position, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is captured by the Measurement - Terminal association that makes it possible to place the sensing position at a  well defined place. The place is defined by the connection of the Terminal to ConductingEquipment.
-    Measurements = List(Instance("CIM13.Meas.Measurement"))
+    Measurements = List(Instance("CIM13.Meas.Measurement"),
+        desc="One or more measurements may be associated with a terminal in the network. Measurement-Terminal defines where the measurement is placed in the network topology. Some Measurements represent quantities related to a particular sensor position, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is captured by the Measurement - Terminal association that makes it possible to place the sensing position at a  well defined place. The place is defined by the connection of the Terminal to ConductingEquipment.")
 
-    TopologicalNode = Instance("CIM13.Topology.TopologicalNode")
+    TopologicalNode = Instance("CIM13.Topology.TopologicalNode",
+        opposite="Terminal")
 
     # Terminals interconnect with zero impedance at a node.  Measurements on a node apply to all of its terminals.
-    ConnectivityNode = Instance("CIM13.Topology.ConnectivityNode")
+    ConnectivityNode = Instance("CIM13.Topology.ConnectivityNode",
+        desc="Terminals interconnect with zero impedance at a node.  Measurements on a node apply to all of its terminals.",
+        opposite="Terminals")
 
     #--------------------------------------------------------------------------
-    #  Begin terminal user definitions:
+    #  Begin "Terminal" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "TieFlow", "OperationalLimitSet", "BranchGroupTerminal", "ConductingEquipment", "RegulatingControl", "Measurements", "TopologicalNode", "ConnectivityNode",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.Terminal",
+        title="Terminal",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End terminal user definitions:
+    #  End "Terminal" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -628,20 +839,36 @@ class SubGeographicalRegion(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # The association is used in the naming hierarchy.
-    Region = Instance("CIM13.Core.GeographicalRegion")
+    Region = Instance("CIM13.Core.GeographicalRegion",
+        desc="The association is used in the naming hierarchy.",
+        opposite="Regions")
 
     # A Line can be contained by a SubGeographical Region.
-    Lines = List(Instance("CIM13.Wires.Line"))
+    Lines = List(Instance("CIM13.Wires.Line"),
+        desc="A Line can be contained by a SubGeographical Region.")
 
     # The association is used in the naming hierarchy.
-    Substations = List(Instance("CIM13.Core.Substation"))
+    Substations = List(Instance("CIM13.Core.Substation"),
+        desc="The association is used in the naming hierarchy.")
 
     #--------------------------------------------------------------------------
-    #  Begin subGeographicalRegion user definitions:
+    #  Begin "SubGeographicalRegion" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Region", "Lines", "Substations",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.SubGeographicalRegion",
+        title="SubGeographicalRegion",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End subGeographicalRegion user definitions:
+    #  End "SubGeographicalRegion" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -656,10 +883,12 @@ class PowerSystemResource(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    PSRType = Instance("CIM13.Core.PSRType")
+    PSRType = Instance("CIM13.Core.PSRType",
+        opposite="PowerSystemResource")
 
     # A power system resource may be part of one or more companies
-    OperatedBy_Companies = List(Instance("CIM13.Core.Company"))
+    OperatedBy_Companies = List(Instance("CIM13.Core.Company"),
+        desc="A power system resource may be part of one or more companies")
 
     ReportingGroup = List(Instance("CIM13.Core.ReportingGroup"))
 
@@ -668,17 +897,32 @@ class PowerSystemResource(IdentifiedObject):
     PsrLists = List(Instance("CIM13.Core.PsrList"))
 
     # A power system resource may have an outage schedule
-    OutageSchedule = Instance("CIM13.Outage.OutageSchedule")
+    OutageSchedule = Instance("CIM13.Outage.OutageSchedule",
+        desc="A power system resource may have an outage schedule",
+        opposite="PSR")
 
     # Measurement-PSR defines the measurements in the naming hierarchy.
-    Contains_Measurements = List(Instance("CIM13.Meas.Measurement"))
+    Contains_Measurements = List(Instance("CIM13.Meas.Measurement"),
+        desc="Measurement-PSR defines the measurements in the naming hierarchy.")
 
     #--------------------------------------------------------------------------
-    #  Begin powerSystemResource user definitions:
+    #  Begin "PowerSystemResource" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.PowerSystemResource",
+        title="PowerSystemResource",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End powerSystemResource user definitions:
+    #  End "PowerSystemResource" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -694,14 +938,26 @@ class BasePower(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # Definition of base power.
-    basePower = Float
+    basePower = Float(desc="Definition of base power.")
 
     #--------------------------------------------------------------------------
-    #  Begin basePower user definitions:
+    #  Begin "BasePower" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "basePower",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.BasePower",
+        title="BasePower",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End basePower user definitions:
+    #  End "BasePower" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -719,11 +975,23 @@ class PSRType(IdentifiedObject):
     PowerSystemResource = List(Instance("CIM13.Core.PowerSystemResource"))
 
     #--------------------------------------------------------------------------
-    #  Begin pSRType user definitions:
+    #  Begin "PSRType" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PowerSystemResource",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.PSRType",
+        title="PSRType",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End pSRType user definitions:
+    #  End "PSRType" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -741,14 +1009,26 @@ class PsrList(IdentifiedObject):
     PowerSystemResources = List(Instance("CIM13.Core.PowerSystemResource"))
 
     # Type of power system resources in this list.
-    typePSRList = Str
+    typePSRList = Str(desc="Type of power system resources in this list.")
 
     #--------------------------------------------------------------------------
-    #  Begin psrList user definitions:
+    #  Begin "PsrList" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "typePSRList",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PowerSystemResources",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.PsrList",
+        title="PsrList",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End psrList user definitions:
+    #  End "PsrList" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -764,17 +1044,30 @@ class Company(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # A power system resource may be part of one or more companies
-    Operates_PSRs = List(Instance("CIM13.Core.PowerSystemResource"))
+    Operates_PSRs = List(Instance("CIM13.Core.PowerSystemResource"),
+        desc="A power system resource may be part of one or more companies")
 
     # The type of company.
-    companyType = CompanyType
+    companyType = CompanyType(desc="The type of company.")
 
     #--------------------------------------------------------------------------
-    #  Begin company user definitions:
+    #  Begin "Company" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "companyType",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Operates_PSRs",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Core.Company",
+        title="Company",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End company user definitions:
+    #  End "Company" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -794,11 +1087,23 @@ class ConnectivityNodeContainer(PowerSystemResource):
     ConnectivityNodes = List(Instance("CIM13.Topology.ConnectivityNode"))
 
     #--------------------------------------------------------------------------
-    #  Begin connectivityNodeContainer user definitions:
+    #  Begin "ConnectivityNodeContainer" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "TopologicalNode", "ConnectivityNodes",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Core.ConnectivityNodeContainer",
+        title="ConnectivityNodeContainer",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End connectivityNodeContainer user definitions:
+    #  End "ConnectivityNodeContainer" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -814,14 +1119,27 @@ class EquipmentContainer(ConnectivityNodeContainer):
     #--------------------------------------------------------------------------
 
     # The association is used in the naming hierarchy.
-    Contains_Equipments = List(Instance("CIM13.Core.Equipment"))
+    Contains_Equipments = List(Instance("CIM13.Core.Equipment"),
+        desc="The association is used in the naming hierarchy.")
 
     #--------------------------------------------------------------------------
-    #  Begin equipmentContainer user definitions:
+    #  Begin "EquipmentContainer" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "TopologicalNode", "ConnectivityNodes", "Contains_Equipments",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Core.EquipmentContainer",
+        title="EquipmentContainer",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End equipmentContainer user definitions:
+    #  End "EquipmentContainer" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -841,17 +1159,31 @@ class Equipment(PowerSystemResource):
     ContingencyEquipment = List(Instance("CIM13.Contingency.ContingencyEquipment"))
 
     # The association is used in the naming hierarchy.
-    MemberOf_EquipmentContainer = Instance("CIM13.Core.EquipmentContainer")
+    MemberOf_EquipmentContainer = Instance("CIM13.Core.EquipmentContainer",
+        desc="The association is used in the naming hierarchy.",
+        opposite="Contains_Equipments")
 
     # The equipment is normally in service.
-    normalIlyInService = Bool
+    normalIlyInService = Bool(desc="The equipment is normally in service.")
 
     #--------------------------------------------------------------------------
-    #  Begin equipment user definitions:
+    #  Begin "Equipment" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Core.Equipment",
+        title="Equipment",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End equipment user definitions:
+    #  End "Equipment" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -867,29 +1199,45 @@ class Bay(EquipmentContainer):
     #--------------------------------------------------------------------------
 
     # The association is used in the naming hierarchy.
-    MemberOf_Substation = Instance("CIM13.Core.Substation")
+    MemberOf_Substation = Instance("CIM13.Core.Substation",
+        desc="The association is used in the naming hierarchy.",
+        opposite="Contains_Bays")
 
     # The association is used in the naming hierarchy.
-    MemberOf_VoltageLevel = Instance("CIM13.Core.VoltageLevel")
+    MemberOf_VoltageLevel = Instance("CIM13.Core.VoltageLevel",
+        desc="The association is used in the naming hierarchy.",
+        opposite="Contains_Bays")
 
     # Bus bar configuration.
-    busBarConfiguration = BusbarConfiguration
+    busBarConfiguration = BusbarConfiguration(desc="Bus bar configuration.")
 
     # Indicates the presence/absence of active/reactive power measurements.
-    bayPowerMeasFlag = Bool
+    bayPowerMeasFlag = Bool(desc="Indicates the presence/absence of active/reactive power measurements.")
 
     # Breaker configuration.
-    breakerConfiguration = BreakerConfiguration
+    breakerConfiguration = BreakerConfiguration(desc="Breaker configuration.")
 
     # Indicates the presence/absence of energy measurements.
-    bayEnergyMeasFlag = Bool
+    bayEnergyMeasFlag = Bool(desc="Indicates the presence/absence of energy measurements.")
 
     #--------------------------------------------------------------------------
-    #  Begin bay user definitions:
+    #  Begin "Bay" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "busBarConfiguration", "bayPowerMeasFlag", "breakerConfiguration", "bayEnergyMeasFlag",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "TopologicalNode", "ConnectivityNodes", "Contains_Equipments", "MemberOf_Substation", "MemberOf_VoltageLevel",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Core.Bay",
+        title="Bay",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End bay user definitions:
+    #  End "Bay" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -905,25 +1253,41 @@ class VoltageLevel(EquipmentContainer):
     #--------------------------------------------------------------------------
 
     # The association is used in the naming hierarchy.
-    Contains_Bays = List(Instance("CIM13.Core.Bay"))
+    Contains_Bays = List(Instance("CIM13.Core.Bay"),
+        desc="The association is used in the naming hierarchy.")
 
-    BaseVoltage = Instance("CIM13.Core.BaseVoltage")
+    BaseVoltage = Instance("CIM13.Core.BaseVoltage",
+        opposite="VoltageLevel")
 
     # The association is used in the naming hierarchy.
-    MemberOf_Substation = Instance("CIM13.Core.Substation")
+    MemberOf_Substation = Instance("CIM13.Core.Substation",
+        desc="The association is used in the naming hierarchy.",
+        opposite="Contains_VoltageLevels")
 
     # The bus bar's low voltage limit
-    lowVoltageLimit = Float
+    lowVoltageLimit = Float(desc="The bus bar's low voltage limit")
 
     # The bus bar's high voltage limit
-    highVoltageLimit = Float
+    highVoltageLimit = Float(desc="The bus bar's high voltage limit")
 
     #--------------------------------------------------------------------------
-    #  Begin voltageLevel user definitions:
+    #  Begin "VoltageLevel" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "lowVoltageLimit", "highVoltageLimit",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "TopologicalNode", "ConnectivityNodes", "Contains_Equipments", "Contains_Bays", "BaseVoltage", "MemberOf_Substation",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Core.VoltageLevel",
+        title="VoltageLevel",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End voltageLevel user definitions:
+    #  End "VoltageLevel" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -939,20 +1303,36 @@ class Substation(EquipmentContainer):
     #--------------------------------------------------------------------------
 
     # The association is used in the naming hierarchy.
-    Contains_VoltageLevels = List(Instance("CIM13.Core.VoltageLevel"))
+    Contains_VoltageLevels = List(Instance("CIM13.Core.VoltageLevel"),
+        desc="The association is used in the naming hierarchy.")
 
     # The association is used in the naming hierarchy.
-    Contains_Bays = List(Instance("CIM13.Core.Bay"))
+    Contains_Bays = List(Instance("CIM13.Core.Bay"),
+        desc="The association is used in the naming hierarchy.")
 
     # The association is used in the naming hierarchy.
-    Region = Instance("CIM13.Core.SubGeographicalRegion")
+    Region = Instance("CIM13.Core.SubGeographicalRegion",
+        desc="The association is used in the naming hierarchy.",
+        opposite="Substations")
 
     #--------------------------------------------------------------------------
-    #  Begin substation user definitions:
+    #  Begin "Substation" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "TopologicalNode", "ConnectivityNodes", "Contains_Equipments", "Contains_VoltageLevels", "Contains_Bays", "Region",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Core.Substation",
+        title="Substation",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End substation user definitions:
+    #  End "Substation" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -968,26 +1348,43 @@ class ConductingEquipment(Equipment):
     #--------------------------------------------------------------------------
 
     # ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes
-    Terminals = List(Instance("CIM13.Core.Terminal"))
+    Terminals = List(Instance("CIM13.Core.Terminal"),
+        desc="ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes")
 
     # Protection equipment may be used to protect specific Conducting Equipment. Multiple equipment may be protected or monitored by multiple protection equipment.
-    ProtectionEquipments = List(Instance("CIM13.Protection.ProtectionEquipment"))
+    ProtectionEquipments = List(Instance("CIM13.Protection.ProtectionEquipment"),
+        desc="Protection equipment may be used to protect specific Conducting Equipment. Multiple equipment may be protected or monitored by multiple protection equipment.")
 
     # Use association to ConductingEquipment only when there is no VoltageLevel container used.
-    BaseVoltage = Instance("CIM13.Core.BaseVoltage")
+    BaseVoltage = Instance("CIM13.Core.BaseVoltage",
+        desc="Use association to ConductingEquipment only when there is no VoltageLevel container used.",
+        opposite="ConductingEquipment")
 
     # Conducting equipment may have multiple clearance tags for authorized field work
-    ClearanceTags = List(Instance("CIM13.Outage.ClearanceTag"))
+    ClearanceTags = List(Instance("CIM13.Outage.ClearanceTag"),
+        desc="Conducting equipment may have multiple clearance tags for authorized field work")
 
     # Describes the phases carried by a conducting equipment.
-    phases = PhaseCode
+    phases = PhaseCode(desc="Describes the phases carried by a conducting equipment.")
 
     #--------------------------------------------------------------------------
-    #  Begin conductingEquipment user definitions:
+    #  Begin "ConductingEquipment" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "phases",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Core.ConductingEquipment",
+        title="ConductingEquipment",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End conductingEquipment user definitions:
+    #  End "ConductingEquipment" user definitions:
     #--------------------------------------------------------------------------
 
 

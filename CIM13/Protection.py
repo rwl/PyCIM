@@ -26,9 +26,9 @@ from CIM13.Core import IdentifiedObject
 
 from enthought.traits.api import Instance, List, Float, Bool, Int
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -47,32 +47,48 @@ class ProtectionEquipment(Equipment):
     #--------------------------------------------------------------------------
 
     # Circuit breakers may be operated by protection relays.
-    Operates_Breakers = List(Instance("CIM13.Wires.ProtectedSwitch"))
+    Operates_Breakers = List(Instance("CIM13.Wires.ProtectedSwitch"),
+        desc="Circuit breakers may be operated by protection relays.")
 
     # Protection equipment may be used to protect specific Conducting Equipment. Multiple equipment may be protected or monitored by multiple protection equipment.
-    ConductingEquipments = List(Instance("CIM13.Core.ConductingEquipment"))
+    ConductingEquipments = List(Instance("CIM13.Core.ConductingEquipment"),
+        desc="Protection equipment may be used to protect specific Conducting Equipment. Multiple equipment may be protected or monitored by multiple protection equipment.")
 
     # The Protection Equipments having the Unit.
-    Unit = Instance("CIM13.Core.Unit")
+    Unit = Instance("CIM13.Core.Unit",
+        desc="The Protection Equipments having the Unit.",
+        opposite="ProtectionEquipments")
 
     # Direction same as positive active power flow value.
-    powerDirectionFlag = Bool
+    powerDirectionFlag = Bool(desc="Direction same as positive active power flow value.")
 
     # The minimum allowable value.
-    lowLimit = Float
+    lowLimit = Float(desc="The minimum allowable value.")
 
     # The maximum allowable value.
-    highLimit = Float
+    highLimit = Float(desc="The maximum allowable value.")
 
     # The time delay from detection of abnormal conditions to relay operation.
-    relayDelayTime = Float
+    relayDelayTime = Float(desc="The time delay from detection of abnormal conditions to relay operation.")
 
     #--------------------------------------------------------------------------
-    #  Begin protectionEquipment user definitions:
+    #  Begin "ProtectionEquipment" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "powerDirectionFlag", "lowLimit", "highLimit", "relayDelayTime",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Operates_Breakers", "ConductingEquipments", "Unit",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Protection.ProtectionEquipment",
+        title="ProtectionEquipment",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End protectionEquipment user definitions:
+    #  End "ProtectionEquipment" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -88,20 +104,34 @@ class RecloseSequence(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # A breaker may have zero or more automatic reclosures after a trip occurs.
-    Breaker = Instance("CIM13.Wires.ProtectedSwitch")
+    Breaker = Instance("CIM13.Wires.ProtectedSwitch",
+        desc="A breaker may have zero or more automatic reclosures after a trip occurs.",
+        opposite="RecloseSequences")
 
     # Indicates the time lapse before the reclose step will execute a reclose.
-    recloseDelay = Float
+    recloseDelay = Float(desc="Indicates the time lapse before the reclose step will execute a reclose.")
 
     # Indicates the ordinal position of the reclose step relative to other steps in the sequence.
-    recloseStep = Int
+    recloseStep = Int(desc="Indicates the ordinal position of the reclose step relative to other steps in the sequence.")
 
     #--------------------------------------------------------------------------
-    #  Begin recloseSequence user definitions:
+    #  Begin "RecloseSequence" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "recloseDelay", "recloseStep",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "Breaker",
+                label="References"),
+            dock="tab"),
+        id="CIM13.Protection.RecloseSequence",
+        title="RecloseSequence",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End recloseSequence user definitions:
+    #  End "RecloseSequence" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -117,20 +147,32 @@ class SynchrocheckRelay(ProtectionEquipment):
     #--------------------------------------------------------------------------
 
     # The maximum allowable difference voltage across the open device
-    maxVoltDiff = Float
+    maxVoltDiff = Float(desc="The maximum allowable difference voltage across the open device")
 
     # The maximum allowable frequency difference across the open device
-    maxFreqDiff = Float
+    maxFreqDiff = Float(desc="The maximum allowable frequency difference across the open device")
 
     # The maximum allowable voltage vector phase angle difference across the open device
-    maxAngleDiff = Float
+    maxAngleDiff = Float(desc="The maximum allowable voltage vector phase angle difference across the open device")
 
     #--------------------------------------------------------------------------
-    #  Begin synchrocheckRelay user definitions:
+    #  Begin "SynchrocheckRelay" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "powerDirectionFlag", "lowLimit", "highLimit", "relayDelayTime", "maxVoltDiff", "maxFreqDiff", "maxAngleDiff",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Operates_Breakers", "ConductingEquipments", "Unit",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Protection.SynchrocheckRelay",
+        title="SynchrocheckRelay",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End synchrocheckRelay user definitions:
+    #  End "SynchrocheckRelay" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -146,32 +188,44 @@ class CurrentRelay(ProtectionEquipment):
     #--------------------------------------------------------------------------
 
     # Current limit #3 for inverse time pickup
-    currentLimit3 = Float
+    currentLimit3 = Float(desc="Current limit #3 for inverse time pickup")
 
     # Current limit #1 for inverse time pickup
-    currentLimit1 = Float
+    currentLimit1 = Float(desc="Current limit #1 for inverse time pickup")
 
     # Inverse time delay #3 for current limit #3
-    timeDelay3 = Float
+    timeDelay3 = Float(desc="Inverse time delay #3 for current limit #3")
 
     # Set true if the current relay has inverse time characteristic.
-    inverseTimeFlag = Bool
+    inverseTimeFlag = Bool(desc="Set true if the current relay has inverse time characteristic.")
 
     # Inverse time delay #1 for current limit #1
-    timeDelay1 = Float
+    timeDelay1 = Float(desc="Inverse time delay #1 for current limit #1")
 
     # Current limit #2 for inverse time pickup
-    currentLimit2 = Float
+    currentLimit2 = Float(desc="Current limit #2 for inverse time pickup")
 
     # Inverse time delay #2 for current limit #2
-    timeDelay2 = Float
+    timeDelay2 = Float(desc="Inverse time delay #2 for current limit #2")
 
     #--------------------------------------------------------------------------
-    #  Begin currentRelay user definitions:
+    #  Begin "CurrentRelay" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "powerDirectionFlag", "lowLimit", "highLimit", "relayDelayTime", "currentLimit3", "currentLimit1", "timeDelay3", "inverseTimeFlag", "timeDelay1", "currentLimit2", "timeDelay2",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Operates_Breakers", "ConductingEquipments", "Unit",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Protection.CurrentRelay",
+        title="CurrentRelay",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End currentRelay user definitions:
+    #  End "CurrentRelay" user definitions:
     #--------------------------------------------------------------------------
 
 

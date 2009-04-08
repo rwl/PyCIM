@@ -22,6 +22,7 @@
 #  Imports:
 #------------------------------------------------------------------------------
 
+import sys
 import gzip
 import bz2
 import zipfile
@@ -35,14 +36,13 @@ from enthought.traits.api import Str, Int, Float, Bool, Instance, List, Enum
 #from rdflib.Namespace import Namespace
 #from rdflib import RDF
 
-import rdfxml
+import RDFXML
 
-cim_packages = ["CIM13.Generation.Production",
-    "CIM13.Generation.GenerationDynamics", "CIM13.Contingency",
-    "CIM13.ControlArea", "CIM13.Core",
-    "CIM13.Domain", "CIM13.Equivalents", "CIM13.LoadModel", "CIM13.Meas",
-    "CIM13.OperationalLimits", "CIM13.Outage", "CIM13.Protection",
-    "CIM13.SCADA", "CIM13.Topology", "CIM13.Wires", "CIM13"]
+cim_packages = ["CIM.Core", "CIM.Domain", "CIM.Topology",
+    "CIM.Generation.Production", "CIM.LoadModel", "CIM.Wires",
+    "CIM.Protection", "CIM.Meas", "CIM.Generation.GenerationDynamics",
+    "CIM.Contingency", "CIM.ControlArea",  "CIM.Equivalents",
+    "CIM.OperationalLimits", "CIM.Outage", "CIM.SCADA", "CIM"]
 
 for pkg in cim_packages:
     exec "import %s" % pkg
@@ -52,19 +52,21 @@ for pkg in cim_packages:
 #------------------------------------------------------------------------------
 
 logger = logging.getLogger(__name__)
+logger.addHandler(logging.StreamHandler(sys.stdout))
+logger.setLevel(logging.ERROR)
 
 #------------------------------------------------------------------------------
 #  Constants:
 #------------------------------------------------------------------------------
 
-ns_cim = rdfxml.Namespace("http://iec.ch/TC57/2009/CIM-schema-cim14#")
-#ns_cim = rdfxml.Namespace("http://iec.ch/TC57/2008/CIM-schema-cim13#")
+ns_cim = RDFXML.Namespace("http://iec.ch/TC57/2009/CIM-schema-cim14#")
+#ns_cim = RDFXML.Namespace("http://iec.ch/TC57/2008/CIM-schema-cim13#")
 
 #------------------------------------------------------------------------------
 #  Split fragment from an URI:
 #------------------------------------------------------------------------------
 
-def split_uri(uri):
+def splitURI(uri):
     """ Splits the fragment from an URI and returns a tuple.
 
         For example:
@@ -106,13 +108,13 @@ class CIMAttributeSink:
         """
         logger.debug("Processing triple [%s %s %s]." % (sub, pred, obj))
 
-        ns_sub,  frag_sub  = split_uri(sub)
-        ns_pred, frag_pred = split_uri(pred)
-        ns_obj,  frag_obj  = split_uri(obj)
+        ns_sub,  frag_sub  = splitURI(sub)
+        ns_pred, frag_pred = splitURI(pred)
+        ns_obj,  frag_obj  = splitURI(obj)
 
         # Instantiate an object if the predicate is an RDF type and the object
         # is in the CIM namespace.
-        if (ns_pred == rdfxml.rdf) and (frag_pred == "type") and \
+        if (ns_pred == RDFXML.rdf) and (frag_pred == "type") and \
             (ns_obj == ns_cim):
 
             cls_name = frag_obj
@@ -136,7 +138,7 @@ class CIMAttributeSink:
         elif ns_pred == ns_cim:
             # The URI of the object with the attribute being set.
             uri   = frag_sub
-            # Strip the double quotes that rdfxml.py adds to literals.
+            # Strip the double quotes that RDFXML.py adds to literals.
             value = ns_obj.strip('"')
 
             # Split the class name and the attribute name.
@@ -212,13 +214,13 @@ class CIMReferenceSink:
     def triple(self, sub, pred, obj):
         """ Handles triples from the RDF parser.
         """
-        ns_pred, frag_pred = split_uri(pred)
-        ns_obj,  obj_uri   = split_uri(obj)
+        ns_pred, frag_pred = splitURI(pred)
+        ns_obj,  obj_uri   = splitURI(obj)
 
         # If the predicate is in the CIM namespace, the triple is specifying
         # an attribute or a reference.
         if ns_pred == ns_cim:
-            ns_sub, uri_subject = split_uri(sub)
+            ns_sub, uri_subject = splitURI(sub)
 
             # Get the map of URIs to model elements for the first pass sink.
             uri_map = self.attr_sink.uri_object_map
@@ -346,16 +348,16 @@ class CIMReader:
         # Instantiate CIM objects and set their attributes.
         attr_sink = CIMAttributeSink()
         logger.debug("Parsing objects and attributes in: %s" % filename)
-#        rdfxml.parseURI(filename, sink=attr_sink)
-        rdfxml.parseRDF(s, base=filename, sink=attr_sink)
+#        RDFXML.parseURI(filename, sink=attr_sink)
+        RDFXML.parseRDF(s, base=filename, sink=attr_sink)
 
         # Second pass to set references.
         ref_sink = CIMReferenceSink(attr_sink)
         logger.debug("Starting second pass to set references.")
-#        rdfxml.parseURI(filename, sink=ref_sink)
-        rdfxml.parseRDF(s, base=filename, sink=ref_sink)
+#        RDFXML.parseURI(filename, sink=ref_sink)
+        RDFXML.parseRDF(s, base=filename, sink=ref_sink)
 
-        return CIM13.Model( Contains = attr_sink.uri_object_map.values() )
+        return CIM.Model( Contains = attr_sink.uri_object_map.values() )
 
 #------------------------------------------------------------------------------
 #  "CIMReader2" class:

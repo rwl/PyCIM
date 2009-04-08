@@ -28,28 +28,41 @@ import logging
 
 from os.path import join, dirname
 
-from iec61970.wires import ACLineSegment
+from CIM.LoadModel import \
+    ConformLoadGroup, LoadArea, ConformLoadSchedule, Load
 
-from cim.cim_reader import read_cim
+from CIM.Meas import \
+    AnalogLimit, AnalogValue, Analog
 
-#------------------------------------------------------------------------------
+from CIM.Protection import \
+    CurrentRelay
+
+from CIM.Topology import \
+    ConnectivityNode, TopologicalNode
+
+from CIM.Wires import \
+    Breaker, SynchronousMachine, BusbarSection, ACLineSegment, \
+    PowerTransformer, TransformerWinding
+
+from CIM.Generation import Production
+
+print dir(Production)
+
+from CIM.Generation.Production import \
+    ThermalGeneratingUnit, GenUnitOpCostCurve, GenUnitOpSchedule
+
+from CIM.CIMReader import \
+    read_cim
+
+#-------------------------------------------------------------------------------
 #  Constants:
-#------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
-logger = logging.getLogger()
-logger.addHandler(logging.StreamHandler(sys.stdout))
-logger.setLevel(logging.ERROR)
+RDFXML_FILE = join(dirname(__file__), "data", "10Bus.xml")
 
-#------------------------------------------------------------------------------
-#  Constants:
-#------------------------------------------------------------------------------
-
-RDFXML_FILE = join(dirname(__file__), "data", "10bus.xml")
-#RDFXML_FILE = join(dirname(__file__), "data", "abb40bus_cim13.xml")
-
-#------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 #  "CIMTestCase" class:
-#------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 class CIMTestCase(unittest.TestCase):
     """ Defines a test case for the Common Information Model.
@@ -61,10 +74,25 @@ class CIMTestCase(unittest.TestCase):
         pass
 
 
-    def test_create_cim(self):
-        """ Test creation of a Common Information Model.
+    def test_create_elements(self):
+        """ Test creation of Common Information Model elements.
         """
-        conductor = ACLineSegment()
+        production = [ThermalGeneratingUnit(), GenUnitOpCostCurve(),
+            GenUnitOpSchedule()]
+
+        load_model = [ConformLoadGroup(), LoadArea(), ConformLoadSchedule(),
+            Load()]
+
+        meas = [AnalogLimit(), AnalogValue(), Analog()]
+
+        topology = [ConnectivityNode(), TopologicalNode()]
+
+        wires = [Breaker(), SynchronousMachine(), BusbarSection(),
+            ACLineSegment(), PowerTransformer(), TransformerWinding()]
+
+        elements = production + load_model + meas + topology + wires
+        for element in elements:
+            self.assertNotEqual(element, None)
 
 
     def test_load_cim(self):

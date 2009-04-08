@@ -29,9 +29,9 @@ from CIM13.Core import RegularIntervalSchedule
 
 from enthought.traits.api import Instance, List, Enum, Float, Bool, Str
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -54,44 +54,56 @@ class LoadResponseCharacteristic(IdentifiedObject):
     EnergyConsumer = List(Instance("CIM13.Wires.EnergyConsumer"))
 
     # Portion of reactive power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.
-    qConstantPower = Float
+    qConstantPower = Float(desc="Portion of reactive power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.")
 
     # Exponent of per unit voltage effecting real power.   This model used only when 'useExponentModel' is true.
-    pVoltageExponent = Float
+    pVoltageExponent = Float(desc="Exponent of per unit voltage effecting real power.   This model used only when 'useExponentModel' is true.")
 
     # Exponent of per unit frequency effecting active power
-    pFrequencyExponent = Float
+    pFrequencyExponent = Float(desc="Exponent of per unit frequency effecting active power")
 
     # Portion of reactive power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.
-    qConstantImpedance = Float
+    qConstantImpedance = Float(desc="Portion of reactive power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.")
 
     # Portion of active power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.
-    pConstantPower = Float
+    pConstantPower = Float(desc="Portion of active power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.")
 
     # Portion of active power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.
-    pConstantImpedance = Float
+    pConstantImpedance = Float(desc="Portion of active power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.")
 
     # Portion of reactive power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.
-    qConstantCurrent = Float
+    qConstantCurrent = Float(desc="Portion of reactive power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.")
 
     # Exponent of per unit frequency effecting reactive power
-    qFrequencyExponent = Float
+    qFrequencyExponent = Float(desc="Exponent of per unit frequency effecting reactive power")
 
     # Indicates the exponential voltage dependency model (pVoltateExponent and qVoltageExponent) is to be used.   If false, the coeficient model (consisting of pConstantImpedance, pConstantCurrent, pConstantPower, qConstantImpedance, qConstantCurrent, and qConstantPower) is to be used.
-    exponentModel = Bool
+    exponentModel = Bool(desc="Indicates the exponential voltage dependency model (pVoltateExponent and qVoltageExponent) is to be used.   If false, the coeficient model (consisting of pConstantImpedance, pConstantCurrent, pConstantPower, qConstantImpedance, qConstantCurrent, and qConstantPower) is to be used.")
 
     # Exponent of per unit voltage effecting reactive power.   This model used only when 'useExponentModel' is true.
-    qVoltageExponent = Float
+    qVoltageExponent = Float(desc="Exponent of per unit voltage effecting reactive power.   This model used only when 'useExponentModel' is true.")
 
     # Portion of active power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.
-    pConstantCurrent = Float
+    pConstantCurrent = Float(desc="Portion of active power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.")
 
     #--------------------------------------------------------------------------
-    #  Begin loadResponseCharacteristic user definitions:
+    #  Begin "LoadResponseCharacteristic" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "qConstantPower", "pVoltageExponent", "pFrequencyExponent", "qConstantImpedance", "pConstantPower", "pConstantImpedance", "qConstantCurrent", "qFrequencyExponent", "exponentModel", "qVoltageExponent", "pConstantCurrent",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "EnergyConsumer",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.LoadResponseCharacteristic",
+        title="LoadResponseCharacteristic",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End loadResponseCharacteristic user definitions:
+    #  End "LoadResponseCharacteristic" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -107,23 +119,36 @@ class Season(Root):
     #--------------------------------------------------------------------------
 
     # Load demand models can be based on seasons
-    SeasonDayTypeSchedules = List(Instance("CIM13.LoadModel.SeasonDayTypeSchedule"))
+    SeasonDayTypeSchedules = List(Instance("CIM13.LoadModel.SeasonDayTypeSchedule"),
+        desc="Load demand models can be based on seasons")
 
     # Date season ends
-    endDate = Str
+    endDate = Str(desc="Date season ends")
 
     # Name of the Season
-    name = SeasonName
+    name = SeasonName(desc="Name of the Season")
 
     # Date season starts
-    startDate = Str
+    startDate = Str(desc="Date season starts")
 
     #--------------------------------------------------------------------------
-    #  Begin season user definitions:
+    #  Begin "Season" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "endDate", "name", "startDate",
+                label="Attributes"),
+            VGroup("ContainedBy", "SeasonDayTypeSchedules",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.Season",
+        title="Season",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End season user definitions:
+    #  End "Season" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -139,14 +164,28 @@ class ConformLoad(EnergyConsumer):
     #--------------------------------------------------------------------------
 
     # Consumers may be assigned to a load area.
-    LoadGroup = Instance("CIM13.LoadModel.ConformLoadGroup")
+    LoadGroup = Instance("CIM13.LoadModel.ConformLoadGroup",
+        desc="Consumers may be assigned to a load area.",
+        opposite="EnergyConsumers")
 
     #--------------------------------------------------------------------------
-    #  Begin conformLoad user definitions:
+    #  Begin "ConformLoad" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "phases", "customerCount", "qfixed", "pfixed", "qfixedPct", "pfixedPct",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags", "PowerCutZone", "LoadResponse", "LoadGroup",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.LoadModel.ConformLoad",
+        title="ConformLoad",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End conformLoad user definitions:
+    #  End "ConformLoad" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -162,20 +201,33 @@ class PowerCutZone(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # An energy consumer is assigned to a power cut zone
-    EnergyConsumers = List(Instance("CIM13.Wires.EnergyConsumer"))
+    EnergyConsumers = List(Instance("CIM13.Wires.EnergyConsumer"),
+        desc="An energy consumer is assigned to a power cut zone")
 
     # First level (amount) of load to cut as a percentage of total zone load
-    cutLevel1 = Float
+    cutLevel1 = Float(desc="First level (amount) of load to cut as a percentage of total zone load")
 
     # Second level (amount) of load to cut as a percentage of total zone load
-    cutLevel2 = Float
+    cutLevel2 = Float(desc="Second level (amount) of load to cut as a percentage of total zone load")
 
     #--------------------------------------------------------------------------
-    #  Begin powerCutZone user definitions:
+    #  Begin "PowerCutZone" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "cutLevel1", "cutLevel2",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "EnergyConsumers",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.PowerCutZone",
+        title="PowerCutZone",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End powerCutZone user definitions:
+    #  End "PowerCutZone" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -192,11 +244,23 @@ class StationSupply(EnergyConsumer):
 
     pass
     #--------------------------------------------------------------------------
-    #  Begin stationSupply user definitions:
+    #  Begin "StationSupply" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "phases", "customerCount", "qfixed", "pfixed", "qfixedPct", "pfixedPct",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags", "PowerCutZone", "LoadResponse",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.LoadModel.StationSupply",
+        title="StationSupply",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End stationSupply user definitions:
+    #  End "StationSupply" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -212,14 +276,27 @@ class DayType(IdentifiedObject):
     #--------------------------------------------------------------------------
 
     # Load demand models can be based on day type
-    SeasonDayTypeSchedules = List(Instance("CIM13.LoadModel.SeasonDayTypeSchedule"))
+    SeasonDayTypeSchedules = List(Instance("CIM13.LoadModel.SeasonDayTypeSchedule"),
+        desc="Load demand models can be based on day type")
 
     #--------------------------------------------------------------------------
-    #  Begin dayType user definitions:
+    #  Begin "DayType" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "SeasonDayTypeSchedules",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.DayType",
+        title="DayType",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End dayType user definitions:
+    #  End "DayType" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -234,14 +311,27 @@ class LoadGroup(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    SubLoadArea = Instance("CIM13.LoadModel.SubLoadArea")
+    SubLoadArea = Instance("CIM13.LoadModel.SubLoadArea",
+        opposite="LoadGroups")
 
     #--------------------------------------------------------------------------
-    #  Begin loadGroup user definitions:
+    #  Begin "LoadGroup" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "SubLoadArea",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.LoadGroup",
+        title="LoadGroup",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End loadGroup user definitions:
+    #  End "LoadGroup" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -256,14 +346,27 @@ class EnergyArea(IdentifiedObject):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    ControlArea = Instance("CIM13.ControlArea.ControlArea")
+    ControlArea = Instance("CIM13.ControlArea.ControlArea",
+        opposite="EnergyArea")
 
     #--------------------------------------------------------------------------
-    #  Begin energyArea user definitions:
+    #  Begin "EnergyArea" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ControlArea",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.EnergyArea",
+        title="EnergyArea",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End energyArea user definitions:
+    #  End "EnergyArea" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -279,17 +382,33 @@ class SeasonDayTypeSchedule(RegularIntervalSchedule):
     #--------------------------------------------------------------------------
 
     # Load demand models can be based on day type
-    DayType = Instance("CIM13.LoadModel.DayType")
+    DayType = Instance("CIM13.LoadModel.DayType",
+        desc="Load demand models can be based on day type",
+        opposite="SeasonDayTypeSchedules")
 
     # Load demand models can be based on seasons
-    Season = Instance("CIM13.LoadModel.Season")
+    Season = Instance("CIM13.LoadModel.Season",
+        desc="Load demand models can be based on seasons",
+        opposite="SeasonDayTypeSchedules")
 
     #--------------------------------------------------------------------------
-    #  Begin seasonDayTypeSchedule user definitions:
+    #  Begin "SeasonDayTypeSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value2Unit", "startTime", "value2Multiplier", "value1Unit", "value1Multiplier", "timeStep", "endTime",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "TimePoints", "DayType", "Season",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.SeasonDayTypeSchedule",
+        title="SeasonDayTypeSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End seasonDayTypeSchedule user definitions:
+    #  End "SeasonDayTypeSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -304,14 +423,27 @@ class NonConformLoad(EnergyConsumer):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    LoadGroup = Instance("CIM13.LoadModel.NonConformLoadGroup")
+    LoadGroup = Instance("CIM13.LoadModel.NonConformLoadGroup",
+        opposite="EnergyConsumers")
 
     #--------------------------------------------------------------------------
-    #  Begin nonConformLoad user definitions:
+    #  Begin "NonConformLoad" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "phases", "customerCount", "qfixed", "pfixed", "qfixedPct", "pfixedPct",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags", "PowerCutZone", "LoadResponse", "LoadGroup",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.LoadModel.NonConformLoad",
+        title="NonConformLoad",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End nonConformLoad user definitions:
+    #  End "NonConformLoad" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -327,16 +459,30 @@ class SubLoadArea(EnergyArea):
     #--------------------------------------------------------------------------
 
     # The SubLoadAreas in the LoadArea.
-    LoadArea = Instance("CIM13.LoadModel.LoadArea")
+    LoadArea = Instance("CIM13.LoadModel.LoadArea",
+        desc="The SubLoadAreas in the LoadArea.",
+        opposite="SubLoadAreas")
 
     LoadGroups = List(Instance("CIM13.LoadModel.LoadGroup"))
 
     #--------------------------------------------------------------------------
-    #  Begin subLoadArea user definitions:
+    #  Begin "SubLoadArea" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ControlArea", "LoadArea", "LoadGroups",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.SubLoadArea",
+        title="SubLoadArea",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End subLoadArea user definitions:
+    #  End "SubLoadArea" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -352,26 +498,38 @@ class Load(ConformLoad):
     #--------------------------------------------------------------------------
 
     # The feeder's contribution to load management.
-    feederLoadMgtFactor = Float
+    feederLoadMgtFactor = Float(desc="The feeder's contribution to load management.")
 
     # The rated individual phase current.
-    phaseRatedCurrent = Float
+    phaseRatedCurrent = Float(desc="The rated individual phase current.")
 
     # The amount of nominal feeder active power that is picked up cold.
-    coldPickUpFactorP = Float
+    coldPickUpFactorP = Float(desc="The amount of nominal feeder active power that is picked up cold.")
 
     # The amount of nominal feeder reactive power that is picked up cold.
-    coldPickUpFactorQ = Float
+    coldPickUpFactorQ = Float(desc="The amount of nominal feeder reactive power that is picked up cold.")
 
     # Permit assignment of loads on a participation factor basis. Given three equivalent loads with factors of 10, 25 and 15, a feeder load of 100 amps could be allocated on the feeder as 20, 50 and 30 amps.
-    loadAllocationFactor = Float
+    loadAllocationFactor = Float(desc="Permit assignment of loads on a participation factor basis. Given three equivalent loads with factors of 10, 25 and 15, a feeder load of 100 amps could be allocated on the feeder as 20, 50 and 30 amps.")
 
     #--------------------------------------------------------------------------
-    #  Begin load user definitions:
+    #  Begin "Load" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "phases", "customerCount", "qfixed", "pfixed", "qfixedPct", "pfixedPct", "feederLoadMgtFactor", "phaseRatedCurrent", "coldPickUpFactorP", "coldPickUpFactorQ", "loadAllocationFactor",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags", "PowerCutZone", "LoadResponse", "LoadGroup",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.LoadModel.Load",
+        title="Load",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End load user definitions:
+    #  End "Load" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -387,16 +545,29 @@ class ConformLoadGroup(LoadGroup):
     #--------------------------------------------------------------------------
 
     # Consumers may be assigned to a load area.
-    EnergyConsumers = List(Instance("CIM13.LoadModel.ConformLoad"))
+    EnergyConsumers = List(Instance("CIM13.LoadModel.ConformLoad"),
+        desc="Consumers may be assigned to a load area.")
 
     ConformLoadSchedules = List(Instance("CIM13.LoadModel.ConformLoadSchedule"))
 
     #--------------------------------------------------------------------------
-    #  Begin conformLoadGroup user definitions:
+    #  Begin "ConformLoadGroup" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "SubLoadArea", "EnergyConsumers", "ConformLoadSchedules",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.ConformLoadGroup",
+        title="ConformLoadGroup",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End conformLoadGroup user definitions:
+    #  End "ConformLoadGroup" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -412,14 +583,27 @@ class LoadArea(EnergyArea):
     #--------------------------------------------------------------------------
 
     # The SubLoadAreas in the LoadArea.
-    SubLoadAreas = List(Instance("CIM13.LoadModel.SubLoadArea"))
+    SubLoadAreas = List(Instance("CIM13.LoadModel.SubLoadArea"),
+        desc="The SubLoadAreas in the LoadArea.")
 
     #--------------------------------------------------------------------------
-    #  Begin loadArea user definitions:
+    #  Begin "LoadArea" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "ControlArea", "SubLoadAreas",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.LoadArea",
+        title="LoadArea",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End loadArea user definitions:
+    #  End "LoadArea" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -434,14 +618,27 @@ class ConformLoadSchedule(SeasonDayTypeSchedule):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    ConformLoadGroup = Instance("CIM13.LoadModel.ConformLoadGroup")
+    ConformLoadGroup = Instance("CIM13.LoadModel.ConformLoadGroup",
+        opposite="ConformLoadSchedules")
 
     #--------------------------------------------------------------------------
-    #  Begin conformLoadSchedule user definitions:
+    #  Begin "ConformLoadSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value2Unit", "startTime", "value2Multiplier", "value1Unit", "value1Multiplier", "timeStep", "endTime",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "TimePoints", "DayType", "Season", "ConformLoadGroup",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.ConformLoadSchedule",
+        title="ConformLoadSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End conformLoadSchedule user definitions:
+    #  End "ConformLoadSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -456,14 +653,27 @@ class NonConformLoadSchedule(SeasonDayTypeSchedule):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    NonConformLoadGroup = Instance("CIM13.LoadModel.NonConformLoadGroup")
+    NonConformLoadGroup = Instance("CIM13.LoadModel.NonConformLoadGroup",
+        opposite="NonConformLoadSchedules")
 
     #--------------------------------------------------------------------------
-    #  Begin nonConformLoadSchedule user definitions:
+    #  Begin "NonConformLoadSchedule" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "value2Unit", "startTime", "value2Multiplier", "value1Unit", "value1Multiplier", "timeStep", "endTime",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "TimePoints", "DayType", "Season", "NonConformLoadGroup",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.NonConformLoadSchedule",
+        title="NonConformLoadSchedule",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End nonConformLoadSchedule user definitions:
+    #  End "NonConformLoadSchedule" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -480,11 +690,23 @@ class CustomerLoad(ConformLoad):
 
     pass
     #--------------------------------------------------------------------------
-    #  Begin customerLoad user definitions:
+    #  Begin "CustomerLoad" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "phases", "customerCount", "qfixed", "pfixed", "qfixedPct", "pfixedPct",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags", "PowerCutZone", "LoadResponse", "LoadGroup",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.LoadModel.CustomerLoad",
+        title="CustomerLoad",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End customerLoad user definitions:
+    #  End "CustomerLoad" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -504,11 +726,23 @@ class NonConformLoadGroup(LoadGroup):
     EnergyConsumers = List(Instance("CIM13.LoadModel.NonConformLoad"))
 
     #--------------------------------------------------------------------------
-    #  Begin nonConformLoadGroup user definitions:
+    #  Begin "NonConformLoadGroup" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "SubLoadArea", "NonConformLoadSchedules", "EnergyConsumers",
+                label="References"),
+            dock="tab"),
+        id="CIM13.LoadModel.NonConformLoadGroup",
+        title="NonConformLoadGroup",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End nonConformLoadGroup user definitions:
+    #  End "NonConformLoadGroup" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -525,11 +759,23 @@ class InductionMotorLoad(NonConformLoad):
 
     pass
     #--------------------------------------------------------------------------
-    #  Begin inductionMotorLoad user definitions:
+    #  Begin "InductionMotorLoad" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "normalIlyInService", "phases", "customerCount", "qfixed", "pfixed", "qfixedPct", "pfixedPct",
+                label="Attributes", columns=1),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "OperationalLimitSet", "ContingencyEquipment", "MemberOf_EquipmentContainer", "Terminals", "ProtectionEquipments", "BaseVoltage", "ClearanceTags", "PowerCutZone", "LoadResponse", "LoadGroup",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.LoadModel.InductionMotorLoad",
+        title="InductionMotorLoad",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End inductionMotorLoad user definitions:
+    #  End "InductionMotorLoad" user definitions:
     #--------------------------------------------------------------------------
 
 

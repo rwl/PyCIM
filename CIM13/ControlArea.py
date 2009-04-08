@@ -26,9 +26,9 @@ from CIM13.Core import PowerSystemResource
 
 from enthought.traits.api import Instance, List, Enum, Float, Int, Bool
 # <<< imports
-
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
 # >>> imports
-
 #------------------------------------------------------------------------------
 #  Trait definitions:
 #------------------------------------------------------------------------------
@@ -48,18 +48,32 @@ class ControlAreaGeneratingUnit(Root):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit")
+    GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit",
+        opposite="ControlAreaGeneratingUnit")
 
     AltGeneratingUnitMeas = List(Instance("CIM13.ControlArea.AltGeneratingUnitMeas"))
 
-    ControlArea = Instance("CIM13.ControlArea.ControlArea")
+    ControlArea = Instance("CIM13.ControlArea.ControlArea",
+        opposite="ControlAreaGeneratingUnit")
 
     #--------------------------------------------------------------------------
-    #  Begin controlAreaGeneratingUnit user definitions:
+    #  Begin "ControlAreaGeneratingUnit" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI",
+                label="Attributes"),
+            VGroup("ContainedBy", "GeneratingUnit", "AltGeneratingUnitMeas", "ControlArea",
+                label="References"),
+            dock="tab"),
+        id="CIM13.ControlArea.ControlAreaGeneratingUnit",
+        title="ControlAreaGeneratingUnit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End controlAreaGeneratingUnit user definitions:
+    #  End "ControlAreaGeneratingUnit" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -76,7 +90,8 @@ class ControlArea(PowerSystemResource):
 
     BusNameMarker = List(Instance("CIM13.Topology.BusNameMarker"))
 
-    EnergyArea = Instance("CIM13.LoadModel.EnergyArea")
+    EnergyArea = Instance("CIM13.LoadModel.EnergyArea",
+        opposite="ControlArea")
 
     TopologicalNode = List(Instance("CIM13.Topology.TopologicalNode"))
 
@@ -85,20 +100,32 @@ class ControlArea(PowerSystemResource):
     TieFlow = List(Instance("CIM13.ControlArea.TieFlow"))
 
     # The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.
-    type = ControlAreaTypeKind
+    type = ControlAreaTypeKind(desc="The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.")
 
     # Active power net interchange tolerance
-    pTolerance = Float
+    pTolerance = Float(desc="Active power net interchange tolerance")
 
     # The specified positive net interchange into the control area.
-    netInterchange = Float
+    netInterchange = Float(desc="The specified positive net interchange into the control area.")
 
     #--------------------------------------------------------------------------
-    #  Begin controlArea user definitions:
+    #  Begin "ControlArea" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "type", "pTolerance", "netInterchange",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "BusNameMarker", "EnergyArea", "TopologicalNode", "ControlAreaGeneratingUnit", "TieFlow",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.ControlArea.ControlArea",
+        title="ControlArea",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End controlArea user definitions:
+    #  End "ControlArea" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -113,19 +140,33 @@ class AltGeneratingUnitMeas(Root):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    ControlAreaGeneratingUnit = Instance("CIM13.ControlArea.ControlAreaGeneratingUnit")
+    ControlAreaGeneratingUnit = Instance("CIM13.ControlArea.ControlAreaGeneratingUnit",
+        opposite="AltGeneratingUnitMeas")
 
-    AnalogValue = Instance("CIM13.Meas.AnalogValue")
+    AnalogValue = Instance("CIM13.Meas.AnalogValue",
+        opposite="AltGeneratingUnit")
 
     # Priority of a measurement usage.   Lower numbers have first priority.
-    priority = Int
+    priority = Int(desc="Priority of a measurement usage.   Lower numbers have first priority.")
 
     #--------------------------------------------------------------------------
-    #  Begin altGeneratingUnitMeas user definitions:
+    #  Begin "AltGeneratingUnitMeas" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "priority",
+                label="Attributes"),
+            VGroup("ContainedBy", "ControlAreaGeneratingUnit", "AnalogValue",
+                label="References"),
+            dock="tab"),
+        id="CIM13.ControlArea.AltGeneratingUnitMeas",
+        title="AltGeneratingUnitMeas",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End altGeneratingUnitMeas user definitions:
+    #  End "AltGeneratingUnitMeas" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -141,21 +182,36 @@ class TieFlow(Root):
     #--------------------------------------------------------------------------
 
     # A terminal may participate in zero, one, or two control areas as a tie flow.
-    Terminal = Instance("CIM13.Core.Terminal")
+    Terminal = Instance("CIM13.Core.Terminal",
+        desc="A terminal may participate in zero, one, or two control areas as a tie flow.",
+        opposite="TieFlow")
 
     AltTieMeas = List(Instance("CIM13.ControlArea.AltTieMeas"))
 
-    ControlArea = Instance("CIM13.ControlArea.ControlArea")
+    ControlArea = Instance("CIM13.ControlArea.ControlArea",
+        opposite="TieFlow")
 
     # The flow is positive into the terminal.  A flow is positive if it is an import into the control area.
-    positiveFlowIn = Bool
+    positiveFlowIn = Bool(desc="The flow is positive into the terminal.  A flow is positive if it is an import into the control area.")
 
     #--------------------------------------------------------------------------
-    #  Begin tieFlow user definitions:
+    #  Begin "TieFlow" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "positiveFlowIn",
+                label="Attributes"),
+            VGroup("ContainedBy", "Terminal", "AltTieMeas", "ControlArea",
+                label="References"),
+            dock="tab"),
+        id="CIM13.ControlArea.TieFlow",
+        title="TieFlow",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End tieFlow user definitions:
+    #  End "TieFlow" user definitions:
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -170,19 +226,33 @@ class AltTieMeas(Root):
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    TieFlow = Instance("CIM13.ControlArea.TieFlow")
+    TieFlow = Instance("CIM13.ControlArea.TieFlow",
+        opposite="AltTieMeas")
 
-    AnalogValue = Instance("CIM13.Meas.AnalogValue")
+    AnalogValue = Instance("CIM13.Meas.AnalogValue",
+        opposite="AltTieMeas")
 
     # Priority of a measurement usage.   Lower numbers have first priority.
-    priority = Int
+    priority = Int(desc="Priority of a measurement usage.   Lower numbers have first priority.")
 
     #--------------------------------------------------------------------------
-    #  Begin altTieMeas user definitions:
+    #  Begin "AltTieMeas" user definitions:
     #--------------------------------------------------------------------------
 
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "priority",
+                label="Attributes"),
+            VGroup("ContainedBy", "TieFlow", "AnalogValue",
+                label="References"),
+            dock="tab"),
+        id="CIM13.ControlArea.AltTieMeas",
+        title="AltTieMeas",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
     #--------------------------------------------------------------------------
-    #  End altTieMeas user definitions:
+    #  End "AltTieMeas" user definitions:
     #--------------------------------------------------------------------------
 
 
