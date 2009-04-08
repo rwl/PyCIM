@@ -27,8 +27,9 @@ from CIM13.Domain import UnitMultiplier
 
 from enthought.traits.api import Instance, List, Enum, Float, Bool, Str, Int
 # <<< imports
-# @generated
 from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid
+
+from itertools import count
 # >>> imports
 #------------------------------------------------------------------------------
 #  Trait definitions:
@@ -263,7 +264,9 @@ class IdentifiedObject(Root):
     #  Begin "IdentifiedObject" user definitions:
     #--------------------------------------------------------------------------
 
-    # @generated
+    _name_ids = count(0)
+    _name     = None
+
     traits_view = View(Tabbed(
             VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName",
                 label="Attributes"),
@@ -274,6 +277,38 @@ class IdentifiedObject(Root):
         title="IdentifiedObject",
         buttons=["OK", "Cancel", "Help"],
         resizable=False)
+
+
+    def _name_default(self):
+        """ Trait initialiser.
+        """
+        return self._generate_name()
+
+
+    def _get_name(self):
+        """ Returns the name, which is generated if it has not been already.
+        """
+        if self._name is None:
+            self._name = self._generate_name()
+        return self._name
+
+
+    def _set_name(self, newname):
+        """ Change name to newname. Uniqueness is not guaranteed anymore.
+        """
+        self._name = newname
+
+
+    def _generate_name(self):
+        """ Return a unique name for this object.
+        """
+        return "%s-%i" % (self.__class__.__name__,  self._name_ids.next())
+
+
+    def __repr__(self):
+        """ The default representation of a named object is its name.
+        """
+        return "<%s '%s'>" % (self.__class__.__name__, self.name)
 
     #--------------------------------------------------------------------------
     #  End "IdentifiedObject" user definitions:

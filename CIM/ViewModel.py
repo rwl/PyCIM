@@ -22,13 +22,16 @@
 #  Imports:
 #------------------------------------------------------------------------------
 
-from CIM import Model
+from CIM import Model, Root
 
 from CIM.Generation.Production \
     import GeneratingUnit, GenUnitOpCostCurve, GenUnitOpSchedule
 
 from CIM.LoadModel \
     import Load, ConformLoadGroup, ConformLoadSchedule
+
+from CIM.Wires \
+    import SynchronousMachine
 
 from enthought.traits.api \
     import Instance, List, Property, on_trait_change
@@ -46,33 +49,53 @@ from pylon.ui.view_model.desktop_vm \
 
 class FlatModel(Model):
 
-    Loads = Property(List(Instance(Load)), depends_on=["Contains"])
+    core = Property(List(Instance(Root)), depends_on=["Contains"])
 
-    ConformLoadGroups = Property(List(Instance(ConformLoadGroup)),
-        depends_on=["Contains"])
-
-    def _get_Loads(self):
+    def _get_core(self):
         """ Property getter.
         """
-        return [root for root in self.Contains if isinstance(root, Load)]
+        return [element for element in self.Contains \
+            if element.__module__.endswith("Core")]
 
-    def _get_ConformLoadGroups(self):
+    production = Property(List(Instance(Root)), depends_on=["Contains"])
+
+    def _get_production(self):
         """ Property getter.
         """
-        return [r for r in self.Contains if isinstance(r, ConformLoadGroup)]
+        return [element for element in self.Contains \
+            if element.__module__.endswith("Generation.Production")]
 
-#    def _Loads_changed(self, new):
-#        for load in new:
-#            load._LoadGroups = self.ConformLoadGroups
-#
-#    def _Loads_items_changed(self, event):
-#        for load in event.added:
-#            load._LoadGroups = self.ConformLoadGroups
+    loadModel = Property(List(Instance(Root)), depends_on=["Contains"])
 
-    @on_trait_change("Loads,ConformLoadGroups")
-    def _SetLoadGroups(self):
-        for load in self.Loads:
-            load._LoadGroups = self.ConformLoadGroups
+    def _get_loadModel(self):
+        """ Property getter.
+        """
+        return [element for element in self.Contains \
+            if element.__module__.endswith("LoadModel")]
+
+    measurement = Property(List(Instance(Root)), depends_on=["Contains"])
+
+    def _get_measurement(self):
+        """ Property getter.
+        """
+        return [element for element in self.Contains \
+            if element.__module__.endswith("Meas")]
+
+    topology = Property(List(Instance(Root)), depends_on=["Contains"])
+
+    def _get_topology(self):
+        """ Property getter.
+        """
+        return [element for element in self.Contains \
+            if element.__module__.endswith("Topology")]
+
+    wires = Property(List(Instance(Root)), depends_on=["Contains"])
+
+    def _get_wires(self):
+        """ Property getter.
+        """
+        return [element for element in self.Contains \
+            if element.__module__.endswith("Wires")]
 
 #------------------------------------------------------------------------------
 #  Flat tree editor:
@@ -80,12 +103,23 @@ class FlatModel(Model):
 
 flat_tree_editor = TreeEditor(
     nodes=[
-#        TreeNode(node_for=[Model], label="=Model", children="",
-#            view=View()),
-        TreeNode(node_for=[Model], children="Contains",
-                 label="=Model", add=[Load, ConformLoadGroup], view=View()),
+        TreeNode(node_for=[Model], label="=Model", children="",
+            view=View()),
+        TreeNode(node_for=[Model], children="core", label="=Core",
+            view=View()),
+        TreeNode(node_for=[Model], children="production", label="=Production",
+            view=View()),
+        TreeNode(node_for=[Model], children="loadModel", label="=Load Model",
+            view=View()),
+        TreeNode(node_for=[Model], children="measurement",
+            label="=Measurement", view=View()),
+        TreeNode(node_for=[Model], children="topology", label="=Topology",
+            view=View()),
+        TreeNode(node_for=[Model], children="wires", label="=Wires",
+            add=[SynchronousMachine], view=View()),
         TreeNode(node_for=[Load], label="name"),
         TreeNode(node_for=[ConformLoadGroup], label="name"),
+        TreeNode(node_for=[SynchronousMachine], label="name"),
         TreeNode(node_for=[GeneratingUnit], label="name")
     ],
     orientation="horizontal", editable=True
@@ -114,7 +148,8 @@ if __name__ == "__main__":
     load_group = ConformLoadGroup(name="CLG1")
     load = Load(name="Load 1", LoadGroup=load_group)
     unit = GeneratingUnit()
-    model = FlatModel(Contains=[load, load_group, unit])
+    machine = SynchronousMachine()
+    model = FlatModel(Contains=[load, load_group, unit, machine])
     view_model = CIMViewModel(model=model)
     view_model.configure_traits()
 
