@@ -107,12 +107,13 @@ class CIMTestCase(unittest.TestCase):
         load.configure_traits()
 
 
-#    def test_load_cim(self):
-#        """ Test loading a Common Information Model from a RDF/XML file.
-#        """
-#        model = read_cim(RDFXML_FILE)
-#        print "ELEMENTS:", len(model.Contains)
-#        model.Contains[16].configure_traits()
+    def test_load_cim(self):
+        """ Test loading a Common Information Model from a RDF/XML file.
+        """
+        elements = read_cim(RDFXML_FILE)
+        model = Model( Contains=elements )
+        print "ELEMENTS:", len(model.Contains)
+        model.Contains[16].configure_traits()
 
 if __name__ == "__main__":
     unittest.main()

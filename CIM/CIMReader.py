@@ -51,9 +51,9 @@ for pkg in cim_packages:
 #  Logging:
 #------------------------------------------------------------------------------
 
+logging.basicConfig(stream=sys.stdout, level=logging.ERROR,
+    format="%(levelname)s: %(message)s)")
 logger = logging.getLogger(__name__)
-logger.addHandler(logging.StreamHandler(sys.stdout))
-logger.setLevel(logging.ERROR)
 
 #------------------------------------------------------------------------------
 #  Constants:
@@ -357,7 +357,9 @@ class CIMReader:
 #        RDFXML.parseURI(filename, sink=ref_sink)
         RDFXML.parseRDF(s, base=filename, sink=ref_sink)
 
-        return CIM.Model( Contains = attr_sink.uri_object_map.values() )
+        elements = attr_sink.uri_object_map.values()
+
+        return elements
 
 #------------------------------------------------------------------------------
 #  "CIMReader2" class:

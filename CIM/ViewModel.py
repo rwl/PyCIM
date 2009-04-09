@@ -22,6 +22,10 @@
 #  Imports:
 #------------------------------------------------------------------------------
 
+import pickle
+
+from os.path import splitext
+
 from CIM import Model, Root
 
 from CIM.Generation.Production \
@@ -39,9 +43,14 @@ from enthought.traits.api \
 from enthought.traits.ui.api \
     import View, Item, TreeEditor, TreeNode, HGroup
 
+from enthought.pyface.api \
+    import FileDialog, OK
+
 # FIXME: Remove dependency on Pylon.
 from pylon.ui.view_model.desktop_vm \
     import DesktopViewModel, frame_icon, menubar
+
+from CIMReader import read_cim
 
 #------------------------------------------------------------------------------
 #  "FlatModel" class:
@@ -122,7 +131,8 @@ flat_tree_editor = TreeEditor(
         TreeNode(node_for=[SynchronousMachine], label="name"),
         TreeNode(node_for=[GeneratingUnit], label="name")
     ],
-    orientation="horizontal", editable=True
+    orientation="horizontal", editable=True,
+    on_dclick=lambda obj: obj.edit_traits(kind="livemodal")
 )
 
 #------------------------------------------------------------------------------
@@ -130,6 +140,52 @@ flat_tree_editor = TreeEditor(
 #------------------------------------------------------------------------------
 
 class CIMViewModel(DesktopViewModel):
+    """ Defines a view model for viewing Common Information Model elements.
+    """
+
+    def open_file(self, info):
+        """ Handles the open action.
+        """
+        if not info.initialized:
+            return # Escape.
+
+        wc = "RDF/XML Files (*.xml,*.zip,*.gz,*.bz2)|*.xml;*.zip;*.gz;*.bz2|" \
+            "Pickle Files (*.pkl)|*.pkl|All Files (*.*)|*.*"
+        dialog = FileDialog( action   = "open",
+                             wildcard = wc,
+                             default_directory = self.wd )
+
+        if dialog.open() == OK:
+            # Index of the selected wildcard.
+            wc_idx   = dialog.wildcard_index
+            exts = [".xml", ".zip", ".gz", ".bz2"]
+            file_ext = splitext(dialog.path)[1]
+
+            # Parse the RDF/XML or Pickle file.
+            if wc_idx == 0 or (wc_idx == 2 and file_ext in exts):
+                elements = read_cim( dialog.path )
+                self.model = FlatModel( Contains=elements )
+                self.file = "" # Prevent 'Save' action overwriting XML files.
+
+            else:
+                fd = None
+                try:
+                    fd = open( dialog.path, "rb" )
+                    self.model = pickle.load( fd )
+
+                finally:
+                    if fd is not None:
+                        fd.close()
+
+                self.file = dialog.path
+
+            # Set the working directory to that of the opened file.
+            self.wd = dialog.directory
+        del dialog
+
+    #--------------------------------------------------------------------------
+    #  Views:
+    #--------------------------------------------------------------------------
 
     traits_view = View( HGroup( Item("model",
                                      editor=flat_tree_editor,
