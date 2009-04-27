@@ -55,18 +55,19 @@ class CTTempActivePowerCurve(Curve):
         desc="A combustion turbine may have a active power versus ambient temperature relationship",
         transient=True,
         opposite="CTTempActivePowerCurve",
-        editor=InstanceEditor(name="_CombustionTurbines"))
+        editor=InstanceEditor(name="_combustionturbines"))
 
-    _CombustionTurbines = Property( List(Instance("CIM.Root")) )
-
-    def _get__CombustionTurbines(self):
+    def _get_combustionturbines(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, CombustionTurbine)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Generation.GenerationDynamics.CombustionTurbine" ]
         else:
             return []
+
+    _combustionturbines = Property(fget=_get_combustionturbines)
 
     #--------------------------------------------------------------------------
     #  Begin "CTTempActivePowerCurve" user definitions:
@@ -345,54 +346,57 @@ class CombustionTurbine(PrimeMover):
         desc="A CAES air compressor is driven by combustion turbine",
         transient=True,
         opposite="DrivenBy_CombustionTurbine",
-        editor=InstanceEditor(name="_AirCompressors"))
+        editor=InstanceEditor(name="_aircompressors"))
 
-    _AirCompressors = Property( List(Instance("CIM.Root")) )
-
-    def _get__AirCompressors(self):
+    def _get_aircompressors(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Drives_AirCompressor)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Generation.Production.AirCompressor" ]
         else:
             return []
+
+    _aircompressors = Property(fget=_get_aircompressors)
 
     # A combustion turbine may have a active power versus ambient temperature relationship
     CTTempActivePowerCurve = Instance("CIM13.Generation.GenerationDynamics.CTTempActivePowerCurve",
         desc="A combustion turbine may have a active power versus ambient temperature relationship",
         transient=True,
         opposite="CombustionTurbine",
-        editor=InstanceEditor(name="_CTTempActivePowerCurves"))
+        editor=InstanceEditor(name="_cttempactivepowercurves"))
 
-    _CTTempActivePowerCurves = Property( List(Instance("CIM.Root")) )
-
-    def _get__CTTempActivePowerCurves(self):
+    def _get_cttempactivepowercurves(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, CTTempActivePowerCurve)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Generation.GenerationDynamics.CTTempActivePowerCurve" ]
         else:
             return []
+
+    _cttempactivepowercurves = Property(fget=_get_cttempactivepowercurves)
 
     # A combustion turbine may have a heat recovery boiler for making steam
     HeatRecoveryBoiler = Instance("CIM13.Generation.GenerationDynamics.HeatRecoveryBoiler",
         desc="A combustion turbine may have a heat recovery boiler for making steam",
         transient=True,
         opposite="CombustionTurbines",
-        editor=InstanceEditor(name="_HeatRecoveryBoilers"))
+        editor=InstanceEditor(name="_heatrecoveryboilers"))
 
-    _HeatRecoveryBoilers = Property( List(Instance("CIM.Root")) )
-
-    def _get__HeatRecoveryBoilers(self):
+    def _get_heatrecoveryboilers(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, HeatRecoveryBoiler)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Generation.GenerationDynamics.HeatRecoveryBoiler" ]
         else:
             return []
+
+    _heatrecoveryboilers = Property(fget=_get_heatrecoveryboilers)
 
     # Reference temperature at which the output of the turbine was defined.
     referenceTemp = Float(desc="Reference temperature at which the output of the turbine was defined.")

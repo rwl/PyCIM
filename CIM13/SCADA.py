@@ -53,18 +53,19 @@ class RemotePoint(IdentifiedObject):
     MemberOf_RemoteUnit = Instance("CIM13.SCADA.RemoteUnit",
         transient=True,
         opposite="Contains_RemotePoints",
-        editor=InstanceEditor(name="_RemoteUnits"))
+        editor=InstanceEditor(name="_remoteunits"))
 
-    _RemoteUnits = Property( List(Instance("CIM.Root")) )
-
-    def _get__RemoteUnits(self):
+    def _get_remoteunits(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, MemberOf_RemoteUnit)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.SCADA.RemoteUnit" ]
         else:
             return []
+
+    _remoteunits = Property(fget=_get_remoteunits)
 
     #--------------------------------------------------------------------------
     #  Begin "RemotePoint" user definitions:
@@ -178,18 +179,19 @@ class RemoteControl(RemotePoint):
     Control = Instance("CIM13.Meas.Control",
         transient=True,
         opposite="RemoteControl",
-        editor=InstanceEditor(name="_Controls"))
+        editor=InstanceEditor(name="_controls"))
 
-    _Controls = Property( List(Instance("CIM.Root")) )
-
-    def _get__Controls(self):
+    def _get_controls(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Control)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Meas.Control" ]
         else:
             return []
+
+    _controls = Property(fget=_get_controls)
 
     # Set to true if the actuator is remotely controlled.
     remoteControlled = Bool(desc="Set to true if the actuator is remotely controlled.")
@@ -237,18 +239,19 @@ class RemoteSource(RemotePoint):
         desc="Links to the physical telemetered point associated with this measurement.",
         transient=True,
         opposite="RemoteSource",
-        editor=InstanceEditor(name="_MeasurementValues"))
+        editor=InstanceEditor(name="_measurementvalues"))
 
-    _MeasurementValues = Property( List(Instance("CIM.Root")) )
-
-    def _get__MeasurementValues(self):
+    def _get_measurementvalues(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, MeasurementValue)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Meas.MeasurementValue" ]
         else:
             return []
+
+    _measurementvalues = Property(fget=_get_measurementvalues)
 
     # The minimum value the telemetry item can return.
     sensorMinimum = Float(desc="The minimum value the telemetry item can return.")

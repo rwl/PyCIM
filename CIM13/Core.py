@@ -63,18 +63,19 @@ class IrregularTimePoint(Root):
         desc="An IrregularTimePoint belongs to an IrregularIntervalSchedule.",
         transient=True,
         opposite="TimePoints",
-        editor=InstanceEditor(name="_IrregularIntervalSchedules"))
+        editor=InstanceEditor(name="_irregularintervalschedules"))
 
-    _IrregularIntervalSchedules = Property( List(Instance("CIM.Root")) )
-
-    def _get__IrregularIntervalSchedules(self):
+    def _get_irregularintervalschedules(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, IntervalSchedule)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.IrregularIntervalSchedule" ]
         else:
             return []
+
+    _irregularintervalschedules = Property(fget=_get_irregularintervalschedules)
 
     # The time is relative the BasicTimeSchedule.startTime.
     time = Float(desc="The time is relative the BasicTimeSchedule.startTime.")
@@ -120,34 +121,36 @@ class OperatingShare(Root):
     OperatingParticipant = Instance("CIM13.Core.OperatingParticipant",
         transient=True,
         opposite="OperatingShare",
-        editor=InstanceEditor(name="_OperatingParticipants"))
+        editor=InstanceEditor(name="_operatingparticipants"))
 
-    _OperatingParticipants = Property( List(Instance("CIM.Root")) )
-
-    def _get__OperatingParticipants(self):
+    def _get_operatingparticipants(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, OperatingParticipant)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.OperatingParticipant" ]
         else:
             return []
+
+    _operatingparticipants = Property(fget=_get_operatingparticipants)
 
     PowerSystemResource = Instance("CIM13.Core.PowerSystemResource",
         transient=True,
         opposite="OperatingShare",
-        editor=InstanceEditor(name="_PowerSystemResources"))
+        editor=InstanceEditor(name="_powersystemresources"))
 
-    _PowerSystemResources = Property( List(Instance("CIM.Root")) )
-
-    def _get__PowerSystemResources(self):
+    def _get_powersystemresources(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, PowerSystemResource)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.PowerSystemResource" ]
         else:
             return []
+
+    _powersystemresources = Property(fget=_get_powersystemresources)
 
     # Percentage ownership for this device.   The percentage indicates the percentage ownership of the PSROwner for the PowerSystemResource.  The total percentage ownership for a PowerSystemResource should add to 100%.
     percentage = Float(desc="Percentage ownership for this device.   The percentage indicates the percentage ownership of the PSROwner for the PowerSystemResource.  The total percentage ownership for a PowerSystemResource should add to 100%.")
@@ -189,18 +192,19 @@ class CurveData(Root):
         desc="The point data values that define a curve",
         transient=True,
         opposite="CurveScheduleDatas",
-        editor=InstanceEditor(name="_Curves"))
+        editor=InstanceEditor(name="_curves"))
 
-    _Curves = Property( List(Instance("CIM.Root")) )
-
-    def _get__Curves(self):
+    def _get_curves(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, CurveSchedule)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.Curve" ]
         else:
             return []
+
+    _curves = Property(fget=_get_curves)
 
     # The data value of the X-axis variable,  depending on the X-axis units
     xvalue = Float(desc="The data value of the X-axis variable,  depending on the X-axis units")
@@ -248,18 +252,19 @@ class RegularTimePoint(Root):
         desc="A RegularTimePoint belongs to a RegularIntervalSchedule.",
         transient=True,
         opposite="TimePoints",
-        editor=InstanceEditor(name="_RegularIntervalSchedules"))
+        editor=InstanceEditor(name="_regularintervalschedules"))
 
-    _RegularIntervalSchedules = Property( List(Instance("CIM.Root")) )
-
-    def _get__RegularIntervalSchedules(self):
+    def _get_regularintervalschedules(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, IntervalSchedule)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.RegularIntervalSchedule" ]
         else:
             return []
+
+    _regularintervalschedules = Property(fget=_get_regularintervalschedules)
 
     # The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.
     value1 = Float(desc="The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.")
@@ -307,18 +312,19 @@ class IdentifiedObject(Root):
         desc="An IdentifiedObject belongs to a Modeling Authority Set for purposes of defining a group of data maintained by the same Modeling Authority.",
         transient=True,
         opposite="IdentifiedObjects",
-        editor=InstanceEditor(name="_ModelingAuthoritySets"))
+        editor=InstanceEditor(name="_modelingauthoritysets"))
 
-    _ModelingAuthoritySets = Property( List(Instance("CIM.Root")) )
-
-    def _get__ModelingAuthoritySets(self):
+    def _get_modelingauthoritysets(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ModelingAuthoritySet)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.ModelingAuthoritySet" ]
         else:
             return []
+
+    _modelingauthoritysets = Property(fget=_get_modelingauthoritysets)
 
     # The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy.
     name = Str(desc="The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy.")
@@ -466,18 +472,19 @@ class ReportingGroup(IdentifiedObject):
     ReportingSuperGroup = Instance("CIM13.Core.ReportingSuperGroup",
         transient=True,
         opposite="ReportingGroup",
-        editor=InstanceEditor(name="_ReportingSuperGroups"))
+        editor=InstanceEditor(name="_reportingsupergroups"))
 
-    _ReportingSuperGroups = Property( List(Instance("CIM.Root")) )
-
-    def _get__ReportingSuperGroups(self):
+    def _get_reportingsupergroups(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ReportingSuperGroup)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.ReportingSuperGroup" ]
         else:
             return []
+
+    _reportingsupergroups = Property(fget=_get_reportingsupergroups)
 
     BusNameMarker = List(Instance("CIM13.Topology.BusNameMarker"))
 
@@ -524,18 +531,19 @@ class ModelingAuthoritySet(IdentifiedObject):
         desc="A Modeling Authority set supplies and maintains the data for the objects in a Modeling Authority Set.",
         transient=True,
         opposite="ModelingAuthoritySets",
-        editor=InstanceEditor(name="_ModelingAuthoritys"))
+        editor=InstanceEditor(name="_modelingauthoritys"))
 
-    _ModelingAuthoritys = Property( List(Instance("CIM.Root")) )
-
-    def _get__ModelingAuthoritys(self):
+    def _get_modelingauthoritys(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ModelingAuthority)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.ModelingAuthority" ]
         else:
             return []
+
+    _modelingauthoritys = Property(fget=_get_modelingauthoritys)
 
     #--------------------------------------------------------------------------
     #  Begin "ModelingAuthoritySet" user definitions:
@@ -931,18 +939,19 @@ class Terminal(IdentifiedObject):
         desc="ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes",
         transient=True,
         opposite="Terminals",
-        editor=InstanceEditor(name="_ConductingEquipments"))
+        editor=InstanceEditor(name="_conductingequipments"))
 
-    _ConductingEquipments = Property( List(Instance("CIM.Root")) )
-
-    def _get__ConductingEquipments(self):
+    def _get_conductingequipments(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ConductingEquipment)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.ConductingEquipment" ]
         else:
             return []
+
+    _conductingequipments = Property(fget=_get_conductingequipments)
 
     RegulatingControl = List(Instance("CIM13.Wires.RegulatingControl"))
 
@@ -953,36 +962,38 @@ class Terminal(IdentifiedObject):
     TopologicalNode = Instance("CIM13.Topology.TopologicalNode",
         transient=True,
         opposite="Terminal",
-        editor=InstanceEditor(name="_TopologicalNodes"))
+        editor=InstanceEditor(name="_topologicalnodes"))
 
-    _TopologicalNodes = Property( List(Instance("CIM.Root")) )
-
-    def _get__TopologicalNodes(self):
+    def _get_topologicalnodes(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, TopologicalNode)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Topology.TopologicalNode" ]
         else:
             return []
+
+    _topologicalnodes = Property(fget=_get_topologicalnodes)
 
     # Terminals interconnect with zero impedance at a node.  Measurements on a node apply to all of its terminals.
     ConnectivityNode = Instance("CIM13.Topology.ConnectivityNode",
         desc="Terminals interconnect with zero impedance at a node.  Measurements on a node apply to all of its terminals.",
         transient=True,
         opposite="Terminals",
-        editor=InstanceEditor(name="_ConnectivityNodes"))
+        editor=InstanceEditor(name="_connectivitynodes"))
 
-    _ConnectivityNodes = Property( List(Instance("CIM.Root")) )
-
-    def _get__ConnectivityNodes(self):
+    def _get_connectivitynodes(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ConnectivityNode)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Topology.ConnectivityNode" ]
         else:
             return []
+
+    _connectivitynodes = Property(fget=_get_connectivitynodes)
 
     #--------------------------------------------------------------------------
     #  Begin "Terminal" user definitions:
@@ -1021,18 +1032,19 @@ class SubGeographicalRegion(IdentifiedObject):
         desc="The association is used in the naming hierarchy.",
         transient=True,
         opposite="Regions",
-        editor=InstanceEditor(name="_GeographicalRegions"))
+        editor=InstanceEditor(name="_geographicalregions"))
 
-    _GeographicalRegions = Property( List(Instance("CIM.Root")) )
-
-    def _get__GeographicalRegions(self):
+    def _get_geographicalregions(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Region)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.GeographicalRegion" ]
         else:
             return []
+
+    _geographicalregions = Property(fget=_get_geographicalregions)
 
     # A Line can be contained by a SubGeographical Region.
     Lines = List(Instance("CIM13.Wires.Line"),
@@ -1077,18 +1089,19 @@ class PowerSystemResource(IdentifiedObject):
     PSRType = Instance("CIM13.Core.PSRType",
         transient=True,
         opposite="PowerSystemResource",
-        editor=InstanceEditor(name="_PSRTypes"))
+        editor=InstanceEditor(name="_psrtypes"))
 
-    _PSRTypes = Property( List(Instance("CIM.Root")) )
-
-    def _get__PSRTypes(self):
+    def _get_psrtypes(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, PSRType)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.PSRType" ]
         else:
             return []
+
+    _psrtypes = Property(fget=_get_psrtypes)
 
     # A power system resource may be part of one or more companies
     OperatedBy_Companies = List(Instance("CIM13.Core.Company"),
@@ -1104,7 +1117,20 @@ class PowerSystemResource(IdentifiedObject):
     OutageSchedule = Instance("CIM13.Outage.OutageSchedule",
         desc="A power system resource may have an outage schedule",
         transient=True,
-        opposite="PSR")
+        opposite="PSR",
+        editor=InstanceEditor(name="_outageschedules"))
+
+    def _get_outageschedules(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Outage.OutageSchedule" ]
+        else:
+            return []
+
+    _outageschedules = Property(fget=_get_outageschedules)
 
     # Measurement-PSR defines the measurements in the naming hierarchy.
     Contains_Measurements = List(Instance("CIM13.Meas.Measurement"),
@@ -1367,7 +1393,20 @@ class Equipment(PowerSystemResource):
     MemberOf_EquipmentContainer = Instance("CIM13.Core.EquipmentContainer",
         desc="The association is used in the naming hierarchy.",
         transient=True,
-        opposite="Contains_Equipments")
+        opposite="Contains_Equipments",
+        editor=InstanceEditor(name="_equipmentcontainers"))
+
+    def _get_equipmentcontainers(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.EquipmentContainer" ]
+        else:
+            return []
+
+    _equipmentcontainers = Property(fget=_get_equipmentcontainers)
 
     # The equipment is normally in service.
     normalIlyInService = Bool(desc="The equipment is normally in service.")
@@ -1409,36 +1448,38 @@ class Bay(EquipmentContainer):
         desc="The association is used in the naming hierarchy.",
         transient=True,
         opposite="Contains_Bays",
-        editor=InstanceEditor(name="_Substations"))
+        editor=InstanceEditor(name="_substations"))
 
-    _Substations = Property( List(Instance("CIM.Root")) )
-
-    def _get__Substations(self):
+    def _get_substations(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, MemberOf_Substation)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.Substation" ]
         else:
             return []
+
+    _substations = Property(fget=_get_substations)
 
     # The association is used in the naming hierarchy.
     MemberOf_VoltageLevel = Instance("CIM13.Core.VoltageLevel",
         desc="The association is used in the naming hierarchy.",
         transient=True,
         opposite="Contains_Bays",
-        editor=InstanceEditor(name="_VoltageLevels"))
+        editor=InstanceEditor(name="_voltagelevels"))
 
-    _VoltageLevels = Property( List(Instance("CIM.Root")) )
-
-    def _get__VoltageLevels(self):
+    def _get_voltagelevels(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, MemberOf_VoltageLevel)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.VoltageLevel" ]
         else:
             return []
+
+    _voltagelevels = Property(fget=_get_voltagelevels)
 
     # Bus bar configuration.
     busBarConfiguration = BusbarConfiguration(desc="Bus bar configuration.")
@@ -1491,36 +1532,38 @@ class VoltageLevel(EquipmentContainer):
     BaseVoltage = Instance("CIM13.Core.BaseVoltage",
         transient=True,
         opposite="VoltageLevel",
-        editor=InstanceEditor(name="_BaseVoltages"))
+        editor=InstanceEditor(name="_basevoltages"))
 
-    _BaseVoltages = Property( List(Instance("CIM.Root")) )
-
-    def _get__BaseVoltages(self):
+    def _get_basevoltages(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, BaseVoltage)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.BaseVoltage" ]
         else:
             return []
+
+    _basevoltages = Property(fget=_get_basevoltages)
 
     # The association is used in the naming hierarchy.
     MemberOf_Substation = Instance("CIM13.Core.Substation",
         desc="The association is used in the naming hierarchy.",
         transient=True,
         opposite="Contains_VoltageLevels",
-        editor=InstanceEditor(name="_Substations"))
+        editor=InstanceEditor(name="_substations"))
 
-    _Substations = Property( List(Instance("CIM.Root")) )
-
-    def _get__Substations(self):
+    def _get_substations(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, MemberOf_Substation)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.Substation" ]
         else:
             return []
+
+    _substations = Property(fget=_get_substations)
 
     # The bus bar's low voltage limit
     lowVoltageLimit = Float(desc="The bus bar's low voltage limit")
@@ -1573,18 +1616,19 @@ class Substation(EquipmentContainer):
         desc="The association is used in the naming hierarchy.",
         transient=True,
         opposite="Substations",
-        editor=InstanceEditor(name="_SubGeographicalRegions"))
+        editor=InstanceEditor(name="_subgeographicalregions"))
 
-    _SubGeographicalRegions = Property( List(Instance("CIM.Root")) )
-
-    def _get__SubGeographicalRegions(self):
+    def _get_subgeographicalregions(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Region)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.SubGeographicalRegion" ]
         else:
             return []
+
+    _subgeographicalregions = Property(fget=_get_subgeographicalregions)
 
     #--------------------------------------------------------------------------
     #  Begin "Substation" user definitions:
@@ -1631,18 +1675,19 @@ class ConductingEquipment(Equipment):
         desc="Use association to ConductingEquipment only when there is no VoltageLevel container used.",
         transient=True,
         opposite="ConductingEquipment",
-        editor=InstanceEditor(name="_BaseVoltages"))
+        editor=InstanceEditor(name="_basevoltages"))
 
-    _BaseVoltages = Property( List(Instance("CIM.Root")) )
-
-    def _get__BaseVoltages(self):
+    def _get_basevoltages(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, BaseVoltage)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.BaseVoltage" ]
         else:
             return []
+
+    _basevoltages = Property(fget=_get_basevoltages)
 
     # Conducting equipment may have multiple clearance tags for authorized field work
     ClearanceTags = List(Instance("CIM13.Outage.ClearanceTag"),

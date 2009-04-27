@@ -87,18 +87,19 @@ class ContingencyElement(IdentifiedObject):
     Contingency = Instance("CIM13.Contingency.Contingency",
         transient=True,
         opposite="ContingencyElement",
-        editor=InstanceEditor(name="_Contingencys"))
+        editor=InstanceEditor(name="_contingencys"))
 
-    _Contingencys = Property( List(Instance("CIM.Root")) )
-
-    def _get__Contingencys(self):
+    def _get_contingencys(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Contingency)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Contingency.Contingency" ]
         else:
             return []
+
+    _contingencys = Property(fget=_get_contingencys)
 
     #--------------------------------------------------------------------------
     #  Begin "ContingencyElement" user definitions:
@@ -135,18 +136,19 @@ class ContingencyEquipment(ContingencyElement):
     Equipment = Instance("CIM13.Core.Equipment",
         transient=True,
         opposite="ContingencyEquipment",
-        editor=InstanceEditor(name="_Equipments"))
+        editor=InstanceEditor(name="_equipments"))
 
-    _Equipments = Property( List(Instance("CIM.Root")) )
-
-    def _get__Equipments(self):
+    def _get_equipments(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Equipment)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.Equipment" ]
         else:
             return []
+
+    _equipments = Property(fget=_get_equipments)
 
     # The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied.
     contingentStatus = ContingencyEquipmentStatusKind(desc="The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied.")

@@ -48,68 +48,72 @@ class TopologicalNode(IdentifiedObject):
     ReportingGroup = Instance("CIM13.Core.ReportingGroup",
         transient=True,
         opposite="TopologicalNode",
-        editor=InstanceEditor(name="_ReportingGroups"))
+        editor=InstanceEditor(name="_reportinggroups"))
 
-    _ReportingGroups = Property( List(Instance("CIM.Root")) )
-
-    def _get__ReportingGroups(self):
+    def _get_reportinggroups(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ReportingGroup)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.ReportingGroup" ]
         else:
             return []
+
+    _reportinggroups = Property(fget=_get_reportinggroups)
 
     AngleRef_TopologicalIsland = Instance("CIM13.Topology.TopologicalIsland",
         transient=True,
         opposite="AngleRef_TopologicalNode",
-        editor=InstanceEditor(name="_TopologicalIslands"))
+        editor=InstanceEditor(name="_topologicalislands"))
 
-    _TopologicalIslands = Property( List(Instance("CIM.Root")) )
-
-    def _get__TopologicalIslands(self):
+    def _get_topologicalislands(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, AngleRef_TopologicalIsland)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Topology.TopologicalIsland" ]
         else:
             return []
+
+    _topologicalislands = Property(fget=_get_topologicalislands)
 
     ConnectivityNodeContainer = Instance("CIM13.Core.ConnectivityNodeContainer",
         transient=True,
         opposite="TopologicalNode",
-        editor=InstanceEditor(name="_ConnectivityNodeContainers"))
+        editor=InstanceEditor(name="_connectivitynodecontainers"))
 
-    _ConnectivityNodeContainers = Property( List(Instance("CIM.Root")) )
-
-    def _get__ConnectivityNodeContainers(self):
+    def _get_connectivitynodecontainers(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ConnectivityNodeContainer)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.ConnectivityNodeContainer" ]
         else:
             return []
+
+    _connectivitynodecontainers = Property(fget=_get_connectivitynodecontainers)
 
     # A topological node belongs to a topological island
     TopologicalIsland = Instance("CIM13.Topology.TopologicalIsland",
         desc="A topological node belongs to a topological island",
         transient=True,
         opposite="TopologicalNodes",
-        editor=InstanceEditor(name="_TopologicalIslands"))
+        editor=InstanceEditor(name="_topologicalislands"))
 
-    _TopologicalIslands = Property( List(Instance("CIM.Root")) )
-
-    def _get__TopologicalIslands(self):
+    def _get_topologicalislands(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, TopologicalIsland)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Topology.TopologicalIsland" ]
         else:
             return []
+
+    _topologicalislands = Property(fget=_get_topologicalislands)
 
     # Several ConnectivityNode(s) may combine together to form a single TopologicalNode, depending on the current state of the network.
     ConnectivityNodes = List(Instance("CIM13.Topology.ConnectivityNode"),
@@ -120,18 +124,19 @@ class TopologicalNode(IdentifiedObject):
     ControlArea = Instance("CIM13.ControlArea.ControlArea",
         transient=True,
         opposite="TopologicalNode",
-        editor=InstanceEditor(name="_ControlAreas"))
+        editor=InstanceEditor(name="_controlareas"))
 
-    _ControlAreas = Property( List(Instance("CIM.Root")) )
-
-    def _get__ControlAreas(self):
+    def _get_controlareas(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ControlArea)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.ControlArea.ControlArea" ]
         else:
             return []
+
+    _controlareas = Property(fget=_get_controlareas)
 
     # True if node energized
     energized = Bool(desc="True if node energized")
@@ -189,18 +194,19 @@ class TopologicalIsland(IdentifiedObject):
     AngleRef_TopologicalNode = Instance("CIM13.Topology.TopologicalNode",
         transient=True,
         opposite="AngleRef_TopologicalIsland",
-        editor=InstanceEditor(name="_TopologicalNodes"))
+        editor=InstanceEditor(name="_topologicalnodes"))
 
-    _TopologicalNodes = Property( List(Instance("CIM.Root")) )
-
-    def _get__TopologicalNodes(self):
+    def _get_topologicalnodes(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, AngleRef_TopologicalNode)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Topology.TopologicalNode" ]
         else:
             return []
+
+    _topologicalnodes = Property(fget=_get_topologicalnodes)
 
     # A topological node belongs to a topological island
     TopologicalNodes = List(Instance("CIM13.Topology.TopologicalNode"),
@@ -241,34 +247,36 @@ class ConnectivityNode(IdentifiedObject):
     MemberOf_EquipmentContainer = Instance("CIM13.Core.ConnectivityNodeContainer",
         transient=True,
         opposite="ConnectivityNodes",
-        editor=InstanceEditor(name="_ConnectivityNodeContainers"))
+        editor=InstanceEditor(name="_connectivitynodecontainers"))
 
-    _ConnectivityNodeContainers = Property( List(Instance("CIM.Root")) )
-
-    def _get__ConnectivityNodeContainers(self):
+    def _get_connectivitynodecontainers(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, MemberOf_EquipmentContainer)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.ConnectivityNodeContainer" ]
         else:
             return []
+
+    _connectivitynodecontainers = Property(fget=_get_connectivitynodecontainers)
 
     BusNameMarker = Instance("CIM13.Topology.BusNameMarker",
         transient=True,
         opposite="ConnectivityNode",
-        editor=InstanceEditor(name="_BusNameMarkers"))
+        editor=InstanceEditor(name="_busnamemarkers"))
 
-    _BusNameMarkers = Property( List(Instance("CIM.Root")) )
-
-    def _get__BusNameMarkers(self):
+    def _get_busnamemarkers(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, BusNameMarker)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Topology.BusNameMarker" ]
         else:
             return []
+
+    _busnamemarkers = Property(fget=_get_busnamemarkers)
 
     # Terminals interconnect with zero impedance at a node.  Measurements on a node apply to all of its terminals.
     Terminals = List(Instance("CIM13.Core.Terminal"),
@@ -279,18 +287,19 @@ class ConnectivityNode(IdentifiedObject):
         desc="Several ConnectivityNode(s) may combine together to form a single TopologicalNode, depending on the current state of the network.",
         transient=True,
         opposite="ConnectivityNodes",
-        editor=InstanceEditor(name="_TopologicalNodes"))
+        editor=InstanceEditor(name="_topologicalnodes"))
 
-    _TopologicalNodes = Property( List(Instance("CIM.Root")) )
-
-    def _get__TopologicalNodes(self):
+    def _get_topologicalnodes(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, TopologicalNode)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Topology.TopologicalNode" ]
         else:
             return []
+
+    _topologicalnodes = Property(fget=_get_topologicalnodes)
 
     #--------------------------------------------------------------------------
     #  Begin "ConnectivityNode" user definitions:
@@ -327,36 +336,38 @@ class BusNameMarker(IdentifiedObject):
     ControlArea = Instance("CIM13.ControlArea.ControlArea",
         transient=True,
         opposite="BusNameMarker",
-        editor=InstanceEditor(name="_ControlAreas"))
+        editor=InstanceEditor(name="_controlareas"))
 
-    _ControlAreas = Property( List(Instance("CIM.Root")) )
-
-    def _get__ControlAreas(self):
+    def _get_controlareas(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ControlArea)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.ControlArea.ControlArea" ]
         else:
             return []
+
+    _controlareas = Property(fget=_get_controlareas)
 
     ConnectivityNode = List(Instance("CIM13.Topology.ConnectivityNode"))
 
     ReportingGroup = Instance("CIM13.Core.ReportingGroup",
         transient=True,
         opposite="BusNameMarker",
-        editor=InstanceEditor(name="_ReportingGroups"))
+        editor=InstanceEditor(name="_reportinggroups"))
 
-    _ReportingGroups = Property( List(Instance("CIM.Root")) )
-
-    def _get__ReportingGroups(self):
+    def _get_reportinggroups(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ReportingGroup)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.ReportingGroup" ]
         else:
             return []
+
+    _reportinggroups = Property(fget=_get_reportinggroups)
 
     #--------------------------------------------------------------------------
     #  Begin "BusNameMarker" user definitions:

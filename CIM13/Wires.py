@@ -137,18 +137,19 @@ class TransformerWinding(ConductingEquipment):
         desc="A transformer has windings",
         transient=True,
         opposite="Contains_TransformerWindings",
-        editor=InstanceEditor(name="_PowerTransformers"))
+        editor=InstanceEditor(name="_powertransformers"))
 
-    _PowerTransformers = Property( List(Instance("CIM.Root")) )
-
-    def _get__PowerTransformers(self):
+    def _get_powertransformers(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, MemberOf_PowerTransformer)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.PowerTransformer" ]
         else:
             return []
+
+    _powertransformers = Property(fget=_get_powertransformers)
 
     # The rated voltage (phase-to-phase) of the winding, usually the same as the neutral voltage.
     ratedU = Float(desc="The rated voltage (phase-to-phase) of the winding, usually the same as the neutral voltage.")
@@ -395,36 +396,38 @@ class VoltageControlZone(PowerSystemResource):
         desc="A VoltageControlZone may have a  voltage regulation schedule.",
         transient=True,
         opposite="VoltageControlZones",
-        editor=InstanceEditor(name="_RegulationSchedules"))
+        editor=InstanceEditor(name="_regulationschedules"))
 
-    _RegulationSchedules = Property( List(Instance("CIM.Root")) )
-
-    def _get__RegulationSchedules(self):
+    def _get_regulationschedules(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, RegulationSchedule)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.RegulationSchedule" ]
         else:
             return []
+
+    _regulationschedules = Property(fget=_get_regulationschedules)
 
     # A VoltageControlZone is controlled by a designated BusbarSection.
     BusbarSection = Instance("CIM13.Wires.BusbarSection",
         desc="A VoltageControlZone is controlled by a designated BusbarSection.",
         transient=True,
         opposite="VoltageControlZone",
-        editor=InstanceEditor(name="_BusbarSections"))
+        editor=InstanceEditor(name="_busbarsections"))
 
-    _BusbarSections = Property( List(Instance("CIM.Root")) )
-
-    def _get__BusbarSections(self):
+    def _get_busbarsections(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, BusbarSection)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.BusbarSection" ]
         else:
             return []
+
+    _busbarsections = Property(fget=_get_busbarsections)
 
     #--------------------------------------------------------------------------
     #  Begin "VoltageControlZone" user definitions:
@@ -461,18 +464,19 @@ class RegulatingCondEq(ConductingEquipment):
     RegulatingControl = Instance("CIM13.Wires.RegulatingControl",
         transient=True,
         opposite="RegulatingCondEq",
-        editor=InstanceEditor(name="_RegulatingControls"))
+        editor=InstanceEditor(name="_regulatingcontrols"))
 
-    _RegulatingControls = Property( List(Instance("CIM.Root")) )
-
-    def _get__RegulatingControls(self):
+    def _get_regulatingcontrols(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, RegulatingControl)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.RegulatingControl" ]
         else:
             return []
+
+    _regulatingcontrols = Property(fget=_get_regulatingcontrols)
 
     # The association gives the control output that is used to actually govern a regulating device, e.g. the magnetization of a synchronous machine or capacitor bank breaker actuators.
     Controls = List(Instance("CIM13.Meas.Control"),
@@ -515,18 +519,19 @@ class Conductor(ConductingEquipment):
         desc="Sections of conductor are physically described by a conductor type",
         transient=True,
         opposite="Conductors",
-        editor=InstanceEditor(name="_ConductorTypes"))
+        editor=InstanceEditor(name="_conductortypes"))
 
-    _ConductorTypes = Property( List(Instance("CIM.Root")) )
-
-    def _get__ConductorTypes(self):
+    def _get_conductortypes(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ConductorType)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.ConductorType" ]
         else:
             return []
+
+    _conductortypes = Property(fget=_get_conductortypes)
 
     # Zero sequence series resistance of the entire line section.
     r0 = Float(desc="Zero sequence series resistance of the entire line section.")
@@ -592,18 +597,19 @@ class Line(EquipmentContainer):
         desc="A Line can be contained by a SubGeographical Region.",
         transient=True,
         opposite="Lines",
-        editor=InstanceEditor(name="_SubGeographicalRegions"))
+        editor=InstanceEditor(name="_subgeographicalregions"))
 
-    _SubGeographicalRegions = Property( List(Instance("CIM.Root")) )
-
-    def _get__SubGeographicalRegions(self):
+    def _get_subgeographicalregions(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Region)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.SubGeographicalRegion" ]
         else:
             return []
+
+    _subgeographicalregions = Property(fget=_get_subgeographicalregions)
 
     #--------------------------------------------------------------------------
     #  Begin "Line" user definitions:
@@ -675,34 +681,36 @@ class TapChanger(PowerSystemResource):
         desc="A transformer winding may have tap changers, separately for voltage and phase angle.  If a TransformerWinding does not have an associated TapChanger, the winding is assumed to be fixed tap.",
         transient=True,
         opposite="TapChangers",
-        editor=InstanceEditor(name="_TransformerWindings"))
+        editor=InstanceEditor(name="_transformerwindings"))
 
-    _TransformerWindings = Property( List(Instance("CIM.Root")) )
-
-    def _get__TransformerWindings(self):
+    def _get_transformerwindings(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, TransformerWinding)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.TransformerWinding" ]
         else:
             return []
+
+    _transformerwindings = Property(fget=_get_transformerwindings)
 
     RegulatingControl = Instance("CIM13.Wires.RegulatingControl",
         transient=True,
         opposite="TapChanger",
-        editor=InstanceEditor(name="_RegulatingControls"))
+        editor=InstanceEditor(name="_regulatingcontrols"))
 
-    _RegulatingControls = Property( List(Instance("CIM.Root")) )
-
-    def _get__RegulatingControls(self):
+    def _get_regulatingcontrols(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, RegulatingControl)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.RegulatingControl" ]
         else:
             return []
+
+    _regulatingcontrols = Property(fget=_get_regulatingcontrols)
 
     # The neutral tap step position for this winding.
     neutralStep = Int(desc="The neutral tap step position for this winding.")
@@ -811,36 +819,38 @@ class WireArrangement(IdentifiedObject):
         desc="A ConductorType is made up of wires that can be configured in several ways.",
         transient=True,
         opposite="WireArrangements",
-        editor=InstanceEditor(name="_ConductorTypes"))
+        editor=InstanceEditor(name="_conductortypes"))
 
-    _ConductorTypes = Property( List(Instance("CIM.Root")) )
-
-    def _get__ConductorTypes(self):
+    def _get_conductortypes(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ConductorType)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.ConductorType" ]
         else:
             return []
+
+    _conductortypes = Property(fget=_get_conductortypes)
 
     # A WireType is mounted at a specified place in a WireArrangement.
     WireType = Instance("CIM13.Wires.WireType",
         desc="A WireType is mounted at a specified place in a WireArrangement.",
         transient=True,
         opposite="WireArrangements",
-        editor=InstanceEditor(name="_WireTypes"))
+        editor=InstanceEditor(name="_wiretypes"))
 
-    _WireTypes = Property( List(Instance("CIM.Root")) )
-
-    def _get__WireTypes(self):
+    def _get_wiretypes(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, WireType)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.WireType" ]
         else:
             return []
+
+    _wiretypes = Property(fget=_get_wiretypes)
 
     # Mounting point where wire One is mounted.
     mountingPointX = Int(desc="Mounting point where wire One is mounted.")
@@ -889,18 +899,19 @@ class PowerTransformer(Equipment):
         desc="A transformer may have a heat exchanger",
         transient=True,
         opposite="PowerTransformer",
-        editor=InstanceEditor(name="_HeatExchangers"))
+        editor=InstanceEditor(name="_heatexchangers"))
 
-    _HeatExchangers = Property( List(Instance("CIM.Root")) )
-
-    def _get__HeatExchangers(self):
+    def _get_heatexchangers(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, HeatExchanger)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.HeatExchanger" ]
         else:
             return []
+
+    _heatexchangers = Property(fget=_get_heatexchangers)
 
     # Type of transformer cooling
     transfCoolingType = TransformerCoolingType(desc="Type of transformer cooling")
@@ -952,34 +963,36 @@ class MutualCoupling(Root):
     First_ACLineSegment = Instance("CIM13.Wires.ACLineSegment",
         transient=True,
         opposite="HasFirst_MutualCoupling",
-        editor=InstanceEditor(name="_ACLineSegments"))
+        editor=InstanceEditor(name="_aclinesegments"))
 
-    _ACLineSegments = Property( List(Instance("CIM.Root")) )
-
-    def _get__ACLineSegments(self):
+    def _get_aclinesegments(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, First_ACLineSegment)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.ACLineSegment" ]
         else:
             return []
+
+    _aclinesegments = Property(fget=_get_aclinesegments)
 
     Second_ACLineSegment = Instance("CIM13.Wires.ACLineSegment",
         transient=True,
         opposite="HasSecond_MutualCoupling",
-        editor=InstanceEditor(name="_ACLineSegments"))
+        editor=InstanceEditor(name="_aclinesegments"))
 
-    _ACLineSegments = Property( List(Instance("CIM.Root")) )
-
-    def _get__ACLineSegments(self):
+    def _get_aclinesegments(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Second_ACLineSegment)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.ACLineSegment" ]
         else:
             return []
+
+    _aclinesegments = Property(fget=_get_aclinesegments)
 
     # Zero sequence branch-to-branch mutual impedance coupling, reactance
     x0 = Float(desc="Zero sequence branch-to-branch mutual impedance coupling, reactance")
@@ -1110,18 +1123,19 @@ class HeatExchanger(Equipment):
         desc="A transformer may have a heat exchanger",
         transient=True,
         opposite="HeatExchanger",
-        editor=InstanceEditor(name="_PowerTransformers"))
+        editor=InstanceEditor(name="_powertransformers"))
 
-    _PowerTransformers = Property( List(Instance("CIM.Root")) )
-
-    def _get__PowerTransformers(self):
+    def _get_powertransformers(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, PowerTransformer)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.PowerTransformer" ]
         else:
             return []
+
+    _powertransformers = Property(fget=_get_powertransformers)
 
     #--------------------------------------------------------------------------
     #  Begin "HeatExchanger" user definitions:
@@ -1159,11 +1173,37 @@ class EnergyConsumer(ConductingEquipment):
     PowerCutZone = Instance("CIM13.LoadModel.PowerCutZone",
         desc="An energy consumer is assigned to a power cut zone",
         transient=True,
-        opposite="EnergyConsumers")
+        opposite="EnergyConsumers",
+        editor=InstanceEditor(name="_powercutzones"))
+
+    def _get_powercutzones(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.LoadModel.PowerCutZone" ]
+        else:
+            return []
+
+    _powercutzones = Property(fget=_get_powercutzones)
 
     LoadResponse = Instance("CIM13.LoadModel.LoadResponseCharacteristic",
         transient=True,
-        opposite="EnergyConsumer")
+        opposite="EnergyConsumer",
+        editor=InstanceEditor(name="_loadresponsecharacteristics"))
+
+    def _get_loadresponsecharacteristics(self):
+        """ Property getter.
+        """
+        if self.ContainedBy is not None:
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.LoadModel.LoadResponseCharacteristic" ]
+        else:
+            return []
+
+    _loadresponsecharacteristics = Property(fget=_get_loadresponsecharacteristics)
 
     # Number of individual customers represented by this Demand
     customerCount = Int(desc="Number of individual customers represented by this Demand")
@@ -1219,18 +1259,19 @@ class Switch(ConductingEquipment):
     CompositeSwitch = Instance("CIM13.Wires.CompositeSwitch",
         transient=True,
         opposite="Switches",
-        editor=InstanceEditor(name="_CompositeSwitchs"))
+        editor=InstanceEditor(name="_compositeswitchs"))
 
-    _CompositeSwitchs = Property( List(Instance("CIM.Root")) )
-
-    def _get__CompositeSwitchs(self):
+    def _get_compositeswitchs(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, CompositeSwitch)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.CompositeSwitch" ]
         else:
             return []
+
+    _compositeswitchs = Property(fget=_get_compositeswitchs)
 
     # Branch is retained in a bus branch model.
     retained = Bool(desc="Branch is retained in a bus branch model.")
@@ -1283,34 +1324,36 @@ class RegulatingControl(PowerSystemResource):
     Terminal = Instance("CIM13.Core.Terminal",
         transient=True,
         opposite="RegulatingControl",
-        editor=InstanceEditor(name="_Terminals"))
+        editor=InstanceEditor(name="_terminals"))
 
-    _Terminals = Property( List(Instance("CIM.Root")) )
-
-    def _get__Terminals(self):
+    def _get_terminals(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Terminal)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.Terminal" ]
         else:
             return []
+
+    _terminals = Property(fget=_get_terminals)
 
     RegulationSchedule = Instance("CIM13.Wires.RegulationSchedule",
         transient=True,
         opposite="RegulatingControl",
-        editor=InstanceEditor(name="_RegulationSchedules"))
+        editor=InstanceEditor(name="_regulationschedules"))
 
-    _RegulationSchedules = Property( List(Instance("CIM.Root")) )
-
-    def _get__RegulationSchedules(self):
+    def _get_regulationschedules(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, RegulationSchedule)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.RegulationSchedule" ]
         else:
             return []
+
+    _regulationschedules = Property(fget=_get_regulationschedules)
 
     # The target value specified for case input.   This value can be used for the target value wihout the use of schedules. The value has the units appropriate to the mode attribute.
     targetValue = Float(desc="The target value specified for case input.   This value can be used for the target value wihout the use of schedules. The value has the units appropriate to the mode attribute.")
@@ -1329,16 +1372,16 @@ class RegulatingControl(PowerSystemResource):
     #--------------------------------------------------------------------------
 
     # @generated
-#    traits_view = View(Tabbed(
-#            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "targetValue", "discrete", "targetRange", "mode",
-#                label="Attributes"),
-#            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "RegulatingCondEq", "TapChanger", "Terminal", "RegulationSchedule",
-#                label="References", columns=1),
-#            dock="tab"),
-#        id="CIM13.Wires.RegulatingControl",
-#        title="RegulatingControl",
-#        buttons=["OK", "Cancel", "Help"],
-#        resizable=False)
+    traits_view = View(Tabbed(
+            VGroup("URI", "name", "localName", "description", "aliasName", "mRID", "pathName", "targetValue", "discrete", "targetRange", "mode",
+                label="Attributes"),
+            VGroup("ContainedBy", "ModelingAuthoritySet", "PSRType", "OperatedBy_Companies", "ReportingGroup", "OperatingShare", "PsrLists", "OutageSchedule", "Contains_Measurements", "RegulatingCondEq", "TapChanger", "Terminal", "RegulationSchedule",
+                label="References", columns=1),
+            dock="tab"),
+        id="CIM13.Wires.RegulatingControl",
+        title="RegulatingControl",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
 
     #--------------------------------------------------------------------------
     #  End "RegulatingControl" user definitions:
@@ -1394,36 +1437,38 @@ class WindingTest(IdentifiedObject):
         desc="The winding to which the test was conducted",
         transient=True,
         opposite="To_WindingTest",
-        editor=InstanceEditor(name="_TransformerWindings"))
+        editor=InstanceEditor(name="_transformerwindings"))
 
-    _TransformerWindings = Property( List(Instance("CIM.Root")) )
-
-    def _get__TransformerWindings(self):
+    def _get_transformerwindings(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, To_TransformerWinding)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.TransformerWinding" ]
         else:
             return []
+
+    _transformerwindings = Property(fget=_get_transformerwindings)
 
     # The winding from which the test was conducted
     From_TransformerWinding = Instance("CIM13.Wires.TransformerWinding",
         desc="The winding from which the test was conducted",
         transient=True,
         opposite="From_WindingTest",
-        editor=InstanceEditor(name="_TransformerWindings"))
+        editor=InstanceEditor(name="_transformerwindings"))
 
-    _TransformerWindings = Property( List(Instance("CIM.Root")) )
-
-    def _get__TransformerWindings(self):
+    def _get_transformerwindings(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, From_TransformerWinding)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.TransformerWinding" ]
         else:
             return []
+
+    _transformerwindings = Property(fget=_get_transformerwindings)
 
     # The load loss kW ('to' winding short-circuited) from the test report.
     loadLoss = Float(desc="The load loss kW ('to' winding short-circuited) from the test report.")
@@ -1803,18 +1848,19 @@ class BusbarSection(Connector):
         desc="A VoltageControlZone is controlled by a designated BusbarSection.",
         transient=True,
         opposite="BusbarSection",
-        editor=InstanceEditor(name="_VoltageControlZones"))
+        editor=InstanceEditor(name="_voltagecontrolzones"))
 
-    _VoltageControlZones = Property( List(Instance("CIM.Root")) )
-
-    def _get__VoltageControlZones(self):
+    def _get_voltagecontrolzones(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, VoltageControlZone)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.VoltageControlZone" ]
         else:
             return []
+
+    _voltagecontrolzones = Property(fget=_get_voltagecontrolzones)
 
     #--------------------------------------------------------------------------
     #  Begin "BusbarSection" user definitions:
@@ -2000,54 +2046,57 @@ class SynchronousMachine(RegulatingCondEq):
         desc="The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating.",
         transient=True,
         opposite="DrivenBy_SynchronousMachine",
-        editor=InstanceEditor(name="_HydroPumps"))
+        editor=InstanceEditor(name="_hydropumps"))
 
-    _HydroPumps = Property( List(Instance("CIM.Root")) )
-
-    def _get__HydroPumps(self):
+    def _get_hydropumps(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Drives_HydroPump)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Generation.Production.HydroPump" ]
         else:
             return []
+
+    _hydropumps = Property(fget=_get_hydropumps)
 
     # A synchronous machine may operate as a generator and as such becomes a member of a generating unit
     MemberOf_GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit",
         desc="A synchronous machine may operate as a generator and as such becomes a member of a generating unit",
         transient=True,
         opposite="Contains_SynchronousMachines",
-        editor=InstanceEditor(name="_GeneratingUnits"))
+        editor=InstanceEditor(name="_generatingunits"))
 
-    _GeneratingUnits = Property( List(Instance("CIM.Root")) )
-
-    def _get__GeneratingUnits(self):
+    def _get_generatingunits(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, MemberOf_GeneratingUnit)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Generation.Production.GeneratingUnit" ]
         else:
             return []
+
+    _generatingunits = Property(fget=_get_generatingunits)
 
     # Defines the default MVArCapabilityCurve for use by a SynchronousMachine.
     InitialReactiveCapabilityCurve = Instance("CIM13.Wires.ReactiveCapabilityCurve",
         desc="Defines the default MVArCapabilityCurve for use by a SynchronousMachine.",
         transient=True,
         opposite="InitiallyUsedBySynchronousMachine",
-        editor=InstanceEditor(name="_ReactiveCapabilityCurves"))
+        editor=InstanceEditor(name="_reactivecapabilitycurves"))
 
-    _ReactiveCapabilityCurves = Property( List(Instance("CIM.Root")) )
-
-    def _get__ReactiveCapabilityCurves(self):
+    def _get_reactivecapabilitycurves(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, InitialReactiveCapabilityCurve)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.ReactiveCapabilityCurve" ]
         else:
             return []
+
+    _reactivecapabilitycurves = Property(fget=_get_reactivecapabilitycurves)
 
     DrivenBy_PrimeMover = List(Instance("CIM13.Generation.GenerationDynamics.PrimeMover"))
 

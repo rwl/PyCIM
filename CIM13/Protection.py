@@ -59,18 +59,19 @@ class ProtectionEquipment(Equipment):
         desc="The Protection Equipments having the Unit.",
         transient=True,
         opposite="ProtectionEquipments",
-        editor=InstanceEditor(name="_Units"))
+        editor=InstanceEditor(name="_units"))
 
-    _Units = Property( List(Instance("CIM.Root")) )
-
-    def _get__Units(self):
+    def _get_units(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Unit)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.Unit" ]
         else:
             return []
+
+    _units = Property(fget=_get_units)
 
     # Direction same as positive active power flow value.
     powerDirectionFlag = Bool(desc="Direction same as positive active power flow value.")
@@ -121,18 +122,19 @@ class RecloseSequence(IdentifiedObject):
         desc="A breaker may have zero or more automatic reclosures after a trip occurs.",
         transient=True,
         opposite="RecloseSequences",
-        editor=InstanceEditor(name="_ProtectedSwitchs"))
+        editor=InstanceEditor(name="_protectedswitchs"))
 
-    _ProtectedSwitchs = Property( List(Instance("CIM.Root")) )
-
-    def _get__ProtectedSwitchs(self):
+    def _get_protectedswitchs(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Breaker)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Wires.ProtectedSwitch" ]
         else:
             return []
+
+    _protectedswitchs = Property(fget=_get_protectedswitchs)
 
     # Indicates the time lapse before the reclose step will execute a reclose.
     recloseDelay = Float(desc="Indicates the time lapse before the reclose step will execute a reclose.")

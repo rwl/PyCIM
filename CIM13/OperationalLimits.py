@@ -51,34 +51,36 @@ class OperationalLimit(IdentifiedObject):
     OperationalLimitType = Instance("CIM13.OperationalLimits.OperationalLimitType",
         transient=True,
         opposite="OperationalLimit",
-        editor=InstanceEditor(name="_OperationalLimitTypes"))
+        editor=InstanceEditor(name="_operationallimittypes"))
 
-    _OperationalLimitTypes = Property( List(Instance("CIM.Root")) )
-
-    def _get__OperationalLimitTypes(self):
+    def _get_operationallimittypes(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, OperationalLimitType)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.OperationalLimits.OperationalLimitType" ]
         else:
             return []
+
+    _operationallimittypes = Property(fget=_get_operationallimittypes)
 
     OperationalLimitSet = Instance("CIM13.OperationalLimits.OperationalLimitSet",
         transient=True,
         opposite="OperationalLimitValue",
-        editor=InstanceEditor(name="_OperationalLimitSets"))
+        editor=InstanceEditor(name="_operationallimitsets"))
 
-    _OperationalLimitSets = Property( List(Instance("CIM.Root")) )
-
-    def _get__OperationalLimitSets(self):
+    def _get_operationallimitsets(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, OperationalLimitSet)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.OperationalLimits.OperationalLimitSet" ]
         else:
             return []
+
+    _operationallimitsets = Property(fget=_get_operationallimitsets)
 
     # Used to specify high/low and limit levels.
     type = Str(desc="Used to specify high/low and limit levels.")
@@ -210,36 +212,38 @@ class OperationalLimitSet(IdentifiedObject):
     Terminal = Instance("CIM13.Core.Terminal",
         transient=True,
         opposite="OperationalLimitSet",
-        editor=InstanceEditor(name="_Terminals"))
+        editor=InstanceEditor(name="_terminals"))
 
-    _Terminals = Property( List(Instance("CIM.Root")) )
-
-    def _get__Terminals(self):
+    def _get_terminals(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Terminal)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.Terminal" ]
         else:
             return []
+
+    _terminals = Property(fget=_get_terminals)
 
     OperationalLimitValue = List(Instance("CIM13.OperationalLimits.OperationalLimit"))
 
     Equipment = Instance("CIM13.Core.Equipment",
         transient=True,
         opposite="OperationalLimitSet",
-        editor=InstanceEditor(name="_Equipments"))
+        editor=InstanceEditor(name="_equipments"))
 
-    _Equipments = Property( List(Instance("CIM.Root")) )
-
-    def _get__Equipments(self):
+    def _get_equipments(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Equipment)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.Equipment" ]
         else:
             return []
+
+    _equipments = Property(fget=_get_equipments)
 
     #--------------------------------------------------------------------------
     #  Begin "OperationalLimitSet" user definitions:
@@ -276,34 +280,36 @@ class BranchGroupTerminal(Root):
     BranchGroup = Instance("CIM13.OperationalLimits.BranchGroup",
         transient=True,
         opposite="BranchGroupTerminal",
-        editor=InstanceEditor(name="_BranchGroups"))
+        editor=InstanceEditor(name="_branchgroups"))
 
-    _BranchGroups = Property( List(Instance("CIM.Root")) )
-
-    def _get__BranchGroups(self):
+    def _get_branchgroups(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, BranchGroup)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.OperationalLimits.BranchGroup" ]
         else:
             return []
+
+    _branchgroups = Property(fget=_get_branchgroups)
 
     Terminal = Instance("CIM13.Core.Terminal",
         transient=True,
         opposite="BranchGroupTerminal",
-        editor=InstanceEditor(name="_Terminals"))
+        editor=InstanceEditor(name="_terminals"))
 
-    _Terminals = Property( List(Instance("CIM.Root")) )
-
-    def _get__Terminals(self):
+    def _get_terminals(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Terminal)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.Terminal" ]
         else:
             return []
+
+    _terminals = Property(fget=_get_terminals)
 
     # The flow into the terminal is summed if set true.   The flow out of the terminanl is summed if set false.
     positiveFlowIn = Bool(desc="The flow into the terminal is summed if set true.   The flow out of the terminanl is summed if set false.")

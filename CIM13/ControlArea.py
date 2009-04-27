@@ -51,36 +51,38 @@ class ControlAreaGeneratingUnit(Root):
     GeneratingUnit = Instance("CIM13.Generation.Production.GeneratingUnit",
         transient=True,
         opposite="ControlAreaGeneratingUnit",
-        editor=InstanceEditor(name="_GeneratingUnits"))
+        editor=InstanceEditor(name="_generatingunits"))
 
-    _GeneratingUnits = Property( List(Instance("CIM.Root")) )
-
-    def _get__GeneratingUnits(self):
+    def _get_generatingunits(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, GeneratingUnit)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Generation.Production.GeneratingUnit" ]
         else:
             return []
+
+    _generatingunits = Property(fget=_get_generatingunits)
 
     AltGeneratingUnitMeas = List(Instance("CIM13.ControlArea.AltGeneratingUnitMeas"))
 
     ControlArea = Instance("CIM13.ControlArea.ControlArea",
         transient=True,
         opposite="ControlAreaGeneratingUnit",
-        editor=InstanceEditor(name="_ControlAreas"))
+        editor=InstanceEditor(name="_controlareas"))
 
-    _ControlAreas = Property( List(Instance("CIM.Root")) )
-
-    def _get__ControlAreas(self):
+    def _get_controlareas(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ControlArea)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.ControlArea.ControlArea" ]
         else:
             return []
+
+    _controlareas = Property(fget=_get_controlareas)
 
     #--------------------------------------------------------------------------
     #  Begin "ControlAreaGeneratingUnit" user definitions:
@@ -119,18 +121,19 @@ class ControlArea(PowerSystemResource):
     EnergyArea = Instance("CIM13.LoadModel.EnergyArea",
         transient=True,
         opposite="ControlArea",
-        editor=InstanceEditor(name="_EnergyAreas"))
+        editor=InstanceEditor(name="_energyareas"))
 
-    _EnergyAreas = Property( List(Instance("CIM.Root")) )
-
-    def _get__EnergyAreas(self):
+    def _get_energyareas(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, EnergyArea)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.LoadModel.EnergyArea" ]
         else:
             return []
+
+    _energyareas = Property(fget=_get_energyareas)
 
     TopologicalNode = List(Instance("CIM13.Topology.TopologicalNode"))
 
@@ -182,34 +185,36 @@ class AltGeneratingUnitMeas(Root):
     ControlAreaGeneratingUnit = Instance("CIM13.ControlArea.ControlAreaGeneratingUnit",
         transient=True,
         opposite="AltGeneratingUnitMeas",
-        editor=InstanceEditor(name="_ControlAreaGeneratingUnits"))
+        editor=InstanceEditor(name="_controlareageneratingunits"))
 
-    _ControlAreaGeneratingUnits = Property( List(Instance("CIM.Root")) )
-
-    def _get__ControlAreaGeneratingUnits(self):
+    def _get_controlareageneratingunits(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ControlAreaGeneratingUnit)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.ControlArea.ControlAreaGeneratingUnit" ]
         else:
             return []
+
+    _controlareageneratingunits = Property(fget=_get_controlareageneratingunits)
 
     AnalogValue = Instance("CIM13.Meas.AnalogValue",
         transient=True,
         opposite="AltGeneratingUnit",
-        editor=InstanceEditor(name="_AnalogValues"))
+        editor=InstanceEditor(name="_analogvalues"))
 
-    _AnalogValues = Property( List(Instance("CIM.Root")) )
-
-    def _get__AnalogValues(self):
+    def _get_analogvalues(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, AnalogValue)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Meas.AnalogValue" ]
         else:
             return []
+
+    _analogvalues = Property(fget=_get_analogvalues)
 
     # Priority of a measurement usage.   Lower numbers have first priority.
     priority = Int(desc="Priority of a measurement usage.   Lower numbers have first priority.")
@@ -251,36 +256,38 @@ class TieFlow(Root):
         desc="A terminal may participate in zero, one, or two control areas as a tie flow.",
         transient=True,
         opposite="TieFlow",
-        editor=InstanceEditor(name="_Terminals"))
+        editor=InstanceEditor(name="_terminals"))
 
-    _Terminals = Property( List(Instance("CIM.Root")) )
-
-    def _get__Terminals(self):
+    def _get_terminals(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Terminal)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.Terminal" ]
         else:
             return []
+
+    _terminals = Property(fget=_get_terminals)
 
     AltTieMeas = List(Instance("CIM13.ControlArea.AltTieMeas"))
 
     ControlArea = Instance("CIM13.ControlArea.ControlArea",
         transient=True,
         opposite="TieFlow",
-        editor=InstanceEditor(name="_ControlAreas"))
+        editor=InstanceEditor(name="_controlareas"))
 
-    _ControlAreas = Property( List(Instance("CIM.Root")) )
-
-    def _get__ControlAreas(self):
+    def _get_controlareas(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ControlArea)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.ControlArea.ControlArea" ]
         else:
             return []
+
+    _controlareas = Property(fget=_get_controlareas)
 
     # The flow is positive into the terminal.  A flow is positive if it is an import into the control area.
     positiveFlowIn = Bool(desc="The flow is positive into the terminal.  A flow is positive if it is an import into the control area.")
@@ -320,34 +327,36 @@ class AltTieMeas(Root):
     TieFlow = Instance("CIM13.ControlArea.TieFlow",
         transient=True,
         opposite="AltTieMeas",
-        editor=InstanceEditor(name="_TieFlows"))
+        editor=InstanceEditor(name="_tieflows"))
 
-    _TieFlows = Property( List(Instance("CIM.Root")) )
-
-    def _get__TieFlows(self):
+    def _get_tieflows(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, TieFlow)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.ControlArea.TieFlow" ]
         else:
             return []
+
+    _tieflows = Property(fget=_get_tieflows)
 
     AnalogValue = Instance("CIM13.Meas.AnalogValue",
         transient=True,
         opposite="AltTieMeas",
-        editor=InstanceEditor(name="_AnalogValues"))
+        editor=InstanceEditor(name="_analogvalues"))
 
-    _AnalogValues = Property( List(Instance("CIM.Root")) )
-
-    def _get__AnalogValues(self):
+    def _get_analogvalues(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, AnalogValue)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Meas.AnalogValue" ]
         else:
             return []
+
+    _analogvalues = Property(fget=_get_analogvalues)
 
     # Priority of a measurement usage.   Lower numbers have first priority.
     priority = Int(desc="Priority of a measurement usage.   Lower numbers have first priority.")

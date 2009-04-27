@@ -40,19 +40,19 @@ from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, V
 class Root(HasTraits):
     ContainedBy = Instance("CIM13.Model",
         transient=True,
-        editor=InstanceEditor(name="_Models"),
-        opposite="Contains")
+        editor=InstanceEditor(name="_models"))
 
-    _Models = Property( List(Instance("CIM.Root")) )
-
-    def _get__Models(self):
+    def _get_models(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, Model)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Model" ]
         else:
             return []
+
+    _models = Property(fget=_get_models)
 
     URI = Str
 
@@ -79,16 +79,16 @@ class Root(HasTraits):
         # if the trait attribute is to be included.
         opposed = self.traits(opposite = lambda val: bool(val))
 
-        print "OPPOSITES:", self, opposed.keys()
+#        print "OPPOSITES:", self, opposed.keys()
 
         for name, trait in opposed.iteritems():
             if trait.is_trait_type( Instance ):
-                print "Instance handler:", self, name
+#                print "Instance handler:", self, name
                 self.on_trait_change(self._on_instance, name)
 
             elif trait.is_trait_type( List ):# and \
 #                trait.inner_traits[0].is_trait_type( Instance ):
-                print "List handler:", self, name
+#                print "List handler:", self, name
                 self.on_trait_change(self._on_list, name)
                 self.on_trait_change(self._on_list, name + "_items")
 
@@ -106,37 +106,37 @@ class Root(HasTraits):
         """
         opposite = obj.trait(name).opposite
 
-        print "ON INSTANCE:", obj, name, old, new
+#        print "ON INSTANCE:", obj, name, old, new
 
         if old is not None:
             opposite_trait = old.trait(opposite)
             # Unset old one-to-one association.
             if opposite_trait.is_trait_type( Instance ):
-                print "Unsetting one-to-one:", old, opposite
+#                print "Unsetting one-to-one:", old, opposite
                 setattr(old, opposite, None)
             # Remove instance from old one-to-many association.
             elif opposite_trait.is_trait_type( List ) and \
                 (obj in getattr(old, opposite)):
-                print "Removing one-to-many:", old, opposite
+#                print "Removing one-to-many:", old, opposite
                 getattr(old, opposite).remove(obj)
 
         if new is not None:
             opposite_trait = new.trait(opposite)
             # Set new one-to-one association.
             if opposite_trait.is_trait_type( Instance ):
-                print "Setting one-to-one:", new, opposite
+#                print "Setting one-to-one:", new, opposite
                 setattr(new, opposite, obj)
             # Set new one-to-many association.
             elif opposite_trait.is_trait_type( List ) and \
                 (obj not in getattr(new, opposite)):
-                print "Setting one-to-many:", new, opposite
+#                print "Setting one-to-many:", new, opposite
                 getattr(new, opposite).append(obj)
 
 
     def _on_list(self, obj, name, old, new):
         """ Handles List instances changing.
         """
-        print "ON LIST:", obj, name, old, new
+#        print "ON LIST:", obj, name, old, new
         # Use the same method for the list being set and for items being
         # added and removed from the list.  When individual items are changed
         # the last argument is an event with '.added' and '.removed' traits.
@@ -152,24 +152,24 @@ class Root(HasTraits):
             opposite_trait = old_obj.trait(opposite)
             # Unset old many-to-one associations.
             if opposite_trait.is_trait_type( Instance ):
-                print "Unsetting many-to-one:", old_obj, opposite
+#                print "Unsetting many-to-one:", old_obj, opposite
                 setattr(old_obj, opposite, None)
             # Remove instance from old many-to-many associtaions.
             elif opposite_trait.is_trait_type( List ) and \
                 (old_obj in getattr(old_obj, opposite)):
-                print "Removing many-to-many:", old_obj, opposite
+#                print "Removing many-to-many:", old_obj, opposite
                 getattr(old_obj, opposite).remove(obj)
 
         for new_obj in new:
             opposite_trait = new_obj.trait(opposite)
             # Set new many-to-one associations.
             if opposite_trait.is_trait_type( Instance ):
-                print "Setting many-to-one:", new_obj, opposite
+#                print "Setting many-to-one:", new_obj, opposite
                 setattr(new_obj, opposite, obj)
             # Set new many-to-many associations.
             elif opposite_trait.is_trait_type( List ) and \
                 (new_obj not in getattr(new_obj, opposite)):
-                print "Setting many-to-many:", getattr(new_obj, opposite)
+#                print "Setting many-to-many:", getattr(new_obj, opposite)
                 getattr(new_obj, opposite).append(obj)
 
     #--------------------------------------------------------------------------
@@ -180,8 +180,8 @@ class Root(HasTraits):
 #  "Model" class:
 #------------------------------------------------------------------------------
 
-class Model(Root):
-    Contains = List(Instance("CIM13.Root"), opposite="ContainedBy")
+class Model(HasTraits):
+    Contains = List(Instance("CIM13.Root"))
 
     #--------------------------------------------------------------------------
     #  Begin "Model" user definitions:

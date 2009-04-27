@@ -91,18 +91,19 @@ class SwitchingOperation(IdentifiedObject):
         desc="An OutageSchedule may operate many switches.",
         transient=True,
         opposite="SwitchingOperations",
-        editor=InstanceEditor(name="_OutageSchedules"))
+        editor=InstanceEditor(name="_outageschedules"))
 
-    _OutageSchedules = Property( List(Instance("CIM.Root")) )
-
-    def _get__OutageSchedules(self):
+    def _get_outageschedules(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, OutageSchedule)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Outage.OutageSchedule" ]
         else:
             return []
+
+    _outageschedules = Property(fget=_get_outageschedules)
 
     # The switch position that shall result from this SwitchingOperation
     newState = SwitchState(desc="The switch position that shall result from this SwitchingOperation")
@@ -151,18 +152,19 @@ class OutageSchedule(IrregularIntervalSchedule):
         desc="A power system resource may have an outage schedule",
         transient=True,
         opposite="OutageSchedule",
-        editor=InstanceEditor(name="_PowerSystemResources"))
+        editor=InstanceEditor(name="_powersystemresources"))
 
-    _PowerSystemResources = Property( List(Instance("CIM.Root")) )
-
-    def _get__PowerSystemResources(self):
+    def _get_powersystemresources(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, PSR)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.PowerSystemResource" ]
         else:
             return []
+
+    _powersystemresources = Property(fget=_get_powersystemresources)
 
     #--------------------------------------------------------------------------
     #  Begin "OutageSchedule" user definitions:
@@ -201,34 +203,36 @@ class ClearanceTag(IdentifiedObject):
         desc="Conducting equipment may have multiple clearance tags for authorized field work",
         transient=True,
         opposite="ClearanceTags",
-        editor=InstanceEditor(name="_ConductingEquipments"))
+        editor=InstanceEditor(name="_conductingequipments"))
 
-    _ConductingEquipments = Property( List(Instance("CIM.Root")) )
-
-    def _get__ConductingEquipments(self):
+    def _get_conductingequipments(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ConductingEquipment)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Core.ConductingEquipment" ]
         else:
             return []
+
+    _conductingequipments = Property(fget=_get_conductingequipments)
 
     ClearanceTagType = Instance("CIM13.Outage.ClearanceTagType",
         transient=True,
         opposite="ClearanceTags",
-        editor=InstanceEditor(name="_ClearanceTagTypes"))
+        editor=InstanceEditor(name="_clearancetagtypes"))
 
-    _ClearanceTagTypes = Property( List(Instance("CIM.Root")) )
-
-    def _get__ClearanceTagTypes(self):
+    def _get_clearancetagtypes(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, ClearanceTagType)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Outage.ClearanceTagType" ]
         else:
             return []
+
+    _clearancetagtypes = Property(fget=_get_clearancetagtypes)
 
     # Description of the work to be performed
     workDescription = Str(desc="Description of the work to be performed")

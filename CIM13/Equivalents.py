@@ -83,18 +83,19 @@ class EquivalentEquipment(ConductingEquipment):
     EquivalentNetwork = Instance("CIM13.Equivalents.EquivalentNetwork",
         transient=True,
         opposite="EquivalentEquipments",
-        editor=InstanceEditor(name="_EquivalentNetworks"))
+        editor=InstanceEditor(name="_equivalentnetworks"))
 
-    _EquivalentNetworks = Property( List(Instance("CIM.Root")) )
-
-    def _get__EquivalentNetworks(self):
+    def _get_equivalentnetworks(self):
         """ Property getter.
         """
         if self.ContainedBy is not None:
-            return [element for element in self.ContainedBy.Contains \
-                if isinstance(element, EquivalentNetwork)]
+            return [e for e in self.ContainedBy.Contains \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM13.Equivalents.EquivalentNetwork" ]
         else:
             return []
+
+    _equivalentnetworks = Property(fget=_get_equivalentnetworks)
 
     #--------------------------------------------------------------------------
     #  Begin "EquivalentEquipment" user definitions:
