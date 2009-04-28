@@ -28,20 +28,25 @@ import logging
 
 from os.path import join, dirname
 
-from enthought.traits.api import HasTraits, Str, Property, Instance, adapts
+from enthought.traits.api import HasTraits, Str, List, Property, Instance
 
 from enthought.traits.ui.api \
     import View, Item, Group, TreeEditor, TreeNode
 
 from enthought.traits.ui.menu import Action, Menu
 
-#from CIM.Core \
-#    import GeographicalRegion, SubGeographicalRegion, Substation, \
-#    VoltageLevel, Bay
-#
-#from CIM.Wires import Line
+from CIM import Root
 
-from CIMReader import read_cim
+from CIM.Core \
+    import GeographicalRegion, SubGeographicalRegion, Substation, \
+    VoltageLevel, Bay
+
+from CIM.Wires import Line
+
+from CIM.CIMReader import read_cim
+
+from CIM13TreeEditor import tree_nodes, GeographicalRegionTreeNode, \
+    SubGeographicalRegionTreeNode, IdentifiedObjectTreeNode
 
 #-------------------------------------------------------------------------------
 #  Constants:
@@ -181,22 +186,45 @@ RDFXML_FILE = join(dirname(__file__), "data", "10Bus.xml")
 #)
 
 #------------------------------------------------------------------------------
+#  "RegionContainer" class:
+#------------------------------------------------------------------------------
+
+class RegionContainer(HasTraits):
+
+    elements = List( Instance(Root) )
+
+    regions = Property(depends_on=["elements", "elements_items"])
+
+    def _get_regions(self):
+        """ Property getter.
+        """
+        return [e for e in self.elements if isinstance(e, GeographicalRegion)]
+
+#------------------------------------------------------------------------------
 #  "CommonInformationModel" class:
 #------------------------------------------------------------------------------
 
-#class CommonInformationModel(HasTraits):
-#
-#    # The root of the model tree:
-#    root = Instance(GeographicalRegion)
-#
-#    # The traits view to display:
-#    view = View(
-#        Item('root', editor=cim_tree_editor, show_label=False),
-#        width     = 0.33,
-#        height    = 0.50,
-#        resizable = True,
-#        buttons   = ["OK", "Cancel"]
-#    )
+class CommonInformationModel(HasTraits):
+
+    # The root of the model tree:
+    root = Instance(HasTraits)
+
+    # The traits view to display:
+    view = View(
+        Item('root',
+            editor=TreeEditor(
+                nodes=[TreeNode(node_for=[RegionContainer], label="=Regions",
+                    children="regions")] + tree_nodes
+#                nodes=[GeographicalRegionTreeNode(),
+#                       IdentifiedObjectTreeNode(),
+#                       SubGeographicalRegionTreeNode()]
+            ),
+            show_label=False),
+        width     = 0.33,
+        height    = 0.50,
+        resizable = True,
+        buttons   = ["OK", "Cancel"]
+    )
 
 #-------------------------------------------------------------------------------
 #  "AdapterTestCase" class:
@@ -215,21 +243,20 @@ class TreeNodeTestCase(unittest.TestCase):
     def test_tree_editor(self):
         """ Test CIM tree editor.
         """
-#        bay1 = Bay(name="Bay 1")
-#        vl1 = VoltageLevel(name="VL 1")
-#        station1 = Substation(name="SS 1", Contains_VoltageLevels=[vl1],
-#                              Contains_Bays=[bay1])
-#        line1 = Line(name="L 1")
-#        sub_region1 = SubGeographicalRegion(name="SR 1",
-#            Substations=[station1], Lines=[line1])
-#        sub_region2 = SubGeographicalRegion(name="SR 2")
-#        region = GeographicalRegion(name="GR 1",
-#            Regions=[sub_region1, sub_region2])
-#
-#        model = CommonInformationModel(root=region)
-#        model.configure_traits()
+        bay1 = Bay(name="Bay 1")
+        vl1 = VoltageLevel(name="VL 1")
+        station1 = Substation(name="SS 1", Contains_VoltageLevels=[vl1],
+                              Contains_Bays=[bay1])
+        line1 = Line(name="L 1")
+        sub_region1 = SubGeographicalRegion(name="SR 1",
+            Substations=[station1], Lines=[line1])
+        sub_region2 = SubGeographicalRegion(name="SR 2")
+        region = GeographicalRegion(name="GR 1",
+            Regions=[sub_region1, sub_region2])
 
-        id_element_map = read_cim( dialog.path )
+#        container = RegionContainer( elements=read_cim( RDFXML_FILE ) )
+        model = CommonInformationModel(root=region)
+        model.configure_traits()
 
 if __name__ == "__main__":
     unittest.main()

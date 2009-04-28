@@ -73,7 +73,7 @@ class RootTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=.")
+    tooltip = Str("=")
 
     # Name to use for a new instance.
     name = Str("Root")
@@ -88,7 +88,7 @@ class RootTreeNode(TreeNode):
     node_for = [Root]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -101,7 +101,7 @@ class RootTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Model") )
+#        children.extend( getattr(object, "ContainedBy") )
         return children
 
 
@@ -109,6 +109,16 @@ class RootTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ModelTreeNode" class:
 #------------------------------------------------------------------------------
@@ -127,7 +137,7 @@ class ModelTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=.")
+    tooltip = Str("=")
 
     # Name to use for a new instance.
     name = Str("Model")
@@ -142,7 +152,7 @@ class ModelTreeNode(TreeNode):
     node_for = [Model]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -154,7 +164,7 @@ class ModelTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Root") )
+        children.extend( getattr(object, "Contains") )
 
         return children
 
@@ -163,6 +173,16 @@ class ModelTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "IEC61970CIMVersionTreeNode" class:
 #------------------------------------------------------------------------------
@@ -181,7 +201,7 @@ class IEC61970CIMVersionTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=This is the IEC 61970 CIM version number assigned to this UML model file..")
+    tooltip = Str("=This is the IEC 61970 CIM version number assigned to this UML model file.")
 
     # Name to use for a new instance.
     name = Str("IEC61970CIMVersion")
@@ -196,7 +216,7 @@ class IEC61970CIMVersionTreeNode(TreeNode):
     node_for = [IEC61970CIMVersion]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -216,6 +236,142 @@ class IEC61970CIMVersionTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
+#------------------------------------------------------------------------------
+#  "PackageTreeNode" class:
+#------------------------------------------------------------------------------
+
+class PackageTreeNode(TreeNode):
+    """ Defines a tree node for a Package.
+    """
+
+    #--------------------------------------------------------------------------
+    #  "TreeNode" interface:
+    #--------------------------------------------------------------------------
+
+    # Name of trait containing children (if '', the node is a leaf).
+#    children = Str("Substations")
+
+    # Name of a trait containing a label.
+    label = Str("name")
+
+    tooltip = Str("=")
+
+    # Name to use for a new instance.
+    name = Str("Package")
+
+    # List of object classes than can be added or copied.
+    add = []
+
+    # List of object classes that can be moved.
+    move = []
+
+    # List of object classes and/or interfaces that the node applies to.
+    node_for = [Package]
+
+    # Function for handling double-clicking an object
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+
+
+    def allows_children ( self, object ):
+        """ Returns whether this object can have children.
+        """
+        return False
+
+    def get_children ( self, object ):
+        """ Gets the object's children.
+        """
+        children = []
+
+        return children
+
+
+    def append_child ( self, object, child ):
+        """ Appends a child to the object's children.
+        """
+        raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
+#------------------------------------------------------------------------------
+#  "StereotypeTreeNode" class:
+#------------------------------------------------------------------------------
+
+class StereotypeTreeNode(TreeNode):
+    """ Defines a tree node for a Stereotype.
+    """
+
+    #--------------------------------------------------------------------------
+    #  "TreeNode" interface:
+    #--------------------------------------------------------------------------
+
+    # Name of trait containing children (if '', the node is a leaf).
+#    children = Str("Substations")
+
+    # Name of a trait containing a label.
+    label = Str("name")
+
+    tooltip = Str("=")
+
+    # Name to use for a new instance.
+    name = Str("Stereotype")
+
+    # List of object classes than can be added or copied.
+    add = []
+
+    # List of object classes that can be moved.
+    move = []
+
+    # List of object classes and/or interfaces that the node applies to.
+    node_for = [Stereotype]
+
+    # Function for handling double-clicking an object
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+
+
+    def allows_children ( self, object ):
+        """ Returns whether this object can have children.
+        """
+        return False
+
+    def get_children ( self, object ):
+        """ Gets the object's children.
+        """
+        children = []
+
+        return children
+
+
+    def append_child ( self, object, child ):
+        """ Appends a child to the object's children.
+        """
+        raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "RegulationScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -234,7 +390,7 @@ class RegulationScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A pre-established pattern over time for a controlled variable, e.g., busbar voltage..")
+    tooltip = Str("=A pre-established pattern over time for a controlled variable, e.g., busbar voltage.")
 
     # Name to use for a new instance.
     name = Str("RegulationSchedule")
@@ -249,7 +405,7 @@ class RegulationScheduleTreeNode(TreeNode):
     node_for = [RegulationSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -262,7 +418,7 @@ class RegulationScheduleTreeNode(TreeNode):
         """
         children = []
         children.extend( getattr(object, "RegulatingControl") )
-        children.extend( getattr(object, "VoltageControlZone") )
+        children.extend( getattr(object, "VoltageControlZones") )
 
         return children
 
@@ -271,6 +427,16 @@ class RegulationScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "GroundDisconnectorTreeNode" class:
 #------------------------------------------------------------------------------
@@ -289,7 +455,7 @@ class GroundDisconnectorTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A manually operated or motor operated mechanical switching device used for isolating a circuit or equipment from Ground..")
+    tooltip = Str("=A manually operated or motor operated mechanical switching device used for isolating a circuit or equipment from Ground.")
 
     # Name to use for a new instance.
     name = Str("GroundDisconnector")
@@ -304,7 +470,7 @@ class GroundDisconnectorTreeNode(TreeNode):
     node_for = [GroundDisconnector]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -324,6 +490,16 @@ class GroundDisconnectorTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "TransformerWindingTreeNode" class:
 #------------------------------------------------------------------------------
@@ -342,7 +518,7 @@ class TransformerWindingTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A winding is associated with each defined terminal of a transformer (or phase shifter)..")
+    tooltip = Str("=A winding is associated with each defined terminal of a transformer (or phase shifter).")
 
     # Name to use for a new instance.
     name = Str("TransformerWinding")
@@ -357,7 +533,7 @@ class TransformerWindingTreeNode(TreeNode):
     node_for = [TransformerWinding]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -369,11 +545,11 @@ class TransformerWindingTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "WindingTest") )
-        children.extend( getattr(object, "WindingTest") )
-        children.extend( getattr(object, "TapChanger") )
+        children.extend( getattr(object, "To_WindingTest") )
+        children.extend( getattr(object, "From_WindingTest") )
+        children.extend( getattr(object, "TapChangers") )
 
-#        children.extend( getattr(object, "PowerTransformer") )
+#        children.extend( getattr(object, "MemberOf_PowerTransformer") )
         return children
 
 
@@ -381,6 +557,16 @@ class TransformerWindingTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "EnergySourceTreeNode" class:
 #------------------------------------------------------------------------------
@@ -399,7 +585,7 @@ class EnergySourceTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A generic equivalent for an energy supplier on a transmission or distribution voltage level..")
+    tooltip = Str("=A generic equivalent for an energy supplier on a transmission or distribution voltage level.")
 
     # Name to use for a new instance.
     name = Str("EnergySource")
@@ -414,7 +600,7 @@ class EnergySourceTreeNode(TreeNode):
     node_for = [EnergySource]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -434,6 +620,16 @@ class EnergySourceTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SeriesCompensatorTreeNode" class:
 #------------------------------------------------------------------------------
@@ -452,7 +648,7 @@ class SeriesCompensatorTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance..")
+    tooltip = Str("=A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.")
 
     # Name to use for a new instance.
     name = Str("SeriesCompensator")
@@ -467,7 +663,7 @@ class SeriesCompensatorTreeNode(TreeNode):
     node_for = [SeriesCompensator]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -487,6 +683,16 @@ class SeriesCompensatorTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "WireTypeTreeNode" class:
 #------------------------------------------------------------------------------
@@ -505,7 +711,7 @@ class WireTypeTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Wire conductor (per IEEE specs). A specific type of wire or combination of wires, not insulated from each other, suitable for carrying electrical current..")
+    tooltip = Str("=Wire conductor (per IEEE specs). A specific type of wire or combination of wires, not insulated from each other, suitable for carrying electrical current.")
 
     # Name to use for a new instance.
     name = Str("WireType")
@@ -520,7 +726,7 @@ class WireTypeTreeNode(TreeNode):
     node_for = [WireType]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -532,7 +738,7 @@ class WireTypeTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "WireArrangement") )
+        children.extend( getattr(object, "WireArrangements") )
 
         return children
 
@@ -541,6 +747,16 @@ class WireTypeTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "BreakerTreeNode" class:
 #------------------------------------------------------------------------------
@@ -559,7 +775,7 @@ class BreakerTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit..")
+    tooltip = Str("=A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit.")
 
     # Name to use for a new instance.
     name = Str("Breaker")
@@ -574,7 +790,7 @@ class BreakerTreeNode(TreeNode):
     node_for = [Breaker]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -594,6 +810,16 @@ class BreakerTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "VoltageControlZoneTreeNode" class:
 #------------------------------------------------------------------------------
@@ -612,7 +838,7 @@ class VoltageControlZoneTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An area of the power system network which is defined for secondary voltage control purposes. A voltage control zone consists of a collection of substations with a designated bus bar section whose voltage will be controlled..")
+    tooltip = Str("=An area of the power system network which is defined for secondary voltage control purposes. A voltage control zone consists of a collection of substations with a designated bus bar section whose voltage will be controlled.")
 
     # Name to use for a new instance.
     name = Str("VoltageControlZone")
@@ -627,7 +853,7 @@ class VoltageControlZoneTreeNode(TreeNode):
     node_for = [VoltageControlZone]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -649,6 +875,16 @@ class VoltageControlZoneTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "FrequencyConverterTreeNode" class:
 #------------------------------------------------------------------------------
@@ -667,7 +903,7 @@ class FrequencyConverterTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A device to convert from one frequency to another (e.g., frequency F1 to F2) comprises a pair of FrequencyConverter instances. One converts from F1 to DC, the other converts the DC to F2..")
+    tooltip = Str("=A device to convert from one frequency to another (e.g., frequency F1 to F2) comprises a pair of FrequencyConverter instances. One converts from F1 to DC, the other converts the DC to F2.")
 
     # Name to use for a new instance.
     name = Str("FrequencyConverter")
@@ -682,7 +918,7 @@ class FrequencyConverterTreeNode(TreeNode):
     node_for = [FrequencyConverter]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -702,6 +938,16 @@ class FrequencyConverterTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "RegulatingCondEqTreeNode" class:
 #------------------------------------------------------------------------------
@@ -720,7 +966,7 @@ class RegulatingCondEqTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=RegulatingCondEq is a type of ConductingEquipment that can regulate Measurements and have a RegulationSchedule..")
+    tooltip = Str("=RegulatingCondEq is a type of ConductingEquipment that can regulate Measurements and have a RegulationSchedule.")
 
     # Name to use for a new instance.
     name = Str("RegulatingCondEq")
@@ -735,7 +981,7 @@ class RegulatingCondEqTreeNode(TreeNode):
     node_for = [RegulatingCondEq]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -747,7 +993,7 @@ class RegulatingCondEqTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Control") )
+        children.extend( getattr(object, "Controls") )
 
 #        children.extend( getattr(object, "RegulatingControl") )
         return children
@@ -757,6 +1003,16 @@ class RegulatingCondEqTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ConductorTreeNode" class:
 #------------------------------------------------------------------------------
@@ -775,7 +1031,7 @@ class ConductorTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system..")
+    tooltip = Str("=Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system.")
 
     # Name to use for a new instance.
     name = Str("Conductor")
@@ -790,7 +1046,7 @@ class ConductorTreeNode(TreeNode):
     node_for = [Conductor]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -811,6 +1067,16 @@ class ConductorTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "LoadBreakSwitchTreeNode" class:
 #------------------------------------------------------------------------------
@@ -829,7 +1095,7 @@ class LoadBreakSwitchTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions..")
+    tooltip = Str("=A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions.")
 
     # Name to use for a new instance.
     name = Str("LoadBreakSwitch")
@@ -844,7 +1110,7 @@ class LoadBreakSwitchTreeNode(TreeNode):
     node_for = [LoadBreakSwitch]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -864,6 +1130,16 @@ class LoadBreakSwitchTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ProtectedSwitchTreeNode" class:
 #------------------------------------------------------------------------------
@@ -882,7 +1158,7 @@ class ProtectedSwitchTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment..")
+    tooltip = Str("=A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment.")
 
     # Name to use for a new instance.
     name = Str("ProtectedSwitch")
@@ -897,7 +1173,7 @@ class ProtectedSwitchTreeNode(TreeNode):
     node_for = [ProtectedSwitch]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -909,8 +1185,8 @@ class ProtectedSwitchTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "ProtectionEquipment") )
-        children.extend( getattr(object, "RecloseSequence") )
+        children.extend( getattr(object, "OperatedBy_ProtectionEquipments") )
+        children.extend( getattr(object, "RecloseSequences") )
 
         return children
 
@@ -919,6 +1195,16 @@ class ProtectedSwitchTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "LineTreeNode" class:
 #------------------------------------------------------------------------------
@@ -937,7 +1223,7 @@ class LineTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A component part of a system extending between adjacent substations or from a substation to an adjacent interconnection point..")
+    tooltip = Str("=A component part of a system extending between adjacent substations or from a substation to an adjacent interconnection point.")
 
     # Name to use for a new instance.
     name = Str("Line")
@@ -952,7 +1238,7 @@ class LineTreeNode(TreeNode):
     node_for = [Line]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -965,7 +1251,7 @@ class LineTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "SubGeographicalRegion") )
+#        children.extend( getattr(object, "Region") )
         return children
 
 
@@ -973,6 +1259,16 @@ class LineTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "GroundTreeNode" class:
 #------------------------------------------------------------------------------
@@ -991,7 +1287,7 @@ class GroundTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A common point for connecting grounded conducting equipment such as shunt capacitors. The power system model can have more than one ground..")
+    tooltip = Str("=A common point for connecting grounded conducting equipment such as shunt capacitors. The power system model can have more than one ground.")
 
     # Name to use for a new instance.
     name = Str("Ground")
@@ -1006,7 +1302,7 @@ class GroundTreeNode(TreeNode):
     node_for = [Ground]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1026,6 +1322,16 @@ class GroundTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "JumperTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1044,7 +1350,7 @@ class JumperTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A short section of conductor with negligible impedance which can be manually removed and replaced if the circuit is de-energized. Note that zero-impedance branches can be modelled by an ACLineSegment with a zero impedance ConductorType.")
+    tooltip = Str("=A short section of conductor with negligible impedance which can be manually removed and replaced if the circuit is de-energized. Note that zero-impedance branches can be modelled by an ACLineSegment with a zero impedance ConductorType")
 
     # Name to use for a new instance.
     name = Str("Jumper")
@@ -1059,7 +1365,7 @@ class JumperTreeNode(TreeNode):
     node_for = [Jumper]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1079,6 +1385,16 @@ class JumperTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "DCLineSegmentTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1097,7 +1413,7 @@ class DCLineSegmentTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A wire or combination of wires not insulated from one another, with consistent electrical characteristics, used to carry direct current between points in the DC region of the power system..")
+    tooltip = Str("=A wire or combination of wires not insulated from one another, with consistent electrical characteristics, used to carry direct current between points in the DC region of the power system.")
 
     # Name to use for a new instance.
     name = Str("DCLineSegment")
@@ -1112,7 +1428,7 @@ class DCLineSegmentTreeNode(TreeNode):
     node_for = [DCLineSegment]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1132,6 +1448,16 @@ class DCLineSegmentTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "TapChangerTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1150,7 +1476,7 @@ class TapChangerTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Mechanism for changing transformer winding tap positions..")
+    tooltip = Str("=Mechanism for changing transformer winding tap positions.")
 
     # Name to use for a new instance.
     name = Str("TapChanger")
@@ -1165,7 +1491,7 @@ class TapChangerTreeNode(TreeNode):
     node_for = [TapChanger]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1187,6 +1513,16 @@ class TapChangerTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CompositeSwitchTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1205,7 +1541,7 @@ class CompositeSwitchTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A model of a set of individual Switches normally enclosed within the same cabinet and possibly with interlocks that restrict the combination of switch positions. These are typically found in medium voltage distribution networks.  A CompositeSwitch could represent a Ring-Main-Unit (RMU), or pad-mounted switchgear, with primitive internal devices such as an internal bus-bar plus 3 or 4 internal switches each of which may individually be open or closed. A CompositeSwitch and a set of contained Switches can also be used to represent a multi-position switch e.g. a switch that can connect a circuit to Ground, Open or Busbar..")
+    tooltip = Str("=A model of a set of individual Switches normally enclosed within the same cabinet and possibly with interlocks that restrict the combination of switch positions. These are typically found in medium voltage distribution networks.  A CompositeSwitch could represent a Ring-Main-Unit (RMU), or pad-mounted switchgear, with primitive internal devices such as an internal bus-bar plus 3 or 4 internal switches each of which may individually be open or closed. A CompositeSwitch and a set of contained Switches can also be used to represent a multi-position switch e.g. a switch that can connect a circuit to Ground, Open or Busbar.")
 
     # Name to use for a new instance.
     name = Str("CompositeSwitch")
@@ -1220,7 +1556,7 @@ class CompositeSwitchTreeNode(TreeNode):
     node_for = [CompositeSwitch]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1232,7 +1568,7 @@ class CompositeSwitchTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Switch") )
+        children.extend( getattr(object, "Switches") )
 
         return children
 
@@ -1241,6 +1577,16 @@ class CompositeSwitchTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "WireArrangementTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1259,7 +1605,7 @@ class WireArrangementTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Identification, spacing and configuration of the wires of a ConductorType, with reference to their type..")
+    tooltip = Str("=Identification, spacing and configuration of the wires of a ConductorType, with reference to their type.")
 
     # Name to use for a new instance.
     name = Str("WireArrangement")
@@ -1274,7 +1620,7 @@ class WireArrangementTreeNode(TreeNode):
     node_for = [WireArrangement]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1296,6 +1642,16 @@ class WireArrangementTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "PowerTransformerTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1314,7 +1670,7 @@ class PowerTransformerTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow)..")
+    tooltip = Str("=An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).")
 
     # Name to use for a new instance.
     name = Str("PowerTransformer")
@@ -1329,7 +1685,7 @@ class PowerTransformerTreeNode(TreeNode):
     node_for = [PowerTransformer]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1341,7 +1697,7 @@ class PowerTransformerTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "TransformerWinding") )
+        children.extend( getattr(object, "Contains_TransformerWindings") )
 
 #        children.extend( getattr(object, "HeatExchanger") )
         return children
@@ -1351,6 +1707,16 @@ class PowerTransformerTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "BusbarSectionTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1369,7 +1735,7 @@ class BusbarSectionTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation.  Voltage measurements are typically obtained from VoltageTransformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal..")
+    tooltip = Str("=A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation.  Voltage measurements are typically obtained from VoltageTransformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal.")
 
     # Name to use for a new instance.
     name = Str("BusbarSection")
@@ -1384,7 +1750,7 @@ class BusbarSectionTreeNode(TreeNode):
     node_for = [BusbarSection]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1405,6 +1771,16 @@ class BusbarSectionTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ACLineSegmentTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1423,7 +1799,7 @@ class ACLineSegmentTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system..")
+    tooltip = Str("=A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.")
 
     # Name to use for a new instance.
     name = Str("ACLineSegment")
@@ -1438,7 +1814,7 @@ class ACLineSegmentTreeNode(TreeNode):
     node_for = [ACLineSegment]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1450,8 +1826,8 @@ class ACLineSegmentTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "MutualCoupling") )
-        children.extend( getattr(object, "MutualCoupling") )
+        children.extend( getattr(object, "HasFirst_MutualCoupling") )
+        children.extend( getattr(object, "HasSecond_MutualCoupling") )
 
         return children
 
@@ -1460,6 +1836,16 @@ class ACLineSegmentTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "MutualCouplingTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1478,7 +1864,7 @@ class MutualCouplingTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=This class represents the zero sequence line mutual coupling..")
+    tooltip = Str("=This class represents the zero sequence line mutual coupling.")
 
     # Name to use for a new instance.
     name = Str("MutualCoupling")
@@ -1493,7 +1879,7 @@ class MutualCouplingTreeNode(TreeNode):
     node_for = [MutualCoupling]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1506,8 +1892,8 @@ class MutualCouplingTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ACLineSegment") )
-#        children.extend( getattr(object, "ACLineSegment") )
+#        children.extend( getattr(object, "First_ACLineSegment") )
+#        children.extend( getattr(object, "Second_ACLineSegment") )
         return children
 
 
@@ -1515,6 +1901,16 @@ class MutualCouplingTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ShuntCompensatorTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1533,7 +1929,7 @@ class ShuntCompensatorTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  Negative values for mVArPerSection and nominalMVAr indicate that the compensator is a reactor..")
+    tooltip = Str("=A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  Negative values for mVArPerSection and nominalMVAr indicate that the compensator is a reactor.")
 
     # Name to use for a new instance.
     name = Str("ShuntCompensator")
@@ -1548,7 +1944,7 @@ class ShuntCompensatorTreeNode(TreeNode):
     node_for = [ShuntCompensator]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1568,6 +1964,16 @@ class ShuntCompensatorTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "FuseTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1586,7 +1992,7 @@ class FuseTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An overcurrent protective device with a circuit opening fusible part that is heated and severed by the passage of overcurrent through it. A fuse is considered a switching device because it breaks current..")
+    tooltip = Str("=An overcurrent protective device with a circuit opening fusible part that is heated and severed by the passage of overcurrent through it. A fuse is considered a switching device because it breaks current.")
 
     # Name to use for a new instance.
     name = Str("Fuse")
@@ -1601,7 +2007,7 @@ class FuseTreeNode(TreeNode):
     node_for = [Fuse]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1621,6 +2027,16 @@ class FuseTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "RectifierInverterTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1639,7 +2055,7 @@ class RectifierInverterTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Bi-directional AC-DC conversion equipment that can be used to control DC current, DC voltage, DC power flow, or firing angle..")
+    tooltip = Str("=Bi-directional AC-DC conversion equipment that can be used to control DC current, DC voltage, DC power flow, or firing angle.")
 
     # Name to use for a new instance.
     name = Str("RectifierInverter")
@@ -1654,7 +2070,7 @@ class RectifierInverterTreeNode(TreeNode):
     node_for = [RectifierInverter]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1674,6 +2090,16 @@ class RectifierInverterTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "HeatExchangerTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1692,7 +2118,7 @@ class HeatExchangerTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Equipment for the cooling of electrical equipment and the extraction of heat.")
+    tooltip = Str("=Equipment for the cooling of electrical equipment and the extraction of heat")
 
     # Name to use for a new instance.
     name = Str("HeatExchanger")
@@ -1707,7 +2133,7 @@ class HeatExchangerTreeNode(TreeNode):
     node_for = [HeatExchanger]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1728,6 +2154,16 @@ class HeatExchangerTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "EnergyConsumerTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1746,7 +2182,7 @@ class EnergyConsumerTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Generic user of energy - a  point of consumption on the power system model.")
+    tooltip = Str("=Generic user of energy - a  point of consumption on the power system model")
 
     # Name to use for a new instance.
     name = Str("EnergyConsumer")
@@ -1761,7 +2197,7 @@ class EnergyConsumerTreeNode(TreeNode):
     node_for = [EnergyConsumer]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1775,7 +2211,7 @@ class EnergyConsumerTreeNode(TreeNode):
         children = []
 
 #        children.extend( getattr(object, "PowerCutZone") )
-#        children.extend( getattr(object, "LoadResponseCharacteristic") )
+#        children.extend( getattr(object, "LoadResponse") )
         return children
 
 
@@ -1783,6 +2219,16 @@ class EnergyConsumerTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SwitchTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1801,7 +2247,7 @@ class SwitchTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A generic device designed to close, or open, or both, one or more electric circuits..")
+    tooltip = Str("=A generic device designed to close, or open, or both, one or more electric circuits.")
 
     # Name to use for a new instance.
     name = Str("Switch")
@@ -1816,7 +2262,7 @@ class SwitchTreeNode(TreeNode):
     node_for = [Switch]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1828,7 +2274,7 @@ class SwitchTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "SwitchingOperation") )
+        children.extend( getattr(object, "SwitchingOperations") )
 
 #        children.extend( getattr(object, "CompositeSwitch") )
         return children
@@ -1838,6 +2284,16 @@ class SwitchTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SynchronousMachineTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1856,7 +2312,7 @@ class SynchronousMachineTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An electromechanical device that operates synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump..")
+    tooltip = Str("=An electromechanical device that operates synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump.")
 
     # Name to use for a new instance.
     name = Str("SynchronousMachine")
@@ -1871,7 +2327,7 @@ class SynchronousMachineTreeNode(TreeNode):
     node_for = [SynchronousMachine]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1883,12 +2339,12 @@ class SynchronousMachineTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "ReactiveCapabilityCurve") )
-        children.extend( getattr(object, "PrimeMover") )
+        children.extend( getattr(object, "ReactiveCapabilityCurves") )
+        children.extend( getattr(object, "DrivenBy_PrimeMover") )
 
-#        children.extend( getattr(object, "HydroPump") )
-#        children.extend( getattr(object, "GeneratingUnit") )
-#        children.extend( getattr(object, "ReactiveCapabilityCurve") )
+#        children.extend( getattr(object, "Drives_HydroPump") )
+#        children.extend( getattr(object, "MemberOf_GeneratingUnit") )
+#        children.extend( getattr(object, "InitialReactiveCapabilityCurve") )
         return children
 
 
@@ -1896,6 +2352,16 @@ class SynchronousMachineTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "RegulatingControlTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1914,7 +2380,7 @@ class RegulatingControlTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Specifies a set of equipment that works together to control a power system quantity such as voltage or flow..")
+    tooltip = Str("=Specifies a set of equipment that works together to control a power system quantity such as voltage or flow.")
 
     # Name to use for a new instance.
     name = Str("RegulatingControl")
@@ -1929,7 +2395,7 @@ class RegulatingControlTreeNode(TreeNode):
     node_for = [RegulatingControl]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -1953,6 +2419,16 @@ class RegulatingControlTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ConnectorTreeNode" class:
 #------------------------------------------------------------------------------
@@ -1971,7 +2447,7 @@ class ConnectorTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation and are modelled with a single logical terminal..")
+    tooltip = Str("=A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation and are modelled with a single logical terminal.")
 
     # Name to use for a new instance.
     name = Str("Connector")
@@ -1986,7 +2462,7 @@ class ConnectorTreeNode(TreeNode):
     node_for = [Connector]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2006,6 +2482,16 @@ class ConnectorTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "StaticVarCompensatorTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2024,7 +2510,7 @@ class StaticVarCompensatorTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.  The SVC may operate in fixed MVar output mode or in voltage control mode.  When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero..")
+    tooltip = Str("=A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.  The SVC may operate in fixed MVar output mode or in voltage control mode.  When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero.")
 
     # Name to use for a new instance.
     name = Str("StaticVarCompensator")
@@ -2039,7 +2525,7 @@ class StaticVarCompensatorTreeNode(TreeNode):
     node_for = [StaticVarCompensator]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2059,6 +2545,16 @@ class StaticVarCompensatorTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "JunctionTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2077,7 +2573,7 @@ class JunctionTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A point where one or more conducting equipments are connected with zero resistance..")
+    tooltip = Str("=A point where one or more conducting equipments are connected with zero resistance.")
 
     # Name to use for a new instance.
     name = Str("Junction")
@@ -2092,7 +2588,7 @@ class JunctionTreeNode(TreeNode):
     node_for = [Junction]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2112,6 +2608,16 @@ class JunctionTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "WindingTestTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2130,7 +2636,7 @@ class WindingTestTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Physical winding test data for the winding/tap pairs of a transformer (or phase shifter). This test data can be used to derive other attributes of specific transformer or phase shifter models..")
+    tooltip = Str("=Physical winding test data for the winding/tap pairs of a transformer (or phase shifter). This test data can be used to derive other attributes of specific transformer or phase shifter models.")
 
     # Name to use for a new instance.
     name = Str("WindingTest")
@@ -2145,7 +2651,7 @@ class WindingTestTreeNode(TreeNode):
     node_for = [WindingTest]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2158,8 +2664,8 @@ class WindingTestTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "TransformerWinding") )
-#        children.extend( getattr(object, "TransformerWinding") )
+#        children.extend( getattr(object, "To_TransformerWinding") )
+#        children.extend( getattr(object, "From_TransformerWinding") )
         return children
 
 
@@ -2167,6 +2673,16 @@ class WindingTestTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "DisconnectorTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2185,7 +2701,7 @@ class DisconnectorTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made..")
+    tooltip = Str("=A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made.")
 
     # Name to use for a new instance.
     name = Str("Disconnector")
@@ -2200,7 +2716,7 @@ class DisconnectorTreeNode(TreeNode):
     node_for = [Disconnector]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2220,6 +2736,16 @@ class DisconnectorTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ConductorTypeTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2238,7 +2764,7 @@ class ConductorTypeTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Wire or cable conductor (per IEEE specs). A specific type of wire or combination of wires not insulated from one another, suitable for carrying electric current. It may be bare or insulated..")
+    tooltip = Str("=Wire or cable conductor (per IEEE specs). A specific type of wire or combination of wires not insulated from one another, suitable for carrying electric current. It may be bare or insulated.")
 
     # Name to use for a new instance.
     name = Str("ConductorType")
@@ -2253,7 +2779,7 @@ class ConductorTypeTreeNode(TreeNode):
     node_for = [ConductorType]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2265,8 +2791,8 @@ class ConductorTypeTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Conductor") )
-        children.extend( getattr(object, "WireArrangement") )
+        children.extend( getattr(object, "Conductors") )
+        children.extend( getattr(object, "WireArrangements") )
 
         return children
 
@@ -2275,6 +2801,16 @@ class ConductorTypeTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "PlantTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2293,7 +2829,7 @@ class PlantTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A Plant is a collection of equipment for purposes of generation..")
+    tooltip = Str("=A Plant is a collection of equipment for purposes of generation.")
 
     # Name to use for a new instance.
     name = Str("Plant")
@@ -2308,7 +2844,7 @@ class PlantTreeNode(TreeNode):
     node_for = [Plant]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2328,6 +2864,16 @@ class PlantTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ReactiveCapabilityCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2346,7 +2892,7 @@ class ReactiveCapabilityCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Reactive power rating envelope versus the synchronous machine's active power, in both the generating and motoring modes. For each active power value there is a corresponding high and low reactive power limit  value. Typically there will be a separate curve for each coolant condition, such as hydrogen pressure.  The Y1 axis values represent reactive minimum and the Y2 axis values represent reactive maximum..")
+    tooltip = Str("=Reactive power rating envelope versus the synchronous machine's active power, in both the generating and motoring modes. For each active power value there is a corresponding high and low reactive power limit  value. Typically there will be a separate curve for each coolant condition, such as hydrogen pressure.  The Y1 axis values represent reactive minimum and the Y2 axis values represent reactive maximum.")
 
     # Name to use for a new instance.
     name = Str("ReactiveCapabilityCurve")
@@ -2361,7 +2907,7 @@ class ReactiveCapabilityCurveTreeNode(TreeNode):
     node_for = [ReactiveCapabilityCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2373,8 +2919,8 @@ class ReactiveCapabilityCurveTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "SynchronousMachine") )
-        children.extend( getattr(object, "SynchronousMachine") )
+        children.extend( getattr(object, "SynchronousMachines") )
+        children.extend( getattr(object, "InitiallyUsedBySynchronousMachine") )
 
         return children
 
@@ -2383,6 +2929,16 @@ class ReactiveCapabilityCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "NuclearGeneratingUnitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2401,7 +2957,7 @@ class NuclearGeneratingUnitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A nuclear generating unit..")
+    tooltip = Str("=A nuclear generating unit.")
 
     # Name to use for a new instance.
     name = Str("NuclearGeneratingUnit")
@@ -2416,7 +2972,7 @@ class NuclearGeneratingUnitTreeNode(TreeNode):
     node_for = [NuclearGeneratingUnit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2436,6 +2992,16 @@ class NuclearGeneratingUnitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "GeneratingUnitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2454,7 +3020,7 @@ class GeneratingUnitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set..")
+    tooltip = Str("=A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set.")
 
     # Name to use for a new instance.
     name = Str("GeneratingUnit")
@@ -2469,7 +3035,7 @@ class GeneratingUnitTreeNode(TreeNode):
     node_for = [GeneratingUnit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2482,9 +3048,9 @@ class GeneratingUnitTreeNode(TreeNode):
         """
         children = []
         children.extend( getattr(object, "ControlAreaGeneratingUnit") )
-        children.extend( getattr(object, "GrossToNetActivePowerCurve") )
-        children.extend( getattr(object, "SynchronousMachine") )
-        children.extend( getattr(object, "GenUnitOpCostCurve") )
+        children.extend( getattr(object, "GrossToNetActivePowerCurves") )
+        children.extend( getattr(object, "Contains_SynchronousMachines") )
+        children.extend( getattr(object, "GenUnitOpCostCurves") )
 
 #        children.extend( getattr(object, "GenUnitOpSchedule") )
         return children
@@ -2494,6 +3060,16 @@ class GeneratingUnitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "StartIgnFuelCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2512,7 +3088,7 @@ class StartIgnFuelCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The quantity of ignition fuel (Y-axis) used to restart and repay the auxiliary power consumed versus the number of hours (X-axis) the unit was off line.")
+    tooltip = Str("=The quantity of ignition fuel (Y-axis) used to restart and repay the auxiliary power consumed versus the number of hours (X-axis) the unit was off line")
 
     # Name to use for a new instance.
     name = Str("StartIgnFuelCurve")
@@ -2527,7 +3103,7 @@ class StartIgnFuelCurveTreeNode(TreeNode):
     node_for = [StartIgnFuelCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2548,6 +3124,16 @@ class StartIgnFuelCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "HydroGeneratingEfficiencyCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2566,7 +3152,7 @@ class HydroGeneratingEfficiencyCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between unit efficiency in percent and unit output active power for a given net head in meters. The relationship between efficiency, discharge, head, and power output is expressed as follows:   E =KP/HQ Where:  (E=percentage)  (P=active power)  (H=height)  (Q=volume/time unit)  (K=constant) For example, a curve instance for a given net head could relate efficiency (Y-axis) versus active power output (X-axis) or versus discharge on the X-axis..")
+    tooltip = Str("=Relationship between unit efficiency in percent and unit output active power for a given net head in meters. The relationship between efficiency, discharge, head, and power output is expressed as follows:   E =KP/HQ Where:  (E=percentage)  (P=active power)  (H=height)  (Q=volume/time unit)  (K=constant) For example, a curve instance for a given net head could relate efficiency (Y-axis) versus active power output (X-axis) or versus discharge on the X-axis.")
 
     # Name to use for a new instance.
     name = Str("HydroGeneratingEfficiencyCurve")
@@ -2581,7 +3167,7 @@ class HydroGeneratingEfficiencyCurveTreeNode(TreeNode):
     node_for = [HydroGeneratingEfficiencyCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2602,6 +3188,16 @@ class HydroGeneratingEfficiencyCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "TargetLevelScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2620,7 +3216,7 @@ class TargetLevelScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Reservoir water level targets from advanced studies or 'rule curves'. Typically in one hour increments for up to 10 days.")
+    tooltip = Str("=Reservoir water level targets from advanced studies or 'rule curves'. Typically in one hour increments for up to 10 days")
 
     # Name to use for a new instance.
     name = Str("TargetLevelSchedule")
@@ -2635,7 +3231,7 @@ class TargetLevelScheduleTreeNode(TreeNode):
     node_for = [TargetLevelSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2656,6 +3252,16 @@ class TargetLevelScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "GrossToNetActivePowerCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2674,7 +3280,7 @@ class GrossToNetActivePowerCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between the generating unit's gross active power output on the X-axis (measured at the terminals of the machine(s)) and the generating unit's net active power output on the Y-axis (based on utility-defined measurements at the power station). Station service loads, when modeled, should be treated as non-conforming bus loads. There may be more than one curve, depending on the auxiliary equipment that is in service..")
+    tooltip = Str("=Relationship between the generating unit's gross active power output on the X-axis (measured at the terminals of the machine(s)) and the generating unit's net active power output on the Y-axis (based on utility-defined measurements at the power station). Station service loads, when modeled, should be treated as non-conforming bus loads. There may be more than one curve, depending on the auxiliary equipment that is in service.")
 
     # Name to use for a new instance.
     name = Str("GrossToNetActivePowerCurve")
@@ -2689,7 +3295,7 @@ class GrossToNetActivePowerCurveTreeNode(TreeNode):
     node_for = [GrossToNetActivePowerCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2710,6 +3316,16 @@ class GrossToNetActivePowerCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "IncrementalHeatRateCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2728,7 +3344,7 @@ class IncrementalHeatRateCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between unit incremental heat rate in (delta energy/time) per (delta active power) and unit output in active power. The IHR curve represents the slope of the HeatInputCurve. Note that the 'incremental heat rate' and the 'heat rate' have the same engineering units..")
+    tooltip = Str("=Relationship between unit incremental heat rate in (delta energy/time) per (delta active power) and unit output in active power. The IHR curve represents the slope of the HeatInputCurve. Note that the 'incremental heat rate' and the 'heat rate' have the same engineering units.")
 
     # Name to use for a new instance.
     name = Str("IncrementalHeatRateCurve")
@@ -2743,7 +3359,7 @@ class IncrementalHeatRateCurveTreeNode(TreeNode):
     node_for = [IncrementalHeatRateCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2764,6 +3380,16 @@ class IncrementalHeatRateCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "HeatInputCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2782,7 +3408,7 @@ class HeatInputCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between unit heat input in energy per time for main fuel (Y1-axis) and supplemental fuel (Y2-axis) versus unit output in active power (X-axis). The quantity of main fuel used to sustain generation at this output level is prorated for throttling between definition points. The quantity of supplemental fuel used at this output level is fixed and not prorated..")
+    tooltip = Str("=Relationship between unit heat input in energy per time for main fuel (Y1-axis) and supplemental fuel (Y2-axis) versus unit output in active power (X-axis). The quantity of main fuel used to sustain generation at this output level is prorated for throttling between definition points. The quantity of supplemental fuel used at this output level is fixed and not prorated.")
 
     # Name to use for a new instance.
     name = Str("HeatInputCurve")
@@ -2797,7 +3423,7 @@ class HeatInputCurveTreeNode(TreeNode):
     node_for = [HeatInputCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2818,6 +3444,16 @@ class HeatInputCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "StartRampCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2836,7 +3472,7 @@ class StartRampCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Rate in gross active power/minute (Y-axis) at which a unit can be loaded versus the number of hours (X-axis) the unit was off line.")
+    tooltip = Str("=Rate in gross active power/minute (Y-axis) at which a unit can be loaded versus the number of hours (X-axis) the unit was off line")
 
     # Name to use for a new instance.
     name = Str("StartRampCurve")
@@ -2851,7 +3487,7 @@ class StartRampCurveTreeNode(TreeNode):
     node_for = [StartRampCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2872,6 +3508,16 @@ class StartRampCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "AirCompressorTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2890,7 +3536,7 @@ class AirCompressorTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Combustion turbine air compressor which is an integral part of a compressed air energy storage (CAES) plant.")
+    tooltip = Str("=Combustion turbine air compressor which is an integral part of a compressed air energy storage (CAES) plant")
 
     # Name to use for a new instance.
     name = Str("AirCompressor")
@@ -2905,7 +3551,7 @@ class AirCompressorTreeNode(TreeNode):
     node_for = [AirCompressor]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2918,8 +3564,8 @@ class AirCompressorTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "CombustionTurbine") )
-#        children.extend( getattr(object, "CAESPlant") )
+#        children.extend( getattr(object, "DrivenBy_CombustionTurbine") )
+#        children.extend( getattr(object, "MemberOf_CAESPlant") )
         return children
 
 
@@ -2927,6 +3573,16 @@ class AirCompressorTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ShutdownCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2945,7 +3601,7 @@ class ShutdownCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between the rate in gross active power/minute (Y-axis) at which a unit should be shutdown and its present gross MW output (X-axis).")
+    tooltip = Str("=Relationship between the rate in gross active power/minute (Y-axis) at which a unit should be shutdown and its present gross MW output (X-axis)")
 
     # Name to use for a new instance.
     name = Str("ShutdownCurve")
@@ -2960,7 +3616,7 @@ class ShutdownCurveTreeNode(TreeNode):
     node_for = [ShutdownCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -2981,6 +3637,16 @@ class ShutdownCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CombinedCyclePlantTreeNode" class:
 #------------------------------------------------------------------------------
@@ -2999,7 +3665,7 @@ class CombinedCyclePlantTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A set of combustion turbines and steam turbines where the exhaust heat from the combustion turbines is recovered to make steam for the steam turbines, resulting in greater overall plant efficiency.")
+    tooltip = Str("=A set of combustion turbines and steam turbines where the exhaust heat from the combustion turbines is recovered to make steam for the steam turbines, resulting in greater overall plant efficiency")
 
     # Name to use for a new instance.
     name = Str("CombinedCyclePlant")
@@ -3014,7 +3680,7 @@ class CombinedCyclePlantTreeNode(TreeNode):
     node_for = [CombinedCyclePlant]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3026,7 +3692,7 @@ class CombinedCyclePlantTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "ThermalGeneratingUnit") )
+        children.extend( getattr(object, "Contain_ThermalGeneratingUnits") )
 
         return children
 
@@ -3035,6 +3701,16 @@ class CombinedCyclePlantTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "StartupModelTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3053,7 +3729,7 @@ class StartupModelTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Unit start up characteristics depending on how long the unit has been off line.")
+    tooltip = Str("=Unit start up characteristics depending on how long the unit has been off line")
 
     # Name to use for a new instance.
     name = Str("StartupModel")
@@ -3068,7 +3744,7 @@ class StartupModelTreeNode(TreeNode):
     node_for = [StartupModel]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3092,6 +3768,16 @@ class StartupModelTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "HydroPumpTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3110,7 +3796,7 @@ class HydroPumpTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A synchronous motor-driven pump, typically associated with a pumped storage plant.")
+    tooltip = Str("=A synchronous motor-driven pump, typically associated with a pumped storage plant")
 
     # Name to use for a new instance.
     name = Str("HydroPump")
@@ -3125,7 +3811,7 @@ class HydroPumpTreeNode(TreeNode):
     node_for = [HydroPump]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3138,9 +3824,9 @@ class HydroPumpTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "HydroPowerPlant") )
+#        children.extend( getattr(object, "MemberOf_HydroPowerPlant") )
 #        children.extend( getattr(object, "HydroPumpOpSchedule") )
-#        children.extend( getattr(object, "SynchronousMachine") )
+#        children.extend( getattr(object, "DrivenBy_SynchronousMachine") )
         return children
 
 
@@ -3148,6 +3834,16 @@ class HydroPumpTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "EmissionCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3166,7 +3862,7 @@ class EmissionCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between the unit's emission rate in units of mass per hour (Y-axis) and output active power (X-axis) for a given type of emission. This curve applies when only one type of fuel is being burned..")
+    tooltip = Str("=Relationship between the unit's emission rate in units of mass per hour (Y-axis) and output active power (X-axis) for a given type of emission. This curve applies when only one type of fuel is being burned.")
 
     # Name to use for a new instance.
     name = Str("EmissionCurve")
@@ -3181,7 +3877,7 @@ class EmissionCurveTreeNode(TreeNode):
     node_for = [EmissionCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3202,6 +3898,16 @@ class EmissionCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "GenUnitOpCostCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3220,7 +3926,7 @@ class GenUnitOpCostCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between unit operating cost (Y-axis) and unit output active power (X-axis). The operating cost curve for thermal units is derived from heat input and fuel costs. The operating cost curve for hydro units is derived from water flow rates and equivalent water costs..")
+    tooltip = Str("=Relationship between unit operating cost (Y-axis) and unit output active power (X-axis). The operating cost curve for thermal units is derived from heat input and fuel costs. The operating cost curve for hydro units is derived from water flow rates and equivalent water costs.")
 
     # Name to use for a new instance.
     name = Str("GenUnitOpCostCurve")
@@ -3235,7 +3941,7 @@ class GenUnitOpCostCurveTreeNode(TreeNode):
     node_for = [GenUnitOpCostCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3256,6 +3962,16 @@ class GenUnitOpCostCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "HydroPowerPlantTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3274,7 +3990,7 @@ class HydroPowerPlantTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A hydro power station which can generate or pump. When generating, the generator turbines receive there water from an upper reservoir. When pumping, the pumps receive their water from a lower reservoir..")
+    tooltip = Str("=A hydro power station which can generate or pump. When generating, the generator turbines receive there water from an upper reservoir. When pumping, the pumps receive their water from a lower reservoir.")
 
     # Name to use for a new instance.
     name = Str("HydroPowerPlant")
@@ -3289,7 +4005,7 @@ class HydroPowerPlantTreeNode(TreeNode):
     node_for = [HydroPowerPlant]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3301,11 +4017,11 @@ class HydroPowerPlantTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "HydroGeneratingUnit") )
-        children.extend( getattr(object, "HydroPump") )
+        children.extend( getattr(object, "Contain_HydroGeneratingUnits") )
+        children.extend( getattr(object, "Contain_HydroPumps") )
 
 #        children.extend( getattr(object, "Reservoir") )
-#        children.extend( getattr(object, "Reservoir") )
+#        children.extend( getattr(object, "GenSourcePumpDischarge") )
         return children
 
 
@@ -3313,6 +4029,16 @@ class HydroPowerPlantTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "HydroGeneratingUnitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3331,7 +4057,7 @@ class HydroGeneratingUnitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A generating unit whose prime mover is a hydraulic turbine (e.g., Francis, Pelton, Kaplan).")
+    tooltip = Str("=A generating unit whose prime mover is a hydraulic turbine (e.g., Francis, Pelton, Kaplan)")
 
     # Name to use for a new instance.
     name = Str("HydroGeneratingUnit")
@@ -3346,7 +4072,7 @@ class HydroGeneratingUnitTreeNode(TreeNode):
     node_for = [HydroGeneratingUnit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3358,10 +4084,10 @@ class HydroGeneratingUnitTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "HydroGeneratingEfficiencyCurve") )
+        children.extend( getattr(object, "HydroGeneratingEfficiencyCurves") )
         children.extend( getattr(object, "TailbayLossCurve") )
 
-#        children.extend( getattr(object, "HydroPowerPlant") )
+#        children.extend( getattr(object, "MemberOf_HydroPowerPlant") )
 #        children.extend( getattr(object, "PenstockLossCurve") )
         return children
 
@@ -3370,6 +4096,16 @@ class HydroGeneratingUnitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CAESPlantTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3388,7 +4124,7 @@ class CAESPlantTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Compressed air energy storage plant.")
+    tooltip = Str("=Compressed air energy storage plant")
 
     # Name to use for a new instance.
     name = Str("CAESPlant")
@@ -3403,7 +4139,7 @@ class CAESPlantTreeNode(TreeNode):
     node_for = [CAESPlant]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3416,8 +4152,8 @@ class CAESPlantTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "AirCompressor") )
-#        children.extend( getattr(object, "ThermalGeneratingUnit") )
+#        children.extend( getattr(object, "Contain_AirCompressor") )
+#        children.extend( getattr(object, "Contain_ThermalGeneratingUnit") )
         return children
 
 
@@ -3425,6 +4161,16 @@ class CAESPlantTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "LevelVsVolumeCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3443,7 +4189,7 @@ class LevelVsVolumeCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between reservoir volume and reservoir level. The  volume is at the y-axis and the reservoir level at the x-axis..")
+    tooltip = Str("=Relationship between reservoir volume and reservoir level. The  volume is at the y-axis and the reservoir level at the x-axis.")
 
     # Name to use for a new instance.
     name = Str("LevelVsVolumeCurve")
@@ -3458,7 +4204,7 @@ class LevelVsVolumeCurveTreeNode(TreeNode):
     node_for = [LevelVsVolumeCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3479,6 +4225,16 @@ class LevelVsVolumeCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "InflowForecastTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3497,7 +4253,7 @@ class InflowForecastTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Natural water inflow to a reservoir, usually forecasted from predicted rain and snowmelt. Typically in one hour increments for up to 10 days. The forecast is given in average cubic meters per second over the time increment..")
+    tooltip = Str("=Natural water inflow to a reservoir, usually forecasted from predicted rain and snowmelt. Typically in one hour increments for up to 10 days. The forecast is given in average cubic meters per second over the time increment.")
 
     # Name to use for a new instance.
     name = Str("InflowForecast")
@@ -3512,7 +4268,7 @@ class InflowForecastTreeNode(TreeNode):
     node_for = [InflowForecast]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3533,6 +4289,16 @@ class InflowForecastTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SteamSendoutScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3551,7 +4317,7 @@ class SteamSendoutScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The cogeneration plant's steam sendout schedule in volume per time unit..")
+    tooltip = Str("=The cogeneration plant's steam sendout schedule in volume per time unit.")
 
     # Name to use for a new instance.
     name = Str("SteamSendoutSchedule")
@@ -3566,7 +4332,7 @@ class SteamSendoutScheduleTreeNode(TreeNode):
     node_for = [SteamSendoutSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3587,6 +4353,16 @@ class SteamSendoutScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ThermalGeneratingUnitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3605,7 +4381,7 @@ class ThermalGeneratingUnitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A generating unit whose prime mover could be a steam turbine, combustion turbine, or diesel engine..")
+    tooltip = Str("=A generating unit whose prime mover could be a steam turbine, combustion turbine, or diesel engine.")
 
     # Name to use for a new instance.
     name = Str("ThermalGeneratingUnit")
@@ -3620,7 +4396,7 @@ class ThermalGeneratingUnitTreeNode(TreeNode):
     node_for = [ThermalGeneratingUnit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3632,19 +4408,19 @@ class ThermalGeneratingUnitTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "FuelAllocationSchedule") )
-        children.extend( getattr(object, "EmissionCurve") )
-        children.extend( getattr(object, "EmissionAccount") )
-        children.extend( getattr(object, "FossilFuel") )
+        children.extend( getattr(object, "FuelAllocationSchedules") )
+        children.extend( getattr(object, "EmissionCurves") )
+        children.extend( getattr(object, "EmmissionAccounts") )
+        children.extend( getattr(object, "FossilFuels") )
 
-#        children.extend( getattr(object, "CogenerationPlant") )
+#        children.extend( getattr(object, "MemberOf_CogenerationPlant") )
 #        children.extend( getattr(object, "StartupModel") )
 #        children.extend( getattr(object, "IncrementalHeatRateCurve") )
 #        children.extend( getattr(object, "ShutdownCurve") )
 #        children.extend( getattr(object, "HeatRateCurve") )
-#        children.extend( getattr(object, "CAESPlant") )
+#        children.extend( getattr(object, "MemberOf_CAESPlant") )
 #        children.extend( getattr(object, "HeatInputCurve") )
-#        children.extend( getattr(object, "CombinedCyclePlant") )
+#        children.extend( getattr(object, "MemberOf_CombinedCyclePlant") )
         return children
 
 
@@ -3652,6 +4428,16 @@ class ThermalGeneratingUnitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "FossilFuelTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3670,7 +4456,7 @@ class FossilFuelTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The fossil fuel consumed by the non-nuclear thermal generating units, e.g., coal, oil, gas.")
+    tooltip = Str("=The fossil fuel consumed by the non-nuclear thermal generating units, e.g., coal, oil, gas")
 
     # Name to use for a new instance.
     name = Str("FossilFuel")
@@ -3685,7 +4471,7 @@ class FossilFuelTreeNode(TreeNode):
     node_for = [FossilFuel]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3707,6 +4493,16 @@ class FossilFuelTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "FuelAllocationScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3725,7 +4521,7 @@ class FuelAllocationScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The amount of fuel of a given type which is allocated for consumption over a specified period of time.")
+    tooltip = Str("=The amount of fuel of a given type which is allocated for consumption over a specified period of time")
 
     # Name to use for a new instance.
     name = Str("FuelAllocationSchedule")
@@ -3740,7 +4536,7 @@ class FuelAllocationScheduleTreeNode(TreeNode):
     node_for = [FuelAllocationSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3762,6 +4558,16 @@ class FuelAllocationScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "EmissionAccountTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3780,7 +4586,7 @@ class EmissionAccountTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Accounts for tracking emissions usage and credits for thermal generating units. A unit may have zero or more emission accounts, and will typically have one for tracking usage and one for tracking credits..")
+    tooltip = Str("=Accounts for tracking emissions usage and credits for thermal generating units. A unit may have zero or more emission accounts, and will typically have one for tracking usage and one for tracking credits.")
 
     # Name to use for a new instance.
     name = Str("EmissionAccount")
@@ -3795,7 +4601,7 @@ class EmissionAccountTreeNode(TreeNode):
     node_for = [EmissionAccount]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3816,6 +4622,16 @@ class EmissionAccountTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "TailbayLossCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3834,7 +4650,7 @@ class TailbayLossCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between tailbay head loss hight (y-axis) and the total discharge into the power station's tailbay volume per time unit (x-axis) . There could be more than one curve depending on the level of the tailbay reservoir or river level.")
+    tooltip = Str("=Relationship between tailbay head loss hight (y-axis) and the total discharge into the power station's tailbay volume per time unit (x-axis) . There could be more than one curve depending on the level of the tailbay reservoir or river level")
 
     # Name to use for a new instance.
     name = Str("TailbayLossCurve")
@@ -3849,7 +4665,7 @@ class TailbayLossCurveTreeNode(TreeNode):
     node_for = [TailbayLossCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3870,6 +4686,16 @@ class TailbayLossCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "PenstockLossCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3888,7 +4714,7 @@ class PenstockLossCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between penstock head loss (in meters) and  total discharge through the penstock (in cubic meters per second). One or more turbines may be connected to the same penstock..")
+    tooltip = Str("=Relationship between penstock head loss (in meters) and  total discharge through the penstock (in cubic meters per second). One or more turbines may be connected to the same penstock.")
 
     # Name to use for a new instance.
     name = Str("PenstockLossCurve")
@@ -3903,7 +4729,7 @@ class PenstockLossCurveTreeNode(TreeNode):
     node_for = [PenstockLossCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3924,6 +4750,16 @@ class PenstockLossCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "StartMainFuelCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3942,7 +4778,7 @@ class StartMainFuelCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The quantity of main fuel (Y-axis) used to restart and repay the auxiliary power consumed versus the number of hours (X-axis) the unit was off line.")
+    tooltip = Str("=The quantity of main fuel (Y-axis) used to restart and repay the auxiliary power consumed versus the number of hours (X-axis) the unit was off line")
 
     # Name to use for a new instance.
     name = Str("StartMainFuelCurve")
@@ -3957,7 +4793,7 @@ class StartMainFuelCurveTreeNode(TreeNode):
     node_for = [StartMainFuelCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -3978,6 +4814,16 @@ class StartMainFuelCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ReservoirTreeNode" class:
 #------------------------------------------------------------------------------
@@ -3996,7 +4842,7 @@ class ReservoirTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A water storage facility within a hydro system, including: ponds, lakes, lagoons, and rivers. The storage is usually behind some type of dam..")
+    tooltip = Str("=A water storage facility within a hydro system, including: ponds, lakes, lagoons, and rivers. The storage is usually behind some type of dam.")
 
     # Name to use for a new instance.
     name = Str("Reservoir")
@@ -4011,7 +4857,7 @@ class ReservoirTreeNode(TreeNode):
     node_for = [Reservoir]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4025,11 +4871,11 @@ class ReservoirTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "LevelVsVolumeCurve") )
         children.extend( getattr(object, "InflowForecast") )
-        children.extend( getattr(object, "Reservoir") )
-        children.extend( getattr(object, "HydroPowerPlant") )
-        children.extend( getattr(object, "HydroPowerPlant") )
+        children.extend( getattr(object, "SpillsInto") )
+        children.extend( getattr(object, "HydroPowerPlants") )
+        children.extend( getattr(object, "UpstreamFrom") )
 
-#        children.extend( getattr(object, "Reservoir") )
+#        children.extend( getattr(object, "SpillsFrom") )
 #        children.extend( getattr(object, "TargetLevelSchedule") )
         return children
 
@@ -4038,6 +4884,16 @@ class ReservoirTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "HydroPumpOpScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4056,7 +4912,7 @@ class HydroPumpOpScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The hydro pump's Operator-approved current operating schedule (or plan), typically produced with the aid of unit commitment type analyses.The unit's operating schedule status is typically given as: (0=unavailable)  (1=avilable to startup or shutdown)  (2=must pump).")
+    tooltip = Str("=The hydro pump's Operator-approved current operating schedule (or plan), typically produced with the aid of unit commitment type analyses.The unit's operating schedule status is typically given as: (0=unavailable)  (1=avilable to startup or shutdown)  (2=must pump)")
 
     # Name to use for a new instance.
     name = Str("HydroPumpOpSchedule")
@@ -4071,7 +4927,7 @@ class HydroPumpOpScheduleTreeNode(TreeNode):
     node_for = [HydroPumpOpSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4092,6 +4948,16 @@ class HydroPumpOpScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "HeatRateCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4110,7 +4976,7 @@ class HeatRateCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between unit heat rate per active power (Y-axis) and  unit output (X-axis). The heat input is from all fuels..")
+    tooltip = Str("=Relationship between unit heat rate per active power (Y-axis) and  unit output (X-axis). The heat input is from all fuels.")
 
     # Name to use for a new instance.
     name = Str("HeatRateCurve")
@@ -4125,7 +4991,7 @@ class HeatRateCurveTreeNode(TreeNode):
     node_for = [HeatRateCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4146,6 +5012,16 @@ class HeatRateCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "GenUnitOpScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4164,7 +5040,7 @@ class GenUnitOpScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The generating unit's Operator-approved current operating schedule (or plan), typically produced with the aid of unit commitment type analyses. The X-axis represents absolute time. The Y1-axis represents the status (0=off-line and unavailable: 1=available: 2=must run: 3=must run at fixed power value: etc.). The Y2-axis represents the must run fixed power value where required..")
+    tooltip = Str("=The generating unit's Operator-approved current operating schedule (or plan), typically produced with the aid of unit commitment type analyses. The X-axis represents absolute time. The Y1-axis represents the status (0=off-line and unavailable: 1=available: 2=must run: 3=must run at fixed power value: etc.). The Y2-axis represents the must run fixed power value where required.")
 
     # Name to use for a new instance.
     name = Str("GenUnitOpSchedule")
@@ -4179,7 +5055,7 @@ class GenUnitOpScheduleTreeNode(TreeNode):
     node_for = [GenUnitOpSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4200,6 +5076,16 @@ class GenUnitOpScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CogenerationPlantTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4218,7 +5104,7 @@ class CogenerationPlantTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A set of thermal generating units for the production of electrical energy and process steam (usually from the output of the steam turbines). The steam sendout is typically used for industrial purposes or for municipal heating and cooling..")
+    tooltip = Str("=A set of thermal generating units for the production of electrical energy and process steam (usually from the output of the steam turbines). The steam sendout is typically used for industrial purposes or for municipal heating and cooling.")
 
     # Name to use for a new instance.
     name = Str("CogenerationPlant")
@@ -4233,7 +5119,7 @@ class CogenerationPlantTreeNode(TreeNode):
     node_for = [CogenerationPlant]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4245,7 +5131,7 @@ class CogenerationPlantTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "ThermalGeneratingUnit") )
+        children.extend( getattr(object, "Contain_ThermalGeneratingUnits") )
 
 #        children.extend( getattr(object, "SteamSendoutSchedule") )
         return children
@@ -4255,6 +5141,16 @@ class CogenerationPlantTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SupercriticalTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4273,7 +5169,7 @@ class SupercriticalTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Once-through supercritical boiler.")
+    tooltip = Str("=Once-through supercritical boiler")
 
     # Name to use for a new instance.
     name = Str("Supercritical")
@@ -4288,7 +5184,7 @@ class SupercriticalTreeNode(TreeNode):
     node_for = [Supercritical]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4308,6 +5204,16 @@ class SupercriticalTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SteamTurbineTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4326,7 +5232,7 @@ class SteamTurbineTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Steam turbine.")
+    tooltip = Str("=Steam turbine")
 
     # Name to use for a new instance.
     name = Str("SteamTurbine")
@@ -4341,7 +5247,7 @@ class SteamTurbineTreeNode(TreeNode):
     node_for = [SteamTurbine]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4353,7 +5259,7 @@ class SteamTurbineTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "SteamSupply") )
+        children.extend( getattr(object, "SteamSupplys") )
 
         return children
 
@@ -4362,6 +5268,16 @@ class SteamTurbineTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CTTempActivePowerCurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4380,7 +5296,7 @@ class CTTempActivePowerCurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between the combustion turbine's power output rating in gross active power (X-axis) and the ambient air temperature (Y-axis).")
+    tooltip = Str("=Relationship between the combustion turbine's power output rating in gross active power (X-axis) and the ambient air temperature (Y-axis)")
 
     # Name to use for a new instance.
     name = Str("CTTempActivePowerCurve")
@@ -4395,7 +5311,7 @@ class CTTempActivePowerCurveTreeNode(TreeNode):
     node_for = [CTTempActivePowerCurve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4416,6 +5332,16 @@ class CTTempActivePowerCurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "PrimeMoverTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4434,7 +5360,7 @@ class PrimeMoverTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The machine used to develop mechanical energy used to drive a generator..")
+    tooltip = Str("=The machine used to develop mechanical energy used to drive a generator.")
 
     # Name to use for a new instance.
     name = Str("PrimeMover")
@@ -4449,7 +5375,7 @@ class PrimeMoverTreeNode(TreeNode):
     node_for = [PrimeMover]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4461,7 +5387,7 @@ class PrimeMoverTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "SynchronousMachine") )
+        children.extend( getattr(object, "Drives_SynchronousMachines") )
 
         return children
 
@@ -4470,6 +5396,16 @@ class PrimeMoverTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "PWRSteamSupplyTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4488,7 +5424,7 @@ class PWRSteamSupplyTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Pressurized water reactor used as a steam supply to a steam turbine.")
+    tooltip = Str("=Pressurized water reactor used as a steam supply to a steam turbine")
 
     # Name to use for a new instance.
     name = Str("PWRSteamSupply")
@@ -4503,7 +5439,7 @@ class PWRSteamSupplyTreeNode(TreeNode):
     node_for = [PWRSteamSupply]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4523,6 +5459,16 @@ class PWRSteamSupplyTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CombustionTurbineTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4541,7 +5487,7 @@ class CombustionTurbineTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A prime mover that is typically fueled by gas or light oil.")
+    tooltip = Str("=A prime mover that is typically fueled by gas or light oil")
 
     # Name to use for a new instance.
     name = Str("CombustionTurbine")
@@ -4556,7 +5502,7 @@ class CombustionTurbineTreeNode(TreeNode):
     node_for = [CombustionTurbine]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4569,7 +5515,7 @@ class CombustionTurbineTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "AirCompressor") )
+#        children.extend( getattr(object, "Drives_AirCompressor") )
 #        children.extend( getattr(object, "CTTempActivePowerCurve") )
 #        children.extend( getattr(object, "HeatRecoveryBoiler") )
         return children
@@ -4579,6 +5525,16 @@ class CombustionTurbineTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "HeatRecoveryBoilerTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4597,7 +5553,7 @@ class HeatRecoveryBoilerTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The heat recovery system associated with combustion turbines in order to produce steam for combined cycle plants.")
+    tooltip = Str("=The heat recovery system associated with combustion turbines in order to produce steam for combined cycle plants")
 
     # Name to use for a new instance.
     name = Str("HeatRecoveryBoiler")
@@ -4612,7 +5568,7 @@ class HeatRecoveryBoilerTreeNode(TreeNode):
     node_for = [HeatRecoveryBoiler]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4624,7 +5580,7 @@ class HeatRecoveryBoilerTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "CombustionTurbine") )
+        children.extend( getattr(object, "CombustionTurbines") )
 
         return children
 
@@ -4633,6 +5589,16 @@ class HeatRecoveryBoilerTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "BWRSteamSupplyTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4651,7 +5617,7 @@ class BWRSteamSupplyTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Boiling water reactor used as a steam supply to a steam turbine.")
+    tooltip = Str("=Boiling water reactor used as a steam supply to a steam turbine")
 
     # Name to use for a new instance.
     name = Str("BWRSteamSupply")
@@ -4666,7 +5632,7 @@ class BWRSteamSupplyTreeNode(TreeNode):
     node_for = [BWRSteamSupply]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4686,6 +5652,16 @@ class BWRSteamSupplyTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "HydroTurbineTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4704,7 +5680,7 @@ class HydroTurbineTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A water driven prime mover. Typical turbine types are: Francis, Kaplan, and Pelton..")
+    tooltip = Str("=A water driven prime mover. Typical turbine types are: Francis, Kaplan, and Pelton.")
 
     # Name to use for a new instance.
     name = Str("HydroTurbine")
@@ -4719,7 +5695,7 @@ class HydroTurbineTreeNode(TreeNode):
     node_for = [HydroTurbine]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4739,6 +5715,16 @@ class HydroTurbineTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "DrumBoilerTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4757,7 +5743,7 @@ class DrumBoilerTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Drum boiler.")
+    tooltip = Str("=Drum boiler")
 
     # Name to use for a new instance.
     name = Str("DrumBoiler")
@@ -4772,7 +5758,7 @@ class DrumBoilerTreeNode(TreeNode):
     node_for = [DrumBoiler]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4792,6 +5778,16 @@ class DrumBoilerTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "FossilSteamSupplyTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4810,7 +5806,7 @@ class FossilSteamSupplyTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Fossil fueled boiler (e.g., coal, oil, gas).")
+    tooltip = Str("=Fossil fueled boiler (e.g., coal, oil, gas)")
 
     # Name to use for a new instance.
     name = Str("FossilSteamSupply")
@@ -4825,7 +5821,7 @@ class FossilSteamSupplyTreeNode(TreeNode):
     node_for = [FossilSteamSupply]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4845,6 +5841,16 @@ class FossilSteamSupplyTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SubcriticalTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4863,7 +5869,7 @@ class SubcriticalTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Once-through subcritical boiler.")
+    tooltip = Str("=Once-through subcritical boiler")
 
     # Name to use for a new instance.
     name = Str("Subcritical")
@@ -4878,7 +5884,7 @@ class SubcriticalTreeNode(TreeNode):
     node_for = [Subcritical]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4898,6 +5904,16 @@ class SubcriticalTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SteamSupplyTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4916,7 +5932,7 @@ class SteamSupplyTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Steam supply for steam turbine.")
+    tooltip = Str("=Steam supply for steam turbine")
 
     # Name to use for a new instance.
     name = Str("SteamSupply")
@@ -4931,7 +5947,7 @@ class SteamSupplyTreeNode(TreeNode):
     node_for = [SteamSupply]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4943,7 +5959,7 @@ class SteamSupplyTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "SteamTurbine") )
+        children.extend( getattr(object, "SteamTurbines") )
 
         return children
 
@@ -4952,6 +5968,16 @@ class SteamSupplyTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "DiscreteTreeNode" class:
 #------------------------------------------------------------------------------
@@ -4970,7 +5996,7 @@ class DiscreteTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Discrete represents a discrete Measurement, i.e. a Measurement reprsenting discrete values, e.g. a Breaker position..")
+    tooltip = Str("=Discrete represents a discrete Measurement, i.e. a Measurement reprsenting discrete values, e.g. a Breaker position.")
 
     # Name to use for a new instance.
     name = Str("Discrete")
@@ -4985,7 +6011,7 @@ class DiscreteTreeNode(TreeNode):
     node_for = [Discrete]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -4997,10 +6023,10 @@ class DiscreteTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "DiscreteValue") )
+        children.extend( getattr(object, "Contain_MeasurementValues") )
 
 #        children.extend( getattr(object, "ValueAliasSet") )
-#        children.extend( getattr(object, "Command") )
+#        children.extend( getattr(object, "ControlledBy_Control") )
         return children
 
 
@@ -5008,6 +6034,16 @@ class DiscreteTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "MeasurementTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5026,7 +6062,7 @@ class MeasurementTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement.  The PSR - Measurement association is intended to capture this use of Measurement and is included in the naming hierarchy based on EquipmentContainer. The naming hierarchy typically has Measurements as leafs, e.g. Substation-VoltageLevel-Bay-Switch-Measurement. Some Measurements represent quantities related to a particular sensor location in the network, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is not captured in the PSR - Measurement association. Instead it is captured by the Measurement - Terminal association that is used to define the sensing location in the network topology. The location is defined by the connection of the Terminal to ConductingEquipment.  Two possible paths exist: 1) Measurement-Terminal- ConnectivityNode-Terminal-ConductingEquipment 2) Measurement-Terminal-ConductingEquipment Alternative 2 is the only allowed use.  When the sensor location is needed both Measurement-PSR and Measurement-Terminal are used. The Measurement-Terminal association is never used alone..")
+    tooltip = Str("=A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement.  The PSR - Measurement association is intended to capture this use of Measurement and is included in the naming hierarchy based on EquipmentContainer. The naming hierarchy typically has Measurements as leafs, e.g. Substation-VoltageLevel-Bay-Switch-Measurement. Some Measurements represent quantities related to a particular sensor location in the network, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is not captured in the PSR - Measurement association. Instead it is captured by the Measurement - Terminal association that is used to define the sensing location in the network topology. The location is defined by the connection of the Terminal to ConductingEquipment.  Two possible paths exist: 1) Measurement-Terminal- ConnectivityNode-Terminal-ConductingEquipment 2) Measurement-Terminal-ConductingEquipment Alternative 2 is the only allowed use.  When the sensor location is needed both Measurement-PSR and Measurement-Terminal are used. The Measurement-Terminal association is never used alone.")
 
     # Name to use for a new instance.
     name = Str("Measurement")
@@ -5041,7 +6077,7 @@ class MeasurementTreeNode(TreeNode):
     node_for = [Measurement]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5055,7 +6091,7 @@ class MeasurementTreeNode(TreeNode):
         children = []
 
 #        children.extend( getattr(object, "Terminal") )
-#        children.extend( getattr(object, "PowerSystemResource") )
+#        children.extend( getattr(object, "MemberOf_PSR") )
 #        children.extend( getattr(object, "Unit") )
 #        children.extend( getattr(object, "MeasurementType") )
         return children
@@ -5065,6 +6101,16 @@ class MeasurementTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SetPointTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5083,7 +6129,7 @@ class SetPointTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A SetPoint is an analog control used for supervisory control..")
+    tooltip = Str("=A SetPoint is an analog control used for supervisory control.")
 
     # Name to use for a new instance.
     name = Str("SetPoint")
@@ -5098,7 +6144,7 @@ class SetPointTreeNode(TreeNode):
     node_for = [SetPoint]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5111,7 +6157,7 @@ class SetPointTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Analog") )
+#        children.extend( getattr(object, "MeasuredBy_Measurement") )
         return children
 
 
@@ -5119,6 +6165,16 @@ class SetPointTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ControlTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5137,7 +6193,7 @@ class ControlTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Control is used for supervisory/device control. It represents control outputs that are used to change the state in a process, e.g. close or open breaker, a set point value or a raise lower command..")
+    tooltip = Str("=Control is used for supervisory/device control. It represents control outputs that are used to change the state in a process, e.g. close or open breaker, a set point value or a raise lower command.")
 
     # Name to use for a new instance.
     name = Str("Control")
@@ -5152,7 +6208,7 @@ class ControlTreeNode(TreeNode):
     node_for = [Control]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5168,7 +6224,7 @@ class ControlTreeNode(TreeNode):
 #        children.extend( getattr(object, "Unit") )
 #        children.extend( getattr(object, "ControlType") )
 #        children.extend( getattr(object, "RemoteControl") )
-#        children.extend( getattr(object, "RegulatingCondEq") )
+#        children.extend( getattr(object, "ControlledBy_RegulatingCondEq") )
         return children
 
 
@@ -5176,6 +6232,16 @@ class ControlTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ControlTypeTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5194,7 +6260,7 @@ class ControlTypeTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Specifies the type of Control, e.g. BreakerOn/Off, GeneratorVoltageSetPoint, TieLineFlow etc. The ControlType.name shall be unique among all specified types and describe the type. The ControlType.aliasName is meant to be used for localization..")
+    tooltip = Str("=Specifies the type of Control, e.g. BreakerOn/Off, GeneratorVoltageSetPoint, TieLineFlow etc. The ControlType.name shall be unique among all specified types and describe the type. The ControlType.aliasName is meant to be used for localization.")
 
     # Name to use for a new instance.
     name = Str("ControlType")
@@ -5209,7 +6275,7 @@ class ControlTypeTreeNode(TreeNode):
     node_for = [ControlType]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5221,7 +6287,7 @@ class ControlTypeTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Control") )
+        children.extend( getattr(object, "Controls") )
 
         return children
 
@@ -5230,6 +6296,16 @@ class ControlTypeTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "DiscreteValueTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5248,7 +6324,7 @@ class DiscreteValueTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=DiscreteValue represents a discrete MeasurementValue..")
+    tooltip = Str("=DiscreteValue represents a discrete MeasurementValue.")
 
     # Name to use for a new instance.
     name = Str("DiscreteValue")
@@ -5263,7 +6339,7 @@ class DiscreteValueTreeNode(TreeNode):
     node_for = [DiscreteValue]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5276,7 +6352,7 @@ class DiscreteValueTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Discrete") )
+#        children.extend( getattr(object, "MemberOf_Measurement") )
         return children
 
 
@@ -5284,6 +6360,16 @@ class DiscreteValueTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "AccumulatorTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5302,7 +6388,7 @@ class AccumulatorTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Accumulator represents a accumulated (counted) Measurement, e.g. an energy value..")
+    tooltip = Str("=Accumulator represents a accumulated (counted) Measurement, e.g. an energy value.")
 
     # Name to use for a new instance.
     name = Str("Accumulator")
@@ -5317,7 +6403,7 @@ class AccumulatorTreeNode(TreeNode):
     node_for = [Accumulator]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5329,8 +6415,8 @@ class AccumulatorTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "AccumulatorValue") )
-        children.extend( getattr(object, "AccumulatorLimitSet") )
+        children.extend( getattr(object, "Contain_MeasurementValues") )
+        children.extend( getattr(object, "LimitSets") )
 
         return children
 
@@ -5339,6 +6425,16 @@ class AccumulatorTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "LimitSetTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5357,7 +6453,7 @@ class LimitSetTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Specifies a set of Limits that are associated with a Measurement. A Measurement may have several LimitSets corresponding to seasonal or other changing conditions. The condition is captured in the name and description attributes. The same LimitSet may be used for several Measurements. In particular percentage limits are used this way..")
+    tooltip = Str("=Specifies a set of Limits that are associated with a Measurement. A Measurement may have several LimitSets corresponding to seasonal or other changing conditions. The condition is captured in the name and description attributes. The same LimitSet may be used for several Measurements. In particular percentage limits are used this way.")
 
     # Name to use for a new instance.
     name = Str("LimitSet")
@@ -5372,7 +6468,7 @@ class LimitSetTreeNode(TreeNode):
     node_for = [LimitSet]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5392,6 +6488,16 @@ class LimitSetTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "AnalogLimitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5410,7 +6516,7 @@ class AnalogLimitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Limit values for Analog measurements.")
+    tooltip = Str("=Limit values for Analog measurements")
 
     # Name to use for a new instance.
     name = Str("AnalogLimit")
@@ -5425,7 +6531,7 @@ class AnalogLimitTreeNode(TreeNode):
     node_for = [AnalogLimit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5438,7 +6544,7 @@ class AnalogLimitTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "AnalogLimitSet") )
+#        children.extend( getattr(object, "LimitSet") )
         return children
 
 
@@ -5446,6 +6552,16 @@ class AnalogLimitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "MeasurementValueTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5464,7 +6580,7 @@ class MeasurementValueTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement..")
+    tooltip = Str("=The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement.")
 
     # Name to use for a new instance.
     name = Str("MeasurementValue")
@@ -5479,7 +6595,7 @@ class MeasurementValueTreeNode(TreeNode):
     node_for = [MeasurementValue]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5502,6 +6618,16 @@ class MeasurementValueTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ValueAliasSetTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5520,7 +6646,7 @@ class ValueAliasSetTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Describes the translation of a set of values into a name and is intendend to facilitate cusom translations. Each ValueAliasSet has a name, description etc. A specific Measurement may represent a discrete state like Open, Closed, Intermediate etc. This requires a translation from the MeasurementValue.value number to a string, e.g. 0->'Invalid', 1->'Open', 2->'Closed', 3->'Intermediate'. Each ValueToAlias member in ValueAliasSet.Value describe a mapping for one particular value to a name..")
+    tooltip = Str("=Describes the translation of a set of values into a name and is intendend to facilitate cusom translations. Each ValueAliasSet has a name, description etc. A specific Measurement may represent a discrete state like Open, Closed, Intermediate etc. This requires a translation from the MeasurementValue.value number to a string, e.g. 0->'Invalid', 1->'Open', 2->'Closed', 3->'Intermediate'. Each ValueToAlias member in ValueAliasSet.Value describe a mapping for one particular value to a name.")
 
     # Name to use for a new instance.
     name = Str("ValueAliasSet")
@@ -5535,7 +6661,7 @@ class ValueAliasSetTreeNode(TreeNode):
     node_for = [ValueAliasSet]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5547,9 +6673,9 @@ class ValueAliasSetTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "ValueToAlias") )
-        children.extend( getattr(object, "Command") )
-        children.extend( getattr(object, "Discrete") )
+        children.extend( getattr(object, "Values") )
+        children.extend( getattr(object, "Commands") )
+        children.extend( getattr(object, "Measurements") )
 
         return children
 
@@ -5558,6 +6684,16 @@ class ValueAliasSetTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "StringMeasurementValueTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5576,7 +6712,7 @@ class StringMeasurementValueTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=StringMeasurementValue represents a measurement value of type string..")
+    tooltip = Str("=StringMeasurementValue represents a measurement value of type string.")
 
     # Name to use for a new instance.
     name = Str("StringMeasurementValue")
@@ -5591,7 +6727,7 @@ class StringMeasurementValueTreeNode(TreeNode):
     node_for = [StringMeasurementValue]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5604,7 +6740,7 @@ class StringMeasurementValueTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "StringMeasurement") )
+#        children.extend( getattr(object, "MemberOf_Measurement") )
         return children
 
 
@@ -5612,6 +6748,16 @@ class StringMeasurementValueTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "Quality61850TreeNode" class:
 #------------------------------------------------------------------------------
@@ -5630,7 +6776,7 @@ class Quality61850TreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Quality flags in this class are as defined in IEC 61850, except for estimatorReplaced, which has been included in this class for convenience..")
+    tooltip = Str("=Quality flags in this class are as defined in IEC 61850, except for estimatorReplaced, which has been included in this class for convenience.")
 
     # Name to use for a new instance.
     name = Str("Quality61850")
@@ -5645,7 +6791,7 @@ class Quality61850TreeNode(TreeNode):
     node_for = [Quality61850]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5665,6 +6811,16 @@ class Quality61850TreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "LimitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5683,7 +6839,7 @@ class LimitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Specifies one limit value for a Measurement. A Measurement typically has several limits that are kept together by the LimitSet class. The actual meaning and use of a Limit instance (i.e., if it is an alarm or warning limit or if it is a high or low limit) is not captured in the Limit class. However the name of a Limit instance may indicate both meaning and use..")
+    tooltip = Str("=Specifies one limit value for a Measurement. A Measurement typically has several limits that are kept together by the LimitSet class. The actual meaning and use of a Limit instance (i.e., if it is an alarm or warning limit or if it is a high or low limit) is not captured in the Limit class. However the name of a Limit instance may indicate both meaning and use.")
 
     # Name to use for a new instance.
     name = Str("Limit")
@@ -5698,7 +6854,7 @@ class LimitTreeNode(TreeNode):
     node_for = [Limit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5718,6 +6874,16 @@ class LimitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "MeasurementTypeTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5736,7 +6902,7 @@ class MeasurementTypeTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Specifies the type of Measurement, e.g. IndoorTemperature, OutDoorTemperature, BusVoltage, GeneratorVoltage, LineFlow etc. The MeasurementType.name shall be unique among all specified types and describe the type. The MeasurementType.aliasName is meant to be used for localization..")
+    tooltip = Str("=Specifies the type of Measurement, e.g. IndoorTemperature, OutDoorTemperature, BusVoltage, GeneratorVoltage, LineFlow etc. The MeasurementType.name shall be unique among all specified types and describe the type. The MeasurementType.aliasName is meant to be used for localization.")
 
     # Name to use for a new instance.
     name = Str("MeasurementType")
@@ -5751,7 +6917,7 @@ class MeasurementTypeTreeNode(TreeNode):
     node_for = [MeasurementType]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5763,7 +6929,7 @@ class MeasurementTypeTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Measurement") )
+        children.extend( getattr(object, "Measurements") )
 
         return children
 
@@ -5772,6 +6938,16 @@ class MeasurementTypeTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "AccumulatorLimitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5790,7 +6966,7 @@ class AccumulatorLimitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Limit values for Accumulator measurements.")
+    tooltip = Str("=Limit values for Accumulator measurements")
 
     # Name to use for a new instance.
     name = Str("AccumulatorLimit")
@@ -5805,7 +6981,7 @@ class AccumulatorLimitTreeNode(TreeNode):
     node_for = [AccumulatorLimit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5818,7 +6994,7 @@ class AccumulatorLimitTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "AccumulatorLimitSet") )
+#        children.extend( getattr(object, "LimitSet") )
         return children
 
 
@@ -5826,6 +7002,16 @@ class AccumulatorLimitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "StringMeasurementTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5844,7 +7030,7 @@ class StringMeasurementTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=StringMeasurement represents a measurement with values of type string..")
+    tooltip = Str("=StringMeasurement represents a measurement with values of type string.")
 
     # Name to use for a new instance.
     name = Str("StringMeasurement")
@@ -5859,7 +7045,7 @@ class StringMeasurementTreeNode(TreeNode):
     node_for = [StringMeasurement]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5871,7 +7057,7 @@ class StringMeasurementTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "StringMeasurementValue") )
+        children.extend( getattr(object, "Contains_MeasurementValues") )
 
         return children
 
@@ -5880,6 +7066,16 @@ class StringMeasurementTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ValueToAliasTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5898,7 +7094,7 @@ class ValueToAliasTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Describes the translation of one particular value into a name, e.g. 1->'Open'.")
+    tooltip = Str("=Describes the translation of one particular value into a name, e.g. 1->'Open'")
 
     # Name to use for a new instance.
     name = Str("ValueToAlias")
@@ -5913,7 +7109,7 @@ class ValueToAliasTreeNode(TreeNode):
     node_for = [ValueToAlias]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5934,6 +7130,16 @@ class ValueToAliasTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "AnalogValueTreeNode" class:
 #------------------------------------------------------------------------------
@@ -5952,7 +7158,7 @@ class AnalogValueTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=AnalogValue represents an analog MeasurementValue..")
+    tooltip = Str("=AnalogValue represents an analog MeasurementValue.")
 
     # Name to use for a new instance.
     name = Str("AnalogValue")
@@ -5967,7 +7173,7 @@ class AnalogValueTreeNode(TreeNode):
     node_for = [AnalogValue]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -5979,10 +7185,10 @@ class AnalogValueTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "AltGeneratingUnitMeas") )
+        children.extend( getattr(object, "AltGeneratingUnit") )
         children.extend( getattr(object, "AltTieMeas") )
 
-#        children.extend( getattr(object, "Analog") )
+#        children.extend( getattr(object, "MemberOf_Measurement") )
         return children
 
 
@@ -5990,6 +7196,16 @@ class AnalogValueTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "MeasurementValueQualityTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6008,7 +7224,7 @@ class MeasurementValueQualityTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Measurement quality flags. Bits 0-10 are defined for substation automation in draft IEC 61850 part 7-3. Bits 11-15 are reserved for future expansion by that document. Bits 16-31 are reserved for EMS applications..")
+    tooltip = Str("=Measurement quality flags. Bits 0-10 are defined for substation automation in draft IEC 61850 part 7-3. Bits 11-15 are reserved for future expansion by that document. Bits 16-31 are reserved for EMS applications.")
 
     # Name to use for a new instance.
     name = Str("MeasurementValueQuality")
@@ -6023,7 +7239,7 @@ class MeasurementValueQualityTreeNode(TreeNode):
     node_for = [MeasurementValueQuality]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6044,6 +7260,16 @@ class MeasurementValueQualityTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "MeasurementValueSourceTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6062,7 +7288,7 @@ class MeasurementValueSourceTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=MeasurementValueSource describes the alternative sources updating a MeasurementValue. User conventions for how to use the MeasurementValueSource attributes are described in the introduction to IEC 61970-301..")
+    tooltip = Str("=MeasurementValueSource describes the alternative sources updating a MeasurementValue. User conventions for how to use the MeasurementValueSource attributes are described in the introduction to IEC 61970-301.")
 
     # Name to use for a new instance.
     name = Str("MeasurementValueSource")
@@ -6077,7 +7303,7 @@ class MeasurementValueSourceTreeNode(TreeNode):
     node_for = [MeasurementValueSource]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6089,7 +7315,7 @@ class MeasurementValueSourceTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "MeasurementValue") )
+        children.extend( getattr(object, "MeasurementValues") )
 
         return children
 
@@ -6098,6 +7324,16 @@ class MeasurementValueSourceTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "AccumulatorLimitSetTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6116,7 +7352,7 @@ class AccumulatorLimitSetTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An AccumulatorLimitSet specifies a set of Limits that are associated with an Accumulator measurement..")
+    tooltip = Str("=An AccumulatorLimitSet specifies a set of Limits that are associated with an Accumulator measurement.")
 
     # Name to use for a new instance.
     name = Str("AccumulatorLimitSet")
@@ -6131,7 +7367,7 @@ class AccumulatorLimitSetTreeNode(TreeNode):
     node_for = [AccumulatorLimitSet]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6143,8 +7379,8 @@ class AccumulatorLimitSetTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Accumulator") )
-        children.extend( getattr(object, "AccumulatorLimit") )
+        children.extend( getattr(object, "Measurements") )
+        children.extend( getattr(object, "Limits") )
 
         return children
 
@@ -6153,6 +7389,16 @@ class AccumulatorLimitSetTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "AnalogLimitSetTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6171,7 +7417,7 @@ class AnalogLimitSetTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An AnalogLimitSet specifies a set of Limits that are associated with an Analog measurement..")
+    tooltip = Str("=An AnalogLimitSet specifies a set of Limits that are associated with an Analog measurement.")
 
     # Name to use for a new instance.
     name = Str("AnalogLimitSet")
@@ -6186,7 +7432,7 @@ class AnalogLimitSetTreeNode(TreeNode):
     node_for = [AnalogLimitSet]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6198,8 +7444,8 @@ class AnalogLimitSetTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "AnalogLimit") )
-        children.extend( getattr(object, "Analog") )
+        children.extend( getattr(object, "Limits") )
+        children.extend( getattr(object, "Measurements") )
 
         return children
 
@@ -6208,6 +7454,16 @@ class AnalogLimitSetTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CommandTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6226,7 +7482,7 @@ class CommandTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A Command is a discrete control used for supervisory control..")
+    tooltip = Str("=A Command is a discrete control used for supervisory control.")
 
     # Name to use for a new instance.
     name = Str("Command")
@@ -6241,7 +7497,7 @@ class CommandTreeNode(TreeNode):
     node_for = [Command]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6255,7 +7511,7 @@ class CommandTreeNode(TreeNode):
         children = []
 
 #        children.extend( getattr(object, "ValueAliasSet") )
-#        children.extend( getattr(object, "Discrete") )
+#        children.extend( getattr(object, "MeasuredBy_Measurement") )
         return children
 
 
@@ -6263,6 +7519,16 @@ class CommandTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "AnalogTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6281,7 +7547,7 @@ class AnalogTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Analog represents an analog Measurement..")
+    tooltip = Str("=Analog represents an analog Measurement.")
 
     # Name to use for a new instance.
     name = Str("Analog")
@@ -6296,7 +7562,7 @@ class AnalogTreeNode(TreeNode):
     node_for = [Analog]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6308,10 +7574,10 @@ class AnalogTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "AnalogValue") )
-        children.extend( getattr(object, "AnalogLimitSet") )
+        children.extend( getattr(object, "Contain_MeasurementValues") )
+        children.extend( getattr(object, "LimitSets") )
 
-#        children.extend( getattr(object, "SetPoint") )
+#        children.extend( getattr(object, "ControlledBy_Control") )
         return children
 
 
@@ -6319,6 +7585,16 @@ class AnalogTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "AccumulatorValueTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6337,7 +7613,7 @@ class AccumulatorValueTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=AccumulatorValue represents a accumulated (counted) MeasurementValue..")
+    tooltip = Str("=AccumulatorValue represents a accumulated (counted) MeasurementValue.")
 
     # Name to use for a new instance.
     name = Str("AccumulatorValue")
@@ -6352,7 +7628,7 @@ class AccumulatorValueTreeNode(TreeNode):
     node_for = [AccumulatorValue]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6365,7 +7641,7 @@ class AccumulatorValueTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Accumulator") )
+#        children.extend( getattr(object, "MemberOf_Measurement") )
         return children
 
 
@@ -6373,6 +7649,16 @@ class AccumulatorValueTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SubLoadAreaTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6391,7 +7677,7 @@ class SubLoadAreaTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The class is the second level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling..")
+    tooltip = Str("=The class is the second level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling.")
 
     # Name to use for a new instance.
     name = Str("SubLoadArea")
@@ -6406,7 +7692,7 @@ class SubLoadAreaTreeNode(TreeNode):
     node_for = [SubLoadArea]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6418,7 +7704,7 @@ class SubLoadAreaTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "LoadGroup") )
+        children.extend( getattr(object, "LoadGroups") )
 
 #        children.extend( getattr(object, "LoadArea") )
         return children
@@ -6428,6 +7714,16 @@ class SubLoadAreaTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "LoadTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6446,7 +7742,7 @@ class LoadTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A generic equivalent for an energy consumer on a transmission or distribution voltage level. It may be under load management and also has cold load pick up characteristics..")
+    tooltip = Str("=A generic equivalent for an energy consumer on a transmission or distribution voltage level. It may be under load management and also has cold load pick up characteristics.")
 
     # Name to use for a new instance.
     name = Str("Load")
@@ -6461,7 +7757,7 @@ class LoadTreeNode(TreeNode):
     node_for = [Load]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6481,6 +7777,16 @@ class LoadTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "LoadResponseCharacteristicTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6499,7 +7805,7 @@ class LoadResponseCharacteristicTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Models the characteristic response of the load demand due to to changes in system conditions such as voltage and frequency. This is not related to demand response..")
+    tooltip = Str("=Models the characteristic response of the load demand due to to changes in system conditions such as voltage and frequency. This is not related to demand response.")
 
     # Name to use for a new instance.
     name = Str("LoadResponseCharacteristic")
@@ -6514,7 +7820,7 @@ class LoadResponseCharacteristicTreeNode(TreeNode):
     node_for = [LoadResponseCharacteristic]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6535,6 +7841,16 @@ class LoadResponseCharacteristicTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SeasonTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6553,7 +7869,7 @@ class SeasonTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A specified time period of the year, e.g., Spring, Summer, Fall, Winter.")
+    tooltip = Str("=A specified time period of the year, e.g., Spring, Summer, Fall, Winter")
 
     # Name to use for a new instance.
     name = Str("Season")
@@ -6568,7 +7884,7 @@ class SeasonTreeNode(TreeNode):
     node_for = [Season]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6580,7 +7896,7 @@ class SeasonTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "SeasonDayTypeSchedule") )
+        children.extend( getattr(object, "SeasonDayTypeSchedules") )
 
         return children
 
@@ -6589,6 +7905,16 @@ class SeasonTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ConformLoadGroupTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6607,7 +7933,7 @@ class ConformLoadGroupTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Load that follows a daily and seasonal load variation pattern..")
+    tooltip = Str("=Load that follows a daily and seasonal load variation pattern.")
 
     # Name to use for a new instance.
     name = Str("ConformLoadGroup")
@@ -6622,7 +7948,7 @@ class ConformLoadGroupTreeNode(TreeNode):
     node_for = [ConformLoadGroup]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6634,8 +7960,8 @@ class ConformLoadGroupTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "ConformLoad") )
-        children.extend( getattr(object, "ConformLoadSchedule") )
+        children.extend( getattr(object, "EnergyConsumers") )
+        children.extend( getattr(object, "ConformLoadSchedules") )
 
         return children
 
@@ -6644,6 +7970,16 @@ class ConformLoadGroupTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ConformLoadTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6662,7 +7998,7 @@ class ConformLoadTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=ConformLoad represent loads that follow a daily load change pattern where the pattern can be used to scale the load with a system load..")
+    tooltip = Str("=ConformLoad represent loads that follow a daily load change pattern where the pattern can be used to scale the load with a system load.")
 
     # Name to use for a new instance.
     name = Str("ConformLoad")
@@ -6677,7 +8013,7 @@ class ConformLoadTreeNode(TreeNode):
     node_for = [ConformLoad]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6690,7 +8026,7 @@ class ConformLoadTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ConformLoadGroup") )
+#        children.extend( getattr(object, "LoadGroup") )
         return children
 
 
@@ -6698,6 +8034,16 @@ class ConformLoadTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "LoadAreaTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6716,7 +8062,7 @@ class LoadAreaTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The class is the root or first level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling..")
+    tooltip = Str("=The class is the root or first level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling.")
 
     # Name to use for a new instance.
     name = Str("LoadArea")
@@ -6731,7 +8077,7 @@ class LoadAreaTreeNode(TreeNode):
     node_for = [LoadArea]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6743,7 +8089,7 @@ class LoadAreaTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "SubLoadArea") )
+        children.extend( getattr(object, "SubLoadAreas") )
 
         return children
 
@@ -6752,6 +8098,16 @@ class LoadAreaTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "PowerCutZoneTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6770,7 +8126,7 @@ class PowerCutZoneTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An area or zone of the power system which is used for load shedding purposes..")
+    tooltip = Str("=An area or zone of the power system which is used for load shedding purposes.")
 
     # Name to use for a new instance.
     name = Str("PowerCutZone")
@@ -6785,7 +8141,7 @@ class PowerCutZoneTreeNode(TreeNode):
     node_for = [PowerCutZone]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6797,7 +8153,7 @@ class PowerCutZoneTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "EnergyConsumer") )
+        children.extend( getattr(object, "EnergyConsumers") )
 
         return children
 
@@ -6806,6 +8162,16 @@ class PowerCutZoneTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ConformLoadScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6824,7 +8190,7 @@ class ConformLoadScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A curve of load  versus time (X-axis) showing the active power values (Y1-axis) and reactive power (Y2-axis) for each unit of the period covered. This curve represents a typical pattern of load over the time period for a given day type and season..")
+    tooltip = Str("=A curve of load  versus time (X-axis) showing the active power values (Y1-axis) and reactive power (Y2-axis) for each unit of the period covered. This curve represents a typical pattern of load over the time period for a given day type and season.")
 
     # Name to use for a new instance.
     name = Str("ConformLoadSchedule")
@@ -6839,7 +8205,7 @@ class ConformLoadScheduleTreeNode(TreeNode):
     node_for = [ConformLoadSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6860,6 +8226,16 @@ class ConformLoadScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "StationSupplyTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6878,7 +8254,7 @@ class StationSupplyTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Station supply with load derived from the station output..")
+    tooltip = Str("=Station supply with load derived from the station output.")
 
     # Name to use for a new instance.
     name = Str("StationSupply")
@@ -6893,7 +8269,7 @@ class StationSupplyTreeNode(TreeNode):
     node_for = [StationSupply]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6913,6 +8289,16 @@ class StationSupplyTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "DayTypeTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6931,7 +8317,7 @@ class DayTypeTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Group of similar days, e.g., Mon/Tue/Wed, Thu/Fri, Sat/Sun, Holiday1, Holiday2.")
+    tooltip = Str("=Group of similar days, e.g., Mon/Tue/Wed, Thu/Fri, Sat/Sun, Holiday1, Holiday2")
 
     # Name to use for a new instance.
     name = Str("DayType")
@@ -6946,7 +8332,7 @@ class DayTypeTreeNode(TreeNode):
     node_for = [DayType]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -6958,7 +8344,7 @@ class DayTypeTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "SeasonDayTypeSchedule") )
+        children.extend( getattr(object, "SeasonDayTypeSchedules") )
 
         return children
 
@@ -6967,6 +8353,16 @@ class DayTypeTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "NonConformLoadScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -6985,7 +8381,7 @@ class NonConformLoadScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An active power (Y1-axis) and reactive power (Y2-axis) schedule (curves) versus time (X-axis) for non-conforming loads, e.g., large industrial load or power station service (where modeled).")
+    tooltip = Str("=An active power (Y1-axis) and reactive power (Y2-axis) schedule (curves) versus time (X-axis) for non-conforming loads, e.g., large industrial load or power station service (where modeled)")
 
     # Name to use for a new instance.
     name = Str("NonConformLoadSchedule")
@@ -7000,7 +8396,7 @@ class NonConformLoadScheduleTreeNode(TreeNode):
     node_for = [NonConformLoadSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7021,6 +8417,16 @@ class NonConformLoadScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CustomerLoadTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7039,7 +8445,7 @@ class CustomerLoadTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A meter for measuring customer energy consumption. The typeName attribute indicates the type of customer meter..")
+    tooltip = Str("=A meter for measuring customer energy consumption. The typeName attribute indicates the type of customer meter.")
 
     # Name to use for a new instance.
     name = Str("CustomerLoad")
@@ -7054,7 +8460,7 @@ class CustomerLoadTreeNode(TreeNode):
     node_for = [CustomerLoad]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7074,6 +8480,16 @@ class CustomerLoadTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "LoadGroupTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7092,7 +8508,7 @@ class LoadGroupTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The class is the third level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling..")
+    tooltip = Str("=The class is the third level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling.")
 
     # Name to use for a new instance.
     name = Str("LoadGroup")
@@ -7107,7 +8523,7 @@ class LoadGroupTreeNode(TreeNode):
     node_for = [LoadGroup]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7128,6 +8544,16 @@ class LoadGroupTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "NonConformLoadGroupTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7146,7 +8572,7 @@ class NonConformLoadGroupTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Loads that do not follow a daily and seasonal load variation pattern..")
+    tooltip = Str("=Loads that do not follow a daily and seasonal load variation pattern.")
 
     # Name to use for a new instance.
     name = Str("NonConformLoadGroup")
@@ -7161,7 +8587,7 @@ class NonConformLoadGroupTreeNode(TreeNode):
     node_for = [NonConformLoadGroup]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7173,8 +8599,8 @@ class NonConformLoadGroupTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "NonConformLoadSchedule") )
-        children.extend( getattr(object, "NonConformLoad") )
+        children.extend( getattr(object, "NonConformLoadSchedules") )
+        children.extend( getattr(object, "EnergyConsumers") )
 
         return children
 
@@ -7183,6 +8609,16 @@ class NonConformLoadGroupTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "EnergyAreaTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7201,7 +8637,7 @@ class EnergyAreaTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The class describes an area having energy production or consumption. The class is the basis for further specialization..")
+    tooltip = Str("=The class describes an area having energy production or consumption. The class is the basis for further specialization.")
 
     # Name to use for a new instance.
     name = Str("EnergyArea")
@@ -7216,7 +8652,7 @@ class EnergyAreaTreeNode(TreeNode):
     node_for = [EnergyArea]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7237,6 +8673,16 @@ class EnergyAreaTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SeasonDayTypeScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7255,7 +8701,7 @@ class SeasonDayTypeScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The schedule specialize RegularIntervalSchedule with type curve data for a specific type of day and season. This means that curves of this type cover a 24 hour period..")
+    tooltip = Str("=The schedule specialize RegularIntervalSchedule with type curve data for a specific type of day and season. This means that curves of this type cover a 24 hour period.")
 
     # Name to use for a new instance.
     name = Str("SeasonDayTypeSchedule")
@@ -7270,7 +8716,7 @@ class SeasonDayTypeScheduleTreeNode(TreeNode):
     node_for = [SeasonDayTypeSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7292,6 +8738,16 @@ class SeasonDayTypeScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "NonConformLoadTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7310,7 +8766,7 @@ class NonConformLoadTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=NonConformLoad represent loads that do not follow a daily load change pattern and changes are not correlated with the daily load change pattern..")
+    tooltip = Str("=NonConformLoad represent loads that do not follow a daily load change pattern and changes are not correlated with the daily load change pattern.")
 
     # Name to use for a new instance.
     name = Str("NonConformLoad")
@@ -7325,7 +8781,7 @@ class NonConformLoadTreeNode(TreeNode):
     node_for = [NonConformLoad]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7338,7 +8794,7 @@ class NonConformLoadTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "NonConformLoadGroup") )
+#        children.extend( getattr(object, "LoadGroup") )
         return children
 
 
@@ -7346,6 +8802,16 @@ class NonConformLoadTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "InductionMotorLoadTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7364,7 +8830,7 @@ class InductionMotorLoadTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Large three phase induction motor load. The typeName attribute indicates the type of induction motor (1 = wound rotor) (2 = squirrel cage)..")
+    tooltip = Str("=Large three phase induction motor load. The typeName attribute indicates the type of induction motor (1 = wound rotor) (2 = squirrel cage).")
 
     # Name to use for a new instance.
     name = Str("InductionMotorLoad")
@@ -7379,7 +8845,7 @@ class InductionMotorLoadTreeNode(TreeNode):
     node_for = [InductionMotorLoad]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7399,6 +8865,16 @@ class InductionMotorLoadTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CurveTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7417,7 +8893,7 @@ class CurveTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Relationship between an independent variable (X-axis) and one or two dependent  variables (Y1-axis and Y2-axis). Curves can also serve as schedules..")
+    tooltip = Str("=Relationship between an independent variable (X-axis) and one or two dependent  variables (Y1-axis and Y2-axis). Curves can also serve as schedules.")
 
     # Name to use for a new instance.
     name = Str("Curve")
@@ -7432,7 +8908,7 @@ class CurveTreeNode(TreeNode):
     node_for = [Curve]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7444,7 +8920,7 @@ class CurveTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "CurveData") )
+        children.extend( getattr(object, "CurveScheduleDatas") )
 
         return children
 
@@ -7453,6 +8929,16 @@ class CurveTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "VoltageLevelTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7471,7 +8957,7 @@ class VoltageLevelTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A collection of equipment at one common system voltage forming a switchgear. The equipment typically consist of breakers, busbars, instrumentation, control, regulation and protection devices as well as assemblies of all these..")
+    tooltip = Str("=A collection of equipment at one common system voltage forming a switchgear. The equipment typically consist of breakers, busbars, instrumentation, control, regulation and protection devices as well as assemblies of all these.")
 
     # Name to use for a new instance.
     name = Str("VoltageLevel")
@@ -7486,7 +8972,7 @@ class VoltageLevelTreeNode(TreeNode):
     node_for = [VoltageLevel]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7498,10 +8984,10 @@ class VoltageLevelTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Bay") )
+        children.extend( getattr(object, "Contains_Bays") )
 
 #        children.extend( getattr(object, "BaseVoltage") )
-#        children.extend( getattr(object, "Substation") )
+#        children.extend( getattr(object, "MemberOf_Substation") )
         return children
 
 
@@ -7509,6 +8995,16 @@ class VoltageLevelTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ReportingGroupTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7527,7 +9023,7 @@ class ReportingGroupTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A reporting group is used for various ad-hoc groupings used for reporting..")
+    tooltip = Str("=A reporting group is used for various ad-hoc groupings used for reporting.")
 
     # Name to use for a new instance.
     name = Str("ReportingGroup")
@@ -7542,7 +9038,7 @@ class ReportingGroupTreeNode(TreeNode):
     node_for = [ReportingGroup]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7566,6 +9062,16 @@ class ReportingGroupTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ModelingAuthoritySetTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7584,7 +9090,7 @@ class ModelingAuthoritySetTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A Modeling Authority Set is a group of objects in a network model where the data is supplied and maintained by the same Modeling Authority..")
+    tooltip = Str("=A Modeling Authority Set is a group of objects in a network model where the data is supplied and maintained by the same Modeling Authority.")
 
     # Name to use for a new instance.
     name = Str("ModelingAuthoritySet")
@@ -7599,7 +9105,7 @@ class ModelingAuthoritySetTreeNode(TreeNode):
     node_for = [ModelingAuthoritySet]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7611,7 +9117,7 @@ class ModelingAuthoritySetTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "IdentifiedObject") )
+        children.extend( getattr(object, "IdentifiedObjects") )
 
 #        children.extend( getattr(object, "ModelingAuthority") )
         return children
@@ -7621,6 +9127,16 @@ class ModelingAuthoritySetTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "OperatingParticipantTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7639,7 +9155,7 @@ class OperatingParticipantTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An operator of multiple PowerSystemResource objects. Note multple OperatingParticipants may operate the same PowerSystemResource object.   This can be used for modeling jointly owned units where each owner operates as a contractual share..")
+    tooltip = Str("=An operator of multiple PowerSystemResource objects. Note multple OperatingParticipants may operate the same PowerSystemResource object.   This can be used for modeling jointly owned units where each owner operates as a contractual share.")
 
     # Name to use for a new instance.
     name = Str("OperatingParticipant")
@@ -7654,7 +9170,7 @@ class OperatingParticipantTreeNode(TreeNode):
     node_for = [OperatingParticipant]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7675,6 +9191,16 @@ class OperatingParticipantTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ReportingSuperGroupTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7693,7 +9219,7 @@ class ReportingSuperGroupTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A reporting super group, groups reporting groups for a higher level report..")
+    tooltip = Str("=A reporting super group, groups reporting groups for a higher level report.")
 
     # Name to use for a new instance.
     name = Str("ReportingSuperGroup")
@@ -7708,7 +9234,7 @@ class ReportingSuperGroupTreeNode(TreeNode):
     node_for = [ReportingSuperGroup]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7729,6 +9255,16 @@ class ReportingSuperGroupTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SubstationTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7747,7 +9283,7 @@ class SubstationTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics..")
+    tooltip = Str("=A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics.")
 
     # Name to use for a new instance.
     name = Str("Substation")
@@ -7762,7 +9298,7 @@ class SubstationTreeNode(TreeNode):
     node_for = [Substation]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7774,10 +9310,10 @@ class SubstationTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "VoltageLevel") )
-        children.extend( getattr(object, "Bay") )
+        children.extend( getattr(object, "Contains_VoltageLevels") )
+        children.extend( getattr(object, "Contains_Bays") )
 
-#        children.extend( getattr(object, "SubGeographicalRegion") )
+#        children.extend( getattr(object, "Region") )
         return children
 
 
@@ -7785,6 +9321,16 @@ class SubstationTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ConductingEquipmentTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7803,7 +9349,7 @@ class ConductingEquipmentTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The parts of the power system that are designed to carry current or that are conductively connected therewith. ConductingEquipment is contained within an EquipmentContainer that may be a Substation, or a VoltageLevel or a Bay within a Substation..")
+    tooltip = Str("=The parts of the power system that are designed to carry current or that are conductively connected therewith. ConductingEquipment is contained within an EquipmentContainer that may be a Substation, or a VoltageLevel or a Bay within a Substation.")
 
     # Name to use for a new instance.
     name = Str("ConductingEquipment")
@@ -7818,7 +9364,7 @@ class ConductingEquipmentTreeNode(TreeNode):
     node_for = [ConductingEquipment]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7830,9 +9376,9 @@ class ConductingEquipmentTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Terminal") )
-        children.extend( getattr(object, "ProtectionEquipment") )
-        children.extend( getattr(object, "ClearanceTag") )
+        children.extend( getattr(object, "Terminals") )
+        children.extend( getattr(object, "ProtectionEquipments") )
+        children.extend( getattr(object, "ClearanceTags") )
 
 #        children.extend( getattr(object, "BaseVoltage") )
         return children
@@ -7842,6 +9388,16 @@ class ConductingEquipmentTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "IrregularTimePointTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7860,7 +9416,7 @@ class IrregularTimePointTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=TimePoints for a schedule where the time between the points varies..")
+    tooltip = Str("=TimePoints for a schedule where the time between the points varies.")
 
     # Name to use for a new instance.
     name = Str("IrregularTimePoint")
@@ -7875,7 +9431,7 @@ class IrregularTimePointTreeNode(TreeNode):
     node_for = [IrregularTimePoint]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7888,7 +9444,7 @@ class IrregularTimePointTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "IrregularIntervalSchedule") )
+#        children.extend( getattr(object, "IntervalSchedule") )
         return children
 
 
@@ -7896,6 +9452,16 @@ class IrregularTimePointTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ConnectivityNodeContainerTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7914,7 +9480,7 @@ class ConnectivityNodeContainerTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A base class for all objects that may contain ConnectivityNodes or TopologicalNodes..")
+    tooltip = Str("=A base class for all objects that may contain ConnectivityNodes or TopologicalNodes.")
 
     # Name to use for a new instance.
     name = Str("ConnectivityNodeContainer")
@@ -7929,7 +9495,7 @@ class ConnectivityNodeContainerTreeNode(TreeNode):
     node_for = [ConnectivityNodeContainer]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7942,7 +9508,7 @@ class ConnectivityNodeContainerTreeNode(TreeNode):
         """
         children = []
         children.extend( getattr(object, "TopologicalNode") )
-        children.extend( getattr(object, "ConnectivityNode") )
+        children.extend( getattr(object, "ConnectivityNodes") )
 
         return children
 
@@ -7951,6 +9517,16 @@ class ConnectivityNodeContainerTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "GeographicalRegionTreeNode" class:
 #------------------------------------------------------------------------------
@@ -7969,7 +9545,7 @@ class GeographicalRegionTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A geographical region of a power system network model..")
+    tooltip = Str("=A geographical region of a power system network model.")
 
     # Name to use for a new instance.
     name = Str("GeographicalRegion")
@@ -7984,7 +9560,7 @@ class GeographicalRegionTreeNode(TreeNode):
     node_for = [GeographicalRegion]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -7996,7 +9572,7 @@ class GeographicalRegionTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "SubGeographicalRegion") )
+        children.extend( getattr(object, "Regions") )
 
         return children
 
@@ -8005,6 +9581,16 @@ class GeographicalRegionTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "UnitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8023,7 +9609,7 @@ class UnitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Quantity being measured. The Unit.name shall be unique among all specified quantities and describe the quantity. The Unit.aliasName is meant to be used for localization..")
+    tooltip = Str("=Quantity being measured. The Unit.name shall be unique among all specified quantities and describe the quantity. The Unit.aliasName is meant to be used for localization.")
 
     # Name to use for a new instance.
     name = Str("Unit")
@@ -8038,7 +9624,7 @@ class UnitTreeNode(TreeNode):
     node_for = [Unit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8050,9 +9636,9 @@ class UnitTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Control") )
-        children.extend( getattr(object, "ProtectionEquipment") )
-        children.extend( getattr(object, "Measurement") )
+        children.extend( getattr(object, "Controls") )
+        children.extend( getattr(object, "ProtectionEquipments") )
+        children.extend( getattr(object, "Measurements") )
 
         return children
 
@@ -8061,6 +9647,16 @@ class UnitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "EquipmentContainerTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8079,7 +9675,7 @@ class EquipmentContainerTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A modeling construct to provide a root class for all Equipment classes.")
+    tooltip = Str("=A modeling construct to provide a root class for all Equipment classes")
 
     # Name to use for a new instance.
     name = Str("EquipmentContainer")
@@ -8094,7 +9690,7 @@ class EquipmentContainerTreeNode(TreeNode):
     node_for = [EquipmentContainer]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8106,7 +9702,7 @@ class EquipmentContainerTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Equipment") )
+        children.extend( getattr(object, "Contains_Equipments") )
 
         return children
 
@@ -8115,6 +9711,16 @@ class EquipmentContainerTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ModelingAuthorityTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8133,7 +9739,7 @@ class ModelingAuthorityTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A Modeling Authority is an entity responsible for supplying and maintaining the data defining a specific set of objects in a network model..")
+    tooltip = Str("=A Modeling Authority is an entity responsible for supplying and maintaining the data defining a specific set of objects in a network model.")
 
     # Name to use for a new instance.
     name = Str("ModelingAuthority")
@@ -8148,7 +9754,7 @@ class ModelingAuthorityTreeNode(TreeNode):
     node_for = [ModelingAuthority]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8160,7 +9766,7 @@ class ModelingAuthorityTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "ModelingAuthoritySet") )
+        children.extend( getattr(object, "ModelingAuthoritySets") )
 
         return children
 
@@ -8169,6 +9775,16 @@ class ModelingAuthorityTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "BaseVoltageTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8187,7 +9803,7 @@ class BaseVoltageTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Collection of BaseVoltages which is used to verify that the BusbarSection.BaseVoltage and other voltage attributes in the CIM are given a value existing in the collection..")
+    tooltip = Str("=Collection of BaseVoltages which is used to verify that the BusbarSection.BaseVoltage and other voltage attributes in the CIM are given a value existing in the collection.")
 
     # Name to use for a new instance.
     name = Str("BaseVoltage")
@@ -8202,7 +9818,7 @@ class BaseVoltageTreeNode(TreeNode):
     node_for = [BaseVoltage]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8224,6 +9840,16 @@ class BaseVoltageTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "OperatingShareTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8242,7 +9868,7 @@ class OperatingShareTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Specifies the contract relationship between a PowerSystemResource and a contract participant..")
+    tooltip = Str("=Specifies the contract relationship between a PowerSystemResource and a contract participant.")
 
     # Name to use for a new instance.
     name = Str("OperatingShare")
@@ -8257,7 +9883,7 @@ class OperatingShareTreeNode(TreeNode):
     node_for = [OperatingShare]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8279,6 +9905,16 @@ class OperatingShareTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "BasicIntervalScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8297,7 +9933,7 @@ class BasicIntervalScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Schedule of values at points in time..")
+    tooltip = Str("=Schedule of values at points in time.")
 
     # Name to use for a new instance.
     name = Str("BasicIntervalSchedule")
@@ -8312,7 +9948,7 @@ class BasicIntervalScheduleTreeNode(TreeNode):
     node_for = [BasicIntervalSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8332,6 +9968,16 @@ class BasicIntervalScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CurveDataTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8350,7 +9996,7 @@ class CurveDataTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Data point values for defining a curve or schedule.")
+    tooltip = Str("=Data point values for defining a curve or schedule")
 
     # Name to use for a new instance.
     name = Str("CurveData")
@@ -8365,7 +10011,7 @@ class CurveDataTreeNode(TreeNode):
     node_for = [CurveData]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8378,7 +10024,7 @@ class CurveDataTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Curve") )
+#        children.extend( getattr(object, "CurveSchedule") )
         return children
 
 
@@ -8386,6 +10032,16 @@ class CurveDataTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "EquipmentTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8404,7 +10060,7 @@ class EquipmentTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The parts of a power system that are physical devices, electronic or mechanical.")
+    tooltip = Str("=The parts of a power system that are physical devices, electronic or mechanical")
 
     # Name to use for a new instance.
     name = Str("Equipment")
@@ -8419,7 +10075,7 @@ class EquipmentTreeNode(TreeNode):
     node_for = [Equipment]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8434,7 +10090,7 @@ class EquipmentTreeNode(TreeNode):
         children.extend( getattr(object, "OperationalLimitSet") )
         children.extend( getattr(object, "ContingencyEquipment") )
 
-#        children.extend( getattr(object, "EquipmentContainer") )
+#        children.extend( getattr(object, "MemberOf_EquipmentContainer") )
         return children
 
 
@@ -8442,6 +10098,16 @@ class EquipmentTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "RegularIntervalScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8460,7 +10126,7 @@ class RegularIntervalScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The schedule has TimePoints where the time between them is constant..")
+    tooltip = Str("=The schedule has TimePoints where the time between them is constant.")
 
     # Name to use for a new instance.
     name = Str("RegularIntervalSchedule")
@@ -8475,7 +10141,7 @@ class RegularIntervalScheduleTreeNode(TreeNode):
     node_for = [RegularIntervalSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8487,7 +10153,7 @@ class RegularIntervalScheduleTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "RegularTimePoint") )
+        children.extend( getattr(object, "TimePoints") )
 
         return children
 
@@ -8496,6 +10162,16 @@ class RegularIntervalScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "IrregularIntervalScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8514,7 +10190,7 @@ class IrregularIntervalScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The schedule has TimePoints where the time between them varies..")
+    tooltip = Str("=The schedule has TimePoints where the time between them varies.")
 
     # Name to use for a new instance.
     name = Str("IrregularIntervalSchedule")
@@ -8529,7 +10205,7 @@ class IrregularIntervalScheduleTreeNode(TreeNode):
     node_for = [IrregularIntervalSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8541,7 +10217,7 @@ class IrregularIntervalScheduleTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "IrregularTimePoint") )
+        children.extend( getattr(object, "TimePoints") )
 
         return children
 
@@ -8550,6 +10226,16 @@ class IrregularIntervalScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "BayTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8568,7 +10254,7 @@ class BayTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry..")
+    tooltip = Str("=A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.")
 
     # Name to use for a new instance.
     name = Str("Bay")
@@ -8583,7 +10269,7 @@ class BayTreeNode(TreeNode):
     node_for = [Bay]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8596,8 +10282,8 @@ class BayTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Substation") )
-#        children.extend( getattr(object, "VoltageLevel") )
+#        children.extend( getattr(object, "MemberOf_Substation") )
+#        children.extend( getattr(object, "MemberOf_VoltageLevel") )
         return children
 
 
@@ -8605,6 +10291,16 @@ class BayTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "RegularTimePointTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8623,7 +10319,7 @@ class RegularTimePointTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=TimePoints for a schedule where the time between the points is constant..")
+    tooltip = Str("=TimePoints for a schedule where the time between the points is constant.")
 
     # Name to use for a new instance.
     name = Str("RegularTimePoint")
@@ -8638,7 +10334,7 @@ class RegularTimePointTreeNode(TreeNode):
     node_for = [RegularTimePoint]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8651,7 +10347,7 @@ class RegularTimePointTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "RegularIntervalSchedule") )
+#        children.extend( getattr(object, "IntervalSchedule") )
         return children
 
 
@@ -8659,6 +10355,16 @@ class RegularTimePointTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "TerminalTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8677,7 +10383,7 @@ class TerminalTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called 'connectivity nodes'..")
+    tooltip = Str("=An electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called 'connectivity nodes'.")
 
     # Name to use for a new instance.
     name = Str("Terminal")
@@ -8692,7 +10398,7 @@ class TerminalTreeNode(TreeNode):
     node_for = [Terminal]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8708,7 +10414,7 @@ class TerminalTreeNode(TreeNode):
         children.extend( getattr(object, "OperationalLimitSet") )
         children.extend( getattr(object, "BranchGroupTerminal") )
         children.extend( getattr(object, "RegulatingControl") )
-        children.extend( getattr(object, "Measurement") )
+        children.extend( getattr(object, "Measurements") )
 
 #        children.extend( getattr(object, "ConductingEquipment") )
 #        children.extend( getattr(object, "TopologicalNode") )
@@ -8720,6 +10426,16 @@ class TerminalTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SubGeographicalRegionTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8738,7 +10454,7 @@ class SubGeographicalRegionTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A subset of a geographical region of a power system network model..")
+    tooltip = Str("=A subset of a geographical region of a power system network model.")
 
     # Name to use for a new instance.
     name = Str("SubGeographicalRegion")
@@ -8753,7 +10469,7 @@ class SubGeographicalRegionTreeNode(TreeNode):
     node_for = [SubGeographicalRegion]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8765,10 +10481,10 @@ class SubGeographicalRegionTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Line") )
-        children.extend( getattr(object, "Substation") )
+        children.extend( getattr(object, "Lines") )
+        children.extend( getattr(object, "Substations") )
 
-#        children.extend( getattr(object, "GeographicalRegion") )
+#        children.extend( getattr(object, "Region") )
         return children
 
 
@@ -8776,6 +10492,16 @@ class SubGeographicalRegionTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "PowerSystemResourceTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8794,7 +10520,7 @@ class PowerSystemResourceTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A power system resource can be an item of equipment such as a Switch, an EquipmentContainer containing many individual items of equipment such as a  Substation, or an organisational entity such as Company or SubControlArea.  This provides for the nesting of collections of PowerSystemResources within other PowerSystemResources. For example, a Switch could be a member of a Substation and a Substation could be a member of a division of a Company..")
+    tooltip = Str("=A power system resource can be an item of equipment such as a Switch, an EquipmentContainer containing many individual items of equipment such as a  Substation, or an organisational entity such as Company or SubControlArea.  This provides for the nesting of collections of PowerSystemResources within other PowerSystemResources. For example, a Switch could be a member of a Substation and a Substation could be a member of a division of a Company.")
 
     # Name to use for a new instance.
     name = Str("PowerSystemResource")
@@ -8809,7 +10535,7 @@ class PowerSystemResourceTreeNode(TreeNode):
     node_for = [PowerSystemResource]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8821,11 +10547,11 @@ class PowerSystemResourceTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Company") )
+        children.extend( getattr(object, "OperatedBy_Companies") )
         children.extend( getattr(object, "ReportingGroup") )
         children.extend( getattr(object, "OperatingShare") )
-        children.extend( getattr(object, "PsrList") )
-        children.extend( getattr(object, "Measurement") )
+        children.extend( getattr(object, "PsrLists") )
+        children.extend( getattr(object, "Contains_Measurements") )
 
 #        children.extend( getattr(object, "PSRType") )
 #        children.extend( getattr(object, "OutageSchedule") )
@@ -8836,6 +10562,16 @@ class PowerSystemResourceTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "BasePowerTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8854,7 +10590,7 @@ class BasePowerTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The BasePower class defines the base power used in the per unit calculations..")
+    tooltip = Str("=The BasePower class defines the base power used in the per unit calculations.")
 
     # Name to use for a new instance.
     name = Str("BasePower")
@@ -8869,7 +10605,7 @@ class BasePowerTreeNode(TreeNode):
     node_for = [BasePower]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8889,6 +10625,16 @@ class BasePowerTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "PSRTypeTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8907,7 +10653,7 @@ class PSRTypeTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Classifying instances of the same class, e.g. overhead and underground ACLineSegments. This classification mechanism is intended to provide flexibility outside the scope of this standard, i.e. provide customisation that is non standard..")
+    tooltip = Str("=Classifying instances of the same class, e.g. overhead and underground ACLineSegments. This classification mechanism is intended to provide flexibility outside the scope of this standard, i.e. provide customisation that is non standard.")
 
     # Name to use for a new instance.
     name = Str("PSRType")
@@ -8922,7 +10668,7 @@ class PSRTypeTreeNode(TreeNode):
     node_for = [PSRType]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8943,6 +10689,16 @@ class PSRTypeTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "PsrListTreeNode" class:
 #------------------------------------------------------------------------------
@@ -8961,7 +10717,7 @@ class PsrListTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Arbitrary list of PowerSystemResources. Can be used for various purposes, including grouping for report generation..")
+    tooltip = Str("=Arbitrary list of PowerSystemResources. Can be used for various purposes, including grouping for report generation.")
 
     # Name to use for a new instance.
     name = Str("PsrList")
@@ -8976,7 +10732,7 @@ class PsrListTreeNode(TreeNode):
     node_for = [PsrList]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -8988,7 +10744,7 @@ class PsrListTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "PowerSystemResource") )
+        children.extend( getattr(object, "PowerSystemResources") )
 
         return children
 
@@ -8997,6 +10753,16 @@ class PsrListTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CompanyTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9015,7 +10781,7 @@ class CompanyTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A company is a legal entity that owns and operates power system resources and is a party to interchange and transmission contracts..")
+    tooltip = Str("=A company is a legal entity that owns and operates power system resources and is a party to interchange and transmission contracts.")
 
     # Name to use for a new instance.
     name = Str("Company")
@@ -9030,7 +10796,7 @@ class CompanyTreeNode(TreeNode):
     node_for = [Company]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9042,7 +10808,7 @@ class CompanyTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "PowerSystemResource") )
+        children.extend( getattr(object, "Operates_PSRs") )
 
         return children
 
@@ -9051,6 +10817,16 @@ class CompanyTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "IdentifiedObjectTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9069,7 +10845,7 @@ class IdentifiedObjectTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=This is a root class to provide common naming attributes for all classes needing naming attributes.")
+    tooltip = Str("=This is a root class to provide common naming attributes for all classes needing naming attributes")
 
     # Name to use for a new instance.
     name = Str("IdentifiedObject")
@@ -9084,7 +10860,7 @@ class IdentifiedObjectTreeNode(TreeNode):
     node_for = [IdentifiedObject]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9105,6 +10881,16 @@ class IdentifiedObjectTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ContingencyTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9123,7 +10909,7 @@ class ContingencyTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An event threatening system reliability, consisting of one or more contingency elements..")
+    tooltip = Str("=An event threatening system reliability, consisting of one or more contingency elements.")
 
     # Name to use for a new instance.
     name = Str("Contingency")
@@ -9138,7 +10924,7 @@ class ContingencyTreeNode(TreeNode):
     node_for = [Contingency]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9159,6 +10945,16 @@ class ContingencyTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ContingencyEquipmentTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9177,7 +10973,7 @@ class ContingencyEquipmentTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A equipment to which the in service status is to change such as a power transformer or AC line segment..")
+    tooltip = Str("=A equipment to which the in service status is to change such as a power transformer or AC line segment.")
 
     # Name to use for a new instance.
     name = Str("ContingencyEquipment")
@@ -9192,7 +10988,7 @@ class ContingencyEquipmentTreeNode(TreeNode):
     node_for = [ContingencyEquipment]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9213,6 +11009,16 @@ class ContingencyEquipmentTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ContingencyElementTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9231,7 +11037,7 @@ class ContingencyElementTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An element of a system event to be studied by contingency analysis, representing a change in status of a single piece of equipment..")
+    tooltip = Str("=An element of a system event to be studied by contingency analysis, representing a change in status of a single piece of equipment.")
 
     # Name to use for a new instance.
     name = Str("ContingencyElement")
@@ -9246,7 +11052,7 @@ class ContingencyElementTreeNode(TreeNode):
     node_for = [ContingencyElement]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9267,6 +11073,16 @@ class ContingencyElementTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ClearanceTagTypeTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9285,7 +11101,7 @@ class ClearanceTagTypeTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Type of ClearanceTag. Could indicate the type of work to be performed and/or the type of supervisory control..")
+    tooltip = Str("=Type of ClearanceTag. Could indicate the type of work to be performed and/or the type of supervisory control.")
 
     # Name to use for a new instance.
     name = Str("ClearanceTagType")
@@ -9300,7 +11116,7 @@ class ClearanceTagTypeTreeNode(TreeNode):
     node_for = [ClearanceTagType]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9312,7 +11128,7 @@ class ClearanceTagTypeTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "ClearanceTag") )
+        children.extend( getattr(object, "ClearanceTags") )
 
         return children
 
@@ -9321,6 +11137,16 @@ class ClearanceTagTypeTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SwitchingOperationTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9339,7 +11165,7 @@ class SwitchingOperationTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A SwitchingOperation is used to define individual switch operations for an OutageSchedule. This OutageSchedule may be associated with another item of Substation such as a Transformer, Line, or Generator; or with the Switch itself as a PowerSystemResource. A Switch may be referenced by many OutageSchedules..")
+    tooltip = Str("=A SwitchingOperation is used to define individual switch operations for an OutageSchedule. This OutageSchedule may be associated with another item of Substation such as a Transformer, Line, or Generator; or with the Switch itself as a PowerSystemResource. A Switch may be referenced by many OutageSchedules.")
 
     # Name to use for a new instance.
     name = Str("SwitchingOperation")
@@ -9354,7 +11180,7 @@ class SwitchingOperationTreeNode(TreeNode):
     node_for = [SwitchingOperation]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9366,7 +11192,7 @@ class SwitchingOperationTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Switch") )
+        children.extend( getattr(object, "Switches") )
 
 #        children.extend( getattr(object, "OutageSchedule") )
         return children
@@ -9376,6 +11202,16 @@ class SwitchingOperationTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "OutageScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9394,7 +11230,7 @@ class OutageScheduleTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The period of time that a piece of equipment is out of service, for example, for maintenance or testing; including the equipment's active power rating while under maintenance. The X-axis represents absolute time and the Y-axis represents the equipment's available rating while out of service..")
+    tooltip = Str("=The period of time that a piece of equipment is out of service, for example, for maintenance or testing; including the equipment's active power rating while under maintenance. The X-axis represents absolute time and the Y-axis represents the equipment's available rating while out of service.")
 
     # Name to use for a new instance.
     name = Str("OutageSchedule")
@@ -9409,7 +11245,7 @@ class OutageScheduleTreeNode(TreeNode):
     node_for = [OutageSchedule]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9421,9 +11257,9 @@ class OutageScheduleTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "SwitchingOperation") )
+        children.extend( getattr(object, "SwitchingOperations") )
 
-#        children.extend( getattr(object, "PowerSystemResource") )
+#        children.extend( getattr(object, "PSR") )
         return children
 
 
@@ -9431,6 +11267,16 @@ class OutageScheduleTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ClearanceTagTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9449,7 +11295,7 @@ class ClearanceTagTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A clearance tag that is used to authorize and schedule work on conducting equipment in the field. Tagged equipment is not available for commercial service..")
+    tooltip = Str("=A clearance tag that is used to authorize and schedule work on conducting equipment in the field. Tagged equipment is not available for commercial service.")
 
     # Name to use for a new instance.
     name = Str("ClearanceTag")
@@ -9464,7 +11310,7 @@ class ClearanceTagTreeNode(TreeNode):
     node_for = [ClearanceTag]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9486,6 +11332,16 @@ class ClearanceTagTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "RemotePointTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9504,7 +11360,7 @@ class RemotePointTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=For a RTU remote points correspond to telemetered values or control outputs. Other units (e.g. control centers) usually also contain calculated values..")
+    tooltip = Str("=For a RTU remote points correspond to telemetered values or control outputs. Other units (e.g. control centers) usually also contain calculated values.")
 
     # Name to use for a new instance.
     name = Str("RemotePoint")
@@ -9519,7 +11375,7 @@ class RemotePointTreeNode(TreeNode):
     node_for = [RemotePoint]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9532,7 +11388,7 @@ class RemotePointTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "RemoteUnit") )
+#        children.extend( getattr(object, "MemberOf_RemoteUnit") )
         return children
 
 
@@ -9540,6 +11396,16 @@ class RemotePointTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "RemoteControlTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9558,7 +11424,7 @@ class RemoteControlTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Remote controls are ouputs that are sent by the remote unit to actuators in the process..")
+    tooltip = Str("=Remote controls are ouputs that are sent by the remote unit to actuators in the process.")
 
     # Name to use for a new instance.
     name = Str("RemoteControl")
@@ -9573,7 +11439,7 @@ class RemoteControlTreeNode(TreeNode):
     node_for = [RemoteControl]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9594,6 +11460,16 @@ class RemoteControlTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "RemoteSourceTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9612,7 +11488,7 @@ class RemoteSourceTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Remote sources are state variables that are telemetered or calculated within the remote unit..")
+    tooltip = Str("=Remote sources are state variables that are telemetered or calculated within the remote unit.")
 
     # Name to use for a new instance.
     name = Str("RemoteSource")
@@ -9627,7 +11503,7 @@ class RemoteSourceTreeNode(TreeNode):
     node_for = [RemoteSource]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9648,6 +11524,16 @@ class RemoteSourceTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CommunicationLinkTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9666,7 +11552,7 @@ class CommunicationLinkTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The connection to remote units is through one or more communication links. Reduntant links may exist. The CommunicationLink class inherit PowerSystemResource. The intention is to allow CommunicationLinks to have Measurements. These Measurements can be used to model link status as operational, out of service, unit failure etc..")
+    tooltip = Str("=The connection to remote units is through one or more communication links. Reduntant links may exist. The CommunicationLink class inherit PowerSystemResource. The intention is to allow CommunicationLinks to have Measurements. These Measurements can be used to model link status as operational, out of service, unit failure etc.")
 
     # Name to use for a new instance.
     name = Str("CommunicationLink")
@@ -9681,7 +11567,7 @@ class CommunicationLinkTreeNode(TreeNode):
     node_for = [CommunicationLink]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9693,7 +11579,7 @@ class CommunicationLinkTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "RemoteUnit") )
+        children.extend( getattr(object, "Contain_RemoteUnits") )
 
         return children
 
@@ -9702,6 +11588,16 @@ class CommunicationLinkTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "RemoteUnitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9720,7 +11616,7 @@ class RemoteUnitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A remote unit can be a RTU, IED, substation control system, control center etc. The communication with the remote unit can be through various standard protocols (e.g. IEC 61870, IEC 61850) or non standard protocols (e.g. DNP, RP570 etc.). A remote unit contain remote data points that might be telemetered, collected or calculated. The RemoteUnit class inherit PowerSystemResource. The intention is to allow RemotUnits to have Measurements. These Measurements can be used to model unit status as operational, out of service, unit failure etc..")
+    tooltip = Str("=A remote unit can be a RTU, IED, substation control system, control center etc. The communication with the remote unit can be through various standard protocols (e.g. IEC 61870, IEC 61850) or non standard protocols (e.g. DNP, RP570 etc.). A remote unit contain remote data points that might be telemetered, collected or calculated. The RemoteUnit class inherit PowerSystemResource. The intention is to allow RemotUnits to have Measurements. These Measurements can be used to model unit status as operational, out of service, unit failure etc.")
 
     # Name to use for a new instance.
     name = Str("RemoteUnit")
@@ -9735,7 +11631,7 @@ class RemoteUnitTreeNode(TreeNode):
     node_for = [RemoteUnit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9747,8 +11643,8 @@ class RemoteUnitTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "CommunicationLink") )
-        children.extend( getattr(object, "RemotePoint") )
+        children.extend( getattr(object, "MemberOf_CommunicationLinks") )
+        children.extend( getattr(object, "Contains_RemotePoints") )
 
         return children
 
@@ -9757,6 +11653,16 @@ class RemoteUnitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "OperationalLimitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9775,7 +11681,7 @@ class OperationalLimitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A value associated with a specific kind of limit..")
+    tooltip = Str("=A value associated with a specific kind of limit.")
 
     # Name to use for a new instance.
     name = Str("OperationalLimit")
@@ -9790,7 +11696,7 @@ class OperationalLimitTreeNode(TreeNode):
     node_for = [OperationalLimit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9812,6 +11718,16 @@ class OperationalLimitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "BranchGroupTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9830,7 +11746,7 @@ class BranchGroupTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A group of branch terminals whose directed flow summation is to be monitored. Abranch group need not form a cutset of the network..")
+    tooltip = Str("=A group of branch terminals whose directed flow summation is to be monitored. Abranch group need not form a cutset of the network.")
 
     # Name to use for a new instance.
     name = Str("BranchGroup")
@@ -9845,7 +11761,7 @@ class BranchGroupTreeNode(TreeNode):
     node_for = [BranchGroup]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9866,6 +11782,16 @@ class BranchGroupTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "OperationalLimitTypeTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9884,7 +11810,7 @@ class OperationalLimitTypeTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A type of limit.  The meaning of a specific limit is described in this class..")
+    tooltip = Str("=A type of limit.  The meaning of a specific limit is described in this class.")
 
     # Name to use for a new instance.
     name = Str("OperationalLimitType")
@@ -9899,7 +11825,7 @@ class OperationalLimitTypeTreeNode(TreeNode):
     node_for = [OperationalLimitType]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9920,6 +11846,16 @@ class OperationalLimitTypeTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ActivePowerLimitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9938,7 +11874,7 @@ class ActivePowerLimitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Limit on active power flow..")
+    tooltip = Str("=Limit on active power flow.")
 
     # Name to use for a new instance.
     name = Str("ActivePowerLimit")
@@ -9953,7 +11889,7 @@ class ActivePowerLimitTreeNode(TreeNode):
     node_for = [ActivePowerLimit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -9973,6 +11909,16 @@ class ActivePowerLimitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CurrentLimitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -9991,7 +11937,7 @@ class CurrentLimitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Operational limit on current..")
+    tooltip = Str("=Operational limit on current.")
 
     # Name to use for a new instance.
     name = Str("CurrentLimit")
@@ -10006,7 +11952,7 @@ class CurrentLimitTreeNode(TreeNode):
     node_for = [CurrentLimit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10026,6 +11972,16 @@ class CurrentLimitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "OperationalLimitSetTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10044,7 +12000,7 @@ class OperationalLimitSetTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A set of limits associated with equipmnet.  Sets of limits might apply to a specific temperature, or season for example. A set of limits may contain may different severiteis of limit levels that would apply to the same equipment.   The set may contain limits of different types such as apparent power and current limits or high and low voltage limits  that are logically applied together as a set..")
+    tooltip = Str("=A set of limits associated with equipmnet.  Sets of limits might apply to a specific temperature, or season for example. A set of limits may contain may different severiteis of limit levels that would apply to the same equipment.   The set may contain limits of different types such as apparent power and current limits or high and low voltage limits  that are logically applied together as a set.")
 
     # Name to use for a new instance.
     name = Str("OperationalLimitSet")
@@ -10059,7 +12015,7 @@ class OperationalLimitSetTreeNode(TreeNode):
     node_for = [OperationalLimitSet]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10071,7 +12027,7 @@ class OperationalLimitSetTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "OperationalLimit") )
+        children.extend( getattr(object, "OperationalLimitValue") )
 
 #        children.extend( getattr(object, "Terminal") )
 #        children.extend( getattr(object, "Equipment") )
@@ -10082,6 +12038,16 @@ class OperationalLimitSetTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "VoltageLimitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10100,7 +12066,7 @@ class VoltageLimitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Operational limit applied to voltage..")
+    tooltip = Str("=Operational limit applied to voltage.")
 
     # Name to use for a new instance.
     name = Str("VoltageLimit")
@@ -10115,7 +12081,7 @@ class VoltageLimitTreeNode(TreeNode):
     node_for = [VoltageLimit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10135,6 +12101,16 @@ class VoltageLimitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "BranchGroupTerminalTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10153,7 +12129,7 @@ class BranchGroupTerminalTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A specific directed terminal flow for a branch group..")
+    tooltip = Str("=A specific directed terminal flow for a branch group.")
 
     # Name to use for a new instance.
     name = Str("BranchGroupTerminal")
@@ -10168,7 +12144,7 @@ class BranchGroupTerminalTreeNode(TreeNode):
     node_for = [BranchGroupTerminal]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10190,6 +12166,16 @@ class BranchGroupTerminalTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ApparentPowerLimitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10208,7 +12194,7 @@ class ApparentPowerLimitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Apparent power limit..")
+    tooltip = Str("=Apparent power limit.")
 
     # Name to use for a new instance.
     name = Str("ApparentPowerLimit")
@@ -10223,7 +12209,7 @@ class ApparentPowerLimitTreeNode(TreeNode):
     node_for = [ApparentPowerLimit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10243,6 +12229,16 @@ class ApparentPowerLimitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ControlAreaGeneratingUnitTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10261,7 +12257,7 @@ class ControlAreaGeneratingUnitTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A control area generating unit. This class is needed so that alternate control area definitions may include the same generating unit.   Note only one instance within a control area should reference a specific generating unit..")
+    tooltip = Str("=A control area generating unit. This class is needed so that alternate control area definitions may include the same generating unit.   Note only one instance within a control area should reference a specific generating unit.")
 
     # Name to use for a new instance.
     name = Str("ControlAreaGeneratingUnit")
@@ -10276,7 +12272,7 @@ class ControlAreaGeneratingUnitTreeNode(TreeNode):
     node_for = [ControlAreaGeneratingUnit]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10299,6 +12295,16 @@ class ControlAreaGeneratingUnitTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ControlAreaTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10317,7 +12323,7 @@ class ControlAreaTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A <b>control area </b>is a grouping of <b>generating units</b> and/or loads and a cutset of tie lines (as <b>terminals</b>) which may be used for a variety of purposes including automatic generation control, powerflow solution area interchange control specification, and input to load forecasting.   Note that any number of overlapping control area specifications can be superimposed on the physical model..")
+    tooltip = Str("=A <b>control area </b>is a grouping of <b>generating units</b> and/or loads and a cutset of tie lines (as <b>terminals</b>) which may be used for a variety of purposes including automatic generation control, powerflow solution area interchange control specification, and input to load forecasting.   Note that any number of overlapping control area specifications can be superimposed on the physical model.")
 
     # Name to use for a new instance.
     name = Str("ControlArea")
@@ -10332,7 +12338,7 @@ class ControlAreaTreeNode(TreeNode):
     node_for = [ControlArea]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10357,6 +12363,16 @@ class ControlAreaTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "AltGeneratingUnitMeasTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10375,7 +12391,7 @@ class AltGeneratingUnitMeasTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A prioritized measurement to be used for the generating unit in the control area specificaiton..")
+    tooltip = Str("=A prioritized measurement to be used for the generating unit in the control area specificaiton.")
 
     # Name to use for a new instance.
     name = Str("AltGeneratingUnitMeas")
@@ -10390,7 +12406,7 @@ class AltGeneratingUnitMeasTreeNode(TreeNode):
     node_for = [AltGeneratingUnitMeas]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10412,6 +12428,16 @@ class AltGeneratingUnitMeasTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "TieFlowTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10430,7 +12456,7 @@ class TieFlowTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A flow specification in terms of location and direction for a control area..")
+    tooltip = Str("=A flow specification in terms of location and direction for a control area.")
 
     # Name to use for a new instance.
     name = Str("TieFlow")
@@ -10445,7 +12471,7 @@ class TieFlowTreeNode(TreeNode):
     node_for = [TieFlow]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10468,6 +12494,16 @@ class TieFlowTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "AltTieMeasTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10486,7 +12522,7 @@ class AltTieMeasTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A prioritized measurement to be used for the tie flow as part of the control area specification..")
+    tooltip = Str("=A prioritized measurement to be used for the tie flow as part of the control area specification.")
 
     # Name to use for a new instance.
     name = Str("AltTieMeas")
@@ -10501,7 +12537,7 @@ class AltTieMeasTreeNode(TreeNode):
     node_for = [AltTieMeas]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10523,6 +12559,16 @@ class AltTieMeasTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "EquivalentBranchTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10541,7 +12587,7 @@ class EquivalentBranchTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The class represents equivalent branches..")
+    tooltip = Str("=The class represents equivalent branches.")
 
     # Name to use for a new instance.
     name = Str("EquivalentBranch")
@@ -10556,7 +12602,7 @@ class EquivalentBranchTreeNode(TreeNode):
     node_for = [EquivalentBranch]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10576,6 +12622,16 @@ class EquivalentBranchTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "EquivalentShuntTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10594,7 +12650,7 @@ class EquivalentShuntTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The class represents equivalent shunts..")
+    tooltip = Str("=The class represents equivalent shunts.")
 
     # Name to use for a new instance.
     name = Str("EquivalentShunt")
@@ -10609,7 +12665,7 @@ class EquivalentShuntTreeNode(TreeNode):
     node_for = [EquivalentShunt]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10629,6 +12685,16 @@ class EquivalentShuntTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "EquivalentNetworkTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10647,7 +12713,7 @@ class EquivalentNetworkTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A class that represents an external meshed network that has been reduced to an electrically equivalent model. The ConnectivityNodes contained in the equivalent are intended to reflect internal nodes of the equivalent. The boundary Connectivity nodes where the equivalent connects outside itself are NOT contained by the equivalent..")
+    tooltip = Str("=A class that represents an external meshed network that has been reduced to an electrically equivalent model. The ConnectivityNodes contained in the equivalent are intended to reflect internal nodes of the equivalent. The boundary Connectivity nodes where the equivalent connects outside itself are NOT contained by the equivalent.")
 
     # Name to use for a new instance.
     name = Str("EquivalentNetwork")
@@ -10662,7 +12728,7 @@ class EquivalentNetworkTreeNode(TreeNode):
     node_for = [EquivalentNetwork]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10674,7 +12740,7 @@ class EquivalentNetworkTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "EquivalentEquipment") )
+        children.extend( getattr(object, "EquivalentEquipments") )
 
         return children
 
@@ -10683,6 +12749,16 @@ class EquivalentNetworkTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "EquivalentEquipmentTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10701,7 +12777,7 @@ class EquivalentEquipmentTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=The class represents equivalent objects that are the result of a network reduction. The class is the base for equivalent objects of different types..")
+    tooltip = Str("=The class represents equivalent objects that are the result of a network reduction. The class is the base for equivalent objects of different types.")
 
     # Name to use for a new instance.
     name = Str("EquivalentEquipment")
@@ -10716,7 +12792,7 @@ class EquivalentEquipmentTreeNode(TreeNode):
     node_for = [EquivalentEquipment]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10737,6 +12813,16 @@ class EquivalentEquipmentTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "TopologicalNodeTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10755,7 +12841,7 @@ class TopologicalNodeTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A set of connectivity nodes that, in the current network state, are connected together through any type of closed switches, including  jumpers. Topological nodes can change as the current network state changes (i.e., switches, breakers, etc. change state)..")
+    tooltip = Str("=A set of connectivity nodes that, in the current network state, are connected together through any type of closed switches, including  jumpers. Topological nodes can change as the current network state changes (i.e., switches, breakers, etc. change state).")
 
     # Name to use for a new instance.
     name = Str("TopologicalNode")
@@ -10770,7 +12856,7 @@ class TopologicalNodeTreeNode(TreeNode):
     node_for = [TopologicalNode]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10782,11 +12868,11 @@ class TopologicalNodeTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "ConnectivityNode") )
+        children.extend( getattr(object, "ConnectivityNodes") )
         children.extend( getattr(object, "Terminal") )
 
 #        children.extend( getattr(object, "ReportingGroup") )
-#        children.extend( getattr(object, "TopologicalIsland") )
+#        children.extend( getattr(object, "AngleRef_TopologicalIsland") )
 #        children.extend( getattr(object, "ConnectivityNodeContainer") )
 #        children.extend( getattr(object, "TopologicalIsland") )
 #        children.extend( getattr(object, "ControlArea") )
@@ -10797,6 +12883,16 @@ class TopologicalNodeTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "TopologicalIslandTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10815,7 +12911,7 @@ class TopologicalIslandTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An electrically connected subset of the network. Topological islands can change as the current network state changes (i.e., disconnect switches, breakers, etc. change state)..")
+    tooltip = Str("=An electrically connected subset of the network. Topological islands can change as the current network state changes (i.e., disconnect switches, breakers, etc. change state).")
 
     # Name to use for a new instance.
     name = Str("TopologicalIsland")
@@ -10830,7 +12926,7 @@ class TopologicalIslandTreeNode(TreeNode):
     node_for = [TopologicalIsland]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10842,9 +12938,9 @@ class TopologicalIslandTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "TopologicalNode") )
+        children.extend( getattr(object, "TopologicalNodes") )
 
-#        children.extend( getattr(object, "TopologicalNode") )
+#        children.extend( getattr(object, "AngleRef_TopologicalNode") )
         return children
 
 
@@ -10852,6 +12948,16 @@ class TopologicalIslandTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ConnectivityNodeTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10870,7 +12976,7 @@ class ConnectivityNodeTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Connectivity nodes are points where terminals of conducting equipment are connected together with zero impedance..")
+    tooltip = Str("=Connectivity nodes are points where terminals of conducting equipment are connected together with zero impedance.")
 
     # Name to use for a new instance.
     name = Str("ConnectivityNode")
@@ -10885,7 +12991,7 @@ class ConnectivityNodeTreeNode(TreeNode):
     node_for = [ConnectivityNode]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10897,9 +13003,9 @@ class ConnectivityNodeTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "Terminal") )
+        children.extend( getattr(object, "Terminals") )
 
-#        children.extend( getattr(object, "ConnectivityNodeContainer") )
+#        children.extend( getattr(object, "MemberOf_EquipmentContainer") )
 #        children.extend( getattr(object, "BusNameMarker") )
 #        children.extend( getattr(object, "TopologicalNode") )
         return children
@@ -10909,6 +13015,16 @@ class ConnectivityNodeTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "BusNameMarkerTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10927,7 +13043,7 @@ class BusNameMarkerTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=Used to apply user standard names to topology buses. Typically used for 'bus/branch' case generation. Associated with one or more ConnectivityNodes that are normally a part of the bus name.    The associated ConnectivityNodes are to be connected by non-retained switches. For a ring bus station configuration, all busbar connectivity nodes in the ring are typically associated.   For a breaker and a half scheme, both busbars would be associated.  For a ring bus, all busbars would be associated.  For a 'straight' busbar configuration, only the main connectivity node at the busbar would be associated..")
+    tooltip = Str("=Used to apply user standard names to topology buses. Typically used for 'bus/branch' case generation. Associated with one or more ConnectivityNodes that are normally a part of the bus name.    The associated ConnectivityNodes are to be connected by non-retained switches. For a ring bus station configuration, all busbar connectivity nodes in the ring are typically associated.   For a breaker and a half scheme, both busbars would be associated.  For a ring bus, all busbars would be associated.  For a 'straight' busbar configuration, only the main connectivity node at the busbar would be associated.")
 
     # Name to use for a new instance.
     name = Str("BusNameMarker")
@@ -10942,7 +13058,7 @@ class BusNameMarkerTreeNode(TreeNode):
     node_for = [BusNameMarker]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -10965,6 +13081,16 @@ class BusNameMarkerTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "SynchrocheckRelayTreeNode" class:
 #------------------------------------------------------------------------------
@@ -10983,7 +13109,7 @@ class SynchrocheckRelayTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A device that operates when two AC circuits are within the desired limits of frequency, phase angle, and voltage, to permit or to cause the paralleling of these two circuits. Used to prevent the paralleling of non-synchronous topological islands..")
+    tooltip = Str("=A device that operates when two AC circuits are within the desired limits of frequency, phase angle, and voltage, to permit or to cause the paralleling of these two circuits. Used to prevent the paralleling of non-synchronous topological islands.")
 
     # Name to use for a new instance.
     name = Str("SynchrocheckRelay")
@@ -10998,7 +13124,7 @@ class SynchrocheckRelayTreeNode(TreeNode):
     node_for = [SynchrocheckRelay]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -11018,6 +13144,16 @@ class SynchrocheckRelayTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "ProtectionEquipmentTreeNode" class:
 #------------------------------------------------------------------------------
@@ -11036,7 +13172,7 @@ class ProtectionEquipmentTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=An electrical device designed to respond to input conditions in a prescribed manner and after specified conditions are met to cause contact operation or similar abrupt change in associated electric control circuits, or simply to display the detected condition. Protection equipment are associated with conducting equipment and usually operate circuit breakers..")
+    tooltip = Str("=An electrical device designed to respond to input conditions in a prescribed manner and after specified conditions are met to cause contact operation or similar abrupt change in associated electric control circuits, or simply to display the detected condition. Protection equipment are associated with conducting equipment and usually operate circuit breakers.")
 
     # Name to use for a new instance.
     name = Str("ProtectionEquipment")
@@ -11051,7 +13187,7 @@ class ProtectionEquipmentTreeNode(TreeNode):
     node_for = [ProtectionEquipment]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -11063,8 +13199,8 @@ class ProtectionEquipmentTreeNode(TreeNode):
         """ Gets the object's children.
         """
         children = []
-        children.extend( getattr(object, "ProtectedSwitch") )
-        children.extend( getattr(object, "ConductingEquipment") )
+        children.extend( getattr(object, "Operates_Breakers") )
+        children.extend( getattr(object, "ConductingEquipments") )
 
 #        children.extend( getattr(object, "Unit") )
         return children
@@ -11074,6 +13210,16 @@ class ProtectionEquipmentTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "CurrentRelayTreeNode" class:
 #------------------------------------------------------------------------------
@@ -11092,7 +13238,7 @@ class CurrentRelayTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A device that checks current flow values in any direction or designated direction.")
+    tooltip = Str("=A device that checks current flow values in any direction or designated direction")
 
     # Name to use for a new instance.
     name = Str("CurrentRelay")
@@ -11107,7 +13253,7 @@ class CurrentRelayTreeNode(TreeNode):
     node_for = [CurrentRelay]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -11127,6 +13273,16 @@ class CurrentRelayTreeNode(TreeNode):
         """ Appends a child to the object's children.
         """
         raise NotImplmentedError
+
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
 #------------------------------------------------------------------------------
 #  "RecloseSequenceTreeNode" class:
 #------------------------------------------------------------------------------
@@ -11145,7 +13301,7 @@ class RecloseSequenceTreeNode(TreeNode):
     # Name of a trait containing a label.
     label = Str("name")
 
-    tooltip = Str("=A reclose sequence (open and close) is defined for each possible reclosure of a breaker..")
+    tooltip = Str("=A reclose sequence (open and close) is defined for each possible reclosure of a breaker.")
 
     # Name to use for a new instance.
     name = Str("RecloseSequence")
@@ -11160,7 +13316,7 @@ class RecloseSequenceTreeNode(TreeNode):
     node_for = [RecloseSequence]
 
     # Function for handling double-clicking an object
-    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
+#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
 
     def allows_children ( self, object ):
@@ -11173,7 +13329,7 @@ class RecloseSequenceTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ProtectedSwitch") )
+#        children.extend( getattr(object, "Breaker") )
         return children
 
 
@@ -11182,250 +13338,235 @@ class RecloseSequenceTreeNode(TreeNode):
         """
         raise NotImplmentedError
 
+
+    def dclick ( self, object ):
+        """ Handles an object being double-clicked.
+        """
+        if object is not None:
+            object.edit_traits(kind="livemodal")
+            return None
+
+        return True
+
+#------------------------------------------------------------------------------
+#  Tree node list:
+#------------------------------------------------------------------------------
+
+
+tree_nodes = [
+    RootTreeNode(),
+    ModelTreeNode(),
+    IEC61970CIMVersionTreeNode(),
+    PackageTreeNode(),
+    StereotypeTreeNode(),
+    MutualCouplingTreeNode(),
+    Quality61850TreeNode(),
+    MeasurementValueQualityTreeNode(),
+    AnalogTreeNode(),
+    AccumulatorValueTreeNode(),
+    SeasonTreeNode(),
+    IrregularTimePointTreeNode(),
+    OperatingShareTreeNode(),
+    CurveDataTreeNode(),
+    RegularTimePointTreeNode(),
+    IdentifiedObjectTreeNode(),
+    ContingencyTreeNode(),
+    ContingencyElementTreeNode(),
+    ClearanceTagTypeTreeNode(),
+    SwitchingOperationTreeNode(),
+    ClearanceTagTreeNode(),
+    RemotePointTreeNode(),
+    RemoteControlTreeNode(),
+    RemoteSourceTreeNode(),
+    OperationalLimitTreeNode(),
+    BranchGroupTreeNode(),
+    OperationalLimitTypeTreeNode(),
+    ActivePowerLimitTreeNode(),
+    CurrentLimitTreeNode(),
+    OperationalLimitSetTreeNode(),
+    VoltageLimitTreeNode(),
+    BranchGroupTerminalTreeNode(),
+    ApparentPowerLimitTreeNode(),
+    ControlAreaGeneratingUnitTreeNode(),
+    AltGeneratingUnitMeasTreeNode(),
+    TieFlowTreeNode(),
+    AltTieMeasTreeNode(),
+    TopologicalNodeTreeNode(),
+    TopologicalIslandTreeNode(),
+    ConnectivityNodeTreeNode(),
+    BusNameMarkerTreeNode(),
+    RecloseSequenceTreeNode(),
+    GroundDisconnectorTreeNode(),
+    WireTypeTreeNode(),
+    ProtectedSwitchTreeNode(),
+    JumperTreeNode(),
+    WireArrangementTreeNode(),
+    FuseTreeNode(),
+    WindingTestTreeNode(),
+    DisconnectorTreeNode(),
+    ConductorTypeTreeNode(),
+    ReactiveCapabilityCurveTreeNode(),
+    NuclearGeneratingUnitTreeNode(),
+    StartIgnFuelCurveTreeNode(),
+    HydroGeneratingEfficiencyCurveTreeNode(),
+    TargetLevelScheduleTreeNode(),
+    GrossToNetActivePowerCurveTreeNode(),
+    IncrementalHeatRateCurveTreeNode(),
+    HeatInputCurveTreeNode(),
+    StartRampCurveTreeNode(),
+    ShutdownCurveTreeNode(),
+    StartupModelTreeNode(),
+    EmissionCurveTreeNode(),
+    GenUnitOpCostCurveTreeNode(),
+    HydroGeneratingUnitTreeNode(),
+    LevelVsVolumeCurveTreeNode(),
+    ThermalGeneratingUnitTreeNode(),
+    FossilFuelTreeNode(),
+    FuelAllocationScheduleTreeNode(),
+    EmissionAccountTreeNode(),
+    TailbayLossCurveTreeNode(),
+    PenstockLossCurveTreeNode(),
+    StartMainFuelCurveTreeNode(),
+    HeatRateCurveTreeNode(),
+    CTTempActivePowerCurveTreeNode(),
+    DiscreteTreeNode(),
+    MeasurementTreeNode(),
+    SetPointTreeNode(),
+    ControlTreeNode(),
+    ControlTypeTreeNode(),
+    DiscreteValueTreeNode(),
+    AccumulatorTreeNode(),
+    LimitSetTreeNode(),
+    AnalogLimitTreeNode(),
+    MeasurementValueTreeNode(),
+    ValueAliasSetTreeNode(),
+    StringMeasurementValueTreeNode(),
+    LimitTreeNode(),
+    MeasurementTypeTreeNode(),
+    AccumulatorLimitTreeNode(),
+    StringMeasurementTreeNode(),
+    ValueToAliasTreeNode(),
+    AnalogValueTreeNode(),
+    MeasurementValueSourceTreeNode(),
+    AccumulatorLimitSetTreeNode(),
+    AnalogLimitSetTreeNode(),
+    CommandTreeNode(),
+    LoadResponseCharacteristicTreeNode(),
+    DayTypeTreeNode(),
+    LoadGroupTreeNode(),
+    NonConformLoadGroupTreeNode(),
+    EnergyAreaTreeNode(),
+    InductionMotorLoadTreeNode(),
+    CurveTreeNode(),
+    ReportingGroupTreeNode(),
+    ModelingAuthoritySetTreeNode(),
+    OperatingParticipantTreeNode(),
+    ReportingSuperGroupTreeNode(),
+    GeographicalRegionTreeNode(),
+    UnitTreeNode(),
+    ModelingAuthorityTreeNode(),
+    BaseVoltageTreeNode(),
+    BasicIntervalScheduleTreeNode(),
+    RegularIntervalScheduleTreeNode(),
+    IrregularIntervalScheduleTreeNode(),
+    TerminalTreeNode(),
+    SubGeographicalRegionTreeNode(),
+    PowerSystemResourceTreeNode(),
+    BasePowerTreeNode(),
+    PSRTypeTreeNode(),
+    PsrListTreeNode(),
+    CompanyTreeNode(),
+    ContingencyEquipmentTreeNode(),
+    OutageScheduleTreeNode(),
+    CommunicationLinkTreeNode(),
+    RemoteUnitTreeNode(),
+    ControlAreaTreeNode(),
+    ProtectionEquipmentTreeNode(),
+    CurrentRelayTreeNode(),
+    RegulationScheduleTreeNode(),
+    BreakerTreeNode(),
+    VoltageControlZoneTreeNode(),
+    LoadBreakSwitchTreeNode(),
+    DCLineSegmentTreeNode(),
+    TapChangerTreeNode(),
+    CompositeSwitchTreeNode(),
+    PowerTransformerTreeNode(),
+    ACLineSegmentTreeNode(),
+    HeatExchangerTreeNode(),
+    RegulatingControlTreeNode(),
+    GeneratingUnitTreeNode(),
+    AirCompressorTreeNode(),
+    CombinedCyclePlantTreeNode(),
+    HydroPumpTreeNode(),
+    HydroPowerPlantTreeNode(),
+    CAESPlantTreeNode(),
+    InflowForecastTreeNode(),
+    SteamSendoutScheduleTreeNode(),
+    ReservoirTreeNode(),
+    HydroPumpOpScheduleTreeNode(),
+    GenUnitOpScheduleTreeNode(),
+    CogenerationPlantTreeNode(),
+    PrimeMoverTreeNode(),
+    CombustionTurbineTreeNode(),
+    HydroTurbineTreeNode(),
+    SteamSupplyTreeNode(),
+    SubLoadAreaTreeNode(),
+    LoadTreeNode(),
+    ConformLoadGroupTreeNode(),
+    LoadAreaTreeNode(),
+    PowerCutZoneTreeNode(),
+    CustomerLoadTreeNode(),
+    SeasonDayTypeScheduleTreeNode(),
+    ConductingEquipmentTreeNode(),
+    ConnectivityNodeContainerTreeNode(),
+    EquipmentContainerTreeNode(),
+    EquipmentTreeNode(),
+    BayTreeNode(),
+    EquivalentNetworkTreeNode(),
+    EquivalentEquipmentTreeNode(),
+    SynchrocheckRelayTreeNode(),
+    TransformerWindingTreeNode(),
+    EnergySourceTreeNode(),
+    SeriesCompensatorTreeNode(),
+    RegulatingCondEqTreeNode(),
+    ConductorTreeNode(),
+    LineTreeNode(),
+    GroundTreeNode(),
+    ShuntCompensatorTreeNode(),
+    RectifierInverterTreeNode(),
+    EnergyConsumerTreeNode(),
+    SwitchTreeNode(),
+    SynchronousMachineTreeNode(),
+    ConnectorTreeNode(),
+    StaticVarCompensatorTreeNode(),
+    JunctionTreeNode(),
+    PlantTreeNode(),
+    SteamTurbineTreeNode(),
+    PWRSteamSupplyTreeNode(),
+    BWRSteamSupplyTreeNode(),
+    FossilSteamSupplyTreeNode(),
+    SubcriticalTreeNode(),
+    ConformLoadTreeNode(),
+    ConformLoadScheduleTreeNode(),
+    StationSupplyTreeNode(),
+    NonConformLoadScheduleTreeNode(),
+    NonConformLoadTreeNode(),
+    VoltageLevelTreeNode(),
+    SubstationTreeNode(),
+    EquivalentBranchTreeNode(),
+    EquivalentShuntTreeNode(),
+    FrequencyConverterTreeNode(),
+    BusbarSectionTreeNode(),
+    SupercriticalTreeNode(),
+    HeatRecoveryBoilerTreeNode(),
+    DrumBoilerTreeNode(),
+]
+tree_nodes.reverse()
+
 #------------------------------------------------------------------------------
 #  CIM13 Tree Editor:
 #------------------------------------------------------------------------------
 
-cim13_tree_editor = TreeEditor(
-    nodes = [
-        RootTreeNode(),
-        ModelTreeNode(),
-        IEC61970CIMVersionTreeNode(),
-        RegulationScheduleTreeNode(),
-        GroundDisconnectorTreeNode(),
-        TransformerWindingTreeNode(),
-        EnergySourceTreeNode(),
-        SeriesCompensatorTreeNode(),
-        WireTypeTreeNode(),
-        BreakerTreeNode(),
-        VoltageControlZoneTreeNode(),
-        FrequencyConverterTreeNode(),
-        RegulatingCondEqTreeNode(),
-        ConductorTreeNode(),
-        LoadBreakSwitchTreeNode(),
-        ProtectedSwitchTreeNode(),
-        LineTreeNode(),
-        GroundTreeNode(),
-        JumperTreeNode(),
-        DCLineSegmentTreeNode(),
-        TapChangerTreeNode(),
-        CompositeSwitchTreeNode(),
-        WireArrangementTreeNode(),
-        PowerTransformerTreeNode(),
-        BusbarSectionTreeNode(),
-        ACLineSegmentTreeNode(),
-        MutualCouplingTreeNode(),
-        ShuntCompensatorTreeNode(),
-        FuseTreeNode(),
-        RectifierInverterTreeNode(),
-        HeatExchangerTreeNode(),
-        EnergyConsumerTreeNode(),
-        SwitchTreeNode(),
-        SynchronousMachineTreeNode(),
-        RegulatingControlTreeNode(),
-        ConnectorTreeNode(),
-        StaticVarCompensatorTreeNode(),
-        JunctionTreeNode(),
-        WindingTestTreeNode(),
-        DisconnectorTreeNode(),
-        ConductorTypeTreeNode(),
-        PlantTreeNode(),
-        ReactiveCapabilityCurveTreeNode(),
-        NuclearGeneratingUnitTreeNode(),
-        GeneratingUnitTreeNode(),
-        StartIgnFuelCurveTreeNode(),
-        HydroGeneratingEfficiencyCurveTreeNode(),
-        TargetLevelScheduleTreeNode(),
-        GrossToNetActivePowerCurveTreeNode(),
-        IncrementalHeatRateCurveTreeNode(),
-        HeatInputCurveTreeNode(),
-        StartRampCurveTreeNode(),
-        AirCompressorTreeNode(),
-        ShutdownCurveTreeNode(),
-        CombinedCyclePlantTreeNode(),
-        StartupModelTreeNode(),
-        HydroPumpTreeNode(),
-        EmissionCurveTreeNode(),
-        GenUnitOpCostCurveTreeNode(),
-        HydroPowerPlantTreeNode(),
-        HydroGeneratingUnitTreeNode(),
-        CAESPlantTreeNode(),
-        LevelVsVolumeCurveTreeNode(),
-        InflowForecastTreeNode(),
-        SteamSendoutScheduleTreeNode(),
-        ThermalGeneratingUnitTreeNode(),
-        FossilFuelTreeNode(),
-        FuelAllocationScheduleTreeNode(),
-        EmissionAccountTreeNode(),
-        TailbayLossCurveTreeNode(),
-        PenstockLossCurveTreeNode(),
-        StartMainFuelCurveTreeNode(),
-        ReservoirTreeNode(),
-        HydroPumpOpScheduleTreeNode(),
-        HeatRateCurveTreeNode(),
-        GenUnitOpScheduleTreeNode(),
-        CogenerationPlantTreeNode(),
-        SupercriticalTreeNode(),
-        SteamTurbineTreeNode(),
-        CTTempActivePowerCurveTreeNode(),
-        PrimeMoverTreeNode(),
-        PWRSteamSupplyTreeNode(),
-        CombustionTurbineTreeNode(),
-        HeatRecoveryBoilerTreeNode(),
-        BWRSteamSupplyTreeNode(),
-        HydroTurbineTreeNode(),
-        DrumBoilerTreeNode(),
-        FossilSteamSupplyTreeNode(),
-        SubcriticalTreeNode(),
-        SteamSupplyTreeNode(),
-        DiscreteTreeNode(),
-        MeasurementTreeNode(),
-        SetPointTreeNode(),
-        ControlTreeNode(),
-        ControlTypeTreeNode(),
-        DiscreteValueTreeNode(),
-        AccumulatorTreeNode(),
-        LimitSetTreeNode(),
-        AnalogLimitTreeNode(),
-        MeasurementValueTreeNode(),
-        ValueAliasSetTreeNode(),
-        StringMeasurementValueTreeNode(),
-        Quality61850TreeNode(),
-        LimitTreeNode(),
-        MeasurementTypeTreeNode(),
-        AccumulatorLimitTreeNode(),
-        StringMeasurementTreeNode(),
-        ValueToAliasTreeNode(),
-        AnalogValueTreeNode(),
-        MeasurementValueQualityTreeNode(),
-        MeasurementValueSourceTreeNode(),
-        AccumulatorLimitSetTreeNode(),
-        AnalogLimitSetTreeNode(),
-        CommandTreeNode(),
-        AnalogTreeNode(),
-        AccumulatorValueTreeNode(),
-        SubLoadAreaTreeNode(),
-        LoadTreeNode(),
-        LoadResponseCharacteristicTreeNode(),
-        SeasonTreeNode(),
-        ConformLoadGroupTreeNode(),
-        ConformLoadTreeNode(),
-        LoadAreaTreeNode(),
-        PowerCutZoneTreeNode(),
-        ConformLoadScheduleTreeNode(),
-        StationSupplyTreeNode(),
-        DayTypeTreeNode(),
-        NonConformLoadScheduleTreeNode(),
-        CustomerLoadTreeNode(),
-        LoadGroupTreeNode(),
-        NonConformLoadGroupTreeNode(),
-        EnergyAreaTreeNode(),
-        SeasonDayTypeScheduleTreeNode(),
-        NonConformLoadTreeNode(),
-        InductionMotorLoadTreeNode(),
-        CurveTreeNode(),
-        VoltageLevelTreeNode(),
-        ReportingGroupTreeNode(),
-        ModelingAuthoritySetTreeNode(),
-        OperatingParticipantTreeNode(),
-        ReportingSuperGroupTreeNode(),
-        SubstationTreeNode(),
-        ConductingEquipmentTreeNode(),
-        IrregularTimePointTreeNode(),
-        ConnectivityNodeContainerTreeNode(),
-        GeographicalRegionTreeNode(),
-        UnitTreeNode(),
-        EquipmentContainerTreeNode(),
-        ModelingAuthorityTreeNode(),
-        BaseVoltageTreeNode(),
-        OperatingShareTreeNode(),
-        BasicIntervalScheduleTreeNode(),
-        CurveDataTreeNode(),
-        EquipmentTreeNode(),
-        RegularIntervalScheduleTreeNode(),
-        IrregularIntervalScheduleTreeNode(),
-        BayTreeNode(),
-        RegularTimePointTreeNode(),
-        TerminalTreeNode(),
-        SubGeographicalRegionTreeNode(),
-        PowerSystemResourceTreeNode(),
-        BasePowerTreeNode(),
-        PSRTypeTreeNode(),
-        PsrListTreeNode(),
-        CompanyTreeNode(),
-        IdentifiedObjectTreeNode(),
-        ContingencyTreeNode(),
-        ContingencyEquipmentTreeNode(),
-        ContingencyElementTreeNode(),
-        ClearanceTagTypeTreeNode(),
-        SwitchingOperationTreeNode(),
-        OutageScheduleTreeNode(),
-        ClearanceTagTreeNode(),
-        RemotePointTreeNode(),
-        RemoteControlTreeNode(),
-        RemoteSourceTreeNode(),
-        CommunicationLinkTreeNode(),
-        RemoteUnitTreeNode(),
-        OperationalLimitTreeNode(),
-        BranchGroupTreeNode(),
-        OperationalLimitTypeTreeNode(),
-        ActivePowerLimitTreeNode(),
-        CurrentLimitTreeNode(),
-        OperationalLimitSetTreeNode(),
-        VoltageLimitTreeNode(),
-        BranchGroupTerminalTreeNode(),
-        ApparentPowerLimitTreeNode(),
-        ControlAreaGeneratingUnitTreeNode(),
-        ControlAreaTreeNode(),
-        AltGeneratingUnitMeasTreeNode(),
-        TieFlowTreeNode(),
-        AltTieMeasTreeNode(),
-        EquivalentBranchTreeNode(),
-        EquivalentShuntTreeNode(),
-        EquivalentNetworkTreeNode(),
-        EquivalentEquipmentTreeNode(),
-        TopologicalNodeTreeNode(),
-        TopologicalIslandTreeNode(),
-        ConnectivityNodeTreeNode(),
-        BusNameMarkerTreeNode(),
-        SynchrocheckRelayTreeNode(),
-        ProtectionEquipmentTreeNode(),
-        CurrentRelayTreeNode(),
-        RecloseSequenceTreeNode(),
-    ],
-    editable=True
-)
-
-#------------------------------------------------------------------------------
-#  "ViewModel" class:
-#------------------------------------------------------------------------------
-
-class ViewModel(HasTraits):
-
-    # The root of the model tree:
-    root = Instance( GeographicalRegion, () )
-
-    # The traits view to display:
-    view = View(
-        Item('root',
-            editor=cim13_tree_editor,
-            show_label=False),
-        width     = 0.33,
-        height    = 0.50,
-        resizable = True,
-        buttons   = ["OK", "Cancel"],
-        id = "CIM13.CIM13TreeEditor"
-    )
-
-#------------------------------------------------------------------------------
-#  "main" function:
-#------------------------------------------------------------------------------
-
-def main():
-    view_model = ViewModel()
-    view_model.configure_traits()
-
-if __name__ == "__main__":
-    main()
+cim13_tree_editor = TreeEditor(nodes=tree_nodes, editable=True)
 
 # EOF -------------------------------------------------------------------------
