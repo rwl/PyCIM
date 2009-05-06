@@ -246,132 +246,7 @@ class IEC61970CIMVersionTreeNode(TreeNode):
             return None
 
         return True
-#------------------------------------------------------------------------------
-#  "PackageTreeNode" class:
-#------------------------------------------------------------------------------
 
-class PackageTreeNode(TreeNode):
-    """ Defines a tree node for a Package.
-    """
-
-    #--------------------------------------------------------------------------
-    #  "TreeNode" interface:
-    #--------------------------------------------------------------------------
-
-    # Name of trait containing children (if '', the node is a leaf).
-#    children = Str("Substations")
-
-    # Name of a trait containing a label.
-    label = Str("name")
-
-    tooltip = Str("=")
-
-    # Name to use for a new instance.
-    name = Str("Package")
-
-    # List of object classes than can be added or copied.
-    add = []
-
-    # List of object classes that can be moved.
-    move = []
-
-    # List of object classes and/or interfaces that the node applies to.
-    node_for = [Package]
-
-    # Function for handling double-clicking an object
-#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
-
-
-    def allows_children ( self, object ):
-        """ Returns whether this object can have children.
-        """
-        return False
-
-    def get_children ( self, object ):
-        """ Gets the object's children.
-        """
-        children = []
-
-        return children
-
-
-    def append_child ( self, object, child ):
-        """ Appends a child to the object's children.
-        """
-        raise NotImplmentedError
-
-
-    def dclick ( self, object ):
-        """ Handles an object being double-clicked.
-        """
-        if object is not None:
-            object.edit_traits(kind="livemodal")
-            return None
-
-        return True
-#------------------------------------------------------------------------------
-#  "StereotypeTreeNode" class:
-#------------------------------------------------------------------------------
-
-class StereotypeTreeNode(TreeNode):
-    """ Defines a tree node for a Stereotype.
-    """
-
-    #--------------------------------------------------------------------------
-    #  "TreeNode" interface:
-    #--------------------------------------------------------------------------
-
-    # Name of trait containing children (if '', the node is a leaf).
-#    children = Str("Substations")
-
-    # Name of a trait containing a label.
-    label = Str("name")
-
-    tooltip = Str("=")
-
-    # Name to use for a new instance.
-    name = Str("Stereotype")
-
-    # List of object classes than can be added or copied.
-    add = []
-
-    # List of object classes that can be moved.
-    move = []
-
-    # List of object classes and/or interfaces that the node applies to.
-    node_for = [Stereotype]
-
-    # Function for handling double-clicking an object
-#    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
-
-
-    def allows_children ( self, object ):
-        """ Returns whether this object can have children.
-        """
-        return False
-
-    def get_children ( self, object ):
-        """ Gets the object's children.
-        """
-        children = []
-
-        return children
-
-
-    def append_child ( self, object, child ):
-        """ Appends a child to the object's children.
-        """
-        raise NotImplmentedError
-
-
-    def dclick ( self, object ):
-        """ Handles an object being double-clicked.
-        """
-        if object is not None:
-            object.edit_traits(kind="livemodal")
-            return None
-
-        return True
 #------------------------------------------------------------------------------
 #  "RegulationScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -13357,8 +13232,6 @@ tree_nodes = [
     RootTreeNode(),
     ModelTreeNode(),
     IEC61970CIMVersionTreeNode(),
-    PackageTreeNode(),
-    StereotypeTreeNode(),
     MutualCouplingTreeNode(),
     Quality61850TreeNode(),
     MeasurementValueQualityTreeNode(),

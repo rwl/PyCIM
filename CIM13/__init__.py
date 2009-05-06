@@ -200,14 +200,6 @@ class Model(HasTraits):
     #--------------------------------------------------------------------------
     #  End "Model" user definitions:
     #--------------------------------------------------------------------------
-    # <<< saveToFile
-    @classmethod
-    def saveToFile(cls, fileName, kwargs, format):
-        """ Save the object to file given by filename.
-            @generated
-        """
-        pass
-    # >>> saveToFile
 
 #------------------------------------------------------------------------------
 #  "IEC61970CIMVersion" class:
@@ -245,58 +237,6 @@ class IEC61970CIMVersion(Root):
 
     #--------------------------------------------------------------------------
     #  End "IEC61970CIMVersion" user definitions:
-    #--------------------------------------------------------------------------
-
-#------------------------------------------------------------------------------
-#  "Package" class:
-#------------------------------------------------------------------------------
-
-class Package(Root):
-    pass
-    #--------------------------------------------------------------------------
-    #  Begin "Package" user definitions:
-    #--------------------------------------------------------------------------
-
-    # @generated
-    traits_view = View(Tabbed(
-            VGroup("URI",
-                label="Attributes"),
-            VGroup("ContainedBy",
-                label="References"),
-            dock="tab"),
-        id="CIM13.Package",
-        title="Package",
-        buttons=["OK", "Cancel", "Help"],
-        resizable=False)
-
-    #--------------------------------------------------------------------------
-    #  End "Package" user definitions:
-    #--------------------------------------------------------------------------
-
-#------------------------------------------------------------------------------
-#  "Stereotype" class:
-#------------------------------------------------------------------------------
-
-class Stereotype(Root):
-    pass
-    #--------------------------------------------------------------------------
-    #  Begin "Stereotype" user definitions:
-    #--------------------------------------------------------------------------
-
-    # @generated
-    traits_view = View(Tabbed(
-            VGroup("URI",
-                label="Attributes"),
-            VGroup("ContainedBy",
-                label="References"),
-            dock="tab"),
-        id="CIM13.Stereotype",
-        title="Stereotype",
-        buttons=["OK", "Cancel", "Help"],
-        resizable=False)
-
-    #--------------------------------------------------------------------------
-    #  End "Stereotype" user definitions:
     #--------------------------------------------------------------------------
 
 

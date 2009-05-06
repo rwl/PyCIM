@@ -46,9 +46,11 @@ from enthought.traits.ui.api \
 from enthought.pyface.api \
     import FileDialog, OK
 
-# FIXME: Remove dependency on Pylon.
-from pylon.ui.view_model.desktop_vm \
-    import DesktopViewModel, frame_icon, menubar
+from DesktopViewModel \
+    import DesktopViewModel, frame_icon
+
+from DesktopMenu \
+    import menubar
 
 from CIMReader import read_cim
 
