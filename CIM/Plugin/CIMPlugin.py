@@ -82,8 +82,9 @@ class CIMPlugin(Plugin):
     def _editors_default(self):
         """ Trait initialiser.
         """
-        from EditorExtension import CIMTreeEditorExtension
-        return [CIMTreeEditorExtension]
+        from EditorExtension \
+            import CIMTreeEditorExtension, CIMGraphEditorExtension
+        return [CIMTreeEditorExtension, CIMGraphEditorExtension]
 
 
     def _import_wizards_default(self):

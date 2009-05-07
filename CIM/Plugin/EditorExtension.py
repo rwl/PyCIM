@@ -38,13 +38,13 @@ IMAGE_LOCATION = join(dirname(__file__), "..", "images")
 #------------------------------------------------------------------------------
 
 class CIMTreeEditorExtension(Editor):
-    """ Associates a table editor with *.pkl files.
+    """ Associates a tree editor with *.pkl files.
     """
     # The object contribution's globally unique identifier.
     id = "CIM.Plugins.TreeEditor"
 
     # A name that will be used in the UI for this editor
-    name = "CIM Editor"
+    name = "CIM Tree Editor"
 
     # An icon that will be used for all resources that match the
     # specified extensions
@@ -52,6 +52,32 @@ class CIMTreeEditorExtension(Editor):
 
     # The contributed editor class
     editor_class = "CIM.Plugin.TreeEditor:CIMTreeEditor"
+
+    # The list of file types understood by the editor
+    extensions = [".pkl"]
+
+    # If true, this editor will be used as the default editor for the type
+    default = True
+
+#------------------------------------------------------------------------------
+#  "CIMGraphEditorExtension" class:
+#------------------------------------------------------------------------------
+
+class CIMGraphEditorExtension(Editor):
+    """ Associates a graph editor with *.pkl files.
+    """
+    # The object contribution's globally unique identifier.
+    id = "CIM.Plugins.GraphEditor"
+
+    # A name that will be used in the UI for this editor
+    name = "CIM Graph Editor"
+
+    # An icon that will be used for all resources that match the
+    # specified extensions
+    image = ImageResource("graph", search_path=[IMAGE_LOCATION])
+
+    # The contributed editor class
+    editor_class = "CIM.Plugin.GraphEditor:CIMGraphEditor"
 
     # The list of file types understood by the editor
     extensions = [".pkl"]

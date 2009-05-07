@@ -25,8 +25,11 @@
 import logging
 
 from enthought.envisage.core_plugin import CorePlugin
-from enthought.envisage.ui.workbench.workbench_plugin import WorkbenchPlugin
-from enthought.envisage.ui.workbench.api import WorkbenchApplication
+
+#from enthought.envisage.ui.workbench.workbench_plugin import WorkbenchPlugin
+#from enthought.envisage.ui.workbench.api import WorkbenchApplication
+from envisage.workbench.workbench_plugin import WorkbenchPlugin
+from envisage.workbench.workbench_application import WorkbenchApplication
 
 from enthought.plugins.ipython_shell.ipython_shell_plugin \
     import IPythonShellPlugin as PythonShellPlugin
@@ -34,6 +37,7 @@ from enthought.plugins.ipython_shell.ipython_shell_plugin \
 from enthought.logger.plugin.logger_plugin import LoggerPlugin
 
 from envisage.resource.resource_plugin import ResourcePlugin
+from envisage.property_view.property_view_plugin import PropertyViewPlugin
 
 from CIMPlugin import CIMPlugin
 
@@ -63,6 +67,7 @@ def main():
             LoggerPlugin(),
             WorkbenchPlugin(),
             ResourcePlugin(),
+            PropertyViewPlugin(),
             CIMPlugin()
         ]
     )

@@ -45,8 +45,12 @@ from CIM.Wires import Line
 
 from CIM.CIMReader import read_cim
 
-from CIM13TreeEditor import tree_nodes, GeographicalRegionTreeNode, \
-    SubGeographicalRegionTreeNode, IdentifiedObjectTreeNode
+#from CIM13TreeEditor import tree_nodes, GeographicalRegionTreeNode, \
+#    SubGeographicalRegionTreeNode, IdentifiedObjectTreeNode
+
+from CIM13TreeNodeEditor \
+    import tree_nodes, GeographicalRegion_TreeNode, \
+    SubGeographicalRegion_TreeNode
 
 #-------------------------------------------------------------------------------
 #  Constants:

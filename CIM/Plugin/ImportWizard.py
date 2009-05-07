@@ -41,9 +41,10 @@ from envisage.resource.action.open_action import OpenAction
 from envisage.resource.wizard.container_selection_page import \
     ContainerSelectionPage
 
-from envisage.resource.resource_adapter import FileIResourceAdapter
+from envisage.resource.resource_adapter import PickleFileIResourceAdapter
 
 from CIM.CIMReader import read_cim
+from CIM import Model
 
 #------------------------------------------------------------------------------
 #  Constants:
@@ -118,12 +119,15 @@ class RDFXMLImportWizard(SimpleWizard):
         mip = self.pages[1]
 
         name, ext = splitext(basename(mip.data_file))
+
         file = IOFile(join(csp.directory, name+".pkl"))
+
         if not file.exists:
-            n = read_cim(mip.data_file)
-#            file.create_file(contents=pickle.dumps(n))
-            resource = FileIResourceAdapter(file)
-            resource.save(n)
+            # Parse the CIM RDF/XML data file.
+            uri_element_map = read_cim(mip.data_file)
+            # Adapt the new file to a persistent resource.
+            resource = PickleFileIResourceAdapter(file)
+            resource.save( uri_element_map )
 
         self._open_resource(file)
 

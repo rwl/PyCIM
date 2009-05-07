@@ -44,9 +44,9 @@ from envisage.resource.action.open_action import OpenAction
 from envisage.resource.wizard.container_selection_page import \
     ContainerSelectionPage
 
-from envisage.resource.resource_editor import PickledProvider
+from envisage.resource.resource_adapter import PickleFileIResourceAdapter
 
-from CIM import Model
+from CIM.Core import GeographicalRegion
 
 #------------------------------------------------------------------------------
 #  Constants:
@@ -88,14 +88,14 @@ class CIMWizardPage(WizardPage):
         Item("model_name")
     )
 
-#    @cached_property
+    @cached_property
     def _get_abs_path(self):
         """ Property getter.
         """
         return join(self.csp.directory, self.model_name)
 
 
-#    @cached_property
+    @cached_property
     def _get__label(self):
         """ Property getter
         """
@@ -187,9 +187,12 @@ class CIMWizard(SimpleWizard):
         if not file.exists:
             name, ext = splitext(nwp.model_name)
 
-            model = Model(name=name)
-#            file.create_file(contents=pickle.dumps(n))
-            PickledProvider().do_save(file, model)
+            default = GeographicalRegion(name=name)
+            uri = str( hash(default) )
+            uri_element_map = {uri: default}
+            # Adapt the new file to a persistent resource.
+            resource = PickleFileIResourceAdapter(file)
+            resource.save( uri_element_map )
 
         self._open_resource(file)
 

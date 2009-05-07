@@ -52,8 +52,10 @@ from CIM13.Generation.GenerationDynamics import *
 #------------------------------------------------------------------------------
 #  Constants:
 #------------------------------------------------------------------------------
-
+# <<< constants
+# @generated
 IMAGE_PATH = ""
+# >>> constants
 
 #------------------------------------------------------------------------------
 #  "RootTreeNode" class:
@@ -87,9 +89,22 @@ class RootTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Root]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RootTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "RootTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -101,7 +116,7 @@ class RootTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ContainedBy") )
+        children.append( getattr(object, "ContainedBy") )
         return children
 
 
@@ -151,9 +166,25 @@ class ModelTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Model]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ModelTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ModelTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -215,9 +246,22 @@ class IEC61970CIMVersionTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [IEC61970CIMVersion]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "IEC61970CIMVersionTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "IEC61970CIMVersionTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -246,7 +290,6 @@ class IEC61970CIMVersionTreeNode(TreeNode):
             return None
 
         return True
-
 #------------------------------------------------------------------------------
 #  "RegulationScheduleTreeNode" class:
 #------------------------------------------------------------------------------
@@ -279,9 +322,25 @@ class RegulationScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [RegulationSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RegulationScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "RegulationScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -344,9 +403,22 @@ class GroundDisconnectorTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [GroundDisconnector]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "GroundDisconnectorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "GroundDisconnectorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -407,9 +479,25 @@ class TransformerWindingTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [TransformerWinding]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "TransformerWindingTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "TransformerWindingTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -424,7 +512,7 @@ class TransformerWindingTreeNode(TreeNode):
         children.extend( getattr(object, "From_WindingTest") )
         children.extend( getattr(object, "TapChangers") )
 
-#        children.extend( getattr(object, "MemberOf_PowerTransformer") )
+        children.append( getattr(object, "MemberOf_PowerTransformer") )
         return children
 
 
@@ -474,9 +562,22 @@ class EnergySourceTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [EnergySource]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "EnergySourceTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "EnergySourceTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -537,9 +638,22 @@ class SeriesCompensatorTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [SeriesCompensator]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SeriesCompensatorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "SeriesCompensatorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -600,9 +714,25 @@ class WireTypeTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [WireType]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "WireTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "WireTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -664,9 +794,22 @@ class BreakerTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Breaker]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "BreakerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "BreakerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -727,9 +870,22 @@ class VoltageControlZoneTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [VoltageControlZone]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "VoltageControlZoneTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "VoltageControlZoneTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -741,8 +897,8 @@ class VoltageControlZoneTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "RegulationSchedule") )
-#        children.extend( getattr(object, "BusbarSection") )
+        children.append( getattr(object, "RegulationSchedule") )
+        children.append( getattr(object, "BusbarSection") )
         return children
 
 
@@ -792,9 +948,22 @@ class FrequencyConverterTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [FrequencyConverter]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "FrequencyConverterTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "FrequencyConverterTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -855,9 +1024,25 @@ class RegulatingCondEqTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [RegulatingCondEq]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RegulatingCondEqTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "RegulatingCondEqTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -870,7 +1055,7 @@ class RegulatingCondEqTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "Controls") )
 
-#        children.extend( getattr(object, "RegulatingControl") )
+        children.append( getattr(object, "RegulatingControl") )
         return children
 
 
@@ -920,9 +1105,22 @@ class ConductorTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Conductor]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ConductorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ConductorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -934,7 +1132,7 @@ class ConductorTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ConductorType") )
+        children.append( getattr(object, "ConductorType") )
         return children
 
 
@@ -984,9 +1182,22 @@ class LoadBreakSwitchTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [LoadBreakSwitch]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "LoadBreakSwitchTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "LoadBreakSwitchTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1047,9 +1258,25 @@ class ProtectedSwitchTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ProtectedSwitch]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ProtectedSwitchTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ProtectedSwitchTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1112,9 +1339,22 @@ class LineTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Line]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "LineTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "LineTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1126,7 +1366,7 @@ class LineTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Region") )
+        children.append( getattr(object, "Region") )
         return children
 
 
@@ -1176,9 +1416,22 @@ class GroundTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Ground]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "GroundTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "GroundTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1239,9 +1492,22 @@ class JumperTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Jumper]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "JumperTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "JumperTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1302,9 +1568,22 @@ class DCLineSegmentTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [DCLineSegment]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "DCLineSegmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "DCLineSegmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1365,9 +1644,22 @@ class TapChangerTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [TapChanger]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "TapChangerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "TapChangerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1379,8 +1671,8 @@ class TapChangerTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "TransformerWinding") )
-#        children.extend( getattr(object, "RegulatingControl") )
+        children.append( getattr(object, "TransformerWinding") )
+        children.append( getattr(object, "RegulatingControl") )
         return children
 
 
@@ -1430,9 +1722,25 @@ class CompositeSwitchTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [CompositeSwitch]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CompositeSwitchTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "CompositeSwitchTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1494,9 +1802,22 @@ class WireArrangementTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [WireArrangement]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "WireArrangementTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "WireArrangementTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1508,8 +1829,8 @@ class WireArrangementTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ConductorType") )
-#        children.extend( getattr(object, "WireType") )
+        children.append( getattr(object, "ConductorType") )
+        children.append( getattr(object, "WireType") )
         return children
 
 
@@ -1559,9 +1880,25 @@ class PowerTransformerTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [PowerTransformer]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "PowerTransformerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "PowerTransformerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1574,7 +1911,7 @@ class PowerTransformerTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "Contains_TransformerWindings") )
 
-#        children.extend( getattr(object, "HeatExchanger") )
+        children.append( getattr(object, "HeatExchanger") )
         return children
 
 
@@ -1624,9 +1961,22 @@ class BusbarSectionTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [BusbarSection]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "BusbarSectionTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "BusbarSectionTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1638,7 +1988,7 @@ class BusbarSectionTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "VoltageControlZone") )
+        children.append( getattr(object, "VoltageControlZone") )
         return children
 
 
@@ -1688,9 +2038,25 @@ class ACLineSegmentTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ACLineSegment]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ACLineSegmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ACLineSegmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1753,9 +2119,22 @@ class MutualCouplingTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [MutualCoupling]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "MutualCouplingTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "MutualCouplingTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1767,8 +2146,8 @@ class MutualCouplingTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "First_ACLineSegment") )
-#        children.extend( getattr(object, "Second_ACLineSegment") )
+        children.append( getattr(object, "First_ACLineSegment") )
+        children.append( getattr(object, "Second_ACLineSegment") )
         return children
 
 
@@ -1818,9 +2197,22 @@ class ShuntCompensatorTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ShuntCompensator]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ShuntCompensatorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ShuntCompensatorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1881,9 +2273,22 @@ class FuseTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Fuse]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "FuseTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "FuseTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -1944,9 +2349,22 @@ class RectifierInverterTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [RectifierInverter]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RectifierInverterTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "RectifierInverterTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2007,9 +2425,22 @@ class HeatExchangerTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [HeatExchanger]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "HeatExchangerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "HeatExchangerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2021,7 +2452,7 @@ class HeatExchangerTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "PowerTransformer") )
+        children.append( getattr(object, "PowerTransformer") )
         return children
 
 
@@ -2071,9 +2502,22 @@ class EnergyConsumerTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [EnergyConsumer]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "EnergyConsumerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "EnergyConsumerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2085,8 +2529,8 @@ class EnergyConsumerTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "PowerCutZone") )
-#        children.extend( getattr(object, "LoadResponse") )
+        children.append( getattr(object, "PowerCutZone") )
+        children.append( getattr(object, "LoadResponse") )
         return children
 
 
@@ -2136,9 +2580,25 @@ class SwitchTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Switch]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SwitchTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "SwitchTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2151,7 +2611,7 @@ class SwitchTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "SwitchingOperations") )
 
-#        children.extend( getattr(object, "CompositeSwitch") )
+        children.append( getattr(object, "CompositeSwitch") )
         return children
 
 
@@ -2201,9 +2661,25 @@ class SynchronousMachineTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [SynchronousMachine]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SynchronousMachineTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "SynchronousMachineTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2217,9 +2693,9 @@ class SynchronousMachineTreeNode(TreeNode):
         children.extend( getattr(object, "ReactiveCapabilityCurves") )
         children.extend( getattr(object, "DrivenBy_PrimeMover") )
 
-#        children.extend( getattr(object, "Drives_HydroPump") )
-#        children.extend( getattr(object, "MemberOf_GeneratingUnit") )
-#        children.extend( getattr(object, "InitialReactiveCapabilityCurve") )
+        children.append( getattr(object, "Drives_HydroPump") )
+        children.append( getattr(object, "MemberOf_GeneratingUnit") )
+        children.append( getattr(object, "InitialReactiveCapabilityCurve") )
         return children
 
 
@@ -2269,9 +2745,25 @@ class RegulatingControlTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [RegulatingControl]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RegulatingControlTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "RegulatingControlTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2285,8 +2777,8 @@ class RegulatingControlTreeNode(TreeNode):
         children.extend( getattr(object, "RegulatingCondEq") )
         children.extend( getattr(object, "TapChanger") )
 
-#        children.extend( getattr(object, "Terminal") )
-#        children.extend( getattr(object, "RegulationSchedule") )
+        children.append( getattr(object, "Terminal") )
+        children.append( getattr(object, "RegulationSchedule") )
         return children
 
 
@@ -2336,9 +2828,22 @@ class ConnectorTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Connector]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ConnectorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ConnectorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2399,9 +2904,22 @@ class StaticVarCompensatorTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [StaticVarCompensator]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "StaticVarCompensatorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "StaticVarCompensatorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2462,9 +2980,22 @@ class JunctionTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Junction]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "JunctionTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "JunctionTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2525,9 +3056,22 @@ class WindingTestTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [WindingTest]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "WindingTestTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "WindingTestTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2539,8 +3083,8 @@ class WindingTestTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "To_TransformerWinding") )
-#        children.extend( getattr(object, "From_TransformerWinding") )
+        children.append( getattr(object, "To_TransformerWinding") )
+        children.append( getattr(object, "From_TransformerWinding") )
         return children
 
 
@@ -2590,9 +3134,22 @@ class DisconnectorTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Disconnector]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "DisconnectorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "DisconnectorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2653,9 +3210,25 @@ class ConductorTypeTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ConductorType]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ConductorTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ConductorTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2718,9 +3291,22 @@ class PlantTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Plant]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "PlantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "PlantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2781,9 +3367,25 @@ class ReactiveCapabilityCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ReactiveCapabilityCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ReactiveCapabilityCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ReactiveCapabilityCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2846,9 +3448,22 @@ class NuclearGeneratingUnitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [NuclearGeneratingUnit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "NuclearGeneratingUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "NuclearGeneratingUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2909,9 +3524,25 @@ class GeneratingUnitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [GeneratingUnit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "GeneratingUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "GeneratingUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2927,7 +3558,7 @@ class GeneratingUnitTreeNode(TreeNode):
         children.extend( getattr(object, "Contains_SynchronousMachines") )
         children.extend( getattr(object, "GenUnitOpCostCurves") )
 
-#        children.extend( getattr(object, "GenUnitOpSchedule") )
+        children.append( getattr(object, "GenUnitOpSchedule") )
         return children
 
 
@@ -2977,9 +3608,22 @@ class StartIgnFuelCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [StartIgnFuelCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "StartIgnFuelCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "StartIgnFuelCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -2991,7 +3635,7 @@ class StartIgnFuelCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "StartupModel") )
+        children.append( getattr(object, "StartupModel") )
         return children
 
 
@@ -3041,9 +3685,22 @@ class HydroGeneratingEfficiencyCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [HydroGeneratingEfficiencyCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "HydroGeneratingEfficiencyCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "HydroGeneratingEfficiencyCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3055,7 +3712,7 @@ class HydroGeneratingEfficiencyCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "HydroGeneratingUnit") )
+        children.append( getattr(object, "HydroGeneratingUnit") )
         return children
 
 
@@ -3105,9 +3762,22 @@ class TargetLevelScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [TargetLevelSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "TargetLevelScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "TargetLevelScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3119,7 +3789,7 @@ class TargetLevelScheduleTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Reservoir") )
+        children.append( getattr(object, "Reservoir") )
         return children
 
 
@@ -3169,9 +3839,22 @@ class GrossToNetActivePowerCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [GrossToNetActivePowerCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "GrossToNetActivePowerCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "GrossToNetActivePowerCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3183,7 +3866,7 @@ class GrossToNetActivePowerCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "GeneratingUnit") )
+        children.append( getattr(object, "GeneratingUnit") )
         return children
 
 
@@ -3233,9 +3916,22 @@ class IncrementalHeatRateCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [IncrementalHeatRateCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "IncrementalHeatRateCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "IncrementalHeatRateCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3247,7 +3943,7 @@ class IncrementalHeatRateCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ThermalGeneratingUnit") )
+        children.append( getattr(object, "ThermalGeneratingUnit") )
         return children
 
 
@@ -3297,9 +3993,22 @@ class HeatInputCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [HeatInputCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "HeatInputCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "HeatInputCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3311,7 +4020,7 @@ class HeatInputCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ThermalGeneratingUnit") )
+        children.append( getattr(object, "ThermalGeneratingUnit") )
         return children
 
 
@@ -3361,9 +4070,22 @@ class StartRampCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [StartRampCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "StartRampCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "StartRampCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3375,7 +4097,7 @@ class StartRampCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "StartupModel") )
+        children.append( getattr(object, "StartupModel") )
         return children
 
 
@@ -3425,9 +4147,22 @@ class AirCompressorTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [AirCompressor]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "AirCompressorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "AirCompressorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3439,8 +4174,8 @@ class AirCompressorTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "DrivenBy_CombustionTurbine") )
-#        children.extend( getattr(object, "MemberOf_CAESPlant") )
+        children.append( getattr(object, "DrivenBy_CombustionTurbine") )
+        children.append( getattr(object, "MemberOf_CAESPlant") )
         return children
 
 
@@ -3490,9 +4225,22 @@ class ShutdownCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ShutdownCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ShutdownCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ShutdownCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3504,7 +4252,7 @@ class ShutdownCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ThermalGeneratingUnit") )
+        children.append( getattr(object, "ThermalGeneratingUnit") )
         return children
 
 
@@ -3554,9 +4302,25 @@ class CombinedCyclePlantTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [CombinedCyclePlant]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CombinedCyclePlantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "CombinedCyclePlantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3618,9 +4382,22 @@ class StartupModelTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [StartupModel]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "StartupModelTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "StartupModelTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3632,10 +4409,10 @@ class StartupModelTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "StartIgnFuelCurve") )
-#        children.extend( getattr(object, "StartRampCurve") )
-#        children.extend( getattr(object, "StartMainFuelCurve") )
-#        children.extend( getattr(object, "ThermalGeneratingUnit") )
+        children.append( getattr(object, "StartIgnFuelCurve") )
+        children.append( getattr(object, "StartRampCurve") )
+        children.append( getattr(object, "StartMainFuelCurve") )
+        children.append( getattr(object, "ThermalGeneratingUnit") )
         return children
 
 
@@ -3685,9 +4462,22 @@ class HydroPumpTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [HydroPump]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "HydroPumpTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "HydroPumpTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3699,9 +4489,9 @@ class HydroPumpTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "MemberOf_HydroPowerPlant") )
-#        children.extend( getattr(object, "HydroPumpOpSchedule") )
-#        children.extend( getattr(object, "DrivenBy_SynchronousMachine") )
+        children.append( getattr(object, "MemberOf_HydroPowerPlant") )
+        children.append( getattr(object, "HydroPumpOpSchedule") )
+        children.append( getattr(object, "DrivenBy_SynchronousMachine") )
         return children
 
 
@@ -3751,9 +4541,22 @@ class EmissionCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [EmissionCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "EmissionCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "EmissionCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3765,7 +4568,7 @@ class EmissionCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ThermalGeneratingUnit") )
+        children.append( getattr(object, "ThermalGeneratingUnit") )
         return children
 
 
@@ -3815,9 +4618,22 @@ class GenUnitOpCostCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [GenUnitOpCostCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "GenUnitOpCostCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "GenUnitOpCostCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3829,7 +4645,7 @@ class GenUnitOpCostCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "GeneratingUnit") )
+        children.append( getattr(object, "GeneratingUnit") )
         return children
 
 
@@ -3879,9 +4695,25 @@ class HydroPowerPlantTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [HydroPowerPlant]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "HydroPowerPlantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "HydroPowerPlantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3895,8 +4727,8 @@ class HydroPowerPlantTreeNode(TreeNode):
         children.extend( getattr(object, "Contain_HydroGeneratingUnits") )
         children.extend( getattr(object, "Contain_HydroPumps") )
 
-#        children.extend( getattr(object, "Reservoir") )
-#        children.extend( getattr(object, "GenSourcePumpDischarge") )
+        children.append( getattr(object, "Reservoir") )
+        children.append( getattr(object, "GenSourcePumpDischarge") )
         return children
 
 
@@ -3946,9 +4778,25 @@ class HydroGeneratingUnitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [HydroGeneratingUnit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "HydroGeneratingUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "HydroGeneratingUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -3962,8 +4810,8 @@ class HydroGeneratingUnitTreeNode(TreeNode):
         children.extend( getattr(object, "HydroGeneratingEfficiencyCurves") )
         children.extend( getattr(object, "TailbayLossCurve") )
 
-#        children.extend( getattr(object, "MemberOf_HydroPowerPlant") )
-#        children.extend( getattr(object, "PenstockLossCurve") )
+        children.append( getattr(object, "MemberOf_HydroPowerPlant") )
+        children.append( getattr(object, "PenstockLossCurve") )
         return children
 
 
@@ -4013,9 +4861,22 @@ class CAESPlantTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [CAESPlant]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CAESPlantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "CAESPlantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4027,8 +4888,8 @@ class CAESPlantTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Contain_AirCompressor") )
-#        children.extend( getattr(object, "Contain_ThermalGeneratingUnit") )
+        children.append( getattr(object, "Contain_AirCompressor") )
+        children.append( getattr(object, "Contain_ThermalGeneratingUnit") )
         return children
 
 
@@ -4078,9 +4939,22 @@ class LevelVsVolumeCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [LevelVsVolumeCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "LevelVsVolumeCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "LevelVsVolumeCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4092,7 +4966,7 @@ class LevelVsVolumeCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Reservoir") )
+        children.append( getattr(object, "Reservoir") )
         return children
 
 
@@ -4142,9 +5016,22 @@ class InflowForecastTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [InflowForecast]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "InflowForecastTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "InflowForecastTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4156,7 +5043,7 @@ class InflowForecastTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Reservoir") )
+        children.append( getattr(object, "Reservoir") )
         return children
 
 
@@ -4206,9 +5093,22 @@ class SteamSendoutScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [SteamSendoutSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SteamSendoutScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "SteamSendoutScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4220,7 +5120,7 @@ class SteamSendoutScheduleTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "CogenerationPlant") )
+        children.append( getattr(object, "CogenerationPlant") )
         return children
 
 
@@ -4270,9 +5170,25 @@ class ThermalGeneratingUnitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ThermalGeneratingUnit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ThermalGeneratingUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ThermalGeneratingUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4288,14 +5204,14 @@ class ThermalGeneratingUnitTreeNode(TreeNode):
         children.extend( getattr(object, "EmmissionAccounts") )
         children.extend( getattr(object, "FossilFuels") )
 
-#        children.extend( getattr(object, "MemberOf_CogenerationPlant") )
-#        children.extend( getattr(object, "StartupModel") )
-#        children.extend( getattr(object, "IncrementalHeatRateCurve") )
-#        children.extend( getattr(object, "ShutdownCurve") )
-#        children.extend( getattr(object, "HeatRateCurve") )
-#        children.extend( getattr(object, "MemberOf_CAESPlant") )
-#        children.extend( getattr(object, "HeatInputCurve") )
-#        children.extend( getattr(object, "MemberOf_CombinedCyclePlant") )
+        children.append( getattr(object, "MemberOf_CogenerationPlant") )
+        children.append( getattr(object, "StartupModel") )
+        children.append( getattr(object, "IncrementalHeatRateCurve") )
+        children.append( getattr(object, "ShutdownCurve") )
+        children.append( getattr(object, "HeatRateCurve") )
+        children.append( getattr(object, "MemberOf_CAESPlant") )
+        children.append( getattr(object, "HeatInputCurve") )
+        children.append( getattr(object, "MemberOf_CombinedCyclePlant") )
         return children
 
 
@@ -4345,9 +5261,25 @@ class FossilFuelTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [FossilFuel]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "FossilFuelTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "FossilFuelTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4360,7 +5292,7 @@ class FossilFuelTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "FuelAllocationSchedule") )
 
-#        children.extend( getattr(object, "ThermalGeneratingUnit") )
+        children.append( getattr(object, "ThermalGeneratingUnit") )
         return children
 
 
@@ -4410,9 +5342,22 @@ class FuelAllocationScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [FuelAllocationSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "FuelAllocationScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "FuelAllocationScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4424,8 +5369,8 @@ class FuelAllocationScheduleTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "FossilFuel") )
-#        children.extend( getattr(object, "ThermalGeneratingUnit") )
+        children.append( getattr(object, "FossilFuel") )
+        children.append( getattr(object, "ThermalGeneratingUnit") )
         return children
 
 
@@ -4475,9 +5420,22 @@ class EmissionAccountTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [EmissionAccount]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "EmissionAccountTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "EmissionAccountTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4489,7 +5447,7 @@ class EmissionAccountTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ThermalGeneratingUnit") )
+        children.append( getattr(object, "ThermalGeneratingUnit") )
         return children
 
 
@@ -4539,9 +5497,22 @@ class TailbayLossCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [TailbayLossCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "TailbayLossCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "TailbayLossCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4553,7 +5524,7 @@ class TailbayLossCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "HydroGeneratingUnit") )
+        children.append( getattr(object, "HydroGeneratingUnit") )
         return children
 
 
@@ -4603,9 +5574,22 @@ class PenstockLossCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [PenstockLossCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "PenstockLossCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "PenstockLossCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4617,7 +5601,7 @@ class PenstockLossCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "HydroGeneratingUnit") )
+        children.append( getattr(object, "HydroGeneratingUnit") )
         return children
 
 
@@ -4667,9 +5651,22 @@ class StartMainFuelCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [StartMainFuelCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "StartMainFuelCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "StartMainFuelCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4681,7 +5678,7 @@ class StartMainFuelCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "StartupModel") )
+        children.append( getattr(object, "StartupModel") )
         return children
 
 
@@ -4731,9 +5728,25 @@ class ReservoirTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Reservoir]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ReservoirTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ReservoirTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4750,8 +5763,8 @@ class ReservoirTreeNode(TreeNode):
         children.extend( getattr(object, "HydroPowerPlants") )
         children.extend( getattr(object, "UpstreamFrom") )
 
-#        children.extend( getattr(object, "SpillsFrom") )
-#        children.extend( getattr(object, "TargetLevelSchedule") )
+        children.append( getattr(object, "SpillsFrom") )
+        children.append( getattr(object, "TargetLevelSchedule") )
         return children
 
 
@@ -4801,9 +5814,22 @@ class HydroPumpOpScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [HydroPumpOpSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "HydroPumpOpScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "HydroPumpOpScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4815,7 +5841,7 @@ class HydroPumpOpScheduleTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "HydroPump") )
+        children.append( getattr(object, "HydroPump") )
         return children
 
 
@@ -4865,9 +5891,22 @@ class HeatRateCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [HeatRateCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "HeatRateCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "HeatRateCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4879,7 +5918,7 @@ class HeatRateCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ThermalGeneratingUnit") )
+        children.append( getattr(object, "ThermalGeneratingUnit") )
         return children
 
 
@@ -4929,9 +5968,22 @@ class GenUnitOpScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [GenUnitOpSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "GenUnitOpScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "GenUnitOpScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -4943,7 +5995,7 @@ class GenUnitOpScheduleTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "GeneratingUnit") )
+        children.append( getattr(object, "GeneratingUnit") )
         return children
 
 
@@ -4993,9 +6045,25 @@ class CogenerationPlantTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [CogenerationPlant]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CogenerationPlantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "CogenerationPlantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5008,7 +6076,7 @@ class CogenerationPlantTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "Contain_ThermalGeneratingUnits") )
 
-#        children.extend( getattr(object, "SteamSendoutSchedule") )
+        children.append( getattr(object, "SteamSendoutSchedule") )
         return children
 
 
@@ -5058,9 +6126,22 @@ class SupercriticalTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Supercritical]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SupercriticalTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "SupercriticalTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5121,9 +6202,25 @@ class SteamTurbineTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [SteamTurbine]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SteamTurbineTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "SteamTurbineTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5185,9 +6282,22 @@ class CTTempActivePowerCurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [CTTempActivePowerCurve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CTTempActivePowerCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "CTTempActivePowerCurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5199,7 +6309,7 @@ class CTTempActivePowerCurveTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "CombustionTurbine") )
+        children.append( getattr(object, "CombustionTurbine") )
         return children
 
 
@@ -5249,9 +6359,25 @@ class PrimeMoverTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [PrimeMover]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "PrimeMoverTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "PrimeMoverTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5313,9 +6439,22 @@ class PWRSteamSupplyTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [PWRSteamSupply]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "PWRSteamSupplyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "PWRSteamSupplyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5376,9 +6515,22 @@ class CombustionTurbineTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [CombustionTurbine]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CombustionTurbineTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "CombustionTurbineTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5390,9 +6542,9 @@ class CombustionTurbineTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Drives_AirCompressor") )
-#        children.extend( getattr(object, "CTTempActivePowerCurve") )
-#        children.extend( getattr(object, "HeatRecoveryBoiler") )
+        children.append( getattr(object, "Drives_AirCompressor") )
+        children.append( getattr(object, "CTTempActivePowerCurve") )
+        children.append( getattr(object, "HeatRecoveryBoiler") )
         return children
 
 
@@ -5442,9 +6594,25 @@ class HeatRecoveryBoilerTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [HeatRecoveryBoiler]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "HeatRecoveryBoilerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "HeatRecoveryBoilerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5506,9 +6674,22 @@ class BWRSteamSupplyTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [BWRSteamSupply]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "BWRSteamSupplyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "BWRSteamSupplyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5569,9 +6750,22 @@ class HydroTurbineTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [HydroTurbine]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "HydroTurbineTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "HydroTurbineTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5632,9 +6826,22 @@ class DrumBoilerTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [DrumBoiler]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "DrumBoilerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "DrumBoilerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5695,9 +6902,22 @@ class FossilSteamSupplyTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [FossilSteamSupply]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "FossilSteamSupplyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "FossilSteamSupplyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5758,9 +6978,22 @@ class SubcriticalTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Subcritical]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SubcriticalTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "SubcriticalTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5821,9 +7054,25 @@ class SteamSupplyTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [SteamSupply]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SteamSupplyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "SteamSupplyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5885,9 +7134,25 @@ class DiscreteTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Discrete]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "DiscreteTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "DiscreteTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5900,8 +7165,8 @@ class DiscreteTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "Contain_MeasurementValues") )
 
-#        children.extend( getattr(object, "ValueAliasSet") )
-#        children.extend( getattr(object, "ControlledBy_Control") )
+        children.append( getattr(object, "ValueAliasSet") )
+        children.append( getattr(object, "ControlledBy_Control") )
         return children
 
 
@@ -5951,9 +7216,22 @@ class MeasurementTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Measurement]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "MeasurementTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "MeasurementTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -5965,10 +7243,10 @@ class MeasurementTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Terminal") )
-#        children.extend( getattr(object, "MemberOf_PSR") )
-#        children.extend( getattr(object, "Unit") )
-#        children.extend( getattr(object, "MeasurementType") )
+        children.append( getattr(object, "Terminal") )
+        children.append( getattr(object, "MemberOf_PSR") )
+        children.append( getattr(object, "Unit") )
+        children.append( getattr(object, "MeasurementType") )
         return children
 
 
@@ -6018,9 +7296,22 @@ class SetPointTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [SetPoint]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SetPointTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "SetPointTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6032,7 +7323,7 @@ class SetPointTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "MeasuredBy_Measurement") )
+        children.append( getattr(object, "MeasuredBy_Measurement") )
         return children
 
 
@@ -6082,9 +7373,22 @@ class ControlTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Control]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ControlTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ControlTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6096,10 +7400,10 @@ class ControlTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Unit") )
-#        children.extend( getattr(object, "ControlType") )
-#        children.extend( getattr(object, "RemoteControl") )
-#        children.extend( getattr(object, "ControlledBy_RegulatingCondEq") )
+        children.append( getattr(object, "Unit") )
+        children.append( getattr(object, "ControlType") )
+        children.append( getattr(object, "RemoteControl") )
+        children.append( getattr(object, "ControlledBy_RegulatingCondEq") )
         return children
 
 
@@ -6149,9 +7453,25 @@ class ControlTypeTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ControlType]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ControlTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ControlTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6213,9 +7533,22 @@ class DiscreteValueTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [DiscreteValue]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "DiscreteValueTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "DiscreteValueTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6227,7 +7560,7 @@ class DiscreteValueTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "MemberOf_Measurement") )
+        children.append( getattr(object, "MemberOf_Measurement") )
         return children
 
 
@@ -6277,9 +7610,25 @@ class AccumulatorTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Accumulator]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "AccumulatorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "AccumulatorTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6342,9 +7691,22 @@ class LimitSetTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [LimitSet]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "LimitSetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "LimitSetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6405,9 +7767,22 @@ class AnalogLimitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [AnalogLimit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "AnalogLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "AnalogLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6419,7 +7794,7 @@ class AnalogLimitTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "LimitSet") )
+        children.append( getattr(object, "LimitSet") )
         return children
 
 
@@ -6469,9 +7844,22 @@ class MeasurementValueTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [MeasurementValue]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "MeasurementValueTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "MeasurementValueTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6483,9 +7871,9 @@ class MeasurementValueTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "MeasurementValueQuality") )
-#        children.extend( getattr(object, "RemoteSource") )
-#        children.extend( getattr(object, "MeasurementValueSource") )
+        children.append( getattr(object, "MeasurementValueQuality") )
+        children.append( getattr(object, "RemoteSource") )
+        children.append( getattr(object, "MeasurementValueSource") )
         return children
 
 
@@ -6535,9 +7923,25 @@ class ValueAliasSetTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ValueAliasSet]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ValueAliasSetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ValueAliasSetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6601,9 +8005,22 @@ class StringMeasurementValueTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [StringMeasurementValue]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "StringMeasurementValueTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "StringMeasurementValueTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6615,7 +8032,7 @@ class StringMeasurementValueTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "MemberOf_Measurement") )
+        children.append( getattr(object, "MemberOf_Measurement") )
         return children
 
 
@@ -6665,9 +8082,22 @@ class Quality61850TreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Quality61850]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "Quality61850TreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "Quality61850TreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6728,9 +8158,22 @@ class LimitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Limit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "LimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "LimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6791,9 +8234,25 @@ class MeasurementTypeTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [MeasurementType]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "MeasurementTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "MeasurementTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6855,9 +8314,22 @@ class AccumulatorLimitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [AccumulatorLimit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "AccumulatorLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "AccumulatorLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6869,7 +8341,7 @@ class AccumulatorLimitTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "LimitSet") )
+        children.append( getattr(object, "LimitSet") )
         return children
 
 
@@ -6919,9 +8391,25 @@ class StringMeasurementTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [StringMeasurement]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "StringMeasurementTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "StringMeasurementTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6983,9 +8471,22 @@ class ValueToAliasTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ValueToAlias]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ValueToAliasTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ValueToAliasTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -6997,7 +8498,7 @@ class ValueToAliasTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ValueAliasSet") )
+        children.append( getattr(object, "ValueAliasSet") )
         return children
 
 
@@ -7047,9 +8548,25 @@ class AnalogValueTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [AnalogValue]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "AnalogValueTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "AnalogValueTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7063,7 +8580,7 @@ class AnalogValueTreeNode(TreeNode):
         children.extend( getattr(object, "AltGeneratingUnit") )
         children.extend( getattr(object, "AltTieMeas") )
 
-#        children.extend( getattr(object, "MemberOf_Measurement") )
+        children.append( getattr(object, "MemberOf_Measurement") )
         return children
 
 
@@ -7113,9 +8630,22 @@ class MeasurementValueQualityTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [MeasurementValueQuality]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "MeasurementValueQualityTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "MeasurementValueQualityTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7127,7 +8657,7 @@ class MeasurementValueQualityTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "MeasurementValue") )
+        children.append( getattr(object, "MeasurementValue") )
         return children
 
 
@@ -7177,9 +8707,25 @@ class MeasurementValueSourceTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [MeasurementValueSource]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "MeasurementValueSourceTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "MeasurementValueSourceTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7241,9 +8787,25 @@ class AccumulatorLimitSetTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [AccumulatorLimitSet]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "AccumulatorLimitSetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "AccumulatorLimitSetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7306,9 +8868,25 @@ class AnalogLimitSetTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [AnalogLimitSet]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "AnalogLimitSetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "AnalogLimitSetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7371,9 +8949,22 @@ class CommandTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Command]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CommandTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "CommandTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7385,8 +8976,8 @@ class CommandTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ValueAliasSet") )
-#        children.extend( getattr(object, "MeasuredBy_Measurement") )
+        children.append( getattr(object, "ValueAliasSet") )
+        children.append( getattr(object, "MeasuredBy_Measurement") )
         return children
 
 
@@ -7436,9 +9027,25 @@ class AnalogTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Analog]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "AnalogTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "AnalogTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7452,7 +9059,7 @@ class AnalogTreeNode(TreeNode):
         children.extend( getattr(object, "Contain_MeasurementValues") )
         children.extend( getattr(object, "LimitSets") )
 
-#        children.extend( getattr(object, "ControlledBy_Control") )
+        children.append( getattr(object, "ControlledBy_Control") )
         return children
 
 
@@ -7502,9 +9109,22 @@ class AccumulatorValueTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [AccumulatorValue]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "AccumulatorValueTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "AccumulatorValueTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7516,7 +9136,7 @@ class AccumulatorValueTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "MemberOf_Measurement") )
+        children.append( getattr(object, "MemberOf_Measurement") )
         return children
 
 
@@ -7566,9 +9186,25 @@ class SubLoadAreaTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [SubLoadArea]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SubLoadAreaTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "SubLoadAreaTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7581,7 +9217,7 @@ class SubLoadAreaTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "LoadGroups") )
 
-#        children.extend( getattr(object, "LoadArea") )
+        children.append( getattr(object, "LoadArea") )
         return children
 
 
@@ -7631,9 +9267,22 @@ class LoadTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Load]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "LoadTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "LoadTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7694,9 +9343,25 @@ class LoadResponseCharacteristicTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [LoadResponseCharacteristic]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "LoadResponseCharacteristicTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "LoadResponseCharacteristicTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7758,9 +9423,25 @@ class SeasonTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Season]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SeasonTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "SeasonTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7822,9 +9503,25 @@ class ConformLoadGroupTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ConformLoadGroup]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ConformLoadGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ConformLoadGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7887,9 +9584,22 @@ class ConformLoadTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ConformLoad]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ConformLoadTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ConformLoadTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -7901,7 +9611,7 @@ class ConformLoadTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "LoadGroup") )
+        children.append( getattr(object, "LoadGroup") )
         return children
 
 
@@ -7951,9 +9661,25 @@ class LoadAreaTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [LoadArea]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "LoadAreaTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "LoadAreaTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8015,9 +9741,25 @@ class PowerCutZoneTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [PowerCutZone]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "PowerCutZoneTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "PowerCutZoneTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8079,9 +9821,22 @@ class ConformLoadScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ConformLoadSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ConformLoadScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ConformLoadScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8093,7 +9848,7 @@ class ConformLoadScheduleTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ConformLoadGroup") )
+        children.append( getattr(object, "ConformLoadGroup") )
         return children
 
 
@@ -8143,9 +9898,22 @@ class StationSupplyTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [StationSupply]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "StationSupplyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "StationSupplyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8206,9 +9974,25 @@ class DayTypeTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [DayType]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "DayTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "DayTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8270,9 +10054,22 @@ class NonConformLoadScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [NonConformLoadSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "NonConformLoadScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "NonConformLoadScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8284,7 +10081,7 @@ class NonConformLoadScheduleTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "NonConformLoadGroup") )
+        children.append( getattr(object, "NonConformLoadGroup") )
         return children
 
 
@@ -8334,9 +10131,22 @@ class CustomerLoadTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [CustomerLoad]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CustomerLoadTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "CustomerLoadTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8397,9 +10207,22 @@ class LoadGroupTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [LoadGroup]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "LoadGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "LoadGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8411,7 +10234,7 @@ class LoadGroupTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "SubLoadArea") )
+        children.append( getattr(object, "SubLoadArea") )
         return children
 
 
@@ -8461,9 +10284,25 @@ class NonConformLoadGroupTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [NonConformLoadGroup]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "NonConformLoadGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "NonConformLoadGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8526,9 +10365,22 @@ class EnergyAreaTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [EnergyArea]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "EnergyAreaTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "EnergyAreaTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8540,7 +10392,7 @@ class EnergyAreaTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ControlArea") )
+        children.append( getattr(object, "ControlArea") )
         return children
 
 
@@ -8590,9 +10442,22 @@ class SeasonDayTypeScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [SeasonDayTypeSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SeasonDayTypeScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "SeasonDayTypeScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8604,8 +10469,8 @@ class SeasonDayTypeScheduleTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "DayType") )
-#        children.extend( getattr(object, "Season") )
+        children.append( getattr(object, "DayType") )
+        children.append( getattr(object, "Season") )
         return children
 
 
@@ -8655,9 +10520,22 @@ class NonConformLoadTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [NonConformLoad]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "NonConformLoadTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "NonConformLoadTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8669,7 +10547,7 @@ class NonConformLoadTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "LoadGroup") )
+        children.append( getattr(object, "LoadGroup") )
         return children
 
 
@@ -8719,9 +10597,22 @@ class InductionMotorLoadTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [InductionMotorLoad]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "InductionMotorLoadTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "InductionMotorLoadTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8782,9 +10673,25 @@ class CurveTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Curve]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "CurveTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8846,9 +10753,25 @@ class VoltageLevelTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [VoltageLevel]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "VoltageLevelTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "VoltageLevelTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8861,8 +10784,8 @@ class VoltageLevelTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "Contains_Bays") )
 
-#        children.extend( getattr(object, "BaseVoltage") )
-#        children.extend( getattr(object, "MemberOf_Substation") )
+        children.append( getattr(object, "BaseVoltage") )
+        children.append( getattr(object, "MemberOf_Substation") )
         return children
 
 
@@ -8912,9 +10835,25 @@ class ReportingGroupTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ReportingGroup]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ReportingGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ReportingGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8929,7 +10868,7 @@ class ReportingGroupTreeNode(TreeNode):
         children.extend( getattr(object, "BusNameMarker") )
         children.extend( getattr(object, "TopologicalNode") )
 
-#        children.extend( getattr(object, "ReportingSuperGroup") )
+        children.append( getattr(object, "ReportingSuperGroup") )
         return children
 
 
@@ -8979,9 +10918,25 @@ class ModelingAuthoritySetTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ModelingAuthoritySet]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ModelingAuthoritySetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ModelingAuthoritySetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -8994,7 +10949,7 @@ class ModelingAuthoritySetTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "IdentifiedObjects") )
 
-#        children.extend( getattr(object, "ModelingAuthority") )
+        children.append( getattr(object, "ModelingAuthority") )
         return children
 
 
@@ -9044,9 +10999,25 @@ class OperatingParticipantTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [OperatingParticipant]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "OperatingParticipantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "OperatingParticipantTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9108,9 +11079,25 @@ class ReportingSuperGroupTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ReportingSuperGroup]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ReportingSuperGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ReportingSuperGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9172,9 +11159,25 @@ class SubstationTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Substation]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SubstationTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "SubstationTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9188,7 +11191,7 @@ class SubstationTreeNode(TreeNode):
         children.extend( getattr(object, "Contains_VoltageLevels") )
         children.extend( getattr(object, "Contains_Bays") )
 
-#        children.extend( getattr(object, "Region") )
+        children.append( getattr(object, "Region") )
         return children
 
 
@@ -9238,9 +11241,25 @@ class ConductingEquipmentTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ConductingEquipment]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ConductingEquipmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ConductingEquipmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9255,7 +11274,7 @@ class ConductingEquipmentTreeNode(TreeNode):
         children.extend( getattr(object, "ProtectionEquipments") )
         children.extend( getattr(object, "ClearanceTags") )
 
-#        children.extend( getattr(object, "BaseVoltage") )
+        children.append( getattr(object, "BaseVoltage") )
         return children
 
 
@@ -9305,9 +11324,22 @@ class IrregularTimePointTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [IrregularTimePoint]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "IrregularTimePointTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "IrregularTimePointTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9319,7 +11351,7 @@ class IrregularTimePointTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "IntervalSchedule") )
+        children.append( getattr(object, "IntervalSchedule") )
         return children
 
 
@@ -9369,9 +11401,25 @@ class ConnectivityNodeContainerTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ConnectivityNodeContainer]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ConnectivityNodeContainerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ConnectivityNodeContainerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9434,9 +11482,25 @@ class GeographicalRegionTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [GeographicalRegion]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "GeographicalRegionTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "GeographicalRegionTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9498,9 +11562,25 @@ class UnitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Unit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "UnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "UnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9564,9 +11644,25 @@ class EquipmentContainerTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [EquipmentContainer]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "EquipmentContainerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "EquipmentContainerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9628,9 +11724,25 @@ class ModelingAuthorityTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ModelingAuthority]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ModelingAuthorityTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ModelingAuthorityTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9692,9 +11804,25 @@ class BaseVoltageTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [BaseVoltage]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "BaseVoltageTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "BaseVoltageTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9757,9 +11885,22 @@ class OperatingShareTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [OperatingShare]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "OperatingShareTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "OperatingShareTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9771,8 +11912,8 @@ class OperatingShareTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "OperatingParticipant") )
-#        children.extend( getattr(object, "PowerSystemResource") )
+        children.append( getattr(object, "OperatingParticipant") )
+        children.append( getattr(object, "PowerSystemResource") )
         return children
 
 
@@ -9822,9 +11963,22 @@ class BasicIntervalScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [BasicIntervalSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "BasicIntervalScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "BasicIntervalScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9885,9 +12039,22 @@ class CurveDataTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [CurveData]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CurveDataTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "CurveDataTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9899,7 +12066,7 @@ class CurveDataTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "CurveSchedule") )
+        children.append( getattr(object, "CurveSchedule") )
         return children
 
 
@@ -9949,9 +12116,25 @@ class EquipmentTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Equipment]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "EquipmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "EquipmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -9965,7 +12148,7 @@ class EquipmentTreeNode(TreeNode):
         children.extend( getattr(object, "OperationalLimitSet") )
         children.extend( getattr(object, "ContingencyEquipment") )
 
-#        children.extend( getattr(object, "MemberOf_EquipmentContainer") )
+        children.append( getattr(object, "MemberOf_EquipmentContainer") )
         return children
 
 
@@ -10015,9 +12198,25 @@ class RegularIntervalScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [RegularIntervalSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RegularIntervalScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "RegularIntervalScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10079,9 +12278,25 @@ class IrregularIntervalScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [IrregularIntervalSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "IrregularIntervalScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "IrregularIntervalScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10143,9 +12358,22 @@ class BayTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Bay]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "BayTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "BayTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10157,8 +12385,8 @@ class BayTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "MemberOf_Substation") )
-#        children.extend( getattr(object, "MemberOf_VoltageLevel") )
+        children.append( getattr(object, "MemberOf_Substation") )
+        children.append( getattr(object, "MemberOf_VoltageLevel") )
         return children
 
 
@@ -10208,9 +12436,22 @@ class RegularTimePointTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [RegularTimePoint]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RegularTimePointTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "RegularTimePointTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10222,7 +12463,7 @@ class RegularTimePointTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "IntervalSchedule") )
+        children.append( getattr(object, "IntervalSchedule") )
         return children
 
 
@@ -10272,9 +12513,25 @@ class TerminalTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Terminal]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "TerminalTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "TerminalTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10291,9 +12548,9 @@ class TerminalTreeNode(TreeNode):
         children.extend( getattr(object, "RegulatingControl") )
         children.extend( getattr(object, "Measurements") )
 
-#        children.extend( getattr(object, "ConductingEquipment") )
-#        children.extend( getattr(object, "TopologicalNode") )
-#        children.extend( getattr(object, "ConnectivityNode") )
+        children.append( getattr(object, "ConductingEquipment") )
+        children.append( getattr(object, "TopologicalNode") )
+        children.append( getattr(object, "ConnectivityNode") )
         return children
 
 
@@ -10343,9 +12600,25 @@ class SubGeographicalRegionTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [SubGeographicalRegion]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SubGeographicalRegionTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "SubGeographicalRegionTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10359,7 +12632,7 @@ class SubGeographicalRegionTreeNode(TreeNode):
         children.extend( getattr(object, "Lines") )
         children.extend( getattr(object, "Substations") )
 
-#        children.extend( getattr(object, "Region") )
+        children.append( getattr(object, "Region") )
         return children
 
 
@@ -10409,9 +12682,25 @@ class PowerSystemResourceTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [PowerSystemResource]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "PowerSystemResourceTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "PowerSystemResourceTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10428,8 +12717,8 @@ class PowerSystemResourceTreeNode(TreeNode):
         children.extend( getattr(object, "PsrLists") )
         children.extend( getattr(object, "Contains_Measurements") )
 
-#        children.extend( getattr(object, "PSRType") )
-#        children.extend( getattr(object, "OutageSchedule") )
+        children.append( getattr(object, "PSRType") )
+        children.append( getattr(object, "OutageSchedule") )
         return children
 
 
@@ -10479,9 +12768,22 @@ class BasePowerTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [BasePower]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "BasePowerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "BasePowerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10542,9 +12844,25 @@ class PSRTypeTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [PSRType]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "PSRTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "PSRTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10606,9 +12924,25 @@ class PsrListTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [PsrList]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "PsrListTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "PsrListTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10670,9 +13004,25 @@ class CompanyTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Company]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CompanyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "CompanyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10734,9 +13084,22 @@ class IdentifiedObjectTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [IdentifiedObject]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "IdentifiedObjectTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "IdentifiedObjectTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10748,7 +13111,7 @@ class IdentifiedObjectTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ModelingAuthoritySet") )
+        children.append( getattr(object, "ModelingAuthoritySet") )
         return children
 
 
@@ -10798,9 +13161,25 @@ class ContingencyTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [Contingency]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ContingencyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ContingencyTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10862,9 +13241,22 @@ class ContingencyEquipmentTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ContingencyEquipment]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ContingencyEquipmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ContingencyEquipmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10876,7 +13268,7 @@ class ContingencyEquipmentTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Equipment") )
+        children.append( getattr(object, "Equipment") )
         return children
 
 
@@ -10926,9 +13318,22 @@ class ContingencyElementTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ContingencyElement]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ContingencyElementTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ContingencyElementTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -10940,7 +13345,7 @@ class ContingencyElementTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Contingency") )
+        children.append( getattr(object, "Contingency") )
         return children
 
 
@@ -10990,9 +13395,25 @@ class ClearanceTagTypeTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ClearanceTagType]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ClearanceTagTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ClearanceTagTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11054,9 +13475,25 @@ class SwitchingOperationTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [SwitchingOperation]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SwitchingOperationTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "SwitchingOperationTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11069,7 +13506,7 @@ class SwitchingOperationTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "Switches") )
 
-#        children.extend( getattr(object, "OutageSchedule") )
+        children.append( getattr(object, "OutageSchedule") )
         return children
 
 
@@ -11119,9 +13556,25 @@ class OutageScheduleTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [OutageSchedule]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "OutageScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "OutageScheduleTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11134,7 +13587,7 @@ class OutageScheduleTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "SwitchingOperations") )
 
-#        children.extend( getattr(object, "PSR") )
+        children.append( getattr(object, "PSR") )
         return children
 
 
@@ -11184,9 +13637,22 @@ class ClearanceTagTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ClearanceTag]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ClearanceTagTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ClearanceTagTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11198,8 +13664,8 @@ class ClearanceTagTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ConductingEquipment") )
-#        children.extend( getattr(object, "ClearanceTagType") )
+        children.append( getattr(object, "ConductingEquipment") )
+        children.append( getattr(object, "ClearanceTagType") )
         return children
 
 
@@ -11249,9 +13715,22 @@ class RemotePointTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [RemotePoint]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RemotePointTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "RemotePointTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11263,7 +13742,7 @@ class RemotePointTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "MemberOf_RemoteUnit") )
+        children.append( getattr(object, "MemberOf_RemoteUnit") )
         return children
 
 
@@ -11313,9 +13792,22 @@ class RemoteControlTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [RemoteControl]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RemoteControlTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "RemoteControlTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11327,7 +13819,7 @@ class RemoteControlTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Control") )
+        children.append( getattr(object, "Control") )
         return children
 
 
@@ -11377,9 +13869,22 @@ class RemoteSourceTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [RemoteSource]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RemoteSourceTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "RemoteSourceTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11391,7 +13896,7 @@ class RemoteSourceTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "MeasurementValue") )
+        children.append( getattr(object, "MeasurementValue") )
         return children
 
 
@@ -11441,9 +13946,25 @@ class CommunicationLinkTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [CommunicationLink]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CommunicationLinkTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "CommunicationLinkTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11505,9 +14026,25 @@ class RemoteUnitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [RemoteUnit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RemoteUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "RemoteUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11570,9 +14107,22 @@ class OperationalLimitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [OperationalLimit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "OperationalLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "OperationalLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11584,8 +14134,8 @@ class OperationalLimitTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "OperationalLimitType") )
-#        children.extend( getattr(object, "OperationalLimitSet") )
+        children.append( getattr(object, "OperationalLimitType") )
+        children.append( getattr(object, "OperationalLimitSet") )
         return children
 
 
@@ -11635,9 +14185,25 @@ class BranchGroupTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [BranchGroup]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "BranchGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "BranchGroupTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11699,9 +14265,25 @@ class OperationalLimitTypeTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [OperationalLimitType]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "OperationalLimitTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "OperationalLimitTypeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11763,9 +14345,22 @@ class ActivePowerLimitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ActivePowerLimit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ActivePowerLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ActivePowerLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11826,9 +14421,22 @@ class CurrentLimitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [CurrentLimit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CurrentLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "CurrentLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11889,9 +14497,25 @@ class OperationalLimitSetTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [OperationalLimitSet]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "OperationalLimitSetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "OperationalLimitSetTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -11904,8 +14528,8 @@ class OperationalLimitSetTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "OperationalLimitValue") )
 
-#        children.extend( getattr(object, "Terminal") )
-#        children.extend( getattr(object, "Equipment") )
+        children.append( getattr(object, "Terminal") )
+        children.append( getattr(object, "Equipment") )
         return children
 
 
@@ -11955,9 +14579,22 @@ class VoltageLimitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [VoltageLimit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "VoltageLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "VoltageLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12018,9 +14655,22 @@ class BranchGroupTerminalTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [BranchGroupTerminal]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "BranchGroupTerminalTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "BranchGroupTerminalTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12032,8 +14682,8 @@ class BranchGroupTerminalTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "BranchGroup") )
-#        children.extend( getattr(object, "Terminal") )
+        children.append( getattr(object, "BranchGroup") )
+        children.append( getattr(object, "Terminal") )
         return children
 
 
@@ -12083,9 +14733,22 @@ class ApparentPowerLimitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ApparentPowerLimit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ApparentPowerLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "ApparentPowerLimitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12146,9 +14809,25 @@ class ControlAreaGeneratingUnitTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ControlAreaGeneratingUnit]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ControlAreaGeneratingUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ControlAreaGeneratingUnitTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12161,8 +14840,8 @@ class ControlAreaGeneratingUnitTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "AltGeneratingUnitMeas") )
 
-#        children.extend( getattr(object, "GeneratingUnit") )
-#        children.extend( getattr(object, "ControlArea") )
+        children.append( getattr(object, "GeneratingUnit") )
+        children.append( getattr(object, "ControlArea") )
         return children
 
 
@@ -12212,9 +14891,25 @@ class ControlAreaTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ControlArea]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ControlAreaTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ControlAreaTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12230,7 +14925,7 @@ class ControlAreaTreeNode(TreeNode):
         children.extend( getattr(object, "ControlAreaGeneratingUnit") )
         children.extend( getattr(object, "TieFlow") )
 
-#        children.extend( getattr(object, "EnergyArea") )
+        children.append( getattr(object, "EnergyArea") )
         return children
 
 
@@ -12280,9 +14975,22 @@ class AltGeneratingUnitMeasTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [AltGeneratingUnitMeas]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "AltGeneratingUnitMeasTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "AltGeneratingUnitMeasTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12294,8 +15002,8 @@ class AltGeneratingUnitMeasTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "ControlAreaGeneratingUnit") )
-#        children.extend( getattr(object, "AnalogValue") )
+        children.append( getattr(object, "ControlAreaGeneratingUnit") )
+        children.append( getattr(object, "AnalogValue") )
         return children
 
 
@@ -12345,9 +15053,25 @@ class TieFlowTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [TieFlow]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "TieFlowTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "TieFlowTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12360,8 +15084,8 @@ class TieFlowTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "AltTieMeas") )
 
-#        children.extend( getattr(object, "Terminal") )
-#        children.extend( getattr(object, "ControlArea") )
+        children.append( getattr(object, "Terminal") )
+        children.append( getattr(object, "ControlArea") )
         return children
 
 
@@ -12411,9 +15135,22 @@ class AltTieMeasTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [AltTieMeas]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "AltTieMeasTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "AltTieMeasTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12425,8 +15162,8 @@ class AltTieMeasTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "TieFlow") )
-#        children.extend( getattr(object, "AnalogValue") )
+        children.append( getattr(object, "TieFlow") )
+        children.append( getattr(object, "AnalogValue") )
         return children
 
 
@@ -12476,9 +15213,22 @@ class EquivalentBranchTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [EquivalentBranch]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "EquivalentBranchTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "EquivalentBranchTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12539,9 +15289,22 @@ class EquivalentShuntTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [EquivalentShunt]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "EquivalentShuntTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "EquivalentShuntTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12602,9 +15365,25 @@ class EquivalentNetworkTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [EquivalentNetwork]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "EquivalentNetworkTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "EquivalentNetworkTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12666,9 +15445,22 @@ class EquivalentEquipmentTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [EquivalentEquipment]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "EquivalentEquipmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "EquivalentEquipmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12680,7 +15472,7 @@ class EquivalentEquipmentTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "EquivalentNetwork") )
+        children.append( getattr(object, "EquivalentNetwork") )
         return children
 
 
@@ -12730,9 +15522,25 @@ class TopologicalNodeTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [TopologicalNode]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "TopologicalNodeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "TopologicalNodeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12746,11 +15554,11 @@ class TopologicalNodeTreeNode(TreeNode):
         children.extend( getattr(object, "ConnectivityNodes") )
         children.extend( getattr(object, "Terminal") )
 
-#        children.extend( getattr(object, "ReportingGroup") )
-#        children.extend( getattr(object, "AngleRef_TopologicalIsland") )
-#        children.extend( getattr(object, "ConnectivityNodeContainer") )
-#        children.extend( getattr(object, "TopologicalIsland") )
-#        children.extend( getattr(object, "ControlArea") )
+        children.append( getattr(object, "ReportingGroup") )
+        children.append( getattr(object, "AngleRef_TopologicalIsland") )
+        children.append( getattr(object, "ConnectivityNodeContainer") )
+        children.append( getattr(object, "TopologicalIsland") )
+        children.append( getattr(object, "ControlArea") )
         return children
 
 
@@ -12800,9 +15608,25 @@ class TopologicalIslandTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [TopologicalIsland]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "TopologicalIslandTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "TopologicalIslandTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12815,7 +15639,7 @@ class TopologicalIslandTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "TopologicalNodes") )
 
-#        children.extend( getattr(object, "AngleRef_TopologicalNode") )
+        children.append( getattr(object, "AngleRef_TopologicalNode") )
         return children
 
 
@@ -12865,9 +15689,25 @@ class ConnectivityNodeTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ConnectivityNode]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ConnectivityNodeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ConnectivityNodeTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12880,9 +15720,9 @@ class ConnectivityNodeTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "Terminals") )
 
-#        children.extend( getattr(object, "MemberOf_EquipmentContainer") )
-#        children.extend( getattr(object, "BusNameMarker") )
-#        children.extend( getattr(object, "TopologicalNode") )
+        children.append( getattr(object, "MemberOf_EquipmentContainer") )
+        children.append( getattr(object, "BusNameMarker") )
+        children.append( getattr(object, "TopologicalNode") )
         return children
 
 
@@ -12932,9 +15772,25 @@ class BusNameMarkerTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [BusNameMarker]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "BusNameMarkerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "BusNameMarkerTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -12947,8 +15803,8 @@ class BusNameMarkerTreeNode(TreeNode):
         children = []
         children.extend( getattr(object, "ConnectivityNode") )
 
-#        children.extend( getattr(object, "ControlArea") )
-#        children.extend( getattr(object, "ReportingGroup") )
+        children.append( getattr(object, "ControlArea") )
+        children.append( getattr(object, "ReportingGroup") )
         return children
 
 
@@ -12998,9 +15854,22 @@ class SynchrocheckRelayTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [SynchrocheckRelay]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "SynchrocheckRelayTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "SynchrocheckRelayTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -13061,9 +15930,25 @@ class ProtectionEquipmentTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [ProtectionEquipment]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ProtectionEquipmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of group item icon.
+    icon_group = Str( '<group>' )
+
+    # Name of opened group item icon.
+    icon_open = Str( '<open>' )
+    #--------------------------------------------------------------------------
+    #  End "ProtectionEquipmentTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -13077,7 +15962,7 @@ class ProtectionEquipmentTreeNode(TreeNode):
         children.extend( getattr(object, "Operates_Breakers") )
         children.extend( getattr(object, "ConductingEquipments") )
 
-#        children.extend( getattr(object, "Unit") )
+        children.append( getattr(object, "Unit") )
         return children
 
 
@@ -13127,9 +16012,22 @@ class CurrentRelayTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [CurrentRelay]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "CurrentRelayTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "CurrentRelayTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -13190,9 +16088,22 @@ class RecloseSequenceTreeNode(TreeNode):
     # List of object classes and/or interfaces that the node applies to.
     node_for = [RecloseSequence]
 
-    # Function for handling double-clicking an object
+    # Function for handling double-clicking an object.
 #    on_dclick = lambda obj: obj.edit_traits(kind="livemodal")
 
+    # Resource path used to locate the node icon.
+    icon_path = Str(IMAGE_PATH)
+
+    #--------------------------------------------------------------------------
+    #  Begin "RecloseSequenceTreeNode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    # Name of leaf item icon.
+    icon_item = Str( '<item>' )
+    #--------------------------------------------------------------------------
+    #  End "RecloseSequenceTreeNode" user definitions:
+    #--------------------------------------------------------------------------
 
     def allows_children ( self, object ):
         """ Returns whether this object can have children.
@@ -13204,7 +16115,7 @@ class RecloseSequenceTreeNode(TreeNode):
         """
         children = []
 
-#        children.extend( getattr(object, "Breaker") )
+        children.append( getattr(object, "Breaker") )
         return children
 
 

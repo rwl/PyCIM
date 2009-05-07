@@ -274,7 +274,8 @@ class CIMReferenceSink:
 #------------------------------------------------------------------------------
 
 class CIMReader:
-    """ Reads RDF/XML files with CIM data.
+    """ Reads CIM RDF/XML data files and returns a dictionary that maps
+        unique resource identifiers to CIM object instances.
     """
 
     filename = ""
@@ -357,9 +358,8 @@ class CIMReader:
 #        RDFXML.parseURI(filename, sink=ref_sink)
         RDFXML.parseRDF(s, base=filename, sink=ref_sink)
 
-        elements = attr_sink.uri_object_map.values()
-
-        return elements
+        # Return a map of unique resource identifiers to CIM objects.
+        return attr_sink.uri_object_map
 
 #------------------------------------------------------------------------------
 #  "CIMReader2" class:
