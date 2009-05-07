@@ -30,6 +30,8 @@ from enthought.traits.ui.api \
 
 from envisage.resource.resource_adapter import ResourceEditor
 
+from CIM import CommonInformationModel
+
 #------------------------------------------------------------------------------
 #  "CIMGraphEditor" class:
 #------------------------------------------------------------------------------
@@ -55,7 +57,8 @@ class CIMGraphEditor(ResourceEditor):
         """
         uri_element_map = self.editor_input.load()
 
-        self.document = Model( Contains=uri_element_map.values() )
+        self.document = CommonInformationModel(
+            Elements=uri_element_map.values())
 
         ui = self.edit_traits( view=self._create_view(), parent=parent,
             kind="subpanel" )

@@ -31,10 +31,10 @@ from enthought.traits.ui.api \
 #from envisage.resource.resource_editor import ResourceEditor
 from envisage.resource.resource_adapter import ResourceEditor
 
-from CIM import Root
+from CIM import Element
 from CIM.Core import GeographicalRegion, VoltageLevel
 #from CIM13TreeEditor import cim13_tree_editor
-from CIM13TreeNodeEditor import TreeRoot, RegionContainer, tree_nodes
+from CIM13r19TreeNodeEditor import tree_nodes
 
 #------------------------------------------------------------------------------
 #  "RegionContainer" class:
@@ -44,8 +44,8 @@ class RegionContainer(HasTraits):
     """ Container of GeographicalRegion objects.
     """
     # All CIM elements.
-#    elements = List( Instance(Root) )
-    uri_element_map = Dict(Str, Root)
+#    elements = List( Instance(Element) )
+    uri_element_map = Dict(Str, Element)
 
     # Subset of the CIM elements of type GeographicalRegion.
 #    regions = Property(depends_on=["elements", "elements_items"])

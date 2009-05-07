@@ -35,7 +35,7 @@ from enthought.traits.ui.api \
 
 from enthought.traits.ui.menu import Action, Menu
 
-from CIM import Root
+from CIM import Element
 
 from CIM.Core \
     import GeographicalRegion, SubGeographicalRegion, Substation, \
@@ -48,7 +48,7 @@ from CIM.CIMReader import read_cim
 #from CIM13TreeEditor import tree_nodes, GeographicalRegionTreeNode, \
 #    SubGeographicalRegionTreeNode, IdentifiedObjectTreeNode
 
-from CIM13TreeNodeEditor \
+from CIM13r19TreeNodeEditor \
     import tree_nodes, GeographicalRegion_TreeNode, \
     SubGeographicalRegion_TreeNode
 
@@ -195,7 +195,7 @@ RDFXML_FILE = join(dirname(__file__), "data", "10Bus.xml")
 
 class RegionContainer(HasTraits):
 
-    elements = List( Instance(Root) )
+    elements = List( Instance(Element) )
 
     regions = Property(depends_on=["elements", "elements_items"])
 

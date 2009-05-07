@@ -15,6 +15,6 @@
 # Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #------------------------------------------------------------------------------
 
-from CIM13.Equivalents import *
+from CIM13r19.Equivalents import *
 
 # EOF -------------------------------------------------------------------------

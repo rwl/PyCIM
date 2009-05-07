@@ -26,7 +26,7 @@ import pickle
 
 from os.path import splitext
 
-from CIM import Model, Root
+from CIM import CommonInformationModel, Element
 
 from CIM.Generation.Production \
     import GeneratingUnit, GenUnitOpCostCurve, GenUnitOpSchedule
@@ -58,54 +58,54 @@ from CIMReader import read_cim
 #  "FlatModel" class:
 #------------------------------------------------------------------------------
 
-class FlatModel(Model):
+class FlatModel(CommonInformationModel):
 
-    core = Property(List(Instance(Root)), depends_on=["Contains"])
+    core = Property(List(Instance(Element)), depends_on=["Elements"])
 
     def _get_core(self):
         """ Property getter.
         """
-        return [element for element in self.Contains \
+        return [element for element in self.Elements \
             if element.__module__.endswith("Core")]
 
-    production = Property(List(Instance(Root)), depends_on=["Contains"])
+    production = Property(List(Instance(Element)), depends_on=["Elements"])
 
     def _get_production(self):
         """ Property getter.
         """
-        return [element for element in self.Contains \
+        return [element for element in self.Elements \
             if element.__module__.endswith("Generation.Production")]
 
-    loadModel = Property(List(Instance(Root)), depends_on=["Contains"])
+    loadModel = Property(List(Instance(Element)), depends_on=["Elements"])
 
     def _get_loadModel(self):
         """ Property getter.
         """
-        return [element for element in self.Contains \
+        return [element for element in self.Elements \
             if element.__module__.endswith("LoadModel")]
 
-    measurement = Property(List(Instance(Root)), depends_on=["Contains"])
+    measurement = Property(List(Instance(Element)), depends_on=["Elements"])
 
     def _get_measurement(self):
         """ Property getter.
         """
-        return [element for element in self.Contains \
+        return [element for element in self.Elements \
             if element.__module__.endswith("Meas")]
 
-    topology = Property(List(Instance(Root)), depends_on=["Contains"])
+    topology = Property(List(Instance(Element)), depends_on=["Elements"])
 
     def _get_topology(self):
         """ Property getter.
         """
-        return [element for element in self.Contains \
+        return [element for element in self.Elements \
             if element.__module__.endswith("Topology")]
 
-    wires = Property(List(Instance(Root)), depends_on=["Contains"])
+    wires = Property(List(Instance(Element)), depends_on=["Elements"])
 
     def _get_wires(self):
         """ Property getter.
         """
-        return [element for element in self.Contains \
+        return [element for element in self.Elements \
             if element.__module__.endswith("Wires")]
 
 #------------------------------------------------------------------------------
@@ -114,20 +114,20 @@ class FlatModel(Model):
 
 flat_tree_editor = TreeEditor(
     nodes=[
-        TreeNode(node_for=[Model], label="=Model", children="",
-            view=View()),
-        TreeNode(node_for=[Model], children="core", label="=Core",
-            view=View()),
-        TreeNode(node_for=[Model], children="production", label="=Production",
-            view=View()),
-        TreeNode(node_for=[Model], children="loadModel", label="=Load Model",
-            view=View()),
-        TreeNode(node_for=[Model], children="measurement",
+        TreeNode(node_for=[CommonInformationModel], label="=Model",
+            children="", view=View()),
+        TreeNode(node_for=[CommonInformationModel], children="core",
+            label="=Core", view=View()),
+        TreeNode(node_for=[CommonInformationModel], children="production",
+            label="=Production", view=View()),
+        TreeNode(node_for=[CommonInformationModel], children="loadModel",
+            label="=Load Model", view=View()),
+        TreeNode(node_for=[CommonInformationModel], children="measurement",
             label="=Measurement", view=View()),
-        TreeNode(node_for=[Model], children="topology", label="=Topology",
-            view=View()),
-        TreeNode(node_for=[Model], children="wires", label="=Wires",
-            add=[SynchronousMachine], view=View()),
+        TreeNode(node_for=[CommonInformationModel], children="topology",
+            label="=Topology", view=View()),
+        TreeNode(node_for=[CommonInformationModel], children="wires",
+            label="=Wires", add=[SynchronousMachine], view=View()),
         TreeNode(node_for=[Load], label="name"),
         TreeNode(node_for=[ConformLoadGroup], label="name"),
         TreeNode(node_for=[SynchronousMachine], label="name"),
@@ -166,7 +166,7 @@ class CIMViewModel(DesktopViewModel):
             # Parse the RDF/XML or Pickle file.
             if wc_idx == 0 or (wc_idx == 2 and file_ext in exts):
                 elements = read_cim( dialog.path )
-                self.model = FlatModel( Contains=elements )
+                self.model = FlatModel( Elements=elements )
                 self.file = "" # Prevent 'Save' action overwriting XML files.
 
             else:
@@ -207,7 +207,7 @@ if __name__ == "__main__":
     load = Load(name="Load 1", LoadGroup=load_group)
     unit = GeneratingUnit()
     machine = SynchronousMachine()
-    model = FlatModel(Contains=[load, load_group, unit, machine])
+    model = FlatModel(Elements=[load, load_group, unit, machine])
     view_model = CIMViewModel(model=model)
     view_model.configure_traits()
 
