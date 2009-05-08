@@ -44,7 +44,7 @@ from envisage.resource.wizard.container_selection_page import \
 from envisage.resource.resource_adapter import PickleFileIResourceAdapter
 
 from CIM.CIMReader import read_cim
-from CIM import Model
+from CIM import CommonInformationModel
 
 #------------------------------------------------------------------------------
 #  Constants:

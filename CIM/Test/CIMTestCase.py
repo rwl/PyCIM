@@ -28,7 +28,7 @@ import logging
 
 from os.path import join, dirname
 
-from CIM import Model
+from CIM import CommonInformationModel
 
 from CIM.LoadModel import \
     ConformLoadGroup, LoadArea, ConformLoadSchedule, Load
@@ -103,7 +103,7 @@ class CIMTestCase(unittest.TestCase):
         load_group = ConformLoadGroup(name="CLG1")
         load_group2 = ConformLoadGroup(name="CLG2")
         load = Load(name="Load 1", LoadGroup=load_group)
-        model = Model(Contains=[load_group, load_group2, load])
+        model = CommonInformationModel(Contains=[load_group, load_group2, load])
         load.configure_traits()
 
 
@@ -111,7 +111,7 @@ class CIMTestCase(unittest.TestCase):
         """ Test loading a Common Information Model from a RDF/XML file.
         """
         elements = read_cim(RDFXML_FILE)
-        model = Model( Contains=elements )
+        model = CommonInformationModel( Contains=elements )
         print "ELEMENTS:", len(model.Contains)
         model.Contains[16].configure_traits()
 
