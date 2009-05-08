@@ -60,7 +60,7 @@ from CIM.CIMReader import \
 #  Constants:
 #-------------------------------------------------------------------------------
 
-RDFXML_FILE = join(dirname(__file__), "data", "10Bus.xml")
+RDFXML_FILE = join(dirname(__file__), "Data", "10Bus.xml")
 
 #-------------------------------------------------------------------------------
 #  "CIMTestCase" class:

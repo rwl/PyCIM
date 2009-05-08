@@ -56,7 +56,7 @@ from CIM13r19TreeNodeEditor \
 #  Constants:
 #-------------------------------------------------------------------------------
 
-RDFXML_FILE = join(dirname(__file__), "data", "10Bus.xml")
+RDFXML_FILE = join(dirname(__file__), "Data", "10Bus.xml")
 
 #------------------------------------------------------------------------------
 #  "SubstationTreeNode" class:
