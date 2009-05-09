@@ -36,7 +36,9 @@ from enthought.plugins.ipython_shell.ipython_shell_plugin \
 
 from enthought.logger.plugin.logger_plugin import LoggerPlugin
 
+from envisage.plugin import EnvisagePlugin
 from envisage.resource.resource_plugin import ResourcePlugin
+from envisage.python_editor.python_editor_plugin import PythonEditorPlugin
 from envisage.property_view.property_view_plugin import PropertyViewPlugin
 
 from CIMPlugin import CIMPlugin
@@ -63,10 +65,12 @@ def main():
         id = "cim",
         plugins = [
             CorePlugin(),
-            PythonShellPlugin(),
-            LoggerPlugin(),
+            EnvisagePlugin(),
             WorkbenchPlugin(),
             ResourcePlugin(),
+            PythonShellPlugin(),
+            LoggerPlugin(),
+            PythonEditorPlugin(),
             PropertyViewPlugin(),
             CIMPlugin()
         ]
