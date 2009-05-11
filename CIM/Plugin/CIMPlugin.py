@@ -38,6 +38,7 @@ class CIMPlugin(Plugin):
     NEW_WIZARDS = "envisage.resource.new_wizards"
     EDITORS = "envisage.resource.editors"
     IMPORT_WIZARDS = "envisage.resource.import_wizards"
+    ACTION_SETS = "enthought.envisage.ui.workbench.action_sets"
 
     # Unique plugin identifier
     id = "cim.cim_plugin"
@@ -60,6 +61,9 @@ class CIMPlugin(Plugin):
 
     # Contributed import wizards.
     import_wizards = List(contributes_to=IMPORT_WIZARDS)
+
+    # Contributed action sets:
+    action_sets = List(contributes_to=ACTION_SETS)
 
     #--------------------------------------------------------------------------
     #  "CIMPlugin" interface:
@@ -92,5 +96,13 @@ class CIMPlugin(Plugin):
         """
         from WizardExtension import RDFXMLImportWizardExtension
         return [RDFXMLImportWizardExtension]
+
+
+    def _action_sets_default(self):
+        """ Trait initialiser.
+        """
+        from ActionSet import CIMWorkbenchActionSet
+
+        return [CIMWorkbenchActionSet]
 
 # EOF -------------------------------------------------------------------------

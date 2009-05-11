@@ -31,7 +31,7 @@ from envisage.resource.editor import Editor
 #  Constants:
 #------------------------------------------------------------------------------
 
-IMAGE_LOCATION = join(dirname(__file__), "..", "images")
+IMAGE_LOCATION = join(dirname(__file__), "..", "Images")
 
 #------------------------------------------------------------------------------
 #  "CIMTreeEditorExtension" class:
