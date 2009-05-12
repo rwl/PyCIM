@@ -31,7 +31,7 @@ from enthought.traits.ui.api \
 from enthought.traits.ui.menu \
     import Action, Menu
 
-from godot.graph_editor import GraphNode, GraphEditor
+from godot.ui.graph_editor import GraphNode, GraphEditor
 
 from CIM13r19 import *
 from CIM13r19.Wires import *

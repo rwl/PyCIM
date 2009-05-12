@@ -146,7 +146,7 @@ class CIMWizard(NewResourceWizard):
     # The dialog title
     title = Str("New CIM")
 
-    extensions = [".xml"]
+    extensions = [".pkl"]
 
 
     def get_resource(self, file):

@@ -28,9 +28,12 @@ from enthought.traits.api \
 from enthought.traits.ui.api \
     import View, Group, Item, HGroup, VGroup, Tabbed
 
-from envisage.resource.resource_adapter import ResourceEditor
+from envisage.resource.resource_editor import ResourceEditor
+
+from godot.ui.graph_editor import GraphEditor, GraphCanvas
 
 from CIM import CommonInformationModel
+from CIM13r19GraphEditor import graph_nodes#, graph_edges
 
 #------------------------------------------------------------------------------
 #  "CIMGraphEditor" class:
@@ -76,7 +79,8 @@ class CIMGraphEditor(ResourceEditor):
         """ Create a view with a tree editor.
         """
         graph_editor = GraphEditor(
-            nodes=cim_nodes, edges=cim_edges,
+            canvas=GraphCanvas(node_children=["Elements"]),
+            nodes=graph_nodes,# edges=graph_edges,
             on_select=self._on_select
         )
 

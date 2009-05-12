@@ -28,12 +28,10 @@ from enthought.traits.api \
 from enthought.traits.ui.api \
     import View, Group, Item, HGroup, VGroup, Tabbed, TreeEditor, TreeNode
 
-#from envisage.resource.resource_editor import ResourceEditor
-from envisage.resource.resource_adapter import ResourceEditor
+from envisage.resource.resource_editor import ResourceEditor
 
 from CIM import Element
 from CIM.Core import GeographicalRegion, VoltageLevel
-#from CIM13TreeEditor import cim13_tree_editor
 from CIM13r19TreeNodeEditor import tree_nodes
 
 #------------------------------------------------------------------------------

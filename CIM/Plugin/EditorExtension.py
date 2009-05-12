@@ -57,7 +57,7 @@ class CIMTreeEditorExtension(Editor):
     extensions = [".pkl"]
 
     # If true, this editor will be used as the default editor for the type
-    default = True
+    default = False
 
 #------------------------------------------------------------------------------
 #  "CIMGraphEditorExtension" class:
@@ -83,6 +83,6 @@ class CIMGraphEditorExtension(Editor):
     extensions = [".pkl"]
 
     # If true, this editor will be used as the default editor for the type
-    default = False
+    default = True
 
 # EOF -------------------------------------------------------------------------
