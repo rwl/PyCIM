@@ -15,66 +15,62 @@
 # Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #------------------------------------------------------------------------------
 
-""" CIM resource wizard extensions.
+""" Defines a wizard for CIM resource creation.
 """
 
 #------------------------------------------------------------------------------
 #  Imports:
 #------------------------------------------------------------------------------
 
-from os.path import dirname, join
+from envisage.resource.wizard.new_resource_wizard import NewResourceWizard
+from envisage.resource.resource_adapter import PickleFileIResourceAdapter
 
-from enthought.pyface.api import ImageResource
-from envisage.resource.wizard_extension import WizardExtension
-
-#------------------------------------------------------------------------------
-#  Constants:
-#------------------------------------------------------------------------------
-
-IMAGE_LOCATION = join(dirname(__file__), "..", "Images")
+from UCTE import CommonInformationModel
 
 #------------------------------------------------------------------------------
-#  "CIMWizardExtension" class:
+#  "NewUCTEWizard" class:
 #------------------------------------------------------------------------------
 
-class CIMWizardExtension(WizardExtension):
-    """ Contributes a new network wizard.
+class NewUCTEWizard(NewResourceWizard):
+    """ A wizard for UCTE resource creation.
+    """
+    # The dialog title
+    title = Str("New UCTE")
+
+    extensions = [".pkl"]
+
+
+    def get_resource(self, file):
+        """ Returns the new adapted resource.
+        """
+        return PickleFileIResourceAdapter(file)
+
+
+    def get_content(self, name):
+        """ Returns the content for the new resource.
+        """
+        return CommonInformationModel()
+
+#------------------------------------------------------------------------------
+#  "NewUCTEWizardExtension" class:
+#------------------------------------------------------------------------------
+
+class NewUCTEWizardExtension(WizardExtension):
+    """ Contributes a new UCTE CIM wizard.
     """
     # The wizard contribution's globally unique identifier.
-    id = "cim.new_cim_wizard"
+    id = "cim.new_ucte_wizard"
 
     # Human readable identifier
-    name = "CIM"
+    name = "UCTE"
 
     # The wizards's image (displayed on selection etc)
-    image = ImageResource("new", search_path=[IMAGE_LOCATION])
+    image = ImageResource("cimug")
 
     # The class of contributed wizard
-    wizard_class = "CIM.Plugin.CIMWizard:CIMWizard"
+    wizard_class = "UCTE.Plugin.UCTEWizard:NewUCTEWizard"
 
     # A longer description of the wizard's function
-    description = "Create a new Common Information Model resource"
-
-#------------------------------------------------------------------------------
-#  "RDFXMLImportWizardExtension" class:
-#------------------------------------------------------------------------------
-
-class RDFXMLImportWizardExtension(WizardExtension):
-    """ Contributes a CIM RDF/XML import wizard.
-    """
-    # The wizard contribution's globally unique identifier.
-    id = "CIM.Plugin.CIMReader"
-
-    # Human readable identifier
-    name = "CIM RDF/XML"
-
-    # The wizards's image (displayed on selection etc)
-    image = ImageResource("xml", search_path=[IMAGE_LOCATION])
-
-    # The class of contributed wizard
-    wizard_class = "CIM.Plugin.ImportWizard:RDFXMLImportWizard"
-
-    # A longer description of the wizard's function
-    description = "Import a CIM RDF/XML data file"
+    description = "Create a new UCTE Common Information Model resource"
 
 # EOF -------------------------------------------------------------------------

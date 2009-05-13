@@ -43,6 +43,8 @@ from envisage.property_view.property_view_plugin import PropertyViewPlugin
 
 from CIMPlugin import CIMPlugin
 
+from UCTE.Plugin.UCTEPlugin import UCTEPlugin
+
 #------------------------------------------------------------------------------
 #  Logging:
 #------------------------------------------------------------------------------
@@ -72,7 +74,8 @@ def main():
             LoggerPlugin(),
             PythonEditorPlugin(),
             PropertyViewPlugin(),
-            CIMPlugin()
+            CIMPlugin(),
+            UCTEPlugin()
         ]
     )
 

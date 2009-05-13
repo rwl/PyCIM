@@ -53,7 +53,7 @@ from CIM.Core import GeographicalRegion
 #  Constants:
 #------------------------------------------------------------------------------
 
-WORKSPACE_VIEW = "envisage.resource.workspace_view"
+WORKSPACE_VIEW = "envisage.resource.resource_view"
 
 #------------------------------------------------------------------------------
 #  "CIMWizardPage" class:
