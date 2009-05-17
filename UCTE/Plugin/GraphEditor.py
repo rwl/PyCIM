@@ -129,7 +129,7 @@ class UCTEGraphEditorExtension(Editor):
 
     # An icon that will be used for all resources that match the
     # specified extensions
-    image = ImageResource("cimug", search_path=[IMAGE_LOCATION])
+    image = ImageResource("cimug")
 
     # The contributed editor class
     editor_class = "UCTE.Plugin.GraphEditor:UCTEGraphEditor"

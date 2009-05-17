@@ -50,6 +50,9 @@ class RegionContainer(HasTraits):
     regions = Property(
         depends_on=["uri_element_map", "uri_element_map_items"])
 
+    levels = Property(
+        depends_on=["uri_element_map", "uri_element_map_items"])
+
 
     def _get_regions(self):
         """ Property getter.
@@ -66,6 +69,12 @@ class RegionContainer(HasTraits):
 #
 #        print "MAP", self.uri_element_map
 
+    def _get_levels(self):
+        """ Property getter.
+        """
+        return [e for e in self.uri_element_map.values() \
+            if isinstance(e, VoltageLevel)]
+
 
 RegionContainerNode = TreeNode(
     node_for=[RegionContainer],
@@ -79,6 +88,14 @@ RegionContainerRegionsNode = TreeNode(
     add=[GeographicalRegion],
     label="=Regions",
     children="regions",
+    view=View()
+)
+
+RegionContainerLevelsNode = TreeNode(
+    node_for=[RegionContainer],
+    add=[VoltageLevel],
+    label="=Voltage Levels",
+    children="levels",
     view=View()
 )
 
@@ -129,8 +146,8 @@ class CIMTreeEditor(ResourceEditor):
         """ Create a view with a tree editor.
         """
         tree_editor = TreeEditor(
-            nodes=[RegionContainerNode, RegionContainerRegionsNode] \
-                + tree_nodes,
+            nodes=[RegionContainerNode, RegionContainerRegionsNode,
+                RegionContainerLevelsNode] + tree_nodes,
             on_select = self._on_select,
             on_dclick = self._on_dclick,
             editable=False

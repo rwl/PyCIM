@@ -70,8 +70,8 @@ class UCTEPlugin(Plugin):
     def _editors_default(self):
         """ Trait initialiser.
         """
-        from UCTETreeEditor import UCTETreeEditorExtension
-        from UCTEGraphEditor import UCTEGraphEditorExtension
+        from TreeEditor import UCTETreeEditorExtension
+        from GraphEditor import UCTEGraphEditorExtension
 
         return [UCTETreeEditorExtension, UCTEGraphEditorExtension]
 

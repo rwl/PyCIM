@@ -44,15 +44,21 @@ from enthought.traits.ui.api \
     import View, Item, TreeEditor, TreeNode, HGroup
 
 from enthought.pyface.api \
-    import FileDialog, OK
+    import FileDialog, OK, ImageResource
 
 from DesktopViewModel \
-    import DesktopViewModel, frame_icon
+    import DesktopViewModel
 
 from DesktopMenu \
     import menubar
 
 from CIMReader import read_cim
+
+#------------------------------------------------------------------------------
+#  Constants:
+#------------------------------------------------------------------------------
+
+frame_icon = ImageResource( "frame.ico", search_path=["Images"] )
 
 #------------------------------------------------------------------------------
 #  "FlatModel" class:
@@ -200,7 +206,7 @@ class CIMViewModel(DesktopViewModel):
                         kind      = "live",
                         buttons   = [],
                         menubar   = menubar,
-                        dock      = "vertical" )
+                        dock      = "vertical")
 
 if __name__ == "__main__":
     load_group = ConformLoadGroup(name="CLG1")

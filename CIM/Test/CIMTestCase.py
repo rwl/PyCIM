@@ -104,16 +104,16 @@ class CIMTestCase(unittest.TestCase):
         load_group2 = ConformLoadGroup(name="CLG2")
         load = Load(name="Load 1", LoadGroup=load_group)
         model = CommonInformationModel(Contains=[load_group, load_group2, load])
-        load.configure_traits()
+#        load.configure_traits()
 
 
     def test_load_cim(self):
         """ Test loading a Common Information Model from a RDF/XML file.
         """
         elements = read_cim(RDFXML_FILE)
-        model = CommonInformationModel( Contains=elements )
-        print "ELEMENTS:", len(model.Contains)
-        model.Contains[16].configure_traits()
+        model = CommonInformationModel( Elements=elements.values() )
+        print "ELEMENTS:", len(model.Elements)
+        model.Elements[6].configure_traits()
 
 if __name__ == "__main__":
     unittest.main()

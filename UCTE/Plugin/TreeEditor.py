@@ -23,7 +23,7 @@
 #------------------------------------------------------------------------------
 
 from enthought.traits.api \
-    import HasTraits, Instance, Dict, Str, Property
+    import HasTraits, Instance, Dict, Str, Property, List
 
 from enthought.traits.ui.api \
     import View, Group, Item, HGroup, VGroup, Tabbed, TreeEditor, TreeNode
