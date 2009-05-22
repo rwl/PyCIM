@@ -38,14 +38,14 @@ from enthought.traits.ui.menu import OKCancelButtons
 from enthought.pyface.wizard.api import SimpleWizard, WizardPage
 from enthought.envisage.ui.workbench.workbench_window import WorkbenchWindow
 
-from envisage.resource.i_workspace import IWorkspace
-from envisage.resource.action.open_action import OpenAction
-from envisage.resource.wizard.new_resource_wizard import NewResourceWizard
+from puddle.resource.i_workspace import IWorkspace
+from puddle.resource.action.open_action import OpenAction
+from puddle.resource.wizard.new_resource_wizard import NewResourceWizard
 
-from envisage.resource.wizard.container_selection_page import \
+from puddle.resource.wizard.container_selection_page import \
     ContainerSelectionPage
 
-from envisage.resource.resource_adapter import PickleFileIResourceAdapter
+from puddle.resource.resource_adapter import PickleFileIResourceAdapter
 
 from CIM.Core import GeographicalRegion
 
@@ -53,7 +53,7 @@ from CIM.Core import GeographicalRegion
 #  Constants:
 #------------------------------------------------------------------------------
 
-WORKSPACE_VIEW = "envisage.resource.resource_view"
+WORKSPACE_VIEW = "puddle.resource.resource_view"
 
 #------------------------------------------------------------------------------
 #  "CIMWizardPage" class:

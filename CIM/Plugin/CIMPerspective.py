@@ -44,7 +44,7 @@ class CIMPerspective(Perspective):
     # The contents of the perspective:
     contents = [
         PerspectiveItem(
-            id="envisage.resource.resource_view",
+            id="puddle.resource.resource_view",
             position="left", width=0.3
         ),
         PerspectiveItem(

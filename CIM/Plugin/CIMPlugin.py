@@ -34,11 +34,11 @@ class CIMPlugin(Plugin):
     """
     # Extension point IDs
     PERSPECTIVES = "enthought.envisage.ui.workbench.perspectives"
-
-    NEW_WIZARDS = "envisage.resource.new_wizards"
-    EDITORS = "envisage.resource.editors"
-    IMPORT_WIZARDS = "envisage.resource.import_wizards"
     ACTION_SETS = "enthought.envisage.ui.workbench.action_sets"
+
+    NEW_WIZARDS = "puddle.resource.new_wizards"
+    EDITORS = "puddle.resource.editors"
+    IMPORT_WIZARDS = "puddle.resource.import_wizards"
 
     # Unique plugin identifier
     id = "cim.cim_plugin"

@@ -25,7 +25,7 @@
 from os.path import dirname, join
 
 from enthought.pyface.api import ImageResource
-from envisage.resource.editor import Editor
+from puddle.resource.editor import Editor
 
 #------------------------------------------------------------------------------
 #  Constants:

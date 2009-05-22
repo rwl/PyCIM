@@ -28,7 +28,7 @@ from enthought.traits.api \
 from enthought.traits.ui.api \
     import View, Group, Item, HGroup, VGroup, Tabbed
 
-from envisage.resource.resource_editor import ResourceEditor
+from puddle.resource.resource_editor import ResourceEditor
 
 from godot.ui.graph_editor import GraphEditor, GraphCanvas
 
