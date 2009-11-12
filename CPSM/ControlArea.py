@@ -1,0 +1,231 @@
+#------------------------------------------------------------------------------
+# Copyright (C) 2009 Richard W. Lincoln
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; version 2 dated June, 1991.
+#
+# This software is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANDABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software Foundation,
+# Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  Imports:
+#------------------------------------------------------------------------------
+
+from CPSM.Core import PowerSystemResource
+from CPSM import Element
+from CPSM.Domain import ActivePower
+
+
+
+from enthought.traits.api import Instance, List, Property, Enum, Bool
+# <<< imports
+# @generated
+from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
+# >>> imports
+#------------------------------------------------------------------------------
+#  Trait definitions:
+#------------------------------------------------------------------------------
+
+
+ControlAreaTypeKind = Enum("Forecast", "Interchange", "AGC")
+
+#------------------------------------------------------------------------------
+#  "ControlArea" class:
+#------------------------------------------------------------------------------
+
+class ControlArea(PowerSystemResource):
+    """ A <b>control area </b>is a grouping of <b>generating units</b> and/or loads and a cutset of tie lines (as <b>terminals</b>) which may be used for a variety of purposes including automatic generation control, powerflow solution area interchange control specification, and input to load forecasting.   Note that any number of overlapping control area specifications can be superimposed on the physical model.A <b>control area </b>is a grouping of <b>generating units</b> and/or loads and a cutset of tie lines (as <b>terminals</b>) which may be used for a variety of purposes including automatic generation control, powerflow solution area interchange control specification, and input to load forecasting.   Note that any number of overlapping control area specifications can be superimposed on the physical model.
+    """
+
+    #--------------------------------------------------------------------------
+    #  Trait definitions:
+    #--------------------------------------------------------------------------
+
+    # The generating unit specificaitons for the control area.The generating unit specificaitons for the control area.
+    ControlAreaGeneratingUnit = List(Instance("CPSM.ControlArea.ControlAreaGeneratingUnit"),
+        desc="The generating unit specificaitons for the control area.The generating unit specificaitons for the control area.")
+
+    # The energy area that is forecast from this control area specification.The energy area that is forecast from this control area specification.
+    EnergyArea = Instance("CPSM.LoadModel.EnergyArea", allow_none=False,
+        desc="The energy area that is forecast from this control area specification.The energy area that is forecast from this control area specification.",
+        transient=True,
+        opposite="ControlArea",
+        editor=InstanceEditor(name="_energyareas"))
+
+    def _get_energyareas(self):
+        """ Property getter.
+        """
+        if self.Parent is not None:
+            return [e for e in self.Parent.Elements \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CPSM.LoadModel.EnergyArea" ]
+        else:
+            return []
+
+    _energyareas = Property(fget=_get_energyareas)
+
+    # The tie flows associated with the control area.The tie flows associated with the control area.
+    TieFlow = List(Instance("CPSM.ControlArea.TieFlow"),
+        desc="The tie flows associated with the control area.The tie flows associated with the control area.")
+
+    # The specified positive net interchange into the control area.The specified positive net interchange into the control area.
+    netInterchange = ActivePower(desc="The specified positive net interchange into the control area.The specified positive net interchange into the control area.")
+
+    # The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.
+    type = ControlAreaTypeKind(desc="The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.")
+
+    #--------------------------------------------------------------------------
+    #  Begin "ControlArea" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "pathName", "description", "aliasName", "name", "netInterchange", "type",
+                label="Attributes"),
+            VGroup("Parent", "Contains_Measurements", "ControlAreaGeneratingUnit", "EnergyArea", "TieFlow",
+                label="References"),
+            dock="tab"),
+        id="CPSM.ControlArea.ControlArea",
+        title="ControlArea",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "ControlArea" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "TieFlow" class:
+#------------------------------------------------------------------------------
+
+class TieFlow(Element):
+    """ A flow specification in terms of location and direction for a control area.A flow specification in terms of location and direction for a control area.
+    """
+
+    #--------------------------------------------------------------------------
+    #  Trait definitions:
+    #--------------------------------------------------------------------------
+
+    # The control area of the tie flows.The control area of the tie flows.
+    ControlArea = Instance("CPSM.ControlArea.ControlArea", allow_none=False,
+        desc="The control area of the tie flows.The control area of the tie flows.",
+        transient=True,
+        opposite="TieFlow",
+        editor=InstanceEditor(name="_controlareas"))
+
+    def _get_controlareas(self):
+        """ Property getter.
+        """
+        if self.Parent is not None:
+            return [e for e in self.Parent.Elements \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CPSM.ControlArea.ControlArea" ]
+        else:
+            return []
+
+    _controlareas = Property(fget=_get_controlareas)
+
+    # The flow is positive into the terminal.  A flow is positive if it is an import into the control area.The flow is positive into the terminal.  A flow is positive if it is an import into the control area.
+    positiveFlowIn = Bool(desc="The flow is positive into the terminal.  A flow is positive if it is an import into the control area.The flow is positive into the terminal.  A flow is positive if it is an import into the control area.")
+
+    #--------------------------------------------------------------------------
+    #  Begin "TieFlow" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI", "positiveFlowIn",
+                label="Attributes"),
+            VGroup("Parent", "ControlArea",
+                label="References"),
+            dock="tab"),
+        id="CPSM.ControlArea.TieFlow",
+        title="TieFlow",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "TieFlow" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "ControlAreaGeneratingUnit" class:
+#------------------------------------------------------------------------------
+
+class ControlAreaGeneratingUnit(Element):
+    """ A control area generating unit. This class is needed so that alternate control area definitions may include the same generating unit.   Note only one instance within a control area should reference a specific generating unit.A control area generating unit. This class is needed so that alternate control area definitions may include the same generating unit.   Note only one instance within a control area should reference a specific generating unit.
+    """
+
+    #--------------------------------------------------------------------------
+    #  Trait definitions:
+    #--------------------------------------------------------------------------
+
+    # The parent control area for the generating unit specifications.The parent control area for the generating unit specifications.
+    ControlArea = Instance("CPSM.ControlArea.ControlArea", allow_none=False,
+        desc="The parent control area for the generating unit specifications.The parent control area for the generating unit specifications.",
+        transient=True,
+        opposite="ControlAreaGeneratingUnit",
+        editor=InstanceEditor(name="_controlareas"))
+
+    def _get_controlareas(self):
+        """ Property getter.
+        """
+        if self.Parent is not None:
+            return [e for e in self.Parent.Elements \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CPSM.ControlArea.ControlArea" ]
+        else:
+            return []
+
+    _controlareas = Property(fget=_get_controlareas)
+
+    # The generating unit specified for this control area.  Note that a control area should include a GeneratingUnit only once.The generating unit specified for this control area.  Note that a control area should include a GeneratingUnit only once.
+    GeneratingUnit = Instance("CPSM.Generation.Production.GeneratingUnit", allow_none=False,
+        desc="The generating unit specified for this control area.  Note that a control area should include a GeneratingUnit only once.The generating unit specified for this control area.  Note that a control area should include a GeneratingUnit only once.",
+        transient=True,
+        opposite="ControlAreaGeneratingUnit",
+        editor=InstanceEditor(name="_generatingunits"))
+
+    def _get_generatingunits(self):
+        """ Property getter.
+        """
+        if self.Parent is not None:
+            return [e for e in self.Parent.Elements \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CPSM.Generation.Production.GeneratingUnit" ]
+        else:
+            return []
+
+    _generatingunits = Property(fget=_get_generatingunits)
+
+    #--------------------------------------------------------------------------
+    #  Begin "ControlAreaGeneratingUnit" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("URI",
+                label="Attributes"),
+            VGroup("Parent", "ControlArea", "GeneratingUnit",
+                label="References"),
+            dock="tab"),
+        id="CPSM.ControlArea.ControlAreaGeneratingUnit",
+        title="ControlAreaGeneratingUnit",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "ControlAreaGeneratingUnit" user definitions:
+    #--------------------------------------------------------------------------
+
+
+
+# EOF -------------------------------------------------------------------------
