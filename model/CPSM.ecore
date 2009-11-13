@@ -12,8 +12,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="URI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Parent" lowerBound="1"
-        eType="#//CommonPowerSystemModel" eOpposite="#//CommonPowerSystemModel/Elements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Model" lowerBound="1" eType="#//CommonPowerSystemModel"
+        eOpposite="#//CommonPowerSystemModel/Elements"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IEC61970CIMVersion" abstract="true"
       eSuperTypes="#//Element">
@@ -31,8 +31,11 @@
     <eOperations name="read">
       <eParameters name="rdfxml" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="write">
+      <eParameters name="rdfxml" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Elements" upperBound="-1"
-        eType="#//Element" eOpposite="#//Element/Parent"/>
+        eType="#//Element" eOpposite="#//Element/Model"/>
   </eClassifiers>
   <eSubpackages name="Generation" nsURI="http://iec.ch/TC57/2008/CIM-schema-cim13#Package_Generation"
       nsPrefix="cim">
