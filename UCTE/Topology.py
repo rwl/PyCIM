@@ -57,8 +57,8 @@ class TopologicalNode(IdentifiedObject):
     def _get_controlareas(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.ControlArea.ControlArea" ]
         else:
@@ -76,8 +76,8 @@ class TopologicalNode(IdentifiedObject):
     def _get_basevoltages(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.BaseVoltage" ]
         else:
@@ -95,8 +95,8 @@ class TopologicalNode(IdentifiedObject):
     def _get_svvoltages(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.StateVariables.SvVoltage" ]
         else:
@@ -114,8 +114,8 @@ class TopologicalNode(IdentifiedObject):
     def _get_topologicalislands(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Topology.TopologicalIsland" ]
         else:
@@ -133,8 +133,8 @@ class TopologicalNode(IdentifiedObject):
     def _get_topologicalislands(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Topology.TopologicalIsland" ]
         else:
@@ -152,8 +152,8 @@ class TopologicalNode(IdentifiedObject):
     def _get_connectivitynodecontainers(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.ConnectivityNodeContainer" ]
         else:
@@ -186,7 +186,7 @@ class TopologicalNode(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "sShortCircuit", "equivalent", "x0PerX", "r0PerR", "xPerR",
+            VGroup("UUID", "description", "name", "aliasName", "sShortCircuit", "equivalent", "x0PerX", "r0PerR", "xPerR",
                 label="Attributes"),
             VGroup("Model", "ControlArea", "BaseVoltage", "SvVoltage", "TopologicalIsland", "AngleRef_TopologicalIsland", "ConnectivityNodeContainer", "Terminal",
                 label="References"),
@@ -226,8 +226,8 @@ class TopologicalIsland(IdentifiedObject):
     def _get_topologicalnodes(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Topology.TopologicalNode" ]
         else:
@@ -241,7 +241,7 @@ class TopologicalIsland(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "TopologicalNodes", "AngleRef_TopologicalNode",
                 label="References"),

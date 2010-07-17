@@ -57,7 +57,7 @@ class StateVariable(Element):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI",
+            VGroup("UUID",
                 label="Attributes"),
             VGroup("Model",
                 label="References"),
@@ -93,8 +93,8 @@ class SvVoltage(StateVariable):
     def _get_topologicalnodes(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Topology.TopologicalNode" ]
         else:
@@ -114,7 +114,7 @@ class SvVoltage(StateVariable):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "angle", "v",
+            VGroup("UUID", "angle", "v",
                 label="Attributes"),
             VGroup("Model", "TopologicalNode",
                 label="References"),
@@ -150,8 +150,8 @@ class SvShuntCompensatorSections(StateVariable):
     def _get_shuntcompensators(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.ShuntCompensator" ]
         else:
@@ -168,7 +168,7 @@ class SvShuntCompensatorSections(StateVariable):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "continuousSections",
+            VGroup("UUID", "continuousSections",
                 label="Attributes"),
             VGroup("Model", "ShuntCompensator",
                 label="References"),
@@ -204,8 +204,8 @@ class SvTapStep(StateVariable):
     def _get_tapchangers(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.TapChanger" ]
         else:
@@ -222,7 +222,7 @@ class SvTapStep(StateVariable):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "continuousPosition",
+            VGroup("UUID", "continuousPosition",
                 label="Attributes"),
             VGroup("Model", "TapChanger",
                 label="References"),
@@ -258,8 +258,8 @@ class SvPowerFlow(StateVariable):
     def _get_terminals(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.Terminal" ]
         else:
@@ -279,7 +279,7 @@ class SvPowerFlow(StateVariable):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "p", "q",
+            VGroup("UUID", "p", "q",
                 label="Attributes"),
             VGroup("Model", "Terminal",
                 label="References"),

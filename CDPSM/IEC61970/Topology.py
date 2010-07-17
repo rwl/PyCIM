@@ -60,8 +60,8 @@ class ConnectivityNode(IdentifiedObject):
     def _get_connectivitynodecontainers(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Core.ConnectivityNodeContainer" ]
         else:
@@ -75,7 +75,7 @@ class ConnectivityNode(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "Terminals", "ConnectivityNodeContainer",
                 label="References"),

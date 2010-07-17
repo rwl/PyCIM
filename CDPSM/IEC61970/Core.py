@@ -70,7 +70,7 @@ class IdentifiedObject(Element):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model",
                 label="References"),
@@ -113,7 +113,7 @@ class BaseVoltage(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "nominalVoltage",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "nominalVoltage",
                 label="Attributes"),
             VGroup("Model", "ConductingEquipment", "VoltageLevel",
                 label="References"),
@@ -149,7 +149,7 @@ class PSRType(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "PowerSystemResources",
                 label="References"),
@@ -185,8 +185,8 @@ class SubGeographicalRegion(IdentifiedObject):
     def _get_geographicalregions(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Core.GeographicalRegion" ]
         else:
@@ -208,7 +208,7 @@ class SubGeographicalRegion(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "Region", "Lines", "Substations",
                 label="References"),
@@ -244,8 +244,8 @@ class Terminal(IdentifiedObject):
     def _get_conductingequipments(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Core.ConductingEquipment" ]
         else:
@@ -263,8 +263,8 @@ class Terminal(IdentifiedObject):
     def _get_connectivitynodes(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Topology.ConnectivityNode" ]
         else:
@@ -284,7 +284,7 @@ class Terminal(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "sequenceNumber", "connected",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "sequenceNumber", "connected",
                 label="Attributes"),
             VGroup("Model", "ConductingEquipment", "ConnectivityNode",
                 label="References"),
@@ -320,7 +320,7 @@ class GeographicalRegion(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "Regions",
                 label="References"),
@@ -356,8 +356,8 @@ class PowerSystemResource(IdentifiedObject):
     def _get_geolocations(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.Common.GeoLocation" ]
         else:
@@ -375,8 +375,8 @@ class PowerSystemResource(IdentifiedObject):
     def _get_psrtypes(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Core.PSRType" ]
         else:
@@ -390,7 +390,7 @@ class PowerSystemResource(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType",
                 label="References"),
@@ -426,7 +426,7 @@ class ConnectivityNodeContainer(PowerSystemResource):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "ConnectivityNodes",
                 label="References"),
@@ -462,8 +462,8 @@ class Equipment(PowerSystemResource):
     def _get_equipmentcontainers(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Core.EquipmentContainer" ]
         else:
@@ -480,7 +480,7 @@ class Equipment(PowerSystemResource):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer",
                 label="References"),
@@ -516,7 +516,7 @@ class EquipmentContainer(ConnectivityNodeContainer):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "ConnectivityNodes", "Equipments",
                 label="References"),
@@ -552,8 +552,8 @@ class Substation(EquipmentContainer):
     def _get_subgeographicalregions(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Core.SubGeographicalRegion" ]
         else:
@@ -571,7 +571,7 @@ class Substation(EquipmentContainer):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "ConnectivityNodes", "Equipments", "Region", "VoltageLevels",
                 label="References"),
@@ -611,8 +611,8 @@ class ConductingEquipment(Equipment):
     def _get_basevoltages(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Core.BaseVoltage" ]
         else:
@@ -629,7 +629,7 @@ class ConductingEquipment(Equipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),
@@ -665,8 +665,8 @@ class VoltageLevel(EquipmentContainer):
     def _get_basevoltages(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Core.BaseVoltage" ]
         else:
@@ -688,8 +688,8 @@ class VoltageLevel(EquipmentContainer):
     def _get_substations(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Core.Substation" ]
         else:
@@ -709,7 +709,7 @@ class VoltageLevel(EquipmentContainer):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "lowVoltageLimit", "highVoltageLimit",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "lowVoltageLimit", "highVoltageLimit",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "ConnectivityNodes", "Equipments", "BaseVoltage", "Bays", "Substation",
                 label="References"),
@@ -745,8 +745,8 @@ class Bay(EquipmentContainer):
     def _get_voltagelevels(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Core.VoltageLevel" ]
         else:
@@ -760,7 +760,7 @@ class Bay(EquipmentContainer):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "ConnectivityNodes", "Equipments", "VoltageLevel",
                 label="References"),

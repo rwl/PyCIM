@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-""" Contains entities that describe dynamic measurement data exchanged between applications.Contains entities that describe dynamic measurement data exchanged between applications.
-"""
 
 
 # <<< imports
@@ -27,11 +25,11 @@ ns_uri = "http://iec.ch/TC57/2009/CIM-schema-cim14#"
 class Element(object):
     # <<< element
     # @generated
-    def __init__(self, uri='', model=None, **kw_args):
+    def __init__(self, uuid='', model=None, **kw_args):
         """ Initialises a new 'Element' instance.
         """
  
-        self.uri = uri
+        self.uuid = uuid
 
 
         self._model = None
@@ -90,8 +88,8 @@ class Element(object):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
 
         if format:
             indent = indent[:-depth]
@@ -107,12 +105,9 @@ class Element(object):
 class Model(object):
     # <<< model
     # @generated
-    def __init__(self, uri='', elements=None, **kw_args):
+    def __init__(self, elements=None, **kw_args):
         """ Initialises a new 'Model' instance.
         """
- 
-        self.uri = uri
-
 
         self._elements = []
         if elements is not None:
@@ -181,8 +176,6 @@ class Model(object):
         for obj in self.elements:
             s += '%s<%s:Model.elements rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        s += '%s<%s:Model.uri>%s</%s:Model.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
 
         if format:
             indent = indent[:-depth]

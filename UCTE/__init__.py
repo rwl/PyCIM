@@ -36,16 +36,15 @@ from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, V
 #------------------------------------------------------------------------------
 
 class Element(HasTraits):
-    Model = Instance("UCTE.Model", allow_none=False,
+    Model = Instance("UCTE.Model",
         transient=True,
-        opposite="Elements",
         editor=InstanceEditor(name="_models"))
 
     def _get_models(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Model" ]
         else:
@@ -53,7 +52,7 @@ class Element(HasTraits):
 
     _models = Property(fget=_get_models)
 
-    URI = Str
+    UUID = Str
 
     #--------------------------------------------------------------------------
     #  Begin "Element" user definitions:
@@ -61,7 +60,7 @@ class Element(HasTraits):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI",
+            VGroup("UUID",
                 label="Attributes"),
             VGroup("Model",
                 label="References"),
@@ -82,16 +81,12 @@ class Element(HasTraits):
 class Model(HasTraits):
     Elements = List(Instance("UCTE.Element"))
 
-    URI = Str
-
     #--------------------------------------------------------------------------
     #  Begin "Model" user definitions:
     #--------------------------------------------------------------------------
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI",
-                label="Attributes"),
             VGroup("Elements",
                 label="References"),
             dock="tab"),
@@ -128,7 +123,7 @@ class IEC61970CIMVersion(Element):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "date", "version",
+            VGroup("UUID", "date", "version",
                 label="Attributes"),
             VGroup("Model",
                 label="References"),

@@ -58,7 +58,7 @@ class IEC61970CIMVersion(Element):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "date", "version",
+            VGroup("UUID", "date", "version",
                 label="Attributes"),
             VGroup("Model",
                 label="References"),

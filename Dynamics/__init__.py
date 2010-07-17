@@ -14,8 +14,6 @@
 # limitations under the License.
 #------------------------------------------------------------------------------
 
-""" Contains entities that describe dynamic measurement data exchanged between applications.Contains entities that describe dynamic measurement data exchanged between applications.
-"""
 #------------------------------------------------------------------------------
 #  Imports:
 #------------------------------------------------------------------------------
@@ -38,7 +36,7 @@ from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, V
 #------------------------------------------------------------------------------
 
 class Element(HasTraits):
-    Model = Instance("dynamics.Model", allow_none=False,
+    Model = Instance("Dynamics.Model",
         transient=True,
         opposite="Elements",
         editor=InstanceEditor(name="_models"))
@@ -46,16 +44,16 @@ class Element(HasTraits):
     def _get_models(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
-                    "dynamics.Model" ]
+                    "Dynamics.Model" ]
         else:
             return []
 
     _models = Property(fget=_get_models)
 
-    URI = Str
+    UUID = Str
 
     #--------------------------------------------------------------------------
     #  Begin "Element" user definitions:
@@ -63,12 +61,12 @@ class Element(HasTraits):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI",
+            VGroup("UUID",
                 label="Attributes"),
             VGroup("Model",
                 label="References"),
             dock="tab"),
-        id="dynamics.Element",
+        id="Dynamics.Element",
         title="Element",
         buttons=["OK", "Cancel", "Help"],
         resizable=False)
@@ -82,9 +80,7 @@ class Element(HasTraits):
 #------------------------------------------------------------------------------
 
 class Model(HasTraits):
-    Elements = List(Instance("dynamics.Element"))
-
-    URI = Str
+    Elements = List(Instance("Dynamics.Element"))
 
     #--------------------------------------------------------------------------
     #  Begin "Model" user definitions:
@@ -92,12 +88,10 @@ class Model(HasTraits):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI",
-                label="Attributes"),
             VGroup("Elements",
                 label="References"),
             dock="tab"),
-        id="dynamics.Model",
+        id="Dynamics.Model",
         title="Model",
         buttons=["OK", "Cancel", "Help"],
         resizable=False)

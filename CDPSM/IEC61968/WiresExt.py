@@ -67,8 +67,8 @@ class DistributionTransformerWinding(ConductingEquipment):
     def _get_windinginfos(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.AssetModels.WindingInfo" ]
         else:
@@ -86,8 +86,8 @@ class DistributionTransformerWinding(ConductingEquipment):
     def _get_distributiontransformers(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.WiresExt.DistributionTransformer" ]
         else:
@@ -105,8 +105,8 @@ class DistributionTransformerWinding(ConductingEquipment):
     def _get_ratiotapchangers(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Wires.RatioTapChanger" ]
         else:
@@ -124,8 +124,8 @@ class DistributionTransformerWinding(ConductingEquipment):
     def _get_windingpiimpedances(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.WiresExt.WindingPiImpedance" ]
         else:
@@ -148,7 +148,7 @@ class DistributionTransformerWinding(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "rground", "xground", "grounded",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "rground", "xground", "grounded",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage", "WindingInfo", "Transformer", "RatioTapChanger", "PiImpedance",
                 label="References"),
@@ -184,8 +184,8 @@ class DistributionLineSegment(ACLineSegment):
     def _get_conductorinfos(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.AssetModels.ConductorInfo" ]
         else:
@@ -203,8 +203,8 @@ class DistributionLineSegment(ACLineSegment):
     def _get_perlengthsequenceimpedances(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.WiresExt.PerLengthSequenceImpedance" ]
         else:
@@ -222,8 +222,8 @@ class DistributionLineSegment(ACLineSegment):
     def _get_perlengthphaseimpedances(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.WiresExt.PerLengthPhaseImpedance" ]
         else:
@@ -237,7 +237,7 @@ class DistributionLineSegment(ACLineSegment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "length", "r", "x0", "bch", "x", "b0ch", "r0",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "length", "r", "x0", "bch", "x", "b0ch", "r0",
                 label="Attributes", columns=1),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage", "ConductorInfo", "SequenceImpedance", "PhaseImpedance",
                 label="References"),
@@ -297,7 +297,7 @@ class WindingPiImpedance(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "x", "g", "r0", "r", "b", "g0", "x0", "b0",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "x", "g", "r0", "r", "b", "g0", "x0", "b0",
                 label="Attributes", columns=1),
             VGroup("Model", "Windings",
                 label="References"),
@@ -362,7 +362,7 @@ class DistributionTapChanger(RatioTapChanger):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "stepVoltageIncrement", "subsequentDelay", "neutralStep", "normalStep", "ltcFlag", "neutralU", "lowStep", "initialDelay", "regulationStatus", "highStep", "tculControlMode", "lineDropR", "monitoredPhase", "lineDropCompensation", "ptRatio", "ctRatio", "reverseLineDropR", "limitVoltage", "reverseLineDropX", "bandVoltage", "targetVoltage", "lineDropX",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "stepVoltageIncrement", "subsequentDelay", "neutralStep", "normalStep", "ltcFlag", "neutralU", "lowStep", "initialDelay", "regulationStatus", "highStep", "tculControlMode", "lineDropR", "monitoredPhase", "lineDropCompensation", "ptRatio", "ctRatio", "reverseLineDropR", "limitVoltage", "reverseLineDropX", "bandVoltage", "targetVoltage", "lineDropX",
                 label="Attributes", columns=2),
             VGroup("Model", "GeoLocation", "PSRType", "SvTapStep", "Winding",
                 label="References"),
@@ -422,7 +422,7 @@ class PerLengthSequenceImpedance(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "x", "gch", "r0", "x0", "g0ch", "b0ch", "r", "bch",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "x", "gch", "r0", "x0", "g0ch", "b0ch", "r", "bch",
                 label="Attributes", columns=1),
             VGroup("Model", "ConductorSegments",
                 label="References"),
@@ -461,7 +461,7 @@ class TransformerBank(Equipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "vectorGroup",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "vectorGroup",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Transformers",
                 label="References"),
@@ -504,7 +504,7 @@ class PerLengthPhaseImpedance(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "conductorCount",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "conductorCount",
                 label="Attributes"),
             VGroup("Model", "PhaseImpedanceData", "ConductorSegments",
                 label="References"),
@@ -540,8 +540,8 @@ class DistributionTransformer(Equipment):
     def _get_transformerinfos(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.AssetModels.TransformerInfo" ]
         else:
@@ -563,8 +563,8 @@ class DistributionTransformer(Equipment):
     def _get_transformerbanks(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.WiresExt.TransformerBank" ]
         else:
@@ -578,7 +578,7 @@ class DistributionTransformer(Equipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "TransformerInfo", "Windings", "TransformerBank",
                 label="References"),
@@ -614,8 +614,8 @@ class PhaseImpedanceData(Element):
     def _get_perlengthphaseimpedances(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.WiresExt.PerLengthPhaseImpedance" ]
         else:
@@ -641,7 +641,7 @@ class PhaseImpedanceData(Element):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "x", "sequenceNumber", "b", "r",
+            VGroup("UUID", "x", "sequenceNumber", "b", "r",
                 label="Attributes"),
             VGroup("Model", "PhaseImpedance",
                 label="References"),

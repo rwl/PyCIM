@@ -74,7 +74,7 @@ class BusbarSection(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),
@@ -110,8 +110,8 @@ class TapChanger(PowerSystemResource):
     def _get_svtapsteps(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.StateVariables.SvTapStep" ]
         else:
@@ -155,7 +155,7 @@ class TapChanger(PowerSystemResource):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "stepVoltageIncrement", "subsequentDelay", "neutralStep", "normalStep", "ltcFlag", "neutralU", "lowStep", "initialDelay", "regulationStatus", "highStep",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "stepVoltageIncrement", "subsequentDelay", "neutralStep", "normalStep", "ltcFlag", "neutralU", "lowStep", "initialDelay", "regulationStatus", "highStep",
                 label="Attributes", columns=1),
             VGroup("Model", "GeoLocation", "PSRType", "SvTapStep",
                 label="References"),
@@ -188,7 +188,7 @@ class Junction(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),
@@ -232,7 +232,7 @@ class EnergySource(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "x", "voltageMagnitude", "voltageAngle", "nominalVoltage",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "x", "voltageMagnitude", "voltageAngle", "nominalVoltage",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),
@@ -268,8 +268,8 @@ class SynchronousMachine(ConductingEquipment):
     def _get_generatingunits(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Generation.Production.GeneratingUnit" ]
         else:
@@ -298,7 +298,7 @@ class SynchronousMachine(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "baseQ", "operatingMode", "type", "maxQ", "minQ",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "baseQ", "operatingMode", "type", "maxQ", "minQ",
                 label="Attributes", columns=1),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage", "GeneratingUnit",
                 label="References"),
@@ -334,8 +334,8 @@ class EnergyConsumer(ConductingEquipment):
     def _get_loadresponsecharacteristics(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.LoadModel.LoadResponseCharacteristic" ]
         else:
@@ -364,7 +364,7 @@ class EnergyConsumer(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "pfixed", "pfixedPct", "qfixedPct", "qfixed", "customerCount",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "pfixed", "pfixedPct", "qfixedPct", "qfixed", "customerCount",
                 label="Attributes", columns=1),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage", "LoadResponse",
                 label="References"),
@@ -399,7 +399,7 @@ class Switch(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "normalOpen",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "normalOpen",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),
@@ -435,8 +435,8 @@ class Line(EquipmentContainer):
     def _get_subgeographicalregions(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Core.SubGeographicalRegion" ]
         else:
@@ -450,7 +450,7 @@ class Line(EquipmentContainer):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "ConnectivityNodes", "Equipments", "Region",
                 label="References"),
@@ -497,7 +497,7 @@ class ShuntCompensator(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "nomQ", "nomU", "normalSections", "maximumSections", "reactivePerSection",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "nomQ", "nomU", "normalSections", "maximumSections", "reactivePerSection",
                 label="Attributes", columns=1),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),
@@ -532,7 +532,7 @@ class Conductor(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "length",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "length",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),
@@ -567,7 +567,7 @@ class LoadBreakSwitch(Switch):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "normalOpen", "ratedCurrent",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "normalOpen", "ratedCurrent",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),
@@ -602,7 +602,7 @@ class Fuse(Switch):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "normalOpen", "ratingCurrent",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "normalOpen", "ratingCurrent",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),
@@ -652,7 +652,7 @@ class ACLineSegment(Conductor):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "length", "r", "x0", "bch", "x", "b0ch", "r0",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "length", "r", "x0", "bch", "x", "b0ch", "r0",
                 label="Attributes", columns=1),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),
@@ -685,7 +685,7 @@ class Disconnector(Switch):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "normalOpen",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "normalOpen",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),
@@ -721,8 +721,8 @@ class RatioTapChanger(TapChanger):
     def _get_distributiontransformerwindings(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.WiresExt.DistributionTransformerWinding" ]
         else:
@@ -739,7 +739,7 @@ class RatioTapChanger(TapChanger):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "stepVoltageIncrement", "subsequentDelay", "neutralStep", "normalStep", "ltcFlag", "neutralU", "lowStep", "initialDelay", "regulationStatus", "highStep", "tculControlMode",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "stepVoltageIncrement", "subsequentDelay", "neutralStep", "normalStep", "ltcFlag", "neutralU", "lowStep", "initialDelay", "regulationStatus", "highStep", "tculControlMode",
                 label="Attributes", columns=1),
             VGroup("Model", "GeoLocation", "PSRType", "SvTapStep", "Winding",
                 label="References"),
@@ -774,7 +774,7 @@ class Breaker(Switch):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "normalOpen", "ratedCurrent",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "phases", "normalOpen", "ratedCurrent",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "Terminals", "BaseVoltage",
                 label="References"),

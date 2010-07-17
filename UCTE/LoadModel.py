@@ -83,7 +83,7 @@ class LoadResponseCharacteristic(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "pVoltageExponent", "qConstantCurrent", "pConstantCurrent", "exponentModel", "pConstantPower", "qVoltageExponent", "qConstantPower", "qConstantImpedance", "pConstantImpedance",
+            VGroup("UUID", "description", "name", "aliasName", "pVoltageExponent", "qConstantCurrent", "pConstantCurrent", "exponentModel", "pConstantPower", "qVoltageExponent", "qConstantPower", "qConstantImpedance", "pConstantImpedance",
                 label="Attributes", columns=1),
             VGroup("Model", "EnergyConsumer",
                 label="References"),

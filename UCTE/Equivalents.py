@@ -53,7 +53,7 @@ class EquivalentEquipment(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent",
                 label="Attributes"),
             VGroup("Model", "MemberOf_EquipmentContainer", "BaseVoltage", "Terminals",
                 label="References"),

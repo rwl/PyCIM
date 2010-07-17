@@ -61,8 +61,8 @@ class OperationalLimit(IdentifiedObject):
     def _get_operationallimitsets(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.OperationalLimits.OperationalLimitSet" ]
         else:
@@ -80,8 +80,8 @@ class OperationalLimit(IdentifiedObject):
     def _get_operationallimittypes(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.OperationalLimits.OperationalLimitType" ]
         else:
@@ -95,7 +95,7 @@ class OperationalLimit(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "OperationalLimitSet", "OperationalLimitType",
                 label="References"),
@@ -131,8 +131,8 @@ class OperationalLimitSet(IdentifiedObject):
     def _get_terminals(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.Terminal" ]
         else:
@@ -150,7 +150,7 @@ class OperationalLimitSet(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "Terminal", "OperationalLimitValue",
                 label="References"),
@@ -192,7 +192,7 @@ class OperationalLimitType(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "direction", "acceptableDuration",
+            VGroup("UUID", "description", "name", "aliasName", "direction", "acceptableDuration",
                 label="Attributes"),
             VGroup("Model", "OperationalLimit",
                 label="References"),
@@ -227,7 +227,7 @@ class CurrentLimit(OperationalLimit):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "value",
+            VGroup("UUID", "description", "name", "aliasName", "value",
                 label="Attributes"),
             VGroup("Model", "OperationalLimitSet", "OperationalLimitType",
                 label="References"),
@@ -262,7 +262,7 @@ class VoltageLimit(OperationalLimit):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "value",
+            VGroup("UUID", "description", "name", "aliasName", "value",
                 label="Attributes"),
             VGroup("Model", "OperationalLimitSet", "OperationalLimitType",
                 label="References"),

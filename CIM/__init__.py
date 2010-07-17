@@ -21,7 +21,7 @@
 
 
 
-from enthought.traits.api import HasTraits, Date, Str
+from enthought.traits.api import HasTraits, Instance, List, Property, Date, Str
 # <<< imports
 # @generated
 from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, VGrid, InstanceEditor
@@ -36,6 +36,23 @@ from enthought.traits.ui.api import View, Group, Item, HGroup, VGroup, Tabbed, V
 #------------------------------------------------------------------------------
 
 class Element(HasTraits):
+    Parent = Instance("CIM.Model",
+        transient=True,
+        opposite="Elements",
+        editor=InstanceEditor(name="_models"))
+
+    def _get_models(self):
+        """ Property getter.
+        """
+        if self.Parent is not None:
+            return [e for e in self.Parent.Elements \
+                if "%s.%s" % (e.__module__, e.__class__.__name__) == \
+                    "CIM.Model" ]
+        else:
+            return []
+
+    _models = Property(fget=_get_models)
+
     UUID = Str
 
     #--------------------------------------------------------------------------
@@ -46,7 +63,8 @@ class Element(HasTraits):
     traits_view = View(Tabbed(
             VGroup("UUID",
                 label="Attributes"),
-            
+            VGroup("Parent",
+                label="References"),
             dock="tab"),
         id="CIM.Element",
         title="Element",
@@ -58,40 +76,300 @@ class Element(HasTraits):
     #--------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-#  "IEC61970CIMVersion" class:
+#  "Model" class:
 #------------------------------------------------------------------------------
 
-class IEC61970CIMVersion(Element):
-    """ This is the IEC 61970 CIM version number assigned to this UML model file.
+class Model(HasTraits):
+    Elements = List(Instance("CIM.Element"))
+
+    #--------------------------------------------------------------------------
+    #  Begin "Model" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("Elements",
+                label="References"),
+            dock="tab"),
+        id="CIM.Model",
+        title="Model",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "Model" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "CombinedVersion" class:
+#------------------------------------------------------------------------------
+
+class CombinedVersion(Element):
+    """ The combined version denotes the versions of the subpackages that have been combined into the total CIIMmodel. This is a convenience instead of having to look at each subpackage.
     """
 
     #--------------------------------------------------------------------------
     #  Trait definitions:
     #--------------------------------------------------------------------------
 
-    # The date of release of the model version.  Of the form 2008-12-22 for example if the date was the twentysecond day of December in 2008.
-    date = Date(desc="The date of release of the model version.  Of the form 2008-12-22 for example if the date was the twentysecond day of December in 2008.")
+    # Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05.
+    date = Date(desc="Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05.")
 
-    # Version number of the model.   Of the form IEC61970CIM14v01 for example.  For UCTE on 2009-01-15 added the terminal.SequenceNumber  added some clarification of MutualCoupling  For UCTE on 2009-0116 added IdentifiedObject inhereitance to OperationalLimitType class  For UCTE on 2009-01-17 added the TopologicalNode-BaseVoltage association.  For UCTE on 2009-01-27 added the TopologicalNode.equivalent attribute.  For UCTE on 2009-02-04 renamed SvTapStep.tapRatio to SvTapStep.continuousPosition. Multipliicty made optional or SvTapStep.position and SvTapStep.continuousPosition.
-    version = Str(desc="Version number of the model.   Of the form IEC61970CIM14v01 for example.  For UCTE on 2009-01-15 added the terminal.SequenceNumber  added some clarification of MutualCoupling  For UCTE on 2009-0116 added IdentifiedObject inhereitance to OperationalLimitType class  For UCTE on 2009-01-17 added the TopologicalNode-BaseVoltage association.  For UCTE on 2009-01-27 added the TopologicalNode.equivalent attribute.  For UCTE on 2009-02-04 renamed SvTapStep.tapRatio to SvTapStep.continuousPosition. Multipliicty made optional or SvTapStep.position and SvTapStep.continuousPosition.")
+    # Form is IEC61970CIMXXvYY_IEC61968CIMXXvYY_combined where XX is the major CIM package version and the YY is the minor version, and different packages could have different major and minor versions.   For example IEC61970CIM13v18_IEC61968CIM10v16_combined.  Additional packages might be added in the future.
+    version = Str(desc="Form is IEC61970CIMXXvYY_IEC61968CIMXXvYY_combined where XX is the major CIM package version and the YY is the minor version, and different packages could have different major and minor versions.   For example IEC61970CIM13v18_IEC61968CIM10v16_combined.  Additional packages might be added in the future.")
 
     #--------------------------------------------------------------------------
-    #  Begin "IEC61970CIMVersion" user definitions:
+    #  Begin "CombinedVersion" user definitions:
     #--------------------------------------------------------------------------
 
     # @generated
     traits_view = View(Tabbed(
             VGroup("UUID", "date", "version",
                 label="Attributes"),
-            
+            VGroup("Parent",
+                label="References"),
             dock="tab"),
-        id="CIM.IEC61970CIMVersion",
-        title="IEC61970CIMVersion",
+        id="CIM.CombinedVersion",
+        title="CombinedVersion",
         buttons=["OK", "Cancel", "Help"],
         resizable=False)
 
     #--------------------------------------------------------------------------
-    #  End "IEC61970CIMVersion" user definitions:
+    #  End "CombinedVersion" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "PowerROCPerMin" class:
+#------------------------------------------------------------------------------
+
+class PowerROCPerMin(Element):
+    pass
+    #--------------------------------------------------------------------------
+    #  Begin "PowerROCPerMin" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("UUID",
+                label="Attributes"),
+            VGroup("Parent",
+                label="References"),
+            dock="tab"),
+        id="CIM.PowerROCPerMin",
+        title="PowerROCPerMin",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "PowerROCPerMin" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "RateOfChange" class:
+#------------------------------------------------------------------------------
+
+class RateOfChange(Element):
+    pass
+    #--------------------------------------------------------------------------
+    #  Begin "RateOfChange" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("UUID",
+                label="Attributes"),
+            VGroup("Parent",
+                label="References"),
+            dock="tab"),
+        id="CIM.RateOfChange",
+        title="RateOfChange",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "RateOfChange" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "EnumeratedType" class:
+#------------------------------------------------------------------------------
+
+class EnumeratedType(Element):
+    pass
+    #--------------------------------------------------------------------------
+    #  Begin "EnumeratedType" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("UUID",
+                label="Attributes"),
+            VGroup("Parent",
+                label="References"),
+            dock="tab"),
+        id="CIM.EnumeratedType",
+        title="EnumeratedType",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "EnumeratedType" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "FreqBiasFactor" class:
+#------------------------------------------------------------------------------
+
+class FreqBiasFactor(Element):
+    pass
+    #--------------------------------------------------------------------------
+    #  Begin "FreqBiasFactor" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("UUID",
+                label="Attributes"),
+            VGroup("Parent",
+                label="References"),
+            dock="tab"),
+        id="CIM.FreqBiasFactor",
+        title="FreqBiasFactor",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "FreqBiasFactor" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "FlowgateIdcType" class:
+#------------------------------------------------------------------------------
+
+class FlowgateIdcType(Element):
+    pass
+    #--------------------------------------------------------------------------
+    #  Begin "FlowgateIdcType" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("UUID",
+                label="Attributes"),
+            VGroup("Parent",
+                label="References"),
+            dock="tab"),
+        id="CIM.FlowgateIdcType",
+        title="FlowgateIdcType",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "FlowgateIdcType" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "Quantity" class:
+#------------------------------------------------------------------------------
+
+class Quantity(Element):
+    pass
+    #--------------------------------------------------------------------------
+    #  Begin "Quantity" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("UUID",
+                label="Attributes"),
+            VGroup("Parent",
+                label="References"),
+            dock="tab"),
+        id="CIM.Quantity",
+        title="Quantity",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "Quantity" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "EnergyAsMWh" class:
+#------------------------------------------------------------------------------
+
+class EnergyAsMWh(Element):
+    pass
+    #--------------------------------------------------------------------------
+    #  Begin "EnergyAsMWh" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("UUID",
+                label="Attributes"),
+            VGroup("Parent",
+                label="References"),
+            dock="tab"),
+        id="CIM.EnergyAsMWh",
+        title="EnergyAsMWh",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "EnergyAsMWh" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "FlowgateAfcUseCode" class:
+#------------------------------------------------------------------------------
+
+class FlowgateAfcUseCode(Element):
+    pass
+    #--------------------------------------------------------------------------
+    #  Begin "FlowgateAfcUseCode" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("UUID",
+                label="Attributes"),
+            VGroup("Parent",
+                label="References"),
+            dock="tab"),
+        id="CIM.FlowgateAfcUseCode",
+        title="FlowgateAfcUseCode",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "FlowgateAfcUseCode" user definitions:
+    #--------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#  "PenaltyFactor" class:
+#------------------------------------------------------------------------------
+
+class PenaltyFactor(Element):
+    pass
+    #--------------------------------------------------------------------------
+    #  Begin "PenaltyFactor" user definitions:
+    #--------------------------------------------------------------------------
+
+    # @generated
+    traits_view = View(Tabbed(
+            VGroup("UUID",
+                label="Attributes"),
+            VGroup("Parent",
+                label="References"),
+            dock="tab"),
+        id="CIM.PenaltyFactor",
+        title="PenaltyFactor",
+        buttons=["OK", "Cancel", "Help"],
+        resizable=False)
+
+    #--------------------------------------------------------------------------
+    #  End "PenaltyFactor" user definitions:
     #--------------------------------------------------------------------------
 
 

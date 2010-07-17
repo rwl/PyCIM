@@ -96,8 +96,8 @@ class BusbarSection(ConductingEquipment):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -244,8 +244,8 @@ class TapChanger(IdentifiedObject):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -450,8 +450,8 @@ class TransformerWinding(ConductingEquipment):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -641,8 +641,8 @@ class RegulatingControl(IdentifiedObject):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -740,8 +740,8 @@ class ReactiveCapabilityCurve(Curve):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -896,8 +896,8 @@ class MutualCoupling(IdentifiedObject):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -995,8 +995,8 @@ class PowerTransformer(Equipment):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -1088,8 +1088,8 @@ class EnergyConsumer(ConductingEquipment):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -1163,8 +1163,8 @@ class Switch(ConductingEquipment):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -1262,8 +1262,8 @@ class RegulatingCondEq(ConductingEquipment):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -1360,8 +1360,8 @@ class VoltageControlZone(IdentifiedObject):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -1424,8 +1424,8 @@ class Line(EquipmentContainer):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -1538,8 +1538,8 @@ class Conductor(ConductingEquipment):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -1613,8 +1613,8 @@ class ACLineSegment(Conductor):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -1759,8 +1759,8 @@ class PhaseTapChanger(TapChanger):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -1972,8 +1972,8 @@ class SynchronousMachine(RegulatingCondEq):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -2073,8 +2073,8 @@ class RatioTapChanger(TapChanger):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -2201,8 +2201,8 @@ class ShuntCompensator(RegulatingCondEq):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \

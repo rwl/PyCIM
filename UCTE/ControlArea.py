@@ -72,7 +72,7 @@ class ControlArea(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "pTolerance", "netInterchange",
+            VGroup("UUID", "description", "name", "aliasName", "pTolerance", "netInterchange",
                 label="Attributes"),
             VGroup("Model", "TopologicalNode", "TieFlow", "ControlAreaGeneratingUnit",
                 label="References"),
@@ -108,8 +108,8 @@ class ControlAreaGeneratingUnit(Element):
     def _get_controlareas(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.ControlArea.ControlArea" ]
         else:
@@ -127,8 +127,8 @@ class ControlAreaGeneratingUnit(Element):
     def _get_generatingunits(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Generation.Production.GeneratingUnit" ]
         else:
@@ -142,7 +142,7 @@ class ControlAreaGeneratingUnit(Element):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI",
+            VGroup("UUID",
                 label="Attributes"),
             VGroup("Model", "ControlArea", "GeneratingUnit",
                 label="References"),
@@ -178,8 +178,8 @@ class TieFlow(Element):
     def _get_controlareas(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.ControlArea.ControlArea" ]
         else:
@@ -197,8 +197,8 @@ class TieFlow(Element):
     def _get_terminals(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.Terminal" ]
         else:
@@ -215,7 +215,7 @@ class TieFlow(Element):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "positiveFlowIn",
+            VGroup("UUID", "positiveFlowIn",
                 label="Attributes"),
             VGroup("Model", "ControlArea", "Terminal",
                 label="References"),

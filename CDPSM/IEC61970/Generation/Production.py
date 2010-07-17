@@ -68,7 +68,7 @@ class GeneratingUnit(Equipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "ratedNetMaxP", "genControlSource", "initialP",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "normaIlyInService", "ratedNetMaxP", "genControlSource", "initialP",
                 label="Attributes"),
             VGroup("Model", "GeoLocation", "PSRType", "EquipmentContainer", "SynchronousMachines",
                 label="References"),

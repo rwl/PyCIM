@@ -62,7 +62,7 @@ class IdentifiedObject(Element):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model",
                 label="References"),
@@ -98,8 +98,8 @@ class CurveData(Element):
     def _get_curves(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.Curve" ]
         else:
@@ -122,7 +122,7 @@ class CurveData(Element):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "y1value", "xvalue", "y2value",
+            VGroup("UUID", "y1value", "xvalue", "y2value",
                 label="Attributes"),
             VGroup("Model", "CurveSchedule",
                 label="References"),
@@ -158,7 +158,7 @@ class Curve(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "CurveScheduleDatas",
                 label="References"),
@@ -194,7 +194,7 @@ class ConnectivityNodeContainer(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "TopologicalNode",
                 label="References"),
@@ -230,8 +230,8 @@ class Equipment(IdentifiedObject):
     def _get_equipmentcontainers(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.EquipmentContainer" ]
         else:
@@ -248,7 +248,7 @@ class Equipment(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent",
                 label="Attributes"),
             VGroup("Model", "MemberOf_EquipmentContainer",
                 label="References"),
@@ -298,7 +298,7 @@ class BaseVoltage(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "nominalVoltage", "isDC",
+            VGroup("UUID", "description", "name", "aliasName", "nominalVoltage", "isDC",
                 label="Attributes"),
             VGroup("Model", "ConductingEquipment", "VoltageLevel", "TopologicalNode",
                 label="References"),
@@ -334,7 +334,7 @@ class EquipmentContainer(ConnectivityNodeContainer):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "TopologicalNode", "Contains_Equipments",
                 label="References"),
@@ -374,8 +374,8 @@ class Substation(EquipmentContainer):
     def _get_subgeographicalregions(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.SubGeographicalRegion" ]
         else:
@@ -389,7 +389,7 @@ class Substation(EquipmentContainer):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "TopologicalNode", "Contains_Equipments", "Contains_VoltageLevels", "Region",
                 label="References"),
@@ -425,8 +425,8 @@ class ConductingEquipment(Equipment):
     def _get_basevoltages(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.BaseVoltage" ]
         else:
@@ -444,7 +444,7 @@ class ConductingEquipment(Equipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent",
                 label="Attributes"),
             VGroup("Model", "MemberOf_EquipmentContainer", "BaseVoltage", "Terminals",
                 label="References"),
@@ -484,8 +484,8 @@ class SubGeographicalRegion(IdentifiedObject):
     def _get_geographicalregions(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.GeographicalRegion" ]
         else:
@@ -499,7 +499,7 @@ class SubGeographicalRegion(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "Substations", "Region",
                 label="References"),
@@ -543,8 +543,8 @@ class Terminal(IdentifiedObject):
     def _get_svpowerflows(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.StateVariables.SvPowerFlow" ]
         else:
@@ -570,8 +570,8 @@ class Terminal(IdentifiedObject):
     def _get_conductingequipments(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.ConductingEquipment" ]
         else:
@@ -589,8 +589,8 @@ class Terminal(IdentifiedObject):
     def _get_topologicalnodes(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Topology.TopologicalNode" ]
         else:
@@ -614,7 +614,7 @@ class Terminal(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "sequenceNumber", "connected",
+            VGroup("UUID", "description", "name", "aliasName", "sequenceNumber", "connected",
                 label="Attributes"),
             VGroup("Model", "HasFirst_MutualCoupling", "OperationalLimitSet", "SvPowerFlow", "RegulatingControl", "TieFlow", "ConductingEquipment", "TopologicalNode", "HasSecond_MutualCoupling",
                 label="References"),
@@ -650,7 +650,7 @@ class GeographicalRegion(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "Regions",
                 label="References"),
@@ -686,8 +686,8 @@ class VoltageLevel(EquipmentContainer):
     def _get_basevoltages(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.BaseVoltage" ]
         else:
@@ -705,8 +705,8 @@ class VoltageLevel(EquipmentContainer):
     def _get_substations(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.Substation" ]
         else:
@@ -720,7 +720,7 @@ class VoltageLevel(EquipmentContainer):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "TopologicalNode", "Contains_Equipments", "BaseVoltage", "MemberOf_Substation",
                 label="References"),

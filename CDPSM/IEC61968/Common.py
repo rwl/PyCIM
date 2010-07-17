@@ -57,7 +57,7 @@ class Location(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "PositionPoints",
                 label="References"),
@@ -93,8 +93,8 @@ class PositionPoint(Element):
     def _get_locations(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.Common.Location" ]
         else:
@@ -117,7 +117,7 @@ class PositionPoint(Element):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "sequenceNumber", "xPosition", "yPosition",
+            VGroup("UUID", "sequenceNumber", "xPosition", "yPosition",
                 label="Attributes"),
             VGroup("Model", "Location",
                 label="References"),
@@ -153,7 +153,7 @@ class GeoLocation(Location):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "PositionPoints", "PowerSystemResources",
                 label="References"),

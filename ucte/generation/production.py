@@ -181,8 +181,8 @@ class GeneratingUnit(Equipment):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -278,8 +278,8 @@ class FossilFuel(IdentifiedObject):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -365,8 +365,8 @@ class HydroPump(IdentifiedObject):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -429,8 +429,8 @@ class WindGeneratingUnit(GeneratingUnit):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -520,8 +520,8 @@ class NuclearGeneratingUnit(GeneratingUnit):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -611,8 +611,8 @@ class HydroGeneratingUnit(GeneratingUnit):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
@@ -725,8 +725,8 @@ class ThermalGeneratingUnit(GeneratingUnit):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
         s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
             (indent, ns_prefix, self.description, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \

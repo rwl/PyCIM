@@ -82,8 +82,8 @@ class BusbarSection(ConductingEquipment):
     def _get_voltagecontrolzones(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.VoltageControlZone" ]
         else:
@@ -97,7 +97,7 @@ class BusbarSection(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent",
                 label="Attributes"),
             VGroup("Model", "MemberOf_EquipmentContainer", "BaseVoltage", "Terminals", "VoltageControlZone",
                 label="References"),
@@ -133,8 +133,8 @@ class TapChanger(IdentifiedObject):
     def _get_svtapsteps(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.StateVariables.SvTapStep" ]
         else:
@@ -150,8 +150,8 @@ class TapChanger(IdentifiedObject):
     def _get_regulatingcontrols(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.RegulatingControl" ]
         else:
@@ -180,7 +180,7 @@ class TapChanger(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "stepVoltageIncrement", "neutralU", "lowStep", "neutralStep", "highStep",
+            VGroup("UUID", "description", "name", "aliasName", "stepVoltageIncrement", "neutralU", "lowStep", "neutralStep", "highStep",
                 label="Attributes"),
             VGroup("Model", "SvTapStep", "RegulatingControl",
                 label="References"),
@@ -216,8 +216,8 @@ class TransformerWinding(ConductingEquipment):
     def _get_powertransformers(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.PowerTransformer" ]
         else:
@@ -235,8 +235,8 @@ class TransformerWinding(ConductingEquipment):
     def _get_ratiotapchangers(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.RatioTapChanger" ]
         else:
@@ -254,8 +254,8 @@ class TransformerWinding(ConductingEquipment):
     def _get_phasetapchangers(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.PhaseTapChanger" ]
         else:
@@ -311,7 +311,7 @@ class TransformerWinding(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent", "x", "b", "connectionType", "ratedS", "x0", "r", "r0", "b0", "ratedU", "g0", "g", "xground", "windingType", "rground",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent", "x", "b", "connectionType", "ratedS", "x0", "r", "r0", "b0", "ratedU", "g0", "g", "xground", "windingType", "rground",
                 label="Attributes", columns=1),
             VGroup("Model", "MemberOf_EquipmentContainer", "BaseVoltage", "Terminals", "MemberOf_PowerTransformer", "RatioTapChanger", "PhaseTapChanger",
                 label="References"),
@@ -347,8 +347,8 @@ class RegulatingControl(IdentifiedObject):
     def _get_terminals(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.Terminal" ]
         else:
@@ -382,7 +382,7 @@ class RegulatingControl(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "mode", "discrete", "targetValue", "targetRange",
+            VGroup("UUID", "description", "name", "aliasName", "mode", "discrete", "targetValue", "targetRange",
                 label="Attributes"),
             VGroup("Model", "Terminal", "RegulatingCondEq", "TapChanger",
                 label="References"),
@@ -418,7 +418,7 @@ class ReactiveCapabilityCurve(Curve):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "CurveScheduleDatas", "InitiallyUsedBySynchronousMachine",
                 label="References"),
@@ -454,8 +454,8 @@ class MutualCoupling(IdentifiedObject):
     def _get_terminals(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.Terminal" ]
         else:
@@ -473,8 +473,8 @@ class MutualCoupling(IdentifiedObject):
     def _get_terminals(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Core.Terminal" ]
         else:
@@ -512,7 +512,7 @@ class MutualCoupling(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "distance22", "g0ch", "distance21", "r0", "b0ch", "x0", "distance11", "distance12",
+            VGroup("UUID", "description", "name", "aliasName", "distance22", "g0ch", "distance21", "r0", "b0ch", "x0", "distance11", "distance12",
                 label="Attributes"),
             VGroup("Model", "First_Terminal", "Second_Terminal",
                 label="References"),
@@ -548,7 +548,7 @@ class PowerTransformer(Equipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent",
                 label="Attributes"),
             VGroup("Model", "MemberOf_EquipmentContainer", "Contains_TransformerWindings",
                 label="References"),
@@ -584,8 +584,8 @@ class EnergyConsumer(ConductingEquipment):
     def _get_loadresponsecharacteristics(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.LoadModel.LoadResponseCharacteristic" ]
         else:
@@ -599,7 +599,7 @@ class EnergyConsumer(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent",
                 label="Attributes"),
             VGroup("Model", "MemberOf_EquipmentContainer", "BaseVoltage", "Terminals", "LoadResponse",
                 label="References"),
@@ -632,7 +632,7 @@ class Switch(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent",
                 label="Attributes"),
             VGroup("Model", "MemberOf_EquipmentContainer", "BaseVoltage", "Terminals",
                 label="References"),
@@ -668,8 +668,8 @@ class RegulatingCondEq(ConductingEquipment):
     def _get_regulatingcontrols(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.RegulatingControl" ]
         else:
@@ -683,7 +683,7 @@ class RegulatingCondEq(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent",
                 label="Attributes"),
             VGroup("Model", "MemberOf_EquipmentContainer", "BaseVoltage", "Terminals", "RegulatingControl",
                 label="References"),
@@ -719,8 +719,8 @@ class VoltageControlZone(IdentifiedObject):
     def _get_busbarsections(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.BusbarSection" ]
         else:
@@ -734,7 +734,7 @@ class VoltageControlZone(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "BusbarSection",
                 label="References"),
@@ -767,7 +767,7 @@ class Line(EquipmentContainer):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "TopologicalNode", "Contains_Equipments",
                 label="References"),
@@ -826,7 +826,7 @@ class Conductor(ConductingEquipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent", "b0ch", "bch", "r0", "x0", "gch", "x", "length", "r", "g0ch",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent", "b0ch", "bch", "r0", "x0", "gch", "x", "length", "r", "g0ch",
                 label="Attributes", columns=1),
             VGroup("Model", "MemberOf_EquipmentContainer", "BaseVoltage", "Terminals",
                 label="References"),
@@ -859,7 +859,7 @@ class ACLineSegment(Conductor):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent", "b0ch", "bch", "r0", "x0", "gch", "x", "length", "r", "g0ch",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent", "b0ch", "bch", "r0", "x0", "gch", "x", "length", "r", "g0ch",
                 label="Attributes", columns=1),
             VGroup("Model", "MemberOf_EquipmentContainer", "BaseVoltage", "Terminals",
                 label="References"),
@@ -895,8 +895,8 @@ class PhaseTapChanger(TapChanger):
     def _get_transformerwindings(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.TransformerWinding" ]
         else:
@@ -928,7 +928,7 @@ class PhaseTapChanger(TapChanger):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "stepVoltageIncrement", "neutralU", "lowStep", "neutralStep", "highStep", "xStepMin", "xStepMax", "stepPhaseShiftIncrement", "windingConnectionAngle", "phaseTapChangerType", "voltageStepIncrementOutOfPhase",
+            VGroup("UUID", "description", "name", "aliasName", "stepVoltageIncrement", "neutralU", "lowStep", "neutralStep", "highStep", "xStepMin", "xStepMax", "stepPhaseShiftIncrement", "windingConnectionAngle", "phaseTapChangerType", "voltageStepIncrementOutOfPhase",
                 label="Attributes", columns=1),
             VGroup("Model", "SvTapStep", "RegulatingControl", "TransformerWinding",
                 label="References"),
@@ -964,8 +964,8 @@ class SynchronousMachine(RegulatingCondEq):
     def _get_reactivecapabilitycurves(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.ReactiveCapabilityCurve" ]
         else:
@@ -983,8 +983,8 @@ class SynchronousMachine(RegulatingCondEq):
     def _get_hydropumps(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Generation.Production.HydroPump" ]
         else:
@@ -1002,8 +1002,8 @@ class SynchronousMachine(RegulatingCondEq):
     def _get_generatingunits(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Generation.Production.GeneratingUnit" ]
         else:
@@ -1053,7 +1053,7 @@ class SynchronousMachine(RegulatingCondEq):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent", "x0", "operatingMode", "r0", "qPercent", "x2", "type", "r2", "r", "maxQ", "x", "ratedS", "minQ",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent", "x0", "operatingMode", "r0", "qPercent", "x2", "type", "r2", "r", "maxQ", "x", "ratedS", "minQ",
                 label="Attributes", columns=1),
             VGroup("Model", "MemberOf_EquipmentContainer", "BaseVoltage", "Terminals", "RegulatingControl", "InitialReactiveCapabilityCurve", "Drives_HydroPump", "MemberOf_GeneratingUnit",
                 label="References"),
@@ -1089,8 +1089,8 @@ class RatioTapChanger(TapChanger):
     def _get_transformerwindings(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.TransformerWinding" ]
         else:
@@ -1104,7 +1104,7 @@ class RatioTapChanger(TapChanger):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "stepVoltageIncrement", "neutralU", "lowStep", "neutralStep", "highStep",
+            VGroup("UUID", "description", "name", "aliasName", "stepVoltageIncrement", "neutralU", "lowStep", "neutralStep", "highStep",
                 label="Attributes"),
             VGroup("Model", "SvTapStep", "RegulatingControl", "TransformerWinding",
                 label="References"),
@@ -1140,8 +1140,8 @@ class ShuntCompensator(RegulatingCondEq):
     def _get_svshuntcompensatorsectionss(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.StateVariables.SvShuntCompensatorSections" ]
         else:
@@ -1170,7 +1170,7 @@ class ShuntCompensator(RegulatingCondEq):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent", "b0PerSection", "maximumSections", "g0PerSection", "bPerSection", "gPerSection",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent", "b0PerSection", "maximumSections", "g0PerSection", "bPerSection", "gPerSection",
                 label="Attributes"),
             VGroup("Model", "MemberOf_EquipmentContainer", "BaseVoltage", "Terminals", "RegulatingControl", "SvShuntCompensatorSections",
                 label="References"),

@@ -83,7 +83,7 @@ class TransformerInfo(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName",
                 label="Attributes"),
             VGroup("Model", "Transformers", "WindingInfos",
                 label="References"),
@@ -127,8 +127,8 @@ class ToWindingSpec(IdentifiedObject):
     def _get_windinginfos(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.AssetModels.WindingInfo" ]
         else:
@@ -151,7 +151,7 @@ class ToWindingSpec(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "toTapStep", "voltage", "phaseShift",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "toTapStep", "voltage", "phaseShift",
                 label="Attributes"),
             VGroup("Model", "OpenCircuitTests", "ShortCircuitTests", "ToWinding",
                 label="References"),
@@ -187,8 +187,8 @@ class WireArrangement(IdentifiedObject):
     def _get_conductorinfos(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.AssetModels.ConductorInfo" ]
         else:
@@ -206,8 +206,8 @@ class WireArrangement(IdentifiedObject):
     def _get_wiretypes(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.AssetModels.WireType" ]
         else:
@@ -230,7 +230,7 @@ class WireArrangement(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "mountingPointX", "mountingPointY", "position",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "mountingPointX", "mountingPointY", "position",
                 label="Attributes"),
             VGroup("Model", "ConductorInfo", "WireType",
                 label="References"),
@@ -285,7 +285,7 @@ class ConductorInfo(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "phaseCount", "insulationMaterial", "insulationThickness", "insulated", "usage",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "phaseCount", "insulationMaterial", "insulationThickness", "insulated", "usage",
                 label="Attributes"),
             VGroup("Model", "WireArrangements", "ConductorSegments",
                 label="References"),
@@ -321,8 +321,8 @@ class DistributionWindingTest(IdentifiedObject):
     def _get_windinginfos(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.AssetModels.WindingInfo" ]
         else:
@@ -339,7 +339,7 @@ class DistributionWindingTest(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "fromTapStep",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "fromTapStep",
                 label="Attributes"),
             VGroup("Model", "FromWinding",
                 label="References"),
@@ -415,7 +415,7 @@ class WireType(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "rAC75", "coreRadius", "coreStrandCount", "rAC25", "radius", "gmr", "rDC20", "rAC50", "material", "sizeDescription", "strandCount", "ratedCurrent",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "rAC75", "coreRadius", "coreStrandCount", "rAC25", "radius", "gmr", "rDC20", "rAC50", "material", "sizeDescription", "strandCount", "ratedCurrent",
                 label="Attributes", columns=1),
             VGroup("Model", "ConcentricNeutralCableInfos", "WireArrangements",
                 label="References"),
@@ -459,8 +459,8 @@ class WindingInfo(IdentifiedObject):
     def _get_transformerinfos(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.AssetModels.TransformerInfo" ]
         else:
@@ -505,7 +505,7 @@ class WindingInfo(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "sequenceNumber", "ratedS", "ratedU", "connectionKind", "emergencyS", "r", "phaseAngle", "insulationU", "shortTermS",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "sequenceNumber", "ratedS", "ratedU", "connectionKind", "emergencyS", "r", "phaseAngle", "insulationU", "shortTermS",
                 label="Attributes", columns=1),
             VGroup("Model", "WindingTests", "ToWindingSpecs", "TransformerInfo", "Windings",
                 label="References"),
@@ -567,7 +567,7 @@ class CableInfo(ConductorInfo):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "phaseCount", "insulationMaterial", "insulationThickness", "insulated", "usage", "nominalTemperature", "diameterOverScreen", "sheathAsNeutral", "diameterOverJacket", "diameterOverCore", "constructionKind", "outerJacketKind", "isStrandFill", "shieldMaterial", "diameterOverInsulation",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "phaseCount", "insulationMaterial", "insulationThickness", "insulated", "usage", "nominalTemperature", "diameterOverScreen", "sheathAsNeutral", "diameterOverJacket", "diameterOverCore", "constructionKind", "outerJacketKind", "isStrandFill", "shieldMaterial", "diameterOverInsulation",
                 label="Attributes", columns=1),
             VGroup("Model", "WireArrangements", "ConductorSegments",
                 label="References"),
@@ -615,7 +615,7 @@ class OpenCircuitTest(DistributionWindingTest):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "fromTapStep", "noLoadLossZero", "noLoadLoss", "excitingCurrent", "excitingCurrentZero",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "fromTapStep", "noLoadLossZero", "noLoadLoss", "excitingCurrent", "excitingCurrentZero",
                 label="Attributes"),
             VGroup("Model", "FromWinding", "MeasuredWindingSpecs",
                 label="References"),
@@ -651,8 +651,8 @@ class ConcentricNeutralCableInfo(CableInfo):
     def _get_wiretypes(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61968.AssetModels.WireType" ]
         else:
@@ -672,7 +672,7 @@ class ConcentricNeutralCableInfo(CableInfo):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "phaseCount", "insulationMaterial", "insulationThickness", "insulated", "usage", "nominalTemperature", "diameterOverScreen", "sheathAsNeutral", "diameterOverJacket", "diameterOverCore", "constructionKind", "outerJacketKind", "isStrandFill", "shieldMaterial", "diameterOverInsulation", "neutralStrandCount", "diameterOverNeutral",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "phaseCount", "insulationMaterial", "insulationThickness", "insulated", "usage", "nominalTemperature", "diameterOverScreen", "sheathAsNeutral", "diameterOverJacket", "diameterOverCore", "constructionKind", "outerJacketKind", "isStrandFill", "shieldMaterial", "diameterOverInsulation", "neutralStrandCount", "diameterOverNeutral",
                 label="Attributes", columns=1),
             VGroup("Model", "WireArrangements", "ConductorSegments", "WireType",
                 label="References"),
@@ -713,7 +713,7 @@ class OverheadConductorInfo(ConductorInfo):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "phaseCount", "insulationMaterial", "insulationThickness", "insulated", "usage", "neutralInsulationThickness", "phaseConductorCount", "phaseConductorSpacing",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "phaseCount", "insulationMaterial", "insulationThickness", "insulated", "usage", "neutralInsulationThickness", "phaseConductorCount", "phaseConductorSpacing",
                 label="Attributes", columns=1),
             VGroup("Model", "WireArrangements", "ConductorSegments",
                 label="References"),
@@ -751,7 +751,7 @@ class TapeShieldCableInfo(CableInfo):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "phaseCount", "insulationMaterial", "insulationThickness", "insulated", "usage", "nominalTemperature", "diameterOverScreen", "sheathAsNeutral", "diameterOverJacket", "diameterOverCore", "constructionKind", "outerJacketKind", "isStrandFill", "shieldMaterial", "diameterOverInsulation", "tapeThickness", "tapeLap",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "phaseCount", "insulationMaterial", "insulationThickness", "insulated", "usage", "nominalTemperature", "diameterOverScreen", "sheathAsNeutral", "diameterOverJacket", "diameterOverCore", "constructionKind", "outerJacketKind", "isStrandFill", "shieldMaterial", "diameterOverInsulation", "tapeThickness", "tapeLap",
                 label="Attributes", columns=1),
             VGroup("Model", "WireArrangements", "ConductorSegments",
                 label="References"),
@@ -799,7 +799,7 @@ class ShortCircuitTest(DistributionWindingTest):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "mRID", "description", "name", "localName", "aliasName", "fromTapStep", "loadLossZero", "leakageImpedanceZero", "leakageImpedance", "loadLoss",
+            VGroup("UUID", "mRID", "description", "name", "localName", "aliasName", "fromTapStep", "loadLossZero", "leakageImpedanceZero", "leakageImpedance", "loadLoss",
                 label="Attributes"),
             VGroup("Model", "FromWinding", "ShortedWindingSpecs",
                 label="References"),

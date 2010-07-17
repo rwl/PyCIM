@@ -78,8 +78,8 @@ class IEC61970CIMVersion(Element):
         if self.model is not None:
             s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
-            (indent, ns_prefix, self.uri, ns_prefix)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
 
         if format:
             indent = indent[:-depth]

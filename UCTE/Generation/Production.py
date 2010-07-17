@@ -90,7 +90,7 @@ class GeneratingUnit(Equipment):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent", "maxOperatingP", "startupCost", "nominalP", "governorSCD", "maximumAllowableSpinningReserve", "variableCost", "minOperatingP", "normalPF",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent", "maxOperatingP", "startupCost", "nominalP", "governorSCD", "maximumAllowableSpinningReserve", "variableCost", "minOperatingP", "normalPF",
                 label="Attributes", columns=1),
             VGroup("Model", "MemberOf_EquipmentContainer", "Contains_SynchronousMachines", "ControlAreaGeneratingUnit",
                 label="References"),
@@ -126,8 +126,8 @@ class FossilFuel(IdentifiedObject):
     def _get_thermalgeneratingunits(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Generation.Production.ThermalGeneratingUnit" ]
         else:
@@ -144,7 +144,7 @@ class FossilFuel(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "fossilFuelType",
+            VGroup("UUID", "description", "name", "aliasName", "fossilFuelType",
                 label="Attributes"),
             VGroup("Model", "ThermalGeneratingUnit",
                 label="References"),
@@ -180,8 +180,8 @@ class HydroPump(IdentifiedObject):
     def _get_synchronousmachines(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Wires.SynchronousMachine" ]
         else:
@@ -195,7 +195,7 @@ class HydroPump(IdentifiedObject):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName",
+            VGroup("UUID", "description", "name", "aliasName",
                 label="Attributes"),
             VGroup("Model", "DrivenBy_SynchronousMachine",
                 label="References"),
@@ -228,7 +228,7 @@ class WindGeneratingUnit(GeneratingUnit):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent", "maxOperatingP", "startupCost", "nominalP", "governorSCD", "maximumAllowableSpinningReserve", "variableCost", "minOperatingP", "normalPF",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent", "maxOperatingP", "startupCost", "nominalP", "governorSCD", "maximumAllowableSpinningReserve", "variableCost", "minOperatingP", "normalPF",
                 label="Attributes", columns=1),
             VGroup("Model", "MemberOf_EquipmentContainer", "Contains_SynchronousMachines", "ControlAreaGeneratingUnit",
                 label="References"),
@@ -261,7 +261,7 @@ class NuclearGeneratingUnit(GeneratingUnit):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent", "maxOperatingP", "startupCost", "nominalP", "governorSCD", "maximumAllowableSpinningReserve", "variableCost", "minOperatingP", "normalPF",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent", "maxOperatingP", "startupCost", "nominalP", "governorSCD", "maximumAllowableSpinningReserve", "variableCost", "minOperatingP", "normalPF",
                 label="Attributes", columns=1),
             VGroup("Model", "MemberOf_EquipmentContainer", "Contains_SynchronousMachines", "ControlAreaGeneratingUnit",
                 label="References"),
@@ -294,7 +294,7 @@ class HydroGeneratingUnit(GeneratingUnit):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent", "maxOperatingP", "startupCost", "nominalP", "governorSCD", "maximumAllowableSpinningReserve", "variableCost", "minOperatingP", "normalPF",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent", "maxOperatingP", "startupCost", "nominalP", "governorSCD", "maximumAllowableSpinningReserve", "variableCost", "minOperatingP", "normalPF",
                 label="Attributes", columns=1),
             VGroup("Model", "MemberOf_EquipmentContainer", "Contains_SynchronousMachines", "ControlAreaGeneratingUnit",
                 label="References"),
@@ -330,8 +330,8 @@ class ThermalGeneratingUnit(GeneratingUnit):
     def _get_fossilfuels(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "UCTE.Generation.Production.FossilFuel" ]
         else:
@@ -345,7 +345,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "description", "name", "aliasName", "equivalent", "maxOperatingP", "startupCost", "nominalP", "governorSCD", "maximumAllowableSpinningReserve", "variableCost", "minOperatingP", "normalPF",
+            VGroup("UUID", "description", "name", "aliasName", "equivalent", "maxOperatingP", "startupCost", "nominalP", "governorSCD", "maximumAllowableSpinningReserve", "variableCost", "minOperatingP", "normalPF",
                 label="Attributes", columns=1),
             VGroup("Model", "MemberOf_EquipmentContainer", "Contains_SynchronousMachines", "ControlAreaGeneratingUnit", "FossilFuels",
                 label="References"),

@@ -56,8 +56,8 @@ class SvTapStep(Element):
     def _get_tapchangers(self):
         """ Property getter.
         """
-        if self.Parent is not None:
-            return [e for e in self.Parent.Elements \
+        if self.Model is not None:
+            return [e for e in self.Model.Elements \
                 if "%s.%s" % (e.__module__, e.__class__.__name__) == \
                     "CDPSM.IEC61970.Wires.TapChanger" ]
         else:
@@ -77,7 +77,7 @@ class SvTapStep(Element):
 
     # @generated
     traits_view = View(Tabbed(
-            VGroup("URI", "continuousPosition", "position",
+            VGroup("UUID", "continuousPosition", "position",
                 label="Attributes"),
             VGroup("Model", "TapChanger",
                 label="References"),

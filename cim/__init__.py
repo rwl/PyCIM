@@ -20,21 +20,43 @@
 
 ns_prefix = "cim"
 
-ns_uri = "http://iec.ch/TC57/CIM-generic"
+ns_uri = "http://iec.ch/TC57/2009/CIM-schema-cim14"
 
 class Element(object):
     # <<< element
     # @generated
-    def __init__(self, uuid='', **kw_args):
+    def __init__(self, uuid='', parent=None, **kw_args):
         """ Initialises a new 'Element' instance.
         """
  
         self.uuid = uuid
 
 
+        self._parent = None
+        self.parent = parent
+
 
         super(Element, self).__init__(**kw_args)
     # >>> element
+
+    # <<< parent
+    # @generated
+    def get_parent(self):
+        """ 
+        """
+        return self._parent
+
+    def set_parent(self, value):
+        if self._parent is not None:
+            filtered = [x for x in self.parent.elements if x != self]
+            self._parent._elements = filtered
+
+        self._parent = value
+        if self._parent is not None:
+            self._parent._elements.append(self)
+
+    parent = property(get_parent, set_parent)
+    # >>> parent
 
 
     def __str__(self):
@@ -63,6 +85,9 @@ class Element(object):
         if format:
             indent += ' ' * depth
 
+        if self.parent is not None:
+            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.parent.uri)
         s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
             (indent, ns_prefix, self.uuid, ns_prefix)
 
@@ -77,36 +102,61 @@ class Element(object):
     # >>> element.serialize
 
 
-class IEC61970CIMVersion(Element):
-    """ This is the IEC 61970 CIM version number assigned to this UML model file.
-    """
-    # <<< iec61970_cimversion
+class Model(object):
+    # <<< model
     # @generated
-    def __init__(self, date='', version='', **kw_args):
-        """ Initialises a new 'IEC61970CIMVersion' instance.
+    def __init__(self, elements=None, **kw_args):
+        """ Initialises a new 'Model' instance.
         """
-        # The date of release of the model version.  Of the form 2008-12-22 for example if the date was the twentysecond day of December in 2008. 
-        self.date = date
 
-        # Version number of the model.   Of the form IEC61970CIM14v01 for example.  For UCTE on 2009-01-15 added the terminal.SequenceNumber  added some clarification of MutualCoupling  For UCTE on 2009-0116 added IdentifiedObject inhereitance to OperationalLimitType class  For UCTE on 2009-01-17 added the TopologicalNode-BaseVoltage association.  For UCTE on 2009-01-27 added the TopologicalNode.equivalent attribute.  For UCTE on 2009-02-04 renamed SvTapStep.tapRatio to SvTapStep.continuousPosition. Multipliicty made optional or SvTapStep.position and SvTapStep.continuousPosition. 
-        self.version = version
+        self._elements = []
+        if elements is not None:
+            self.elements = elements
+        else:
+            self.elements = []
 
 
+        super(Model, self).__init__(**kw_args)
+    # >>> model
 
-        super(IEC61970CIMVersion, self).__init__(**kw_args)
-    # >>> iec61970_cimversion
+    # <<< elements
+    # @generated
+    def get_elements(self):
+        """ 
+        """
+        return self._elements
+
+    def set_elements(self, value):
+        for x in self._elements:
+            x._parent = None
+        for y in value:
+            y._parent = self
+        self._elements = value
+
+    elements = property(get_elements, set_elements)
+
+    def add_elements(self, *elements):
+        for obj in elements:
+            obj._parent = self
+            self._elements.append(obj)
+
+    def remove_elements(self, *elements):
+        for obj in elements:
+            obj._parent = None
+            self._elements.remove(obj)
+    # >>> elements
 
 
     def __str__(self):
-        """ Returns a string representation of the IEC61970CIMVersion.
+        """ Returns a string representation of the Model.
         """
         return self.serialize(header=True, depth=2, format=True)
 
 
-    # <<< iec61970_cimversion.serialize
+    # <<< model.serialize
     # @generated
     def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the IEC61970CIMVersion.
+        """ Returns an RDF/XML representation of the Model.
         """
         s = ''
         indent = ' ' * depth if depth else ''
@@ -119,26 +169,594 @@ class IEC61970CIMVersion(Element):
             if format:
                 indent += ' ' * depth
 
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "IEC61970CIMVersion", self.uri)
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Model", self.uri)
         if format:
             indent += ' ' * depth
 
-        s += '%s<%s:IEC61970CIMVersion.date>%s</%s:IEC61970CIMVersion.date>' % \
-            (indent, ns_prefix, self.date, ns_prefix)
-        s += '%s<%s:IEC61970CIMVersion.version>%s</%s:IEC61970CIMVersion.version>' % \
-            (indent, ns_prefix, self.version, ns_prefix)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
+        for obj in self.elements:
+            s += '%s<%s:Model.elements rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, obj.uri)
 
         if format:
             indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "IEC61970CIMVersion")
+        s += '%s</%s:%s>' % (indent, ns_prefix, "Model")
 
         if header:
             s += '%s</rdf:RDF>' % indent[:-depth]
 
         return s
-    # >>> iec61970_cimversion.serialize
+    # >>> model.serialize
+
+
+class CombinedVersion(Element):
+    """ The combined version denotes the versions of the subpackages that have been combined into the total CIIMmodel. This is a convenience instead of having to look at each subpackage.
+    """
+    # <<< combined_version
+    # @generated
+    def __init__(self, date='', version='', **kw_args):
+        """ Initialises a new 'CombinedVersion' instance.
+        """
+        # Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05. 
+        self.date = date
+
+        # Form is IEC61970CIMXXvYY_IEC61968CIMXXvYY_combined where XX is the major CIM package version and the YY is the minor version, and different packages could have different major and minor versions.   For example IEC61970CIM13v18_IEC61968CIM10v16_combined.  Additional packages might be added in the future. 
+        self.version = version
+
+
+
+        super(CombinedVersion, self).__init__(**kw_args)
+    # >>> combined_version
+
+
+    def __str__(self):
+        """ Returns a string representation of the CombinedVersion.
+        """
+        return self.serialize(header=True, depth=2, format=True)
+
+
+    # <<< combined_version.serialize
+    # @generated
+    def serialize(self, header=False, depth=0, format=False):
+        """ Returns an RDF/XML representation of the CombinedVersion.
+        """
+        s = ''
+        indent = ' ' * depth if depth else ''
+        if format:
+            indent = '\n' + indent
+        if header:
+            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
+            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
+                (ns_prefix, ns_uri)
+            if format:
+                indent += ' ' * depth
+
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "CombinedVersion", self.uri)
+        if format:
+            indent += ' ' * depth
+
+        s += '%s<%s:CombinedVersion.date>%s</%s:CombinedVersion.date>' % \
+            (indent, ns_prefix, self.date, ns_prefix)
+        s += '%s<%s:CombinedVersion.version>%s</%s:CombinedVersion.version>' % \
+            (indent, ns_prefix, self.version, ns_prefix)
+        if self.parent is not None:
+            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.parent.uri)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
+
+        if format:
+            indent = indent[:-depth]
+        s += '%s</%s:%s>' % (indent, ns_prefix, "CombinedVersion")
+
+        if header:
+            s += '%s</rdf:RDF>' % indent[:-depth]
+
+        return s
+    # >>> combined_version.serialize
+
+
+class PowerROCPerMin(Element):
+    pass
+    # <<< power_rocper_min
+    # @generated
+    def __init__(self, **kw_args):
+        """ Initialises a new 'PowerROCPerMin' instance.
+        """
+
+
+        super(PowerROCPerMin, self).__init__(**kw_args)
+    # >>> power_rocper_min
+
+
+    def __str__(self):
+        """ Returns a string representation of the PowerROCPerMin.
+        """
+        return self.serialize(header=True, depth=2, format=True)
+
+
+    # <<< power_rocper_min.serialize
+    # @generated
+    def serialize(self, header=False, depth=0, format=False):
+        """ Returns an RDF/XML representation of the PowerROCPerMin.
+        """
+        s = ''
+        indent = ' ' * depth if depth else ''
+        if format:
+            indent = '\n' + indent
+        if header:
+            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
+            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
+                (ns_prefix, ns_uri)
+            if format:
+                indent += ' ' * depth
+
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "PowerROCPerMin", self.uri)
+        if format:
+            indent += ' ' * depth
+
+        if self.parent is not None:
+            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.parent.uri)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
+
+        if format:
+            indent = indent[:-depth]
+        s += '%s</%s:%s>' % (indent, ns_prefix, "PowerROCPerMin")
+
+        if header:
+            s += '%s</rdf:RDF>' % indent[:-depth]
+
+        return s
+    # >>> power_rocper_min.serialize
+
+
+class RateOfChange(Element):
+    pass
+    # <<< rate_of_change
+    # @generated
+    def __init__(self, **kw_args):
+        """ Initialises a new 'RateOfChange' instance.
+        """
+
+
+        super(RateOfChange, self).__init__(**kw_args)
+    # >>> rate_of_change
+
+
+    def __str__(self):
+        """ Returns a string representation of the RateOfChange.
+        """
+        return self.serialize(header=True, depth=2, format=True)
+
+
+    # <<< rate_of_change.serialize
+    # @generated
+    def serialize(self, header=False, depth=0, format=False):
+        """ Returns an RDF/XML representation of the RateOfChange.
+        """
+        s = ''
+        indent = ' ' * depth if depth else ''
+        if format:
+            indent = '\n' + indent
+        if header:
+            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
+            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
+                (ns_prefix, ns_uri)
+            if format:
+                indent += ' ' * depth
+
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "RateOfChange", self.uri)
+        if format:
+            indent += ' ' * depth
+
+        if self.parent is not None:
+            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.parent.uri)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
+
+        if format:
+            indent = indent[:-depth]
+        s += '%s</%s:%s>' % (indent, ns_prefix, "RateOfChange")
+
+        if header:
+            s += '%s</rdf:RDF>' % indent[:-depth]
+
+        return s
+    # >>> rate_of_change.serialize
+
+
+class EnumeratedType(Element):
+    pass
+    # <<< enumerated_type
+    # @generated
+    def __init__(self, **kw_args):
+        """ Initialises a new 'EnumeratedType' instance.
+        """
+
+
+        super(EnumeratedType, self).__init__(**kw_args)
+    # >>> enumerated_type
+
+
+    def __str__(self):
+        """ Returns a string representation of the EnumeratedType.
+        """
+        return self.serialize(header=True, depth=2, format=True)
+
+
+    # <<< enumerated_type.serialize
+    # @generated
+    def serialize(self, header=False, depth=0, format=False):
+        """ Returns an RDF/XML representation of the EnumeratedType.
+        """
+        s = ''
+        indent = ' ' * depth if depth else ''
+        if format:
+            indent = '\n' + indent
+        if header:
+            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
+            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
+                (ns_prefix, ns_uri)
+            if format:
+                indent += ' ' * depth
+
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "EnumeratedType", self.uri)
+        if format:
+            indent += ' ' * depth
+
+        if self.parent is not None:
+            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.parent.uri)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
+
+        if format:
+            indent = indent[:-depth]
+        s += '%s</%s:%s>' % (indent, ns_prefix, "EnumeratedType")
+
+        if header:
+            s += '%s</rdf:RDF>' % indent[:-depth]
+
+        return s
+    # >>> enumerated_type.serialize
+
+
+class FreqBiasFactor(Element):
+    pass
+    # <<< freq_bias_factor
+    # @generated
+    def __init__(self, **kw_args):
+        """ Initialises a new 'FreqBiasFactor' instance.
+        """
+
+
+        super(FreqBiasFactor, self).__init__(**kw_args)
+    # >>> freq_bias_factor
+
+
+    def __str__(self):
+        """ Returns a string representation of the FreqBiasFactor.
+        """
+        return self.serialize(header=True, depth=2, format=True)
+
+
+    # <<< freq_bias_factor.serialize
+    # @generated
+    def serialize(self, header=False, depth=0, format=False):
+        """ Returns an RDF/XML representation of the FreqBiasFactor.
+        """
+        s = ''
+        indent = ' ' * depth if depth else ''
+        if format:
+            indent = '\n' + indent
+        if header:
+            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
+            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
+                (ns_prefix, ns_uri)
+            if format:
+                indent += ' ' * depth
+
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "FreqBiasFactor", self.uri)
+        if format:
+            indent += ' ' * depth
+
+        if self.parent is not None:
+            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.parent.uri)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
+
+        if format:
+            indent = indent[:-depth]
+        s += '%s</%s:%s>' % (indent, ns_prefix, "FreqBiasFactor")
+
+        if header:
+            s += '%s</rdf:RDF>' % indent[:-depth]
+
+        return s
+    # >>> freq_bias_factor.serialize
+
+
+class FlowgateIdcType(Element):
+    pass
+    # <<< flowgate_idc_type
+    # @generated
+    def __init__(self, **kw_args):
+        """ Initialises a new 'FlowgateIdcType' instance.
+        """
+
+
+        super(FlowgateIdcType, self).__init__(**kw_args)
+    # >>> flowgate_idc_type
+
+
+    def __str__(self):
+        """ Returns a string representation of the FlowgateIdcType.
+        """
+        return self.serialize(header=True, depth=2, format=True)
+
+
+    # <<< flowgate_idc_type.serialize
+    # @generated
+    def serialize(self, header=False, depth=0, format=False):
+        """ Returns an RDF/XML representation of the FlowgateIdcType.
+        """
+        s = ''
+        indent = ' ' * depth if depth else ''
+        if format:
+            indent = '\n' + indent
+        if header:
+            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
+            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
+                (ns_prefix, ns_uri)
+            if format:
+                indent += ' ' * depth
+
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "FlowgateIdcType", self.uri)
+        if format:
+            indent += ' ' * depth
+
+        if self.parent is not None:
+            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.parent.uri)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
+
+        if format:
+            indent = indent[:-depth]
+        s += '%s</%s:%s>' % (indent, ns_prefix, "FlowgateIdcType")
+
+        if header:
+            s += '%s</rdf:RDF>' % indent[:-depth]
+
+        return s
+    # >>> flowgate_idc_type.serialize
+
+
+class Quantity(Element):
+    pass
+    # <<< quantity
+    # @generated
+    def __init__(self, **kw_args):
+        """ Initialises a new 'Quantity' instance.
+        """
+
+
+        super(Quantity, self).__init__(**kw_args)
+    # >>> quantity
+
+
+    def __str__(self):
+        """ Returns a string representation of the Quantity.
+        """
+        return self.serialize(header=True, depth=2, format=True)
+
+
+    # <<< quantity.serialize
+    # @generated
+    def serialize(self, header=False, depth=0, format=False):
+        """ Returns an RDF/XML representation of the Quantity.
+        """
+        s = ''
+        indent = ' ' * depth if depth else ''
+        if format:
+            indent = '\n' + indent
+        if header:
+            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
+            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
+                (ns_prefix, ns_uri)
+            if format:
+                indent += ' ' * depth
+
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Quantity", self.uri)
+        if format:
+            indent += ' ' * depth
+
+        if self.parent is not None:
+            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.parent.uri)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
+
+        if format:
+            indent = indent[:-depth]
+        s += '%s</%s:%s>' % (indent, ns_prefix, "Quantity")
+
+        if header:
+            s += '%s</rdf:RDF>' % indent[:-depth]
+
+        return s
+    # >>> quantity.serialize
+
+
+class EnergyAsMWh(Element):
+    pass
+    # <<< energy_as_mwh
+    # @generated
+    def __init__(self, **kw_args):
+        """ Initialises a new 'EnergyAsMWh' instance.
+        """
+
+
+        super(EnergyAsMWh, self).__init__(**kw_args)
+    # >>> energy_as_mwh
+
+
+    def __str__(self):
+        """ Returns a string representation of the EnergyAsMWh.
+        """
+        return self.serialize(header=True, depth=2, format=True)
+
+
+    # <<< energy_as_mwh.serialize
+    # @generated
+    def serialize(self, header=False, depth=0, format=False):
+        """ Returns an RDF/XML representation of the EnergyAsMWh.
+        """
+        s = ''
+        indent = ' ' * depth if depth else ''
+        if format:
+            indent = '\n' + indent
+        if header:
+            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
+            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
+                (ns_prefix, ns_uri)
+            if format:
+                indent += ' ' * depth
+
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "EnergyAsMWh", self.uri)
+        if format:
+            indent += ' ' * depth
+
+        if self.parent is not None:
+            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.parent.uri)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
+
+        if format:
+            indent = indent[:-depth]
+        s += '%s</%s:%s>' % (indent, ns_prefix, "EnergyAsMWh")
+
+        if header:
+            s += '%s</rdf:RDF>' % indent[:-depth]
+
+        return s
+    # >>> energy_as_mwh.serialize
+
+
+class FlowgateAfcUseCode(Element):
+    pass
+    # <<< flowgate_afc_use_code
+    # @generated
+    def __init__(self, **kw_args):
+        """ Initialises a new 'FlowgateAfcUseCode' instance.
+        """
+
+
+        super(FlowgateAfcUseCode, self).__init__(**kw_args)
+    # >>> flowgate_afc_use_code
+
+
+    def __str__(self):
+        """ Returns a string representation of the FlowgateAfcUseCode.
+        """
+        return self.serialize(header=True, depth=2, format=True)
+
+
+    # <<< flowgate_afc_use_code.serialize
+    # @generated
+    def serialize(self, header=False, depth=0, format=False):
+        """ Returns an RDF/XML representation of the FlowgateAfcUseCode.
+        """
+        s = ''
+        indent = ' ' * depth if depth else ''
+        if format:
+            indent = '\n' + indent
+        if header:
+            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
+            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
+                (ns_prefix, ns_uri)
+            if format:
+                indent += ' ' * depth
+
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "FlowgateAfcUseCode", self.uri)
+        if format:
+            indent += ' ' * depth
+
+        if self.parent is not None:
+            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.parent.uri)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
+
+        if format:
+            indent = indent[:-depth]
+        s += '%s</%s:%s>' % (indent, ns_prefix, "FlowgateAfcUseCode")
+
+        if header:
+            s += '%s</rdf:RDF>' % indent[:-depth]
+
+        return s
+    # >>> flowgate_afc_use_code.serialize
+
+
+class PenaltyFactor(Element):
+    pass
+    # <<< penalty_factor
+    # @generated
+    def __init__(self, **kw_args):
+        """ Initialises a new 'PenaltyFactor' instance.
+        """
+
+
+        super(PenaltyFactor, self).__init__(**kw_args)
+    # >>> penalty_factor
+
+
+    def __str__(self):
+        """ Returns a string representation of the PenaltyFactor.
+        """
+        return self.serialize(header=True, depth=2, format=True)
+
+
+    # <<< penalty_factor.serialize
+    # @generated
+    def serialize(self, header=False, depth=0, format=False):
+        """ Returns an RDF/XML representation of the PenaltyFactor.
+        """
+        s = ''
+        indent = ' ' * depth if depth else ''
+        if format:
+            indent = '\n' + indent
+        if header:
+            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
+            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
+                (ns_prefix, ns_uri)
+            if format:
+                indent += ' ' * depth
+
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "PenaltyFactor", self.uri)
+        if format:
+            indent += ' ' * depth
+
+        if self.parent is not None:
+            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.parent.uri)
+        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
+            (indent, ns_prefix, self.uuid, ns_prefix)
+
+        if format:
+            indent = indent[:-depth]
+        s += '%s</%s:%s>' % (indent, ns_prefix, "PenaltyFactor")
+
+        if header:
+            s += '%s</rdf:RDF>' % indent[:-depth]
+
+        return s
+    # >>> penalty_factor.serialize
 
 
 # <<< cim
