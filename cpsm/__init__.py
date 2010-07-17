@@ -1,5 +1,17 @@
-# Copyright (C) 2009 Richard W. Lincoln
-# All rights reserved.
+# Copyright (C) 2010 Richard Lincoln
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 """ An extension to the Core and Wires packages that models information on the current and planned network configuration. These entities are optional within typical network applications.An extension to the Core and Wires packages that models information on the current and planned network configuration. These entities are optional within typical network applications.
 """
 
@@ -15,38 +27,38 @@ ns_uri = "http://iec.ch/TC57/2008/CIM-schema-cim13#"
 class Element(object):
     # <<< element
     # @generated
-    def __init__(self, uri='', parent=None, **kw_args):
+    def __init__(self, uri='', model=None, **kw_args):
         """ Initialises a new 'Element' instance.
         """
  
         self.uri = uri
 
 
-        self._parent = None
-        self.parent = parent
+        self._model = None
+        self.model = model
 
 
         super(Element, self).__init__(**kw_args)
     # >>> element
 
-    # <<< parent
+    # <<< model
     # @generated
-    def get_parent(self):
+    def get_model(self):
         """ 
         """
-        return self._parent
+        return self._model
 
-    def set_parent(self, value):
-        if self._parent is not None:
-            filtered = [x for x in self.parent.elements if x != self]
-            self._parent._elements = filtered
+    def set_model(self, value):
+        if self._model is not None:
+            filtered = [x for x in self.model.elements if x != self]
+            self._model._elements = filtered
 
-        self._parent = value
-        if self._parent is not None:
-            self._parent._elements.append(self)
+        self._model = value
+        if self._model is not None:
+            self._model._elements.append(self)
 
-    parent = property(get_parent, set_parent)
-    # >>> parent
+    model = property(get_model, set_model)
+    # >>> model
 
 
     def __str__(self):
@@ -75,9 +87,9 @@ class Element(object):
         if format:
             indent += ' ' * depth
 
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
 
@@ -92,12 +104,15 @@ class Element(object):
     # >>> element.serialize
 
 
-class CommonPowerSystemModel(object):
-    # <<< common_power_system_model
+class Model(object):
+    # <<< model
     # @generated
-    def __init__(self, elements=None, **kw_args):
-        """ Initialises a new 'CommonPowerSystemModel' instance.
+    def __init__(self, uri='', elements=None, **kw_args):
+        """ Initialises a new 'Model' instance.
         """
+ 
+        self.uri = uri
+
 
         self._elements = []
         if elements is not None:
@@ -106,8 +121,8 @@ class CommonPowerSystemModel(object):
             self.elements = []
 
 
-        super(CommonPowerSystemModel, self).__init__(**kw_args)
-    # >>> common_power_system_model
+        super(Model, self).__init__(**kw_args)
+    # >>> model
 
     # <<< elements
     # @generated
@@ -118,47 +133,35 @@ class CommonPowerSystemModel(object):
 
     def set_elements(self, value):
         for x in self._elements:
-            x._parent = None
+            x._model = None
         for y in value:
-            y._parent = self
+            y._model = self
         self._elements = value
 
     elements = property(get_elements, set_elements)
 
     def add_elements(self, *elements):
         for obj in elements:
-            obj._parent = self
+            obj._model = self
             self._elements.append(obj)
 
     def remove_elements(self, *elements):
         for obj in elements:
-            obj._parent = None
+            obj._model = None
             self._elements.remove(obj)
     # >>> elements
 
-    # <<< read
-    def read(self, rdfxml):
-        """ @generated
-        """
-        pass
-    # >>> read
-    # <<< write
-    def write(self, rdfxml):
-        """ @generated
-        """
-        pass
-    # >>> write
 
     def __str__(self):
-        """ Returns a string representation of the CommonPowerSystemModel.
+        """ Returns a string representation of the Model.
         """
         return self.serialize(header=True, depth=2, format=True)
 
 
-    # <<< common_power_system_model.serialize
+    # <<< model.serialize
     # @generated
     def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the CommonPowerSystemModel.
+        """ Returns an RDF/XML representation of the Model.
         """
         s = ''
         indent = ' ' * depth if depth else ''
@@ -171,23 +174,25 @@ class CommonPowerSystemModel(object):
             if format:
                 indent += ' ' * depth
 
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "CommonPowerSystemModel", self.uri)
+        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Model", self.uri)
         if format:
             indent += ' ' * depth
 
         for obj in self.elements:
-            s += '%s<%s:CommonPowerSystemModel.elements rdf:resource="#%s"/>' % \
+            s += '%s<%s:Model.elements rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
+        s += '%s<%s:Model.uri>%s</%s:Model.uri>' % \
+            (indent, ns_prefix, self.uri, ns_prefix)
 
         if format:
             indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "CommonPowerSystemModel")
+        s += '%s</%s:%s>' % (indent, ns_prefix, "Model")
 
         if header:
             s += '%s</rdf:RDF>' % indent[:-depth]
 
         return s
-    # >>> common_power_system_model.serialize
+    # >>> model.serialize
 
 
 class IEC61970CIMVersion(Element):
@@ -240,9 +245,9 @@ class IEC61970CIMVersion(Element):
             (indent, ns_prefix, self.version, ns_prefix)
         s += '%s<%s:IEC61970CIMVersion.date>%s</%s:IEC61970CIMVersion.date>' % \
             (indent, ns_prefix, self.date, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
 

@@ -1,5 +1,17 @@
-# Copyright (C) 2009 Richard W. Lincoln
-# All rights reserved.
+# Copyright (C) 2010 Richard Lincoln
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 """ The specificatoin of limits associated with equipment and other operational entities.The specificatoin of limits associated with equipment and other operational entities.
 """
 
@@ -83,9 +95,9 @@ class OperationalLimit(IdentifiedObject):
                 (indent, ns_prefix, self.operational_limit_set.uri)
         s += '%s<%s:OperationalLimit.type>%s</%s:OperationalLimit.type>' % \
             (indent, ns_prefix, self.type, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -209,9 +221,9 @@ class OperationalLimitSet(IdentifiedObject):
         for obj in self.operational_limit_value:
             s += '%s<%s:OperationalLimitSet.operational_limit_value rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -279,9 +291,9 @@ class ActivePowerLimit(OperationalLimit):
 
         s += '%s<%s:ActivePowerLimit.value>%s</%s:ActivePowerLimit.value>' % \
             (indent, ns_prefix, self.value, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -354,9 +366,9 @@ class ApparentPowerLimit(OperationalLimit):
 
         s += '%s<%s:ApparentPowerLimit.value>%s</%s:ApparentPowerLimit.value>' % \
             (indent, ns_prefix, self.value, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -429,9 +441,9 @@ class VoltageLimit(OperationalLimit):
 
         s += '%s<%s:VoltageLimit.value>%s</%s:VoltageLimit.value>' % \
             (indent, ns_prefix, self.value, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -504,9 +516,9 @@ class CurrentLimit(OperationalLimit):
 
         s += '%s<%s:CurrentLimit.value>%s</%s:CurrentLimit.value>' % \
             (indent, ns_prefix, self.value, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \

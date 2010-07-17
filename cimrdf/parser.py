@@ -4,27 +4,19 @@ import logging
 
 from rdflib import Graph, RDF, Namespace, Literal
 
-from cpsm_pkg_map import cpsm_pkg_map
-#from ucte_pkg_map import ucte_pkg_map
-#from cdpsm_pkg_map import cdpsm_pkg_map
-#from dynamics_pkg_map import dynamics_pkg_map
-
-from cpsm import ns_uri as ns_cpsm
-#from ucte import ns_uri as ns_ucte
-#from cdpsm import ns_uri as ns_cdpsm
-#from dynamics import ns_uri as ns_dyn
+from cim import ns_uri
+from cim_pkg_map import pkg_map
 
 logger = logging.getLogger(__name__)
 
-PKG_MAP = {"cpsm": cpsm_pkg_map}#, "ucte": ucte_pkg_map, "cdpsm": cdpsm_pkg_map, "dynamics": dynamics_pkg_map}
+#PKG_MAP = {"cpsm": cpsm_pkg_map, "ucte": ucte_pkg_map, "cdpsm": cdpsm_pkg_map, "dynamics": dynamics_pkg_map}
+#NS_MAP = {"cpsm": ns_cpsm, "cdpsm": ns_cdpsm, "dynamics": ns_dyn, "ucte": ns_ucte}
 
-NS_MAP = {"cpsm": ns_cpsm}#, "cdpsm": ns_cdpsm, "dynamics": ns_dyn, "ucte": ns_ucte}
-
-def read(path, profile):
+def read(path, profile=None):
     """ Returns a dictionary of CIM objects.
     """
-    ns = Namespace(NS_MAP[profile])
-    urimap = PKG_MAP[profile]
+    ns = Namespace(ns_uri)#NS_MAP[profile])
+    urimap = pkg_map#PKG_MAP[profile]
 
     g = Graph()
     g.parse(path)

@@ -1,5 +1,17 @@
-# Copyright (C) 2009 Richard W. Lincoln
-# All rights reserved.
+# Copyright (C) 2010 Richard Lincoln
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 
 from cpsm.core import ConnectivityNodeContainer
 from cpsm.core import ConductingEquipment
@@ -88,9 +100,9 @@ class EquivalentNetwork(ConnectivityNodeContainer):
         for obj in self.equivalent_equipments:
             s += '%s<%s:EquivalentNetwork.equivalent_equipments rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -184,9 +196,9 @@ class EquivalentEquipment(ConductingEquipment):
         if self.equivalent_network is not None:
             s += '%s<%s:EquivalentEquipment.equivalent_network rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.equivalent_network.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -274,9 +286,9 @@ class EquivalentShunt(EquivalentEquipment):
             (indent, ns_prefix, self.b, ns_prefix)
         s += '%s<%s:EquivalentShunt.g>%s</%s:EquivalentShunt.g>' % \
             (indent, ns_prefix, self.g, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -367,9 +379,9 @@ class EquivalentBranch(EquivalentEquipment):
             (indent, ns_prefix, self.x, ns_prefix)
         s += '%s<%s:EquivalentBranch.r>%s</%s:EquivalentBranch.r>' % \
             (indent, ns_prefix, self.r, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \

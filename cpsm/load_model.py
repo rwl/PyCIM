@@ -1,5 +1,17 @@
-# Copyright (C) 2009 Richard W. Lincoln
-# All rights reserved.
+# Copyright (C) 2010 Richard Lincoln
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 """ This package is responsible for modeling the energy consumers and the system load as curves and associated curve data. Special circumstances that may affect the load, such as seasons and daytypes, are also included here.  This information is used by Load Forecasting and Load Management.This package is responsible for modeling the energy consumers and the system load as curves and associated curve data. Special circumstances that may affect the load, such as seasons and daytypes, are also included here.  This information is used by Load Forecasting and Load Management.
 """
 
@@ -81,9 +93,9 @@ class NonConformLoad(EnergyConsumer):
         if self.load_group is not None:
             s += '%s<%s:NonConformLoad.load_group rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.load_group.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -208,9 +220,9 @@ class DayType(IdentifiedObject):
         for obj in self.season_day_type_schedules:
             s += '%s<%s:DayType.season_day_type_schedules rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -324,9 +336,9 @@ class Season(Element):
             (indent, ns_prefix, self.start_date, ns_prefix)
         s += '%s<%s:Season.name>%s</%s:Season.name>' % \
             (indent, ns_prefix, self.name, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
 
@@ -382,9 +394,9 @@ class StationSupply(EnergyConsumer):
         if format:
             indent += ' ' * depth
 
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -523,9 +535,9 @@ class SeasonDayTypeSchedule(RegularIntervalSchedule):
         if self.season is not None:
             s += '%s<%s:SeasonDayTypeSchedule.season rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.season.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -626,9 +638,9 @@ class LoadGroup(IdentifiedObject):
         if self.sub_load_area is not None:
             s += '%s<%s:LoadGroup.sub_load_area rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.sub_load_area.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -715,9 +727,9 @@ class EnergyArea(IdentifiedObject):
         if self.control_area is not None:
             s += '%s<%s:EnergyArea.control_area rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.control_area.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -836,9 +848,9 @@ class LoadResponseCharacteristic(IdentifiedObject):
             (indent, ns_prefix, self.q_frequency_exponent, ns_prefix)
         s += '%s<%s:LoadResponseCharacteristic.p_voltage_exponent>%s</%s:LoadResponseCharacteristic.p_voltage_exponent>' % \
             (indent, ns_prefix, self.p_voltage_exponent, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -926,9 +938,9 @@ class ConformLoad(EnergyConsumer):
         if self.load_group is not None:
             s += '%s<%s:ConformLoad.load_group rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.load_group.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1089,9 +1101,9 @@ class NonConformLoadGroup(LoadGroup):
         for obj in self.energy_consumers:
             s += '%s<%s:NonConformLoadGroup.energy_consumers rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1182,9 +1194,9 @@ class ConformLoadSchedule(SeasonDayTypeSchedule):
         if self.conform_load_group is not None:
             s += '%s<%s:ConformLoadSchedule.conform_load_group rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.conform_load_group.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1267,9 +1279,9 @@ class CustomerLoad(ConformLoad):
         if format:
             indent += ' ' * depth
 
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1362,9 +1374,9 @@ class Load(ConformLoad):
         if format:
             indent += ' ' * depth
 
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1528,9 +1540,9 @@ class ConformLoadGroup(LoadGroup):
         for obj in self.conform_load_schedules:
             s += '%s<%s:ConformLoadGroup.conform_load_schedules rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1632,9 +1644,9 @@ class LoadArea(EnergyArea):
         for obj in self.sub_load_areas:
             s += '%s<%s:LoadArea.sub_load_areas rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1761,9 +1773,9 @@ class SubLoadArea(EnergyArea):
         if self.load_area is not None:
             s += '%s<%s:SubLoadArea.load_area rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.load_area.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1854,9 +1866,9 @@ class NonConformLoadSchedule(SeasonDayTypeSchedule):
         if self.non_conform_load_group is not None:
             s += '%s<%s:NonConformLoadSchedule.non_conform_load_group rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.non_conform_load_group.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1939,9 +1951,9 @@ class InductionMotorLoad(NonConformLoad):
         if format:
             indent += ' ' * depth
 
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \

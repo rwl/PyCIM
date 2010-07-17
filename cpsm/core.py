@@ -1,5 +1,17 @@
-# Copyright (C) 2009 Richard W. Lincoln
-# All rights reserved.
+# Copyright (C) 2010 Richard Lincoln
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 """ Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.
 """
 
@@ -73,9 +85,9 @@ class IdentifiedObject(Element):
             (indent, ns_prefix, self.alias_name, ns_prefix)
         s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
             (indent, ns_prefix, self.name, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
 
@@ -170,9 +182,9 @@ class RegularTimePoint(Element):
             (indent, ns_prefix, self.sequence_number, ns_prefix)
         s += '%s<%s:RegularTimePoint.value2>%s</%s:RegularTimePoint.value2>' % \
             (indent, ns_prefix, self.value2, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
 
@@ -267,9 +279,9 @@ class CurveData(Element):
             (indent, ns_prefix, self.xvalue, ns_prefix)
         s += '%s<%s:CurveData.y1value>%s</%s:CurveData.y1value>' % \
             (indent, ns_prefix, self.y1value, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
 
@@ -446,9 +458,9 @@ class Terminal(IdentifiedObject):
         if self.conducting_equipment is not None:
             s += '%s<%s:Terminal.conducting_equipment rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.conducting_equipment.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -588,9 +600,9 @@ class BaseVoltage(IdentifiedObject):
                 (indent, ns_prefix, obj.uri)
         s += '%s<%s:BaseVoltage.nominal_voltage>%s</%s:BaseVoltage.nominal_voltage>' % \
             (indent, ns_prefix, self.nominal_voltage, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -689,9 +701,9 @@ class Unit(IdentifiedObject):
         for obj in self.measurements:
             s += '%s<%s:Unit.measurements rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -851,9 +863,9 @@ class SubGeographicalRegion(IdentifiedObject):
         for obj in self.substations:
             s += '%s<%s:SubGeographicalRegion.substations rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -972,9 +984,9 @@ class Curve(IdentifiedObject):
             (indent, ns_prefix, self.curve_style, ns_prefix)
         s += '%s<%s:Curve.y1_unit>%s</%s:Curve.y1_unit>' % \
             (indent, ns_prefix, self.y1_unit, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1073,9 +1085,9 @@ class PowerSystemResource(IdentifiedObject):
         for obj in self.contains_measurements:
             s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1153,9 +1165,9 @@ class BasicIntervalSchedule(IdentifiedObject):
             (indent, ns_prefix, self.value1_unit, ns_prefix)
         s += '%s<%s:BasicIntervalSchedule.value2_unit>%s</%s:BasicIntervalSchedule.value2_unit>' % \
             (indent, ns_prefix, self.value2_unit, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1254,9 +1266,9 @@ class GeographicalRegion(IdentifiedObject):
         for obj in self.regions:
             s += '%s<%s:GeographicalRegion.regions rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1365,9 +1377,9 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
             (indent, ns_prefix, self.end_time, ns_prefix)
         s += '%s<%s:RegularIntervalSchedule.time_step>%s</%s:RegularIntervalSchedule.time_step>' % \
             (indent, ns_prefix, self.time_step, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1472,9 +1484,9 @@ class ConnectivityNodeContainer(PowerSystemResource):
         for obj in self.connectivity_nodes:
             s += '%s<%s:ConnectivityNodeContainer.connectivity_nodes rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1576,9 +1588,9 @@ class EquipmentContainer(ConnectivityNodeContainer):
         for obj in self.contains_equipments:
             s += '%s<%s:EquipmentContainer.contains_equipments rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1743,9 +1755,9 @@ class VoltageLevel(EquipmentContainer):
             (indent, ns_prefix, self.low_voltage_limit, ns_prefix)
         s += '%s<%s:VoltageLevel.high_voltage_limit>%s</%s:VoltageLevel.high_voltage_limit>' % \
             (indent, ns_prefix, self.high_voltage_limit, ns_prefix)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1842,9 +1854,9 @@ class Bay(EquipmentContainer):
         if self.member_of_voltage_level is not None:
             s += '%s<%s:Bay.member_of_voltage_level rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, self.member_of_voltage_level.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -1977,9 +1989,9 @@ class Equipment(PowerSystemResource):
         for obj in self.operational_limit_set:
             s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -2106,9 +2118,9 @@ class Substation(EquipmentContainer):
         for obj in self.contains_voltage_levels:
             s += '%s<%s:Substation.contains_voltage_levels rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
@@ -2241,9 +2253,9 @@ class ConductingEquipment(Equipment):
         for obj in self.terminals:
             s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
                 (indent, ns_prefix, obj.uri)
-        if self.parent is not None:
-            s += '%s<%s:Element.parent rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.parent.uri)
+        if self.model is not None:
+            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
+                (indent, ns_prefix, self.model.uri)
         s += '%s<%s:Element.uri>%s</%s:Element.uri>' % \
             (indent, ns_prefix, self.uri, ns_prefix)
         s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \

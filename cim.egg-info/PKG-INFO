@@ -1,0 +1,28 @@
+Metadata-Version: 1.0
+Name: cim
+Version: 14.02
+Summary: Python implementation of the Common Information Model.
+Home-page: http://rwl.github.com/cim
+Author: Richard Lincoln
+Author-email: r.w.lincoln@gmail.com
+License: Apache License version 2.0
+Description: ---
+        CIM
+        ---
+        
+        CIM is a Python implementation of the IEC Common Information Model.
+        
+        -------
+        License
+        -------
+        
+        CIM is licensed under the `Apache License`_ version 2.0.
+        
+        -------
+        Credits
+        -------
+        
+        CIM is developed by Richard Lincoln (r.w.lincoln@gmail.com).
+        
+        .. _`Apache License`: http://www.apache.org/licenses/LICENSE-2.0.html
+Platform: UNKNOWN
