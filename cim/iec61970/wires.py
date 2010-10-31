@@ -36,19 +36,19 @@ class Switch(ConductingEquipment):
     """
     # <<< switch
     # @generated
-    def __init__(self, switch_on_count=0, normal_open=False, retained=False, switch_on_date='', load_mgmt_functions=None, composite_switch=None, switch_schedules=None, connect_disconnect_functions=None, switching_operations=None, **kw_args):
+    def __init__(self, switch_on_count=0, normal_open=False, retained=False, switch_on_date='', load_mgmt_functions=None, composite_switch=None, switch_schedules=None, connect_disconnect_functions=None, switching_operations=None, *args, **kw_args):
         """ Initialises a new 'Switch' instance.
         """
-        # The switch on count since the switch was last reset or initialized. 
+        # The switch on count since the switch was last reset or initialized.
         self.switch_on_count = switch_on_count
 
-        # The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurment the Discrete.normalValue is expected to match with the Switch.normalOpen. 
+        # The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurment the Discrete.normalValue is expected to match with the Switch.normalOpen.
         self.normal_open = normal_open
 
-        # Branch is retained in a bus branch model. 
+        # Branch is retained in a bus branch model.
         self.retained = retained
 
-        # The date and time when the switch was last switched on. 
+        # The date and time when the switch was last switched on.
         self.switch_on_date = switch_on_date
 
 
@@ -86,7 +86,7 @@ class Switch(ConductingEquipment):
     # <<< load_mgmt_functions
     # @generated
     def get_load_mgmt_functions(self):
-        """ 
+        """
         """
         return self._load_mgmt_functions
 
@@ -163,7 +163,7 @@ class Switch(ConductingEquipment):
     # <<< connect_disconnect_functions
     # @generated
     def get_connect_disconnect_functions(self):
-        """ 
+        """
         """
         return self._connect_disconnect_functions
 
@@ -555,34 +555,34 @@ class TapChanger(PowerSystemResource):
     def __init__(self, neutral_step=0, subsequent_delay=0.0, neutral_u=0.0, step_voltage_increment=0.0, low_step=0, normal_step=0, regulation_status=False, high_step=0, initial_delay=0.0, ltc_flag=False, regulating_control=None, impedance_variation_curve=None, sv_tap_step=None, tap_schedules=None, **kw_args):
         """ Initialises a new 'TapChanger' instance.
         """
-        # The neutral tap step position for this winding. 
+        # The neutral tap step position for this winding.
         self.neutral_step = neutral_step
 
-        # For an LTC, the delay for subsequent tap changer operation (second and later step changes) 
+        # For an LTC, the delay for subsequent tap changer operation (second and later step changes)
         self.subsequent_delay = subsequent_delay
 
-        # Voltage at which the winding operates at the neutral tap setting. 
+        # Voltage at which the winding operates at the neutral tap setting.
         self.neutral_u = neutral_u
 
-        # Tap step increment, in per cent of nominal voltage, per step position.  For a symmetrical PhaseTapChanger, the stepVoltageIncrement is used in the formula for calculation of the phase angle.  For a symmetrical PhaseTapChanger, the voltage magnitude does not change with tap step. 
+        # Tap step increment, in per cent of nominal voltage, per step position.  For a symmetrical PhaseTapChanger, the stepVoltageIncrement is used in the formula for calculation of the phase angle.  For a symmetrical PhaseTapChanger, the voltage magnitude does not change with tap step.
         self.step_voltage_increment = step_voltage_increment
 
-        # Lowest possible tap step position, retard from neutral 
+        # Lowest possible tap step position, retard from neutral
         self.low_step = low_step
 
-        # The tap step position used in 'normal' network operation for this winding. For a 'Fixed' tap changer indicates the current physical tap setting. 
+        # The tap step position used in 'normal' network operation for this winding. For a 'Fixed' tap changer indicates the current physical tap setting.
         self.normal_step = normal_step
 
-        # Specifies the default regulation status of the TapChanger.  True is regulating.  False is not regulating. 
+        # Specifies the default regulation status of the TapChanger.  True is regulating.  False is not regulating.
         self.regulation_status = regulation_status
 
-        # Highest possible tap step position, advance from neutral 
+        # Highest possible tap step position, advance from neutral
         self.high_step = high_step
 
-        # For an LTC, the delay for initial tap changer operation (first step change) 
+        # For an LTC, the delay for initial tap changer operation (first step change)
         self.initial_delay = initial_delay
 
-        # Specifies whether or not a TapChanger has load tap changing capabilities. 
+        # Specifies whether or not a TapChanger has load tap changing capabilities.
         self.ltc_flag = ltc_flag
 
 
@@ -608,7 +608,7 @@ class TapChanger(PowerSystemResource):
     # <<< regulating_control
     # @generated
     def get_regulating_control(self):
-        """ 
+        """
         """
         return self._regulating_control
 
@@ -837,13 +837,13 @@ class RegulatingControl(PowerSystemResource):
         # The regulating control mode presently available.  This specifications allows for determining the kind of regualation without need for obtaining the units from a schedule. Values are: "reactive_power", "time_scheduled", "voltage", "current_flow", "admittance", "fixed", "power_factor", "temperature", "active_power"
         self.mode = 'reactive_power'
 
-        # This is the case input target range.   This performs the same function as the value2 attribute on the regulation schedule in the case that schedules are not used.   The units of those appropriate for the mode. 
+        # This is the case input target range.   This performs the same function as the value2 attribute on the regulation schedule in the case that schedules are not used.   The units of those appropriate for the mode.
         self.target_range = target_range
 
-        # The target value specified for case input.   This value can be used for the target value wihout the use of schedules. The value has the units appropriate to the mode attribute. 
+        # The target value specified for case input.   This value can be used for the target value wihout the use of schedules. The value has the units appropriate to the mode attribute.
         self.target_value = target_value
 
-        # The regulation is performed in a discrete mode. 
+        # The regulation is performed in a discrete mode.
         self.discrete = discrete
 
 
@@ -1107,13 +1107,13 @@ class TapSchedule(SeasonDayTypeSchedule):
     def __init__(self, line_drop_x=0.0, line_drop_compensation=False, line_drop_r=0.0, tap_changer=None, **kw_args):
         """ Initialises a new 'TapSchedule' instance.
         """
-        # Line drop reactance. 
+        # Line drop reactance.
         self.line_drop_x = line_drop_x
 
-        # Flag to indicate that line drop compensation is to be applied 
+        # Flag to indicate that line drop compensation is to be applied
         self.line_drop_compensation = line_drop_compensation
 
-        # Line drop resistance. 
+        # Line drop resistance.
         self.line_drop_r = line_drop_r
 
 
@@ -1242,19 +1242,19 @@ class EnergyConsumer(ConductingEquipment):
     def __init__(self, qfixed_pct=0.0, pfixed=0.0, customer_count=0, qfixed=0.0, pfixed_pct=0.0, power_cut_zone=None, service_delivery_points=None, load_response=None, **kw_args):
         """ Initialises a new 'EnergyConsumer' instance.
         """
-        # Fixed reactive power as per cent of load group fixed reactive power. 
+        # Fixed reactive power as per cent of load group fixed reactive power.
         self.qfixed_pct = qfixed_pct
 
-        # Active power of the load that is a fixed quantity. 
+        # Active power of the load that is a fixed quantity.
         self.pfixed = pfixed
 
-        # Number of individual customers represented by this Demand 
+        # Number of individual customers represented by this Demand
         self.customer_count = customer_count
 
-        # Reactive power of the load that is a fixed quantity. 
+        # Reactive power of the load that is a fixed quantity.
         self.qfixed = qfixed
 
-        # Fixed active power as per cent of load group fixed active power 
+        # Fixed active power as per cent of load group fixed active power
         self.pfixed_pct = pfixed_pct
 
 
@@ -1296,7 +1296,7 @@ class EnergyConsumer(ConductingEquipment):
     # <<< service_delivery_points
     # @generated
     def get_service_delivery_points(self):
-        """ 
+        """
         """
         return self._service_delivery_points
 
@@ -1510,34 +1510,34 @@ class EnergySource(ConductingEquipment):
     def __init__(self, rn=0.0, r=0.0, r0=0.0, voltage_magnitude=0.0, x=0.0, voltage_angle=0.0, xn=0.0, x0=0.0, active_power=0.0, nominal_voltage=0.0, **kw_args):
         """ Initialises a new 'EnergySource' instance.
         """
-        # Negative sequence Thevenin resistance. 
+        # Negative sequence Thevenin resistance.
         self.rn = rn
 
-        # Positive sequence Thevenin resistance. 
+        # Positive sequence Thevenin resistance.
         self.r = r
 
-        # Zero sequence Thevenin resistance. 
+        # Zero sequence Thevenin resistance.
         self.r0 = r0
 
-        # Phase-to-phase open circuit voltage magnitude. 
+        # Phase-to-phase open circuit voltage magnitude.
         self.voltage_magnitude = voltage_magnitude
 
-        # Positive sequence Thevenin reactance. 
+        # Positive sequence Thevenin reactance.
         self.x = x
 
-        # Phase angle of a-phase open circuit. 
+        # Phase angle of a-phase open circuit.
         self.voltage_angle = voltage_angle
 
-        # Negative sequence Thevenin reactance. 
+        # Negative sequence Thevenin reactance.
         self.xn = xn
 
-        # Zero sequence Thevenin reactance. 
+        # Zero sequence Thevenin reactance.
         self.x0 = x0
 
-        # High voltage source load 
+        # High voltage source load
         self.active_power = active_power
 
-        # Phase-to-phase nominal voltage. 
+        # Phase-to-phase nominal voltage.
         self.nominal_voltage = nominal_voltage
 
 
@@ -1876,7 +1876,7 @@ class Line(EquipmentContainer):
     # <<< flowgates
     # @generated
     def get_flowgates(self):
-        """ 
+        """
         """
         return self._flowgates
 
@@ -2173,10 +2173,10 @@ class ReactiveCapabilityCurve(Curve):
     def __init__(self, coolant_temperature=0.0, hydrogen_pressure=0.0, synchronous_machines=None, initially_used_by_synchronous_machines=None, **kw_args):
         """ Initialises a new 'ReactiveCapabilityCurve' instance.
         """
-        # The machine's coolant temperature (e.g., ambient air or stator circulating water). 
+        # The machine's coolant temperature (e.g., ambient air or stator circulating water).
         self.coolant_temperature = coolant_temperature
 
-        # The hydrogen coolant pressure 
+        # The hydrogen coolant pressure
         self.hydrogen_pressure = hydrogen_pressure
 
 
@@ -2524,7 +2524,7 @@ class Resistor(ConductingEquipment):
     # <<< resistor_type_asset
     # @generated
     def get_resistor_type_asset(self):
-        """ 
+        """
         """
         return self._resistor_type_asset
 
@@ -2543,7 +2543,7 @@ class Resistor(ConductingEquipment):
     # <<< resistor_asset
     # @generated
     def get_resistor_asset(self):
-        """ 
+        """
         """
         return self._resistor_asset
 
@@ -2716,10 +2716,10 @@ class SeriesCompensator(ConductingEquipment):
     def __init__(self, r=0.0, x=0.0, **kw_args):
         """ Initialises a new 'SeriesCompensator' instance.
         """
-        # Positive sequence resistance. 
+        # Positive sequence resistance.
         self.r = r
 
-        # Positive sequence reactance. 
+        # Positive sequence reactance.
         self.x = x
 
 
@@ -2883,28 +2883,28 @@ class WindingTest(IdentifiedObject):
     def __init__(self, phase_shift=0.0, from_tap_step=0, no_load_loss=0.0, to_tap_step=0, exciting_current=0.0, load_loss=0.0, leakage_impedance=0.0, voltage=0.0, to_transformer_winding=None, from_transformer_winding=None, **kw_args):
         """ Initialises a new 'WindingTest' instance.
         """
-        # The phase shift measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited. 
+        # The phase shift measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited.
         self.phase_shift = phase_shift
 
-        # The tap step number for the 'from' winding of the test pair. 
+        # The tap step number for the 'from' winding of the test pair.
         self.from_tap_step = from_tap_step
 
-        # The no load loss kW 'to' winding open-circuited) from the test report. 
+        # The no load loss kW 'to' winding open-circuited) from the test report.
         self.no_load_loss = no_load_loss
 
-        # The tap step number for the 'to' winding of the test pair. 
+        # The tap step number for the 'to' winding of the test pair.
         self.to_tap_step = to_tap_step
 
-        # The exciting current on open-circuit test, expressed as a percentage of rated current, at nominal voltage 
+        # The exciting current on open-circuit test, expressed as a percentage of rated current, at nominal voltage
         self.exciting_current = exciting_current
 
-        # The load loss kW ('to' winding short-circuited) from the test report. 
+        # The load loss kW ('to' winding short-circuited) from the test report.
         self.load_loss = load_loss
 
-        # The leakage impedance measured at the 'from' winding  with the 'to' winding short-circuited and all other windings open-circuited.  Leakage impedance is expressed in units based on the apparent power and voltage ratings of the 'from' winding. 
+        # The leakage impedance measured at the 'from' winding  with the 'to' winding short-circuited and all other windings open-circuited.  Leakage impedance is expressed in units based on the apparent power and voltage ratings of the 'from' winding.
         self.leakage_impedance = leakage_impedance
 
-        # The voltage measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited. 
+        # The voltage measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited.
         self.voltage = voltage
 
 
@@ -3045,7 +3045,7 @@ class Conductor(ConductingEquipment):
     def __init__(self, length=0.0, **kw_args):
         """ Initialises a new 'Conductor' instance.
         """
-        # Segment length for calculating line section capabilities 
+        # Segment length for calculating line section capabilities
         self.length = length
 
 
@@ -3207,13 +3207,13 @@ class PowerTransformer(Equipment):
     def __init__(self, bmag_sat=0.0, mag_base_u=0.0, mag_sat_flux=0.0, transformer_windings=None, flowgates=None, heat_exchanger=None, **kw_args):
         """ Initialises a new 'PowerTransformer' instance.
         """
-        # Core shunt magnetizing susceptance in the saturation region. 
+        # Core shunt magnetizing susceptance in the saturation region.
         self.bmag_sat = bmag_sat
 
-        # The reference voltage at which the magnetizing saturation measurements were made 
+        # The reference voltage at which the magnetizing saturation measurements were made
         self.mag_base_u = mag_base_u
 
-        # Core magnetizing saturation curve knee flux level. 
+        # Core magnetizing saturation curve knee flux level.
         self.mag_sat_flux = mag_sat_flux
 
 
@@ -3266,7 +3266,7 @@ class PowerTransformer(Equipment):
     # <<< flowgates
     # @generated
     def get_flowgates(self):
-        """ 
+        """
         """
         return self._flowgates
 
@@ -3456,28 +3456,28 @@ class MutualCoupling(IdentifiedObject):
     def __init__(self, distance12=0.0, b0ch=0.0, r0=0.0, g0ch=0.0, distance22=0.0, distance21=0.0, distance11=0.0, x0=0.0, second_terminal=None, first_terminal=None, **kw_args):
         """ Initialises a new 'MutualCoupling' instance.
         """
-        # Distance from the first line's from specified terminal to end of coupled region 
+        # Distance from the first line's from specified terminal to end of coupled region
         self.distance12 = distance12
 
-        # Zero sequence mutual coupling shunt (charging) susceptance, uniformly distributed, of the entire line section. 
+        # Zero sequence mutual coupling shunt (charging) susceptance, uniformly distributed, of the entire line section.
         self.b0ch = b0ch
 
-        # Zero sequence branch-to-branch mutual impedance coupling, resistance 
+        # Zero sequence branch-to-branch mutual impedance coupling, resistance
         self.r0 = r0
 
-        # Zero sequence mutual coupling shunt (charging) conductance, uniformly distributed, of the entire line section. 
+        # Zero sequence mutual coupling shunt (charging) conductance, uniformly distributed, of the entire line section.
         self.g0ch = g0ch
 
-        # Distance from the second line's specified terminal to end of coupled region 
+        # Distance from the second line's specified terminal to end of coupled region
         self.distance22 = distance22
 
-        # Distance from the second line's specified terminal to start of coupled region 
+        # Distance from the second line's specified terminal to start of coupled region
         self.distance21 = distance21
 
-        # Distance from the first line's specified terminal to start of coupled region 
+        # Distance from the first line's specified terminal to start of coupled region
         self.distance11 = distance11
 
-        # Zero sequence branch-to-branch mutual impedance coupling, reactance 
+        # Zero sequence branch-to-branch mutual impedance coupling, reactance
         self.x0 = x0
 
 
@@ -3632,7 +3632,7 @@ class Ground(ConductingEquipment):
     # <<< winding_insulations
     # @generated
     def get_winding_insulations(self):
-        """ 
+        """
         """
         return self._winding_insulations
 
@@ -4399,52 +4399,52 @@ class TransformerWinding(ConductingEquipment):
         # The type of connection of the winding. Values are: "y", "yn", "zn", "i", "a", "d", "z"
         self.connection_type = 'y'
 
-        # Apparent power that the winding can carry for a short period of time. 
+        # Apparent power that the winding can carry for a short period of time.
         self.short_term_s = short_term_s
 
-        # The rated voltage (phase-to-phase) of the winding, usually the same as the neutral voltage. 
+        # The rated voltage (phase-to-phase) of the winding, usually the same as the neutral voltage.
         self.rated_u = rated_u
 
-        # Set if the winding is grounded. 
+        # Set if the winding is grounded.
         self.grounded = grounded
 
-        # Zero sequence series resistance of the winding. 
+        # Zero sequence series resistance of the winding.
         self.r0 = r0
 
-        # The normal apparent power rating for the winding 
+        # The normal apparent power rating for the winding
         self.rated_s = rated_s
 
-        # The apparent power that the winding can carry  under emergency conditions. 
+        # The apparent power that the winding can carry  under emergency conditions.
         self.emergency_s = emergency_s
 
-        # Zero sequence magnetizing branch susceptance. 
+        # Zero sequence magnetizing branch susceptance.
         self.b0 = b0
 
-        # Ground reactance path through connected grounding transformer. 
+        # Ground reactance path through connected grounding transformer.
         self.xground = xground
 
-        # Zero sequence magnetizing branch conductance. 
+        # Zero sequence magnetizing branch conductance.
         self.g0 = g0
 
-        # Magnetizing branch susceptance (B mag).  The value can be positive or negative. 
+        # Magnetizing branch susceptance (B mag).  The value can be positive or negative.
         self.b = b
 
-        # Positive sequence series resistance of the winding.  For a two winding transformer, the full resistance of the transformer should be entered on the primary (high voltage) winding. 
+        # Positive sequence series resistance of the winding.  For a two winding transformer, the full resistance of the transformer should be entered on the primary (high voltage) winding.
         self.r = r
 
-        # Ground resistance path through connected grounding transformer. 
+        # Ground resistance path through connected grounding transformer.
         self.rground = rground
 
-        # Positive sequence series reactance of the winding.  For a two winding transformer, the full reactance of the transformer should be entered on the primary (high voltage) winding. 
+        # Positive sequence series reactance of the winding.  For a two winding transformer, the full reactance of the transformer should be entered on the primary (high voltage) winding.
         self.x = x
 
-        # Basic insulation level voltage rating 
+        # Basic insulation level voltage rating
         self.insulation_u = insulation_u
 
-        # Magnetizing branch conductance (G mag). 
+        # Magnetizing branch conductance (G mag).
         self.g = g
 
-        # Zero sequence series reactance of the winding. 
+        # Zero sequence series reactance of the winding.
         self.x0 = x0
 
 
@@ -4785,7 +4785,7 @@ class CompositeSwitch(Equipment):
     def __init__(self, composite_switch_type='', switches=None, **kw_args):
         """ Initialises a new 'CompositeSwitch' instance.
         """
-        # An alphanumeric code that can be used as a reference to extar information such as the description of the interlocking scheme if any 
+        # An alphanumeric code that can be used as a reference to extar information such as the description of the interlocking scheme if any
         self.composite_switch_type = composite_switch_type
 
 
@@ -5129,40 +5129,40 @@ class RectifierInverter(ConductingEquipment):
     def __init__(self, rated_u=0.0, max_p=0.0, min_p=0.0, commutating_resistance=0.0, bridges=0, compound_resistance=0.0, min_compound_voltage=0.0, commutating_reactance=0.0, min_u=0.0, operating_mode='', max_u=0.0, frequency=0.0, **kw_args):
         """ Initialises a new 'RectifierInverter' instance.
         """
-        # Rectifier/inverter primary base voltage 
+        # Rectifier/inverter primary base voltage
         self.rated_u = rated_u
 
-        # The maximum active power on the DC side at which the fconverter should operate. 
+        # The maximum active power on the DC side at which the fconverter should operate.
         self.max_p = max_p
 
-        # The minimum active power on the DC side at which the converter should operate. 
+        # The minimum active power on the DC side at which the converter should operate.
         self.min_p = min_p
 
-        # Commutating resistance. 
+        # Commutating resistance.
         self.commutating_resistance = commutating_resistance
 
-        # Number of bridges 
+        # Number of bridges
         self.bridges = bridges
 
-        # Compounding resistance. 
+        # Compounding resistance.
         self.compound_resistance = compound_resistance
 
-        # Minimum compounded DC voltage 
+        # Minimum compounded DC voltage
         self.min_compound_voltage = min_compound_voltage
 
-        # Commutating reactance at AC bus frequency. 
+        # Commutating reactance at AC bus frequency.
         self.commutating_reactance = commutating_reactance
 
-        # The minimum voltage on the DC side at which the converter should operate. 
+        # The minimum voltage on the DC side at which the converter should operate.
         self.min_u = min_u
 
-        # Operating mode for the converter. 
+        # Operating mode for the converter.
         self.operating_mode = operating_mode
 
-        # The maximum voltage on the DC side at which the converter should operate. 
+        # The maximum voltage on the DC side at which the converter should operate.
         self.max_u = max_u
 
-        # Frequency on the AC side. 
+        # Frequency on the AC side.
         self.frequency = frequency
 
 
@@ -5346,13 +5346,13 @@ class RegulationSchedule(SeasonDayTypeSchedule):
     def __init__(self, line_drop_compensation=False, line_drop_x=0.0, line_drop_r=0.0, regulating_control=None, voltage_control_zones=None, **kw_args):
         """ Initialises a new 'RegulationSchedule' instance.
         """
-        # Flag to indicate that line drop compensation is to be applied 
+        # Flag to indicate that line drop compensation is to be applied
         self.line_drop_compensation = line_drop_compensation
 
-        # Line drop reactance. 
+        # Line drop reactance.
         self.line_drop_x = line_drop_x
 
-        # Line drop resistance. 
+        # Line drop resistance.
         self.line_drop_r = line_drop_r
 
 
@@ -5517,7 +5517,7 @@ class Fuse(Switch):
     def __init__(self, rating_current=0.0, **kw_args):
         """ Initialises a new 'Fuse' instance.
         """
-        # Fault interrupting current rating. 
+        # Fault interrupting current rating.
         self.rating_current = rating_current
 
 
@@ -5705,22 +5705,22 @@ class PhaseTapChanger(TapChanger):
         # The type of phase shifter construction. Values are: "symmetrical", "unknown", "asymmetrical"
         self.phase_tap_changer_type = 'symmetrical'
 
-        # The phase angle between the in-phase winding and the out-of -phase winding used for creating phase shift.   It is only possible to have a symmemtrical transformer if this angle is 90 degrees. 
+        # The phase angle between the in-phase winding and the out-of -phase winding used for creating phase shift.   It is only possible to have a symmemtrical transformer if this angle is 90 degrees.
         self.winding_connection_angle = winding_connection_angle
 
-        # Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer). The actual phase shift increment might be more accureatly computed from the symmetrical or asymmetrical models or a tap step table lookup if those are available. 
+        # Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer). The actual phase shift increment might be more accureatly computed from the symmetrical or asymmetrical models or a tap step table lookup if those are available.
         self.step_phase_shift_increment = step_phase_shift_increment
 
-        # The reactance at the maximum tap step. 
+        # The reactance at the maximum tap step.
         self.x_step_max = x_step_max
 
-        # The reactance at the minimum tap step. 
+        # The reactance at the minimum tap step.
         self.x_step_min = x_step_min
 
-        # The voltage step increment on the out of phase winding.    This voltage step on the out of phase winding of the phase shifter.  Similar to TapChanger.voltageStepIncrement, but it is applied only to the out of phase winding. 
+        # The voltage step increment on the out of phase winding.    This voltage step on the out of phase winding of the phase shifter.  Similar to TapChanger.voltageStepIncrement, but it is applied only to the out of phase winding.
         self.voltage_step_increment_out_of_phase = voltage_step_increment_out_of_phase
 
-        # Similar to TapChanger.nominalVoltage, but this is the nominal voltage in the out of phase winding at the nominal tap step. A typical case may have zero voltage at the nominal step, indicating no phase shift at the nominal voltage. 
+        # Similar to TapChanger.nominalVoltage, but this is the nominal voltage in the out of phase winding at the nominal tap step. A typical case may have zero voltage at the nominal step, indicating no phase shift at the nominal voltage.
         self.nominal_voltage_out_of_phase = nominal_voltage_out_of_phase
 
 
@@ -6358,10 +6358,10 @@ class Breaker(ProtectedSwitch):
     def __init__(self, in_transit_time=0.0, rated_current=0.0, **kw_args):
         """ Initialises a new 'Breaker' instance.
         """
-        # The transition time from open to close. 
+        # The transition time from open to close.
         self.in_transit_time = in_transit_time
 
-        # Fault interrupting current rating. 
+        # Fault interrupting current rating.
         self.rated_current = rated_current
 
 
@@ -6732,28 +6732,28 @@ class ACLineSegment(Conductor):
     def __init__(self, bch=0.0, r=0.0, gch=0.0, r0=0.0, b0ch=0.0, x0=0.0, x=0.0, g0ch=0.0, **kw_args):
         """ Initialises a new 'ACLineSegment' instance.
         """
-        # Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line. 
+        # Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line.
         self.bch = bch
 
-        # Positive sequence series resistance of the entire line section. 
+        # Positive sequence series resistance of the entire line section.
         self.r = r
 
-        # Positive sequence shunt (charging) conductance, uniformly distributed, of the entire line section. 
+        # Positive sequence shunt (charging) conductance, uniformly distributed, of the entire line section.
         self.gch = gch
 
-        # Zero sequence series resistance of the entire line section. 
+        # Zero sequence series resistance of the entire line section.
         self.r0 = r0
 
-        # Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section. 
+        # Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.
         self.b0ch = b0ch
 
-        # Zero sequence series reactance of the entire line section. 
+        # Zero sequence series reactance of the entire line section.
         self.x0 = x0
 
-        # Positive sequence series reactance of the entire line section. 
+        # Positive sequence series reactance of the entire line section.
         self.x = x
 
-        # Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section. 
+        # Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section.
         self.g0ch = g0ch
 
 
@@ -7112,49 +7112,49 @@ class ShuntCompensator(RegulatingCondEq):
     def __init__(self, b0_per_section=0.0, maximum_sections=0, normal_sections=0, nom_q=0.0, switch_on_count=0, max_u=0.0, reactive_per_section=0.0, a_vrdelay=0.0, b_per_section=0.0, voltage_sensitivity=0.0, nom_u=0.0, g_per_section=0.0, min_u=0.0, switch_on_date='', g0_per_section=0.0, sv_shunt_compensator_sections=None, **kw_args):
         """ Initialises a new 'ShuntCompensator' instance.
         """
-        # Zero sequence shunt (charging) susceptance per section 
+        # Zero sequence shunt (charging) susceptance per section
         self.b0_per_section = b0_per_section
 
-        # For a capacitor bank, the maximum number of sections that may be switched in. 
+        # For a capacitor bank, the maximum number of sections that may be switched in.
         self.maximum_sections = maximum_sections
 
-        # For a capacitor bank, the normal number of sections switched in. This number should correspond to the nominal reactive power (nomQ). 
+        # For a capacitor bank, the normal number of sections switched in. This number should correspond to the nominal reactive power (nomQ).
         self.normal_sections = normal_sections
 
-        # Nominal reactive power output of the capacitor bank at the nominal voltage. This number should be positive. 
+        # Nominal reactive power output of the capacitor bank at the nominal voltage. This number should be positive.
         self.nom_q = nom_q
 
-        # The switch on count since the capacitor count was last reset or initialized. 
+        # The switch on count since the capacitor count was last reset or initialized.
         self.switch_on_count = switch_on_count
 
-        # The maximum voltage at which the capacitor bank should operate. 
+        # The maximum voltage at which the capacitor bank should operate.
         self.max_u = max_u
 
-        # For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage. 
+        # For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage.
         self.reactive_per_section = reactive_per_section
 
-        # Time delay required for the device to be connected or disconnected by automatic voltage regulation (AVR). 
+        # Time delay required for the device to be connected or disconnected by automatic voltage regulation (AVR).
         self.a_vrdelay = a_vrdelay
 
-        # Positive sequence shunt (charging) susceptance per section 
+        # Positive sequence shunt (charging) susceptance per section
         self.b_per_section = b_per_section
 
-        # Voltage sensitivity required for the device to regulate the bus voltage, in voltage/reactive power. 
+        # Voltage sensitivity required for the device to regulate the bus voltage, in voltage/reactive power.
         self.voltage_sensitivity = voltage_sensitivity
 
-        # The nominal voltage at which the nominal reactive power was measured. This should normally be within 10% of the voltage at which the capacitor is connected to the network. 
+        # The nominal voltage at which the nominal reactive power was measured. This should normally be within 10% of the voltage at which the capacitor is connected to the network.
         self.nom_u = nom_u
 
-        # Positive sequence shunt (charging) conductance per section 
+        # Positive sequence shunt (charging) conductance per section
         self.g_per_section = g_per_section
 
-        # The minimum voltage at which the capacitor bank should operate. 
+        # The minimum voltage at which the capacitor bank should operate.
         self.min_u = min_u
 
-        # The date and time when the capacitor bank was last switched on. 
+        # The date and time when the capacitor bank was last switched on.
         self.switch_on_date = switch_on_date
 
-        # Zero sequence shunt (charging) conductance per section 
+        # Zero sequence shunt (charging) conductance per section
         self.g0_per_section = g0_per_section
 
 
@@ -7383,85 +7383,85 @@ class SynchronousMachine(RegulatingCondEq):
         # Current mode of operation. Values are: "condenser", "generator"
         self.operating_mode = 'condenser'
 
-        # Negative sequence reactance. 
+        # Negative sequence reactance.
         self.x2 = x2
 
-        # Zero sequence reactance of the synchronous machine. 
+        # Zero sequence reactance of the synchronous machine.
         self.x0 = x0
 
-        # Percent of the coordinated reactive control that comes from this machine. 
+        # Percent of the coordinated reactive control that comes from this machine.
         self.q_percent = q_percent
 
-        # Damping torque coefficient, a proportionality constant that, when multiplied by the angular velocity of the rotor poles with respect to the magnetic field (frequency), results in the damping torque. 
+        # Damping torque coefficient, a proportionality constant that, when multiplied by the angular velocity of the rotor poles with respect to the magnetic field (frequency), results in the damping torque.
         self.damping = damping
 
-        # Time delay required when switching from Manual to Automatic Voltage Regulation. This value is used in the accelerating power reference frame for powerflow solutions 
+        # Time delay required when switching from Manual to Automatic Voltage Regulation. This value is used in the accelerating power reference frame for powerflow solutions
         self.manual_to_avr = manual_to_avr
 
-        # Positive sequence reactance of the synchronous machine. 
+        # Positive sequence reactance of the synchronous machine.
         self.x = x
 
-        # Minimum reactive power limit for the unit. 
+        # Minimum reactive power limit for the unit.
         self.min_q = min_q
 
-        # Quadrature-axis synchronous reactance (Xq) , the ratio of the component of reactive armature voltage, due to the quadrature-axis component of armature current, to this component of current, under steady state conditions and at rated frequency. 
+        # Quadrature-axis synchronous reactance (Xq) , the ratio of the component of reactive armature voltage, due to the quadrature-axis component of armature current, to this component of current, under steady state conditions and at rated frequency.
         self.x_quad_sync = x_quad_sync
 
-        # Quadrature-axis subtransient reactance, also known as X'q. 
+        # Quadrature-axis subtransient reactance, also known as X'q.
         self.x_quad_subtrans = x_quad_subtrans
 
-        # Negative sequence resistance. 
+        # Negative sequence resistance.
         self.r2 = r2
 
-        # The energy stored in the rotor when operating at rated speed. This value is used in the accelerating power reference frame for  operator training simulator solutions. 
+        # The energy stored in the rotor when operating at rated speed. This value is used in the accelerating power reference frame for  operator training simulator solutions.
         self.inertia = inertia
 
-        # Positive sequence resistance of the synchronous machine. 
+        # Positive sequence resistance of the synchronous machine.
         self.r = r
 
-        # Direct-axis synchronous reactance. The quotient of a sustained value of that AC component of armature voltage that is produced by the total direct-axis flux due to direct-axis armature current and the value of the AC component of this current, the machine running at rated speed. (Xd) 
+        # Direct-axis synchronous reactance. The quotient of a sustained value of that AC component of armature voltage that is produced by the total direct-axis flux due to direct-axis armature current and the value of the AC component of this current, the machine running at rated speed. (Xd)
         self.x_direct_sync = x_direct_sync
 
-        # Quadrature-axis transient reactance, also known as X'q. 
+        # Quadrature-axis transient reactance, also known as X'q.
         self.x_quad_trans = x_quad_trans
 
-        # Direct-axis transient reactance, also known as X'd. 
+        # Direct-axis transient reactance, also known as X'd.
         self.x_direct_trans = x_direct_trans
 
-        # Priority of unit for reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on. 
+        # Priority of unit for reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on.
         self.reference_priority = reference_priority
 
-        # Zero sequence resistance of the synchronous machine. 
+        # Zero sequence resistance of the synchronous machine.
         self.r0 = r0
 
-        # Minimum voltage  limit for the unit. 
+        # Minimum voltage  limit for the unit.
         self.min_u = min_u
 
-        # Maximum reactive power limit. This is the maximum (nameplate) limit for the unit. 
+        # Maximum reactive power limit. This is the maximum (nameplate) limit for the unit.
         self.max_q = max_q
 
-        # Active power consumed when in condenser mode operation. 
+        # Active power consumed when in condenser mode operation.
         self.condenser_p = condenser_p
 
-        # Default base reactive power value. This value represents the initial reactive power that can be used by any application function. 
+        # Default base reactive power value. This value represents the initial reactive power that can be used by any application function.
         self.base_q = base_q
 
-        # Direct-axis subtransient reactance, also known as X'd. 
+        # Direct-axis subtransient reactance, also known as X'd.
         self.x_direct_subtrans = x_direct_subtrans
 
-        # Nameplate apparent power rating for the unit 
+        # Nameplate apparent power rating for the unit
         self.rated_s = rated_s
 
-        # Maximum voltage limit for the unit. 
+        # Maximum voltage limit for the unit.
         self.max_u = max_u
 
-        # Time delay required when switching from Automatic Voltage Regulation (AVR) to Manual for a leading MVAr violation. 
+        # Time delay required when switching from Automatic Voltage Regulation (AVR) to Manual for a leading MVAr violation.
         self.a_vrto_manual_lead = a_vrto_manual_lead
 
-        # Time delay required when switching from Automatic Voltage Regulation (AVR) to Manual for a lagging MVAr violation. 
+        # Time delay required when switching from Automatic Voltage Regulation (AVR) to Manual for a lagging MVAr violation.
         self.a_vrto_manual_lag = a_vrto_manual_lag
 
-        # Temperature or pressure of coolant medium 
+        # Temperature or pressure of coolant medium
         self.coolant_condition = coolant_condition
 
 
@@ -7841,22 +7841,22 @@ class FrequencyConverter(RegulatingCondEq):
     def __init__(self, max_u=0.0, min_u=0.0, min_p=0.0, frequency=0.0, max_p=0.0, operating_mode='', **kw_args):
         """ Initialises a new 'FrequencyConverter' instance.
         """
-        # The maximum voltage on the DC side at which the frequency converter should operate. 
+        # The maximum voltage on the DC side at which the frequency converter should operate.
         self.max_u = max_u
 
-        # The minimum voltage on the DC side at which the frequency converter should operate. 
+        # The minimum voltage on the DC side at which the frequency converter should operate.
         self.min_u = min_u
 
-        # The minimum active power on the DC side at which the frequence converter should operate. 
+        # The minimum active power on the DC side at which the frequence converter should operate.
         self.min_p = min_p
 
-        # Frequency on the AC side. 
+        # Frequency on the AC side.
         self.frequency = frequency
 
-        # The maximum active power on the DC side at which the frequence converter should operate. 
+        # The maximum active power on the DC side at which the frequence converter should operate.
         self.max_p = max_p
 
-        # Operating mode for the frequency converter 
+        # Operating mode for the frequency converter
         self.operating_mode = operating_mode
 
 
@@ -8192,10 +8192,10 @@ class DCLineSegment(Conductor):
     def __init__(self, dc_segment_inductance=0.0, dc_segment_resistance=0.0, **kw_args):
         """ Initialises a new 'DCLineSegment' instance.
         """
-        # Inductance of the DC line segment. 
+        # Inductance of the DC line segment.
         self.dc_segment_inductance = dc_segment_inductance
 
-        # Resistance of the DC line segment. 
+        # Resistance of the DC line segment.
         self.dc_segment_resistance = dc_segment_resistance
 
 
@@ -8593,16 +8593,16 @@ class StaticVarCompensator(RegulatingCondEq):
         # SVC control mode. Values are: "off", "reactive_power", "voltage"
         self.s_vccontrol_mode = 'off'
 
-        # Maximum available capacitive reactive power 
+        # Maximum available capacitive reactive power
         self.capacitive_rating = capacitive_rating
 
-        # The characteristics slope of an SVC defines how the reactive power output changes in proportion to the difference between the regulated bus voltage and the voltage setpoint. 
+        # The characteristics slope of an SVC defines how the reactive power output changes in proportion to the difference between the regulated bus voltage and the voltage setpoint.
         self.slope = slope
 
-        # The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero. 
+        # The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero.
         self.voltage_set_point = voltage_set_point
 
-        # Maximum available inductive reactive power 
+        # Maximum available inductive reactive power
         self.inductive_rating = inductive_rating
 
 
@@ -8778,7 +8778,7 @@ class LoadBreakSwitch(ProtectedSwitch):
     def __init__(self, rated_current=0.0, **kw_args):
         """ Initialises a new 'LoadBreakSwitch' instance.
         """
-        # Current carrying capacity of a wire or cable under stated thermal conditions. 
+        # Current carrying capacity of a wire or cable under stated thermal conditions.
         self.rated_current = rated_current
 
 
