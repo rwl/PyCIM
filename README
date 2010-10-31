@@ -2,18 +2,18 @@
 Introduction
 ------------
 
-CIM is a Python implementation of the IEC Common Information Model.
+PyCIM is a Python implementation of the IEC Common Information Model.
 
 -------
 License
 -------
 
-CIM is licensed under the `Apache License`_ version 2.0.
+PyCIM is licensed under the `GNU Lesser General Public License`_ version 2.1.
 
 -------
 Credits
 -------
 
-CIM is developed by Richard Lincoln (r.w.lincoln@gmail.com).
+PyCIM is developed by Richard Lincoln (r.w.lincoln@gmail.com).
 
-.. _`Apache License`: http://www.apache.org/licenses/LICENSE-2.0.html
+.. _`GNU Lesser General Public License`: http://www.gnu.org/licenses/lgpl-2.1.html
