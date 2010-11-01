@@ -14,14 +14,15 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, USA
 
+import sys
 import logging
 
-from elementtree.SimpleXMLWriter import XMLWriter
+from xml_writer import XMLWriter
 
 logger = logging.getLogger(__name__)
 
 def cimwrite(d, file_or_filename):
-    """ CIM RDF/XML serialiser.
+    """CIM RDF/XML serializer.
 
     @type d: dict
     @param d: Map of URIs to CIM objects.
@@ -30,3 +31,25 @@ def cimwrite(d, file_or_filename):
     @rtype: bool
     @return: Write success.
     """
+    w = XMLWriter(sys.stdout)
+
+    html = w.start("html")
+
+    w.start("head")
+    w.element("title", "my document")
+    w.element("meta", name="generator", value="my application 1.0")
+    w.end()
+
+    w.start("body")
+    w.element("h1", "this is a heading")
+    w.element("p", "this is a paragraph")
+
+    w.start("p")
+    w.data("this is ")
+    w.element("b", "bold")
+    w.data(" and ")
+    w.element("i", "italic")
+    w.data(".")
+    w.end("p")
+
+    w.close(html)

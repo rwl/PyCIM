@@ -1,18 +1,20 @@
 # Copyright (C) 2010 Richard Lincoln
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
 #
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, USA
 
-""" Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.
+""" Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.
 """
 
 from cpsm import Element
@@ -26,97 +28,57 @@ ns_prefix = "cim"
 ns_uri = "http://iec.ch/TC57/2008/CIM-schema-cim13#Package_Core"
 
 class IdentifiedObject(Element):
-    """ This is a root class to provide common naming attributes for all classes needing naming attributesThis is a root class to provide common naming attributes for all classes needing naming attributes
+    """ This is a root class to provide common naming attributes for all classes needing naming attributes
     """
     # <<< identified_object
     # @generated
-    def __init__(self, path_name='', description='', alias_name='', name='', **kw_args):
+    def __init__(self, path_name='', description='', alias_name='', name='', *args, **kw_args):
         """ Initialises a new 'IdentifiedObject' instance.
+
+        @param path_name: The pathname is a system unique name composed from all IdentifiedObject.localNames in a naming hierarchy path from the object to the root. 
+        @param description: The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy. 
+        @param alias_name: The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy. 
+        @param name: The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy. 
         """
-        # The pathname is a system unique name composed from all IdentifiedObject.localNames in a naming hierarchy path from the object to the root.The pathname is a system unique name composed from all IdentifiedObject.localNames in a naming hierarchy path from the object to the root. 
+        # The pathname is a system unique name composed from all IdentifiedObject.localNames in a naming hierarchy path from the object to the root. 
         self.path_name = path_name
 
-        # The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy. 
+        # The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy. 
         self.description = description
 
-        # The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy. 
+        # The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy. 
         self.alias_name = alias_name
 
-        # The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy.The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy. 
+        # The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy. 
         self.name = name
 
 
 
-        super(IdentifiedObject, self).__init__(**kw_args)
+        super(IdentifiedObject, self).__init__(*args, **kw_args)
     # >>> identified_object
 
 
-    def __str__(self):
-        """ Returns a string representation of the IdentifiedObject.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< identified_object.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the IdentifiedObject.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "IdentifiedObject", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "IdentifiedObject")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> identified_object.serialize
-
 
 class RegularTimePoint(Element):
-    """ TimePoints for a schedule where the time between the points is constant.TimePoints for a schedule where the time between the points is constant.
+    """ TimePoints for a schedule where the time between the points is constant.
     """
     # <<< regular_time_point
     # @generated
-    def __init__(self, value1=0.0, sequence_number=0, value2=0.0, interval_schedule=None, **kw_args):
+    def __init__(self, value1=0.0, sequence_number=0, value2=0.0, interval_schedule=None, *args, **kw_args):
         """ Initialises a new 'RegularTimePoint' instance.
+
+        @param value1: The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule. 
+        @param sequence_number: The position of the RegularTimePoint in the sequence. Note that time points don't have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the RegularIntervalSchedule.timeStep with the RegularTimePoint.sequenceNumber and add the BasicIntervalSchedule.startTime. 
+        @param value2: The second value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule. 
+        @param interval_schedule: A RegularTimePoint belongs to a RegularIntervalSchedule.
         """
-        # The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule. 
+        # The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule. 
         self.value1 = value1
 
-        # The position of the RegularTimePoint in the sequence. Note that time points don't have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the RegularIntervalSchedule.timeStep with the RegularTimePoint.sequenceNumber and add the BasicIntervalSchedule.startTime.The position of the RegularTimePoint in the sequence. Note that time points don't have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the RegularIntervalSchedule.timeStep with the RegularTimePoint.sequenceNumber and add the BasicIntervalSchedule.startTime. 
+        # The position of the RegularTimePoint in the sequence. Note that time points don't have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the RegularIntervalSchedule.timeStep with the RegularTimePoint.sequenceNumber and add the BasicIntervalSchedule.startTime. 
         self.sequence_number = sequence_number
 
-        # The second value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.The second value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule. 
+        # The second value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule. 
         self.value2 = value2
 
 
@@ -124,13 +86,13 @@ class RegularTimePoint(Element):
         self.interval_schedule = interval_schedule
 
 
-        super(RegularTimePoint, self).__init__(**kw_args)
+        super(RegularTimePoint, self).__init__(*args, **kw_args)
     # >>> regular_time_point
 
     # <<< interval_schedule
     # @generated
     def get_interval_schedule(self):
-        """ A RegularTimePoint belongs to a RegularIntervalSchedule.A RegularTimePoint belongs to a RegularIntervalSchedule.
+        """ A RegularTimePoint belongs to a RegularIntervalSchedule.
         """
         return self._interval_schedule
 
@@ -147,73 +109,27 @@ class RegularTimePoint(Element):
     # >>> interval_schedule
 
 
-    def __str__(self):
-        """ Returns a string representation of the RegularTimePoint.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< regular_time_point.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the RegularTimePoint.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "RegularTimePoint", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.interval_schedule is not None:
-            s += '%s<%s:RegularTimePoint.interval_schedule rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.interval_schedule.uri)
-        s += '%s<%s:RegularTimePoint.value1>%s</%s:RegularTimePoint.value1>' % \
-            (indent, ns_prefix, self.value1, ns_prefix)
-        s += '%s<%s:RegularTimePoint.sequence_number>%s</%s:RegularTimePoint.sequence_number>' % \
-            (indent, ns_prefix, self.sequence_number, ns_prefix)
-        s += '%s<%s:RegularTimePoint.value2>%s</%s:RegularTimePoint.value2>' % \
-            (indent, ns_prefix, self.value2, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "RegularTimePoint")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> regular_time_point.serialize
-
 
 class CurveData(Element):
-    """ Data point values for defining a curve or scheduleData point values for defining a curve or schedule
+    """ Data point values for defining a curve or schedule
     """
     # <<< curve_data
     # @generated
-    def __init__(self, y2value=0.0, xvalue=0.0, y1value=0.0, curve_schedule=None, **kw_args):
+    def __init__(self, y2value=0.0, xvalue=0.0, y1value=0.0, curve_schedule=None, *args, **kw_args):
         """ Initialises a new 'CurveData' instance.
+
+        @param y2value: The data value of the second Y-axis variable (if present), depending on the Y-axis units 
+        @param xvalue: The data value of the X-axis variable,  depending on the X-axis units 
+        @param y1value: The data value of the  first Y-axis variable, depending on the Y-axis units 
+        @param curve_schedule: The Curve defined by this CurveData.
         """
-        # The data value of the second Y-axis variable (if present), depending on the Y-axis unitsThe data value of the second Y-axis variable (if present), depending on the Y-axis units 
+        # The data value of the second Y-axis variable (if present), depending on the Y-axis units 
         self.y2value = y2value
 
-        # The data value of the X-axis variable,  depending on the X-axis unitsThe data value of the X-axis variable,  depending on the X-axis units 
+        # The data value of the X-axis variable,  depending on the X-axis units 
         self.xvalue = xvalue
 
-        # The data value of the  first Y-axis variable, depending on the Y-axis unitsThe data value of the  first Y-axis variable, depending on the Y-axis units 
+        # The data value of the  first Y-axis variable, depending on the Y-axis units 
         self.y1value = y1value
 
 
@@ -221,13 +137,13 @@ class CurveData(Element):
         self.curve_schedule = curve_schedule
 
 
-        super(CurveData, self).__init__(**kw_args)
+        super(CurveData, self).__init__(*args, **kw_args)
     # >>> curve_data
 
     # <<< curve_schedule
     # @generated
     def get_curve_schedule(self):
-        """ The Curve defined by this CurveData.The Curve defined by this CurveData.
+        """ The Curve defined by this CurveData.
         """
         return self._curve_schedule
 
@@ -244,65 +160,19 @@ class CurveData(Element):
     # >>> curve_schedule
 
 
-    def __str__(self):
-        """ Returns a string representation of the CurveData.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< curve_data.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the CurveData.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "CurveData", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.curve_schedule is not None:
-            s += '%s<%s:CurveData.curve_schedule rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.curve_schedule.uri)
-        s += '%s<%s:CurveData.y2value>%s</%s:CurveData.y2value>' % \
-            (indent, ns_prefix, self.y2value, ns_prefix)
-        s += '%s<%s:CurveData.xvalue>%s</%s:CurveData.xvalue>' % \
-            (indent, ns_prefix, self.xvalue, ns_prefix)
-        s += '%s<%s:CurveData.y1value>%s</%s:CurveData.y1value>' % \
-            (indent, ns_prefix, self.y1value, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "CurveData")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> curve_data.serialize
-
 
 class Terminal(IdentifiedObject):
-    """ An electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called 'connectivity nodes'.An electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called 'connectivity nodes'.
+    """ An electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called 'connectivity nodes'.
     """
     # <<< terminal
     # @generated
-    def __init__(self, measurements=None, regulating_control=None, connectivity_node=None, conducting_equipment=None, **kw_args):
+    def __init__(self, measurements=None, regulating_control=None, connectivity_node=None, conducting_equipment=None, *args, **kw_args):
         """ Initialises a new 'Terminal' instance.
+
+        @param measurements: One or more measurements may be associated with a terminal in the network. Measurement-Terminal defines where the measurement is placed in the network topology. Some Measurements represent quantities related to a particular sensor position, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is captured by the Measurement - Terminal association that makes it possible to place the sensing position at a  well defined place. The place is defined by the connection of the Terminal to ConductingEquipment.
+        @param regulating_control: The terminal is regulated by a control.
+        @param connectivity_node: Terminals interconnect with zero impedance at a node.  Measurements on a node apply to all of its terminals.
+        @param conducting_equipment: ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes
         """
 
         self._measurements = []
@@ -324,13 +194,13 @@ class Terminal(IdentifiedObject):
         self.conducting_equipment = conducting_equipment
 
 
-        super(Terminal, self).__init__(**kw_args)
+        super(Terminal, self).__init__(*args, **kw_args)
     # >>> terminal
 
     # <<< measurements
     # @generated
     def get_measurements(self):
-        """ One or more measurements may be associated with a terminal in the network. Measurement-Terminal defines where the measurement is placed in the network topology. Some Measurements represent quantities related to a particular sensor position, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is captured by the Measurement - Terminal association that makes it possible to place the sensing position at a  well defined place. The place is defined by the connection of the Terminal to ConductingEquipment.One or more measurements may be associated with a terminal in the network. Measurement-Terminal defines where the measurement is placed in the network topology. Some Measurements represent quantities related to a particular sensor position, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is captured by the Measurement - Terminal association that makes it possible to place the sensing position at a  well defined place. The place is defined by the connection of the Terminal to ConductingEquipment.
+        """ One or more measurements may be associated with a terminal in the network. Measurement-Terminal defines where the measurement is placed in the network topology. Some Measurements represent quantities related to a particular sensor position, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is captured by the Measurement - Terminal association that makes it possible to place the sensing position at a  well defined place. The place is defined by the connection of the Terminal to ConductingEquipment.
         """
         return self._measurements
 
@@ -357,7 +227,7 @@ class Terminal(IdentifiedObject):
     # <<< regulating_control
     # @generated
     def get_regulating_control(self):
-        """ The terminal is regulated by a control.The terminal is regulated by a control.
+        """ The terminal is regulated by a control.
         """
         return self._regulating_control
 
@@ -384,7 +254,7 @@ class Terminal(IdentifiedObject):
     # <<< connectivity_node
     # @generated
     def get_connectivity_node(self):
-        """ Terminals interconnect with zero impedance at a node.  Measurements on a node apply to all of its terminals.Terminals interconnect with zero impedance at a node.  Measurements on a node apply to all of its terminals.
+        """ Terminals interconnect with zero impedance at a node.  Measurements on a node apply to all of its terminals.
         """
         return self._connectivity_node
 
@@ -403,7 +273,7 @@ class Terminal(IdentifiedObject):
     # <<< conducting_equipment
     # @generated
     def get_conducting_equipment(self):
-        """ ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodesConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes
+        """ ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes
         """
         return self._conducting_equipment
 
@@ -420,78 +290,20 @@ class Terminal(IdentifiedObject):
     # >>> conducting_equipment
 
 
-    def __str__(self):
-        """ Returns a string representation of the Terminal.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< terminal.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the Terminal.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Terminal", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.measurements:
-            s += '%s<%s:Terminal.measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.regulating_control:
-            s += '%s<%s:Terminal.regulating_control rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.connectivity_node is not None:
-            s += '%s<%s:Terminal.connectivity_node rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.connectivity_node.uri)
-        if self.conducting_equipment is not None:
-            s += '%s<%s:Terminal.conducting_equipment rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.conducting_equipment.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "Terminal")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> terminal.serialize
-
 
 class BaseVoltage(IdentifiedObject):
-    """ Collection of BaseVoltages which is used to verify that the BusbarSection.BaseVoltage and other voltage attributes in the CIM are given a value existing in the collection.Collection of BaseVoltages which is used to verify that the BusbarSection.BaseVoltage and other voltage attributes in the CIM are given a value existing in the collection.
+    """ Collection of BaseVoltages which is used to verify that the BusbarSection.BaseVoltage and other voltage attributes in the CIM are given a value existing in the collection.
     """
     # <<< base_voltage
     # @generated
-    def __init__(self, nominal_voltage=0.0, conducting_equipment=None, voltage_level=None, **kw_args):
+    def __init__(self, nominal_voltage=0.0, conducting_equipment=None, voltage_level=None, *args, **kw_args):
         """ Initialises a new 'BaseVoltage' instance.
+
+        @param nominal_voltage: The PowerSystemResource's base voltage. 
+        @param conducting_equipment: Use association to ConductingEquipment only when there is no VoltageLevel container used.
+        @param voltage_level: The VoltageLevels having this BaseVoltage.
         """
-        # The PowerSystemResource's base voltage.The PowerSystemResource's base voltage. 
+        # The PowerSystemResource's base voltage. 
         self.nominal_voltage = nominal_voltage
 
 
@@ -508,13 +320,13 @@ class BaseVoltage(IdentifiedObject):
             self.voltage_level = []
 
 
-        super(BaseVoltage, self).__init__(**kw_args)
+        super(BaseVoltage, self).__init__(*args, **kw_args)
     # >>> base_voltage
 
     # <<< conducting_equipment
     # @generated
     def get_conducting_equipment(self):
-        """ Use association to ConductingEquipment only when there is no VoltageLevel container used.Use association to ConductingEquipment only when there is no VoltageLevel container used.
+        """ Use association to ConductingEquipment only when there is no VoltageLevel container used.
         """
         return self._conducting_equipment
 
@@ -541,7 +353,7 @@ class BaseVoltage(IdentifiedObject):
     # <<< voltage_level
     # @generated
     def get_voltage_level(self):
-        """ The VoltageLevels having this BaseVoltage.The VoltageLevels having this BaseVoltage.
+        """ The VoltageLevels having this BaseVoltage.
         """
         return self._voltage_level
 
@@ -566,72 +378,16 @@ class BaseVoltage(IdentifiedObject):
     # >>> voltage_level
 
 
-    def __str__(self):
-        """ Returns a string representation of the BaseVoltage.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< base_voltage.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the BaseVoltage.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "BaseVoltage", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.conducting_equipment:
-            s += '%s<%s:BaseVoltage.conducting_equipment rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.voltage_level:
-            s += '%s<%s:BaseVoltage.voltage_level rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        s += '%s<%s:BaseVoltage.nominal_voltage>%s</%s:BaseVoltage.nominal_voltage>' % \
-            (indent, ns_prefix, self.nominal_voltage, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "BaseVoltage")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> base_voltage.serialize
-
 
 class Unit(IdentifiedObject):
-    """ Quantity being measured. The Unit.name shall be unique among all specified quantities and describe the quantity. The Unit.aliasName is meant to be used for localization.Quantity being measured. The Unit.name shall be unique among all specified quantities and describe the quantity. The Unit.aliasName is meant to be used for localization.
+    """ Quantity being measured. The Unit.name shall be unique among all specified quantities and describe the quantity. The Unit.aliasName is meant to be used for localization.
     """
     # <<< unit
     # @generated
-    def __init__(self, measurements=None, **kw_args):
+    def __init__(self, measurements=None, *args, **kw_args):
         """ Initialises a new 'Unit' instance.
+
+        @param measurements: The Measurements having the Unit
         """
 
         self._measurements = []
@@ -641,13 +397,13 @@ class Unit(IdentifiedObject):
             self.measurements = []
 
 
-        super(Unit, self).__init__(**kw_args)
+        super(Unit, self).__init__(*args, **kw_args)
     # >>> unit
 
     # <<< measurements
     # @generated
     def get_measurements(self):
-        """ The Measurements having the UnitThe Measurements having the Unit
+        """ The Measurements having the Unit
         """
         return self._measurements
 
@@ -672,67 +428,18 @@ class Unit(IdentifiedObject):
     # >>> measurements
 
 
-    def __str__(self):
-        """ Returns a string representation of the Unit.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< unit.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the Unit.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Unit", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.measurements:
-            s += '%s<%s:Unit.measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "Unit")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> unit.serialize
-
 
 class SubGeographicalRegion(IdentifiedObject):
-    """ A subset of a geographical region of a power system network model.A subset of a geographical region of a power system network model.
+    """ A subset of a geographical region of a power system network model.
     """
     # <<< sub_geographical_region
     # @generated
-    def __init__(self, region=None, lines=None, substations=None, **kw_args):
+    def __init__(self, region=None, lines=None, substations=None, *args, **kw_args):
         """ Initialises a new 'SubGeographicalRegion' instance.
+
+        @param region: The association is used in the naming hierarchy.
+        @param lines: A Line can be contained by a SubGeographical Region.
+        @param substations: The association is used in the naming hierarchy.
         """
 
         self._region = None
@@ -751,13 +458,13 @@ class SubGeographicalRegion(IdentifiedObject):
             self.substations = []
 
 
-        super(SubGeographicalRegion, self).__init__(**kw_args)
+        super(SubGeographicalRegion, self).__init__(*args, **kw_args)
     # >>> sub_geographical_region
 
     # <<< region
     # @generated
     def get_region(self):
-        """ The association is used in the naming hierarchy.The association is used in the naming hierarchy.
+        """ The association is used in the naming hierarchy.
         """
         return self._region
 
@@ -776,7 +483,7 @@ class SubGeographicalRegion(IdentifiedObject):
     # <<< lines
     # @generated
     def get_lines(self):
-        """ A Line can be contained by a SubGeographical Region.A Line can be contained by a SubGeographical Region.
+        """ A Line can be contained by a SubGeographical Region.
         """
         return self._lines
 
@@ -803,7 +510,7 @@ class SubGeographicalRegion(IdentifiedObject):
     # <<< substations
     # @generated
     def get_substations(self):
-        """ The association is used in the naming hierarchy.The association is used in the naming hierarchy.
+        """ The association is used in the naming hierarchy.
         """
         return self._substations
 
@@ -828,85 +535,32 @@ class SubGeographicalRegion(IdentifiedObject):
     # >>> substations
 
 
-    def __str__(self):
-        """ Returns a string representation of the SubGeographicalRegion.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< sub_geographical_region.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the SubGeographicalRegion.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "SubGeographicalRegion", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.region is not None:
-            s += '%s<%s:SubGeographicalRegion.region rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.region.uri)
-        for obj in self.lines:
-            s += '%s<%s:SubGeographicalRegion.lines rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.substations:
-            s += '%s<%s:SubGeographicalRegion.substations rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "SubGeographicalRegion")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> sub_geographical_region.serialize
-
 
 class Curve(IdentifiedObject):
-    """ Relationship between an independent variable (X-axis) and one or two dependent  variables (Y1-axis and Y2-axis). Curves can also serve as schedules.Relationship between an independent variable (X-axis) and one or two dependent  variables (Y1-axis and Y2-axis). Curves can also serve as schedules.
+    """ Relationship between an independent variable (X-axis) and one or two dependent  variables (Y1-axis and Y2-axis). Curves can also serve as schedules.
     """
     # <<< curve
     # @generated
-    def __init__(self, y2_unit='w/s', x_unit='w/s', curve_style='ramp_yvalue', y1_unit='w/s', curve_schedule_datas=None, **kw_args):
+    def __init__(self, y2_unit='w/s', x_unit='w/s', curve_style='ramp_yvalue', y1_unit='w/s', curve_schedule_datas=None, *args, **kw_args):
         """ Initialises a new 'Curve' instance.
+
+        @param y2_unit: The Y2-axis units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "º_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
+        @param x_unit: The X-axis units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "º_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
+        @param curve_style: The style or shape of the curve. Values are: "ramp_yvalue", "formula", "constant_yvalue", "straight_line_yvalues"
+        @param y1_unit: The Y1-axis units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "º_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
+        @param curve_schedule_datas: The point data values that define a curve
         """
-        # The Y2-axis units of measure.The Y2-axis units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "deg_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
-        self.y2_unit = 'w/s'
+        # The Y2-axis units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "º_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
+        self.y2_unit = y2_unit
 
-        # The X-axis units of measure.The X-axis units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "deg_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
-        self.x_unit = 'w/s'
+        # The X-axis units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "º_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
+        self.x_unit = x_unit
 
-        # The style or shape of the curve.The style or shape of the curve. Values are: "ramp_yvalue", "formula", "constant_yvalue", "straight_line_yvalues"
-        self.curve_style = 'ramp_yvalue'
+        # The style or shape of the curve. Values are: "ramp_yvalue", "formula", "constant_yvalue", "straight_line_yvalues"
+        self.curve_style = curve_style
 
-        # The Y1-axis units of measure.The Y1-axis units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "deg_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
-        self.y1_unit = 'w/s'
+        # The Y1-axis units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "º_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
+        self.y1_unit = y1_unit
 
 
         self._curve_schedule_datas = []
@@ -916,13 +570,13 @@ class Curve(IdentifiedObject):
             self.curve_schedule_datas = []
 
 
-        super(Curve, self).__init__(**kw_args)
+        super(Curve, self).__init__(*args, **kw_args)
     # >>> curve
 
     # <<< curve_schedule_datas
     # @generated
     def get_curve_schedule_datas(self):
-        """ The point data values that define a curveThe point data values that define a curve
+        """ The point data values that define a curve
         """
         return self._curve_schedule_datas
 
@@ -947,75 +601,16 @@ class Curve(IdentifiedObject):
     # >>> curve_schedule_datas
 
 
-    def __str__(self):
-        """ Returns a string representation of the Curve.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< curve.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the Curve.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Curve", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.curve_schedule_datas:
-            s += '%s<%s:Curve.curve_schedule_datas rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        s += '%s<%s:Curve.y2_unit>%s</%s:Curve.y2_unit>' % \
-            (indent, ns_prefix, self.y2_unit, ns_prefix)
-        s += '%s<%s:Curve.x_unit>%s</%s:Curve.x_unit>' % \
-            (indent, ns_prefix, self.x_unit, ns_prefix)
-        s += '%s<%s:Curve.curve_style>%s</%s:Curve.curve_style>' % \
-            (indent, ns_prefix, self.curve_style, ns_prefix)
-        s += '%s<%s:Curve.y1_unit>%s</%s:Curve.y1_unit>' % \
-            (indent, ns_prefix, self.y1_unit, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "Curve")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> curve.serialize
-
 
 class PowerSystemResource(IdentifiedObject):
-    """ A power system resource can be an item of equipment such as a Switch, an EquipmentContainer containing many individual items of equipment such as a  Substation, or an organisational entity such as Company or SubControlArea.  This provides for the nesting of collections of PowerSystemResources within other PowerSystemResources. For example, a Switch could be a member of a Substation and a Substation could be a member of a division of a Company.A power system resource can be an item of equipment such as a Switch, an EquipmentContainer containing many individual items of equipment such as a  Substation, or an organisational entity such as Company or SubControlArea.  This provides for the nesting of collections of PowerSystemResources within other PowerSystemResources. For example, a Switch could be a member of a Substation and a Substation could be a member of a division of a Company.
+    """ A power system resource can be an item of equipment such as a Switch, an EquipmentContainer containing many individual items of equipment such as a  Substation, or an organisational entity such as Company or SubControlArea.  This provides for the nesting of collections of PowerSystemResources within other PowerSystemResources. For example, a Switch could be a member of a Substation and a Substation could be a member of a division of a Company.
     """
     # <<< power_system_resource
     # @generated
-    def __init__(self, contains_measurements=None, **kw_args):
+    def __init__(self, contains_measurements=None, *args, **kw_args):
         """ Initialises a new 'PowerSystemResource' instance.
+
+        @param contains_measurements: The Measurements that are included in the naming hierarchy where the PSR is the containing object
         """
 
         self._contains_measurements = []
@@ -1025,13 +620,13 @@ class PowerSystemResource(IdentifiedObject):
             self.contains_measurements = []
 
 
-        super(PowerSystemResource, self).__init__(**kw_args)
+        super(PowerSystemResource, self).__init__(*args, **kw_args)
     # >>> power_system_resource
 
     # <<< contains_measurements
     # @generated
     def get_contains_measurements(self):
-        """ The Measurements that are included in the naming hierarchy where the PSR is the containing objectThe Measurements that are included in the naming hierarchy where the PSR is the containing object
+        """ The Measurements that are included in the naming hierarchy where the PSR is the containing object
         """
         return self._contains_measurements
 
@@ -1056,147 +651,44 @@ class PowerSystemResource(IdentifiedObject):
     # >>> contains_measurements
 
 
-    def __str__(self):
-        """ Returns a string representation of the PowerSystemResource.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< power_system_resource.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the PowerSystemResource.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "PowerSystemResource", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "PowerSystemResource")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> power_system_resource.serialize
-
 
 class BasicIntervalSchedule(IdentifiedObject):
-    """ Schedule of values at points in time.Schedule of values at points in time.
+    """ Schedule of values at points in time.
     """
     # <<< basic_interval_schedule
     # @generated
-    def __init__(self, start_time='', value1_unit='w/s', value2_unit='w/s', **kw_args):
+    def __init__(self, start_time='', value1_unit='w/s', value2_unit='w/s', *args, **kw_args):
         """ Initialises a new 'BasicIntervalSchedule' instance.
+
+        @param start_time: The time for the first time point. 
+        @param value1_unit: Value1 units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "º_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
+        @param value2_unit: Value2 units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "º_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
         """
-        # The time for the first time point.The time for the first time point. 
+        # The time for the first time point. 
         self.start_time = start_time
 
-        # Value1 units of measure.Value1 units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "deg_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
-        self.value1_unit = 'w/s'
+        # Value1 units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "º_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
+        self.value1_unit = value1_unit
 
-        # Value2 units of measure.Value2 units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "deg_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
-        self.value2_unit = 'w/s'
+        # Value2 units of measure. Values are: "w/s", "none", "s", "h", "j/s", "va", "wh", "ohm", "m3", "hz-1", "w", "min", "rad", "g", "j", "h", "f", "kg/j", "vah", "s-1", "º_c", "deg", "pa", "var", "s", "w/hz", "m", "m2", "hz", "a", "n", "v/var", "varh", "v"
+        self.value2_unit = value2_unit
 
 
 
-        super(BasicIntervalSchedule, self).__init__(**kw_args)
+        super(BasicIntervalSchedule, self).__init__(*args, **kw_args)
     # >>> basic_interval_schedule
 
 
-    def __str__(self):
-        """ Returns a string representation of the BasicIntervalSchedule.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< basic_interval_schedule.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the BasicIntervalSchedule.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "BasicIntervalSchedule", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        s += '%s<%s:BasicIntervalSchedule.start_time>%s</%s:BasicIntervalSchedule.start_time>' % \
-            (indent, ns_prefix, self.start_time, ns_prefix)
-        s += '%s<%s:BasicIntervalSchedule.value1_unit>%s</%s:BasicIntervalSchedule.value1_unit>' % \
-            (indent, ns_prefix, self.value1_unit, ns_prefix)
-        s += '%s<%s:BasicIntervalSchedule.value2_unit>%s</%s:BasicIntervalSchedule.value2_unit>' % \
-            (indent, ns_prefix, self.value2_unit, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "BasicIntervalSchedule")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> basic_interval_schedule.serialize
-
 
 class GeographicalRegion(IdentifiedObject):
-    """ A geographical region of a power system network model.A geographical region of a power system network model.
+    """ A geographical region of a power system network model.
     """
     # <<< geographical_region
     # @generated
-    def __init__(self, regions=None, **kw_args):
+    def __init__(self, regions=None, *args, **kw_args):
         """ Initialises a new 'GeographicalRegion' instance.
+
+        @param regions: The association is used in the naming hierarchy.
         """
 
         self._regions = []
@@ -1206,13 +698,13 @@ class GeographicalRegion(IdentifiedObject):
             self.regions = []
 
 
-        super(GeographicalRegion, self).__init__(**kw_args)
+        super(GeographicalRegion, self).__init__(*args, **kw_args)
     # >>> geographical_region
 
     # <<< regions
     # @generated
     def get_regions(self):
-        """ The association is used in the naming hierarchy.The association is used in the naming hierarchy.
+        """ The association is used in the naming hierarchy.
         """
         return self._regions
 
@@ -1237,72 +729,23 @@ class GeographicalRegion(IdentifiedObject):
     # >>> regions
 
 
-    def __str__(self):
-        """ Returns a string representation of the GeographicalRegion.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< geographical_region.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the GeographicalRegion.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "GeographicalRegion", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.regions:
-            s += '%s<%s:GeographicalRegion.regions rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "GeographicalRegion")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> geographical_region.serialize
-
 
 class RegularIntervalSchedule(BasicIntervalSchedule):
-    """ The schedule has TimePoints where the time between them is constant.The schedule has TimePoints where the time between them is constant.
+    """ The schedule has TimePoints where the time between them is constant.
     """
     # <<< regular_interval_schedule
     # @generated
-    def __init__(self, end_time='', time_step=0.0, time_points=None, **kw_args):
+    def __init__(self, end_time='', time_step=0.0, time_points=None, *args, **kw_args):
         """ Initialises a new 'RegularIntervalSchedule' instance.
+
+        @param end_time: The time for the last time point. 
+        @param time_step: The time between each pair of subsequent RegularTimePoints. 
+        @param time_points: The point data values that define a curve
         """
-        # The time for the last time point.The time for the last time point. 
+        # The time for the last time point. 
         self.end_time = end_time
 
-        # The time between each pair of subsequent RegularTimePoints.The time between each pair of subsequent RegularTimePoints. 
+        # The time between each pair of subsequent RegularTimePoints. 
         self.time_step = time_step
 
 
@@ -1313,13 +756,13 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
             self.time_points = []
 
 
-        super(RegularIntervalSchedule, self).__init__(**kw_args)
+        super(RegularIntervalSchedule, self).__init__(*args, **kw_args)
     # >>> regular_interval_schedule
 
     # <<< time_points
     # @generated
     def get_time_points(self):
-        """ The point data values that define a curveThe point data values that define a curve
+        """ The point data values that define a curve
         """
         return self._time_points
 
@@ -1344,77 +787,16 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
     # >>> time_points
 
 
-    def __str__(self):
-        """ Returns a string representation of the RegularIntervalSchedule.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< regular_interval_schedule.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the RegularIntervalSchedule.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "RegularIntervalSchedule", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.time_points:
-            s += '%s<%s:RegularIntervalSchedule.time_points rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        s += '%s<%s:RegularIntervalSchedule.end_time>%s</%s:RegularIntervalSchedule.end_time>' % \
-            (indent, ns_prefix, self.end_time, ns_prefix)
-        s += '%s<%s:RegularIntervalSchedule.time_step>%s</%s:RegularIntervalSchedule.time_step>' % \
-            (indent, ns_prefix, self.time_step, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        s += '%s<%s:BasicIntervalSchedule.start_time>%s</%s:BasicIntervalSchedule.start_time>' % \
-            (indent, ns_prefix, self.start_time, ns_prefix)
-        s += '%s<%s:BasicIntervalSchedule.value1_unit>%s</%s:BasicIntervalSchedule.value1_unit>' % \
-            (indent, ns_prefix, self.value1_unit, ns_prefix)
-        s += '%s<%s:BasicIntervalSchedule.value2_unit>%s</%s:BasicIntervalSchedule.value2_unit>' % \
-            (indent, ns_prefix, self.value2_unit, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "RegularIntervalSchedule")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> regular_interval_schedule.serialize
-
 
 class ConnectivityNodeContainer(PowerSystemResource):
-    """ A base class for all objects that may contain ConnectivityNodes.A base class for all objects that may contain ConnectivityNodes.
+    """ A base class for all objects that may contain ConnectivityNodes.
     """
     # <<< connectivity_node_container
     # @generated
-    def __init__(self, connectivity_nodes=None, **kw_args):
+    def __init__(self, connectivity_nodes=None, *args, **kw_args):
         """ Initialises a new 'ConnectivityNodeContainer' instance.
+
+        @param connectivity_nodes: Connectivity nodes contained by this container.
         """
 
         self._connectivity_nodes = []
@@ -1424,13 +806,13 @@ class ConnectivityNodeContainer(PowerSystemResource):
             self.connectivity_nodes = []
 
 
-        super(ConnectivityNodeContainer, self).__init__(**kw_args)
+        super(ConnectivityNodeContainer, self).__init__(*args, **kw_args)
     # >>> connectivity_node_container
 
     # <<< connectivity_nodes
     # @generated
     def get_connectivity_nodes(self):
-        """ Connectivity nodes contained by this container.Connectivity nodes contained by this container.
+        """ Connectivity nodes contained by this container.
         """
         return self._connectivity_nodes
 
@@ -1455,70 +837,16 @@ class ConnectivityNodeContainer(PowerSystemResource):
     # >>> connectivity_nodes
 
 
-    def __str__(self):
-        """ Returns a string representation of the ConnectivityNodeContainer.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< connectivity_node_container.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the ConnectivityNodeContainer.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "ConnectivityNodeContainer", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.connectivity_nodes:
-            s += '%s<%s:ConnectivityNodeContainer.connectivity_nodes rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "ConnectivityNodeContainer")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> connectivity_node_container.serialize
-
 
 class EquipmentContainer(ConnectivityNodeContainer):
-    """ A modeling construct to provide a root class for all Equipment classesA modeling construct to provide a root class for all Equipment classes
+    """ A modeling construct to provide a root class for all Equipment classes
     """
     # <<< equipment_container
     # @generated
-    def __init__(self, contains_equipments=None, **kw_args):
+    def __init__(self, contains_equipments=None, *args, **kw_args):
         """ Initialises a new 'EquipmentContainer' instance.
+
+        @param contains_equipments: The association is used in the naming hierarchy.
         """
 
         self._contains_equipments = []
@@ -1528,13 +856,13 @@ class EquipmentContainer(ConnectivityNodeContainer):
             self.contains_equipments = []
 
 
-        super(EquipmentContainer, self).__init__(**kw_args)
+        super(EquipmentContainer, self).__init__(*args, **kw_args)
     # >>> equipment_container
 
     # <<< contains_equipments
     # @generated
     def get_contains_equipments(self):
-        """ The association is used in the naming hierarchy.The association is used in the naming hierarchy.
+        """ The association is used in the naming hierarchy.
         """
         return self._contains_equipments
 
@@ -1559,78 +887,25 @@ class EquipmentContainer(ConnectivityNodeContainer):
     # >>> contains_equipments
 
 
-    def __str__(self):
-        """ Returns a string representation of the EquipmentContainer.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< equipment_container.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the EquipmentContainer.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "EquipmentContainer", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.contains_equipments:
-            s += '%s<%s:EquipmentContainer.contains_equipments rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.connectivity_nodes:
-            s += '%s<%s:ConnectivityNodeContainer.connectivity_nodes rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "EquipmentContainer")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> equipment_container.serialize
-
 
 class VoltageLevel(EquipmentContainer):
-    """ A collection of equipment at one common system voltage forming a switchgear. The equipment typically consist of breakers, busbars, instrumentation, control, regulation and protection devices as well as assemblies of all these.A collection of equipment at one common system voltage forming a switchgear. The equipment typically consist of breakers, busbars, instrumentation, control, regulation and protection devices as well as assemblies of all these.
+    """ A collection of equipment at one common system voltage forming a switchgear. The equipment typically consist of breakers, busbars, instrumentation, control, regulation and protection devices as well as assemblies of all these.
     """
     # <<< voltage_level
     # @generated
-    def __init__(self, low_voltage_limit=0.0, high_voltage_limit=0.0, member_of_substation=None, base_voltage=None, contains_bays=None, **kw_args):
+    def __init__(self, low_voltage_limit=0.0, high_voltage_limit=0.0, member_of_substation=None, base_voltage=None, contains_bays=None, *args, **kw_args):
         """ Initialises a new 'VoltageLevel' instance.
+
+        @param low_voltage_limit: The bus bar's low voltage limit 
+        @param high_voltage_limit: The bus bar's high voltage limit 
+        @param member_of_substation: The association is used in the naming hierarchy.
+        @param base_voltage: The base voltage used for all equipment within the VoltageLevel.
+        @param contains_bays: The association is used in the naming hierarchy.
         """
-        # The bus bar's low voltage limitThe bus bar's low voltage limit 
+        # The bus bar's low voltage limit 
         self.low_voltage_limit = low_voltage_limit
 
-        # The bus bar's high voltage limitThe bus bar's high voltage limit 
+        # The bus bar's high voltage limit 
         self.high_voltage_limit = high_voltage_limit
 
 
@@ -1647,13 +922,13 @@ class VoltageLevel(EquipmentContainer):
             self.contains_bays = []
 
 
-        super(VoltageLevel, self).__init__(**kw_args)
+        super(VoltageLevel, self).__init__(*args, **kw_args)
     # >>> voltage_level
 
     # <<< member_of_substation
     # @generated
     def get_member_of_substation(self):
-        """ The association is used in the naming hierarchy.The association is used in the naming hierarchy.
+        """ The association is used in the naming hierarchy.
         """
         return self._member_of_substation
 
@@ -1672,7 +947,7 @@ class VoltageLevel(EquipmentContainer):
     # <<< base_voltage
     # @generated
     def get_base_voltage(self):
-        """ The base voltage used for all equipment within the VoltageLevel.The base voltage used for all equipment within the VoltageLevel.
+        """ The base voltage used for all equipment within the VoltageLevel.
         """
         return self._base_voltage
 
@@ -1691,7 +966,7 @@ class VoltageLevel(EquipmentContainer):
     # <<< contains_bays
     # @generated
     def get_contains_bays(self):
-        """ The association is used in the naming hierarchy.The association is used in the naming hierarchy.
+        """ The association is used in the naming hierarchy.
         """
         return self._contains_bays
 
@@ -1716,99 +991,29 @@ class VoltageLevel(EquipmentContainer):
     # >>> contains_bays
 
 
-    def __str__(self):
-        """ Returns a string representation of the VoltageLevel.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< voltage_level.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the VoltageLevel.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "VoltageLevel", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.member_of_substation is not None:
-            s += '%s<%s:VoltageLevel.member_of_substation rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_substation.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:VoltageLevel.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.contains_bays:
-            s += '%s<%s:VoltageLevel.contains_bays rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        s += '%s<%s:VoltageLevel.low_voltage_limit>%s</%s:VoltageLevel.low_voltage_limit>' % \
-            (indent, ns_prefix, self.low_voltage_limit, ns_prefix)
-        s += '%s<%s:VoltageLevel.high_voltage_limit>%s</%s:VoltageLevel.high_voltage_limit>' % \
-            (indent, ns_prefix, self.high_voltage_limit, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.connectivity_nodes:
-            s += '%s<%s:ConnectivityNodeContainer.connectivity_nodes rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.contains_equipments:
-            s += '%s<%s:EquipmentContainer.contains_equipments rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "VoltageLevel")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> voltage_level.serialize
-
 
 class Bay(EquipmentContainer):
-    """ A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.
+    """ A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.
     """
     # <<< bay
     # @generated
-    def __init__(self, member_of_voltage_level=None, **kw_args):
+    def __init__(self, member_of_voltage_level=None, *args, **kw_args):
         """ Initialises a new 'Bay' instance.
+
+        @param member_of_voltage_level: The association is used in the naming hierarchy.
         """
 
         self._member_of_voltage_level = None
         self.member_of_voltage_level = member_of_voltage_level
 
 
-        super(Bay, self).__init__(**kw_args)
+        super(Bay, self).__init__(*args, **kw_args)
     # >>> bay
 
     # <<< member_of_voltage_level
     # @generated
     def get_member_of_voltage_level(self):
-        """ The association is used in the naming hierarchy.The association is used in the naming hierarchy.
+        """ The association is used in the naming hierarchy.
         """
         return self._member_of_voltage_level
 
@@ -1825,76 +1030,17 @@ class Bay(EquipmentContainer):
     # >>> member_of_voltage_level
 
 
-    def __str__(self):
-        """ Returns a string representation of the Bay.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< bay.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the Bay.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Bay", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.member_of_voltage_level is not None:
-            s += '%s<%s:Bay.member_of_voltage_level rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_voltage_level.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.connectivity_nodes:
-            s += '%s<%s:ConnectivityNodeContainer.connectivity_nodes rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.contains_equipments:
-            s += '%s<%s:EquipmentContainer.contains_equipments rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "Bay")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> bay.serialize
-
 
 class Equipment(PowerSystemResource):
-    """ The parts of a power system that are physical devices, electronic or mechanicalThe parts of a power system that are physical devices, electronic or mechanical
+    """ The parts of a power system that are physical devices, electronic or mechanical
     """
     # <<< equipment
     # @generated
-    def __init__(self, member_of_equipment_container=None, operational_limit_set=None, **kw_args):
+    def __init__(self, member_of_equipment_container=None, operational_limit_set=None, *args, **kw_args):
         """ Initialises a new 'Equipment' instance.
+
+        @param member_of_equipment_container: The association is used in the naming hierarchy.
+        @param operational_limit_set: The equipment limit sets associated with the equipment.
         """
 
         self._member_of_equipment_container = None
@@ -1907,13 +1053,13 @@ class Equipment(PowerSystemResource):
             self.operational_limit_set = []
 
 
-        super(Equipment, self).__init__(**kw_args)
+        super(Equipment, self).__init__(*args, **kw_args)
     # >>> equipment
 
     # <<< member_of_equipment_container
     # @generated
     def get_member_of_equipment_container(self):
-        """ The association is used in the naming hierarchy.The association is used in the naming hierarchy.
+        """ The association is used in the naming hierarchy.
         """
         return self._member_of_equipment_container
 
@@ -1932,7 +1078,7 @@ class Equipment(PowerSystemResource):
     # <<< operational_limit_set
     # @generated
     def get_operational_limit_set(self):
-        """ The equipment limit sets associated with the equipment.The equipment limit sets associated with the equipment.
+        """ The equipment limit sets associated with the equipment.
         """
         return self._operational_limit_set
 
@@ -1957,73 +1103,17 @@ class Equipment(PowerSystemResource):
     # >>> operational_limit_set
 
 
-    def __str__(self):
-        """ Returns a string representation of the Equipment.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< equipment.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the Equipment.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Equipment", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "Equipment")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> equipment.serialize
-
 
 class Substation(EquipmentContainer):
-    """ A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics.A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics.
+    """ A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics.
     """
     # <<< substation
     # @generated
-    def __init__(self, region=None, contains_voltage_levels=None, **kw_args):
+    def __init__(self, region=None, contains_voltage_levels=None, *args, **kw_args):
         """ Initialises a new 'Substation' instance.
+
+        @param region: The association is used in the naming hierarchy.
+        @param contains_voltage_levels: The association is used in the naming hierarchy.
         """
 
         self._region = None
@@ -2036,13 +1126,13 @@ class Substation(EquipmentContainer):
             self.contains_voltage_levels = []
 
 
-        super(Substation, self).__init__(**kw_args)
+        super(Substation, self).__init__(*args, **kw_args)
     # >>> substation
 
     # <<< region
     # @generated
     def get_region(self):
-        """ The association is used in the naming hierarchy.The association is used in the naming hierarchy.
+        """ The association is used in the naming hierarchy.
         """
         return self._region
 
@@ -2061,7 +1151,7 @@ class Substation(EquipmentContainer):
     # <<< contains_voltage_levels
     # @generated
     def get_contains_voltage_levels(self):
-        """ The association is used in the naming hierarchy.The association is used in the naming hierarchy.
+        """ The association is used in the naming hierarchy.
         """
         return self._contains_voltage_levels
 
@@ -2086,79 +1176,17 @@ class Substation(EquipmentContainer):
     # >>> contains_voltage_levels
 
 
-    def __str__(self):
-        """ Returns a string representation of the Substation.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< substation.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the Substation.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Substation", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.region is not None:
-            s += '%s<%s:Substation.region rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.region.uri)
-        for obj in self.contains_voltage_levels:
-            s += '%s<%s:Substation.contains_voltage_levels rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.connectivity_nodes:
-            s += '%s<%s:ConnectivityNodeContainer.connectivity_nodes rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.contains_equipments:
-            s += '%s<%s:EquipmentContainer.contains_equipments rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "Substation")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> substation.serialize
-
 
 class ConductingEquipment(Equipment):
-    """ The parts of the power system that are designed to carry current or that are conductively connected therewith. ConductingEquipment is contained within an EquipmentContainer that may be a Substation, or a VoltageLevel or a Bay within a Substation.The parts of the power system that are designed to carry current or that are conductively connected therewith. ConductingEquipment is contained within an EquipmentContainer that may be a Substation, or a VoltageLevel or a Bay within a Substation.
+    """ The parts of the power system that are designed to carry current or that are conductively connected therewith. ConductingEquipment is contained within an EquipmentContainer that may be a Substation, or a VoltageLevel or a Bay within a Substation.
     """
     # <<< conducting_equipment
     # @generated
-    def __init__(self, base_voltage=None, terminals=None, **kw_args):
+    def __init__(self, base_voltage=None, terminals=None, *args, **kw_args):
         """ Initialises a new 'ConductingEquipment' instance.
+
+        @param base_voltage: Use association to ConductingEquipment only when there is no VoltageLevel container used.
+        @param terminals: ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes
         """
 
         self._base_voltage = None
@@ -2171,13 +1199,13 @@ class ConductingEquipment(Equipment):
             self.terminals = []
 
 
-        super(ConductingEquipment, self).__init__(**kw_args)
+        super(ConductingEquipment, self).__init__(*args, **kw_args)
     # >>> conducting_equipment
 
     # <<< base_voltage
     # @generated
     def get_base_voltage(self):
-        """ Use association to ConductingEquipment only when there is no VoltageLevel container used.Use association to ConductingEquipment only when there is no VoltageLevel container used.
+        """ Use association to ConductingEquipment only when there is no VoltageLevel container used.
         """
         return self._base_voltage
 
@@ -2196,7 +1224,7 @@ class ConductingEquipment(Equipment):
     # <<< terminals
     # @generated
     def get_terminals(self):
-        """ ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodesConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes
+        """ ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes
         """
         return self._terminals
 
@@ -2220,71 +1248,6 @@ class ConductingEquipment(Equipment):
             self._terminals.remove(obj)
     # >>> terminals
 
-
-    def __str__(self):
-        """ Returns a string representation of the ConductingEquipment.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< conducting_equipment.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the ConductingEquipment.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "ConductingEquipment", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "ConductingEquipment")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> conducting_equipment.serialize
 
 
 # <<< core

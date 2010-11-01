@@ -18,24 +18,24 @@ import logging
 
 from xml.etree.cElementTree import iterparse
 
-from cim import ns_uri
-from pycim.cim_pkg_map import pkg_map
+from cim15v01 import ns_uri
+from pycim.cim15v01_pkg_map import pkg_map
 
 from cpsm import ns_uri as ns_cpsm
-from pycim.cpsm_pkg_map import cpsm_pkg_map
+from pycim.cpsm_pkg_map import pkg_map as cpsm_pkg_map
 
-from ucte import ns_uri as ns_ucte
-from pycim.ucte_pkg_map import ucte_pkg_map
+from entsoe import ns_uri as ns_ucte
+from pycim.entsoe_pkg_map import pkg_map as entsoe_pkg_map
 
 from cdpsm import ns_uri as ns_cdpsm
-from pycim.cdpsm_pkg_map import cdpsm_pkg_map
+from pycim.cdpsm_pkg_map import pkg_map as cdpsm_pkg_map
 
 from dynamics import ns_uri as ns_dyn
-from pycim.dynamics_pkg_map import dynamics_pkg_map
+from pycim.dynamics_pkg_map import pkg_map as dynamics_pkg_map
 
 logger = logging.getLogger(__name__)
 
-PKG_MAP = {"cpsm": cpsm_pkg_map, "ucte": ucte_pkg_map,
+PKG_MAP = {"cpsm": cpsm_pkg_map, "ucte": entsoe_pkg_map,
            "cdpsm": cdpsm_pkg_map, "dynamics": dynamics_pkg_map}
 NS_MAP = {"cpsm": ns_cpsm, "cdpsm": ns_cdpsm, "dynamics": ns_dyn,
           "ucte": ns_ucte}

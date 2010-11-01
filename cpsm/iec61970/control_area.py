@@ -1,16 +1,18 @@
 # Copyright (C) 2010 Richard Lincoln
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
 #
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, USA
 
 
 from cpsm.iec61970.core import PowerSystemResource
@@ -25,18 +27,24 @@ ns_prefix = "cim"
 ns_uri = "http://iec.ch/TC57/2008/CIM-schema-cim13#Package_ControlArea"
 
 class ControlArea(PowerSystemResource):
-    """ A <b>control area </b>is a grouping of <b>generating units</b> and/or loads and a cutset of tie lines (as <b>terminals</b>) which may be used for a variety of purposes including automatic generation control, powerflow solution area interchange control specification, and input to load forecasting.   Note that any number of overlapping control area specifications can be superimposed on the physical model.A <b>control area </b>is a grouping of <b>generating units</b> and/or loads and a cutset of tie lines (as <b>terminals</b>) which may be used for a variety of purposes including automatic generation control, powerflow solution area interchange control specification, and input to load forecasting.   Note that any number of overlapping control area specifications can be superimposed on the physical model.
+    """ A <b>control area </b>is a grouping of <b>generating units</b> and/or loads and a cutset of tie lines (as <b>terminals</b>) which may be used for a variety of purposes including automatic generation control, powerflow solution area interchange control specification, and input to load forecasting.   Note that any number of overlapping control area specifications can be superimposed on the physical model.
     """
     # <<< control_area
     # @generated
-    def __init__(self, net_interchange=0.0, type='forecast', control_area_generating_unit=None, energy_area=None, tie_flow=None, **kw_args):
+    def __init__(self, net_interchange=0.0, type='forecast', control_area_generating_unit=None, energy_area=None, tie_flow=None, *args, **kw_args):
         """ Initialises a new 'ControlArea' instance.
+
+        @param net_interchange: The specified positive net interchange into the control area. 
+        @param type: The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes. Values are: "forecast", "interchange", "agc"
+        @param control_area_generating_unit: The generating unit specificaitons for the control area.
+        @param energy_area: The energy area that is forecast from this control area specification.
+        @param tie_flow: The tie flows associated with the control area.
         """
-        # The specified positive net interchange into the control area.The specified positive net interchange into the control area. 
+        # The specified positive net interchange into the control area. 
         self.net_interchange = net_interchange
 
-        # The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes. Values are: "forecast", "interchange", "agc"
-        self.type = 'forecast'
+        # The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes. Values are: "forecast", "interchange", "agc"
+        self.type = type
 
 
         self._control_area_generating_unit = []
@@ -55,13 +63,13 @@ class ControlArea(PowerSystemResource):
             self.tie_flow = []
 
 
-        super(ControlArea, self).__init__(**kw_args)
+        super(ControlArea, self).__init__(*args, **kw_args)
     # >>> control_area
 
     # <<< control_area_generating_unit
     # @generated
     def get_control_area_generating_unit(self):
-        """ The generating unit specificaitons for the control area.The generating unit specificaitons for the control area.
+        """ The generating unit specificaitons for the control area.
         """
         return self._control_area_generating_unit
 
@@ -88,7 +96,7 @@ class ControlArea(PowerSystemResource):
     # <<< energy_area
     # @generated
     def get_energy_area(self):
-        """ The energy area that is forecast from this control area specification.The energy area that is forecast from this control area specification.
+        """ The energy area that is forecast from this control area specification.
         """
         return self._energy_area
 
@@ -106,7 +114,7 @@ class ControlArea(PowerSystemResource):
     # <<< tie_flow
     # @generated
     def get_tie_flow(self):
-        """ The tie flows associated with the control area.The tie flows associated with the control area.
+        """ The tie flows associated with the control area.
         """
         return self._tie_flow
 
@@ -131,82 +139,19 @@ class ControlArea(PowerSystemResource):
     # >>> tie_flow
 
 
-    def __str__(self):
-        """ Returns a string representation of the ControlArea.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< control_area.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the ControlArea.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "ControlArea", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.control_area_generating_unit:
-            s += '%s<%s:ControlArea.control_area_generating_unit rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.energy_area is not None:
-            s += '%s<%s:ControlArea.energy_area rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.energy_area.uri)
-        for obj in self.tie_flow:
-            s += '%s<%s:ControlArea.tie_flow rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        s += '%s<%s:ControlArea.net_interchange>%s</%s:ControlArea.net_interchange>' % \
-            (indent, ns_prefix, self.net_interchange, ns_prefix)
-        s += '%s<%s:ControlArea.type>%s</%s:ControlArea.type>' % \
-            (indent, ns_prefix, self.type, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "ControlArea")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> control_area.serialize
-
 
 class TieFlow(Element):
-    """ A flow specification in terms of location and direction for a control area.A flow specification in terms of location and direction for a control area.
+    """ A flow specification in terms of location and direction for a control area.
     """
     # <<< tie_flow
     # @generated
-    def __init__(self, positive_flow_in=False, control_area=None, **kw_args):
+    def __init__(self, positive_flow_in=False, control_area=None, *args, **kw_args):
         """ Initialises a new 'TieFlow' instance.
+
+        @param positive_flow_in: The flow is positive into the terminal.  A flow is positive if it is an import into the control area. 
+        @param control_area: The control area of the tie flows.
         """
-        # The flow is positive into the terminal.  A flow is positive if it is an import into the control area.The flow is positive into the terminal.  A flow is positive if it is an import into the control area. 
+        # The flow is positive into the terminal.  A flow is positive if it is an import into the control area. 
         self.positive_flow_in = positive_flow_in
 
 
@@ -214,13 +159,13 @@ class TieFlow(Element):
         self.control_area = control_area
 
 
-        super(TieFlow, self).__init__(**kw_args)
+        super(TieFlow, self).__init__(*args, **kw_args)
     # >>> tie_flow
 
     # <<< control_area
     # @generated
     def get_control_area(self):
-        """ The control area of the tie flows.The control area of the tie flows.
+        """ The control area of the tie flows.
         """
         return self._control_area
 
@@ -237,61 +182,17 @@ class TieFlow(Element):
     # >>> control_area
 
 
-    def __str__(self):
-        """ Returns a string representation of the TieFlow.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< tie_flow.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the TieFlow.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "TieFlow", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.control_area is not None:
-            s += '%s<%s:TieFlow.control_area rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.control_area.uri)
-        s += '%s<%s:TieFlow.positive_flow_in>%s</%s:TieFlow.positive_flow_in>' % \
-            (indent, ns_prefix, self.positive_flow_in, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "TieFlow")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> tie_flow.serialize
-
 
 class ControlAreaGeneratingUnit(Element):
-    """ A control area generating unit. This class is needed so that alternate control area definitions may include the same generating unit.   Note only one instance within a control area should reference a specific generating unit.A control area generating unit. This class is needed so that alternate control area definitions may include the same generating unit.   Note only one instance within a control area should reference a specific generating unit.
+    """ A control area generating unit. This class is needed so that alternate control area definitions may include the same generating unit.   Note only one instance within a control area should reference a specific generating unit.
     """
     # <<< control_area_generating_unit
     # @generated
-    def __init__(self, control_area=None, generating_unit=None, **kw_args):
+    def __init__(self, control_area=None, generating_unit=None, *args, **kw_args):
         """ Initialises a new 'ControlAreaGeneratingUnit' instance.
+
+        @param control_area: The parent control area for the generating unit specifications.
+        @param generating_unit: The generating unit specified for this control area.  Note that a control area should include a GeneratingUnit only once.
         """
 
         self._control_area = None
@@ -301,13 +202,13 @@ class ControlAreaGeneratingUnit(Element):
         self.generating_unit = generating_unit
 
 
-        super(ControlAreaGeneratingUnit, self).__init__(**kw_args)
+        super(ControlAreaGeneratingUnit, self).__init__(*args, **kw_args)
     # >>> control_area_generating_unit
 
     # <<< control_area
     # @generated
     def get_control_area(self):
-        """ The parent control area for the generating unit specifications.The parent control area for the generating unit specifications.
+        """ The parent control area for the generating unit specifications.
         """
         return self._control_area
 
@@ -326,7 +227,7 @@ class ControlAreaGeneratingUnit(Element):
     # <<< generating_unit
     # @generated
     def get_generating_unit(self):
-        """ The generating unit specified for this control area.  Note that a control area should include a GeneratingUnit only once.The generating unit specified for this control area.  Note that a control area should include a GeneratingUnit only once.
+        """ The generating unit specified for this control area.  Note that a control area should include a GeneratingUnit only once.
         """
         return self._generating_unit
 
@@ -342,54 +243,6 @@ class ControlAreaGeneratingUnit(Element):
     generating_unit = property(get_generating_unit, set_generating_unit)
     # >>> generating_unit
 
-
-    def __str__(self):
-        """ Returns a string representation of the ControlAreaGeneratingUnit.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< control_area_generating_unit.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the ControlAreaGeneratingUnit.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "ControlAreaGeneratingUnit", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.control_area is not None:
-            s += '%s<%s:ControlAreaGeneratingUnit.control_area rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.control_area.uri)
-        if self.generating_unit is not None:
-            s += '%s<%s:ControlAreaGeneratingUnit.generating_unit rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.generating_unit.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "ControlAreaGeneratingUnit")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> control_area_generating_unit.serialize
 
 
 # <<< control_area

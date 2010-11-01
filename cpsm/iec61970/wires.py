@@ -1,18 +1,20 @@
 # Copyright (C) 2010 Richard Lincoln
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
 #
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, USA
 
-""" An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow.An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow.
+""" An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow.
 """
 
 from cpsm.iec61970.core import Equipment
@@ -31,12 +33,14 @@ ns_prefix = "cim"
 ns_uri = "http://iec.ch/TC57/2008/CIM-schema-cim13#Package_Wires"
 
 class PowerTransformer(Equipment):
-    """ An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).
+    """ An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).
     """
     # <<< power_transformer
     # @generated
-    def __init__(self, contains_transformer_windings=None, **kw_args):
+    def __init__(self, contains_transformer_windings=None, *args, **kw_args):
         """ Initialises a new 'PowerTransformer' instance.
+
+        @param contains_transformer_windings: A transformer has windings
         """
 
         self._contains_transformer_windings = []
@@ -46,13 +50,13 @@ class PowerTransformer(Equipment):
             self.contains_transformer_windings = []
 
 
-        super(PowerTransformer, self).__init__(**kw_args)
+        super(PowerTransformer, self).__init__(*args, **kw_args)
     # >>> power_transformer
 
     # <<< contains_transformer_windings
     # @generated
     def get_contains_transformer_windings(self):
-        """ A transformer has windingsA transformer has windings
+        """ A transformer has windings
         """
         return self._contains_transformer_windings
 
@@ -77,170 +81,46 @@ class PowerTransformer(Equipment):
     # >>> contains_transformer_windings
 
 
-    def __str__(self):
-        """ Returns a string representation of the PowerTransformer.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< power_transformer.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the PowerTransformer.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "PowerTransformer", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.contains_transformer_windings:
-            s += '%s<%s:PowerTransformer.contains_transformer_windings rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "PowerTransformer")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> power_transformer.serialize
-
 
 class BusbarSection(ConductingEquipment):
-    """ A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation.  Voltage measurements are typically obtained from VoltageTransformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal.A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation.  Voltage measurements are typically obtained from VoltageTransformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal.
+    """ A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation.  Voltage measurements are typically obtained from VoltageTransformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal.
     """
     pass
     # <<< busbar_section
     # @generated
-    def __init__(self, **kw_args):
+    def __init__(self, *args, **kw_args):
         """ Initialises a new 'BusbarSection' instance.
+
         """
 
 
-        super(BusbarSection, self).__init__(**kw_args)
+        super(BusbarSection, self).__init__(*args, **kw_args)
     # >>> busbar_section
 
 
-    def __str__(self):
-        """ Returns a string representation of the BusbarSection.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< busbar_section.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the BusbarSection.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "BusbarSection", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "BusbarSection")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> busbar_section.serialize
-
 
 class RegulatingCondEq(ConductingEquipment):
-    """ RegulatingCondEq is a type of ConductingEquipment that can regulate Measurements and have a RegulationSchedule.RegulatingCondEq is a type of ConductingEquipment that can regulate Measurements and have a RegulationSchedule.
+    """ RegulatingCondEq is a type of ConductingEquipment that can regulate Measurements and have a RegulationSchedule.
     """
     # <<< regulating_cond_eq
     # @generated
-    def __init__(self, regulating_control=None, **kw_args):
+    def __init__(self, regulating_control=None, *args, **kw_args):
         """ Initialises a new 'RegulatingCondEq' instance.
+
+        @param regulating_control: copy from ...
         """
 
         self._regulating_control = None
         self.regulating_control = regulating_control
 
 
-        super(RegulatingCondEq, self).__init__(**kw_args)
+        super(RegulatingCondEq, self).__init__(*args, **kw_args)
     # >>> regulating_cond_eq
 
     # <<< regulating_control
     # @generated
     def get_regulating_control(self):
-        """ copy from ...copy from ...
+        """ copy from ...
         """
         return self._regulating_control
 
@@ -257,93 +137,31 @@ class RegulatingCondEq(ConductingEquipment):
     # >>> regulating_control
 
 
-    def __str__(self):
-        """ Returns a string representation of the RegulatingCondEq.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< regulating_cond_eq.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the RegulatingCondEq.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "RegulatingCondEq", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.regulating_control is not None:
-            s += '%s<%s:RegulatingCondEq.regulating_control rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.regulating_control.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "RegulatingCondEq")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> regulating_cond_eq.serialize
-
 
 class EnergyConsumer(ConductingEquipment):
-    """ Generic user of energy - a  point of consumption on the power system modelGeneric user of energy - a  point of consumption on the power system model
+    """ Generic user of energy - a  point of consumption on the power system model
     """
     # <<< energy_consumer
     # @generated
-    def __init__(self, qfixed_pct=0.0, pfixed=0.0, qfixed=0.0, pfixed_pct=0.0, load_response=None, **kw_args):
+    def __init__(self, qfixed_pct=0.0, pfixed=0.0, qfixed=0.0, pfixed_pct=0.0, load_response=None, *args, **kw_args):
         """ Initialises a new 'EnergyConsumer' instance.
+
+        @param qfixed_pct: Fixed reactive power as per cent of load group fixed reactive power. 
+        @param pfixed: Active power of the load that is a fixed quantity. 
+        @param qfixed: Reactive power of the load that is a fixed quantity. 
+        @param pfixed_pct: Fixed active power as per cent of load group fixed active power 
+        @param load_response: The load response characteristic of this load.
         """
-        # Fixed reactive power as per cent of load group fixed reactive power.Fixed reactive power as per cent of load group fixed reactive power. 
+        # Fixed reactive power as per cent of load group fixed reactive power. 
         self.qfixed_pct = qfixed_pct
 
-        # Active power of the load that is a fixed quantity.Active power of the load that is a fixed quantity. 
+        # Active power of the load that is a fixed quantity. 
         self.pfixed = pfixed
 
-        # Reactive power of the load that is a fixed quantity.Reactive power of the load that is a fixed quantity. 
+        # Reactive power of the load that is a fixed quantity. 
         self.qfixed = qfixed
 
-        # Fixed active power as per cent of load group fixed active powerFixed active power as per cent of load group fixed active power 
+        # Fixed active power as per cent of load group fixed active power 
         self.pfixed_pct = pfixed_pct
 
 
@@ -351,13 +169,13 @@ class EnergyConsumer(ConductingEquipment):
         self.load_response = load_response
 
 
-        super(EnergyConsumer, self).__init__(**kw_args)
+        super(EnergyConsumer, self).__init__(*args, **kw_args)
     # >>> energy_consumer
 
     # <<< load_response
     # @generated
     def get_load_response(self):
-        """ The load response characteristic of this load.The load response characteristic of this load.
+        """ The load response characteristic of this load.
         """
         return self._load_response
 
@@ -374,107 +192,40 @@ class EnergyConsumer(ConductingEquipment):
     # >>> load_response
 
 
-    def __str__(self):
-        """ Returns a string representation of the EnergyConsumer.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< energy_consumer.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the EnergyConsumer.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "EnergyConsumer", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.load_response is not None:
-            s += '%s<%s:EnergyConsumer.load_response rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.load_response.uri)
-        s += '%s<%s:EnergyConsumer.qfixed_pct>%s</%s:EnergyConsumer.qfixed_pct>' % \
-            (indent, ns_prefix, self.qfixed_pct, ns_prefix)
-        s += '%s<%s:EnergyConsumer.pfixed>%s</%s:EnergyConsumer.pfixed>' % \
-            (indent, ns_prefix, self.pfixed, ns_prefix)
-        s += '%s<%s:EnergyConsumer.qfixed>%s</%s:EnergyConsumer.qfixed>' % \
-            (indent, ns_prefix, self.qfixed, ns_prefix)
-        s += '%s<%s:EnergyConsumer.pfixed_pct>%s</%s:EnergyConsumer.pfixed_pct>' % \
-            (indent, ns_prefix, self.pfixed_pct, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "EnergyConsumer")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> energy_consumer.serialize
-
 
 class TransformerWinding(ConductingEquipment):
-    """ A winding is associated with each defined terminal of a transformer (or phase shifter).A winding is associated with each defined terminal of a transformer (or phase shifter).
+    """ A winding is associated with each defined terminal of a transformer (or phase shifter).
     """
     # <<< transformer_winding
     # @generated
-    def __init__(self, winding_type='primary', rated_s=0.0, x=0.0, rated_u=0.0, r=0.0, b=0.0, tap_changers=None, member_of_power_transformer=None, **kw_args):
+    def __init__(self, winding_type='primary', rated_s=0.0, x=0.0, rated_u=0.0, r=0.0, b=0.0, tap_changers=None, member_of_power_transformer=None, *args, **kw_args):
         """ Initialises a new 'TransformerWinding' instance.
-        """
-        # The type of winding.The type of winding. Values are: "primary", "tertiary", "secondary", "quaternary"
-        self.winding_type = 'primary'
 
-        # The normal apparent power rating for the windingThe normal apparent power rating for the winding 
+        @param winding_type: The type of winding. Values are: "primary", "tertiary", "secondary", "quaternary"
+        @param rated_s: The normal apparent power rating for the winding 
+        @param x: Positive sequence series reactance of the winding. 
+        @param rated_u: The rated voltage (phase-to-phase) of the winding, usually the same as the neutral voltage. 
+        @param r: Positive sequence series resistance of the winding. 
+        @param b: Magnetizing branch susceptance (B mag). 
+        @param tap_changers: A transformer winding may have tap changers, separately for voltage and phase angle.  If a TransformerWinding does not have an associated TapChanger, the winding is assumed to be fixed tap.
+        @param member_of_power_transformer: A transformer has windings
+        """
+        # The type of winding. Values are: "primary", "tertiary", "secondary", "quaternary"
+        self.winding_type = winding_type
+
+        # The normal apparent power rating for the winding 
         self.rated_s = rated_s
 
-        # Positive sequence series reactance of the winding.Positive sequence series reactance of the winding. 
+        # Positive sequence series reactance of the winding. 
         self.x = x
 
-        # The rated voltage (phase-to-phase) of the winding, usually the same as the neutral voltage.The rated voltage (phase-to-phase) of the winding, usually the same as the neutral voltage. 
+        # The rated voltage (phase-to-phase) of the winding, usually the same as the neutral voltage. 
         self.rated_u = rated_u
 
-        # Positive sequence series resistance of the winding.Positive sequence series resistance of the winding. 
+        # Positive sequence series resistance of the winding. 
         self.r = r
 
-        # Magnetizing branch susceptance (B mag).Magnetizing branch susceptance (B mag). 
+        # Magnetizing branch susceptance (B mag). 
         self.b = b
 
 
@@ -488,13 +239,13 @@ class TransformerWinding(ConductingEquipment):
         self.member_of_power_transformer = member_of_power_transformer
 
 
-        super(TransformerWinding, self).__init__(**kw_args)
+        super(TransformerWinding, self).__init__(*args, **kw_args)
     # >>> transformer_winding
 
     # <<< tap_changers
     # @generated
     def get_tap_changers(self):
-        """ A transformer winding may have tap changers, separately for voltage and phase angle.  If a TransformerWinding does not have an associated TapChanger, the winding is assumed to be fixed tap.A transformer winding may have tap changers, separately for voltage and phase angle.  If a TransformerWinding does not have an associated TapChanger, the winding is assumed to be fixed tap.
+        """ A transformer winding may have tap changers, separately for voltage and phase angle.  If a TransformerWinding does not have an associated TapChanger, the winding is assumed to be fixed tap.
         """
         return self._tap_changers
 
@@ -521,7 +272,7 @@ class TransformerWinding(ConductingEquipment):
     # <<< member_of_power_transformer
     # @generated
     def get_member_of_power_transformer(self):
-        """ A transformer has windingsA transformer has windings
+        """ A transformer has windings
         """
         return self._member_of_power_transformer
 
@@ -538,97 +289,19 @@ class TransformerWinding(ConductingEquipment):
     # >>> member_of_power_transformer
 
 
-    def __str__(self):
-        """ Returns a string representation of the TransformerWinding.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< transformer_winding.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the TransformerWinding.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "TransformerWinding", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.tap_changers:
-            s += '%s<%s:TransformerWinding.tap_changers rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_power_transformer is not None:
-            s += '%s<%s:TransformerWinding.member_of_power_transformer rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_power_transformer.uri)
-        s += '%s<%s:TransformerWinding.winding_type>%s</%s:TransformerWinding.winding_type>' % \
-            (indent, ns_prefix, self.winding_type, ns_prefix)
-        s += '%s<%s:TransformerWinding.rated_s>%s</%s:TransformerWinding.rated_s>' % \
-            (indent, ns_prefix, self.rated_s, ns_prefix)
-        s += '%s<%s:TransformerWinding.x>%s</%s:TransformerWinding.x>' % \
-            (indent, ns_prefix, self.x, ns_prefix)
-        s += '%s<%s:TransformerWinding.rated_u>%s</%s:TransformerWinding.rated_u>' % \
-            (indent, ns_prefix, self.rated_u, ns_prefix)
-        s += '%s<%s:TransformerWinding.r>%s</%s:TransformerWinding.r>' % \
-            (indent, ns_prefix, self.r, ns_prefix)
-        s += '%s<%s:TransformerWinding.b>%s</%s:TransformerWinding.b>' % \
-            (indent, ns_prefix, self.b, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "TransformerWinding")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> transformer_winding.serialize
-
 
 class RegulatingControl(PowerSystemResource):
-    """ Specifies a set of equipment that works together to control a power system quantity such as voltage or flow.Specifies a set of equipment that works together to control a power system quantity such as voltage or flow.
+    """ Specifies a set of equipment that works together to control a power system quantity such as voltage or flow.
     """
     # <<< regulating_control
     # @generated
-    def __init__(self, terminal=None, regulation_schedule=None, tap_changer=None, regulating_cond_eq=None, **kw_args):
+    def __init__(self, terminal=None, regulation_schedule=None, tap_changer=None, regulating_cond_eq=None, *args, **kw_args):
         """ Initialises a new 'RegulatingControl' instance.
+
+        @param terminal: The terminal associated with this regulating control.
+        @param regulation_schedule: Schedule for this Regulating regulating control.
+        @param tap_changer: copy from reg conduting eq
+        @param regulating_cond_eq: copy from reg cond eq
         """
 
         self._terminal = None
@@ -650,13 +323,13 @@ class RegulatingControl(PowerSystemResource):
             self.regulating_cond_eq = []
 
 
-        super(RegulatingControl, self).__init__(**kw_args)
+        super(RegulatingControl, self).__init__(*args, **kw_args)
     # >>> regulating_control
 
     # <<< terminal
     # @generated
     def get_terminal(self):
-        """ The terminal associated with this regulating control.The terminal associated with this regulating control.
+        """ The terminal associated with this regulating control.
         """
         return self._terminal
 
@@ -675,7 +348,7 @@ class RegulatingControl(PowerSystemResource):
     # <<< regulation_schedule
     # @generated
     def get_regulation_schedule(self):
-        """ Schedule for this Regulating regulating control.Schedule for this Regulating regulating control.
+        """ Schedule for this Regulating regulating control.
         """
         return self._regulation_schedule
 
@@ -694,7 +367,7 @@ class RegulatingControl(PowerSystemResource):
     # <<< tap_changer
     # @generated
     def get_tap_changer(self):
-        """ copy from reg conduting eqcopy from reg conduting eq
+        """ copy from reg conduting eq
         """
         return self._tap_changer
 
@@ -721,7 +394,7 @@ class RegulatingControl(PowerSystemResource):
     # <<< regulating_cond_eq
     # @generated
     def get_regulating_cond_eq(self):
-        """ copy from reg cond eqcopy from reg cond eq
+        """ copy from reg cond eq
         """
         return self._regulating_cond_eq
 
@@ -746,79 +419,16 @@ class RegulatingControl(PowerSystemResource):
     # >>> regulating_cond_eq
 
 
-    def __str__(self):
-        """ Returns a string representation of the RegulatingControl.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< regulating_control.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the RegulatingControl.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "RegulatingControl", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.terminal is not None:
-            s += '%s<%s:RegulatingControl.terminal rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.terminal.uri)
-        if self.regulation_schedule is not None:
-            s += '%s<%s:RegulatingControl.regulation_schedule rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.regulation_schedule.uri)
-        for obj in self.tap_changer:
-            s += '%s<%s:RegulatingControl.tap_changer rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.regulating_cond_eq:
-            s += '%s<%s:RegulatingControl.regulating_cond_eq rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "RegulatingControl")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> regulating_control.serialize
-
 
 class RegulationSchedule(RegularIntervalSchedule):
-    """ A pre-established pattern over time for a controlled variable, e.g., busbar voltage.A pre-established pattern over time for a controlled variable, e.g., busbar voltage.
+    """ A pre-established pattern over time for a controlled variable, e.g., busbar voltage.
     """
     # <<< regulation_schedule
     # @generated
-    def __init__(self, regulating_control=None, **kw_args):
+    def __init__(self, regulating_control=None, *args, **kw_args):
         """ Initialises a new 'RegulationSchedule' instance.
+
+        @param regulating_control: Regulating controls that have this Schedule.
         """
 
         self._regulating_control = []
@@ -828,13 +438,13 @@ class RegulationSchedule(RegularIntervalSchedule):
             self.regulating_control = []
 
 
-        super(RegulationSchedule, self).__init__(**kw_args)
+        super(RegulationSchedule, self).__init__(*args, **kw_args)
     # >>> regulation_schedule
 
     # <<< regulating_control
     # @generated
     def get_regulating_control(self):
-        """ Regulating controls that have this Schedule.Regulating controls that have this Schedule.
+        """ Regulating controls that have this Schedule.
         """
         return self._regulating_control
 
@@ -859,260 +469,64 @@ class RegulationSchedule(RegularIntervalSchedule):
     # >>> regulating_control
 
 
-    def __str__(self):
-        """ Returns a string representation of the RegulationSchedule.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< regulation_schedule.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the RegulationSchedule.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "RegulationSchedule", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.regulating_control:
-            s += '%s<%s:RegulationSchedule.regulating_control rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        s += '%s<%s:BasicIntervalSchedule.start_time>%s</%s:BasicIntervalSchedule.start_time>' % \
-            (indent, ns_prefix, self.start_time, ns_prefix)
-        s += '%s<%s:BasicIntervalSchedule.value1_unit>%s</%s:BasicIntervalSchedule.value1_unit>' % \
-            (indent, ns_prefix, self.value1_unit, ns_prefix)
-        s += '%s<%s:BasicIntervalSchedule.value2_unit>%s</%s:BasicIntervalSchedule.value2_unit>' % \
-            (indent, ns_prefix, self.value2_unit, ns_prefix)
-        for obj in self.time_points:
-            s += '%s<%s:RegularIntervalSchedule.time_points rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        s += '%s<%s:RegularIntervalSchedule.end_time>%s</%s:RegularIntervalSchedule.end_time>' % \
-            (indent, ns_prefix, self.end_time, ns_prefix)
-        s += '%s<%s:RegularIntervalSchedule.time_step>%s</%s:RegularIntervalSchedule.time_step>' % \
-            (indent, ns_prefix, self.time_step, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "RegulationSchedule")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> regulation_schedule.serialize
-
 
 class Switch(ConductingEquipment):
-    """ A generic device designed to close, or open, or both, one or more electric circuits.A generic device designed to close, or open, or both, one or more electric circuits.
+    """ A generic device designed to close, or open, or both, one or more electric circuits.
     """
     # <<< switch
     # @generated
-    def __init__(self, normal_open=False, **kw_args):
+    def __init__(self, normal_open=False, *args, **kw_args):
         """ Initialises a new 'Switch' instance.
+
+        @param normal_open: The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurment the Discrete.normalValue is expected to match with the Switch.normalOpen. 
         """
-        # The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurment the Discrete.normalValue is expected to match with the Switch.normalOpen.The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurment the Discrete.normalValue is expected to match with the Switch.normalOpen. 
+        # The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurment the Discrete.normalValue is expected to match with the Switch.normalOpen. 
         self.normal_open = normal_open
 
 
 
-        super(Switch, self).__init__(**kw_args)
+        super(Switch, self).__init__(*args, **kw_args)
     # >>> switch
 
 
-    def __str__(self):
-        """ Returns a string representation of the Switch.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< switch.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the Switch.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Switch", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        s += '%s<%s:Switch.normal_open>%s</%s:Switch.normal_open>' % \
-            (indent, ns_prefix, self.normal_open, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "Switch")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> switch.serialize
-
 
 class Conductor(ConductingEquipment):
-    """ Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system.Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system.
+    """ Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system.
     """
     # <<< conductor
     # @generated
-    def __init__(self, r=0.0, x=0.0, bch=0.0, **kw_args):
+    def __init__(self, r=0.0, x=0.0, bch=0.0, *args, **kw_args):
         """ Initialises a new 'Conductor' instance.
+
+        @param r: Positive sequence series resistance of the entire line section. 
+        @param x: Positive sequence series reactance of the entire line section. 
+        @param bch: Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section. 
         """
-        # Positive sequence series resistance of the entire line section.Positive sequence series resistance of the entire line section. 
+        # Positive sequence series resistance of the entire line section. 
         self.r = r
 
-        # Positive sequence series reactance of the entire line section.Positive sequence series reactance of the entire line section. 
+        # Positive sequence series reactance of the entire line section. 
         self.x = x
 
-        # Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section. 
+        # Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section. 
         self.bch = bch
 
 
 
-        super(Conductor, self).__init__(**kw_args)
+        super(Conductor, self).__init__(*args, **kw_args)
     # >>> conductor
 
 
-    def __str__(self):
-        """ Returns a string representation of the Conductor.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< conductor.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the Conductor.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Conductor", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        s += '%s<%s:Conductor.r>%s</%s:Conductor.r>' % \
-            (indent, ns_prefix, self.r, ns_prefix)
-        s += '%s<%s:Conductor.x>%s</%s:Conductor.x>' % \
-            (indent, ns_prefix, self.x, ns_prefix)
-        s += '%s<%s:Conductor.bch>%s</%s:Conductor.bch>' % \
-            (indent, ns_prefix, self.bch, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "Conductor")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> conductor.serialize
-
 
 class ReactiveCapabilityCurve(Curve):
-    """ Reactive power rating envelope versus the synchronous machine's active power, in both the generating and motoring modes. For each active power value there is a corresponding high and low reactive power limit  value. Typically there will be a separate curve for each coolant condition, such as hydrogen pressure.  The Y1 axis values represent reactive minimum and the Y2 axis values represent reactive maximum.Reactive power rating envelope versus the synchronous machine's active power, in both the generating and motoring modes. For each active power value there is a corresponding high and low reactive power limit  value. Typically there will be a separate curve for each coolant condition, such as hydrogen pressure.  The Y1 axis values represent reactive minimum and the Y2 axis values represent reactive maximum.
+    """ Reactive power rating envelope versus the synchronous machine's active power, in both the generating and motoring modes. For each active power value there is a corresponding high and low reactive power limit  value. Typically there will be a separate curve for each coolant condition, such as hydrogen pressure.  The Y1 axis values represent reactive minimum and the Y2 axis values represent reactive maximum.
     """
     # <<< reactive_capability_curve
     # @generated
-    def __init__(self, initially_used_by_synchronous_machine=None, **kw_args):
+    def __init__(self, initially_used_by_synchronous_machine=None, *args, **kw_args):
         """ Initialises a new 'ReactiveCapabilityCurve' instance.
+
+        @param initially_used_by_synchronous_machine: Synchronous machines using this curve as default.
         """
 
         self._initially_used_by_synchronous_machine = []
@@ -1122,13 +536,13 @@ class ReactiveCapabilityCurve(Curve):
             self.initially_used_by_synchronous_machine = []
 
 
-        super(ReactiveCapabilityCurve, self).__init__(**kw_args)
+        super(ReactiveCapabilityCurve, self).__init__(*args, **kw_args)
     # >>> reactive_capability_curve
 
     # <<< initially_used_by_synchronous_machine
     # @generated
     def get_initially_used_by_synchronous_machine(self):
-        """ Synchronous machines using this curve as default.Synchronous machines using this curve as default.
+        """ Synchronous machines using this curve as default.
         """
         return self._initially_used_by_synchronous_machine
 
@@ -1153,104 +567,52 @@ class ReactiveCapabilityCurve(Curve):
     # >>> initially_used_by_synchronous_machine
 
 
-    def __str__(self):
-        """ Returns a string representation of the ReactiveCapabilityCurve.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< reactive_capability_curve.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the ReactiveCapabilityCurve.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "ReactiveCapabilityCurve", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        for obj in self.initially_used_by_synchronous_machine:
-            s += '%s<%s:ReactiveCapabilityCurve.initially_used_by_synchronous_machine rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.curve_schedule_datas:
-            s += '%s<%s:Curve.curve_schedule_datas rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        s += '%s<%s:Curve.y2_unit>%s</%s:Curve.y2_unit>' % \
-            (indent, ns_prefix, self.y2_unit, ns_prefix)
-        s += '%s<%s:Curve.x_unit>%s</%s:Curve.x_unit>' % \
-            (indent, ns_prefix, self.x_unit, ns_prefix)
-        s += '%s<%s:Curve.curve_style>%s</%s:Curve.curve_style>' % \
-            (indent, ns_prefix, self.curve_style, ns_prefix)
-        s += '%s<%s:Curve.y1_unit>%s</%s:Curve.y1_unit>' % \
-            (indent, ns_prefix, self.y1_unit, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "ReactiveCapabilityCurve")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> reactive_capability_curve.serialize
-
 
 class TapChanger(PowerSystemResource):
-    """ Mechanism for changing transformer winding tap positions.Mechanism for changing transformer winding tap positions.
+    """ Mechanism for changing transformer winding tap positions.
     """
     # <<< tap_changer
     # @generated
-    def __init__(self, normal_step=0, high_step=0, step_phase_shift_increment=0.0, neutral_step=0, low_step=0, tcul_control_mode='local', step_voltage_increment=0.0, type='voltage_and_phase_control', neutral_u=0.0, regulating_control=None, transformer_winding=None, **kw_args):
+    def __init__(self, normal_step=0, high_step=0, step_phase_shift_increment=0.0, neutral_step=0, low_step=0, tcul_control_mode='local', step_voltage_increment=0.0, type='voltage_and_phase_control', neutral_u=0.0, regulating_control=None, transformer_winding=None, *args, **kw_args):
         """ Initialises a new 'TapChanger' instance.
+
+        @param normal_step: The tap step position used in 'normal' network operation for this winding. For a 'Fixed' tap changer indicates the current physical tap setting. 
+        @param high_step: Highest possible tap step position, advance from neutral 
+        @param step_phase_shift_increment: Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer). 
+        @param neutral_step: The neutral tap step position for this winding. 
+        @param low_step: Lowest possible tap step position, retard from neutral 
+        @param tcul_control_mode: For an LTC, the tap changer control mode. Values are: "local", "active", "volt", "off", "reactive"
+        @param step_voltage_increment: Tap step increment, in per cent of nominal voltage, per step position. 
+        @param type: The type of tap changer. Indicates the ability of the transformer to perform various regulation tasks. The tap changer must be also be associated wtih a RegulationControl object before any regulation is possible. Values are: "voltage_and_phase_control", "phase_control", "fixed", "voltage_control"
+        @param neutral_u: Voltage at which the winding operates at the neutral tap setting. 
+        @param regulating_control:
+        @param transformer_winding: A transformer winding may have tap changers, separately for voltage and phase angle
         """
-        # The tap step position used in 'normal' network operation for this winding. For a 'Fixed' tap changer indicates the current physical tap setting.The tap step position used in 'normal' network operation for this winding. For a 'Fixed' tap changer indicates the current physical tap setting. 
+        # The tap step position used in 'normal' network operation for this winding. For a 'Fixed' tap changer indicates the current physical tap setting. 
         self.normal_step = normal_step
 
-        # Highest possible tap step position, advance from neutralHighest possible tap step position, advance from neutral 
+        # Highest possible tap step position, advance from neutral 
         self.high_step = high_step
 
-        # Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer).Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer). 
+        # Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer). 
         self.step_phase_shift_increment = step_phase_shift_increment
 
-        # The neutral tap step position for this winding.The neutral tap step position for this winding. 
+        # The neutral tap step position for this winding. 
         self.neutral_step = neutral_step
 
-        # Lowest possible tap step position, retard from neutralLowest possible tap step position, retard from neutral 
+        # Lowest possible tap step position, retard from neutral 
         self.low_step = low_step
 
-        # For an LTC, the tap changer control mode.For an LTC, the tap changer control mode. Values are: "local", "active", "volt", "off", "reactive"
-        self.tcul_control_mode = 'local'
+        # For an LTC, the tap changer control mode. Values are: "local", "active", "volt", "off", "reactive"
+        self.tcul_control_mode = tcul_control_mode
 
-        # Tap step increment, in per cent of nominal voltage, per step position.Tap step increment, in per cent of nominal voltage, per step position. 
+        # Tap step increment, in per cent of nominal voltage, per step position. 
         self.step_voltage_increment = step_voltage_increment
 
-        # The type of tap changer. Indicates the ability of the transformer to perform various regulation tasks. The tap changer must be also be associated wtih a RegulationControl object before any regulation is possible.The type of tap changer. Indicates the ability of the transformer to perform various regulation tasks. The tap changer must be also be associated wtih a RegulationControl object before any regulation is possible. Values are: "voltage_and_phase_control", "phase_control", "fixed", "voltage_control"
-        self.type = 'voltage_and_phase_control'
+        # The type of tap changer. Indicates the ability of the transformer to perform various regulation tasks. The tap changer must be also be associated wtih a RegulationControl object before any regulation is possible. Values are: "voltage_and_phase_control", "phase_control", "fixed", "voltage_control"
+        self.type = type
 
-        # Voltage at which the winding operates at the neutral tap setting.Voltage at which the winding operates at the neutral tap setting. 
+        # Voltage at which the winding operates at the neutral tap setting. 
         self.neutral_u = neutral_u
 
 
@@ -1261,7 +623,7 @@ class TapChanger(PowerSystemResource):
         self.transformer_winding = transformer_winding
 
 
-        super(TapChanger, self).__init__(**kw_args)
+        super(TapChanger, self).__init__(*args, **kw_args)
     # >>> tap_changer
 
     # <<< regulating_control
@@ -1286,7 +648,7 @@ class TapChanger(PowerSystemResource):
     # <<< transformer_winding
     # @generated
     def get_transformer_winding(self):
-        """ A transformer winding may have tap changers, separately for voltage and phase angleA transformer winding may have tap changers, separately for voltage and phase angle
+        """ A transformer winding may have tap changers, separately for voltage and phase angle
         """
         return self._transformer_winding
 
@@ -1303,104 +665,29 @@ class TapChanger(PowerSystemResource):
     # >>> transformer_winding
 
 
-    def __str__(self):
-        """ Returns a string representation of the TapChanger.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< tap_changer.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the TapChanger.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "TapChanger", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.regulating_control is not None:
-            s += '%s<%s:TapChanger.regulating_control rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.regulating_control.uri)
-        if self.transformer_winding is not None:
-            s += '%s<%s:TapChanger.transformer_winding rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.transformer_winding.uri)
-        s += '%s<%s:TapChanger.normal_step>%s</%s:TapChanger.normal_step>' % \
-            (indent, ns_prefix, self.normal_step, ns_prefix)
-        s += '%s<%s:TapChanger.high_step>%s</%s:TapChanger.high_step>' % \
-            (indent, ns_prefix, self.high_step, ns_prefix)
-        s += '%s<%s:TapChanger.step_phase_shift_increment>%s</%s:TapChanger.step_phase_shift_increment>' % \
-            (indent, ns_prefix, self.step_phase_shift_increment, ns_prefix)
-        s += '%s<%s:TapChanger.neutral_step>%s</%s:TapChanger.neutral_step>' % \
-            (indent, ns_prefix, self.neutral_step, ns_prefix)
-        s += '%s<%s:TapChanger.low_step>%s</%s:TapChanger.low_step>' % \
-            (indent, ns_prefix, self.low_step, ns_prefix)
-        s += '%s<%s:TapChanger.tcul_control_mode>%s</%s:TapChanger.tcul_control_mode>' % \
-            (indent, ns_prefix, self.tcul_control_mode, ns_prefix)
-        s += '%s<%s:TapChanger.step_voltage_increment>%s</%s:TapChanger.step_voltage_increment>' % \
-            (indent, ns_prefix, self.step_voltage_increment, ns_prefix)
-        s += '%s<%s:TapChanger.type>%s</%s:TapChanger.type>' % \
-            (indent, ns_prefix, self.type, ns_prefix)
-        s += '%s<%s:TapChanger.neutral_u>%s</%s:TapChanger.neutral_u>' % \
-            (indent, ns_prefix, self.neutral_u, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "TapChanger")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> tap_changer.serialize
-
 
 class Line(EquipmentContainer):
-    """ A component part of a system extending between adjacent substations or from a substation to an adjacent interconnection point.A component part of a system extending between adjacent substations or from a substation to an adjacent interconnection point.
+    """ A component part of a system extending between adjacent substations or from a substation to an adjacent interconnection point.
     """
     # <<< line
     # @generated
-    def __init__(self, region=None, **kw_args):
+    def __init__(self, region=None, *args, **kw_args):
         """ Initialises a new 'Line' instance.
+
+        @param region: A Line can be contained by a SubGeographical Region.
         """
 
         self._region = None
         self.region = region
 
 
-        super(Line, self).__init__(**kw_args)
+        super(Line, self).__init__(*args, **kw_args)
     # >>> line
 
     # <<< region
     # @generated
     def get_region(self):
-        """ A Line can be contained by a SubGeographical Region.A Line can be contained by a SubGeographical Region.
+        """ A Line can be contained by a SubGeographical Region.
         """
         return self._region
 
@@ -1417,260 +704,73 @@ class Line(EquipmentContainer):
     # >>> region
 
 
-    def __str__(self):
-        """ Returns a string representation of the Line.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< line.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the Line.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Line", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.region is not None:
-            s += '%s<%s:Line.region rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.region.uri)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.connectivity_nodes:
-            s += '%s<%s:ConnectivityNodeContainer.connectivity_nodes rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        for obj in self.contains_equipments:
-            s += '%s<%s:EquipmentContainer.contains_equipments rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "Line")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> line.serialize
-
 
 class SeriesCompensator(ConductingEquipment):
-    """ A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.
+    """ A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.
     """
     # <<< series_compensator
     # @generated
-    def __init__(self, r=0.0, x=0.0, **kw_args):
+    def __init__(self, r=0.0, x=0.0, *args, **kw_args):
         """ Initialises a new 'SeriesCompensator' instance.
+
+        @param r: Positive sequence resistance. 
+        @param x: Positive sequence reactance. 
         """
-        # Positive sequence resistance.Positive sequence resistance. 
+        # Positive sequence resistance. 
         self.r = r
 
-        # Positive sequence reactance.Positive sequence reactance. 
+        # Positive sequence reactance. 
         self.x = x
 
 
 
-        super(SeriesCompensator, self).__init__(**kw_args)
+        super(SeriesCompensator, self).__init__(*args, **kw_args)
     # >>> series_compensator
 
 
-    def __str__(self):
-        """ Returns a string representation of the SeriesCompensator.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< series_compensator.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the SeriesCompensator.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "SeriesCompensator", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        s += '%s<%s:SeriesCompensator.r>%s</%s:SeriesCompensator.r>' % \
-            (indent, ns_prefix, self.r, ns_prefix)
-        s += '%s<%s:SeriesCompensator.x>%s</%s:SeriesCompensator.x>' % \
-            (indent, ns_prefix, self.x, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "SeriesCompensator")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> series_compensator.serialize
-
 
 class Disconnector(Switch):
-    """ A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made.A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made.
+    """ A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made.
     """
     pass
     # <<< disconnector
     # @generated
-    def __init__(self, **kw_args):
+    def __init__(self, *args, **kw_args):
         """ Initialises a new 'Disconnector' instance.
+
         """
 
 
-        super(Disconnector, self).__init__(**kw_args)
+        super(Disconnector, self).__init__(*args, **kw_args)
     # >>> disconnector
 
 
-    def __str__(self):
-        """ Returns a string representation of the Disconnector.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< disconnector.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the Disconnector.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Disconnector", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        s += '%s<%s:Switch.normal_open>%s</%s:Switch.normal_open>' % \
-            (indent, ns_prefix, self.normal_open, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "Disconnector")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> disconnector.serialize
-
 
 class SynchronousMachine(RegulatingCondEq):
-    """ An electromechanical device that operates synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump.An electromechanical device that operates synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump.
+    """ An electromechanical device that operates synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump.
     """
     # <<< synchronous_machine
     # @generated
-    def __init__(self, operating_mode='generator', min_q=0.0, type='generator', max_q=0.0, initial_reactive_capability_curve=None, member_of_generating_unit=None, **kw_args):
+    def __init__(self, operating_mode='generator', min_q=0.0, type='generator', max_q=0.0, initial_reactive_capability_curve=None, member_of_generating_unit=None, *args, **kw_args):
         """ Initialises a new 'SynchronousMachine' instance.
-        """
-        # Current mode of operation.Current mode of operation. Values are: "generator", "condenser"
-        self.operating_mode = 'generator'
 
-        # Minimum reactive power limit for the unit.Minimum reactive power limit for the unit. 
+        @param operating_mode: Current mode of operation. Values are: "generator", "condenser"
+        @param min_q: Minimum reactive power limit for the unit. 
+        @param type: Modes that this synchronous machine can operate in. Values are: "generator", "generator_or_condenser", "condenser"
+        @param max_q: Maximum reactive power limit. This is the maximum (nameplate) limit for the unit. 
+        @param initial_reactive_capability_curve: The default ReactiveCapabilityCurve for use by a SynchronousMachine
+        @param member_of_generating_unit: A synchronous machine may operate as a generator and as such becomes a member of a generating unit
+        """
+        # Current mode of operation. Values are: "generator", "condenser"
+        self.operating_mode = operating_mode
+
+        # Minimum reactive power limit for the unit. 
         self.min_q = min_q
 
-        # Modes that this synchronous machine can operate in.Modes that this synchronous machine can operate in. Values are: "generator", "generator_or_condenser", "condenser"
-        self.type = 'generator'
+        # Modes that this synchronous machine can operate in. Values are: "generator", "generator_or_condenser", "condenser"
+        self.type = type
 
-        # Maximum reactive power limit. This is the maximum (nameplate) limit for the unit.Maximum reactive power limit. This is the maximum (nameplate) limit for the unit. 
+        # Maximum reactive power limit. This is the maximum (nameplate) limit for the unit. 
         self.max_q = max_q
 
 
@@ -1681,13 +781,13 @@ class SynchronousMachine(RegulatingCondEq):
         self.member_of_generating_unit = member_of_generating_unit
 
 
-        super(SynchronousMachine, self).__init__(**kw_args)
+        super(SynchronousMachine, self).__init__(*args, **kw_args)
     # >>> synchronous_machine
 
     # <<< initial_reactive_capability_curve
     # @generated
     def get_initial_reactive_capability_curve(self):
-        """ The default ReactiveCapabilityCurve for use by a SynchronousMachineThe default ReactiveCapabilityCurve for use by a SynchronousMachine
+        """ The default ReactiveCapabilityCurve for use by a SynchronousMachine
         """
         return self._initial_reactive_capability_curve
 
@@ -1706,7 +806,7 @@ class SynchronousMachine(RegulatingCondEq):
     # <<< member_of_generating_unit
     # @generated
     def get_member_of_generating_unit(self):
-        """ A synchronous machine may operate as a generator and as such becomes a member of a generating unitA synchronous machine may operate as a generator and as such becomes a member of a generating unit
+        """ A synchronous machine may operate as a generator and as such becomes a member of a generating unit
         """
         return self._member_of_generating_unit
 
@@ -1723,559 +823,130 @@ class SynchronousMachine(RegulatingCondEq):
     # >>> member_of_generating_unit
 
 
-    def __str__(self):
-        """ Returns a string representation of the SynchronousMachine.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< synchronous_machine.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the SynchronousMachine.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "SynchronousMachine", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.initial_reactive_capability_curve is not None:
-            s += '%s<%s:SynchronousMachine.initial_reactive_capability_curve rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.initial_reactive_capability_curve.uri)
-        if self.member_of_generating_unit is not None:
-            s += '%s<%s:SynchronousMachine.member_of_generating_unit rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_generating_unit.uri)
-        s += '%s<%s:SynchronousMachine.operating_mode>%s</%s:SynchronousMachine.operating_mode>' % \
-            (indent, ns_prefix, self.operating_mode, ns_prefix)
-        s += '%s<%s:SynchronousMachine.min_q>%s</%s:SynchronousMachine.min_q>' % \
-            (indent, ns_prefix, self.min_q, ns_prefix)
-        s += '%s<%s:SynchronousMachine.type>%s</%s:SynchronousMachine.type>' % \
-            (indent, ns_prefix, self.type, ns_prefix)
-        s += '%s<%s:SynchronousMachine.max_q>%s</%s:SynchronousMachine.max_q>' % \
-            (indent, ns_prefix, self.max_q, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.regulating_control is not None:
-            s += '%s<%s:RegulatingCondEq.regulating_control rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.regulating_control.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "SynchronousMachine")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> synchronous_machine.serialize
-
 
 class ShuntCompensator(RegulatingCondEq):
-    """ A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  Negative values for mVArPerSection and nominalMVAr indicate that the compensator is a reactor.A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  Negative values for mVArPerSection and nominalMVAr indicate that the compensator is a reactor.
+    """ A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  Negative values for mVArPerSection and nominalMVAr indicate that the compensator is a reactor.
     """
     # <<< shunt_compensator
     # @generated
-    def __init__(self, maximum_sections=0, normal_sections=0, nom_u=0.0, reactive_per_section=0.0, **kw_args):
+    def __init__(self, maximum_sections=0, normal_sections=0, nom_u=0.0, reactive_per_section=0.0, *args, **kw_args):
         """ Initialises a new 'ShuntCompensator' instance.
+
+        @param maximum_sections: For a capacitor bank, the maximum number of sections that may be switched in. 
+        @param normal_sections: For a capacitor bank, the normal number of sections switched in. This number should correspond to the nominal reactive power (nomQ). 
+        @param nom_u: The nominal voltage at which the nominal reactive power was measured. This should normally be within 10% of the voltage at which the capacitor is connected to the network. 
+        @param reactive_per_section: For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage. 
         """
-        # For a capacitor bank, the maximum number of sections that may be switched in.For a capacitor bank, the maximum number of sections that may be switched in. 
+        # For a capacitor bank, the maximum number of sections that may be switched in. 
         self.maximum_sections = maximum_sections
 
-        # For a capacitor bank, the normal number of sections switched in. This number should correspond to the nominal reactive power (nomQ).For a capacitor bank, the normal number of sections switched in. This number should correspond to the nominal reactive power (nomQ). 
+        # For a capacitor bank, the normal number of sections switched in. This number should correspond to the nominal reactive power (nomQ). 
         self.normal_sections = normal_sections
 
-        # The nominal voltage at which the nominal reactive power was measured. This should normally be within 10% of the voltage at which the capacitor is connected to the network.The nominal voltage at which the nominal reactive power was measured. This should normally be within 10% of the voltage at which the capacitor is connected to the network. 
+        # The nominal voltage at which the nominal reactive power was measured. This should normally be within 10% of the voltage at which the capacitor is connected to the network. 
         self.nom_u = nom_u
 
-        # For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage.For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage. 
+        # For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage. 
         self.reactive_per_section = reactive_per_section
 
 
 
-        super(ShuntCompensator, self).__init__(**kw_args)
+        super(ShuntCompensator, self).__init__(*args, **kw_args)
     # >>> shunt_compensator
 
 
-    def __str__(self):
-        """ Returns a string representation of the ShuntCompensator.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< shunt_compensator.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the ShuntCompensator.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "ShuntCompensator", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        s += '%s<%s:ShuntCompensator.maximum_sections>%s</%s:ShuntCompensator.maximum_sections>' % \
-            (indent, ns_prefix, self.maximum_sections, ns_prefix)
-        s += '%s<%s:ShuntCompensator.normal_sections>%s</%s:ShuntCompensator.normal_sections>' % \
-            (indent, ns_prefix, self.normal_sections, ns_prefix)
-        s += '%s<%s:ShuntCompensator.nom_u>%s</%s:ShuntCompensator.nom_u>' % \
-            (indent, ns_prefix, self.nom_u, ns_prefix)
-        s += '%s<%s:ShuntCompensator.reactive_per_section>%s</%s:ShuntCompensator.reactive_per_section>' % \
-            (indent, ns_prefix, self.reactive_per_section, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.regulating_control is not None:
-            s += '%s<%s:RegulatingCondEq.regulating_control rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.regulating_control.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "ShuntCompensator")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> shunt_compensator.serialize
-
 
 class LoadBreakSwitch(Switch):
-    """ A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions.A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions.
+    """ A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions.
     """
     # <<< load_break_switch
     # @generated
-    def __init__(self, rated_current=0.0, **kw_args):
+    def __init__(self, rated_current=0.0, *args, **kw_args):
         """ Initialises a new 'LoadBreakSwitch' instance.
+
+        @param rated_current: Current carrying capacity of a wire or cable under stated thermal conditions. 
         """
-        # Current carrying capacity of a wire or cable under stated thermal conditions.Current carrying capacity of a wire or cable under stated thermal conditions. 
+        # Current carrying capacity of a wire or cable under stated thermal conditions. 
         self.rated_current = rated_current
 
 
 
-        super(LoadBreakSwitch, self).__init__(**kw_args)
+        super(LoadBreakSwitch, self).__init__(*args, **kw_args)
     # >>> load_break_switch
 
 
-    def __str__(self):
-        """ Returns a string representation of the LoadBreakSwitch.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< load_break_switch.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the LoadBreakSwitch.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "LoadBreakSwitch", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        s += '%s<%s:LoadBreakSwitch.rated_current>%s</%s:LoadBreakSwitch.rated_current>' % \
-            (indent, ns_prefix, self.rated_current, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        s += '%s<%s:Switch.normal_open>%s</%s:Switch.normal_open>' % \
-            (indent, ns_prefix, self.normal_open, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "LoadBreakSwitch")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> load_break_switch.serialize
-
 
 class ACLineSegment(Conductor):
-    """ A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.
+    """ A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.
     """
     pass
     # <<< acline_segment
     # @generated
-    def __init__(self, **kw_args):
+    def __init__(self, *args, **kw_args):
         """ Initialises a new 'ACLineSegment' instance.
+
         """
 
 
-        super(ACLineSegment, self).__init__(**kw_args)
+        super(ACLineSegment, self).__init__(*args, **kw_args)
     # >>> acline_segment
 
 
-    def __str__(self):
-        """ Returns a string representation of the ACLineSegment.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< acline_segment.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the ACLineSegment.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "ACLineSegment", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        s += '%s<%s:Conductor.r>%s</%s:Conductor.r>' % \
-            (indent, ns_prefix, self.r, ns_prefix)
-        s += '%s<%s:Conductor.x>%s</%s:Conductor.x>' % \
-            (indent, ns_prefix, self.x, ns_prefix)
-        s += '%s<%s:Conductor.bch>%s</%s:Conductor.bch>' % \
-            (indent, ns_prefix, self.bch, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "ACLineSegment")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> acline_segment.serialize
-
 
 class StaticVarCompensator(RegulatingCondEq):
-    """ A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.  The SVC may operate in fixed MVar output mode or in voltage control mode.  When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero.A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.  The SVC may operate in fixed MVar output mode or in voltage control mode.  When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero.
+    """ A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.  The SVC may operate in fixed MVar output mode or in voltage control mode.  When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero.
     """
     # <<< static_var_compensator
     # @generated
-    def __init__(self, voltage_set_point=0.0, s_vccontrol_mode='voltage', capacitive_rating=0.0, slope=0.0, inductive_rating=0.0, **kw_args):
+    def __init__(self, voltage_set_point=0.0, s_vccontrol_mode='voltage', capacitive_rating=0.0, slope=0.0, inductive_rating=0.0, *args, **kw_args):
         """ Initialises a new 'StaticVarCompensator' instance.
+
+        @param voltage_set_point: The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero. 
+        @param s_vccontrol_mode: SVC control mode. Values are: "voltage", "off", "reactive_power"
+        @param capacitive_rating: Maximum available capacitive reactive power 
+        @param slope: The characteristics slope of an SVC defines how the reactive power output changes in proportion to the difference between the regulated bus voltage and the voltage setpoint. 
+        @param inductive_rating: Maximum available inductive reactive power 
         """
-        # The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero.The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero. 
+        # The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero. 
         self.voltage_set_point = voltage_set_point
 
-        # SVC control mode.SVC control mode. Values are: "voltage", "off", "reactive_power"
-        self.s_vccontrol_mode = 'voltage'
+        # SVC control mode. Values are: "voltage", "off", "reactive_power"
+        self.s_vccontrol_mode = s_vccontrol_mode
 
-        # Maximum available capacitive reactive powerMaximum available capacitive reactive power 
+        # Maximum available capacitive reactive power 
         self.capacitive_rating = capacitive_rating
 
-        # The characteristics slope of an SVC defines how the reactive power output changes in proportion to the difference between the regulated bus voltage and the voltage setpoint.The characteristics slope of an SVC defines how the reactive power output changes in proportion to the difference between the regulated bus voltage and the voltage setpoint. 
+        # The characteristics slope of an SVC defines how the reactive power output changes in proportion to the difference between the regulated bus voltage and the voltage setpoint. 
         self.slope = slope
 
-        # Maximum available inductive reactive powerMaximum available inductive reactive power 
+        # Maximum available inductive reactive power 
         self.inductive_rating = inductive_rating
 
 
 
-        super(StaticVarCompensator, self).__init__(**kw_args)
+        super(StaticVarCompensator, self).__init__(*args, **kw_args)
     # >>> static_var_compensator
 
 
-    def __str__(self):
-        """ Returns a string representation of the StaticVarCompensator.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< static_var_compensator.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the StaticVarCompensator.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "StaticVarCompensator", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        s += '%s<%s:StaticVarCompensator.voltage_set_point>%s</%s:StaticVarCompensator.voltage_set_point>' % \
-            (indent, ns_prefix, self.voltage_set_point, ns_prefix)
-        s += '%s<%s:StaticVarCompensator.s_vccontrol_mode>%s</%s:StaticVarCompensator.s_vccontrol_mode>' % \
-            (indent, ns_prefix, self.s_vccontrol_mode, ns_prefix)
-        s += '%s<%s:StaticVarCompensator.capacitive_rating>%s</%s:StaticVarCompensator.capacitive_rating>' % \
-            (indent, ns_prefix, self.capacitive_rating, ns_prefix)
-        s += '%s<%s:StaticVarCompensator.slope>%s</%s:StaticVarCompensator.slope>' % \
-            (indent, ns_prefix, self.slope, ns_prefix)
-        s += '%s<%s:StaticVarCompensator.inductive_rating>%s</%s:StaticVarCompensator.inductive_rating>' % \
-            (indent, ns_prefix, self.inductive_rating, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.regulating_control is not None:
-            s += '%s<%s:RegulatingCondEq.regulating_control rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.regulating_control.uri)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "StaticVarCompensator")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> static_var_compensator.serialize
-
 
 class Breaker(Switch):
-    """ A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit.A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit.
+    """ A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit.
     """
     # <<< breaker
     # @generated
-    def __init__(self, rated_current=0.0, **kw_args):
+    def __init__(self, rated_current=0.0, *args, **kw_args):
         """ Initialises a new 'Breaker' instance.
+
+        @param rated_current: Fault interrupting current rating. 
         """
-        # Fault interrupting current rating.Fault interrupting current rating. 
+        # Fault interrupting current rating. 
         self.rated_current = rated_current
 
 
 
-        super(Breaker, self).__init__(**kw_args)
+        super(Breaker, self).__init__(*args, **kw_args)
     # >>> breaker
 
-
-    def __str__(self):
-        """ Returns a string representation of the Breaker.
-        """
-        return self.serialize(header=True, depth=2, format=True)
-
-
-    # <<< breaker.serialize
-    # @generated
-    def serialize(self, header=False, depth=0, format=False):
-        """ Returns an RDF/XML representation of the Breaker.
-        """
-        s = ''
-        indent = ' ' * depth if depth else ''
-        if format:
-            indent = '\n' + indent
-        if header:
-            s += '<?xml version="1.0" encoding="UTF-8"?>\n'
-            s += '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:%s="%s">' % \
-                (ns_prefix, ns_uri)
-            if format:
-                indent += ' ' * depth
-
-        s += '%s<%s:%s rdf:ID="%s">' % (indent, ns_prefix, "Breaker", self.uri)
-        if format:
-            indent += ' ' * depth
-
-        s += '%s<%s:Breaker.rated_current>%s</%s:Breaker.rated_current>' % \
-            (indent, ns_prefix, self.rated_current, ns_prefix)
-        if self.model is not None:
-            s += '%s<%s:Element.model rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.model.uri)
-        s += '%s<%s:Element.uuid>%s</%s:Element.uuid>' % \
-            (indent, ns_prefix, self.uuid, ns_prefix)
-        s += '%s<%s:IdentifiedObject.path_name>%s</%s:IdentifiedObject.path_name>' % \
-            (indent, ns_prefix, self.path_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.description>%s</%s:IdentifiedObject.description>' % \
-            (indent, ns_prefix, self.description, ns_prefix)
-        s += '%s<%s:IdentifiedObject.alias_name>%s</%s:IdentifiedObject.alias_name>' % \
-            (indent, ns_prefix, self.alias_name, ns_prefix)
-        s += '%s<%s:IdentifiedObject.name>%s</%s:IdentifiedObject.name>' % \
-            (indent, ns_prefix, self.name, ns_prefix)
-        for obj in self.contains_measurements:
-            s += '%s<%s:PowerSystemResource.contains_measurements rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.member_of_equipment_container is not None:
-            s += '%s<%s:Equipment.member_of_equipment_container rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.member_of_equipment_container.uri)
-        for obj in self.operational_limit_set:
-            s += '%s<%s:Equipment.operational_limit_set rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        if self.base_voltage is not None:
-            s += '%s<%s:ConductingEquipment.base_voltage rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, self.base_voltage.uri)
-        for obj in self.terminals:
-            s += '%s<%s:ConductingEquipment.terminals rdf:resource="#%s"/>' % \
-                (indent, ns_prefix, obj.uri)
-        s += '%s<%s:Switch.normal_open>%s</%s:Switch.normal_open>' % \
-            (indent, ns_prefix, self.normal_open, ns_prefix)
-
-        if format:
-            indent = indent[:-depth]
-        s += '%s</%s:%s>' % (indent, ns_prefix, "Breaker")
-
-        if header:
-            s += '%s</rdf:RDF>' % indent[:-depth]
-
-        return s
-    # >>> breaker.serialize
 
 
 # <<< wires
