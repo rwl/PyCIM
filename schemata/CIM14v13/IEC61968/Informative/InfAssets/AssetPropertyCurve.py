@@ -20,7 +20,7 @@ class AssetPropertyCurve(Curve):
     """An Asset Property that is described through curves rather than as a data point. The relationship is to be defined between an independent variable (X-axis) and one or two dependent variables (Y1-axis and Y2-axis).
     """
 
-    def __init__(self, Specification=None, Assets=None, *args, **kw_args):
+    def __init__(self, Specification=None, Assets=None, **kw_args):
         """Initializes a new 'AssetPropertyCurve' instance.
 
         @param Specification:
@@ -32,7 +32,7 @@ class AssetPropertyCurve(Curve):
         self._Assets = []
         self.Assets = [] if Assets is None else Assets
 
-        super(AssetPropertyCurve, self).__init__(*args, **kw_args)
+        super(AssetPropertyCurve, self).__init__(**kw_args)
 
     def getSpecification(self):
         

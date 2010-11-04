@@ -18,7 +18,7 @@ from CIM14v13.Element import Element
 
 class EnergySchedulingVersion(Element):
 
-    def __init__(self, date='', version='', *args, **kw_args):
+    def __init__(self, date='', version='', **kw_args):
         """Initializes a new 'EnergySchedulingVersion' instance.
 
         @param date: 
@@ -30,5 +30,5 @@ class EnergySchedulingVersion(Element):
         #: v 4 moved SubControlArea
         self.version = version
 
-        super(EnergySchedulingVersion, self).__init__(*args, **kw_args)
+        super(EnergySchedulingVersion, self).__init__(**kw_args)
 

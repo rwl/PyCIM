@@ -20,7 +20,7 @@ class EndDeviceAsset(AssetContainer):
     """AssetContainer that performs one or more end device functions. One type of EndDeviceAsset is a MeterAsset which can perform metering, load management, connect/disconnect, accounting functions, etc. Some EndDeviceAssets, such as ones monitoring and controlling air conditioner, refrigerator, pool pumps may be connected to a MeterAsset. All EndDeviceAssets may have communication capability defined by the associated ComFunction(s). An EndDeviceAsset may be owned by a consumer, a service provider, utility or otherwise. There may be a related end device function that identifies a sensor or control point within a metering application or communications systems (e.g., water, gas, electricity). Some devices may use an optical port that conforms to the ANSI C12.18 standard for communications.
     """
 
-    def __init__(self, readRequest=False, metrology=False, disconnect=False, relayCapable=False, outageReport=False, amrSystem='', reverseFlowHandling=False, loadControl=False, dstEnabled=False, timeZoneOffset=0.0, demandResponse=False, EndDeviceGroups=None, EndDeviceControls=None, ElectricalInfos=None, Readings=None, ServiceLocation=None, EndDeviceModel=None, DeviceFunctions=None, Customer=None, ServiceDeliveryPoint=None, *args, **kw_args):
+    def __init__(self, readRequest=False, metrology=False, disconnect=False, relayCapable=False, outageReport=False, amrSystem='', reverseFlowHandling=False, loadControl=False, dstEnabled=False, timeZoneOffset=0.0, demandResponse=False, EndDeviceGroups=None, EndDeviceControls=None, ElectricalInfos=None, Readings=None, ServiceLocation=None, EndDeviceModel=None, DeviceFunctions=None, Customer=None, ServiceDeliveryPoint=None, **kw_args):
         """Initializes a new 'EndDeviceAsset' instance.
 
         @param readRequest: True if this end device asset is capable of supporting on-request reads for this end device. 
@@ -104,7 +104,7 @@ class EndDeviceAsset(AssetContainer):
         self._ServiceDeliveryPoint = None
         self.ServiceDeliveryPoint = ServiceDeliveryPoint
 
-        super(EndDeviceAsset, self).__init__(*args, **kw_args)
+        super(EndDeviceAsset, self).__init__(**kw_args)
 
     def getEndDeviceGroups(self):
         """All end device groups referring to this end device asset.

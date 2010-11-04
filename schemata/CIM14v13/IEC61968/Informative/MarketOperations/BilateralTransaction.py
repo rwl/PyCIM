@@ -20,7 +20,7 @@ class BilateralTransaction(Element):
     """Bilateral transaction
     """
 
-    def __init__(self, scope='', curtailTimeMax=0, curtailTimeMin=0, marketType='', purchaseTimeMin=0, purchaseTimeMax=0, totalTranChargeMax=0.0, transactionType='', *args, **kw_args):
+    def __init__(self, scope='', curtailTimeMax=0, curtailTimeMin=0, marketType='', purchaseTimeMin=0, purchaseTimeMax=0, totalTranChargeMax=0.0, transactionType='', **kw_args):
         """Initializes a new 'BilateralTransaction' instance.
 
         @param scope: Transaction scope: 'Internal' 'External' 
@@ -56,5 +56,5 @@ class BilateralTransaction(Element):
         #: Transaction type (default 1)  1 - Fixed  2 - Dispatchable continuous  3 - Dispatchable block-loading
         self.transactionType = transactionType
 
-        super(BilateralTransaction, self).__init__(*args, **kw_args)
+        super(BilateralTransaction, self).__init__(**kw_args)
 

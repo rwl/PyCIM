@@ -20,7 +20,7 @@ class NodeConstraintTerm(ConstraintTerm):
     """To be used only to constrain a quantity that cannot be associated with a terminal. For example, a registered generating unit that is not electrically connected to the network.
     """
 
-    def __init__(self, ConnectivityNode=None, *args, **kw_args):
+    def __init__(self, ConnectivityNode=None, **kw_args):
         """Initializes a new 'NodeConstraintTerm' instance.
 
         @param ConnectivityNode:
@@ -28,7 +28,7 @@ class NodeConstraintTerm(ConstraintTerm):
         self._ConnectivityNode = None
         self.ConnectivityNode = ConnectivityNode
 
-        super(NodeConstraintTerm, self).__init__(*args, **kw_args)
+        super(NodeConstraintTerm, self).__init__(**kw_args)
 
     def getConnectivityNode(self):
         

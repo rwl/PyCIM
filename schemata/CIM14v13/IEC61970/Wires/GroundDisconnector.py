@@ -20,9 +20,9 @@ class GroundDisconnector(Switch):
     """A manually operated or motor operated mechanical switching device used for isolating a circuit or equipment from Ground.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'GroundDisconnector' instance.
 
         """
-        super(GroundDisconnector, self).__init__(*args, **kw_args)
+        super(GroundDisconnector, self).__init__(**kw_args)
 

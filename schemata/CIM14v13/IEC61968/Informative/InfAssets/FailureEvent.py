@@ -20,7 +20,7 @@ class FailureEvent(ActivityRecord):
     """An event where an asset has failed to perform its functions within specified parameters.
     """
 
-    def __init__(self, failureIsolationMethod='manuallyIsolated', corporateCode='', faultLocatingMethod='', location='', *args, **kw_args):
+    def __init__(self, failureIsolationMethod='manuallyIsolated', corporateCode='', faultLocatingMethod='', location='', **kw_args):
         """Initializes a new 'FailureEvent' instance.
 
         @param failureIsolationMethod: How the asset failure was isolated from the system. Values are: "manuallyIsolated", "burnedInTheClear", "fuse", "other", "breakerOperation"
@@ -40,5 +40,5 @@ class FailureEvent(ActivityRecord):
         #: Failure location on an object.
         self.location = location
 
-        super(FailureEvent, self).__init__(*args, **kw_args)
+        super(FailureEvent, self).__init__(**kw_args)
 

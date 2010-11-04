@@ -20,7 +20,7 @@ class GmlDiagramObject(Location):
     """Any of the magnitudes that serve to define the position of a point by reference to a fixed figure, system of lines, etc.
     """
 
-    def __init__(self, Diagrams=None, GmlLineSymbols=None, GmlCoordinateSystems=None, GmlRasterSymbols=None, GmlPolygonSymbols=None, GmlPointSymbols=None, GmlTextSymbols=None, *args, **kw_args):
+    def __init__(self, Diagrams=None, GmlLineSymbols=None, GmlCoordinateSystems=None, GmlRasterSymbols=None, GmlPolygonSymbols=None, GmlPointSymbols=None, GmlTextSymbols=None, **kw_args):
         """Initializes a new 'GmlDiagramObject' instance.
 
         @param Diagrams:
@@ -52,7 +52,7 @@ class GmlDiagramObject(Location):
         self._GmlTextSymbols = []
         self.GmlTextSymbols = [] if GmlTextSymbols is None else GmlTextSymbols
 
-        super(GmlDiagramObject, self).__init__(*args, **kw_args)
+        super(GmlDiagramObject, self).__init__(**kw_args)
 
     def getDiagrams(self):
         

@@ -20,7 +20,7 @@ class ServiceReservation(Element):
     """A ServiceReservation is a reservation for either AncillaryServices or TransmissionServices. In the case of TransmissionServices, this is the right to some amount of AvailableTransmissionCapacity for a product on a path in a direction for some specific period of time
     """
 
-    def __init__(self, Holds=None, Resells=None, Reserves_AncillaryServices=None, Sells=None, Reserves_TransmissionService=None, *args, **kw_args):
+    def __init__(self, Holds=None, Resells=None, Reserves_AncillaryServices=None, Sells=None, Reserves_TransmissionService=None, **kw_args):
         """Initializes a new 'ServiceReservation' instance.
 
         @param Holds: A Marketer holds title to a ServiceReservation.
@@ -44,7 +44,7 @@ class ServiceReservation(Element):
         self._Reserves_TransmissionService = []
         self.Reserves_TransmissionService = [] if Reserves_TransmissionService is None else Reserves_TransmissionService
 
-        super(ServiceReservation, self).__init__(*args, **kw_args)
+        super(ServiceReservation, self).__init__(**kw_args)
 
     def getHolds(self):
         """A Marketer holds title to a ServiceReservation.

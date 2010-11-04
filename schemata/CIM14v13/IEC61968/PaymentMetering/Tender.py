@@ -20,7 +20,7 @@ class Tender(IdentifiedObject):
     """Tender is what is 'offered' by the customer towards making a payment and is often more than the required payment (hence the need for 'change'). The payment is thus that part of the Tender that goes towards settlement of a particular transaction. Tender is modelled as an aggregation of Cheque and Card. Both these tender types can exist in a single tender bid thus 'accountHolderName' must exist separately in each of Cheque and Card as each could have a different account holder name.
     """
 
-    def __init__(self, kind='cheque', amount=0.0, change=0.0, Cheque=None, Card=None, Receipt=None, *args, **kw_args):
+    def __init__(self, kind='cheque', amount=0.0, change=0.0, Cheque=None, Card=None, Receipt=None, **kw_args):
         """Initializes a new 'Tender' instance.
 
         @param kind: Kind of tender from customer. Values are: "cheque", "card", "other", "unspecified", "cash"
@@ -48,7 +48,7 @@ class Tender(IdentifiedObject):
         self._Receipt = None
         self.Receipt = Receipt
 
-        super(Tender, self).__init__(*args, **kw_args)
+        super(Tender, self).__init__(**kw_args)
 
     def getCheque(self):
         """Cheque used to tender payment.

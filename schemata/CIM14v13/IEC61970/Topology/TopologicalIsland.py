@@ -20,7 +20,7 @@ class TopologicalIsland(IdentifiedObject):
     """An electrically connected subset of the network. Topological islands can change as the current network state changes (i.e., disconnect switches, breakers, etc. change state).
     """
 
-    def __init__(self, AngleRef_TopologicalNode=None, TopologicalNodes=None, *args, **kw_args):
+    def __init__(self, AngleRef_TopologicalNode=None, TopologicalNodes=None, **kw_args):
         """Initializes a new 'TopologicalIsland' instance.
 
         @param AngleRef_TopologicalNode: The angle reference for the island.   Normally there is one TopologicalNode that is selected as the angle reference for each island.   Other reference schemes exist, so the association is optional.
@@ -32,7 +32,7 @@ class TopologicalIsland(IdentifiedObject):
         self._TopologicalNodes = []
         self.TopologicalNodes = [] if TopologicalNodes is None else TopologicalNodes
 
-        super(TopologicalIsland, self).__init__(*args, **kw_args)
+        super(TopologicalIsland, self).__init__(**kw_args)
 
     def getAngleRef_TopologicalNode(self):
         """The angle reference for the island.   Normally there is one TopologicalNode that is selected as the angle reference for each island.   Other reference schemes exist, so the association is optional.

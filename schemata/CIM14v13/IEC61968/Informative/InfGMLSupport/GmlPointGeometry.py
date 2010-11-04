@@ -20,9 +20,9 @@ class GmlPointGeometry(GmlDiagramObject):
     """Typically used for rendering power system resources and/or point assets.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'GmlPointGeometry' instance.
 
         """
-        super(GmlPointGeometry, self).__init__(*args, **kw_args)
+        super(GmlPointGeometry, self).__init__(**kw_args)
 

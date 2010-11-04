@@ -20,7 +20,7 @@ class EquivalentBranch(EquivalentEquipment):
     """The class represents equivalent branches.
     """
 
-    def __init__(self, r=0.0, x=0.0, *args, **kw_args):
+    def __init__(self, r=0.0, x=0.0, **kw_args):
         """Initializes a new 'EquivalentBranch' instance.
 
         @param r: Positive sequence series resistance of the reduced branch. 
@@ -32,5 +32,5 @@ class EquivalentBranch(EquivalentEquipment):
         #: Positive sequence series reactance of the reduced branch.
         self.x = x
 
-        super(EquivalentBranch, self).__init__(*args, **kw_args)
+        super(EquivalentBranch, self).__init__(**kw_args)
 

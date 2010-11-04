@@ -20,7 +20,7 @@ class StandardIndustryCode(Document):
     """The Standard Industrial Classification (SIC) are the codes that identify the type of products/service an industry is involved in, and used for statutory reporting purposes. For example, in the USA these codes are located by the federal government, and then published in a book entitled 'The Standard Industrial Classification Manual'. The codes are arranged in a hierarchical structure. Note that Residential Service Agreements are not classified according to the SIC codes.
     """
 
-    def __init__(self, code='', CustomerAgreements=None, *args, **kw_args):
+    def __init__(self, code='', CustomerAgreements=None, **kw_args):
         """Initializes a new 'StandardIndustryCode' instance.
 
         @param code: Standard alphanumeric code assigned to a particular product/service within an industry. 
@@ -32,7 +32,7 @@ class StandardIndustryCode(Document):
         self._CustomerAgreements = []
         self.CustomerAgreements = [] if CustomerAgreements is None else CustomerAgreements
 
-        super(StandardIndustryCode, self).__init__(*args, **kw_args)
+        super(StandardIndustryCode, self).__init__(**kw_args)
 
     def getCustomerAgreements(self):
         

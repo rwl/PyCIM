@@ -20,7 +20,7 @@ class NonStandardItem(Document):
     """This document provides information for non-standard items like customer contributions (e.g., customer digs trench), vouchers (e.g., credit), and contractor bids.
     """
 
-    def __init__(self, amount=0.0, code='', *args, **kw_args):
+    def __init__(self, amount=0.0, code='', **kw_args):
         """Initializes a new 'NonStandardItem' instance.
 
         @param amount: The projected cost for this item. 
@@ -32,5 +32,5 @@ class NonStandardItem(Document):
         #: The category of non-standard work.
         self.code = code
 
-        super(NonStandardItem, self).__init__(*args, **kw_args)
+        super(NonStandardItem, self).__init__(**kw_args)
 

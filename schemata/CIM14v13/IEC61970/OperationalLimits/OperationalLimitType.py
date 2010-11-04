@@ -20,7 +20,7 @@ class OperationalLimitType(Element):
     """A type of limit.  The meaning of a specific limit is described in this class.
     """
 
-    def __init__(self, direction='absoluteValue', acceptableDuration=0.0, OperationalLimit=None, *args, **kw_args):
+    def __init__(self, direction='absoluteValue', acceptableDuration=0.0, OperationalLimit=None, **kw_args):
         """Initializes a new 'OperationalLimitType' instance.
 
         @param direction: The direction of the limit. Values are: "absoluteValue", "high", "low"
@@ -36,7 +36,7 @@ class OperationalLimitType(Element):
         self._OperationalLimit = []
         self.OperationalLimit = [] if OperationalLimit is None else OperationalLimit
 
-        super(OperationalLimitType, self).__init__(*args, **kw_args)
+        super(OperationalLimitType, self).__init__(**kw_args)
 
     def getOperationalLimit(self):
         """The operational limits associated with this type of limit.

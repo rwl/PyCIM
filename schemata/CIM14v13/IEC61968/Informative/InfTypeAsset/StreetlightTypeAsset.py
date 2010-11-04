@@ -20,7 +20,7 @@ class StreetlightTypeAsset(ElectricalTypeAsset):
     """Documentation for a generic streetlight that may be used for various purposes such as work planning. Use 'category' for utility specific categorisation, such as luminar, grid light, lantern, open bottom, flood, etc.
     """
 
-    def __init__(self, lightRating=0.0, StreetlightAssetModels=None, *args, **kw_args):
+    def __init__(self, lightRating=0.0, StreetlightAssetModels=None, **kw_args):
         """Initializes a new 'StreetlightTypeAsset' instance.
 
         @param lightRating: Nominal (as designed) power rating of light. 
@@ -32,7 +32,7 @@ class StreetlightTypeAsset(ElectricalTypeAsset):
         self._StreetlightAssetModels = []
         self.StreetlightAssetModels = [] if StreetlightAssetModels is None else StreetlightAssetModels
 
-        super(StreetlightTypeAsset, self).__init__(*args, **kw_args)
+        super(StreetlightTypeAsset, self).__init__(**kw_args)
 
     def getStreetlightAssetModels(self):
         

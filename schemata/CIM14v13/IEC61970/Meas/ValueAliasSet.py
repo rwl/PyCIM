@@ -20,7 +20,7 @@ class ValueAliasSet(IdentifiedObject):
     """Describes the translation of a set of values into a name and is intendend to facilitate cusom translations. Each ValueAliasSet has a name, description etc. A specific Measurement may represent a discrete state like Open, Closed, Intermediate etc. This requires a translation from the MeasurementValue.value number to a string, e.g. 0->'Invalid', 1->'Open', 2->'Closed', 3->'Intermediate'. Each ValueToAlias member in ValueAliasSet.Value describe a mapping for one particular value to a name.
     """
 
-    def __init__(self, Discretes=None, Commands=None, Values=None, *args, **kw_args):
+    def __init__(self, Discretes=None, Commands=None, Values=None, **kw_args):
         """Initializes a new 'ValueAliasSet' instance.
 
         @param Discretes: The Measurements using the set for translation
@@ -36,7 +36,7 @@ class ValueAliasSet(IdentifiedObject):
         self._Values = []
         self.Values = [] if Values is None else Values
 
-        super(ValueAliasSet, self).__init__(*args, **kw_args)
+        super(ValueAliasSet, self).__init__(**kw_args)
 
     def getDiscretes(self):
         """The Measurements using the set for translation

@@ -20,7 +20,7 @@ class TestDataSet(ProcedureDataSet):
     """Test results, usually obtained by a lab or other independent organisation.
     """
 
-    def __init__(self, specimenID='', conclusion='', specimenToLabDateTime='', *args, **kw_args):
+    def __init__(self, specimenID='', conclusion='', specimenToLabDateTime='', **kw_args):
         """Initializes a new 'TestDataSet' instance.
 
         @param specimenID: Identifier of specimen used in inspection or test. 
@@ -36,5 +36,5 @@ class TestDataSet(ProcedureDataSet):
         #: Date and time the specimen was received by the lab.
         self.specimenToLabDateTime = specimenToLabDateTime
 
-        super(TestDataSet, self).__init__(*args, **kw_args)
+        super(TestDataSet, self).__init__(**kw_args)
 

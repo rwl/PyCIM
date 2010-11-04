@@ -20,7 +20,7 @@ class LocationGrant(Agreement):
     """A grant provides a right, as defined by type, for a parcel of land. Note that the association to Location, Asset, Organisation, etc. for the Grant is inherited from Agreement, a type of Document.
     """
 
-    def __init__(self, propertyData='', LandProperty=None, *args, **kw_args):
+    def __init__(self, propertyData='', LandProperty=None, **kw_args):
         """Initializes a new 'LocationGrant' instance.
 
         @param propertyData: Property related information that describes the Grant's land parcel. For example, it may be a deed book number, deed book page number, and parcel number. 
@@ -32,7 +32,7 @@ class LocationGrant(Agreement):
         self._LandProperty = None
         self.LandProperty = LandProperty
 
-        super(LocationGrant, self).__init__(*args, **kw_args)
+        super(LocationGrant, self).__init__(**kw_args)
 
     def getLandProperty(self):
         """Land property this location grant applies to.

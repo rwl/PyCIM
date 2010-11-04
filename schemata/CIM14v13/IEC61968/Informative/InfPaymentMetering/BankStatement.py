@@ -20,7 +20,7 @@ class BankStatement(Document):
     """A type of Document that records bank deposits made by Vendor of revenue collected at PointOfSale.
     """
 
-    def __init__(self, depositAmount=0.0, posted=False, depositDateTime='', merchantCreditAmount=0.0, Vendor=None, MerchantAccount=None, BankAccount=None, *args, **kw_args):
+    def __init__(self, depositAmount=0.0, posted=False, depositDateTime='', merchantCreditAmount=0.0, Vendor=None, MerchantAccount=None, BankAccount=None, **kw_args):
         """Initializes a new 'BankStatement' instance.
 
         @param depositAmount: The amount that is deposited into the bank via BankAccount. 
@@ -52,7 +52,7 @@ class BankStatement(Document):
         self._BankAccount = None
         self.BankAccount = BankAccount
 
-        super(BankStatement, self).__init__(*args, **kw_args)
+        super(BankStatement, self).__init__(**kw_args)
 
     def getVendor(self):
         """The Vendor that made this BankStatement (by making deposit).

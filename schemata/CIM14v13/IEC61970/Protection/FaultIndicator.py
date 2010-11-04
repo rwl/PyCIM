@@ -20,7 +20,7 @@ class FaultIndicator(Equipment):
     """A FaultIndicator is typically only an indicator (which may or may not be remotely monitored), and not a piece of equipment that actually initiates a protection event. It is used for FLISR (Fault Location, Isolation and Restoration) purposes, assisting with the dispatch of crews to 'most likely' part of the network (i.e. assists with determining circuit section where the fault most likely happened).
     """
 
-    def __init__(self, FaultIndicatorAssets=None, FaultIndicatorTypeAsset=None, *args, **kw_args):
+    def __init__(self, FaultIndicatorAssets=None, FaultIndicatorTypeAsset=None, **kw_args):
         """Initializes a new 'FaultIndicator' instance.
 
         @param FaultIndicatorAssets:
@@ -32,7 +32,7 @@ class FaultIndicator(Equipment):
         self._FaultIndicatorTypeAsset = None
         self.FaultIndicatorTypeAsset = FaultIndicatorTypeAsset
 
-        super(FaultIndicator, self).__init__(*args, **kw_args)
+        super(FaultIndicator, self).__init__(**kw_args)
 
     def getFaultIndicatorAssets(self):
         

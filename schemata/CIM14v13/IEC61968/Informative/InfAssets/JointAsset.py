@@ -20,7 +20,7 @@ class JointAsset(ElectricalAsset):
     """Physical asset connecting two or more cable assets. It includes the portion of cable under wipes, welds, or other seals.
     """
 
-    def __init__(self, configurationKind='wires2to1', fillKind='bluefill254', insulation='', *args, **kw_args):
+    def __init__(self, configurationKind='wires2to1', fillKind='bluefill254', insulation='', **kw_args):
         """Initializes a new 'JointAsset' instance.
 
         @param configurationKind: Configuration of joint. Values are: "wires2to1", "wires1to1", "other", "wires3to1"
@@ -36,5 +36,5 @@ class JointAsset(ElectricalAsset):
         #: The type of insulation around the joint, classified according to the utility's asset management standards and practices.
         self.insulation = insulation
 
-        super(JointAsset, self).__init__(*args, **kw_args)
+        super(JointAsset, self).__init__(**kw_args)
 

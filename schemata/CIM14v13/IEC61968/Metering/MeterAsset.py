@@ -20,7 +20,7 @@ class MeterAsset(EndDeviceAsset):
     """Physical asset that performs the metering role of the ServiceDeliveryPoint. Used for measuring consumption and detection of events.
     """
 
-    def __init__(self, formNumber='', kH=0.0, kR=0.0, MeterReadings=None, VendingTransactions=None, MeterServiceWorks=None, MeterReplacementWorks=None, MeterAssetModel=None, *args, **kw_args):
+    def __init__(self, formNumber='', kH=0.0, kR=0.0, MeterReadings=None, VendingTransactions=None, MeterServiceWorks=None, MeterReplacementWorks=None, MeterAssetModel=None, **kw_args):
         """Initializes a new 'MeterAsset' instance.
 
         @param formNumber: Meter form designation per ANSI C12.10 or other applicable standard. An alphanumeric designation denoting the circuit arrangement for which the meter is applicable and its specific terminal arrangement. 
@@ -56,7 +56,7 @@ class MeterAsset(EndDeviceAsset):
         self._MeterAssetModel = None
         self.MeterAssetModel = MeterAssetModel
 
-        super(MeterAsset, self).__init__(*args, **kw_args)
+        super(MeterAsset, self).__init__(**kw_args)
 
     def getMeterReadings(self):
         """All meter readings provided by this meter asset.

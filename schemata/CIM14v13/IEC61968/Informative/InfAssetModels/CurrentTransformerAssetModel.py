@@ -20,7 +20,7 @@ class CurrentTransformerAssetModel(ElectricalAssetModel):
     """A particular model supplied by a manufacturer of a Current Transformer (CT), wich is used to measure electrical qualities of the circuit that is being protected and/or monitored.
     """
 
-    def __init__(self, CurrentTransformerTypeAsset=None, CurrentTransformerInfo=None, CurrentTransformerAssets=None, *args, **kw_args):
+    def __init__(self, CurrentTransformerTypeAsset=None, CurrentTransformerInfo=None, CurrentTransformerAssets=None, **kw_args):
         """Initializes a new 'CurrentTransformerAssetModel' instance.
 
         @param CurrentTransformerTypeAsset:
@@ -36,7 +36,7 @@ class CurrentTransformerAssetModel(ElectricalAssetModel):
         self._CurrentTransformerAssets = []
         self.CurrentTransformerAssets = [] if CurrentTransformerAssets is None else CurrentTransformerAssets
 
-        super(CurrentTransformerAssetModel, self).__init__(*args, **kw_args)
+        super(CurrentTransformerAssetModel, self).__init__(**kw_args)
 
     def getCurrentTransformerTypeAsset(self):
         

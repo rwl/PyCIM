@@ -20,7 +20,7 @@ class ErpPerson(IdentifiedObject):
     """General purpose information for name and other information to contact people.
     """
 
-    def __init__(self, prefix='', governmentID='', lastName='', category='', firstName='', suffix='', specialNeed='', mName='', ErpTelephoneNumbers=None, DocumentRoles=None, ElectronicAddresses=None, Crews=None, Appointments=None, LaborItems=None, MeasurementValues=None, CallBacks=None, ActivityRecords=None, ErpOrganisationRoles=None, Crafts=None, LocationRoles=None, Skills=None, CustomerData=None, ChangeItems=None, SwitchingStepRoles=None, ErpPersonnel=None, ErpCompetency=None, LandPropertyRoles=None, status=None, *args, **kw_args):
+    def __init__(self, prefix='', governmentID='', lastName='', category='', firstName='', suffix='', specialNeed='', mName='', ErpTelephoneNumbers=None, DocumentRoles=None, ElectronicAddresses=None, Crews=None, Appointments=None, LaborItems=None, MeasurementValues=None, CallBacks=None, ActivityRecords=None, ErpOrganisationRoles=None, Crafts=None, LocationRoles=None, Skills=None, CustomerData=None, ChangeItems=None, SwitchingStepRoles=None, ErpPersonnel=None, ErpCompetency=None, LandPropertyRoles=None, status=None, **kw_args):
         """Initializes a new 'ErpPerson' instance.
 
         @param prefix: A prefix or title for the person's name, such as Miss, Mister, Doctor, etc. 
@@ -135,7 +135,7 @@ class ErpPerson(IdentifiedObject):
 
         self.status = status
 
-        super(ErpPerson, self).__init__(*args, **kw_args)
+        super(ErpPerson, self).__init__(**kw_args)
 
     def getErpTelephoneNumbers(self):
         

@@ -20,7 +20,7 @@ class OrgPropertyRole(Role):
     """Roles played between Organisations and a given piece of property. For example, the Organisation may be the owner, renter, occupier, taxiing authority, etc.
     """
 
-    def __init__(self, ErpOrganisation=None, LandProperty=None, *args, **kw_args):
+    def __init__(self, ErpOrganisation=None, LandProperty=None, **kw_args):
         """Initializes a new 'OrgPropertyRole' instance.
 
         @param ErpOrganisation:
@@ -32,7 +32,7 @@ class OrgPropertyRole(Role):
         self._LandProperty = []
         self.LandProperty = [] if LandProperty is None else LandProperty
 
-        super(OrgPropertyRole, self).__init__(*args, **kw_args)
+        super(OrgPropertyRole, self).__init__(**kw_args)
 
     def getErpOrganisation(self):
         

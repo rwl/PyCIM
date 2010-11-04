@@ -20,7 +20,7 @@ class ErpTimeSheet(Document):
     """Time sheet for employees and contractors. Note that ErpTimeSheet inherits the relationship to ErpPerson from Document.
     """
 
-    def __init__(self, ErpTimeEntries=None, *args, **kw_args):
+    def __init__(self, ErpTimeEntries=None, **kw_args):
         """Initializes a new 'ErpTimeSheet' instance.
 
         @param ErpTimeEntries:
@@ -28,7 +28,7 @@ class ErpTimeSheet(Document):
         self._ErpTimeEntries = []
         self.ErpTimeEntries = [] if ErpTimeEntries is None else ErpTimeEntries
 
-        super(ErpTimeSheet, self).__init__(*args, **kw_args)
+        super(ErpTimeSheet, self).__init__(**kw_args)
 
     def getErpTimeEntries(self):
         

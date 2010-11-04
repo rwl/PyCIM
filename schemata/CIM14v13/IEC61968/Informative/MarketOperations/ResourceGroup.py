@@ -20,7 +20,7 @@ class ResourceGroup(IdentifiedObject):
     """A logical grouping of resources that are used to model location of types of requirements for ancillary services such as spinning reserve zones, regulation zones, etc.
     """
 
-    def __init__(self, RegisteredResources=None, ResourceGroupReqs=None, *args, **kw_args):
+    def __init__(self, RegisteredResources=None, ResourceGroupReqs=None, **kw_args):
         """Initializes a new 'ResourceGroup' instance.
 
         @param RegisteredResources:
@@ -32,7 +32,7 @@ class ResourceGroup(IdentifiedObject):
         self._ResourceGroupReqs = []
         self.ResourceGroupReqs = [] if ResourceGroupReqs is None else ResourceGroupReqs
 
-        super(ResourceGroup, self).__init__(*args, **kw_args)
+        super(ResourceGroup, self).__init__(**kw_args)
 
     def getRegisteredResources(self):
         

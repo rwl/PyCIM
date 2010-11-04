@@ -20,7 +20,7 @@ class RegularTimePoint(Element):
     """TimePoints for a schedule where the time between the points is constant.
     """
 
-    def __init__(self, value2=0.0, sequenceNumber=0, value1=0.0, IntervalSchedule=None, *args, **kw_args):
+    def __init__(self, value2=0.0, sequenceNumber=0, value1=0.0, IntervalSchedule=None, **kw_args):
         """Initializes a new 'RegularTimePoint' instance.
 
         @param value2: The second value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule. 
@@ -40,7 +40,7 @@ class RegularTimePoint(Element):
         self._IntervalSchedule = None
         self.IntervalSchedule = IntervalSchedule
 
-        super(RegularTimePoint, self).__init__(*args, **kw_args)
+        super(RegularTimePoint, self).__init__(**kw_args)
 
     def getIntervalSchedule(self):
         """A RegularTimePoint belongs to a RegularIntervalSchedule.

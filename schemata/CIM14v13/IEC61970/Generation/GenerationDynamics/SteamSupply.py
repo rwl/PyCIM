@@ -20,7 +20,7 @@ class SteamSupply(PowerSystemResource):
     """Steam supply for steam turbine
     """
 
-    def __init__(self, steamSupplyRating=0.0, SteamTurbines=None, *args, **kw_args):
+    def __init__(self, steamSupplyRating=0.0, SteamTurbines=None, **kw_args):
         """Initializes a new 'SteamSupply' instance.
 
         @param steamSupplyRating: Rating of steam supply 
@@ -32,7 +32,7 @@ class SteamSupply(PowerSystemResource):
         self._SteamTurbines = []
         self.SteamTurbines = [] if SteamTurbines is None else SteamTurbines
 
-        super(SteamSupply, self).__init__(*args, **kw_args)
+        super(SteamSupply, self).__init__(**kw_args)
 
     def getSteamTurbines(self):
         """Steam turbines may have steam supplied by a steam supply

@@ -20,7 +20,7 @@ class PerLengthSequenceImpedance(IdentifiedObject):
     """Sequence impedance and admittance parameters per unit length, for transposed lines of 1, 2, or 3 phases. For 1-phase lines, define x=x0=xself. For 2-phase lines, define x=xs-xm and x0=xs+xm.
     """
 
-    def __init__(self, r0=0.0, bch=0.0, x=0.0, r=0.0, gch=0.0, x0=0.0, b0ch=0.0, g0ch=0.0, ConductorSegments=None, *args, **kw_args):
+    def __init__(self, r0=0.0, bch=0.0, x=0.0, r=0.0, gch=0.0, x0=0.0, b0ch=0.0, g0ch=0.0, ConductorSegments=None, **kw_args):
         """Initializes a new 'PerLengthSequenceImpedance' instance.
 
         @param r0: Zero sequence series resistance, per unit of length. 
@@ -60,7 +60,7 @@ class PerLengthSequenceImpedance(IdentifiedObject):
         self._ConductorSegments = []
         self.ConductorSegments = [] if ConductorSegments is None else ConductorSegments
 
-        super(PerLengthSequenceImpedance, self).__init__(*args, **kw_args)
+        super(PerLengthSequenceImpedance, self).__init__(**kw_args)
 
     def getConductorSegments(self):
         """All conductor segments described by this sequence impedance.

@@ -20,7 +20,7 @@ class Document(IdentifiedObject):
     """Parent class for different groupings of information collected and managed as a part of a business process. It will frequently contain references to other objects, such as assets, people and power system resources.
     """
 
-    def __init__(self, subject='', revisionNumber='', category='', lastModifiedDateTime='', title='', createdDateTime='', ActivityRecords=None, ErpOrganisationRoles=None, ScheduledEvents=None, FromDocumentRoles=None, LocationRoles=None, PowerSystemResourceRoles=None, NetworkDataSets=None, ErpPersonRoles=None, ChangeItems=None, Measurements=None, docStatus=None, ScheduleParameterInfos=None, ElectronicAddress=None, ToDocumentRoles=None, status=None, AssetRoles=None, ChangeSets=None, *args, **kw_args):
+    def __init__(self, subject='', revisionNumber='', category='', lastModifiedDateTime='', title='', createdDateTime='', ActivityRecords=None, ErpOrganisationRoles=None, ScheduledEvents=None, FromDocumentRoles=None, LocationRoles=None, PowerSystemResourceRoles=None, NetworkDataSets=None, ErpPersonRoles=None, ChangeItems=None, Measurements=None, docStatus=None, ScheduleParameterInfos=None, ElectronicAddress=None, ToDocumentRoles=None, status=None, AssetRoles=None, ChangeSets=None, **kw_args):
         """Initializes a new 'Document' instance.
 
         @param subject: Document subject. 
@@ -114,7 +114,7 @@ class Document(IdentifiedObject):
         self._ChangeSets = []
         self.ChangeSets = [] if ChangeSets is None else ChangeSets
 
-        super(Document, self).__init__(*args, **kw_args)
+        super(Document, self).__init__(**kw_args)
 
     def getActivityRecords(self):
         """All activity records created for this document.

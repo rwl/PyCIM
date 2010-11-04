@@ -20,7 +20,7 @@ class GmlFeatureType(IdentifiedObject):
     """Type classification of feature.
     """
 
-    def __init__(self, GmlFeatureStyles=None, *args, **kw_args):
+    def __init__(self, GmlFeatureStyles=None, **kw_args):
         """Initializes a new 'GmlFeatureType' instance.
 
         @param GmlFeatureStyles:
@@ -28,7 +28,7 @@ class GmlFeatureType(IdentifiedObject):
         self._GmlFeatureStyles = []
         self.GmlFeatureStyles = [] if GmlFeatureStyles is None else GmlFeatureStyles
 
-        super(GmlFeatureType, self).__init__(*args, **kw_args)
+        super(GmlFeatureType, self).__init__(**kw_args)
 
     def getGmlFeatureStyles(self):
         

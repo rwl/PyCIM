@@ -20,7 +20,7 @@ class OrgOrgRole(Role):
     """Roles played between Organisations and other Organisations. This includes role ups for ogranisations, cost centers, profit centers, regulatory reporting, etc. Note that the parent and child relationship is indicated by the name on each end of the association.
     """
 
-    def __init__(self, clientID='', ChildOrganisation=None, ParentOrganisation=None, *args, **kw_args):
+    def __init__(self, clientID='', ChildOrganisation=None, ParentOrganisation=None, **kw_args):
         """Initializes a new 'OrgOrgRole' instance.
 
         @param clientID: Identifiers of the organisation held by another organisation, such as a government agency (federal, state, province, city, county), financial institution (Dun and Bradstreet), etc. 
@@ -36,7 +36,7 @@ class OrgOrgRole(Role):
         self._ParentOrganisation = None
         self.ParentOrganisation = ParentOrganisation
 
-        super(OrgOrgRole, self).__init__(*args, **kw_args)
+        super(OrgOrgRole, self).__init__(**kw_args)
 
     def getChildOrganisation(self):
         

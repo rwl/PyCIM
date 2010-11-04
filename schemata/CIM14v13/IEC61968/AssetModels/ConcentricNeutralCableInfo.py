@@ -20,7 +20,7 @@ class ConcentricNeutralCableInfo(CableInfo):
     """Concentric neutral cable data.
     """
 
-    def __init__(self, neutralStrandCount=0, diameterOverNeutral=0.0, WireType=None, *args, **kw_args):
+    def __init__(self, neutralStrandCount=0, diameterOverNeutral=0.0, WireType=None, **kw_args):
         """Initializes a new 'ConcentricNeutralCableInfo' instance.
 
         @param neutralStrandCount: Number of concentric neutral strands. 
@@ -36,7 +36,7 @@ class ConcentricNeutralCableInfo(CableInfo):
         self._WireType = None
         self.WireType = WireType
 
-        super(ConcentricNeutralCableInfo, self).__init__(*args, **kw_args)
+        super(ConcentricNeutralCableInfo, self).__init__(**kw_args)
 
     def getWireType(self):
         """Wire type used for this concentric neutral cable.

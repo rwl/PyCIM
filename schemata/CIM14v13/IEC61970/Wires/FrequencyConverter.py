@@ -20,7 +20,7 @@ class FrequencyConverter(RegulatingCondEq):
     """A device to convert from one frequency to another (e.g., frequency F1 to F2) comprises a pair of FrequencyConverter instances. One converts from F1 to DC, the other converts the DC to F2.
     """
 
-    def __init__(self, maxU=0.0, minU=0.0, minP=0.0, frequency=0.0, maxP=0.0, operatingMode='', *args, **kw_args):
+    def __init__(self, maxU=0.0, minU=0.0, minP=0.0, frequency=0.0, maxP=0.0, operatingMode='', **kw_args):
         """Initializes a new 'FrequencyConverter' instance.
 
         @param maxU: The maximum voltage on the DC side at which the frequency converter should operate. 
@@ -48,5 +48,5 @@ class FrequencyConverter(RegulatingCondEq):
         #: Operating mode for the frequency converter
         self.operatingMode = operatingMode
 
-        super(FrequencyConverter, self).__init__(*args, **kw_args)
+        super(FrequencyConverter, self).__init__(**kw_args)
 

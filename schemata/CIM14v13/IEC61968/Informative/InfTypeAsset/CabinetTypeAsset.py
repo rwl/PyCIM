@@ -20,7 +20,7 @@ class CabinetTypeAsset(StructureTypeAsset):
     """Documentation for a generic cabinet that may be used for various purposes such as work planning.
     """
 
-    def __init__(self, CabinetModels=None, *args, **kw_args):
+    def __init__(self, CabinetModels=None, **kw_args):
         """Initializes a new 'CabinetTypeAsset' instance.
 
         @param CabinetModels:
@@ -28,7 +28,7 @@ class CabinetTypeAsset(StructureTypeAsset):
         self._CabinetModels = []
         self.CabinetModels = [] if CabinetModels is None else CabinetModels
 
-        super(CabinetTypeAsset, self).__init__(*args, **kw_args)
+        super(CabinetTypeAsset, self).__init__(**kw_args)
 
     def getCabinetModels(self):
         

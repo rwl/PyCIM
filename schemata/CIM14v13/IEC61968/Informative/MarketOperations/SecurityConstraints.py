@@ -20,7 +20,7 @@ class SecurityConstraints(IdentifiedObject):
     """Typical for regional transmission operators (RTOs), these constraints include transmission as well as generation group constraints identified in both base case and critical contingency cases.
     """
 
-    def __init__(self, maxMW=0.0, actualMW=0.0, minMW=0.0, RTO=None, *args, **kw_args):
+    def __init__(self, maxMW=0.0, actualMW=0.0, minMW=0.0, RTO=None, **kw_args):
         """Initializes a new 'SecurityConstraints' instance.
 
         @param maxMW: Maximum MW limit 
@@ -40,7 +40,7 @@ class SecurityConstraints(IdentifiedObject):
         self._RTO = None
         self.RTO = RTO
 
-        super(SecurityConstraints, self).__init__(*args, **kw_args)
+        super(SecurityConstraints, self).__init__(**kw_args)
 
     def getRTO(self):
         

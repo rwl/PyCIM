@@ -20,7 +20,7 @@ class SeriesCompensatorTypeAsset(ElectricalTypeAsset):
     """Documentation for a generic series compensator that may be used for design purposes.
     """
 
-    def __init__(self, ShuntCompensatorAssetModels=None, *args, **kw_args):
+    def __init__(self, ShuntCompensatorAssetModels=None, **kw_args):
         """Initializes a new 'SeriesCompensatorTypeAsset' instance.
 
         @param ShuntCompensatorAssetModels:
@@ -28,7 +28,7 @@ class SeriesCompensatorTypeAsset(ElectricalTypeAsset):
         self._ShuntCompensatorAssetModels = []
         self.ShuntCompensatorAssetModels = [] if ShuntCompensatorAssetModels is None else ShuntCompensatorAssetModels
 
-        super(SeriesCompensatorTypeAsset, self).__init__(*args, **kw_args)
+        super(SeriesCompensatorTypeAsset, self).__init__(**kw_args)
 
     def getShuntCompensatorAssetModels(self):
         

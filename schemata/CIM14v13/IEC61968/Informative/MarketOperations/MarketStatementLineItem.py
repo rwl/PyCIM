@@ -20,7 +20,7 @@ class MarketStatementLineItem(IdentifiedObject):
     """An individual line item on a statement.
     """
 
-    def __init__(self, previousISOAmount=0.0, intervalNumber='', netQuantity=0.0, intervalDate='', previousAmount=0.0, netISOAmount=0.0, netPrice=0.0, currentAmount=0.0, netISOQuantity=0.0, previousQuantity=0.0, quantityUOM='', previsouPrice=0.0, previousISOQuantity=0.0, currentISOAmount=0.0, currentQuantity=0.0, currentPrice=0.0, netAmount=0.0, currentISOQuantity=0.0, MarketStatement=None, PassThroughBill=None, ContainerMarketStatementLineItem=None, ComponentMarketStatementLineItem=None, UserAttributes=None, *args, **kw_args):
+    def __init__(self, previousISOAmount=0.0, intervalNumber='', netQuantity=0.0, intervalDate='', previousAmount=0.0, netISOAmount=0.0, netPrice=0.0, currentAmount=0.0, netISOQuantity=0.0, previousQuantity=0.0, quantityUOM='', previsouPrice=0.0, previousISOQuantity=0.0, currentISOAmount=0.0, currentQuantity=0.0, currentPrice=0.0, netAmount=0.0, currentISOQuantity=0.0, MarketStatement=None, PassThroughBill=None, ContainerMarketStatementLineItem=None, ComponentMarketStatementLineItem=None, UserAttributes=None, **kw_args):
         """Initializes a new 'MarketStatementLineItem' instance.
 
         @param previousISOAmount: Previous ISO settlement amount. 
@@ -116,7 +116,7 @@ class MarketStatementLineItem(IdentifiedObject):
         self._UserAttributes = []
         self.UserAttributes = [] if UserAttributes is None else UserAttributes
 
-        super(MarketStatementLineItem, self).__init__(*args, **kw_args)
+        super(MarketStatementLineItem, self).__init__(**kw_args)
 
     def getMarketStatement(self):
         

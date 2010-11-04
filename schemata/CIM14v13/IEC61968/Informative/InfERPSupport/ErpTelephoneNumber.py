@@ -20,7 +20,7 @@ class ErpTelephoneNumber(TelephoneNumber):
     """The telephone number for a person or organisation.
     """
 
-    def __init__(self, usage='', ElectronicAddress=None, ErpPersons=None, status=None, *args, **kw_args):
+    def __init__(self, usage='', ElectronicAddress=None, ErpPersons=None, status=None, **kw_args):
         """Initializes a new 'ErpTelephoneNumber' instance.
 
         @param usage: The purpose of the telephone: home, mobile, home fax, office, office fax, switchboard, other. 
@@ -39,7 +39,7 @@ class ErpTelephoneNumber(TelephoneNumber):
 
         self.status = status
 
-        super(ErpTelephoneNumber, self).__init__(*args, **kw_args)
+        super(ErpTelephoneNumber, self).__init__(**kw_args)
 
     def getElectronicAddress(self):
         

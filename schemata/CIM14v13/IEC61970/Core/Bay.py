@@ -20,7 +20,7 @@ class Bay(EquipmentContainer):
     """A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.
     """
 
-    def __init__(self, breakerConfiguration='noBreaker', busBarConfiguration='ringBus', bayEnergyMeasFlag=False, bayPowerMeasFlag=False, VoltageLevel=None, Substation=None, *args, **kw_args):
+    def __init__(self, breakerConfiguration='noBreaker', busBarConfiguration='ringBus', bayEnergyMeasFlag=False, bayPowerMeasFlag=False, VoltageLevel=None, Substation=None, **kw_args):
         """Initializes a new 'Bay' instance.
 
         @param breakerConfiguration: Breaker configuration. Values are: "noBreaker", "doubleBreaker", "singleBreaker", "breakerAndAHalf"
@@ -48,7 +48,7 @@ class Bay(EquipmentContainer):
         self._Substation = None
         self.Substation = Substation
 
-        super(Bay, self).__init__(*args, **kw_args)
+        super(Bay, self).__init__(**kw_args)
 
     def getVoltageLevel(self):
         """The association is used in the naming hierarchy.

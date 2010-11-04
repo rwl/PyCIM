@@ -20,7 +20,7 @@ class ToolAssetModel(AssetModel):
     """Documentation for a type of a tool of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, Tools=None, ToolTypeAsset=None, *args, **kw_args):
+    def __init__(self, Tools=None, ToolTypeAsset=None, **kw_args):
         """Initializes a new 'ToolAssetModel' instance.
 
         @param Tools:
@@ -32,7 +32,7 @@ class ToolAssetModel(AssetModel):
         self._ToolTypeAsset = None
         self.ToolTypeAsset = ToolTypeAsset
 
-        super(ToolAssetModel, self).__init__(*args, **kw_args)
+        super(ToolAssetModel, self).__init__(**kw_args)
 
     def getTools(self):
         

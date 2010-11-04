@@ -20,7 +20,7 @@ class GeographicalRegion(IdentifiedObject):
     """A geographical region of a power system network model.
     """
 
-    def __init__(self, Regions=None, *args, **kw_args):
+    def __init__(self, Regions=None, **kw_args):
         """Initializes a new 'GeographicalRegion' instance.
 
         @param Regions: The association is used in the naming hierarchy.
@@ -28,7 +28,7 @@ class GeographicalRegion(IdentifiedObject):
         self._Regions = []
         self.Regions = [] if Regions is None else Regions
 
-        super(GeographicalRegion, self).__init__(*args, **kw_args)
+        super(GeographicalRegion, self).__init__(**kw_args)
 
     def getRegions(self):
         """The association is used in the naming hierarchy.

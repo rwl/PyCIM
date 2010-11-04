@@ -20,7 +20,7 @@ class ErpPersonScheduleStepRole(Role):
     """Roles played between Persons and Schedule Steps.
     """
 
-    def __init__(self, SwitchingStep=None, ErpPerson=None, *args, **kw_args):
+    def __init__(self, SwitchingStep=None, ErpPerson=None, **kw_args):
         """Initializes a new 'ErpPersonScheduleStepRole' instance.
 
         @param SwitchingStep:
@@ -32,7 +32,7 @@ class ErpPersonScheduleStepRole(Role):
         self._ErpPerson = None
         self.ErpPerson = ErpPerson
 
-        super(ErpPersonScheduleStepRole, self).__init__(*args, **kw_args)
+        super(ErpPersonScheduleStepRole, self).__init__(**kw_args)
 
     def getSwitchingStep(self):
         

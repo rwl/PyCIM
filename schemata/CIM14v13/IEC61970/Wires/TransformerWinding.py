@@ -20,7 +20,7 @@ class TransformerWinding(ConductingEquipment):
     """A winding is associated with each defined terminal of a transformer (or phase shifter).
     """
 
-    def __init__(self, windingType='tertiary', connectionType='Y', shortTermS=0.0, ratedU=0.0, grounded=False, r0=0.0, ratedS=0.0, emergencyS=0.0, b0=0.0, xground=0.0, g0=0.0, b=0.0, r=0.0, rground=0.0, x=0.0, insulationU=0.0, g=0.0, x0=0.0, To_WindingTest=None, PowerTransformer=None, From_WindingTest=None, RatioTapChanger=None, PhaseTapChanger=None, *args, **kw_args):
+    def __init__(self, windingType='tertiary', connectionType='Y', shortTermS=0.0, ratedU=0.0, grounded=False, r0=0.0, ratedS=0.0, emergencyS=0.0, b0=0.0, xground=0.0, g0=0.0, b=0.0, r=0.0, rground=0.0, x=0.0, insulationU=0.0, g=0.0, x0=0.0, To_WindingTest=None, PowerTransformer=None, From_WindingTest=None, RatioTapChanger=None, PhaseTapChanger=None, **kw_args):
         """Initializes a new 'TransformerWinding' instance.
 
         @param windingType: The type of winding. Values are: "tertiary", "secondary", "primary", "quaternary"
@@ -116,7 +116,7 @@ class TransformerWinding(ConductingEquipment):
         self._PhaseTapChanger = None
         self.PhaseTapChanger = PhaseTapChanger
 
-        super(TransformerWinding, self).__init__(*args, **kw_args)
+        super(TransformerWinding, self).__init__(**kw_args)
 
     def getTo_WindingTest(self):
         """The winding winding tests for which the transformer winding (terminal) participates as the 'to' end of the test.

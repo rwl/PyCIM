@@ -20,7 +20,7 @@ class IncidentRecord(Document):
     """Document describing the incident reported in a TroubleTicket. If the incident has to do with an outage, this will be associated with an OutageRecord. Primary cause of the incident is captured in 'category'.
     """
 
-    def __init__(self, IncidentCodes=None, period=None, TroubleTickets=None, *args, **kw_args):
+    def __init__(self, IncidentCodes=None, period=None, TroubleTickets=None, **kw_args):
         """Initializes a new 'IncidentRecord' instance.
 
         @param IncidentCodes:
@@ -35,7 +35,7 @@ class IncidentRecord(Document):
         self._TroubleTickets = []
         self.TroubleTickets = [] if TroubleTickets is None else TroubleTickets
 
-        super(IncidentRecord, self).__init__(*args, **kw_args)
+        super(IncidentRecord, self).__init__(**kw_args)
 
     def getIncidentCodes(self):
         

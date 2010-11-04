@@ -20,7 +20,7 @@ class ResistorAssetModel(ElectricalAssetModel):
     """Documentation for a type of a resistor asset of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, ResistorTypeAsset=None, ResistorAssets=None, *args, **kw_args):
+    def __init__(self, ResistorTypeAsset=None, ResistorAssets=None, **kw_args):
         """Initializes a new 'ResistorAssetModel' instance.
 
         @param ResistorTypeAsset:
@@ -32,7 +32,7 @@ class ResistorAssetModel(ElectricalAssetModel):
         self._ResistorAssets = []
         self.ResistorAssets = [] if ResistorAssets is None else ResistorAssets
 
-        super(ResistorAssetModel, self).__init__(*args, **kw_args)
+        super(ResistorAssetModel, self).__init__(**kw_args)
 
     def getResistorTypeAsset(self):
         

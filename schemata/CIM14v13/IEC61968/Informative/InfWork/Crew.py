@@ -20,7 +20,7 @@ class Crew(IdentifiedObject):
     """A crew is a group of people (ErpPersons) with specific skills, tools, and vehicles.
     """
 
-    def __init__(self, category='', Capabilities=None, WorkTasks=None, Vehicles=None, CrewMembers=None, Assignments=None, Tools=None, Route=None, OutageSteps=None, WorkEquipmentAssets=None, Locations=None, ShiftPatterns=None, SwitchingSchedules=None, Organisations=None, *args, **kw_args):
+    def __init__(self, category='', Capabilities=None, WorkTasks=None, Vehicles=None, CrewMembers=None, Assignments=None, Tools=None, Route=None, OutageSteps=None, WorkEquipmentAssets=None, Locations=None, ShiftPatterns=None, SwitchingSchedules=None, Organisations=None, **kw_args):
         """Initializes a new 'Crew' instance.
 
         @param category: Category by utility's work management standards and practices. 
@@ -80,7 +80,7 @@ class Crew(IdentifiedObject):
         self._Organisations = []
         self.Organisations = [] if Organisations is None else Organisations
 
-        super(Crew, self).__init__(*args, **kw_args)
+        super(Crew, self).__init__(**kw_args)
 
     def getCapabilities(self):
         

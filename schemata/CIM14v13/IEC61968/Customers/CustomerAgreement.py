@@ -20,7 +20,7 @@ class CustomerAgreement(Agreement):
     """Agreement between the Customer and the ServiceSupplier to pay for service at a specific ServiceLocation. It records certain billing information about the type of service provided at the ServiceLocation and is used during charge creation to determine the type of service.
     """
 
-    def __init__(self, ServiceSupplier=None, ServiceLocations=None, ServiceCategory=None, ServiceDeliveryPoints=None, DemandResponseProgram=None, MeterReadings=None, AuxiliaryAgreements=None, Equipments=None, EndDeviceControls=None, CustomerAccount=None, Customer=None, StandardIndustryCode=None, PricingStructures=None, *args, **kw_args):
+    def __init__(self, ServiceSupplier=None, ServiceLocations=None, ServiceCategory=None, ServiceDeliveryPoints=None, DemandResponseProgram=None, MeterReadings=None, AuxiliaryAgreements=None, Equipments=None, EndDeviceControls=None, CustomerAccount=None, Customer=None, StandardIndustryCode=None, PricingStructures=None, **kw_args):
         """Initializes a new 'CustomerAgreement' instance.
 
         @param ServiceSupplier: Service supplier for this customer agreement.
@@ -76,7 +76,7 @@ class CustomerAgreement(Agreement):
         self._PricingStructures = []
         self.PricingStructures = [] if PricingStructures is None else PricingStructures
 
-        super(CustomerAgreement, self).__init__(*args, **kw_args)
+        super(CustomerAgreement, self).__init__(**kw_args)
 
     def getServiceSupplier(self):
         """Service supplier for this customer agreement.

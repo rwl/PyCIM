@@ -20,7 +20,7 @@ class FACTSDeviceAssetModel(ElectricalAssetModel):
     """A particular model of FACTS device provided from a manufacturer. A FACTS devices are used for the dynamic control of voltage, impedance and phase angle of high voltage AC transmission lines. FACTS device types include: - SVC = Static Var Compensator - STATCOM = Static Synchronous Compensator - TCPAR = Thyristor Controlled Phase-Angle Regulator - TCSC = Thyristor Controlled Series Capacitor - TCVL = Thyristor Controlled Voltage Limiter - TSBR = Thyristor Switched Braking Resistor - TSSC = Thyristor Switched Series Capacitor - UPFC = Unified Power Flow Controller
     """
 
-    def __init__(self, FACTSDeviceAssets=None, FACTSDeviceTypeAsset=None, *args, **kw_args):
+    def __init__(self, FACTSDeviceAssets=None, FACTSDeviceTypeAsset=None, **kw_args):
         """Initializes a new 'FACTSDeviceAssetModel' instance.
 
         @param FACTSDeviceAssets:
@@ -32,7 +32,7 @@ class FACTSDeviceAssetModel(ElectricalAssetModel):
         self._FACTSDeviceTypeAsset = None
         self.FACTSDeviceTypeAsset = FACTSDeviceTypeAsset
 
-        super(FACTSDeviceAssetModel, self).__init__(*args, **kw_args)
+        super(FACTSDeviceAssetModel, self).__init__(**kw_args)
 
     def getFACTSDeviceAssets(self):
         

@@ -20,7 +20,7 @@ class OverheadConductorAsset(ConductorAsset):
     """Physical conductor performing the Conductor role that is used in overhead applications.
     """
 
-    def __init__(self, MountingPoint=None, *args, **kw_args):
+    def __init__(self, MountingPoint=None, **kw_args):
         """Initializes a new 'OverheadConductorAsset' instance.
 
         @param MountingPoint:
@@ -28,7 +28,7 @@ class OverheadConductorAsset(ConductorAsset):
         self._MountingPoint = None
         self.MountingPoint = MountingPoint
 
-        super(OverheadConductorAsset, self).__init__(*args, **kw_args)
+        super(OverheadConductorAsset, self).__init__(**kw_args)
 
     def getMountingPoint(self):
         

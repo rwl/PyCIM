@@ -20,7 +20,7 @@ class IncidentCode(IdentifiedObject):
     """Classification of incident types. Multiple incident codes may apply to a given incident. The primary overall incident cause is recorded in 'IncidentRecord.category', and the main code in 'name'.
     """
 
-    def __init__(self, subCode='', IncidentRecords=None, *args, **kw_args):
+    def __init__(self, subCode='', IncidentRecords=None, **kw_args):
         """Initializes a new 'IncidentCode' instance.
 
         @param subCode: Additional level of classification detail (as extension to the main code found in 'name'). 
@@ -32,7 +32,7 @@ class IncidentCode(IdentifiedObject):
         self._IncidentRecords = []
         self.IncidentRecords = [] if IncidentRecords is None else IncidentRecords
 
-        super(IncidentCode, self).__init__(*args, **kw_args)
+        super(IncidentCode, self).__init__(**kw_args)
 
     def getIncidentRecords(self):
         

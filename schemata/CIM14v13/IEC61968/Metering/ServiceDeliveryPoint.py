@@ -20,7 +20,7 @@ class ServiceDeliveryPoint(IdentifiedObject):
     """Logical point on the network where the ownership of the service changes hands. It is one of potentially many service points within a ServiceLocation, delivering service in accordance with a CustomerAgreement. Used at the place where a meter may be installed.
     """
 
-    def __init__(self, phaseConfig='other', billingCycle='', loadMgmt='', ratedPower=0.0, nominalServiceVoltage=0, ratedCurrent=0.0, estimatedLoad=0.0, checkBilling=False, serviceDeliveryRemark='', servicePriority='', budgetBill='', grounded=False, consumptionRealEnergy=0.0, ctptReference=0, ServiceSupplier=None, SDPLocations=None, CustomerAgreement=None, MeterReadings=None, EnergyConsumer=None, PricingStructures=None, ServiceCategory=None, PowerQualityPricings=None, ServiceLocation=None, EndDeviceAssets=None, *args, **kw_args):
+    def __init__(self, phaseConfig='other', billingCycle='', loadMgmt='', ratedPower=0.0, nominalServiceVoltage=0, ratedCurrent=0.0, estimatedLoad=0.0, checkBilling=False, serviceDeliveryRemark='', servicePriority='', budgetBill='', grounded=False, consumptionRealEnergy=0.0, ctptReference=0, ServiceSupplier=None, SDPLocations=None, CustomerAgreement=None, MeterReadings=None, EnergyConsumer=None, PricingStructures=None, ServiceCategory=None, PowerQualityPricings=None, ServiceLocation=None, EndDeviceAssets=None, **kw_args):
         """Initializes a new 'ServiceDeliveryPoint' instance.
 
         @param phaseConfig: Phase configuration kind. Values are: "other", "twoPhaseTwoWire", "threePhaseTwoWire", "threePhaseFourWire", "twoPhaseThreeWire", "threePhaseThreeWire", "onePhaseThreeWire", "onePhaseTwoWire"
@@ -120,7 +120,7 @@ class ServiceDeliveryPoint(IdentifiedObject):
         self._EndDeviceAssets = []
         self.EndDeviceAssets = [] if EndDeviceAssets is None else EndDeviceAssets
 
-        super(ServiceDeliveryPoint, self).__init__(*args, **kw_args)
+        super(ServiceDeliveryPoint, self).__init__(**kw_args)
 
     def getServiceSupplier(self):
         """ServiceSupplier (Utility) utilising this service delivery point to deliver a service.

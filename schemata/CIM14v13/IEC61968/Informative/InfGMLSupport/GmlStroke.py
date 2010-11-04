@@ -20,7 +20,7 @@ class GmlStroke(IdentifiedObject):
     """The element encapsulating the graphical symbolization parameters for linear geometries.
     """
 
-    def __init__(self, opacity=0.0, linejoin='', dashOffset='', dashArray='', width=0.0, lineCap='', lineStyle='', GmlSvgParameters=None, GmlLineSymbols=None, GmlMarks=None, GmlColour=None, GmlPolygonSymbols=None, *args, **kw_args):
+    def __init__(self, opacity=0.0, linejoin='', dashOffset='', dashArray='', width=0.0, lineCap='', lineStyle='', GmlSvgParameters=None, GmlLineSymbols=None, GmlMarks=None, GmlColour=None, GmlPolygonSymbols=None, **kw_args):
         """Initializes a new 'GmlStroke' instance.
 
         @param opacity: Specifies the level of translucency to use when rendering the stroke. The value is encoded as a floating-point value between 0.0 and 1.0 with 0.0 representing completely transparent and 1.0 representing completely opaque, with a linear scale of translucency for intermediate values. The default value is 1.0 
@@ -72,7 +72,7 @@ class GmlStroke(IdentifiedObject):
         self._GmlPolygonSymbols = []
         self.GmlPolygonSymbols = [] if GmlPolygonSymbols is None else GmlPolygonSymbols
 
-        super(GmlStroke, self).__init__(*args, **kw_args)
+        super(GmlStroke, self).__init__(**kw_args)
 
     def getGmlSvgParameters(self):
         

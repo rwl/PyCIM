@@ -20,7 +20,7 @@ class Agreement(Document):
     """Formal agreement between two parties defining the terms and conditions for a set of services. The specifics of the services are, in turn, defined via one or more service agreements.
     """
 
-    def __init__(self, signDate='', validityInterval=None, *args, **kw_args):
+    def __init__(self, signDate='', validityInterval=None, **kw_args):
         """Initializes a new 'Agreement' instance.
 
         @param signDate: Date this agreement was consummated among associated persons and/or organisations. 
@@ -31,7 +31,7 @@ class Agreement(Document):
 
         self.validityInterval = validityInterval
 
-        super(Agreement, self).__init__(*args, **kw_args)
+        super(Agreement, self).__init__(**kw_args)
 
     # Date and time interval this agreement is valid (from going into effect to termination).
     validityInterval = None

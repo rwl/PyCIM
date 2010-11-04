@@ -20,7 +20,7 @@ class DefaultConstraintLimit(Curve):
     """Possibly time-varying max MW or MVA and optionally Min MW limit or MVA limit (Y1 and Y2, respectively) applied as a default value if no specific constraint limits are specified for a contingency analysis. Use CurveSchedule XAxisUnits to specify MW or MVA.
     """
 
-    def __init__(self, SecurityConstraintSum=None, *args, **kw_args):
+    def __init__(self, SecurityConstraintSum=None, **kw_args):
         """Initializes a new 'DefaultConstraintLimit' instance.
 
         @param SecurityConstraintSum:
@@ -28,7 +28,7 @@ class DefaultConstraintLimit(Curve):
         self._SecurityConstraintSum = None
         self.SecurityConstraintSum = SecurityConstraintSum
 
-        super(DefaultConstraintLimit, self).__init__(*args, **kw_args)
+        super(DefaultConstraintLimit, self).__init__(**kw_args)
 
     def getSecurityConstraintSum(self):
         

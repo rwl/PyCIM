@@ -20,7 +20,7 @@ class Season(Element):
     """A specified time period of the year, e.g., Spring, Summer, Fall, Winter
     """
 
-    def __init__(self, name='spring', startDate='', endDate='', CapacityBenefitMargin=None, ViolationLimits=None, SeasonDayTypeSchedules=None, *args, **kw_args):
+    def __init__(self, name='spring', startDate='', endDate='', CapacityBenefitMargin=None, ViolationLimits=None, SeasonDayTypeSchedules=None, **kw_args):
         """Initializes a new 'Season' instance.
 
         @param name: Name of the Season Values are: "spring", "fall", "winter", "summer"
@@ -48,7 +48,7 @@ class Season(Element):
         self._SeasonDayTypeSchedules = []
         self.SeasonDayTypeSchedules = [] if SeasonDayTypeSchedules is None else SeasonDayTypeSchedules
 
-        super(Season, self).__init__(*args, **kw_args)
+        super(Season, self).__init__(**kw_args)
 
     def getCapacityBenefitMargin(self):
         """Capacity Benefit Margin may differ based on the season

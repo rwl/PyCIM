@@ -20,7 +20,7 @@ class PSRType(IdentifiedObject):
     """Classifying instances of the same class, e.g. overhead and underground ACLineSegments. This classification mechanism is intended to provide flexibility outside the scope of this standard, i.e. provide customisation that is non standard.
     """
 
-    def __init__(self, PowerSystemResources=None, *args, **kw_args):
+    def __init__(self, PowerSystemResources=None, **kw_args):
         """Initializes a new 'PSRType' instance.
 
         @param PowerSystemResources: Power system resources classified with this PSRType.
@@ -28,7 +28,7 @@ class PSRType(IdentifiedObject):
         self._PowerSystemResources = []
         self.PowerSystemResources = [] if PowerSystemResources is None else PowerSystemResources
 
-        super(PSRType, self).__init__(*args, **kw_args)
+        super(PSRType, self).__init__(**kw_args)
 
     def getPowerSystemResources(self):
         """Power system resources classified with this PSRType.

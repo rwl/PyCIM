@@ -20,7 +20,7 @@ class Ground(ConductingEquipment):
     """A common point for connecting grounded conducting equipment such as shunt capacitors. The power system model can have more than one ground.
     """
 
-    def __init__(self, WindingInsulations=None, *args, **kw_args):
+    def __init__(self, WindingInsulations=None, **kw_args):
         """Initializes a new 'Ground' instance.
 
         @param WindingInsulations:
@@ -28,7 +28,7 @@ class Ground(ConductingEquipment):
         self._WindingInsulations = []
         self.WindingInsulations = [] if WindingInsulations is None else WindingInsulations
 
-        super(Ground, self).__init__(*args, **kw_args)
+        super(Ground, self).__init__(**kw_args)
 
     def getWindingInsulations(self):
         

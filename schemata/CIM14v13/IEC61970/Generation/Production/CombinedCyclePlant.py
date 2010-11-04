@@ -20,7 +20,7 @@ class CombinedCyclePlant(PowerSystemResource):
     """A set of combustion turbines and steam turbines where the exhaust heat from the combustion turbines is recovered to make steam for the steam turbines, resulting in greater overall plant efficiency
     """
 
-    def __init__(self, combCyclePlantRating=0.0, ThermalGeneratingUnits=None, *args, **kw_args):
+    def __init__(self, combCyclePlantRating=0.0, ThermalGeneratingUnits=None, **kw_args):
         """Initializes a new 'CombinedCyclePlant' instance.
 
         @param combCyclePlantRating: The combined cycle plant's active power output rating 
@@ -32,7 +32,7 @@ class CombinedCyclePlant(PowerSystemResource):
         self._ThermalGeneratingUnits = []
         self.ThermalGeneratingUnits = [] if ThermalGeneratingUnits is None else ThermalGeneratingUnits
 
-        super(CombinedCyclePlant, self).__init__(*args, **kw_args)
+        super(CombinedCyclePlant, self).__init__(**kw_args)
 
     def getThermalGeneratingUnits(self):
         """A thermal generating unit may be a member of a combined cycle plant

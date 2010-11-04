@@ -20,7 +20,7 @@ class TimeTariffInterval(Element):
     """One of a sequence of time intervals defined in terms of real time. It is typically used in association with TariffProfile to define the intervals in a time of use tariff structure, where startDateTime simultaneously determines the starting point of this interval and the ending point of the previous interval.
     """
 
-    def __init__(self, startDateTime='', sequenceNumber=0, TariffProfiles=None, Charges=None, *args, **kw_args):
+    def __init__(self, startDateTime='', sequenceNumber=0, TariffProfiles=None, Charges=None, **kw_args):
         """Initializes a new 'TimeTariffInterval' instance.
 
         @param startDateTime: A real time marker that defines the starting time (typically it is the time of day) for this interval. The interval extends to the start of the next interval or until it is reset to the start of the first interval by TariffProfile.tariffCycle. 
@@ -40,7 +40,7 @@ class TimeTariffInterval(Element):
         self._Charges = []
         self.Charges = [] if Charges is None else Charges
 
-        super(TimeTariffInterval, self).__init__(*args, **kw_args)
+        super(TimeTariffInterval, self).__init__(**kw_args)
 
     def getTariffProfiles(self):
         """All tariff profiles defined by this time tariff interval.

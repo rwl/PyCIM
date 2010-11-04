@@ -20,7 +20,7 @@ class StreetDetail(Element):
     """Street details, in the context of address.
     """
 
-    def __init__(self, buildingName='', type='', name='', withinTownLimits=False, number='', suffix='', prefix='', code='', addressGeneral='', suiteNumber='', *args, **kw_args):
+    def __init__(self, buildingName='', type='', name='', withinTownLimits=False, number='', suffix='', prefix='', code='', addressGeneral='', suiteNumber='', **kw_args):
         """Initializes a new 'StreetDetail' instance.
 
         @param buildingName: (if applicable) In certain cases the physical location of the place of interest does not have a direct point of entry from the street, but may be located inside a larger structure such as a building, complex, office block, apartment, etc. 
@@ -64,5 +64,5 @@ class StreetDetail(Element):
         #: Number of the apartment or suite.
         self.suiteNumber = suiteNumber
 
-        super(StreetDetail, self).__init__(*args, **kw_args)
+        super(StreetDetail, self).__init__(**kw_args)
 

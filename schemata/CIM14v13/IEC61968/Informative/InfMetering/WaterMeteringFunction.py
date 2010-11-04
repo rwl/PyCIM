@@ -20,9 +20,9 @@ class WaterMeteringFunction(DeviceFunction):
     """Functionality performed by a water meter. It's entirely possible that the metering system would carry information to/from water meters even though it was built primarily to carry the higher-value electric meter data.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'WaterMeteringFunction' instance.
 
         """
-        super(WaterMeteringFunction, self).__init__(*args, **kw_args)
+        super(WaterMeteringFunction, self).__init__(**kw_args)
 

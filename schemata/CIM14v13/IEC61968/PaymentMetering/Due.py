@@ -20,7 +20,7 @@ class Due(Element):
     """Details on amounts due for an account.
     """
 
-    def __init__(self, principle=0.0, current=0.0, charges=0.0, arrears=0.0, interest=0.0, *args, **kw_args):
+    def __init__(self, principle=0.0, current=0.0, charges=0.0, arrears=0.0, interest=0.0, **kw_args):
         """Initializes a new 'Due' instance.
 
         @param principle: Part of 'current' that constitutes the portion of the principle amount currently due. 
@@ -44,5 +44,5 @@ class Due(Element):
         #: Part of 'current' that constitutes the interest portion.
         self.interest = interest
 
-        super(Due, self).__init__(*args, **kw_args)
+        super(Due, self).__init__(**kw_args)
 

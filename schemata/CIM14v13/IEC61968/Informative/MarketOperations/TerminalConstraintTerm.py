@@ -20,7 +20,7 @@ class TerminalConstraintTerm(ConstraintTerm):
     """A constraint term associated with a specific terminal on a physical piece of equipment.
     """
 
-    def __init__(self, Terminal=None, *args, **kw_args):
+    def __init__(self, Terminal=None, **kw_args):
         """Initializes a new 'TerminalConstraintTerm' instance.
 
         @param Terminal:
@@ -28,7 +28,7 @@ class TerminalConstraintTerm(ConstraintTerm):
         self._Terminal = None
         self.Terminal = Terminal
 
-        super(TerminalConstraintTerm, self).__init__(*args, **kw_args)
+        super(TerminalConstraintTerm, self).__init__(**kw_args)
 
     def getTerminal(self):
         

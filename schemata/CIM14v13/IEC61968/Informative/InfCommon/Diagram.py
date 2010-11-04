@@ -20,7 +20,7 @@ class Diagram(Document):
     """GML and/or other means are used for rendering objects on various types of displays(geographic, schematic, other) and maps associated with various coordinate systems.
     """
 
-    def __init__(self, kind='geographic', GmlDiagramObjects=None, DesignLocations=None, GmlCoordinateSystem=None, *args, **kw_args):
+    def __init__(self, kind='geographic', GmlDiagramObjects=None, DesignLocations=None, GmlCoordinateSystem=None, **kw_args):
         """Initializes a new 'Diagram' instance.
 
         @param kind: Kind of this diagram. Values are: "geographic", "schematic", "designSketch", "internalView", "other"
@@ -40,7 +40,7 @@ class Diagram(Document):
         self._GmlCoordinateSystem = None
         self.GmlCoordinateSystem = GmlCoordinateSystem
 
-        super(Diagram, self).__init__(*args, **kw_args)
+        super(Diagram, self).__init__(**kw_args)
 
     def getGmlDiagramObjects(self):
         

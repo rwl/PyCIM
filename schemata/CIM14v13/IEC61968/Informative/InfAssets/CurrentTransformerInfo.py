@@ -20,7 +20,7 @@ class CurrentTransformerInfo(ElectricalInfo):
     """Used to define either the required additional electrical properties of a type of Current Transformer (CT) or a CT Model.
     """
 
-    def __init__(self, tertiaryFlsRating=0.0, secondaryFlsRating=0.0, primaryFlsRating=0.0, CurrentTransformerTypeAsset=None, secondaryRatio=None, CurrentTransformerAssets=None, CurrentTransformerAssertModels=None, primaryRatio=None, tertiaryRatio=None, *args, **kw_args):
+    def __init__(self, tertiaryFlsRating=0.0, secondaryFlsRating=0.0, primaryFlsRating=0.0, CurrentTransformerTypeAsset=None, secondaryRatio=None, CurrentTransformerAssets=None, CurrentTransformerAssertModels=None, primaryRatio=None, tertiaryRatio=None, **kw_args):
         """Initializes a new 'CurrentTransformerInfo' instance.
 
         @param tertiaryFlsRating: Full load secondary (FLS) rating for tertiary winding. 
@@ -57,7 +57,7 @@ class CurrentTransformerInfo(ElectricalInfo):
 
         self.tertiaryRatio = tertiaryRatio
 
-        super(CurrentTransformerInfo, self).__init__(*args, **kw_args)
+        super(CurrentTransformerInfo, self).__init__(**kw_args)
 
     def getCurrentTransformerTypeAsset(self):
         

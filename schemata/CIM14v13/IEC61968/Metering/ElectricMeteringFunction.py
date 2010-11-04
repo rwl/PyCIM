@@ -20,7 +20,7 @@ class ElectricMeteringFunction(DeviceFunction):
     """Functionality performed by an electric meter.
     """
 
-    def __init__(self, kWMultiplier=0, billingMultiplier=0.0, billingMultiplierApplied=False, transformerCTRatio=0.0, demandMultiplier=0.0, transformerRatiosApplied=False, transformerVTRatio=0.0, demandMultiplierApplied=False, currentRating=0.0, kWhMultiplier=0, voltageRating=0.0, MeteringFunctionConfiguration=None, *args, **kw_args):
+    def __init__(self, kWMultiplier=0, billingMultiplier=0.0, billingMultiplierApplied=False, transformerCTRatio=0.0, demandMultiplier=0.0, transformerRatiosApplied=False, transformerVTRatio=0.0, demandMultiplierApplied=False, currentRating=0.0, kWhMultiplier=0, voltageRating=0.0, MeteringFunctionConfiguration=None, **kw_args):
         """Initializes a new 'ElectricMeteringFunction' instance.
 
         @param kWMultiplier: Meter kW (pulse) multiplier, used as a multiplier for a meter register reading to determine the actual amount of usage for which to bill a customer. 
@@ -72,7 +72,7 @@ class ElectricMeteringFunction(DeviceFunction):
         self._MeteringFunctionConfiguration = None
         self.MeteringFunctionConfiguration = MeteringFunctionConfiguration
 
-        super(ElectricMeteringFunction, self).__init__(*args, **kw_args)
+        super(ElectricMeteringFunction, self).__init__(**kw_args)
 
     def getMeteringFunctionConfiguration(self):
         """Configuration for this electric metering function.

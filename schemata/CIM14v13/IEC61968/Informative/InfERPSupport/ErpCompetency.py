@@ -20,7 +20,7 @@ class ErpCompetency(IdentifiedObject):
     """Information that describes aptitudes of a utility employee. Unlike Skills that an ErpPerson must be certified to perform before undertaking certain type of assignments (to be able to perfrom a Craft), ErpCompetency has more to do with typical Human Resource (HR) matters such as schooling, training, etc.
     """
 
-    def __init__(self, ErpPersons=None, *args, **kw_args):
+    def __init__(self, ErpPersons=None, **kw_args):
         """Initializes a new 'ErpCompetency' instance.
 
         @param ErpPersons:
@@ -28,7 +28,7 @@ class ErpCompetency(IdentifiedObject):
         self._ErpPersons = []
         self.ErpPersons = [] if ErpPersons is None else ErpPersons
 
-        super(ErpCompetency, self).__init__(*args, **kw_args)
+        super(ErpCompetency, self).__init__(**kw_args)
 
     def getErpPersons(self):
         

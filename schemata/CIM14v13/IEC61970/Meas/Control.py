@@ -20,7 +20,7 @@ class Control(IdentifiedObject):
     """Control is used for supervisory/device control. It represents control outputs that are used to change the state in a process, e.g. close or open breaker, a set point value or a raise lower command.
     """
 
-    def __init__(self, timeStamp='', operationInProgress=False, RemoteControl=None, Unit=None, RegulatingCondEq=None, ControlType=None, *args, **kw_args):
+    def __init__(self, timeStamp='', operationInProgress=False, RemoteControl=None, Unit=None, RegulatingCondEq=None, ControlType=None, **kw_args):
         """Initializes a new 'Control' instance.
 
         @param timeStamp: The last time a control output was sent 
@@ -48,7 +48,7 @@ class Control(IdentifiedObject):
         self._ControlType = None
         self.ControlType = ControlType
 
-        super(Control, self).__init__(*args, **kw_args)
+        super(Control, self).__init__(**kw_args)
 
     def getRemoteControl(self):
         """The remote point controlling the physical actuator.

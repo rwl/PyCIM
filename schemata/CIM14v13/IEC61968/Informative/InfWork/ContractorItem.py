@@ -20,7 +20,7 @@ class ContractorItem(IdentifiedObject):
     """Contractor information for work task.
     """
 
-    def __init__(self, cost=0.0, bidAmount=0.0, activityCode='', WorkTask=None, WorkCostDetail=None, ErpPayables=None, status=None, *args, **kw_args):
+    def __init__(self, cost=0.0, bidAmount=0.0, activityCode='', WorkTask=None, WorkCostDetail=None, ErpPayables=None, status=None, **kw_args):
         """Initializes a new 'ContractorItem' instance.
 
         @param cost: The total amount charged. 
@@ -51,7 +51,7 @@ class ContractorItem(IdentifiedObject):
 
         self.status = status
 
-        super(ContractorItem, self).__init__(*args, **kw_args)
+        super(ContractorItem, self).__init__(**kw_args)
 
     def getWorkTask(self):
         

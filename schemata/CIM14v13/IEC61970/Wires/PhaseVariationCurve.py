@@ -20,7 +20,7 @@ class PhaseVariationCurve(Curve):
     """A Phase Variation Curve describes the phase shift in relationship to tap step changes.  The tap step is represented using the xValue and the phase shift using y1value.
     """
 
-    def __init__(self, PhaseTapChanger=None, *args, **kw_args):
+    def __init__(self, PhaseTapChanger=None, **kw_args):
         """Initializes a new 'PhaseVariationCurve' instance.
 
         @param PhaseTapChanger: A PhaseVariationCurve defines phase shift changes for a PhaseTapChanger.
@@ -28,7 +28,7 @@ class PhaseVariationCurve(Curve):
         self._PhaseTapChanger = None
         self.PhaseTapChanger = PhaseTapChanger
 
-        super(PhaseVariationCurve, self).__init__(*args, **kw_args)
+        super(PhaseVariationCurve, self).__init__(**kw_args)
 
     def getPhaseTapChanger(self):
         """A PhaseVariationCurve defines phase shift changes for a PhaseTapChanger.

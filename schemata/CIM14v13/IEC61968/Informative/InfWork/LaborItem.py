@@ -20,7 +20,7 @@ class LaborItem(IdentifiedObject):
     """Labor used for work order.
     """
 
-    def __init__(self, laborRate=0.0, cost=0.0, activityCode='', laborDuration=0.0, WorkCostDetail=None, ErpPersons=None, status=None, WorkTask=None, *args, **kw_args):
+    def __init__(self, laborRate=0.0, cost=0.0, activityCode='', laborDuration=0.0, WorkCostDetail=None, ErpPersons=None, status=None, WorkTask=None, **kw_args):
         """Initializes a new 'LaborItem' instance.
 
         @param laborRate: The labor rate applied for work. 
@@ -55,7 +55,7 @@ class LaborItem(IdentifiedObject):
         self._WorkTask = None
         self.WorkTask = WorkTask
 
-        super(LaborItem, self).__init__(*args, **kw_args)
+        super(LaborItem, self).__init__(**kw_args)
 
     def getWorkCostDetail(self):
         

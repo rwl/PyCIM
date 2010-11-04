@@ -20,7 +20,7 @@ class StaticVarCompensator(RegulatingCondEq):
     """A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.  The SVC may operate in fixed MVar output mode or in voltage control mode.  When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero.
     """
 
-    def __init__(self, sVCControlMode='off', capacitiveRating=0.0, slope=0.0, voltageSetPoint=0.0, inductiveRating=0.0, *args, **kw_args):
+    def __init__(self, sVCControlMode='off', capacitiveRating=0.0, slope=0.0, voltageSetPoint=0.0, inductiveRating=0.0, **kw_args):
         """Initializes a new 'StaticVarCompensator' instance.
 
         @param sVCControlMode: SVC control mode. Values are: "off", "reactivePower", "voltage"
@@ -44,5 +44,5 @@ class StaticVarCompensator(RegulatingCondEq):
         #: Maximum available inductive reactive power
         self.inductiveRating = inductiveRating
 
-        super(StaticVarCompensator, self).__init__(*args, **kw_args)
+        super(StaticVarCompensator, self).__init__(**kw_args)
 

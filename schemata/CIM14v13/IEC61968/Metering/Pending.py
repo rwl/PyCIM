@@ -20,7 +20,7 @@ class Pending(Element):
     """When present, a scalar conversion that is associated with IntervalBlock and which needs to be applied to every contained IntervalReading value. This conversion results in a new associated ReadingType, reflecting the true dimensions of interval reading values after the conversion.
     """
 
-    def __init__(self, offset=0, scalarNumerator=0, scalarFloat=0.0, scalarDenominator=0, multiplyBeforeAdd=False, ReadingType=None, IntervalBlocks=None, *args, **kw_args):
+    def __init__(self, offset=0, scalarNumerator=0, scalarFloat=0.0, scalarDenominator=0, multiplyBeforeAdd=False, ReadingType=None, IntervalBlocks=None, **kw_args):
         """Initializes a new 'Pending' instance.
 
         @param offset: (if applicable) Offset to be added as well as multiplication using scalars. 
@@ -52,7 +52,7 @@ class Pending(Element):
         self._IntervalBlocks = []
         self.IntervalBlocks = [] if IntervalBlocks is None else IntervalBlocks
 
-        super(Pending, self).__init__(*args, **kw_args)
+        super(Pending, self).__init__(**kw_args)
 
     def getReadingType(self):
         """Reading type resulting from this pending conversion.

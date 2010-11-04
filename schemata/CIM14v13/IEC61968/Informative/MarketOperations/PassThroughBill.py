@@ -20,7 +20,7 @@ class PassThroughBill(Document):
     """Pass Through Bill is used for: 1)Two sided charge transactions with or without ISO involvement (hence the ?pass thru?) 2) Specific direct charges or payments that are calculated outside or provided directly to settlements 3) Specific charge bill determinants that are externally supplied and used in charge calculations
     """
 
-    def __init__(self, transactionDate='', transactionType='', billRunType='', timeZone='', taxAmount=0.0, effectiveDate='', tradeDate='', billStart='', price=0.0, soldTo='', previousStart='', providedBy='', productCode='', isProfiled=False, quantity=None, previousEnd='', serviceStart='', paidTo='', billEnd='', amount=0.0, serviceEnd='', billedTo='', isDisputed=False, MarketStatementLineItem=None, UserAttributes=None, ChargeProfiles=None, *args, **kw_args):
+    def __init__(self, transactionDate='', transactionType='', billRunType='', timeZone='', taxAmount=0.0, effectiveDate='', tradeDate='', billStart='', price=0.0, soldTo='', previousStart='', providedBy='', productCode='', isProfiled=False, quantity=None, previousEnd='', serviceStart='', paidTo='', billEnd='', amount=0.0, serviceEnd='', billedTo='', isDisputed=False, MarketStatementLineItem=None, UserAttributes=None, ChargeProfiles=None, **kw_args):
         """Initializes a new 'PassThroughBill' instance.
 
         @param transactionDate: The date the transaction occurs. 
@@ -128,7 +128,7 @@ class PassThroughBill(Document):
         self._ChargeProfiles = []
         self.ChargeProfiles = [] if ChargeProfiles is None else ChargeProfiles
 
-        super(PassThroughBill, self).__init__(*args, **kw_args)
+        super(PassThroughBill, self).__init__(**kw_args)
 
     def getMarketStatementLineItem(self):
         

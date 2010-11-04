@@ -20,7 +20,7 @@ class ErpBOM(Document):
     """Information that generally describes the Bill of Material Structure and its contents for a utility.  This is used by ERP systems to transfer Bill of Material information between two business applications.
     """
 
-    def __init__(self, Design=None, ErpBomItemDatas=None, *args, **kw_args):
+    def __init__(self, Design=None, ErpBomItemDatas=None, **kw_args):
         """Initializes a new 'ErpBOM' instance.
 
         @param Design:
@@ -32,7 +32,7 @@ class ErpBOM(Document):
         self._ErpBomItemDatas = []
         self.ErpBomItemDatas = [] if ErpBomItemDatas is None else ErpBomItemDatas
 
-        super(ErpBOM, self).__init__(*args, **kw_args)
+        super(ErpBOM, self).__init__(**kw_args)
 
     def getDesign(self):
         

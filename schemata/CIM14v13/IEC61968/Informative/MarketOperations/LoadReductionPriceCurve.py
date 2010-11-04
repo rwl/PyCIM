@@ -20,7 +20,7 @@ class LoadReductionPriceCurve(Curve):
     """This is the price sensitivity that bidder expresses for allowing market load interruption.  Relationship between price (Y1-axis) vs. MW (X-axis).
     """
 
-    def __init__(self, LoadBids=None, *args, **kw_args):
+    def __init__(self, LoadBids=None, **kw_args):
         """Initializes a new 'LoadReductionPriceCurve' instance.
 
         @param LoadBids:
@@ -28,7 +28,7 @@ class LoadReductionPriceCurve(Curve):
         self._LoadBids = []
         self.LoadBids = [] if LoadBids is None else LoadBids
 
-        super(LoadReductionPriceCurve, self).__init__(*args, **kw_args)
+        super(LoadReductionPriceCurve, self).__init__(**kw_args)
 
     def getLoadBids(self):
         

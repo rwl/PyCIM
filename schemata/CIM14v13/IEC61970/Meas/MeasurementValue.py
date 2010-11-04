@@ -20,7 +20,7 @@ class MeasurementValue(IdentifiedObject):
     """The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement.
     """
 
-    def __init__(self, sensorAccuracy=0.0, timeStamp='', GmlValues=None, MeasurementValueSource=None, ErpPerson=None, ProcedureDataSets=None, RemoteSource=None, MeasurementValueQuality=None, *args, **kw_args):
+    def __init__(self, sensorAccuracy=0.0, timeStamp='', GmlValues=None, MeasurementValueSource=None, ErpPerson=None, ProcedureDataSets=None, RemoteSource=None, MeasurementValueQuality=None, **kw_args):
         """Initializes a new 'MeasurementValue' instance.
 
         @param sensorAccuracy: The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions. 
@@ -56,7 +56,7 @@ class MeasurementValue(IdentifiedObject):
         self._MeasurementValueQuality = None
         self.MeasurementValueQuality = MeasurementValueQuality
 
-        super(MeasurementValue, self).__init__(*args, **kw_args)
+        super(MeasurementValue, self).__init__(**kw_args)
 
     def getGmlValues(self):
         

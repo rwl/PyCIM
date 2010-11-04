@@ -20,7 +20,7 @@ class Work(Document):
     """Document used to request, initiate, track and record work. This is synonymous with Work Breakdown Structure (WBS), which is traversed through the (currently informative) recursive association of Work. Note that the work name is equal to the WBS name, which is given in the inherited 'name' attribute.
     """
 
-    def __init__(self, kind='service', requestDateTime='', priority='', WorkFlowSteps=None, Customers=None, WorkTasks=None, ErpProjectAccounting=None, Project=None, Designs=None, BusinessCase=None, WorkBillingInfo=None, WorkCostDetails=None, Request=None, *args, **kw_args):
+    def __init__(self, kind='service', requestDateTime='', priority='', WorkFlowSteps=None, Customers=None, WorkTasks=None, ErpProjectAccounting=None, Project=None, Designs=None, BusinessCase=None, WorkBillingInfo=None, WorkCostDetails=None, Request=None, **kw_args):
         """Initializes a new 'Work' instance.
 
         @param kind: Kind of work. Values are: "service", "reconnect", "disconnect", "other", "meter", "construction", "inspection", "maintenance"
@@ -76,7 +76,7 @@ class Work(Document):
         self._Request = None
         self.Request = Request
 
-        super(Work, self).__init__(*args, **kw_args)
+        super(Work, self).__init__(**kw_args)
 
     def getWorkFlowSteps(self):
         

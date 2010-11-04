@@ -20,7 +20,7 @@ class MutualCoupling(IdentifiedObject):
     """This class represents the zero sequence line mutual coupling.
     """
 
-    def __init__(self, distance12=0.0, b0ch=0.0, r0=0.0, g0ch=0.0, distance22=0.0, distance21=0.0, distance11=0.0, x0=0.0, Second_Terminal=None, First_Terminal=None, *args, **kw_args):
+    def __init__(self, distance12=0.0, b0ch=0.0, r0=0.0, g0ch=0.0, distance22=0.0, distance21=0.0, distance11=0.0, x0=0.0, Second_Terminal=None, First_Terminal=None, **kw_args):
         """Initializes a new 'MutualCoupling' instance.
 
         @param distance12: Distance from the first line's from specified terminal to end of coupled region 
@@ -64,7 +64,7 @@ class MutualCoupling(IdentifiedObject):
         self._First_Terminal = None
         self.First_Terminal = First_Terminal
 
-        super(MutualCoupling, self).__init__(*args, **kw_args)
+        super(MutualCoupling, self).__init__(**kw_args)
 
     def getSecond_Terminal(self):
         """The starting terminal for the calculation of distances along the second branch of the mutual coupling.

@@ -20,7 +20,7 @@ class DuctTypeAsset(StructureTypeAsset):
     """A Duct contains underground cables and is contained within a duct bank. The xCoord and yCoord attributes define its positioning within the DuctBank.
     """
 
-    def __init__(self, xCoord=0, yCoord=0, CableAssets=None, DuctBankTypeAsset=None, *args, **kw_args):
+    def __init__(self, xCoord=0, yCoord=0, CableAssets=None, DuctBankTypeAsset=None, **kw_args):
         """Initializes a new 'DuctTypeAsset' instance.
 
         @param xCoord: X position of the duct within the duct bank. 
@@ -40,7 +40,7 @@ class DuctTypeAsset(StructureTypeAsset):
         self._DuctBankTypeAsset = None
         self.DuctBankTypeAsset = DuctBankTypeAsset
 
-        super(DuctTypeAsset, self).__init__(*args, **kw_args)
+        super(DuctTypeAsset, self).__init__(**kw_args)
 
     def getCableAssets(self):
         

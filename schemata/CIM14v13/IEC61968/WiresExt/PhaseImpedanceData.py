@@ -20,7 +20,7 @@ class PhaseImpedanceData(Element):
     """Triplet of resistance, reactance, and susceptance matrix element values.
     """
 
-    def __init__(self, x=0.0, sequenceNumber=0, b=0.0, r=0.0, PhaseImpedance=None, *args, **kw_args):
+    def __init__(self, x=0.0, sequenceNumber=0, b=0.0, r=0.0, PhaseImpedance=None, **kw_args):
         """Initializes a new 'PhaseImpedanceData' instance.
 
         @param x: Reactance matrix element value, per length of unit. 
@@ -44,7 +44,7 @@ class PhaseImpedanceData(Element):
         self._PhaseImpedance = None
         self.PhaseImpedance = PhaseImpedance
 
-        super(PhaseImpedanceData, self).__init__(*args, **kw_args)
+        super(PhaseImpedanceData, self).__init__(**kw_args)
 
     def getPhaseImpedance(self):
         """Conductor phase impedance to which this data belongs.

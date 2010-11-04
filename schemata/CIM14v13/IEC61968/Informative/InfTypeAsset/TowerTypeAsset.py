@@ -20,7 +20,7 @@ class TowerTypeAsset(StructureTypeAsset):
     """Documentation for a generic tower that may be used for various purposes such as work planning. A transmission tower carrying two 3-phase circuits will have 2 instances of Connection, each of which will have 3 MountingPoint instances, one for each phase all with coordinates relative to a common origin on the tower. (It may also have a 3rd Connection with a single MountingPoint for the Neutral line).
     """
 
-    def __init__(self, TowerAssetModels=None, *args, **kw_args):
+    def __init__(self, TowerAssetModels=None, **kw_args):
         """Initializes a new 'TowerTypeAsset' instance.
 
         @param TowerAssetModels:
@@ -28,7 +28,7 @@ class TowerTypeAsset(StructureTypeAsset):
         self._TowerAssetModels = []
         self.TowerAssetModels = [] if TowerAssetModels is None else TowerAssetModels
 
-        super(TowerTypeAsset, self).__init__(*args, **kw_args)
+        super(TowerTypeAsset, self).__init__(**kw_args)
 
     def getTowerAssetModels(self):
         

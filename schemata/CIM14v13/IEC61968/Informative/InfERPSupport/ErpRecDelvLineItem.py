@@ -20,7 +20,7 @@ class ErpRecDelvLineItem(IdentifiedObject):
     """Of an ErpReceiveDelivery, this is an individually received good or service by the Organisation receiving goods or services. It may be used to indicate receipt of goods in conjunction with a purchase order line item.
     """
 
-    def __init__(self, status=None, ErpPOLineItem=None, ErpReceiveDelivery=None, MaterialItems=None, ErpInvoiceLineItem=None, Assets=None, *args, **kw_args):
+    def __init__(self, status=None, ErpPOLineItem=None, ErpReceiveDelivery=None, MaterialItems=None, ErpInvoiceLineItem=None, Assets=None, **kw_args):
         """Initializes a new 'ErpRecDelvLineItem' instance.
 
         @param status:
@@ -47,7 +47,7 @@ class ErpRecDelvLineItem(IdentifiedObject):
         self._Assets = []
         self.Assets = [] if Assets is None else Assets
 
-        super(ErpRecDelvLineItem, self).__init__(*args, **kw_args)
+        super(ErpRecDelvLineItem, self).__init__(**kw_args)
 
     status = None
 

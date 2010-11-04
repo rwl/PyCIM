@@ -20,7 +20,7 @@ class InfoQuestion(Document):
     """Questions and answers associated with a type of document for purposes of clarification. Questions may be predefined or ad hoc.
     """
 
-    def __init__(self, questionRemark='', answer='', questionCategory='', questionCode='', answerDateTime='', questionText='', answerRemark='', *args, **kw_args):
+    def __init__(self, questionRemark='', answer='', questionCategory='', questionCode='', answerDateTime='', questionText='', answerRemark='', **kw_args):
         """Initializes a new 'InfoQuestion' instance.
 
         @param questionRemark: Remarks to qualify the question in this situation. 
@@ -52,5 +52,5 @@ class InfoQuestion(Document):
         #: Remarks to qualify the answer.
         self.answerRemark = answerRemark
 
-        super(InfoQuestion, self).__init__(*args, **kw_args)
+        super(InfoQuestion, self).__init__(**kw_args)
 

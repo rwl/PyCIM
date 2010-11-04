@@ -20,7 +20,7 @@ class ConnectivityNode(IdentifiedObject):
     """Connectivity nodes are points where terminals of conducting equipment are connected together with zero impedance.
     """
 
-    def __init__(self, Pnode=None, BusNameMarker=None, LossPenaltyFactors=None, TopologicalNode=None, NodeConstraintTerms=None, Terminals=None, ConnectivityNodeContainer=None, *args, **kw_args):
+    def __init__(self, Pnode=None, BusNameMarker=None, LossPenaltyFactors=None, TopologicalNode=None, NodeConstraintTerms=None, Terminals=None, ConnectivityNodeContainer=None, **kw_args):
         """Initializes a new 'ConnectivityNode' instance.
 
         @param Pnode:
@@ -52,7 +52,7 @@ class ConnectivityNode(IdentifiedObject):
         self._ConnectivityNodeContainer = None
         self.ConnectivityNodeContainer = ConnectivityNodeContainer
 
-        super(ConnectivityNode, self).__init__(*args, **kw_args)
+        super(ConnectivityNode, self).__init__(**kw_args)
 
     def getPnode(self):
         

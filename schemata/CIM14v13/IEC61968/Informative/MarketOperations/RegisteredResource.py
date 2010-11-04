@@ -20,7 +20,7 @@ class RegisteredResource(IdentifiedObject):
     """A resource that is registered through the RTO participant registration system. Examples include generating unit, customer meter, and a non-physical generator or load.
     """
 
-    def __init__(self, rtoID='', Meters=None, Markets=None, ResourceGroups=None, MarketProducts=None, Pnode=None, Organisation=None, *args, **kw_args):
+    def __init__(self, rtoID='', Meters=None, Markets=None, ResourceGroups=None, MarketProducts=None, Pnode=None, Organisation=None, **kw_args):
         """Initializes a new 'RegisteredResource' instance.
 
         @param rtoID: Unique name obtained via RTO registration 
@@ -52,7 +52,7 @@ class RegisteredResource(IdentifiedObject):
         self._Organisation = None
         self.Organisation = Organisation
 
-        super(RegisteredResource, self).__init__(*args, **kw_args)
+        super(RegisteredResource, self).__init__(**kw_args)
 
     def getMeters(self):
         

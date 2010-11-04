@@ -20,7 +20,7 @@ class BreakerAssetModel(ElectricalAssetModel):
     """Documentation for a type of a breaker asset of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, BreakerInfo=None, BreakerAssets=None, BreakerTypeAsset=None, *args, **kw_args):
+    def __init__(self, BreakerInfo=None, BreakerAssets=None, BreakerTypeAsset=None, **kw_args):
         """Initializes a new 'BreakerAssetModel' instance.
 
         @param BreakerInfo:
@@ -36,7 +36,7 @@ class BreakerAssetModel(ElectricalAssetModel):
         self._BreakerTypeAsset = None
         self.BreakerTypeAsset = BreakerTypeAsset
 
-        super(BreakerAssetModel, self).__init__(*args, **kw_args)
+        super(BreakerAssetModel, self).__init__(**kw_args)
 
     def getBreakerInfo(self):
         

@@ -20,7 +20,7 @@ class LoadMgmtFunction(DeviceFunction):
     """A collective function at an end device that manages the customer load.
     """
 
-    def __init__(self, schedulingBasis='tariffBased', loadStatus='noLoad', manualOverRide=False, overRideTimeOut=0.0, remoteOverRide=False, isAutoOp=False, Switches=None, LoadMgmtRecords=None, *args, **kw_args):
+    def __init__(self, schedulingBasis='tariffBased', loadStatus='noLoad', manualOverRide=False, overRideTimeOut=0.0, remoteOverRide=False, isAutoOp=False, Switches=None, LoadMgmtRecords=None, **kw_args):
         """Initializes a new 'LoadMgmtFunction' instance.
 
         @param schedulingBasis: The basis of Load Management scheduling used here: Time Based, Tariff Based, Remote Control and Manual Control. Values are: "tariffBased", "remoteControl", "manualControl", "timeBased"
@@ -56,7 +56,7 @@ class LoadMgmtFunction(DeviceFunction):
         self._LoadMgmtRecords = []
         self.LoadMgmtRecords = [] if LoadMgmtRecords is None else LoadMgmtRecords
 
-        super(LoadMgmtFunction, self).__init__(*args, **kw_args)
+        super(LoadMgmtFunction, self).__init__(**kw_args)
 
     def getSwitches(self):
         

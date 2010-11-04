@@ -20,7 +20,7 @@ class TransactionSummary(Element):
     """The record of detail of payment transactions pertaining to one shift of operation (one record per 'transactionKind').
     """
 
-    def __init__(self, transactionKind='auxiliaryChargePayment', Shift=None, line=None, *args, **kw_args):
+    def __init__(self, transactionKind='auxiliaryChargePayment', Shift=None, line=None, **kw_args):
         """Initializes a new 'TransactionSummary' instance.
 
         @param transactionKind: 'Transaction.kind' for which 'transactionsTotal' is given. Values are: "auxiliaryChargePayment", "tokenExchange", "tokenCancellation", "transactionReversal", "diversePayment", "tokenFreeIssue", "other", "meterConfigurationToken", "tokenSalePayment", "accountPayment", "taxChargePayment", "serviceChargePayment", "tokenGrant"
@@ -35,7 +35,7 @@ class TransactionSummary(Element):
 
         self.line = line
 
-        super(TransactionSummary, self).__init__(*args, **kw_args)
+        super(TransactionSummary, self).__init__(**kw_args)
 
     def getShift(self):
         """Shift to which this summary applies.

@@ -20,7 +20,7 @@ class Fuse(Switch):
     """An overcurrent protective device with a circuit opening fusible part that is heated and severed by the passage of overcurrent through it. A fuse is considered a switching device because it breaks current.
     """
 
-    def __init__(self, ratingCurrent=0.0, *args, **kw_args):
+    def __init__(self, ratingCurrent=0.0, **kw_args):
         """Initializes a new 'Fuse' instance.
 
         @param ratingCurrent: Fault interrupting current rating. 
@@ -28,5 +28,5 @@ class Fuse(Switch):
         #: Fault interrupting current rating.
         self.ratingCurrent = ratingCurrent
 
-        super(Fuse, self).__init__(*args, **kw_args)
+        super(Fuse, self).__init__(**kw_args)
 

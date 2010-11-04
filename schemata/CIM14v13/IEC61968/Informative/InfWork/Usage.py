@@ -20,7 +20,7 @@ class Usage(IdentifiedObject):
     """The way material and assets are used to perform a certain type of work task. The way is described in text in the inheritied description attribute.
     """
 
-    def __init__(self, MaterialItem=None, WorkTask=None, status=None, WorkEquipmentAsset=None, *args, **kw_args):
+    def __init__(self, MaterialItem=None, WorkTask=None, status=None, WorkEquipmentAsset=None, **kw_args):
         """Initializes a new 'Usage' instance.
 
         @param MaterialItem:
@@ -39,7 +39,7 @@ class Usage(IdentifiedObject):
         self._WorkEquipmentAsset = None
         self.WorkEquipmentAsset = WorkEquipmentAsset
 
-        super(Usage, self).__init__(*args, **kw_args)
+        super(Usage, self).__init__(**kw_args)
 
     def getMaterialItem(self):
         

@@ -20,9 +20,9 @@ class SchematicLocation(Location):
     """Schematic location. Intended to be used in the context of diagrams (worked out by WG13 in 2008 and 2009).
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'SchematicLocation' instance.
 
         """
-        super(SchematicLocation, self).__init__(*args, **kw_args)
+        super(SchematicLocation, self).__init__(**kw_args)
 

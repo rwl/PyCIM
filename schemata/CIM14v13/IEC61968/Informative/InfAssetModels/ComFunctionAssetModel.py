@@ -20,7 +20,7 @@ class ComFunctionAssetModel(ElectricalAssetModel):
     """Documentation for a type of communication function of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, ComFunctionTypeAsset=None, *args, **kw_args):
+    def __init__(self, ComFunctionTypeAsset=None, **kw_args):
         """Initializes a new 'ComFunctionAssetModel' instance.
 
         @param ComFunctionTypeAsset:
@@ -28,7 +28,7 @@ class ComFunctionAssetModel(ElectricalAssetModel):
         self._ComFunctionTypeAsset = None
         self.ComFunctionTypeAsset = ComFunctionTypeAsset
 
-        super(ComFunctionAssetModel, self).__init__(*args, **kw_args)
+        super(ComFunctionAssetModel, self).__init__(**kw_args)
 
     def getComFunctionTypeAsset(self):
         

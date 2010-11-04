@@ -20,7 +20,7 @@ class ConductorAsset(Asset):
     """Physical asset used to perform the conductor's role.
     """
 
-    def __init__(self, groundingMethod='', isHorizontal=False, insulated=False, CircuitSection=None, ConductorAssetModel=None, ConductorSegment=None, *args, **kw_args):
+    def __init__(self, groundingMethod='', isHorizontal=False, insulated=False, CircuitSection=None, ConductorAssetModel=None, ConductorSegment=None, **kw_args):
         """Initializes a new 'ConductorAsset' instance.
 
         @param groundingMethod: Description of the method used for grounding the conductor. For a cable, the grounding/bonding shield may be multi-point, single-point, cross cable, or other. 
@@ -48,7 +48,7 @@ class ConductorAsset(Asset):
         self._ConductorSegment = None
         self.ConductorSegment = ConductorSegment
 
-        super(ConductorAsset, self).__init__(*args, **kw_args)
+        super(ConductorAsset, self).__init__(**kw_args)
 
     def getCircuitSection(self):
         

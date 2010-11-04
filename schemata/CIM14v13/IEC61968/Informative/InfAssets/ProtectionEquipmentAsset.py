@@ -20,7 +20,7 @@ class ProtectionEquipmentAsset(ElectricalAsset):
     """Physical asset performing ProtectionEquipment function.
     """
 
-    def __init__(self, phaseTrip=0.0, groundTrip=0.0, ProtectionEquipmentAssetModel=None, *args, **kw_args):
+    def __init__(self, phaseTrip=0.0, groundTrip=0.0, ProtectionEquipmentAssetModel=None, **kw_args):
         """Initializes a new 'ProtectionEquipmentAsset' instance.
 
         @param phaseTrip: Actual phase trip for this type of relay, if applicable. 
@@ -36,7 +36,7 @@ class ProtectionEquipmentAsset(ElectricalAsset):
         self._ProtectionEquipmentAssetModel = None
         self.ProtectionEquipmentAssetModel = ProtectionEquipmentAssetModel
 
-        super(ProtectionEquipmentAsset, self).__init__(*args, **kw_args)
+        super(ProtectionEquipmentAsset, self).__init__(**kw_args)
 
     def getProtectionEquipmentAssetModel(self):
         

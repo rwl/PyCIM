@@ -20,7 +20,7 @@ class Connection(IdentifiedObject):
     """A structure can have multiple connection points for electrical connections (e.g. line) each with multiple mounting points, one for each phase. e.g. a Tower may have three Connections, two with three mounting points, one for each phase and a third with a single mounting point for the neutral line. A pole, on the other hand, may have a single Connection with one, two or three mounting points depending on whether it is carrying 1,2 or 3 phases.
     """
 
-    def __init__(self, StructureTypeAssets=None, MountingPoints=None, *args, **kw_args):
+    def __init__(self, StructureTypeAssets=None, MountingPoints=None, **kw_args):
         """Initializes a new 'Connection' instance.
 
         @param StructureTypeAssets:
@@ -32,7 +32,7 @@ class Connection(IdentifiedObject):
         self._MountingPoints = []
         self.MountingPoints = [] if MountingPoints is None else MountingPoints
 
-        super(Connection, self).__init__(*args, **kw_args)
+        super(Connection, self).__init__(**kw_args)
 
     def getStructureTypeAssets(self):
         

@@ -20,7 +20,7 @@ class TransformerObservation(IdentifiedObject):
     """Common information captured during transformer inspections and/or diagnostics. Note that some properties may be measured through other means and therefore have measurement values in addition to the observed values recorded here.
     """
 
-    def __init__(self, oilNeutralizationNumber='', topOilTemp=0.0, dga='', pumpVibration='', oilColor='', oilIFT='', oilDielectricStrength=0.0, hotSpotTemp=0.0, oilLevel='', waterContent='', bushingTemp=0.0, furfuralDP='', freqResp='', status=None, WindingInsulationPFs=None, TransformerAsset=None, Transformer=None, BushingInsultationPFs=None, ProcedureDataSets=None, *args, **kw_args):
+    def __init__(self, oilNeutralizationNumber='', topOilTemp=0.0, dga='', pumpVibration='', oilColor='', oilIFT='', oilDielectricStrength=0.0, hotSpotTemp=0.0, oilLevel='', waterContent='', bushingTemp=0.0, furfuralDP='', freqResp='', status=None, WindingInsulationPFs=None, TransformerAsset=None, Transformer=None, BushingInsultationPFs=None, ProcedureDataSets=None, **kw_args):
         """Initializes a new 'TransformerObservation' instance.
 
         @param oilNeutralizationNumber: Oil Quality Analysis-Neutralization Number - Number - Mg KOH. 
@@ -99,7 +99,7 @@ class TransformerObservation(IdentifiedObject):
         self._ProcedureDataSets = []
         self.ProcedureDataSets = [] if ProcedureDataSets is None else ProcedureDataSets
 
-        super(TransformerObservation, self).__init__(*args, **kw_args)
+        super(TransformerObservation, self).__init__(**kw_args)
 
     status = None
 

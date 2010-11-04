@@ -20,7 +20,7 @@ class ChangeItem(IdentifiedObject):
     """Description for a single change within an ordered list of changes.
     """
 
-    def __init__(self, kind='add', sequenceNumber=0, PowerSystemResource=None, Location=None, Organisation=None, status=None, Asset=None, Document=None, GmlObservation=None, ErpPerson=None, Measurement=None, GmlSelector=None, ChangeSet=None, NetworkDataSet=None, *args, **kw_args):
+    def __init__(self, kind='add', sequenceNumber=0, PowerSystemResource=None, Location=None, Organisation=None, status=None, Asset=None, Document=None, GmlObservation=None, ErpPerson=None, Measurement=None, GmlSelector=None, ChangeSet=None, NetworkDataSet=None, **kw_args):
         """Initializes a new 'ChangeItem' instance.
 
         @param kind: Kind of change for the associated object. Values are: "add", "modify", "delete"
@@ -79,7 +79,7 @@ class ChangeItem(IdentifiedObject):
         self._NetworkDataSet = None
         self.NetworkDataSet = NetworkDataSet
 
-        super(ChangeItem, self).__init__(*args, **kw_args)
+        super(ChangeItem, self).__init__(**kw_args)
 
     def getPowerSystemResource(self):
         

@@ -20,7 +20,7 @@ class ConductorAssetModel(AssetModel):
     """A type of conductor made by a particular manufacturer (Organisation). Its ElectricalProperties are defined as being per unit length (which is defined by the unitLength attribute)
     """
 
-    def __init__(self, ConductorAssets=None, ConductorInfo=None, *args, **kw_args):
+    def __init__(self, ConductorAssets=None, ConductorInfo=None, **kw_args):
         """Initializes a new 'ConductorAssetModel' instance.
 
         @param ConductorAssets:
@@ -32,7 +32,7 @@ class ConductorAssetModel(AssetModel):
         self._ConductorInfo = None
         self.ConductorInfo = ConductorInfo
 
-        super(ConductorAssetModel, self).__init__(*args, **kw_args)
+        super(ConductorAssetModel, self).__init__(**kw_args)
 
     def getConductorAssets(self):
         

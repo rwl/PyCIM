@@ -20,7 +20,7 @@ class DeviceFunction(AssetFunction):
     """Function performed by a device such as a meter, communication equipment, controllers, etc.
     """
 
-    def __init__(self, disabled=False, ComEquipmentAsset=None, EndDeviceAsset=None, Registers=None, EndDeviceEvents=None, *args, **kw_args):
+    def __init__(self, disabled=False, ComEquipmentAsset=None, EndDeviceAsset=None, Registers=None, EndDeviceEvents=None, **kw_args):
         """Initializes a new 'DeviceFunction' instance.
 
         @param disabled: True if the device function is disabled (deactivated). Default is false (i.e., function is enabled). 
@@ -44,7 +44,7 @@ class DeviceFunction(AssetFunction):
         self._EndDeviceEvents = []
         self.EndDeviceEvents = [] if EndDeviceEvents is None else EndDeviceEvents
 
-        super(DeviceFunction, self).__init__(*args, **kw_args)
+        super(DeviceFunction, self).__init__(**kw_args)
 
     def getComEquipmentAsset(self):
         """Communication equipment asset performing this device function.

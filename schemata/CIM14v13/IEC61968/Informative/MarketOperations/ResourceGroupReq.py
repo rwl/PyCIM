@@ -20,7 +20,7 @@ class ResourceGroupReq(IdentifiedObject):
     """Ancillary service requirements for a market.
     """
 
-    def __init__(self, ResourceGroup=None, RTOs=None, *args, **kw_args):
+    def __init__(self, ResourceGroup=None, RTOs=None, **kw_args):
         """Initializes a new 'ResourceGroupReq' instance.
 
         @param ResourceGroup:
@@ -32,7 +32,7 @@ class ResourceGroupReq(IdentifiedObject):
         self._RTOs = []
         self.RTOs = [] if RTOs is None else RTOs
 
-        super(ResourceGroupReq, self).__init__(*args, **kw_args)
+        super(ResourceGroupReq, self).__init__(**kw_args)
 
     def getResourceGroup(self):
         

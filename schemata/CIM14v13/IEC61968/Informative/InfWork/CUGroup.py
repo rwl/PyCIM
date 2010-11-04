@@ -20,7 +20,7 @@ class CUGroup(IdentifiedObject):
     """A Compatible Unit Group identifies a set of compatible units which may be jointly utilized for estimating and designating jobs.
     """
 
-    def __init__(self, ParentCUGroups=None, ChildCUGroups=None, DesignLocationCUs=None, status=None, CompatibleUnits=None, *args, **kw_args):
+    def __init__(self, ParentCUGroups=None, ChildCUGroups=None, DesignLocationCUs=None, status=None, CompatibleUnits=None, **kw_args):
         """Initializes a new 'CUGroup' instance.
 
         @param ParentCUGroups:
@@ -43,7 +43,7 @@ class CUGroup(IdentifiedObject):
         self._CompatibleUnits = []
         self.CompatibleUnits = [] if CompatibleUnits is None else CompatibleUnits
 
-        super(CUGroup, self).__init__(*args, **kw_args)
+        super(CUGroup, self).__init__(**kw_args)
 
     def getParentCUGroups(self):
         

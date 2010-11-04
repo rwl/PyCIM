@@ -20,7 +20,7 @@ class BushingModel(ElectricalAssetModel):
     """Documentation for a type of a bushing of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, insulationKind='paperoil', BushingAsset=None, *args, **kw_args):
+    def __init__(self, insulationKind='paperoil', BushingAsset=None, **kw_args):
         """Initializes a new 'BushingModel' instance.
 
         @param insulationKind: Kind of insulation used in this bushing model. Values are: "paperoil", "compound", "other", "solidPorcelain"
@@ -32,7 +32,7 @@ class BushingModel(ElectricalAssetModel):
         self._BushingAsset = None
         self.BushingAsset = BushingAsset
 
-        super(BushingModel, self).__init__(*args, **kw_args)
+        super(BushingModel, self).__init__(**kw_args)
 
     def getBushingAsset(self):
         

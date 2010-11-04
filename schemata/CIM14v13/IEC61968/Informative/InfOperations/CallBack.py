@@ -20,7 +20,7 @@ class CallBack(IdentifiedObject):
     """Information about a planned CallBack or a CallBack that has occurred, from the utility to a customer regarding the status and plans about resolving trouble, performing work, etc.
     """
 
-    def __init__(self, advice='', contactDetail='', comment='', problemInfo='', dateTime='', ErpPersons=None, Appointments=None, status=None, TroubleTickets=None, *args, **kw_args):
+    def __init__(self, advice='', contactDetail='', comment='', problemInfo='', dateTime='', ErpPersons=None, Appointments=None, status=None, TroubleTickets=None, **kw_args):
         """Initializes a new 'CallBack' instance.
 
         @param advice: Advice already given to the customer during this call back. 
@@ -59,7 +59,7 @@ class CallBack(IdentifiedObject):
         self._TroubleTickets = []
         self.TroubleTickets = [] if TroubleTickets is None else TroubleTickets
 
-        super(CallBack, self).__init__(*args, **kw_args)
+        super(CallBack, self).__init__(**kw_args)
 
     def getErpPersons(self):
         

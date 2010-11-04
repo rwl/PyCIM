@@ -20,7 +20,7 @@ class Resistor(ConductingEquipment):
     """Resistor, typically used in filter configurations or as earthing resistor for transformers.  Used for electrical model of distribution networks.
     """
 
-    def __init__(self, ResistorTypeAsset=None, ResistorAsset=None, *args, **kw_args):
+    def __init__(self, ResistorTypeAsset=None, ResistorAsset=None, **kw_args):
         """Initializes a new 'Resistor' instance.
 
         @param ResistorTypeAsset:
@@ -32,7 +32,7 @@ class Resistor(ConductingEquipment):
         self._ResistorAsset = None
         self.ResistorAsset = ResistorAsset
 
-        super(Resistor, self).__init__(*args, **kw_args)
+        super(Resistor, self).__init__(**kw_args)
 
     def getResistorTypeAsset(self):
         

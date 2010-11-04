@@ -20,7 +20,7 @@ class BasicIntervalSchedule(IdentifiedObject):
     """Schedule of values at points in time.
     """
 
-    def __init__(self, value2Multiplier='m', value1Unit='m2', value2Unit='m2', value1Multiplier='m', startTime='', *args, **kw_args):
+    def __init__(self, value2Multiplier='m', value1Unit='m2', value2Unit='m2', value1Multiplier='m', startTime='', **kw_args):
         """Initializes a new 'BasicIntervalSchedule' instance.
 
         @param value2Multiplier: Multiplier for value2. Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
@@ -44,5 +44,5 @@ class BasicIntervalSchedule(IdentifiedObject):
         #: The time for the first time point.
         self.startTime = startTime
 
-        super(BasicIntervalSchedule, self).__init__(*args, **kw_args)
+        super(BasicIntervalSchedule, self).__init__(**kw_args)
 

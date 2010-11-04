@@ -20,7 +20,7 @@ class ErpPOLineItem(Document):
     """Of an ErpPurchaseOrder, this is an individually ordered item or product along with the quantity, price and other descriptive information.
     """
 
-    def __init__(self, ErpReqLineItem=None, ErpRecDelLineItem=None, AssetModelCatalogueItem=None, ErpPurchaseOrder=None, MaterialItem=None, *args, **kw_args):
+    def __init__(self, ErpReqLineItem=None, ErpRecDelLineItem=None, AssetModelCatalogueItem=None, ErpPurchaseOrder=None, MaterialItem=None, **kw_args):
         """Initializes a new 'ErpPOLineItem' instance.
 
         @param ErpReqLineItem:
@@ -44,7 +44,7 @@ class ErpPOLineItem(Document):
         self._MaterialItem = None
         self.MaterialItem = MaterialItem
 
-        super(ErpPOLineItem, self).__init__(*args, **kw_args)
+        super(ErpPOLineItem, self).__init__(**kw_args)
 
     def getErpReqLineItem(self):
         

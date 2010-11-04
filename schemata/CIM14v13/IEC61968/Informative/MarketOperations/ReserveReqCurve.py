@@ -20,7 +20,7 @@ class ReserveReqCurve(RegularIntervalSchedule):
     """A curve relating  reserve requirement versus time, showing the values of a specific reserve requirement for each unit of the period covered. The  curve can be based on 'absolute' time or on 'normalized' time.  X is time, typically expressed in absolute time Y1 is reserve requirement, typically expressed in MW
     """
 
-    def __init__(self, ReserveReq=None, *args, **kw_args):
+    def __init__(self, ReserveReq=None, **kw_args):
         """Initializes a new 'ReserveReqCurve' instance.
 
         @param ReserveReq:
@@ -28,7 +28,7 @@ class ReserveReqCurve(RegularIntervalSchedule):
         self._ReserveReq = None
         self.ReserveReq = ReserveReq
 
-        super(ReserveReqCurve, self).__init__(*args, **kw_args)
+        super(ReserveReqCurve, self).__init__(**kw_args)
 
     def getReserveReq(self):
         

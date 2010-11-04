@@ -18,7 +18,7 @@ from CIM14v13.IEC61968.Informative.MarketOperations.RegisteredResource import Re
 
 class RegisteredLoad(RegisteredResource):
 
-    def __init__(self, LoadArea=None, LoadBids=None, *args, **kw_args):
+    def __init__(self, LoadArea=None, LoadBids=None, **kw_args):
         """Initializes a new 'RegisteredLoad' instance.
 
         @param LoadArea:
@@ -30,7 +30,7 @@ class RegisteredLoad(RegisteredResource):
         self._LoadBids = []
         self.LoadBids = [] if LoadBids is None else LoadBids
 
-        super(RegisteredLoad, self).__init__(*args, **kw_args)
+        super(RegisteredLoad, self).__init__(**kw_args)
 
     def getLoadArea(self):
         

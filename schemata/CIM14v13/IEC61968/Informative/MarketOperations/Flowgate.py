@@ -20,7 +20,7 @@ class Flowgate(PowerSystemResource):
     """A flowgate, is single or group of transmission elements intended to model MW flow impact relating to transmission limitations and transmission service usage.
     """
 
-    def __init__(self, coordinatedFlag=False, counterFlowValue=0, reciprocalFlag=False, managingEntityFlag=False, AfcUseCode=None, outOfServiceDate='', coordinationStudyDate='', AtcFlag=False, inServiceDate='', IdcAssignedId=0, IdcOperationalName='', positiveImpactValue=0, IdcType=None, deletionDate='', SubControlArea=None, ViolationLimits=None, TransmissionProvider=None, TransmissionReliabilityMargin=None, PowerTransormers=None, Lines=None, CapacityBenefitMargin=None, FTRs=None, *args, **kw_args):
+    def __init__(self, coordinatedFlag=False, counterFlowValue=0, reciprocalFlag=False, managingEntityFlag=False, AfcUseCode=None, outOfServiceDate='', coordinationStudyDate='', AtcFlag=False, inServiceDate='', IdcAssignedId=0, IdcOperationalName='', positiveImpactValue=0, IdcType=None, deletionDate='', SubControlArea=None, ViolationLimits=None, TransmissionProvider=None, TransmissionReliabilityMargin=None, PowerTransormers=None, Lines=None, CapacityBenefitMargin=None, FTRs=None, **kw_args):
         """Initializes a new 'Flowgate' instance.
 
         @param coordinatedFlag: Flag to indicate if Flowgate qualified as coordinated Flowgate 
@@ -112,7 +112,7 @@ class Flowgate(PowerSystemResource):
         self._FTRs = []
         self.FTRs = [] if FTRs is None else FTRs
 
-        super(Flowgate, self).__init__(*args, **kw_args)
+        super(Flowgate, self).__init__(**kw_args)
 
     def getSubControlArea(self):
         """A control area may own 0 to n flowgates A flowgate must be owned by exactly 1 control area

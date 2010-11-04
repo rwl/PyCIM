@@ -20,7 +20,7 @@ class SeriesCompensatorAssetModel(ElectricalAssetModel):
     """For application as a series capacitor or reactor, this is documentation for a type of a capacitor or reactor of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, SeriesCompensatorAsset=None, ShuntCompensatorTypeAsset=None, *args, **kw_args):
+    def __init__(self, SeriesCompensatorAsset=None, ShuntCompensatorTypeAsset=None, **kw_args):
         """Initializes a new 'SeriesCompensatorAssetModel' instance.
 
         @param SeriesCompensatorAsset:
@@ -32,7 +32,7 @@ class SeriesCompensatorAssetModel(ElectricalAssetModel):
         self._ShuntCompensatorTypeAsset = None
         self.ShuntCompensatorTypeAsset = ShuntCompensatorTypeAsset
 
-        super(SeriesCompensatorAssetModel, self).__init__(*args, **kw_args)
+        super(SeriesCompensatorAssetModel, self).__init__(**kw_args)
 
     def getSeriesCompensatorAsset(self):
         

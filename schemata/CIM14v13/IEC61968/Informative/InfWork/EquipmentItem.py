@@ -20,7 +20,7 @@ class EquipmentItem(IdentifiedObject):
     """An equipment item, such as a vehicle, used for a work order.
     """
 
-    def __init__(self, cost=0.0, code='', WorkCostDetail=None, WorkTask=None, status=None, *args, **kw_args):
+    def __init__(self, cost=0.0, code='', WorkCostDetail=None, WorkTask=None, status=None, **kw_args):
         """Initializes a new 'EquipmentItem' instance.
 
         @param cost: The cost for vehicle usage. 
@@ -43,7 +43,7 @@ class EquipmentItem(IdentifiedObject):
 
         self.status = status
 
-        super(EquipmentItem, self).__init__(*args, **kw_args)
+        super(EquipmentItem, self).__init__(**kw_args)
 
     def getWorkCostDetail(self):
         

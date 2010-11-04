@@ -20,7 +20,7 @@ class Contingency(IdentifiedObject):
     """An event threatening system reliability, consisting of one or more contingency elements.
     """
 
-    def __init__(self, mustStudy=False, ContingencyConstraintLimit=None, ContingencyElement=None, *args, **kw_args):
+    def __init__(self, mustStudy=False, ContingencyConstraintLimit=None, ContingencyElement=None, **kw_args):
         """Initializes a new 'Contingency' instance.
 
         @param mustStudy: Set true if must study this contingency. 
@@ -36,7 +36,7 @@ class Contingency(IdentifiedObject):
         self._ContingencyElement = []
         self.ContingencyElement = [] if ContingencyElement is None else ContingencyElement
 
-        super(Contingency, self).__init__(*args, **kw_args)
+        super(Contingency, self).__init__(**kw_args)
 
     def getContingencyConstraintLimit(self):
         

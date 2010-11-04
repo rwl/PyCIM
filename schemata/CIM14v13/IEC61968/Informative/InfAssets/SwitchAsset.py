@@ -20,7 +20,7 @@ class SwitchAsset(ElectricalAsset):
     """Physical asset performing Switch function.
     """
 
-    def __init__(self, SwitchInfo=None, SwitchAssetModel=None, *args, **kw_args):
+    def __init__(self, SwitchInfo=None, SwitchAssetModel=None, **kw_args):
         """Initializes a new 'SwitchAsset' instance.
 
         @param SwitchInfo:
@@ -32,7 +32,7 @@ class SwitchAsset(ElectricalAsset):
         self._SwitchAssetModel = None
         self.SwitchAssetModel = SwitchAssetModel
 
-        super(SwitchAsset, self).__init__(*args, **kw_args)
+        super(SwitchAsset, self).__init__(**kw_args)
 
     def getSwitchInfo(self):
         

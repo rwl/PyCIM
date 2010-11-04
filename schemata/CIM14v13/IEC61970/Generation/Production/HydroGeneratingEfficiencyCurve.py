@@ -20,7 +20,7 @@ class HydroGeneratingEfficiencyCurve(Curve):
     """Relationship between unit efficiency in percent and unit output active power for a given net head in meters. The relationship between efficiency, discharge, head, and power output is expressed as follows:   E =KP/HQ Where:  (E=percentage)  (P=active power)  (H=height)  (Q=volume/time unit)  (K=constant) For example, a curve instance for a given net head could relate efficiency (Y-axis) versus active power output (X-axis) or versus discharge on the X-axis.
     """
 
-    def __init__(self, HydroGeneratingUnit=None, *args, **kw_args):
+    def __init__(self, HydroGeneratingUnit=None, **kw_args):
         """Initializes a new 'HydroGeneratingEfficiencyCurve' instance.
 
         @param HydroGeneratingUnit: A hydro generating unit has an efficiency curve
@@ -28,7 +28,7 @@ class HydroGeneratingEfficiencyCurve(Curve):
         self._HydroGeneratingUnit = None
         self.HydroGeneratingUnit = HydroGeneratingUnit
 
-        super(HydroGeneratingEfficiencyCurve, self).__init__(*args, **kw_args)
+        super(HydroGeneratingEfficiencyCurve, self).__init__(**kw_args)
 
     def getHydroGeneratingUnit(self):
         """A hydro generating unit has an efficiency curve

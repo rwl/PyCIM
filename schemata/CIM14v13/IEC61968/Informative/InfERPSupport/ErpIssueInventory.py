@@ -20,7 +20,7 @@ class ErpIssueInventory(IdentifiedObject):
     """Can be used to request an application to process an issue or request information about an issue.
     """
 
-    def __init__(self, status=None, TypeMaterial=None, TypeAsset=None, *args, **kw_args):
+    def __init__(self, status=None, TypeMaterial=None, TypeAsset=None, **kw_args):
         """Initializes a new 'ErpIssueInventory' instance.
 
         @param status:
@@ -35,7 +35,7 @@ class ErpIssueInventory(IdentifiedObject):
         self._TypeAsset = None
         self.TypeAsset = TypeAsset
 
-        super(ErpIssueInventory, self).__init__(*args, **kw_args)
+        super(ErpIssueInventory, self).__init__(**kw_args)
 
     status = None
 

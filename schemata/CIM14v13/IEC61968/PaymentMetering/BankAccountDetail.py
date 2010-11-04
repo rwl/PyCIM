@@ -20,7 +20,7 @@ class BankAccountDetail(Element):
     """Details of a bank account.
     """
 
-    def __init__(self, branchCode='', holderID='', holderName='', accountNumber='', bankName='', *args, **kw_args):
+    def __init__(self, branchCode='', holderID='', holderName='', accountNumber='', bankName='', **kw_args):
         """Initializes a new 'BankAccountDetail' instance.
 
         @param branchCode: Branch of bank where account is held. 
@@ -44,5 +44,5 @@ class BankAccountDetail(Element):
         #: Name of bank where account is held.
         self.bankName = bankName
 
-        super(BankAccountDetail, self).__init__(*args, **kw_args)
+        super(BankAccountDetail, self).__init__(**kw_args)
 

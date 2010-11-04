@@ -20,9 +20,9 @@ class GmlPolygonGeometry(GmlDiagramObject):
     """Used to show the footprint of substations, sites, service territories, tax districts, school districts, etc.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'GmlPolygonGeometry' instance.
 
         """
-        super(GmlPolygonGeometry, self).__init__(*args, **kw_args)
+        super(GmlPolygonGeometry, self).__init__(**kw_args)
 

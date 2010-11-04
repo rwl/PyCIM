@@ -20,7 +20,7 @@ class ErpItemMaster(IdentifiedObject):
     """Any unique purchased part for manufactured product tracked by ERP systems for a utility. Item, as used by the OAG, refers to the basic information about an item, including its attributes, cost, and locations. It does not include item quantities. Compare to the Inventory, which includes all quantities and other location-specific information.
     """
 
-    def __init__(self, Asset=None, status=None, *args, **kw_args):
+    def __init__(self, Asset=None, status=None, **kw_args):
         """Initializes a new 'ErpItemMaster' instance.
 
         @param Asset:
@@ -31,7 +31,7 @@ class ErpItemMaster(IdentifiedObject):
 
         self.status = status
 
-        super(ErpItemMaster, self).__init__(*args, **kw_args)
+        super(ErpItemMaster, self).__init__(**kw_args)
 
     def getAsset(self):
         

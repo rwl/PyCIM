@@ -20,7 +20,7 @@ class Cheque(Element):
     """The actual tender when it is a type of cheque.
     """
 
-    def __init__(self, kind='bankOrder', micrNumber='', chequeNumber='', date='', Tender=None, bankAccountDetail=None, *args, **kw_args):
+    def __init__(self, kind='bankOrder', micrNumber='', chequeNumber='', date='', Tender=None, bankAccountDetail=None, **kw_args):
         """Initializes a new 'Cheque' instance.
 
         @param kind: Kind of cheque. Values are: "bankOrder", "postalOrder", "other"
@@ -47,7 +47,7 @@ class Cheque(Element):
 
         self.bankAccountDetail = bankAccountDetail
 
-        super(Cheque, self).__init__(*args, **kw_args)
+        super(Cheque, self).__init__(**kw_args)
 
     def getTender(self):
         """Payment tender the cheque is being used for.

@@ -20,7 +20,7 @@ class AvailableTransmissionCapacity(Curve):
     """Amount of possible flow by direction.
     """
 
-    def __init__(self, ScheduleFor=None, *args, **kw_args):
+    def __init__(self, ScheduleFor=None, **kw_args):
         """Initializes a new 'AvailableTransmissionCapacity' instance.
 
         @param ScheduleFor: A transmission schedule posts the available transmission capacity for a transmission line.
@@ -28,7 +28,7 @@ class AvailableTransmissionCapacity(Curve):
         self._ScheduleFor = []
         self.ScheduleFor = [] if ScheduleFor is None else ScheduleFor
 
-        super(AvailableTransmissionCapacity, self).__init__(*args, **kw_args)
+        super(AvailableTransmissionCapacity, self).__init__(**kw_args)
 
     def getScheduleFor(self):
         """A transmission schedule posts the available transmission capacity for a transmission line.

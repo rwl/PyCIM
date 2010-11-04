@@ -20,7 +20,7 @@ class LandProperty(IdentifiedObject):
     """Information about a particular piece of (land) property such as its use. Ownership of the property may be determined through associations to Organisations and/or ErpPersons.
     """
 
-    def __init__(self, kind='store', demographicKind='other', externalRecordReference='', LocationGrants=None, AssetContainers=None, ErpSiteLevelDatas=None, ErpPersonRoles=None, Locations=None, RightOfWays=None, ErpOrganisationRoles=None, status=None, *args, **kw_args):
+    def __init__(self, kind='store', demographicKind='other', externalRecordReference='', LocationGrants=None, AssetContainers=None, ErpSiteLevelDatas=None, ErpPersonRoles=None, Locations=None, RightOfWays=None, ErpOrganisationRoles=None, status=None, **kw_args):
         """Initializes a new 'LandProperty' instance.
 
         @param kind: Kind of (land) property, categorised according to its main functional use from the utility's perspective. Values are: "store", "depot", "customerPremise", "external", "gridSupplyPoint", "substation", "building"
@@ -67,7 +67,7 @@ class LandProperty(IdentifiedObject):
 
         self.status = status
 
-        super(LandProperty, self).__init__(*args, **kw_args)
+        super(LandProperty, self).__init__(**kw_args)
 
     def getLocationGrants(self):
         """All location grants this land property has.

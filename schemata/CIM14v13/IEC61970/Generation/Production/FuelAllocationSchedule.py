@@ -20,7 +20,7 @@ class FuelAllocationSchedule(Curve):
     """The amount of fuel of a given type which is allocated for consumption over a specified period of time
     """
 
-    def __init__(self, fuelType='gas', minFuelAllocation=0.0, fuelAllocationStartDate='', maxFuelAllocation=0.0, fuelAllocationEndDate='', ThermalGeneratingUnit=None, FossilFuel=None, *args, **kw_args):
+    def __init__(self, fuelType='gas', minFuelAllocation=0.0, fuelAllocationStartDate='', maxFuelAllocation=0.0, fuelAllocationEndDate='', ThermalGeneratingUnit=None, FossilFuel=None, **kw_args):
         """Initializes a new 'FuelAllocationSchedule' instance.
 
         @param fuelType: The type of fuel, which also indicates the corresponding measurement unit Values are: "gas", "oil", "coal", "lignite"
@@ -52,7 +52,7 @@ class FuelAllocationSchedule(Curve):
         self._FossilFuel = None
         self.FossilFuel = FossilFuel
 
-        super(FuelAllocationSchedule, self).__init__(*args, **kw_args)
+        super(FuelAllocationSchedule, self).__init__(**kw_args)
 
     def getThermalGeneratingUnit(self):
         """A thermal generating unit may have one or more fuel allocation schedules

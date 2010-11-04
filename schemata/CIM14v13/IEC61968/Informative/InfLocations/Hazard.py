@@ -20,7 +20,7 @@ class Hazard(IdentifiedObject):
     """A hazard is any object or condition that is a danger for causing loss or perils to an asset and/or people. Examples of hazards are trees growing under overhead power lines, a park being located by a substation (i.e., children climb fence to recover a ball), a lake near an overhead distribution line (fishing pole/line contacting power lines), etc.
     """
 
-    def __init__(self, category='', Assets=None, Locations=None, status=None, *args, **kw_args):
+    def __init__(self, category='', Assets=None, Locations=None, status=None, **kw_args):
         """Initializes a new 'Hazard' instance.
 
         @param category: Category by utility's corporate standards and practices. 
@@ -39,7 +39,7 @@ class Hazard(IdentifiedObject):
 
         self.status = status
 
-        super(Hazard, self).__init__(*args, **kw_args)
+        super(Hazard, self).__init__(**kw_args)
 
     def getAssets(self):
         

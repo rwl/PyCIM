@@ -20,7 +20,7 @@ class GmlLabelStyle(IdentifiedObject):
     """The style for the text that is to be displayed along with the graphical representation of a feature. The content of the label is not necessarily defined in the GML data set. More precisely, the content can be static text specified in the style itself and the text from the GML data set. Label style has two elements: gml:style that specifies the style and gml:label that is used to compose the label content.
     """
 
-    def __init__(self, transform='', style='', labelExpression='', GmlGeometryStyles=None, GmlFeatureStyle=None, GmlTopologyStyles=None, *args, **kw_args):
+    def __init__(self, transform='', style='', labelExpression='', GmlGeometryStyles=None, GmlFeatureStyle=None, GmlTopologyStyles=None, **kw_args):
         """Initializes a new 'GmlLabelStyle' instance.
 
         @param transform: Allows us to specify a transformation expression that will be applied to the symbol in the rendering phase. Its type is xsd:string and the value is specified in the SVG specification (transform attribute). 
@@ -48,7 +48,7 @@ class GmlLabelStyle(IdentifiedObject):
         self._GmlTopologyStyles = []
         self.GmlTopologyStyles = [] if GmlTopologyStyles is None else GmlTopologyStyles
 
-        super(GmlLabelStyle, self).__init__(*args, **kw_args)
+        super(GmlLabelStyle, self).__init__(**kw_args)
 
     def getGmlGeometryStyles(self):
         

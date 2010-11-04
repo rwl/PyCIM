@@ -18,7 +18,7 @@ from CIM14v13.IEC61968.Informative.MarketOperations.ResourceBid import ResourceB
 
 class GeneratingBid(ResourceBid):
 
-    def __init__(self, maxEmergencyMW=0.0, maximumEconomicMW=0.0, minimumEconomicMW=0.0, startUpRampRate=None, downTimeMax=0.0, operatingMode='', startupTime=0.0, minEmergencyMW=0.0, noLoadCost=0.0, minimumDownTime=0.0, startUpType=0, upTimeMin=0.0, upTimeMax=0.0, notificationTime=0.0, NotificationTimeCurve=None, RegisteredGenerator=None, StartUpCostCurve=None, BidSet=None, StartUpTimeCurve=None, *args, **kw_args):
+    def __init__(self, maxEmergencyMW=0.0, maximumEconomicMW=0.0, minimumEconomicMW=0.0, startUpRampRate=None, downTimeMax=0.0, operatingMode='', startupTime=0.0, minEmergencyMW=0.0, noLoadCost=0.0, minimumDownTime=0.0, startUpType=0, upTimeMin=0.0, upTimeMax=0.0, notificationTime=0.0, NotificationTimeCurve=None, RegisteredGenerator=None, StartUpCostCurve=None, BidSet=None, StartUpTimeCurve=None, **kw_args):
         """Initializes a new 'GeneratingBid' instance.
 
         @param maxEmergencyMW: Power rating available for unit under emergency conditions greater than or equal to maximum economic limit. 
@@ -98,7 +98,7 @@ class GeneratingBid(ResourceBid):
         self._StartUpTimeCurve = None
         self.StartUpTimeCurve = StartUpTimeCurve
 
-        super(GeneratingBid, self).__init__(*args, **kw_args)
+        super(GeneratingBid, self).__init__(**kw_args)
 
     def getNotificationTimeCurve(self):
         

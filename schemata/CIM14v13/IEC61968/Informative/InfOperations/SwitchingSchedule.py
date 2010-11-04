@@ -20,7 +20,7 @@ class SwitchingSchedule(Document):
     """Document describing a sequence of steps to perform an item of work, for example to isolate some plant with regard to safety, equipment ratings, and standards of customer service. Note 1: SwitchingSchedule is intended to describe the full operational details for switching for real time operation which includes other operations such as grounding, applying safety documents etc.  Note 2: The association to ErpPerson suits the UK practice of quoting specific names (e.g the crew foreman). The association to Crew is for US practice.
     """
 
-    def __init__(self, reason='', interval=None, ScheduleSteps=None, Crews=None, WorkTask=None, *args, **kw_args):
+    def __init__(self, reason='', interval=None, ScheduleSteps=None, Crews=None, WorkTask=None, **kw_args):
         """Initializes a new 'SwitchingSchedule' instance.
 
         @param reason: Reason for switching. 
@@ -43,7 +43,7 @@ class SwitchingSchedule(Document):
         self._WorkTask = None
         self.WorkTask = WorkTask
 
-        super(SwitchingSchedule, self).__init__(*args, **kw_args)
+        super(SwitchingSchedule, self).__init__(**kw_args)
 
     # Interval between starting and completion of the switching.
     interval = None

@@ -20,7 +20,7 @@ class BidPriceCurve(Curve):
     """Relationship between unit operating price in $/hour (Y-axis) and unit output in MW (X-axis).
     """
 
-    def __init__(self, ProductBids=None, *args, **kw_args):
+    def __init__(self, ProductBids=None, **kw_args):
         """Initializes a new 'BidPriceCurve' instance.
 
         @param ProductBids:
@@ -28,7 +28,7 @@ class BidPriceCurve(Curve):
         self._ProductBids = []
         self.ProductBids = [] if ProductBids is None else ProductBids
 
-        super(BidPriceCurve, self).__init__(*args, **kw_args)
+        super(BidPriceCurve, self).__init__(**kw_args)
 
     def getProductBids(self):
         

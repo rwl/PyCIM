@@ -20,7 +20,7 @@ class ConnectivityNodeContainer(PowerSystemResource):
     """A base class for all objects that may contain ConnectivityNodes or TopologicalNodes.
     """
 
-    def __init__(self, TopologicalNode=None, ConnectivityNodes=None, *args, **kw_args):
+    def __init__(self, TopologicalNode=None, ConnectivityNodes=None, **kw_args):
         """Initializes a new 'ConnectivityNodeContainer' instance.
 
         @param TopologicalNode: The topological nodes which belong to this connectivity node container.
@@ -32,7 +32,7 @@ class ConnectivityNodeContainer(PowerSystemResource):
         self._ConnectivityNodes = []
         self.ConnectivityNodes = [] if ConnectivityNodes is None else ConnectivityNodes
 
-        super(ConnectivityNodeContainer, self).__init__(*args, **kw_args)
+        super(ConnectivityNodeContainer, self).__init__(**kw_args)
 
     def getTopologicalNode(self):
         """The topological nodes which belong to this connectivity node container.

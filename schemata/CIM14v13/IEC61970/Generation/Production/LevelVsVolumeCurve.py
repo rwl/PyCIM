@@ -20,7 +20,7 @@ class LevelVsVolumeCurve(Curve):
     """Relationship between reservoir volume and reservoir level. The  volume is at the y-axis and the reservoir level at the x-axis.
     """
 
-    def __init__(self, Reservoir=None, *args, **kw_args):
+    def __init__(self, Reservoir=None, **kw_args):
         """Initializes a new 'LevelVsVolumeCurve' instance.
 
         @param Reservoir: A reservoir may have a level versus volume relationship.
@@ -28,7 +28,7 @@ class LevelVsVolumeCurve(Curve):
         self._Reservoir = None
         self.Reservoir = Reservoir
 
-        super(LevelVsVolumeCurve, self).__init__(*args, **kw_args)
+        super(LevelVsVolumeCurve, self).__init__(**kw_args)
 
     def getReservoir(self):
         """A reservoir may have a level versus volume relationship.

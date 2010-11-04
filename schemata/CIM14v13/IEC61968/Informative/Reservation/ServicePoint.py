@@ -20,7 +20,7 @@ class ServicePoint(IdentifiedObject):
     """Each ServicePoint is contained within (or on the boundary of) an ElectronicIinterchangeArea. ServicePoints are defined termination points of a transmission path (down to distribution level or to a customer - generation or consumption or both).
     """
 
-    def __init__(self, CustomerConsumer=None, Declare_TiePoint=None, EnergyProducts=None, TransmissionProvider=None, HasAPOD_=None, HasAPOR_=None, MemberOf=None, GenerationProvider=None, *args, **kw_args):
+    def __init__(self, CustomerConsumer=None, Declare_TiePoint=None, EnergyProducts=None, TransmissionProvider=None, HasAPOD_=None, HasAPOR_=None, MemberOf=None, GenerationProvider=None, **kw_args):
         """Initializes a new 'ServicePoint' instance.
 
         @param CustomerConsumer: A CustomerConsumer may have one or more ServicePoints.
@@ -56,7 +56,7 @@ class ServicePoint(IdentifiedObject):
         self._GenerationProvider = None
         self.GenerationProvider = GenerationProvider
 
-        super(ServicePoint, self).__init__(*args, **kw_args)
+        super(ServicePoint, self).__init__(**kw_args)
 
     def getCustomerConsumer(self):
         """A CustomerConsumer may have one or more ServicePoints.

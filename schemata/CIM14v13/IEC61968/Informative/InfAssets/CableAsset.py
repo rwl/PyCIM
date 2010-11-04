@@ -20,7 +20,7 @@ class CableAsset(ConductorAsset):
     """Insultated physical cable for performing the Conductor role used in undergrond and other applications..
     """
 
-    def __init__(self, DuctBanks=None, DuctBankTypeAsset=None, *args, **kw_args):
+    def __init__(self, DuctBanks=None, DuctBankTypeAsset=None, **kw_args):
         """Initializes a new 'CableAsset' instance.
 
         @param DuctBanks:
@@ -32,7 +32,7 @@ class CableAsset(ConductorAsset):
         self._DuctBankTypeAsset = None
         self.DuctBankTypeAsset = DuctBankTypeAsset
 
-        super(CableAsset, self).__init__(*args, **kw_args)
+        super(CableAsset, self).__init__(**kw_args)
 
     def getDuctBanks(self):
         

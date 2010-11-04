@@ -20,7 +20,7 @@ class PoleTypeAsset(StructureTypeAsset):
     """Documentation for a generic pole that may be used for various purposes such as work planning. A pole typically has a single Connection with 1,2 or 3 mounting points.
     """
 
-    def __init__(self, length=0.0, diameter=0.0, PoleModels=None, *args, **kw_args):
+    def __init__(self, length=0.0, diameter=0.0, PoleModels=None, **kw_args):
         """Initializes a new 'PoleTypeAsset' instance.
 
         @param length: Length of the pole (inclusive of any section of the pole that may be underground post-installation). 
@@ -36,7 +36,7 @@ class PoleTypeAsset(StructureTypeAsset):
         self._PoleModels = []
         self.PoleModels = [] if PoleModels is None else PoleModels
 
-        super(PoleTypeAsset, self).__init__(*args, **kw_args)
+        super(PoleTypeAsset, self).__init__(**kw_args)
 
     def getPoleModels(self):
         

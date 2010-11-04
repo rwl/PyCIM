@@ -20,7 +20,7 @@ class Discrete(Measurement):
     """Discrete represents a discrete Measurement, i.e. a Measurement reprsenting discrete values, e.g. a Breaker position.
     """
 
-    def __init__(self, normalValue=0, minValue=0, maxValue=0, Command=None, ValueAliasSet=None, DiscreteValues=None, *args, **kw_args):
+    def __init__(self, normalValue=0, minValue=0, maxValue=0, Command=None, ValueAliasSet=None, DiscreteValues=None, **kw_args):
         """Initializes a new 'Discrete' instance.
 
         @param normalValue: Normal measurement value, e.g., used for percentage calculations. 
@@ -48,7 +48,7 @@ class Discrete(Measurement):
         self._DiscreteValues = []
         self.DiscreteValues = [] if DiscreteValues is None else DiscreteValues
 
-        super(Discrete, self).__init__(*args, **kw_args)
+        super(Discrete, self).__init__(**kw_args)
 
     def getCommand(self):
         """The Control variable associated with the Measurement.

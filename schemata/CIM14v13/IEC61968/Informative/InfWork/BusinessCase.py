@@ -20,7 +20,7 @@ class BusinessCase(Document):
     """Business justification for capital expenditures, usually addressing operations and maintenance costs as well.
     """
 
-    def __init__(self, corporateCode='', Works=None, Projects=None, *args, **kw_args):
+    def __init__(self, corporateCode='', Works=None, Projects=None, **kw_args):
         """Initializes a new 'BusinessCase' instance.
 
         @param corporateCode: A codified representation of the business case (i.e., codes for highway relocation, replace substation transformers, etc.). 
@@ -36,7 +36,7 @@ class BusinessCase(Document):
         self._Projects = []
         self.Projects = [] if Projects is None else Projects
 
-        super(BusinessCase, self).__init__(*args, **kw_args)
+        super(BusinessCase, self).__init__(**kw_args)
 
     def getWorks(self):
         

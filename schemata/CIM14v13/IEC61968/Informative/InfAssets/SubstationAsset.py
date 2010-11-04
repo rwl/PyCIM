@@ -20,7 +20,7 @@ class SubstationAsset(AssetContainer):
     """A grouping of assets such as conductors, transformers, switchgear, etc. When located on the ground surface, it is usually surrounded by some kind of fence with a locked gate. It may also be located inside buildings, in underground vaults, and on structures. Use 'category' for utility-specific categorisation (such as Air Cooled, Gas Insultated, etc.).
     """
 
-    def __init__(self, function='industrial', Substation=None, *args, **kw_args):
+    def __init__(self, function='industrial', Substation=None, **kw_args):
         """Initializes a new 'SubstationAsset' instance.
 
         @param function: Function of this substation asset. Values are: "industrial", "subTransmission", "generation", "distribution", "transmission", "other"
@@ -32,7 +32,7 @@ class SubstationAsset(AssetContainer):
         self._Substation = None
         self.Substation = Substation
 
-        super(SubstationAsset, self).__init__(*args, **kw_args)
+        super(SubstationAsset, self).__init__(**kw_args)
 
     def getSubstation(self):
         

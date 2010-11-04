@@ -20,9 +20,9 @@ class ErpSalesOrder(Document):
     """General purpose Sales Order is used for utility service orders, etc. As used by the OAG, the SalesOrder is a step beyond a PurchaseOrder in that the receiving entity of the order also communicates SalesInformoration about the Order along with the Order itself.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'ErpSalesOrder' instance.
 
         """
-        super(ErpSalesOrder, self).__init__(*args, **kw_args)
+        super(ErpSalesOrder, self).__init__(**kw_args)
 

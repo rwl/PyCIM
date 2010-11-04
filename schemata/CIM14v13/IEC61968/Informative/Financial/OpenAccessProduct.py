@@ -20,7 +20,7 @@ class OpenAccessProduct(Agreement):
     """Contracts for services offered commercially.
     """
 
-    def __init__(self, ProvidedBy_TransmissionService=None, AncillaryServices=None, *args, **kw_args):
+    def __init__(self, ProvidedBy_TransmissionService=None, AncillaryServices=None, **kw_args):
         """Initializes a new 'OpenAccessProduct' instance.
 
         @param ProvidedBy_TransmissionService: A TransmissionService is sold according to the terms of a particular OpenAccessProduct agreement.
@@ -32,7 +32,7 @@ class OpenAccessProduct(Agreement):
         self._AncillaryServices = []
         self.AncillaryServices = [] if AncillaryServices is None else AncillaryServices
 
-        super(OpenAccessProduct, self).__init__(*args, **kw_args)
+        super(OpenAccessProduct, self).__init__(**kw_args)
 
     def getProvidedBy_TransmissionService(self):
         """A TransmissionService is sold according to the terms of a particular OpenAccessProduct agreement.

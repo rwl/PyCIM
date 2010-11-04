@@ -20,7 +20,7 @@ class SteamSendoutSchedule(RegularIntervalSchedule):
     """The cogeneration plant's steam sendout schedule in volume per time unit.
     """
 
-    def __init__(self, CogenerationPlant=None, *args, **kw_args):
+    def __init__(self, CogenerationPlant=None, **kw_args):
         """Initializes a new 'SteamSendoutSchedule' instance.
 
         @param CogenerationPlant: A cogeneration plant has a steam sendout schedule
@@ -28,7 +28,7 @@ class SteamSendoutSchedule(RegularIntervalSchedule):
         self._CogenerationPlant = None
         self.CogenerationPlant = CogenerationPlant
 
-        super(SteamSendoutSchedule, self).__init__(*args, **kw_args)
+        super(SteamSendoutSchedule, self).__init__(**kw_args)
 
     def getCogenerationPlant(self):
         """A cogeneration plant has a steam sendout schedule

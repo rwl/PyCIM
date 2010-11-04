@@ -20,7 +20,7 @@ class Medium(IdentifiedObject):
     """A substance that either (1) provides the means of transmission of a force or effect, such as hydraulic fluid, or (2) is used for a surrounding or enveloping substance, such as oil in a transformer or circuit breaker.
     """
 
-    def __init__(self, kind='solid', volumeSpec=0.0, Assets=None, Specification=None, *args, **kw_args):
+    def __init__(self, kind='solid', volumeSpec=0.0, Assets=None, Specification=None, **kw_args):
         """Initializes a new 'Medium' instance.
 
         @param kind: Kind of this medium. Values are: "solid", "gas", "liquid"
@@ -40,7 +40,7 @@ class Medium(IdentifiedObject):
         self._Specification = None
         self.Specification = Specification
 
-        super(Medium, self).__init__(*args, **kw_args)
+        super(Medium, self).__init__(**kw_args)
 
     def getAssets(self):
         

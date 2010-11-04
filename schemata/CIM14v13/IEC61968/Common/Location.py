@@ -20,7 +20,7 @@ class Location(IdentifiedObject):
     """The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It may be: - Spatial location of an actual or planned structure, or a set of point-oriented structures (as a substation, structure, building, town, etc.) or diagram objects, which may be defined as a point or polygon, or, - Path of an underground or overhead conductor, or a linear diagram object.
     """
 
-    def __init__(self, corporateCode='', direction='', isPolygon=False, category='', geoInfoReference='', DocumentRoles=None, ErpPersonRoles=None, ElectronicAddresses=None, ChangeItems=None, Routes=None, PositionPoints=None, GmlSelectors=None, mainAddress=None, FromLocationRoles=None, status=None, ToLocationRoles=None, TelephoneNumbers=None, secondaryAddress=None, LandProperties=None, Measurements=None, ErpOrganisationRoles=None, DimensionsInfo=None, AssetRoles=None, Crews=None, RedLines=None, GmlObservatins=None, Hazards=None, ActivityRecords=None, *args, **kw_args):
+    def __init__(self, corporateCode='', direction='', isPolygon=False, category='', geoInfoReference='', DocumentRoles=None, ErpPersonRoles=None, ElectronicAddresses=None, ChangeItems=None, Routes=None, PositionPoints=None, GmlSelectors=None, mainAddress=None, FromLocationRoles=None, status=None, ToLocationRoles=None, TelephoneNumbers=None, secondaryAddress=None, LandProperties=None, Measurements=None, ErpOrganisationRoles=None, DimensionsInfo=None, AssetRoles=None, Crews=None, RedLines=None, GmlObservatins=None, Hazards=None, ActivityRecords=None, **kw_args):
         """Initializes a new 'Location' instance.
 
         @param corporateCode: Utility-specific code for the location. 
@@ -133,7 +133,7 @@ class Location(IdentifiedObject):
         self._ActivityRecords = []
         self.ActivityRecords = [] if ActivityRecords is None else ActivityRecords
 
-        super(Location, self).__init__(*args, **kw_args)
+        super(Location, self).__init__(**kw_args)
 
     def getDocumentRoles(self):
         

@@ -20,7 +20,7 @@ class ErpJournal(Document):
     """Book for recording accounting transactions as they occur. Transactions and adjustments are first recorded in a journal, which is like a diary of instructions, advising which account to be charged and by how much. A journal represents a change in the balances of a business's financial accounts. Many tasks or transactions throughout an enterprise will result in the creation of a journal. Some examples are creating a customer invoice, paying a vendor, transferring inventory, or paying employees.
     """
 
-    def __init__(self, ErpJournalEntries=None, *args, **kw_args):
+    def __init__(self, ErpJournalEntries=None, **kw_args):
         """Initializes a new 'ErpJournal' instance.
 
         @param ErpJournalEntries:
@@ -28,7 +28,7 @@ class ErpJournal(Document):
         self._ErpJournalEntries = []
         self.ErpJournalEntries = [] if ErpJournalEntries is None else ErpJournalEntries
 
-        super(ErpJournal, self).__init__(*args, **kw_args)
+        super(ErpJournal, self).__init__(**kw_args)
 
     def getErpJournalEntries(self):
         

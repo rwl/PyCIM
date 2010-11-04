@@ -20,7 +20,7 @@ class SVCAsset(FACTSDeviceAsset):
     """Physical asset performing StaticVarCompensator function.
     """
 
-    def __init__(self, SvcInfo=None, SVCAssetModel=None, *args, **kw_args):
+    def __init__(self, SvcInfo=None, SVCAssetModel=None, **kw_args):
         """Initializes a new 'SVCAsset' instance.
 
         @param SvcInfo:
@@ -32,7 +32,7 @@ class SVCAsset(FACTSDeviceAsset):
         self._SVCAssetModel = None
         self.SVCAssetModel = SVCAssetModel
 
-        super(SVCAsset, self).__init__(*args, **kw_args)
+        super(SVCAsset, self).__init__(**kw_args)
 
     def getSvcInfo(self):
         

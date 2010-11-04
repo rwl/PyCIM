@@ -20,7 +20,7 @@ class StartUpCostCurve(Curve):
     """Startup costs and time as a function of down time.  Relationship between unit startup cost (Y1-axis) and unit startup time (Y2-axis) vs. unit elapsed down time (X-axis).
     """
 
-    def __init__(self, GeneratingBids=None, RegisteredGenerators=None, *args, **kw_args):
+    def __init__(self, GeneratingBids=None, RegisteredGenerators=None, **kw_args):
         """Initializes a new 'StartUpCostCurve' instance.
 
         @param GeneratingBids:
@@ -32,7 +32,7 @@ class StartUpCostCurve(Curve):
         self._RegisteredGenerators = []
         self.RegisteredGenerators = [] if RegisteredGenerators is None else RegisteredGenerators
 
-        super(StartUpCostCurve, self).__init__(*args, **kw_args)
+        super(StartUpCostCurve, self).__init__(**kw_args)
 
     def getGeneratingBids(self):
         

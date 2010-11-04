@@ -20,7 +20,7 @@ class ComEquipmentAsset(AssetContainer):
     """Communicaiton equipment, other than media, such as gateways, routers, controllers, etc.
     """
 
-    def __init__(self, DeviceFunctions=None, *args, **kw_args):
+    def __init__(self, DeviceFunctions=None, **kw_args):
         """Initializes a new 'ComEquipmentAsset' instance.
 
         @param DeviceFunctions: All device functions of this communication equipment asset.
@@ -28,7 +28,7 @@ class ComEquipmentAsset(AssetContainer):
         self._DeviceFunctions = []
         self.DeviceFunctions = [] if DeviceFunctions is None else DeviceFunctions
 
-        super(ComEquipmentAsset, self).__init__(*args, **kw_args)
+        super(ComEquipmentAsset, self).__init__(**kw_args)
 
     def getDeviceFunctions(self):
         """All device functions of this communication equipment asset.

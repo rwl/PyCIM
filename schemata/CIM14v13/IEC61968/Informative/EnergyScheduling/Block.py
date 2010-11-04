@@ -20,9 +20,9 @@ class Block(EnergyTransaction):
     """A block is a simple transaction type, with no additional relationships.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'Block' instance.
 
         """
-        super(Block, self).__init__(*args, **kw_args)
+        super(Block, self).__init__(**kw_args)
 

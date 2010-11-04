@@ -20,7 +20,7 @@ class RemoteSource(RemotePoint):
     """Remote sources are state variables that are telemetered or calculated within the remote unit.
     """
 
-    def __init__(self, sensorMinimum=0.0, deadband=0.0, sensorMaximum=0.0, scanInterval=0.0, MeasurementValue=None, *args, **kw_args):
+    def __init__(self, sensorMinimum=0.0, deadband=0.0, sensorMaximum=0.0, scanInterval=0.0, MeasurementValue=None, **kw_args):
         """Initializes a new 'RemoteSource' instance.
 
         @param sensorMinimum: The minimum value the telemetry item can return. 
@@ -44,7 +44,7 @@ class RemoteSource(RemotePoint):
         self._MeasurementValue = None
         self.MeasurementValue = MeasurementValue
 
-        super(RemoteSource, self).__init__(*args, **kw_args)
+        super(RemoteSource, self).__init__(**kw_args)
 
     def getMeasurementValue(self):
         """Link to the physical telemetered point associated with this measurement.

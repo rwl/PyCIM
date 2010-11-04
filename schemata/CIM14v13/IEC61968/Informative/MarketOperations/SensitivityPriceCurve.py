@@ -20,7 +20,7 @@ class SensitivityPriceCurve(Curve):
     """Optionally, this curve expresses elasticity of the associated requirement.  For example, used to reduce requirements when clearing price exceeds reasonable values when the supply quantity becomes scarce.  For example, a single point value of $1000/MW for a spinning reserve will cause a reduction in the required spinning reserve.  X axis is constrained quantity (e.g., MW) Y1 axis is money per constrained quantity
     """
 
-    def __init__(self, ReserveReq=None, *args, **kw_args):
+    def __init__(self, ReserveReq=None, **kw_args):
         """Initializes a new 'SensitivityPriceCurve' instance.
 
         @param ReserveReq:
@@ -28,7 +28,7 @@ class SensitivityPriceCurve(Curve):
         self._ReserveReq = None
         self.ReserveReq = ReserveReq
 
-        super(SensitivityPriceCurve, self).__init__(*args, **kw_args)
+        super(SensitivityPriceCurve, self).__init__(**kw_args)
 
     def getReserveReq(self):
         

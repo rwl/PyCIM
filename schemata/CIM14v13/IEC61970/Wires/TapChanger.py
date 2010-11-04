@@ -20,7 +20,7 @@ class TapChanger(PowerSystemResource):
     """Mechanism for changing transformer winding tap positions.
     """
 
-    def __init__(self, neutralStep=0, subsequentDelay=0.0, neutralU=0.0, stepVoltageIncrement=0.0, lowStep=0, normalStep=0, regulationStatus=False, highStep=0, initialDelay=0.0, ltcFlag=False, RegulatingControl=None, ImpedanceVariationCurve=None, SvTapStep=None, TapSchedules=None, *args, **kw_args):
+    def __init__(self, neutralStep=0, subsequentDelay=0.0, neutralU=0.0, stepVoltageIncrement=0.0, lowStep=0, normalStep=0, regulationStatus=False, highStep=0, initialDelay=0.0, ltcFlag=False, RegulatingControl=None, ImpedanceVariationCurve=None, SvTapStep=None, TapSchedules=None, **kw_args):
         """Initializes a new 'TapChanger' instance.
 
         @param neutralStep: The neutral tap step position for this winding. 
@@ -80,7 +80,7 @@ class TapChanger(PowerSystemResource):
         self._TapSchedules = []
         self.TapSchedules = [] if TapSchedules is None else TapSchedules
 
-        super(TapChanger, self).__init__(*args, **kw_args)
+        super(TapChanger, self).__init__(**kw_args)
 
     def getRegulatingControl(self):
         

@@ -20,7 +20,7 @@ class RecloserAsset(ElectricalAsset):
     """Physical recloser performing a reclosing function, which is modeled through Breaker.
     """
 
-    def __init__(self, RecloserAssetModel=None, RecloserInfo=None, *args, **kw_args):
+    def __init__(self, RecloserAssetModel=None, RecloserInfo=None, **kw_args):
         """Initializes a new 'RecloserAsset' instance.
 
         @param RecloserAssetModel:
@@ -32,7 +32,7 @@ class RecloserAsset(ElectricalAsset):
         self._RecloserInfo = None
         self.RecloserInfo = RecloserInfo
 
-        super(RecloserAsset, self).__init__(*args, **kw_args)
+        super(RecloserAsset, self).__init__(**kw_args)
 
     def getRecloserAssetModel(self):
         

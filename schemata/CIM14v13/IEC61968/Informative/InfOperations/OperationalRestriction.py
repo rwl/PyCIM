@@ -20,14 +20,14 @@ class OperationalRestriction(Document):
     """A document that can be associated with a device to describe any sort of restrictions compared with the original manufacturer's specification e.g. temporary maximum loadings, maximum switching current, do not operate if bus couplers are open etc etc.  Since it is used in the network operations domain, it is associated with ConductingEquipment. In the UK, for example, if a breaker or switch ever mal-operates, this is reported centrally and utilities use their asset systems to identify all the installed devices of the same manufacturer's type. They then apply operational restrictions in the operational systems to warn operators of potential problems. After appropriate inspection and maintenance, the operational restrictions may be removed.
     """
 
-    def __init__(self, activePeriod=None, *args, **kw_args):
+    def __init__(self, activePeriod=None, **kw_args):
         """Initializes a new 'OperationalRestriction' instance.
 
         @param activePeriod: Interval during which the restriction is applied.
         """
         self.activePeriod = activePeriod
 
-        super(OperationalRestriction, self).__init__(*args, **kw_args)
+        super(OperationalRestriction, self).__init__(**kw_args)
 
     # Interval during which the restriction is applied.
     activePeriod = None

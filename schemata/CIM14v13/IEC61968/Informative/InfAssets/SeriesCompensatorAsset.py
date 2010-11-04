@@ -20,7 +20,7 @@ class SeriesCompensatorAsset(ElectricalAsset):
     """For a a series capacitor or reactor, this is the physical asset performing the SeriesCompensator role (PSR).
     """
 
-    def __init__(self, SeriesCompensatorAssetModel=None, *args, **kw_args):
+    def __init__(self, SeriesCompensatorAssetModel=None, **kw_args):
         """Initializes a new 'SeriesCompensatorAsset' instance.
 
         @param SeriesCompensatorAssetModel:
@@ -28,7 +28,7 @@ class SeriesCompensatorAsset(ElectricalAsset):
         self._SeriesCompensatorAssetModel = None
         self.SeriesCompensatorAssetModel = SeriesCompensatorAssetModel
 
-        super(SeriesCompensatorAsset, self).__init__(*args, **kw_args)
+        super(SeriesCompensatorAsset, self).__init__(**kw_args)
 
     def getSeriesCompensatorAssetModel(self):
         

@@ -20,7 +20,7 @@ class DimensionsInfo(IdentifiedObject):
     """As applicable, the basic linear, area, or volume dimensions of an asset, asset type (AssetModel) or other type of object (such as land area). Units and multipliers are specified per dimension.
     """
 
-    def __init__(self, sizeLength=0.0, sizeDepth=0.0, sizeDiameter=0.0, orientation='', sizeWidth=0.0, Assets=None, Specifications=None, Locations=None, *args, **kw_args):
+    def __init__(self, sizeLength=0.0, sizeDepth=0.0, sizeDiameter=0.0, orientation='', sizeWidth=0.0, Assets=None, Specifications=None, Locations=None, **kw_args):
         """Initializes a new 'DimensionsInfo' instance.
 
         @param sizeLength: Length measurement. 
@@ -56,7 +56,7 @@ class DimensionsInfo(IdentifiedObject):
         self._Locations = []
         self.Locations = [] if Locations is None else Locations
 
-        super(DimensionsInfo, self).__init__(*args, **kw_args)
+        super(DimensionsInfo, self).__init__(**kw_args)
 
     def getAssets(self):
         

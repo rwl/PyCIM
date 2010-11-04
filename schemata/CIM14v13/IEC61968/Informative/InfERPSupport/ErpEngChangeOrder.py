@@ -20,9 +20,9 @@ class ErpEngChangeOrder(Document):
     """General Utility Engineering Change Order information.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'ErpEngChangeOrder' instance.
 
         """
-        super(ErpEngChangeOrder, self).__init__(*args, **kw_args)
+        super(ErpEngChangeOrder, self).__init__(**kw_args)
 

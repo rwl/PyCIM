@@ -20,9 +20,9 @@ class Manhole(UndergroundStructure):
     """Provides access at key locations to underground cables, equipment, etc. housed inside a protective vault.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'Manhole' instance.
 
         """
-        super(Manhole, self).__init__(*args, **kw_args)
+        super(Manhole, self).__init__(**kw_args)
 

@@ -20,7 +20,7 @@ class FACTSDeviceTypeAsset(ElectricalTypeAsset):
     """Documentation for generic Flexible alternating current transmission systems (FACTS) devices that may be used for various purposes such as work planning.
     """
 
-    def __init__(self, FACTSDeviceAssetModels=None, *args, **kw_args):
+    def __init__(self, FACTSDeviceAssetModels=None, **kw_args):
         """Initializes a new 'FACTSDeviceTypeAsset' instance.
 
         @param FACTSDeviceAssetModels:
@@ -28,7 +28,7 @@ class FACTSDeviceTypeAsset(ElectricalTypeAsset):
         self._FACTSDeviceAssetModels = []
         self.FACTSDeviceAssetModels = [] if FACTSDeviceAssetModels is None else FACTSDeviceAssetModels
 
-        super(FACTSDeviceTypeAsset, self).__init__(*args, **kw_args)
+        super(FACTSDeviceTypeAsset, self).__init__(**kw_args)
 
     def getFACTSDeviceAssetModels(self):
         

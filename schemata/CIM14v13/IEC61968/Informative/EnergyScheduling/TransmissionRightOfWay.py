@@ -20,7 +20,7 @@ class TransmissionRightOfWay(PowerSystemResource):
     """A collection of transmission lines that are close proximity to each other.
     """
 
-    def __init__(self, TransmissionCorridor=None, Lines=None, *args, **kw_args):
+    def __init__(self, TransmissionCorridor=None, Lines=None, **kw_args):
         """Initializes a new 'TransmissionRightOfWay' instance.
 
         @param TransmissionCorridor: A transmission right-of-way is a member of a transmission corridor
@@ -32,7 +32,7 @@ class TransmissionRightOfWay(PowerSystemResource):
         self._Lines = []
         self.Lines = [] if Lines is None else Lines
 
-        super(TransmissionRightOfWay, self).__init__(*args, **kw_args)
+        super(TransmissionRightOfWay, self).__init__(**kw_args)
 
     def getTransmissionCorridor(self):
         """A transmission right-of-way is a member of a transmission corridor

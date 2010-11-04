@@ -20,7 +20,7 @@ class HydroGeneratingUnit(GeneratingUnit):
     """A generating unit whose prime mover is a hydraulic turbine (e.g., Francis, Pelton, Kaplan)
     """
 
-    def __init__(self, energyConversionCapability='generator', hydroUnitWaterCost=0.0, TailbayLossCurve=None, HydroPowerPlant=None, PenstockLossCurve=None, HydroGeneratingEfficiencyCurves=None, *args, **kw_args):
+    def __init__(self, energyConversionCapability='generator', hydroUnitWaterCost=0.0, TailbayLossCurve=None, HydroPowerPlant=None, PenstockLossCurve=None, HydroGeneratingEfficiencyCurves=None, **kw_args):
         """Initializes a new 'HydroGeneratingUnit' instance.
 
         @param energyConversionCapability: Energy conversion capability for generating. Values are: "generator", "pumpAndGenerator"
@@ -48,7 +48,7 @@ class HydroGeneratingUnit(GeneratingUnit):
         self._HydroGeneratingEfficiencyCurves = []
         self.HydroGeneratingEfficiencyCurves = [] if HydroGeneratingEfficiencyCurves is None else HydroGeneratingEfficiencyCurves
 
-        super(HydroGeneratingUnit, self).__init__(*args, **kw_args)
+        super(HydroGeneratingUnit, self).__init__(**kw_args)
 
     def getTailbayLossCurve(self):
         """A hydro generating unit has a tailbay loss curve

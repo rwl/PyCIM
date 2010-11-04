@@ -20,7 +20,7 @@ class ErpPayable(Document):
     """A transaction that represents an invoice from a supplier. A payable (or voucher) is an open item, approved and ready for payment, in the Accounts Payable ledger.
     """
 
-    def __init__(self, ContractorItems=None, ErpPayableLineItems=None, *args, **kw_args):
+    def __init__(self, ContractorItems=None, ErpPayableLineItems=None, **kw_args):
         """Initializes a new 'ErpPayable' instance.
 
         @param ContractorItems:
@@ -32,7 +32,7 @@ class ErpPayable(Document):
         self._ErpPayableLineItems = []
         self.ErpPayableLineItems = [] if ErpPayableLineItems is None else ErpPayableLineItems
 
-        super(ErpPayable, self).__init__(*args, **kw_args)
+        super(ErpPayable, self).__init__(**kw_args)
 
     def getContractorItems(self):
         

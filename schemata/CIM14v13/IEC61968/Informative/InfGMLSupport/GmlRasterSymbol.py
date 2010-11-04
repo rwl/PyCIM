@@ -20,7 +20,7 @@ class GmlRasterSymbol(GmlSymbol):
     """Describes how to render raster/matrix-coverage data (e.g., satellite photos, DEMs).
     """
 
-    def __init__(self, greenSourceName='', brighnessOnly=False, reliefFactor='', overlapbehaviour='', graySourcename='', opacity=0.0, redSourcename='', blueSourcename='', GmlDiagramObject=None, *args, **kw_args):
+    def __init__(self, greenSourceName='', brighnessOnly=False, reliefFactor='', overlapbehaviour='', graySourcename='', opacity=0.0, redSourcename='', blueSourcename='', GmlDiagramObject=None, **kw_args):
         """Initializes a new 'GmlRasterSymbol' instance.
 
         @param greenSourceName: Colour Channels are identified by a system and data-dependent character identifier. Contrast enhancement may be applied to each channel in isolation. 
@@ -60,7 +60,7 @@ class GmlRasterSymbol(GmlSymbol):
         self._GmlDiagramObject = None
         self.GmlDiagramObject = GmlDiagramObject
 
-        super(GmlRasterSymbol, self).__init__(*args, **kw_args)
+        super(GmlRasterSymbol, self).__init__(**kw_args)
 
     def getGmlDiagramObject(self):
         

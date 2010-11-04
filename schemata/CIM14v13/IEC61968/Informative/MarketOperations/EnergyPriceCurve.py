@@ -20,7 +20,7 @@ class EnergyPriceCurve(Curve):
     """Relationship between a price in $/hour (Y-axis) and a MW value (X-axis).
     """
 
-    def __init__(self, EnergyTransactions=None, FTRs=None, *args, **kw_args):
+    def __init__(self, EnergyTransactions=None, FTRs=None, **kw_args):
         """Initializes a new 'EnergyPriceCurve' instance.
 
         @param EnergyTransactions:
@@ -32,7 +32,7 @@ class EnergyPriceCurve(Curve):
         self._FTRs = []
         self.FTRs = [] if FTRs is None else FTRs
 
-        super(EnergyPriceCurve, self).__init__(*args, **kw_args)
+        super(EnergyPriceCurve, self).__init__(**kw_args)
 
     def getEnergyTransactions(self):
         

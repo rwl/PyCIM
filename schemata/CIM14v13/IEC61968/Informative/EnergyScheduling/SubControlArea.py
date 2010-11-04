@@ -20,7 +20,7 @@ class SubControlArea(ControlArea):
     """SubControlArea replacement classed moved into EnergySchedulingPackage.  An area defined for the purpose of tracking interchange with surrounding areas via tie points; may or may not serve as a control area.
     """
 
-    def __init__(self, Flowgate=None, Export_EnergyTransactions=None, Import_EnergyTransactions=None, HostControlArea=None, PartOf=None, SideA_TieLines=None, GeneratingUnits=None, SideB_TieLines=None, *args, **kw_args):
+    def __init__(self, Flowgate=None, Export_EnergyTransactions=None, Import_EnergyTransactions=None, HostControlArea=None, PartOf=None, SideA_TieLines=None, GeneratingUnits=None, SideB_TieLines=None, **kw_args):
         """Initializes a new 'SubControlArea' instance.
 
         @param Flowgate: A control area may own 0 to n flowgates A flowgate must be owned by exactly 1 control area
@@ -56,7 +56,7 @@ class SubControlArea(ControlArea):
         self._SideB_TieLines = []
         self.SideB_TieLines = [] if SideB_TieLines is None else SideB_TieLines
 
-        super(SubControlArea, self).__init__(*args, **kw_args)
+        super(SubControlArea, self).__init__(**kw_args)
 
     def getFlowgate(self):
         """A control area may own 0 to n flowgates A flowgate must be owned by exactly 1 control area

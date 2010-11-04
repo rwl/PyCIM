@@ -20,7 +20,7 @@ class CUAsset(IdentifiedObject):
     """Compatible unit for various types of assets such as transformers switches, substation fences, poles, etc..
     """
 
-    def __init__(self, quantity=0, typeAssetCode='', CompatibleUnits=None, TypeAsset=None, status=None, *args, **kw_args):
+    def __init__(self, quantity=0, typeAssetCode='', CompatibleUnits=None, TypeAsset=None, status=None, **kw_args):
         """Initializes a new 'CUAsset' instance.
 
         @param quantity: Quantity of the type asset within the CU. 
@@ -43,7 +43,7 @@ class CUAsset(IdentifiedObject):
 
         self.status = status
 
-        super(CUAsset, self).__init__(*args, **kw_args)
+        super(CUAsset, self).__init__(**kw_args)
 
     def getCompatibleUnits(self):
         

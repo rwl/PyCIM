@@ -20,7 +20,7 @@ class LoadMgmtRecord(ActivityRecord):
     """A log of actual measured load reductions as a result of load shed operations.
     """
 
-    def __init__(self, loadReduction=0.0, LoadMgmtFunction=None, *args, **kw_args):
+    def __init__(self, loadReduction=0.0, LoadMgmtFunction=None, **kw_args):
         """Initializes a new 'LoadMgmtRecord' instance.
 
         @param loadReduction: The measured reduction of the total load power as a result of the load shed activation. Thus it is the difference in power before and after the load shed operation. 
@@ -32,7 +32,7 @@ class LoadMgmtRecord(ActivityRecord):
         self._LoadMgmtFunction = None
         self.LoadMgmtFunction = LoadMgmtFunction
 
-        super(LoadMgmtRecord, self).__init__(*args, **kw_args)
+        super(LoadMgmtRecord, self).__init__(**kw_args)
 
     def getLoadMgmtFunction(self):
         

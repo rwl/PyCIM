@@ -20,7 +20,7 @@ class PhaseTapChanger(TapChanger):
     """A specialization of a voltage tap changer that has detailed modeling for phase shifting capabilities.   A phase shifting tap changer is also in general a voltage magnitude transformer.    The symmetrical and asymmetrical transformer tap changer models are defined here.
     """
 
-    def __init__(self, phaseTapChangerType='symmetrical', windingConnectionAngle=0.0, stepPhaseShiftIncrement=0.0, xStepMax=0.0, xStepMin=0.0, voltageStepIncrementOutOfPhase=0.0, nominalVoltageOutOfPhase=0.0, PhaseVariationCurve=None, Winding=None, TransformerWinding=None, *args, **kw_args):
+    def __init__(self, phaseTapChangerType='symmetrical', windingConnectionAngle=0.0, stepPhaseShiftIncrement=0.0, xStepMax=0.0, xStepMin=0.0, voltageStepIncrementOutOfPhase=0.0, nominalVoltageOutOfPhase=0.0, PhaseVariationCurve=None, Winding=None, TransformerWinding=None, **kw_args):
         """Initializes a new 'PhaseTapChanger' instance.
 
         @param phaseTapChangerType: The type of phase shifter construction. Values are: "symmetrical", "unknown", "asymmetrical"
@@ -64,7 +64,7 @@ class PhaseTapChanger(TapChanger):
         self._TransformerWinding = None
         self.TransformerWinding = TransformerWinding
 
-        super(PhaseTapChanger, self).__init__(*args, **kw_args)
+        super(PhaseTapChanger, self).__init__(**kw_args)
 
     def getPhaseVariationCurve(self):
         """A PhaseTapChanger can have an associated PhaseVariationCurve to define phase shift variations with tap step changes.

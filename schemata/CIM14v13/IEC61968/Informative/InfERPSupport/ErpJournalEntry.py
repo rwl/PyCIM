@@ -20,7 +20,7 @@ class ErpJournalEntry(IdentifiedObject):
     """Details of an individual entry in a journal, which is to be posted to a ledger on the posting date.
     """
 
-    def __init__(self, transactionDateTime='', accountID='', postingDateTime='', amount=0.0, sourceID='', ErpPayableLineItems=None, ErpInvoiceLineItem=None, status=None, ErpJournal=None, CostTypes=None, ErpLedgerEntry=None, ErpRecLineItems=None, *args, **kw_args):
+    def __init__(self, transactionDateTime='', accountID='', postingDateTime='', amount=0.0, sourceID='', ErpPayableLineItems=None, ErpInvoiceLineItem=None, status=None, ErpJournal=None, CostTypes=None, ErpLedgerEntry=None, ErpRecLineItems=None, **kw_args):
         """Initializes a new 'ErpJournalEntry' instance.
 
         @param transactionDateTime: Date and time journal entry was recorded. 
@@ -71,7 +71,7 @@ class ErpJournalEntry(IdentifiedObject):
         self._ErpRecLineItems = []
         self.ErpRecLineItems = [] if ErpRecLineItems is None else ErpRecLineItems
 
-        super(ErpJournalEntry, self).__init__(*args, **kw_args)
+        super(ErpJournalEntry, self).__init__(**kw_args)
 
     def getErpPayableLineItems(self):
         

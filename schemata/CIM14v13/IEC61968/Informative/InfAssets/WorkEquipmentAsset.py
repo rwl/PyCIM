@@ -20,7 +20,7 @@ class WorkEquipmentAsset(Asset):
     """Various equipment used to perform units of work by crews, office staff, etc.
     """
 
-    def __init__(self, WorkEquipmentAssetModel=None, Crew=None, Usages=None, *args, **kw_args):
+    def __init__(self, WorkEquipmentAssetModel=None, Crew=None, Usages=None, **kw_args):
         """Initializes a new 'WorkEquipmentAsset' instance.
 
         @param WorkEquipmentAssetModel:
@@ -36,7 +36,7 @@ class WorkEquipmentAsset(Asset):
         self._Usages = []
         self.Usages = [] if Usages is None else Usages
 
-        super(WorkEquipmentAsset, self).__init__(*args, **kw_args)
+        super(WorkEquipmentAsset, self).__init__(**kw_args)
 
     def getWorkEquipmentAssetModel(self):
         

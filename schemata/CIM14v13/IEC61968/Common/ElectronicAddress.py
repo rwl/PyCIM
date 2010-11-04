@@ -20,7 +20,7 @@ class ElectronicAddress(IdentifiedObject):
     """Electronic address information.
     """
 
-    def __init__(self, web='', email='', password='', lan='', userID='', radio='', ErpTelephoneNumbers=None, Locations=None, Cashier=None, ErpPerson=None, Asset=None, status=None, Document=None, Organisation=None, *args, **kw_args):
+    def __init__(self, web='', email='', password='', lan='', userID='', radio='', ErpTelephoneNumbers=None, Locations=None, Cashier=None, ErpPerson=None, Asset=None, status=None, Document=None, Organisation=None, **kw_args):
         """Initializes a new 'ElectronicAddress' instance.
 
         @param web: World Wide Web address. 
@@ -79,7 +79,7 @@ class ElectronicAddress(IdentifiedObject):
         self._Organisation = None
         self.Organisation = Organisation
 
-        super(ElectronicAddress, self).__init__(*args, **kw_args)
+        super(ElectronicAddress, self).__init__(**kw_args)
 
     def getErpTelephoneNumbers(self):
         

@@ -20,7 +20,7 @@ class GmlHalo(IdentifiedObject):
     """A type of Fill that is applied to the backgrounds of font glyphs. The use of halos greatly improves the readability of text labels.
     """
 
-    def __init__(self, radius='', opacity=0.0, GmlTextSymbols=None, *args, **kw_args):
+    def __init__(self, radius='', opacity=0.0, GmlTextSymbols=None, **kw_args):
         """Initializes a new 'GmlHalo' instance.
 
         @param radius: The Radius element gives the absolute size of a halo radius in pixels encoded as a floating-point number. The radius is taken from the outside edge of a font glyph to extend the area of coverage of the glyph (and the inside edge of ?holes? in the glyphs). The default radius is one pixel. Negative values are not allowed. 
@@ -36,7 +36,7 @@ class GmlHalo(IdentifiedObject):
         self._GmlTextSymbols = []
         self.GmlTextSymbols = [] if GmlTextSymbols is None else GmlTextSymbols
 
-        super(GmlHalo, self).__init__(*args, **kw_args)
+        super(GmlHalo, self).__init__(**kw_args)
 
     def getGmlTextSymbols(self):
         

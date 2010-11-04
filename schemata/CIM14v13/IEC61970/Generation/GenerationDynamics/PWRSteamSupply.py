@@ -20,7 +20,7 @@ class PWRSteamSupply(SteamSupply):
     """Pressurized water reactor used as a steam supply to a steam turbine
     """
 
-    def __init__(self, coreHTLagTC1=0.0, hotLegSteamGain=0.0, coldLegLagTC=0.0, coreNeutronicsEffTC=0.0, steamFlowFG=0.0, throttlePressureFactor=0.0, hotLegToColdLegGain=0.0, throttlePressureSP=0.0, steamPressureDropLagTC=0.0, coreHTLagTC2=0.0, coldLegFG1=0.0, coldLegFBLagTC=0.0, hotLegLagTC=0.0, coldLegFBLeadTC2=0.0, pressureCG=0.0, coldLegFBLeadTC1=0.0, coldLegFG2=0.0, coreNeutronicsHT=0.0, steamPressureFG=0.0, feedbackFactor=0.0, *args, **kw_args):
+    def __init__(self, coreHTLagTC1=0.0, hotLegSteamGain=0.0, coldLegLagTC=0.0, coreNeutronicsEffTC=0.0, steamFlowFG=0.0, throttlePressureFactor=0.0, hotLegToColdLegGain=0.0, throttlePressureSP=0.0, steamPressureDropLagTC=0.0, coreHTLagTC2=0.0, coldLegFG1=0.0, coldLegFBLagTC=0.0, hotLegLagTC=0.0, coldLegFBLeadTC2=0.0, pressureCG=0.0, coldLegFBLeadTC1=0.0, coldLegFG2=0.0, coreNeutronicsHT=0.0, steamPressureFG=0.0, feedbackFactor=0.0, **kw_args):
         """Initializes a new 'PWRSteamSupply' instance.
 
         @param coreHTLagTC1: Core Heat Transfer Lag Time Constant 
@@ -104,5 +104,5 @@ class PWRSteamSupply(SteamSupply):
         #: Feedback Factor
         self.feedbackFactor = feedbackFactor
 
-        super(PWRSteamSupply, self).__init__(*args, **kw_args)
+        super(PWRSteamSupply, self).__init__(**kw_args)
 

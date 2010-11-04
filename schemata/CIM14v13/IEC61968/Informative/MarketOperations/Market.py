@@ -20,7 +20,7 @@ class Market(IdentifiedObject):
     """Market (e.g., DAM, HAM)  zzMarket operation control parameters.
     """
 
-    def __init__(self, rampIntervalNonSpinRes=0.0, localTimeZone='', rampIntervalEnergy=0.0, type='', timeIntervalLength=0.0, rampIntervalSpinRes=0.0, dst=False, rampIntervalReg=0.0, end='', start='', Bids=None, MarketProducts=None, RegisteredResources=None, Settlements=None, MarketFactors=None, RTO=None, *args, **kw_args):
+    def __init__(self, rampIntervalNonSpinRes=0.0, localTimeZone='', rampIntervalEnergy=0.0, type='', timeIntervalLength=0.0, rampIntervalSpinRes=0.0, dst=False, rampIntervalReg=0.0, end='', start='', Bids=None, MarketProducts=None, RegisteredResources=None, Settlements=None, MarketFactors=None, RTO=None, **kw_args):
         """Initializes a new 'Market' instance.
 
         @param rampIntervalNonSpinRes: Ramping time interval for non-spinning reserve. 
@@ -88,7 +88,7 @@ class Market(IdentifiedObject):
         self._RTO = None
         self.RTO = RTO
 
-        super(Market, self).__init__(*args, **kw_args)
+        super(Market, self).__init__(**kw_args)
 
     def getBids(self):
         

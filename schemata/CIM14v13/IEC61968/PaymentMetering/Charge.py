@@ -20,7 +20,7 @@ class Charge(IdentifiedObject):
     """A charge element associated with other entities such as tariff structures, auxiliary agreements or other charge elements. The total charge amount applicable to this instance of Charge is the sum of fixedPortion plus percentagePortion.
     """
 
-    def __init__(self, kind='other', variablePortion=0.0, ConsumptionTariffIntervals=None, AuxiliaryAccounts=None, TimeTariffIntervals=None, ParentCharge=None, ChildCharges=None, fixedPortion=None, *args, **kw_args):
+    def __init__(self, kind='other', variablePortion=0.0, ConsumptionTariffIntervals=None, AuxiliaryAccounts=None, TimeTariffIntervals=None, ParentCharge=None, ChildCharges=None, fixedPortion=None, **kw_args):
         """Initializes a new 'Charge' instance.
 
         @param kind: The kind of charge to be applied. Values are: "other", "auxiliaryCharge", "demandCharge", "taxCharge", "consumptionCharge"
@@ -55,7 +55,7 @@ class Charge(IdentifiedObject):
 
         self.fixedPortion = fixedPortion
 
-        super(Charge, self).__init__(*args, **kw_args)
+        super(Charge, self).__init__(**kw_args)
 
     def getConsumptionTariffIntervals(self):
         """Tariff intervals to which this consumption-based charge must be levied.

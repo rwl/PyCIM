@@ -20,7 +20,7 @@ class DemandResponseProgram(IdentifiedObject):
     """Demand response program.
     """
 
-    def __init__(self, type='', EndDeviceGroups=None, validityInterval=None, CustomerAgreements=None, EndDeviceControls=None, *args, **kw_args):
+    def __init__(self, type='', EndDeviceGroups=None, validityInterval=None, CustomerAgreements=None, EndDeviceControls=None, **kw_args):
         """Initializes a new 'DemandResponseProgram' instance.
 
         @param type: Type of demand response program; examples are CPP (critical-peak pricing), RTP (real-time pricing), DLC (direct load control), DBP (demand bidding program), BIP (base interruptible program). Note that possible types change a lot and it would be impossible to enumerate them all. 
@@ -43,7 +43,7 @@ class DemandResponseProgram(IdentifiedObject):
         self._EndDeviceControls = []
         self.EndDeviceControls = [] if EndDeviceControls is None else EndDeviceControls
 
-        super(DemandResponseProgram, self).__init__(*args, **kw_args)
+        super(DemandResponseProgram, self).__init__(**kw_args)
 
     def getEndDeviceGroups(self):
         """All groups of end devices with this demand response program.

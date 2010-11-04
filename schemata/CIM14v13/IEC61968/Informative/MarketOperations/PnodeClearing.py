@@ -20,7 +20,7 @@ class PnodeClearing(MarketFactors):
     """Pricing node clearing results posted for a given settlement period.
     """
 
-    def __init__(self, congestLMP=0.0, lossLMP=0.0, costLMP=0.0, Pnode=None, *args, **kw_args):
+    def __init__(self, congestLMP=0.0, lossLMP=0.0, costLMP=0.0, Pnode=None, **kw_args):
         """Initializes a new 'PnodeClearing' instance.
 
         @param congestLMP: Congestion component of Location Marginal Price (LMP) in monetary units per MW. 
@@ -40,7 +40,7 @@ class PnodeClearing(MarketFactors):
         self._Pnode = None
         self.Pnode = Pnode
 
-        super(PnodeClearing, self).__init__(*args, **kw_args)
+        super(PnodeClearing, self).__init__(**kw_args)
 
     def getPnode(self):
         

@@ -20,7 +20,7 @@ class SecurityConstraintsClearing(MarketFactors):
     """Binding security constrained clearing results posted for a given settlement period.
     """
 
-    def __init__(self, mwLimit=0.0, mwFlow=0.0, shadowPrice=0.0, *args, **kw_args):
+    def __init__(self, mwLimit=0.0, mwFlow=0.0, shadowPrice=0.0, **kw_args):
         """Initializes a new 'SecurityConstraintsClearing' instance.
 
         @param mwLimit: Binding MW limit. 
@@ -36,5 +36,5 @@ class SecurityConstraintsClearing(MarketFactors):
         #: Security constraint shadow price.
         self.shadowPrice = shadowPrice
 
-        super(SecurityConstraintsClearing, self).__init__(*args, **kw_args)
+        super(SecurityConstraintsClearing, self).__init__(**kw_args)
 

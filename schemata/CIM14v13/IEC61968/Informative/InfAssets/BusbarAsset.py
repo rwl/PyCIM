@@ -20,7 +20,7 @@ class BusbarAsset(ElectricalAsset):
     """Physical asset used to perform the BusbarSection's role.
     """
 
-    def __init__(self, BusbarAssetModel=None, *args, **kw_args):
+    def __init__(self, BusbarAssetModel=None, **kw_args):
         """Initializes a new 'BusbarAsset' instance.
 
         @param BusbarAssetModel:
@@ -28,7 +28,7 @@ class BusbarAsset(ElectricalAsset):
         self._BusbarAssetModel = None
         self.BusbarAssetModel = BusbarAssetModel
 
-        super(BusbarAsset, self).__init__(*args, **kw_args)
+        super(BusbarAsset, self).__init__(**kw_args)
 
     def getBusbarAssetModel(self):
         

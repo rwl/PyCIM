@@ -20,7 +20,7 @@ class OrgLocRole(Role):
     """Roles played between Organisations and Locations, for example a service territory or school district. Note that roles dealing with use of a specific piece of property should be defined based on the relationship between OccupationsOfProperty and Location.
     """
 
-    def __init__(self, ErpOrganisation=None, Location=None, *args, **kw_args):
+    def __init__(self, ErpOrganisation=None, Location=None, **kw_args):
         """Initializes a new 'OrgLocRole' instance.
 
         @param ErpOrganisation:
@@ -32,7 +32,7 @@ class OrgLocRole(Role):
         self._Location = None
         self.Location = Location
 
-        super(OrgLocRole, self).__init__(*args, **kw_args)
+        super(OrgLocRole, self).__init__(**kw_args)
 
     def getErpOrganisation(self):
         

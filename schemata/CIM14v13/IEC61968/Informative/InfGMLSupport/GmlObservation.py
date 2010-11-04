@@ -20,7 +20,7 @@ class GmlObservation(Element):
     """A GML observation models the act of observing, often with a camera, a person or some form of instrument. An observation feature describes the 'metadata' associated with an information capture event, together with a value for the result of the observation. The basic structures introduced in this class are intended to serve as the foundation for more comprehensive schemas for scientific, technical and engineering measurement schemas.
     """
 
-    def __init__(self, target='', using='', dateTime='', resultOf='', ChangeItems=None, GmlValues=None, Locations=None, *args, **kw_args):
+    def __init__(self, target='', using='', dateTime='', resultOf='', ChangeItems=None, GmlValues=None, Locations=None, **kw_args):
         """Initializes a new 'GmlObservation' instance.
 
         @param target: Contains or points to the specimen, region or station which is the object of the observation 
@@ -52,7 +52,7 @@ class GmlObservation(Element):
         self._Locations = []
         self.Locations = [] if Locations is None else Locations
 
-        super(GmlObservation, self).__init__(*args, **kw_args)
+        super(GmlObservation, self).__init__(**kw_args)
 
     def getChangeItems(self):
         

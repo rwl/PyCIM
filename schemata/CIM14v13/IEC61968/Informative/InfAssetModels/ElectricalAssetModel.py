@@ -20,7 +20,7 @@ class ElectricalAssetModel(AssetModel):
     """Documentation for a type of ElectricalAsset of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, ElectricalInfos=None, *args, **kw_args):
+    def __init__(self, ElectricalInfos=None, **kw_args):
         """Initializes a new 'ElectricalAssetModel' instance.
 
         @param ElectricalInfos:
@@ -28,7 +28,7 @@ class ElectricalAssetModel(AssetModel):
         self._ElectricalInfos = []
         self.ElectricalInfos = [] if ElectricalInfos is None else ElectricalInfos
 
-        super(ElectricalAssetModel, self).__init__(*args, **kw_args)
+        super(ElectricalAssetModel, self).__init__(**kw_args)
 
     def getElectricalInfos(self):
         

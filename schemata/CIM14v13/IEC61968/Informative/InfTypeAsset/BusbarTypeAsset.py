@@ -20,7 +20,7 @@ class BusbarTypeAsset(ElectricalTypeAsset):
     """Documentation for a generic busbar that may be used for design purposes. It is typically associated with PoserSystemResource BusbarSection.
     """
 
-    def __init__(self, BusbarTypeAssets=None, *args, **kw_args):
+    def __init__(self, BusbarTypeAssets=None, **kw_args):
         """Initializes a new 'BusbarTypeAsset' instance.
 
         @param BusbarTypeAssets:
@@ -28,7 +28,7 @@ class BusbarTypeAsset(ElectricalTypeAsset):
         self._BusbarTypeAssets = []
         self.BusbarTypeAssets = [] if BusbarTypeAssets is None else BusbarTypeAssets
 
-        super(BusbarTypeAsset, self).__init__(*args, **kw_args)
+        super(BusbarTypeAsset, self).__init__(**kw_args)
 
     def getBusbarTypeAssets(self):
         

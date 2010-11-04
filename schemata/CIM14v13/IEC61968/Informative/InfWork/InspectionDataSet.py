@@ -20,7 +20,7 @@ class InspectionDataSet(ProcedureDataSet):
     """Documents the result of one inspection, a type of Procedure, for a given attribute of an asset.
     """
 
-    def __init__(self, locationCondition='', AccordingToSchedules=None, *args, **kw_args):
+    def __init__(self, locationCondition='', AccordingToSchedules=None, **kw_args):
         """Initializes a new 'InspectionDataSet' instance.
 
         @param locationCondition: Description of the conditions of the location where the asset resides. 
@@ -32,7 +32,7 @@ class InspectionDataSet(ProcedureDataSet):
         self._AccordingToSchedules = []
         self.AccordingToSchedules = [] if AccordingToSchedules is None else AccordingToSchedules
 
-        super(InspectionDataSet, self).__init__(*args, **kw_args)
+        super(InspectionDataSet, self).__init__(**kw_args)
 
     def getAccordingToSchedules(self):
         

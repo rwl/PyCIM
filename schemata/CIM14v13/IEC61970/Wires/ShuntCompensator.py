@@ -20,7 +20,7 @@ class ShuntCompensator(RegulatingCondEq):
     """A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  A negative value for reactivePerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied.
     """
 
-    def __init__(self, b0PerSection=0.0, maximumSections=0, normalSections=0, nomQ=0.0, switchOnCount=0, maxU=0.0, reactivePerSection=0.0, aVRDelay=0.0, bPerSection=0.0, voltageSensitivity=0.0, nomU=0.0, gPerSection=0.0, minU=0.0, switchOnDate='', g0PerSection=0.0, SvShuntCompensatorSections=None, *args, **kw_args):
+    def __init__(self, b0PerSection=0.0, maximumSections=0, normalSections=0, nomQ=0.0, switchOnCount=0, maxU=0.0, reactivePerSection=0.0, aVRDelay=0.0, bPerSection=0.0, voltageSensitivity=0.0, nomU=0.0, gPerSection=0.0, minU=0.0, switchOnDate='', g0PerSection=0.0, SvShuntCompensatorSections=None, **kw_args):
         """Initializes a new 'ShuntCompensator' instance.
 
         @param b0PerSection: Zero sequence shunt (charging) susceptance per section 
@@ -88,7 +88,7 @@ class ShuntCompensator(RegulatingCondEq):
         self._SvShuntCompensatorSections = None
         self.SvShuntCompensatorSections = SvShuntCompensatorSections
 
-        super(ShuntCompensator, self).__init__(*args, **kw_args)
+        super(ShuntCompensator, self).__init__(**kw_args)
 
     def getSvShuntCompensatorSections(self):
         """The state for the number of shunt compensator sections in service.

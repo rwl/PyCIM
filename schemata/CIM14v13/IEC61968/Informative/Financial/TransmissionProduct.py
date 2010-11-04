@@ -18,7 +18,7 @@ from CIM14v13.IEC61970.Core.IdentifiedObject import IdentifiedObject
 
 class TransmissionProduct(IdentifiedObject):
 
-    def __init__(self, transmissionProductType=None, Offers=None, TransmissionProvider=None, LocationFor=None, *args, **kw_args):
+    def __init__(self, transmissionProductType=None, Offers=None, TransmissionProvider=None, LocationFor=None, **kw_args):
         """Initializes a new 'TransmissionProduct' instance.
 
         @param transmissionProductType: Type of the transmission product. This could be a transmission service class (firm, total transmission capability, or non-firm), transmission service period (on-peak, full-period, off-peak), transmission service increments (yearly extended, hourly fixed, monthly sliding, etc.), transmission service type (network, available transmission capability, or point-to-point, or a transmission service window (fixed hourly, sliding weekly, extended monthly, etc.). 
@@ -38,7 +38,7 @@ class TransmissionProduct(IdentifiedObject):
         self._LocationFor = []
         self.LocationFor = [] if LocationFor is None else LocationFor
 
-        super(TransmissionProduct, self).__init__(*args, **kw_args)
+        super(TransmissionProduct, self).__init__(**kw_args)
 
     def getOffers(self):
         """A transmission product is offered as a transmission service along a transmission path.

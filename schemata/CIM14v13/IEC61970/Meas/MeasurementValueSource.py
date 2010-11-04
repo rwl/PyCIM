@@ -20,7 +20,7 @@ class MeasurementValueSource(IdentifiedObject):
     """MeasurementValueSource describes the alternative sources updating a MeasurementValue. User conventions for how to use the MeasurementValueSource attributes are described in the introduction to IEC 61970-301.
     """
 
-    def __init__(self, MeasurementValues=None, *args, **kw_args):
+    def __init__(self, MeasurementValues=None, **kw_args):
         """Initializes a new 'MeasurementValueSource' instance.
 
         @param MeasurementValues: The MeasurementValues updated by the source
@@ -28,7 +28,7 @@ class MeasurementValueSource(IdentifiedObject):
         self._MeasurementValues = []
         self.MeasurementValues = [] if MeasurementValues is None else MeasurementValues
 
-        super(MeasurementValueSource, self).__init__(*args, **kw_args)
+        super(MeasurementValueSource, self).__init__(**kw_args)
 
     def getMeasurementValues(self):
         """The MeasurementValues updated by the source

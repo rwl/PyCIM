@@ -20,7 +20,7 @@ class BranchGroup(IdentifiedObject):
     """A group of branch terminals whose directed flow summation is to be monitored. Abranch group need not form a cutset of the network.
     """
 
-    def __init__(self, maximumActivePower=0.0, monitorReactivePower=False, minimumActivePower=0.0, minimumReactivePower=0.0, monitorActivePower=False, maximumReactivePower=0.0, BranchGroupTerminal=None, *args, **kw_args):
+    def __init__(self, maximumActivePower=0.0, monitorReactivePower=False, minimumActivePower=0.0, minimumReactivePower=0.0, monitorActivePower=False, maximumReactivePower=0.0, BranchGroupTerminal=None, **kw_args):
         """Initializes a new 'BranchGroup' instance.
 
         @param maximumActivePower: The maximum active power flow. 
@@ -52,7 +52,7 @@ class BranchGroup(IdentifiedObject):
         self._BranchGroupTerminal = []
         self.BranchGroupTerminal = [] if BranchGroupTerminal is None else BranchGroupTerminal
 
-        super(BranchGroup, self).__init__(*args, **kw_args)
+        super(BranchGroup, self).__init__(**kw_args)
 
     def getBranchGroupTerminal(self):
         """The directed branch group terminals to be summed.

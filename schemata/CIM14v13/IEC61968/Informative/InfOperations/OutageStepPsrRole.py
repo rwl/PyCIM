@@ -20,7 +20,7 @@ class OutageStepPsrRole(Role):
     """Roles played between Power System Resources and Outage Steps. Examples roles include: normal supply, actual supply, interrupting device, restoration device.
     """
 
-    def __init__(self, ConductingEquipment=None, OutageStep=None, *args, **kw_args):
+    def __init__(self, ConductingEquipment=None, OutageStep=None, **kw_args):
         """Initializes a new 'OutageStepPsrRole' instance.
 
         @param ConductingEquipment:
@@ -32,7 +32,7 @@ class OutageStepPsrRole(Role):
         self._OutageStep = None
         self.OutageStep = OutageStep
 
-        super(OutageStepPsrRole, self).__init__(*args, **kw_args)
+        super(OutageStepPsrRole, self).__init__(**kw_args)
 
     def getConductingEquipment(self):
         

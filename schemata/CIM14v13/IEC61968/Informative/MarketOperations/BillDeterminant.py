@@ -18,7 +18,7 @@ from CIM14v13.IEC61968.Common.Document import Document
 
 class BillDeterminant(Document):
 
-    def __init__(self, calculationLevel='', precisionLevel='', unitOfMeasure='', configVersion='', numberInterval=0, ChargeProfile=None, ChargeProfileData=None, UserAttributes=None, *args, **kw_args):
+    def __init__(self, calculationLevel='', precisionLevel='', unitOfMeasure='', configVersion='', numberInterval=0, ChargeProfile=None, ChargeProfileData=None, UserAttributes=None, **kw_args):
         """Initializes a new 'BillDeterminant' instance.
 
         @param calculationLevel: Level in charge calculation order. 
@@ -54,7 +54,7 @@ class BillDeterminant(Document):
         self._UserAttributes = []
         self.UserAttributes = [] if UserAttributes is None else UserAttributes
 
-        super(BillDeterminant, self).__init__(*args, **kw_args)
+        super(BillDeterminant, self).__init__(**kw_args)
 
     def getChargeProfile(self):
         

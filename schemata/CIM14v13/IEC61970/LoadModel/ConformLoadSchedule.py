@@ -20,7 +20,7 @@ class ConformLoadSchedule(SeasonDayTypeSchedule):
     """A curve of load  versus time (X-axis) showing the active power values (Y1-axis) and reactive power (Y2-axis) for each unit of the period covered. This curve represents a typical pattern of load over the time period for a given day type and season.
     """
 
-    def __init__(self, ConformLoadGroup=None, *args, **kw_args):
+    def __init__(self, ConformLoadGroup=None, **kw_args):
         """Initializes a new 'ConformLoadSchedule' instance.
 
         @param ConformLoadGroup: The ConformLoadGroup where the ConformLoadSchedule belongs.
@@ -28,7 +28,7 @@ class ConformLoadSchedule(SeasonDayTypeSchedule):
         self._ConformLoadGroup = None
         self.ConformLoadGroup = ConformLoadGroup
 
-        super(ConformLoadSchedule, self).__init__(*args, **kw_args)
+        super(ConformLoadSchedule, self).__init__(**kw_args)
 
     def getConformLoadGroup(self):
         """The ConformLoadGroup where the ConformLoadSchedule belongs.

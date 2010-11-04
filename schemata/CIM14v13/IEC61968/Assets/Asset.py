@@ -20,7 +20,7 @@ class Asset(IdentifiedObject):
     """Tangible resource of the utility, including power system equipment, cabinets, buildings, etc. For electrical network equipment, the role of the asset is defined through PowerSystemResource and its subclasses, defined mainly in the Wires model (refer to IEC61970-301 and model package IEC61970::Wires). Asset description places emphasis on the physical characteristics of the equipment fulfilling that role.
     """
 
-    def __init__(self, initialCondition='', category='', lotNumber='', application='', serialNumber='', installationDate='', corporateCode='', purchasePrice=0.0, manufacturedDate='', initialLossOfLife=0.0, utcNumber='', critical=False, Measurements=None, Hazards=None, ErpOrganisationRoles=None, DimensionsInfo=None, ScheduledEvents=None, Mediums=None, AssetFunctions=None, Properties=None, AssetContainer=None, Ratings=None, ActivityRecords=None, FromAssetRoles=None, LocationRoles=None, PowerSystemResourceRoles=None, DocumentRoles=None, ChangeItems=None, ErpItemMaster=None, ElectronicAddresses=None, WorkTask=None, ErpRecDeliveryItems=None, ReliabilityInfos=None, ToAssetRoles=None, AssetPropertyCurves=None, FinancialInfo=None, ErpInventory=None, acceptanceTest=None, status=None, *args, **kw_args):
+    def __init__(self, initialCondition='', category='', lotNumber='', application='', serialNumber='', installationDate='', corporateCode='', purchasePrice=0.0, manufacturedDate='', initialLossOfLife=0.0, utcNumber='', critical=False, Measurements=None, Hazards=None, ErpOrganisationRoles=None, DimensionsInfo=None, ScheduledEvents=None, Mediums=None, AssetFunctions=None, Properties=None, AssetContainer=None, Ratings=None, ActivityRecords=None, FromAssetRoles=None, LocationRoles=None, PowerSystemResourceRoles=None, DocumentRoles=None, ChangeItems=None, ErpItemMaster=None, ElectronicAddresses=None, WorkTask=None, ErpRecDeliveryItems=None, ReliabilityInfos=None, ToAssetRoles=None, AssetPropertyCurves=None, FinancialInfo=None, ErpInventory=None, acceptanceTest=None, status=None, **kw_args):
         """Initializes a new 'Asset' instance.
 
         @param initialCondition: Condition of asset in inventory or at time of installation. Examples include new, rebuilt, overhaul required, other. Refer to inspection data for information on the most current condition of the asset. 
@@ -178,7 +178,7 @@ class Asset(IdentifiedObject):
 
         self.status = status
 
-        super(Asset, self).__init__(*args, **kw_args)
+        super(Asset, self).__init__(**kw_args)
 
     def getMeasurements(self):
         

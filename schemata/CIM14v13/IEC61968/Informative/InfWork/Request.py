@@ -20,7 +20,7 @@ class Request(Document):
     """A request for work, service or project.
     """
 
-    def __init__(self, corporateCode='', priority='', actionNeeded='', Organisation=None, Projects=None, ErpQuoteLineItem=None, Works=None, *args, **kw_args):
+    def __init__(self, corporateCode='', priority='', actionNeeded='', Organisation=None, Projects=None, ErpQuoteLineItem=None, Works=None, **kw_args):
         """Initializes a new 'Request' instance.
 
         @param corporateCode: The corporate code for this request. 
@@ -52,7 +52,7 @@ class Request(Document):
         self._Works = []
         self.Works = [] if Works is None else Works
 
-        super(Request, self).__init__(*args, **kw_args)
+        super(Request, self).__init__(**kw_args)
 
     def getOrganisation(self):
         

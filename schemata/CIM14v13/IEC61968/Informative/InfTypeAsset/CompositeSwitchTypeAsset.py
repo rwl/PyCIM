@@ -20,7 +20,7 @@ class CompositeSwitchTypeAsset(TypeAsset):
     """Documentation for a generic composite switch asset that may be used for design purposes. A composite wwitch is an amalgamation of multiple Switches.
     """
 
-    def __init__(self, CompositeSwitchAssetModels=None, SwitchTypesAssets=None, CompositeSwitchInfo=None, *args, **kw_args):
+    def __init__(self, CompositeSwitchAssetModels=None, SwitchTypesAssets=None, CompositeSwitchInfo=None, **kw_args):
         """Initializes a new 'CompositeSwitchTypeAsset' instance.
 
         @param CompositeSwitchAssetModels:
@@ -36,7 +36,7 @@ class CompositeSwitchTypeAsset(TypeAsset):
         self._CompositeSwitchInfo = None
         self.CompositeSwitchInfo = CompositeSwitchInfo
 
-        super(CompositeSwitchTypeAsset, self).__init__(*args, **kw_args)
+        super(CompositeSwitchTypeAsset, self).__init__(**kw_args)
 
     def getCompositeSwitchAssetModels(self):
         

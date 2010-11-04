@@ -20,9 +20,9 @@ class StationSupply(EnergyConsumer):
     """Station supply with load derived from the station output.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'StationSupply' instance.
 
         """
-        super(StationSupply, self).__init__(*args, **kw_args)
+        super(StationSupply, self).__init__(**kw_args)
 

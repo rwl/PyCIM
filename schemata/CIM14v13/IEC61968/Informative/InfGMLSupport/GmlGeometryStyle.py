@@ -20,7 +20,7 @@ class GmlGeometryStyle(IdentifiedObject):
     """The style for one geometry of a feature. Any number of geometry style descriptors can be assigned to one feature style. This is usually required for features with multiple geometry properties.
     """
 
-    def __init__(self, symbol='', geometryType='', geometryProperty='', GmlFeatureStyle=None, GmlLabelStyle=None, *args, **kw_args):
+    def __init__(self, symbol='', geometryType='', geometryProperty='', GmlFeatureStyle=None, GmlLabelStyle=None, **kw_args):
         """Initializes a new 'GmlGeometryStyle' instance.
 
         @param symbol: Graphical symbol used to render a geometry or a topology. A symbol is a description of graphical attributes of a graphical object without a particular, implicit meaning. It can be a description of a line, circle, polygon or more complex drawing. 
@@ -44,7 +44,7 @@ class GmlGeometryStyle(IdentifiedObject):
         self._GmlLabelStyle = None
         self.GmlLabelStyle = GmlLabelStyle
 
-        super(GmlGeometryStyle, self).__init__(*args, **kw_args)
+        super(GmlGeometryStyle, self).__init__(**kw_args)
 
     def getGmlFeatureStyle(self):
         

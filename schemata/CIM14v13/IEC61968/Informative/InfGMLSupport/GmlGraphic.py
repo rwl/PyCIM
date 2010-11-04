@@ -20,7 +20,7 @@ class GmlGraphic(IdentifiedObject):
     """A 'graphic symbol' with an inherent shape, color(s), and possibly size. A 'graphic' can be very informally defined as 'a little picture' and can be of either a raster or vector-graphic source type.
     """
 
-    def __init__(self, xScale=0.0, size=0, yScale=0.0, opacity=0.0, symbolID='', rotation=0.0, minSize=0, GmlMarks=None, GmlPointSymbols=None, *args, **kw_args):
+    def __init__(self, xScale=0.0, size=0, yScale=0.0, opacity=0.0, symbolID='', rotation=0.0, minSize=0, GmlMarks=None, GmlPointSymbols=None, **kw_args):
         """Initializes a new 'GmlGraphic' instance.
 
         @param xScale: Horizontal scaling factor of normal symbol - particularly applicable to busbars if not described through a sequence of gmlPositions (e.g., Busbar). 
@@ -60,7 +60,7 @@ class GmlGraphic(IdentifiedObject):
         self._GmlPointSymbols = []
         self.GmlPointSymbols = [] if GmlPointSymbols is None else GmlPointSymbols
 
-        super(GmlGraphic, self).__init__(*args, **kw_args)
+        super(GmlGraphic, self).__init__(**kw_args)
 
     def getGmlMarks(self):
         

@@ -20,7 +20,7 @@ class AccumulatorLimitSet(LimitSet):
     """An AccumulatorLimitSet specifies a set of Limits that are associated with an Accumulator measurement.
     """
 
-    def __init__(self, Measurements=None, Limits=None, *args, **kw_args):
+    def __init__(self, Measurements=None, Limits=None, **kw_args):
         """Initializes a new 'AccumulatorLimitSet' instance.
 
         @param Measurements: The Measurements using the LimitSet.
@@ -32,7 +32,7 @@ class AccumulatorLimitSet(LimitSet):
         self._Limits = []
         self.Limits = [] if Limits is None else Limits
 
-        super(AccumulatorLimitSet, self).__init__(*args, **kw_args)
+        super(AccumulatorLimitSet, self).__init__(**kw_args)
 
     def getMeasurements(self):
         """The Measurements using the LimitSet.

@@ -20,7 +20,7 @@ class CompositeSwitchInfo(IdentifiedObject):
     """Properties of a composite switch.
     """
 
-    def __init__(self, phaseCode='BC', ratedVoltage=0.0, phaseCount=0, remote=False, initOpMode='', gang=False, switchStateCount=0, interruptingRating=0.0, CompositeSwitchAssetModel=None, CompositeSwitchAssets=None, CompositeSwitchTypeAsset=None, *args, **kw_args):
+    def __init__(self, phaseCode='BC', ratedVoltage=0.0, phaseCount=0, remote=False, initOpMode='', gang=False, switchStateCount=0, interruptingRating=0.0, CompositeSwitchAssetModel=None, CompositeSwitchAssets=None, CompositeSwitchTypeAsset=None, **kw_args):
         """Initializes a new 'CompositeSwitchInfo' instance.
 
         @param phaseCode: Phases carried, if applicable. Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
@@ -68,7 +68,7 @@ class CompositeSwitchInfo(IdentifiedObject):
         self._CompositeSwitchTypeAsset = None
         self.CompositeSwitchTypeAsset = CompositeSwitchTypeAsset
 
-        super(CompositeSwitchInfo, self).__init__(*args, **kw_args)
+        super(CompositeSwitchInfo, self).__init__(**kw_args)
 
     def getCompositeSwitchAssetModel(self):
         

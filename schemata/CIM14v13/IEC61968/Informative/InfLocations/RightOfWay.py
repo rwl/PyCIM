@@ -20,7 +20,7 @@ class RightOfWay(Agreement):
     """A right-of-way (ROW) is for land where it is lawful to use for a public road, an electric power line, etc. Note that the association to Location, Asset, Organisation, etc. for the Grant is inherited from Agreement, a type of Document.
     """
 
-    def __init__(self, propertyData='', LandProperties=None, *args, **kw_args):
+    def __init__(self, propertyData='', LandProperties=None, **kw_args):
         """Initializes a new 'RightOfWay' instance.
 
         @param propertyData: Property related information that describes the ROW's land parcel. For example, it may be a deed book number, deed book page number, and parcel number. 
@@ -32,7 +32,7 @@ class RightOfWay(Agreement):
         self._LandProperties = []
         self.LandProperties = [] if LandProperties is None else LandProperties
 
-        super(RightOfWay, self).__init__(*args, **kw_args)
+        super(RightOfWay, self).__init__(**kw_args)
 
     def getLandProperties(self):
         """All land properties this right of way applies to.

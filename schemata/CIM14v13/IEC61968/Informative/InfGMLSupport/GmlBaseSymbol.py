@@ -20,7 +20,7 @@ class GmlBaseSymbol(IdentifiedObject):
     """Allows referencing and extension of external symbols, which may be stored in a symbol repository. The graphical properties from a referenced external symbol override the ones read in from the base symbol.
     """
 
-    def __init__(self, GmlSymbols=None, *args, **kw_args):
+    def __init__(self, GmlSymbols=None, **kw_args):
         """Initializes a new 'GmlBaseSymbol' instance.
 
         @param GmlSymbols:
@@ -28,7 +28,7 @@ class GmlBaseSymbol(IdentifiedObject):
         self._GmlSymbols = []
         self.GmlSymbols = [] if GmlSymbols is None else GmlSymbols
 
-        super(GmlBaseSymbol, self).__init__(*args, **kw_args)
+        super(GmlBaseSymbol, self).__init__(**kw_args)
 
     def getGmlSymbols(self):
         

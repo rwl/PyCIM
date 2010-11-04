@@ -20,7 +20,7 @@ class CurrentRelay(ProtectionEquipment):
     """A device that checks current flow values in any direction or designated direction
     """
 
-    def __init__(self, timeDelay2=0.0, currentLimit2=0.0, currentLimit3=0.0, inverseTimeFlag=False, timeDelay3=0.0, currentLimit1=0.0, timeDelay1=0.0, *args, **kw_args):
+    def __init__(self, timeDelay2=0.0, currentLimit2=0.0, currentLimit3=0.0, inverseTimeFlag=False, timeDelay3=0.0, currentLimit1=0.0, timeDelay1=0.0, **kw_args):
         """Initializes a new 'CurrentRelay' instance.
 
         @param timeDelay2: Inverse time delay #2 for current limit #2 
@@ -52,5 +52,5 @@ class CurrentRelay(ProtectionEquipment):
         #: Inverse time delay #1 for current limit #1
         self.timeDelay1 = timeDelay1
 
-        super(CurrentRelay, self).__init__(*args, **kw_args)
+        super(CurrentRelay, self).__init__(**kw_args)
 

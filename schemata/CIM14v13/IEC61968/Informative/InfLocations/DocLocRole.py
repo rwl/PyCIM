@@ -20,7 +20,7 @@ class DocLocRole(Role):
     """Roles played between Documents and Locations. For example, as ErpAddress is a type of Location and WorkBilling is a type of Document, a role is the address for which to mail the invoice. As a TroubleTicket is a type of Document, one instance of Location may be the address for which the trouble is reported.
     """
 
-    def __init__(self, Location=None, Document=None, *args, **kw_args):
+    def __init__(self, Location=None, Document=None, **kw_args):
         """Initializes a new 'DocLocRole' instance.
 
         @param Location:
@@ -32,7 +32,7 @@ class DocLocRole(Role):
         self._Document = None
         self.Document = Document
 
-        super(DocLocRole, self).__init__(*args, **kw_args)
+        super(DocLocRole, self).__init__(**kw_args)
 
     def getLocation(self):
         

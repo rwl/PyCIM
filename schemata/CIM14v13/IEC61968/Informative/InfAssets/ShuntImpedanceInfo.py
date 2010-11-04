@@ -20,7 +20,7 @@ class ShuntImpedanceInfo(ElectricalInfo):
     """Properties of a shunt impedance.
     """
 
-    def __init__(self, controlKind='fixed', sensingPhaseCode='BC', regBranchKind='transformer', localControlKind='none', regBranch='', lowVoltageOverride=0.0, switchOperationCycle=0.0, highVoltageOverride=0.0, localOverride=False, regBranchEnd=0, localOffLevel='', branchDirect=0, normalOpen=False, cellSize=0.0, localOnLevel='', maxSwitchOperationCount=0, vRegLineLine=False, ShuntCompensatorTypeAsset=None, ShuntCompensatorAssetModel=None, ShuntCompensatorAssets=None, *args, **kw_args):
+    def __init__(self, controlKind='fixed', sensingPhaseCode='BC', regBranchKind='transformer', localControlKind='none', regBranch='', lowVoltageOverride=0.0, switchOperationCycle=0.0, highVoltageOverride=0.0, localOverride=False, regBranchEnd=0, localOffLevel='', branchDirect=0, normalOpen=False, cellSize=0.0, localOnLevel='', maxSwitchOperationCount=0, vRegLineLine=False, ShuntCompensatorTypeAsset=None, ShuntCompensatorAssetModel=None, ShuntCompensatorAssets=None, **kw_args):
         """Initializes a new 'ShuntImpedanceInfo' instance.
 
         @param controlKind: Kind of control (if any). Values are: "fixed", "remoteWithLocalOverride", "remoteOnly", "localOnly"
@@ -104,7 +104,7 @@ class ShuntImpedanceInfo(ElectricalInfo):
         self._ShuntCompensatorAssets = []
         self.ShuntCompensatorAssets = [] if ShuntCompensatorAssets is None else ShuntCompensatorAssets
 
-        super(ShuntImpedanceInfo, self).__init__(*args, **kw_args)
+        super(ShuntImpedanceInfo, self).__init__(**kw_args)
 
     def getShuntCompensatorTypeAsset(self):
         

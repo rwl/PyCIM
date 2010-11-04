@@ -20,7 +20,7 @@ class OutageRecord(Document):
     """A document describing details of an outage in part of the electrical network, typically produced by a SCADA system following a breaker trip, or within a Trouble Call System by grouping customer calls. This has an associated OutageStep for each supply point. Primary cause of the outage is captured in 'category'. In some countries all outage restoration is performed using a SwitchingSchedule which complements the OutageRecord and records the ErpPersons (crew) and any planned Work. In other systems, it may be acceptable to manage outages including new WorkTasks without switching schedules. Note: The relationship between OutageRecord and ErpPerson and Crew is inherited as each is a type of Document.
     """
 
-    def __init__(self, mode='', damageCode='', actionTaken='', endDateTime='', isPlanned=False, OutageReport=None, OutageCodes=None, OutageSteps=None, *args, **kw_args):
+    def __init__(self, mode='', damageCode='', actionTaken='', endDateTime='', isPlanned=False, OutageReport=None, OutageCodes=None, OutageSteps=None, **kw_args):
         """Initializes a new 'OutageRecord' instance.
 
         @param mode: Value of ErpOrganisation.mode at the time of OutageRecord.startDateTime. 
@@ -56,7 +56,7 @@ class OutageRecord(Document):
         self._OutageSteps = []
         self.OutageSteps = [] if OutageSteps is None else OutageSteps
 
-        super(OutageRecord, self).__init__(*args, **kw_args)
+        super(OutageRecord, self).__init__(**kw_args)
 
     def getOutageReport(self):
         

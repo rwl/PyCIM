@@ -20,7 +20,7 @@ class UndergroundStructure(Structure):
     """Abstract class for underground structures. Typical structure types are: BURD, Enclosure, Hand Hole, Manhole, Pad/Slab, Subsurface Enclosure, Trench, Tunnel, Vault, Pull/Splice Box.
     """
 
-    def __init__(self, sealingWarrantyExpiresDate='', ventilation=False, material='', *args, **kw_args):
+    def __init__(self, sealingWarrantyExpiresDate='', ventilation=False, material='', **kw_args):
         """Initializes a new 'UndergroundStructure' instance.
 
         @param sealingWarrantyExpiresDate: Date sealing warranty expires. 
@@ -36,5 +36,5 @@ class UndergroundStructure(Structure):
         #: Primary material of underground structure.
         self.material = material
 
-        super(UndergroundStructure, self).__init__(*args, **kw_args)
+        super(UndergroundStructure, self).__init__(**kw_args)
 

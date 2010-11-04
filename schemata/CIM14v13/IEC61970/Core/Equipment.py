@@ -20,7 +20,7 @@ class Equipment(PowerSystemResource):
     """The parts of a power system that are physical devices, electronic or mechanical
     """
 
-    def __init__(self, normaIlyInService=False, ContingencyEquipment=None, CustomerAgreements=None, OperationalLimitSet=None, EquipmentContainer=None, *args, **kw_args):
+    def __init__(self, normaIlyInService=False, ContingencyEquipment=None, CustomerAgreements=None, OperationalLimitSet=None, EquipmentContainer=None, **kw_args):
         """Initializes a new 'Equipment' instance.
 
         @param normaIlyInService: The equipment is normally in service. 
@@ -44,7 +44,7 @@ class Equipment(PowerSystemResource):
         self._EquipmentContainer = None
         self.EquipmentContainer = EquipmentContainer
 
-        super(Equipment, self).__init__(*args, **kw_args)
+        super(Equipment, self).__init__(**kw_args)
 
     def getContingencyEquipment(self):
         """The contingency element associated with the equipment.

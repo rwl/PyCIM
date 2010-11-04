@@ -20,7 +20,7 @@ class BreakerAsset(ElectricalAsset):
     """Physical asset performing Breaker role.
     """
 
-    def __init__(self, BreakerInfo=None, BreakerAssetModel=None, *args, **kw_args):
+    def __init__(self, BreakerInfo=None, BreakerAssetModel=None, **kw_args):
         """Initializes a new 'BreakerAsset' instance.
 
         @param BreakerInfo:
@@ -32,7 +32,7 @@ class BreakerAsset(ElectricalAsset):
         self._BreakerAssetModel = None
         self.BreakerAssetModel = BreakerAssetModel
 
-        super(BreakerAsset, self).__init__(*args, **kw_args)
+        super(BreakerAsset, self).__init__(**kw_args)
 
     def getBreakerInfo(self):
         

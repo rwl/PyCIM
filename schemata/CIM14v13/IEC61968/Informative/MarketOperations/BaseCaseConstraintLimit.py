@@ -20,7 +20,7 @@ class BaseCaseConstraintLimit(Curve):
     """Possibly time-varying max MW or MVA and optionally Min MW limit or MVA limit (Y1 and Y2, respectively) assigned to a contingency analysis base case. Use CurveSchedule XAxisUnits to specify MW or MVA. To be used only if the BaseCaseConstraintLimit differs from the DefaultConstraintLimit.
     """
 
-    def __init__(self, SecurityConstraintSum=None, *args, **kw_args):
+    def __init__(self, SecurityConstraintSum=None, **kw_args):
         """Initializes a new 'BaseCaseConstraintLimit' instance.
 
         @param SecurityConstraintSum:
@@ -28,7 +28,7 @@ class BaseCaseConstraintLimit(Curve):
         self._SecurityConstraintSum = None
         self.SecurityConstraintSum = SecurityConstraintSum
 
-        super(BaseCaseConstraintLimit, self).__init__(*args, **kw_args)
+        super(BaseCaseConstraintLimit, self).__init__(**kw_args)
 
     def getSecurityConstraintSum(self):
         

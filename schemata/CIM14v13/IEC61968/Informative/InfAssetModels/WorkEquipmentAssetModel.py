@@ -20,7 +20,7 @@ class WorkEquipmentAssetModel(AssetModel):
     """Documentation for a type of an equipment used for work of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, WorkEquipmentTypeAsset=None, WorkEquipmentAssets=None, *args, **kw_args):
+    def __init__(self, WorkEquipmentTypeAsset=None, WorkEquipmentAssets=None, **kw_args):
         """Initializes a new 'WorkEquipmentAssetModel' instance.
 
         @param WorkEquipmentTypeAsset:
@@ -32,7 +32,7 @@ class WorkEquipmentAssetModel(AssetModel):
         self._WorkEquipmentAssets = []
         self.WorkEquipmentAssets = [] if WorkEquipmentAssets is None else WorkEquipmentAssets
 
-        super(WorkEquipmentAssetModel, self).__init__(*args, **kw_args)
+        super(WorkEquipmentAssetModel, self).__init__(**kw_args)
 
     def getWorkEquipmentTypeAsset(self):
         

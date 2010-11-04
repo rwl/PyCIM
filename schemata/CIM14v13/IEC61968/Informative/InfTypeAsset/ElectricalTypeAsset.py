@@ -20,7 +20,7 @@ class ElectricalTypeAsset(TypeAsset):
     """Generic TypeAsset for all types of component in the network that have electrical characteristics.
     """
 
-    def __init__(self, ElectricalInfos=None, *args, **kw_args):
+    def __init__(self, ElectricalInfos=None, **kw_args):
         """Initializes a new 'ElectricalTypeAsset' instance.
 
         @param ElectricalInfos:
@@ -28,7 +28,7 @@ class ElectricalTypeAsset(TypeAsset):
         self._ElectricalInfos = []
         self.ElectricalInfos = [] if ElectricalInfos is None else ElectricalInfos
 
-        super(ElectricalTypeAsset, self).__init__(*args, **kw_args)
+        super(ElectricalTypeAsset, self).__init__(**kw_args)
 
     def getElectricalInfos(self):
         

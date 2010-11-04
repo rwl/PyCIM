@@ -20,7 +20,7 @@ class SurgeProtectorAssetModel(ElectricalAssetModel):
     """Documentation for a type of an SurgeProtector asset of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, SurgeProtectorTypeAsset=None, SurgeProtectorAssets=None, *args, **kw_args):
+    def __init__(self, SurgeProtectorTypeAsset=None, SurgeProtectorAssets=None, **kw_args):
         """Initializes a new 'SurgeProtectorAssetModel' instance.
 
         @param SurgeProtectorTypeAsset:
@@ -32,7 +32,7 @@ class SurgeProtectorAssetModel(ElectricalAssetModel):
         self._SurgeProtectorAssets = []
         self.SurgeProtectorAssets = [] if SurgeProtectorAssets is None else SurgeProtectorAssets
 
-        super(SurgeProtectorAssetModel, self).__init__(*args, **kw_args)
+        super(SurgeProtectorAssetModel, self).__init__(**kw_args)
 
     def getSurgeProtectorTypeAsset(self):
         

@@ -20,7 +20,7 @@ class DuctBankTypeAsset(StructureTypeAsset):
     """A DuctBank contains multiple Ducts. The DuctBank itself should have no connections, since these are defined by the individual ducts within it. However, it will have a ConstructionType and the material it is constructed from.
     """
 
-    def __init__(self, DuctTypeAssets=None, DuctBanks=None, *args, **kw_args):
+    def __init__(self, DuctTypeAssets=None, DuctBanks=None, **kw_args):
         """Initializes a new 'DuctBankTypeAsset' instance.
 
         @param DuctTypeAssets:
@@ -32,7 +32,7 @@ class DuctBankTypeAsset(StructureTypeAsset):
         self._DuctBanks = []
         self.DuctBanks = [] if DuctBanks is None else DuctBanks
 
-        super(DuctBankTypeAsset, self).__init__(*args, **kw_args)
+        super(DuctBankTypeAsset, self).__init__(**kw_args)
 
     def getDuctTypeAssets(self):
         

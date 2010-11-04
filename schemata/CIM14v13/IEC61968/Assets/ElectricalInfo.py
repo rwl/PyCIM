@@ -20,7 +20,7 @@ class ElectricalInfo(IdentifiedObject):
     """Electrical properties of an asset or of an asset model (product by a manufacturer). Can also be used to define electrical properties for each phase individually. Not every attribute will be required for each type of asset or asset model. For example, a transformer may only have requirements for 'ratedVoltage', 'ratedApparentPower' and 'phaseCount' attributes, while a conductor will have 'r', 'x', 'b' and 'g' requirements per unit length on top of a 'ratedCurrent' and 'ratedVoltage'.
     """
 
-    def __init__(self, b=0.0, wireCount=0, r0=0.0, frequency=0.0, g=0.0, ratedVoltage=0.0, x=0.0, phaseCount=0, ratedCurrent=0.0, b0=0.0, r=0.0, g0=0.0, ratedApparentPower=0.0, x0=0.0, bil=0.0, EndDeviceAssets=None, ElectricalTypeAssets=None, ElectricalAssets=None, ElectricalAssetModels=None, *args, **kw_args):
+    def __init__(self, b=0.0, wireCount=0, r0=0.0, frequency=0.0, g=0.0, ratedVoltage=0.0, x=0.0, phaseCount=0, ratedCurrent=0.0, b0=0.0, r=0.0, g0=0.0, ratedApparentPower=0.0, x0=0.0, bil=0.0, EndDeviceAssets=None, ElectricalTypeAssets=None, ElectricalAssets=None, ElectricalAssetModels=None, **kw_args):
         """Initializes a new 'ElectricalInfo' instance.
 
         @param b: Positive sequence susceptance. 
@@ -100,7 +100,7 @@ class ElectricalInfo(IdentifiedObject):
         self._ElectricalAssetModels = []
         self.ElectricalAssetModels = [] if ElectricalAssetModels is None else ElectricalAssetModels
 
-        super(ElectricalInfo, self).__init__(*args, **kw_args)
+        super(ElectricalInfo, self).__init__(**kw_args)
 
     def getEndDeviceAssets(self):
         """All end device assets having this set of electrical properties.

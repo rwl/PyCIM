@@ -20,7 +20,7 @@ class CapacityBenefitMargin(Profile):
     """Capacity Benefit Margin (CBM) is defined as that amount of transmission transfer capability reserved by load serving entities to ensure access to generation from interconnected systems to meet generation reliability requirements. Reservation fo CBM by a load serving entity allows that entity to reduce its installed generating capacity below that which may otherwise have been necessary without interconnections to meet its generation reliability requirements.  CBM is modeled as a profile with values in different time periods which are represented by the profile data.
     """
 
-    def __init__(self, Season=None, Flowgate=None, *args, **kw_args):
+    def __init__(self, Season=None, Flowgate=None, **kw_args):
         """Initializes a new 'CapacityBenefitMargin' instance.
 
         @param Season: Capacity Benefit Margin may differ based on the season
@@ -32,7 +32,7 @@ class CapacityBenefitMargin(Profile):
         self._Flowgate = []
         self.Flowgate = [] if Flowgate is None else Flowgate
 
-        super(CapacityBenefitMargin, self).__init__(*args, **kw_args)
+        super(CapacityBenefitMargin, self).__init__(**kw_args)
 
     def getSeason(self):
         """Capacity Benefit Margin may differ based on the season

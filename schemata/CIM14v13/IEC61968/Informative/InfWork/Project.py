@@ -20,7 +20,7 @@ class Project(Document):
     """A collection of related work. For construction projects and maintenance projects, multiple phases may be performed.
     """
 
-    def __init__(self, budget=0.0, ErpProjectAccounting=None, Works=None, BusinessCase=None, Requests=None, ParentProject=None, SubProjects=None, *args, **kw_args):
+    def __init__(self, budget=0.0, ErpProjectAccounting=None, Works=None, BusinessCase=None, Requests=None, ParentProject=None, SubProjects=None, **kw_args):
         """Initializes a new 'Project' instance.
 
         @param budget: Overall project budget. 
@@ -52,7 +52,7 @@ class Project(Document):
         self._SubProjects = []
         self.SubProjects = [] if SubProjects is None else SubProjects
 
-        super(Project, self).__init__(*args, **kw_args)
+        super(Project, self).__init__(**kw_args)
 
     def getErpProjectAccounting(self):
         

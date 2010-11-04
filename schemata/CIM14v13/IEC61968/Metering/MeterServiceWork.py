@@ -20,7 +20,7 @@ class MeterServiceWork(Work):
     """Work involving meters.
     """
 
-    def __init__(self, MeterAsset=None, OldMeterAsset=None, *args, **kw_args):
+    def __init__(self, MeterAsset=None, OldMeterAsset=None, **kw_args):
         """Initializes a new 'MeterServiceWork' instance.
 
         @param MeterAsset: Meter asset on which this non-replacement work is performed.
@@ -32,7 +32,7 @@ class MeterServiceWork(Work):
         self._OldMeterAsset = None
         self.OldMeterAsset = OldMeterAsset
 
-        super(MeterServiceWork, self).__init__(*args, **kw_args)
+        super(MeterServiceWork, self).__init__(**kw_args)
 
     def getMeterAsset(self):
         """Meter asset on which this non-replacement work is performed.

@@ -20,7 +20,7 @@ class EndDeviceModel(AssetModel):
     """Documentation for particular end device product model made by a manufacturer.
     """
 
-    def __init__(self, EndDeviceTypeAsset=None, EndDeviceAssets=None, *args, **kw_args):
+    def __init__(self, EndDeviceTypeAsset=None, EndDeviceAssets=None, **kw_args):
         """Initializes a new 'EndDeviceModel' instance.
 
         @param EndDeviceTypeAsset:
@@ -32,7 +32,7 @@ class EndDeviceModel(AssetModel):
         self._EndDeviceAssets = []
         self.EndDeviceAssets = [] if EndDeviceAssets is None else EndDeviceAssets
 
-        super(EndDeviceModel, self).__init__(*args, **kw_args)
+        super(EndDeviceModel, self).__init__(**kw_args)
 
     def getEndDeviceTypeAsset(self):
         

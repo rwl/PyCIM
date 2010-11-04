@@ -20,7 +20,7 @@ class EnergyConsumer(ConductingEquipment):
     """Generic user of energy - a  point of consumption on the power system model
     """
 
-    def __init__(self, qfixedPct=0.0, pfixed=0.0, customerCount=0, qfixed=0.0, pfixedPct=0.0, PowerCutZone=None, ServiceDeliveryPoints=None, LoadResponse=None, *args, **kw_args):
+    def __init__(self, qfixedPct=0.0, pfixed=0.0, customerCount=0, qfixed=0.0, pfixedPct=0.0, PowerCutZone=None, ServiceDeliveryPoints=None, LoadResponse=None, **kw_args):
         """Initializes a new 'EnergyConsumer' instance.
 
         @param qfixedPct: Fixed reactive power as per cent of load group fixed reactive power. 
@@ -56,7 +56,7 @@ class EnergyConsumer(ConductingEquipment):
         self._LoadResponse = None
         self.LoadResponse = LoadResponse
 
-        super(EnergyConsumer, self).__init__(*args, **kw_args)
+        super(EnergyConsumer, self).__init__(**kw_args)
 
     def getPowerCutZone(self):
         """An energy consumer is assigned to a power cut zone

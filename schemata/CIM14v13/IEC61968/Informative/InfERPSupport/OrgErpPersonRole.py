@@ -20,7 +20,7 @@ class OrgErpPersonRole(Role):
     """Roles played between Persons and Organisations.
     """
 
-    def __init__(self, clientID='', ErpOrganisation=None, ErpPerson=None, *args, **kw_args):
+    def __init__(self, clientID='', ErpOrganisation=None, ErpPerson=None, **kw_args):
         """Initializes a new 'OrgErpPersonRole' instance.
 
         @param clientID: Identifiers of the person held by an organisation, such as a government agency (federal, state, province, city, county), financial institutions, etc. 
@@ -36,7 +36,7 @@ class OrgErpPersonRole(Role):
         self._ErpPerson = None
         self.ErpPerson = ErpPerson
 
-        super(OrgErpPersonRole, self).__init__(*args, **kw_args)
+        super(OrgErpPersonRole, self).__init__(**kw_args)
 
     def getErpOrganisation(self):
         

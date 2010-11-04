@@ -20,7 +20,7 @@ class ChargeProfile(Profile):
     """A type of profile for financial charges
     """
 
-    def __init__(self, unitOfMeasure='', frequency='', numberInterval=0, type='', BillDeterminant=None, PassTroughBill=None, ChargeProfileData=None, *args, **kw_args):
+    def __init__(self, unitOfMeasure='', frequency='', numberInterval=0, type='', BillDeterminant=None, PassTroughBill=None, ChargeProfileData=None, **kw_args):
         """Initializes a new 'ChargeProfile' instance.
 
         @param unitOfMeasure: The unit of measure applied to the value attribute of the profile data. 
@@ -52,7 +52,7 @@ class ChargeProfile(Profile):
         self._ChargeProfileData = []
         self.ChargeProfileData = [] if ChargeProfileData is None else ChargeProfileData
 
-        super(ChargeProfile, self).__init__(*args, **kw_args)
+        super(ChargeProfile, self).__init__(**kw_args)
 
     def getBillDeterminant(self):
         

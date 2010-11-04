@@ -20,7 +20,7 @@ class Structure(AssetContainer):
     """Construction holding assets such as conductors, transformers, switchgear, etc.
     """
 
-    def __init__(self, materialKind='concrete', height=0.0, removeWeed=False, weedRemovedDate='', fumigantAppliedDate='', fumigantName='', StructureSupports=None, *args, **kw_args):
+    def __init__(self, materialKind='concrete', height=0.0, removeWeed=False, weedRemovedDate='', fumigantAppliedDate='', fumigantName='', StructureSupports=None, **kw_args):
         """Initializes a new 'Structure' instance.
 
         @param materialKind: Material this structure is made of. Values are: "concrete", "wood", "other", "steel"
@@ -52,7 +52,7 @@ class Structure(AssetContainer):
         self._StructureSupports = []
         self.StructureSupports = [] if StructureSupports is None else StructureSupports
 
-        super(Structure, self).__init__(*args, **kw_args)
+        super(Structure, self).__init__(**kw_args)
 
     def getStructureSupports(self):
         

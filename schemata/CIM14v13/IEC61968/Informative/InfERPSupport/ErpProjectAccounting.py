@@ -20,7 +20,7 @@ class ErpProjectAccounting(Document):
     """Utility Project Accounting information, used by ERP applications to enable all relevant sub-systems that submit single sided transactions to transfer information with a Project Accounting Application. This would include, but not necessarily be limited to: Accounts Payable, Accounts Receivable, Budget, Order Management, Purchasing, Time and Labor, Travel and Expense.
     """
 
-    def __init__(self, Projects=None, WorkCostDetails=None, Works=None, ErpTimeEntries=None, *args, **kw_args):
+    def __init__(self, Projects=None, WorkCostDetails=None, Works=None, ErpTimeEntries=None, **kw_args):
         """Initializes a new 'ErpProjectAccounting' instance.
 
         @param Projects:
@@ -40,7 +40,7 @@ class ErpProjectAccounting(Document):
         self._ErpTimeEntries = []
         self.ErpTimeEntries = [] if ErpTimeEntries is None else ErpTimeEntries
 
-        super(ErpProjectAccounting, self).__init__(*args, **kw_args)
+        super(ErpProjectAccounting, self).__init__(**kw_args)
 
     def getProjects(self):
         

@@ -20,7 +20,7 @@ class ReceiptSummary(Element):
     """Record of detail of receipts pertaining to one shift of operation (one record per 'tenderKind').
     """
 
-    def __init__(self, tenderKind='cheque', Shift=None, line=None, *args, **kw_args):
+    def __init__(self, tenderKind='cheque', Shift=None, line=None, **kw_args):
         """Initializes a new 'ReceiptSummary' instance.
 
         @param tenderKind: 'Tender.kind' for which 'receiptsTotal' is given. Values are: "cheque", "card", "other", "unspecified", "cash"
@@ -35,7 +35,7 @@ class ReceiptSummary(Element):
 
         self.line = line
 
-        super(ReceiptSummary, self).__init__(*args, **kw_args)
+        super(ReceiptSummary, self).__init__(**kw_args)
 
     def getShift(self):
         """Shift for which this summary is given.

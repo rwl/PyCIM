@@ -20,7 +20,7 @@ class TelephoneNumber(IdentifiedObject):
     """Telephone number.
     """
 
-    def __init__(self, cityCode='', countryCode='', extension='', areaCode='', localNumber='', Organisation=None, Location=None, *args, **kw_args):
+    def __init__(self, cityCode='', countryCode='', extension='', areaCode='', localNumber='', Organisation=None, Location=None, **kw_args):
         """Initializes a new 'TelephoneNumber' instance.
 
         @param cityCode: (if applicable) City code. 
@@ -52,7 +52,7 @@ class TelephoneNumber(IdentifiedObject):
         self._Location = None
         self.Location = Location
 
-        super(TelephoneNumber, self).__init__(*args, **kw_args)
+        super(TelephoneNumber, self).__init__(**kw_args)
 
     def getOrganisation(self):
         """Organisation owning this telephone number.

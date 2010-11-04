@@ -20,7 +20,7 @@ class HydroPump(PowerSystemResource):
     """A synchronous motor-driven pump, typically associated with a pumped storage plant
     """
 
-    def __init__(self, pumpDischAtMinHead=0.0, pumpDischAtMaxHead=0.0, pumpPowerAtMinHead=0.0, pumpPowerAtMaxHead=0.0, HydroPumpOpSchedule=None, SynchronousMachine=None, HydroPowerPlant=None, *args, **kw_args):
+    def __init__(self, pumpDischAtMinHead=0.0, pumpDischAtMaxHead=0.0, pumpPowerAtMinHead=0.0, pumpPowerAtMaxHead=0.0, HydroPumpOpSchedule=None, SynchronousMachine=None, HydroPowerPlant=None, **kw_args):
         """Initializes a new 'HydroPump' instance.
 
         @param pumpDischAtMinHead: The pumping discharge (m3/sec) under minimum head conditions, usually at full gate 
@@ -52,7 +52,7 @@ class HydroPump(PowerSystemResource):
         self._HydroPowerPlant = None
         self.HydroPowerPlant = HydroPowerPlant
 
-        super(HydroPump, self).__init__(*args, **kw_args)
+        super(HydroPump, self).__init__(**kw_args)
 
     def getHydroPumpOpSchedule(self):
         """The hydro pump has a pumping schedule over time, indicating when pumping is to occur.

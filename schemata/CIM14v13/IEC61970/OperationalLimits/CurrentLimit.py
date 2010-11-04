@@ -20,7 +20,7 @@ class CurrentLimit(OperationalLimit):
     """Operational limit on current.
     """
 
-    def __init__(self, value=0.0, *args, **kw_args):
+    def __init__(self, value=0.0, **kw_args):
         """Initializes a new 'CurrentLimit' instance.
 
         @param value: Limit on current flow. 
@@ -28,5 +28,5 @@ class CurrentLimit(OperationalLimit):
         #: Limit on current flow.
         self.value = value
 
-        super(CurrentLimit, self).__init__(*args, **kw_args)
+        super(CurrentLimit, self).__init__(**kw_args)
 

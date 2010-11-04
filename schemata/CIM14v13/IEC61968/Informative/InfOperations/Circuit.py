@@ -20,9 +20,9 @@ class Circuit(EquipmentContainer):
     """EquipmentContainer that will typically include conductors, energy consumers, transformers and transformer windings, switches, shunt compensators, etc., likely at different voltages. Circuit extends from a substation to a set of open points (radial circuit), or to a second substation (looped circuit). It generally starts with a switching device, located in a substation. Membership in a Circuit is based on the nominal or design system configuration, but the electrical connectivity will change during switching operations.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'Circuit' instance.
 
         """
-        super(Circuit, self).__init__(*args, **kw_args)
+        super(Circuit, self).__init__(**kw_args)
 

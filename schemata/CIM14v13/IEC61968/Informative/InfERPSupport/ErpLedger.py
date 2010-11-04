@@ -20,7 +20,7 @@ class ErpLedger(Document):
     """In accounting transactions, a ledger is a book containing accounts to which debits and credits are posted from journals, where transactions are initially recorded. Journal entries are periodically posted to the ledger. Ledger Actual represents actual amounts by account within ledger within company or business area. Actual amounts may be generated in a source application and then loaded to a specific ledger within the enterprise general ledger or budget application.
     """
 
-    def __init__(self, ErpLedgerEntries=None, *args, **kw_args):
+    def __init__(self, ErpLedgerEntries=None, **kw_args):
         """Initializes a new 'ErpLedger' instance.
 
         @param ErpLedgerEntries:
@@ -28,7 +28,7 @@ class ErpLedger(Document):
         self._ErpLedgerEntries = []
         self.ErpLedgerEntries = [] if ErpLedgerEntries is None else ErpLedgerEntries
 
-        super(ErpLedger, self).__init__(*args, **kw_args)
+        super(ErpLedger, self).__init__(**kw_args)
 
     def getErpLedgerEntries(self):
         

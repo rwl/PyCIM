@@ -20,9 +20,9 @@ class TSPAgreement(Agreement):
     """A contractual agreement between a supplier (utility) and a transaction service provider (a type of organisation) that governs the terms and conditions, under which authorisation the transaction service provider may process transactions on behalf of the supplier.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'TSPAgreement' instance.
 
         """
-        super(TSPAgreement, self).__init__(*args, **kw_args)
+        super(TSPAgreement, self).__init__(**kw_args)
 

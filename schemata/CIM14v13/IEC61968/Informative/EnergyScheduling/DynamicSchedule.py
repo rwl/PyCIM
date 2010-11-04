@@ -20,7 +20,7 @@ class DynamicSchedule(RegularIntervalSchedule):
     """A continuously variable component of a control area's active power net interchange schedule. Dynamic schedules are sent and received by control areas.
     """
 
-    def __init__(self, dynSchedStatus='', dynSchedSignRev=False, Measurement=None, Receive_HostControlArea=None, Send_HostControlArea=None, *args, **kw_args):
+    def __init__(self, dynSchedStatus='', dynSchedSignRev=False, Measurement=None, Receive_HostControlArea=None, Send_HostControlArea=None, **kw_args):
         """Initializes a new 'DynamicSchedule' instance.
 
         @param dynSchedStatus: The 'active' or 'inactive' status of the dynamic schedule 
@@ -44,7 +44,7 @@ class DynamicSchedule(RegularIntervalSchedule):
         self._Send_HostControlArea = None
         self.Send_HostControlArea = Send_HostControlArea
 
-        super(DynamicSchedule, self).__init__(*args, **kw_args)
+        super(DynamicSchedule, self).__init__(**kw_args)
 
     def getMeasurement(self):
         """A measurement is a data source for dynamic interchange schedules

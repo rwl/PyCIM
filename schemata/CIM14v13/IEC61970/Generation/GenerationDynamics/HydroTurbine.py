@@ -20,7 +20,7 @@ class HydroTurbine(PrimeMover):
     """A water driven prime mover. Typical turbine types are: Francis, Kaplan, and Pelton.
     """
 
-    def __init__(self, turbineType='francis', speedRating=0.0, speedRegulation=0.0, turbineRating=0.0, transientDroopTime=0.0, minHeadMaxP=0.0, transientRegulation=0.0, gateRateLimit=0.0, maxHeadMaxP=0.0, waterStartingTime=0.0, gateUpperLimit=0.0, *args, **kw_args):
+    def __init__(self, turbineType='francis', speedRating=0.0, speedRegulation=0.0, turbineRating=0.0, transientDroopTime=0.0, minHeadMaxP=0.0, transientRegulation=0.0, gateRateLimit=0.0, maxHeadMaxP=0.0, waterStartingTime=0.0, gateUpperLimit=0.0, **kw_args):
         """Initializes a new 'HydroTurbine' instance.
 
         @param turbineType: Type of turbine. Values are: "francis", "kaplan", "pelton"
@@ -68,5 +68,5 @@ class HydroTurbine(PrimeMover):
         #: Gate Upper Limit
         self.gateUpperLimit = gateUpperLimit
 
-        super(HydroTurbine, self).__init__(*args, **kw_args)
+        super(HydroTurbine, self).__init__(**kw_args)
 

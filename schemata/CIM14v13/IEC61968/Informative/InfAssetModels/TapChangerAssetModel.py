@@ -20,7 +20,7 @@ class TapChangerAssetModel(AssetModel):
     """Documentation for a type of a tap changer of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, switchingKind='vacuum', neutralStep=0, lowStep=0, frequency=0.0, stepVoltageIncrement=0.0, ratedCurrent=0.0, initialDelay=0.0, tapCount=0, ratedVoltage=0.0, stepPhaseIncrement=0.0, subsequentDelay=0.0, highStep=0, ratedApparentPower=0.0, phaseCount=0, bil=0.0, TapChangerAssets=None, *args, **kw_args):
+    def __init__(self, switchingKind='vacuum', neutralStep=0, lowStep=0, frequency=0.0, stepVoltageIncrement=0.0, ratedCurrent=0.0, initialDelay=0.0, tapCount=0, ratedVoltage=0.0, stepPhaseIncrement=0.0, subsequentDelay=0.0, highStep=0, ratedApparentPower=0.0, phaseCount=0, bil=0.0, TapChangerAssets=None, **kw_args):
         """Initializes a new 'TapChangerAssetModel' instance.
 
         @param switchingKind: Switching kind of tap changer. Values are: "vacuum", "reactive", "other", "resistive"
@@ -88,7 +88,7 @@ class TapChangerAssetModel(AssetModel):
         self._TapChangerAssets = []
         self.TapChangerAssets = [] if TapChangerAssets is None else TapChangerAssets
 
-        super(TapChangerAssetModel, self).__init__(*args, **kw_args)
+        super(TapChangerAssetModel, self).__init__(**kw_args)
 
     def getTapChangerAssets(self):
         

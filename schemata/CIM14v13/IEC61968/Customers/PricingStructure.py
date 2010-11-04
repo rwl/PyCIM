@@ -20,7 +20,7 @@ class PricingStructure(Document):
     """Grouping of pricing components and prices used in the creation of customer charges and the eligibility criteria under which these terms may be offered to a customer. The reasons for grouping include state, customer classification, site characteristics, classification (i.e. fee price structure, deposit price structure, electric service price structure, etc.) and accounting requirements.
     """
 
-    def __init__(self, revenueKind='streetLight', code='', dailyFloorUsage=0, taxExemption=False, dailyCeilingUsage=0, dailyEstimatedUsage=0, Tariffs=None, PowerQualityPricings=None, Transactions=None, ServiceDeliveryPoints=None, CustomerAgreements=None, SubscribePowerCurve=None, ServiceCategory=None, *args, **kw_args):
+    def __init__(self, revenueKind='streetLight', code='', dailyFloorUsage=0, taxExemption=False, dailyCeilingUsage=0, dailyEstimatedUsage=0, Tariffs=None, PowerQualityPricings=None, Transactions=None, ServiceDeliveryPoints=None, CustomerAgreements=None, SubscribePowerCurve=None, ServiceCategory=None, **kw_args):
         """Initializes a new 'PricingStructure' instance.
 
         @param revenueKind: (Accounting) Kind of revenue, often used to determine the grace period allowed, before collection actions are taken on a customer (grace periods vary between revenue classes). Values are: "streetLight", "commercial", "other", "irrigation", "nonResidential", "industrial", "residential"
@@ -76,7 +76,7 @@ class PricingStructure(Document):
         self._ServiceCategory = None
         self.ServiceCategory = ServiceCategory
 
-        super(PricingStructure, self).__init__(*args, **kw_args)
+        super(PricingStructure, self).__init__(**kw_args)
 
     def getTariffs(self):
         """All tariffs used by this pricing structure.

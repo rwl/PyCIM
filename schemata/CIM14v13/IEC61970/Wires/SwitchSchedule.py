@@ -20,7 +20,7 @@ class SwitchSchedule(SeasonDayTypeSchedule):
     """A schedule of switch positions.  If RegularTimePoint.value1 is 0, the switch is open.  If 1, the switch is closed.
     """
 
-    def __init__(self, Switch=None, *args, **kw_args):
+    def __init__(self, Switch=None, **kw_args):
         """Initializes a new 'SwitchSchedule' instance.
 
         @param Switch: A SwitchSchedule is associated with a Switch.
@@ -28,7 +28,7 @@ class SwitchSchedule(SeasonDayTypeSchedule):
         self._Switch = None
         self.Switch = Switch
 
-        super(SwitchSchedule, self).__init__(*args, **kw_args)
+        super(SwitchSchedule, self).__init__(**kw_args)
 
     def getSwitch(self):
         """A SwitchSchedule is associated with a Switch.

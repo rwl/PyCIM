@@ -20,7 +20,7 @@ class Settlement(Document):
     """Specifies a settlement run.
     """
 
-    def __init__(self, tradeDate='', Market=None, ErpLedgerEntries=None, ErpInvoiceLineItems=None, *args, **kw_args):
+    def __init__(self, tradeDate='', Market=None, ErpLedgerEntries=None, ErpInvoiceLineItems=None, **kw_args):
         """Initializes a new 'Settlement' instance.
 
         @param tradeDate: The trade date on which the settlement is run. 
@@ -40,7 +40,7 @@ class Settlement(Document):
         self._ErpInvoiceLineItems = []
         self.ErpInvoiceLineItems = [] if ErpInvoiceLineItems is None else ErpInvoiceLineItems
 
-        super(Settlement, self).__init__(*args, **kw_args)
+        super(Settlement, self).__init__(**kw_args)
 
     def getMarket(self):
         

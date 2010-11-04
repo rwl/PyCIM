@@ -20,7 +20,7 @@ class GmlSymbol(IdentifiedObject):
     """Describes how a feature is to appear on a map or display. The symbol describes not just the shape that should appear but also such graphical properties as color and opacity.
     """
 
-    def __init__(self, level='', type='', version='', GmlFeatureStyles=None, GmlBaseSymbol=None, *args, **kw_args):
+    def __init__(self, level='', type='', version='', GmlFeatureStyles=None, GmlBaseSymbol=None, **kw_args):
         """Initializes a new 'GmlSymbol' instance.
 
         @param level: The level (of the map) where the symbol exists or the zoom levels at which this diagram object is displayed. As a way of de-cluttering displays, for example, some symbols and annotations are only shown when zoomed in. 
@@ -44,7 +44,7 @@ class GmlSymbol(IdentifiedObject):
         self._GmlBaseSymbol = None
         self.GmlBaseSymbol = GmlBaseSymbol
 
-        super(GmlSymbol, self).__init__(*args, **kw_args)
+        super(GmlSymbol, self).__init__(**kw_args)
 
     def getGmlFeatureStyles(self):
         

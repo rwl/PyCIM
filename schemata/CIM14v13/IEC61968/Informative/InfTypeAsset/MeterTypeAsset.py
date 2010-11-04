@@ -20,7 +20,7 @@ class MeterTypeAsset(ElectricalTypeAsset):
     """Documentation for a generic meter that may be used for design purposes. Rather than being associated with CustomerMeter, it is associated with EnergyConsumer as it may be used for many applications, such as tie line metering, in addition to customer metering.
     """
 
-    def __init__(self, MeterAssetModels=None, *args, **kw_args):
+    def __init__(self, MeterAssetModels=None, **kw_args):
         """Initializes a new 'MeterTypeAsset' instance.
 
         @param MeterAssetModels:
@@ -28,7 +28,7 @@ class MeterTypeAsset(ElectricalTypeAsset):
         self._MeterAssetModels = []
         self.MeterAssetModels = [] if MeterAssetModels is None else MeterAssetModels
 
-        super(MeterTypeAsset, self).__init__(*args, **kw_args)
+        super(MeterTypeAsset, self).__init__(**kw_args)
 
     def getMeterAssetModels(self):
         

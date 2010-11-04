@@ -20,9 +20,9 @@ class ComEquipmentTypeAsset(TypeAsset):
     """Documentation for a piece of Communication Equipment (e.g., gateway, router, network hub, etc.) that may be used for design purposes.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'ComEquipmentTypeAsset' instance.
 
         """
-        super(ComEquipmentTypeAsset, self).__init__(*args, **kw_args)
+        super(ComEquipmentTypeAsset, self).__init__(**kw_args)
 

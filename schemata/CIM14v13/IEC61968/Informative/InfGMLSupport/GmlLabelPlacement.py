@@ -20,7 +20,7 @@ class GmlLabelPlacement(IdentifiedObject):
     """Used to position a label relative to a point or a line.
     """
 
-    def __init__(self, type='', offset='', anchorX='', rotation='', displacementY='', displacementX='', anchorY='', GmlTextSymbols=None, *args, **kw_args):
+    def __init__(self, type='', offset='', anchorX='', rotation='', displacementY='', displacementX='', anchorY='', GmlTextSymbols=None, **kw_args):
         """Initializes a new 'GmlLabelPlacement' instance.
 
         @param type: Type of 'LabelPlacement' which in turn specifies where and how a text label should be rendered relative to a geometry. 
@@ -56,7 +56,7 @@ class GmlLabelPlacement(IdentifiedObject):
         self._GmlTextSymbols = []
         self.GmlTextSymbols = [] if GmlTextSymbols is None else GmlTextSymbols
 
-        super(GmlLabelPlacement, self).__init__(*args, **kw_args)
+        super(GmlLabelPlacement, self).__init__(**kw_args)
 
     def getGmlTextSymbols(self):
         

@@ -20,7 +20,7 @@ class TypeAssetCatalogue(IdentifiedObject):
     """Catalogue of generic types of assets (TypeAsset) that may be used for design purposes. It is not associated with a particular manufacturer.
     """
 
-    def __init__(self, TypeAssets=None, status=None, *args, **kw_args):
+    def __init__(self, TypeAssets=None, status=None, **kw_args):
         """Initializes a new 'TypeAssetCatalogue' instance.
 
         @param TypeAssets:
@@ -31,7 +31,7 @@ class TypeAssetCatalogue(IdentifiedObject):
 
         self.status = status
 
-        super(TypeAssetCatalogue, self).__init__(*args, **kw_args)
+        super(TypeAssetCatalogue, self).__init__(**kw_args)
 
     def getTypeAssets(self):
         

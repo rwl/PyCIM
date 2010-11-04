@@ -20,7 +20,7 @@ class EmissionAccount(Curve):
     """Accounts for tracking emissions usage and credits for thermal generating units. A unit may have zero or more emission accounts, and will typically have one for tracking usage and one for tracking credits.
     """
 
-    def __init__(self, emissionType='nitrogenOxide', emissionValueSource='calculated', ThermalGeneratingUnit=None, *args, **kw_args):
+    def __init__(self, emissionType='nitrogenOxide', emissionValueSource='calculated', ThermalGeneratingUnit=None, **kw_args):
         """Initializes a new 'EmissionAccount' instance.
 
         @param emissionType: The type of emission, for example sulfur dioxide (SO2). The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide). Values are: "nitrogenOxide", "carbonDisulfide", "hydrogenSulfide", "sulfurDioxide", "chlorine", "carbonDioxide"
@@ -36,7 +36,7 @@ class EmissionAccount(Curve):
         self._ThermalGeneratingUnit = None
         self.ThermalGeneratingUnit = ThermalGeneratingUnit
 
-        super(EmissionAccount, self).__init__(*args, **kw_args)
+        super(EmissionAccount, self).__init__(**kw_args)
 
     def getThermalGeneratingUnit(self):
         """A thermal generating unit may have one or more emission allowance accounts

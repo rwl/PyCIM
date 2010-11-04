@@ -20,7 +20,7 @@ class Anchor(StructureSupport):
     """A type of support for structures, used to hold poles secure.
     """
 
-    def __init__(self, kind='other', *args, **kw_args):
+    def __init__(self, kind='other', **kw_args):
         """Initializes a new 'Anchor' instance.
 
         @param kind: Kind of this anchor. Values are: "other", "concrete", "rod", "screw", "multiHelix", "helix", "unknown"
@@ -28,5 +28,5 @@ class Anchor(StructureSupport):
         #: Kind of this anchor.Values are: "other", "concrete", "rod", "screw", "multiHelix", "helix", "unknown"
         self.kind = kind
 
-        super(Anchor, self).__init__(*args, **kw_args)
+        super(Anchor, self).__init__(**kw_args)
 

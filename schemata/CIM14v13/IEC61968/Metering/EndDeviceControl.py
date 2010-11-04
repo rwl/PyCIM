@@ -20,7 +20,7 @@ class EndDeviceControl(IdentifiedObject):
     """Instructs an EndDeviceAsset (or EndDeviceGroup) to perform a specified action.
     """
 
-    def __init__(self, type='', drProgramMandatory=False, priceSignal=0.0, drProgramLevel=0, EndDeviceAsset=None, scheduledInterval=None, EndDeviceGroup=None, CustomerAgreement=None, DemandResponseProgram=None, *args, **kw_args):
+    def __init__(self, type='', drProgramMandatory=False, priceSignal=0.0, drProgramLevel=0, EndDeviceAsset=None, scheduledInterval=None, EndDeviceGroup=None, CustomerAgreement=None, DemandResponseProgram=None, **kw_args):
         """Initializes a new 'EndDeviceControl' instance.
 
         @param type: Type of control. 
@@ -59,7 +59,7 @@ class EndDeviceControl(IdentifiedObject):
         self._DemandResponseProgram = None
         self.DemandResponseProgram = DemandResponseProgram
 
-        super(EndDeviceControl, self).__init__(*args, **kw_args)
+        super(EndDeviceControl, self).__init__(**kw_args)
 
     def getEndDeviceAsset(self):
         """End device asset receiving commands from this end device control.

@@ -20,7 +20,7 @@ class ModelingAuthority(IdentifiedObject):
     """A Modeling Authority is an entity responsible for supplying and maintaining the data defining a specific set of objects in a network model.
     """
 
-    def __init__(self, ModelingAuthoritySets=None, *args, **kw_args):
+    def __init__(self, ModelingAuthoritySets=None, **kw_args):
         """Initializes a new 'ModelingAuthority' instance.
 
         @param ModelingAuthoritySets: A Modeling Authority set supplies and maintains the data for the objects in a Modeling Authority Set.
@@ -28,7 +28,7 @@ class ModelingAuthority(IdentifiedObject):
         self._ModelingAuthoritySets = []
         self.ModelingAuthoritySets = [] if ModelingAuthoritySets is None else ModelingAuthoritySets
 
-        super(ModelingAuthority, self).__init__(*args, **kw_args)
+        super(ModelingAuthority, self).__init__(**kw_args)
 
     def getModelingAuthoritySets(self):
         """A Modeling Authority set supplies and maintains the data for the objects in a Modeling Authority Set.

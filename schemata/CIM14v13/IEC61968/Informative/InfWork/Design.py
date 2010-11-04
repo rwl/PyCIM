@@ -20,7 +20,7 @@ class Design(Document):
     """A design for consideration by customers, potential customers, or internal work. Note that the Version of design is the revision attribute that is inherited from Document.
     """
 
-    def __init__(self, kind='estimated', price=0.0, costEstimate=0.0, DesignLocationsCUs=None, WorkCostDetails=None, ErpQuoteLineItem=None, DesignLocations=None, Work=None, ErpBOMs=None, ConditionFactors=None, WorkTasks=None, *args, **kw_args):
+    def __init__(self, kind='estimated', price=0.0, costEstimate=0.0, DesignLocationsCUs=None, WorkCostDetails=None, ErpQuoteLineItem=None, DesignLocations=None, Work=None, ErpBOMs=None, ConditionFactors=None, WorkTasks=None, **kw_args):
         """Initializes a new 'Design' instance.
 
         @param kind: Kind of this design. Values are: "estimated", "asBuilt", "other"
@@ -68,7 +68,7 @@ class Design(Document):
         self._WorkTasks = []
         self.WorkTasks = [] if WorkTasks is None else WorkTasks
 
-        super(Design, self).__init__(*args, **kw_args)
+        super(Design, self).__init__(**kw_args)
 
     def getDesignLocationsCUs(self):
         

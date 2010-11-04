@@ -20,7 +20,7 @@ class AssetModel(Document):
     """Documentation for a particular product model made by a manufacturer. There are typically many instances of an asset associated with a single asset model.
     """
 
-    def __init__(self, corporateStandardKind='other', usageKind='distributionUnderground', modelNumber='', weightTotal=0.0, modelVersion='', ErpInventoryCounts=None, TypeAsset=None, AssetModelCatalogueItems=None, *args, **kw_args):
+    def __init__(self, corporateStandardKind='other', usageKind='distributionUnderground', modelNumber='', weightTotal=0.0, modelVersion='', ErpInventoryCounts=None, TypeAsset=None, AssetModelCatalogueItems=None, **kw_args):
         """Initializes a new 'AssetModel' instance.
 
         @param corporateStandardKind: Kind of corporate standard for this asset model. Values are: "other", "underEvaluation", "experimental", "standard"
@@ -56,7 +56,7 @@ class AssetModel(Document):
         self._AssetModelCatalogueItems = []
         self.AssetModelCatalogueItems = [] if AssetModelCatalogueItems is None else AssetModelCatalogueItems
 
-        super(AssetModel, self).__init__(*args, **kw_args)
+        super(AssetModel, self).__init__(**kw_args)
 
     def getErpInventoryCounts(self):
         

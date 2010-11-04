@@ -20,7 +20,7 @@ class Terminal(IdentifiedObject):
     """An electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called 'connectivity nodes'.
     """
 
-    def __init__(self, sequenceNumber=0, connected=False, ConductingEquipment=None, BushingAsset=None, HasSecond_MutualCoupling=None, OperationalLimitSet=None, HasFirst_MutualCoupling=None, TieFlow=None, Measurements=None, TopologicalNode=None, RegulatingControl=None, SvPowerFlow=None, TerminalConstraints=None, BranchGroupTerminal=None, ConnectivityNode=None, *args, **kw_args):
+    def __init__(self, sequenceNumber=0, connected=False, ConductingEquipment=None, BushingAsset=None, HasSecond_MutualCoupling=None, OperationalLimitSet=None, HasFirst_MutualCoupling=None, TieFlow=None, Measurements=None, TopologicalNode=None, RegulatingControl=None, SvPowerFlow=None, TerminalConstraints=None, BranchGroupTerminal=None, ConnectivityNode=None, **kw_args):
         """Initializes a new 'Terminal' instance.
 
         @param sequenceNumber: The orientation of the terminal connections for a multiple terminal conducting equipment.  The sequence numbering starts with 1 and additional terminals should follow in increasing order.   The first terminal is the 'starting point' for a two terminal branch.   In the case of class TransformerWinding only one terminal is used so its sequenceNumber must be 1. 
@@ -84,7 +84,7 @@ class Terminal(IdentifiedObject):
         self._ConnectivityNode = None
         self.ConnectivityNode = ConnectivityNode
 
-        super(Terminal, self).__init__(*args, **kw_args)
+        super(Terminal, self).__init__(**kw_args)
 
     def getConductingEquipment(self):
         """ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes

@@ -20,7 +20,7 @@ class Route(IdentifiedObject):
     """Route that is followed, for example by service crews.
     """
 
-    def __init__(self, category='', Locations=None, Crews=None, status=None, *args, **kw_args):
+    def __init__(self, category='', Locations=None, Crews=None, status=None, **kw_args):
         """Initializes a new 'Route' instance.
 
         @param category: Category by utility's work management standards and practices. 
@@ -39,7 +39,7 @@ class Route(IdentifiedObject):
 
         self.status = status
 
-        super(Route, self).__init__(*args, **kw_args)
+        super(Route, self).__init__(**kw_args)
 
     def getLocations(self):
         

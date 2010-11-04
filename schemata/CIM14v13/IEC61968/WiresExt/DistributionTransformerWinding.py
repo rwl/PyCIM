@@ -20,7 +20,7 @@ class DistributionTransformerWinding(ConductingEquipment):
     """Conducting connection point of a distribution / unbalanced transformer winding instance. This class differs from Wires::TransformerWinding as follows: - the eight Pi model attributes are moved into separate class, that can be optionally referred to from several winding instances. - the three grounding attributes can differ per winding instance, even for windings that use the same TransformerInfo, so they are kept on DistributionTransformerWinding. - 'windingType' attribute is replaced by 'sequenceNumber' attribute on WindingInfo class. - all the other attributes come from the WindingInfo (and its relationships). TransformerInfo is associated to the DistributionTransformer as referenceable data, so it can be defined once and referred to from instances, instead of being specified with each instance.
     """
 
-    def __init__(self, grounded=False, xground=0.0, rground=0.0, FromWindingInsulations=None, PiImpedance=None, PhaseTapChanger=None, RatioTapChanger=None, WindingInfo=None, Transformer=None, ToWindingInsulations=None, *args, **kw_args):
+    def __init__(self, grounded=False, xground=0.0, rground=0.0, FromWindingInsulations=None, PiImpedance=None, PhaseTapChanger=None, RatioTapChanger=None, WindingInfo=None, Transformer=None, ToWindingInsulations=None, **kw_args):
         """Initializes a new 'DistributionTransformerWinding' instance.
 
         @param grounded: (for Yn and Zn connections) True if the neutral is solidly grounded. 
@@ -64,7 +64,7 @@ class DistributionTransformerWinding(ConductingEquipment):
         self._ToWindingInsulations = []
         self.ToWindingInsulations = [] if ToWindingInsulations is None else ToWindingInsulations
 
-        super(DistributionTransformerWinding, self).__init__(*args, **kw_args)
+        super(DistributionTransformerWinding, self).__init__(**kw_args)
 
     def getFromWindingInsulations(self):
         

@@ -20,7 +20,7 @@ class GmlFeatureStyle(IdentifiedObject):
     """Used for styling a particular aspect or aspects of a feature, such as geometry, topology or arbitrary text string.
     """
 
-    def __init__(self, queryGrammar='xpath', version='', featureTypeName='', baseType='', featureType='', semanticTypeIdentifier='', featureConstraint='', GmlGeometryStyles=None, GmlFeatureTypes=None, GmlLabelStyles=None, GmlSymbols=None, GmlTobologyStyles=None, *args, **kw_args):
+    def __init__(self, queryGrammar='xpath', version='', featureTypeName='', baseType='', featureType='', semanticTypeIdentifier='', featureConstraint='', GmlGeometryStyles=None, GmlFeatureTypes=None, GmlLabelStyles=None, GmlSymbols=None, GmlTobologyStyles=None, **kw_args):
         """Initializes a new 'GmlFeatureStyle' instance.
 
         @param queryGrammar: Grammar used in the content of the gml:featureConstraint element. Values are: "xpath", "other", "xquery"
@@ -72,7 +72,7 @@ class GmlFeatureStyle(IdentifiedObject):
         self._GmlTobologyStyles = []
         self.GmlTobologyStyles = [] if GmlTobologyStyles is None else GmlTobologyStyles
 
-        super(GmlFeatureStyle, self).__init__(*args, **kw_args)
+        super(GmlFeatureStyle, self).__init__(**kw_args)
 
     def getGmlGeometryStyles(self):
         

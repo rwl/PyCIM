@@ -20,7 +20,7 @@ class Streetlight(ElectricalAsset):
     """Streetlight asset.
     """
 
-    def __init__(self, lampKind='highPressureSodium', lightRating=0.0, armLength=0.0, AttachedToPole=None, StreetlightAssetModel=None, *args, **kw_args):
+    def __init__(self, lampKind='highPressureSodium', lightRating=0.0, armLength=0.0, AttachedToPole=None, StreetlightAssetModel=None, **kw_args):
         """Initializes a new 'Streetlight' instance.
 
         @param lampKind: Lamp kind currently installed. Values are: "highPressureSodium", "other", "metalHalide", "mercuryVapor"
@@ -44,7 +44,7 @@ class Streetlight(ElectricalAsset):
         self._StreetlightAssetModel = None
         self.StreetlightAssetModel = StreetlightAssetModel
 
-        super(Streetlight, self).__init__(*args, **kw_args)
+        super(Streetlight, self).__init__(**kw_args)
 
     def getAttachedToPole(self):
         """Streetlight(s) may be attached to a pole.

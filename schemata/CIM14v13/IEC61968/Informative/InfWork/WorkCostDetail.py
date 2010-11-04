@@ -20,7 +20,7 @@ class WorkCostDetail(Document):
     """A collection of all of the individual cost items collected from multiple sources.
     """
 
-    def __init__(self, amount=0.0, isDebit=False, transactionDateTime='', type='', OverheadCost=None, WorkTask=None, LaborItems=None, ErpProjectAccounting=None, EquipmentItems=None, WorkCostSummary=None, Design=None, MiscCostItems=None, CostType=None, Works=None, ContractorItems=None, MaterialItems=None, PropertyUnits=None, *args, **kw_args):
+    def __init__(self, amount=0.0, isDebit=False, transactionDateTime='', type='', OverheadCost=None, WorkTask=None, LaborItems=None, ErpProjectAccounting=None, EquipmentItems=None, WorkCostSummary=None, Design=None, MiscCostItems=None, CostType=None, Works=None, ContractorItems=None, MaterialItems=None, PropertyUnits=None, **kw_args):
         """Initializes a new 'WorkCostDetail' instance.
 
         @param amount: Amount in designated currency for work, either a total or an individual element. As defined in the attribute 'type,' multiple instances are applicable to each work for: planned cost, actual cost, authorized cost, budgeted cost, forecasted cost, other. 
@@ -92,7 +92,7 @@ class WorkCostDetail(Document):
         self._PropertyUnits = []
         self.PropertyUnits = [] if PropertyUnits is None else PropertyUnits
 
-        super(WorkCostDetail, self).__init__(*args, **kw_args)
+        super(WorkCostDetail, self).__init__(**kw_args)
 
     def getOverheadCost(self):
         

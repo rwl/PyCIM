@@ -20,7 +20,7 @@ class Vehicle(Asset):
     """A vehicle is a type of utility asset.
     """
 
-    def __init__(self, usageKind='contractor', odometerReading=0.0, odometerReadDateTime='', Crew=None, VehicleAssetModel=None, *args, **kw_args):
+    def __init__(self, usageKind='contractor', odometerReading=0.0, odometerReadDateTime='', Crew=None, VehicleAssetModel=None, **kw_args):
         """Initializes a new 'Vehicle' instance.
 
         @param usageKind: The general categorization type of vehicle as categorized by the utility's asset management standards and practices. Note: (1) Vehicle model is defined by VehicleAssetModel, and (2) Specific people and organizations and their roles relative to this vehicle may be determined by the inherited Asset-ErpPerson and Asset-Organization associations. Values are: "contractor", "other", "crew", "user"
@@ -44,7 +44,7 @@ class Vehicle(Asset):
         self._VehicleAssetModel = None
         self.VehicleAssetModel = VehicleAssetModel
 
-        super(Vehicle, self).__init__(*args, **kw_args)
+        super(Vehicle, self).__init__(**kw_args)
 
     def getCrew(self):
         

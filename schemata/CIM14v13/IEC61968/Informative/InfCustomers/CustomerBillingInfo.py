@@ -20,7 +20,7 @@ class CustomerBillingInfo(Document):
     """The creation of the monthly customer billing statements is the method employed to notify Customers of charges, adjustments and credits applied to their account for Services and Products. The actuall billing occurs through an ErpInvoice. The CustomerBillingInfo includes information from the payment, collection, meter reading, installed meter, service, site, customer, customer account, customer agreement, services and pricing subject areas. Each component price shows up as a separate line item on the ErpInvoice. The Customer Billing Statement may include collection and account messages, marketing/civic event messages and bill inserts. One Customer Billing Statement is produced for all Agreements under a CustomerAccount per billing cycle date defined in 'CustomerAccount.billingCycle'. The history of CustomerBillingInfo, Invoices and Payments is to be maintained in associated ActivityRecords.
     """
 
-    def __init__(self, kind='separateEssUdc', pymtPlanType='', billingDate='', pymtPlanAmt=0.0, outBalance=0.0, lastPaymentAmt=0.0, lastPaymentDate='', dueDate='', ErpInvoiceLineItems=None, CustomerAccount=None, *args, **kw_args):
+    def __init__(self, kind='separateEssUdc', pymtPlanType='', billingDate='', pymtPlanAmt=0.0, outBalance=0.0, lastPaymentAmt=0.0, lastPaymentDate='', dueDate='', ErpInvoiceLineItems=None, CustomerAccount=None, **kw_args):
         """Initializes a new 'CustomerBillingInfo' instance.
 
         @param kind: Kind of bill customer receives. Values are: "separateEssUdc", "other", "consolidatedEss", "consolidatedUdc"
@@ -64,7 +64,7 @@ class CustomerBillingInfo(Document):
         self._CustomerAccount = None
         self.CustomerAccount = CustomerAccount
 
-        super(CustomerBillingInfo, self).__init__(*args, **kw_args)
+        super(CustomerBillingInfo, self).__init__(**kw_args)
 
     def getErpInvoiceLineItems(self):
         

@@ -20,7 +20,7 @@ class Analog(Measurement):
     """Analog represents an analog Measurement.
     """
 
-    def __init__(self, maxValue=0.0, positiveFlowIn=False, normalValue=0.0, minValue=0.0, AnalogValues=None, LimitSets=None, SetPoint=None, *args, **kw_args):
+    def __init__(self, maxValue=0.0, positiveFlowIn=False, normalValue=0.0, minValue=0.0, AnalogValues=None, LimitSets=None, SetPoint=None, **kw_args):
         """Initializes a new 'Analog' instance.
 
         @param maxValue: Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values. 
@@ -52,7 +52,7 @@ class Analog(Measurement):
         self._SetPoint = None
         self.SetPoint = SetPoint
 
-        super(Analog, self).__init__(*args, **kw_args)
+        super(Analog, self).__init__(**kw_args)
 
     def getAnalogValues(self):
         """The values connected to this measurement.

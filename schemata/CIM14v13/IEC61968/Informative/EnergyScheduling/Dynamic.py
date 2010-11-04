@@ -20,7 +20,7 @@ class Dynamic(EnergyTransaction):
     """A dynamic energy transaction has more complex relationships than a simple block type. It behaves like a pseudo tie line.
     """
 
-    def __init__(self, TieLines=None, *args, **kw_args):
+    def __init__(self, TieLines=None, **kw_args):
         """Initializes a new 'Dynamic' instance.
 
         @param TieLines: A dynamic energy transaction can act as a pseudo tie line.
@@ -28,7 +28,7 @@ class Dynamic(EnergyTransaction):
         self._TieLines = []
         self.TieLines = [] if TieLines is None else TieLines
 
-        super(Dynamic, self).__init__(*args, **kw_args)
+        super(Dynamic, self).__init__(**kw_args)
 
     def getTieLines(self):
         """A dynamic energy transaction can act as a pseudo tie line.

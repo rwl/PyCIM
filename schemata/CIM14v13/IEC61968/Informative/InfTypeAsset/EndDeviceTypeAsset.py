@@ -20,7 +20,7 @@ class EndDeviceTypeAsset(TypeAsset):
     """Documentation for generic End Device that may be used for various purposes such as work planning.
     """
 
-    def __init__(self, EndDeviceModels=None, *args, **kw_args):
+    def __init__(self, EndDeviceModels=None, **kw_args):
         """Initializes a new 'EndDeviceTypeAsset' instance.
 
         @param EndDeviceModels:
@@ -28,7 +28,7 @@ class EndDeviceTypeAsset(TypeAsset):
         self._EndDeviceModels = []
         self.EndDeviceModels = [] if EndDeviceModels is None else EndDeviceModels
 
-        super(EndDeviceTypeAsset, self).__init__(*args, **kw_args)
+        super(EndDeviceTypeAsset, self).__init__(**kw_args)
 
     def getEndDeviceModels(self):
         

@@ -20,7 +20,7 @@ class OutageNotification(Document):
     """A document containing information to be sent to customers notifying that an outage will take place. This is used to generate mailing lists for customers.
     """
 
-    def __init__(self, duration=0.0, reason='', expectedInterruptionCount=0, CustomerDatas=None, *args, **kw_args):
+    def __init__(self, duration=0.0, reason='', expectedInterruptionCount=0, CustomerDatas=None, **kw_args):
         """Initializes a new 'OutageNotification' instance.
 
         @param duration: Likely duration of the interruption(s). 
@@ -40,7 +40,7 @@ class OutageNotification(Document):
         self._CustomerDatas = []
         self.CustomerDatas = [] if CustomerDatas is None else CustomerDatas
 
-        super(OutageNotification, self).__init__(*args, **kw_args)
+        super(OutageNotification, self).__init__(**kw_args)
 
     def getCustomerDatas(self):
         

@@ -20,7 +20,7 @@ class WindingInsulation(IdentifiedObject):
     """Winding insulation condition as a result of a test.
     """
 
-    def __init__(self, insulationPFStatus='', leakageReactance=0.0, insulationResistance='', FromWinding=None, Ground=None, TransformerObservation=None, status=None, ToWinding=None, *args, **kw_args):
+    def __init__(self, insulationPFStatus='', leakageReactance=0.0, insulationResistance='', FromWinding=None, Ground=None, TransformerObservation=None, status=None, ToWinding=None, **kw_args):
         """Initializes a new 'WindingInsulation' instance.
 
         @param insulationPFStatus: Status of Winding Insulation Power Factor as of statusDate: Acceptable, Minor Deterioration or Moisture Absorption, Major Deterioration or Moisture Absorption, Failed. 
@@ -55,7 +55,7 @@ class WindingInsulation(IdentifiedObject):
         self._ToWinding = None
         self.ToWinding = ToWinding
 
-        super(WindingInsulation, self).__init__(*args, **kw_args)
+        super(WindingInsulation, self).__init__(**kw_args)
 
     def getFromWinding(self):
         

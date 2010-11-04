@@ -20,7 +20,7 @@ class MeasurementValueQuality(Quality61850):
     """Measurement quality flags. Bits 0-10 are defined for substation automation in draft IEC 61850 part 7-3. Bits 11-15 are reserved for future expansion by that document. Bits 16-31 are reserved for EMS applications.
     """
 
-    def __init__(self, MeasurementValue=None, *args, **kw_args):
+    def __init__(self, MeasurementValue=None, **kw_args):
         """Initializes a new 'MeasurementValueQuality' instance.
 
         @param MeasurementValue: A MeasurementValue has a MeasurementValueQuality associated with it.
@@ -28,7 +28,7 @@ class MeasurementValueQuality(Quality61850):
         self._MeasurementValue = None
         self.MeasurementValue = MeasurementValue
 
-        super(MeasurementValueQuality, self).__init__(*args, **kw_args)
+        super(MeasurementValueQuality, self).__init__(**kw_args)
 
     def getMeasurementValue(self):
         """A MeasurementValue has a MeasurementValueQuality associated with it.

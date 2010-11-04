@@ -20,7 +20,7 @@ class Substation(EquipmentContainer):
     """A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics.
     """
 
-    def __init__(self, VoltageLevels=None, Region=None, Bays=None, SubstationAsset=None, *args, **kw_args):
+    def __init__(self, VoltageLevels=None, Region=None, Bays=None, SubstationAsset=None, **kw_args):
         """Initializes a new 'Substation' instance.
 
         @param VoltageLevels: The association is used in the naming hierarchy.
@@ -40,7 +40,7 @@ class Substation(EquipmentContainer):
         self._SubstationAsset = None
         self.SubstationAsset = SubstationAsset
 
-        super(Substation, self).__init__(*args, **kw_args)
+        super(Substation, self).__init__(**kw_args)
 
     def getVoltageLevels(self):
         """The association is used in the naming hierarchy.

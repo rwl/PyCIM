@@ -20,7 +20,7 @@ class CostType(IdentifiedObject):
     """A categorization for resources, often costs, in accounting transactions. Examples include: material components, building in service, coal sales, overhead, etc.
     """
 
-    def __init__(self, code='', amountAssignmentFlag=False, level='', stage='', WorkCostDetails=None, ErpJournalEntries=None, ChildCostTypes=None, ParentCostType=None, status=None, CompatibleUnits=None, *args, **kw_args):
+    def __init__(self, code='', amountAssignmentFlag=False, level='', stage='', WorkCostDetails=None, ErpJournalEntries=None, ChildCostTypes=None, ParentCostType=None, status=None, CompatibleUnits=None, **kw_args):
         """Initializes a new 'CostType' instance.
 
         @param code: A codified representation of the resource element. 
@@ -63,7 +63,7 @@ class CostType(IdentifiedObject):
         self._CompatibleUnits = []
         self.CompatibleUnits = [] if CompatibleUnits is None else CompatibleUnits
 
-        super(CostType, self).__init__(*args, **kw_args)
+        super(CostType, self).__init__(**kw_args)
 
     def getWorkCostDetails(self):
         

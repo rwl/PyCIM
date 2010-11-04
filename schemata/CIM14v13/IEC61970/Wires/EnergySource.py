@@ -20,7 +20,7 @@ class EnergySource(ConductingEquipment):
     """A generic equivalent for an energy supplier on a transmission or distribution voltage level.
     """
 
-    def __init__(self, rn=0.0, r=0.0, r0=0.0, voltageMagnitude=0.0, x=0.0, voltageAngle=0.0, xn=0.0, x0=0.0, activePower=0.0, nominalVoltage=0.0, *args, **kw_args):
+    def __init__(self, rn=0.0, r=0.0, r0=0.0, voltageMagnitude=0.0, x=0.0, voltageAngle=0.0, xn=0.0, x0=0.0, activePower=0.0, nominalVoltage=0.0, **kw_args):
         """Initializes a new 'EnergySource' instance.
 
         @param rn: Negative sequence Thevenin resistance. 
@@ -64,5 +64,5 @@ class EnergySource(ConductingEquipment):
         #: Phase-to-phase nominal voltage.
         self.nominalVoltage = nominalVoltage
 
-        super(EnergySource, self).__init__(*args, **kw_args)
+        super(EnergySource, self).__init__(**kw_args)
 

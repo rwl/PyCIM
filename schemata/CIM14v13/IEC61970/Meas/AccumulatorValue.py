@@ -20,7 +20,7 @@ class AccumulatorValue(MeasurementValue):
     """AccumulatorValue represents a accumulated (counted) MeasurementValue.
     """
 
-    def __init__(self, value=0, Accumulator=None, *args, **kw_args):
+    def __init__(self, value=0, Accumulator=None, **kw_args):
         """Initializes a new 'AccumulatorValue' instance.
 
         @param value: The value to supervise. The value is positive. 
@@ -32,7 +32,7 @@ class AccumulatorValue(MeasurementValue):
         self._Accumulator = None
         self.Accumulator = Accumulator
 
-        super(AccumulatorValue, self).__init__(*args, **kw_args)
+        super(AccumulatorValue, self).__init__(**kw_args)
 
     def getAccumulator(self):
         """Measurement to which this value is connected.

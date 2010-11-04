@@ -20,7 +20,7 @@ class MerchantAgreement(Agreement):
     """A formal controlling contractual agreement between Supplier and Merchant, in terms of which Merchant is authorised to vend tokens and receipt payments on behalf of Supplier. Merchant is accountable to Supplier for revenue collected at PointOfSale.
     """
 
-    def __init__(self, MerchantAccounts=None, *args, **kw_args):
+    def __init__(self, MerchantAccounts=None, **kw_args):
         """Initializes a new 'MerchantAgreement' instance.
 
         @param MerchantAccounts: All merchant accounts instantiated as a result of this merchant agreement.
@@ -28,7 +28,7 @@ class MerchantAgreement(Agreement):
         self._MerchantAccounts = []
         self.MerchantAccounts = [] if MerchantAccounts is None else MerchantAccounts
 
-        super(MerchantAgreement, self).__init__(*args, **kw_args)
+        super(MerchantAgreement, self).__init__(**kw_args)
 
     def getMerchantAccounts(self):
         """All merchant accounts instantiated as a result of this merchant agreement.

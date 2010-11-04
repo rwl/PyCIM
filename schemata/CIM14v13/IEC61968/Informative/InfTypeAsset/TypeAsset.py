@@ -20,7 +20,7 @@ class TypeAsset(Document):
     """Whereas an AssetModel is a particular model and version of a vendor's product, a TypeAsset is documentation for a generic asset or material item that may be used for design purposes. Any number of AssetModels may be used to perform this generic function. The primary role of the TypeAsset is typically defined by the PowereSystemResource it is associated with.
     """
 
-    def __init__(self, quantity='', stockItem=False, estimatedUnitCost=0.0, CUWorkEquipmentAsset=None, CUAsset=None, TypeAssetCatalogue=None, AssetModels=None, ErpInventoryIssues=None, ErpReqLineItems=None, ErpBomItemDatas=None, *args, **kw_args):
+    def __init__(self, quantity='', stockItem=False, estimatedUnitCost=0.0, CUWorkEquipmentAsset=None, CUAsset=None, TypeAssetCatalogue=None, AssetModels=None, ErpInventoryIssues=None, ErpReqLineItems=None, ErpBomItemDatas=None, **kw_args):
         """Initializes a new 'TypeAsset' instance.
 
         @param quantity: The value, unit of measure, and multiplier for the quantity. 
@@ -64,7 +64,7 @@ class TypeAsset(Document):
         self._ErpBomItemDatas = []
         self.ErpBomItemDatas = [] if ErpBomItemDatas is None else ErpBomItemDatas
 
-        super(TypeAsset, self).__init__(*args, **kw_args)
+        super(TypeAsset, self).__init__(**kw_args)
 
     def getCUWorkEquipmentAsset(self):
         

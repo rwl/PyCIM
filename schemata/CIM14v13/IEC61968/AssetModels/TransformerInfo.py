@@ -20,7 +20,7 @@ class TransformerInfo(IdentifiedObject):
     """Set of transformer data, from an equipment library.
     """
 
-    def __init__(self, Transformers=None, TransformerAssets=None, WindingInfos=None, TransformerAssetModels=None, *args, **kw_args):
+    def __init__(self, Transformers=None, TransformerAssets=None, WindingInfos=None, TransformerAssetModels=None, **kw_args):
         """Initializes a new 'TransformerInfo' instance.
 
         @param Transformers: All transformers that can be described with this transformer data.
@@ -40,7 +40,7 @@ class TransformerInfo(IdentifiedObject):
         self._TransformerAssetModels = []
         self.TransformerAssetModels = [] if TransformerAssetModels is None else TransformerAssetModels
 
-        super(TransformerInfo, self).__init__(*args, **kw_args)
+        super(TransformerInfo, self).__init__(**kw_args)
 
     def getTransformers(self):
         """All transformers that can be described with this transformer data.

@@ -20,7 +20,7 @@ class ReactiveCapabilityCurve(Curve):
     """Reactive power rating envelope versus the synchronous machine's active power, in both the generating and motoring modes. For each active power value there is a corresponding high and low reactive power limit  value. Typically there will be a separate curve for each coolant condition, such as hydrogen pressure.  The Y1 axis values represent reactive minimum and the Y2 axis values represent reactive maximum.
     """
 
-    def __init__(self, coolantTemperature=0.0, hydrogenPressure=0.0, SynchronousMachines=None, InitiallyUsedBySynchronousMachines=None, *args, **kw_args):
+    def __init__(self, coolantTemperature=0.0, hydrogenPressure=0.0, SynchronousMachines=None, InitiallyUsedBySynchronousMachines=None, **kw_args):
         """Initializes a new 'ReactiveCapabilityCurve' instance.
 
         @param coolantTemperature: The machine's coolant temperature (e.g., ambient air or stator circulating water). 
@@ -40,7 +40,7 @@ class ReactiveCapabilityCurve(Curve):
         self._InitiallyUsedBySynchronousMachines = []
         self.InitiallyUsedBySynchronousMachines = [] if InitiallyUsedBySynchronousMachines is None else InitiallyUsedBySynchronousMachines
 
-        super(ReactiveCapabilityCurve, self).__init__(*args, **kw_args)
+        super(ReactiveCapabilityCurve, self).__init__(**kw_args)
 
     def getSynchronousMachines(self):
         """Synchronous machines using this curve.

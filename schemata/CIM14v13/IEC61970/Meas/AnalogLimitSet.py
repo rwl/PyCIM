@@ -20,7 +20,7 @@ class AnalogLimitSet(LimitSet):
     """An AnalogLimitSet specifies a set of Limits that are associated with an Analog measurement.
     """
 
-    def __init__(self, Limits=None, Measurements=None, *args, **kw_args):
+    def __init__(self, Limits=None, Measurements=None, **kw_args):
         """Initializes a new 'AnalogLimitSet' instance.
 
         @param Limits: The limit values used for supervision of Measurements.
@@ -32,7 +32,7 @@ class AnalogLimitSet(LimitSet):
         self._Measurements = []
         self.Measurements = [] if Measurements is None else Measurements
 
-        super(AnalogLimitSet, self).__init__(*args, **kw_args)
+        super(AnalogLimitSet, self).__init__(**kw_args)
 
     def getLimits(self):
         """The limit values used for supervision of Measurements.

@@ -20,7 +20,7 @@ class ViolationLimit(Limit):
     """A type of limit that indicates if it is enforced and, through association, the organisation responsible for setting the limit.
     """
 
-    def __init__(self, enforced=False, Organisations=None, Flowgate=None, Season=None, Measurement=None, *args, **kw_args):
+    def __init__(self, enforced=False, Organisations=None, Flowgate=None, Season=None, Measurement=None, **kw_args):
         """Initializes a new 'ViolationLimit' instance.
 
         @param enforced: True if limit is enforced. 
@@ -44,7 +44,7 @@ class ViolationLimit(Limit):
         self._Measurement = None
         self.Measurement = Measurement
 
-        super(ViolationLimit, self).__init__(*args, **kw_args)
+        super(ViolationLimit, self).__init__(**kw_args)
 
     def getOrganisations(self):
         

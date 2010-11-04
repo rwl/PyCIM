@@ -20,7 +20,7 @@ class ToolTypeAsset(TypeAsset):
     """Documentation for a generic tool that may be used for various purposes such as work planning.
     """
 
-    def __init__(self, ToolAssetModels=None, *args, **kw_args):
+    def __init__(self, ToolAssetModels=None, **kw_args):
         """Initializes a new 'ToolTypeAsset' instance.
 
         @param ToolAssetModels:
@@ -28,7 +28,7 @@ class ToolTypeAsset(TypeAsset):
         self._ToolAssetModels = []
         self.ToolAssetModels = [] if ToolAssetModels is None else ToolAssetModels
 
-        super(ToolTypeAsset, self).__init__(*args, **kw_args)
+        super(ToolTypeAsset, self).__init__(**kw_args)
 
     def getToolAssetModels(self):
         

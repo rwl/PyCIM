@@ -20,7 +20,7 @@ class Command(Control):
     """A Command is a discrete control used for supervisory control.
     """
 
-    def __init__(self, normalValue=0, value=0, Discrete=None, ValueAliasSet=None, *args, **kw_args):
+    def __init__(self, normalValue=0, value=0, Discrete=None, ValueAliasSet=None, **kw_args):
         """Initializes a new 'Command' instance.
 
         @param normalValue: Normal value for Control.value e.g. used for percentage scaling 
@@ -40,7 +40,7 @@ class Command(Control):
         self._ValueAliasSet = None
         self.ValueAliasSet = ValueAliasSet
 
-        super(Command, self).__init__(*args, **kw_args)
+        super(Command, self).__init__(**kw_args)
 
     def getDiscrete(self):
         """The Measurement variable used for control.

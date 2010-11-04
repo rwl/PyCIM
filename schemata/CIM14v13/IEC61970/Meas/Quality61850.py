@@ -20,7 +20,7 @@ class Quality61850(Element):
     """Quality flags in this class are as defined in IEC 61850, except for estimatorReplaced, which has been included in this class for convenience.
     """
 
-    def __init__(self, source='SUBSTITUTED', validity='GOOD', test=False, overFlow=False, estimatorReplaced=False, suspect=False, badReference=False, operatorBlocked=False, oscillatory=False, failure=False, oldData=False, outOfRange=False, *args, **kw_args):
+    def __init__(self, source='SUBSTITUTED', validity='GOOD', test=False, overFlow=False, estimatorReplaced=False, suspect=False, badReference=False, operatorBlocked=False, oscillatory=False, failure=False, oldData=False, outOfRange=False, **kw_args):
         """Initializes a new 'Quality61850' instance.
 
         @param source: Source gives information related to the origin of a value. The value may be acquired from the process, defaulted or substituted. Values are: "SUBSTITUTED", "PROCESS", "DEFAULTED"
@@ -72,5 +72,5 @@ class Quality61850(Element):
         #: Measurement value is beyond a predefined range of value.
         self.outOfRange = outOfRange
 
-        super(Quality61850, self).__init__(*args, **kw_args)
+        super(Quality61850, self).__init__(**kw_args)
 

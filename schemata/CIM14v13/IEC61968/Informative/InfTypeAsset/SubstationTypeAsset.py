@@ -20,9 +20,9 @@ class SubstationTypeAsset(TypeAsset):
     """Documentation for a type of substation that may be used for design purposes.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'SubstationTypeAsset' instance.
 
         """
-        super(SubstationTypeAsset, self).__init__(*args, **kw_args)
+        super(SubstationTypeAsset, self).__init__(**kw_args)
 

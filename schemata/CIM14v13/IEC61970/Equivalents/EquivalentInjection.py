@@ -20,7 +20,7 @@ class EquivalentInjection(EquivalentEquipment):
     """This class represents equivalent injections (generation or load).  Voltage regulation is allowed only at the local connectivity node.
     """
 
-    def __init__(self, regulationStatus=False, regulationCapability=False, minP=0.0, maxP=0.0, regulationTarget=0.0, *args, **kw_args):
+    def __init__(self, regulationStatus=False, regulationCapability=False, minP=0.0, maxP=0.0, regulationTarget=0.0, **kw_args):
         """Initializes a new 'EquivalentInjection' instance.
 
         @param regulationStatus: Specifies the default regulation status of the EquivalentInjection.  True is regulating.  False is not regulating. 
@@ -44,5 +44,5 @@ class EquivalentInjection(EquivalentEquipment):
         #: The target voltage for voltage regulation.
         self.regulationTarget = regulationTarget
 
-        super(EquivalentInjection, self).__init__(*args, **kw_args)
+        super(EquivalentInjection, self).__init__(**kw_args)
 

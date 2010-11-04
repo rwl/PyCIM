@@ -20,7 +20,7 @@ class CogenerationPlant(PowerSystemResource):
     """A set of thermal generating units for the production of electrical energy and process steam (usually from the output of the steam turbines). The steam sendout is typically used for industrial purposes or for municipal heating and cooling.
     """
 
-    def __init__(self, cogenHPSendoutRating=0.0, ratedP=0.0, cogenLPSendoutRating=0.0, cogenLPSteamRating=0.0, cogenHPSteamRating=0.0, SteamSendoutSchedule=None, ThermalGeneratingUnits=None, *args, **kw_args):
+    def __init__(self, cogenHPSendoutRating=0.0, ratedP=0.0, cogenLPSendoutRating=0.0, cogenLPSteamRating=0.0, cogenHPSteamRating=0.0, SteamSendoutSchedule=None, ThermalGeneratingUnits=None, **kw_args):
         """Initializes a new 'CogenerationPlant' instance.
 
         @param cogenHPSendoutRating: The high pressure steam sendout 
@@ -52,7 +52,7 @@ class CogenerationPlant(PowerSystemResource):
         self._ThermalGeneratingUnits = []
         self.ThermalGeneratingUnits = [] if ThermalGeneratingUnits is None else ThermalGeneratingUnits
 
-        super(CogenerationPlant, self).__init__(*args, **kw_args)
+        super(CogenerationPlant, self).__init__(**kw_args)
 
     def getSteamSendoutSchedule(self):
         """A cogeneration plant has a steam sendout schedule

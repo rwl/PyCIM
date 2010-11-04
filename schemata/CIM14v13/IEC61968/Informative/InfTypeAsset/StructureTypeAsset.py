@@ -20,7 +20,7 @@ class StructureTypeAsset(TypeAsset):
     """A Type of Structural Asset with properties common to a large number of asset models.
     """
 
-    def __init__(self, ratedVoltage=0.0, MountConnections=None, *args, **kw_args):
+    def __init__(self, ratedVoltage=0.0, MountConnections=None, **kw_args):
         """Initializes a new 'StructureTypeAsset' instance.
 
         @param ratedVoltage: Maximum rated voltage of the equipment that can be mounted on/contained within the structure. 
@@ -32,7 +32,7 @@ class StructureTypeAsset(TypeAsset):
         self._MountConnections = []
         self.MountConnections = [] if MountConnections is None else MountConnections
 
-        super(StructureTypeAsset, self).__init__(*args, **kw_args)
+        super(StructureTypeAsset, self).__init__(**kw_args)
 
     def getMountConnections(self):
         

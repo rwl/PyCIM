@@ -20,7 +20,7 @@ class ErpBomItemData(IdentifiedObject):
     """An individual item on a bill of materials.
     """
 
-    def __init__(self, DesignLocation=None, ErpBOM=None, TypeAsset=None, *args, **kw_args):
+    def __init__(self, DesignLocation=None, ErpBOM=None, TypeAsset=None, **kw_args):
         """Initializes a new 'ErpBomItemData' instance.
 
         @param DesignLocation:
@@ -36,7 +36,7 @@ class ErpBomItemData(IdentifiedObject):
         self._TypeAsset = None
         self.TypeAsset = TypeAsset
 
-        super(ErpBomItemData, self).__init__(*args, **kw_args)
+        super(ErpBomItemData, self).__init__(**kw_args)
 
     def getDesignLocation(self):
         

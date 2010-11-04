@@ -20,7 +20,7 @@ class StringMeasurement(Measurement):
     """StringMeasurement represents a measurement with values of type string.
     """
 
-    def __init__(self, StringMeasurementValues=None, *args, **kw_args):
+    def __init__(self, StringMeasurementValues=None, **kw_args):
         """Initializes a new 'StringMeasurement' instance.
 
         @param StringMeasurementValues: The values connected to this measurement.
@@ -28,7 +28,7 @@ class StringMeasurement(Measurement):
         self._StringMeasurementValues = []
         self.StringMeasurementValues = [] if StringMeasurementValues is None else StringMeasurementValues
 
-        super(StringMeasurement, self).__init__(*args, **kw_args)
+        super(StringMeasurement, self).__init__(**kw_args)
 
     def getStringMeasurementValues(self):
         """The values connected to this measurement.

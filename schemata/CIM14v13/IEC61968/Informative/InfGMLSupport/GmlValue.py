@@ -20,7 +20,7 @@ class GmlValue(IdentifiedObject):
     """Used for direct representation of values.
     """
 
-    def __init__(self, value=0.0, timePeriod='', dateTime='', MeasurementValue=None, GmlObservation=None, *args, **kw_args):
+    def __init__(self, value=0.0, timePeriod='', dateTime='', MeasurementValue=None, GmlObservation=None, **kw_args):
         """Initializes a new 'GmlValue' instance.
 
         @param value: 
@@ -44,7 +44,7 @@ class GmlValue(IdentifiedObject):
         self._GmlObservation = None
         self.GmlObservation = GmlObservation
 
-        super(GmlValue, self).__init__(*args, **kw_args)
+        super(GmlValue, self).__init__(**kw_args)
 
     def getMeasurementValue(self):
         

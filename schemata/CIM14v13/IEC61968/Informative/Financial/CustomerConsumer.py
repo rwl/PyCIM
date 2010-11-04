@@ -20,7 +20,7 @@ class CustomerConsumer(ErpOrganisation):
     """The energy buyer in the energy marketplace.
     """
 
-    def __init__(self, ServicePoint=None, TieLines=None, *args, **kw_args):
+    def __init__(self, ServicePoint=None, TieLines=None, **kw_args):
         """Initializes a new 'CustomerConsumer' instance.
 
         @param ServicePoint: A CustomerConsumer may have one or more ServicePoints.
@@ -32,7 +32,7 @@ class CustomerConsumer(ErpOrganisation):
         self._TieLines = []
         self.TieLines = [] if TieLines is None else TieLines
 
-        super(CustomerConsumer, self).__init__(*args, **kw_args)
+        super(CustomerConsumer, self).__init__(**kw_args)
 
     def getServicePoint(self):
         """A CustomerConsumer may have one or more ServicePoints.

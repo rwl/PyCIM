@@ -20,7 +20,7 @@ class TroubleTicket(Document):
     """A document used to report electrical trouble. The trouble may either be an outage or non-outage problem, such as power quality. It must always be associated with an Incident Record. Note that a separate Activity Record is created for each call associated with an instance of Trouble Ticket. The time of a call is stored in ActivityRecord.createdOn and comments are recorded in ActivityRecord.remarks.
     """
 
-    def __init__(self, reportingKind='letter', advice='', callBack=False, priority='', informAfterRestored=False, estimatedRestoreDateTime='', informBeforeRestored=False, hazardCode='', firstCallDateTime='', CustomerData=None, troublePeriod=None, CallBacks=None, IncidentRecord=None, *args, **kw_args):
+    def __init__(self, reportingKind='letter', advice='', callBack=False, priority='', informAfterRestored=False, estimatedRestoreDateTime='', informBeforeRestored=False, hazardCode='', firstCallDateTime='', CustomerData=None, troublePeriod=None, CallBacks=None, IncidentRecord=None, **kw_args):
         """Initializes a new 'TroubleTicket' instance.
 
         @param reportingKind: Means the customer used to report trouble (default is 'call'). Values are: "letter", "other", "call", "email"
@@ -75,7 +75,7 @@ class TroubleTicket(Document):
         self._IncidentRecord = None
         self.IncidentRecord = IncidentRecord
 
-        super(TroubleTicket, self).__init__(*args, **kw_args)
+        super(TroubleTicket, self).__init__(**kw_args)
 
     def getCustomerData(self):
         

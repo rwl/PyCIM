@@ -20,7 +20,7 @@ class BusbarSection(Connector):
     """A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation.  Voltage measurements are typically obtained from VoltageTransformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal.
     """
 
-    def __init__(self, VoltageControlZone=None, *args, **kw_args):
+    def __init__(self, VoltageControlZone=None, **kw_args):
         """Initializes a new 'BusbarSection' instance.
 
         @param VoltageControlZone: A VoltageControlZone is controlled by a designated BusbarSection.
@@ -28,7 +28,7 @@ class BusbarSection(Connector):
         self._VoltageControlZone = None
         self.VoltageControlZone = VoltageControlZone
 
-        super(BusbarSection, self).__init__(*args, **kw_args)
+        super(BusbarSection, self).__init__(**kw_args)
 
     def getVoltageControlZone(self):
         """A VoltageControlZone is controlled by a designated BusbarSection.

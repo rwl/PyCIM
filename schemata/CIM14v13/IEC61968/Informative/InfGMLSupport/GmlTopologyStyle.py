@@ -20,7 +20,7 @@ class GmlTopologyStyle(IdentifiedObject):
     """The style for one topology property. Similarly to the Geometry style, a feature can have multiple topology properties, thus multiple topology style descriptors can be specified within one feature style.
     """
 
-    def __init__(self, GmlLableStyle=None, GmlFeatureStyle=None, *args, **kw_args):
+    def __init__(self, GmlLableStyle=None, GmlFeatureStyle=None, **kw_args):
         """Initializes a new 'GmlTopologyStyle' instance.
 
         @param GmlLableStyle:
@@ -32,7 +32,7 @@ class GmlTopologyStyle(IdentifiedObject):
         self._GmlFeatureStyle = None
         self.GmlFeatureStyle = GmlFeatureStyle
 
-        super(GmlTopologyStyle, self).__init__(*args, **kw_args)
+        super(GmlTopologyStyle, self).__init__(**kw_args)
 
     def getGmlLableStyle(self):
         

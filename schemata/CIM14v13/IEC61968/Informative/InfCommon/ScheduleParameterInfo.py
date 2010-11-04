@@ -20,7 +20,7 @@ class ScheduleParameterInfo(IdentifiedObject):
     """Schedule parameters for an activity that is to occur, is occurring, or has completed.
     """
 
-    def __init__(self, ForInspectionDataSet=None, estimatedWindow=None, ScheduledEvents=None, status=None, Documents=None, requestedWindow=None, *args, **kw_args):
+    def __init__(self, ForInspectionDataSet=None, estimatedWindow=None, ScheduledEvents=None, status=None, Documents=None, requestedWindow=None, **kw_args):
         """Initializes a new 'ScheduleParameterInfo' instance.
 
         @param ForInspectionDataSet:
@@ -45,7 +45,7 @@ class ScheduleParameterInfo(IdentifiedObject):
 
         self.requestedWindow = requestedWindow
 
-        super(ScheduleParameterInfo, self).__init__(*args, **kw_args)
+        super(ScheduleParameterInfo, self).__init__(**kw_args)
 
     def getForInspectionDataSet(self):
         

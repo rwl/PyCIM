@@ -20,9 +20,9 @@ class ComMediaAsset(Asset):
     """Communication media such as fibre optic cable, power-line, telephone, etc.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'ComMediaAsset' instance.
 
         """
-        super(ComMediaAsset, self).__init__(*args, **kw_args)
+        super(ComMediaAsset, self).__init__(**kw_args)
 

@@ -20,7 +20,7 @@ class EnergyTransaction(Document):
     """Specifies the schedule for energy transfers between interchange areas that are necessary to satisfy the associated interchange transaction.
     """
 
-    def __init__(self, receiptPointP=0.0, state=None, energyMin=0.0, firmInterchangeFlag=False, congestChargeMax=0.0, reason='', deliveryPointP=0.0, CurtailmentProfiles=None, Export_SubControlArea=None, EnergyTransId=None, Import_SubControlArea=None, EnergyPriceCurves=None, LossProfiles=None, EnergyProfiles=None, EnergyProduct=None, *args, **kw_args):
+    def __init__(self, receiptPointP=0.0, state=None, energyMin=0.0, firmInterchangeFlag=False, congestChargeMax=0.0, reason='', deliveryPointP=0.0, CurtailmentProfiles=None, Export_SubControlArea=None, EnergyTransId=None, Import_SubControlArea=None, EnergyPriceCurves=None, LossProfiles=None, EnergyProfiles=None, EnergyProduct=None, **kw_args):
         """Initializes a new 'EnergyTransaction' instance.
 
         @param receiptPointP: Receipt point active power 
@@ -84,7 +84,7 @@ class EnergyTransaction(Document):
         self._EnergyProduct = None
         self.EnergyProduct = EnergyProduct
 
-        super(EnergyTransaction, self).__init__(*args, **kw_args)
+        super(EnergyTransaction, self).__init__(**kw_args)
 
     def getCurtailmentProfiles(self):
         """An EnergyTransaction may be curtailed by any of the participating entities.

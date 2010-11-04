@@ -20,7 +20,7 @@ class WorkLocation(Location):
     """Information about a particular location for various forms of work such as a one call request.
     """
 
-    def __init__(self, block='', nearestIntersection='', subdivision='', lot='', OneCallRequest=None, DesignLocations=None, *args, **kw_args):
+    def __init__(self, block='', nearestIntersection='', subdivision='', lot='', OneCallRequest=None, DesignLocations=None, **kw_args):
         """Initializes a new 'WorkLocation' instance.
 
         @param block: Name, identifier, or description of the block, if applicable, in which work is to occur. 
@@ -48,7 +48,7 @@ class WorkLocation(Location):
         self._DesignLocations = []
         self.DesignLocations = [] if DesignLocations is None else DesignLocations
 
-        super(WorkLocation, self).__init__(*args, **kw_args)
+        super(WorkLocation, self).__init__(**kw_args)
 
     def getOneCallRequest(self):
         

@@ -20,7 +20,7 @@ class CompositeSwitchAssetModel(AssetModel):
     """Documentation for a type of a composite switch asset of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, CompositeSwitchInfo=None, CompositeSwitchAssets=None, CompositeSwitchTypeAsset=None, *args, **kw_args):
+    def __init__(self, CompositeSwitchInfo=None, CompositeSwitchAssets=None, CompositeSwitchTypeAsset=None, **kw_args):
         """Initializes a new 'CompositeSwitchAssetModel' instance.
 
         @param CompositeSwitchInfo:
@@ -36,7 +36,7 @@ class CompositeSwitchAssetModel(AssetModel):
         self._CompositeSwitchTypeAsset = None
         self.CompositeSwitchTypeAsset = CompositeSwitchTypeAsset
 
-        super(CompositeSwitchAssetModel, self).__init__(*args, **kw_args)
+        super(CompositeSwitchAssetModel, self).__init__(**kw_args)
 
     def getCompositeSwitchInfo(self):
         

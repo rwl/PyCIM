@@ -20,7 +20,7 @@ class HostControlArea(IdentifiedObject):
     """A HostControlArea has a set of tie points and a set of generator controls (i.e., AGC). It also has a total load, including transmission and distribution losses.
     """
 
-    def __init__(self, areaControlMode='OFF', frequencyBiasFactor=None, freqSetPoint=0.0, InadvertentAccounts=None, AreaReserveSpec=None, SideA_TieLines=None, SubControlAreas=None, SideB_TieLines=None, Receive_DynamicSchedules=None, Send_DynamicSchedules=None, Controls=None, *args, **kw_args):
+    def __init__(self, areaControlMode='OFF', frequencyBiasFactor=None, freqSetPoint=0.0, InadvertentAccounts=None, AreaReserveSpec=None, SideA_TieLines=None, SubControlAreas=None, SideB_TieLines=None, Receive_DynamicSchedules=None, Send_DynamicSchedules=None, Controls=None, **kw_args):
         """Initializes a new 'HostControlArea' instance.
 
         @param areaControlMode: The area's present control mode: (CF = constant frequency) or (CTL = constant tie-line) or (TLB = tie-line bias) or (OFF = off control) Values are: "OFF", "TLB", "CF", "CTL"
@@ -68,7 +68,7 @@ class HostControlArea(IdentifiedObject):
         self._Controls = None
         self.Controls = Controls
 
-        super(HostControlArea, self).__init__(*args, **kw_args)
+        super(HostControlArea, self).__init__(**kw_args)
 
     def getInadvertentAccounts(self):
         """A control area can have one or more net inadvertent interchange accounts

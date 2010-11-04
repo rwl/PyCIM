@@ -20,7 +20,7 @@ class LossProfile(Profile):
     """LossProfile is associated with an EnerrgyTransaction and must be completely contained within the time frame of the EnergyProfile associated with this EnergyTransaction.
     """
 
-    def __init__(self, EnergyTransaction=None, HasLoss_=None, *args, **kw_args):
+    def __init__(self, EnergyTransaction=None, HasLoss_=None, **kw_args):
         """Initializes a new 'LossProfile' instance.
 
         @param EnergyTransaction: An EnergyTransaction may have a LossProfile.
@@ -32,7 +32,7 @@ class LossProfile(Profile):
         self._HasLoss_ = None
         self.HasLoss_ = HasLoss_
 
-        super(LossProfile, self).__init__(*args, **kw_args)
+        super(LossProfile, self).__init__(**kw_args)
 
     def getEnergyTransaction(self):
         """An EnergyTransaction may have a LossProfile.

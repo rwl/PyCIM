@@ -20,7 +20,7 @@ class ServiceCategory(IdentifiedObject):
     """Category of service provided to the customer.
     """
 
-    def __init__(self, kind='refuse', CustomerAgreements=None, ServiceDeliveryPoints=None, SPAccountingFunctions=None, PricingStructures=None, *args, **kw_args):
+    def __init__(self, kind='refuse', CustomerAgreements=None, ServiceDeliveryPoints=None, SPAccountingFunctions=None, PricingStructures=None, **kw_args):
         """Initializes a new 'ServiceCategory' instance.
 
         @param kind: Kind of service. Values are: "refuse", "other", "tvLicence", "internet", "electricty", "water", "heat", "rates", "gas", "sewerage", "time"
@@ -44,7 +44,7 @@ class ServiceCategory(IdentifiedObject):
         self._PricingStructures = []
         self.PricingStructures = [] if PricingStructures is None else PricingStructures
 
-        super(ServiceCategory, self).__init__(*args, **kw_args)
+        super(ServiceCategory, self).__init__(**kw_args)
 
     def getCustomerAgreements(self):
         

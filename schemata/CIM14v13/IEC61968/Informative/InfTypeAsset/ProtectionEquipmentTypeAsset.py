@@ -20,7 +20,7 @@ class ProtectionEquipmentTypeAsset(ElectricalTypeAsset):
     """Documentation for generic protection equiment that may be used for design purposes.
     """
 
-    def __init__(self, defaultPhaseTrip=0.0, defaultGroundTrip=0.0, ProtectionEquipmentAssetModels=None, *args, **kw_args):
+    def __init__(self, defaultPhaseTrip=0.0, defaultGroundTrip=0.0, ProtectionEquipmentAssetModels=None, **kw_args):
         """Initializes a new 'ProtectionEquipmentTypeAsset' instance.
 
         @param defaultPhaseTrip: Default phase trip setting for this type of relay, if applicable. 
@@ -36,7 +36,7 @@ class ProtectionEquipmentTypeAsset(ElectricalTypeAsset):
         self._ProtectionEquipmentAssetModels = []
         self.ProtectionEquipmentAssetModels = [] if ProtectionEquipmentAssetModels is None else ProtectionEquipmentAssetModels
 
-        super(ProtectionEquipmentTypeAsset, self).__init__(*args, **kw_args)
+        super(ProtectionEquipmentTypeAsset, self).__init__(**kw_args)
 
     def getProtectionEquipmentAssetModels(self):
         

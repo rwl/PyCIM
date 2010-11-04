@@ -18,7 +18,7 @@ from CIM14v13.Element import Element
 
 class ChargeProfileData(Element):
 
-    def __init__(self, sequence=0, value=0.0, timeStamp='', BillDeterminant=None, ChargeProfile=None, *args, **kw_args):
+    def __init__(self, sequence=0, value=0.0, timeStamp='', BillDeterminant=None, ChargeProfile=None, **kw_args):
         """Initializes a new 'ChargeProfileData' instance.
 
         @param sequence: The sequence number of the profile. 
@@ -42,7 +42,7 @@ class ChargeProfileData(Element):
         self._ChargeProfile = None
         self.ChargeProfile = ChargeProfile
 
-        super(ChargeProfileData, self).__init__(*args, **kw_args)
+        super(ChargeProfileData, self).__init__(**kw_args)
 
     def getBillDeterminant(self):
         

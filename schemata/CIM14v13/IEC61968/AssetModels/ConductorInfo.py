@@ -20,7 +20,7 @@ class ConductorInfo(IdentifiedObject):
     """Conductor data.
     """
 
-    def __init__(self, usage='secondary', insulationMaterial='highPressureFluidFilled', phaseCount=0, insulated=False, insulationThickness=0.0, ConductorSegments=None, ConductorAssetModel=None, WireArrangements=None, *args, **kw_args):
+    def __init__(self, usage='secondary', insulationMaterial='highPressureFluidFilled', phaseCount=0, insulated=False, insulationThickness=0.0, ConductorSegments=None, ConductorAssetModel=None, WireArrangements=None, **kw_args):
         """Initializes a new 'ConductorInfo' instance.
 
         @param usage: Usage of this conductor. Values are: "secondary", "transmission", "other", "distribution"
@@ -56,7 +56,7 @@ class ConductorInfo(IdentifiedObject):
         self._WireArrangements = []
         self.WireArrangements = [] if WireArrangements is None else WireArrangements
 
-        super(ConductorInfo, self).__init__(*args, **kw_args)
+        super(ConductorInfo, self).__init__(**kw_args)
 
     def getConductorSegments(self):
         """All conductor segments described by this conductor data.

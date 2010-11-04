@@ -20,7 +20,7 @@ class Status(Element):
     """Current status information relevant to an entity.
     """
 
-    def __init__(self, dateTime='', reason='', value='', remark='', *args, **kw_args):
+    def __init__(self, dateTime='', reason='', value='', remark='', **kw_args):
         """Initializes a new 'Status' instance.
 
         @param dateTime: Date and time for which status 'value' applies. 
@@ -40,5 +40,5 @@ class Status(Element):
         #: Pertinent information regarding the current 'value', as free form text.
         self.remark = remark
 
-        super(Status, self).__init__(*args, **kw_args)
+        super(Status, self).__init__(**kw_args)
 

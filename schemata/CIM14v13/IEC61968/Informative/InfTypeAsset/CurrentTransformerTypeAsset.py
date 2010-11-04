@@ -20,7 +20,7 @@ class CurrentTransformerTypeAsset(ElectricalTypeAsset):
     """Documentation for a generic Current Transformer (CT) that may be used for various purposes such as work planning.
     """
 
-    def __init__(self, usage='', accuracyClass='', accuracyLimit=0.0, kneePointCurrent=0.0, coreBurden=0.0, ctClass='', coreCount=0, kneePointVoltage=0.0, CurrentTransformerInfo=None, CurrentTransformerAssetModels=None, CurrentTransformers=None, nominalRatio=None, maxRatio=None, *args, **kw_args):
+    def __init__(self, usage='', accuracyClass='', accuracyLimit=0.0, kneePointCurrent=0.0, coreBurden=0.0, ctClass='', coreCount=0, kneePointVoltage=0.0, CurrentTransformerInfo=None, CurrentTransformerAssetModels=None, CurrentTransformers=None, nominalRatio=None, maxRatio=None, **kw_args):
         """Initializes a new 'CurrentTransformerTypeAsset' instance.
 
         @param usage: eg. metering, protection, etc 
@@ -74,7 +74,7 @@ class CurrentTransformerTypeAsset(ElectricalTypeAsset):
 
         self.maxRatio = maxRatio
 
-        super(CurrentTransformerTypeAsset, self).__init__(*args, **kw_args)
+        super(CurrentTransformerTypeAsset, self).__init__(**kw_args)
 
     def getCurrentTransformerInfo(self):
         

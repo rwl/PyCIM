@@ -20,7 +20,7 @@ class TransmissionCorridor(PowerSystemResource):
     """A corridor containing one or more rights of way
     """
 
-    def __init__(self, TransmissionRightOfWays=None, ContainedIn=None, *args, **kw_args):
+    def __init__(self, TransmissionRightOfWays=None, ContainedIn=None, **kw_args):
         """Initializes a new 'TransmissionCorridor' instance.
 
         @param TransmissionRightOfWays: A transmission right-of-way is a member of a transmission corridor
@@ -32,7 +32,7 @@ class TransmissionCorridor(PowerSystemResource):
         self._ContainedIn = []
         self.ContainedIn = [] if ContainedIn is None else ContainedIn
 
-        super(TransmissionCorridor, self).__init__(*args, **kw_args)
+        super(TransmissionCorridor, self).__init__(**kw_args)
 
     def getTransmissionRightOfWays(self):
         """A transmission right-of-way is a member of a transmission corridor

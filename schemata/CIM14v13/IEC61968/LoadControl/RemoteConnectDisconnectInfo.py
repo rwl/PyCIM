@@ -20,7 +20,7 @@ class RemoteConnectDisconnectInfo(Element):
     """Details of remote connect disconnect function.
     """
 
-    def __init__(self, isArmConnect=False, customerVoltageLimit=0.0, powerLimit=0.0, isEnergyLimiting=False, energyUsageWarning=0.0, isArmDisconnect=False, energyUsageStartDateTime='', needsVoltageLimitCheck=False, energyLimit=0.0, armedTimeout=0.0, needsPowerLimitCheck=False, usePushbutton=False, *args, **kw_args):
+    def __init__(self, isArmConnect=False, customerVoltageLimit=0.0, powerLimit=0.0, isEnergyLimiting=False, energyUsageWarning=0.0, isArmDisconnect=False, energyUsageStartDateTime='', needsVoltageLimitCheck=False, energyLimit=0.0, armedTimeout=0.0, needsPowerLimitCheck=False, usePushbutton=False, **kw_args):
         """Initializes a new 'RemoteConnectDisconnectInfo' instance.
 
         @param isArmConnect: True if the RCD switch must be armed before a connect action can be initiated. 
@@ -72,5 +72,5 @@ class RemoteConnectDisconnectInfo(Element):
         #: True if pushbutton must be used for connect.
         self.usePushbutton = usePushbutton
 
-        super(RemoteConnectDisconnectInfo, self).__init__(*args, **kw_args)
+        super(RemoteConnectDisconnectInfo, self).__init__(**kw_args)
 

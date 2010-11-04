@@ -20,7 +20,7 @@ class Customer(Organisation):
     """Organisation receiving services from ServiceSupplier.
     """
 
-    def __init__(self, kind='windMachine', pucNumber='', specialNeed='', vip=False, TroubleTickets=None, Works=None, OutageNotifications=None, ErpPersons=None, EndDeviceAssets=None, CustomerAgreements=None, PlannedOutage=None, status=None, *args, **kw_args):
+    def __init__(self, kind='windMachine', pucNumber='', specialNeed='', vip=False, TroubleTickets=None, Works=None, OutageNotifications=None, ErpPersons=None, EndDeviceAssets=None, CustomerAgreements=None, PlannedOutage=None, status=None, **kw_args):
         """Initializes a new 'Customer' instance.
 
         @param kind: Kind of customer. Values are: "windMachine", "residentialFarmService", "residential", "energyServiceSupplier", "residentialStreetlightOthers", "other", "pumpingLoad", "commercialIndustrial", "residentialAndStreetlight", "residentialAndCommercial", "energyServiceScheduler", "internalUse"
@@ -71,7 +71,7 @@ class Customer(Organisation):
 
         self.status = status
 
-        super(Customer, self).__init__(*args, **kw_args)
+        super(Customer, self).__init__(**kw_args)
 
     def getTroubleTickets(self):
         

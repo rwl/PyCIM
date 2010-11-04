@@ -20,9 +20,9 @@ class Disconnector(Switch):
     """A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'Disconnector' instance.
 
         """
-        super(Disconnector, self).__init__(*args, **kw_args)
+        super(Disconnector, self).__init__(**kw_args)
 

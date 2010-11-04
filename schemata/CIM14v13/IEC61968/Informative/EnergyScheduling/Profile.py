@@ -20,7 +20,7 @@ class Profile(IdentifiedObject):
     """A profile is a simpler curve type.
     """
 
-    def __init__(self, ProfileDatas=None, *args, **kw_args):
+    def __init__(self, ProfileDatas=None, **kw_args):
         """Initializes a new 'Profile' instance.
 
         @param ProfileDatas: A profile has profile data associated with it.
@@ -28,7 +28,7 @@ class Profile(IdentifiedObject):
         self._ProfileDatas = []
         self.ProfileDatas = [] if ProfileDatas is None else ProfileDatas
 
-        super(Profile, self).__init__(*args, **kw_args)
+        super(Profile, self).__init__(**kw_args)
 
     def getProfileDatas(self):
         """A profile has profile data associated with it.

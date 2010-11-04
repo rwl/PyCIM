@@ -20,7 +20,7 @@ class WorkFlowStep(IdentifiedObject):
     """A pre-defined set of work steps for a given type of work.
     """
 
-    def __init__(self, sequenceNumber=0, Work=None, WorkTasks=None, status=None, *args, **kw_args):
+    def __init__(self, sequenceNumber=0, Work=None, WorkTasks=None, status=None, **kw_args):
         """Initializes a new 'WorkFlowStep' instance.
 
         @param sequenceNumber: Used to define dependencies of each work flow step, which is for the instance of WorkTask associated with a given instance of WorkFlow. 
@@ -39,7 +39,7 @@ class WorkFlowStep(IdentifiedObject):
 
         self.status = status
 
-        super(WorkFlowStep, self).__init__(*args, **kw_args)
+        super(WorkFlowStep, self).__init__(**kw_args)
 
     def getWork(self):
         

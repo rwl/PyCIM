@@ -20,7 +20,7 @@ class SDPAccountingFunction(DeviceFunction):
     """Service delivery point accounting function, particularly for payment meter.
     """
 
-    def __init__(self, ChargeRegisters=None, availableCredit=None, creditExpiryLevel=None, CreditRegisters=None, ServiceKind=None, lowCreditWarningLevel=None, *args, **kw_args):
+    def __init__(self, ChargeRegisters=None, availableCredit=None, creditExpiryLevel=None, CreditRegisters=None, ServiceKind=None, lowCreditWarningLevel=None, **kw_args):
         """Initializes a new 'SDPAccountingFunction' instance.
 
         @param ChargeRegisters:
@@ -45,7 +45,7 @@ class SDPAccountingFunction(DeviceFunction):
 
         self.lowCreditWarningLevel = lowCreditWarningLevel
 
-        super(SDPAccountingFunction, self).__init__(*args, **kw_args)
+        super(SDPAccountingFunction, self).__init__(**kw_args)
 
     def getChargeRegisters(self):
         

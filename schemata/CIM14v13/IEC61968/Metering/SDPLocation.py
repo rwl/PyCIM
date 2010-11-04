@@ -20,7 +20,7 @@ class SDPLocation(Location):
     """Location of an individual service delivery point. For residential or most businesses, it is typically the location of a meter on the customer's premises. For transmission, it is the point(s) of interconnection on the transmission provider's transmission system where capacity and/or energy transmitted by the transmission provider is made available to the receiving party. The point(s) of delivery is specified in the Service Agreement.
     """
 
-    def __init__(self, accessMethod='', siteAccessProblem='', remark='', occupancyDate='', ServiceDeliveryPoints=None, *args, **kw_args):
+    def __init__(self, accessMethod='', siteAccessProblem='', remark='', occupancyDate='', ServiceDeliveryPoints=None, **kw_args):
         """Initializes a new 'SDPLocation' instance.
 
         @param accessMethod: Method for the service person to access this service delivery point location. For example, a description of where to obtain a key if the facility is unmanned and secured. 
@@ -44,7 +44,7 @@ class SDPLocation(Location):
         self._ServiceDeliveryPoints = []
         self.ServiceDeliveryPoints = [] if ServiceDeliveryPoints is None else ServiceDeliveryPoints
 
-        super(SDPLocation, self).__init__(*args, **kw_args)
+        super(SDPLocation, self).__init__(**kw_args)
 
     def getServiceDeliveryPoints(self):
         """All service delivery points at this location.

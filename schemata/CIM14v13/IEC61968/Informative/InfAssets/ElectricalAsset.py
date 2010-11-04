@@ -20,7 +20,7 @@ class ElectricalAsset(Asset):
     """An asset that has (or can have) a role in the electrical network.
     """
 
-    def __init__(self, phaseCode='BC', isConnected=False, ElectricalInfos=None, ConductingEquipment=None, *args, **kw_args):
+    def __init__(self, phaseCode='BC', isConnected=False, ElectricalInfos=None, ConductingEquipment=None, **kw_args):
         """Initializes a new 'ElectricalAsset' instance.
 
         @param phaseCode: If 'isConnected' is true, then this is the as-built phase(s) that the asset is associatied with. Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
@@ -40,7 +40,7 @@ class ElectricalAsset(Asset):
         self._ConductingEquipment = None
         self.ConductingEquipment = ConductingEquipment
 
-        super(ElectricalAsset, self).__init__(*args, **kw_args)
+        super(ElectricalAsset, self).__init__(**kw_args)
 
     def getElectricalInfos(self):
         

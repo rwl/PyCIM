@@ -20,7 +20,7 @@ class StartMainFuelCurve(Curve):
     """The quantity of main fuel (Y-axis) used to restart and repay the auxiliary power consumed versus the number of hours (X-axis) the unit was off line
     """
 
-    def __init__(self, mainFuelType='gas', StartupModel=None, *args, **kw_args):
+    def __init__(self, mainFuelType='gas', StartupModel=None, **kw_args):
         """Initializes a new 'StartMainFuelCurve' instance.
 
         @param mainFuelType: Type of main fuel Values are: "gas", "oil", "coal", "lignite"
@@ -32,7 +32,7 @@ class StartMainFuelCurve(Curve):
         self._StartupModel = None
         self.StartupModel = StartupModel
 
-        super(StartMainFuelCurve, self).__init__(*args, **kw_args)
+        super(StartMainFuelCurve, self).__init__(**kw_args)
 
     def getStartupModel(self):
         """The unit's startup model may have a startup main fuel curve

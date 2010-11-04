@@ -20,7 +20,7 @@ class PSREvent(ActivityRecord):
     """Event recording the change in operational status of a PowerSystemResource.
     """
 
-    def __init__(self, kind='inService', PowerSystemResource=None, *args, **kw_args):
+    def __init__(self, kind='inService', PowerSystemResource=None, **kw_args):
         """Initializes a new 'PSREvent' instance.
 
         @param kind: Kind of event. Values are: "inService", "unknown", "pendingAdd", "outOfService", "pendingRemove", "other", "pendingReplace"
@@ -32,7 +32,7 @@ class PSREvent(ActivityRecord):
         self._PowerSystemResource = None
         self.PowerSystemResource = PowerSystemResource
 
-        super(PSREvent, self).__init__(*args, **kw_args)
+        super(PSREvent, self).__init__(**kw_args)
 
     def getPowerSystemResource(self):
         """Power system resource that generated this event.

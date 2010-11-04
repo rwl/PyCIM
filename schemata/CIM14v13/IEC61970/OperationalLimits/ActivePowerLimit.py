@@ -20,7 +20,7 @@ class ActivePowerLimit(OperationalLimit):
     """Limit on active power flow.
     """
 
-    def __init__(self, value=0.0, *args, **kw_args):
+    def __init__(self, value=0.0, **kw_args):
         """Initializes a new 'ActivePowerLimit' instance.
 
         @param value: Value of active power limit. 
@@ -28,5 +28,5 @@ class ActivePowerLimit(OperationalLimit):
         #: Value of active power limit.
         self.value = value
 
-        super(ActivePowerLimit, self).__init__(*args, **kw_args)
+        super(ActivePowerLimit, self).__init__(**kw_args)
 

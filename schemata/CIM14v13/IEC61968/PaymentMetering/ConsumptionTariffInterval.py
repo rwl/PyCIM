@@ -20,7 +20,7 @@ class ConsumptionTariffInterval(Element):
     """One of a sequence of intervals defined in terms of consumption quantity of a service such as electricity, water, gas, etc. It is typically used in association with TariffProfile to define the steps or blocks in a step tariff structure, where startValue simultaneously defines the entry value of this step and the closing value of the previous step. Where consumption is &gt;= startValue it falls within this interval and where consumption is &lt; startValue it falls within the previous interval.
     """
 
-    def __init__(self, sequenceNumber=0, startValue=0.0, Charges=None, TariffProfiles=None, *args, **kw_args):
+    def __init__(self, sequenceNumber=0, startValue=0.0, Charges=None, TariffProfiles=None, **kw_args):
         """Initializes a new 'ConsumptionTariffInterval' instance.
 
         @param sequenceNumber: A sequential reference that defines the identity of this interval and its relative position with respect to other intervals in a sequence of intervals. 
@@ -40,7 +40,7 @@ class ConsumptionTariffInterval(Element):
         self._TariffProfiles = []
         self.TariffProfiles = [] if TariffProfiles is None else TariffProfiles
 
-        super(ConsumptionTariffInterval, self).__init__(*args, **kw_args)
+        super(ConsumptionTariffInterval, self).__init__(**kw_args)
 
     def getCharges(self):
         """All charges used to define this consumption tariff interval.

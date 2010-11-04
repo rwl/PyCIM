@@ -20,7 +20,7 @@ class Appointment(ScheduledEvent):
     """Meeting time and location.
     """
 
-    def __init__(self, remark='', callAhead=False, ErpPersons=None, CallBack=None, address=None, meetingInterval=None, *args, **kw_args):
+    def __init__(self, remark='', callAhead=False, ErpPersons=None, CallBack=None, address=None, meetingInterval=None, **kw_args):
         """Initializes a new 'Appointment' instance.
 
         @param remark: Information about the appointment. 
@@ -46,7 +46,7 @@ class Appointment(ScheduledEvent):
 
         self.meetingInterval = meetingInterval
 
-        super(Appointment, self).__init__(*args, **kw_args)
+        super(Appointment, self).__init__(**kw_args)
 
     def getErpPersons(self):
         

@@ -20,7 +20,7 @@ class DrumBoiler(FossilSteamSupply):
     """Drum boiler
     """
 
-    def __init__(self, drumBoilerRating=0.0, *args, **kw_args):
+    def __init__(self, drumBoilerRating=0.0, **kw_args):
         """Initializes a new 'DrumBoiler' instance.
 
         @param drumBoilerRating: Rating of drum boiler in steam units 
@@ -28,5 +28,5 @@ class DrumBoiler(FossilSteamSupply):
         #: Rating of drum boiler in steam units
         self.drumBoilerRating = drumBoilerRating
 
-        super(DrumBoiler, self).__init__(*args, **kw_args)
+        super(DrumBoiler, self).__init__(**kw_args)
 

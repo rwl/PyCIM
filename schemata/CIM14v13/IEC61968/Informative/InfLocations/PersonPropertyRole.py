@@ -20,7 +20,7 @@ class PersonPropertyRole(Role):
     """The role of a person relative to a given piece of property. Examples of roles include: owner, renter, contractor, etc.
     """
 
-    def __init__(self, LandProperty=None, ErpPerson=None, *args, **kw_args):
+    def __init__(self, LandProperty=None, ErpPerson=None, **kw_args):
         """Initializes a new 'PersonPropertyRole' instance.
 
         @param LandProperty:
@@ -32,7 +32,7 @@ class PersonPropertyRole(Role):
         self._ErpPerson = None
         self.ErpPerson = ErpPerson
 
-        super(PersonPropertyRole, self).__init__(*args, **kw_args)
+        super(PersonPropertyRole, self).__init__(**kw_args)
 
     def getLandProperty(self):
         

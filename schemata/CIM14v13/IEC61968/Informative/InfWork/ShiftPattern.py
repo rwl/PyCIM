@@ -20,7 +20,7 @@ class ShiftPattern(IdentifiedObject):
     """The patterns of shifts worked by people or crews.
     """
 
-    def __init__(self, cycleCount=0, assignmentType='', validityInterval=None, Crews=None, status=None, *args, **kw_args):
+    def __init__(self, cycleCount=0, assignmentType='', validityInterval=None, Crews=None, status=None, **kw_args):
         """Initializes a new 'ShiftPattern' instance.
 
         @param cycleCount: Number of cycles for a temporary shift. 
@@ -42,7 +42,7 @@ class ShiftPattern(IdentifiedObject):
 
         self.status = status
 
-        super(ShiftPattern, self).__init__(*args, **kw_args)
+        super(ShiftPattern, self).__init__(**kw_args)
 
     # Date and time interval for which this shift pattern is valid (when it became effective and when it expires).
     validityInterval = None

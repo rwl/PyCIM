@@ -20,7 +20,7 @@ class EnergyProfile(Profile):
     """Specifies the start time, stop time, level for an EnergyTransaction.
     """
 
-    def __init__(self, TransactionBid=None, EnergyTransaction=None, *args, **kw_args):
+    def __init__(self, TransactionBid=None, EnergyTransaction=None, **kw_args):
         """Initializes a new 'EnergyProfile' instance.
 
         @param TransactionBid:
@@ -32,7 +32,7 @@ class EnergyProfile(Profile):
         self._EnergyTransaction = None
         self.EnergyTransaction = EnergyTransaction
 
-        super(EnergyProfile, self).__init__(*args, **kw_args)
+        super(EnergyProfile, self).__init__(**kw_args)
 
     def getTransactionBid(self):
         

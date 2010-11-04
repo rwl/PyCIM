@@ -20,7 +20,7 @@ class TimeSchedule(Document):
     """Description of anything that changes through time. Time schedule is used to perform a single-valued function of time. Use inherited 'category' attribute to give additional information on this schedule, such as: periodic (hourly, daily, weekly, monthly, etc.), day of the month, by date, calendar (specific times and dates).
     """
 
-    def __init__(self, disabled=False, offset=0.0, recurrencePattern='', recurrencePeriod=0.0, TimePoints=None, scheduleInterval=None, *args, **kw_args):
+    def __init__(self, disabled=False, offset=0.0, recurrencePattern='', recurrencePeriod=0.0, TimePoints=None, scheduleInterval=None, **kw_args):
         """Initializes a new 'TimeSchedule' instance.
 
         @param disabled: True if this schedule is deactivated (disabled). 
@@ -47,7 +47,7 @@ class TimeSchedule(Document):
 
         self.scheduleInterval = scheduleInterval
 
-        super(TimeSchedule, self).__init__(*args, **kw_args)
+        super(TimeSchedule, self).__init__(**kw_args)
 
     def getTimePoints(self):
         """Sequence of time points belonging to this time schedule.

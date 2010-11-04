@@ -20,7 +20,7 @@ class AreaReserveSpec(Element):
     """The control area's reserve specification
     """
 
-    def __init__(self, areaReserveSpecName='', raiseRegMarginReqt=0.0, lowerRegMarginReqt=0.0, primaryReserveReqt=0.0, opReserveReqt=0.0, spinningReserveReqt=0.0, HostControlAreas=None, ReserveEnergyTransaction=None, *args, **kw_args):
+    def __init__(self, areaReserveSpecName='', raiseRegMarginReqt=0.0, lowerRegMarginReqt=0.0, primaryReserveReqt=0.0, opReserveReqt=0.0, spinningReserveReqt=0.0, HostControlAreas=None, ReserveEnergyTransaction=None, **kw_args):
         """Initializes a new 'AreaReserveSpec' instance.
 
         @param areaReserveSpecName: The Identification or name of the control area's reserve specification. A particular specification could correspond to pre-defined power system conditions, e.g., emergency situations. 
@@ -56,7 +56,7 @@ class AreaReserveSpec(Element):
         self._ReserveEnergyTransaction = None
         self.ReserveEnergyTransaction = ReserveEnergyTransaction
 
-        super(AreaReserveSpec, self).__init__(*args, **kw_args)
+        super(AreaReserveSpec, self).__init__(**kw_args)
 
     def getHostControlAreas(self):
         """A control area has one or more area reserve specifications

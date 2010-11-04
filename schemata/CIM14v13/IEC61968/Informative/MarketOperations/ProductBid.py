@@ -20,7 +20,7 @@ class ProductBid(IdentifiedObject):
     """Component of a bid that pertains to one market product.
     """
 
-    def __init__(self, Bid=None, MarketProduct=None, BidPriceCurve=None, ProductBidClearing=None, *args, **kw_args):
+    def __init__(self, Bid=None, MarketProduct=None, BidPriceCurve=None, ProductBidClearing=None, **kw_args):
         """Initializes a new 'ProductBid' instance.
 
         @param Bid: A bid comprises one or more product bids of market products
@@ -40,7 +40,7 @@ class ProductBid(IdentifiedObject):
         self._ProductBidClearing = None
         self.ProductBidClearing = ProductBidClearing
 
-        super(ProductBid, self).__init__(*args, **kw_args)
+        super(ProductBid, self).__init__(**kw_args)
 
     def getBid(self):
         """A bid comprises one or more product bids of market products

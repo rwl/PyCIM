@@ -20,7 +20,7 @@ class AncillaryServiceClearing(MarketFactors):
     """Ancillary services clearing results are posted for a given settlement period.
     """
 
-    def __init__(self, clearedMW=0.0, mcp=0.0, commodityType='', MarketCaseClearing=None, *args, **kw_args):
+    def __init__(self, clearedMW=0.0, mcp=0.0, commodityType='', MarketCaseClearing=None, **kw_args):
         """Initializes a new 'AncillaryServiceClearing' instance.
 
         @param clearedMW: Cleared MWs. 
@@ -40,7 +40,7 @@ class AncillaryServiceClearing(MarketFactors):
         self._MarketCaseClearing = None
         self.MarketCaseClearing = MarketCaseClearing
 
-        super(AncillaryServiceClearing, self).__init__(*args, **kw_args)
+        super(AncillaryServiceClearing, self).__init__(**kw_args)
 
     def getMarketCaseClearing(self):
         

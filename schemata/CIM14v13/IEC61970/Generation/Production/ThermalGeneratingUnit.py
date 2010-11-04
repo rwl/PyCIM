@@ -20,7 +20,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
     """A generating unit whose prime mover could be a steam turbine, combustion turbine, or diesel engine.
     """
 
-    def __init__(self, oMCost=0.0, HeatRateCurve=None, EmmissionAccounts=None, FuelAllocationSchedules=None, HeatInputCurve=None, CombinedCyclePlant=None, CogenerationPlant=None, EmissionCurves=None, ShutdownCurve=None, CAESPlant=None, IncrementalHeatRateCurve=None, StartupModel=None, FossilFuels=None, *args, **kw_args):
+    def __init__(self, oMCost=0.0, HeatRateCurve=None, EmmissionAccounts=None, FuelAllocationSchedules=None, HeatInputCurve=None, CombinedCyclePlant=None, CogenerationPlant=None, EmissionCurves=None, ShutdownCurve=None, CAESPlant=None, IncrementalHeatRateCurve=None, StartupModel=None, FossilFuels=None, **kw_args):
         """Initializes a new 'ThermalGeneratingUnit' instance.
 
         @param oMCost: Operating and maintenance cost for the thermal unit 
@@ -76,7 +76,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
         self._FossilFuels = []
         self.FossilFuels = [] if FossilFuels is None else FossilFuels
 
-        super(ThermalGeneratingUnit, self).__init__(*args, **kw_args)
+        super(ThermalGeneratingUnit, self).__init__(**kw_args)
 
     def getHeatRateCurve(self):
         """A thermal generating unit may have a heat rate curve

@@ -20,7 +20,7 @@ class ScheduledEvent(IdentifiedObject):
     """Signifies an event to trigger one or more activities, such as reading a meter, recalculating a bill, requesting work, when generating units must be scheduled for maintenance, when a transformer is scheduled to be refurbished, etc.
     """
 
-    def __init__(self, duration=0.0, category='', Document=None, Assets=None, ActivityRecord=None, ScheduleParameterInfo=None, status=None, TimePoint=None, *args, **kw_args):
+    def __init__(self, duration=0.0, category='', Document=None, Assets=None, ActivityRecord=None, ScheduleParameterInfo=None, status=None, TimePoint=None, **kw_args):
         """Initializes a new 'ScheduledEvent' instance.
 
         @param duration: Duration of the scheduled event, for example, the time to ramp between values. 
@@ -55,7 +55,7 @@ class ScheduledEvent(IdentifiedObject):
         self._TimePoint = None
         self.TimePoint = TimePoint
 
-        super(ScheduledEvent, self).__init__(*args, **kw_args)
+        super(ScheduledEvent, self).__init__(**kw_args)
 
     def getDocument(self):
         

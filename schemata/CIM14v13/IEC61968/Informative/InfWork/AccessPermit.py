@@ -20,7 +20,7 @@ class AccessPermit(Document):
     """A permit is sometimes needed to provide legal access to land or equipment. For example, local authority permission for road works.
     """
 
-    def __init__(self, payment=0.0, applicationNumber='', expirationDate='', effectiveDate='', permitID='', *args, **kw_args):
+    def __init__(self, payment=0.0, applicationNumber='', expirationDate='', effectiveDate='', permitID='', **kw_args):
         """Initializes a new 'AccessPermit' instance.
 
         @param payment: Total cost of permit. 
@@ -44,5 +44,5 @@ class AccessPermit(Document):
         #: Permit identifier.
         self.permitID = permitID
 
-        super(AccessPermit, self).__init__(*args, **kw_args)
+        super(AccessPermit, self).__init__(**kw_args)
 

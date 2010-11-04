@@ -20,7 +20,7 @@ class AssetContainer(Asset):
     """Asset that is aggregation of other assets such as conductors, transformers, switchgear, land, fences, buildings, equipment, vehicles, etc.
     """
 
-    def __init__(self, LandProperties=None, Assets=None, Seals=None, *args, **kw_args):
+    def __init__(self, LandProperties=None, Assets=None, Seals=None, **kw_args):
         """Initializes a new 'AssetContainer' instance.
 
         @param LandProperties:
@@ -36,7 +36,7 @@ class AssetContainer(Asset):
         self._Seals = []
         self.Seals = [] if Seals is None else Seals
 
-        super(AssetContainer, self).__init__(*args, **kw_args)
+        super(AssetContainer, self).__init__(**kw_args)
 
     def getLandProperties(self):
         

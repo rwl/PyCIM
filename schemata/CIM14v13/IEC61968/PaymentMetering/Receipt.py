@@ -20,7 +20,7 @@ class Receipt(IdentifiedObject):
     """Record of total receipted payment from customer.
     """
 
-    def __init__(self, isBankable=False, Transactions=None, CashierShift=None, VendorShift=None, Tenders=None, line=None, *args, **kw_args):
+    def __init__(self, isBankable=False, Transactions=None, CashierShift=None, VendorShift=None, Tenders=None, line=None, **kw_args):
         """Initializes a new 'Receipt' instance.
 
         @param isBankable: True if this receipted payment is manually bankable, otherwise it is an electronic funds transfer. 
@@ -47,7 +47,7 @@ class Receipt(IdentifiedObject):
 
         self.line = line
 
-        super(Receipt, self).__init__(*args, **kw_args)
+        super(Receipt, self).__init__(**kw_args)
 
     def getTransactions(self):
         """All transactions recorded for this receipted payment.

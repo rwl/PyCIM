@@ -20,7 +20,7 @@ class BushingAsset(Asset):
     """Physical bushing that insulates and protects from abrasion a conductor that passes through it. It is associated with a specific Terminal, which is in turn associated with a ConductingEquipment.
     """
 
-    def __init__(self, c2Capacitance=0.0, c1PowerFactor=0.0, c2PowerFactor=0.0, c1Capacitance=0.0, Terminal=None, BushingInsulationPFs=None, BushingModel=None, *args, **kw_args):
+    def __init__(self, c2Capacitance=0.0, c1PowerFactor=0.0, c2PowerFactor=0.0, c1Capacitance=0.0, Terminal=None, BushingInsulationPFs=None, BushingModel=None, **kw_args):
         """Initializes a new 'BushingAsset' instance.
 
         @param c2Capacitance: Factory measured capacitance measured between the power factor tap and ground. 
@@ -52,7 +52,7 @@ class BushingAsset(Asset):
         self._BushingModel = None
         self.BushingModel = BushingModel
 
-        super(BushingAsset, self).__init__(*args, **kw_args)
+        super(BushingAsset, self).__init__(**kw_args)
 
     def getTerminal(self):
         

@@ -20,7 +20,7 @@ class GeneratorTypeAsset(ElectricalTypeAsset):
     """Documentation for generic generation equipment that may be used for various purposes such as work planning. It defines both the Real and Reactive power properties (modelled at the PSR level as a GeneratingUnit + SynchronousMachine)
     """
 
-    def __init__(self, rDirectSubtrans=0.0, xDirectSubtrans=0.0, rQuadTrans=0.0, xQuadTrans=0.0, xQuadSync=0.0, xDirectSync=0.0, rQuadSync=0.0, maxQ=0.0, rDirectSync=0.0, rDirectTrans=0.0, rQuadSubtrans=0.0, minQ=0.0, minP=0.0, maxP=0.0, xDirectTrans=0.0, xQuadSubtrans=0.0, GeneratorAssetModels=None, *args, **kw_args):
+    def __init__(self, rDirectSubtrans=0.0, xDirectSubtrans=0.0, rQuadTrans=0.0, xQuadTrans=0.0, xQuadSync=0.0, xDirectSync=0.0, rQuadSync=0.0, maxQ=0.0, rDirectSync=0.0, rDirectTrans=0.0, rQuadSubtrans=0.0, minQ=0.0, minP=0.0, maxP=0.0, xDirectTrans=0.0, xQuadSubtrans=0.0, GeneratorAssetModels=None, **kw_args):
         """Initializes a new 'GeneratorTypeAsset' instance.
 
         @param rDirectSubtrans: Direct-axis subtransient resistance 
@@ -92,7 +92,7 @@ class GeneratorTypeAsset(ElectricalTypeAsset):
         self._GeneratorAssetModels = []
         self.GeneratorAssetModels = [] if GeneratorAssetModels is None else GeneratorAssetModels
 
-        super(GeneratorTypeAsset, self).__init__(*args, **kw_args)
+        super(GeneratorTypeAsset, self).__init__(**kw_args)
 
     def getGeneratorAssetModels(self):
         

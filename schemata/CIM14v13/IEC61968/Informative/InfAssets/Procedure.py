@@ -20,7 +20,7 @@ class Procedure(Document):
     """A documented procedure for various types of Work or Work Tasks. One or more procedures guide a compatible unit, a standard way of performing a unit of work. The type of procedure is defined in Procedure.type. For example, when type=Inspection, this procedure coupled with Schedule and other information provides the key items of an inspection plan. Another type of Procedure is a Diagnosis. Note that each specific values and settings to be used in a procedure is intended to be described in an instance of ProcedureValue. A maintenance ticket, a type of Work, is generated whenever maintenance is determined to be needed as a result of an inspection or diagnosis.
     """
 
-    def __init__(self, kind='test', instruction='', sequenceNumber='', corporateCode='', CompatibleUnits=None, ProcedureDataSets=None, ProcedureValues=None, Limits=None, *args, **kw_args):
+    def __init__(self, kind='test', instruction='', sequenceNumber='', corporateCode='', CompatibleUnits=None, ProcedureDataSets=None, ProcedureValues=None, Limits=None, **kw_args):
         """Initializes a new 'Procedure' instance.
 
         @param kind: Kind of this procedure. Values are: "test", "diagnosis", "inspection", "other", "maintenance"
@@ -56,7 +56,7 @@ class Procedure(Document):
         self._Limits = []
         self.Limits = [] if Limits is None else Limits
 
-        super(Procedure, self).__init__(*args, **kw_args)
+        super(Procedure, self).__init__(**kw_args)
 
     def getCompatibleUnits(self):
         

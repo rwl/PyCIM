@@ -20,7 +20,7 @@ class SVCInfo(ElectricalInfo):
     """Properties for an SVC, allowing the capacitive and inductive ratings for each phase to be specified individually if required.
     """
 
-    def __init__(self, capacitiveRating=0.0, inductiveRating=0.0, SVCTypeAssets=None, SVCAsset=None, SVCAssetModel=None, *args, **kw_args):
+    def __init__(self, capacitiveRating=0.0, inductiveRating=0.0, SVCTypeAssets=None, SVCAsset=None, SVCAssetModel=None, **kw_args):
         """Initializes a new 'SVCInfo' instance.
 
         @param capacitiveRating: Maximum capacitive reactive power 
@@ -44,7 +44,7 @@ class SVCInfo(ElectricalInfo):
         self._SVCAssetModel = None
         self.SVCAssetModel = SVCAssetModel
 
-        super(SVCInfo, self).__init__(*args, **kw_args)
+        super(SVCInfo, self).__init__(**kw_args)
 
     def getSVCTypeAssets(self):
         

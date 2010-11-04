@@ -20,7 +20,7 @@ class BidSet(IdentifiedObject):
     """As set of mutually exclusive bids for which a maximum of one may be scheduled. Of these generating bids, only one generating bid can be scheduled at a time.
     """
 
-    def __init__(self, GeneratingBids=None, *args, **kw_args):
+    def __init__(self, GeneratingBids=None, **kw_args):
         """Initializes a new 'BidSet' instance.
 
         @param GeneratingBids:
@@ -28,7 +28,7 @@ class BidSet(IdentifiedObject):
         self._GeneratingBids = []
         self.GeneratingBids = [] if GeneratingBids is None else GeneratingBids
 
-        super(BidSet, self).__init__(*args, **kw_args)
+        super(BidSet, self).__init__(**kw_args)
 
     def getGeneratingBids(self):
         

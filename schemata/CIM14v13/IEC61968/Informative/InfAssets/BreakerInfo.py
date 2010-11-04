@@ -20,7 +20,7 @@ class BreakerInfo(SwitchInfo):
     """Properties of breakers.
     """
 
-    def __init__(self, phaseTrip=0.0, BreakerAssets=None, BreakerAssetModels=None, BreakerTypeAsset=None, *args, **kw_args):
+    def __init__(self, phaseTrip=0.0, BreakerAssets=None, BreakerAssetModels=None, BreakerTypeAsset=None, **kw_args):
         """Initializes a new 'BreakerInfo' instance.
 
         @param phaseTrip: Phase trip rating. 
@@ -40,7 +40,7 @@ class BreakerInfo(SwitchInfo):
         self._BreakerTypeAsset = None
         self.BreakerTypeAsset = BreakerTypeAsset
 
-        super(BreakerInfo, self).__init__(*args, **kw_args)
+        super(BreakerInfo, self).__init__(**kw_args)
 
     def getBreakerAssets(self):
         

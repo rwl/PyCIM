@@ -20,7 +20,7 @@ class WindingInfo(IdentifiedObject):
     """Winding data.
     """
 
-    def __init__(self, connectionKind='Y', shortTermS=0.0, insulationU=0.0, sequenceNumber=0, phaseAngle=0, emergencyS=0.0, ratedU=0.0, r=0.0, ratedS=0.0, TransformerInfo=None, WindingTests=None, Windings=None, ToWindingSpecs=None, *args, **kw_args):
+    def __init__(self, connectionKind='Y', shortTermS=0.0, insulationU=0.0, sequenceNumber=0, phaseAngle=0, emergencyS=0.0, ratedU=0.0, r=0.0, ratedS=0.0, TransformerInfo=None, WindingTests=None, Windings=None, ToWindingSpecs=None, **kw_args):
         """Initializes a new 'WindingInfo' instance.
 
         @param connectionKind: Kind of connection of this winding. Values are: "Y", "Yn", "Zn", "I", "A", "D", "Z"
@@ -76,7 +76,7 @@ class WindingInfo(IdentifiedObject):
         self._ToWindingSpecs = []
         self.ToWindingSpecs = [] if ToWindingSpecs is None else ToWindingSpecs
 
-        super(WindingInfo, self).__init__(*args, **kw_args)
+        super(WindingInfo, self).__init__(**kw_args)
 
     def getTransformerInfo(self):
         """Transformer data that this winding description is part of.

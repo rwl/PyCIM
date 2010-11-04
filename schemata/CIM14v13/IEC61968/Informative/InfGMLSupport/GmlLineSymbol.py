@@ -20,7 +20,7 @@ class GmlLineSymbol(GmlSymbol):
     """Used to style a 'stroke' along a linear geometry type, such as a string of line segments.
     """
 
-    def __init__(self, sourceSide='', GmlDiagramObject=None, GmlStroke=None, *args, **kw_args):
+    def __init__(self, sourceSide='', GmlDiagramObject=None, GmlStroke=None, **kw_args):
         """Initializes a new 'GmlLineSymbol' instance.
 
         @param sourceSide: For dynamic network update (i.e. colouring) purposes 
@@ -36,7 +36,7 @@ class GmlLineSymbol(GmlSymbol):
         self._GmlStroke = None
         self.GmlStroke = GmlStroke
 
-        super(GmlLineSymbol, self).__init__(*args, **kw_args)
+        super(GmlLineSymbol, self).__init__(**kw_args)
 
     def getGmlDiagramObject(self):
         

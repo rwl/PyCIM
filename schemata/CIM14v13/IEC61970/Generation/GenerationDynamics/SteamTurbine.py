@@ -20,7 +20,7 @@ class SteamTurbine(PrimeMover):
     """Steam turbine
     """
 
-    def __init__(self, crossoverTC=0.0, shaft2PowerLP1=0.0, shaft1PowerIP=0.0, shaft2PowerIP=0.0, reheater1TC=0.0, shaft2PowerLP2=0.0, steamChestTC=0.0, shaft1PowerHP=0.0, shaft1PowerLP2=0.0, shaft2PowerHP=0.0, reheater2TC=0.0, shaft1PowerLP1=0.0, SteamSupplys=None, *args, **kw_args):
+    def __init__(self, crossoverTC=0.0, shaft2PowerLP1=0.0, shaft1PowerIP=0.0, shaft2PowerIP=0.0, reheater1TC=0.0, shaft2PowerLP2=0.0, steamChestTC=0.0, shaft1PowerHP=0.0, shaft1PowerLP2=0.0, shaft2PowerHP=0.0, reheater2TC=0.0, shaft1PowerLP1=0.0, SteamSupplys=None, **kw_args):
         """Initializes a new 'SteamTurbine' instance.
 
         @param crossoverTC: Crossover Time Constant 
@@ -76,7 +76,7 @@ class SteamTurbine(PrimeMover):
         self._SteamSupplys = []
         self.SteamSupplys = [] if SteamSupplys is None else SteamSupplys
 
-        super(SteamTurbine, self).__init__(*args, **kw_args)
+        super(SteamTurbine, self).__init__(**kw_args)
 
     def getSteamSupplys(self):
         """Steam turbines may have steam supplied by a steam supply

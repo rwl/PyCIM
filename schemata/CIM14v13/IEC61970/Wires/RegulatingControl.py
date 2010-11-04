@@ -20,7 +20,7 @@ class RegulatingControl(PowerSystemResource):
     """Specifies a set of equipment that works together to control a power system quantity such as voltage or flow.
     """
 
-    def __init__(self, mode='reactivePower', targetRange=0.0, targetValue=0.0, discrete=False, RegulationSchedule=None, TapChanger=None, RegulatingCondEq=None, Terminal=None, *args, **kw_args):
+    def __init__(self, mode='reactivePower', targetRange=0.0, targetValue=0.0, discrete=False, RegulationSchedule=None, TapChanger=None, RegulatingCondEq=None, Terminal=None, **kw_args):
         """Initializes a new 'RegulatingControl' instance.
 
         @param mode: The regulating control mode presently available.  This specifications allows for determining the kind of regualation without need for obtaining the units from a schedule. Values are: "reactivePower", "timeScheduled", "voltage", "currentFlow", "admittance", "fixed", "powerFactor", "temperature", "activePower"
@@ -56,7 +56,7 @@ class RegulatingControl(PowerSystemResource):
         self._Terminal = None
         self.Terminal = Terminal
 
-        super(RegulatingControl, self).__init__(*args, **kw_args)
+        super(RegulatingControl, self).__init__(**kw_args)
 
     def getRegulationSchedule(self):
         """Schedule for this Regulating regulating control.

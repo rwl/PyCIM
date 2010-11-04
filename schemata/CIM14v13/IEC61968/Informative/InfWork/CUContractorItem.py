@@ -20,7 +20,7 @@ class CUContractorItem(IdentifiedObject):
     """Compatible unit contractor item.
     """
 
-    def __init__(self, bidAmount=0.0, activityCode='', CompatibleUnits=None, status=None, *args, **kw_args):
+    def __init__(self, bidAmount=0.0, activityCode='', CompatibleUnits=None, status=None, **kw_args):
         """Initializes a new 'CUContractorItem' instance.
 
         @param bidAmount: The amount that a given contractor will charge for performing this unit of work. 
@@ -39,7 +39,7 @@ class CUContractorItem(IdentifiedObject):
 
         self.status = status
 
-        super(CUContractorItem, self).__init__(*args, **kw_args)
+        super(CUContractorItem, self).__init__(**kw_args)
 
     def getCompatibleUnits(self):
         

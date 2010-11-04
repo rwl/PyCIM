@@ -20,7 +20,7 @@ class MeterAssetModel(ElectricalAssetModel):
     """Documentation for a type of a meter asset of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, kVAhMeter=False, intervalDataMeter=False, maxRegisterCount=0, wireCount=0, kH=0.0, timeOfUseMeter=False, form='', registerRatio=0.0, demandMeter=False, reactiveMeter=False, loadProfileMeter=False, kwhMeter=False, qMeter=False, MeterTypeAsset=None, MeterAssets=None, *args, **kw_args):
+    def __init__(self, kVAhMeter=False, intervalDataMeter=False, maxRegisterCount=0, wireCount=0, kH=0.0, timeOfUseMeter=False, form='', registerRatio=0.0, demandMeter=False, reactiveMeter=False, loadProfileMeter=False, kwhMeter=False, qMeter=False, MeterTypeAsset=None, MeterAssets=None, **kw_args):
         """Initializes a new 'MeterAssetModel' instance.
 
         @param kVAhMeter: True when the meter is capable of metering apparent energy in kVAh. 
@@ -84,7 +84,7 @@ class MeterAssetModel(ElectricalAssetModel):
         self._MeterAssets = []
         self.MeterAssets = [] if MeterAssets is None else MeterAssets
 
-        super(MeterAssetModel, self).__init__(*args, **kw_args)
+        super(MeterAssetModel, self).__init__(**kw_args)
 
     def getMeterTypeAsset(self):
         

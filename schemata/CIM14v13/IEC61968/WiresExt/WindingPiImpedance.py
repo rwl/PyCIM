@@ -20,7 +20,7 @@ class WindingPiImpedance(IdentifiedObject):
     """Transformer Pi-model impedance that accurately reflects impedance for transformers with 2 or 3 windings. For transformers with 4 or more windings, you must use TransformerInfo.
     """
 
-    def __init__(self, x=0.0, r0=0.0, b0=0.0, g=0.0, g0=0.0, x0=0.0, b=0.0, r=0.0, Windings=None, *args, **kw_args):
+    def __init__(self, x=0.0, r0=0.0, b0=0.0, g=0.0, g0=0.0, x0=0.0, b=0.0, r=0.0, Windings=None, **kw_args):
         """Initializes a new 'WindingPiImpedance' instance.
 
         @param x: Positive sequence series reactance of the winding.  For a two winding transformer, the full reactance of the transformer should be entered on the primary (high voltage) winding. 
@@ -60,7 +60,7 @@ class WindingPiImpedance(IdentifiedObject):
         self._Windings = []
         self.Windings = [] if Windings is None else Windings
 
-        super(WindingPiImpedance, self).__init__(*args, **kw_args)
+        super(WindingPiImpedance, self).__init__(**kw_args)
 
     def getWindings(self):
         """All windings having this Pi impedance.

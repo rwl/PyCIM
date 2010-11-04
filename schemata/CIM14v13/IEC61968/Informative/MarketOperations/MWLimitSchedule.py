@@ -20,7 +20,7 @@ class MWLimitSchedule(Curve):
     """Maximum MW and optionally Minimum MW (Y1 and Y2, respectively)
     """
 
-    def __init__(self, SecurityConstraintLimit=None, *args, **kw_args):
+    def __init__(self, SecurityConstraintLimit=None, **kw_args):
         """Initializes a new 'MWLimitSchedule' instance.
 
         @param SecurityConstraintLimit:
@@ -28,7 +28,7 @@ class MWLimitSchedule(Curve):
         self._SecurityConstraintLimit = None
         self.SecurityConstraintLimit = SecurityConstraintLimit
 
-        super(MWLimitSchedule, self).__init__(*args, **kw_args)
+        super(MWLimitSchedule, self).__init__(**kw_args)
 
     def getSecurityConstraintLimit(self):
         

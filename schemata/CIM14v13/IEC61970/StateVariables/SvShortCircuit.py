@@ -20,7 +20,7 @@ class SvShortCircuit(StateVariable):
     """State variable for short circuit.
     """
 
-    def __init__(self, xPerR=0.0, r0PerR=0.0, sShortCircuit=0.0, x0PerX=0.0, TopologicalNode=None, *args, **kw_args):
+    def __init__(self, xPerR=0.0, r0PerR=0.0, sShortCircuit=0.0, x0PerX=0.0, TopologicalNode=None, **kw_args):
         """Initializes a new 'SvShortCircuit' instance.
 
         @param xPerR: Ratio of positive sequence reactance per postive sequence resistance. 
@@ -44,7 +44,7 @@ class SvShortCircuit(StateVariable):
         self._TopologicalNode = None
         self.TopologicalNode = TopologicalNode
 
-        super(SvShortCircuit, self).__init__(*args, **kw_args)
+        super(SvShortCircuit, self).__init__(**kw_args)
 
     def getTopologicalNode(self):
         """The topological node associated with the short circuit state.

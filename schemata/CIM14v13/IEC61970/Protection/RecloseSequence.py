@@ -20,7 +20,7 @@ class RecloseSequence(IdentifiedObject):
     """A reclose sequence (open and close) is defined for each possible reclosure of a breaker.
     """
 
-    def __init__(self, recloseStep=0, recloseDelay=0.0, ProtectedSwitch=None, *args, **kw_args):
+    def __init__(self, recloseStep=0, recloseDelay=0.0, ProtectedSwitch=None, **kw_args):
         """Initializes a new 'RecloseSequence' instance.
 
         @param recloseStep: Indicates the ordinal position of the reclose step relative to other steps in the sequence. 
@@ -36,7 +36,7 @@ class RecloseSequence(IdentifiedObject):
         self._ProtectedSwitch = None
         self.ProtectedSwitch = ProtectedSwitch
 
-        super(RecloseSequence, self).__init__(*args, **kw_args)
+        super(RecloseSequence, self).__init__(**kw_args)
 
     def getProtectedSwitch(self):
         """A breaker may have zero or more automatic reclosures after a trip occurs.

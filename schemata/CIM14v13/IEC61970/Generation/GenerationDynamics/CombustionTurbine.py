@@ -20,7 +20,7 @@ class CombustionTurbine(PrimeMover):
     """A prime mover that is typically fueled by gas or light oil
     """
 
-    def __init__(self, auxPowerVersusVoltage=0.0, ambientTemp=0.0, heatRecoveryFlag=False, capabilityVersusFrequency=0.0, powerVariationByTemp=0.0, referenceTemp=0.0, timeConstant=0.0, auxPowerVersusFrequency=0.0, HeatRecoveryBoiler=None, CTTempActivePowerCurve=None, AirCompressor=None, *args, **kw_args):
+    def __init__(self, auxPowerVersusVoltage=0.0, ambientTemp=0.0, heatRecoveryFlag=False, capabilityVersusFrequency=0.0, powerVariationByTemp=0.0, referenceTemp=0.0, timeConstant=0.0, auxPowerVersusFrequency=0.0, HeatRecoveryBoiler=None, CTTempActivePowerCurve=None, AirCompressor=None, **kw_args):
         """Initializes a new 'CombustionTurbine' instance.
 
         @param auxPowerVersusVoltage: Off-nominal voltage effect on turbine auxiliaries. Per unit reduction in auxiliary active power consumption versus per unit reduction in auxiliary bus voltage (from a specified voltage level). 
@@ -68,7 +68,7 @@ class CombustionTurbine(PrimeMover):
         self._AirCompressor = None
         self.AirCompressor = AirCompressor
 
-        super(CombustionTurbine, self).__init__(*args, **kw_args)
+        super(CombustionTurbine, self).__init__(**kw_args)
 
     def getHeatRecoveryBoiler(self):
         """A combustion turbine may have a heat recovery boiler for making steam

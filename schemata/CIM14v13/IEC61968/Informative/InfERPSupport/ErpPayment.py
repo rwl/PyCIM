@@ -20,7 +20,7 @@ class ErpPayment(Document):
     """Payment infromation and status for any individual line item of an ErpInvoice (e.g., when payment is from a customer). ErpPayable is also updated when payment is to a supplier and ErpReceivable is updated when payment is from a customer. Multiple payments can be made against a single line item and an individual payment can apply to more that one line item.
     """
 
-    def __init__(self, termsPayment='', ErpRecLineItems=None, ErpInvoiceLineItems=None, ErpPayableLineItems=None, *args, **kw_args):
+    def __init__(self, termsPayment='', ErpRecLineItems=None, ErpInvoiceLineItems=None, ErpPayableLineItems=None, **kw_args):
         """Initializes a new 'ErpPayment' instance.
 
         @param termsPayment: Payment terms (e.g., net 30). 
@@ -40,7 +40,7 @@ class ErpPayment(Document):
         self._ErpPayableLineItems = []
         self.ErpPayableLineItems = [] if ErpPayableLineItems is None else ErpPayableLineItems
 
-        super(ErpPayment, self).__init__(*args, **kw_args)
+        super(ErpPayment, self).__init__(**kw_args)
 
     def getErpRecLineItems(self):
         

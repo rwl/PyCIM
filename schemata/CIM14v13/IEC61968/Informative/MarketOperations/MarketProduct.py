@@ -20,7 +20,7 @@ class MarketProduct(IdentifiedObject):
     """A product traded by an RTO (e.g., energy, 10 minute spinning reserve).  Ancillary service product examples include: Regulation Up Regulation Dn Spinning Reserve Non-Spinning Reserve Operating Reserve
     """
 
-    def __init__(self, Market=None, RegisteredResources=None, ReserveReqs=None, ProductBids=None, *args, **kw_args):
+    def __init__(self, Market=None, RegisteredResources=None, ReserveReqs=None, ProductBids=None, **kw_args):
         """Initializes a new 'MarketProduct' instance.
 
         @param Market:
@@ -40,7 +40,7 @@ class MarketProduct(IdentifiedObject):
         self._ProductBids = []
         self.ProductBids = [] if ProductBids is None else ProductBids
 
-        super(MarketProduct, self).__init__(*args, **kw_args)
+        super(MarketProduct, self).__init__(**kw_args)
 
     def getMarket(self):
         

@@ -20,7 +20,7 @@ class RegulatingCondEq(ConductingEquipment):
     """A type of conducting equipment that can regulate a quanity (i.e. voltage or flow) at a specific point in the network.
     """
 
-    def __init__(self, RegulatingControl=None, Controls=None, *args, **kw_args):
+    def __init__(self, RegulatingControl=None, Controls=None, **kw_args):
         """Initializes a new 'RegulatingCondEq' instance.
 
         @param RegulatingControl: The regulating control scheme in which this equipment participates.
@@ -32,7 +32,7 @@ class RegulatingCondEq(ConductingEquipment):
         self._Controls = []
         self.Controls = [] if Controls is None else Controls
 
-        super(RegulatingCondEq, self).__init__(*args, **kw_args)
+        super(RegulatingCondEq, self).__init__(**kw_args)
 
     def getRegulatingControl(self):
         """The regulating control scheme in which this equipment participates.

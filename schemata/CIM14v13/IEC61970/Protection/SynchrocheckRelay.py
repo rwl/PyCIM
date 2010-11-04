@@ -20,7 +20,7 @@ class SynchrocheckRelay(ProtectionEquipment):
     """A device that operates when two AC circuits are within the desired limits of frequency, phase angle, and voltage, to permit or to cause the paralleling of these two circuits. Used to prevent the paralleling of non-synchronous topological islands.
     """
 
-    def __init__(self, maxFreqDiff=0.0, maxVoltDiff=0.0, maxAngleDiff=0.0, *args, **kw_args):
+    def __init__(self, maxFreqDiff=0.0, maxVoltDiff=0.0, maxAngleDiff=0.0, **kw_args):
         """Initializes a new 'SynchrocheckRelay' instance.
 
         @param maxFreqDiff: The maximum allowable frequency difference across the open device 
@@ -36,5 +36,5 @@ class SynchrocheckRelay(ProtectionEquipment):
         #: The maximum allowable voltage vector phase angle difference across the open device
         self.maxAngleDiff = maxAngleDiff
 
-        super(SynchrocheckRelay, self).__init__(*args, **kw_args)
+        super(SynchrocheckRelay, self).__init__(**kw_args)
 

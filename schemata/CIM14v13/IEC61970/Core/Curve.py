@@ -20,7 +20,7 @@ class Curve(IdentifiedObject):
     """A multi-purpose curve or functional relationship between an independent variable (X-axis) and dependent (Y-axis) variables.
     """
 
-    def __init__(self, y3Multiplier='m', y2Multiplier='m', xMultiplier='m', y2Unit='m2', curveStyle='constantYValue', y1Unit='m2', y1Multiplier='m', y3Unit='m2', xUnit='m2', CurveDatas=None, *args, **kw_args):
+    def __init__(self, y3Multiplier='m', y2Multiplier='m', xMultiplier='m', y2Unit='m2', curveStyle='constantYValue', y1Unit='m2', y1Multiplier='m', y3Unit='m2', xUnit='m2', CurveDatas=None, **kw_args):
         """Initializes a new 'Curve' instance.
 
         @param y3Multiplier: Multiplier for Y3-axis. Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
@@ -64,7 +64,7 @@ class Curve(IdentifiedObject):
         self._CurveDatas = []
         self.CurveDatas = [] if CurveDatas is None else CurveDatas
 
-        super(Curve, self).__init__(*args, **kw_args)
+        super(Curve, self).__init__(**kw_args)
 
     def getCurveDatas(self):
         """The point data values that define a curve

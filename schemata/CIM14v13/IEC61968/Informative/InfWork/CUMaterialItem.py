@@ -20,7 +20,7 @@ class CUMaterialItem(IdentifiedObject):
     """Compatible unit of a consumable supply item. For example, nuts, bolts, brackets, glue, etc.
     """
 
-    def __init__(self, corporateCode='', quantity=0, status=None, TypeMaterial=None, CompatibleUnits=None, PropertyUnits=None, *args, **kw_args):
+    def __init__(self, corporateCode='', quantity=0, status=None, TypeMaterial=None, CompatibleUnits=None, PropertyUnits=None, **kw_args):
         """Initializes a new 'CUMaterialItem' instance.
 
         @param corporateCode: Code for material. 
@@ -47,7 +47,7 @@ class CUMaterialItem(IdentifiedObject):
         self._PropertyUnits = []
         self.PropertyUnits = [] if PropertyUnits is None else PropertyUnits
 
-        super(CUMaterialItem, self).__init__(*args, **kw_args)
+        super(CUMaterialItem, self).__init__(**kw_args)
 
     status = None
 

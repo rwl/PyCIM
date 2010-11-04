@@ -20,7 +20,7 @@ class FaultIndicatorTypeAsset(ElectricalTypeAsset):
     """Documentation for a generic fault indicator that may be used for design purposes.
     """
 
-    def __init__(self, resetKind='other', FaultIndicatorAssetModels=None, FaultIndicators=None, *args, **kw_args):
+    def __init__(self, resetKind='other', FaultIndicatorAssetModels=None, FaultIndicators=None, **kw_args):
         """Initializes a new 'FaultIndicatorTypeAsset' instance.
 
         @param resetKind: Kind of reset mechanisim of this fault indicator. Values are: "other", "remote", "manual", "automatic"
@@ -36,7 +36,7 @@ class FaultIndicatorTypeAsset(ElectricalTypeAsset):
         self._FaultIndicators = []
         self.FaultIndicators = [] if FaultIndicators is None else FaultIndicators
 
-        super(FaultIndicatorTypeAsset, self).__init__(*args, **kw_args)
+        super(FaultIndicatorTypeAsset, self).__init__(**kw_args)
 
     def getFaultIndicatorAssetModels(self):
         

@@ -20,7 +20,7 @@ class StreetlightAssetModel(ElectricalAssetModel):
     """Documentation for a type of a streelight of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, lampKind='highPressureSodium', lightRating=0.0, Streetlights=None, StreetlightTypeAssets=None, *args, **kw_args):
+    def __init__(self, lampKind='highPressureSodium', lightRating=0.0, Streetlights=None, StreetlightTypeAssets=None, **kw_args):
         """Initializes a new 'StreetlightAssetModel' instance.
 
         @param lampKind: Lamp kind supplied from manufacturer (vs. one that has been replaced in the field). Values are: "highPressureSodium", "other", "metalHalide", "mercuryVapor"
@@ -40,7 +40,7 @@ class StreetlightAssetModel(ElectricalAssetModel):
         self._StreetlightTypeAssets = []
         self.StreetlightTypeAssets = [] if StreetlightTypeAssets is None else StreetlightTypeAssets
 
-        super(StreetlightAssetModel, self).__init__(*args, **kw_args)
+        super(StreetlightAssetModel, self).__init__(**kw_args)
 
     def getStreetlights(self):
         

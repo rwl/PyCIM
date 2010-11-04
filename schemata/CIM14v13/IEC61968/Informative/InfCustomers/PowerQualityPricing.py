@@ -20,7 +20,7 @@ class PowerQualityPricing(Document):
     """Pricing can be based on power quality.
     """
 
-    def __init__(self, emergencyLowVoltLimit=0.0, emergencyHighVoltLimit=0.0, voltLimitViolCost=0.0, valueUninterruptedServiceP=0.0, normalLowVoltLimit=0.0, voltImbalanceViolCost=0.0, normalHighVoltLimit=0.0, powerFactorMin=0.0, valueUninterruptedServiceEnergy=0.0, PricingStructure=None, ServiceDeliveryPoints=None, *args, **kw_args):
+    def __init__(self, emergencyLowVoltLimit=0.0, emergencyHighVoltLimit=0.0, voltLimitViolCost=0.0, valueUninterruptedServiceP=0.0, normalLowVoltLimit=0.0, voltImbalanceViolCost=0.0, normalHighVoltLimit=0.0, powerFactorMin=0.0, valueUninterruptedServiceEnergy=0.0, PricingStructure=None, ServiceDeliveryPoints=None, **kw_args):
         """Initializes a new 'PowerQualityPricing' instance.
 
         @param emergencyLowVoltLimit: Emergency low voltage limit. 
@@ -68,7 +68,7 @@ class PowerQualityPricing(Document):
         self._ServiceDeliveryPoints = []
         self.ServiceDeliveryPoints = [] if ServiceDeliveryPoints is None else ServiceDeliveryPoints
 
-        super(PowerQualityPricing, self).__init__(*args, **kw_args)
+        super(PowerQualityPricing, self).__init__(**kw_args)
 
     def getPricingStructure(self):
         

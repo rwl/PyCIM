@@ -20,7 +20,7 @@ class Zone(Location):
     """Area divided off from other areas. It may be part of the electrical network, a land area where special restrictions apply, weather areas, etc. For weather, it is an area where a set of relatively homogenous weather measurements apply.
     """
 
-    def __init__(self, kind='specialRestrictionLand', *args, **kw_args):
+    def __init__(self, kind='specialRestrictionLand', **kw_args):
         """Initializes a new 'Zone' instance.
 
         @param kind: Kind of this zone. Values are: "specialRestrictionLand", "electricalNetwork", "weatherZone", "other"
@@ -28,5 +28,5 @@ class Zone(Location):
         #: Kind of this zone.Values are: "specialRestrictionLand", "electricalNetwork", "weatherZone", "other"
         self.kind = kind
 
-        super(Zone, self).__init__(*args, **kw_args)
+        super(Zone, self).__init__(**kw_args)
 

@@ -20,7 +20,7 @@ class EndDeviceGroup(IdentifiedObject):
     """Abstraction for management of group communications within a two-way AMR system or the data for a group of related meters. Commands can be issued to all of the meters that belong to a meter group using a defined group address and the underlying AMR communication infrastructure.
     """
 
-    def __init__(self, groupAddress=0, DemandResponseProgram=None, EndDeviceAssets=None, EndDeviceControls=None, *args, **kw_args):
+    def __init__(self, groupAddress=0, DemandResponseProgram=None, EndDeviceAssets=None, EndDeviceControls=None, **kw_args):
         """Initializes a new 'EndDeviceGroup' instance.
 
         @param groupAddress: Address of this end device group. 
@@ -40,7 +40,7 @@ class EndDeviceGroup(IdentifiedObject):
         self._EndDeviceControls = []
         self.EndDeviceControls = [] if EndDeviceControls is None else EndDeviceControls
 
-        super(EndDeviceGroup, self).__init__(*args, **kw_args)
+        super(EndDeviceGroup, self).__init__(**kw_args)
 
     def getDemandResponseProgram(self):
         """Demand response program for this group of end devices.

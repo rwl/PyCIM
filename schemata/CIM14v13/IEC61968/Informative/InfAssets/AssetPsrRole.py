@@ -20,7 +20,7 @@ class AssetPsrRole(Role):
     """Roles played between Assets and Power System Resources.
     """
 
-    def __init__(self, PowerSystemResource=None, Asset=None, *args, **kw_args):
+    def __init__(self, PowerSystemResource=None, Asset=None, **kw_args):
         """Initializes a new 'AssetPsrRole' instance.
 
         @param PowerSystemResource:
@@ -32,7 +32,7 @@ class AssetPsrRole(Role):
         self._Asset = None
         self.Asset = Asset
 
-        super(AssetPsrRole, self).__init__(*args, **kw_args)
+        super(AssetPsrRole, self).__init__(**kw_args)
 
     def getPowerSystemResource(self):
         

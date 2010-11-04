@@ -20,7 +20,7 @@ class ChargeRegister(IdentifiedObject):
     """Accumulated charges transacted per ChargeKind for a given function. There could be several of these registers, one for each ChargeKind; depending on the application.
     """
 
-    def __init__(self, chargeKind='other', chargeAmount=None, SPAccountingFunction=None, *args, **kw_args):
+    def __init__(self, chargeKind='other', chargeAmount=None, SPAccountingFunction=None, **kw_args):
         """Initializes a new 'ChargeRegister' instance.
 
         @param chargeKind: Several different types of charges are typically implemented in the case of a prepayment meter. For example: a charge according to a tariff for consumption and possibly a demand component, or a charge for a debt that is loaded in the meter to be recovered on a time basis, or a standing charge to be levied at the end of each billing period, or a tax charge loaded in the meter to be recovered on a consumption basis or a time basis. Values are: "other", "auxiliaryCharge", "demandCharge", "taxCharge", "consumptionCharge"
@@ -35,7 +35,7 @@ class ChargeRegister(IdentifiedObject):
         self._SPAccountingFunction = None
         self.SPAccountingFunction = SPAccountingFunction
 
-        super(ChargeRegister, self).__init__(*args, **kw_args)
+        super(ChargeRegister, self).__init__(**kw_args)
 
     # Charge amount in favour of the supplier. The units are either in currency units or service units, depending on the value of 'AccountingUnit.accountingMode'.
     chargeAmount = None

@@ -20,7 +20,7 @@ class Transaction(IdentifiedObject):
     """The record of details of payment for service or token sale.
     """
 
-    def __init__(self, kind='auxiliaryChargePayment', serviceUnitsEnergy=0.0, serviceUnitsError=0.0, reversedId='', receiverReference='', diverseReference='', donorReference='', VendorShift=None, Receipt=None, CustomerAccount=None, MeterAsset=None, UserAttributes=None, AuxiliaryAccount=None, PricingStructure=None, CashierShift=None, line=None, *args, **kw_args):
+    def __init__(self, kind='auxiliaryChargePayment', serviceUnitsEnergy=0.0, serviceUnitsError=0.0, reversedId='', receiverReference='', diverseReference='', donorReference='', VendorShift=None, Receipt=None, CustomerAccount=None, MeterAsset=None, UserAttributes=None, AuxiliaryAccount=None, PricingStructure=None, CashierShift=None, line=None, **kw_args):
         """Initializes a new 'Transaction' instance.
 
         @param kind: Kind of transaction. Values are: "auxiliaryChargePayment", "tokenExchange", "tokenCancellation", "transactionReversal", "diversePayment", "tokenFreeIssue", "other", "meterConfigurationToken", "tokenSalePayment", "accountPayment", "taxChargePayment", "serviceChargePayment", "tokenGrant"
@@ -87,7 +87,7 @@ class Transaction(IdentifiedObject):
 
         self.line = line
 
-        super(Transaction, self).__init__(*args, **kw_args)
+        super(Transaction, self).__init__(**kw_args)
 
     def getVendorShift(self):
         """Vendor shift during which this transaction was recorded.

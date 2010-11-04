@@ -20,7 +20,7 @@ class HeatInputCurve(Curve):
     """Relationship between unit heat input in energy per time for main fuel (Y1-axis) and supplemental fuel (Y2-axis) versus unit output in active power (X-axis). The quantity of main fuel used to sustain generation at this output level is prorated for throttling between definition points. The quantity of supplemental fuel used at this output level is fixed and not prorated.
     """
 
-    def __init__(self, heatInputEff=0.0, auxPowerOffset=0.0, heatInputOffset=0.0, isNetGrossP=False, auxPowerMult=0.0, ThermalGeneratingUnit=None, *args, **kw_args):
+    def __init__(self, heatInputEff=0.0, auxPowerOffset=0.0, heatInputOffset=0.0, isNetGrossP=False, auxPowerMult=0.0, ThermalGeneratingUnit=None, **kw_args):
         """Initializes a new 'HeatInputCurve' instance.
 
         @param heatInputEff: Heat input - efficiency multiplier adjustment factor. 
@@ -48,7 +48,7 @@ class HeatInputCurve(Curve):
         self._ThermalGeneratingUnit = None
         self.ThermalGeneratingUnit = ThermalGeneratingUnit
 
-        super(HeatInputCurve, self).__init__(*args, **kw_args)
+        super(HeatInputCurve, self).__init__(**kw_args)
 
     def getThermalGeneratingUnit(self):
         """A thermal generating unit may have a heat input curve

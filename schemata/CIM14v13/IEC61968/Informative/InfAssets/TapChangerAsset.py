@@ -20,7 +20,7 @@ class TapChangerAsset(Asset):
     """Physical asset performing TapChanger function.
     """
 
-    def __init__(self, TapChangerAssetModel=None, *args, **kw_args):
+    def __init__(self, TapChangerAssetModel=None, **kw_args):
         """Initializes a new 'TapChangerAsset' instance.
 
         @param TapChangerAssetModel:
@@ -28,7 +28,7 @@ class TapChangerAsset(Asset):
         self._TapChangerAssetModel = None
         self.TapChangerAssetModel = TapChangerAssetModel
 
-        super(TapChangerAsset, self).__init__(*args, **kw_args)
+        super(TapChangerAsset, self).__init__(**kw_args)
 
     def getTapChangerAssetModel(self):
         

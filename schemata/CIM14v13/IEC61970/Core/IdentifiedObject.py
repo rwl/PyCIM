@@ -20,7 +20,7 @@ class IdentifiedObject(Element):
     """This is a root class to provide common naming attributes for all classes needing naming attributes
     """
 
-    def __init__(self, description='', mRID='', name='', pathName='', localName='', aliasName='', ModelingAuthoritySet=None, *args, **kw_args):
+    def __init__(self, description='', mRID='', name='', pathName='', localName='', aliasName='', ModelingAuthoritySet=None, **kw_args):
         """Initializes a new 'IdentifiedObject' instance.
 
         @param description: The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy. 
@@ -52,7 +52,7 @@ class IdentifiedObject(Element):
         self._ModelingAuthoritySet = None
         self.ModelingAuthoritySet = ModelingAuthoritySet
 
-        super(IdentifiedObject, self).__init__(*args, **kw_args)
+        super(IdentifiedObject, self).__init__(**kw_args)
 
     def getModelingAuthoritySet(self):
         """An IdentifiedObject belongs to a Modeling Authority Set for purposes of defining a group of data maintained by the same Modeling Authority.

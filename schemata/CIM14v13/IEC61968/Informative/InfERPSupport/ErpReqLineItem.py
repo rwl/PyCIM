@@ -20,7 +20,7 @@ class ErpReqLineItem(IdentifiedObject):
     """Information that describes a requested item and its attributes.
     """
 
-    def __init__(self, deliveryDate='', code='', quantity=0, cost=0.0, ErpRequisition=None, TypeMaterial=None, ErpPOLineItem=None, status=None, ErpQuoteLineItem=None, TypeAsset=None, *args, **kw_args):
+    def __init__(self, deliveryDate='', code='', quantity=0, cost=0.0, ErpRequisition=None, TypeMaterial=None, ErpPOLineItem=None, status=None, ErpQuoteLineItem=None, TypeAsset=None, **kw_args):
         """Initializes a new 'ErpReqLineItem' instance.
 
         @param deliveryDate: 
@@ -63,7 +63,7 @@ class ErpReqLineItem(IdentifiedObject):
         self._TypeAsset = None
         self.TypeAsset = TypeAsset
 
-        super(ErpReqLineItem, self).__init__(*args, **kw_args)
+        super(ErpReqLineItem, self).__init__(**kw_args)
 
     def getErpRequisition(self):
         

@@ -20,7 +20,7 @@ class PoleModel(AssetModel):
     """A type of pole supplied by a given manufacturer.
     """
 
-    def __init__(self, speciesType='', classification='', PoleTypeAsset=None, Poles=None, *args, **kw_args):
+    def __init__(self, speciesType='', classification='', PoleTypeAsset=None, Poles=None, **kw_args):
         """Initializes a new 'PoleModel' instance.
 
         @param speciesType: Pole species. Aluminum, Aluminum Davit, Concrete, Fiberglass, Galvanized Davit, Galvanized, Steel Davit Primed, Steel Davit, Steel Standard Primed, Steel, Truncated, Wood-Treated, Wood-Hard, Wood-Salt Treated, Wood-Soft, Wood, Other, Unknown. 
@@ -40,7 +40,7 @@ class PoleModel(AssetModel):
         self._Poles = []
         self.Poles = [] if Poles is None else Poles
 
-        super(PoleModel, self).__init__(*args, **kw_args)
+        super(PoleModel, self).__init__(**kw_args)
 
     def getPoleTypeAsset(self):
         

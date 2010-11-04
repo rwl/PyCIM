@@ -20,7 +20,7 @@ class PackageDependenciesCIMVeresion(Element):
     """The version of dependencies description among top level subpackages of the combined CIM model.  This is not the same as the combined packages version.
     """
 
-    def __init__(self, date='', vesion='', *args, **kw_args):
+    def __init__(self, date='', vesion='', **kw_args):
         """Initializes a new 'PackageDependenciesCIMVeresion' instance.
 
         @param date: Date of last change to the main package dependencies in format YYYY-MM-DD.   This is updated when the version attribute is updated. 
@@ -32,5 +32,5 @@ class PackageDependenciesCIMVeresion(Element):
         #: The version of the main subpackages of the combined CIM model.  The format is simply an integer.  The version (and date) initial values should be updated any time the dependencies in the model change and require an actual change to the diagrams within this package.
         self.vesion = vesion
 
-        super(PackageDependenciesCIMVeresion, self).__init__(*args, **kw_args)
+        super(PackageDependenciesCIMVeresion, self).__init__(**kw_args)
 

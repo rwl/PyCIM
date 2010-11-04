@@ -20,7 +20,7 @@ class GmlPosition(PositionPoint):
     """Position point with a GML coordinate reference system.
     """
 
-    def __init__(self, GmlCoordinateSystem=None, *args, **kw_args):
+    def __init__(self, GmlCoordinateSystem=None, **kw_args):
         """Initializes a new 'GmlPosition' instance.
 
         @param GmlCoordinateSystem:
@@ -28,7 +28,7 @@ class GmlPosition(PositionPoint):
         self._GmlCoordinateSystem = None
         self.GmlCoordinateSystem = GmlCoordinateSystem
 
-        super(GmlPosition, self).__init__(*args, **kw_args)
+        super(GmlPosition, self).__init__(**kw_args)
 
     def getGmlCoordinateSystem(self):
         

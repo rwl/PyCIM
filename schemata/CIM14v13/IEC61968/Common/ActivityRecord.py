@@ -20,7 +20,7 @@ class ActivityRecord(IdentifiedObject):
     """Records activity for an entity at a point in time; activity may be for an event that has already occurred or for a planned activity.
     """
 
-    def __init__(self, reason='', category='', severity='', createdDateTime='', MarketFactors=None, Documents=None, Organisations=None, ScheduledEvent=None, Assets=None, ErpPersons=None, Locations=None, status=None, *args, **kw_args):
+    def __init__(self, reason='', category='', severity='', createdDateTime='', MarketFactors=None, Documents=None, Organisations=None, ScheduledEvent=None, Assets=None, ErpPersons=None, Locations=None, status=None, **kw_args):
         """Initializes a new 'ActivityRecord' instance.
 
         @param reason: Reason for event resulting in this activity record, typically supplied when user initiated. 
@@ -70,7 +70,7 @@ class ActivityRecord(IdentifiedObject):
 
         self.status = status
 
-        super(ActivityRecord, self).__init__(*args, **kw_args)
+        super(ActivityRecord, self).__init__(**kw_args)
 
     def add_MarketFactors(self, *MarketFactors):
         for obj in MarketFactors:

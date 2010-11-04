@@ -20,7 +20,7 @@ class Bank(Organisation):
     """Organisation that is a commercial bank, agency, or other institution that offers a similar service.
     """
 
-    def __init__(self, iban='', branchCode='', bic='', BankAccounts=None, *args, **kw_args):
+    def __init__(self, iban='', branchCode='', bic='', BankAccounts=None, **kw_args):
         """Initializes a new 'Bank' instance.
 
         @param iban: International bank account number defined in ISO 13616; for countries where IBAN is not in operation, the existing BIC or SWIFT codes may be used instead (see ISO 9362). 
@@ -40,7 +40,7 @@ class Bank(Organisation):
         self._BankAccounts = []
         self.BankAccounts = [] if BankAccounts is None else BankAccounts
 
-        super(Bank, self).__init__(*args, **kw_args)
+        super(Bank, self).__init__(**kw_args)
 
     def getBankAccounts(self):
         """All BankAccounts this Bank provides.

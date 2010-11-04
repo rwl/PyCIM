@@ -20,7 +20,7 @@ class TransmissionService(IdentifiedObject):
     """Transmission products along posted transmission path.
     """
 
-    def __init__(self, OfferedAs=None, Offering=None, TransContractFor=None, ScheduledBy=None, Offers=None, ReservedBy_ServiceReservation=None, *args, **kw_args):
+    def __init__(self, OfferedAs=None, Offering=None, TransContractFor=None, ScheduledBy=None, Offers=None, ReservedBy_ServiceReservation=None, **kw_args):
         """Initializes a new 'TransmissionService' instance.
 
         @param OfferedAs: A transmission product is offered as a transmission service along a transmission path.
@@ -48,7 +48,7 @@ class TransmissionService(IdentifiedObject):
         self._ReservedBy_ServiceReservation = []
         self.ReservedBy_ServiceReservation = [] if ReservedBy_ServiceReservation is None else ReservedBy_ServiceReservation
 
-        super(TransmissionService, self).__init__(*args, **kw_args)
+        super(TransmissionService, self).__init__(**kw_args)
 
     def getOfferedAs(self):
         """A transmission product is offered as a transmission service along a transmission path.

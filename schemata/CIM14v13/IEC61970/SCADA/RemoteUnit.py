@@ -20,7 +20,7 @@ class RemoteUnit(PowerSystemResource):
     """A remote unit can be a RTU, IED, substation control system, control center etc. The communication with the remote unit can be through various standard protocols (e.g. IEC 61870, IEC 61850) or non standard protocols (e.g. DNP, RP570 etc.). A remote unit contain remote data points that might be telemetered, collected or calculated. The RemoteUnit class inherit PowerSystemResource. The intention is to allow RemotUnits to have Measurements. These Measurements can be used to model unit status as operational, out of service, unit failure etc.
     """
 
-    def __init__(self, remoteUnitType='RTU', CommunicationLinks=None, RemotePoints=None, *args, **kw_args):
+    def __init__(self, remoteUnitType='RTU', CommunicationLinks=None, RemotePoints=None, **kw_args):
         """Initializes a new 'RemoteUnit' instance.
 
         @param remoteUnitType: Type of remote unit. Values are: "RTU", "SubstationControlSystem", "ControlCenter", "IED"
@@ -36,7 +36,7 @@ class RemoteUnit(PowerSystemResource):
         self._RemotePoints = []
         self.RemotePoints = [] if RemotePoints is None else RemotePoints
 
-        super(RemoteUnit, self).__init__(*args, **kw_args)
+        super(RemoteUnit, self).__init__(**kw_args)
 
     def getCommunicationLinks(self):
         """RTUs may be attached to communication links.

@@ -20,7 +20,7 @@ class TransactionBid(Bid):
     """Bilateral or scheduled transactions for energy and ancillary services considered by market clearing process
     """
 
-    def __init__(self, Delivery_Pnode=None, Receipt_Pnode=None, EnergyTransId=None, EnergyProfiles=None, *args, **kw_args):
+    def __init__(self, Delivery_Pnode=None, Receipt_Pnode=None, EnergyTransId=None, EnergyProfiles=None, **kw_args):
         """Initializes a new 'TransactionBid' instance.
 
         @param Delivery_Pnode:
@@ -40,7 +40,7 @@ class TransactionBid(Bid):
         self._EnergyProfiles = []
         self.EnergyProfiles = [] if EnergyProfiles is None else EnergyProfiles
 
-        super(TransactionBid, self).__init__(*args, **kw_args)
+        super(TransactionBid, self).__init__(**kw_args)
 
     def getDelivery_Pnode(self):
         

@@ -20,7 +20,7 @@ class Conductor(ConductingEquipment):
     """Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system.
     """
 
-    def __init__(self, length=0.0, *args, **kw_args):
+    def __init__(self, length=0.0, **kw_args):
         """Initializes a new 'Conductor' instance.
 
         @param length: Segment length for calculating line section capabilities 
@@ -28,5 +28,5 @@ class Conductor(ConductingEquipment):
         #: Segment length for calculating line section capabilities
         self.length = length
 
-        super(Conductor, self).__init__(*args, **kw_args)
+        super(Conductor, self).__init__(**kw_args)
 

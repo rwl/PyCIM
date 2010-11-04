@@ -20,7 +20,7 @@ class Tower(Structure):
     """Large structure used to carry transmission lines, subtransmission lines, and/or other equipment/lines (e.g., communication). Dimensions of the Tower are specified in associated DimensionsInfo class.
     """
 
-    def __init__(self, constructionKind='suspension', TowerAssetModel=None, *args, **kw_args):
+    def __init__(self, constructionKind='suspension', TowerAssetModel=None, **kw_args):
         """Initializes a new 'Tower' instance.
 
         @param constructionKind: Construction structure on the tower. Values are: "suspension", "tension"
@@ -32,7 +32,7 @@ class Tower(Structure):
         self._TowerAssetModel = None
         self.TowerAssetModel = TowerAssetModel
 
-        super(Tower, self).__init__(*args, **kw_args)
+        super(Tower, self).__init__(**kw_args)
 
     def getTowerAssetModel(self):
         

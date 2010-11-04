@@ -20,7 +20,7 @@ class Map(Diagram):
     """A type of diagram that is usually printed on paper. It normally depicts part of the earth's surface, showing utility assets, right of ways, topological data, coordinates, grids, etc. Maps vary depending on whether they are used for dispatch, design, schematic, etc.
     """
 
-    def __init__(self, mapLocGrid='', pageNumber=0, *args, **kw_args):
+    def __init__(self, mapLocGrid='', pageNumber=0, **kw_args):
         """Initializes a new 'Map' instance.
 
         @param mapLocGrid: Map grid number. 
@@ -32,5 +32,5 @@ class Map(Diagram):
         #: Page number for particular set of maps specified by 'category'.
         self.pageNumber = pageNumber
 
-        super(Map, self).__init__(*args, **kw_args)
+        super(Map, self).__init__(**kw_args)
 

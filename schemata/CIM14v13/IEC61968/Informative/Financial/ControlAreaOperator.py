@@ -20,7 +20,7 @@ class ControlAreaOperator(ErpOrganisation):
     """Operates the Control Area. Approves and implements energy transactions. Verifies both Inter-Control Area and Intra-Control Area transactions for the power system before granting approval (and implementing) the transactions.
     """
 
-    def __init__(self, AncillaryService=None, ControlledBy=None, TieLines=None, *args, **kw_args):
+    def __init__(self, AncillaryService=None, ControlledBy=None, TieLines=None, **kw_args):
         """Initializes a new 'ControlAreaOperator' instance.
 
         @param AncillaryService: Sale of ancillary services provided by ControlAreaOperators.
@@ -36,7 +36,7 @@ class ControlAreaOperator(ErpOrganisation):
         self._TieLines = []
         self.TieLines = [] if TieLines is None else TieLines
 
-        super(ControlAreaOperator, self).__init__(*args, **kw_args)
+        super(ControlAreaOperator, self).__init__(**kw_args)
 
     def getAncillaryService(self):
         """Sale of ancillary services provided by ControlAreaOperators.

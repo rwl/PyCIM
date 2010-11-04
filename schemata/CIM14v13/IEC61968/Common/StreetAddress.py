@@ -20,7 +20,7 @@ class StreetAddress(Element):
     """General purpose street address information.
     """
 
-    def __init__(self, status=None, townDetail=None, streetDetail=None, *args, **kw_args):
+    def __init__(self, status=None, townDetail=None, streetDetail=None, **kw_args):
         """Initializes a new 'StreetAddress' instance.
 
         @param status: Status of this address.
@@ -33,7 +33,7 @@ class StreetAddress(Element):
 
         self.streetDetail = streetDetail
 
-        super(StreetAddress, self).__init__(*args, **kw_args)
+        super(StreetAddress, self).__init__(**kw_args)
 
     # Status of this address.
     status = None

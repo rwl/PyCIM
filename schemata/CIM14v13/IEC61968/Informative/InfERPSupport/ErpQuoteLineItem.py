@@ -20,7 +20,7 @@ class ErpQuoteLineItem(IdentifiedObject):
     """Of an ErpQuote, the item or product quoted along with quantity, price and other descriptive information.
     """
 
-    def __init__(self, AssetModelCatalogueItem=None, Design=None, Request=None, ErpReqLineItem=None, ErpInvoiceLineItem=None, status=None, ErpQuote=None, *args, **kw_args):
+    def __init__(self, AssetModelCatalogueItem=None, Design=None, Request=None, ErpReqLineItem=None, ErpInvoiceLineItem=None, status=None, ErpQuote=None, **kw_args):
         """Initializes a new 'ErpQuoteLineItem' instance.
 
         @param AssetModelCatalogueItem:
@@ -51,7 +51,7 @@ class ErpQuoteLineItem(IdentifiedObject):
         self._ErpQuote = None
         self.ErpQuote = ErpQuote
 
-        super(ErpQuoteLineItem, self).__init__(*args, **kw_args)
+        super(ErpQuoteLineItem, self).__init__(**kw_args)
 
     def getAssetModelCatalogueItem(self):
         

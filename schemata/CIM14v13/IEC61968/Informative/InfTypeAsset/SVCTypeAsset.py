@@ -20,7 +20,7 @@ class SVCTypeAsset(FACTSDeviceTypeAsset):
     """Documentation for a generic Static Var Compensator (SVC) that may be used for various purposes such as work planning.
     """
 
-    def __init__(self, SvcInfos=None, SVCAssetModels=None, *args, **kw_args):
+    def __init__(self, SvcInfos=None, SVCAssetModels=None, **kw_args):
         """Initializes a new 'SVCTypeAsset' instance.
 
         @param SvcInfos:
@@ -32,7 +32,7 @@ class SVCTypeAsset(FACTSDeviceTypeAsset):
         self._SVCAssetModels = []
         self.SVCAssetModels = [] if SVCAssetModels is None else SVCAssetModels
 
-        super(SVCTypeAsset, self).__init__(*args, **kw_args)
+        super(SVCTypeAsset, self).__init__(**kw_args)
 
     def getSvcInfos(self):
         

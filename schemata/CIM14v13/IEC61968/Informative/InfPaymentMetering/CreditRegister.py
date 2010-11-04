@@ -20,7 +20,7 @@ class CreditRegister(IdentifiedObject):
     """Accumulated credits transacted per CreditKind for a given function. There could be several of these registers, one for each CreditKind; depending on the application.
     """
 
-    def __init__(self, creditKind='other', creditAmount=None, SDPAccountingFunction=None, *args, **kw_args):
+    def __init__(self, creditKind='other', creditAmount=None, SDPAccountingFunction=None, **kw_args):
         """Initializes a new 'CreditRegister' instance.
 
         @param creditKind: Several different types of credit are typically implemented in the case of a prepayment meter.  For example: credit transferred by means of a token carrier, or credit advanced automatically inside the meter under certain conditions, or credit held in reserved to be released under emergency conditions, or credit granted by local authority as a basic life support mechanism and may be dispensed automatically by the meter under certain conditions or credit available under severe climate conditions such as during winter over a weekend. Values are: "other", "reserveCredit", "lifelineCredit", "advanceCredit", "tokenCredit", "grantCredit"
@@ -35,7 +35,7 @@ class CreditRegister(IdentifiedObject):
         self._SDPAccountingFunction = None
         self.SDPAccountingFunction = SDPAccountingFunction
 
-        super(CreditRegister, self).__init__(*args, **kw_args)
+        super(CreditRegister, self).__init__(**kw_args)
 
     # Credit amount in favour of the customer. The units are either in currency units or service units, depending on the value of 'AccountingUnit.accountingMode'.
     creditAmount = None

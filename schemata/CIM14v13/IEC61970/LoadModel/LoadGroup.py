@@ -20,7 +20,7 @@ class LoadGroup(IdentifiedObject):
     """The class is the third level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling.
     """
 
-    def __init__(self, RegisteredLoads=None, SubLoadArea=None, *args, **kw_args):
+    def __init__(self, RegisteredLoads=None, SubLoadArea=None, **kw_args):
         """Initializes a new 'LoadGroup' instance.
 
         @param RegisteredLoads:
@@ -32,7 +32,7 @@ class LoadGroup(IdentifiedObject):
         self._SubLoadArea = None
         self.SubLoadArea = SubLoadArea
 
-        super(LoadGroup, self).__init__(*args, **kw_args)
+        super(LoadGroup, self).__init__(**kw_args)
 
     def getRegisteredLoads(self):
         

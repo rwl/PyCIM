@@ -20,7 +20,7 @@ class GmlFont(IdentifiedObject):
     """Identifies a font of a certain family, style, and size.
     """
 
-    def __init__(self, absoluteSize=False, style='', size='', family='', weight='', GmlTextSymbols=None, GmlColour=None, GmlSvgParameters=None, *args, **kw_args):
+    def __init__(self, absoluteSize=False, style='', size='', family='', weight='', GmlTextSymbols=None, GmlColour=None, GmlSvgParameters=None, **kw_args):
         """Initializes a new 'GmlFont' instance.
 
         @param absoluteSize: True if 'size' is expressed in absolute values. Default is false. 
@@ -56,7 +56,7 @@ class GmlFont(IdentifiedObject):
         self._GmlSvgParameters = []
         self.GmlSvgParameters = [] if GmlSvgParameters is None else GmlSvgParameters
 
-        super(GmlFont, self).__init__(*args, **kw_args)
+        super(GmlFont, self).__init__(**kw_args)
 
     def getGmlTextSymbols(self):
         

@@ -20,7 +20,7 @@ class Cashier(IdentifiedObject):
     """The operator of the point of sale for the duration of CashierShift. Cashier is under the exclusive management control of Vendor.
     """
 
-    def __init__(self, ElectronicAddresses=None, CashierShifts=None, Vendor=None, *args, **kw_args):
+    def __init__(self, ElectronicAddresses=None, CashierShifts=None, Vendor=None, **kw_args):
         """Initializes a new 'Cashier' instance.
 
         @param ElectronicAddresses:
@@ -36,7 +36,7 @@ class Cashier(IdentifiedObject):
         self._Vendor = None
         self.Vendor = Vendor
 
-        super(Cashier, self).__init__(*args, **kw_args)
+        super(Cashier, self).__init__(**kw_args)
 
     def getElectronicAddresses(self):
         

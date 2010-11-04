@@ -20,7 +20,7 @@ class Line(EquipmentContainer):
     """Contains equipment beyond a substation belonging to a power transmission line.
     """
 
-    def __init__(self, TransmissionRightOfWay=None, Flowgates=None, Region=None, *args, **kw_args):
+    def __init__(self, TransmissionRightOfWay=None, Flowgates=None, Region=None, **kw_args):
         """Initializes a new 'Line' instance.
 
         @param TransmissionRightOfWay: A transmission line can be part of a transmission corridor
@@ -36,7 +36,7 @@ class Line(EquipmentContainer):
         self._Region = None
         self.Region = Region
 
-        super(Line, self).__init__(*args, **kw_args)
+        super(Line, self).__init__(**kw_args)
 
     def getTransmissionRightOfWay(self):
         """A transmission line can be part of a transmission corridor

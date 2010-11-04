@@ -20,7 +20,7 @@ class ErpRequisition(Document):
     """General information that applies to a utility requisition that is a request for the purchase of goods or services. Typically, a requisition leads to the creation of a purchase order to a specific supplier.
     """
 
-    def __init__(self, ErpReqLineItems=None, *args, **kw_args):
+    def __init__(self, ErpReqLineItems=None, **kw_args):
         """Initializes a new 'ErpRequisition' instance.
 
         @param ErpReqLineItems:
@@ -28,7 +28,7 @@ class ErpRequisition(Document):
         self._ErpReqLineItems = []
         self.ErpReqLineItems = [] if ErpReqLineItems is None else ErpReqLineItems
 
-        super(ErpRequisition, self).__init__(*args, **kw_args)
+        super(ErpRequisition, self).__init__(**kw_args)
 
     def getErpReqLineItems(self):
         

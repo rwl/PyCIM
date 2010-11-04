@@ -20,7 +20,7 @@ class TransmissionProvider(ErpOrganisation):
     """Provider of the transmission capacity (interconnecting wires between Generation and Consumption) required to fulfill and Energy Transaction's energy exchange. Posts information for transmission paths and AvailableTransmissionCapacities on a reservation node. Buys and sells its products and services on the same reservation node.
     """
 
-    def __init__(self, TransmissionProducts=None, Flowgate=None, ServicePoint=None, AncillaryServices=None, For=None, OfferedBy=None, SoldBy=None, *args, **kw_args):
+    def __init__(self, TransmissionProducts=None, Flowgate=None, ServicePoint=None, AncillaryServices=None, For=None, OfferedBy=None, SoldBy=None, **kw_args):
         """Initializes a new 'TransmissionProvider' instance.
 
         @param TransmissionProducts: A TransmissionProvider offers a TransmissionProduct.
@@ -52,7 +52,7 @@ class TransmissionProvider(ErpOrganisation):
         self._SoldBy = []
         self.SoldBy = [] if SoldBy is None else SoldBy
 
-        super(TransmissionProvider, self).__init__(*args, **kw_args)
+        super(TransmissionProvider, self).__init__(**kw_args)
 
     def getTransmissionProducts(self):
         """A TransmissionProvider offers a TransmissionProduct.

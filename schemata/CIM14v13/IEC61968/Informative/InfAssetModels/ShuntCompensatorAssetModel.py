@@ -20,7 +20,7 @@ class ShuntCompensatorAssetModel(ElectricalAssetModel):
     """For application as shunt capacitor or reactor or switchable bank of shunt capacitors or reactors, this is documentation for a type of a capacitor or reactor of a particular product model made by a manufacturer (Organisation). There are typically many instances of an asset associated with a single asset model.
     """
 
-    def __init__(self, ShuntCompensatorAssets=None, ShuntCompensatorTypeAsset=None, ShuntImpedanceInfo=None, *args, **kw_args):
+    def __init__(self, ShuntCompensatorAssets=None, ShuntCompensatorTypeAsset=None, ShuntImpedanceInfo=None, **kw_args):
         """Initializes a new 'ShuntCompensatorAssetModel' instance.
 
         @param ShuntCompensatorAssets:
@@ -36,7 +36,7 @@ class ShuntCompensatorAssetModel(ElectricalAssetModel):
         self._ShuntImpedanceInfo = None
         self.ShuntImpedanceInfo = ShuntImpedanceInfo
 
-        super(ShuntCompensatorAssetModel, self).__init__(*args, **kw_args)
+        super(ShuntCompensatorAssetModel, self).__init__(**kw_args)
 
     def getShuntCompensatorAssets(self):
         

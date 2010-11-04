@@ -20,7 +20,7 @@ class BusbarAssetModel(ElectricalAssetModel):
     """Documentation for a type of a busbar asset of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, BusbarAssets=None, BusbarAssetModel=None, *args, **kw_args):
+    def __init__(self, BusbarAssets=None, BusbarAssetModel=None, **kw_args):
         """Initializes a new 'BusbarAssetModel' instance.
 
         @param BusbarAssets:
@@ -32,7 +32,7 @@ class BusbarAssetModel(ElectricalAssetModel):
         self._BusbarAssetModel = None
         self.BusbarAssetModel = BusbarAssetModel
 
-        super(BusbarAssetModel, self).__init__(*args, **kw_args)
+        super(BusbarAssetModel, self).__init__(**kw_args)
 
     def getBusbarAssets(self):
         

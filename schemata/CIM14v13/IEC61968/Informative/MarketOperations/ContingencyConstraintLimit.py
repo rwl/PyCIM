@@ -20,7 +20,7 @@ class ContingencyConstraintLimit(Curve):
     """Possibly time-varying max MW or MVA and optionally Min MW limit or MVA limit (Y1 and Y2, respectively) assigned to a constraint for a specific contingency. Use CurveSchedule XAxisUnits to specify MW or MVA.
     """
 
-    def __init__(self, MWLimitSchedules=None, Contingency=None, SecurityConstraintSum=None, *args, **kw_args):
+    def __init__(self, MWLimitSchedules=None, Contingency=None, SecurityConstraintSum=None, **kw_args):
         """Initializes a new 'ContingencyConstraintLimit' instance.
 
         @param MWLimitSchedules:
@@ -36,7 +36,7 @@ class ContingencyConstraintLimit(Curve):
         self._SecurityConstraintSum = None
         self.SecurityConstraintSum = SecurityConstraintSum
 
-        super(ContingencyConstraintLimit, self).__init__(*args, **kw_args)
+        super(ContingencyConstraintLimit, self).__init__(**kw_args)
 
     def getMWLimitSchedules(self):
         

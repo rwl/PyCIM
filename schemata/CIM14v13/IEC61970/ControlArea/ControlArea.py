@@ -20,7 +20,7 @@ class ControlArea(PowerSystemResource):
     """A <b>control area </b>is a grouping of <b>generating units</b> and/or loads and a cutset of tie lines (as <b>terminals</b>) which may be used for a variety of purposes including automatic generation control, powerflow solution area interchange control specification, and input to load forecasting.   Note that any number of overlapping control area specifications can be superimposed on the physical model.
     """
 
-    def __init__(self, type='Interchange', pTolerance=0.0, netInterchange=0.0, EnergyArea=None, ControlAreaGeneratingUnit=None, TieFlow=None, *args, **kw_args):
+    def __init__(self, type='Interchange', pTolerance=0.0, netInterchange=0.0, EnergyArea=None, ControlAreaGeneratingUnit=None, TieFlow=None, **kw_args):
         """Initializes a new 'ControlArea' instance.
 
         @param type: The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes. Values are: "Interchange", "AGC", "Forecast"
@@ -48,7 +48,7 @@ class ControlArea(PowerSystemResource):
         self._TieFlow = []
         self.TieFlow = [] if TieFlow is None else TieFlow
 
-        super(ControlArea, self).__init__(*args, **kw_args)
+        super(ControlArea, self).__init__(**kw_args)
 
     def getEnergyArea(self):
         """The energy area that is forecast from this control area specification.

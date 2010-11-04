@@ -20,7 +20,7 @@ class VendorShift(Shift):
     """The operating shift for a vendor during which he may transact against the merchant's account. It aggregates transactions and receipts during the shift and periodically debits a merchant account. The totals in VendorShift should always = sum of totals aggregated in all cashier shifts that were open under the particular vendor shift.
     """
 
-    def __init__(self, posted=False, merchantDebitAmount=0.0, Transactions=None, Receipts=None, MerchantAccount=None, Vendor=None, *args, **kw_args):
+    def __init__(self, posted=False, merchantDebitAmount=0.0, Transactions=None, Receipts=None, MerchantAccount=None, Vendor=None, **kw_args):
         """Initializes a new 'VendorShift' instance.
 
         @param posted: = true if merchantDebitAmount has been debited from MerchantAccount; typically happens at the end of VendorShift when it closes. 
@@ -48,7 +48,7 @@ class VendorShift(Shift):
         self._Vendor = None
         self.Vendor = Vendor
 
-        super(VendorShift, self).__init__(*args, **kw_args)
+        super(VendorShift, self).__init__(**kw_args)
 
     def getTransactions(self):
         

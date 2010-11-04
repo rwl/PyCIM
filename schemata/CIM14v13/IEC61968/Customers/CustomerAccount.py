@@ -20,7 +20,7 @@ class CustomerAccount(Document):
     """Assignment of a group of products and services purchased by the Customer through a CustomerAgreement, used as a mechanism for customer billing and payment. It contains common information from the various types of CustomerAgreements to create billings (invoices) for a Customer and receive payment.
     """
 
-    def __init__(self, budgetBill='', billingCycle='', WorkBillingInfos=None, PaymentTransactions=None, CustomerAgreements=None, CustomerBillingInfos=None, ErpInvoicees=None, *args, **kw_args):
+    def __init__(self, budgetBill='', billingCycle='', WorkBillingInfos=None, PaymentTransactions=None, CustomerAgreements=None, CustomerBillingInfos=None, ErpInvoicees=None, **kw_args):
         """Initializes a new 'CustomerAccount' instance.
 
         @param budgetBill: Budget bill code. 
@@ -52,7 +52,7 @@ class CustomerAccount(Document):
         self._ErpInvoicees = []
         self.ErpInvoicees = [] if ErpInvoicees is None else ErpInvoicees
 
-        super(CustomerAccount, self).__init__(*args, **kw_args)
+        super(CustomerAccount, self).__init__(**kw_args)
 
     def getWorkBillingInfos(self):
         

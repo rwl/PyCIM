@@ -20,7 +20,7 @@ class GmlSvgParameter(IdentifiedObject):
     """Refers to an SVG/CSS graphical-formatting parameter. The parameter is identified using the 'name' attribute and the content of the element gives the SVG/CSS-coded value.
     """
 
-    def __init__(self, value='', attribute='', GmlStokes=None, GmlFills=None, GmlFonts=None, *args, **kw_args):
+    def __init__(self, value='', attribute='', GmlStokes=None, GmlFills=None, GmlFonts=None, **kw_args):
         """Initializes a new 'GmlSvgParameter' instance.
 
         @param value: The SVG/CSS-coded value of the associated SvgAttribute. 
@@ -44,7 +44,7 @@ class GmlSvgParameter(IdentifiedObject):
         self._GmlFonts = []
         self.GmlFonts = [] if GmlFonts is None else GmlFonts
 
-        super(GmlSvgParameter, self).__init__(*args, **kw_args)
+        super(GmlSvgParameter, self).__init__(**kw_args)
 
     def getGmlStokes(self):
         

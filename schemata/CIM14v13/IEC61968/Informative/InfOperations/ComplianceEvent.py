@@ -20,7 +20,7 @@ class ComplianceEvent(ActivityRecord):
     """Compliance events are used for reporting regulatory or contract compliance issues and/or variances. These might be created as a consequence of local business processes and associated rules. It is anticipated that this class will be customised extensively to meet local implementation needs. Use inherited 'category' to indicate that, for example, expected performance will not be met or reported as mandated.
     """
 
-    def __init__(self, complianceType='', deadline='', *args, **kw_args):
+    def __init__(self, complianceType='', deadline='', **kw_args):
         """Initializes a new 'ComplianceEvent' instance.
 
         @param complianceType: Type of compliance event indicating, for example, types of regulatory and/or contractual compliance events where expected performance will not be met or reported as mandated. 
@@ -32,5 +32,5 @@ class ComplianceEvent(ActivityRecord):
         #: The deadline for compliance.
         self.deadline = deadline
 
-        super(ComplianceEvent, self).__init__(*args, **kw_args)
+        super(ComplianceEvent, self).__init__(**kw_args)
 

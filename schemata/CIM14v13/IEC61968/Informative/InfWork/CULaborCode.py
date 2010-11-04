@@ -20,7 +20,7 @@ class CULaborCode(IdentifiedObject):
     """Labor code associated with various compatible unit labor items.
     """
 
-    def __init__(self, code='', CULaborItems=None, status=None, *args, **kw_args):
+    def __init__(self, code='', CULaborItems=None, status=None, **kw_args):
         """Initializes a new 'CULaborCode' instance.
 
         @param code: Labor code. 
@@ -35,7 +35,7 @@ class CULaborCode(IdentifiedObject):
 
         self.status = status
 
-        super(CULaborCode, self).__init__(*args, **kw_args)
+        super(CULaborCode, self).__init__(**kw_args)
 
     def getCULaborItems(self):
         

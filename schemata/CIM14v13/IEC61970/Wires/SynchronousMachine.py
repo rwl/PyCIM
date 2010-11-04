@@ -20,7 +20,7 @@ class SynchronousMachine(RegulatingCondEq):
     """An electromechanical device that operates synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump.
     """
 
-    def __init__(self, type='generator', coolantType='air', operatingMode='condenser', x2=0.0, x0=0.0, qPercent=0.0, damping=0.0, manualToAVR=0.0, x=0.0, minQ=0.0, xQuadSync=0.0, xQuadSubtrans=0.0, r2=0.0, inertia=0.0, r=0.0, xDirectSync=0.0, xQuadTrans=0.0, xDirectTrans=0.0, referencePriority=0, r0=0.0, minU=0.0, maxQ=0.0, condenserP=0.0, baseQ=0.0, xDirectSubtrans=0.0, ratedS=0.0, maxU=0.0, aVRToManualLead=0.0, aVRToManualLag=0.0, coolantCondition=0.0, ReactiveCapabilityCurves=None, HydroPump=None, PrimeMovers=None, GeneratingUnit=None, InitialReactiveCapabilityCurve=None, *args, **kw_args):
+    def __init__(self, type='generator', coolantType='air', operatingMode='condenser', x2=0.0, x0=0.0, qPercent=0.0, damping=0.0, manualToAVR=0.0, x=0.0, minQ=0.0, xQuadSync=0.0, xQuadSubtrans=0.0, r2=0.0, inertia=0.0, r=0.0, xDirectSync=0.0, xQuadTrans=0.0, xDirectTrans=0.0, referencePriority=0, r0=0.0, minU=0.0, maxQ=0.0, condenserP=0.0, baseQ=0.0, xDirectSubtrans=0.0, ratedS=0.0, maxU=0.0, aVRToManualLead=0.0, aVRToManualLag=0.0, coolantCondition=0.0, ReactiveCapabilityCurves=None, HydroPump=None, PrimeMovers=None, GeneratingUnit=None, InitialReactiveCapabilityCurve=None, **kw_args):
         """Initializes a new 'SynchronousMachine' instance.
 
         @param type: Modes that this synchronous machine can operate in. Values are: "generator", "generator_or_condenser", "condenser"
@@ -164,7 +164,7 @@ class SynchronousMachine(RegulatingCondEq):
         self._InitialReactiveCapabilityCurve = None
         self.InitialReactiveCapabilityCurve = InitialReactiveCapabilityCurve
 
-        super(SynchronousMachine, self).__init__(*args, **kw_args)
+        super(SynchronousMachine, self).__init__(**kw_args)
 
     def getReactiveCapabilityCurves(self):
         """All available Reactive capability curves for this SynchronousMachine.

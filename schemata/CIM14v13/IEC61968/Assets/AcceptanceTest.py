@@ -20,7 +20,7 @@ class AcceptanceTest(Element):
     """Acceptance test for assets.
     """
 
-    def __init__(self, dateTime='', success=False, type='', *args, **kw_args):
+    def __init__(self, dateTime='', success=False, type='', **kw_args):
         """Initializes a new 'AcceptanceTest' instance.
 
         @param dateTime: Date and time the asset was last tested using the 'type' of test and yielding the current status in 'success' attribute. 
@@ -36,5 +36,5 @@ class AcceptanceTest(Element):
         #: Type of test or group of tests that was conducted on 'dateTime'.
         self.type = type
 
-        super(AcceptanceTest, self).__init__(*args, **kw_args)
+        super(AcceptanceTest, self).__init__(**kw_args)
 

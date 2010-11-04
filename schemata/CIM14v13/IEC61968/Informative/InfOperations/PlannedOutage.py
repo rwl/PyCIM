@@ -20,7 +20,7 @@ class PlannedOutage(Document):
     """Planned outage involves network operations which will affect the supply of power to customers. Note that the list of Power System Resources for the PlannedOutage may be the same or a superset of the ones per OutageStep.
     """
 
-    def __init__(self, kind='flexible', CustomerDatas=None, OutageSchedules=None, *args, **kw_args):
+    def __init__(self, kind='flexible', CustomerDatas=None, OutageSchedules=None, **kw_args):
         """Initializes a new 'PlannedOutage' instance.
 
         @param kind: Kind of outage. Values are: "flexible", "fixed", "forced"
@@ -36,7 +36,7 @@ class PlannedOutage(Document):
         self._OutageSchedules = []
         self.OutageSchedules = [] if OutageSchedules is None else OutageSchedules
 
-        super(PlannedOutage, self).__init__(*args, **kw_args)
+        super(PlannedOutage, self).__init__(**kw_args)
 
     def getCustomerDatas(self):
         """All customers affected by this work. Derived from WorkOrder.connectedCustomers

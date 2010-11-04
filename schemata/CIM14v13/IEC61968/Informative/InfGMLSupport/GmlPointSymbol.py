@@ -20,7 +20,7 @@ class GmlPointSymbol(GmlSymbol):
     """Used to draw a 'graphic' at a point.
     """
 
-    def __init__(self, GmlGraphic=None, GmlDiagramObject=None, *args, **kw_args):
+    def __init__(self, GmlGraphic=None, GmlDiagramObject=None, **kw_args):
         """Initializes a new 'GmlPointSymbol' instance.
 
         @param GmlGraphic:
@@ -32,7 +32,7 @@ class GmlPointSymbol(GmlSymbol):
         self._GmlDiagramObject = None
         self.GmlDiagramObject = GmlDiagramObject
 
-        super(GmlPointSymbol, self).__init__(*args, **kw_args)
+        super(GmlPointSymbol, self).__init__(**kw_args)
 
     def getGmlGraphic(self):
         

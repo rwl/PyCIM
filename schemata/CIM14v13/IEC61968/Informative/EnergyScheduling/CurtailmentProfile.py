@@ -20,7 +20,7 @@ class CurtailmentProfile(Profile):
     """Curtailing entity must be providing at least one service to the EnergyTransaction. The CurtailmentProfile must be completely contained within the EnergyProfile timeframe for this EnergyTransaction.
     """
 
-    def __init__(self, EnergyTransaction=None, *args, **kw_args):
+    def __init__(self, EnergyTransaction=None, **kw_args):
         """Initializes a new 'CurtailmentProfile' instance.
 
         @param EnergyTransaction: An EnergyTransaction may be curtailed by any of the participating entities.
@@ -28,7 +28,7 @@ class CurtailmentProfile(Profile):
         self._EnergyTransaction = None
         self.EnergyTransaction = EnergyTransaction
 
-        super(CurtailmentProfile, self).__init__(*args, **kw_args)
+        super(CurtailmentProfile, self).__init__(**kw_args)
 
     def getEnergyTransaction(self):
         """An EnergyTransaction may be curtailed by any of the participating entities.

@@ -20,7 +20,7 @@ class OneCallRequest(Document):
     """A request for other utilities to mark their underground facilities prior to commencement of construction and/or maintenance.
     """
 
-    def __init__(self, markingInstruction='', markedIndicator=False, explosivesUsed=False, WorkLocations=None, *args, **kw_args):
+    def __init__(self, markingInstruction='', markedIndicator=False, explosivesUsed=False, WorkLocations=None, **kw_args):
         """Initializes a new 'OneCallRequest' instance.
 
         @param markingInstruction: Instructions for marking a dig area, if applicable. 
@@ -40,7 +40,7 @@ class OneCallRequest(Document):
         self._WorkLocations = []
         self.WorkLocations = [] if WorkLocations is None else WorkLocations
 
-        super(OneCallRequest, self).__init__(*args, **kw_args)
+        super(OneCallRequest, self).__init__(**kw_args)
 
     def getWorkLocations(self):
         

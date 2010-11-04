@@ -20,7 +20,7 @@ class RecloserInfo(SwitchInfo):
     """Properties of reclosers.
     """
 
-    def __init__(self, groundTripNormalEnabled=False, groundTripCapable=False, groundTripRating=0.0, phaseTripRating=0.0, recloseLockoutCount=0, RecloserAssetModels=None, RecloserTypeAsset=None, RecloserAssets=None, *args, **kw_args):
+    def __init__(self, groundTripNormalEnabled=False, groundTripCapable=False, groundTripRating=0.0, phaseTripRating=0.0, recloseLockoutCount=0, RecloserAssetModels=None, RecloserTypeAsset=None, RecloserAssets=None, **kw_args):
         """Initializes a new 'RecloserInfo' instance.
 
         @param groundTripNormalEnabled: True if normal status of ground trip is enabled. 
@@ -56,7 +56,7 @@ class RecloserInfo(SwitchInfo):
         self._RecloserAssets = []
         self.RecloserAssets = [] if RecloserAssets is None else RecloserAssets
 
-        super(RecloserInfo, self).__init__(*args, **kw_args)
+        super(RecloserInfo, self).__init__(**kw_args)
 
     def getRecloserAssetModels(self):
         

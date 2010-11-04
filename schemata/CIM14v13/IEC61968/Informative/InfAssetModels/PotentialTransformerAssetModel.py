@@ -20,7 +20,7 @@ class PotentialTransformerAssetModel(ElectricalAssetModel):
     """A particular model supplied by a manufacturer of a Potential Transformer (PT), wich is used to measure electrical qualities of the circuit that is being protected and/or monitored.
     """
 
-    def __init__(self, PotentialTransformerTypeAsset=None, PotentialTransformerInfo=None, PotentialTransformerAssets=None, *args, **kw_args):
+    def __init__(self, PotentialTransformerTypeAsset=None, PotentialTransformerInfo=None, PotentialTransformerAssets=None, **kw_args):
         """Initializes a new 'PotentialTransformerAssetModel' instance.
 
         @param PotentialTransformerTypeAsset:
@@ -36,7 +36,7 @@ class PotentialTransformerAssetModel(ElectricalAssetModel):
         self._PotentialTransformerAssets = []
         self.PotentialTransformerAssets = [] if PotentialTransformerAssets is None else PotentialTransformerAssets
 
-        super(PotentialTransformerAssetModel, self).__init__(*args, **kw_args)
+        super(PotentialTransformerAssetModel, self).__init__(**kw_args)
 
     def getPotentialTransformerTypeAsset(self):
         

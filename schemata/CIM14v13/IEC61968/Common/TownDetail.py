@@ -20,7 +20,7 @@ class TownDetail(Element):
     """Town details, in the context of address.
     """
 
-    def __init__(self, stateOrProvince='', code='', name='', section='', country='', *args, **kw_args):
+    def __init__(self, stateOrProvince='', code='', name='', section='', country='', **kw_args):
         """Initializes a new 'TownDetail' instance.
 
         @param stateOrProvince: Name of the state or province. 
@@ -44,5 +44,5 @@ class TownDetail(Element):
         #: Name of the country.
         self.country = country
 
-        super(TownDetail, self).__init__(*args, **kw_args)
+        super(TownDetail, self).__init__(**kw_args)
 

@@ -20,7 +20,7 @@ class MarketRole(IdentifiedObject):
     """Role an organisation plays in a market. Examples include one or more of values defined in MarketRoleKind.
     """
 
-    def __init__(self, kind='other', status=None, Organisations=None, *args, **kw_args):
+    def __init__(self, kind='other', status=None, Organisations=None, **kw_args):
         """Initializes a new 'MarketRole' instance.
 
         @param kind: Kind of role an organisation plays in a market. Values are: "other", "transmissionServiceProvider", "planningAuthority", "reliabilityAuthority", "transmissionOwner", "transmissionPlanner", "generatorOperator", "energyServiceConsumer", "generatorOwner", "transmissionOperator", "complianceMonitor", "distributionProvider", "loadServingEntity", "interchangeAuthority", "purchasingSellingEntity", "resourcePlanner", "balancingAuthority", "competitiveRetailer", "standardsDeveloper"
@@ -35,7 +35,7 @@ class MarketRole(IdentifiedObject):
         self._Organisations = []
         self.Organisations = [] if Organisations is None else Organisations
 
-        super(MarketRole, self).__init__(*args, **kw_args)
+        super(MarketRole, self).__init__(**kw_args)
 
     status = None
 

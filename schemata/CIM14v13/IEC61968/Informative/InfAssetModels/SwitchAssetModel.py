@@ -20,7 +20,7 @@ class SwitchAssetModel(ElectricalAssetModel):
     """Documentation for a type of a switch asset of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, SwitchTypeAsset=None, SwitchAssets=None, SwitchInfo=None, *args, **kw_args):
+    def __init__(self, SwitchTypeAsset=None, SwitchAssets=None, SwitchInfo=None, **kw_args):
         """Initializes a new 'SwitchAssetModel' instance.
 
         @param SwitchTypeAsset:
@@ -36,7 +36,7 @@ class SwitchAssetModel(ElectricalAssetModel):
         self._SwitchInfo = None
         self.SwitchInfo = SwitchInfo
 
-        super(SwitchAssetModel, self).__init__(*args, **kw_args)
+        super(SwitchAssetModel, self).__init__(**kw_args)
 
     def getSwitchTypeAsset(self):
         

@@ -18,7 +18,7 @@ from CIM14v13.Element import Element
 
 class ReservationVersion(Element):
 
-    def __init__(self, version='', date='', *args, **kw_args):
+    def __init__(self, version='', date='', **kw_args):
         """Initializes a new 'ReservationVersion' instance.
 
         @param version: 
@@ -30,5 +30,5 @@ class ReservationVersion(Element):
 
         self.date = date
 
-        super(ReservationVersion, self).__init__(*args, **kw_args)
+        super(ReservationVersion, self).__init__(**kw_args)
 

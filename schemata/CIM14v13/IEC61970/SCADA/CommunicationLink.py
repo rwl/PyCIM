@@ -20,7 +20,7 @@ class CommunicationLink(PowerSystemResource):
     """The connection to remote units is through one or more communication links. Reduntant links may exist. The CommunicationLink class inherit PowerSystemResource. The intention is to allow CommunicationLinks to have Measurements. These Measurements can be used to model link status as operational, out of service, unit failure etc.
     """
 
-    def __init__(self, RemoteUnits=None, *args, **kw_args):
+    def __init__(self, RemoteUnits=None, **kw_args):
         """Initializes a new 'CommunicationLink' instance.
 
         @param RemoteUnits: RTUs may be attached to communication links.
@@ -28,7 +28,7 @@ class CommunicationLink(PowerSystemResource):
         self._RemoteUnits = []
         self.RemoteUnits = [] if RemoteUnits is None else RemoteUnits
 
-        super(CommunicationLink, self).__init__(*args, **kw_args)
+        super(CommunicationLink, self).__init__(**kw_args)
 
     def getRemoteUnits(self):
         """RTUs may be attached to communication links.

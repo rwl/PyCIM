@@ -20,7 +20,7 @@ class OrgAssetRole(Role):
     """The roles played between an Organisations and an Asset.
     """
 
-    def __init__(self, percentOwnership=0.0, Asset=None, ErpOrganisation=None, *args, **kw_args):
+    def __init__(self, percentOwnership=0.0, Asset=None, ErpOrganisation=None, **kw_args):
         """Initializes a new 'OrgAssetRole' instance.
 
         @param percentOwnership: If the role type is 'owner,' this indicate the percentage of ownership. 
@@ -36,7 +36,7 @@ class OrgAssetRole(Role):
         self._ErpOrganisation = None
         self.ErpOrganisation = ErpOrganisation
 
-        super(OrgAssetRole, self).__init__(*args, **kw_args)
+        super(OrgAssetRole, self).__init__(**kw_args)
 
     def getAsset(self):
         

@@ -20,7 +20,7 @@ class RampRateCurve(Curve):
     """Ramp rate as a function of resource MW output
     """
 
-    def __init__(self, rampRateType='', GeneratingUnit=None, *args, **kw_args):
+    def __init__(self, rampRateType='', GeneratingUnit=None, **kw_args):
         """Initializes a new 'RampRateCurve' instance.
 
         @param rampRateType: How ramp rate is applied (e.g., raise or lower, as when applied to a generation resource) 
@@ -32,7 +32,7 @@ class RampRateCurve(Curve):
         self._GeneratingUnit = []
         self.GeneratingUnit = [] if GeneratingUnit is None else GeneratingUnit
 
-        super(RampRateCurve, self).__init__(*args, **kw_args)
+        super(RampRateCurve, self).__init__(**kw_args)
 
     def getGeneratingUnit(self):
         

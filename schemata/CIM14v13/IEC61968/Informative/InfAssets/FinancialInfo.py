@@ -20,7 +20,7 @@ class FinancialInfo(IdentifiedObject):
     """Various current financial properties associated with a particular asset. Historical properties may be determined by ActivityRecords associated with the asset.
     """
 
-    def __init__(self, costType='', plantTransferDateTime='', actualPurchaseCost=0.0, purchaseDateTime='', purchaseOrderNumber='', warrantyEndDateTime='', valueDateTime='', account='', financialValue=0.0, quantity=0, costDescription='', Asset=None, *args, **kw_args):
+    def __init__(self, costType='', plantTransferDateTime='', actualPurchaseCost=0.0, purchaseDateTime='', purchaseOrderNumber='', warrantyEndDateTime='', valueDateTime='', account='', financialValue=0.0, quantity=0, costDescription='', Asset=None, **kw_args):
         """Initializes a new 'FinancialInfo' instance.
 
         @param costType: Category of cost to which this Material Item belongs. 
@@ -72,7 +72,7 @@ class FinancialInfo(IdentifiedObject):
         self._Asset = None
         self.Asset = Asset
 
-        super(FinancialInfo, self).__init__(*args, **kw_args)
+        super(FinancialInfo, self).__init__(**kw_args)
 
     def getAsset(self):
         

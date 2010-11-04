@@ -20,7 +20,7 @@ class MiscCostItem(IdentifiedObject):
     """Various cost items that are not associated with compatible units. Examples include rental equipment, labor, materials, contractor costs, permits - anything not covered in a CU.
     """
 
-    def __init__(self, costPerUnit=0.0, externalRefID='', costType='', quantity=0, account='', WorkCostDetail=None, DesignLocation=None, WorkTask=None, status=None, *args, **kw_args):
+    def __init__(self, costPerUnit=0.0, externalRefID='', costType='', quantity=0, account='', WorkCostDetail=None, DesignLocation=None, WorkTask=None, status=None, **kw_args):
         """Initializes a new 'MiscCostItem' instance.
 
         @param costPerUnit: The cost per unit for this misc. item. 
@@ -59,7 +59,7 @@ class MiscCostItem(IdentifiedObject):
 
         self.status = status
 
-        super(MiscCostItem, self).__init__(*args, **kw_args)
+        super(MiscCostItem, self).__init__(**kw_args)
 
     def getWorkCostDetail(self):
         

@@ -20,7 +20,7 @@ class GmlLineGeometry(GmlDiagramObject):
     """Typically used for rendering linear assets and/or power system resources.
     """
 
-    def __init__(self, sourceSide='', *args, **kw_args):
+    def __init__(self, sourceSide='', **kw_args):
         """Initializes a new 'GmlLineGeometry' instance.
 
         @param sourceSide: For dynamic network update (i.e. colouring) purposes 
@@ -28,5 +28,5 @@ class GmlLineGeometry(GmlDiagramObject):
         #: For dynamic network update (i.e. colouring) purposes
         self.sourceSide = sourceSide
 
-        super(GmlLineGeometry, self).__init__(*args, **kw_args)
+        super(GmlLineGeometry, self).__init__(**kw_args)
 

@@ -20,7 +20,7 @@ class ErpPersonnel(IdentifiedObject):
     """Information that applies to the basic data about a utility person, used by ERP applications to transfer Personnel data for a worker.
     """
 
-    def __init__(self, ErpPersons=None, status=None, *args, **kw_args):
+    def __init__(self, ErpPersons=None, status=None, **kw_args):
         """Initializes a new 'ErpPersonnel' instance.
 
         @param ErpPersons:
@@ -31,7 +31,7 @@ class ErpPersonnel(IdentifiedObject):
 
         self.status = status
 
-        super(ErpPersonnel, self).__init__(*args, **kw_args)
+        super(ErpPersonnel, self).__init__(**kw_args)
 
     def getErpPersons(self):
         

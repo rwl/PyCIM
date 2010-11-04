@@ -20,7 +20,7 @@ class TransformerAsset(Asset):
     """A specific physical (vs. logical) transformer.
     """
 
-    def __init__(self, reconditionedDateTime='', TransformerInfo=None, PowerRatings=None, TransformerObservations=None, TransformerAssetModel=None, *args, **kw_args):
+    def __init__(self, reconditionedDateTime='', TransformerInfo=None, PowerRatings=None, TransformerObservations=None, TransformerAssetModel=None, **kw_args):
         """Initializes a new 'TransformerAsset' instance.
 
         @param reconditionedDateTime: Date and time this asset was last reconditioned or had a major overhaul. 
@@ -44,7 +44,7 @@ class TransformerAsset(Asset):
         self._TransformerAssetModel = None
         self.TransformerAssetModel = TransformerAssetModel
 
-        super(TransformerAsset, self).__init__(*args, **kw_args)
+        super(TransformerAsset, self).__init__(**kw_args)
 
     def getTransformerInfo(self):
         

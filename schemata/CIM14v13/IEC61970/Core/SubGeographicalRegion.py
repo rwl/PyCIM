@@ -20,7 +20,7 @@ class SubGeographicalRegion(IdentifiedObject):
     """A subset of a geographical region of a power system network model.
     """
 
-    def __init__(self, Region=None, Substations=None, Lines=None, *args, **kw_args):
+    def __init__(self, Region=None, Substations=None, Lines=None, **kw_args):
         """Initializes a new 'SubGeographicalRegion' instance.
 
         @param Region: The association is used in the naming hierarchy.
@@ -36,7 +36,7 @@ class SubGeographicalRegion(IdentifiedObject):
         self._Lines = []
         self.Lines = [] if Lines is None else Lines
 
-        super(SubGeographicalRegion, self).__init__(*args, **kw_args)
+        super(SubGeographicalRegion, self).__init__(**kw_args)
 
     def getRegion(self):
         """The association is used in the naming hierarchy.

@@ -20,7 +20,7 @@ class ShuntCompensatorTypeAsset(ElectricalTypeAsset):
     """Documentation for a generic shunt compensator that may be used for design purposes.
     """
 
-    def __init__(self, maxPowerLoss=0.0, ShuntImpedanceInfo=None, ShuntCompensatorAssetModels=None, *args, **kw_args):
+    def __init__(self, maxPowerLoss=0.0, ShuntImpedanceInfo=None, ShuntCompensatorAssetModels=None, **kw_args):
         """Initializes a new 'ShuntCompensatorTypeAsset' instance.
 
         @param maxPowerLoss: Maximum allowed Apparent Power loss 
@@ -36,7 +36,7 @@ class ShuntCompensatorTypeAsset(ElectricalTypeAsset):
         self._ShuntCompensatorAssetModels = []
         self.ShuntCompensatorAssetModels = [] if ShuntCompensatorAssetModels is None else ShuntCompensatorAssetModels
 
-        super(ShuntCompensatorTypeAsset, self).__init__(*args, **kw_args)
+        super(ShuntCompensatorTypeAsset, self).__init__(**kw_args)
 
     def getShuntImpedanceInfo(self):
         

@@ -20,7 +20,7 @@ class GmlCoordinateSystem(IdentifiedObject):
     """A coordinate reference system consists of a set of coordinate system axes that is related to the earth through a datum that defines the size and shape of the earth or some abstract reference system such as those used for rendering schemantic diagrams, internal views of items such as cabinets, vaults, etc. Geometries in GML indicate the coordinate reference system in which their measurements have been made.
     """
 
-    def __init__(self, positionUnitName='', zMax='', yMax='', zMin='', yMin='', xMin='', scale='', xMax='', GmlPositions=None, GmlDiagramObjects=None, Diagrams=None, *args, **kw_args):
+    def __init__(self, positionUnitName='', zMax='', yMax='', zMin='', yMin='', xMin='', scale='', xMax='', GmlPositions=None, GmlDiagramObjects=None, Diagrams=None, **kw_args):
         """Initializes a new 'GmlCoordinateSystem' instance.
 
         @param positionUnitName: 
@@ -68,7 +68,7 @@ class GmlCoordinateSystem(IdentifiedObject):
         self._Diagrams = []
         self.Diagrams = [] if Diagrams is None else Diagrams
 
-        super(GmlCoordinateSystem, self).__init__(*args, **kw_args)
+        super(GmlCoordinateSystem, self).__init__(**kw_args)
 
     def getGmlPositions(self):
         

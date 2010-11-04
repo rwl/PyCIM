@@ -20,7 +20,7 @@ class Vendor(IdentifiedObject):
     """The entity that owns PointOfSale and contracts with Cashier to receipt payments and vend tokens using the payment system. Vendor has a private contract with and is managed by Merchant who is a type of Organisation. Vendor is accountable to Merchant for revenue collected, who is in turn accountable to Supplier.
     """
 
-    def __init__(self, PointOfSales=None, BankStatements=None, Cashiers=None, MerchantAccount=None, VendorShifts=None, *args, **kw_args):
+    def __init__(self, PointOfSales=None, BankStatements=None, Cashiers=None, MerchantAccount=None, VendorShifts=None, **kw_args):
         """Initializes a new 'Vendor' instance.
 
         @param PointOfSales: All points of sale this Vendor controls.
@@ -44,7 +44,7 @@ class Vendor(IdentifiedObject):
         self._VendorShifts = []
         self.VendorShifts = [] if VendorShifts is None else VendorShifts
 
-        super(Vendor, self).__init__(*args, **kw_args)
+        super(Vendor, self).__init__(**kw_args)
 
     def getPointOfSales(self):
         """All points of sale this Vendor controls.

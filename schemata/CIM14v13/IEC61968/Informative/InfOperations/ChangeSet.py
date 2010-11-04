@@ -20,7 +20,7 @@ class ChangeSet(IdentifiedObject):
     """The updates required in a transaction for an existing data set are grouped into a single ChangeSet. In data sets (e.g., NetworkDataSet), each major step in the ChangeSet is described through a separate ChangeItem associated with the data set. Within each data set, each inidividual object change is described with a seperate ChangeItem associated with the object.
     """
 
-    def __init__(self, LandBases=None, NetworkDataSets=None, ChangeItems=None, status=None, Documents=None, *args, **kw_args):
+    def __init__(self, LandBases=None, NetworkDataSets=None, ChangeItems=None, status=None, Documents=None, **kw_args):
         """Initializes a new 'ChangeSet' instance.
 
         @param LandBases:
@@ -42,7 +42,7 @@ class ChangeSet(IdentifiedObject):
         self._Documents = []
         self.Documents = [] if Documents is None else Documents
 
-        super(ChangeSet, self).__init__(*args, **kw_args)
+        super(ChangeSet, self).__init__(**kw_args)
 
     def add_LandBases(self, *LandBases):
         for obj in LandBases:

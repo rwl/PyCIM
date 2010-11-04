@@ -20,7 +20,7 @@ class OrgPsrRole(Role):
     """Roles played between Organisations and Power System Resources.
     """
 
-    def __init__(self, PowerSystemResource=None, ErpOrganisation=None, *args, **kw_args):
+    def __init__(self, PowerSystemResource=None, ErpOrganisation=None, **kw_args):
         """Initializes a new 'OrgPsrRole' instance.
 
         @param PowerSystemResource:
@@ -32,7 +32,7 @@ class OrgPsrRole(Role):
         self._ErpOrganisation = None
         self.ErpOrganisation = ErpOrganisation
 
-        super(OrgPsrRole, self).__init__(*args, **kw_args)
+        super(OrgPsrRole, self).__init__(**kw_args)
 
     def getPowerSystemResource(self):
         

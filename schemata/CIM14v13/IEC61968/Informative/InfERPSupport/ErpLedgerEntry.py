@@ -20,7 +20,7 @@ class ErpLedgerEntry(IdentifiedObject):
     """Details of an individual entry in a ledger, which was posted from a journal on the posted date.
     """
 
-    def __init__(self, accountKind='estimate', amount=0.0, accountID='', transactionDateTime='', postedDateTime='', ErpLedger=None, UserAttributes=None, ErpLedgerEntry=None, Settlements=None, ErpJounalEntry=None, status=None, *args, **kw_args):
+    def __init__(self, accountKind='estimate', amount=0.0, accountID='', transactionDateTime='', postedDateTime='', ErpLedger=None, UserAttributes=None, ErpLedgerEntry=None, Settlements=None, ErpJounalEntry=None, status=None, **kw_args):
         """Initializes a new 'ErpLedgerEntry' instance.
 
         @param accountKind: Kind of account for this entry. Values are: "estimate", "reversal", "statistical", "normal"
@@ -67,7 +67,7 @@ class ErpLedgerEntry(IdentifiedObject):
 
         self.status = status
 
-        super(ErpLedgerEntry, self).__init__(*args, **kw_args)
+        super(ErpLedgerEntry, self).__init__(**kw_args)
 
     def getErpLedger(self):
         

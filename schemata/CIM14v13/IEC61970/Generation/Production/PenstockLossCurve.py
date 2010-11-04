@@ -20,7 +20,7 @@ class PenstockLossCurve(Curve):
     """Relationship between penstock head loss (in meters) and  total discharge through the penstock (in cubic meters per second). One or more turbines may be connected to the same penstock.
     """
 
-    def __init__(self, HydroGeneratingUnit=None, *args, **kw_args):
+    def __init__(self, HydroGeneratingUnit=None, **kw_args):
         """Initializes a new 'PenstockLossCurve' instance.
 
         @param HydroGeneratingUnit: A hydro generating unit has a penstock loss curve
@@ -28,7 +28,7 @@ class PenstockLossCurve(Curve):
         self._HydroGeneratingUnit = None
         self.HydroGeneratingUnit = HydroGeneratingUnit
 
-        super(PenstockLossCurve, self).__init__(*args, **kw_args)
+        super(PenstockLossCurve, self).__init__(**kw_args)
 
     def getHydroGeneratingUnit(self):
         """A hydro generating unit has a penstock loss curve

@@ -20,7 +20,7 @@ class ConductingEquipment(Equipment):
     """The parts of the power system that are designed to carry current or that are conductively connected therewith. ConductingEquipment is contained within an EquipmentContainer that may be a Substation, or a VoltageLevel or a Bay within a Substation.
     """
 
-    def __init__(self, phases='BC', Terminals=None, ClearanceTags=None, OutageStepRoles=None, BaseVoltage=None, ElectricalAssets=None, SvStatus=None, ProtectionEquipments=None, *args, **kw_args):
+    def __init__(self, phases='BC', Terminals=None, ClearanceTags=None, OutageStepRoles=None, BaseVoltage=None, ElectricalAssets=None, SvStatus=None, ProtectionEquipments=None, **kw_args):
         """Initializes a new 'ConductingEquipment' instance.
 
         @param phases: Describes the phases carried by a conducting equipment. Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
@@ -56,7 +56,7 @@ class ConductingEquipment(Equipment):
         self._ProtectionEquipments = []
         self.ProtectionEquipments = [] if ProtectionEquipments is None else ProtectionEquipments
 
-        super(ConductingEquipment, self).__init__(*args, **kw_args)
+        super(ConductingEquipment, self).__init__(**kw_args)
 
     def getTerminals(self):
         """ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes

@@ -20,7 +20,7 @@ class WorkTask(Document):
     """A set of tasks is required to implement a design.
     """
 
-    def __init__(self, schedOverride='', priority='', ContractorItems=None, Crews=None, WorkCostDetails=None, Usages=None, QualificationRequirements=None, Work=None, WorkFlowStep=None, LaborItems=None, MaterialItems=None, EquipmentItems=None, DesignLocationCUs=None, OverheadCost=None, Assets=None, Capabilities=None, MiscCostItems=None, SwitchingSchedules=None, Design=None, *args, **kw_args):
+    def __init__(self, schedOverride='', priority='', ContractorItems=None, Crews=None, WorkCostDetails=None, Usages=None, QualificationRequirements=None, Work=None, WorkFlowStep=None, LaborItems=None, MaterialItems=None, EquipmentItems=None, DesignLocationCUs=None, OverheadCost=None, Assets=None, Capabilities=None, MiscCostItems=None, SwitchingSchedules=None, Design=None, **kw_args):
         """Initializes a new 'WorkTask' instance.
 
         @param schedOverride: If specified, override schedule and perform this task in accordance with instructions specified here. 
@@ -100,7 +100,7 @@ class WorkTask(Document):
         self._Design = None
         self.Design = Design
 
-        super(WorkTask, self).__init__(*args, **kw_args)
+        super(WorkTask, self).__init__(**kw_args)
 
     def getContractorItems(self):
         

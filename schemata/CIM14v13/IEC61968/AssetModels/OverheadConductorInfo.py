@@ -20,7 +20,7 @@ class OverheadConductorInfo(ConductorInfo):
     """Overhead conductor data.
     """
 
-    def __init__(self, neutralInsulationThickness=0.0, phaseConductorCount=0, phaseConductorSpacing=0.0, *args, **kw_args):
+    def __init__(self, neutralInsulationThickness=0.0, phaseConductorCount=0, phaseConductorSpacing=0.0, **kw_args):
         """Initializes a new 'OverheadConductorInfo' instance.
 
         @param neutralInsulationThickness: (if applicable) Insulation thickness of the neutral conductor. 
@@ -36,5 +36,5 @@ class OverheadConductorInfo(ConductorInfo):
         #: Distance between conductor strands in a symmetrical bundle.
         self.phaseConductorSpacing = phaseConductorSpacing
 
-        super(OverheadConductorInfo, self).__init__(*args, **kw_args)
+        super(OverheadConductorInfo, self).__init__(**kw_args)
 

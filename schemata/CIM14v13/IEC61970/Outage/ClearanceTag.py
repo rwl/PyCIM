@@ -20,7 +20,7 @@ class ClearanceTag(IdentifiedObject):
     """A clearance tag that is used to authorize and schedule work on conducting equipment in the field. Tagged equipment is not available for commercial service.
     """
 
-    def __init__(self, authorityName='', workEndTime='', phaseCheckReqFlag=False, deenergizeReqFlag=False, tagIssueTime='', workDescription='', workStartTime='', groundReqFlag=False, ConductingEquipment=None, SafetyDocument=None, ClearanceTagType=None, *args, **kw_args):
+    def __init__(self, authorityName='', workEndTime='', phaseCheckReqFlag=False, deenergizeReqFlag=False, tagIssueTime='', workDescription='', workStartTime='', groundReqFlag=False, ConductingEquipment=None, SafetyDocument=None, ClearanceTagType=None, **kw_args):
         """Initializes a new 'ClearanceTag' instance.
 
         @param authorityName: The name of the person who is authorized to issue the tag 
@@ -68,7 +68,7 @@ class ClearanceTag(IdentifiedObject):
         self._ClearanceTagType = None
         self.ClearanceTagType = ClearanceTagType
 
-        super(ClearanceTag, self).__init__(*args, **kw_args)
+        super(ClearanceTag, self).__init__(**kw_args)
 
     def getConductingEquipment(self):
         """Conducting equipment may have multiple clearance tags for authorized field work

@@ -20,7 +20,7 @@ class VoltageControlZone(PowerSystemResource):
     """An area of the power system network which is defined for secondary voltage control purposes. A voltage control zone consists of a collection of substations with a designated bus bar section whose voltage will be controlled.
     """
 
-    def __init__(self, RegulationSchedule=None, BusbarSection=None, *args, **kw_args):
+    def __init__(self, RegulationSchedule=None, BusbarSection=None, **kw_args):
         """Initializes a new 'VoltageControlZone' instance.
 
         @param RegulationSchedule: A VoltageControlZone may have a  voltage regulation schedule.
@@ -32,7 +32,7 @@ class VoltageControlZone(PowerSystemResource):
         self._BusbarSection = None
         self.BusbarSection = BusbarSection
 
-        super(VoltageControlZone, self).__init__(*args, **kw_args)
+        super(VoltageControlZone, self).__init__(**kw_args)
 
     def getRegulationSchedule(self):
         """A VoltageControlZone may have a  voltage regulation schedule.

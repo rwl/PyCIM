@@ -20,7 +20,7 @@ class Token(IdentifiedObject):
     """The token that is transferred to the payment meter.
     """
 
-    def __init__(self, code='', comment='', PointOfSale=None, *args, **kw_args):
+    def __init__(self, code='', comment='', PointOfSale=None, **kw_args):
         """Initializes a new 'Token' instance.
 
         @param code: Coded representation of the token that is transferred to the payment meter. 
@@ -36,7 +36,7 @@ class Token(IdentifiedObject):
         self._PointOfSale = None
         self.PointOfSale = PointOfSale
 
-        super(Token, self).__init__(*args, **kw_args)
+        super(Token, self).__init__(**kw_args)
 
     def getPointOfSale(self):
         """PointOfSale tha sold or dispensed this Token.

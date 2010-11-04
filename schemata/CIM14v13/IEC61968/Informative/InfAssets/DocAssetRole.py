@@ -20,7 +20,7 @@ class DocAssetRole(Role):
     """Roles played between Documents and Assets.
     """
 
-    def __init__(self, Asset=None, Document=None, *args, **kw_args):
+    def __init__(self, Asset=None, Document=None, **kw_args):
         """Initializes a new 'DocAssetRole' instance.
 
         @param Asset:
@@ -32,7 +32,7 @@ class DocAssetRole(Role):
         self._Document = None
         self.Document = Document
 
-        super(DocAssetRole, self).__init__(*args, **kw_args)
+        super(DocAssetRole, self).__init__(**kw_args)
 
     def getAsset(self):
         

@@ -20,7 +20,7 @@ class PotentialTransformer(Equipment):
     """Instrument transformer (also known as Voltage Transformer) used to measure electrical qualities of the circuit that is being protected and/or monitored. Typically used as voltage transducer for the purpose of metering, protection, or sometimes auxiliary substation supply. A typical secondary voltage rating would be 120V.
     """
 
-    def __init__(self, accuracyClass='', ptClass='', nominalRatio=0.0, PotentialTransformerAsset=None, PotentialTransformerTypeAsset=None, *args, **kw_args):
+    def __init__(self, accuracyClass='', ptClass='', nominalRatio=0.0, PotentialTransformerAsset=None, PotentialTransformerTypeAsset=None, **kw_args):
         """Initializes a new 'PotentialTransformer' instance.
 
         @param accuracyClass: PT accuracy classification. 
@@ -44,7 +44,7 @@ class PotentialTransformer(Equipment):
         self._PotentialTransformerTypeAsset = None
         self.PotentialTransformerTypeAsset = PotentialTransformerTypeAsset
 
-        super(PotentialTransformer, self).__init__(*args, **kw_args)
+        super(PotentialTransformer, self).__init__(**kw_args)
 
     def getPotentialTransformerAsset(self):
         

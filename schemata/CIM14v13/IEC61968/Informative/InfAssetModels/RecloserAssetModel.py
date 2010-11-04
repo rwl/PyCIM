@@ -20,7 +20,7 @@ class RecloserAssetModel(ElectricalAssetModel):
     """Documentation for a type of a recloser asset of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, RecloserInfo=None, RecloserTypeAsset=None, RecloserAssets=None, *args, **kw_args):
+    def __init__(self, RecloserInfo=None, RecloserTypeAsset=None, RecloserAssets=None, **kw_args):
         """Initializes a new 'RecloserAssetModel' instance.
 
         @param RecloserInfo:
@@ -36,7 +36,7 @@ class RecloserAssetModel(ElectricalAssetModel):
         self._RecloserAssets = []
         self.RecloserAssets = [] if RecloserAssets is None else RecloserAssets
 
-        super(RecloserAssetModel, self).__init__(*args, **kw_args)
+        super(RecloserAssetModel, self).__init__(**kw_args)
 
     def getRecloserInfo(self):
         

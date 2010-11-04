@@ -20,9 +20,9 @@ class GasMeteringFunction(DeviceFunction):
     """Functionality performed by a gas meter. It's entirely possible that the metering system would carry information to/from gas meters even though it was built primarily to carry the higher-value electric meter data.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'GasMeteringFunction' instance.
 
         """
-        super(GasMeteringFunction, self).__init__(*args, **kw_args)
+        super(GasMeteringFunction, self).__init__(**kw_args)
 

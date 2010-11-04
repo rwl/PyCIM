@@ -20,7 +20,7 @@ class WorkStatusEntry(ActivityRecord):
     """A type of ActivityRecord that records information about the status of an item, such as a Work or WorkTask, at a point in time.
     """
 
-    def __init__(self, percentComplete=0.0, *args, **kw_args):
+    def __init__(self, percentComplete=0.0, **kw_args):
         """Initializes a new 'WorkStatusEntry' instance.
 
         @param percentComplete: Estimated percentage of completion of this individual work task or overall work order. 
@@ -28,5 +28,5 @@ class WorkStatusEntry(ActivityRecord):
         #: Estimated percentage of completion of this individual work task or overall work order.
         self.percentComplete = percentComplete
 
-        super(WorkStatusEntry, self).__init__(*args, **kw_args)
+        super(WorkStatusEntry, self).__init__(**kw_args)
 

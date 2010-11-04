@@ -20,7 +20,7 @@ class Organisation(IdentifiedObject):
     """Organisation that might have roles as utility, contractor, supplier, manufacturer, customer, etc.
     """
 
-    def __init__(self, BusinessRoles=None, TelephoneNumbers=None, streetAddress=None, MarketRoles=None, postalAddress=None, ElectronicAddresses=None, *args, **kw_args):
+    def __init__(self, BusinessRoles=None, TelephoneNumbers=None, streetAddress=None, MarketRoles=None, postalAddress=None, ElectronicAddresses=None, **kw_args):
         """Initializes a new 'Organisation' instance.
 
         @param BusinessRoles:
@@ -46,7 +46,7 @@ class Organisation(IdentifiedObject):
         self._ElectronicAddresses = []
         self.ElectronicAddresses = [] if ElectronicAddresses is None else ElectronicAddresses
 
-        super(Organisation, self).__init__(*args, **kw_args)
+        super(Organisation, self).__init__(**kw_args)
 
     def getBusinessRoles(self):
         

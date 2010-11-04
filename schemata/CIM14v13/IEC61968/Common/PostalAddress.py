@@ -20,7 +20,7 @@ class PostalAddress(Element):
     """General purpose postal address information.
     """
 
-    def __init__(self, poBox='', postalCode='', streetDetail=None, townDetail=None, *args, **kw_args):
+    def __init__(self, poBox='', postalCode='', streetDetail=None, townDetail=None, **kw_args):
         """Initializes a new 'PostalAddress' instance.
 
         @param poBox: Post office box. 
@@ -38,7 +38,7 @@ class PostalAddress(Element):
 
         self.townDetail = townDetail
 
-        super(PostalAddress, self).__init__(*args, **kw_args)
+        super(PostalAddress, self).__init__(**kw_args)
 
     # Street detail.
     streetDetail = None

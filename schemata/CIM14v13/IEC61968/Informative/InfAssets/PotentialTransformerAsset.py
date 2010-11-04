@@ -20,7 +20,7 @@ class PotentialTransformerAsset(ElectricalAsset):
     """Physical asset performing Potential Transformer (PT) function.
     """
 
-    def __init__(self, PotentialTransformer=None, PotentialTransformerInfo=None, PotentialTransformerAssetModel=None, *args, **kw_args):
+    def __init__(self, PotentialTransformer=None, PotentialTransformerInfo=None, PotentialTransformerAssetModel=None, **kw_args):
         """Initializes a new 'PotentialTransformerAsset' instance.
 
         @param PotentialTransformer:
@@ -36,7 +36,7 @@ class PotentialTransformerAsset(ElectricalAsset):
         self._PotentialTransformerAssetModel = None
         self.PotentialTransformerAssetModel = PotentialTransformerAssetModel
 
-        super(PotentialTransformerAsset, self).__init__(*args, **kw_args)
+        super(PotentialTransformerAsset, self).__init__(**kw_args)
 
     def getPotentialTransformer(self):
         

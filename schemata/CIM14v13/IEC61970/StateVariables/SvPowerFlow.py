@@ -20,7 +20,7 @@ class SvPowerFlow(StateVariable):
     """State variable for power flow.
     """
 
-    def __init__(self, p=0.0, q=0.0, Terminal=None, *args, **kw_args):
+    def __init__(self, p=0.0, q=0.0, Terminal=None, **kw_args):
         """Initializes a new 'SvPowerFlow' instance.
 
         @param p: The active power flow into the terminal. 
@@ -36,7 +36,7 @@ class SvPowerFlow(StateVariable):
         self._Terminal = None
         self.Terminal = Terminal
 
-        super(SvPowerFlow, self).__init__(*args, **kw_args)
+        super(SvPowerFlow, self).__init__(**kw_args)
 
     def getTerminal(self):
         """The terminal associated with the power flow state.

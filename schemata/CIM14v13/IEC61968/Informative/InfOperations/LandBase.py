@@ -20,9 +20,9 @@ class LandBase(Document):
     """Land base data.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'LandBase' instance.
 
         """
-        super(LandBase, self).__init__(*args, **kw_args)
+        super(LandBase, self).__init__(**kw_args)
 

@@ -20,9 +20,9 @@ class ComPort(IdentifiedObject):
     """Port information used for communication connectivity purposes. The 'port' names the physical association to another device from the perspective of the parent asset. For example, a communications module may need to list the meters which it can talk to as meter serial number '123' is on 'port 0', S/N '456' is on port '1', etc. A meter or load control device may need to know that a hot-water heater load is on 'port 0', and an air-conditioner on 'port 1'.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'ComPort' instance.
 
         """
-        super(ComPort, self).__init__(*args, **kw_args)
+        super(ComPort, self).__init__(**kw_args)
 

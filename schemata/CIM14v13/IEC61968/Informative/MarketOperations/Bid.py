@@ -20,7 +20,7 @@ class Bid(Document):
     """Represents both bids to purchase and offers to sell energy or ancillary services in an RTO-sponsored market.
     """
 
-    def __init__(self, stopTime='', startTime='', marketType='', Market=None, ProductBids=None, BidClearing=None, *args, **kw_args):
+    def __init__(self, stopTime='', startTime='', marketType='', Market=None, ProductBids=None, BidClearing=None, **kw_args):
         """Initializes a new 'Bid' instance.
 
         @param stopTime: Stop time and date for which bid is applicable. 
@@ -48,7 +48,7 @@ class Bid(Document):
         self._BidClearing = None
         self.BidClearing = BidClearing
 
-        super(Bid, self).__init__(*args, **kw_args)
+        super(Bid, self).__init__(**kw_args)
 
     def getMarket(self):
         

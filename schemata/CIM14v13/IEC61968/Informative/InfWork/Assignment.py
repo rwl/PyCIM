@@ -20,7 +20,7 @@ class Assignment(Document):
     """An assignment is given to an ErpPerson, Crew, Organisation, Equipment Item, Tool, etc. and may be used to perform Work, WorkTasks, Procedures, etc. TimeSchedules may be set up directly for Assignments or indirectly via the associated WorkTask. Note that these associations are all inherited through the recursive relationship on Document.
     """
 
-    def __init__(self, Crews=None, effectivePeriod=None, *args, **kw_args):
+    def __init__(self, Crews=None, effectivePeriod=None, **kw_args):
         """Initializes a new 'Assignment' instance.
 
         @param Crews: All Crews having this Assignment.
@@ -31,7 +31,7 @@ class Assignment(Document):
 
         self.effectivePeriod = effectivePeriod
 
-        super(Assignment, self).__init__(*args, **kw_args)
+        super(Assignment, self).__init__(**kw_args)
 
     def getCrews(self):
         """All Crews having this Assignment.

@@ -20,7 +20,7 @@ class SubscribePowerCurve(Curve):
     """Price curve for specifying the cost of energy (X) at points in time (y1) according to a prcing structure, which is based on a tariff.
     """
 
-    def __init__(self, PricingStructure=None, *args, **kw_args):
+    def __init__(self, PricingStructure=None, **kw_args):
         """Initializes a new 'SubscribePowerCurve' instance.
 
         @param PricingStructure:
@@ -28,7 +28,7 @@ class SubscribePowerCurve(Curve):
         self._PricingStructure = None
         self.PricingStructure = PricingStructure
 
-        super(SubscribePowerCurve, self).__init__(*args, **kw_args)
+        super(SubscribePowerCurve, self).__init__(**kw_args)
 
     def getPricingStructure(self):
         

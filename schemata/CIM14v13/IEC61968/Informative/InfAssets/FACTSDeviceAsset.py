@@ -20,7 +20,7 @@ class FACTSDeviceAsset(ElectricalAsset):
     """Physical asset used to perform the FACTSDevice's role.
     """
 
-    def __init__(self, kind='tsbr', FACTSDeviceAssetModel=None, *args, **kw_args):
+    def __init__(self, kind='tsbr', FACTSDeviceAssetModel=None, **kw_args):
         """Initializes a new 'FACTSDeviceAsset' instance.
 
         @param kind: Kind of FACTS device. Values are: "tsbr", "statcom", "tcvl", "tssc", "tcpar", "svc", "upfc", "tcsc"
@@ -32,7 +32,7 @@ class FACTSDeviceAsset(ElectricalAsset):
         self._FACTSDeviceAssetModel = None
         self.FACTSDeviceAssetModel = FACTSDeviceAssetModel
 
-        super(FACTSDeviceAsset, self).__init__(*args, **kw_args)
+        super(FACTSDeviceAsset, self).__init__(**kw_args)
 
     def getFACTSDeviceAssetModel(self):
         

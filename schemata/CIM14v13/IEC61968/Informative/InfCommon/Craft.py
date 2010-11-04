@@ -20,7 +20,7 @@ class Craft(IdentifiedObject):
     """Craft of a person or a crew. Examples include overhead electric, underground electric, high pressure gas, etc. This ensures necessary knowledge and skills before being allowed to perform certain types of work.
     """
 
-    def __init__(self, category='', Skills=None, ErpPersons=None, status=None, Capabilities=None, *args, **kw_args):
+    def __init__(self, category='', Skills=None, ErpPersons=None, status=None, Capabilities=None, **kw_args):
         """Initializes a new 'Craft' instance.
 
         @param category: Category by utility's work mangement standards and practices. 
@@ -43,7 +43,7 @@ class Craft(IdentifiedObject):
         self._Capabilities = []
         self.Capabilities = [] if Capabilities is None else Capabilities
 
-        super(Craft, self).__init__(*args, **kw_args)
+        super(Craft, self).__init__(**kw_args)
 
     def getSkills(self):
         

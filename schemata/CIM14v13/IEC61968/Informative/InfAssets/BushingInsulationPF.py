@@ -20,7 +20,7 @@ class BushingInsulationPF(IdentifiedObject):
     """Bushing insulation power factor condition as a result of a test. Typical status values are: Acceptable, Minor Deterioration or Moisture Absorption, Major Deterioration or Moisture Absorption, Failed.
     """
 
-    def __init__(self, testKind='c1', BushingAsset=None, TransformerObservation=None, status=None, *args, **kw_args):
+    def __init__(self, testKind='c1', BushingAsset=None, TransformerObservation=None, status=None, **kw_args):
         """Initializes a new 'BushingInsulationPF' instance.
 
         @param testKind: Kind of test for this bushing. Values are: "c1", "c2"
@@ -39,7 +39,7 @@ class BushingInsulationPF(IdentifiedObject):
 
         self.status = status
 
-        super(BushingInsulationPF, self).__init__(*args, **kw_args)
+        super(BushingInsulationPF, self).__init__(**kw_args)
 
     def getBushingAsset(self):
         

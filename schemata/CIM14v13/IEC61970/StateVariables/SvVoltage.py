@@ -20,7 +20,7 @@ class SvVoltage(StateVariable):
     """State variable for voltage.
     """
 
-    def __init__(self, v=0.0, angle=0.0, TopologicalNode=None, *args, **kw_args):
+    def __init__(self, v=0.0, angle=0.0, TopologicalNode=None, **kw_args):
         """Initializes a new 'SvVoltage' instance.
 
         @param v: The voltage magnitude of the topological node. 
@@ -36,7 +36,7 @@ class SvVoltage(StateVariable):
         self._TopologicalNode = None
         self.TopologicalNode = TopologicalNode
 
-        super(SvVoltage, self).__init__(*args, **kw_args)
+        super(SvVoltage, self).__init__(**kw_args)
 
     def getTopologicalNode(self):
         """The topological node associated with the voltage state.

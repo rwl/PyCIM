@@ -20,7 +20,7 @@ class ClearanceTagType(IdentifiedObject):
     """Type of ClearanceTag. Could indicate the type of work to be performed and/or the type of supervisory control.
     """
 
-    def __init__(self, ClearanceTags=None, *args, **kw_args):
+    def __init__(self, ClearanceTags=None, **kw_args):
         """Initializes a new 'ClearanceTagType' instance.
 
         @param ClearanceTags: The ClearanceTags currently being defined for this type.
@@ -28,7 +28,7 @@ class ClearanceTagType(IdentifiedObject):
         self._ClearanceTags = []
         self.ClearanceTags = [] if ClearanceTags is None else ClearanceTags
 
-        super(ClearanceTagType, self).__init__(*args, **kw_args)
+        super(ClearanceTagType, self).__init__(**kw_args)
 
     def getClearanceTags(self):
         """The ClearanceTags currently being defined for this type.

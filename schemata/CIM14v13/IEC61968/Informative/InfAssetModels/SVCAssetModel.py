@@ -20,7 +20,7 @@ class SVCAssetModel(FACTSDeviceAssetModel):
     """Documentation for a type of a Static Var Compensator of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, SvcInfo=None, SVCTypeAsset=None, SVCAssets=None, *args, **kw_args):
+    def __init__(self, SvcInfo=None, SVCTypeAsset=None, SVCAssets=None, **kw_args):
         """Initializes a new 'SVCAssetModel' instance.
 
         @param SvcInfo:
@@ -36,7 +36,7 @@ class SVCAssetModel(FACTSDeviceAssetModel):
         self._SVCAssets = []
         self.SVCAssets = [] if SVCAssets is None else SVCAssets
 
-        super(SVCAssetModel, self).__init__(*args, **kw_args)
+        super(SVCAssetModel, self).__init__(**kw_args)
 
     def getSvcInfo(self):
         

@@ -20,7 +20,7 @@ class ErpRecLineItem(IdentifiedObject):
     """Individual entry of an ErpReceivable, it is a particular transaction representing an invoice, credit memo or debit memo to a customer.
     """
 
-    def __init__(self, ErpInvoiceLineItem=None, ErpPayments=None, ErpJournalEntries=None, ErpReceivable=None, status=None, *args, **kw_args):
+    def __init__(self, ErpInvoiceLineItem=None, ErpPayments=None, ErpJournalEntries=None, ErpReceivable=None, status=None, **kw_args):
         """Initializes a new 'ErpRecLineItem' instance.
 
         @param ErpInvoiceLineItem:
@@ -43,7 +43,7 @@ class ErpRecLineItem(IdentifiedObject):
 
         self.status = status
 
-        super(ErpRecLineItem, self).__init__(*args, **kw_args)
+        super(ErpRecLineItem, self).__init__(**kw_args)
 
     def getErpInvoiceLineItem(self):
         

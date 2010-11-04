@@ -20,7 +20,7 @@ class TiePoint(IdentifiedObject):
     """Site of an interface between interchange areas. The tie point can be a network branch (e.g., transmission line or transformer) or a switching device. For transmission lines, the interchange area boundary is usually at a designated point such as the middle of the line. Line end metering is then corrected for line losses.
     """
 
-    def __init__(self, tiePointMWRating=0.0, Declared_ServicePoint=None, For_Measurements=None, By_Measurements=None, *args, **kw_args):
+    def __init__(self, tiePointMWRating=0.0, Declared_ServicePoint=None, For_Measurements=None, By_Measurements=None, **kw_args):
         """Initializes a new 'TiePoint' instance.
 
         @param tiePointMWRating: The MW rating of the tie point 
@@ -40,7 +40,7 @@ class TiePoint(IdentifiedObject):
         self._By_Measurements = []
         self.By_Measurements = [] if By_Measurements is None else By_Measurements
 
-        super(TiePoint, self).__init__(*args, **kw_args)
+        super(TiePoint, self).__init__(**kw_args)
 
     def getDeclared_ServicePoint(self):
         """A tiepoint may be declared as a service point.

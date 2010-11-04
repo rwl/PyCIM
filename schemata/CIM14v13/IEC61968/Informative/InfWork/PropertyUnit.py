@@ -20,7 +20,7 @@ class PropertyUnit(IdentifiedObject):
     """Unit of property for reporting purposes.
     """
 
-    def __init__(self, activityCode='install', accountingUsage='', propertyAccount='', CUMaterialItems=None, CompatibleUnits=None, status=None, WorkCostDetails=None, *args, **kw_args):
+    def __init__(self, activityCode='install', accountingUsage='', propertyAccount='', CUMaterialItems=None, CompatibleUnits=None, status=None, WorkCostDetails=None, **kw_args):
         """Initializes a new 'PropertyUnit' instance.
 
         @param activityCode: Activity code identifies a specific and distinguishable work action. Values are: "install", "remove", "transfer", "abandon"
@@ -51,7 +51,7 @@ class PropertyUnit(IdentifiedObject):
         self._WorkCostDetails = []
         self.WorkCostDetails = [] if WorkCostDetails is None else WorkCostDetails
 
-        super(PropertyUnit, self).__init__(*args, **kw_args)
+        super(PropertyUnit, self).__init__(**kw_args)
 
     def getCUMaterialItems(self):
         

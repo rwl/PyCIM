@@ -20,7 +20,7 @@ class DuctBank(Asset):
     """A duct bank may contain many ducts. Each duct contains individual lines that are expressed as conductor assets (thereby describing each line's physical asset characteristics), which are each associated with ACLineSegments and other classes describing their electrical characteristics.
     """
 
-    def __init__(self, circuitCount=0, ductCount=0, CableAssets=None, DuctBankTypeAsset=None, *args, **kw_args):
+    def __init__(self, circuitCount=0, ductCount=0, CableAssets=None, DuctBankTypeAsset=None, **kw_args):
         """Initializes a new 'DuctBank' instance.
 
         @param circuitCount: Number of circuits in duct bank. Refer to associations between a duct (ConductorAsset) and an ACLineSegment to understand which circuits are in which ducts. 
@@ -40,7 +40,7 @@ class DuctBank(Asset):
         self._DuctBankTypeAsset = None
         self.DuctBankTypeAsset = DuctBankTypeAsset
 
-        super(DuctBank, self).__init__(*args, **kw_args)
+        super(DuctBank, self).__init__(**kw_args)
 
     def getCableAssets(self):
         

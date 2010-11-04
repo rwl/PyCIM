@@ -20,7 +20,7 @@ class AssetModelCatalogue(IdentifiedObject):
     """Catalogue of available types of products and materials that are used to build or install, maintain or operate an Asset. Each catalogue item is for a specific product (AssetModel) available from a specific supplier.
     """
 
-    def __init__(self, status=None, AssetModelCatalogueItems=None, *args, **kw_args):
+    def __init__(self, status=None, AssetModelCatalogueItems=None, **kw_args):
         """Initializes a new 'AssetModelCatalogue' instance.
 
         @param status:
@@ -31,7 +31,7 @@ class AssetModelCatalogue(IdentifiedObject):
         self._AssetModelCatalogueItems = []
         self.AssetModelCatalogueItems = [] if AssetModelCatalogueItems is None else AssetModelCatalogueItems
 
-        super(AssetModelCatalogue, self).__init__(*args, **kw_args)
+        super(AssetModelCatalogue, self).__init__(**kw_args)
 
     status = None
 

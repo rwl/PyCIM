@@ -20,7 +20,7 @@ class ErpTimeEntry(IdentifiedObject):
     """An individual entry on an ErpTimeSheet.
     """
 
-    def __init__(self, ErpProjectAccounting=None, ErpTimeSheet=None, status=None, *args, **kw_args):
+    def __init__(self, ErpProjectAccounting=None, ErpTimeSheet=None, status=None, **kw_args):
         """Initializes a new 'ErpTimeEntry' instance.
 
         @param ErpProjectAccounting:
@@ -35,7 +35,7 @@ class ErpTimeEntry(IdentifiedObject):
 
         self.status = status
 
-        super(ErpTimeEntry, self).__init__(*args, **kw_args)
+        super(ErpTimeEntry, self).__init__(**kw_args)
 
     def getErpProjectAccounting(self):
         

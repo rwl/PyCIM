@@ -20,7 +20,7 @@ class CUWorkEquipmentItem(IdentifiedObject):
     """Compatible unit for various types of WorkEquipmentAssets, including vehicles.
     """
 
-    def __init__(self, equipCode='', rate=0.0, CompatibleUnits=None, TypeAsset=None, status=None, *args, **kw_args):
+    def __init__(self, equipCode='', rate=0.0, CompatibleUnits=None, TypeAsset=None, status=None, **kw_args):
         """Initializes a new 'CUWorkEquipmentItem' instance.
 
         @param equipCode: The equipment type code. 
@@ -43,7 +43,7 @@ class CUWorkEquipmentItem(IdentifiedObject):
 
         self.status = status
 
-        super(CUWorkEquipmentItem, self).__init__(*args, **kw_args)
+        super(CUWorkEquipmentItem, self).__init__(**kw_args)
 
     def getCompatibleUnits(self):
         

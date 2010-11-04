@@ -20,7 +20,7 @@ class ConditionFactor(IdentifiedObject):
     """This is to specify the various condition factors for a design that may alter the cost estimate or the allocation.
     """
 
-    def __init__(self, kind='labor', cfValue='', status=None, DesignLocationCUs=None, DesignLocations=None, Designs=None, *args, **kw_args):
+    def __init__(self, kind='labor', cfValue='', status=None, DesignLocationCUs=None, DesignLocations=None, Designs=None, **kw_args):
         """Initializes a new 'ConditionFactor' instance.
 
         @param kind: Kind of this condition factor. Values are: "labor", "accountAllocation", "travel", "other", "material"
@@ -47,7 +47,7 @@ class ConditionFactor(IdentifiedObject):
         self._Designs = []
         self.Designs = [] if Designs is None else Designs
 
-        super(ConditionFactor, self).__init__(*args, **kw_args)
+        super(ConditionFactor, self).__init__(**kw_args)
 
     status = None
 

@@ -20,7 +20,7 @@ class Pnode(IdentifiedObject):
     """A pricing node is directly associated with a connectivity node.  It is a pricing location for which market participants submit their bids, offers, buy/sell CRRs, and settle.
     """
 
-    def __init__(self, usage='', isPublic=False, beginPeriod='', endPeriod='', type='', ConnectivityNode=None, RTO=None, DeliveryTransactionBids=None, Measurements=None, ReceiptTransactionBids=None, FTRs=None, RegisteredResources=None, PnodeClearing=None, *args, **kw_args):
+    def __init__(self, usage='', isPublic=False, beginPeriod='', endPeriod='', type='', ConnectivityNode=None, RTO=None, DeliveryTransactionBids=None, Measurements=None, ReceiptTransactionBids=None, FTRs=None, RegisteredResources=None, PnodeClearing=None, **kw_args):
         """Initializes a new 'Pnode' instance.
 
         @param usage: Price node usage:  'Control Area' 'Regulation Region' 'Price Zone' 'Spin Region' 'Non-Spin Region' 'Price Hub' 
@@ -76,7 +76,7 @@ class Pnode(IdentifiedObject):
         self._PnodeClearing = None
         self.PnodeClearing = PnodeClearing
 
-        super(Pnode, self).__init__(*args, **kw_args)
+        super(Pnode, self).__init__(**kw_args)
 
     def getConnectivityNode(self):
         

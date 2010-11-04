@@ -20,7 +20,7 @@ class ErpReceiveDelivery(Document):
     """Transaction for an Organisation receiving goods or services that may be used to indicate receipt of goods in conjunction with a purchase order. A receivable is an open (unpaid) item in the Accounts Receivable ledger.
     """
 
-    def __init__(self, ErpRecDelvLineItems=None, *args, **kw_args):
+    def __init__(self, ErpRecDelvLineItems=None, **kw_args):
         """Initializes a new 'ErpReceiveDelivery' instance.
 
         @param ErpRecDelvLineItems:
@@ -28,7 +28,7 @@ class ErpReceiveDelivery(Document):
         self._ErpRecDelvLineItems = []
         self.ErpRecDelvLineItems = [] if ErpRecDelvLineItems is None else ErpRecDelvLineItems
 
-        super(ErpReceiveDelivery, self).__init__(*args, **kw_args)
+        super(ErpReceiveDelivery, self).__init__(**kw_args)
 
     def getErpRecDelvLineItems(self):
         

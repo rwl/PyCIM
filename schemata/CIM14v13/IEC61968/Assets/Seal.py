@@ -20,7 +20,7 @@ class Seal(IdentifiedObject):
     """Physically controls access to AssetContainers.
     """
 
-    def __init__(self, condition='locked', kind='other', sealNumber='', appliedDateTime='', AssetContainer=None, *args, **kw_args):
+    def __init__(self, condition='locked', kind='other', sealNumber='', appliedDateTime='', AssetContainer=None, **kw_args):
         """Initializes a new 'Seal' instance.
 
         @param condition: Condition of seal. Values are: "locked", "open", "missing", "broken", "other"
@@ -44,7 +44,7 @@ class Seal(IdentifiedObject):
         self._AssetContainer = None
         self.AssetContainer = AssetContainer
 
-        super(Seal, self).__init__(*args, **kw_args)
+        super(Seal, self).__init__(**kw_args)
 
     def getAssetContainer(self):
         """Asset container to which this seal is applied.

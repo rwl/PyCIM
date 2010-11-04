@@ -20,7 +20,7 @@ class DiscreteValue(MeasurementValue):
     """DiscreteValue represents a discrete MeasurementValue.
     """
 
-    def __init__(self, value=0, Discrete=None, *args, **kw_args):
+    def __init__(self, value=0, Discrete=None, **kw_args):
         """Initializes a new 'DiscreteValue' instance.
 
         @param value: The value to supervise. 
@@ -32,7 +32,7 @@ class DiscreteValue(MeasurementValue):
         self._Discrete = None
         self.Discrete = Discrete
 
-        super(DiscreteValue, self).__init__(*args, **kw_args)
+        super(DiscreteValue, self).__init__(**kw_args)
 
     def getDiscrete(self):
         """Measurement to which this value is connected.

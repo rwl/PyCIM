@@ -20,7 +20,7 @@ class ErpOrganisation(Organisation):
     """Identifies organisations that might have roles as utilities, contractors, suppliers, manufacturers, customers, etc. Organisations may also have parent-child relationships to identify departments within an organisation, or parent company relationships. The organization may be internal (e.g., departments) or external to the utility. There may be multiple organizations of a given 'category', each with a unique 'code'.
     """
 
-    def __init__(self, code='', category='', mode='', optOut=False, industryID='', isProfitCenter=False, isCostCenter=False, governmentID='', DocumentRoles=None, ActivityRecords=None, LocationRoles=None, ErpPersonRoles=None, ViolationLimits=None, Requests=None, ChangeItems=None, IntSchedAgreement=None, RegisteredResources=None, PowerSystemResourceRoles=None, AssetRoles=None, LandPropertyRoles=None, ParentOrganisationRoles=None, ChildOrganisationRoles=None, Crews=None, *args, **kw_args):
+    def __init__(self, code='', category='', mode='', optOut=False, industryID='', isProfitCenter=False, isCostCenter=False, governmentID='', DocumentRoles=None, ActivityRecords=None, LocationRoles=None, ErpPersonRoles=None, ViolationLimits=None, Requests=None, ChangeItems=None, IntSchedAgreement=None, RegisteredResources=None, PowerSystemResourceRoles=None, AssetRoles=None, LandPropertyRoles=None, ParentOrganisationRoles=None, ChildOrganisationRoles=None, Crews=None, **kw_args):
         """Initializes a new 'ErpOrganisation' instance.
 
         @param code: Designated code for organisation. 
@@ -116,7 +116,7 @@ class ErpOrganisation(Organisation):
         self._Crews = []
         self.Crews = [] if Crews is None else Crews
 
-        super(ErpOrganisation, self).__init__(*args, **kw_args)
+        super(ErpOrganisation, self).__init__(**kw_args)
 
     def getDocumentRoles(self):
         

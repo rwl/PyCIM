@@ -20,7 +20,7 @@ class GenerationProvider(ErpOrganisation):
     """The energy seller in the energy marketplace.
     """
 
-    def __init__(self, GeneratingUnits=None, EnergyProducts=None, ServicePoint=None, *args, **kw_args):
+    def __init__(self, GeneratingUnits=None, EnergyProducts=None, ServicePoint=None, **kw_args):
         """Initializes a new 'GenerationProvider' instance.
 
         @param GeneratingUnits: A GenerationProvider operates one or more GeneratingUnits.
@@ -36,7 +36,7 @@ class GenerationProvider(ErpOrganisation):
         self._ServicePoint = []
         self.ServicePoint = [] if ServicePoint is None else ServicePoint
 
-        super(GenerationProvider, self).__init__(*args, **kw_args)
+        super(GenerationProvider, self).__init__(**kw_args)
 
     def getGeneratingUnits(self):
         """A GenerationProvider operates one or more GeneratingUnits.

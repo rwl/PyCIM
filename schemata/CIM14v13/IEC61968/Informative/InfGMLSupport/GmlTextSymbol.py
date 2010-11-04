@@ -20,7 +20,7 @@ class GmlTextSymbol(GmlSymbol):
     """Used for styling text labels, i.e., for rendering them according to various graphical parameters.
     """
 
-    def __init__(self, minFontSize=0, property='', fieldID='', label='', labelType='', GmlFont=None, GmlLabelPlacement=None, GmlFill=None, GmlHalo=None, GmlDiagramObject=None, *args, **kw_args):
+    def __init__(self, minFontSize=0, property='', fieldID='', label='', labelType='', GmlFont=None, GmlLabelPlacement=None, GmlFill=None, GmlHalo=None, GmlDiagramObject=None, **kw_args):
         """Initializes a new 'GmlTextSymbol' instance.
 
         @param minFontSize: The minimum font size allowed. 
@@ -64,7 +64,7 @@ class GmlTextSymbol(GmlSymbol):
         self._GmlDiagramObject = None
         self.GmlDiagramObject = GmlDiagramObject
 
-        super(GmlTextSymbol, self).__init__(*args, **kw_args)
+        super(GmlTextSymbol, self).__init__(**kw_args)
 
     def getGmlFont(self):
         

@@ -20,7 +20,7 @@ class PotentialTransformerTypeAsset(ElectricalTypeAsset):
     """Documentation for a generic Potential Transformer (PT) that may be used for various purposes such as work planning.
     """
 
-    def __init__(self, ptClass='', accuracyClass='', nominalRatio=None, PotentialTransformers=None, PotentialTransformerAssetModels=None, PotentialTransformerInfo=None, *args, **kw_args):
+    def __init__(self, ptClass='', accuracyClass='', nominalRatio=None, PotentialTransformers=None, PotentialTransformerAssetModels=None, PotentialTransformerInfo=None, **kw_args):
         """Initializes a new 'PotentialTransformerTypeAsset' instance.
 
         @param ptClass: 
@@ -47,7 +47,7 @@ class PotentialTransformerTypeAsset(ElectricalTypeAsset):
         self._PotentialTransformerInfo = None
         self.PotentialTransformerInfo = PotentialTransformerInfo
 
-        super(PotentialTransformerTypeAsset, self).__init__(*args, **kw_args)
+        super(PotentialTransformerTypeAsset, self).__init__(**kw_args)
 
     nominalRatio = None
 

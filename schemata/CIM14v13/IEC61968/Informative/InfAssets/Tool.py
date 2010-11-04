@@ -20,7 +20,7 @@ class Tool(Asset):
     """Utility asset typically used by utility resources like crews and persons. As is the case for other assets, tools must be maintained.
     """
 
-    def __init__(self, lastCalibrationDate='', ToolAssetModel=None, Crew=None, *args, **kw_args):
+    def __init__(self, lastCalibrationDate='', ToolAssetModel=None, Crew=None, **kw_args):
         """Initializes a new 'Tool' instance.
 
         @param lastCalibrationDate: Date the tool was last caibrated, if applicable. 
@@ -36,7 +36,7 @@ class Tool(Asset):
         self._Crew = None
         self.Crew = Crew
 
-        super(Tool, self).__init__(*args, **kw_args)
+        super(Tool, self).__init__(**kw_args)
 
     def getToolAssetModel(self):
         

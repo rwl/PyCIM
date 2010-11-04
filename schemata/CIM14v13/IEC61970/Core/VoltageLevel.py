@@ -20,7 +20,7 @@ class VoltageLevel(EquipmentContainer):
     """A collection of equipment at one common system voltage forming a switchgear. The equipment typically consist of breakers, busbars, instrumentation, control, regulation and protection devices as well as assemblies of all these.
     """
 
-    def __init__(self, lowVoltageLimit=0.0, highVoltageLimit=0.0, Bays=None, Substation=None, BaseVoltage=None, *args, **kw_args):
+    def __init__(self, lowVoltageLimit=0.0, highVoltageLimit=0.0, Bays=None, Substation=None, BaseVoltage=None, **kw_args):
         """Initializes a new 'VoltageLevel' instance.
 
         @param lowVoltageLimit: The bus bar's low voltage limit 
@@ -44,7 +44,7 @@ class VoltageLevel(EquipmentContainer):
         self._BaseVoltage = None
         self.BaseVoltage = BaseVoltage
 
-        super(VoltageLevel, self).__init__(*args, **kw_args)
+        super(VoltageLevel, self).__init__(**kw_args)
 
     def getBays(self):
         """The association is used in the naming hierarchy.

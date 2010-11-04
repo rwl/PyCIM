@@ -20,7 +20,7 @@ class AuxiliaryAgreement(Agreement):
     """An ad-hoc auxiliary account agreement associated with a customer agreement, not part of the customer's account, but typically subject to formal agreement between customer and supplier (utility). Typically this is used to collect revenue owing by the customer for other services or arrears accrued with the utility for other services. It is typically linked to a prepaid token purchase transaction, thus forcing the customer to make a payment towards settlement of the auxiliary account balance whenever he needs to purchase a prepaid token for electricity. The present status of AuxiliaryAgreement can be defined in the context of the utility's business rules, for example: enabled, disabled, pending, over recovered, under recovered, written off, etc.
     """
 
-    def __init__(self, auxPriorityCode='', fixedAmount=0.0, payCycle='', vendPortion=0.0, vendPortionArrear=0.0, minAmount=0.0, auxCycle='', auxRef='', subCategory='', arrearsInterest=0.0, CustomerAgreement=None, AuxiliaryAccounts=None, *args, **kw_args):
+    def __init__(self, auxPriorityCode='', fixedAmount=0.0, payCycle='', vendPortion=0.0, vendPortionArrear=0.0, minAmount=0.0, auxCycle='', auxRef='', subCategory='', arrearsInterest=0.0, CustomerAgreement=None, AuxiliaryAccounts=None, **kw_args):
         """Initializes a new 'AuxiliaryAgreement' instance.
 
         @param auxPriorityCode: The coded priority indicating the priority that this AuxiliaryAgreement has above other AuxiliaryAgreements (associated with the same customer agreement) when it comes to competing for settlement from a payment transaction or token purchase. 
@@ -72,7 +72,7 @@ class AuxiliaryAgreement(Agreement):
         self._AuxiliaryAccounts = []
         self.AuxiliaryAccounts = [] if AuxiliaryAccounts is None else AuxiliaryAccounts
 
-        super(AuxiliaryAgreement, self).__init__(*args, **kw_args)
+        super(AuxiliaryAgreement, self).__init__(**kw_args)
 
     def getCustomerAgreement(self):
         """Customer agreement this (non-service related) auxiliary agreement refers to.

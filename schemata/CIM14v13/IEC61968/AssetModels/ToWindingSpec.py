@@ -20,7 +20,7 @@ class ToWindingSpec(IdentifiedObject):
     """For short-circuit tests, specifies the winding and tap for all short-circuited windings.  For open-circuit tests, specifies the winding, tap, induced voltage, and induced angle for any non-excited windings that were measured during the test. This won't apply if only the exciting current and no-load losses were measured.
     """
 
-    def __init__(self, voltage=0.0, toTapStep=0, phaseShift=0.0, OpenCircuitTests=None, ShortCircuitTests=None, ToWinding=None, *args, **kw_args):
+    def __init__(self, voltage=0.0, toTapStep=0, phaseShift=0.0, OpenCircuitTests=None, ShortCircuitTests=None, ToWinding=None, **kw_args):
         """Initializes a new 'ToWindingSpec' instance.
 
         @param voltage: (if open-circuit test) Voltage measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited. 
@@ -48,7 +48,7 @@ class ToWindingSpec(IdentifiedObject):
         self._ToWinding = None
         self.ToWinding = ToWinding
 
-        super(ToWindingSpec, self).__init__(*args, **kw_args)
+        super(ToWindingSpec, self).__init__(**kw_args)
 
     def getOpenCircuitTests(self):
         """All open-circuit tests in which this winding was measured.

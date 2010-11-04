@@ -20,7 +20,7 @@ class AssetFunctionAssetModel(AssetModel):
     """Documentation for a type of an asset function of a particular product model made by a manufacturer.(Organisation). Asset Functions are typically component parts of Assets or Asset Containers.
     """
 
-    def __init__(self, AssetFunctionTypeAsset=None, AssetFunctions=None, *args, **kw_args):
+    def __init__(self, AssetFunctionTypeAsset=None, AssetFunctions=None, **kw_args):
         """Initializes a new 'AssetFunctionAssetModel' instance.
 
         @param AssetFunctionTypeAsset:
@@ -32,7 +32,7 @@ class AssetFunctionAssetModel(AssetModel):
         self._AssetFunctions = []
         self.AssetFunctions = [] if AssetFunctions is None else AssetFunctions
 
-        super(AssetFunctionAssetModel, self).__init__(*args, **kw_args)
+        super(AssetFunctionAssetModel, self).__init__(**kw_args)
 
     def getAssetFunctionTypeAsset(self):
         

@@ -20,9 +20,9 @@ class ExternalCustomerAgreement(Agreement):
     """A type of customer agreement involving an external agency. For example, a customer may form a contracts with an Energy Service Supplier if Direct Access is permitted.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'ExternalCustomerAgreement' instance.
 
         """
-        super(ExternalCustomerAgreement, self).__init__(*args, **kw_args)
+        super(ExternalCustomerAgreement, self).__init__(**kw_args)
 

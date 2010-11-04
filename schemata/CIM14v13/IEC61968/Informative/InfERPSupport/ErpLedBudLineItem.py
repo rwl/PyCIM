@@ -20,7 +20,7 @@ class ErpLedBudLineItem(IdentifiedObject):
     """Individual entry of a given Ledger Budget, typically containing information such as amount, accounting date, accounting period, and is associated with the applicable general ledger account.
     """
 
-    def __init__(self, ErpLedgerBudget=None, ErpLedBudLineItem=None, status=None, *args, **kw_args):
+    def __init__(self, ErpLedgerBudget=None, ErpLedBudLineItem=None, status=None, **kw_args):
         """Initializes a new 'ErpLedBudLineItem' instance.
 
         @param ErpLedgerBudget:
@@ -35,7 +35,7 @@ class ErpLedBudLineItem(IdentifiedObject):
 
         self.status = status
 
-        super(ErpLedBudLineItem, self).__init__(*args, **kw_args)
+        super(ErpLedBudLineItem, self).__init__(**kw_args)
 
     def getErpLedgerBudget(self):
         

@@ -20,7 +20,7 @@ class CircuitSection(IdentifiedObject):
     """Section of circuit located between two sectionalizing devices. It may contain other circuit sections, for example, a lateral tapped off a primary.
     """
 
-    def __init__(self, connectionKind='electricallyConnected', ConductorAssets=None, NetworkDataSets=None, PowerSystemResources=None, Circuits=None, *args, **kw_args):
+    def __init__(self, connectionKind='electricallyConnected', ConductorAssets=None, NetworkDataSets=None, PowerSystemResources=None, Circuits=None, **kw_args):
         """Initializes a new 'CircuitSection' instance.
 
         @param connectionKind: Kind of this circuit section. Values are: "electricallyConnected", "nominallyConnected", "other", "asBuilt"
@@ -43,7 +43,7 @@ class CircuitSection(IdentifiedObject):
 
         self.Circuits = [] if Circuits is None else Circuits
 
-        super(CircuitSection, self).__init__(*args, **kw_args)
+        super(CircuitSection, self).__init__(**kw_args)
 
     def getConductorAssets(self):
         

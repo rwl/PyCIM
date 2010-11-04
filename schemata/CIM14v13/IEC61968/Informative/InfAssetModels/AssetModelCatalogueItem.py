@@ -20,7 +20,7 @@ class AssetModelCatalogueItem(Document):
     """Provides pricing and other relevant information about a specific manufacturer's product (i.e., AssetModel), and its price from a given supplier. A single AssetModel may be availble from multiple suppliers. Note that manufacturer and supplier are both types of organisation, which the association is inherited from Document.
     """
 
-    def __init__(self, unitCost=0.0, ErpQuoteLineItems=None, ErpPOLineItems=None, AssetModel=None, AssetModelCatalogue=None, *args, **kw_args):
+    def __init__(self, unitCost=0.0, ErpQuoteLineItems=None, ErpPOLineItems=None, AssetModel=None, AssetModelCatalogue=None, **kw_args):
         """Initializes a new 'AssetModelCatalogueItem' instance.
 
         @param unitCost: Unit cost for an asset model from a specific supplier, either for a unit cost or cost per unit length. Cost is for material or asset only and does not include labor to install/construct or configure it. 
@@ -44,7 +44,7 @@ class AssetModelCatalogueItem(Document):
         self._AssetModelCatalogue = None
         self.AssetModelCatalogue = AssetModelCatalogue
 
-        super(AssetModelCatalogueItem, self).__init__(*args, **kw_args)
+        super(AssetModelCatalogueItem, self).__init__(**kw_args)
 
     def getErpQuoteLineItems(self):
         

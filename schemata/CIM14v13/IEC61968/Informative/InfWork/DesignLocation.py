@@ -20,7 +20,7 @@ class DesignLocation(IdentifiedObject):
     """A logical part of the design (e.g., pole and all equipment on a pole). This includes points and spans.
     """
 
-    def __init__(self, spanLength=0.0, MaterialItems=None, DesignLocationCUs=None, Designs=None, status=None, MiscCostItems=None, ConditionFactors=None, Diagrams=None, ErpBomItemDatas=None, WorkLocations=None, *args, **kw_args):
+    def __init__(self, spanLength=0.0, MaterialItems=None, DesignLocationCUs=None, Designs=None, status=None, MiscCostItems=None, ConditionFactors=None, Diagrams=None, ErpBomItemDatas=None, WorkLocations=None, **kw_args):
         """Initializes a new 'DesignLocation' instance.
 
         @param spanLength: The legth of the span from the previous pole to this pole. 
@@ -63,7 +63,7 @@ class DesignLocation(IdentifiedObject):
         self._WorkLocations = []
         self.WorkLocations = [] if WorkLocations is None else WorkLocations
 
-        super(DesignLocation, self).__init__(*args, **kw_args)
+        super(DesignLocation, self).__init__(**kw_args)
 
     def getMaterialItems(self):
         

@@ -20,7 +20,7 @@ class TransformerAssetModel(AssetModel):
     """Documentation for a type of a transformer of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, function='other', constructionKind='padmountDeadFront', windingInsulationKind='other', oilPreservationKind='nitrogenBlanket', coreKind='core', autoTransformer=False, reconfigWinding=False, dayOverLoadRating=0.0, altSecondaryNomVoltage=0.0, altPrimaryNomVoltage=0.0, coreCoilsWeight=0.0, solidInsulationWeight=0.0, hourOverLoadRating=0.0, neutralBIL=0.0, TransformerAssets=None, TransformerInfo=None, *args, **kw_args):
+    def __init__(self, function='other', constructionKind='padmountDeadFront', windingInsulationKind='other', oilPreservationKind='nitrogenBlanket', coreKind='core', autoTransformer=False, reconfigWinding=False, dayOverLoadRating=0.0, altSecondaryNomVoltage=0.0, altPrimaryNomVoltage=0.0, coreCoilsWeight=0.0, solidInsulationWeight=0.0, hourOverLoadRating=0.0, neutralBIL=0.0, TransformerAssets=None, TransformerInfo=None, **kw_args):
         """Initializes a new 'TransformerAssetModel' instance.
 
         @param function: Function of this transformer. Values are: "other", "voltageRegulator", "secondaryTransformer", "autotransformer", "powerTransformer"
@@ -88,7 +88,7 @@ class TransformerAssetModel(AssetModel):
         self._TransformerInfo = None
         self.TransformerInfo = TransformerInfo
 
-        super(TransformerAssetModel, self).__init__(*args, **kw_args)
+        super(TransformerAssetModel, self).__init__(**kw_args)
 
     def getTransformerAssets(self):
         

@@ -20,7 +20,7 @@ class VehicleAssetModel(AssetModel):
     """Documentation for a type of a vehicle of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, Vehicles=None, VehicleTypeAsset=None, *args, **kw_args):
+    def __init__(self, Vehicles=None, VehicleTypeAsset=None, **kw_args):
         """Initializes a new 'VehicleAssetModel' instance.
 
         @param Vehicles:
@@ -32,7 +32,7 @@ class VehicleAssetModel(AssetModel):
         self._VehicleTypeAsset = None
         self.VehicleTypeAsset = VehicleTypeAsset
 
-        super(VehicleAssetModel, self).__init__(*args, **kw_args)
+        super(VehicleAssetModel, self).__init__(**kw_args)
 
     def getVehicles(self):
         

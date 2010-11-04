@@ -20,7 +20,7 @@ class AltTieMeas(Element):
     """A prioritized measurement to be used for the tie flow as part of the control area specification.
     """
 
-    def __init__(self, priority=0, AnalogValue=None, TieFlow=None, *args, **kw_args):
+    def __init__(self, priority=0, AnalogValue=None, TieFlow=None, **kw_args):
         """Initializes a new 'AltTieMeas' instance.
 
         @param priority: Priority of a measurement usage.   Lower numbers have first priority. 
@@ -36,7 +36,7 @@ class AltTieMeas(Element):
         self._TieFlow = None
         self.TieFlow = TieFlow
 
-        super(AltTieMeas, self).__init__(*args, **kw_args)
+        super(AltTieMeas, self).__init__(**kw_args)
 
     def getAnalogValue(self):
         """The specific analog value used as a source.

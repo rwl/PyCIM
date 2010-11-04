@@ -20,7 +20,7 @@ class FaultIndicatorAsset(ElectricalAsset):
     """Physical asset performing FaultIndicator function.
     """
 
-    def __init__(self, FaultIndicator=None, FaultIndicatorAssetModel=None, *args, **kw_args):
+    def __init__(self, FaultIndicator=None, FaultIndicatorAssetModel=None, **kw_args):
         """Initializes a new 'FaultIndicatorAsset' instance.
 
         @param FaultIndicator:
@@ -32,7 +32,7 @@ class FaultIndicatorAsset(ElectricalAsset):
         self._FaultIndicatorAssetModel = None
         self.FaultIndicatorAssetModel = FaultIndicatorAssetModel
 
-        super(FaultIndicatorAsset, self).__init__(*args, **kw_args)
+        super(FaultIndicatorAsset, self).__init__(**kw_args)
 
     def getFaultIndicator(self):
         

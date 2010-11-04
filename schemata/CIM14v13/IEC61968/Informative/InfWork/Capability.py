@@ -20,7 +20,7 @@ class Capability(IdentifiedObject):
     """Capabilities of a crew.
     """
 
-    def __init__(self, performanceFactor='', category='', Crew=None, status=None, WorkTasks=None, validityInterval=None, Crafts=None, *args, **kw_args):
+    def __init__(self, performanceFactor='', category='', Crew=None, status=None, WorkTasks=None, validityInterval=None, Crafts=None, **kw_args):
         """Initializes a new 'Capability' instance.
 
         @param performanceFactor: Capability performance factor. 
@@ -50,7 +50,7 @@ class Capability(IdentifiedObject):
         self._Crafts = []
         self.Crafts = [] if Crafts is None else Crafts
 
-        super(Capability, self).__init__(*args, **kw_args)
+        super(Capability, self).__init__(**kw_args)
 
     def getCrew(self):
         

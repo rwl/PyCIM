@@ -20,7 +20,7 @@ class BusNameMarker(IdentifiedObject):
     """Used to apply user standard names to topology buses. Typically used for 'bus/branch' case generation. Associated with one or more ConnectivityNodes that are normally a part of the bus name.    The associated ConnectivityNodes are to be connected by non-retained switches. For a ring bus station configuration, all busbar connectivity nodes in the ring are typically associated.   For a breaker and a half scheme, both busbars would be associated.  For a ring bus, all busbars would be associated.  For a 'straight' busbar configuration, only the main connectivity node at the busbar would be associated.
     """
 
-    def __init__(self, ConnectivityNode=None, ReportingGroup=None, *args, **kw_args):
+    def __init__(self, ConnectivityNode=None, ReportingGroup=None, **kw_args):
         """Initializes a new 'BusNameMarker' instance.
 
         @param ConnectivityNode: The list of nodes which have the same bus name in the normal  topology.  Note that this list of ConnectivityNodes should be connected by objects derived from Switch that are normally closed.
@@ -32,7 +32,7 @@ class BusNameMarker(IdentifiedObject):
         self._ReportingGroup = None
         self.ReportingGroup = ReportingGroup
 
-        super(BusNameMarker, self).__init__(*args, **kw_args)
+        super(BusNameMarker, self).__init__(**kw_args)
 
     def getConnectivityNode(self):
         """The list of nodes which have the same bus name in the normal  topology.  Note that this list of ConnectivityNodes should be connected by objects derived from Switch that are normally closed.

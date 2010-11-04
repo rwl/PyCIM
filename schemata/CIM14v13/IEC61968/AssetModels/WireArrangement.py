@@ -20,7 +20,7 @@ class WireArrangement(IdentifiedObject):
     """Identification, spacing and configuration of the wires of a Conductor, with reference to their type.
     """
 
-    def __init__(self, position=0, mountingPointY=0.0, mountingPointX=0.0, WireType=None, ConductorInfo=None, *args, **kw_args):
+    def __init__(self, position=0, mountingPointY=0.0, mountingPointX=0.0, WireType=None, ConductorInfo=None, **kw_args):
         """Initializes a new 'WireArrangement' instance.
 
         @param position: Position number on the structure corresponding to this wire. For example, use 1..3 for phases and 4 for the neutral on a 3-phase structure. The individual phase assignments matter; for example, ABC will produce a different set of unbalanced line parameters, by phase, than BAC. 
@@ -44,7 +44,7 @@ class WireArrangement(IdentifiedObject):
         self._ConductorInfo = None
         self.ConductorInfo = ConductorInfo
 
-        super(WireArrangement, self).__init__(*args, **kw_args)
+        super(WireArrangement, self).__init__(**kw_args)
 
     def getWireType(self):
         """Wire type used for this wire arrangement.

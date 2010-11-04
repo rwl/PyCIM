@@ -20,7 +20,7 @@ class FossilSteamSupply(SteamSupply):
     """Fossil fueled boiler (e.g., coal, oil, gas)
     """
 
-    def __init__(self, boilerControlMode='following', fuelSupplyTC=0.0, pressureCtrlDG=0.0, superHeater2Capacity=0.0, controlTC=0.0, controlErrorBiasP=0.0, pressureCtrlPG=0.0, pressureCtrlIG=0.0, feedWaterIG=0.0, superHeater1Capacity=0.0, mechPowerSensorLag=0.0, controlIC=0.0, controlPC=0.0, pressureFeedback=0, feedWaterPG=0.0, fuelDemandLimit=0.0, controlPED=0.0, auxPowerVersusFrequency=0.0, auxPowerVersusVoltage=0.0, maxErrorRateP=0.0, fuelSupplyDelay=0.0, superHeaterPipePD=0.0, controlPEB=0.0, feedWaterTC=0.0, throttlePressureSP=0.0, minErrorRateP=0.0, *args, **kw_args):
+    def __init__(self, boilerControlMode='following', fuelSupplyTC=0.0, pressureCtrlDG=0.0, superHeater2Capacity=0.0, controlTC=0.0, controlErrorBiasP=0.0, pressureCtrlPG=0.0, pressureCtrlIG=0.0, feedWaterIG=0.0, superHeater1Capacity=0.0, mechPowerSensorLag=0.0, controlIC=0.0, controlPC=0.0, pressureFeedback=0, feedWaterPG=0.0, fuelDemandLimit=0.0, controlPED=0.0, auxPowerVersusFrequency=0.0, auxPowerVersusVoltage=0.0, maxErrorRateP=0.0, fuelSupplyDelay=0.0, superHeaterPipePD=0.0, controlPEB=0.0, feedWaterTC=0.0, throttlePressureSP=0.0, minErrorRateP=0.0, **kw_args):
         """Initializes a new 'FossilSteamSupply' instance.
 
         @param boilerControlMode: The control mode of the boiler Values are: "following", "coordinated"
@@ -128,5 +128,5 @@ class FossilSteamSupply(SteamSupply):
         #: Active power Minimum Error Rate Limit
         self.minErrorRateP = minErrorRateP
 
-        super(FossilSteamSupply, self).__init__(*args, **kw_args)
+        super(FossilSteamSupply, self).__init__(**kw_args)
 

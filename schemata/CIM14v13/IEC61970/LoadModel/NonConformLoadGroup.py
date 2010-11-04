@@ -20,7 +20,7 @@ class NonConformLoadGroup(LoadGroup):
     """Loads that do not follow a daily and seasonal load variation pattern.
     """
 
-    def __init__(self, EnergyConsumers=None, NonConformLoadSchedules=None, *args, **kw_args):
+    def __init__(self, EnergyConsumers=None, NonConformLoadSchedules=None, **kw_args):
         """Initializes a new 'NonConformLoadGroup' instance.
 
         @param EnergyConsumers: Conform loads assigned to this ConformLoadGroup.
@@ -32,7 +32,7 @@ class NonConformLoadGroup(LoadGroup):
         self._NonConformLoadSchedules = []
         self.NonConformLoadSchedules = [] if NonConformLoadSchedules is None else NonConformLoadSchedules
 
-        super(NonConformLoadGroup, self).__init__(*args, **kw_args)
+        super(NonConformLoadGroup, self).__init__(**kw_args)
 
     def getEnergyConsumers(self):
         """Conform loads assigned to this ConformLoadGroup.

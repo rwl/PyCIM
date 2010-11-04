@@ -17,7 +17,7 @@
 
 class Element(object):
 
-    def __init__(self, UUID='', *args, **kw_args):
+    def __init__(self, UUID=''):
         """Initializes a new 'Element' instance.
 
         @param UUID: 

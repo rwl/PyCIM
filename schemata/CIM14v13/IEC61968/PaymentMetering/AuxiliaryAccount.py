@@ -20,7 +20,7 @@ class AuxiliaryAccount(Document):
     """Variable and dynamic part of AuxiliaryAgreement, generally representing the current state of the account related to the outstanding balance defined in AuxiliaryAgreement.
     """
 
-    def __init__(self, balance=0.0, principleAmount=0.0, lastDebit=None, Charges=None, lastCredit=None, AuxiliaryAgreement=None, PaymentTransactions=None, due=None, *args, **kw_args):
+    def __init__(self, balance=0.0, principleAmount=0.0, lastDebit=None, Charges=None, lastCredit=None, AuxiliaryAgreement=None, PaymentTransactions=None, due=None, **kw_args):
         """Initializes a new 'AuxiliaryAccount' instance.
 
         @param balance: The total amount currently remaining on this account that is required to be paid in order to settle the account to zero. This excludes any due amounts not yet paid. 
@@ -53,7 +53,7 @@ class AuxiliaryAccount(Document):
 
         self.due = due
 
-        super(AuxiliaryAccount, self).__init__(*args, **kw_args)
+        super(AuxiliaryAccount, self).__init__(**kw_args)
 
     # Details of the last debit transaction performed on this account.
     lastDebit = None

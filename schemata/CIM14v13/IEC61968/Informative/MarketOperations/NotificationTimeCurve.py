@@ -20,7 +20,7 @@ class NotificationTimeCurve(Curve):
     """Notification time curve as a function of down time.  Relationship between crew notification time (Y1-axis) and unit startup time (Y2-axis) vs. unit elapsed down time (X-axis).
     """
 
-    def __init__(self, GeneratingBids=None, *args, **kw_args):
+    def __init__(self, GeneratingBids=None, **kw_args):
         """Initializes a new 'NotificationTimeCurve' instance.
 
         @param GeneratingBids:
@@ -28,7 +28,7 @@ class NotificationTimeCurve(Curve):
         self._GeneratingBids = []
         self.GeneratingBids = [] if GeneratingBids is None else GeneratingBids
 
-        super(NotificationTimeCurve, self).__init__(*args, **kw_args)
+        super(NotificationTimeCurve, self).__init__(**kw_args)
 
     def getGeneratingBids(self):
         

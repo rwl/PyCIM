@@ -20,7 +20,7 @@ class BasePower(IdentifiedObject):
     """The BasePower class defines the base power used in the per unit calculations.
     """
 
-    def __init__(self, basePower=0.0, *args, **kw_args):
+    def __init__(self, basePower=0.0, **kw_args):
         """Initializes a new 'BasePower' instance.
 
         @param basePower: Definition of base power. 
@@ -28,5 +28,5 @@ class BasePower(IdentifiedObject):
         #: Definition of base power.
         self.basePower = basePower
 
-        super(BasePower, self).__init__(*args, **kw_args)
+        super(BasePower, self).__init__(**kw_args)
 

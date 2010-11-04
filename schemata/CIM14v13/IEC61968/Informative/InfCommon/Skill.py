@@ -20,7 +20,7 @@ class Skill(Document):
     """Proficiency level of a craft, which is required to operate or maintain a particular type of asset and/or perform certain types of work.
     """
 
-    def __init__(self, level='master', effectiveDateTime='', Crafts=None, QualificationRequirements=None, ErpPerson=None, certificationPeriod=None, *args, **kw_args):
+    def __init__(self, level='master', effectiveDateTime='', Crafts=None, QualificationRequirements=None, ErpPerson=None, certificationPeriod=None, **kw_args):
         """Initializes a new 'Skill' instance.
 
         @param level: Level of skill for a Craft. Values are: "master", "other", "standard", "apprentice"
@@ -47,7 +47,7 @@ class Skill(Document):
 
         self.certificationPeriod = certificationPeriod
 
-        super(Skill, self).__init__(*args, **kw_args)
+        super(Skill, self).__init__(**kw_args)
 
     def getCrafts(self):
         

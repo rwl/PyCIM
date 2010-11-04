@@ -20,7 +20,7 @@ class ReportingSuperGroup(IdentifiedObject):
     """A reporting super group, groups reporting groups for a higher level report.
     """
 
-    def __init__(self, ReportingGroup=None, *args, **kw_args):
+    def __init__(self, ReportingGroup=None, **kw_args):
         """Initializes a new 'ReportingSuperGroup' instance.
 
         @param ReportingGroup: Reporting groups that are grouped under this group group.
@@ -28,7 +28,7 @@ class ReportingSuperGroup(IdentifiedObject):
         self._ReportingGroup = []
         self.ReportingGroup = [] if ReportingGroup is None else ReportingGroup
 
-        super(ReportingSuperGroup, self).__init__(*args, **kw_args)
+        super(ReportingSuperGroup, self).__init__(**kw_args)
 
     def getReportingGroup(self):
         """Reporting groups that are grouped under this group group.

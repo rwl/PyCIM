@@ -20,7 +20,7 @@ class LocLocRole(Role):
     """The relationship between one Location and another Location. One 'roleType' is 'Directions,' for which an additional attribute serves for providing a textual description for navigating from one location to another location.
     """
 
-    def __init__(self, directionInfo='', ToLocation=None, FromLocation=None, *args, **kw_args):
+    def __init__(self, directionInfo='', ToLocation=None, FromLocation=None, **kw_args):
         """Initializes a new 'LocLocRole' instance.
 
         @param directionInfo: Detailed directional information. 
@@ -36,7 +36,7 @@ class LocLocRole(Role):
         self._FromLocation = None
         self.FromLocation = FromLocation
 
-        super(LocLocRole, self).__init__(*args, **kw_args)
+        super(LocLocRole, self).__init__(**kw_args)
 
     def getToLocation(self):
         

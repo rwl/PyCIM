@@ -20,7 +20,7 @@ class ResistorAsset(ElectricalAsset):
     """Physical asset performing Resistor function.
     """
 
-    def __init__(self, Resistor=None, ResistorAssetModel=None, *args, **kw_args):
+    def __init__(self, Resistor=None, ResistorAssetModel=None, **kw_args):
         """Initializes a new 'ResistorAsset' instance.
 
         @param Resistor:
@@ -32,7 +32,7 @@ class ResistorAsset(ElectricalAsset):
         self._ResistorAssetModel = None
         self.ResistorAssetModel = ResistorAssetModel
 
-        super(ResistorAsset, self).__init__(*args, **kw_args)
+        super(ResistorAsset, self).__init__(**kw_args)
 
     def getResistor(self):
         

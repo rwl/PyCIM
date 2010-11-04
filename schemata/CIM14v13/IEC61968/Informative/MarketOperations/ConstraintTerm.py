@@ -20,7 +20,7 @@ class ConstraintTerm(IdentifiedObject):
     """A constraint term is one element of a linear constraint.
     """
 
-    def __init__(self, factor='', function='', SecurityConstraintSum=None, *args, **kw_args):
+    def __init__(self, factor='', function='', SecurityConstraintSum=None, **kw_args):
         """Initializes a new 'ConstraintTerm' instance.
 
         @param factor: 
@@ -36,7 +36,7 @@ class ConstraintTerm(IdentifiedObject):
         self._SecurityConstraintSum = None
         self.SecurityConstraintSum = SecurityConstraintSum
 
-        super(ConstraintTerm, self).__init__(*args, **kw_args)
+        super(ConstraintTerm, self).__init__(**kw_args)
 
     def getSecurityConstraintSum(self):
         

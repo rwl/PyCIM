@@ -20,7 +20,7 @@ class ConnectDisconnectFunction(DeviceFunction):
     """A function that will disconnect or reconnect the customer's load under defined conditions.
     """
 
-    def __init__(self, isDelayedDiscon=False, isConnected=False, eventCount=0, isLocalAutoDisconOp=False, isRemoteAutoDisconOp=False, isRemoteAutoReconOp=False, isLocalAutoReconOp=False, rcdInfo=None, Switches=None, *args, **kw_args):
+    def __init__(self, isDelayedDiscon=False, isConnected=False, eventCount=0, isLocalAutoDisconOp=False, isRemoteAutoDisconOp=False, isRemoteAutoReconOp=False, isLocalAutoReconOp=False, rcdInfo=None, Switches=None, **kw_args):
         """Initializes a new 'ConnectDisconnectFunction' instance.
 
         @param isDelayedDiscon: If set true, the switch may disconnect the service at the end of a specified time delay after the disconnect signal had been given. If set false, the switch may disconnect the service immediately after the disconnect signal had been given. This is typically the case for over current circuit-breakers which are classified as either instantaneous or slow acting. 
@@ -59,7 +59,7 @@ class ConnectDisconnectFunction(DeviceFunction):
         self._Switches = []
         self.Switches = [] if Switches is None else Switches
 
-        super(ConnectDisconnectFunction, self).__init__(*args, **kw_args)
+        super(ConnectDisconnectFunction, self).__init__(**kw_args)
 
     # Information on remote connect disconnect switch.
     rcdInfo = None

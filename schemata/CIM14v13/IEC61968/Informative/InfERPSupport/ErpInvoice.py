@@ -20,7 +20,7 @@ class ErpInvoice(Document):
     """A roll up of invoice line items. The whole invoice has a due date and amount to be paid, with information such as customer, banks etc. being obtained through associations. The invoice roll up is based on individual line items that each contain amounts and descriptions for specific services or products.
     """
 
-    def __init__(self, billMediaKind='other', kind='sales', amount=0.0, proForma=False, transactionDateTime='', mailedDate='', dueDate='', transferType='', referenceNumber='', CustomerAccount=None, ErpInvoiceLineItems=None, *args, **kw_args):
+    def __init__(self, billMediaKind='other', kind='sales', amount=0.0, proForma=False, transactionDateTime='', mailedDate='', dueDate='', transferType='', referenceNumber='', CustomerAccount=None, ErpInvoiceLineItems=None, **kw_args):
         """Initializes a new 'ErpInvoice' instance.
 
         @param billMediaKind: Kind of media by which the CustomerBillingInfo was delivered. Values are: "other", "paper", "electronic"
@@ -68,7 +68,7 @@ class ErpInvoice(Document):
         self._ErpInvoiceLineItems = []
         self.ErpInvoiceLineItems = [] if ErpInvoiceLineItems is None else ErpInvoiceLineItems
 
-        super(ErpInvoice, self).__init__(*args, **kw_args)
+        super(ErpInvoice, self).__init__(**kw_args)
 
     def getCustomerAccount(self):
         

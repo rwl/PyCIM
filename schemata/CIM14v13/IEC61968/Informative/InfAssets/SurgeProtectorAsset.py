@@ -20,7 +20,7 @@ class SurgeProtectorAsset(ElectricalAsset):
     """Physical asset performing SurgeProtector function.
     """
 
-    def __init__(self, SurgeProtector=None, SurgeProtectorAssetModel=None, *args, **kw_args):
+    def __init__(self, SurgeProtector=None, SurgeProtectorAssetModel=None, **kw_args):
         """Initializes a new 'SurgeProtectorAsset' instance.
 
         @param SurgeProtector:
@@ -32,7 +32,7 @@ class SurgeProtectorAsset(ElectricalAsset):
         self._SurgeProtectorAssetModel = None
         self.SurgeProtectorAssetModel = SurgeProtectorAssetModel
 
-        super(SurgeProtectorAsset, self).__init__(*args, **kw_args)
+        super(SurgeProtectorAsset, self).__init__(**kw_args)
 
     def getSurgeProtector(self):
         

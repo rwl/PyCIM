@@ -20,7 +20,7 @@ class PowerTransformer(Equipment):
     """An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).
     """
 
-    def __init__(self, bmagSat=0.0, magBaseU=0.0, magSatFlux=0.0, TransformerWindings=None, Flowgates=None, HeatExchanger=None, *args, **kw_args):
+    def __init__(self, bmagSat=0.0, magBaseU=0.0, magSatFlux=0.0, TransformerWindings=None, Flowgates=None, HeatExchanger=None, **kw_args):
         """Initializes a new 'PowerTransformer' instance.
 
         @param bmagSat: Core shunt magnetizing susceptance in the saturation region. 
@@ -48,7 +48,7 @@ class PowerTransformer(Equipment):
         self._HeatExchanger = None
         self.HeatExchanger = HeatExchanger
 
-        super(PowerTransformer, self).__init__(*args, **kw_args)
+        super(PowerTransformer, self).__init__(**kw_args)
 
     def getTransformerWindings(self):
         """A transformer has windings

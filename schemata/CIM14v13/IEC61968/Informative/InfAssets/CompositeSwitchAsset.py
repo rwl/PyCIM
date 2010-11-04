@@ -20,7 +20,7 @@ class CompositeSwitchAsset(Asset):
     """Physical asset that performs a given CompositeSwitch's role.
     """
 
-    def __init__(self, kind='ugMultiSwitch', CompositeSwitchInfo=None, CompositeSwitchAssetModel=None, *args, **kw_args):
+    def __init__(self, kind='ugMultiSwitch', CompositeSwitchInfo=None, CompositeSwitchAssetModel=None, **kw_args):
         """Initializes a new 'CompositeSwitchAsset' instance.
 
         @param kind: Kind of composite switch. Values are: "ugMultiSwitch", "throwOver", "escoThrowOver", "gral", "ral", "other", "regulatorBypass"
@@ -36,7 +36,7 @@ class CompositeSwitchAsset(Asset):
         self._CompositeSwitchAssetModel = None
         self.CompositeSwitchAssetModel = CompositeSwitchAssetModel
 
-        super(CompositeSwitchAsset, self).__init__(*args, **kw_args)
+        super(CompositeSwitchAsset, self).__init__(**kw_args)
 
     def getCompositeSwitchInfo(self):
         

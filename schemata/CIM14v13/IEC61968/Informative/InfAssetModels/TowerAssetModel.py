@@ -20,7 +20,7 @@ class TowerAssetModel(AssetModel):
     """A type of tower supplied by a given manufacturer or constructed from a common design.
     """
 
-    def __init__(self, TowerTypeAsset=None, Towers=None, *args, **kw_args):
+    def __init__(self, TowerTypeAsset=None, Towers=None, **kw_args):
         """Initializes a new 'TowerAssetModel' instance.
 
         @param TowerTypeAsset:
@@ -32,7 +32,7 @@ class TowerAssetModel(AssetModel):
         self._Towers = []
         self.Towers = [] if Towers is None else Towers
 
-        super(TowerAssetModel, self).__init__(*args, **kw_args)
+        super(TowerAssetModel, self).__init__(**kw_args)
 
     def getTowerTypeAsset(self):
         

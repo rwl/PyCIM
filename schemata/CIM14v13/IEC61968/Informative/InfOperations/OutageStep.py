@@ -20,7 +20,7 @@ class OutageStep(IdentifiedObject):
     """Holds an outage start and end time for each supply point of an outage record. The supply point for a given step is the associated PowerSystemResource instance.
     """
 
-    def __init__(self, jobPriority='', totalCml=0.0, estimatedRestoreDateTime='', averageCml=0.0, shockReported=False, specialCustomerCount=0, callerCount=0, damage=False, criticalCustomerCount=0, fatality=False, totalCustomerCount=0, injury=False, Crews=None, OutageCodes=None, OutageRecord=None, status=None, noPowerInterval=None, ConductingEquipmentRoles=None, *args, **kw_args):
+    def __init__(self, jobPriority='', totalCml=0.0, estimatedRestoreDateTime='', averageCml=0.0, shockReported=False, specialCustomerCount=0, callerCount=0, damage=False, criticalCustomerCount=0, fatality=False, totalCustomerCount=0, injury=False, Crews=None, OutageCodes=None, OutageRecord=None, status=None, noPowerInterval=None, ConductingEquipmentRoles=None, **kw_args):
         """Initializes a new 'OutageStep' instance.
 
         @param jobPriority: 
@@ -94,7 +94,7 @@ class OutageStep(IdentifiedObject):
         self._ConductingEquipmentRoles = []
         self.ConductingEquipmentRoles = [] if ConductingEquipmentRoles is None else ConductingEquipmentRoles
 
-        super(OutageStep, self).__init__(*args, **kw_args)
+        super(OutageStep, self).__init__(**kw_args)
 
     def getCrews(self):
         

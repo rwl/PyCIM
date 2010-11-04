@@ -20,7 +20,7 @@ class StartupModel(IdentifiedObject):
     """Unit start up characteristics depending on how long the unit has been off line
     """
 
-    def __init__(self, incrementalMaintCost=0.0, startupDate='', startupCost=0.0, stbyAuxP=0.0, startupPriority=0, fixedMaintCost=0.0, minimumDownTime=0.0, riskFactorCost=0.0, minimumRunTime=0.0, hotStandbyHeat=0.0, StartMainFuelCurve=None, StartIgnFuelCurve=None, StartRampCurve=None, ThermalGeneratingUnit=None, *args, **kw_args):
+    def __init__(self, incrementalMaintCost=0.0, startupDate='', startupCost=0.0, stbyAuxP=0.0, startupPriority=0, fixedMaintCost=0.0, minimumDownTime=0.0, riskFactorCost=0.0, minimumRunTime=0.0, hotStandbyHeat=0.0, StartMainFuelCurve=None, StartIgnFuelCurve=None, StartRampCurve=None, ThermalGeneratingUnit=None, **kw_args):
         """Initializes a new 'StartupModel' instance.
 
         @param incrementalMaintCost: Incremental Maintenance Cost 
@@ -80,7 +80,7 @@ class StartupModel(IdentifiedObject):
         self._ThermalGeneratingUnit = None
         self.ThermalGeneratingUnit = ThermalGeneratingUnit
 
-        super(StartupModel, self).__init__(*args, **kw_args)
+        super(StartupModel, self).__init__(**kw_args)
 
     def getStartMainFuelCurve(self):
         """The unit's startup model may have a startup main fuel curve

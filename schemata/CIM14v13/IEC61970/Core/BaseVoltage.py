@@ -20,7 +20,7 @@ class BaseVoltage(IdentifiedObject):
     """Defines a nominal base voltage which is referenced in the system.
     """
 
-    def __init__(self, isDC=False, nominalVoltage=0.0, VoltageLevel=None, ConductingEquipment=None, TopologicalNode=None, *args, **kw_args):
+    def __init__(self, isDC=False, nominalVoltage=0.0, VoltageLevel=None, ConductingEquipment=None, TopologicalNode=None, **kw_args):
         """Initializes a new 'BaseVoltage' instance.
 
         @param isDC: If true, this is a direct current base voltage and items assigned to this base voltage are also associated with a direct current capabilities.   False indicates alternating current. 
@@ -44,7 +44,7 @@ class BaseVoltage(IdentifiedObject):
         self._TopologicalNode = []
         self.TopologicalNode = [] if TopologicalNode is None else TopologicalNode
 
-        super(BaseVoltage, self).__init__(*args, **kw_args)
+        super(BaseVoltage, self).__init__(**kw_args)
 
     def getVoltageLevel(self):
         """The VoltageLevels having this BaseVoltage.

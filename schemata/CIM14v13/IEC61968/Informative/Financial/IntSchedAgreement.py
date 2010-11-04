@@ -20,7 +20,7 @@ class IntSchedAgreement(Agreement):
     """A type of agreement that provides the default method by which interchange schedules are to be integrated to obtain hourly energy schedules for accounting.
     """
 
-    def __init__(self, defaultIntegrationMethod=None, Organisations=None, *args, **kw_args):
+    def __init__(self, defaultIntegrationMethod=None, Organisations=None, **kw_args):
         """Initializes a new 'IntSchedAgreement' instance.
 
         @param defaultIntegrationMethod: The default method by which interchange schedules are to be integrated to obtain hourly energy schedules for accounting. Method #1 is to integrate the instantaneous schedule between the hourly boundaries. Method #2 compensates for any up/down ramping that occurs across the hourly boundary (this is called block accounting). 
@@ -32,7 +32,7 @@ class IntSchedAgreement(Agreement):
         self._Organisations = []
         self.Organisations = [] if Organisations is None else Organisations
 
-        super(IntSchedAgreement, self).__init__(*args, **kw_args)
+        super(IntSchedAgreement, self).__init__(**kw_args)
 
     def getOrganisations(self):
         

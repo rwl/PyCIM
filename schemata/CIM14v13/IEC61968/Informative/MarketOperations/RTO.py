@@ -20,7 +20,7 @@ class RTO(ErpOrganisation):
     """Regional transmission operator.
     """
 
-    def __init__(self, Pnodes=None, SecurityConstraints=None, SecurityConstraintsLinear=None, ResourceGroupReqs=None, Markets=None, *args, **kw_args):
+    def __init__(self, Pnodes=None, SecurityConstraints=None, SecurityConstraintsLinear=None, ResourceGroupReqs=None, Markets=None, **kw_args):
         """Initializes a new 'RTO' instance.
 
         @param Pnodes:
@@ -44,7 +44,7 @@ class RTO(ErpOrganisation):
         self._Markets = []
         self.Markets = [] if Markets is None else Markets
 
-        super(RTO, self).__init__(*args, **kw_args)
+        super(RTO, self).__init__(**kw_args)
 
     def getPnodes(self):
         

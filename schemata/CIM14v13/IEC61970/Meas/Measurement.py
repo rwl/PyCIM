@@ -20,7 +20,7 @@ class Measurement(IdentifiedObject):
     """A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement.  The PSR - Measurement association is intended to capture this use of Measurement and is included in the naming hierarchy based on EquipmentContainer. The naming hierarchy typically has Measurements as leafs, e.g. Substation-VoltageLevel-Bay-Switch-Measurement. Some Measurements represent quantities related to a particular sensor location in the network, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is not captured in the PSR - Measurement association. Instead it is captured by the Measurement - Terminal association that is used to define the sensing location in the network topology. The location is defined by the connection of the Terminal to ConductingEquipment.  Two possible paths exist: 1) Measurement-Terminal- ConnectivityNode-Terminal-ConductingEquipment 2) Measurement-Terminal-ConductingEquipment Alternative 2 is the only allowed use.  When the sensor location is needed both Measurement-PSR and Measurement-Terminal are used. The Measurement-Terminal association is never used alone.
     """
 
-    def __init__(self, measurementType='', Asset=None, For_TiePoint=None, PowerSystemResource=None, DynamicSchedules=None, Pnode=None, Terminal=None, Documents=None, Locations=None, ChangeItems=None, ViolationLimits=None, By_TiePoint=None, Unit=None, *args, **kw_args):
+    def __init__(self, measurementType='', Asset=None, For_TiePoint=None, PowerSystemResource=None, DynamicSchedules=None, Pnode=None, Terminal=None, Documents=None, Locations=None, ChangeItems=None, ViolationLimits=None, By_TiePoint=None, Unit=None, **kw_args):
         """Initializes a new 'Measurement' instance.
 
         @param measurementType: Specifies the type of Measurement, e.g. IndoorTemperature, OutDoorTemperature, BusVoltage, GeneratorVoltage, LineFlow etc. 
@@ -76,7 +76,7 @@ class Measurement(IdentifiedObject):
         self._Unit = None
         self.Unit = Unit
 
-        super(Measurement, self).__init__(*args, **kw_args)
+        super(Measurement, self).__init__(**kw_args)
 
     def getAsset(self):
         

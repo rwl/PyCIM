@@ -20,9 +20,9 @@ class ErpChartOfAccounts(Document):
     """Accounting structure of a business. Each account represents a financial aspect of a business, such as its Accounts Payable, or the value of its inventory, or its office supply expenses.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'ErpChartOfAccounts' instance.
 
         """
-        super(ErpChartOfAccounts, self).__init__(*args, **kw_args)
+        super(ErpChartOfAccounts, self).__init__(**kw_args)
 

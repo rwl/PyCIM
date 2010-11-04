@@ -20,7 +20,7 @@ class PotentialTransformerInfo(ElectricalInfo):
     """Used to define either the required additional electrical properties of a type of a Potential Transformer (PT), or a PT Model.
     """
 
-    def __init__(self, primaryRatio=None, tertiaryRatio=None, secondaryRatio=None, PotentialTransformerAssets=None, PotentialTransformerAssetModels=None, PotentialTransformerTypeAsset=None, *args, **kw_args):
+    def __init__(self, primaryRatio=None, tertiaryRatio=None, secondaryRatio=None, PotentialTransformerAssets=None, PotentialTransformerAssetModels=None, PotentialTransformerTypeAsset=None, **kw_args):
         """Initializes a new 'PotentialTransformerInfo' instance.
 
         @param primaryRatio: Ratio for the primary winding tap changer.
@@ -45,7 +45,7 @@ class PotentialTransformerInfo(ElectricalInfo):
         self._PotentialTransformerTypeAsset = None
         self.PotentialTransformerTypeAsset = PotentialTransformerTypeAsset
 
-        super(PotentialTransformerInfo, self).__init__(*args, **kw_args)
+        super(PotentialTransformerInfo, self).__init__(**kw_args)
 
     # Ratio for the primary winding tap changer.
     primaryRatio = None

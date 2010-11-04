@@ -20,9 +20,9 @@ class Guy(StructureSupport):
     """A type of support for structures.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'Guy' instance.
 
         """
-        super(Guy, self).__init__(*args, **kw_args)
+        super(Guy, self).__init__(**kw_args)
 

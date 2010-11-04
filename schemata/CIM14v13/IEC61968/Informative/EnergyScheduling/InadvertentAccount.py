@@ -20,7 +20,7 @@ class InadvertentAccount(Curve):
     """An account for tracking inadvertent interchange versus time for each control area. A control area may have more than one inadvertent account in order to track inadvertent over one or more specific tie points in addition to the usual overall net inadvertent. Separate accounts would also be used to track designated time periods, such as on-peak and off-peak.
     """
 
-    def __init__(self, HostControlArea=None, *args, **kw_args):
+    def __init__(self, HostControlArea=None, **kw_args):
         """Initializes a new 'InadvertentAccount' instance.
 
         @param HostControlArea: A control area can have one or more net inadvertent interchange accounts
@@ -28,7 +28,7 @@ class InadvertentAccount(Curve):
         self._HostControlArea = None
         self.HostControlArea = HostControlArea
 
-        super(InadvertentAccount, self).__init__(*args, **kw_args)
+        super(InadvertentAccount, self).__init__(**kw_args)
 
     def getHostControlArea(self):
         """A control area can have one or more net inadvertent interchange accounts

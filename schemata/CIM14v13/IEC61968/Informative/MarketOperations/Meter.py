@@ -20,7 +20,7 @@ class Meter(IdentifiedObject):
     """This is generic logical meter object.
     """
 
-    def __init__(self, RegisteredResource=None, *args, **kw_args):
+    def __init__(self, RegisteredResource=None, **kw_args):
         """Initializes a new 'Meter' instance.
 
         @param RegisteredResource:
@@ -28,7 +28,7 @@ class Meter(IdentifiedObject):
         self._RegisteredResource = None
         self.RegisteredResource = RegisteredResource
 
-        super(Meter, self).__init__(*args, **kw_args)
+        super(Meter, self).__init__(**kw_args)
 
     def getRegisteredResource(self):
         

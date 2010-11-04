@@ -20,7 +20,7 @@ class VehicleTypeAsset(TypeAsset):
     """Documentation for a generic vehicle that may be used for various purposes such as work planning.
     """
 
-    def __init__(self, VehicleAssetModels=None, *args, **kw_args):
+    def __init__(self, VehicleAssetModels=None, **kw_args):
         """Initializes a new 'VehicleTypeAsset' instance.
 
         @param VehicleAssetModels:
@@ -28,7 +28,7 @@ class VehicleTypeAsset(TypeAsset):
         self._VehicleAssetModels = []
         self.VehicleAssetModels = [] if VehicleAssetModels is None else VehicleAssetModels
 
-        super(VehicleTypeAsset, self).__init__(*args, **kw_args)
+        super(VehicleTypeAsset, self).__init__(**kw_args)
 
     def getVehicleAssetModels(self):
         

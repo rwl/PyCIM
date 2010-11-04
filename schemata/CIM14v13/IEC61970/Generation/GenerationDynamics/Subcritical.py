@@ -20,9 +20,9 @@ class Subcritical(FossilSteamSupply):
     """Once-through subcritical boiler
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'Subcritical' instance.
 
         """
-        super(Subcritical, self).__init__(*args, **kw_args)
+        super(Subcritical, self).__init__(**kw_args)
 

@@ -20,7 +20,7 @@ class ReserveReq(ResourceGroupReq):
     """Requirements for minimum amount of reserve and/or regulation to be supplied by a set of qualified resources.
     """
 
-    def __init__(self, MarketProduct=None, ReserveReqCurve=None, SensitivityPriceCurve=None, *args, **kw_args):
+    def __init__(self, MarketProduct=None, ReserveReqCurve=None, SensitivityPriceCurve=None, **kw_args):
         """Initializes a new 'ReserveReq' instance.
 
         @param MarketProduct: Market product associated with reserve requirement must be a reserve or regulation product.
@@ -36,7 +36,7 @@ class ReserveReq(ResourceGroupReq):
         self._SensitivityPriceCurve = None
         self.SensitivityPriceCurve = SensitivityPriceCurve
 
-        super(ReserveReq, self).__init__(*args, **kw_args)
+        super(ReserveReq, self).__init__(**kw_args)
 
     def getMarketProduct(self):
         """Market product associated with reserve requirement must be a reserve or regulation product.

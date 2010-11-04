@@ -20,7 +20,7 @@ class LineDetail(Element):
     """Details on an amount line, with rounding, date and note.
     """
 
-    def __init__(self, amount=0.0, rounding=0.0, note='', dateTime='', *args, **kw_args):
+    def __init__(self, amount=0.0, rounding=0.0, note='', dateTime='', **kw_args):
         """Initializes a new 'LineDetail' instance.
 
         @param amount: Amount for this line item. 
@@ -40,5 +40,5 @@ class LineDetail(Element):
         #: Date and time when this line was created in the application process.
         self.dateTime = dateTime
 
-        super(LineDetail, self).__init__(*args, **kw_args)
+        super(LineDetail, self).__init__(**kw_args)
 

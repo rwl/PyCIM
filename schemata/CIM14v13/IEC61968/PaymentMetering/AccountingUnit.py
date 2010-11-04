@@ -20,7 +20,7 @@ class AccountingUnit(Element):
     """Unit for accounting; use either 'energyUnit' or 'currencyUnit' to specify the unit for 'value'.
     """
 
-    def __init__(self, monetaryUnit='EUR', multiplier='m', energyUnit=0.0, value=0.0, *args, **kw_args):
+    def __init__(self, monetaryUnit='EUR', multiplier='m', energyUnit=0.0, value=0.0, **kw_args):
         """Initializes a new 'AccountingUnit' instance.
 
         @param monetaryUnit: Unit of currency. Values are: "EUR", "other", "JPY", "DKK", "NOK", "CNY", "USD", "INR", "SEK", "AUD", "CHF", "CAD", "RUR", "GBP"
@@ -40,5 +40,5 @@ class AccountingUnit(Element):
         #: Value expressed in applicable units.
         self.value = value
 
-        super(AccountingUnit, self).__init__(*args, **kw_args)
+        super(AccountingUnit, self).__init__(**kw_args)
 

@@ -20,7 +20,7 @@ class ProtectionEquipmentAssetModel(ElectricalAssetModel):
     """Documentation for a type of protection equipment asset of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, ProtectionEquipmentAssets=None, ProtectionEquipmentTypeAsset=None, *args, **kw_args):
+    def __init__(self, ProtectionEquipmentAssets=None, ProtectionEquipmentTypeAsset=None, **kw_args):
         """Initializes a new 'ProtectionEquipmentAssetModel' instance.
 
         @param ProtectionEquipmentAssets:
@@ -32,7 +32,7 @@ class ProtectionEquipmentAssetModel(ElectricalAssetModel):
         self._ProtectionEquipmentTypeAsset = None
         self.ProtectionEquipmentTypeAsset = ProtectionEquipmentTypeAsset
 
-        super(ProtectionEquipmentAssetModel, self).__init__(*args, **kw_args)
+        super(ProtectionEquipmentAssetModel, self).__init__(**kw_args)
 
     def getProtectionEquipmentAssets(self):
         

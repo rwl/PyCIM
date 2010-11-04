@@ -20,7 +20,7 @@ class MaterialItem(IdentifiedObject):
     """The physical consumable supply used for work and other purposes. It includes items such as nuts, bolts, brackets, glue, etc.
     """
 
-    def __init__(self, actualCost=0.0, materialCode='', quantity=0, costType='', costDescription='', externalRefID='', account='', Usages=None, DesignLocation=None, status=None, WorkTask=None, ErpInventoryCounts=None, ErpRecDelvLineItems=None, ErpPOLineItems=None, WorkCostDetail=None, TypeMaterial=None, *args, **kw_args):
+    def __init__(self, actualCost=0.0, materialCode='', quantity=0, costType='', costDescription='', externalRefID='', account='', Usages=None, DesignLocation=None, status=None, WorkTask=None, ErpInventoryCounts=None, ErpRecDelvLineItems=None, ErpPOLineItems=None, WorkCostDetail=None, TypeMaterial=None, **kw_args):
         """Initializes a new 'MaterialItem' instance.
 
         @param actualCost: The actual cost of this particular material in this particular quantity. 
@@ -87,7 +87,7 @@ class MaterialItem(IdentifiedObject):
         self._TypeMaterial = None
         self.TypeMaterial = TypeMaterial
 
-        super(MaterialItem, self).__init__(*args, **kw_args)
+        super(MaterialItem, self).__init__(**kw_args)
 
     def getUsages(self):
         

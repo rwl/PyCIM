@@ -20,7 +20,7 @@ class LoadShedFunction(LoadMgmtFunction):
     """A kind of LoadMgmtFunction that sheds a part of the customer load.
     """
 
-    def __init__(self, switchedLoad=0.0, *args, **kw_args):
+    def __init__(self, switchedLoad=0.0, **kw_args):
         """Initializes a new 'LoadShedFunction' instance.
 
         @param switchedLoad: The value of the load that is connected to the shedding switch. Typically this is a noted nominal value rather than a measured value. 
@@ -28,5 +28,5 @@ class LoadShedFunction(LoadMgmtFunction):
         #: The value of the load that is connected to the shedding switch. Typically this is a noted nominal value rather than a measured value.
         self.switchedLoad = switchedLoad
 
-        super(LoadShedFunction, self).__init__(*args, **kw_args)
+        super(LoadShedFunction, self).__init__(**kw_args)
 

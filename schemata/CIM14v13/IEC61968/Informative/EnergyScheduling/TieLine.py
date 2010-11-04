@@ -18,7 +18,7 @@ from CIM14v13.Element import Element
 
 class TieLine(Element):
 
-    def __init__(self, SideA_HostControlArea=None, SideB_HostControlArea=None, SideA_SubControlArea=None, CustomerConsumer=None, SideB_SubControlArea=None, DynamicEnergyTransaction=None, ControlAreaOperators=None, *args, **kw_args):
+    def __init__(self, SideA_HostControlArea=None, SideB_HostControlArea=None, SideA_SubControlArea=None, CustomerConsumer=None, SideB_SubControlArea=None, DynamicEnergyTransaction=None, ControlAreaOperators=None, **kw_args):
         """Initializes a new 'TieLine' instance.
 
         @param SideA_HostControlArea: A HostControlArea can have zero or more tie lines.
@@ -50,7 +50,7 @@ class TieLine(Element):
         self._ControlAreaOperators = []
         self.ControlAreaOperators = [] if ControlAreaOperators is None else ControlAreaOperators
 
-        super(TieLine, self).__init__(*args, **kw_args)
+        super(TieLine, self).__init__(**kw_args)
 
     def getSideA_HostControlArea(self):
         """A HostControlArea can have zero or more tie lines.

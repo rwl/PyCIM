@@ -20,7 +20,7 @@ class SwitchingOperation(IdentifiedObject):
     """A SwitchingOperation is used to define individual switch operations for an OutageSchedule. This OutageSchedule may be associated with another item of Substation such as a Transformer, Line, or Generator; or with the Switch itself as a PowerSystemResource. A Switch may be referenced by many OutageSchedules.
     """
 
-    def __init__(self, newState='open', operationTime='', OutageSchedule=None, Switches=None, *args, **kw_args):
+    def __init__(self, newState='open', operationTime='', OutageSchedule=None, Switches=None, **kw_args):
         """Initializes a new 'SwitchingOperation' instance.
 
         @param newState: The switch position that shall result from this SwitchingOperation Values are: "open", "close"
@@ -40,7 +40,7 @@ class SwitchingOperation(IdentifiedObject):
         self._Switches = []
         self.Switches = [] if Switches is None else Switches
 
-        super(SwitchingOperation, self).__init__(*args, **kw_args)
+        super(SwitchingOperation, self).__init__(**kw_args)
 
     def getOutageSchedule(self):
         """An OutageSchedule may operate many switches.

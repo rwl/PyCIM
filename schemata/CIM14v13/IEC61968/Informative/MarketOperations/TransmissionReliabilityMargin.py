@@ -20,7 +20,7 @@ class TransmissionReliabilityMargin(IdentifiedObject):
     """Transmission Reliability Margin (TRM) is defined as that amount of transmission transfer capability necessary to ensure that the interconnected transmission network is secure under a reasonable range of uncertainties in system conditions.
     """
 
-    def __init__(self, valueUnit='', trmValue=0.0, TrmType='', Flowgate=None, *args, **kw_args):
+    def __init__(self, valueUnit='', trmValue=0.0, TrmType='', Flowgate=None, **kw_args):
         """Initializes a new 'TransmissionReliabilityMargin' instance.
 
         @param valueUnit: unit of the TRM value. Could be MW or Percentage. 
@@ -40,7 +40,7 @@ class TransmissionReliabilityMargin(IdentifiedObject):
         self._Flowgate = []
         self.Flowgate = [] if Flowgate is None else Flowgate
 
-        super(TransmissionReliabilityMargin, self).__init__(*args, **kw_args)
+        super(TransmissionReliabilityMargin, self).__init__(**kw_args)
 
     def getFlowgate(self):
         """A fowgate may have 0 to 1 TRM

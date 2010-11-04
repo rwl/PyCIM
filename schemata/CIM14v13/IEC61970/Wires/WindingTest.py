@@ -20,7 +20,7 @@ class WindingTest(IdentifiedObject):
     """Physical winding test data for the winding/tap pairs of a transformer (or phase shifter). This test data can be used to derive other attributes of specific transformer or phase shifter models.
     """
 
-    def __init__(self, phaseShift=0.0, fromTapStep=0, noLoadLoss=0.0, toTapStep=0, excitingCurrent=0.0, loadLoss=0.0, leakageImpedance=0.0, voltage=0.0, To_TransformerWinding=None, From_TransformerWinding=None, *args, **kw_args):
+    def __init__(self, phaseShift=0.0, fromTapStep=0, noLoadLoss=0.0, toTapStep=0, excitingCurrent=0.0, loadLoss=0.0, leakageImpedance=0.0, voltage=0.0, To_TransformerWinding=None, From_TransformerWinding=None, **kw_args):
         """Initializes a new 'WindingTest' instance.
 
         @param phaseShift: The phase shift measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited. 
@@ -64,7 +64,7 @@ class WindingTest(IdentifiedObject):
         self._From_TransformerWinding = None
         self.From_TransformerWinding = From_TransformerWinding
 
-        super(WindingTest, self).__init__(*args, **kw_args)
+        super(WindingTest, self).__init__(**kw_args)
 
     def getTo_TransformerWinding(self):
         """The winding to which the test was conducted.  Note that although the 'from' side of the test is required, the 'to' side of a test is not always required.

@@ -20,9 +20,9 @@ class NuclearGeneratingUnit(GeneratingUnit):
     """A nuclear generating unit.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'NuclearGeneratingUnit' instance.
 
         """
-        super(NuclearGeneratingUnit, self).__init__(*args, **kw_args)
+        super(NuclearGeneratingUnit, self).__init__(**kw_args)
 

@@ -20,7 +20,7 @@ class EnergyArea(IdentifiedObject):
     """The class describes an area having energy production or consumption. The class is the basis for further specialization.
     """
 
-    def __init__(self, ControlArea=None, *args, **kw_args):
+    def __init__(self, ControlArea=None, **kw_args):
         """Initializes a new 'EnergyArea' instance.
 
         @param ControlArea: The control area specification that is used for the load forecast.
@@ -28,7 +28,7 @@ class EnergyArea(IdentifiedObject):
         self._ControlArea = None
         self.ControlArea = ControlArea
 
-        super(EnergyArea, self).__init__(*args, **kw_args)
+        super(EnergyArea, self).__init__(**kw_args)
 
     def getControlArea(self):
         """The control area specification that is used for the load forecast.

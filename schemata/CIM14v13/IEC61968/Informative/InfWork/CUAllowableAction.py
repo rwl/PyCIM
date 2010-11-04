@@ -20,7 +20,7 @@ class CUAllowableAction(IdentifiedObject):
     """Allowed actions: Install, Remove, Transfer, Abandon, etc.
     """
 
-    def __init__(self, CompatibleUnits=None, status=None, *args, **kw_args):
+    def __init__(self, CompatibleUnits=None, status=None, **kw_args):
         """Initializes a new 'CUAllowableAction' instance.
 
         @param CompatibleUnits:
@@ -31,7 +31,7 @@ class CUAllowableAction(IdentifiedObject):
 
         self.status = status
 
-        super(CUAllowableAction, self).__init__(*args, **kw_args)
+        super(CUAllowableAction, self).__init__(**kw_args)
 
     def getCompatibleUnits(self):
         

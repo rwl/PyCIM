@@ -20,7 +20,7 @@ class GmlSelector(IdentifiedObject):
     """A diagram element that allows selection by a user, i.e. as 'hyperNode' for navigating between diagrams, or as composite object representing multiple grouped objects.
     """
 
-    def __init__(self, Locations=None, ChangeItems=None, *args, **kw_args):
+    def __init__(self, Locations=None, ChangeItems=None, **kw_args):
         """Initializes a new 'GmlSelector' instance.
 
         @param Locations:
@@ -32,7 +32,7 @@ class GmlSelector(IdentifiedObject):
         self._ChangeItems = []
         self.ChangeItems = [] if ChangeItems is None else ChangeItems
 
-        super(GmlSelector, self).__init__(*args, **kw_args)
+        super(GmlSelector, self).__init__(**kw_args)
 
     def getLocations(self):
         

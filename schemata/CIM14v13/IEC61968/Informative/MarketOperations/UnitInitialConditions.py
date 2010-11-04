@@ -20,7 +20,7 @@ class UnitInitialConditions(IdentifiedObject):
     """Resource status at the end of a given clearing period.
     """
 
-    def __init__(self, resourceStatus=0, cumStatusChanges=0, statusDate='', resourceMW=0.0, timeInStatus=0.0, cumEnergy=None, GeneratingUnit=None, *args, **kw_args):
+    def __init__(self, resourceStatus=0, cumStatusChanges=0, statusDate='', resourceMW=0.0, timeInStatus=0.0, cumEnergy=None, GeneratingUnit=None, **kw_args):
         """Initializes a new 'UnitInitialConditions' instance.
 
         @param resourceStatus: Resource status at the end of previous clearing period:  0 - off-line  1 - on-line production  2 - in shutdown process  3 - in startup process 
@@ -52,7 +52,7 @@ class UnitInitialConditions(IdentifiedObject):
         self._GeneratingUnit = None
         self.GeneratingUnit = GeneratingUnit
 
-        super(UnitInitialConditions, self).__init__(*args, **kw_args)
+        super(UnitInitialConditions, self).__init__(**kw_args)
 
     def getGeneratingUnit(self):
         

@@ -20,7 +20,7 @@ class CabinetModel(AssetModel):
     """Documentation for a type of Cabinet of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, Cabinets=None, CabinetTypeAsset=None, *args, **kw_args):
+    def __init__(self, Cabinets=None, CabinetTypeAsset=None, **kw_args):
         """Initializes a new 'CabinetModel' instance.
 
         @param Cabinets:
@@ -32,7 +32,7 @@ class CabinetModel(AssetModel):
         self._CabinetTypeAsset = None
         self.CabinetTypeAsset = CabinetTypeAsset
 
-        super(CabinetModel, self).__init__(*args, **kw_args)
+        super(CabinetModel, self).__init__(**kw_args)
 
     def getCabinets(self):
         

@@ -20,7 +20,7 @@ class CompositeSwitch(Equipment):
     """A model of a set of individual Switches normally enclosed within the same cabinet and possibly with interlocks that restrict the combination of switch positions. These are typically found in medium voltage distribution networks.  A CompositeSwitch could represent a Ring-Main-Unit (RMU), or pad-mounted switchgear, with primitive internal devices such as an internal bus-bar plus 3 or 4 internal switches each of which may individually be open or closed. A CompositeSwitch and a set of contained Switches can also be used to represent a multi-position switch e.g. a switch that can connect a circuit to Ground, Open or Busbar.
     """
 
-    def __init__(self, compositeSwitchType='', Switches=None, *args, **kw_args):
+    def __init__(self, compositeSwitchType='', Switches=None, **kw_args):
         """Initializes a new 'CompositeSwitch' instance.
 
         @param compositeSwitchType: An alphanumeric code that can be used as a reference to extar information such as the description of the interlocking scheme if any 
@@ -32,7 +32,7 @@ class CompositeSwitch(Equipment):
         self._Switches = []
         self.Switches = [] if Switches is None else Switches
 
-        super(CompositeSwitch, self).__init__(*args, **kw_args)
+        super(CompositeSwitch, self).__init__(**kw_args)
 
     def getSwitches(self):
         """Switches contained in this Composite switch.

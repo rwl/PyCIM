@@ -20,7 +20,7 @@ class ComFunctionTypeAsset(ElectricalTypeAsset):
     """Documentation for a generic communication function that may be used for various purposes such as work planning.
     """
 
-    def __init__(self, ComFunctionAssetModels=None, *args, **kw_args):
+    def __init__(self, ComFunctionAssetModels=None, **kw_args):
         """Initializes a new 'ComFunctionTypeAsset' instance.
 
         @param ComFunctionAssetModels:
@@ -28,7 +28,7 @@ class ComFunctionTypeAsset(ElectricalTypeAsset):
         self._ComFunctionAssetModels = []
         self.ComFunctionAssetModels = [] if ComFunctionAssetModels is None else ComFunctionAssetModels
 
-        super(ComFunctionTypeAsset, self).__init__(*args, **kw_args)
+        super(ComFunctionTypeAsset, self).__init__(**kw_args)
 
     def getComFunctionAssetModels(self):
         

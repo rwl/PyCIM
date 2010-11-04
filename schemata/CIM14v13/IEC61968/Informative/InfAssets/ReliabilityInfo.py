@@ -20,7 +20,7 @@ class ReliabilityInfo(IdentifiedObject):
     """Information regarding the experienced and expected reliability of a specific asset, type of asset, or asset model.
     """
 
-    def __init__(self, momFailureRate=0.0, mTTR=0.0, Specification=None, Assets=None, *args, **kw_args):
+    def __init__(self, momFailureRate=0.0, mTTR=0.0, Specification=None, Assets=None, **kw_args):
         """Initializes a new 'ReliabilityInfo' instance.
 
         @param momFailureRate: Momentary failure rate (temporary failures/kft-year). 
@@ -40,7 +40,7 @@ class ReliabilityInfo(IdentifiedObject):
         self._Assets = []
         self.Assets = [] if Assets is None else Assets
 
-        super(ReliabilityInfo, self).__init__(*args, **kw_args)
+        super(ReliabilityInfo, self).__init__(**kw_args)
 
     def getSpecification(self):
         

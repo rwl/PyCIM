@@ -20,7 +20,7 @@ class FTR(Agreement):
     """Financial Transmission Rights (FTR) regarding transmission capacity at a flowgate.
     """
 
-    def __init__(self, action='', class='', baseEnergy=0.0, optimized='', ftrType='', Pnodes=None, EnergyPriceCurve=None, Flowgate=None, *args, **kw_args):
+    def __init__(self, action='', class='', baseEnergy=0.0, optimized='', ftrType='', Pnodes=None, EnergyPriceCurve=None, Flowgate=None, **kw_args):
         """Initializes a new 'FTR' instance.
 
         @param action: Buy, Sell 
@@ -56,7 +56,7 @@ class FTR(Agreement):
         self._Flowgate = None
         self.Flowgate = Flowgate
 
-        super(FTR, self).__init__(*args, **kw_args)
+        super(FTR, self).__init__(**kw_args)
 
     def getPnodes(self):
         

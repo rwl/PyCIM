@@ -20,7 +20,7 @@ class GeneratingUnit(Equipment):
     """A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set.
     """
 
-    def __init__(self, genOperatingMode='off', genControlMode='setpoint', genControlSource='onAGC', variableCost=0.0, shortPF=0.0, ratedGrossMinP=0.0, maxOperatingP=0.0, maximumAllowableSpinningReserve=0.0, startupTime=0.0, longPF=0.0, initialP=0.0, lowerRampRate=0.0, minimumOffTime=0.0, spinReserveRamp=0.0, fuelPriority=0, ratedGrossMaxP=0.0, modelDetail=0, efficiency=0.0, raiseRampRate=0.0, tieLinePF=0.0, penaltyFactor=0.0, minOperatingP=0.0, autoCntrlMarginP=0.0, minEconomicP=0.0, controlDeadband=0.0, dispReserveFlag=False, normalPF=0.0, highControlLimit=0.0, allocSpinResP=0.0, lowControlLimit=0.0, governorMPL=0.0, controlPulseLow=0.0, fastStartFlag=False, nominalP=0.0, baseP=0.0, ratedNetMaxP=0.0, maxEconomicP=0.0, controlResponseRate=0.0, stepChange=0.0, energyMinP=0.0, startupCost=0.0, governorSCD=0.0, controlPulseHigh=0.0, OperatedBy_GenerationProvider=None, ControlAreaGeneratingUnit=None, GenUnitOpCostCurves=None, SubControlArea=None, RegisteredGenerator=None, SynchronousMachines=None, GenUnitOpSchedule=None, GrossToNetActivePowerCurves=None, *args, **kw_args):
+    def __init__(self, genOperatingMode='off', genControlMode='setpoint', genControlSource='onAGC', variableCost=0.0, shortPF=0.0, ratedGrossMinP=0.0, maxOperatingP=0.0, maximumAllowableSpinningReserve=0.0, startupTime=0.0, longPF=0.0, initialP=0.0, lowerRampRate=0.0, minimumOffTime=0.0, spinReserveRamp=0.0, fuelPriority=0, ratedGrossMaxP=0.0, modelDetail=0, efficiency=0.0, raiseRampRate=0.0, tieLinePF=0.0, penaltyFactor=0.0, minOperatingP=0.0, autoCntrlMarginP=0.0, minEconomicP=0.0, controlDeadband=0.0, dispReserveFlag=False, normalPF=0.0, highControlLimit=0.0, allocSpinResP=0.0, lowControlLimit=0.0, governorMPL=0.0, controlPulseLow=0.0, fastStartFlag=False, nominalP=0.0, baseP=0.0, ratedNetMaxP=0.0, maxEconomicP=0.0, controlResponseRate=0.0, stepChange=0.0, energyMinP=0.0, startupCost=0.0, governorSCD=0.0, controlPulseHigh=0.0, OperatedBy_GenerationProvider=None, ControlAreaGeneratingUnit=None, GenUnitOpCostCurves=None, SubControlArea=None, RegisteredGenerator=None, SynchronousMachines=None, GenUnitOpSchedule=None, GrossToNetActivePowerCurves=None, **kw_args):
         """Initializes a new 'GeneratingUnit' instance.
 
         @param genOperatingMode: Operating mode for secondary control. Values are: "off", "AGC", "manual", "MRN", "LFC", "EDC", "fixed", "REG"
@@ -228,7 +228,7 @@ class GeneratingUnit(Equipment):
         self._GrossToNetActivePowerCurves = []
         self.GrossToNetActivePowerCurves = [] if GrossToNetActivePowerCurves is None else GrossToNetActivePowerCurves
 
-        super(GeneratingUnit, self).__init__(*args, **kw_args)
+        super(GeneratingUnit, self).__init__(**kw_args)
 
     def getOperatedBy_GenerationProvider(self):
         """A GenerationProvider operates one or more GeneratingUnits.

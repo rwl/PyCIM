@@ -18,7 +18,7 @@ from CIM14v13.IEC61968.Informative.MarketOperations.RegisteredResource import Re
 
 class RegisteredGenerator(RegisteredResource):
 
-    def __init__(self, lowerRampRate=None, maximumAllowableSpinningReserve=0.0, lowerControlRate=None, raiseControlRate=None, highControlLimit=0.0, maximumOperatingMW=0.0, raiseRampRate=None, spinReserveRamp=None, lowControlLImit=0.0, minimumOperatingMW=0.0, UnitInitialConditions=None, RampRateCurves=None, GeneratingBids=None, StartUpCostCurves=None, GeneratingUnit=None, *args, **kw_args):
+    def __init__(self, lowerRampRate=None, maximumAllowableSpinningReserve=0.0, lowerControlRate=None, raiseControlRate=None, highControlLimit=0.0, maximumOperatingMW=0.0, raiseRampRate=None, spinReserveRamp=None, lowControlLImit=0.0, minimumOperatingMW=0.0, UnitInitialConditions=None, RampRateCurves=None, GeneratingBids=None, StartUpCostCurves=None, GeneratingUnit=None, **kw_args):
         """Initializes a new 'RegisteredGenerator' instance.
 
         @param lowerRampRate: 
@@ -82,7 +82,7 @@ class RegisteredGenerator(RegisteredResource):
         self._GeneratingUnit = None
         self.GeneratingUnit = GeneratingUnit
 
-        super(RegisteredGenerator, self).__init__(*args, **kw_args)
+        super(RegisteredGenerator, self).__init__(**kw_args)
 
     def getUnitInitialConditions(self):
         

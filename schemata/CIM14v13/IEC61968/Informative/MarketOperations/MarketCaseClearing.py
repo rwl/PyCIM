@@ -20,7 +20,7 @@ class MarketCaseClearing(MarketFactors):
     """Market case clearing results are posted for a given settlement period.
     """
 
-    def __init__(self, modifiedDate='', postedDate='', caseType='', AncillaryServiceClearing=None, *args, **kw_args):
+    def __init__(self, modifiedDate='', postedDate='', caseType='', AncillaryServiceClearing=None, **kw_args):
         """Initializes a new 'MarketCaseClearing' instance.
 
         @param modifiedDate: Last time and date clearing results were manually modified. 
@@ -40,7 +40,7 @@ class MarketCaseClearing(MarketFactors):
         self._AncillaryServiceClearing = []
         self.AncillaryServiceClearing = [] if AncillaryServiceClearing is None else AncillaryServiceClearing
 
-        super(MarketCaseClearing, self).__init__(*args, **kw_args)
+        super(MarketCaseClearing, self).__init__(**kw_args)
 
     def getAncillaryServiceClearing(self):
         

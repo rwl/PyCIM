@@ -20,9 +20,9 @@ class Junction(Connector):
     """A point where one or more conducting equipments are connected with zero resistance.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'Junction' instance.
 
         """
-        super(Junction, self).__init__(*args, **kw_args)
+        super(Junction, self).__init__(**kw_args)
 

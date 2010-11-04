@@ -20,7 +20,7 @@ class CableInfo(ConductorInfo):
     """Cable data.
     """
 
-    def __init__(self, constructionKind='compacted', shieldMaterial='other', outerJacketKind='linearLowDensityPolyethylene', diameterOverCore=0.0, isStrandFill=False, diameterOverInsulation=0.0, diameterOverJacket=0.0, nominalTemperature=0.0, sheathAsNeutral=False, diameterOverScreen=0.0, *args, **kw_args):
+    def __init__(self, constructionKind='compacted', shieldMaterial='other', outerJacketKind='linearLowDensityPolyethylene', diameterOverCore=0.0, isStrandFill=False, diameterOverInsulation=0.0, diameterOverJacket=0.0, nominalTemperature=0.0, sheathAsNeutral=False, diameterOverScreen=0.0, **kw_args):
         """Initializes a new 'CableInfo' instance.
 
         @param constructionKind: Kind of construction of this cable. Values are: "compacted", "sector", "segmental", "solid", "stranded", "other", "compressed"
@@ -64,5 +64,5 @@ class CableInfo(ConductorInfo):
         #: Diameter over the outer screen; should be the shield's inside diameter..
         self.diameterOverScreen = diameterOverScreen
 
-        super(CableInfo, self).__init__(*args, **kw_args)
+        super(CableInfo, self).__init__(**kw_args)
 

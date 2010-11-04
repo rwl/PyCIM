@@ -20,7 +20,7 @@ class Marketer(ErpOrganisation):
     """Matches buyers and sellers, and secures transmission (and other ancillary services) needed to complete the energy transaction.
     """
 
-    def __init__(self, HeldBy=None, ResoldBy=None, Resells_EnergyProduct=None, HoldsTitleTo_EnergyProducts=None, *args, **kw_args):
+    def __init__(self, HeldBy=None, ResoldBy=None, Resells_EnergyProduct=None, HoldsTitleTo_EnergyProducts=None, **kw_args):
         """Initializes a new 'Marketer' instance.
 
         @param HeldBy: A Marketer holds title to a ServiceReservation.
@@ -40,7 +40,7 @@ class Marketer(ErpOrganisation):
         self._HoldsTitleTo_EnergyProducts = []
         self.HoldsTitleTo_EnergyProducts = [] if HoldsTitleTo_EnergyProducts is None else HoldsTitleTo_EnergyProducts
 
-        super(Marketer, self).__init__(*args, **kw_args)
+        super(Marketer, self).__init__(**kw_args)
 
     def getHeldBy(self):
         """A Marketer holds title to a ServiceReservation.

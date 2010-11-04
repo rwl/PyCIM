@@ -20,7 +20,7 @@ class ShuntCompensatorAsset(ElectricalAsset):
     """For a shunt capacitor or reactor or switchable bank of shunt capacitors or reactors, this is the physical asset performing the ShuntCompensator role (PSR).
     """
 
-    def __init__(self, ShuntCompensatorAssetModel=None, ShuntImpedanceInfo=None, *args, **kw_args):
+    def __init__(self, ShuntCompensatorAssetModel=None, ShuntImpedanceInfo=None, **kw_args):
         """Initializes a new 'ShuntCompensatorAsset' instance.
 
         @param ShuntCompensatorAssetModel:
@@ -32,7 +32,7 @@ class ShuntCompensatorAsset(ElectricalAsset):
         self._ShuntImpedanceInfo = None
         self.ShuntImpedanceInfo = ShuntImpedanceInfo
 
-        super(ShuntCompensatorAsset, self).__init__(*args, **kw_args)
+        super(ShuntCompensatorAsset, self).__init__(**kw_args)
 
     def getShuntCompensatorAssetModel(self):
         

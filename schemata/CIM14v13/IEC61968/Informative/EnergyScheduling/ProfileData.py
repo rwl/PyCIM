@@ -20,7 +20,7 @@ class ProfileData(Element):
     """Data for profile.
     """
 
-    def __init__(self, stopDateTime='', energyLevel=0.0, startDateTime='', capacityLevel=0.0, sequenceNumber=0, Profile=None, *args, **kw_args):
+    def __init__(self, stopDateTime='', energyLevel=0.0, startDateTime='', capacityLevel=0.0, sequenceNumber=0, Profile=None, **kw_args):
         """Initializes a new 'ProfileData' instance.
 
         @param stopDateTime: Stop date/time for this profile. 
@@ -48,7 +48,7 @@ class ProfileData(Element):
         self._Profile = []
         self.Profile = [] if Profile is None else Profile
 
-        super(ProfileData, self).__init__(*args, **kw_args)
+        super(ProfileData, self).__init__(**kw_args)
 
     def getProfile(self):
         """A profile has profile data associated with it.

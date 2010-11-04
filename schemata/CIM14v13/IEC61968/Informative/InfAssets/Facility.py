@@ -20,7 +20,7 @@ class Facility(AssetContainer):
     """A facility may contain buildings, storage facilities, switching facilities, power generation, manufacturing facilities, maintenance facilities, etc.
     """
 
-    def __init__(self, kind='', *args, **kw_args):
+    def __init__(self, kind='', **kw_args):
         """Initializes a new 'Facility' instance.
 
         @param kind: Kind of this facility. 
@@ -28,5 +28,5 @@ class Facility(AssetContainer):
         #: Kind of this facility.
         self.kind = kind
 
-        super(Facility, self).__init__(*args, **kw_args)
+        super(Facility, self).__init__(**kw_args)
 

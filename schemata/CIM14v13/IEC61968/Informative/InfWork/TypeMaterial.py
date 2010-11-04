@@ -20,7 +20,7 @@ class TypeMaterial(Document):
     """Documentation for a generic material item that may be used for design, work and other purposes. Any number of MaterialItems manufactured by various vendors may be used to perform this TypeMaterial. Note that class analagous to 'AssetModel' is not used for material items. This is because in some cases, for example, a utility sets up a Master material record for a 3 inch long half inch diameter steel bolt and they do not necessarily care what specific supplier is providing the material item. As different vendors are used to supply the part, the Stock Code of the material item can stay the same. In other cases, each time the vendor changes, a new stock code is set up so they can track material used by vendor. Therefore a Material Item 'Model' is not typically needed.
     """
 
-    def __init__(self, stockItem=False, quantity='', costType='', estUnitCost=0.0, ErpReqLineItems=None, ErpIssueInventories=None, CUMaterialItems=None, MaterialItems=None, *args, **kw_args):
+    def __init__(self, stockItem=False, quantity='', costType='', estUnitCost=0.0, ErpReqLineItems=None, ErpIssueInventories=None, CUMaterialItems=None, MaterialItems=None, **kw_args):
         """Initializes a new 'TypeMaterial' instance.
 
         @param stockItem: True if item is a stock item (default). 
@@ -56,7 +56,7 @@ class TypeMaterial(Document):
         self._MaterialItems = []
         self.MaterialItems = [] if MaterialItems is None else MaterialItems
 
-        super(TypeMaterial, self).__init__(*args, **kw_args)
+        super(TypeMaterial, self).__init__(**kw_args)
 
     def getErpReqLineItems(self):
         

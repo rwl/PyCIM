@@ -20,7 +20,7 @@ class CompatibleUnit(Document):
     """A pre-planned job model containing labor, material, and accounting requirements for standardized job planning.
     """
 
-    def __init__(self, estCost=0.0, quantity='', CUWorkEquipmentItems=None, CUContractorItems=None, Procedures=None, CUAssets=None, CUMaterialItems=None, PropertyUnit=None, CULaborItems=None, DesignLocationCUs=None, CUAllowableAction=None, CUGroup=None, CostType=None, *args, **kw_args):
+    def __init__(self, estCost=0.0, quantity='', CUWorkEquipmentItems=None, CUContractorItems=None, Procedures=None, CUAssets=None, CUMaterialItems=None, PropertyUnit=None, CULaborItems=None, DesignLocationCUs=None, CUAllowableAction=None, CUGroup=None, CostType=None, **kw_args):
         """Initializes a new 'CompatibleUnit' instance.
 
         @param estCost: Estimated total cost for perfoming CU. 
@@ -76,7 +76,7 @@ class CompatibleUnit(Document):
         self._CostType = None
         self.CostType = CostType
 
-        super(CompatibleUnit, self).__init__(*args, **kw_args)
+        super(CompatibleUnit, self).__init__(**kw_args)
 
     def getCUWorkEquipmentItems(self):
         

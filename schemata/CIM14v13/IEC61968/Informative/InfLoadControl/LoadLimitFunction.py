@@ -20,7 +20,7 @@ class LoadLimitFunction(LoadMgmtFunction):
     """A kind of LoadMgmtFunction that limits the customer load to a given value.
     """
 
-    def __init__(self, isAutoReconOp=False, disconnectTimeDelay=0.0, reconnectTimeDelay=0.0, maximumLoad=0.0, *args, **kw_args):
+    def __init__(self, isAutoReconOp=False, disconnectTimeDelay=0.0, reconnectTimeDelay=0.0, maximumLoad=0.0, **kw_args):
         """Initializes a new 'LoadLimitFunction' instance.
 
         @param isAutoReconOp: True if the switch will reconnect automatically, otherwise it will reconnect under manual control. 
@@ -40,5 +40,5 @@ class LoadLimitFunction(LoadMgmtFunction):
         #: The power level, to which the customer load is being limited when this function activates. When the maximum load is exceeded the switch will typically open to shed the complete customer load.
         self.maximumLoad = maximumLoad
 
-        super(LoadLimitFunction, self).__init__(*args, **kw_args)
+        super(LoadLimitFunction, self).__init__(**kw_args)
 

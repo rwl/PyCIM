@@ -20,7 +20,7 @@ class SvShuntCompensatorSections(StateVariable):
     """State variable for the number of sections in service for a shunt compensator.
     """
 
-    def __init__(self, sections=0, continuousSections=0.0, ShuntCompensator=None, *args, **kw_args):
+    def __init__(self, sections=0, continuousSections=0.0, ShuntCompensator=None, **kw_args):
         """Initializes a new 'SvShuntCompensatorSections' instance.
 
         @param sections: The number of sections in service. 
@@ -36,7 +36,7 @@ class SvShuntCompensatorSections(StateVariable):
         self._ShuntCompensator = None
         self.ShuntCompensator = ShuntCompensator
 
-        super(SvShuntCompensatorSections, self).__init__(*args, **kw_args)
+        super(SvShuntCompensatorSections, self).__init__(**kw_args)
 
     def getShuntCompensator(self):
         """The shunt compensator for which the state applies.

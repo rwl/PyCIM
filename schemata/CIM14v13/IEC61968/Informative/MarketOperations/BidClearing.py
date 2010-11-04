@@ -20,7 +20,7 @@ class BidClearing(Element):
     """Bid clearing results posted for a given settlement period.
     """
 
-    def __init__(self, noLoadCost=0.0, startUpCost=0.0, lostOpCost=0.0, Bid=None, *args, **kw_args):
+    def __init__(self, noLoadCost=0.0, startUpCost=0.0, lostOpCost=0.0, Bid=None, **kw_args):
         """Initializes a new 'BidClearing' instance.
 
         @param noLoadCost: No-load cost in monetary units. 
@@ -40,7 +40,7 @@ class BidClearing(Element):
         self._Bid = None
         self.Bid = Bid
 
-        super(BidClearing, self).__init__(*args, **kw_args)
+        super(BidClearing, self).__init__(**kw_args)
 
     def getBid(self):
         

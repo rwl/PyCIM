@@ -20,7 +20,7 @@ class SvInjection(StateVariable):
     """Injectixon state variable.
     """
 
-    def __init__(self, pNetInjection=0.0, qNetInjection=0.0, TopologicalNode=None, *args, **kw_args):
+    def __init__(self, pNetInjection=0.0, qNetInjection=0.0, TopologicalNode=None, **kw_args):
         """Initializes a new 'SvInjection' instance.
 
         @param pNetInjection: The activive power injected into the bus at this location. 
@@ -36,7 +36,7 @@ class SvInjection(StateVariable):
         self._TopologicalNode = None
         self.TopologicalNode = TopologicalNode
 
-        super(SvInjection, self).__init__(*args, **kw_args)
+        super(SvInjection, self).__init__(**kw_args)
 
     def getTopologicalNode(self):
         """The topological node associated with the state injection.

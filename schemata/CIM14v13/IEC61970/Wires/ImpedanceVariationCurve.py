@@ -20,7 +20,7 @@ class ImpedanceVariationCurve(Curve):
     """An Impedance Variation Curve describes the change in Transformer Winding impedance values in relationship to tap step changes.  The tap step is represented using the xValue, resistance using y1value, reactance using y2value, and magnetizing susceptance using y3value.  The resistance (r), reactance (x), and magnetizing susceptance (b) of the associated TransformerWinding define the impedance when the tap is at neutral step.  The curve values represent the change to the impedance from the neutral step values.  The impedance at a non-neutral step is calculated by adding the neutral step impedance (from the TransformerWinding) to the delta value from the curve.
     """
 
-    def __init__(self, TapChanger=None, *args, **kw_args):
+    def __init__(self, TapChanger=None, **kw_args):
         """Initializes a new 'ImpedanceVariationCurve' instance.
 
         @param TapChanger: An ImpedanceVariationCurve is defines impedance changes for a TapChanger.
@@ -28,7 +28,7 @@ class ImpedanceVariationCurve(Curve):
         self._TapChanger = None
         self.TapChanger = TapChanger
 
-        super(ImpedanceVariationCurve, self).__init__(*args, **kw_args)
+        super(ImpedanceVariationCurve, self).__init__(**kw_args)
 
     def getTapChanger(self):
         """An ImpedanceVariationCurve is defines impedance changes for a TapChanger.

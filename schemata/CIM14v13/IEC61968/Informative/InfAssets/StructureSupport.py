@@ -20,7 +20,7 @@ class StructureSupport(Asset):
     """Support for Structures.
     """
 
-    def __init__(self, length=0.0, direction=0.0, size='', rodLength=0.0, rodCount=0, SecuredStructure=None, *args, **kw_args):
+    def __init__(self, length=0.0, direction=0.0, size='', rodLength=0.0, rodCount=0, SecuredStructure=None, **kw_args):
         """Initializes a new 'StructureSupport' instance.
 
         @param length: Length of anchor lead or guy. 
@@ -48,7 +48,7 @@ class StructureSupport(Asset):
         self._SecuredStructure = None
         self.SecuredStructure = SecuredStructure
 
-        super(StructureSupport, self).__init__(*args, **kw_args)
+        super(StructureSupport, self).__init__(**kw_args)
 
     def getSecuredStructure(self):
         

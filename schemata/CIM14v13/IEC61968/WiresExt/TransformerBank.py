@@ -20,7 +20,7 @@ class TransformerBank(Equipment):
     """An assembly of transformers that are connected together. For three-phase transformers, there would be one transformer per bank. For banks of single-phase transformers, there will be more than one transformer per bank, and they need not be identical.
     """
 
-    def __init__(self, vectorGroup='', Transformers=None, *args, **kw_args):
+    def __init__(self, vectorGroup='', Transformers=None, **kw_args):
         """Initializes a new 'TransformerBank' instance.
 
         @param vectorGroup: Vector group of the bank for protective relaying, e.g., Dyn1. For unbalanced transformers, this may not be simply determined from the constituent winding connections. 
@@ -32,7 +32,7 @@ class TransformerBank(Equipment):
         self._Transformers = []
         self.Transformers = [] if Transformers is None else Transformers
 
-        super(TransformerBank, self).__init__(*args, **kw_args)
+        super(TransformerBank, self).__init__(**kw_args)
 
     def getTransformers(self):
         """All transformers that belong to this bank.

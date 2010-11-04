@@ -20,7 +20,7 @@ class ErpInventoryCount(IdentifiedObject):
     """This is related to Inventory physical counts organized by AssetModel. Note that a count of a type of asset can be accomplished by the association inherited by AssetModel (from Document) to Asset. It enables ERP applications to transfer an inventory count between ERP and the actual physical inventory location. This count may be a cycle count or a physical count.
     """
 
-    def __init__(self, AssetModel=None, MaterialItem=None, status=None, *args, **kw_args):
+    def __init__(self, AssetModel=None, MaterialItem=None, status=None, **kw_args):
         """Initializes a new 'ErpInventoryCount' instance.
 
         @param AssetModel:
@@ -35,7 +35,7 @@ class ErpInventoryCount(IdentifiedObject):
 
         self.status = status
 
-        super(ErpInventoryCount, self).__init__(*args, **kw_args)
+        super(ErpInventoryCount, self).__init__(**kw_args)
 
     def getAssetModel(self):
         

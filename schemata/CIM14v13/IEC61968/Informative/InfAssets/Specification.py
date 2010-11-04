@@ -20,7 +20,7 @@ class Specification(Document):
     """Specification can be used for various purposes relative to an asset, a logical device (PowerSystemResource), location, etc. Examples include documents supplied by manufacturers such as asset installation instructions, asset maintenance instructions, etc.
     """
 
-    def __init__(self, AssetProperites=None, QualificationRequirements=None, Ratings=None, DimensionsInfos=None, ReliabilityInfos=None, Mediums=None, AssetPropertyCurves=None, *args, **kw_args):
+    def __init__(self, AssetProperites=None, QualificationRequirements=None, Ratings=None, DimensionsInfos=None, ReliabilityInfos=None, Mediums=None, AssetPropertyCurves=None, **kw_args):
         """Initializes a new 'Specification' instance.
 
         @param AssetProperites: UserAttributes used to specify further properties of the asset covered with this specification. Use 'name' to specify what kind of property it is, and 'value.value' attribute for the actual value.
@@ -52,7 +52,7 @@ class Specification(Document):
         self._AssetPropertyCurves = []
         self.AssetPropertyCurves = [] if AssetPropertyCurves is None else AssetPropertyCurves
 
-        super(Specification, self).__init__(*args, **kw_args)
+        super(Specification, self).__init__(**kw_args)
 
     def getAssetProperites(self):
         """UserAttributes used to specify further properties of the asset covered with this specification. Use 'name' to specify what kind of property it is, and 'value.value' attribute for the actual value.

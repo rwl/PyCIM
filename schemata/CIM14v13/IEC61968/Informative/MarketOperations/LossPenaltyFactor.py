@@ -20,7 +20,7 @@ class LossPenaltyFactor(MarketFactors):
     """Loss penalty factor applied to a ConnectivityNode for a given time interval.
     """
 
-    def __init__(self, lossFactor=None, ConnectivityNodes=None, *args, **kw_args):
+    def __init__(self, lossFactor=None, ConnectivityNodes=None, **kw_args):
         """Initializes a new 'LossPenaltyFactor' instance.
 
         @param lossFactor: Loss penalty factor. 
@@ -32,7 +32,7 @@ class LossPenaltyFactor(MarketFactors):
         self._ConnectivityNodes = []
         self.ConnectivityNodes = [] if ConnectivityNodes is None else ConnectivityNodes
 
-        super(LossPenaltyFactor, self).__init__(*args, **kw_args)
+        super(LossPenaltyFactor, self).__init__(**kw_args)
 
     def getConnectivityNodes(self):
         

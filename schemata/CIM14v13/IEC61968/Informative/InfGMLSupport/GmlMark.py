@@ -20,7 +20,7 @@ class GmlMark(IdentifiedObject):
     """Defines a 'shape' which has coloring applied to it (i.e. square, circle, triangle, star, ...).
     """
 
-    def __init__(self, wellKnownName='', GmlFIlls=None, GmlGraphics=None, GmlStrokes=None, *args, **kw_args):
+    def __init__(self, wellKnownName='', GmlFIlls=None, GmlGraphics=None, GmlStrokes=None, **kw_args):
         """Initializes a new 'GmlMark' instance.
 
         @param wellKnownName: Gives the well-known name of the shape of the mark. Allowed values include at least square, circle, triangle, star, cross, and x. 
@@ -40,7 +40,7 @@ class GmlMark(IdentifiedObject):
         self._GmlStrokes = []
         self.GmlStrokes = [] if GmlStrokes is None else GmlStrokes
 
-        super(GmlMark, self).__init__(*args, **kw_args)
+        super(GmlMark, self).__init__(**kw_args)
 
     def getGmlFIlls(self):
         

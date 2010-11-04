@@ -20,7 +20,7 @@ class DocOrgRole(Role):
     """Roles played between Organisations and Documents.
     """
 
-    def __init__(self, ErpOrganisation=None, Document=None, *args, **kw_args):
+    def __init__(self, ErpOrganisation=None, Document=None, **kw_args):
         """Initializes a new 'DocOrgRole' instance.
 
         @param ErpOrganisation:
@@ -32,7 +32,7 @@ class DocOrgRole(Role):
         self._Document = None
         self.Document = Document
 
-        super(DocOrgRole, self).__init__(*args, **kw_args)
+        super(DocOrgRole, self).__init__(**kw_args)
 
     def getErpOrganisation(self):
         

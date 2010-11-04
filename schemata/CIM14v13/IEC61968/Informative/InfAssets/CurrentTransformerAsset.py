@@ -20,7 +20,7 @@ class CurrentTransformerAsset(ElectricalAsset):
     """Physical asset performing Current Transformer (CT) function.
     """
 
-    def __init__(self, typeCT='', CurrentTransformerInfo=None, CurrentTransformerAssetModel=None, CurrentTransformer=None, *args, **kw_args):
+    def __init__(self, typeCT='', CurrentTransformerInfo=None, CurrentTransformerAssetModel=None, CurrentTransformer=None, **kw_args):
         """Initializes a new 'CurrentTransformerAsset' instance.
 
         @param typeCT: Type of CT as categorized by the utility's asset management standards and practices. 
@@ -40,7 +40,7 @@ class CurrentTransformerAsset(ElectricalAsset):
         self._CurrentTransformer = None
         self.CurrentTransformer = CurrentTransformer
 
-        super(CurrentTransformerAsset, self).__init__(*args, **kw_args)
+        super(CurrentTransformerAsset, self).__init__(**kw_args)
 
     def getCurrentTransformerInfo(self):
         

@@ -20,7 +20,7 @@ class DesignLocationCU(IdentifiedObject):
     """Compatible unit at a given design location.
     """
 
-    def __init__(self, cuAction='install', removalYear='', cuUsage='', cuAccount='', cuQuantity=0, energizationFlag=False, Designs=None, DesignLocation=None, CUGroups=None, ConditionFactors=None, WorkTasks=None, CompatibleUnits=None, status=None, *args, **kw_args):
+    def __init__(self, cuAction='install', removalYear='', cuUsage='', cuAccount='', cuQuantity=0, energizationFlag=False, Designs=None, DesignLocation=None, CUGroups=None, ConditionFactors=None, WorkTasks=None, CompatibleUnits=None, status=None, **kw_args):
         """Initializes a new 'DesignLocationCU' instance.
 
         @param cuAction: A code that instructs the crew what action to perform. Values are: "install", "remove", "transfer", "abandon"
@@ -75,7 +75,7 @@ class DesignLocationCU(IdentifiedObject):
 
         self.status = status
 
-        super(DesignLocationCU, self).__init__(*args, **kw_args)
+        super(DesignLocationCU, self).__init__(**kw_args)
 
     def getDesigns(self):
         

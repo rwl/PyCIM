@@ -20,7 +20,7 @@ class ErpLedgerBudget(Document):
     """Information for utility Ledger Budgets. They support the transfer budget amounts between all possible source applications throughout an enterprise and a general ledger or budget application.
     """
 
-    def __init__(self, ErpLedBudLineItems=None, *args, **kw_args):
+    def __init__(self, ErpLedBudLineItems=None, **kw_args):
         """Initializes a new 'ErpLedgerBudget' instance.
 
         @param ErpLedBudLineItems:
@@ -28,7 +28,7 @@ class ErpLedgerBudget(Document):
         self._ErpLedBudLineItems = []
         self.ErpLedBudLineItems = [] if ErpLedBudLineItems is None else ErpLedBudLineItems
 
-        super(ErpLedgerBudget, self).__init__(*args, **kw_args)
+        super(ErpLedgerBudget, self).__init__(**kw_args)
 
     def getErpLedBudLineItems(self):
         

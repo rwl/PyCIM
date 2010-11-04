@@ -20,7 +20,7 @@ class ProtectedSwitch(Switch):
     """A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment.
     """
 
-    def __init__(self, RecloseSequences=None, *args, **kw_args):
+    def __init__(self, RecloseSequences=None, **kw_args):
         """Initializes a new 'ProtectedSwitch' instance.
 
         @param RecloseSequences: A breaker may have zero or more automatic reclosures after a trip occurs.
@@ -28,7 +28,7 @@ class ProtectedSwitch(Switch):
         self._RecloseSequences = []
         self.RecloseSequences = [] if RecloseSequences is None else RecloseSequences
 
-        super(ProtectedSwitch, self).__init__(*args, **kw_args)
+        super(ProtectedSwitch, self).__init__(**kw_args)
 
     def getRecloseSequences(self):
         """A breaker may have zero or more automatic reclosures after a trip occurs.

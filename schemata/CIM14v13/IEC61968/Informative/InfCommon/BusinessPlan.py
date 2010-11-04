@@ -20,9 +20,9 @@ class BusinessPlan(Document):
     """A BusinessPlan is an organized sequence of predetermined actions required to complete a future organizational objective. It is a type of document that typically references a schedule, physical and/or logical resources (assets and/or PowerSystemResources), locations, etc.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'BusinessPlan' instance.
 
         """
-        super(BusinessPlan, self).__init__(*args, **kw_args)
+        super(BusinessPlan, self).__init__(**kw_args)
 

@@ -20,7 +20,7 @@ class Role(IdentifiedObject):
     """Enumeration of potential roles that might be played by one object relative to another.
     """
 
-    def __init__(self, category='', status=None, *args, **kw_args):
+    def __init__(self, category='', status=None, **kw_args):
         """Initializes a new 'Role' instance.
 
         @param category: Category of role. 
@@ -31,7 +31,7 @@ class Role(IdentifiedObject):
 
         self.status = status
 
-        super(Role, self).__init__(*args, **kw_args)
+        super(Role, self).__init__(**kw_args)
 
     status = None
 

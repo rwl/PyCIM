@@ -20,7 +20,7 @@ class CurveData(Element):
     """Multi-purpose data points for defining a curve.
     """
 
-    def __init__(self, y1value=0.0, y2value=0.0, y3value=0.0, xvalue=0.0, Curve=None, *args, **kw_args):
+    def __init__(self, y1value=0.0, y2value=0.0, y3value=0.0, xvalue=0.0, Curve=None, **kw_args):
         """Initializes a new 'CurveData' instance.
 
         @param y1value: The data value of the  first Y-axis variable, depending on the Y-axis units 
@@ -44,7 +44,7 @@ class CurveData(Element):
         self._Curve = None
         self.Curve = Curve
 
-        super(CurveData, self).__init__(*args, **kw_args)
+        super(CurveData, self).__init__(**kw_args)
 
     def getCurve(self):
         """The Curve defined by this CurveData.

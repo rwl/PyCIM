@@ -20,7 +20,7 @@ class WorkCostSummary(Document):
     """A roll up by cost category for the entire cost of a work order. For example, total labor.
     """
 
-    def __init__(self, WorkCostDetail=None, *args, **kw_args):
+    def __init__(self, WorkCostDetail=None, **kw_args):
         """Initializes a new 'WorkCostSummary' instance.
 
         @param WorkCostDetail:
@@ -28,7 +28,7 @@ class WorkCostSummary(Document):
         self._WorkCostDetail = None
         self.WorkCostDetail = WorkCostDetail
 
-        super(WorkCostSummary, self).__init__(*args, **kw_args)
+        super(WorkCostSummary, self).__init__(**kw_args)
 
     def getWorkCostDetail(self):
         

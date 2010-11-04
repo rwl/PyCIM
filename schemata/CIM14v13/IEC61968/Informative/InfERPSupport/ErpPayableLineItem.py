@@ -20,7 +20,7 @@ class ErpPayableLineItem(IdentifiedObject):
     """Of an ErpPayable, a line item references an ErpInvoiceLineitem or other source such as credit memos.
     """
 
-    def __init__(self, ErpJournalEntries=None, status=None, ErpPayments=None, ErpInvoiceLineItem=None, ErpPayable=None, *args, **kw_args):
+    def __init__(self, ErpJournalEntries=None, status=None, ErpPayments=None, ErpInvoiceLineItem=None, ErpPayable=None, **kw_args):
         """Initializes a new 'ErpPayableLineItem' instance.
 
         @param ErpJournalEntries:
@@ -43,7 +43,7 @@ class ErpPayableLineItem(IdentifiedObject):
         self._ErpPayable = None
         self.ErpPayable = ErpPayable
 
-        super(ErpPayableLineItem, self).__init__(*args, **kw_args)
+        super(ErpPayableLineItem, self).__init__(**kw_args)
 
     def getErpJournalEntries(self):
         

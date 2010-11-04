@@ -20,7 +20,7 @@ class Pole(Structure):
     """A long, slender piece of wood, metal, etc. usually rounded that stands vertically from the ground and is used for mounting various types of overhead equipment. Dimensions of Pole are specified in associated DimensionsInfo.
     """
 
-    def __init__(self, baseKind='cement', preservativeKind='naphthena', treatmentKind='grayStain', treatedDateTime='', construction='', breastBlock=False, jpaReference='', SupportStreetlights=None, PoleModel=None, *args, **kw_args):
+    def __init__(self, baseKind='cement', preservativeKind='naphthena', treatmentKind='grayStain', treatedDateTime='', construction='', breastBlock=False, jpaReference='', SupportStreetlights=None, PoleModel=None, **kw_args):
         """Initializes a new 'Pole' instance.
 
         @param baseKind: Kind of base for this pole. Values are: "cement", "dirt", "unknown", "other", "asphalt"
@@ -60,7 +60,7 @@ class Pole(Structure):
         self._PoleModel = None
         self.PoleModel = PoleModel
 
-        super(Pole, self).__init__(*args, **kw_args)
+        super(Pole, self).__init__(**kw_args)
 
     def getSupportStreetlights(self):
         """Streetlight(s) may be attached to a pole.

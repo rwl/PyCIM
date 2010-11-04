@@ -20,7 +20,7 @@ class AncillaryService(IdentifiedObject):
     """All of these services relate  to various aspects of insuring that the production of energy matches consumption of energy at any given time.  They are very critical to the security and reliability of the interconnected network. Some examples of AncillaryServices include Operating/Supplemental Reserve, Energy Imbalance Service, Operating/Spinning Reserve, Reactive Supply and Voltage Control, and Regulation and Frequency Response.
     """
 
-    def __init__(self, TransmissionProviders=None, ControlAreaOperator=None, ReservedBy_ServiceReservation=None, OpenAccessProduct=None, *args, **kw_args):
+    def __init__(self, TransmissionProviders=None, ControlAreaOperator=None, ReservedBy_ServiceReservation=None, OpenAccessProduct=None, **kw_args):
         """Initializes a new 'AncillaryService' instance.
 
         @param TransmissionProviders: A TransmissionProvider offers AncillaryServices. One type of AncillaryServices is a shipping and handling fee to manage the services purchased, another is the reactive power support used to control the voltage on the  transmission system.  This is the amount needed to support the path or amount necessary to maintain the proper voltage at a ServicePoint.
@@ -40,7 +40,7 @@ class AncillaryService(IdentifiedObject):
         self._OpenAccessProduct = None
         self.OpenAccessProduct = OpenAccessProduct
 
-        super(AncillaryService, self).__init__(*args, **kw_args)
+        super(AncillaryService, self).__init__(**kw_args)
 
     def getTransmissionProviders(self):
         """A TransmissionProvider offers AncillaryServices. One type of AncillaryServices is a shipping and handling fee to manage the services purchased, another is the reactive power support used to control the voltage on the  transmission system.  This is the amount needed to support the path or amount necessary to maintain the proper voltage at a ServicePoint.

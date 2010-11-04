@@ -20,7 +20,7 @@ class AssetFunctionTypeAsset(TypeAsset):
     """Documentation for a generic Asset Function that may be used for various purposes such as work planning.
     """
 
-    def __init__(self, AssetFunctionAssetModels=None, *args, **kw_args):
+    def __init__(self, AssetFunctionAssetModels=None, **kw_args):
         """Initializes a new 'AssetFunctionTypeAsset' instance.
 
         @param AssetFunctionAssetModels:
@@ -28,7 +28,7 @@ class AssetFunctionTypeAsset(TypeAsset):
         self._AssetFunctionAssetModels = []
         self.AssetFunctionAssetModels = [] if AssetFunctionAssetModels is None else AssetFunctionAssetModels
 
-        super(AssetFunctionTypeAsset, self).__init__(*args, **kw_args)
+        super(AssetFunctionTypeAsset, self).__init__(**kw_args)
 
     def getAssetFunctionAssetModels(self):
         

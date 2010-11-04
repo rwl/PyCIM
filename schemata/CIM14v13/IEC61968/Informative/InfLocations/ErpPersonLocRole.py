@@ -20,7 +20,7 @@ class ErpPersonLocRole(Role):
     """Roles played between People and Locations. Some Locations are somewhat static, like the person's home address. Other may be dynamic, for example when the person is part of a crew driving around in truck.
     """
 
-    def __init__(self, Location=None, ErpPerson=None, *args, **kw_args):
+    def __init__(self, Location=None, ErpPerson=None, **kw_args):
         """Initializes a new 'ErpPersonLocRole' instance.
 
         @param Location:
@@ -32,7 +32,7 @@ class ErpPersonLocRole(Role):
         self._ErpPerson = None
         self.ErpPerson = ErpPerson
 
-        super(ErpPersonLocRole, self).__init__(*args, **kw_args)
+        super(ErpPersonLocRole, self).__init__(**kw_args)
 
     def getLocation(self):
         

@@ -20,7 +20,7 @@ class CULaborItem(IdentifiedObject):
     """Compatible unit labor item.
     """
 
-    def __init__(self, laborRate=0.0, activityCode='', laborDuration=0.0, QualificationRequirements=None, CULaborCode=None, status=None, CompatibleUnits=None, *args, **kw_args):
+    def __init__(self, laborRate=0.0, activityCode='', laborDuration=0.0, QualificationRequirements=None, CULaborCode=None, status=None, CompatibleUnits=None, **kw_args):
         """Initializes a new 'CULaborItem' instance.
 
         @param laborRate: The labor rate applied for work. 
@@ -51,7 +51,7 @@ class CULaborItem(IdentifiedObject):
         self._CompatibleUnits = []
         self.CompatibleUnits = [] if CompatibleUnits is None else CompatibleUnits
 
-        super(CULaborItem, self).__init__(*args, **kw_args)
+        super(CULaborItem, self).__init__(**kw_args)
 
     def getQualificationRequirements(self):
         

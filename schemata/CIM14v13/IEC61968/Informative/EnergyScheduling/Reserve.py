@@ -18,7 +18,7 @@ from CIM14v13.IEC61968.Informative.EnergyScheduling.EnergyTransaction import Ene
 
 class Reserve(EnergyTransaction):
 
-    def __init__(self, AreaReserveSpec=None, *args, **kw_args):
+    def __init__(self, AreaReserveSpec=None, **kw_args):
         """Initializes a new 'Reserve' instance.
 
         @param AreaReserveSpec: A Reserve type of energy transaction can count towards an area reserve specification.
@@ -26,7 +26,7 @@ class Reserve(EnergyTransaction):
         self._AreaReserveSpec = []
         self.AreaReserveSpec = [] if AreaReserveSpec is None else AreaReserveSpec
 
-        super(Reserve, self).__init__(*args, **kw_args)
+        super(Reserve, self).__init__(**kw_args)
 
     def getAreaReserveSpec(self):
         """A Reserve type of energy transaction can count towards an area reserve specification.

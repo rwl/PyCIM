@@ -20,7 +20,7 @@ class ErpReceivable(Document):
     """Transaction representing an invoice, credit memo or debit memo to a customer. It is an open (unpaid) item in the Accounts Receivable ledger.
     """
 
-    def __init__(self, ErpRecLineItems=None, *args, **kw_args):
+    def __init__(self, ErpRecLineItems=None, **kw_args):
         """Initializes a new 'ErpReceivable' instance.
 
         @param ErpRecLineItems:
@@ -28,7 +28,7 @@ class ErpReceivable(Document):
         self._ErpRecLineItems = []
         self.ErpRecLineItems = [] if ErpRecLineItems is None else ErpRecLineItems
 
-        super(ErpReceivable, self).__init__(*args, **kw_args)
+        super(ErpReceivable, self).__init__(**kw_args)
 
     def getErpRecLineItems(self):
         

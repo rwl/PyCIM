@@ -20,7 +20,7 @@ class OpenCircuitTest(DistributionWindingTest):
     """Open-circuit test results may include no-load losses, exciting current, phase shifts, and induced voltage. For three-phase windings, the excitation can be positive sequence (the default) or zero sequence. For induced voltage and phase shifts, use the associated ToWindingSpec class.
     """
 
-    def __init__(self, noLoadLoss=0.0, excitingCurrentZero=0.0, excitingCurrent=0.0, noLoadLossZero=0.0, MeasuredWindingSpecs=None, *args, **kw_args):
+    def __init__(self, noLoadLoss=0.0, excitingCurrentZero=0.0, excitingCurrent=0.0, noLoadLossZero=0.0, MeasuredWindingSpecs=None, **kw_args):
         """Initializes a new 'OpenCircuitTest' instance.
 
         @param noLoadLoss: Losses measured from a positive-sequence or single-phase open-circuit (excitation) test. 
@@ -44,7 +44,7 @@ class OpenCircuitTest(DistributionWindingTest):
         self._MeasuredWindingSpecs = []
         self.MeasuredWindingSpecs = [] if MeasuredWindingSpecs is None else MeasuredWindingSpecs
 
-        super(OpenCircuitTest, self).__init__(*args, **kw_args)
+        super(OpenCircuitTest, self).__init__(**kw_args)
 
     def getMeasuredWindingSpecs(self):
         """All other windings measured during this test.

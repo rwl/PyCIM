@@ -20,7 +20,7 @@ class ErpSiteLevelData(IdentifiedObject):
     """For a utility, general information that describes physical locations of organizations or the location codes and their meanings. This enables ERP applications to ensure that the physical location identifiers are synchronized between the business applications.
     """
 
-    def __init__(self, status=None, LandProperty=None, *args, **kw_args):
+    def __init__(self, status=None, LandProperty=None, **kw_args):
         """Initializes a new 'ErpSiteLevelData' instance.
 
         @param status:
@@ -31,7 +31,7 @@ class ErpSiteLevelData(IdentifiedObject):
         self._LandProperty = None
         self.LandProperty = LandProperty
 
-        super(ErpSiteLevelData, self).__init__(*args, **kw_args)
+        super(ErpSiteLevelData, self).__init__(**kw_args)
 
     status = None
 

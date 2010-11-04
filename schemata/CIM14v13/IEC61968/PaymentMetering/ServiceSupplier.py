@@ -20,7 +20,7 @@ class ServiceSupplier(Organisation):
     """Organisation that provides services to Customers.
     """
 
-    def __init__(self, kind='other', issuerIdentificationNumber='', ServiceDeliveryPoints=None, CustomerAgreements=None, BankAccounts=None, *args, **kw_args):
+    def __init__(self, kind='other', issuerIdentificationNumber='', ServiceDeliveryPoints=None, CustomerAgreements=None, BankAccounts=None, **kw_args):
         """Initializes a new 'ServiceSupplier' instance.
 
         @param kind: Kind of supplier. Values are: "other", "retailer", "utility"
@@ -44,7 +44,7 @@ class ServiceSupplier(Organisation):
         self._BankAccounts = []
         self.BankAccounts = [] if BankAccounts is None else BankAccounts
 
-        super(ServiceSupplier, self).__init__(*args, **kw_args)
+        super(ServiceSupplier, self).__init__(**kw_args)
 
     def getServiceDeliveryPoints(self):
         """All service delivery points this service supplier utilises to deliver a service.

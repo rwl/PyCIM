@@ -20,7 +20,7 @@ class UserAttribute(Element):
     """Generic name-value pair class, with optional sequence number and units for value; can be used to model parts of information exchange when concrete types are not known in advance.
     """
 
-    def __init__(self, sequenceNumber=0, value='', name='', PropertySpecification=None, RatingSpecification=None, PropertyAssets=None, RatingAssets=None, ErpLedgerEntries=None, ProcedureDataSets=None, Transaction=None, Procedure=None, PassThroughBills=None, ErpInvoiceLineItems=None, BillDeterminants=None, ErpStatementLineItems=None, *args, **kw_args):
+    def __init__(self, sequenceNumber=0, value='', name='', PropertySpecification=None, RatingSpecification=None, PropertyAssets=None, RatingAssets=None, ErpLedgerEntries=None, ProcedureDataSets=None, Transaction=None, Procedure=None, PassThroughBills=None, ErpInvoiceLineItems=None, BillDeterminants=None, ErpStatementLineItems=None, **kw_args):
         """Initializes a new 'UserAttribute' instance.
 
         @param sequenceNumber: Sequence number for this attribute in a list of attributes. 
@@ -84,7 +84,7 @@ class UserAttribute(Element):
         self._ErpStatementLineItems = []
         self.ErpStatementLineItems = [] if ErpStatementLineItems is None else ErpStatementLineItems
 
-        super(UserAttribute, self).__init__(*args, **kw_args)
+        super(UserAttribute, self).__init__(**kw_args)
 
     def getPropertySpecification(self):
         

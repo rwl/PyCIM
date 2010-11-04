@@ -20,7 +20,7 @@ class Regulation(Document):
     """Special requirements and/or regulations may pertain to certain types of assets or work. For example, fire protection and scaffolding.
     """
 
-    def __init__(self, referenceNumber='', *args, **kw_args):
+    def __init__(self, referenceNumber='', **kw_args):
         """Initializes a new 'Regulation' instance.
 
         @param referenceNumber: External reference to regulation, if applicable. 
@@ -28,5 +28,5 @@ class Regulation(Document):
         #: External reference to regulation, if applicable.
         self.referenceNumber = referenceNumber
 
-        super(Regulation, self).__init__(*args, **kw_args)
+        super(Regulation, self).__init__(**kw_args)
 

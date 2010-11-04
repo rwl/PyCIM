@@ -20,7 +20,7 @@ class MeteringFunctionConfiguration(IdentifiedObject):
     """The configuration of data for a given meter function.
     """
 
-    def __init__(self, ElectricMeteringFunctions=None, *args, **kw_args):
+    def __init__(self, ElectricMeteringFunctions=None, **kw_args):
         """Initializes a new 'MeteringFunctionConfiguration' instance.
 
         @param ElectricMeteringFunctions: All electric metering functions with this configuration.
@@ -28,7 +28,7 @@ class MeteringFunctionConfiguration(IdentifiedObject):
         self._ElectricMeteringFunctions = []
         self.ElectricMeteringFunctions = [] if ElectricMeteringFunctions is None else ElectricMeteringFunctions
 
-        super(MeteringFunctionConfiguration, self).__init__(*args, **kw_args)
+        super(MeteringFunctionConfiguration, self).__init__(**kw_args)
 
     def getElectricMeteringFunctions(self):
         """All electric metering functions with this configuration.

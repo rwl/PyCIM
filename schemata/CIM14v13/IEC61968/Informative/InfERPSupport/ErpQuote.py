@@ -20,7 +20,7 @@ class ErpQuote(Document):
     """Document describing the prices of goods or services provided by a supplier. It includes the terms of the purchase, delivery proposals, identification of goods or services ordered, as well as their quantities.
     """
 
-    def __init__(self, ErpQuoteLineItems=None, *args, **kw_args):
+    def __init__(self, ErpQuoteLineItems=None, **kw_args):
         """Initializes a new 'ErpQuote' instance.
 
         @param ErpQuoteLineItems:
@@ -28,7 +28,7 @@ class ErpQuote(Document):
         self._ErpQuoteLineItems = []
         self.ErpQuoteLineItems = [] if ErpQuoteLineItems is None else ErpQuoteLineItems
 
-        super(ErpQuote, self).__init__(*args, **kw_args)
+        super(ErpQuote, self).__init__(**kw_args)
 
     def getErpQuoteLineItems(self):
         

@@ -20,7 +20,7 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
     """The schedule has TimePoints where the time between them is constant.
     """
 
-    def __init__(self, timeStep=0.0, endTime='', TimePoints=None, *args, **kw_args):
+    def __init__(self, timeStep=0.0, endTime='', TimePoints=None, **kw_args):
         """Initializes a new 'RegularIntervalSchedule' instance.
 
         @param timeStep: The time between each pair of subsequent RegularTimePoints. 
@@ -36,7 +36,7 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
         self._TimePoints = []
         self.TimePoints = [] if TimePoints is None else TimePoints
 
-        super(RegularIntervalSchedule, self).__init__(*args, **kw_args)
+        super(RegularIntervalSchedule, self).__init__(**kw_args)
 
     def getTimePoints(self):
         """The point data values that define a curve

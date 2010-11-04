@@ -20,7 +20,7 @@ class Reservoir(PowerSystemResource):
     """A water storage facility within a hydro system, including: ponds, lakes, lagoons, and rivers. The storage is usually behind some type of dam.
     """
 
-    def __init__(self, spillWayGateType='', spillwayCrestLength=0.0, activeStorageCapacity=0.0, grossCapacity=0.0, energyStorageRating=0.0, fullSupplyLevel=0.0, spillwayCapacity=0.0, spillTravelDelay=0.0, riverOutletWorks='', normalMinOperateLevel=0.0, spillwayCrestLevel=0.0, InflowForecasts=None, SpillsIntoReservoirs=None, SpillsFromReservoir=None, UpstreamFromHydroPowerPlants=None, LevelVsVolumeCurves=None, TargetLevelSchedule=None, HydroPowerPlants=None, *args, **kw_args):
+    def __init__(self, spillWayGateType='', spillwayCrestLength=0.0, activeStorageCapacity=0.0, grossCapacity=0.0, energyStorageRating=0.0, fullSupplyLevel=0.0, spillwayCapacity=0.0, spillTravelDelay=0.0, riverOutletWorks='', normalMinOperateLevel=0.0, spillwayCrestLevel=0.0, InflowForecasts=None, SpillsIntoReservoirs=None, SpillsFromReservoir=None, UpstreamFromHydroPowerPlants=None, LevelVsVolumeCurves=None, TargetLevelSchedule=None, HydroPowerPlants=None, **kw_args):
         """Initializes a new 'Reservoir' instance.
 
         @param spillWayGateType: Type of spillway gate, including parameters 
@@ -96,7 +96,7 @@ class Reservoir(PowerSystemResource):
         self._HydroPowerPlants = []
         self.HydroPowerPlants = [] if HydroPowerPlants is None else HydroPowerPlants
 
-        super(Reservoir, self).__init__(*args, **kw_args)
+        super(Reservoir, self).__init__(**kw_args)
 
     def getInflowForecasts(self):
         """A reservoir may have a 'natural' inflow forecast.

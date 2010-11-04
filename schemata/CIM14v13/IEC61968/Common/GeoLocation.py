@@ -20,7 +20,7 @@ class GeoLocation(Location):
     """Geographical location.
     """
 
-    def __init__(self, PowerSystemResources=None, *args, **kw_args):
+    def __init__(self, PowerSystemResources=None, **kw_args):
         """Initializes a new 'GeoLocation' instance.
 
         @param PowerSystemResources: All power system resources at this geographical location.
@@ -28,7 +28,7 @@ class GeoLocation(Location):
         self._PowerSystemResources = []
         self.PowerSystemResources = [] if PowerSystemResources is None else PowerSystemResources
 
-        super(GeoLocation, self).__init__(*args, **kw_args)
+        super(GeoLocation, self).__init__(**kw_args)
 
     def getPowerSystemResources(self):
         """All power system resources at this geographical location.

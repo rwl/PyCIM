@@ -20,7 +20,7 @@ class ReadingType(IdentifiedObject):
     """Type of data conveyed by a specific Reading.
     """
 
-    def __init__(self, kind='power', unit='m2', multiplier='m', channelNumber=0, defaultQuality='', dynamicConfiguration='', intervalLength=0.0, reverseChronology=False, defaultValueDataType='', Pending=None, Readings=None, IntervalBlocks=None, Register=None, *args, **kw_args):
+    def __init__(self, kind='power', unit='m2', multiplier='m', channelNumber=0, defaultQuality='', dynamicConfiguration='', intervalLength=0.0, reverseChronology=False, defaultValueDataType='', Pending=None, Readings=None, IntervalBlocks=None, Register=None, **kw_args):
         """Initializes a new 'ReadingType' instance.
 
         @param kind: Kind of reading. Values are: "power", "voltageAngle", "other", "energy", "phaseAngle", "date", "time", "volume", "voltage", "demand", "powerFactor", "currentAngle", "pressure", "current"
@@ -76,7 +76,7 @@ class ReadingType(IdentifiedObject):
         self._Register = None
         self.Register = Register
 
-        super(ReadingType, self).__init__(*args, **kw_args)
+        super(ReadingType, self).__init__(**kw_args)
 
     def getPending(self):
         """Pending conversion that produced this reading type.

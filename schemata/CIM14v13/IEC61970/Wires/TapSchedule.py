@@ -20,7 +20,7 @@ class TapSchedule(SeasonDayTypeSchedule):
     """A pre-established pattern over time for a tap step.
     """
 
-    def __init__(self, lineDropX=0.0, lineDropCompensation=False, lineDropR=0.0, TapChanger=None, *args, **kw_args):
+    def __init__(self, lineDropX=0.0, lineDropCompensation=False, lineDropR=0.0, TapChanger=None, **kw_args):
         """Initializes a new 'TapSchedule' instance.
 
         @param lineDropX: Line drop reactance. 
@@ -40,7 +40,7 @@ class TapSchedule(SeasonDayTypeSchedule):
         self._TapChanger = None
         self.TapChanger = TapChanger
 
-        super(TapSchedule, self).__init__(*args, **kw_args)
+        super(TapSchedule, self).__init__(**kw_args)
 
     def getTapChanger(self):
         """A TapSchedule is associated with a TapChanger.

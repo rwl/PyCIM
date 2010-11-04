@@ -20,7 +20,7 @@ class GmlPolygonSymbol(GmlSymbol):
     """Used to draw a polygon (or other area-type geometries), including filling its interior and stroking its border (outline).
     """
 
-    def __init__(self, GmlFill=None, GmlDiagramObject=None, GmlStroke=None, *args, **kw_args):
+    def __init__(self, GmlFill=None, GmlDiagramObject=None, GmlStroke=None, **kw_args):
         """Initializes a new 'GmlPolygonSymbol' instance.
 
         @param GmlFill:
@@ -36,7 +36,7 @@ class GmlPolygonSymbol(GmlSymbol):
         self._GmlStroke = None
         self.GmlStroke = GmlStroke
 
-        super(GmlPolygonSymbol, self).__init__(*args, **kw_args)
+        super(GmlPolygonSymbol, self).__init__(**kw_args)
 
     def getGmlFill(self):
         

@@ -20,7 +20,7 @@ class PositionPoint(Element):
     """Set of spatial coordinates that determine a point. A sequence of PositionPoints can be used to describe: - physical location of non-point oriented objects like cables or lines, or - area of an object like a substation, a geographical zone or a diagram object.
     """
 
-    def __init__(self, sequenceNumber=0, zPosition='', xPosition='', yPosition='', Location=None, *args, **kw_args):
+    def __init__(self, sequenceNumber=0, zPosition='', xPosition='', yPosition='', Location=None, **kw_args):
         """Initializes a new 'PositionPoint' instance.
 
         @param sequenceNumber: Zero-relative sequence number of this point within a series of points. 
@@ -44,7 +44,7 @@ class PositionPoint(Element):
         self._Location = None
         self.Location = Location
 
-        super(PositionPoint, self).__init__(*args, **kw_args)
+        super(PositionPoint, self).__init__(**kw_args)
 
     def getLocation(self):
         """Location that this position point describes.

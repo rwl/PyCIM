@@ -20,7 +20,7 @@ class GeneratorAsset(ElectricalAsset):
     """Physical asset performing the Generator role.
     """
 
-    def __init__(self, GeneratorAssetModel=None, *args, **kw_args):
+    def __init__(self, GeneratorAssetModel=None, **kw_args):
         """Initializes a new 'GeneratorAsset' instance.
 
         @param GeneratorAssetModel:
@@ -28,7 +28,7 @@ class GeneratorAsset(ElectricalAsset):
         self._GeneratorAssetModel = None
         self.GeneratorAssetModel = GeneratorAssetModel
 
-        super(GeneratorAsset, self).__init__(*args, **kw_args)
+        super(GeneratorAsset, self).__init__(**kw_args)
 
     def getGeneratorAssetModel(self):
         

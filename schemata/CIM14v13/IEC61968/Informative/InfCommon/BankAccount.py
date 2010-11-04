@@ -20,7 +20,7 @@ class BankAccount(Document):
     """Bank account.
     """
 
-    def __init__(self, accountNumber='', ServiceSupplier=None, Bank=None, BankStatements=None, *args, **kw_args):
+    def __init__(self, accountNumber='', ServiceSupplier=None, Bank=None, BankStatements=None, **kw_args):
         """Initializes a new 'BankAccount' instance.
 
         @param accountNumber: Account reference number. 
@@ -40,7 +40,7 @@ class BankAccount(Document):
         self._BankStatements = []
         self.BankStatements = [] if BankStatements is None else BankStatements
 
-        super(BankAccount, self).__init__(*args, **kw_args)
+        super(BankAccount, self).__init__(**kw_args)
 
     def getServiceSupplier(self):
         """ServiceSupplier that is owner of this BankAccount.

@@ -20,7 +20,7 @@ class RedLine(IdentifiedObject):
     """This class is used for handling the accompanying annotations, time stamp, author, etc. of designs, drawings and maps. A red line can be associated with any Location object.
     """
 
-    def __init__(self, status=None, Locations=None, *args, **kw_args):
+    def __init__(self, status=None, Locations=None, **kw_args):
         """Initializes a new 'RedLine' instance.
 
         @param status:
@@ -31,7 +31,7 @@ class RedLine(IdentifiedObject):
         self._Locations = []
         self.Locations = [] if Locations is None else Locations
 
-        super(RedLine, self).__init__(*args, **kw_args)
+        super(RedLine, self).__init__(**kw_args)
 
     status = None
 

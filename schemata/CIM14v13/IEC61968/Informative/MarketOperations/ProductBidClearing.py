@@ -20,7 +20,7 @@ class ProductBidClearing(MarketFactors):
     """Product Bid clearing results posted for a given settlement period.
     """
 
-    def __init__(self, clearedMW=0.0, ProductBids=None, *args, **kw_args):
+    def __init__(self, clearedMW=0.0, ProductBids=None, **kw_args):
         """Initializes a new 'ProductBidClearing' instance.
 
         @param clearedMW: Cleared MWs. 
@@ -32,7 +32,7 @@ class ProductBidClearing(MarketFactors):
         self._ProductBids = []
         self.ProductBids = [] if ProductBids is None else ProductBids
 
-        super(ProductBidClearing, self).__init__(*args, **kw_args)
+        super(ProductBidClearing, self).__init__(**kw_args)
 
     def getProductBids(self):
         

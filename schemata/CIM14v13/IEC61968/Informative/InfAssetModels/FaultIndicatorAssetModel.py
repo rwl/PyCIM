@@ -20,7 +20,7 @@ class FaultIndicatorAssetModel(ElectricalAssetModel):
     """Documentation for a type of an FaultIndicator asset of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, FaultIndicatorTypeAsset=None, FaultIndicatorAssets=None, *args, **kw_args):
+    def __init__(self, FaultIndicatorTypeAsset=None, FaultIndicatorAssets=None, **kw_args):
         """Initializes a new 'FaultIndicatorAssetModel' instance.
 
         @param FaultIndicatorTypeAsset:
@@ -32,7 +32,7 @@ class FaultIndicatorAssetModel(ElectricalAssetModel):
         self._FaultIndicatorAssets = []
         self.FaultIndicatorAssets = [] if FaultIndicatorAssets is None else FaultIndicatorAssets
 
-        super(FaultIndicatorAssetModel, self).__init__(*args, **kw_args)
+        super(FaultIndicatorAssetModel, self).__init__(**kw_args)
 
     def getFaultIndicatorTypeAsset(self):
         

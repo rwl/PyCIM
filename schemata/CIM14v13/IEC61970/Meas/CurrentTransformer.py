@@ -20,7 +20,7 @@ class CurrentTransformer(Equipment):
     """Instrument transformer used to measure electrical qualities of the circuit that is being protected and/or monitored. Typically used as current transducer for the purpose of metering or protection. A typical secondary current rating would be 5A.
     """
 
-    def __init__(self, accuracyClass='', accuracyLimit='', usage='', coreCount=0, maxRatio=0.0, ctClass='', CurrentTransformerTypeAsset=None, CurrentTransformerAsset=None, *args, **kw_args):
+    def __init__(self, accuracyClass='', accuracyLimit='', usage='', coreCount=0, maxRatio=0.0, ctClass='', CurrentTransformerTypeAsset=None, CurrentTransformerAsset=None, **kw_args):
         """Initializes a new 'CurrentTransformer' instance.
 
         @param accuracyClass: CT accuracy classification. 
@@ -56,7 +56,7 @@ class CurrentTransformer(Equipment):
         self._CurrentTransformerAsset = None
         self.CurrentTransformerAsset = CurrentTransformerAsset
 
-        super(CurrentTransformer, self).__init__(*args, **kw_args)
+        super(CurrentTransformer, self).__init__(**kw_args)
 
     def getCurrentTransformerTypeAsset(self):
         

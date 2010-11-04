@@ -18,7 +18,7 @@ from CIM14v13.IEC61968.Informative.MarketOperations.ResourceBid import ResourceB
 
 class LoadBid(ResourceBid):
 
-    def __init__(self, dropRampRate=None, minTimeBetLoadRed=0.0, minLoadReductionCost=0.0, minLoadReductionInterval=0.0, minLoad=0.0, pickUpRampRate=None, reqNoticeTime=0.0, minLoadReduction=0.0, shutdownCost=0.0, LoadReductionPriceCurve=None, RegisteredLoad=None, *args, **kw_args):
+    def __init__(self, dropRampRate=None, minTimeBetLoadRed=0.0, minLoadReductionCost=0.0, minLoadReductionInterval=0.0, minLoad=0.0, pickUpRampRate=None, reqNoticeTime=0.0, minLoadReduction=0.0, shutdownCost=0.0, LoadReductionPriceCurve=None, RegisteredLoad=None, **kw_args):
         """Initializes a new 'LoadBid' instance.
 
         @param dropRampRate: Maximum rate that load can be reduced (MW/minute) 
@@ -66,7 +66,7 @@ class LoadBid(ResourceBid):
         self._RegisteredLoad = None
         self.RegisteredLoad = RegisteredLoad
 
-        super(LoadBid, self).__init__(*args, **kw_args)
+        super(LoadBid, self).__init__(**kw_args)
 
     def getLoadReductionPriceCurve(self):
         

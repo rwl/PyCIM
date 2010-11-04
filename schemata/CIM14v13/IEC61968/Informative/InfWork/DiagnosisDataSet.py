@@ -20,7 +20,7 @@ class DiagnosisDataSet(ProcedureDataSet):
     """The result of a problem (typically an asset failure) diagnosis.
     """
 
-    def __init__(self, phaseCode='BC', failureMode='', rootRemark='', rootCause='', finalOrigin='', finalCause='', preliminaryCode='', effect='', preliminaryRemark='', rootOrigin='', finalCode='', finalRemark='', preliminaryDateTime='', *args, **kw_args):
+    def __init__(self, phaseCode='BC', failureMode='', rootRemark='', rootCause='', finalOrigin='', finalCause='', preliminaryCode='', effect='', preliminaryRemark='', rootOrigin='', finalCode='', finalRemark='', preliminaryDateTime='', **kw_args):
         """Initializes a new 'DiagnosisDataSet' instance.
 
         @param phaseCode: Phase(s) diagnosed. Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
@@ -76,5 +76,5 @@ class DiagnosisDataSet(ProcedureDataSet):
         #: Date and time preliminary assessment of problem was performed.
         self.preliminaryDateTime = preliminaryDateTime
 
-        super(DiagnosisDataSet, self).__init__(*args, **kw_args)
+        super(DiagnosisDataSet, self).__init__(**kw_args)
 

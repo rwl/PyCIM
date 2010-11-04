@@ -20,7 +20,7 @@ class PowerSystemResource(IdentifiedObject):
     """A power system resource can be an item of equipment such as a Switch, an EquipmentContainer containing many individual items of equipment such as a  Substation, or an organisational entity such as Company or SubControlArea.  This provides for the nesting of collections of PowerSystemResources within other PowerSystemResources. For example, a Switch could be a member of a Substation and a Substation could be a member of a division of a Company.
     """
 
-    def __init__(self, ChangeItems=None, AssetRoles=None, GeoLocation=None, SafetyDocuments=None, OutageSchedule=None, Measurements=None, ErpOrganisationRoles=None, PSRType=None, PsrLists=None, PSREvent=None, OperatingShare=None, ScheduleSteps=None, DocumentRoles=None, ReportingGroup=None, CircuitSections=None, NetworkDataSets=None, *args, **kw_args):
+    def __init__(self, ChangeItems=None, AssetRoles=None, GeoLocation=None, SafetyDocuments=None, OutageSchedule=None, Measurements=None, ErpOrganisationRoles=None, PSRType=None, PsrLists=None, PSREvent=None, OperatingShare=None, ScheduleSteps=None, DocumentRoles=None, ReportingGroup=None, CircuitSections=None, NetworkDataSets=None, **kw_args):
         """Initializes a new 'PowerSystemResource' instance.
 
         @param ChangeItems:
@@ -88,7 +88,7 @@ class PowerSystemResource(IdentifiedObject):
         self._NetworkDataSets = []
         self.NetworkDataSets = [] if NetworkDataSets is None else NetworkDataSets
 
-        super(PowerSystemResource, self).__init__(*args, **kw_args)
+        super(PowerSystemResource, self).__init__(**kw_args)
 
     def getChangeItems(self):
         

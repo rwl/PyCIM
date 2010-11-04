@@ -20,7 +20,7 @@ class AssetFunction(Asset):
     """Function performed by an asset. Often, function is a module (or a board that plugs into a backplane) that can be replaced or updated without impacting the rest of the asset. Therefore functions are treated as assets because they have life-cycles that are independent of the asset containing the function.
     """
 
-    def __init__(self, hardwareID='', configID='', programID='', password='', firmwareID='', Asset=None, AssetFunctionAssetModel=None, *args, **kw_args):
+    def __init__(self, hardwareID='', configID='', programID='', password='', firmwareID='', Asset=None, AssetFunctionAssetModel=None, **kw_args):
         """Initializes a new 'AssetFunction' instance.
 
         @param hardwareID: Hardware version. 
@@ -52,7 +52,7 @@ class AssetFunction(Asset):
         self._AssetFunctionAssetModel = None
         self.AssetFunctionAssetModel = AssetFunctionAssetModel
 
-        super(AssetFunction, self).__init__(*args, **kw_args)
+        super(AssetFunction, self).__init__(**kw_args)
 
     def getAsset(self):
         

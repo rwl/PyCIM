@@ -20,9 +20,9 @@ class StateVariable(Element):
     """An abstract class for state variables.
     """
 
-    def __init__(self, *args, **kw_args):
+    def __init__(self, **kw_args):
         """Initializes a new 'StateVariable' instance.
 
         """
-        super(StateVariable, self).__init__(*args, **kw_args)
+        super(StateVariable, self).__init__(**kw_args)
 

@@ -20,7 +20,7 @@ class HydroPowerPlant(PowerSystemResource):
     """A hydro power station which can generate or pump. When generating, the generator turbines receive there water from an upper reservoir. When pumping, the pumps receive their water from a lower reservoir.
     """
 
-    def __init__(self, hydroPlantType='majorStorage', surgeTankCode='', penstockType='', pumpRatedP=0.0, genRatedP=0.0, plantDischargeCapacity=0.0, dischargeTravelDelay=0.0, plantRatedHead=0.0, surgeTankCrestLevel=0.0, GenSourcePumpDischargeReservoir=None, HydroPumps=None, HydroGeneratingUnits=None, Reservoir=None, *args, **kw_args):
+    def __init__(self, hydroPlantType='majorStorage', surgeTankCode='', penstockType='', pumpRatedP=0.0, genRatedP=0.0, plantDischargeCapacity=0.0, dischargeTravelDelay=0.0, plantRatedHead=0.0, surgeTankCrestLevel=0.0, GenSourcePumpDischargeReservoir=None, HydroPumps=None, HydroGeneratingUnits=None, Reservoir=None, **kw_args):
         """Initializes a new 'HydroPowerPlant' instance.
 
         @param hydroPlantType: The type of hydro power plant. Values are: "majorStorage", "runOfRiver", "minorStorage", "pumpedStorage"
@@ -76,7 +76,7 @@ class HydroPowerPlant(PowerSystemResource):
         self._Reservoir = None
         self.Reservoir = Reservoir
 
-        super(HydroPowerPlant, self).__init__(*args, **kw_args)
+        super(HydroPowerPlant, self).__init__(**kw_args)
 
     def getGenSourcePumpDischargeReservoir(self):
         """Generators are supplied water from or pumps discharge water to an upstream reservoir

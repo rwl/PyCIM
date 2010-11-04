@@ -20,7 +20,7 @@ class Switch(ConductingEquipment):
     """A generic device designed to close, or open, or both, one or more electric circuits.
     """
 
-    def __init__(self, switchOnCount=0, normalOpen=False, retained=False, switchOnDate='', LoadMgmtFunctions=None, CompositeSwitch=None, SwitchSchedules=None, ConnectDisconnectFunctions=None, SwitchingOperations=None, *args, **kw_args):
+    def __init__(self, switchOnCount=0, normalOpen=False, retained=False, switchOnDate='', LoadMgmtFunctions=None, CompositeSwitch=None, SwitchSchedules=None, ConnectDisconnectFunctions=None, SwitchingOperations=None, **kw_args):
         """Initializes a new 'Switch' instance.
 
         @param switchOnCount: The switch on count since the switch was last reset or initialized. 
@@ -60,7 +60,7 @@ class Switch(ConductingEquipment):
         self._SwitchingOperations = []
         self.SwitchingOperations = [] if SwitchingOperations is None else SwitchingOperations
 
-        super(Switch, self).__init__(*args, **kw_args)
+        super(Switch, self).__init__(**kw_args)
 
     def getLoadMgmtFunctions(self):
         

@@ -20,7 +20,7 @@ class SurgeProtectorTypeAsset(ElectricalTypeAsset):
     """Documentation for a generic surge arrestor that may be used for design purposes.
     """
 
-    def __init__(self, maximumEnergyAbsorption=0.0, maximumContinousOperatingVoltage=0.0, maximumCurrentRating=0.0, nominalDesignVoltage=0.0, SurgeProtectors=None, SurgeProtectorAssetModels=None, *args, **kw_args):
+    def __init__(self, maximumEnergyAbsorption=0.0, maximumContinousOperatingVoltage=0.0, maximumCurrentRating=0.0, nominalDesignVoltage=0.0, SurgeProtectors=None, SurgeProtectorAssetModels=None, **kw_args):
         """Initializes a new 'SurgeProtectorTypeAsset' instance.
 
         @param maximumEnergyAbsorption: 
@@ -48,7 +48,7 @@ class SurgeProtectorTypeAsset(ElectricalTypeAsset):
         self._SurgeProtectorAssetModels = []
         self.SurgeProtectorAssetModels = [] if SurgeProtectorAssetModels is None else SurgeProtectorAssetModels
 
-        super(SurgeProtectorTypeAsset, self).__init__(*args, **kw_args)
+        super(SurgeProtectorTypeAsset, self).__init__(**kw_args)
 
     def getSurgeProtectors(self):
         

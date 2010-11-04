@@ -20,7 +20,7 @@ class SwitchInfo(ElectricalInfo):
     """Properties of a switch.
     """
 
-    def __init__(self, makingCapacity=0.0, poleCount=0, interruptingRating=0.0, withstandCurrent=0.0, minimumCurrent=0.0, loadBreak=False, gang=False, dielectricStrength=0.0, remote=False, SwitchAssets=None, SwitchAssetModel=None, SwitchTypeAsset=None, *args, **kw_args):
+    def __init__(self, makingCapacity=0.0, poleCount=0, interruptingRating=0.0, withstandCurrent=0.0, minimumCurrent=0.0, loadBreak=False, gang=False, dielectricStrength=0.0, remote=False, SwitchAssets=None, SwitchAssetModel=None, SwitchTypeAsset=None, **kw_args):
         """Initializes a new 'SwitchInfo' instance.
 
         @param makingCapacity: The highest value of current the switch can make at the rated voltage under specified operating conditions without suffering significant deterioration of its performance. 
@@ -72,7 +72,7 @@ class SwitchInfo(ElectricalInfo):
         self._SwitchTypeAsset = None
         self.SwitchTypeAsset = SwitchTypeAsset
 
-        super(SwitchInfo, self).__init__(*args, **kw_args)
+        super(SwitchInfo, self).__init__(**kw_args)
 
     def getSwitchAssets(self):
         

@@ -20,7 +20,7 @@ class StartUpTimeCurve(Curve):
     """Startup time curve as a function of down time, where time is specified in seconds.  Relationship between unit startup time (Y1-axis) vs. unit elapsed down time (X-axis).
     """
 
-    def __init__(self, GeneratingBids=None, *args, **kw_args):
+    def __init__(self, GeneratingBids=None, **kw_args):
         """Initializes a new 'StartUpTimeCurve' instance.
 
         @param GeneratingBids:
@@ -28,7 +28,7 @@ class StartUpTimeCurve(Curve):
         self._GeneratingBids = []
         self.GeneratingBids = [] if GeneratingBids is None else GeneratingBids
 
-        super(StartUpTimeCurve, self).__init__(*args, **kw_args)
+        super(StartUpTimeCurve, self).__init__(**kw_args)
 
     def getGeneratingBids(self):
         

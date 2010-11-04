@@ -20,7 +20,7 @@ class FossilFuel(IdentifiedObject):
     """The fossil fuel consumed by the non-nuclear thermal generating units, e.g., coal, oil, gas
     """
 
-    def __init__(self, fossilFuelType='gas', fuelDispatchCost=0.0, fuelEffFactor=0.0, fuelCost=0.0, lowBreakpointP=0.0, highBreakpointP=0.0, fuelSulfur=0.0, fuelHandlingCost=0.0, fuelHeatContent=0.0, fuelMixture=0.0, FuelAllocationSchedules=None, ThermalGeneratingUnit=None, *args, **kw_args):
+    def __init__(self, fossilFuelType='gas', fuelDispatchCost=0.0, fuelEffFactor=0.0, fuelCost=0.0, lowBreakpointP=0.0, highBreakpointP=0.0, fuelSulfur=0.0, fuelHandlingCost=0.0, fuelHeatContent=0.0, fuelMixture=0.0, FuelAllocationSchedules=None, ThermalGeneratingUnit=None, **kw_args):
         """Initializes a new 'FossilFuel' instance.
 
         @param fossilFuelType: The type of fossil fuel, such as coal, oil, or gas. Values are: "gas", "oil", "coal", "lignite"
@@ -72,7 +72,7 @@ class FossilFuel(IdentifiedObject):
         self._ThermalGeneratingUnit = None
         self.ThermalGeneratingUnit = ThermalGeneratingUnit
 
-        super(FossilFuel, self).__init__(*args, **kw_args)
+        super(FossilFuel, self).__init__(**kw_args)
 
     def getFuelAllocationSchedules(self):
         """A fuel allocation schedule must have a fossil fuel

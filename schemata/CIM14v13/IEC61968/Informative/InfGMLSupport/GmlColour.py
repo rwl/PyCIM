@@ -20,7 +20,7 @@ class GmlColour(IdentifiedObject):
     """The solid color that will be used. The color value is RGB-encoded using two hexadecimal digits per primary-color component, in the order Red, Green, Blue, prefixed with a hash (#) sign. The hexadecimal digits between A and F may be in either uppercase or lowercase. For example, full red is encoded as '#ff0000' (with no quotation marks). If the Stroke cssParameter element is absent, the default color is defined to be black ('#000000').
     """
 
-    def __init__(self, blue='', green='', red='', GmlFills=None, GmlFonts=None, GmlStrokes=None, *args, **kw_args):
+    def __init__(self, blue='', green='', red='', GmlFills=None, GmlFonts=None, GmlStrokes=None, **kw_args):
         """Initializes a new 'GmlColour' instance.
 
         @param blue: The color value for BLUE (RGB-encoded using two hexadecimal digits per primary-color component, in the order Red, Green, Blue, prefixed with a hash (#) sign.). 
@@ -48,7 +48,7 @@ class GmlColour(IdentifiedObject):
         self._GmlStrokes = []
         self.GmlStrokes = [] if GmlStrokes is None else GmlStrokes
 
-        super(GmlColour, self).__init__(*args, **kw_args)
+        super(GmlColour, self).__init__(**kw_args)
 
     def getGmlFills(self):
         

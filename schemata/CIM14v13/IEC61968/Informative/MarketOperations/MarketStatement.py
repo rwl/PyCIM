@@ -20,7 +20,7 @@ class MarketStatement(Document):
     """A statement is a roll up of statement line items. Each statement along with its line items provide the details of specific charges at any given time.
     """
 
-    def __init__(self, tradeDate='', referenceNumber='', start='', end='', transactionDate='', MarketStatementLineItem=None, *args, **kw_args):
+    def __init__(self, tradeDate='', referenceNumber='', start='', end='', transactionDate='', MarketStatementLineItem=None, **kw_args):
         """Initializes a new 'MarketStatement' instance.
 
         @param tradeDate: The date of which Settlement is run. 
@@ -48,7 +48,7 @@ class MarketStatement(Document):
         self._MarketStatementLineItem = []
         self.MarketStatementLineItem = [] if MarketStatementLineItem is None else MarketStatementLineItem
 
-        super(MarketStatement, self).__init__(*args, **kw_args)
+        super(MarketStatement, self).__init__(**kw_args)
 
     def getMarketStatementLineItem(self):
         

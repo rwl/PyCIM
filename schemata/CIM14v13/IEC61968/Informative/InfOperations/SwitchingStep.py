@@ -20,7 +20,7 @@ class SwitchingStep(IdentifiedObject):
     """A single step within a SwitchingSchedule. Could be a switching operation (applying a network alteration), or issuing a safety document. Note: Inherited attribute IdentifiedObject.name is used to hold the sequence number.
     """
 
-    def __init__(self, statusKind='confirmed', desiredEndState='', text='', requiredControlAction='', requiredControlActionInterval=None, SafetyDocument=None, SwitchingSchedule=None, ErpPersonRole=None, PowerSystemResources=None, *args, **kw_args):
+    def __init__(self, statusKind='confirmed', desiredEndState='', text='', requiredControlAction='', requiredControlActionInterval=None, SafetyDocument=None, SwitchingSchedule=None, ErpPersonRole=None, PowerSystemResources=None, **kw_args):
         """Initializes a new 'SwitchingStep' instance.
 
         @param statusKind: Status of this SwitchingStep. Values are: "confirmed", "skipped", "aborted", "instructed", "proposed"
@@ -59,7 +59,7 @@ class SwitchingStep(IdentifiedObject):
         self._PowerSystemResources = []
         self.PowerSystemResources = [] if PowerSystemResources is None else PowerSystemResources
 
-        super(SwitchingStep, self).__init__(*args, **kw_args)
+        super(SwitchingStep, self).__init__(**kw_args)
 
     # Interval between 'requiredControlAction' was issued and completed.
     requiredControlActionInterval = None

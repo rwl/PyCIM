@@ -20,7 +20,7 @@ class MountingPoint(IdentifiedObject):
     """Point on a structure that a connection may have a conductor connected to. Defined with an x and y coordinate plus a phase. A connection may have multiple mounting points, one for each phase.
     """
 
-    def __init__(self, phaseCode='BC', yCoord=0, xCoord=0, OverheadConductors=None, Connections=None, *args, **kw_args):
+    def __init__(self, phaseCode='BC', yCoord=0, xCoord=0, OverheadConductors=None, Connections=None, **kw_args):
         """Initializes a new 'MountingPoint' instance.
 
         @param phaseCode: Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
@@ -44,7 +44,7 @@ class MountingPoint(IdentifiedObject):
         self._Connections = []
         self.Connections = [] if Connections is None else Connections
 
-        super(MountingPoint, self).__init__(*args, **kw_args)
+        super(MountingPoint, self).__init__(**kw_args)
 
     def getOverheadConductors(self):
         

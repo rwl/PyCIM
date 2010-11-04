@@ -20,7 +20,7 @@ class TimePoint(IdentifiedObject):
     """A point in time within a sequence of points in time relative to a TimeSchedule.
     """
 
-    def __init__(self, relativeTimeInterval=0.0, absoluteTime='', sequenceNumber=0, window=None, ScheduledEvents=None, TimeSchedule=None, status=None, *args, **kw_args):
+    def __init__(self, relativeTimeInterval=0.0, absoluteTime='', sequenceNumber=0, window=None, ScheduledEvents=None, TimeSchedule=None, status=None, **kw_args):
         """Initializes a new 'TimePoint' instance.
 
         @param relativeTimeInterval: (if interval-based) A point in time relative to scheduled start time in 'TimeSchedule.scheduleInterval.start'. 
@@ -50,7 +50,7 @@ class TimePoint(IdentifiedObject):
 
         self.status = status
 
-        super(TimePoint, self).__init__(*args, **kw_args)
+        super(TimePoint, self).__init__(**kw_args)
 
     # Interval defining the window of time that this time point is valid (for example, seasonal, only on weekends, not on weekends, only 8:00 to 5:00, etc.).
     window = None

@@ -20,7 +20,7 @@ class WorkBillingInfo(Document):
     """Billing information for work performed for the customer. The history of Work Billing Info, Invoices, and Payments is to be maintained in associated ActivityRecords.
     """
 
-    def __init__(self, dueDateTime='', receivedDateTime='', deposit=0.0, workPrice=0.0, discount=0.0, costEstimate=0.0, issueDateTime='', ErpLineItems=None, CustomerAccount=None, Works=None, *args, **kw_args):
+    def __init__(self, dueDateTime='', receivedDateTime='', deposit=0.0, workPrice=0.0, discount=0.0, costEstimate=0.0, issueDateTime='', ErpLineItems=None, CustomerAccount=None, Works=None, **kw_args):
         """Initializes a new 'WorkBillingInfo' instance.
 
         @param dueDateTime: Date and time by which payment for bill is expected from client. 
@@ -64,7 +64,7 @@ class WorkBillingInfo(Document):
         self._Works = []
         self.Works = [] if Works is None else Works
 
-        super(WorkBillingInfo, self).__init__(*args, **kw_args)
+        super(WorkBillingInfo, self).__init__(**kw_args)
 
     def getErpLineItems(self):
         

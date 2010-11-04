@@ -20,7 +20,7 @@ class OutageHistory(Document):
     """A document collecting OutageReports, that allows utilities to examine the number of outages suffered by a customer. Also provides data to calculate the total supply interruption to any customer over a given period.
     """
 
-    def __init__(self, OutageReports=None, *args, **kw_args):
+    def __init__(self, OutageReports=None, **kw_args):
         """Initializes a new 'OutageHistory' instance.
 
         @param OutageReports: OutageReports per customer for which this OutageHistory is created.
@@ -28,7 +28,7 @@ class OutageHistory(Document):
         self._OutageReports = []
         self.OutageReports = [] if OutageReports is None else OutageReports
 
-        super(OutageHistory, self).__init__(*args, **kw_args)
+        super(OutageHistory, self).__init__(**kw_args)
 
     def getOutageReports(self):
         """OutageReports per customer for which this OutageHistory is created.

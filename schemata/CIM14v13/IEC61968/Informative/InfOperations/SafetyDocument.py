@@ -20,7 +20,7 @@ class SafetyDocument(Document):
     """A document restricting or authorising works on electrical equipment (for example a permit to work, sanction for test, limitation of access, or certificate of isolation), defined based upon organisational practices. Note: SafetyDocument may refer to ClearanceTag-s associated with ConductingEquipment for which the SafetyDocument is issued.
     """
 
-    def __init__(self, PowerSystemResource=None, ScheduleSteps=None, ClearanceTags=None, *args, **kw_args):
+    def __init__(self, PowerSystemResource=None, ScheduleSteps=None, ClearanceTags=None, **kw_args):
         """Initializes a new 'SafetyDocument' instance.
 
         @param PowerSystemResource:
@@ -36,7 +36,7 @@ class SafetyDocument(Document):
         self._ClearanceTags = []
         self.ClearanceTags = [] if ClearanceTags is None else ClearanceTags
 
-        super(SafetyDocument, self).__init__(*args, **kw_args)
+        super(SafetyDocument, self).__init__(**kw_args)
 
     def getPowerSystemResource(self):
         

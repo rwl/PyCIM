@@ -20,7 +20,7 @@ class SurgeProtector(Equipment):
     """Shunt device, installed on the network, usually in the proximity of electrical equipment in order to protect the said equipment against transient voltage spikes caused by lightning or switching activity.
     """
 
-    def __init__(self, SurgeProtectorTypeAsset=None, SurgeProtectorAsset=None, *args, **kw_args):
+    def __init__(self, SurgeProtectorTypeAsset=None, SurgeProtectorAsset=None, **kw_args):
         """Initializes a new 'SurgeProtector' instance.
 
         @param SurgeProtectorTypeAsset:
@@ -32,7 +32,7 @@ class SurgeProtector(Equipment):
         self._SurgeProtectorAsset = None
         self.SurgeProtectorAsset = SurgeProtectorAsset
 
-        super(SurgeProtector, self).__init__(*args, **kw_args)
+        super(SurgeProtector, self).__init__(**kw_args)
 
     def getSurgeProtectorTypeAsset(self):
         

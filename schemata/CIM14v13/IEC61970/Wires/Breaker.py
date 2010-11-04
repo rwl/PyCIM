@@ -20,7 +20,7 @@ class Breaker(ProtectedSwitch):
     """A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit.
     """
 
-    def __init__(self, inTransitTime=0.0, ratedCurrent=0.0, *args, **kw_args):
+    def __init__(self, inTransitTime=0.0, ratedCurrent=0.0, **kw_args):
         """Initializes a new 'Breaker' instance.
 
         @param inTransitTime: The transition time from open to close. 
@@ -32,5 +32,5 @@ class Breaker(ProtectedSwitch):
         #: Fault interrupting current rating.
         self.ratedCurrent = ratedCurrent
 
-        super(Breaker, self).__init__(*args, **kw_args)
+        super(Breaker, self).__init__(**kw_args)
 

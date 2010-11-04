@@ -20,7 +20,7 @@ class ErpInvoiceLineItem(Document):
     """An individual line item on an invoice.
     """
 
-    def __init__(self, kind='recalculation', lineNumber='', netAmount=0.0, glAccount='', glDateTime='', lineAmount=0.0, previousAmount=0.0, lineVersion='', WorkBillingInfos=None, ErpRecLineItem=None, MarketFactors=None, ErpJournalEntries=None, billPeriod=None, ErpRecDelvLineItem=None, CustomerBillingInfos=None, UserAttributes=None, ContainerErpInvoiceLineItem=None, ComponentErpInvoiceLineItems=None, ErpPayments=None, Settlements=None, ErpInvoice=None, ErpQuoteLineItem=None, ErpPayableLineItem=None, *args, **kw_args):
+    def __init__(self, kind='recalculation', lineNumber='', netAmount=0.0, glAccount='', glDateTime='', lineAmount=0.0, previousAmount=0.0, lineVersion='', WorkBillingInfos=None, ErpRecLineItem=None, MarketFactors=None, ErpJournalEntries=None, billPeriod=None, ErpRecDelvLineItem=None, CustomerBillingInfos=None, UserAttributes=None, ContainerErpInvoiceLineItem=None, ComponentErpInvoiceLineItems=None, ErpPayments=None, Settlements=None, ErpInvoice=None, ErpQuoteLineItem=None, ErpPayableLineItem=None, **kw_args):
         """Initializes a new 'ErpInvoiceLineItem' instance.
 
         @param kind: Kind of line item. Values are: "recalculation", "initial", "other"
@@ -115,7 +115,7 @@ class ErpInvoiceLineItem(Document):
         self._ErpPayableLineItem = None
         self.ErpPayableLineItem = ErpPayableLineItem
 
-        super(ErpInvoiceLineItem, self).__init__(*args, **kw_args)
+        super(ErpInvoiceLineItem, self).__init__(**kw_args)
 
     def getWorkBillingInfos(self):
         

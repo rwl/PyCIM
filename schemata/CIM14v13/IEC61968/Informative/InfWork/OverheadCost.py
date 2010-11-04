@@ -20,7 +20,7 @@ class OverheadCost(IdentifiedObject):
     """Overhead cost applied to work order.
     """
 
-    def __init__(self, cost=0.0, code='', WorkCostDetails=None, WorkTasks=None, status=None, *args, **kw_args):
+    def __init__(self, cost=0.0, code='', WorkCostDetails=None, WorkTasks=None, status=None, **kw_args):
         """Initializes a new 'OverheadCost' instance.
 
         @param cost: The overhead cost to be applied. 
@@ -43,7 +43,7 @@ class OverheadCost(IdentifiedObject):
 
         self.status = status
 
-        super(OverheadCost, self).__init__(*args, **kw_args)
+        super(OverheadCost, self).__init__(**kw_args)
 
     def getWorkCostDetails(self):
         

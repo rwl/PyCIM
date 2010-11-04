@@ -20,7 +20,7 @@ class QualificationRequirement(IdentifiedObject):
     """Certain skills are required and must be certified in order for a person (typically a member of a crew) to be qualified to work on types of equipment.
     """
 
-    def __init__(self, qualificationID='', Specifications=None, WorkTasks=None, CULaborItems=None, Skills=None, *args, **kw_args):
+    def __init__(self, qualificationID='', Specifications=None, WorkTasks=None, CULaborItems=None, Skills=None, **kw_args):
         """Initializes a new 'QualificationRequirement' instance.
 
         @param qualificationID: Qualification identifier. 
@@ -44,7 +44,7 @@ class QualificationRequirement(IdentifiedObject):
         self._Skills = []
         self.Skills = [] if Skills is None else Skills
 
-        super(QualificationRequirement, self).__init__(*args, **kw_args)
+        super(QualificationRequirement, self).__init__(**kw_args)
 
     def getSpecifications(self):
         

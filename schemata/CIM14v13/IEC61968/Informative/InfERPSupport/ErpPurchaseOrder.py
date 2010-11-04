@@ -20,7 +20,7 @@ class ErpPurchaseOrder(Document):
     """A document that communicates an order to purchase goods from a buyer to a supplier. The PurchaseOrder carries information to and from the buyer and supplier. It is a legally binding document once both Parties agree to the contents and the specified terms and conditions of the order.
     """
 
-    def __init__(self, ErpPOLineItems=None, *args, **kw_args):
+    def __init__(self, ErpPOLineItems=None, **kw_args):
         """Initializes a new 'ErpPurchaseOrder' instance.
 
         @param ErpPOLineItems:
@@ -28,7 +28,7 @@ class ErpPurchaseOrder(Document):
         self._ErpPOLineItems = []
         self.ErpPOLineItems = [] if ErpPOLineItems is None else ErpPOLineItems
 
-        super(ErpPurchaseOrder, self).__init__(*args, **kw_args)
+        super(ErpPurchaseOrder, self).__init__(**kw_args)
 
     def getErpPOLineItems(self):
         

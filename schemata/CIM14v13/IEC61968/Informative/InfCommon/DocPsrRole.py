@@ -20,7 +20,7 @@ class DocPsrRole(Role):
     """Potential roles that might played by a document relative to a type of PowerSystemResource.
     """
 
-    def __init__(self, Document=None, PowerSystemResource=None, *args, **kw_args):
+    def __init__(self, Document=None, PowerSystemResource=None, **kw_args):
         """Initializes a new 'DocPsrRole' instance.
 
         @param Document:
@@ -32,7 +32,7 @@ class DocPsrRole(Role):
         self._PowerSystemResource = None
         self.PowerSystemResource = PowerSystemResource
 
-        super(DocPsrRole, self).__init__(*args, **kw_args)
+        super(DocPsrRole, self).__init__(**kw_args)
 
     def getDocument(self):
         

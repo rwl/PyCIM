@@ -20,7 +20,7 @@ class OutageReport(Document):
     """Document with statistics of an outage.
     """
 
-    def __init__(self, averageCml=0.0, outageDuration=0.0, customerCount=0, totalCml=0.0, OutageRecord=None, OutageHistory=None, *args, **kw_args):
+    def __init__(self, averageCml=0.0, outageDuration=0.0, customerCount=0, totalCml=0.0, OutageRecord=None, OutageHistory=None, **kw_args):
         """Initializes a new 'OutageReport' instance.
 
         @param averageCml: Average Customer Minutes Lost (CML) for this outage. 
@@ -48,7 +48,7 @@ class OutageReport(Document):
         self._OutageHistory = None
         self.OutageHistory = OutageHistory
 
-        super(OutageReport, self).__init__(*args, **kw_args)
+        super(OutageReport, self).__init__(**kw_args)
 
     def getOutageRecord(self):
         """reference to related document

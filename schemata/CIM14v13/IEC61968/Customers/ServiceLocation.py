@@ -20,7 +20,7 @@ class ServiceLocation(Location):
     """A customer ServiceLocation has one or more ServiceDeliveryPoint(s), which in turn relate to Meters. The location may be a point or a polygon, depending on the specific circumstances. For distribution, the ServiceLocation is typically the location of the utility customer's premise. Because a customer's premise may have one or more meters, the ServiceDeliveryPoint is used to define the actual conducting equipment that the EndDeviceAsset attaches to at the utility customer's ServiceLocation. For transmission, it is the point(s) of interconnection on the transmission provider's transmission system where capacity and/or energy transmitted by the transmission provider is made available to the receiving party.
     """
 
-    def __init__(self, needsInspection=False, accessMethod='', siteAccessProblem='', CustomerAgreements=None, EndDeviceAssets=None, ServiceDeliveryPoints=None, *args, **kw_args):
+    def __init__(self, needsInspection=False, accessMethod='', siteAccessProblem='', CustomerAgreements=None, EndDeviceAssets=None, ServiceDeliveryPoints=None, **kw_args):
         """Initializes a new 'ServiceLocation' instance.
 
         @param needsInspection: True if inspection is needed of facilities at this service location. This could be requested by a customer, due to suspected tampering, environmental concerns (e.g., a fire in the vicinity), or to correct incompatible data. 
@@ -48,7 +48,7 @@ class ServiceLocation(Location):
         self._ServiceDeliveryPoints = []
         self.ServiceDeliveryPoints = [] if ServiceDeliveryPoints is None else ServiceDeliveryPoints
 
-        super(ServiceLocation, self).__init__(*args, **kw_args)
+        super(ServiceLocation, self).__init__(**kw_args)
 
     def getCustomerAgreements(self):
         """All customer agreements regulating this service location.

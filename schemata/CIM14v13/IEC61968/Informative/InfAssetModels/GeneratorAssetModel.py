@@ -20,7 +20,7 @@ class GeneratorAssetModel(ElectricalAssetModel):
     """Documentation for a type of generation equipment of a particular product model made by a manufacturer.
     """
 
-    def __init__(self, GeneratorAssets=None, GeneratorTypeAsset=None, *args, **kw_args):
+    def __init__(self, GeneratorAssets=None, GeneratorTypeAsset=None, **kw_args):
         """Initializes a new 'GeneratorAssetModel' instance.
 
         @param GeneratorAssets:
@@ -32,7 +32,7 @@ class GeneratorAssetModel(ElectricalAssetModel):
         self._GeneratorTypeAsset = None
         self.GeneratorTypeAsset = GeneratorTypeAsset
 
-        super(GeneratorAssetModel, self).__init__(*args, **kw_args)
+        super(GeneratorAssetModel, self).__init__(**kw_args)
 
     def getGeneratorAssets(self):
         

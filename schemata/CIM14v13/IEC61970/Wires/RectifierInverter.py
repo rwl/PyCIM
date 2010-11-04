@@ -20,7 +20,7 @@ class RectifierInverter(ConductingEquipment):
     """Bi-directional AC-DC conversion equipment that can be used to control DC current, DC voltage, DC power flow, or firing angle.
     """
 
-    def __init__(self, ratedU=0.0, maxP=0.0, minP=0.0, commutatingResistance=0.0, bridges=0, compoundResistance=0.0, minCompoundVoltage=0.0, commutatingReactance=0.0, minU=0.0, operatingMode='', maxU=0.0, frequency=0.0, *args, **kw_args):
+    def __init__(self, ratedU=0.0, maxP=0.0, minP=0.0, commutatingResistance=0.0, bridges=0, compoundResistance=0.0, minCompoundVoltage=0.0, commutatingReactance=0.0, minU=0.0, operatingMode='', maxU=0.0, frequency=0.0, **kw_args):
         """Initializes a new 'RectifierInverter' instance.
 
         @param ratedU: Rectifier/inverter primary base voltage 
@@ -72,5 +72,5 @@ class RectifierInverter(ConductingEquipment):
         #: Frequency on the AC side.
         self.frequency = frequency
 
-        super(RectifierInverter, self).__init__(*args, **kw_args)
+        super(RectifierInverter, self).__init__(**kw_args)
 

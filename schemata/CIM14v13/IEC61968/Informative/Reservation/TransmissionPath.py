@@ -20,7 +20,7 @@ class TransmissionPath(Element):
     """An electrical connection, link, or line consisting of one or more parallel transmission elements between two areas of the interconnected electric systems, or portions thereof. TransmissionCorridor and TransmissionRightOfWay refer to legal aspects. The TransmissionPath refers to the segments between a TransmissionProvider's ServicePoints.
     """
 
-    def __init__(self, totalTransferCapability=0.0, parallelPathFlag=False, availTransferCapability=0.0, OfferedOn=None, DeliveryPointFor=None, PointOfReceiptFor=None, LocatedOn=None, For=None, *args, **kw_args):
+    def __init__(self, totalTransferCapability=0.0, parallelPathFlag=False, availTransferCapability=0.0, OfferedOn=None, DeliveryPointFor=None, PointOfReceiptFor=None, LocatedOn=None, For=None, **kw_args):
         """Initializes a new 'TransmissionPath' instance.
 
         @param totalTransferCapability: The total transmission capability of a transmission path in the reference direction 
@@ -56,7 +56,7 @@ class TransmissionPath(Element):
         self._For = None
         self.For = For
 
-        super(TransmissionPath, self).__init__(*args, **kw_args)
+        super(TransmissionPath, self).__init__(**kw_args)
 
     def getOfferedOn(self):
         """A transmission service is offered on a transmission path.

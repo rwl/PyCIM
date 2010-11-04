@@ -20,7 +20,7 @@ class IncrementalHeatRateCurve(Curve):
     """Relationship between unit incremental heat rate in (delta energy/time) per (delta active power) and unit output in active power. The IHR curve represents the slope of the HeatInputCurve. Note that the 'incremental heat rate' and the 'heat rate' have the same engineering units.
     """
 
-    def __init__(self, isNetGrossP=False, ThermalGeneratingUnit=None, *args, **kw_args):
+    def __init__(self, isNetGrossP=False, ThermalGeneratingUnit=None, **kw_args):
         """Initializes a new 'IncrementalHeatRateCurve' instance.
 
         @param isNetGrossP: Flag is set to true when output is expressed in net active power 
@@ -32,7 +32,7 @@ class IncrementalHeatRateCurve(Curve):
         self._ThermalGeneratingUnit = None
         self.ThermalGeneratingUnit = ThermalGeneratingUnit
 
-        super(IncrementalHeatRateCurve, self).__init__(*args, **kw_args)
+        super(IncrementalHeatRateCurve, self).__init__(**kw_args)
 
     def getThermalGeneratingUnit(self):
         """A thermal generating unit may have an incremental heat rate curve

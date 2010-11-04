@@ -20,7 +20,7 @@ class ResourceBid(Bid):
     """Energy bid for generation, load, or virtual type for the whole of the market-trading period (i.e., one day in day ahead market or one hour in the real time market)
     """
 
-    def __init__(self, startUpsMaxDay=0, energyMinDay=0.0, energyMaxDay=0.0, virtual=False, startUpsMaxWeek=0, commodityType='', shutDownsMaxWeek=0, shutDownsMaxDay=0, *args, **kw_args):
+    def __init__(self, startUpsMaxDay=0, energyMinDay=0.0, energyMaxDay=0.0, virtual=False, startUpsMaxWeek=0, commodityType='', shutDownsMaxWeek=0, shutDownsMaxDay=0, **kw_args):
         """Initializes a new 'ResourceBid' instance.
 
         @param startUpsMaxDay: Maximum number of startups per day. 
@@ -56,5 +56,5 @@ class ResourceBid(Bid):
         #: Maximum number of shutdowns per day.
         self.shutDownsMaxDay = shutDownsMaxDay
 
-        super(ResourceBid, self).__init__(*args, **kw_args)
+        super(ResourceBid, self).__init__(**kw_args)
 

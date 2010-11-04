@@ -20,7 +20,7 @@ class ProcedureDataSet(Document):
     """A data set recorded each time a procedure is executed. Observed results are captured in associated measurement values and/or values for properties relevant to the type of procedure performed.
     """
 
-    def __init__(self, completedDateTime='', Procedure=None, Properties=None, MeasurementValues=None, TransformerObservations=None, *args, **kw_args):
+    def __init__(self, completedDateTime='', Procedure=None, Properties=None, MeasurementValues=None, TransformerObservations=None, **kw_args):
         """Initializes a new 'ProcedureDataSet' instance.
 
         @param completedDateTime: Date and time procedure was completed. 
@@ -44,7 +44,7 @@ class ProcedureDataSet(Document):
         self._TransformerObservations = []
         self.TransformerObservations = [] if TransformerObservations is None else TransformerObservations
 
-        super(ProcedureDataSet, self).__init__(*args, **kw_args)
+        super(ProcedureDataSet, self).__init__(**kw_args)
 
     def getProcedure(self):
         

@@ -20,7 +20,7 @@ class AssetLocRole(Role):
     """Roles played between Assets and Locations.
     """
 
-    def __init__(self, Asset=None, Location=None, *args, **kw_args):
+    def __init__(self, Asset=None, Location=None, **kw_args):
         """Initializes a new 'AssetLocRole' instance.
 
         @param Asset:
@@ -32,7 +32,7 @@ class AssetLocRole(Role):
         self._Location = None
         self.Location = Location
 
-        super(AssetLocRole, self).__init__(*args, **kw_args)
+        super(AssetLocRole, self).__init__(**kw_args)
 
     def getAsset(self):
         

@@ -20,7 +20,7 @@ class ShutdownCurve(Curve):
     """Relationship between the rate in gross active power/minute (Y-axis) at which a unit should be shutdown and its present gross MW output (X-axis)
     """
 
-    def __init__(self, shutdownDate='', shutdownCost=0.0, ThermalGeneratingUnit=None, *args, **kw_args):
+    def __init__(self, shutdownDate='', shutdownCost=0.0, ThermalGeneratingUnit=None, **kw_args):
         """Initializes a new 'ShutdownCurve' instance.
 
         @param shutdownDate: The date and time of the most recent generating unit shutdown 
@@ -36,7 +36,7 @@ class ShutdownCurve(Curve):
         self._ThermalGeneratingUnit = None
         self.ThermalGeneratingUnit = ThermalGeneratingUnit
 
-        super(ShutdownCurve, self).__init__(*args, **kw_args)
+        super(ShutdownCurve, self).__init__(**kw_args)
 
     def getThermalGeneratingUnit(self):
         """A thermal generating unit may have a shutdown curve

@@ -20,7 +20,7 @@ class GmlFill(IdentifiedObject):
     """Specifies how the area of the geometry will be filled.
     """
 
-    def __init__(self, opacity=0.0, GmlColour=None, GmlPolygonSymbols=None, GmlSvgParameters=None, GmlMarks=None, GmlTextSymbols=None, *args, **kw_args):
+    def __init__(self, opacity=0.0, GmlColour=None, GmlPolygonSymbols=None, GmlSvgParameters=None, GmlMarks=None, GmlTextSymbols=None, **kw_args):
         """Initializes a new 'GmlFill' instance.
 
         @param opacity: Specifies the level of translucency to use when rendering the Fill. The value is encoded as a floating-point value between 0.0 and 1.0 with 0.0 representing completely transparent and 1.0 representing completely opaque, with a linear scale of translucency for intermediate values. The default value is 1.0 
@@ -48,7 +48,7 @@ class GmlFill(IdentifiedObject):
         self._GmlTextSymbols = []
         self.GmlTextSymbols = [] if GmlTextSymbols is None else GmlTextSymbols
 
-        super(GmlFill, self).__init__(*args, **kw_args)
+        super(GmlFill, self).__init__(**kw_args)
 
     def getGmlColour(self):
         

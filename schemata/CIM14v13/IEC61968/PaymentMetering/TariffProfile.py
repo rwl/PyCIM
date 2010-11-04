@@ -20,7 +20,7 @@ class TariffProfile(Document):
     """A schedule of charges; structure associated with Tariff that allows the definition of complex tarif structures such as step and time of use when used in conjunction with TimeTariffInterval and Charge. Inherited 'status.value' is defined in the context of the utility's business rules, for example: active, inactive, etc.
     """
 
-    def __init__(self, tariffCycle='', ConsumptionTariffIntervals=None, Tariffs=None, TimeTariffIntervals=None, *args, **kw_args):
+    def __init__(self, tariffCycle='', ConsumptionTariffIntervals=None, Tariffs=None, TimeTariffIntervals=None, **kw_args):
         """Initializes a new 'TariffProfile' instance.
 
         @param tariffCycle: The frequency at which the tariff charge schedule is repeated Examples are: once off on a specified date and time; hourly; daily; weekly; monthly; 3-monthly; 6-monthly; 12-monthly; etc. At the end of each cycle, the business rules are reset to start from the beginning again. 
@@ -40,7 +40,7 @@ class TariffProfile(Document):
         self._TimeTariffIntervals = []
         self.TimeTariffIntervals = [] if TimeTariffIntervals is None else TimeTariffIntervals
 
-        super(TariffProfile, self).__init__(*args, **kw_args)
+        super(TariffProfile, self).__init__(**kw_args)
 
     def getConsumptionTariffIntervals(self):
         """All consumption tariff intervals used to define this tariff profile.

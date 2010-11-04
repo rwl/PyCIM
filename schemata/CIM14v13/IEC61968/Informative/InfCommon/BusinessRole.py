@@ -20,7 +20,7 @@ class BusinessRole(IdentifiedObject):
     """A business role that this organisation plays. A single organisation typically performs many functions, each one described as a role.
     """
 
-    def __init__(self, category='', Organisations=None, status=None, *args, **kw_args):
+    def __init__(self, category='', Organisations=None, status=None, **kw_args):
         """Initializes a new 'BusinessRole' instance.
 
         @param category: Category by utility's corporate standards and practices. 
@@ -35,7 +35,7 @@ class BusinessRole(IdentifiedObject):
 
         self.status = status
 
-        super(BusinessRole, self).__init__(*args, **kw_args)
+        super(BusinessRole, self).__init__(**kw_args)
 
     def getOrganisations(self):
         

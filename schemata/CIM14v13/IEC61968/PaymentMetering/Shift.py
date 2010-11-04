@@ -20,7 +20,7 @@ class Shift(IdentifiedObject):
     """Generally referring to a period of operation or work performed. Whether shift is open/closed can be derived from attributes 'activiryInterval.start' and 'activityInterval.end'. The grand total for receipts (i.e., cumulative total of all actual receipted amounts during this shift; bankable + non-bankable; excludes rounding error totals) can be derived from Receipt attributes: =sum(Receipt.receiptAmount) ; includes bankable and non-bankable receipts. Must also reconcile against: =sum(receiptsGrandTotalBankable + receiptsGrandTotalNonBankable). Must also reconcile against ReceiptSummary: =sum(ReceiptSummary.receiptsTotal). The attributes with 'GrandTotal' defined in this class may need to be used when the source data is periodically flushed from the system and then these cannot be derived.
     """
 
-    def __init__(self, transactionsGrandTotalRounding=0.0, transactionsGrandTotal=0.0, receiptsGrandTotalBankable=0.0, receiptsGrandTotalRounding=0.0, receiptsGrandTotalNonBankable=0.0, ReceiptSummaries=None, activityInterval=None, TransactionSummaries=None, *args, **kw_args):
+    def __init__(self, transactionsGrandTotalRounding=0.0, transactionsGrandTotal=0.0, receiptsGrandTotalBankable=0.0, receiptsGrandTotalRounding=0.0, receiptsGrandTotalNonBankable=0.0, ReceiptSummaries=None, activityInterval=None, TransactionSummaries=None, **kw_args):
         """Initializes a new 'Shift' instance.
 
         @param transactionsGrandTotalRounding: Cumulative amount in error due to process rounding not reflected in transactionsGandTotal. Values are obtained from Transaction attributes: =sum(Transaction.transactionRounding). 
@@ -55,7 +55,7 @@ class Shift(IdentifiedObject):
         self._TransactionSummaries = []
         self.TransactionSummaries = [] if TransactionSummaries is None else TransactionSummaries
 
-        super(Shift, self).__init__(*args, **kw_args)
+        super(Shift, self).__init__(**kw_args)
 
     def getReceiptSummaries(self):
         """All receipt summaries for this shift.

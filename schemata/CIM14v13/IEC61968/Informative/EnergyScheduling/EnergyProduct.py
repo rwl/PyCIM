@@ -20,7 +20,7 @@ class EnergyProduct(Agreement):
     """An EnergyProduct is offered commercially as a ContractOrTariff.
     """
 
-    def __init__(self, ServicePoint=None, GenerationProvider=None, EnergyTransactions=None, ResoldBy_Marketers=None, TitleHeldBy_Marketer=None, *args, **kw_args):
+    def __init__(self, ServicePoint=None, GenerationProvider=None, EnergyTransactions=None, ResoldBy_Marketers=None, TitleHeldBy_Marketer=None, **kw_args):
         """Initializes a new 'EnergyProduct' instance.
 
         @param ServicePoint: An EnergyProduct injects energy into a service point.
@@ -44,7 +44,7 @@ class EnergyProduct(Agreement):
         self._TitleHeldBy_Marketer = None
         self.TitleHeldBy_Marketer = TitleHeldBy_Marketer
 
-        super(EnergyProduct, self).__init__(*args, **kw_args)
+        super(EnergyProduct, self).__init__(**kw_args)
 
     def getServicePoint(self):
         """An EnergyProduct injects energy into a service point.

@@ -20,7 +20,7 @@ class ACLineSegment(Conductor):
     """A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.
     """
 
-    def __init__(self, bch=0.0, r=0.0, gch=0.0, r0=0.0, b0ch=0.0, x0=0.0, x=0.0, g0ch=0.0, *args, **kw_args):
+    def __init__(self, bch=0.0, r=0.0, gch=0.0, r0=0.0, b0ch=0.0, x0=0.0, x=0.0, g0ch=0.0, **kw_args):
         """Initializes a new 'ACLineSegment' instance.
 
         @param bch: Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line. 
@@ -56,5 +56,5 @@ class ACLineSegment(Conductor):
         #: Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section.
         self.g0ch = g0ch
 
-        super(ACLineSegment, self).__init__(*args, **kw_args)
+        super(ACLineSegment, self).__init__(**kw_args)
 

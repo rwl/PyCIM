@@ -20,7 +20,7 @@ class Cabinet(AssetContainer):
     """Enclosure that offers protection to the equipment it contains and/or safety to people/animals outside it.
     """
 
-    def __init__(self, CabinetModel=None, *args, **kw_args):
+    def __init__(self, CabinetModel=None, **kw_args):
         """Initializes a new 'Cabinet' instance.
 
         @param CabinetModel:
@@ -28,7 +28,7 @@ class Cabinet(AssetContainer):
         self._CabinetModel = None
         self.CabinetModel = CabinetModel
 
-        super(Cabinet, self).__init__(*args, **kw_args)
+        super(Cabinet, self).__init__(**kw_args)
 
     def getCabinetModel(self):
         

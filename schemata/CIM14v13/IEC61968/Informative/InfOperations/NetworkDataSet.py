@@ -20,7 +20,7 @@ class NetworkDataSet(IdentifiedObject):
     """Categorized as a type of document, model of a portion of the electrical network that includes a list of the equipment, along with relevant connectivity, electrical characteristics, geographical location, and various parameters associated with the equipment.
     """
 
-    def __init__(self, category='', Documents=None, CircuitSections=None, ChangeSets=None, PowerSystemResources=None, LandBases=None, ChangeItems=None, status=None, *args, **kw_args):
+    def __init__(self, category='', Documents=None, CircuitSections=None, ChangeSets=None, PowerSystemResources=None, LandBases=None, ChangeItems=None, status=None, **kw_args):
         """Initializes a new 'NetworkDataSet' instance.
 
         @param category: Category of network data set. 
@@ -54,7 +54,7 @@ class NetworkDataSet(IdentifiedObject):
 
         self.status = status
 
-        super(NetworkDataSet, self).__init__(*args, **kw_args)
+        super(NetworkDataSet, self).__init__(**kw_args)
 
     def getDocuments(self):
         

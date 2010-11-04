@@ -20,7 +20,7 @@ class DocDocRole(Role):
     """Roles played between Documents and other Documents.
     """
 
-    def __init__(self, ToDocument=None, FromDocument=None, *args, **kw_args):
+    def __init__(self, ToDocument=None, FromDocument=None, **kw_args):
         """Initializes a new 'DocDocRole' instance.
 
         @param ToDocument:
@@ -32,7 +32,7 @@ class DocDocRole(Role):
         self._FromDocument = None
         self.FromDocument = FromDocument
 
-        super(DocDocRole, self).__init__(*args, **kw_args)
+        super(DocDocRole, self).__init__(**kw_args)
 
     def getToDocument(self):
         

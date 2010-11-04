@@ -20,7 +20,7 @@ class MaintenanceDataSet(ProcedureDataSet):
     """The result of a maintenance activity, a type of Procedure, for a given attribute of an asset is documentated in an MaintenanceDataSet.
     """
 
-    def __init__(self, conditionBefore='', maintCode='', conditionAfter='', *args, **kw_args):
+    def __init__(self, conditionBefore='', maintCode='', conditionAfter='', **kw_args):
         """Initializes a new 'MaintenanceDataSet' instance.
 
         @param conditionBefore: Description of the condition of the asset just prior to maintenance being performed. 
@@ -36,5 +36,5 @@ class MaintenanceDataSet(ProcedureDataSet):
         #: Condition of asset just following maintenance procedure.
         self.conditionAfter = conditionAfter
 
-        super(MaintenanceDataSet, self).__init__(*args, **kw_args)
+        super(MaintenanceDataSet, self).__init__(**kw_args)
 

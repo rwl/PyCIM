@@ -20,7 +20,7 @@ class MarketFactors(Document):
     """Aggregation of market information relative for a specific time interval.
     """
 
-    def __init__(self, intervalStartTime='', ErpInvoices=None, Market=None, *args, **kw_args):
+    def __init__(self, intervalStartTime='', ErpInvoices=None, Market=None, **kw_args):
         """Initializes a new 'MarketFactors' instance.
 
         @param intervalStartTime: The start of the time interval for which requirement is defined. 
@@ -36,7 +36,7 @@ class MarketFactors(Document):
         self._Market = None
         self.Market = Market
 
-        super(MarketFactors, self).__init__(*args, **kw_args)
+        super(MarketFactors, self).__init__(**kw_args)
 
     def getErpInvoices(self):
         

@@ -20,7 +20,7 @@ class TopologicalNode(IdentifiedObject):
     """A set of connectivity nodes that, in the current network state, are connected together through any type of closed switches, including  jumpers. Topological nodes can change as the current network state changes (i.e., switches, breakers, etc. change state).
     """
 
-    def __init__(self, SvVoltage=None, ReportingGroup=None, Terminal=None, SvShortCircuit=None, SvInjection=None, AngleRef_TopologicalIsland=None, ConnectivityNodes=None, ConnectivityNodeContainer=None, BaseVoltage=None, TopologicalIsland=None, *args, **kw_args):
+    def __init__(self, SvVoltage=None, ReportingGroup=None, Terminal=None, SvShortCircuit=None, SvInjection=None, AngleRef_TopologicalIsland=None, ConnectivityNodes=None, ConnectivityNodeContainer=None, BaseVoltage=None, TopologicalIsland=None, **kw_args):
         """Initializes a new 'TopologicalNode' instance.
 
         @param SvVoltage: The state voltage associated with the topological node.
@@ -64,7 +64,7 @@ class TopologicalNode(IdentifiedObject):
         self._TopologicalIsland = None
         self.TopologicalIsland = TopologicalIsland
 
-        super(TopologicalNode, self).__init__(*args, **kw_args)
+        super(TopologicalNode, self).__init__(**kw_args)
 
     def getSvVoltage(self):
         """The state voltage associated with the topological node.
