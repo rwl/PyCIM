@@ -36,37 +36,37 @@ class FinancialInfo(IdentifiedObject):
         @param costDescription: Description of the cost. 
         @param Asset:
         """
-        #: Category of cost to which this Material Item belongs. 
+        #: Category of cost to which this Material Item belongs.
         self.costType = costType
 
-        #: Date and time asset's financial value was put in plant for regulatory accounting purposes (e.g., for rate base calculations). This is sometime referred to as the 'in-service date.' 
+        #: Date and time asset's financial value was put in plant for regulatory accounting purposes (e.g., for rate base calculations). This is sometime referred to as the 'in-service date.'
         self.plantTransferDateTime = plantTransferDateTime
 
-        #: The actual purchase cost of this particular asset. 
+        #: The actual purchase cost of this particular asset.
         self.actualPurchaseCost = actualPurchaseCost
 
-        #: Date and time asset was purchased. 
+        #: Date and time asset was purchased.
         self.purchaseDateTime = purchaseDateTime
 
-        #: Purchase order identifier. 
+        #: Purchase order identifier.
         self.purchaseOrderNumber = purchaseOrderNumber
 
-        #: Date and time warranty on asset expires. 
+        #: Date and time warranty on asset expires.
         self.warrantyEndDateTime = warrantyEndDateTime
 
-        #: Date and time at which the financial value was last established. 
+        #: Date and time at which the financial value was last established.
         self.valueDateTime = valueDateTime
 
-        #: The account to which this actual material item is charged. 
+        #: The account to which this actual material item is charged.
         self.account = account
 
-        #: Value of asset as of 'valueDateTime'. 
+        #: Value of asset as of 'valueDateTime'.
         self.financialValue = financialValue
 
-        #: The quantity of the asset if per unit length, for example conductor. 
+        #: The quantity of the asset if per unit length, for example conductor.
         self.quantity = quantity
 
-        #: Description of the cost. 
+        #: Description of the cost.
         self.costDescription = costDescription
 
         self._Asset = None

@@ -30,10 +30,10 @@ class VendorShift(Shift):
         @param MerchantAccount: Merchant account this vendor shift periodically debits (based on aggregated transactions).
         @param Vendor: Vendor that opens and owns this vendor shift.
         """
-        #: = true if merchantDebitAmount has been debited from MerchantAccount; typically happens at the end of VendorShift when it closes. 
+        #: = true if merchantDebitAmount has been debited from MerchantAccount; typically happens at the end of VendorShift when it closes.
         self.posted = posted
 
-        #: The amount that is to be debited from the merchant account for this vendor shift. This amount reflects the sum(PaymentTransaction.transactionAmount). 
+        #: The amount that is to be debited from the merchant account for this vendor shift. This amount reflects the sum(PaymentTransaction.transactionAmount).
         self.merchantDebitAmount = merchantDebitAmount
 
         self._Transactions = []

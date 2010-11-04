@@ -37,31 +37,31 @@ class HydroPowerPlant(PowerSystemResource):
         @param HydroGeneratingUnits: The hydro generating unit belongs to a hydro power plant
         @param Reservoir: Generators discharge water to or pumps are supplied water from a downstream reservoir
         """
-        #: The type of hydro power plant. Values are: "majorStorage", "runOfRiver", "minorStorage", "pumpedStorage"
+        #: The type of hydro power plant.Values are: "majorStorage", "runOfRiver", "minorStorage", "pumpedStorage"
         self.hydroPlantType = hydroPlantType
 
-        #: A code describing the type (or absence) of surge tank that is associated with the hydro power plant 
+        #: A code describing the type (or absence) of surge tank that is associated with the hydro power plant
         self.surgeTankCode = surgeTankCode
 
-        #: Type and configuration of hydro plant penstock(s) 
+        #: Type and configuration of hydro plant penstock(s)
         self.penstockType = penstockType
 
-        #: The hydro plant's pumping rating active power for rated head conditions 
+        #: The hydro plant's pumping rating active power for rated head conditions
         self.pumpRatedP = pumpRatedP
 
-        #: The hydro plant's generating rating active power for rated head conditions 
+        #: The hydro plant's generating rating active power for rated head conditions
         self.genRatedP = genRatedP
 
-        #: Total plant discharge capacity in cubic meters per second 
+        #: Total plant discharge capacity in cubic meters per second
         self.plantDischargeCapacity = plantDischargeCapacity
 
-        #: Water travel delay from tailbay to next downstream hydro power station 
+        #: Water travel delay from tailbay to next downstream hydro power station
         self.dischargeTravelDelay = dischargeTravelDelay
 
-        #: The plant's rated gross head 
+        #: The plant's rated gross head
         self.plantRatedHead = plantRatedHead
 
-        #: The level at which the surge tank spills 
+        #: The level at which the surge tank spills
         self.surgeTankCrestLevel = surgeTankCrestLevel
 
         self._GenSourcePumpDischargeReservoir = None

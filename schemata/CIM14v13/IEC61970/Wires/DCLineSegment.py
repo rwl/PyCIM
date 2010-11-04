@@ -26,10 +26,10 @@ class DCLineSegment(Conductor):
         @param dcSegmentInductance: Inductance of the DC line segment. 
         @param dcSegmentResistance: Resistance of the DC line segment. 
         """
-        #: Inductance of the DC line segment. 
+        #: Inductance of the DC line segment.
         self.dcSegmentInductance = dcSegmentInductance
 
-        #: Resistance of the DC line segment. 
+        #: Resistance of the DC line segment.
         self.dcSegmentResistance = dcSegmentResistance
 
         super(DCLineSegment, self).__init__(*args, **kw_args)

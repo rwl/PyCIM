@@ -26,7 +26,7 @@ class StructureTypeAsset(TypeAsset):
         @param ratedVoltage: Maximum rated voltage of the equipment that can be mounted on/contained within the structure. 
         @param MountConnections:
         """
-        #: Maximum rated voltage of the equipment that can be mounted on/contained within the structure. 
+        #: Maximum rated voltage of the equipment that can be mounted on/contained within the structure.
         self.ratedVoltage = ratedVoltage
 
         self._MountConnections = []

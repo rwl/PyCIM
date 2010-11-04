@@ -29,16 +29,16 @@ class PositionPoint(Element):
         @param yPosition: Y axis position. 
         @param Location: Location that this position point describes.
         """
-        #: Zero-relative sequence number of this point within a series of points. 
+        #: Zero-relative sequence number of this point within a series of points.
         self.sequenceNumber = sequenceNumber
 
-        #: (if applicable) Z axis position. 
+        #: (if applicable) Z axis position.
         self.zPosition = zPosition
 
-        #: X axis position. 
+        #: X axis position.
         self.xPosition = xPosition
 
-        #: Y axis position. 
+        #: Y axis position.
         self.yPosition = yPosition
 
         self._Location = None

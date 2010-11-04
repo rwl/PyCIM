@@ -31,16 +31,16 @@ class ProtectionEquipment(Equipment):
         @param Unit: The Unit for the Protection Equipment.
         @param ConductingEquipments: Protection equipment may be used to protect specific Conducting Equipment. Multiple equipment may be protected or monitored by multiple protection equipment.
         """
-        #: The maximum allowable value. 
+        #: The maximum allowable value.
         self.highLimit = highLimit
 
-        #: Direction same as positive active power flow value. 
+        #: Direction same as positive active power flow value.
         self.powerDirectionFlag = powerDirectionFlag
 
-        #: The minimum allowable value. 
+        #: The minimum allowable value.
         self.lowLimit = lowLimit
 
-        #: The time delay from detection of abnormal conditions to relay operation. 
+        #: The time delay from detection of abnormal conditions to relay operation.
         self.relayDelayTime = relayDelayTime
 
         self.ProtectedSwitches = [] if ProtectedSwitches is None else ProtectedSwitches

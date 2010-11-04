@@ -29,16 +29,16 @@ class PhaseImpedanceData(Element):
         @param r: Resistance matrix element value, per length of unit. 
         @param PhaseImpedance: Conductor phase impedance to which this data belongs.
         """
-        #: Reactance matrix element value, per length of unit. 
+        #: Reactance matrix element value, per length of unit.
         self.x = x
 
-        #: Column-wise element index, assuming a symmetrical matrix. Ranges from 1 to N + N*(N-1)/2. 
+        #: Column-wise element index, assuming a symmetrical matrix. Ranges from 1 to N + N*(N-1)/2.
         self.sequenceNumber = sequenceNumber
 
-        #: Susceptance matrix element value, per length of unit. 
+        #: Susceptance matrix element value, per length of unit.
         self.b = b
 
-        #: Resistance matrix element value, per length of unit. 
+        #: Resistance matrix element value, per length of unit.
         self.r = r
 
         self._PhaseImpedance = None

@@ -26,10 +26,10 @@ class Map(Diagram):
         @param mapLocGrid: Map grid number. 
         @param pageNumber: Page number for particular set of maps specified by 'category'. 
         """
-        #: Map grid number. 
+        #: Map grid number.
         self.mapLocGrid = mapLocGrid
 
-        #: Page number for particular set of maps specified by 'category'. 
+        #: Page number for particular set of maps specified by 'category'.
         self.pageNumber = pageNumber
 
         super(Map, self).__init__(*args, **kw_args)

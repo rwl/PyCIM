@@ -32,7 +32,7 @@ class ConductingEquipment(Equipment):
         @param SvStatus: The status state associated with the conducting equipment.
         @param ProtectionEquipments: Protection equipment may be used to protect specific Conducting Equipment. Multiple equipment may be protected or monitored by multiple protection equipment.
         """
-        #: Describes the phases carried by a conducting equipment. Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
+        #: Describes the phases carried by a conducting equipment.Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
         self.phases = phases
 
         self._Terminals = []

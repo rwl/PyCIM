@@ -26,7 +26,7 @@ class Agreement(Document):
         @param signDate: Date this agreement was consummated among associated persons and/or organisations. 
         @param validityInterval: Date and time interval this agreement is valid (from going into effect to termination).
         """
-        #: Date this agreement was consummated among associated persons and/or organisations. 
+        #: Date this agreement was consummated among associated persons and/or organisations.
         self.signDate = signDate
 
         self.validityInterval = validityInterval

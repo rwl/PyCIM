@@ -19,3 +19,22 @@
 
 ns_prefix = "cimCommon"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Common"
+
+from CIM14v13.IEC61968.Common.Organisation import Organisation
+from CIM14v13.IEC61968.Common.ActivityRecord import ActivityRecord
+from CIM14v13.IEC61968.Common.Document import Document
+from CIM14v13.IEC61968.Common.PositionPoint import PositionPoint
+from CIM14v13.IEC61968.Common.Agreement import Agreement
+from CIM14v13.IEC61968.Common.Location import Location
+from CIM14v13.IEC61968.Common.TimeSchedule import TimeSchedule
+from CIM14v13.IEC61968.Common.StreetAddress import StreetAddress
+from CIM14v13.IEC61968.Common.TelephoneNumber import TelephoneNumber
+from CIM14v13.IEC61968.Common.DateTimeInterval import DateTimeInterval
+from CIM14v13.IEC61968.Common.PostalAddress import PostalAddress
+from CIM14v13.IEC61968.Common.TownDetail import TownDetail
+from CIM14v13.IEC61968.Common.ElectronicAddress import ElectronicAddress
+from CIM14v13.IEC61968.Common.TimePoint import TimePoint
+from CIM14v13.IEC61968.Common.UserAttribute import UserAttribute
+from CIM14v13.IEC61968.Common.Status import Status
+from CIM14v13.IEC61968.Common.StreetDetail import StreetDetail
+from CIM14v13.IEC61968.Common.GeoLocation import GeoLocation

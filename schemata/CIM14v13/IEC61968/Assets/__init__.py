@@ -19,3 +19,11 @@
 
 ns_prefix = "cimAssets"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Assets"
+
+from CIM14v13.IEC61968.Assets.Seal import Seal
+from CIM14v13.IEC61968.Assets.Asset import Asset
+from CIM14v13.IEC61968.Assets.AssetFunction import AssetFunction
+from CIM14v13.IEC61968.Assets.ElectricalInfo import ElectricalInfo
+from CIM14v13.IEC61968.Assets.ComMediaAsset import ComMediaAsset
+from CIM14v13.IEC61968.Assets.AssetContainer import AssetContainer
+from CIM14v13.IEC61968.Assets.AcceptanceTest import AcceptanceTest

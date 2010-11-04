@@ -26,7 +26,7 @@ class StartRampCurve(Curve):
         @param hotStandbyRamp: The startup ramp rate in gross for a unit that is on hot standby 
         @param StartupModel: The unit's startup model may have a startup ramp curve
         """
-        #: The startup ramp rate in gross for a unit that is on hot standby 
+        #: The startup ramp rate in gross for a unit that is on hot standby
         self.hotStandbyRamp = hotStandbyRamp
 
         self._StartupModel = None

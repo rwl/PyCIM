@@ -28,13 +28,13 @@ class RegularTimePoint(Element):
         @param value1: The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule. 
         @param IntervalSchedule: A RegularTimePoint belongs to a RegularIntervalSchedule.
         """
-        #: The second value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule. 
+        #: The second value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.
         self.value2 = value2
 
-        #: The position of the RegularTimePoint in the sequence. Note that time points don't have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the RegularIntervalSchedule.timeStep with the RegularTimePoint.sequenceNumber and add the BasicIntervalSchedule.startTime. 
+        #: The position of the RegularTimePoint in the sequence. Note that time points don't have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the RegularIntervalSchedule.timeStep with the RegularTimePoint.sequenceNumber and add the BasicIntervalSchedule.startTime.
         self.sequenceNumber = sequenceNumber
 
-        #: The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule. 
+        #: The first value at the time. The meaning of the value is defined by the class inhering the RegularIntervalSchedule.
         self.value1 = value1
 
         self._IntervalSchedule = None

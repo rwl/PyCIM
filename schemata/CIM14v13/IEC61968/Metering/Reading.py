@@ -29,7 +29,7 @@ class Reading(MeasurementValue):
         @param ReadingType: Type information for this reading value.
         @param MeterReadings: All meter readings (sets of values) containing this reading value.
         """
-        #: Value of this reading. 
+        #: Value of this reading.
         self.value = value
 
         self._EndDeviceAsset = None

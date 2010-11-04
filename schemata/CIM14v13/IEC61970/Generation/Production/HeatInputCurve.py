@@ -30,19 +30,19 @@ class HeatInputCurve(Curve):
         @param auxPowerMult: Power output - auxiliary power multiplier adjustment factor. 
         @param ThermalGeneratingUnit: A thermal generating unit may have a heat input curve
         """
-        #: Heat input - efficiency multiplier adjustment factor. 
+        #: Heat input - efficiency multiplier adjustment factor.
         self.heatInputEff = heatInputEff
 
-        #: Power output - auxiliary power offset adjustment factor 
+        #: Power output - auxiliary power offset adjustment factor
         self.auxPowerOffset = auxPowerOffset
 
-        #: Heat input - offset adjustment factor. 
+        #: Heat input - offset adjustment factor.
         self.heatInputOffset = heatInputOffset
 
-        #: Flag is set to true when output is expressed in net active power 
+        #: Flag is set to true when output is expressed in net active power
         self.isNetGrossP = isNetGrossP
 
-        #: Power output - auxiliary power multiplier adjustment factor. 
+        #: Power output - auxiliary power multiplier adjustment factor.
         self.auxPowerMult = auxPowerMult
 
         self._ThermalGeneratingUnit = None

@@ -29,10 +29,10 @@ class EquipmentItem(IdentifiedObject):
         @param WorkTask:
         @param status:
         """
-        #: The cost for vehicle usage. 
+        #: The cost for vehicle usage.
         self.cost = cost
 
-        #: Code for type of vehicle. 
+        #: Code for type of vehicle.
         self.code = code
 
         self._WorkCostDetail = None

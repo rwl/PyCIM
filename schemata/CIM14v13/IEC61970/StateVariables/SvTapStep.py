@@ -27,10 +27,10 @@ class SvTapStep(StateVariable):
         @param continuousPosition: The floating point tap position. 
         @param TapChanger: The tap changer associated with the tap step state.
         """
-        #: The integer tap position. 
+        #: The integer tap position.
         self.position = position
 
-        #: The floating point tap position. 
+        #: The floating point tap position.
         self.continuousPosition = continuousPosition
 
         self._TapChanger = None

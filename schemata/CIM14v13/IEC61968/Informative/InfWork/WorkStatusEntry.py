@@ -25,7 +25,7 @@ class WorkStatusEntry(ActivityRecord):
 
         @param percentComplete: Estimated percentage of completion of this individual work task or overall work order. 
         """
-        #: Estimated percentage of completion of this individual work task or overall work order. 
+        #: Estimated percentage of completion of this individual work task or overall work order.
         self.percentComplete = percentComplete
 
         super(WorkStatusEntry, self).__init__(*args, **kw_args)

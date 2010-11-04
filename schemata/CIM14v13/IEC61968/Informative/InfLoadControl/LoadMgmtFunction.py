@@ -32,22 +32,22 @@ class LoadMgmtFunction(DeviceFunction):
         @param Switches:
         @param LoadMgmtRecords:
         """
-        #: The basis of Load Management scheduling used here: Time Based, Tariff Based, Remote Control and Manual Control. Values are: "tariffBased", "remoteControl", "manualControl", "timeBased"
+        #: The basis of Load Management scheduling used here: Time Based, Tariff Based, Remote Control and Manual Control.Values are: "tariffBased", "remoteControl", "manualControl", "timeBased"
         self.schedulingBasis = schedulingBasis
 
-        #: The present state of the load being either shed (noLoad), limited (limitedLoad) or fully connected (fullLoad). This refers only to the portion of the customer load that is under control of the LoadMgmtFunction. Values are: "noLoad", "fullLoad", "limitedLoad"
+        #: The present state of the load being either shed (noLoad), limited (limitedLoad) or fully connected (fullLoad). This refers only to the portion of the customer load that is under control of the LoadMgmtFunction.Values are: "noLoad", "fullLoad", "limitedLoad"
         self.loadStatus = loadStatus
 
-        #: True if the currently active schedule is being manually over-ridden to either shed load or to limit load. 
+        #: True if the currently active schedule is being manually over-ridden to either shed load or to limit load.
         self.manualOverRide = manualOverRide
 
-        #: After a command had been received to activate the mannualOverRide state or remoteOverRideState, the normal (halted) schedule will resume after this specified time duration had elapsed. 
+        #: After a command had been received to activate the mannualOverRide state or remoteOverRideState, the normal (halted) schedule will resume after this specified time duration had elapsed.
         self.overRideTimeOut = overRideTimeOut
 
-        #: True if the currently active schedule is being remotely over-ridden to either shed load or to limit load. 
+        #: True if the currently active schedule is being remotely over-ridden to either shed load or to limit load.
         self.remoteOverRide = remoteOverRide
 
-        #: True if LoadMgmtFunction operates under automatic control, otherwise it operates under manual control. 
+        #: True if LoadMgmtFunction operates under automatic control, otherwise it operates under manual control.
         self.isAutoOp = isAutoOp
 
         self._Switches = []

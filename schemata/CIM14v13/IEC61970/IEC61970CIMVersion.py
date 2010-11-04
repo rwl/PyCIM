@@ -26,10 +26,10 @@ class IEC61970CIMVersion(Element):
         @param date: Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05. 
         @param version: Form is IEC61970CIMXXvYY where XX is the major CIM package version and the YY is the minor version.   For ecample IEC61970CIM13v18. 
         """
-        #: Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05. 
+        #: Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05.
         self.date = date
 
-        #: Form is IEC61970CIMXXvYY where XX is the major CIM package version and the YY is the minor version.   For ecample IEC61970CIM13v18. 
+        #: Form is IEC61970CIMXXvYY where XX is the major CIM package version and the YY is the minor version.   For ecample IEC61970CIM13v18.
         self.version = version
 
         super(IEC61970CIMVersion, self).__init__(*args, **kw_args)

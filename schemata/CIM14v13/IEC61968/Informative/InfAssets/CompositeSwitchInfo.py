@@ -35,28 +35,28 @@ class CompositeSwitchInfo(IdentifiedObject):
         @param CompositeSwitchAssets:
         @param CompositeSwitchTypeAsset:
         """
-        #: Phases carried, if applicable. Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
+        #: Phases carried, if applicable.Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
         self.phaseCode = phaseCode
 
-        #: Rated voltage. 
+        #: Rated voltage.
         self.ratedVoltage = ratedVoltage
 
-        #: Supported number of phases, typically 0, 1 or 3. 
+        #: Supported number of phases, typically 0, 1 or 3.
         self.phaseCount = phaseCount
 
-        #: True if device is capable of being operated by remote control. 
+        #: True if device is capable of being operated by remote control.
         self.remote = remote
 
-        #: Initial operating mode, with the following values: Automatic, Manual. 
+        #: Initial operating mode, with the following values: Automatic, Manual.
         self.initOpMode = initOpMode
 
-        #: True if multi-phase switch controls all phases concurrently. 
+        #: True if multi-phase switch controls all phases concurrently.
         self.gang = gang
 
-        #: Number of switch states represented by the composite switch. 
+        #: Number of switch states represented by the composite switch.
         self.switchStateCount = switchStateCount
 
-        #: Breaking capacity, or short circuit rating, is the maximum rated current which the device can safely interrupt at the rated voltage. 
+        #: Breaking capacity, or short circuit rating, is the maximum rated current which the device can safely interrupt at the rated voltage.
         self.interruptingRating = interruptingRating
 
         self._CompositeSwitchAssetModel = None

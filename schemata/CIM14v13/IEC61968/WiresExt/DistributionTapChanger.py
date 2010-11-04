@@ -36,40 +36,40 @@ class DistributionTapChanger(RatioTapChanger):
         @param ptRatio: Built-in voltage transducer ratio. 
         @param ctRatio: Built-in current transducer ratio. 
         """
-        #: Phase voltage controlling this regulator, measured at regulator location. Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
+        #: Phase voltage controlling this regulator, measured at regulator location.Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
         self.monitoredPhase = monitoredPhase
 
-        #: Target voltage on the PT secondary base. 
+        #: Target voltage on the PT secondary base.
         self.targetVoltage = targetVoltage
 
-        #: Line drop compensator resistance setting for reverse power flow. 
+        #: Line drop compensator resistance setting for reverse power flow.
         self.reverseLineDropR = reverseLineDropR
 
-        #: Maximum allowed regulated voltage on the PT secondary base, regardless of line drop compensation. Sometimes referred to as first-house protection. 
+        #: Maximum allowed regulated voltage on the PT secondary base, regardless of line drop compensation. Sometimes referred to as first-house protection.
         self.limitVoltage = limitVoltage
 
-        #: Line drop compensator reactance setting for reverse power flow. 
+        #: Line drop compensator reactance setting for reverse power flow.
         self.reverseLineDropX = reverseLineDropX
 
-        #: Line drop compensator resistance setting for normal (forward) power flow. 
+        #: Line drop compensator resistance setting for normal (forward) power flow.
         self.lineDropR = lineDropR
 
-        #: If true, the line drop compensation is to be applied. 
+        #: If true, the line drop compensation is to be applied.
         self.lineDropCompensation = lineDropCompensation
 
-        #: Line drop compensator reactance setting for normal (forward) power flow. 
+        #: Line drop compensator reactance setting for normal (forward) power flow.
         self.lineDropX = lineDropX
 
-        #: Voltage range (max - min) on the PT secondary base, centered on 'targetVoltage'. 
+        #: Voltage range (max - min) on the PT secondary base, centered on 'targetVoltage'.
         self.bandVoltage = bandVoltage
 
-        #: Built-in current transformer primary rating. 
+        #: Built-in current transformer primary rating.
         self.ctRating = ctRating
 
-        #: Built-in voltage transducer ratio. 
+        #: Built-in voltage transducer ratio.
         self.ptRatio = ptRatio
 
-        #: Built-in current transducer ratio. 
+        #: Built-in current transducer ratio.
         self.ctRatio = ctRatio
 
         super(DistributionTapChanger, self).__init__(*args, **kw_args)

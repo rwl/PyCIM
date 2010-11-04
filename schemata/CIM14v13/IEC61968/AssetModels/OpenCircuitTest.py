@@ -29,16 +29,16 @@ class OpenCircuitTest(DistributionWindingTest):
         @param noLoadLossZero: Losses measured from a zero-sequence open-circuit (excitation) test. 
         @param MeasuredWindingSpecs: All other windings measured during this test.
         """
-        #: Losses measured from a positive-sequence or single-phase open-circuit (excitation) test. 
+        #: Losses measured from a positive-sequence or single-phase open-circuit (excitation) test.
         self.noLoadLoss = noLoadLoss
 
-        #: Exciting current measured from a zero-sequence open-circuit (excitation) test. 
+        #: Exciting current measured from a zero-sequence open-circuit (excitation) test.
         self.excitingCurrentZero = excitingCurrentZero
 
-        #: Exciting current measured from a positive-sequence or single-phase open-circuit (excitation) test. 
+        #: Exciting current measured from a positive-sequence or single-phase open-circuit (excitation) test.
         self.excitingCurrent = excitingCurrent
 
-        #: Losses measured from a zero-sequence open-circuit (excitation) test. 
+        #: Losses measured from a zero-sequence open-circuit (excitation) test.
         self.noLoadLossZero = noLoadLossZero
 
         self._MeasuredWindingSpecs = []

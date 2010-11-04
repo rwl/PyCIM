@@ -28,13 +28,13 @@ class IrregularTimePoint(Element):
         @param value2: The second value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule. 
         @param IntervalSchedule: An IrregularTimePoint belongs to an IrregularIntervalSchedule.
         """
-        #: The time is relative the BasicTimeSchedule.startTime. 
+        #: The time is relative the BasicTimeSchedule.startTime.
         self.time = time
 
-        #: The first value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule. 
+        #: The first value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule.
         self.value1 = value1
 
-        #: The second value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule. 
+        #: The second value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule.
         self.value2 = value2
 
         self._IntervalSchedule = None

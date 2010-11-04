@@ -38,7 +38,7 @@ class Crew(IdentifiedObject):
         @param SwitchingSchedules: All SwitchingSchedules executed by this Crew.
         @param Organisations:
         """
-        #: Category by utility's work management standards and practices. 
+        #: Category by utility's work management standards and practices.
         self.category = category
 
         self._Capabilities = []

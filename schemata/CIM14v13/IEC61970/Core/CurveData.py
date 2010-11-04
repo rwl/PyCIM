@@ -29,16 +29,16 @@ class CurveData(Element):
         @param xvalue: The data value of the X-axis variable,  depending on the X-axis units 
         @param Curve: The Curve defined by this CurveData.
         """
-        #: The data value of the  first Y-axis variable, depending on the Y-axis units 
+        #: The data value of the  first Y-axis variable, depending on the Y-axis units
         self.y1value = y1value
 
-        #: The data value of the second Y-axis variable (if present), depending on the Y-axis units 
+        #: The data value of the second Y-axis variable (if present), depending on the Y-axis units
         self.y2value = y2value
 
-        #: The data value of the third Y-axis variable (if present), depending on the Y-axis units 
+        #: The data value of the third Y-axis variable (if present), depending on the Y-axis units
         self.y3value = y3value
 
-        #: The data value of the X-axis variable,  depending on the X-axis units 
+        #: The data value of the X-axis variable,  depending on the X-axis units
         self.xvalue = xvalue
 
         self._Curve = None

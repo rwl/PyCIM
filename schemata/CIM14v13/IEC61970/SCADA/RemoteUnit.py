@@ -27,7 +27,7 @@ class RemoteUnit(PowerSystemResource):
         @param CommunicationLinks: RTUs may be attached to communication links.
         @param RemotePoints: Remote points this Remote unit contains.
         """
-        #: Type of remote unit. Values are: "RTU", "SubstationControlSystem", "ControlCenter", "IED"
+        #: Type of remote unit.Values are: "RTU", "SubstationControlSystem", "ControlCenter", "IED"
         self.remoteUnitType = remoteUnitType
 
         self._CommunicationLinks = []

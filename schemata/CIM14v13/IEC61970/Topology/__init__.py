@@ -19,3 +19,8 @@
 
 ns_prefix = "cimTopology"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Topology"
+
+from CIM14v13.IEC61970.Topology.BusNameMarker import BusNameMarker
+from CIM14v13.IEC61970.Topology.ConnectivityNode import ConnectivityNode
+from CIM14v13.IEC61970.Topology.TopologicalNode import TopologicalNode
+from CIM14v13.IEC61970.Topology.TopologicalIsland import TopologicalIsland

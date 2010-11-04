@@ -28,10 +28,10 @@ class ConsumptionTariffInterval(Element):
         @param Charges: All charges used to define this consumption tariff interval.
         @param TariffProfiles: All tariff profiles defined by this consumption tariff interval.
         """
-        #: A sequential reference that defines the identity of this interval and its relative position with respect to other intervals in a sequence of intervals. 
+        #: A sequential reference that defines the identity of this interval and its relative position with respect to other intervals in a sequence of intervals.
         self.sequenceNumber = sequenceNumber
 
-        #: The lowest level of consumption that defines the starting point of this interval. The interval extends to the start of the next interval or until it is reset to the start of the first interval by TariffProfile.tariffCycle. 
+        #: The lowest level of consumption that defines the starting point of this interval. The interval extends to the start of the next interval or until it is reset to the start of the first interval by TariffProfile.tariffCycle.
         self.startValue = startValue
 
         self._Charges = []

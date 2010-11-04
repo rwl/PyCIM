@@ -32,19 +32,19 @@ class ConductorInfo(IdentifiedObject):
         @param ConductorAssetModel:
         @param WireArrangements: All wire arrangements (single wires) that make this conductor.
         """
-        #: Usage of this conductor. Values are: "secondary", "transmission", "other", "distribution"
+        #: Usage of this conductor.Values are: "secondary", "transmission", "other", "distribution"
         self.usage = usage
 
-        #: (if insulated conductor) Material used for insulation. Values are: "highPressureFluidFilled", "lowCapacitanceRubber", "crosslinkedPolyethylene", "ozoneResistantRubber", "highMolecularWeightPolyethylene", "treeRetardantCrosslinkedPolyethylene", "oilPaper", "butyl", "beltedPilc", "rubber", "ethylenePropyleneRubber", "varnishedCambricCloth", "asbestosAndVarnishedCambric", "treeResistantHighMolecularWeightPolyethylene", "other", "siliconRubber", "unbeltedPilc", "varnishedDacronGlass"
+        #: (if insulated conductor) Material used for insulation.Values are: "highPressureFluidFilled", "lowCapacitanceRubber", "crosslinkedPolyethylene", "ozoneResistantRubber", "highMolecularWeightPolyethylene", "treeRetardantCrosslinkedPolyethylene", "oilPaper", "butyl", "beltedPilc", "rubber", "ethylenePropyleneRubber", "varnishedCambricCloth", "asbestosAndVarnishedCambric", "treeResistantHighMolecularWeightPolyethylene", "other", "siliconRubber", "unbeltedPilc", "varnishedDacronGlass"
         self.insulationMaterial = insulationMaterial
 
-        #: Number of phases (including neutral) to be retained. Any wires beyond this number should be reduced into the earth return. 
+        #: Number of phases (including neutral) to be retained. Any wires beyond this number should be reduced into the earth return.
         self.phaseCount = phaseCount
 
-        #: True if conductor is insulated. 
+        #: True if conductor is insulated.
         self.insulated = insulated
 
-        #: (if insulated conductor) Thickness of the insulation. 
+        #: (if insulated conductor) Thickness of the insulation.
         self.insulationThickness = insulationThickness
 
         self._ConductorSegments = []

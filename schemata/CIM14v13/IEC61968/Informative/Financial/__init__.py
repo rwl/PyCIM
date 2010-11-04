@@ -19,3 +19,13 @@
 
 ns_prefix = "cimFinancial"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Financial"
+
+from CIM14v13.IEC61968.Informative.Financial.Marketer import Marketer
+from CIM14v13.IEC61968.Informative.Financial.FinancialVersion import FinancialVersion
+from CIM14v13.IEC61968.Informative.Financial.CustomerConsumer import CustomerConsumer
+from CIM14v13.IEC61968.Informative.Financial.TransmissionProvider import TransmissionProvider
+from CIM14v13.IEC61968.Informative.Financial.TransmissionProduct import TransmissionProduct
+from CIM14v13.IEC61968.Informative.Financial.GenerationProvider import GenerationProvider
+from CIM14v13.IEC61968.Informative.Financial.OpenAccessProduct import OpenAccessProduct
+from CIM14v13.IEC61968.Informative.Financial.IntSchedAgreement import IntSchedAgreement
+from CIM14v13.IEC61968.Informative.Financial.ControlAreaOperator import ControlAreaOperator

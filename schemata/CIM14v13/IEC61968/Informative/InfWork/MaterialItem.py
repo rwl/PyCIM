@@ -40,25 +40,25 @@ class MaterialItem(IdentifiedObject):
         @param WorkCostDetail:
         @param TypeMaterial:
         """
-        #: The actual cost of this particular material in this particular quantity. 
+        #: The actual cost of this particular material in this particular quantity.
         self.actualCost = actualCost
 
-        #: Code for material. 
+        #: Code for material.
         self.materialCode = materialCode
 
-        #: The quantity of material used. 
+        #: The quantity of material used.
         self.quantity = quantity
 
-        #: The category of cost to which this Material Item belongs. 
+        #: The category of cost to which this Material Item belongs.
         self.costType = costType
 
-        #: Description of the cost. 
+        #: Description of the cost.
         self.costDescription = costDescription
 
-        #: External reference identifier for this actual material item such as a purchase order number, a serial number, etc. 
+        #: External reference identifier for this actual material item such as a purchase order number, a serial number, etc.
         self.externalRefID = externalRefID
 
-        #: The account to which this actual material item is charged. 
+        #: The account to which this actual material item is charged.
         self.account = account
 
         self._Usages = []

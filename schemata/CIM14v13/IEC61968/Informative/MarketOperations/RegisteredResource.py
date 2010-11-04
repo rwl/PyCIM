@@ -31,7 +31,7 @@ class RegisteredResource(IdentifiedObject):
         @param Pnode: A registered resource injects power at one or more connectivity nodes related to a pnode
         @param Organisation:
         """
-        #: Unique name obtained via RTO registration 
+        #: Unique name obtained via RTO registration
         self.rtoID = rtoID
 
         self._Meters = []

@@ -31,13 +31,13 @@ class PropertyUnit(IdentifiedObject):
         @param status:
         @param WorkCostDetails:
         """
-        #: Activity code identifies a specific and distinguishable work action. Values are: "install", "remove", "transfer", "abandon"
+        #: Activity code identifies a specific and distinguishable work action.Values are: "install", "remove", "transfer", "abandon"
         self.activityCode = activityCode
 
-        #: A code that identifies appropriate type of property accounts such as distribution, streetlgihts, communications. 
+        #: A code that identifies appropriate type of property accounts such as distribution, streetlgihts, communications.
         self.accountingUsage = accountingUsage
 
-        #: Used for property record accounting. For example, in the USA, this would be a FERC account. 
+        #: Used for property record accounting. For example, in the USA, this would be a FERC account.
         self.propertyAccount = propertyAccount
 
         self._CUMaterialItems = []

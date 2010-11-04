@@ -45,67 +45,67 @@ class BWRSteamSupply(SteamSupply):
         @param pressureSetpointTC2: Pressure Setpoint Time Constant 
         @param rfAux6: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output. 
         """
-        #: Proportional Gain 
+        #: Proportional Gain
         self.proportionalGain = proportionalGain
 
-        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output. 
+        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
         self.rfAux3 = rfAux3
 
-        #: Constant Associated With Rod Pattern 
+        #: Constant Associated With Rod Pattern
         self.rodPatternConstant = rodPatternConstant
 
-        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output. 
+        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
         self.rfAux4 = rfAux4
 
-        #: Pressure Setpoint Gain Adjuster 
+        #: Pressure Setpoint Gain Adjuster
         self.pressureSetpointGA = pressureSetpointGA
 
-        #: In-Core Thermal Time Constant 
+        #: In-Core Thermal Time Constant
         self.inCoreThermalTC = inCoreThermalTC
 
-        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output. 
+        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
         self.rfAux2 = rfAux2
 
-        #: Pressure Limit 
+        #: Pressure Limit
         self.pressureLimit = pressureLimit
 
-        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output. 
+        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
         self.rfAux1 = rfAux1
 
-        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output. 
+        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
         self.rfAux7 = rfAux7
 
-        #: High Power Limit 
+        #: High Power Limit
         self.highPowerLimit = highPowerLimit
 
-        #: Low Power Limit 
+        #: Low Power Limit
         self.lowPowerLimit = lowPowerLimit
 
-        #: Initial Lower Limit 
+        #: Initial Lower Limit
         self.lowerLimit = lowerLimit
 
-        #: Initial Upper Limit 
+        #: Initial Upper Limit
         self.upperLimit = upperLimit
 
-        #: Pressure Setpoint Time Constant 
+        #: Pressure Setpoint Time Constant
         self.pressureSetpointTC1 = pressureSetpointTC1
 
-        #: Rod Pattern 
+        #: Rod Pattern
         self.rodPattern = rodPattern
 
-        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output. 
+        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
         self.rfAux8 = rfAux8
 
-        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output. 
+        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
         self.rfAux5 = rfAux5
 
-        #: Integral Gain 
+        #: Integral Gain
         self.integralGain = integralGain
 
-        #: Pressure Setpoint Time Constant 
+        #: Pressure Setpoint Time Constant
         self.pressureSetpointTC2 = pressureSetpointTC2
 
-        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output. 
+        #: Coefficient for modeling the effect of off-nominal frequency and voltage on recirculation and core flow, which affects the BWR power output.
         self.rfAux6 = rfAux6
 
         super(BWRSteamSupply, self).__init__(*args, **kw_args)

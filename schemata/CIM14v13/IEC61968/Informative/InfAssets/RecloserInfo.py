@@ -32,19 +32,19 @@ class RecloserInfo(SwitchInfo):
         @param RecloserTypeAsset:
         @param RecloserAssets:
         """
-        #: True if normal status of ground trip is enabled. 
+        #: True if normal status of ground trip is enabled.
         self.groundTripNormalEnabled = groundTripNormalEnabled
 
-        #: True if device has ground trip capability. 
+        #: True if device has ground trip capability.
         self.groundTripCapable = groundTripCapable
 
-        #: Ground trip rating. 
+        #: Ground trip rating.
         self.groundTripRating = groundTripRating
 
-        #: Phase trip rating. 
+        #: Phase trip rating.
         self.phaseTripRating = phaseTripRating
 
-        #: Total number of phase reclose operations. 
+        #: Total number of phase reclose operations.
         self.recloseLockoutCount = recloseLockoutCount
 
         self._RecloserAssetModels = []

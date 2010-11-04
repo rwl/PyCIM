@@ -35,31 +35,31 @@ class ErpInvoice(Document):
         @param CustomerAccount:
         @param ErpInvoiceLineItems:
         """
-        #: Kind of media by which the CustomerBillingInfo was delivered. Values are: "other", "paper", "electronic"
+        #: Kind of media by which the CustomerBillingInfo was delivered.Values are: "other", "paper", "electronic"
         self.billMediaKind = billMediaKind
 
-        #: Kind of invoice (default is 'sales'). Values are: "sales", "purchase"
+        #: Kind of invoice (default is 'sales').Values are: "sales", "purchase"
         self.kind = kind
 
-        #: Total amount due on this invoice based on line items and applicable adjustments. 
+        #: Total amount due on this invoice based on line items and applicable adjustments.
         self.amount = amount
 
-        #: True if payment is to be paid by a Customer to accept a particular ErpQuote (with associated Design) and have work initiated, at which time an associated ErpInvoice should automatically be generated. EprPayment.subjectStatus satisfies terms specificed in the ErpQuote. 
+        #: True if payment is to be paid by a Customer to accept a particular ErpQuote (with associated Design) and have work initiated, at which time an associated ErpInvoice should automatically be generated. EprPayment.subjectStatus satisfies terms specificed in the ErpQuote.
         self.proForma = proForma
 
-        #: Date and time when the invoice is issued. 
+        #: Date and time when the invoice is issued.
         self.transactionDateTime = transactionDateTime
 
-        #: Date on which the customer billing statement/invoice was printed/mailed. 
+        #: Date on which the customer billing statement/invoice was printed/mailed.
         self.mailedDate = mailedDate
 
-        #: Calculated date upon which the Invoice amount is due. 
+        #: Calculated date upon which the Invoice amount is due.
         self.dueDate = dueDate
 
-        #: Type of invoice transfer. 
+        #: Type of invoice transfer.
         self.transferType = transferType
 
-        #: Number of an invoice to be reference by this invoice. 
+        #: Number of an invoice to be reference by this invoice.
         self.referenceNumber = referenceNumber
 
         self._CustomerAccount = None

@@ -28,10 +28,10 @@ class ReliabilityInfo(IdentifiedObject):
         @param Specification:
         @param Assets:
         """
-        #: Momentary failure rate (temporary failures/kft-year). 
+        #: Momentary failure rate (temporary failures/kft-year).
         self.momFailureRate = momFailureRate
 
-        #: Mean time to repair (MTTR - hours). 
+        #: Mean time to repair (MTTR - hours).
         self.mTTR = mTTR
 
         self._Specification = None

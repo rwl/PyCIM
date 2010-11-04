@@ -41,52 +41,52 @@ class GeneratorTypeAsset(ElectricalTypeAsset):
         @param xQuadSubtrans: Quadrature-axis subtransient reactance 
         @param GeneratorAssetModels:
         """
-        #: Direct-axis subtransient resistance 
+        #: Direct-axis subtransient resistance
         self.rDirectSubtrans = rDirectSubtrans
 
-        #: Direct-axis subtransient reactance 
+        #: Direct-axis subtransient reactance
         self.xDirectSubtrans = xDirectSubtrans
 
-        #: Quadrature-axis Transient resistance 
+        #: Quadrature-axis Transient resistance
         self.rQuadTrans = rQuadTrans
 
-        #: Quadrature-axis transient reactance. 
+        #: Quadrature-axis transient reactance.
         self.xQuadTrans = xQuadTrans
 
-        #: Quadrature-axis synchronous reactance 
+        #: Quadrature-axis synchronous reactance
         self.xQuadSync = xQuadSync
 
-        #: Direct-axis synchronous reactance 
+        #: Direct-axis synchronous reactance
         self.xDirectSync = xDirectSync
 
-        #: Quadrature-axis synchronous resistance 
+        #: Quadrature-axis synchronous resistance
         self.rQuadSync = rQuadSync
 
-        #: Maximum reactive power limit. 
+        #: Maximum reactive power limit.
         self.maxQ = maxQ
 
-        #: Direct-axis synchronous resistance 
+        #: Direct-axis synchronous resistance
         self.rDirectSync = rDirectSync
 
-        #: Direct-axis Transient resistance 
+        #: Direct-axis Transient resistance
         self.rDirectTrans = rDirectTrans
 
-        #: Quadrature-axis subtransient resistance 
+        #: Quadrature-axis subtransient resistance
         self.rQuadSubtrans = rQuadSubtrans
 
-        #: Minimum reactive power generated. 
+        #: Minimum reactive power generated.
         self.minQ = minQ
 
-        #: Minimum real power generated. 
+        #: Minimum real power generated.
         self.minP = minP
 
-        #: Maximum real power limit. 
+        #: Maximum real power limit.
         self.maxP = maxP
 
-        #: Direct-axis Transient reactance 
+        #: Direct-axis Transient reactance
         self.xDirectTrans = xDirectTrans
 
-        #: Quadrature-axis subtransient reactance 
+        #: Quadrature-axis subtransient reactance
         self.xQuadSubtrans = xQuadSubtrans
 
         self._GeneratorAssetModels = []

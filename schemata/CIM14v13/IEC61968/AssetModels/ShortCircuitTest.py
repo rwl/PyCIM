@@ -29,16 +29,16 @@ class ShortCircuitTest(DistributionWindingTest):
         @param leakageImpedance: Leakage impedance measured from a positive-sequence or single-phase short-circuit test. 
         @param ShortedWindingSpecs: All windings short-circuited during this test.
         """
-        #: Load losses from a positive-sequence or single-phase short-circuit test. 
+        #: Load losses from a positive-sequence or single-phase short-circuit test.
         self.loadLoss = loadLoss
 
-        #: Load losses from a zero-sequence short-circuit test. 
+        #: Load losses from a zero-sequence short-circuit test.
         self.loadLossZero = loadLossZero
 
-        #: Leakage impedance measured from a zero-sequence short-circuit test. 
+        #: Leakage impedance measured from a zero-sequence short-circuit test.
         self.leakageImpedanceZero = leakageImpedanceZero
 
-        #: Leakage impedance measured from a positive-sequence or single-phase short-circuit test. 
+        #: Leakage impedance measured from a positive-sequence or single-phase short-circuit test.
         self.leakageImpedance = leakageImpedance
 
         self._ShortedWindingSpecs = []

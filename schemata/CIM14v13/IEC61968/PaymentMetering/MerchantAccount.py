@@ -31,10 +31,10 @@ class MerchantAccount(Document):
         @param MerchantAgreement: Merchant agreement that instantiated this merchant account.
         @param VendorShifts: All vendor shifts that operate on this merchant account.
         """
-        #: The balance of this account after taking into account any pending debits from VendorShift.merchantDebitAmount and pending credits from BankStatement.merchantCreditAmount or credits (see also BankStatement attributes and VendorShift attributes). 
+        #: The balance of this account after taking into account any pending debits from VendorShift.merchantDebitAmount and pending credits from BankStatement.merchantCreditAmount or credits (see also BankStatement attributes and VendorShift attributes).
         self.provisionalBalance = provisionalBalance
 
-        #: The current operating balance of this account. 
+        #: The current operating balance of this account.
         self.currentBalance = currentBalance
 
         self._Vendors = []

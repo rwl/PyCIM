@@ -33,31 +33,31 @@ class LoadBid(ResourceBid):
         @param LoadReductionPriceCurve:
         @param RegisteredLoad:
         """
-        #: Maximum rate that load can be reduced (MW/minute) 
+        #: Maximum rate that load can be reduced (MW/minute)
         self.dropRampRate = dropRampRate
 
-        #: Shortest time that load must be left at normal levels before a new load reduction. 
+        #: Shortest time that load must be left at normal levels before a new load reduction.
         self.minTimeBetLoadRed = minTimeBetLoadRed
 
-        #: Cost in $ at the minimum reduced load 
+        #: Cost in $ at the minimum reduced load
         self.minLoadReductionCost = minLoadReductionCost
 
-        #: Shortest period load reduction must be maintained before load can be restored to normal levels. 
+        #: Shortest period load reduction must be maintained before load can be restored to normal levels.
         self.minLoadReductionInterval = minLoadReductionInterval
 
-        #: Minimum MW load below which it may not be reduced. 
+        #: Minimum MW load below which it may not be reduced.
         self.minLoad = minLoad
 
-        #: Maximum rate load may be restored (MW/minute) 
+        #: Maximum rate load may be restored (MW/minute)
         self.pickUpRampRate = pickUpRampRate
 
-        #: Time period that is required from an order to reduce a load to the time that it takes to get to the minimum load reduction. 
+        #: Time period that is required from an order to reduce a load to the time that it takes to get to the minimum load reduction.
         self.reqNoticeTime = reqNoticeTime
 
-        #: Minimum MW for a load reduction (e.g., MW rating of a discrete pump. 
+        #: Minimum MW for a load reduction (e.g., MW rating of a discrete pump.
         self.minLoadReduction = minLoadReduction
 
-        #: The fixed cost associated with committing a load reduction. 
+        #: The fixed cost associated with committing a load reduction.
         self.shutdownCost = shutdownCost
 
         self._LoadReductionPriceCurve = None

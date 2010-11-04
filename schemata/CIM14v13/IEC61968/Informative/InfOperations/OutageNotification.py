@@ -28,13 +28,13 @@ class OutageNotification(Document):
         @param expectedInterruptionCount: Number of possible interruptions that the customer may expect for this event. 
         @param CustomerDatas:
         """
-        #: Likely duration of the interruption(s). 
+        #: Likely duration of the interruption(s).
         self.duration = duration
 
-        #: Details of the outage 'reason'. 
+        #: Details of the outage 'reason'.
         self.reason = reason
 
-        #: Number of possible interruptions that the customer may expect for this event. 
+        #: Number of possible interruptions that the customer may expect for this event.
         self.expectedInterruptionCount = expectedInterruptionCount
 
         self._CustomerDatas = []

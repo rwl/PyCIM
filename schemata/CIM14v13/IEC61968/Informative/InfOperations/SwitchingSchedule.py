@@ -29,7 +29,7 @@ class SwitchingSchedule(Document):
         @param Crews: All Crews executing this SwitchingSchedule.
         @param WorkTask:
         """
-        #: Reason for switching. 
+        #: Reason for switching.
         self.reason = reason
 
         self.interval = interval

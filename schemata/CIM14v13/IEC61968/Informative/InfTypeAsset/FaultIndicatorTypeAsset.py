@@ -27,7 +27,7 @@ class FaultIndicatorTypeAsset(ElectricalTypeAsset):
         @param FaultIndicatorAssetModels:
         @param FaultIndicators:
         """
-        #: Kind of reset mechanisim of this fault indicator. Values are: "other", "remote", "manual", "automatic"
+        #: Kind of reset mechanisim of this fault indicator.Values are: "other", "remote", "manual", "automatic"
         self.resetKind = resetKind
 
         self._FaultIndicatorAssetModels = []

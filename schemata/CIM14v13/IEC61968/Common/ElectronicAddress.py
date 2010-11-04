@@ -38,22 +38,22 @@ class ElectronicAddress(IdentifiedObject):
         @param Document:
         @param Organisation: Organisation owning this electronic address.
         """
-        #: World Wide Web address. 
+        #: World Wide Web address.
         self.web = web
 
-        #: Email address. 
+        #: Email address.
         self.email = email
 
-        #: Password needed to log in. 
+        #: Password needed to log in.
         self.password = password
 
-        #: Address on local area network. 
+        #: Address on local area network.
         self.lan = lan
 
-        #: User ID needed to log in, which can be for an individual person, an organisation, a location, etc. 
+        #: User ID needed to log in, which can be for an individual person, an organisation, a location, etc.
         self.userID = userID
 
-        #: Radio address. 
+        #: Radio address.
         self.radio = radio
 
         self._ErpTelephoneNumbers = []

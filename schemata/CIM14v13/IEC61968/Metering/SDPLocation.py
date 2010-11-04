@@ -29,16 +29,16 @@ class SDPLocation(Location):
         @param occupancyDate: Date when certificate of occupancy was provided for this location, 0 if valid certificate of occupancy does not exist for (inherited) 'Location.corporateCode'. 
         @param ServiceDeliveryPoints: All service delivery points at this location.
         """
-        #: Method for the service person to access this service delivery point location. For example, a description of where to obtain a key if the facility is unmanned and secured. 
+        #: Method for the service person to access this service delivery point location. For example, a description of where to obtain a key if the facility is unmanned and secured.
         self.accessMethod = accessMethod
 
-        #: Problems previously encountered when visiting or performing work at this service delivery point location. Examples include: bad dog, violent customer, verbally abusive occupant, obstructions, safety hazards, etc. 
+        #: Problems previously encountered when visiting or performing work at this service delivery point location. Examples include: bad dog, violent customer, verbally abusive occupant, obstructions, safety hazards, etc.
         self.siteAccessProblem = siteAccessProblem
 
-        #: Remarks about this location. 
+        #: Remarks about this location.
         self.remark = remark
 
-        #: Date when certificate of occupancy was provided for this location, 0 if valid certificate of occupancy does not exist for (inherited) 'Location.corporateCode'. 
+        #: Date when certificate of occupancy was provided for this location, 0 if valid certificate of occupancy does not exist for (inherited) 'Location.corporateCode'.
         self.occupancyDate = occupancyDate
 
         self._ServiceDeliveryPoints = []

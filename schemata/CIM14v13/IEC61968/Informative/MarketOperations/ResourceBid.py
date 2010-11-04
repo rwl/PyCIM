@@ -32,28 +32,28 @@ class ResourceBid(Bid):
         @param shutDownsMaxWeek: Maximum number of shutdowns per week. 
         @param shutDownsMaxDay: Maximum number of shutdowns per day. 
         """
-        #: Maximum number of startups per day. 
+        #: Maximum number of startups per day.
         self.startUpsMaxDay = startUpsMaxDay
 
-        #: Minimum amount of energy per day which has to be produced during the trading period in MWh 
+        #: Minimum amount of energy per day which has to be produced during the trading period in MWh
         self.energyMinDay = energyMinDay
 
-        #: Maximum amount of energy per day which can be produced during the trading period in MWh 
+        #: Maximum amount of energy per day which can be produced during the trading period in MWh
         self.energyMaxDay = energyMaxDay
 
-        #: True if bid is virtual.  Bid is assumed to be non-virtual if attribute is absent 
+        #: True if bid is virtual.  Bid is assumed to be non-virtual if attribute is absent
         self.virtual = virtual
 
-        #: Maximum number of startups per week. 
+        #: Maximum number of startups per week.
         self.startUpsMaxWeek = startUpsMaxWeek
 
-        #: Energy product (commodity) type:  'En' - Energy  'Ru' - Regulation Up  'Rd' - Regulation Dn  'Sr' - Spinning Reserve  'Nr' - Non-Spinning Reserve  'Or' - Operating Reserve 
+        #: Energy product (commodity) type:  'En' - Energy  'Ru' - Regulation Up  'Rd' - Regulation Dn  'Sr' - Spinning Reserve  'Nr' - Non-Spinning Reserve  'Or' - Operating Reserve
         self.commodityType = commodityType
 
-        #: Maximum number of shutdowns per week. 
+        #: Maximum number of shutdowns per week.
         self.shutDownsMaxWeek = shutDownsMaxWeek
 
-        #: Maximum number of shutdowns per day. 
+        #: Maximum number of shutdowns per day.
         self.shutDownsMaxDay = shutDownsMaxDay
 
         super(ResourceBid, self).__init__(*args, **kw_args)

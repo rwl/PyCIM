@@ -26,10 +26,10 @@ class PackageDependenciesCIMVeresion(Element):
         @param date: Date of last change to the main package dependencies in format YYYY-MM-DD.   This is updated when the version attribute is updated. 
         @param vesion: The version of the main subpackages of the combined CIM model.  The format is simply an integer.  The version (and date) initial values should be updated any time the dependencies in the model change and require an actual change to the diagrams within this package. 
         """
-        #: Date of last change to the main package dependencies in format YYYY-MM-DD.   This is updated when the version attribute is updated. 
+        #: Date of last change to the main package dependencies in format YYYY-MM-DD.   This is updated when the version attribute is updated.
         self.date = date
 
-        #: The version of the main subpackages of the combined CIM model.  The format is simply an integer.  The version (and date) initial values should be updated any time the dependencies in the model change and require an actual change to the diagrams within this package. 
+        #: The version of the main subpackages of the combined CIM model.  The format is simply an integer.  The version (and date) initial values should be updated any time the dependencies in the model change and require an actual change to the diagrams within this package.
         self.vesion = vesion
 
         super(PackageDependenciesCIMVeresion, self).__init__(*args, **kw_args)

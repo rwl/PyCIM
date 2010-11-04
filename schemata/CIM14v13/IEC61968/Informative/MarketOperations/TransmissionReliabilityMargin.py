@@ -28,13 +28,13 @@ class TransmissionReliabilityMargin(IdentifiedObject):
         @param TrmType: the type of TRM 
         @param Flowgate: A fowgate may have 0 to 1 TRM
         """
-        #: unit of the TRM value. Could be MW or Percentage. 
+        #: unit of the TRM value. Could be MW or Percentage.
         self.valueUnit = valueUnit
 
-        #: Value of the TRM 
+        #: Value of the TRM
         self.trmValue = trmValue
 
-        #: the type of TRM 
+        #: the type of TRM
         self.TrmType = TrmType
 
         self._Flowgate = []

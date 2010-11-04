@@ -27,7 +27,7 @@ class PlannedOutage(Document):
         @param CustomerDatas: All customers affected by this work. Derived from WorkOrder.connectedCustomers
         @param OutageSchedules:
         """
-        #: Kind of outage. Values are: "flexible", "fixed", "forced"
+        #: Kind of outage.Values are: "flexible", "fixed", "forced"
         self.kind = kind
 
         self._CustomerDatas = []

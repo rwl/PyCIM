@@ -32,13 +32,13 @@ class WindingInsulation(IdentifiedObject):
         @param status:
         @param ToWinding:
         """
-        #: Status of Winding Insulation Power Factor as of statusDate: Acceptable, Minor Deterioration or Moisture Absorption, Major Deterioration or Moisture Absorption, Failed. 
+        #: Status of Winding Insulation Power Factor as of statusDate: Acceptable, Minor Deterioration or Moisture Absorption, Major Deterioration or Moisture Absorption, Failed.
         self.insulationPFStatus = insulationPFStatus
 
-        #: As of statusDate, the leakage reactance measured at the 'from' winding with the 'to' winding short-circuited and all other windings open-circuited. 
+        #: As of statusDate, the leakage reactance measured at the 'from' winding with the 'to' winding short-circuited and all other windings open-circuited.
         self.leakageReactance = leakageReactance
 
-        #: For testType, status of Winding Insulation Resistance as of statusDate. Typical values are: Acceptable, Questionable, Failed. 
+        #: For testType, status of Winding Insulation Resistance as of statusDate. Typical values are: Acceptable, Questionable, Failed.
         self.insulationResistance = insulationResistance
 
         self._FromWinding = None

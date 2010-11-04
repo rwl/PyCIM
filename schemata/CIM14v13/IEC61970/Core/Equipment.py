@@ -29,7 +29,7 @@ class Equipment(PowerSystemResource):
         @param OperationalLimitSet: The equipment limit sets associated with the equipment.
         @param EquipmentContainer: The association is used in the naming hierarchy.
         """
-        #: The equipment is normally in service. 
+        #: The equipment is normally in service.
         self.normaIlyInService = normaIlyInService
 
         self._ContingencyEquipment = []

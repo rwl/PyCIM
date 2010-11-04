@@ -29,10 +29,10 @@ class ServiceSupplier(Organisation):
         @param CustomerAgreements: All customer agreements of this service supplier.
         @param BankAccounts: All BackAccounts this ServiceSupplier owns.
         """
-        #: Kind of supplier. Values are: "other", "retailer", "utility"
+        #: Kind of supplier.Values are: "other", "retailer", "utility"
         self.kind = kind
 
-        #: Unique transaction reference prefix number issued to an entity by the International Standards Organisation for the purpose of tagging onto electronic financial transactions, as defined in ISO/IEC 7812-1 and ISO/IEC 7812-2. 
+        #: Unique transaction reference prefix number issued to an entity by the International Standards Organisation for the purpose of tagging onto electronic financial transactions, as defined in ISO/IEC 7812-1 and ISO/IEC 7812-2.
         self.issuerIdentificationNumber = issuerIdentificationNumber
 
         self._ServiceDeliveryPoints = []

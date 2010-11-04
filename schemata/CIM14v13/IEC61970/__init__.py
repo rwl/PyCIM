@@ -19,3 +19,5 @@
 
 ns_prefix = "cimIEC61970"
 ns_uri = "http://iec.ch/TC57/CIM-generic#IEC61970"
+
+from CIM14v13.IEC61970.IEC61970CIMVersion import IEC61970CIMVersion

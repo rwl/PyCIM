@@ -27,7 +27,7 @@ class Accumulator(Measurement):
         @param AccumulatorValues: The values connected to this measurement.
         @param LimitSets: A measurement may have zero or more limit ranges defined for it.
         """
-        #: Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values. 
+        #: Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.
         self.maxValue = maxValue
 
         self._AccumulatorValues = []

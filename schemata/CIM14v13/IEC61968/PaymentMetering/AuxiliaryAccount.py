@@ -32,10 +32,10 @@ class AuxiliaryAccount(Document):
         @param PaymentTransactions: All payments against this account.
         @param due: Current amounts now due for payment on this account.
         """
-        #: The total amount currently remaining on this account that is required to be paid in order to settle the account to zero. This excludes any due amounts not yet paid. 
+        #: The total amount currently remaining on this account that is required to be paid in order to settle the account to zero. This excludes any due amounts not yet paid.
         self.balance = balance
 
-        #: The initial principle amount, with which this account was instantiated. 
+        #: The initial principle amount, with which this account was instantiated.
         self.principleAmount = principleAmount
 
         self.lastDebit = lastDebit

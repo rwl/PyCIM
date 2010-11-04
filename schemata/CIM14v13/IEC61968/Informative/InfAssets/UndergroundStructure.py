@@ -27,13 +27,13 @@ class UndergroundStructure(Structure):
         @param ventilation: True if vault is ventilating. 
         @param material: Primary material of underground structure. 
         """
-        #: Date sealing warranty expires. 
+        #: Date sealing warranty expires.
         self.sealingWarrantyExpiresDate = sealingWarrantyExpiresDate
 
-        #: True if vault is ventilating. 
+        #: True if vault is ventilating.
         self.ventilation = ventilation
 
-        #: Primary material of underground structure. 
+        #: Primary material of underground structure.
         self.material = material
 
         super(UndergroundStructure, self).__init__(*args, **kw_args)

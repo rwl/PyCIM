@@ -34,28 +34,28 @@ class CustomerBillingInfo(Document):
         @param ErpInvoiceLineItems:
         @param CustomerAccount:
         """
-        #: Kind of bill customer receives. Values are: "separateEssUdc", "other", "consolidatedEss", "consolidatedUdc"
+        #: Kind of bill customer receives.Values are: "separateEssUdc", "other", "consolidatedEss", "consolidatedUdc"
         self.kind = kind
 
-        #: Type of payment plan. 
+        #: Type of payment plan.
         self.pymtPlanType = pymtPlanType
 
-        #: Business date designated for the billing run which produced this CustomerBillingInfo. 
+        #: Business date designated for the billing run which produced this CustomerBillingInfo.
         self.billingDate = billingDate
 
-        #: Monthly amortized amount due during each billing cycle for the CustomerAccount balance for which the Payment Plan is set-up. 
+        #: Monthly amortized amount due during each billing cycle for the CustomerAccount balance for which the Payment Plan is set-up.
         self.pymtPlanAmt = pymtPlanAmt
 
-        #: Outstanding balance on the CustomerAccount as of the statement date. 
+        #: Outstanding balance on the CustomerAccount as of the statement date.
         self.outBalance = outBalance
 
-        #: Amount of the last payment received from the customer. It is retained in the Customer Billing system, although the details of each payment are tracked in the ERP system. 
+        #: Amount of the last payment received from the customer. It is retained in the Customer Billing system, although the details of each payment are tracked in the ERP system.
         self.lastPaymentAmt = lastPaymentAmt
 
-        #: Date of the last payment received from the customer. It is retained in the Customer Billing system, although the details of each payment are tracked in the ERP system. 
+        #: Date of the last payment received from the customer. It is retained in the Customer Billing system, although the details of each payment are tracked in the ERP system.
         self.lastPaymentDate = lastPaymentDate
 
-        #: Calculated date upon which a customer billing amount is due, used in the invoicing process to determine when a Customer's Payment is delinquent. It takes into consideration the regulatory criteria and the Customer's requested due date. In the absence of a Customer requested due date, the due date is typically calculated from the regulated number of days and the 'billingDate'. 
+        #: Calculated date upon which a customer billing amount is due, used in the invoicing process to determine when a Customer's Payment is delinquent. It takes into consideration the regulatory criteria and the Customer's requested due date. In the absence of a Customer requested due date, the due date is typically calculated from the regulated number of days and the 'billingDate'.
         self.dueDate = dueDate
 
         self._ErpInvoiceLineItems = []

@@ -35,28 +35,28 @@ class GmlCoordinateSystem(IdentifiedObject):
         @param GmlDiagramObjects:
         @param Diagrams:
         """
- 
+
         self.positionUnitName = positionUnitName
 
-        #: If applicable, the maximum position allowed along the Z axis of the coordinate reference system. 
+        #: If applicable, the maximum position allowed along the Z axis of the coordinate reference system.
         self.zMax = zMax
 
-        #: The maximum position allowed along the Y axis of the coordinate reference system. 
+        #: The maximum position allowed along the Y axis of the coordinate reference system.
         self.yMax = yMax
 
-        #: If applicable, the minimum position allowed along the Z axis of the coordinate reference system. 
+        #: If applicable, the minimum position allowed along the Z axis of the coordinate reference system.
         self.zMin = zMin
 
-        #: The minimum position allowed along the Y axis of the coordinate reference system. 
+        #: The minimum position allowed along the Y axis of the coordinate reference system.
         self.yMin = yMin
 
-        #: The minimum position allowed along the X axis of the coordinate reference system. 
+        #: The minimum position allowed along the X axis of the coordinate reference system.
         self.xMin = xMin
 
- 
+
         self.scale = scale
 
-        #: The maximum position allowed along the X axis of the coordinate reference system. 
+        #: The maximum position allowed along the X axis of the coordinate reference system.
         self.xMax = xMax
 
         self._GmlPositions = []

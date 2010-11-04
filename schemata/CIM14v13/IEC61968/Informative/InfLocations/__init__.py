@@ -17,3 +17,19 @@
 
 ns_prefix = "cimInfLocations"
 ns_uri = "http://iec.ch/TC57/CIM-generic#InfLocations"
+
+from CIM14v13.IEC61968.Informative.InfLocations.LocLocRole import LocLocRole
+from CIM14v13.IEC61968.Informative.InfLocations.RightOfWay import RightOfWay
+from CIM14v13.IEC61968.Informative.InfLocations.OrgLocRole import OrgLocRole
+from CIM14v13.IEC61968.Informative.InfLocations.OrgPropertyRole import OrgPropertyRole
+from CIM14v13.IEC61968.Informative.InfLocations.AssetLocRole import AssetLocRole
+from CIM14v13.IEC61968.Informative.InfLocations.ErpPersonLocRole import ErpPersonLocRole
+from CIM14v13.IEC61968.Informative.InfLocations.Route import Route
+from CIM14v13.IEC61968.Informative.InfLocations.Zone import Zone
+from CIM14v13.IEC61968.Informative.InfLocations.DocLocRole import DocLocRole
+from CIM14v13.IEC61968.Informative.InfLocations.SchematicLocation import SchematicLocation
+from CIM14v13.IEC61968.Informative.InfLocations.RedLine import RedLine
+from CIM14v13.IEC61968.Informative.InfLocations.LocationGrant import LocationGrant
+from CIM14v13.IEC61968.Informative.InfLocations.LandProperty import LandProperty
+from CIM14v13.IEC61968.Informative.InfLocations.Hazard import Hazard
+from CIM14v13.IEC61968.Informative.InfLocations.PersonPropertyRole import PersonPropertyRole

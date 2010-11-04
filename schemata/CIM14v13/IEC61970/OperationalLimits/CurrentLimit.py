@@ -25,7 +25,7 @@ class CurrentLimit(OperationalLimit):
 
         @param value: Limit on current flow. 
         """
-        #: Limit on current flow. 
+        #: Limit on current flow.
         self.value = value
 
         super(CurrentLimit, self).__init__(*args, **kw_args)

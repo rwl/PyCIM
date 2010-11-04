@@ -42,37 +42,37 @@ class Reservoir(PowerSystemResource):
         @param TargetLevelSchedule: A reservoir may have a water level target schedule.
         @param HydroPowerPlants: Generators discharge water to or pumps are supplied water from a downstream reservoir
         """
-        #: Type of spillway gate, including parameters 
+        #: Type of spillway gate, including parameters
         self.spillWayGateType = spillWayGateType
 
-        #: The length of the spillway crest 
+        #: The length of the spillway crest
         self.spillwayCrestLength = spillwayCrestLength
 
-        #: Storage volume between the full supply level and the normal minimum operating level 
+        #: Storage volume between the full supply level and the normal minimum operating level
         self.activeStorageCapacity = activeStorageCapacity
 
-        #: Total capacity of reservoir 
+        #: Total capacity of reservoir
         self.grossCapacity = grossCapacity
 
-        #: The reservoir's energy storage rating in energy for given head conditions 
+        #: The reservoir's energy storage rating in energy for given head conditions
         self.energyStorageRating = energyStorageRating
 
-        #: Full supply level, above which water will spill. This can be the spillway crest level or the top of closed gates. 
+        #: Full supply level, above which water will spill. This can be the spillway crest level or the top of closed gates.
         self.fullSupplyLevel = fullSupplyLevel
 
-        #: The flow capacity of the spillway in cubic meters per second 
+        #: The flow capacity of the spillway in cubic meters per second
         self.spillwayCapacity = spillwayCapacity
 
-        #: The spillway water travel delay to the next downstream reservoir 
+        #: The spillway water travel delay to the next downstream reservoir
         self.spillTravelDelay = spillTravelDelay
 
-        #: River outlet works for riparian right releases or other purposes 
+        #: River outlet works for riparian right releases or other purposes
         self.riverOutletWorks = riverOutletWorks
 
-        #: Normal minimum operating level below which the penstocks will draw air 
+        #: Normal minimum operating level below which the penstocks will draw air
         self.normalMinOperateLevel = normalMinOperateLevel
 
-        #: Spillway crest level above which water will spill 
+        #: Spillway crest level above which water will spill
         self.spillwayCrestLevel = spillwayCrestLevel
 
         self._InflowForecasts = []

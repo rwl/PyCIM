@@ -28,10 +28,10 @@ class DuctBank(Asset):
         @param CableAssets:
         @param DuctBankTypeAsset:
         """
-        #: Number of circuits in duct bank. Refer to associations between a duct (ConductorAsset) and an ACLineSegment to understand which circuits are in which ducts. 
+        #: Number of circuits in duct bank. Refer to associations between a duct (ConductorAsset) and an ACLineSegment to understand which circuits are in which ducts.
         self.circuitCount = circuitCount
 
-        #: Number of ducts in duct bank. 
+        #: Number of ducts in duct bank.
         self.ductCount = ductCount
 
         self._CableAssets = []

@@ -27,7 +27,7 @@ class MarketRole(IdentifiedObject):
         @param status:
         @param Organisations:
         """
-        #: Kind of role an organisation plays in a market. Values are: "other", "transmissionServiceProvider", "planningAuthority", "reliabilityAuthority", "transmissionOwner", "transmissionPlanner", "generatorOperator", "energyServiceConsumer", "generatorOwner", "transmissionOperator", "complianceMonitor", "distributionProvider", "loadServingEntity", "interchangeAuthority", "purchasingSellingEntity", "resourcePlanner", "balancingAuthority", "competitiveRetailer", "standardsDeveloper"
+        #: Kind of role an organisation plays in a market.Values are: "other", "transmissionServiceProvider", "planningAuthority", "reliabilityAuthority", "transmissionOwner", "transmissionPlanner", "generatorOperator", "energyServiceConsumer", "generatorOwner", "transmissionOperator", "complianceMonitor", "distributionProvider", "loadServingEntity", "interchangeAuthority", "purchasingSellingEntity", "resourcePlanner", "balancingAuthority", "competitiveRetailer", "standardsDeveloper"
         self.kind = kind
 
         self.status = status

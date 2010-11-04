@@ -28,7 +28,7 @@ class Diagram(Document):
         @param DesignLocations:
         @param GmlCoordinateSystem:
         """
-        #: Kind of this diagram. Values are: "geographic", "schematic", "designSketch", "internalView", "other"
+        #: Kind of this diagram.Values are: "geographic", "schematic", "designSketch", "internalView", "other"
         self.kind = kind
 
         self._GmlDiagramObjects = []

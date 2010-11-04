@@ -26,7 +26,7 @@ class TransformerBank(Equipment):
         @param vectorGroup: Vector group of the bank for protective relaying, e.g., Dyn1. For unbalanced transformers, this may not be simply determined from the constituent winding connections. 
         @param Transformers: All transformers that belong to this bank.
         """
-        #: Vector group of the bank for protective relaying, e.g., Dyn1. For unbalanced transformers, this may not be simply determined from the constituent winding connections. 
+        #: Vector group of the bank for protective relaying, e.g., Dyn1. For unbalanced transformers, this may not be simply determined from the constituent winding connections.
         self.vectorGroup = vectorGroup
 
         self._Transformers = []

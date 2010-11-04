@@ -26,7 +26,7 @@ class CombinedCyclePlant(PowerSystemResource):
         @param combCyclePlantRating: The combined cycle plant's active power output rating 
         @param ThermalGeneratingUnits: A thermal generating unit may be a member of a combined cycle plant
         """
-        #: The combined cycle plant's active power output rating 
+        #: The combined cycle plant's active power output rating
         self.combCyclePlantRating = combCyclePlantRating
 
         self._ThermalGeneratingUnits = []

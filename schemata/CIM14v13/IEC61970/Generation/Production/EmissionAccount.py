@@ -27,10 +27,10 @@ class EmissionAccount(Curve):
         @param emissionValueSource: The source of the emission value. Values are: "calculated", "measured"
         @param ThermalGeneratingUnit: A thermal generating unit may have one or more emission allowance accounts
         """
-        #: The type of emission, for example sulfur dioxide (SO2). The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide). Values are: "nitrogenOxide", "carbonDisulfide", "hydrogenSulfide", "sulfurDioxide", "chlorine", "carbonDioxide"
+        #: The type of emission, for example sulfur dioxide (SO2). The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide).Values are: "nitrogenOxide", "carbonDisulfide", "hydrogenSulfide", "sulfurDioxide", "chlorine", "carbonDioxide"
         self.emissionType = emissionType
 
-        #: The source of the emission value. Values are: "calculated", "measured"
+        #: The source of the emission value.Values are: "calculated", "measured"
         self.emissionValueSource = emissionValueSource
 
         self._ThermalGeneratingUnit = None

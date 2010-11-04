@@ -47,22 +47,22 @@ class Document(IdentifiedObject):
         @param AssetRoles:
         @param ChangeSets:
         """
-        #: Document subject. 
+        #: Document subject.
         self.subject = subject
 
-        #: Revision number for this document. 
+        #: Revision number for this document.
         self.revisionNumber = revisionNumber
 
-        #: Utility-specific categorisation of this document, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.). 
+        #: Utility-specific categorisation of this document, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).
         self.category = category
 
-        #: Date and time this document was last modified. Documents may potentially be modified many times during their lifetime. 
+        #: Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.
         self.lastModifiedDateTime = lastModifiedDateTime
 
-        #: Document title. 
+        #: Document title.
         self.title = title
 
-        #: Date and time that this document was created. 
+        #: Date and time that this document was created.
         self.createdDateTime = createdDateTime
 
         self._ActivityRecords = []

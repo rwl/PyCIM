@@ -27,7 +27,7 @@ class TransactionSummary(Element):
         @param Shift: Shift to which this summary applies.
         @param line: Totalised amount transacted during the shift for this specific 'transactionKind', i.e., sum of 'Transaction.line.amount' per 'Transaction.kind'. Cumulative amount of rounding errors due to process rounding not reflected in 'LineDetail.amount' for 'transactionKind', i.e., sum of 'Transaction.line.rounding' per 'Transaction.kind'.
         """
-        #: 'Transaction.kind' for which 'transactionsTotal' is given. Values are: "auxiliaryChargePayment", "tokenExchange", "tokenCancellation", "transactionReversal", "diversePayment", "tokenFreeIssue", "other", "meterConfigurationToken", "tokenSalePayment", "accountPayment", "taxChargePayment", "serviceChargePayment", "tokenGrant"
+        #: 'Transaction.kind' for which 'transactionsTotal' is given.Values are: "auxiliaryChargePayment", "tokenExchange", "tokenCancellation", "transactionReversal", "diversePayment", "tokenFreeIssue", "other", "meterConfigurationToken", "tokenSalePayment", "accountPayment", "taxChargePayment", "serviceChargePayment", "tokenGrant"
         self.transactionKind = transactionKind
 
         self._Shift = None

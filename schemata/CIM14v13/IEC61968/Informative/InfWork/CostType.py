@@ -34,16 +34,16 @@ class CostType(IdentifiedObject):
         @param status:
         @param CompatibleUnits:
         """
-        #: A codified representation of the resource element. 
+        #: A codified representation of the resource element.
         self.code = code
 
-        #: True if an amount can be assigned to the resource element (e.g., building in service, transmission plant, software development capital); false otherwise (e.g., internal labor, material components). 
+        #: True if an amount can be assigned to the resource element (e.g., building in service, transmission plant, software development capital); false otherwise (e.g., internal labor, material components).
         self.amountAssignmentFlag = amountAssignmentFlag
 
-        #: The level of the resource element in the hierarchy of resource elements (recursive relationship). 
+        #: The level of the resource element in the hierarchy of resource elements (recursive relationship).
         self.level = level
 
-        #: The stage for which this costType applies: estimated design, estimated actual or actual actual. 
+        #: The stage for which this costType applies: estimated design, estimated actual or actual actual.
         self.stage = stage
 
         self._WorkCostDetails = []

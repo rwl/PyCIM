@@ -43,49 +43,49 @@ class ElectricalInfo(IdentifiedObject):
         @param ElectricalAssets:
         @param ElectricalAssetModels:
         """
-        #: Positive sequence susceptance. 
+        #: Positive sequence susceptance.
         self.b = b
 
-        #: For an installed asset, this is the total number of electrical wires that are physically connected to it. For an AssetModel, this is the total number of wires that can potentially be connected to this asset type. This is particularly useful to understand overall electrical configurations for distribution secondary where the number of wires can not be derived from phase information alone. For example, 120v 2 Wires; 240v 2 Wires; 480v 1Ph 2 Wires; 120/240v 1Ph; 120/208v 3Ph Y; 120/208v 1Ph Y; 120/240v 3Ph D; 240/480v 1Ph 3 Wires; 480v 3Ph D; 240/480v 3Ph D; 277/480v 3Ph Y. 
+        #: For an installed asset, this is the total number of electrical wires that are physically connected to it. For an AssetModel, this is the total number of wires that can potentially be connected to this asset type. This is particularly useful to understand overall electrical configurations for distribution secondary where the number of wires can not be derived from phase information alone. For example, 120v 2 Wires; 240v 2 Wires; 480v 1Ph 2 Wires; 120/240v 1Ph; 120/208v 3Ph Y; 120/208v 1Ph Y; 120/240v 3Ph D; 240/480v 1Ph 3 Wires; 480v 3Ph D; 240/480v 3Ph D; 277/480v 3Ph Y.
         self.wireCount = wireCount
 
-        #: Zero sequence series resistance. 
+        #: Zero sequence series resistance.
         self.r0 = r0
 
-        #: Frequency at which stated device ratings apply, typically 50 Hz or 60 Hz. 
+        #: Frequency at which stated device ratings apply, typically 50 Hz or 60 Hz.
         self.frequency = frequency
 
-        #: Positive sequence conductance. 
+        #: Positive sequence conductance.
         self.g = g
 
-        #: Rated voltage. 
+        #: Rated voltage.
         self.ratedVoltage = ratedVoltage
 
-        #: Positive sequence series reactance. 
+        #: Positive sequence series reactance.
         self.x = x
 
-        #: Number of potential phases the asset supports, typically 0, 1 or 3. The actual phases connected are determined from 'ConductingEquipment.phases' attribute in the ConductingEquipment subclass associated with the asset or from 'ElectricalAsset.phaseCode' attribute. 
+        #: Number of potential phases the asset supports, typically 0, 1 or 3. The actual phases connected are determined from 'ConductingEquipment.phases' attribute in the ConductingEquipment subclass associated with the asset or from 'ElectricalAsset.phaseCode' attribute.
         self.phaseCount = phaseCount
 
-        #: Rated current. 
+        #: Rated current.
         self.ratedCurrent = ratedCurrent
 
-        #: Zero sequence susceptance. 
+        #: Zero sequence susceptance.
         self.b0 = b0
 
-        #: Positive sequence series resistance. 
+        #: Positive sequence series resistance.
         self.r = r
 
-        #: Zero sequence conductance. 
+        #: Zero sequence conductance.
         self.g0 = g0
 
-        #: Rated apparent power. 
+        #: Rated apparent power.
         self.ratedApparentPower = ratedApparentPower
 
-        #: Zero sequence series reactance. 
+        #: Zero sequence series reactance.
         self.x0 = x0
 
-        #: Basic Insulation Level (BIL) for switchgear, insulators, etc. A reference insulation level expressed as the impulse crest voltage of a nominal wave, typically 1,2 x 50 microsecond. This is a measure of the ability of the insulation to withstand very high voltage surges. 
+        #: Basic Insulation Level (BIL) for switchgear, insulators, etc. A reference insulation level expressed as the impulse crest voltage of a nominal wave, typically 1,2 x 50 microsecond. This is a measure of the ability of the insulation to withstand very high voltage surges.
         self.bil = bil
 
         self._EndDeviceAssets = []

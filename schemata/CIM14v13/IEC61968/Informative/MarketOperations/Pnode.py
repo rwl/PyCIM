@@ -37,19 +37,19 @@ class Pnode(IdentifiedObject):
         @param RegisteredResources: A registered resource injects power at one or more connectivity nodes related to a pnode
         @param PnodeClearing:
         """
-        #: Price node usage:  'Control Area' 'Regulation Region' 'Price Zone' 'Spin Region' 'Non-Spin Region' 'Price Hub' 
+        #: Price node usage:  'Control Area' 'Regulation Region' 'Price Zone' 'Spin Region' 'Non-Spin Region' 'Price Hub'
         self.usage = usage
 
-        #: True=Public; False=Private Public Pnodes: Prices are published for DA/RT and FTR Markets. Private Pnodes: Location is not usable by Market for Bidding/FTRs/Transactions 
+        #: True=Public; False=Private Public Pnodes: Prices are published for DA/RT and FTR Markets. Private Pnodes: Location is not usable by Market for Bidding/FTRs/Transactions
         self.isPublic = isPublic
 
-        #: Start date-time of the period in which the price node definition is valid. 
+        #: Start date-time of the period in which the price node definition is valid.
         self.beginPeriod = beginPeriod
 
-        #: End date-time of the period in which the price node definition is valid 
+        #: End date-time of the period in which the price node definition is valid
         self.endPeriod = endPeriod
 
-        #: Price node type: Hub (H), Zone (Z), Control Area (C), ?, Bus (B) 
+        #: Price node type: Hub (H), Zone (Z), Control Area (C), ?, Bus (B)
         self.type = type
 
         self._ConnectivityNode = None

@@ -26,7 +26,7 @@ class HeatRateCurve(Curve):
         @param isNetGrossP: Flag is set to true when output is expressed in net active power 
         @param ThermalGeneratingUnit: A thermal generating unit may have a heat rate curve
         """
-        #: Flag is set to true when output is expressed in net active power 
+        #: Flag is set to true when output is expressed in net active power
         self.isNetGrossP = isNetGrossP
 
         self._ThermalGeneratingUnit = None

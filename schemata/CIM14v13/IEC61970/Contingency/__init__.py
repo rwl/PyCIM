@@ -19,3 +19,7 @@
 
 ns_prefix = "cimContingency"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Contingency"
+
+from CIM14v13.IEC61970.Contingency.Contingency import Contingency
+from CIM14v13.IEC61970.Contingency.ContingencyElement import ContingencyElement
+from CIM14v13.IEC61970.Contingency.ContingencyEquipment import ContingencyEquipment

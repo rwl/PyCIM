@@ -27,7 +27,7 @@ class BusinessRole(IdentifiedObject):
         @param Organisations:
         @param status:
         """
-        #: Category by utility's corporate standards and practices. 
+        #: Category by utility's corporate standards and practices.
         self.category = category
 
         self._Organisations = []

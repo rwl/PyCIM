@@ -28,16 +28,16 @@ class FailureEvent(ActivityRecord):
         @param faultLocatingMethod: The method used for locating the faulted part of the asset. For example, cable options include: Cap Discharge-Thumping, Bridge Method, Visual Inspection, Other. 
         @param location: Failure location on an object. 
         """
-        #: How the asset failure was isolated from the system. Values are: "manuallyIsolated", "burnedInTheClear", "fuse", "other", "breakerOperation"
+        #: How the asset failure was isolated from the system.Values are: "manuallyIsolated", "burnedInTheClear", "fuse", "other", "breakerOperation"
         self.failureIsolationMethod = failureIsolationMethod
 
-        #: Code for asset failure. 
+        #: Code for asset failure.
         self.corporateCode = corporateCode
 
-        #: The method used for locating the faulted part of the asset. For example, cable options include: Cap Discharge-Thumping, Bridge Method, Visual Inspection, Other. 
+        #: The method used for locating the faulted part of the asset. For example, cable options include: Cap Discharge-Thumping, Bridge Method, Visual Inspection, Other.
         self.faultLocatingMethod = faultLocatingMethod
 
-        #: Failure location on an object. 
+        #: Failure location on an object.
         self.location = location
 
         super(FailureEvent, self).__init__(*args, **kw_args)

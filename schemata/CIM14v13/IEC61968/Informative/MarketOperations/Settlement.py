@@ -28,7 +28,7 @@ class Settlement(Document):
         @param ErpLedgerEntries:
         @param ErpInvoiceLineItems:
         """
-        #: The trade date on which the settlement is run. 
+        #: The trade date on which the settlement is run.
         self.tradeDate = tradeDate
 
         self._Market = None

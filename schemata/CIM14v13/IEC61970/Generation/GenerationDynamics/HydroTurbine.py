@@ -35,37 +35,37 @@ class HydroTurbine(PrimeMover):
         @param waterStartingTime: Water Starting Time 
         @param gateUpperLimit: Gate Upper Limit 
         """
-        #: Type of turbine. Values are: "francis", "kaplan", "pelton"
+        #: Type of turbine.Values are: "francis", "kaplan", "pelton"
         self.turbineType = turbineType
 
-        #: Rated speed in number of revolutions. 
+        #: Rated speed in number of revolutions.
         self.speedRating = speedRating
 
-        #: Speed Regulation 
+        #: Speed Regulation
         self.speedRegulation = speedRegulation
 
-        #: Rated turbine active power 
+        #: Rated turbine active power
         self.turbineRating = turbineRating
 
-        #: Transient Droop Time Constant 
+        #: Transient Droop Time Constant
         self.transientDroopTime = transientDroopTime
 
-        #: Maximum efficiency active power at minimum head conditions 
+        #: Maximum efficiency active power at minimum head conditions
         self.minHeadMaxP = minHeadMaxP
 
-        #: Transient Regulation 
+        #: Transient Regulation
         self.transientRegulation = transientRegulation
 
-        #: Gate Rate Limit 
+        #: Gate Rate Limit
         self.gateRateLimit = gateRateLimit
 
-        #: Maximum efficiency active power at maximum head conditions 
+        #: Maximum efficiency active power at maximum head conditions
         self.maxHeadMaxP = maxHeadMaxP
 
-        #: Water Starting Time 
+        #: Water Starting Time
         self.waterStartingTime = waterStartingTime
 
-        #: Gate Upper Limit 
+        #: Gate Upper Limit
         self.gateUpperLimit = gateUpperLimit
 
         super(HydroTurbine, self).__init__(*args, **kw_args)

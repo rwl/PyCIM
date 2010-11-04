@@ -19,3 +19,9 @@
 
 ns_prefix = "cimSCADA"
 ns_uri = "http://iec.ch/TC57/CIM-generic#SCADA"
+
+from CIM14v13.IEC61970.SCADA.CommunicationLink import CommunicationLink
+from CIM14v13.IEC61970.SCADA.RemotePoint import RemotePoint
+from CIM14v13.IEC61970.SCADA.RemoteSource import RemoteSource
+from CIM14v13.IEC61970.SCADA.RemoteControl import RemoteControl
+from CIM14v13.IEC61970.SCADA.RemoteUnit import RemoteUnit

@@ -37,31 +37,31 @@ class TroubleTicket(Document):
         @param CallBacks:
         @param IncidentRecord:
         """
-        #: Means the customer used to report trouble (default is 'call'). Values are: "letter", "other", "call", "email"
+        #: Means the customer used to report trouble (default is 'call').Values are: "letter", "other", "call", "email"
         self.reportingKind = reportingKind
 
-        #: Advice already given to the customer at time when trouble was first reported. 
+        #: Advice already given to the customer at time when trouble was first reported.
         self.advice = advice
 
-        #: True if requested to customer when someone is about to arrive at their premises. 
+        #: True if requested to customer when someone is about to arrive at their premises.
         self.callBack = callBack
 
-        #: Priority of trouble call. 
+        #: Priority of trouble call.
         self.priority = priority
 
-        #: True if person reporting trouble requested a call back to confirm power has been restored. The person and their contact information is maintained in the assoicated Customer informaiton. Call back results are recorded in assoicated 'ActivityRecord.Status.remarks'. 
+        #: True if person reporting trouble requested a call back to confirm power has been restored. The person and their contact information is maintained in the assoicated Customer informaiton. Call back results are recorded in assoicated 'ActivityRecord.Status.remarks'.
         self.informAfterRestored = informAfterRestored
 
-        #: Estimated restoration date and time last provided to the customer. 
+        #: Estimated restoration date and time last provided to the customer.
         self.estimatedRestoreDateTime = estimatedRestoreDateTime
 
-        #: True if person reporting trouble requested a call back when sigificant information became available about cause of the outage and the estimated restoration time. The person and their contact information are maintained in the assoicated Customer information. Call back results are recorded in assoicated 'ActivityRecord.Status.remarks'. 
+        #: True if person reporting trouble requested a call back when sigificant information became available about cause of the outage and the estimated restoration time. The person and their contact information are maintained in the assoicated Customer information. Call back results are recorded in assoicated 'ActivityRecord.Status.remarks'.
         self.informBeforeRestored = informBeforeRestored
 
-        #: Code for a reported hazard condition. 
+        #: Code for a reported hazard condition.
         self.hazardCode = hazardCode
 
-        #: Date and time trouble call first received. The date and time of subsequent calls by the same customer for the same trouble are recorded in associated Activity Records. 
+        #: Date and time trouble call first received. The date and time of subsequent calls by the same customer for the same trouble are recorded in associated Activity Records.
         self.firstCallDateTime = firstCallDateTime
 
         self._CustomerData = None

@@ -33,25 +33,25 @@ class Pole(Structure):
         @param SupportStreetlights: Streetlight(s) may be attached to a pole.
         @param PoleModel:
         """
-        #: Kind of base for this pole. Values are: "cement", "dirt", "unknown", "other", "asphalt"
+        #: Kind of base for this pole.Values are: "cement", "dirt", "unknown", "other", "asphalt"
         self.baseKind = baseKind
 
-        #: Kind of preservative for this pole. Values are: "naphthena", "unknown", "other", "chemonite", "penta", "cellon", "creosote"
+        #: Kind of preservative for this pole.Values are: "naphthena", "unknown", "other", "chemonite", "penta", "cellon", "creosote"
         self.preservativeKind = preservativeKind
 
-        #: Kind of treatment for this pole. Values are: "grayStain", "other", "natural", "greenStain", "full", "unknown", "butt", "penta"
+        #: Kind of treatment for this pole.Values are: "grayStain", "other", "natural", "greenStain", "full", "unknown", "butt", "penta"
         self.treatmentKind = treatmentKind
 
-        #: Date and time pole was last treated with preservative. 
+        #: Date and time pole was last treated with preservative.
         self.treatedDateTime = treatedDateTime
 
-        #: The framing structure mounted on the pole. 
+        #: The framing structure mounted on the pole.
         self.construction = construction
 
-        #: True if a block of material has been attached to base of pole in ground for stability. This technique is used primarily when anchors can not be used. 
+        #: True if a block of material has been attached to base of pole in ground for stability. This technique is used primarily when anchors can not be used.
         self.breastBlock = breastBlock
 
-        #: Joint pole agreement reference number. 
+        #: Joint pole agreement reference number.
         self.jpaReference = jpaReference
 
         self._SupportStreetlights = []

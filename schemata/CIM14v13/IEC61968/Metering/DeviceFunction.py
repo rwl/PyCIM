@@ -29,7 +29,7 @@ class DeviceFunction(AssetFunction):
         @param Registers: All registers for quantities metered by this device function.
         @param EndDeviceEvents: All events reported by this device function.
         """
-        #: True if the device function is disabled (deactivated). Default is false (i.e., function is enabled). 
+        #: True if the device function is disabled (deactivated). Default is false (i.e., function is enabled).
         self.disabled = disabled
 
         self._ComEquipmentAsset = None

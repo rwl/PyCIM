@@ -28,13 +28,13 @@ class Bank(Organisation):
         @param bic: Bank identifier code as defined in ISO 9362; for use in countries wher IBAN is not yet in operation. 
         @param BankAccounts: All BankAccounts this Bank provides.
         """
-        #: International bank account number defined in ISO 13616; for countries where IBAN is not in operation, the existing BIC or SWIFT codes may be used instead (see ISO 9362). 
+        #: International bank account number defined in ISO 13616; for countries where IBAN is not in operation, the existing BIC or SWIFT codes may be used instead (see ISO 9362).
         self.iban = iban
 
-        #: Codified reference to the particular branch of the bank where BankAccount is held. 
+        #: Codified reference to the particular branch of the bank where BankAccount is held.
         self.branchCode = branchCode
 
-        #: Bank identifier code as defined in ISO 9362; for use in countries wher IBAN is not yet in operation. 
+        #: Bank identifier code as defined in ISO 9362; for use in countries wher IBAN is not yet in operation.
         self.bic = bic
 
         self._BankAccounts = []

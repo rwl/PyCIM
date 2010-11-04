@@ -25,7 +25,7 @@ class DrumBoiler(FossilSteamSupply):
 
         @param drumBoilerRating: Rating of drum boiler in steam units 
         """
-        #: Rating of drum boiler in steam units 
+        #: Rating of drum boiler in steam units
         self.drumBoilerRating = drumBoilerRating
 
         super(DrumBoiler, self).__init__(*args, **kw_args)

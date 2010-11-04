@@ -27,10 +27,10 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
         @param endTime: The time for the last time point. 
         @param TimePoints: The point data values that define a curve
         """
-        #: The time between each pair of subsequent RegularTimePoints. 
+        #: The time between each pair of subsequent RegularTimePoints.
         self.timeStep = timeStep
 
-        #: The time for the last time point. 
+        #: The time for the last time point.
         self.endTime = endTime
 
         self._TimePoints = []

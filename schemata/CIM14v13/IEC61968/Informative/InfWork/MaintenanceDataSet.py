@@ -27,13 +27,13 @@ class MaintenanceDataSet(ProcedureDataSet):
         @param maintCode: Code for the type of maintenance performed. 
         @param conditionAfter: Condition of asset just following maintenance procedure. 
         """
-        #: Description of the condition of the asset just prior to maintenance being performed. 
+        #: Description of the condition of the asset just prior to maintenance being performed.
         self.conditionBefore = conditionBefore
 
-        #: Code for the type of maintenance performed. 
+        #: Code for the type of maintenance performed.
         self.maintCode = maintCode
 
-        #: Condition of asset just following maintenance procedure. 
+        #: Condition of asset just following maintenance procedure.
         self.conditionAfter = conditionAfter
 
         super(MaintenanceDataSet, self).__init__(*args, **kw_args)

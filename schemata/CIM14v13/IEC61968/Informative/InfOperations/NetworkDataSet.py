@@ -32,7 +32,7 @@ class NetworkDataSet(IdentifiedObject):
         @param ChangeItems:
         @param status:
         """
-        #: Category of network data set. 
+        #: Category of network data set.
         self.category = category
 
         self._Documents = []

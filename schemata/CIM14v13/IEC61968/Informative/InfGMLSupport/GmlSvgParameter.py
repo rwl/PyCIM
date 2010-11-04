@@ -29,10 +29,10 @@ class GmlSvgParameter(IdentifiedObject):
         @param GmlFills:
         @param GmlFonts:
         """
-        #: The SVG/CSS-coded value of the associated SvgAttribute. 
+        #: The SVG/CSS-coded value of the associated SvgAttribute.
         self.value = value
 
-        #: The attribute of the GmlSvgParameter. E.g., for 'Stroke', the following SvgParameters may be used: 'stroke' (color), 'stroke-opacity', 'stroke-width', 'stroke-linejoin', 'stroke-linecap', 'stroke-dasharray', and 'stroke-dashoffset'. Others are not officially supported. 
+        #: The attribute of the GmlSvgParameter. E.g., for 'Stroke', the following SvgParameters may be used: 'stroke' (color), 'stroke-opacity', 'stroke-width', 'stroke-linejoin', 'stroke-linecap', 'stroke-dasharray', and 'stroke-dashoffset'. Others are not officially supported.
         self.attribute = attribute
 
         self._GmlStokes = []

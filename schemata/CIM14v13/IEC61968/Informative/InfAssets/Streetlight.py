@@ -29,13 +29,13 @@ class Streetlight(ElectricalAsset):
         @param AttachedToPole: Streetlight(s) may be attached to a pole.
         @param StreetlightAssetModel:
         """
-        #: Lamp kind currently installed. Values are: "highPressureSodium", "other", "metalHalide", "mercuryVapor"
+        #: Lamp kind currently installed.Values are: "highPressureSodium", "other", "metalHalide", "mercuryVapor"
         self.lampKind = lampKind
 
-        #: Actual power rating of light. 
+        #: Actual power rating of light.
         self.lightRating = lightRating
 
-        #: Length of arm of this specific asset. Note that a new light may be placed on an existing arm. 
+        #: Length of arm of this specific asset. Note that a new light may be placed on an existing arm.
         self.armLength = armLength
 
         self._AttachedToPole = None

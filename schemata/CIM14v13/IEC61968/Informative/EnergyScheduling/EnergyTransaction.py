@@ -39,25 +39,25 @@ class EnergyTransaction(Document):
         @param EnergyProfiles: An EnergyTransaction must have at least one EnergyProfile.
         @param EnergyProduct: The 'Source' for an EnergyTransaction is an EnergyProduct which is injected into a ControlArea.
         """
-        #: Receipt point active power 
+        #: Receipt point active power
         self.receiptPointP = receiptPointP
 
-        #: { Approve | Deny | Study } 
+        #: { Approve | Deny | Study }
         self.state = state
 
-        #: Transaction minimum active power if dispatchable 
+        #: Transaction minimum active power if dispatchable
         self.energyMin = energyMin
 
-        #: Firm interchange flag indicates whether or not this energy transaction can be changed without potential financial consequences. 
+        #: Firm interchange flag indicates whether or not this energy transaction can be changed without potential financial consequences.
         self.firmInterchangeFlag = firmInterchangeFlag
 
-        #: Maximum congestion charges in monetary units 
+        #: Maximum congestion charges in monetary units
         self.congestChargeMax = congestChargeMax
 
- 
+
         self.reason = reason
 
-        #: Delivery point active power 
+        #: Delivery point active power
         self.deliveryPointP = deliveryPointP
 
         self._CurtailmentProfiles = []

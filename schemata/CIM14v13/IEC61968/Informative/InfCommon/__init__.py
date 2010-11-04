@@ -19,3 +19,18 @@
 
 ns_prefix = "cimInfCommon"
 ns_uri = "http://iec.ch/TC57/CIM-generic#InfCommon"
+
+from CIM14v13.IEC61968.Informative.InfCommon.Role import Role
+from CIM14v13.IEC61968.Informative.InfCommon.ScheduledEvent import ScheduledEvent
+from CIM14v13.IEC61968.Informative.InfCommon.Skill import Skill
+from CIM14v13.IEC61968.Informative.InfCommon.BankAccount import BankAccount
+from CIM14v13.IEC61968.Informative.InfCommon.MarketRole import MarketRole
+from CIM14v13.IEC61968.Informative.InfCommon.Diagram import Diagram
+from CIM14v13.IEC61968.Informative.InfCommon.Map import Map
+from CIM14v13.IEC61968.Informative.InfCommon.DocPsrRole import DocPsrRole
+from CIM14v13.IEC61968.Informative.InfCommon.Ratio import Ratio
+from CIM14v13.IEC61968.Informative.InfCommon.DocDocRole import DocDocRole
+from CIM14v13.IEC61968.Informative.InfCommon.BusinessPlan import BusinessPlan
+from CIM14v13.IEC61968.Informative.InfCommon.BusinessRole import BusinessRole
+from CIM14v13.IEC61968.Informative.InfCommon.Craft import Craft
+from CIM14v13.IEC61968.Informative.InfCommon.ScheduleParameterInfo import ScheduleParameterInfo

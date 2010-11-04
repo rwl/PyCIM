@@ -19,3 +19,19 @@
 
 ns_prefix = "cimAssetModels"
 ns_uri = "http://iec.ch/TC57/CIM-generic#AssetModels"
+
+from CIM14v13.IEC61968.AssetModels.AssetModel import AssetModel
+from CIM14v13.IEC61968.AssetModels.DistributionWindingTest import DistributionWindingTest
+from CIM14v13.IEC61968.AssetModels.WindingInfo import WindingInfo
+from CIM14v13.IEC61968.AssetModels.ConductorInfo import ConductorInfo
+from CIM14v13.IEC61968.AssetModels.CableInfo import CableInfo
+from CIM14v13.IEC61968.AssetModels.ConcentricNeutralCableInfo import ConcentricNeutralCableInfo
+from CIM14v13.IEC61968.AssetModels.WireArrangement import WireArrangement
+from CIM14v13.IEC61968.AssetModels.WireType import WireType
+from CIM14v13.IEC61968.AssetModels.ShortCircuitTest import ShortCircuitTest
+from CIM14v13.IEC61968.AssetModels.OverheadConductorInfo import OverheadConductorInfo
+from CIM14v13.IEC61968.AssetModels.OpenCircuitTest import OpenCircuitTest
+from CIM14v13.IEC61968.AssetModels.TransformerInfo import TransformerInfo
+from CIM14v13.IEC61968.AssetModels.ToWindingSpec import ToWindingSpec
+from CIM14v13.IEC61968.AssetModels.TapeShieldCableInfo import TapeShieldCableInfo
+from CIM14v13.IEC61968.AssetModels.EndDeviceModel import EndDeviceModel

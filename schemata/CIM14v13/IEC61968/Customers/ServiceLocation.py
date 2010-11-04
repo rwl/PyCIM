@@ -30,13 +30,13 @@ class ServiceLocation(Location):
         @param EndDeviceAssets: All end device assets that measure the service delivered to this service location.
         @param ServiceDeliveryPoints: All service delivery points delivering service (of the same type) to this service location.
         """
-        #: True if inspection is needed of facilities at this service location. This could be requested by a customer, due to suspected tampering, environmental concerns (e.g., a fire in the vicinity), or to correct incompatible data. 
+        #: True if inspection is needed of facilities at this service location. This could be requested by a customer, due to suspected tampering, environmental concerns (e.g., a fire in the vicinity), or to correct incompatible data.
         self.needsInspection = needsInspection
 
-        #: Method for the service person to access the appropriate service locations. For example, a description of where to obtain a key if the facility is unmanned and secured. 
+        #: Method for the service person to access the appropriate service locations. For example, a description of where to obtain a key if the facility is unmanned and secured.
         self.accessMethod = accessMethod
 
-        #: Problems previously encountered when visiting or performing work on this site. Examples include: bad dog, violent customer, verbally abusive occupant, obstructions, safety hazards, etc. 
+        #: Problems previously encountered when visiting or performing work on this site. Examples include: bad dog, violent customer, verbally abusive occupant, obstructions, safety hazards, etc.
         self.siteAccessProblem = siteAccessProblem
 
         self._CustomerAgreements = []

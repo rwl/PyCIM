@@ -32,16 +32,16 @@ class LaborItem(IdentifiedObject):
         @param status:
         @param WorkTask:
         """
-        #: The labor rate applied for work. 
+        #: The labor rate applied for work.
         self.laborRate = laborRate
 
-        #: Total cost for labor. Note that this may not be able to be derived from labor rate and time charged. 
+        #: Total cost for labor. Note that this may not be able to be derived from labor rate and time charged.
         self.cost = cost
 
-        #: Activity code identifies a specific and distinguishable unit of work. 
+        #: Activity code identifies a specific and distinguishable unit of work.
         self.activityCode = activityCode
 
-        #: Time required to perform work. 
+        #: Time required to perform work.
         self.laborDuration = laborDuration
 
         self._WorkCostDetail = None

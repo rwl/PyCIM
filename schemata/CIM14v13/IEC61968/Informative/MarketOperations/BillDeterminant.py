@@ -30,19 +30,19 @@ class BillDeterminant(Document):
         @param ChargeProfileData:
         @param UserAttributes:
         """
-        #: Level in charge calculation order. 
+        #: Level in charge calculation order.
         self.calculationLevel = calculationLevel
 
-        #: The level of precision in the current value. 
+        #: The level of precision in the current value.
         self.precisionLevel = precisionLevel
 
-        #: The UOM for the current value of the Bill Determinant. 
+        #: The UOM for the current value of the Bill Determinant.
         self.unitOfMeasure = unitOfMeasure
 
-        #: The version of configuration of calculation logic in the settlement. 
+        #: The version of configuration of calculation logic in the settlement.
         self.configVersion = configVersion
 
-        #: Number of intervals of bill determiant in trade day, eg 300 for five minute intervals. 
+        #: Number of intervals of bill determiant in trade day, eg 300 for five minute intervals.
         self.numberInterval = numberInterval
 
         self._ChargeProfile = None

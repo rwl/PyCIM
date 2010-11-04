@@ -32,16 +32,16 @@ class Procedure(Document):
         @param ProcedureValues: UserAttributes used to specify procedure values. An example is to have an instance for each of the following settings when conducting a test: voltage, current, frequency, temperature specified in 'name' attribute, and the corresponding value and units in 'value' attribute.
         @param Limits:
         """
-        #: Kind of this procedure. Values are: "test", "diagnosis", "inspection", "other", "maintenance"
+        #: Kind of this procedure.Values are: "test", "diagnosis", "inspection", "other", "maintenance"
         self.kind = kind
 
-        #: The textual description of the procedure, which references instances of ProcedureValue as appropriate. 
+        #: The textual description of the procedure, which references instances of ProcedureValue as appropriate.
         self.instruction = instruction
 
-        #: Sequence number in a sequence of procedures being performed. 
+        #: Sequence number in a sequence of procedures being performed.
         self.sequenceNumber = sequenceNumber
 
-        #: Code for this kind of procedure. 
+        #: Code for this kind of procedure.
         self.corporateCode = corporateCode
 
         self._CompatibleUnits = []

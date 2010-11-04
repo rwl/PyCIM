@@ -29,7 +29,7 @@ class CashierShift(Shift):
         @param PointOfSale: Point of sale that is in operation during this shift.
         @param Transactions:
         """
-        #: The amount of cash that the cashier brings with him to start his shift and that he will take away at the end of his shift; i.e. the cash float does not get banked. 
+        #: The amount of cash that the cashier brings with him to start his shift and that he will take away at the end of his shift; i.e. the cash float does not get banked.
         self.cashFloat = cashFloat
 
         self._Cashier = None

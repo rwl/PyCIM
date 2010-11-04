@@ -28,7 +28,7 @@ class TariffProfile(Document):
         @param Tariffs: All tariffs defined by this tariff profile.
         @param TimeTariffIntervals: All time tariff intervals used to define this tariff profile.
         """
-        #: The frequency at which the tariff charge schedule is repeated Examples are: once off on a specified date and time; hourly; daily; weekly; monthly; 3-monthly; 6-monthly; 12-monthly; etc. At the end of each cycle, the business rules are reset to start from the beginning again. 
+        #: The frequency at which the tariff charge schedule is repeated Examples are: once off on a specified date and time; hourly; daily; weekly; monthly; 3-monthly; 6-monthly; 12-monthly; etc. At the end of each cycle, the business rules are reset to start from the beginning again.
         self.tariffCycle = tariffCycle
 
         self._ConsumptionTariffIntervals = []

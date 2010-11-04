@@ -27,7 +27,7 @@ class OrgErpPersonRole(Role):
         @param ErpOrganisation:
         @param ErpPerson:
         """
-        #: Identifiers of the person held by an organisation, such as a government agency (federal, state, province, city, county), financial institutions, etc. 
+        #: Identifiers of the person held by an organisation, such as a government agency (federal, state, province, city, county), financial institutions, etc.
         self.clientID = clientID
 
         self._ErpOrganisation = None

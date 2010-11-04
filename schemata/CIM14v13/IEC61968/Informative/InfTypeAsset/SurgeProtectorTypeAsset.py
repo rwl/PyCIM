@@ -30,16 +30,16 @@ class SurgeProtectorTypeAsset(ElectricalTypeAsset):
         @param SurgeProtectors:
         @param SurgeProtectorAssetModels:
         """
- 
+
         self.maximumEnergyAbsorption = maximumEnergyAbsorption
 
- 
+
         self.maximumContinousOperatingVoltage = maximumContinousOperatingVoltage
 
- 
+
         self.maximumCurrentRating = maximumCurrentRating
 
- 
+
         self.nominalDesignVoltage = nominalDesignVoltage
 
         self._SurgeProtectors = []

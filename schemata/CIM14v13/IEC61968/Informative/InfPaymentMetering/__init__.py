@@ -17,3 +17,13 @@
 
 ns_prefix = "cimInfPaymentMetering"
 ns_uri = "http://iec.ch/TC57/CIM-generic#InfPaymentMetering"
+
+from CIM14v13.IEC61968.Informative.InfPaymentMetering.ReceiptSummary import ReceiptSummary
+from CIM14v13.IEC61968.Informative.InfPaymentMetering.BankStatement import BankStatement
+from CIM14v13.IEC61968.Informative.InfPaymentMetering.TSPAgreement import TSPAgreement
+from CIM14v13.IEC61968.Informative.InfPaymentMetering.TransactionSummary import TransactionSummary
+from CIM14v13.IEC61968.Informative.InfPaymentMetering.Bank import Bank
+from CIM14v13.IEC61968.Informative.InfPaymentMetering.SDPAccountingFunction import SDPAccountingFunction
+from CIM14v13.IEC61968.Informative.InfPaymentMetering.CreditRegister import CreditRegister
+from CIM14v13.IEC61968.Informative.InfPaymentMetering.Token import Token
+from CIM14v13.IEC61968.Informative.InfPaymentMetering.ChargeRegister import ChargeRegister

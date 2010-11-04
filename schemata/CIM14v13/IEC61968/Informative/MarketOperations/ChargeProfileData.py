@@ -27,13 +27,13 @@ class ChargeProfileData(Element):
         @param BillDeterminant:
         @param ChargeProfile:
         """
-        #: The sequence number of the profile. 
+        #: The sequence number of the profile.
         self.sequence = sequence
 
-        #: The value of an interval given a profile type (amount, price, or quantity), subject to the UOM. 
+        #: The value of an interval given a profile type (amount, price, or quantity), subject to the UOM.
         self.value = value
 
-        #: The date and time of an interval. 
+        #: The date and time of an interval.
         self.timeStamp = timeStamp
 
         self._BillDeterminant = None

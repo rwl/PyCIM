@@ -32,28 +32,28 @@ class BilateralTransaction(Element):
         @param totalTranChargeMax: Maximum total transmission (congestion) charges in monetary units 
         @param transactionType: Transaction type (default 1)  1 - Fixed  2 - Dispatchable continuous  3 - Dispatchable block-loading 
         """
-        #: Transaction scope: 'Internal' 'External' 
+        #: Transaction scope: 'Internal' 'External'
         self.scope = scope
 
-        #: Maximum curtailment time in number of trading intervals 
+        #: Maximum curtailment time in number of trading intervals
         self.curtailTimeMax = curtailTimeMax
 
-        #: Minimum curtailment time in number of trading intervals 
+        #: Minimum curtailment time in number of trading intervals
         self.curtailTimeMin = curtailTimeMin
 
-        #: Market type (default=DA) DA - Day Ahead RT - Real Time HA - Hour Ahead 
+        #: Market type (default=DA) DA - Day Ahead RT - Real Time HA - Hour Ahead
         self.marketType = marketType
 
-        #: Minimum purchase time in number of trading intervals 
+        #: Minimum purchase time in number of trading intervals
         self.purchaseTimeMin = purchaseTimeMin
 
-        #: Maximum purchase time in number of trading intervals 
+        #: Maximum purchase time in number of trading intervals
         self.purchaseTimeMax = purchaseTimeMax
 
-        #: Maximum total transmission (congestion) charges in monetary units 
+        #: Maximum total transmission (congestion) charges in monetary units
         self.totalTranChargeMax = totalTranChargeMax
 
-        #: Transaction type (default 1)  1 - Fixed  2 - Dispatchable continuous  3 - Dispatchable block-loading 
+        #: Transaction type (default 1)  1 - Fixed  2 - Dispatchable continuous  3 - Dispatchable block-loading
         self.transactionType = transactionType
 
         super(BilateralTransaction, self).__init__(*args, **kw_args)

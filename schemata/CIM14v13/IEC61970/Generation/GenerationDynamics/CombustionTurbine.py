@@ -35,28 +35,28 @@ class CombustionTurbine(PrimeMover):
         @param CTTempActivePowerCurve: A combustion turbine may have an active power versus ambient temperature relationship
         @param AirCompressor: A CAES air compressor is driven by combustion turbine
         """
-        #: Off-nominal voltage effect on turbine auxiliaries. Per unit reduction in auxiliary active power consumption versus per unit reduction in auxiliary bus voltage (from a specified voltage level). 
+        #: Off-nominal voltage effect on turbine auxiliaries. Per unit reduction in auxiliary active power consumption versus per unit reduction in auxiliary bus voltage (from a specified voltage level).
         self.auxPowerVersusVoltage = auxPowerVersusVoltage
 
-        #: Default ambient temperature to be used in modeling applications 
+        #: Default ambient temperature to be used in modeling applications
         self.ambientTemp = ambientTemp
 
-        #: Flag that is set to true if the combustion turbine is associated with a heat recovery boiler 
+        #: Flag that is set to true if the combustion turbine is associated with a heat recovery boiler
         self.heatRecoveryFlag = heatRecoveryFlag
 
-        #: Off-nominal frequency effect on turbine capability. Per unit reduction in unit active power capability versus per unit reduction in frequency (from rated frequency). 
+        #: Off-nominal frequency effect on turbine capability. Per unit reduction in unit active power capability versus per unit reduction in frequency (from rated frequency).
         self.capabilityVersusFrequency = capabilityVersusFrequency
 
-        #: Per unit change in power per (versus) unit change in ambient temperature 
+        #: Per unit change in power per (versus) unit change in ambient temperature
         self.powerVariationByTemp = powerVariationByTemp
 
-        #: Reference temperature at which the output of the turbine was defined. 
+        #: Reference temperature at which the output of the turbine was defined.
         self.referenceTemp = referenceTemp
 
-        #: The time constant for the turbine. 
+        #: The time constant for the turbine.
         self.timeConstant = timeConstant
 
-        #: Off-nominal frequency effect on turbine auxiliaries. Per unit reduction in auxiliary active power consumption versus per unit reduction in frequency (from rated frequency). 
+        #: Off-nominal frequency effect on turbine auxiliaries. Per unit reduction in auxiliary active power consumption versus per unit reduction in frequency (from rated frequency).
         self.auxPowerVersusFrequency = auxPowerVersusFrequency
 
         self._HeatRecoveryBoiler = None

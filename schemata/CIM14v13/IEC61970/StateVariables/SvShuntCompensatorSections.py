@@ -27,10 +27,10 @@ class SvShuntCompensatorSections(StateVariable):
         @param continuousSections: The number of sections in service as a continous variable. 
         @param ShuntCompensator: The shunt compensator for which the state applies.
         """
-        #: The number of sections in service. 
+        #: The number of sections in service.
         self.sections = sections
 
-        #: The number of sections in service as a continous variable. 
+        #: The number of sections in service as a continous variable.
         self.continuousSections = continuousSections
 
         self._ShuntCompensator = None

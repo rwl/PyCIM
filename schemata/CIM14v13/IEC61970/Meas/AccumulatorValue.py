@@ -26,7 +26,7 @@ class AccumulatorValue(MeasurementValue):
         @param value: The value to supervise. The value is positive. 
         @param Accumulator: Measurement to which this value is connected.
         """
-        #: The value to supervise. The value is positive. 
+        #: The value to supervise. The value is positive.
         self.value = value
 
         self._Accumulator = None

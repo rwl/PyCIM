@@ -26,7 +26,7 @@ class StartIgnFuelCurve(Curve):
         @param ignitionFuelType: Type of ignition fuel Values are: "gas", "oil", "coal", "lignite"
         @param StartupModel: The unit's startup model may have a startup ignition fuel curve
         """
-        #: Type of ignition fuel Values are: "gas", "oil", "coal", "lignite"
+        #: Type of ignition fuelValues are: "gas", "oil", "coal", "lignite"
         self.ignitionFuelType = ignitionFuelType
 
         self._StartupModel = None

@@ -37,28 +37,28 @@ class CurrentTransformerTypeAsset(ElectricalTypeAsset):
         @param nominalRatio: Nominal ratio between the primary and secondary current; i.e. 100:5
         @param maxRatio: Maximum ratio between the primary and secondary current.
         """
-        #: eg. metering, protection, etc 
+        #: eg. metering, protection, etc
         self.usage = usage
 
-        #: CT accuracy classification 
+        #: CT accuracy classification
         self.accuracyClass = accuracyClass
 
- 
+
         self.accuracyLimit = accuracyLimit
 
-        #: Maximum primary current where the CT still displays linear characteristicts. 
+        #: Maximum primary current where the CT still displays linear characteristicts.
         self.kneePointCurrent = kneePointCurrent
 
-        #: Power burden of the CT core 
+        #: Power burden of the CT core
         self.coreBurden = coreBurden
 
- 
+
         self.ctClass = ctClass
 
-        #: Number of cores. 
+        #: Number of cores.
         self.coreCount = coreCount
 
-        #: Maximum voltage across the secondary terminals where the CT still displays linear characteristicts. 
+        #: Maximum voltage across the secondary terminals where the CT still displays linear characteristicts.
         self.kneePointVoltage = kneePointVoltage
 
         self._CurrentTransformerInfo = None

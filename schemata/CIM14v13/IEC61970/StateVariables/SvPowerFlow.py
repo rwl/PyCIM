@@ -27,10 +27,10 @@ class SvPowerFlow(StateVariable):
         @param q: The reactive power flow into the terminal. 
         @param Terminal: The terminal associated with the power flow state.
         """
-        #: The active power flow into the terminal. 
+        #: The active power flow into the terminal.
         self.p = p
 
-        #: The reactive power flow into the terminal. 
+        #: The reactive power flow into the terminal.
         self.q = q
 
         self._Terminal = None

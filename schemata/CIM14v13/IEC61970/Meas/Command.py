@@ -28,10 +28,10 @@ class Command(Control):
         @param Discrete: The Measurement variable used for control.
         @param ValueAliasSet: The Commands using the set for translation.
         """
-        #: Normal value for Control.value e.g. used for percentage scaling 
+        #: Normal value for Control.value e.g. used for percentage scaling
         self.normalValue = normalValue
 
-        #: The value representing the actuator output 
+        #: The value representing the actuator output
         self.value = value
 
         self._Discrete = None

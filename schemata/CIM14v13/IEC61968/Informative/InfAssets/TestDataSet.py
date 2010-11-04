@@ -27,13 +27,13 @@ class TestDataSet(ProcedureDataSet):
         @param conclusion: Conclusion drawn from test results. 
         @param specimenToLabDateTime: Date and time the specimen was received by the lab. 
         """
-        #: Identifier of specimen used in inspection or test. 
+        #: Identifier of specimen used in inspection or test.
         self.specimenID = specimenID
 
-        #: Conclusion drawn from test results. 
+        #: Conclusion drawn from test results.
         self.conclusion = conclusion
 
-        #: Date and time the specimen was received by the lab. 
+        #: Date and time the specimen was received by the lab.
         self.specimenToLabDateTime = specimenToLabDateTime
 
         super(TestDataSet, self).__init__(*args, **kw_args)

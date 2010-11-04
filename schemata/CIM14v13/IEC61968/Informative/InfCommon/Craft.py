@@ -29,7 +29,7 @@ class Craft(IdentifiedObject):
         @param status:
         @param Capabilities:
         """
-        #: Category by utility's work mangement standards and practices. 
+        #: Category by utility's work mangement standards and practices.
         self.category = category
 
         self._Skills = []

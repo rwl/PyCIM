@@ -31,13 +31,13 @@ class CULaborItem(IdentifiedObject):
         @param status:
         @param CompatibleUnits:
         """
-        #: The labor rate applied for work. 
+        #: The labor rate applied for work.
         self.laborRate = laborRate
 
-        #: Activity code identifies a specific and distinguishable unit of work. 
+        #: Activity code identifies a specific and distinguishable unit of work.
         self.activityCode = activityCode
 
-        #: Estimated time to perform work. 
+        #: Estimated time to perform work.
         self.laborDuration = laborDuration
 
         self._QualificationRequirements = []

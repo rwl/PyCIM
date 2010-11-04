@@ -26,10 +26,10 @@ class EquivalentBranch(EquivalentEquipment):
         @param r: Positive sequence series resistance of the reduced branch. 
         @param x: Positive sequence series reactance of the reduced branch. 
         """
-        #: Positive sequence series resistance of the reduced branch. 
+        #: Positive sequence series resistance of the reduced branch.
         self.r = r
 
-        #: Positive sequence series reactance of the reduced branch. 
+        #: Positive sequence series reactance of the reduced branch.
         self.x = x
 
         super(EquivalentBranch, self).__init__(*args, **kw_args)

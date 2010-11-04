@@ -31,13 +31,13 @@ class TimePoint(IdentifiedObject):
         @param TimeSchedule: Time schedule owning this time point.
         @param status: Status of this time point.
         """
-        #: (if interval-based) A point in time relative to scheduled start time in 'TimeSchedule.scheduleInterval.start'. 
+        #: (if interval-based) A point in time relative to scheduled start time in 'TimeSchedule.scheduleInterval.start'.
         self.relativeTimeInterval = relativeTimeInterval
 
-        #: Absolute date and time for this time point. For calendar-based time point, it is typically manually entered, while for interval-based or sequence-based time point it is derived. 
+        #: Absolute date and time for this time point. For calendar-based time point, it is typically manually entered, while for interval-based or sequence-based time point it is derived.
         self.absoluteTime = absoluteTime
 
-        #: (if sequence-based) Relative sequence number for this time point. 
+        #: (if sequence-based) Relative sequence number for this time point.
         self.sequenceNumber = sequenceNumber
 
         self.window = window

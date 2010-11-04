@@ -28,7 +28,7 @@ class WorkFlowStep(IdentifiedObject):
         @param WorkTasks:
         @param status:
         """
-        #: Used to define dependencies of each work flow step, which is for the instance of WorkTask associated with a given instance of WorkFlow. 
+        #: Used to define dependencies of each work flow step, which is for the instance of WorkTask associated with a given instance of WorkFlow.
         self.sequenceNumber = sequenceNumber
 
         self._Work = None

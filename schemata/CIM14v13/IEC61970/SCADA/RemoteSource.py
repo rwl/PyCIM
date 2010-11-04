@@ -29,16 +29,16 @@ class RemoteSource(RemotePoint):
         @param scanInterval: The time interval between scans. 
         @param MeasurementValue: Link to the physical telemetered point associated with this measurement.
         """
-        #: The minimum value the telemetry item can return. 
+        #: The minimum value the telemetry item can return.
         self.sensorMinimum = sensorMinimum
 
-        #: The smallest change in value to be reported. 
+        #: The smallest change in value to be reported.
         self.deadband = deadband
 
-        #: The maximum value the telemetry item can return. 
+        #: The maximum value the telemetry item can return.
         self.sensorMaximum = sensorMaximum
 
-        #: The time interval between scans. 
+        #: The time interval between scans.
         self.scanInterval = scanInterval
 
         self._MeasurementValue = None

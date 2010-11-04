@@ -30,13 +30,13 @@ class ToWindingSpec(IdentifiedObject):
         @param ShortCircuitTests: All short-circuit tests in which this winding was short-circuited.
         @param ToWinding: Winding short-circuited in a short-circuit test, or measured for induced voltage and angle in an open-circuit test.
         """
-        #: (if open-circuit test) Voltage measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited. 
+        #: (if open-circuit test) Voltage measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited.
         self.voltage = voltage
 
-        #: Tap step number for the 'to' winding of the test pair. 
+        #: Tap step number for the 'to' winding of the test pair.
         self.toTapStep = toTapStep
 
-        #: (if open-circuit test) Phase shift measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited. 
+        #: (if open-circuit test) Phase shift measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited.
         self.phaseShift = phaseShift
 
         self._OpenCircuitTests = []

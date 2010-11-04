@@ -28,10 +28,10 @@ class CAESPlant(PowerSystemResource):
         @param ThermalGeneratingUnit: A thermal generating unit may be a member of a compressed air energy storage plant
         @param AirCompressor: An air compressor may be a member of a compressed air energy storage plant
         """
-        #: The CAES plant's gross rated generating capacity 
+        #: The CAES plant's gross rated generating capacity
         self.ratedCapacityP = ratedCapacityP
 
-        #: The rated energy storage capacity. 
+        #: The rated energy storage capacity.
         self.energyStorageCapacity = energyStorageCapacity
 
         self._ThermalGeneratingUnit = None

@@ -38,34 +38,34 @@ class TapChanger(PowerSystemResource):
         @param SvTapStep: The tap step state associated with the tap changer.
         @param TapSchedules: A TapChanger can have TapSchedules.
         """
-        #: The neutral tap step position for this winding. 
+        #: The neutral tap step position for this winding.
         self.neutralStep = neutralStep
 
-        #: For an LTC, the delay for subsequent tap changer operation (second and later step changes) 
+        #: For an LTC, the delay for subsequent tap changer operation (second and later step changes)
         self.subsequentDelay = subsequentDelay
 
-        #: Voltage at which the winding operates at the neutral tap setting. 
+        #: Voltage at which the winding operates at the neutral tap setting.
         self.neutralU = neutralU
 
-        #: Tap step increment, in per cent of nominal voltage, per step position.  For a symmetrical PhaseTapChanger, the stepVoltageIncrement is used in the formula for calculation of the phase angle.  For a symmetrical PhaseTapChanger, the voltage magnitude does not change with tap step. 
+        #: Tap step increment, in per cent of nominal voltage, per step position.  For a symmetrical PhaseTapChanger, the stepVoltageIncrement is used in the formula for calculation of the phase angle.  For a symmetrical PhaseTapChanger, the voltage magnitude does not change with tap step.
         self.stepVoltageIncrement = stepVoltageIncrement
 
-        #: Lowest possible tap step position, retard from neutral 
+        #: Lowest possible tap step position, retard from neutral
         self.lowStep = lowStep
 
-        #: The tap step position used in 'normal' network operation for this winding. For a 'Fixed' tap changer indicates the current physical tap setting. 
+        #: The tap step position used in 'normal' network operation for this winding. For a 'Fixed' tap changer indicates the current physical tap setting.
         self.normalStep = normalStep
 
-        #: Specifies the default regulation status of the TapChanger.  True is regulating.  False is not regulating. 
+        #: Specifies the default regulation status of the TapChanger.  True is regulating.  False is not regulating.
         self.regulationStatus = regulationStatus
 
-        #: Highest possible tap step position, advance from neutral 
+        #: Highest possible tap step position, advance from neutral
         self.highStep = highStep
 
-        #: For an LTC, the delay for initial tap changer operation (first step change) 
+        #: For an LTC, the delay for initial tap changer operation (first step change)
         self.initialDelay = initialDelay
 
-        #: Specifies whether or not a TapChanger has load tap changing capabilities. 
+        #: Specifies whether or not a TapChanger has load tap changing capabilities.
         self.ltcFlag = ltcFlag
 
         self._RegulatingControl = None

@@ -25,7 +25,7 @@ class Regulation(Document):
 
         @param referenceNumber: External reference to regulation, if applicable. 
         """
-        #: External reference to regulation, if applicable. 
+        #: External reference to regulation, if applicable.
         self.referenceNumber = referenceNumber
 
         super(Regulation, self).__init__(*args, **kw_args)

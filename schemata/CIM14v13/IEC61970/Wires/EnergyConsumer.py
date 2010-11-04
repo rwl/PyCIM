@@ -32,19 +32,19 @@ class EnergyConsumer(ConductingEquipment):
         @param ServiceDeliveryPoints:
         @param LoadResponse: The load response characteristic of this load.
         """
-        #: Fixed reactive power as per cent of load group fixed reactive power. 
+        #: Fixed reactive power as per cent of load group fixed reactive power.
         self.qfixedPct = qfixedPct
 
-        #: Active power of the load that is a fixed quantity. 
+        #: Active power of the load that is a fixed quantity.
         self.pfixed = pfixed
 
-        #: Number of individual customers represented by this Demand 
+        #: Number of individual customers represented by this Demand
         self.customerCount = customerCount
 
-        #: Reactive power of the load that is a fixed quantity. 
+        #: Reactive power of the load that is a fixed quantity.
         self.qfixed = qfixed
 
-        #: Fixed active power as per cent of load group fixed active power 
+        #: Fixed active power as per cent of load group fixed active power
         self.pfixedPct = pfixedPct
 
         self._PowerCutZone = None

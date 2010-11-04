@@ -26,7 +26,7 @@ class LossPenaltyFactor(MarketFactors):
         @param lossFactor: Loss penalty factor. 
         @param ConnectivityNodes:
         """
-        #: Loss penalty factor. 
+        #: Loss penalty factor.
         self.lossFactor = lossFactor
 
         self._ConnectivityNodes = []

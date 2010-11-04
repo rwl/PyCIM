@@ -19,3 +19,6 @@
 
 ns_prefix = "cimLoadControl"
 ns_uri = "http://iec.ch/TC57/CIM-generic#LoadControl"
+
+from CIM14v13.IEC61968.LoadControl.ConnectDisconnectFunction import ConnectDisconnectFunction
+from CIM14v13.IEC61968.LoadControl.RemoteConnectDisconnectInfo import RemoteConnectDisconnectInfo

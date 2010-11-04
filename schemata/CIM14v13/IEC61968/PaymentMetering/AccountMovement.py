@@ -27,13 +27,13 @@ class AccountMovement(Element):
         @param dateTime: Date and time when the credit/debit transaction was performed. 
         @param reason: Reason for credit/debit transaction on an account. Example: payment received/arrears interest levied. 
         """
-        #: Amount that was credited to/debited from an account. For example: payment received/interest charge on arrears. 
+        #: Amount that was credited to/debited from an account. For example: payment received/interest charge on arrears.
         self.amount = amount
 
-        #: Date and time when the credit/debit transaction was performed. 
+        #: Date and time when the credit/debit transaction was performed.
         self.dateTime = dateTime
 
-        #: Reason for credit/debit transaction on an account. Example: payment received/arrears interest levied. 
+        #: Reason for credit/debit transaction on an account. Example: payment received/arrears interest levied.
         self.reason = reason
 
         super(AccountMovement, self).__init__(*args, **kw_args)

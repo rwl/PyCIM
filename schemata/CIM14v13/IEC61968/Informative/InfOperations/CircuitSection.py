@@ -29,7 +29,7 @@ class CircuitSection(IdentifiedObject):
         @param PowerSystemResources:
         @param Circuits:
         """
-        #: Kind of this circuit section. Values are: "electricallyConnected", "nominallyConnected", "other", "asBuilt"
+        #: Kind of this circuit section.Values are: "electricallyConnected", "nominallyConnected", "other", "asBuilt"
         self.connectionKind = connectionKind
 
         self._ConductorAssets = []

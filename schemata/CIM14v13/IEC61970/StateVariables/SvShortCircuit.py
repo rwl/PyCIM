@@ -29,16 +29,16 @@ class SvShortCircuit(StateVariable):
         @param x0PerX: The ratio of zero sequence reactance per positive sequence reactance. 
         @param TopologicalNode: The topological node associated with the short circuit state.
         """
-        #: Ratio of positive sequence reactance per postive sequence resistance. 
+        #: Ratio of positive sequence reactance per postive sequence resistance.
         self.xPerR = xPerR
 
-        #: The ratio of zero sequence resistance to positive sequence resistance. 
+        #: The ratio of zero sequence resistance to positive sequence resistance.
         self.r0PerR = r0PerR
 
-        #: The short circuit apparent power drawn at this node when faulted. 
+        #: The short circuit apparent power drawn at this node when faulted.
         self.sShortCircuit = sShortCircuit
 
-        #: The ratio of zero sequence reactance per positive sequence reactance. 
+        #: The ratio of zero sequence reactance per positive sequence reactance.
         self.x0PerX = x0PerX
 
         self._TopologicalNode = None

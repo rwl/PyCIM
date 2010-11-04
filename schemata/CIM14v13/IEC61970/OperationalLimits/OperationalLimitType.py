@@ -27,10 +27,10 @@ class OperationalLimitType(Element):
         @param acceptableDuration: The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed. 
         @param OperationalLimit: The operational limits associated with this type of limit.
         """
-        #: The direction of the limit. Values are: "absoluteValue", "high", "low"
+        #: The direction of the limit.Values are: "absoluteValue", "high", "low"
         self.direction = direction
 
-        #: The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed. 
+        #: The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed.
         self.acceptableDuration = acceptableDuration
 
         self._OperationalLimit = []

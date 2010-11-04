@@ -31,19 +31,19 @@ class AssetFunction(Asset):
         @param Asset:
         @param AssetFunctionAssetModel:
         """
-        #: Hardware version. 
+        #: Hardware version.
         self.hardwareID = hardwareID
 
-        #: Configuration specified for this function. 
+        #: Configuration specified for this function.
         self.configID = configID
 
-        #: Name of program. 
+        #: Name of program.
         self.programID = programID
 
-        #: Password needed to access this function. 
+        #: Password needed to access this function.
         self.password = password
 
-        #: Firmware version. 
+        #: Firmware version.
         self.firmwareID = firmwareID
 
         self._Asset = None

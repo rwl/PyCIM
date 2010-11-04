@@ -28,16 +28,16 @@ class Status(Element):
         @param value: Status value at 'dateTime'; prior status changes may have been kept in instances of ActivityRecords associated with the object to which this Status applies. 
         @param remark: Pertinent information regarding the current 'value', as free form text. 
         """
-        #: Date and time for which status 'value' applies. 
+        #: Date and time for which status 'value' applies.
         self.dateTime = dateTime
 
-        #: Reason code or explanation for why an object went to the current status 'value'. 
+        #: Reason code or explanation for why an object went to the current status 'value'.
         self.reason = reason
 
-        #: Status value at 'dateTime'; prior status changes may have been kept in instances of ActivityRecords associated with the object to which this Status applies. 
+        #: Status value at 'dateTime'; prior status changes may have been kept in instances of ActivityRecords associated with the object to which this Status applies.
         self.value = value
 
-        #: Pertinent information regarding the current 'value', as free form text. 
+        #: Pertinent information regarding the current 'value', as free form text.
         self.remark = remark
 
         super(Status, self).__init__(*args, **kw_args)

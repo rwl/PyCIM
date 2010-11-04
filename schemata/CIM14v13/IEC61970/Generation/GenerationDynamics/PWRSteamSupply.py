@@ -44,64 +44,64 @@ class PWRSteamSupply(SteamSupply):
         @param steamPressureFG: Steam Pressure Feedback Gain 
         @param feedbackFactor: Feedback Factor 
         """
-        #: Core Heat Transfer Lag Time Constant 
+        #: Core Heat Transfer Lag Time Constant
         self.coreHTLagTC1 = coreHTLagTC1
 
-        #: Hot Leg Steam Gain 
+        #: Hot Leg Steam Gain
         self.hotLegSteamGain = hotLegSteamGain
 
-        #: Cold Leg Lag Time Constant 
+        #: Cold Leg Lag Time Constant
         self.coldLegLagTC = coldLegLagTC
 
-        #: Core Neutronics Effective Time Constant 
+        #: Core Neutronics Effective Time Constant
         self.coreNeutronicsEffTC = coreNeutronicsEffTC
 
-        #: Steam Flow Feedback Gain 
+        #: Steam Flow Feedback Gain
         self.steamFlowFG = steamFlowFG
 
-        #: Throttle Pressure Factor 
+        #: Throttle Pressure Factor
         self.throttlePressureFactor = throttlePressureFactor
 
-        #: Hot Leg To Cold Leg Gain 
+        #: Hot Leg To Cold Leg Gain
         self.hotLegToColdLegGain = hotLegToColdLegGain
 
-        #: Throttle Pressure Setpoint 
+        #: Throttle Pressure Setpoint
         self.throttlePressureSP = throttlePressureSP
 
-        #: Steam Pressure Drop Lag Time Constant 
+        #: Steam Pressure Drop Lag Time Constant
         self.steamPressureDropLagTC = steamPressureDropLagTC
 
-        #: Core Heat Transfer Lag Time Constant 
+        #: Core Heat Transfer Lag Time Constant
         self.coreHTLagTC2 = coreHTLagTC2
 
-        #: Cold Leg Feedback Gain 1 
+        #: Cold Leg Feedback Gain 1
         self.coldLegFG1 = coldLegFG1
 
-        #: Cold Leg Feedback Lag Time Constant 
+        #: Cold Leg Feedback Lag Time Constant
         self.coldLegFBLagTC = coldLegFBLagTC
 
-        #: Hot Leg Lag Time Constant 
+        #: Hot Leg Lag Time Constant
         self.hotLegLagTC = hotLegLagTC
 
-        #: Cold Leg Feedback Lead Time Constant 
+        #: Cold Leg Feedback Lead Time Constant
         self.coldLegFBLeadTC2 = coldLegFBLeadTC2
 
-        #: Pressure Control Gain 
+        #: Pressure Control Gain
         self.pressureCG = pressureCG
 
-        #: Cold Leg Feedback Lead Time Constant 
+        #: Cold Leg Feedback Lead Time Constant
         self.coldLegFBLeadTC1 = coldLegFBLeadTC1
 
-        #: Cold Leg Feedback Gain 2 
+        #: Cold Leg Feedback Gain 2
         self.coldLegFG2 = coldLegFG2
 
-        #: Core Neutronics And Heat Transfer 
+        #: Core Neutronics And Heat Transfer
         self.coreNeutronicsHT = coreNeutronicsHT
 
-        #: Steam Pressure Feedback Gain 
+        #: Steam Pressure Feedback Gain
         self.steamPressureFG = steamPressureFG
 
-        #: Feedback Factor 
+        #: Feedback Factor
         self.feedbackFactor = feedbackFactor
 
         super(PWRSteamSupply, self).__init__(*args, **kw_args)

@@ -22,8 +22,7 @@ class Element(object):
 
         @param UUID: 
         """
- 
+
         self.UUID = UUID
 
-        super(Element, self).__init__(*args, **kw_args)
 

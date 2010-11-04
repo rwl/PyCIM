@@ -29,7 +29,7 @@ class ViolationLimit(Limit):
         @param Season: Limits may differ based on the season
         @param Measurement:
         """
-        #: True if limit is enforced. 
+        #: True if limit is enforced.
         self.enforced = enforced
 
         self._Organisations = []

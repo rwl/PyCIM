@@ -17,3 +17,6 @@
 
 ns_prefix = "cim"
 ns_uri = "http://iec.ch/TC57/CIM-generic"
+
+from CIM14v13.CombinedVersion import CombinedVersion
+from CIM14v13.Element import Element

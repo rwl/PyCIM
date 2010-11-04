@@ -29,19 +29,19 @@ class EquivalentInjection(EquivalentEquipment):
         @param maxP: Minimum active power of the injection. 
         @param regulationTarget: The target voltage for voltage regulation. 
         """
-        #: Specifies the default regulation status of the EquivalentInjection.  True is regulating.  False is not regulating. 
+        #: Specifies the default regulation status of the EquivalentInjection.  True is regulating.  False is not regulating.
         self.regulationStatus = regulationStatus
 
-        #: Specifies whether or not the EquivalentInjection has the capability to regulate the local voltage. 
+        #: Specifies whether or not the EquivalentInjection has the capability to regulate the local voltage.
         self.regulationCapability = regulationCapability
 
-        #: Maximum active power of the injection. 
+        #: Maximum active power of the injection.
         self.minP = minP
 
-        #: Minimum active power of the injection. 
+        #: Minimum active power of the injection.
         self.maxP = maxP
 
-        #: The target voltage for voltage regulation. 
+        #: The target voltage for voltage regulation.
         self.regulationTarget = regulationTarget
 
         super(EquivalentInjection, self).__init__(*args, **kw_args)

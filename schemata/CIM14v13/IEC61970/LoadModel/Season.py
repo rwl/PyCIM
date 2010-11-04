@@ -30,13 +30,13 @@ class Season(Element):
         @param ViolationLimits: Limits may differ based on the season
         @param SeasonDayTypeSchedules: Schedules that use this Season.
         """
-        #: Name of the Season Values are: "spring", "fall", "winter", "summer"
+        #: Name of the SeasonValues are: "spring", "fall", "winter", "summer"
         self.name = name
 
-        #: Date season starts 
+        #: Date season starts
         self.startDate = startDate
 
-        #: Date season ends 
+        #: Date season ends
         self.endDate = endDate
 
         self._CapacityBenefitMargin = []

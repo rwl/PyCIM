@@ -35,28 +35,28 @@ class ClearanceTag(IdentifiedObject):
         @param SafetyDocument:
         @param ClearanceTagType: The type of tag, depending on the purpose of the work to be performed and/or the type of supervisory control allowed.
         """
-        #: The name of the person who is authorized to issue the tag 
+        #: The name of the person who is authorized to issue the tag
         self.authorityName = authorityName
 
-        #: The time at which the clearance tag is scheduled to be removed 
+        #: The time at which the clearance tag is scheduled to be removed
         self.workEndTime = workEndTime
 
-        #: Set true if equipment phasing must be checked 
+        #: Set true if equipment phasing must be checked
         self.phaseCheckReqFlag = phaseCheckReqFlag
 
-        #: Set true if equipment must be deenergized 
+        #: Set true if equipment must be deenergized
         self.deenergizeReqFlag = deenergizeReqFlag
 
-        #: The time at which the clearance tag was issued 
+        #: The time at which the clearance tag was issued
         self.tagIssueTime = tagIssueTime
 
-        #: Description of the work to be performed 
+        #: Description of the work to be performed
         self.workDescription = workDescription
 
-        #: The time at which the clearance tag is scheduled to be set. 
+        #: The time at which the clearance tag is scheduled to be set.
         self.workStartTime = workStartTime
 
-        #: Set true if equipment must be grounded 
+        #: Set true if equipment must be grounded
         self.groundReqFlag = groundReqFlag
 
         self._ConductingEquipment = None

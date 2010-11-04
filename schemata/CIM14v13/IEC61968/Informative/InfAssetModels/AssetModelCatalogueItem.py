@@ -29,7 +29,7 @@ class AssetModelCatalogueItem(Document):
         @param AssetModel:
         @param AssetModelCatalogue:
         """
-        #: Unit cost for an asset model from a specific supplier, either for a unit cost or cost per unit length. Cost is for material or asset only and does not include labor to install/construct or configure it. 
+        #: Unit cost for an asset model from a specific supplier, either for a unit cost or cost per unit length. Cost is for material or asset only and does not include labor to install/construct or configure it.
         self.unitCost = unitCost
 
         self._ErpQuoteLineItems = []

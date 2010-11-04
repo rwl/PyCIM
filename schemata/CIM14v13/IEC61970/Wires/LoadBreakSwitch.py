@@ -25,7 +25,7 @@ class LoadBreakSwitch(ProtectedSwitch):
 
         @param ratedCurrent: Current carrying capacity of a wire or cable under stated thermal conditions. 
         """
-        #: Current carrying capacity of a wire or cable under stated thermal conditions. 
+        #: Current carrying capacity of a wire or cable under stated thermal conditions.
         self.ratedCurrent = ratedCurrent
 
         super(LoadBreakSwitch, self).__init__(*args, **kw_args)

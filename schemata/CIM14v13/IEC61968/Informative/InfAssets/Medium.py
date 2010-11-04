@@ -28,10 +28,10 @@ class Medium(IdentifiedObject):
         @param Assets:
         @param Specification:
         """
-        #: Kind of this medium. Values are: "solid", "gas", "liquid"
+        #: Kind of this medium.Values are: "solid", "gas", "liquid"
         self.kind = kind
 
-        #: The volume of the medium specified for this application. Note that the actual volume is a type of measurement associated witht the asset. 
+        #: The volume of the medium specified for this application. Note that the actual volume is a type of measurement associated witht the asset.
         self.volumeSpec = volumeSpec
 
         self._Assets = []

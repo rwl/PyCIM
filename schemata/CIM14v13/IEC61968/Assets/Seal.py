@@ -29,16 +29,16 @@ class Seal(IdentifiedObject):
         @param appliedDateTime: Date and time this seal has been applied. 
         @param AssetContainer: Asset container to which this seal is applied.
         """
-        #: Condition of seal. Values are: "locked", "open", "missing", "broken", "other"
+        #: Condition of seal.Values are: "locked", "open", "missing", "broken", "other"
         self.condition = condition
 
-        #: Kind of seal. Values are: "other", "steel", "lock", "lead"
+        #: Kind of seal.Values are: "other", "steel", "lock", "lead"
         self.kind = kind
 
-        #: (reserved word) Seal number. 
+        #: (reserved word) Seal number.
         self.sealNumber = sealNumber
 
-        #: Date and time this seal has been applied. 
+        #: Date and time this seal has been applied.
         self.appliedDateTime = appliedDateTime
 
         self._AssetContainer = None

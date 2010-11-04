@@ -36,19 +36,19 @@ class ErpJournalEntry(IdentifiedObject):
         @param ErpLedgerEntry:
         @param ErpRecLineItems:
         """
-        #: Date and time journal entry was recorded. 
+        #: Date and time journal entry was recorded.
         self.transactionDateTime = transactionDateTime
 
-        #: Account identifier for this entry. 
+        #: Account identifier for this entry.
         self.accountID = accountID
 
-        #: Date and time this entry is to be posted to the ledger. 
+        #: Date and time this entry is to be posted to the ledger.
         self.postingDateTime = postingDateTime
 
-        #: The amount of the debit or credit for this account. 
+        #: The amount of the debit or credit for this account.
         self.amount = amount
 
-        #: The identifer of the source for this entry. 
+        #: The identifer of the source for this entry.
         self.sourceID = sourceID
 
         self._ErpPayableLineItems = []

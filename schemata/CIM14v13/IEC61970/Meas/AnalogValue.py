@@ -28,7 +28,7 @@ class AnalogValue(MeasurementValue):
         @param Analog: Measurement to which this value is connected.
         @param AltGeneratingUnit: The alternate generating unit for which this measurement value applies.
         """
-        #: The value to supervise. 
+        #: The value to supervise.
         self.value = value
 
         self._AltTieMeas = []

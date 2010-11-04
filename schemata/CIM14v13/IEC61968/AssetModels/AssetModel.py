@@ -32,19 +32,19 @@ class AssetModel(Document):
         @param TypeAsset: A type of asset may be satisified with many different types of asset models.
         @param AssetModelCatalogueItems:
         """
-        #: Kind of corporate standard for this asset model. Values are: "other", "underEvaluation", "experimental", "standard"
+        #: Kind of corporate standard for this asset model.Values are: "other", "underEvaluation", "experimental", "standard"
         self.corporateStandardKind = corporateStandardKind
 
-        #: Intended usage for this asset model. Values are: "distributionUnderground", "other", "streetlight", "customerSubstation", "unknown", "distributionOverhead", "substation", "transmission"
+        #: Intended usage for this asset model.Values are: "distributionUnderground", "other", "streetlight", "customerSubstation", "unknown", "distributionOverhead", "substation", "transmission"
         self.usageKind = usageKind
 
-        #: Manufacturer's model number. 
+        #: Manufacturer's model number.
         self.modelNumber = modelNumber
 
-        #: Total manufactured weight of asset. 
+        #: Total manufactured weight of asset.
         self.weightTotal = weightTotal
 
-        #: Version number for product model, which indicates vintage of the product. 
+        #: Version number for product model, which indicates vintage of the product.
         self.modelVersion = modelVersion
 
         self._ErpInventoryCounts = []

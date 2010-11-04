@@ -27,13 +27,13 @@ class JointAsset(ElectricalAsset):
         @param fillKind: Material used to fill the joint. Values are: "bluefill254", "airNoFilling", "epoxy", "insoluseal", "noVoid", "noFillPrefab", "asphaltic", "other", "oil", "petrolatum"
         @param insulation: The type of insulation around the joint, classified according to the utility's asset management standards and practices. 
         """
-        #: Configuration of joint. Values are: "wires2to1", "wires1to1", "other", "wires3to1"
+        #: Configuration of joint.Values are: "wires2to1", "wires1to1", "other", "wires3to1"
         self.configurationKind = configurationKind
 
-        #: Material used to fill the joint. Values are: "bluefill254", "airNoFilling", "epoxy", "insoluseal", "noVoid", "noFillPrefab", "asphaltic", "other", "oil", "petrolatum"
+        #: Material used to fill the joint.Values are: "bluefill254", "airNoFilling", "epoxy", "insoluseal", "noVoid", "noFillPrefab", "asphaltic", "other", "oil", "petrolatum"
         self.fillKind = fillKind
 
-        #: The type of insulation around the joint, classified according to the utility's asset management standards and practices. 
+        #: The type of insulation around the joint, classified according to the utility's asset management standards and practices.
         self.insulation = insulation
 
         super(JointAsset, self).__init__(*args, **kw_args)

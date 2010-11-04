@@ -34,19 +34,19 @@ class GmlTextSymbol(GmlSymbol):
         @param GmlHalo:
         @param GmlDiagramObject:
         """
-        #: The minimum font size allowed. 
+        #: The minimum font size allowed.
         self.minFontSize = minFontSize
 
-        #: Generic method for capturing all unspecified information pertaining to the TextSymbol. 
+        #: Generic method for capturing all unspecified information pertaining to the TextSymbol.
         self.property = property
 
-        #: The name of the field of the class being annotated. Most objects will include name, description, and aliasName. Many objects may contain other fields such as comment, status, etc. 
+        #: The name of the field of the class being annotated. Most objects will include name, description, and aliasName. Many objects may contain other fields such as comment, status, etc.
         self.fieldID = fieldID
 
-        #: Text-label content. If the value is not provided, then no text will be rendered. 
+        #: Text-label content. If the value is not provided, then no text will be rendered.
         self.label = label
 
-        #: The type-classification of a label. 
+        #: The type-classification of a label.
         self.labelType = labelType
 
         self._GmlFont = None

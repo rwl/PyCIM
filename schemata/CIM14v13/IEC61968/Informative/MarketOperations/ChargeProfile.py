@@ -31,16 +31,16 @@ class ChargeProfile(Profile):
         @param PassTroughBill:
         @param ChargeProfileData:
         """
-        #: The unit of measure applied to the value attribute of the profile data. 
+        #: The unit of measure applied to the value attribute of the profile data.
         self.unitOfMeasure = unitOfMeasure
 
-        #: The calculation frequency, daily or monthly. 
+        #: The calculation frequency, daily or monthly.
         self.frequency = frequency
 
-        #: The number of intervals in the profile data. 
+        #: The number of intervals in the profile data.
         self.numberInterval = numberInterval
 
-        #: The type of profile.  It could be amount, price, or quantity. 
+        #: The type of profile.  It could be amount, price, or quantity.
         self.type = type
 
         self._BillDeterminant = None

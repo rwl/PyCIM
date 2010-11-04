@@ -27,7 +27,7 @@ class GmlLineSymbol(GmlSymbol):
         @param GmlDiagramObject:
         @param GmlStroke:
         """
-        #: For dynamic network update (i.e. colouring) purposes 
+        #: For dynamic network update (i.e. colouring) purposes
         self.sourceSide = sourceSide
 
         self._GmlDiagramObject = None

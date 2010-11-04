@@ -26,10 +26,10 @@ class CombinedVersion(Element):
         @param date: Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05. 
         @param version: Form is IEC61970CIMXXvYY_IEC61968CIMXXvYY_combined where XX is the major CIM package version and the YY is the minor version, and different packages could have different major and minor versions.   For example IEC61970CIM13v18_IEC61968CIM10v16_combined.  Additional packages might be added in the future. 
         """
-        #: Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05. 
+        #: Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05.
         self.date = date
 
-        #: Form is IEC61970CIMXXvYY_IEC61968CIMXXvYY_combined where XX is the major CIM package version and the YY is the minor version, and different packages could have different major and minor versions.   For example IEC61970CIM13v18_IEC61968CIM10v16_combined.  Additional packages might be added in the future. 
+        #: Form is IEC61970CIMXXvYY_IEC61968CIMXXvYY_combined where XX is the major CIM package version and the YY is the minor version, and different packages could have different major and minor versions.   For example IEC61970CIM13v18_IEC61968CIM10v16_combined.  Additional packages might be added in the future.
         self.version = version
 
         super(CombinedVersion, self).__init__(*args, **kw_args)

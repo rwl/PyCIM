@@ -26,10 +26,10 @@ class ComplianceEvent(ActivityRecord):
         @param complianceType: Type of compliance event indicating, for example, types of regulatory and/or contractual compliance events where expected performance will not be met or reported as mandated. 
         @param deadline: The deadline for compliance. 
         """
-        #: Type of compliance event indicating, for example, types of regulatory and/or contractual compliance events where expected performance will not be met or reported as mandated. 
+        #: Type of compliance event indicating, for example, types of regulatory and/or contractual compliance events where expected performance will not be met or reported as mandated.
         self.complianceType = complianceType
 
-        #: The deadline for compliance. 
+        #: The deadline for compliance.
         self.deadline = deadline
 
         super(ComplianceEvent, self).__init__(*args, **kw_args)

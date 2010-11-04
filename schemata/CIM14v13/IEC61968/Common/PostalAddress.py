@@ -28,10 +28,10 @@ class PostalAddress(Element):
         @param streetDetail: Street detail.
         @param townDetail: Town detail.
         """
-        #: Post office box. 
+        #: Post office box.
         self.poBox = poBox
 
-        #: Postal code for the address. 
+        #: Postal code for the address.
         self.postalCode = postalCode
 
         self.streetDetail = streetDetail

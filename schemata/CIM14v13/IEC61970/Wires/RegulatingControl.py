@@ -32,16 +32,16 @@ class RegulatingControl(PowerSystemResource):
         @param RegulatingCondEq: The equipment that participates in this regulating control scheme.
         @param Terminal: The terminal associated with this regulating control.
         """
-        #: The regulating control mode presently available.  This specifications allows for determining the kind of regualation without need for obtaining the units from a schedule. Values are: "reactivePower", "timeScheduled", "voltage", "currentFlow", "admittance", "fixed", "powerFactor", "temperature", "activePower"
+        #: The regulating control mode presently available.  This specifications allows for determining the kind of regualation without need for obtaining the units from a schedule.Values are: "reactivePower", "timeScheduled", "voltage", "currentFlow", "admittance", "fixed", "powerFactor", "temperature", "activePower"
         self.mode = mode
 
-        #: This is the case input target range.   This performs the same function as the value2 attribute on the regulation schedule in the case that schedules are not used.   The units of those appropriate for the mode. 
+        #: This is the case input target range.   This performs the same function as the value2 attribute on the regulation schedule in the case that schedules are not used.   The units of those appropriate for the mode.
         self.targetRange = targetRange
 
-        #: The target value specified for case input.   This value can be used for the target value wihout the use of schedules. The value has the units appropriate to the mode attribute. 
+        #: The target value specified for case input.   This value can be used for the target value wihout the use of schedules. The value has the units appropriate to the mode attribute.
         self.targetValue = targetValue
 
-        #: The regulation is performed in a discrete mode. 
+        #: The regulation is performed in a discrete mode.
         self.discrete = discrete
 
         self._RegulationSchedule = []

@@ -26,7 +26,7 @@ class IncidentCode(IdentifiedObject):
         @param subCode: Additional level of classification detail (as extension to the main code found in 'name'). 
         @param IncidentRecords:
         """
-        #: Additional level of classification detail (as extension to the main code found in 'name'). 
+        #: Additional level of classification detail (as extension to the main code found in 'name').
         self.subCode = subCode
 
         self._IncidentRecords = []

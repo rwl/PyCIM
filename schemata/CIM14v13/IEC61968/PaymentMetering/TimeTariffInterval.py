@@ -28,10 +28,10 @@ class TimeTariffInterval(Element):
         @param TariffProfiles: All tariff profiles defined by this time tariff interval.
         @param Charges: All charges used to define this time tariff interval.
         """
-        #: A real time marker that defines the starting time (typically it is the time of day) for this interval. The interval extends to the start of the next interval or until it is reset to the start of the first interval by TariffProfile.tariffCycle. 
+        #: A real time marker that defines the starting time (typically it is the time of day) for this interval. The interval extends to the start of the next interval or until it is reset to the start of the first interval by TariffProfile.tariffCycle.
         self.startDateTime = startDateTime
 
-        #: A sequential reference that defines the identity of this interval and its relative position with respect to other intervals in a sequence of intervals. 
+        #: A sequential reference that defines the identity of this interval and its relative position with respect to other intervals in a sequence of intervals.
         self.sequenceNumber = sequenceNumber
 
         self._TariffProfiles = []

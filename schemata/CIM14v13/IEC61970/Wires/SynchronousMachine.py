@@ -59,94 +59,94 @@ class SynchronousMachine(RegulatingCondEq):
         @param GeneratingUnit: A synchronous machine may operate as a generator and as such becomes a member of a generating unit
         @param InitialReactiveCapabilityCurve: The default ReactiveCapabilityCurve for use by a SynchronousMachine
         """
-        #: Modes that this synchronous machine can operate in. Values are: "generator", "generator_or_condenser", "condenser"
+        #: Modes that this synchronous machine can operate in.Values are: "generator", "generator_or_condenser", "condenser"
         self.type = type
 
-        #: Method of cooling the machine. Values are: "air", "hydrogenGas", "water"
+        #: Method of cooling the machine.Values are: "air", "hydrogenGas", "water"
         self.coolantType = coolantType
 
-        #: Current mode of operation. Values are: "condenser", "generator"
+        #: Current mode of operation.Values are: "condenser", "generator"
         self.operatingMode = operatingMode
 
-        #: Negative sequence reactance. 
+        #: Negative sequence reactance.
         self.x2 = x2
 
-        #: Zero sequence reactance of the synchronous machine. 
+        #: Zero sequence reactance of the synchronous machine.
         self.x0 = x0
 
-        #: Percent of the coordinated reactive control that comes from this machine. 
+        #: Percent of the coordinated reactive control that comes from this machine.
         self.qPercent = qPercent
 
-        #: Damping torque coefficient, a proportionality constant that, when multiplied by the angular velocity of the rotor poles with respect to the magnetic field (frequency), results in the damping torque. 
+        #: Damping torque coefficient, a proportionality constant that, when multiplied by the angular velocity of the rotor poles with respect to the magnetic field (frequency), results in the damping torque.
         self.damping = damping
 
-        #: Time delay required when switching from Manual to Automatic Voltage Regulation. This value is used in the accelerating power reference frame for powerflow solutions 
+        #: Time delay required when switching from Manual to Automatic Voltage Regulation. This value is used in the accelerating power reference frame for powerflow solutions
         self.manualToAVR = manualToAVR
 
-        #: Positive sequence reactance of the synchronous machine. 
+        #: Positive sequence reactance of the synchronous machine.
         self.x = x
 
-        #: Minimum reactive power limit for the unit. 
+        #: Minimum reactive power limit for the unit.
         self.minQ = minQ
 
-        #: Quadrature-axis synchronous reactance (Xq) , the ratio of the component of reactive armature voltage, due to the quadrature-axis component of armature current, to this component of current, under steady state conditions and at rated frequency. 
+        #: Quadrature-axis synchronous reactance (Xq) , the ratio of the component of reactive armature voltage, due to the quadrature-axis component of armature current, to this component of current, under steady state conditions and at rated frequency.
         self.xQuadSync = xQuadSync
 
-        #: Quadrature-axis subtransient reactance, also known as X'q. 
+        #: Quadrature-axis subtransient reactance, also known as X'q.
         self.xQuadSubtrans = xQuadSubtrans
 
-        #: Negative sequence resistance. 
+        #: Negative sequence resistance.
         self.r2 = r2
 
-        #: The energy stored in the rotor when operating at rated speed. This value is used in the accelerating power reference frame for  operator training simulator solutions. 
+        #: The energy stored in the rotor when operating at rated speed. This value is used in the accelerating power reference frame for  operator training simulator solutions.
         self.inertia = inertia
 
-        #: Positive sequence resistance of the synchronous machine. 
+        #: Positive sequence resistance of the synchronous machine.
         self.r = r
 
-        #: Direct-axis synchronous reactance. The quotient of a sustained value of that AC component of armature voltage that is produced by the total direct-axis flux due to direct-axis armature current and the value of the AC component of this current, the machine running at rated speed. (Xd) 
+        #: Direct-axis synchronous reactance. The quotient of a sustained value of that AC component of armature voltage that is produced by the total direct-axis flux due to direct-axis armature current and the value of the AC component of this current, the machine running at rated speed. (Xd)
         self.xDirectSync = xDirectSync
 
-        #: Quadrature-axis transient reactance, also known as X'q. 
+        #: Quadrature-axis transient reactance, also known as X'q.
         self.xQuadTrans = xQuadTrans
 
-        #: Direct-axis transient reactance, also known as X'd. 
+        #: Direct-axis transient reactance, also known as X'd.
         self.xDirectTrans = xDirectTrans
 
-        #: Priority of unit for reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on. 
+        #: Priority of unit for reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on.
         self.referencePriority = referencePriority
 
-        #: Zero sequence resistance of the synchronous machine. 
+        #: Zero sequence resistance of the synchronous machine.
         self.r0 = r0
 
-        #: Minimum voltage  limit for the unit. 
+        #: Minimum voltage  limit for the unit.
         self.minU = minU
 
-        #: Maximum reactive power limit. This is the maximum (nameplate) limit for the unit. 
+        #: Maximum reactive power limit. This is the maximum (nameplate) limit for the unit.
         self.maxQ = maxQ
 
-        #: Active power consumed when in condenser mode operation. 
+        #: Active power consumed when in condenser mode operation.
         self.condenserP = condenserP
 
-        #: Default base reactive power value. This value represents the initial reactive power that can be used by any application function. 
+        #: Default base reactive power value. This value represents the initial reactive power that can be used by any application function.
         self.baseQ = baseQ
 
-        #: Direct-axis subtransient reactance, also known as X'd. 
+        #: Direct-axis subtransient reactance, also known as X'd.
         self.xDirectSubtrans = xDirectSubtrans
 
-        #: Nameplate apparent power rating for the unit 
+        #: Nameplate apparent power rating for the unit
         self.ratedS = ratedS
 
-        #: Maximum voltage limit for the unit. 
+        #: Maximum voltage limit for the unit.
         self.maxU = maxU
 
-        #: Time delay required when switching from Automatic Voltage Regulation (AVR) to Manual for a leading MVAr violation. 
+        #: Time delay required when switching from Automatic Voltage Regulation (AVR) to Manual for a leading MVAr violation.
         self.aVRToManualLead = aVRToManualLead
 
-        #: Time delay required when switching from Automatic Voltage Regulation (AVR) to Manual for a lagging MVAr violation. 
+        #: Time delay required when switching from Automatic Voltage Regulation (AVR) to Manual for a lagging MVAr violation.
         self.aVRToManualLag = aVRToManualLag
 
-        #: Temperature or pressure of coolant medium 
+        #: Temperature or pressure of coolant medium
         self.coolantCondition = coolantCondition
 
         self._ReactiveCapabilityCurves = []

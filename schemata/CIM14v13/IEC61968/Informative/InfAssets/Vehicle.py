@@ -29,13 +29,13 @@ class Vehicle(Asset):
         @param Crew:
         @param VehicleAssetModel:
         """
-        #: The general categorization type of vehicle as categorized by the utility's asset management standards and practices. Note: (1) Vehicle model is defined by VehicleAssetModel, and (2) Specific people and organizations and their roles relative to this vehicle may be determined by the inherited Asset-ErpPerson and Asset-Organization associations. Values are: "contractor", "other", "crew", "user"
+        #: The general categorization type of vehicle as categorized by the utility's asset management standards and practices. Note: (1) Vehicle model is defined by VehicleAssetModel, and (2) Specific people and organizations and their roles relative to this vehicle may be determined by the inherited Asset-ErpPerson and Asset-Organization associations.Values are: "contractor", "other", "crew", "user"
         self.usageKind = usageKind
 
-        #: Odometer reading of this vehicle as of the 'odometerReadingDateTime'. Refer to associated ActivityRecords for earlier readings. 
+        #: Odometer reading of this vehicle as of the 'odometerReadingDateTime'. Refer to associated ActivityRecords for earlier readings.
         self.odometerReading = odometerReading
 
-        #: Date and time the last odometer reading was recorded. 
+        #: Date and time the last odometer reading was recorded.
         self.odometerReadDateTime = odometerReadDateTime
 
         self._Crew = None

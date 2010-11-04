@@ -33,28 +33,28 @@ class PerLengthSequenceImpedance(IdentifiedObject):
         @param g0ch: Zero sequence shunt (charging) conductance, per unit of length. 
         @param ConductorSegments: All conductor segments described by this sequence impedance.
         """
-        #: Zero sequence series resistance, per unit of length. 
+        #: Zero sequence series resistance, per unit of length.
         self.r0 = r0
 
-        #: Positive sequence shunt (charging) susceptance, per unit of length. 
+        #: Positive sequence shunt (charging) susceptance, per unit of length.
         self.bch = bch
 
-        #: Positive sequence series reactance, per unit of length. 
+        #: Positive sequence series reactance, per unit of length.
         self.x = x
 
-        #: Positive sequence series resistance, per unit of length. 
+        #: Positive sequence series resistance, per unit of length.
         self.r = r
 
-        #: Positive sequence shunt (charging) conductance, per unit of length. 
+        #: Positive sequence shunt (charging) conductance, per unit of length.
         self.gch = gch
 
-        #: Zero sequence series reactance, per unit of length. 
+        #: Zero sequence series reactance, per unit of length.
         self.x0 = x0
 
-        #: Zero sequence shunt (charging) susceptance, per unit of length. 
+        #: Zero sequence shunt (charging) susceptance, per unit of length.
         self.b0ch = b0ch
 
-        #: Zero sequence shunt (charging) conductance, per unit of length. 
+        #: Zero sequence shunt (charging) conductance, per unit of length.
         self.g0ch = g0ch
 
         self._ConductorSegments = []

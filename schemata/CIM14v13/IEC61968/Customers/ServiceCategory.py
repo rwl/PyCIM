@@ -29,7 +29,7 @@ class ServiceCategory(IdentifiedObject):
         @param SPAccountingFunctions:
         @param PricingStructures: All pricing structures applicable to this service category.
         """
-        #: Kind of service. Values are: "refuse", "other", "tvLicence", "internet", "electricty", "water", "heat", "rates", "gas", "sewerage", "time"
+        #: Kind of service.Values are: "refuse", "other", "tvLicence", "internet", "electricty", "water", "heat", "rates", "gas", "sewerage", "time"
         self.kind = kind
 
         self._CustomerAgreements = []

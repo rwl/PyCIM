@@ -29,19 +29,19 @@ class AccessPermit(Document):
         @param effectiveDate: Date that permit became official. 
         @param permitID: Permit identifier. 
         """
-        #: Total cost of permit. 
+        #: Total cost of permit.
         self.payment = payment
 
-        #: Permit application number that is used by municipality, state, province, etc. 
+        #: Permit application number that is used by municipality, state, province, etc.
         self.applicationNumber = applicationNumber
 
-        #: Permit expiration date. 
+        #: Permit expiration date.
         self.expirationDate = expirationDate
 
-        #: Date that permit became official. 
+        #: Date that permit became official.
         self.effectiveDate = effectiveDate
 
-        #: Permit identifier. 
+        #: Permit identifier.
         self.permitID = permitID
 
         super(AccessPermit, self).__init__(*args, **kw_args)

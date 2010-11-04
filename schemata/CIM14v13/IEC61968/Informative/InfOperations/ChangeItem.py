@@ -38,10 +38,10 @@ class ChangeItem(IdentifiedObject):
         @param ChangeSet:
         @param NetworkDataSet:
         """
-        #: Kind of change for the associated object. Values are: "add", "modify", "delete"
+        #: Kind of change for the associated object.Values are: "add", "modify", "delete"
         self.kind = kind
 
-        #: Relative order of this ChangeItem in an ordered sequence of changes. 
+        #: Relative order of this ChangeItem in an ordered sequence of changes.
         self.sequenceNumber = sequenceNumber
 
         self._PowerSystemResource = None

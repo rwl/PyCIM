@@ -29,19 +29,19 @@ class BankAccountDetail(Element):
         @param accountNumber: Operational account reference number. 
         @param bankName: Name of bank where account is held. 
         """
-        #: Branch of bank where account is held. 
+        #: Branch of bank where account is held.
         self.branchCode = branchCode
 
-        #: National identity number (or equivalent) of account holder. 
+        #: National identity number (or equivalent) of account holder.
         self.holderID = holderID
 
-        #: Name of account holder. 
+        #: Name of account holder.
         self.holderName = holderName
 
-        #: Operational account reference number. 
+        #: Operational account reference number.
         self.accountNumber = accountNumber
 
-        #: Name of bank where account is held. 
+        #: Name of bank where account is held.
         self.bankName = bankName
 
         super(BankAccountDetail, self).__init__(*args, **kw_args)

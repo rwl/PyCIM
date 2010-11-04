@@ -27,7 +27,7 @@ class OperationalLimit(IdentifiedObject):
         @param OperationalLimitType: The limit type associated with this limit.
         @param OperationalLimitSet: The limit set to which the limit values belong.
         """
-        #: Used to specify high/low and limit levels. 
+        #: Used to specify high/low and limit levels.
         self.type = type
 
         self._OperationalLimitType = None

@@ -29,7 +29,7 @@ class TransformerAsset(Asset):
         @param TransformerObservations:
         @param TransformerAssetModel:
         """
-        #: Date and time this asset was last reconditioned or had a major overhaul. 
+        #: Date and time this asset was last reconditioned or had a major overhaul.
         self.reconditionedDateTime = reconditionedDateTime
 
         self._TransformerInfo = None

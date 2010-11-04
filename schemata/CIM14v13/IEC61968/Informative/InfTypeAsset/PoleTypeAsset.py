@@ -27,10 +27,10 @@ class PoleTypeAsset(StructureTypeAsset):
         @param diameter: Diameter of the pole. 
         @param PoleModels:
         """
-        #: Length of the pole (inclusive of any section of the pole that may be underground post-installation). 
+        #: Length of the pole (inclusive of any section of the pole that may be underground post-installation).
         self.length = length
 
-        #: Diameter of the pole. 
+        #: Diameter of the pole.
         self.diameter = diameter
 
         self._PoleModels = []

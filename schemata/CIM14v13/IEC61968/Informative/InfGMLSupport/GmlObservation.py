@@ -31,16 +31,16 @@ class GmlObservation(Element):
         @param GmlValues:
         @param Locations:
         """
-        #: Contains or points to the specimen, region or station which is the object of the observation 
+        #: Contains or points to the specimen, region or station which is the object of the observation
         self.target = target
 
-        #: Contains or points to a description of a sensor, instrument or procedure used for the observation. 
+        #: Contains or points to a description of a sensor, instrument or procedure used for the observation.
         self.using = using
 
- 
+
         self.dateTime = dateTime
 
-        #: Indicates the result of the observation. 
+        #: Indicates the result of the observation.
         self.resultOf = resultOf
 
         self._ChangeItems = []

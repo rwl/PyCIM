@@ -27,10 +27,10 @@ class ConcentricNeutralCableInfo(CableInfo):
         @param diameterOverNeutral: Diameter over the concentric neutral strands. 
         @param WireType: Wire type used for this concentric neutral cable.
         """
-        #: Number of concentric neutral strands. 
+        #: Number of concentric neutral strands.
         self.neutralStrandCount = neutralStrandCount
 
-        #: Diameter over the concentric neutral strands. 
+        #: Diameter over the concentric neutral strands.
         self.diameterOverNeutral = diameterOverNeutral
 
         self._WireType = None

@@ -42,40 +42,40 @@ class OutageStep(IdentifiedObject):
         @param noPowerInterval: Date and time interval between loss and restoration of power.
         @param ConductingEquipmentRoles:
         """
- 
+
         self.jobPriority = jobPriority
 
-        #: Total Customer Minutes Lost (CML) for this supply point for this outage. 
+        #: Total Customer Minutes Lost (CML) for this supply point for this outage.
         self.totalCml = totalCml
 
-        #: Estimated time of restoration. 
+        #: Estimated time of restoration.
         self.estimatedRestoreDateTime = estimatedRestoreDateTime
 
-        #: Average Customer Minutes Lost (CML) for this supply point for this outage. 
+        #: Average Customer Minutes Lost (CML) for this supply point for this outage.
         self.averageCml = averageCml
 
-        #: True if shocks reported by caller or engineer. 
+        #: True if shocks reported by caller or engineer.
         self.shockReported = shockReported
 
-        #: Number of customers with high reliability required. 
+        #: Number of customers with high reliability required.
         self.specialCustomerCount = specialCustomerCount
 
-        #: Number of customers phoning in. 
+        #: Number of customers phoning in.
         self.callerCount = callerCount
 
-        #: True if damage reported by caller or engineer. 
+        #: True if damage reported by caller or engineer.
         self.damage = damage
 
-        #: Number of customers with critical needs, e.g., with a dialysis machine. 
+        #: Number of customers with critical needs, e.g., with a dialysis machine.
         self.criticalCustomerCount = criticalCustomerCount
 
-        #: True if fatalities reported by caller or engineer. 
+        #: True if fatalities reported by caller or engineer.
         self.fatality = fatality
 
-        #: Number of customers connected to the PowerSystemResource. 
+        #: Number of customers connected to the PowerSystemResource.
         self.totalCustomerCount = totalCustomerCount
 
-        #: True if injuries reported by caller or engineer. 
+        #: True if injuries reported by caller or engineer.
         self.injury = injury
 
         self._Crews = []

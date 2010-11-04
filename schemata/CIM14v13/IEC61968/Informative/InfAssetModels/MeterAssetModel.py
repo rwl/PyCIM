@@ -39,43 +39,43 @@ class MeterAssetModel(ElectricalAssetModel):
         @param MeterTypeAsset:
         @param MeterAssets:
         """
-        #: True when the meter is capable of metering apparent energy in kVAh. 
+        #: True when the meter is capable of metering apparent energy in kVAh.
         self.kVAhMeter = kVAhMeter
 
-        #: True when the meter or the installed AMR option is capable of capturing interval data for a user selectable measurement (kWh, Volts, or some other billing or engineering quantity). 
+        #: True when the meter or the installed AMR option is capable of capturing interval data for a user selectable measurement (kWh, Volts, or some other billing or engineering quantity).
         self.intervalDataMeter = intervalDataMeter
 
-        #: Maximum number of registers this meter model can support. The actual number in use is based on the number of Registers associated with a given MeterAsset. 
+        #: Maximum number of registers this meter model can support. The actual number in use is based on the number of Registers associated with a given MeterAsset.
         self.maxRegisterCount = maxRegisterCount
 
-        #: Number of wires. 
+        #: Number of wires.
         self.wireCount = wireCount
 
-        #: Meter kh (watthour) constant. This constant is the number of watthours that must be applied to the meter to cause one disk revolution for an electromechanical meter or the number of watthours represented by one increment pulse for an electronic meter. 
+        #: Meter kh (watthour) constant. This constant is the number of watthours that must be applied to the meter to cause one disk revolution for an electromechanical meter or the number of watthours represented by one increment pulse for an electronic meter.
         self.kH = kH
 
-        #: True when the meter or meter+AMR module are capable of offering TOU data. 
+        #: True when the meter or meter+AMR module are capable of offering TOU data.
         self.timeOfUseMeter = timeOfUseMeter
 
-        #: Meter form number. 
+        #: Meter form number.
         self.form = form
 
-        #: Meter register ratio. 
+        #: Meter register ratio.
         self.registerRatio = registerRatio
 
-        #: True when the meter or installed AMR option is capable of capturing demand data. 
+        #: True when the meter or installed AMR option is capable of capturing demand data.
         self.demandMeter = demandMeter
 
-        #: True when the meter is capable of metering reactive energy in kVArh. 
+        #: True when the meter is capable of metering reactive energy in kVArh.
         self.reactiveMeter = reactiveMeter
 
-        #: True when the meter or the installed AMR option is capable of capturing kWh interval data. 
+        #: True when the meter or the installed AMR option is capable of capturing kWh interval data.
         self.loadProfileMeter = loadProfileMeter
 
-        #: True when the meter is capable of metering real energy in kWh. 
+        #: True when the meter is capable of metering real energy in kWh.
         self.kwhMeter = kwhMeter
 
-        #: True when the meter is capable of metering reactive energy in kQh. 
+        #: True when the meter is capable of metering reactive energy in kQh.
         self.qMeter = qMeter
 
         self._MeterTypeAsset = None

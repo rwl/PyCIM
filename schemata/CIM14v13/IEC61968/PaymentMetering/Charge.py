@@ -32,10 +32,10 @@ class Charge(IdentifiedObject):
         @param ChildCharges: All sub-components of this complex charge.
         @param fixedPortion: The fixed portion of this charge element.
         """
-        #: The kind of charge to be applied. Values are: "other", "auxiliaryCharge", "demandCharge", "taxCharge", "consumptionCharge"
+        #: The kind of charge to be applied.Values are: "other", "auxiliaryCharge", "demandCharge", "taxCharge", "consumptionCharge"
         self.kind = kind
 
-        #: The variable portion of this charge element, calculated as a percentage of the total amount of a parent charge. 
+        #: The variable portion of this charge element, calculated as a percentage of the total amount of a parent charge.
         self.variablePortion = variablePortion
 
         self._ConsumptionTariffIntervals = []

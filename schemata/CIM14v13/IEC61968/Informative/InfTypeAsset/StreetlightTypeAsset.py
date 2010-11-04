@@ -26,7 +26,7 @@ class StreetlightTypeAsset(ElectricalTypeAsset):
         @param lightRating: Nominal (as designed) power rating of light. 
         @param StreetlightAssetModels:
         """
-        #: Nominal (as designed) power rating of light. 
+        #: Nominal (as designed) power rating of light.
         self.lightRating = lightRating
 
         self._StreetlightAssetModels = []

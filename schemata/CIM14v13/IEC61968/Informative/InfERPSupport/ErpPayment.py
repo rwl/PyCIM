@@ -28,7 +28,7 @@ class ErpPayment(Document):
         @param ErpInvoiceLineItems:
         @param ErpPayableLineItems:
         """
-        #: Payment terms (e.g., net 30). 
+        #: Payment terms (e.g., net 30).
         self.termsPayment = termsPayment
 
         self._ErpRecLineItems = []

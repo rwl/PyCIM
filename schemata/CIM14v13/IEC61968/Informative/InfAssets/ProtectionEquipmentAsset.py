@@ -27,10 +27,10 @@ class ProtectionEquipmentAsset(ElectricalAsset):
         @param groundTrip: Actual ground trip for this type of relay, if applicable. 
         @param ProtectionEquipmentAssetModel:
         """
-        #: Actual phase trip for this type of relay, if applicable. 
+        #: Actual phase trip for this type of relay, if applicable.
         self.phaseTrip = phaseTrip
 
-        #: Actual ground trip for this type of relay, if applicable. 
+        #: Actual ground trip for this type of relay, if applicable.
         self.groundTrip = groundTrip
 
         self._ProtectionEquipmentAssetModel = None

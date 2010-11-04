@@ -34,7 +34,7 @@ class DesignLocation(IdentifiedObject):
         @param ErpBomItemDatas:
         @param WorkLocations:
         """
-        #: The legth of the span from the previous pole to this pole. 
+        #: The legth of the span from the previous pole to this pole.
         self.spanLength = spanLength
 
         self._MaterialItems = []

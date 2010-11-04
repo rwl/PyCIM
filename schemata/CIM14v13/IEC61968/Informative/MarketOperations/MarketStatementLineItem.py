@@ -47,58 +47,58 @@ class MarketStatementLineItem(IdentifiedObject):
         @param ComponentMarketStatementLineItem:
         @param UserAttributes:
         """
-        #: Previous ISO settlement amount. 
+        #: Previous ISO settlement amount.
         self.previousISOAmount = previousISOAmount
 
-        #: The number of intervals. 
+        #: The number of intervals.
         self.intervalNumber = intervalNumber
 
-        #: Net settlement quantity, subject to the UOM. 
+        #: Net settlement quantity, subject to the UOM.
         self.netQuantity = netQuantity
 
-        #: The date of which the settlement is run. 
+        #: The date of which the settlement is run.
         self.intervalDate = intervalDate
 
-        #: Previous settlement amount. 
+        #: Previous settlement amount.
         self.previousAmount = previousAmount
 
-        #: Net ISO settlement amount. 
+        #: Net ISO settlement amount.
         self.netISOAmount = netISOAmount
 
-        #: Net settlement price. 
+        #: Net settlement price.
         self.netPrice = netPrice
 
-        #: Current settlement amount. 
+        #: Current settlement amount.
         self.currentAmount = currentAmount
 
-        #: Net ISO settlement quantity. 
+        #: Net ISO settlement quantity.
         self.netISOQuantity = netISOQuantity
 
-        #: Previous settlement quantity, subject to the UOM. 
+        #: Previous settlement quantity, subject to the UOM.
         self.previousQuantity = previousQuantity
 
-        #: The unit of measure for the quantity element of the line item. 
+        #: The unit of measure for the quantity element of the line item.
         self.quantityUOM = quantityUOM
 
-        #: Previous settlement price. 
+        #: Previous settlement price.
         self.previsouPrice = previsouPrice
 
-        #: Previous ISO settlement quantity. 
+        #: Previous ISO settlement quantity.
         self.previousISOQuantity = previousISOQuantity
 
-        #: Current ISO settlement amount. 
+        #: Current ISO settlement amount.
         self.currentISOAmount = currentISOAmount
 
-        #: Current settlement quantity, subject to the UOM. 
+        #: Current settlement quantity, subject to the UOM.
         self.currentQuantity = currentQuantity
 
-        #: Current settlement price. 
+        #: Current settlement price.
         self.currentPrice = currentPrice
 
-        #: Net settlement amount. 
+        #: Net settlement amount.
         self.netAmount = netAmount
 
-        #: Current ISO settlement quantity. 
+        #: Current ISO settlement quantity.
         self.currentISOQuantity = currentISOQuantity
 
         self._MarketStatement = None

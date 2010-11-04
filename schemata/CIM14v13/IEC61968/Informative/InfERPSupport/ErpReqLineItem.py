@@ -34,16 +34,16 @@ class ErpReqLineItem(IdentifiedObject):
         @param ErpQuoteLineItem:
         @param TypeAsset:
         """
- 
+
         self.deliveryDate = deliveryDate
 
- 
+
         self.code = code
 
-        #: Quantity of item requisitioned. 
+        #: Quantity of item requisitioned.
         self.quantity = quantity
 
-        #: Cost of material 
+        #: Cost of material
         self.cost = cost
 
         self._ErpRequisition = None

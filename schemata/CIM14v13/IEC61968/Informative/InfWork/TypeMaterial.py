@@ -32,16 +32,16 @@ class TypeMaterial(Document):
         @param CUMaterialItems:
         @param MaterialItems:
         """
-        #: True if item is a stock item (default). 
+        #: True if item is a stock item (default).
         self.stockItem = stockItem
 
-        #: The value, unit of measure, and multiplier for the quantity. 
+        #: The value, unit of measure, and multiplier for the quantity.
         self.quantity = quantity
 
-        #: The category of cost to which this Material Item belongs. 
+        #: The category of cost to which this Material Item belongs.
         self.costType = costType
 
-        #: The estimated unit cost of this type of material, either for a unit cost or cost per unit length. Cost is for material or asset only and does not include labor to install/construct or configure it. 
+        #: The estimated unit cost of this type of material, either for a unit cost or cost per unit length. Cost is for material or asset only and does not include labor to install/construct or configure it.
         self.estUnitCost = estUnitCost
 
         self._ErpReqLineItems = []

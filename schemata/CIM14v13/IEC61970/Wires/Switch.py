@@ -33,16 +33,16 @@ class Switch(ConductingEquipment):
         @param ConnectDisconnectFunctions:
         @param SwitchingOperations: A switch may be operated by many schedules.
         """
-        #: The switch on count since the switch was last reset or initialized. 
+        #: The switch on count since the switch was last reset or initialized.
         self.switchOnCount = switchOnCount
 
-        #: The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurment the Discrete.normalValue is expected to match with the Switch.normalOpen. 
+        #: The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurment the Discrete.normalValue is expected to match with the Switch.normalOpen.
         self.normalOpen = normalOpen
 
-        #: Branch is retained in a bus branch model. 
+        #: Branch is retained in a bus branch model.
         self.retained = retained
 
-        #: The date and time when the switch was last switched on. 
+        #: The date and time when the switch was last switched on.
         self.switchOnDate = switchOnDate
 
         self._LoadMgmtFunctions = []

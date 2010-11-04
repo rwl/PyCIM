@@ -25,7 +25,7 @@ class ApparentPowerLimit(OperationalLimit):
 
         @param value: The apparent power limit. 
         """
-        #: The apparent power limit. 
+        #: The apparent power limit.
         self.value = value
 
         super(ApparentPowerLimit, self).__init__(*args, **kw_args)

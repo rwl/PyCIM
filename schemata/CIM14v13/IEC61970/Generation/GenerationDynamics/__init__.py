@@ -19,3 +19,17 @@
 
 ns_prefix = "cimGenerationDynamics"
 ns_uri = "http://iec.ch/TC57/CIM-generic#GenerationDynamics"
+
+from CIM14v13.IEC61970.Generation.GenerationDynamics.SteamSupply import SteamSupply
+from CIM14v13.IEC61970.Generation.GenerationDynamics.FossilSteamSupply import FossilSteamSupply
+from CIM14v13.IEC61970.Generation.GenerationDynamics.HeatRecoveryBoiler import HeatRecoveryBoiler
+from CIM14v13.IEC61970.Generation.GenerationDynamics.PrimeMover import PrimeMover
+from CIM14v13.IEC61970.Generation.GenerationDynamics.HydroTurbine import HydroTurbine
+from CIM14v13.IEC61970.Generation.GenerationDynamics.Subcritical import Subcritical
+from CIM14v13.IEC61970.Generation.GenerationDynamics.BWRSteamSupply import BWRSteamSupply
+from CIM14v13.IEC61970.Generation.GenerationDynamics.CTTempActivePowerCurve import CTTempActivePowerCurve
+from CIM14v13.IEC61970.Generation.GenerationDynamics.DrumBoiler import DrumBoiler
+from CIM14v13.IEC61970.Generation.GenerationDynamics.CombustionTurbine import CombustionTurbine
+from CIM14v13.IEC61970.Generation.GenerationDynamics.Supercritical import Supercritical
+from CIM14v13.IEC61970.Generation.GenerationDynamics.PWRSteamSupply import PWRSteamSupply
+from CIM14v13.IEC61970.Generation.GenerationDynamics.SteamTurbine import SteamTurbine

@@ -31,22 +31,22 @@ class UnitInitialConditions(IdentifiedObject):
         @param cumEnergy: Cumulative energy production over trading period. 
         @param GeneratingUnit:
         """
-        #: Resource status at the end of previous clearing period:  0 - off-line  1 - on-line production  2 - in shutdown process  3 - in startup process 
+        #: Resource status at the end of previous clearing period:  0 - off-line  1 - on-line production  2 - in shutdown process  3 - in startup process
         self.resourceStatus = resourceStatus
 
-        #: Cumulative number of status changes of the resource. 
+        #: Cumulative number of status changes of the resource.
         self.cumStatusChanges = cumStatusChanges
 
-        #: Time and date for resourceStatus 
+        #: Time and date for resourceStatus
         self.statusDate = statusDate
 
-        #: Resource MW output at the end of previous clearing period. 
+        #: Resource MW output at the end of previous clearing period.
         self.resourceMW = resourceMW
 
-        #: Time in market trading intervals the resource is in the state as of the end of the previous clearing period. 
+        #: Time in market trading intervals the resource is in the state as of the end of the previous clearing period.
         self.timeInStatus = timeInStatus
 
-        #: Cumulative energy production over trading period. 
+        #: Cumulative energy production over trading period.
         self.cumEnergy = cumEnergy
 
         self._GeneratingUnit = None

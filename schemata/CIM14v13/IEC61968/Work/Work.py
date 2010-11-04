@@ -37,13 +37,13 @@ class Work(Document):
         @param WorkCostDetails:
         @param Request:
         """
-        #: Kind of work. Values are: "service", "reconnect", "disconnect", "other", "meter", "construction", "inspection", "maintenance"
+        #: Kind of work.Values are: "service", "reconnect", "disconnect", "other", "meter", "construction", "inspection", "maintenance"
         self.kind = kind
 
-        #: Date and time work was requested. 
+        #: Date and time work was requested.
         self.requestDateTime = requestDateTime
 
-        #: Priority of work. 
+        #: Priority of work.
         self.priority = priority
 
         self._WorkFlowSteps = []

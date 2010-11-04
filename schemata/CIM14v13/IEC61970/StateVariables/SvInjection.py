@@ -27,10 +27,10 @@ class SvInjection(StateVariable):
         @param qNetInjection: The activive power injected into the bus at this location. 
         @param TopologicalNode: The topological node associated with the state injection.
         """
-        #: The activive power injected into the bus at this location. 
+        #: The activive power injected into the bus at this location.
         self.pNetInjection = pNetInjection
 
-        #: The activive power injected into the bus at this location. 
+        #: The activive power injected into the bus at this location.
         self.qNetInjection = qNetInjection
 
         self._TopologicalNode = None

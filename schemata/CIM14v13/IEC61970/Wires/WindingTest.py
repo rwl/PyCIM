@@ -34,28 +34,28 @@ class WindingTest(IdentifiedObject):
         @param To_TransformerWinding: The winding to which the test was conducted.  Note that although the 'from' side of the test is required, the 'to' side of a test is not always required.
         @param From_TransformerWinding: The winding from which the test was conducted
         """
-        #: The phase shift measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited. 
+        #: The phase shift measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited.
         self.phaseShift = phaseShift
 
-        #: The tap step number for the 'from' winding of the test pair. 
+        #: The tap step number for the 'from' winding of the test pair.
         self.fromTapStep = fromTapStep
 
-        #: The no load loss kW 'to' winding open-circuited) from the test report. 
+        #: The no load loss kW 'to' winding open-circuited) from the test report.
         self.noLoadLoss = noLoadLoss
 
-        #: The tap step number for the 'to' winding of the test pair. 
+        #: The tap step number for the 'to' winding of the test pair.
         self.toTapStep = toTapStep
 
-        #: The exciting current on open-circuit test, expressed as a percentage of rated current, at nominal voltage 
+        #: The exciting current on open-circuit test, expressed as a percentage of rated current, at nominal voltage
         self.excitingCurrent = excitingCurrent
 
-        #: The load loss kW ('to' winding short-circuited) from the test report. 
+        #: The load loss kW ('to' winding short-circuited) from the test report.
         self.loadLoss = loadLoss
 
-        #: The leakage impedance measured at the 'from' winding  with the 'to' winding short-circuited and all other windings open-circuited.  Leakage impedance is expressed in units based on the apparent power and voltage ratings of the 'from' winding. 
+        #: The leakage impedance measured at the 'from' winding  with the 'to' winding short-circuited and all other windings open-circuited.  Leakage impedance is expressed in units based on the apparent power and voltage ratings of the 'from' winding.
         self.leakageImpedance = leakageImpedance
 
-        #: The voltage measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited. 
+        #: The voltage measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited.
         self.voltage = voltage
 
         self._To_TransformerWinding = None

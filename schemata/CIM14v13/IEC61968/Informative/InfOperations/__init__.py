@@ -19,3 +19,29 @@
 
 ns_prefix = "cimInfOperations"
 ns_uri = "http://iec.ch/TC57/CIM-generic#InfOperations"
+
+from CIM14v13.IEC61968.Informative.InfOperations.SwitchingStep import SwitchingStep
+from CIM14v13.IEC61968.Informative.InfOperations.ErpPersonScheduleStepRole import ErpPersonScheduleStepRole
+from CIM14v13.IEC61968.Informative.InfOperations.OperationalRestriction import OperationalRestriction
+from CIM14v13.IEC61968.Informative.InfOperations.SafetyDocument import SafetyDocument
+from CIM14v13.IEC61968.Informative.InfOperations.OutageStep import OutageStep
+from CIM14v13.IEC61968.Informative.InfOperations.ComplianceEvent import ComplianceEvent
+from CIM14v13.IEC61968.Informative.InfOperations.PSREvent import PSREvent
+from CIM14v13.IEC61968.Informative.InfOperations.OutageCode import OutageCode
+from CIM14v13.IEC61968.Informative.InfOperations.OutageStepPsrRole import OutageStepPsrRole
+from CIM14v13.IEC61968.Informative.InfOperations.NetworkDataSet import NetworkDataSet
+from CIM14v13.IEC61968.Informative.InfOperations.CircuitSection import CircuitSection
+from CIM14v13.IEC61968.Informative.InfOperations.OutageRecord import OutageRecord
+from CIM14v13.IEC61968.Informative.InfOperations.CallBack import CallBack
+from CIM14v13.IEC61968.Informative.InfOperations.ChangeItem import ChangeItem
+from CIM14v13.IEC61968.Informative.InfOperations.OrgPsrRole import OrgPsrRole
+from CIM14v13.IEC61968.Informative.InfOperations.OutageNotification import OutageNotification
+from CIM14v13.IEC61968.Informative.InfOperations.SwitchingSchedule import SwitchingSchedule
+from CIM14v13.IEC61968.Informative.InfOperations.IncidentCode import IncidentCode
+from CIM14v13.IEC61968.Informative.InfOperations.PlannedOutage import PlannedOutage
+from CIM14v13.IEC61968.Informative.InfOperations.TroubleTicket import TroubleTicket
+from CIM14v13.IEC61968.Informative.InfOperations.IncidentRecord import IncidentRecord
+from CIM14v13.IEC61968.Informative.InfOperations.ChangeSet import ChangeSet
+from CIM14v13.IEC61968.Informative.InfOperations.OutageReport import OutageReport
+from CIM14v13.IEC61968.Informative.InfOperations.LandBase import LandBase
+from CIM14v13.IEC61968.Informative.InfOperations.Circuit import Circuit

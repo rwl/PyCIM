@@ -30,10 +30,10 @@ class Appointment(ScheduledEvent):
         @param address: Address for appointment.
         @param meetingInterval: Date and time reserved for appointment.
         """
-        #: Information about the appointment. 
+        #: Information about the appointment.
         self.remark = remark
 
-        #: True if requested to call customer when someone is about to arrive at their premises. 
+        #: True if requested to call customer when someone is about to arrive at their premises.
         self.callAhead = callAhead
 
         self._ErpPersons = []

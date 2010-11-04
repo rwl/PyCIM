@@ -31,7 +31,7 @@ class Project(Document):
         @param ParentProject:
         @param SubProjects:
         """
-        #: Overall project budget. 
+        #: Overall project budget.
         self.budget = budget
 
         self._ErpProjectAccounting = None

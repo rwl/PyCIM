@@ -30,16 +30,16 @@ class WorkLocation(Location):
         @param OneCallRequest:
         @param DesignLocations:
         """
-        #: Name, identifier, or description of the block, if applicable, in which work is to occur. 
+        #: Name, identifier, or description of the block, if applicable, in which work is to occur.
         self.block = block
 
-        #: The names of streets at the nearest intersection to work area. 
+        #: The names of streets at the nearest intersection to work area.
         self.nearestIntersection = nearestIntersection
 
-        #: Name, identifier, or description of the subdivision, if applicable, in which work is to occur. 
+        #: Name, identifier, or description of the subdivision, if applicable, in which work is to occur.
         self.subdivision = subdivision
 
-        #: Name, identifier, or description of the lot, if applicable, in which work is to occur. 
+        #: Name, identifier, or description of the lot, if applicable, in which work is to occur.
         self.lot = lot
 
         self._OneCallRequest = None

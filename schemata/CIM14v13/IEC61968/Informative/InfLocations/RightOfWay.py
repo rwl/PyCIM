@@ -26,7 +26,7 @@ class RightOfWay(Agreement):
         @param propertyData: Property related information that describes the ROW's land parcel. For example, it may be a deed book number, deed book page number, and parcel number. 
         @param LandProperties: All land properties this right of way applies to.
         """
-        #: Property related information that describes the ROW's land parcel. For example, it may be a deed book number, deed book page number, and parcel number. 
+        #: Property related information that describes the ROW's land parcel. For example, it may be a deed book number, deed book page number, and parcel number.
         self.propertyData = propertyData
 
         self._LandProperties = []

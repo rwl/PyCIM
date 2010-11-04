@@ -26,7 +26,7 @@ class AccumulatorLimit(Limit):
         @param value: The value to supervise against. The value is positive. 
         @param LimitSet: The set of limits.
         """
-        #: The value to supervise against. The value is positive. 
+        #: The value to supervise against. The value is positive.
         self.value = value
 
         self._LimitSet = None

@@ -43,43 +43,43 @@ class TransformerObservation(IdentifiedObject):
         @param BushingInsultationPFs:
         @param ProcedureDataSets:
         """
-        #: Oil Quality Analysis-Neutralization Number - Number - Mg KOH. 
+        #: Oil Quality Analysis-Neutralization Number - Number - Mg KOH.
         self.oilNeutralizationNumber = oilNeutralizationNumber
 
-        #: Top oil temperature. 
+        #: Top oil temperature.
         self.topOilTemp = topOilTemp
 
-        #: Dissolved Gas Analysis. Typical values are: Acceptable, Overheating, Corona, Sparking, Arcing. 
+        #: Dissolved Gas Analysis. Typical values are: Acceptable, Overheating, Corona, Sparking, Arcing.
         self.dga = dga
 
-        #: Pump vibration, with typical values being: nominal, high. 
+        #: Pump vibration, with typical values being: nominal, high.
         self.pumpVibration = pumpVibration
 
-        #: Oil Quality Analysis-Color. 
+        #: Oil Quality Analysis-Color.
         self.oilColor = oilColor
 
-        #: Oil Quality Analysis- inter facial tension (IFT) - number-Dynes/CM. 
+        #: Oil Quality Analysis- inter facial tension (IFT) - number-Dynes/CM.
         self.oilIFT = oilIFT
 
-        #: Oil Quality Analysis-Dielectric Strength. 
+        #: Oil Quality Analysis-Dielectric Strength.
         self.oilDielectricStrength = oilDielectricStrength
 
-        #: Hotspot oil temperature. 
+        #: Hotspot oil temperature.
         self.hotSpotTemp = hotSpotTemp
 
-        #: The level of oil in the transformer. 
+        #: The level of oil in the transformer.
         self.oilLevel = oilLevel
 
-        #: Water Content expressed in parts per million. 
+        #: Water Content expressed in parts per million.
         self.waterContent = waterContent
 
-        #: Bushing temperature. 
+        #: Bushing temperature.
         self.bushingTemp = bushingTemp
 
-        #: Overall measure of furfural in oil and mechanical strength of paper. DP, the degree of polymerization, is the strength of the paper. Furfural is a measure of furfural compounds, often expressed in parts per million. 
+        #: Overall measure of furfural in oil and mechanical strength of paper. DP, the degree of polymerization, is the strength of the paper. Furfural is a measure of furfural compounds, often expressed in parts per million.
         self.furfuralDP = furfuralDP
 
-        #: Frequency Response Analysis. Typical values are: acceptable, slight movement, significant movement, failed, near failure. A graphic of the response diagram, which is a type of document, may be associated with this analysis through the recursive document relationship of the ProcedureDataSet. 
+        #: Frequency Response Analysis. Typical values are: acceptable, slight movement, significant movement, failed, near failure. A graphic of the response diagram, which is a type of document, may be associated with this analysis through the recursive document relationship of the ProcedureDataSet.
         self.freqResp = freqResp
 
         self.status = status

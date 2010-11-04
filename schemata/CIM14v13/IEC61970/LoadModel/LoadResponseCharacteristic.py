@@ -36,37 +36,37 @@ class LoadResponseCharacteristic(IdentifiedObject):
         @param pConstantPower: Portion of active power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP. 
         @param EnergyConsumer: The set of loads that have the response characteristics.
         """
-        #: Exponent of per unit frequency effecting active power 
+        #: Exponent of per unit frequency effecting active power
         self.pFrequencyExponent = pFrequencyExponent
 
-        #: Portion of active power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP. 
+        #: Portion of active power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.
         self.pConstantCurrent = pConstantCurrent
 
-        #: Portion of reactive power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP. 
+        #: Portion of reactive power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.
         self.qConstantPower = qConstantPower
 
-        #: Portion of reactive power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP. 
+        #: Portion of reactive power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.
         self.qConstantCurrent = qConstantCurrent
 
-        #: Portion of active power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP. 
+        #: Portion of active power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.
         self.pConstantImpedance = pConstantImpedance
 
-        #: Indicates the exponential voltage dependency model (pVoltateExponent and qVoltageExponent) is to be used.   If false, the coeficient model (consisting of pConstantImpedance, pConstantCurrent, pConstantPower, qConstantImpedance, qConstantCurrent, and qConstantPower) is to be used. 
+        #: Indicates the exponential voltage dependency model (pVoltateExponent and qVoltageExponent) is to be used.   If false, the coeficient model (consisting of pConstantImpedance, pConstantCurrent, pConstantPower, qConstantImpedance, qConstantCurrent, and qConstantPower) is to be used.
         self.exponentModel = exponentModel
 
-        #: Exponent of per unit voltage effecting reactive power.   This model used only when 'useExponentModel' is true. 
+        #: Exponent of per unit voltage effecting reactive power.   This model used only when 'useExponentModel' is true.
         self.qVoltageExponent = qVoltageExponent
 
-        #: Exponent of per unit frequency effecting reactive power 
+        #: Exponent of per unit frequency effecting reactive power
         self.qFrequencyExponent = qFrequencyExponent
 
-        #: Portion of reactive power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP. 
+        #: Portion of reactive power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP.
         self.qConstantImpedance = qConstantImpedance
 
-        #: Exponent of per unit voltage effecting real power.   This model used only when 'useExponentModel' is true. 
+        #: Exponent of per unit voltage effecting real power.   This model used only when 'useExponentModel' is true.
         self.pVoltageExponent = pVoltageExponent
 
-        #: Portion of active power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP. 
+        #: Portion of active power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP.
         self.pConstantPower = pConstantPower
 
         self._EnergyConsumer = []

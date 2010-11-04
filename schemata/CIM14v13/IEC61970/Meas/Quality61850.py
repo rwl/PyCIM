@@ -36,40 +36,40 @@ class Quality61850(Element):
         @param oldData: Measurement value is old and possibly invalid, as it has not been successfully updated during a specified time interval. 
         @param outOfRange: Measurement value is beyond a predefined range of value. 
         """
-        #: Source gives information related to the origin of a value. The value may be acquired from the process, defaulted or substituted. Values are: "SUBSTITUTED", "PROCESS", "DEFAULTED"
+        #: Source gives information related to the origin of a value. The value may be acquired from the process, defaulted or substituted.Values are: "SUBSTITUTED", "PROCESS", "DEFAULTED"
         self.source = source
 
-        #: Validity of the measurement value. Values are: "GOOD", "INVALID", "QUESTIONABLE"
+        #: Validity of the measurement value.Values are: "GOOD", "INVALID", "QUESTIONABLE"
         self.validity = validity
 
-        #: Measurement value is transmitted for test purposes. 
+        #: Measurement value is transmitted for test purposes.
         self.test = test
 
-        #: Measurement value is beyond the capability of being  represented properly. For example, a counter value overflows from maximum count back to a value of zero. 
+        #: Measurement value is beyond the capability of being  represented properly. For example, a counter value overflows from maximum count back to a value of zero.
         self.overFlow = overFlow
 
-        #: Value has been replaced by State Estimator. estimatorReplaced is not an IEC61850 quality bit but has been put in this class for convenience. 
+        #: Value has been replaced by State Estimator. estimatorReplaced is not an IEC61850 quality bit but has been put in this class for convenience.
         self.estimatorReplaced = estimatorReplaced
 
-        #: A correlation function has detected that the value is not consitent with other values. Typically set by a network State Estimator. 
+        #: A correlation function has detected that the value is not consitent with other values. Typically set by a network State Estimator.
         self.suspect = suspect
 
-        #: Measurement value may be incorrect due to a reference being out of calibration. 
+        #: Measurement value may be incorrect due to a reference being out of calibration.
         self.badReference = badReference
 
-        #: Measurement value is blocked and hence unavailable for transmission. 
+        #: Measurement value is blocked and hence unavailable for transmission.
         self.operatorBlocked = operatorBlocked
 
-        #: To prevent some overload of the communication it is sensible to detect and suppress oscillating (fast changing) binary inputs. If a signal changes in a defined time (tosc) twice in the same direction (from 0 to 1 or from 1 to 0) then oscillation is detected and the detail quality identifier 'oscillatory' is set. If it is detected a configured numbers of transient changes could be passed by. In this time the validity status 'questionable' is set. If after this defined numbers of changes the signal is still in the oscillating state the value shall be set either to the opposite state of the previous stable value or to a defined default value. In this case the validity status 'questionable' is reset and 'invalid' is set as long as the signal is oscillating. If it is configured such that no transient changes should be passed by then the validity status 'invalid' is set immediately in addition to the detail quality identifier 'oscillatory' (used for status information only). 
+        #: To prevent some overload of the communication it is sensible to detect and suppress oscillating (fast changing) binary inputs. If a signal changes in a defined time (tosc) twice in the same direction (from 0 to 1 or from 1 to 0) then oscillation is detected and the detail quality identifier 'oscillatory' is set. If it is detected a configured numbers of transient changes could be passed by. In this time the validity status 'questionable' is set. If after this defined numbers of changes the signal is still in the oscillating state the value shall be set either to the opposite state of the previous stable value or to a defined default value. In this case the validity status 'questionable' is reset and 'invalid' is set as long as the signal is oscillating. If it is configured such that no transient changes should be passed by then the validity status 'invalid' is set immediately in addition to the detail quality identifier 'oscillatory' (used for status information only).
         self.oscillatory = oscillatory
 
-        #: This identifier indicates that a supervision function has detected an internal or external failure, e.g. communication failure. 
+        #: This identifier indicates that a supervision function has detected an internal or external failure, e.g. communication failure.
         self.failure = failure
 
-        #: Measurement value is old and possibly invalid, as it has not been successfully updated during a specified time interval. 
+        #: Measurement value is old and possibly invalid, as it has not been successfully updated during a specified time interval.
         self.oldData = oldData
 
-        #: Measurement value is beyond a predefined range of value. 
+        #: Measurement value is beyond a predefined range of value.
         self.outOfRange = outOfRange
 
         super(Quality61850, self).__init__(*args, **kw_args)

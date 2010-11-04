@@ -19,3 +19,4 @@
 
 ns_prefix = "cimGeneration"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Generation"
+

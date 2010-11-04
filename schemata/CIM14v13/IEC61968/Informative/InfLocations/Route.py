@@ -28,7 +28,7 @@ class Route(IdentifiedObject):
         @param Crews:
         @param status:
         """
-        #: Category by utility's work management standards and practices. 
+        #: Category by utility's work management standards and practices.
         self.category = category
 
         self._Locations = []

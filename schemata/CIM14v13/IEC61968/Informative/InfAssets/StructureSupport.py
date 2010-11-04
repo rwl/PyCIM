@@ -30,19 +30,19 @@ class StructureSupport(Asset):
         @param rodCount: Number of rods used for an anchor. 
         @param SecuredStructure:
         """
-        #: Length of anchor lead or guy. 
+        #: Length of anchor lead or guy.
         self.length = length
 
-        #: Direction of supporting anchor or guy. 
+        #: Direction of supporting anchor or guy.
         self.direction = direction
 
-        #: Size of anchor or guy. 
+        #: Size of anchor or guy.
         self.size = size
 
-        #: Length of rod used for an anchor. 
+        #: Length of rod used for an anchor.
         self.rodLength = rodLength
 
-        #: Number of rods used for an anchor. 
+        #: Number of rods used for an anchor.
         self.rodCount = rodCount
 
         self._SecuredStructure = None

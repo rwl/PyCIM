@@ -30,13 +30,13 @@ class Bid(Document):
         @param ProductBids: A bid comprises one or more product bids of market products
         @param BidClearing:
         """
-        #: Stop time and date for which bid is applicable. 
+        #: Stop time and date for which bid is applicable.
         self.stopTime = stopTime
 
-        #: Start time and date for which bid applies. 
+        #: Start time and date for which bid applies.
         self.startTime = startTime
 
- 
+
         self.marketType = marketType
 
         self._Market = None

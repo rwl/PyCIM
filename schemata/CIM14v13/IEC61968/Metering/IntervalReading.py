@@ -27,7 +27,7 @@ class IntervalReading(MeasurementValue):
         @param IntervalBlocks: All blocks containing this interval reading.
         @param ReadingQualities: Used only if quality of this interval reading value is different than 'Good'.
         """
-        #: Value of this interval reading. 
+        #: Value of this interval reading.
         self.value = value
 
         self._IntervalBlocks = []

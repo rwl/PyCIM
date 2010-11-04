@@ -39,13 +39,13 @@ class UserAttribute(Element):
         @param BillDeterminants:
         @param ErpStatementLineItems:
         """
-        #: Sequence number for this attribute in a list of attributes. 
+        #: Sequence number for this attribute in a list of attributes.
         self.sequenceNumber = sequenceNumber
 
-        #: Value of an attribute, including unit information. 
+        #: Value of an attribute, including unit information.
         self.value = value
 
-        #: Name of an attribute. 
+        #: Name of an attribute.
         self.name = name
 
         self._PropertySpecification = None

@@ -30,16 +30,16 @@ class Cheque(Element):
         @param Tender: Payment tender the cheque is being used for.
         @param bankAccountDetail: Details of the account holder and bank.
         """
-        #: Kind of cheque. Values are: "bankOrder", "postalOrder", "other"
+        #: Kind of cheque.Values are: "bankOrder", "postalOrder", "other"
         self.kind = kind
 
-        #: The magnetic ink character recognition number printed on the cheque. 
+        #: The magnetic ink character recognition number printed on the cheque.
         self.micrNumber = micrNumber
 
-        #: Cheque reference number as printed on the cheque. 
+        #: Cheque reference number as printed on the cheque.
         self.chequeNumber = chequeNumber
 
-        #: Date when cheque becomes valid. 
+        #: Date when cheque becomes valid.
         self.date = date
 
         self._Tender = None

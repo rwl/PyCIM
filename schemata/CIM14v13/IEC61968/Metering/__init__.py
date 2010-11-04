@@ -19,3 +19,24 @@
 
 ns_prefix = "cimMetering"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Metering"
+
+from CIM14v13.IEC61968.Metering.SDPLocation import SDPLocation
+from CIM14v13.IEC61968.Metering.DeviceFunction import DeviceFunction
+from CIM14v13.IEC61968.Metering.ComFunction import ComFunction
+from CIM14v13.IEC61968.Metering.IntervalReading import IntervalReading
+from CIM14v13.IEC61968.Metering.ReadingType import ReadingType
+from CIM14v13.IEC61968.Metering.EndDeviceAsset import EndDeviceAsset
+from CIM14v13.IEC61968.Metering.MeterAsset import MeterAsset
+from CIM14v13.IEC61968.Metering.ElectricMeteringFunction import ElectricMeteringFunction
+from CIM14v13.IEC61968.Metering.Reading import Reading
+from CIM14v13.IEC61968.Metering.Register import Register
+from CIM14v13.IEC61968.Metering.ReadingQuality import ReadingQuality
+from CIM14v13.IEC61968.Metering.MeterServiceWork import MeterServiceWork
+from CIM14v13.IEC61968.Metering.IntervalBlock import IntervalBlock
+from CIM14v13.IEC61968.Metering.MeterReading import MeterReading
+from CIM14v13.IEC61968.Metering.DemandResponseProgram import DemandResponseProgram
+from CIM14v13.IEC61968.Metering.EndDeviceEvent import EndDeviceEvent
+from CIM14v13.IEC61968.Metering.EndDeviceControl import EndDeviceControl
+from CIM14v13.IEC61968.Metering.ServiceDeliveryPoint import ServiceDeliveryPoint
+from CIM14v13.IEC61968.Metering.EndDeviceGroup import EndDeviceGroup
+from CIM14v13.IEC61968.Metering.Pending import Pending

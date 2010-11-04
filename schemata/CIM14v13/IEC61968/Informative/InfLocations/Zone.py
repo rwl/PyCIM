@@ -25,7 +25,7 @@ class Zone(Location):
 
         @param kind: Kind of this zone. Values are: "specialRestrictionLand", "electricalNetwork", "weatherZone", "other"
         """
-        #: Kind of this zone. Values are: "specialRestrictionLand", "electricalNetwork", "weatherZone", "other"
+        #: Kind of this zone.Values are: "specialRestrictionLand", "electricalNetwork", "weatherZone", "other"
         self.kind = kind
 
         super(Zone, self).__init__(*args, **kw_args)

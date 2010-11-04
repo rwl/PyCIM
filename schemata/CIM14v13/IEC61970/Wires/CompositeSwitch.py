@@ -26,7 +26,7 @@ class CompositeSwitch(Equipment):
         @param compositeSwitchType: An alphanumeric code that can be used as a reference to extar information such as the description of the interlocking scheme if any 
         @param Switches: Switches contained in this Composite switch.
         """
-        #: An alphanumeric code that can be used as a reference to extar information such as the description of the interlocking scheme if any 
+        #: An alphanumeric code that can be used as a reference to extar information such as the description of the interlocking scheme if any
         self.compositeSwitchType = compositeSwitchType
 
         self._Switches = []

@@ -28,13 +28,13 @@ class PnodeClearing(MarketFactors):
         @param costLMP: Cost component of Locational Marginal Pricing (LMP) in monetary units per MW. 
         @param Pnode:
         """
-        #: Congestion component of Location Marginal Price (LMP) in monetary units per MW. 
+        #: Congestion component of Location Marginal Price (LMP) in monetary units per MW.
         self.congestLMP = congestLMP
 
-        #: Loss component of Location Marginal Price (LMP) in monetary units per MW. 
+        #: Loss component of Location Marginal Price (LMP) in monetary units per MW.
         self.lossLMP = lossLMP
 
-        #: Cost component of Locational Marginal Pricing (LMP) in monetary units per MW. 
+        #: Cost component of Locational Marginal Pricing (LMP) in monetary units per MW.
         self.costLMP = costLMP
 
         self._Pnode = None

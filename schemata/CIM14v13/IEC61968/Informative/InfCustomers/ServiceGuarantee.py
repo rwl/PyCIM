@@ -28,13 +28,13 @@ class ServiceGuarantee(Document):
         @param payAmount: Amount to be paid by the service provider to the customer for each violation of the 'serviceRequirement'. 
         @param applicationPeriod: Period in which this service guantee applies.
         """
-        #: True if utility must autmatically pay the specified amount whenever the condition is not satisified, otherwise customer must make a claim to receive payment. 
+        #: True if utility must autmatically pay the specified amount whenever the condition is not satisified, otherwise customer must make a claim to receive payment.
         self.automaticPay = automaticPay
 
-        #: Explanation of the requirement and conditions for satisfying it. 
+        #: Explanation of the requirement and conditions for satisfying it.
         self.serviceRequirement = serviceRequirement
 
-        #: Amount to be paid by the service provider to the customer for each violation of the 'serviceRequirement'. 
+        #: Amount to be paid by the service provider to the customer for each violation of the 'serviceRequirement'.
         self.payAmount = payAmount
 
         self.applicationPeriod = applicationPeriod

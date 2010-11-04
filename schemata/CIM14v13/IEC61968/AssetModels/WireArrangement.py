@@ -29,13 +29,13 @@ class WireArrangement(IdentifiedObject):
         @param WireType: Wire type used for this wire arrangement.
         @param ConductorInfo: Conductor data this wire arrangement belongs to.
         """
-        #: Position number on the structure corresponding to this wire. For example, use 1..3 for phases and 4 for the neutral on a 3-phase structure. The individual phase assignments matter; for example, ABC will produce a different set of unbalanced line parameters, by phase, than BAC. 
+        #: Position number on the structure corresponding to this wire. For example, use 1..3 for phases and 4 for the neutral on a 3-phase structure. The individual phase assignments matter; for example, ABC will produce a different set of unbalanced line parameters, by phase, than BAC.
         self.position = position
 
-        #: Height above ground of the first wire. 
+        #: Height above ground of the first wire.
         self.mountingPointY = mountingPointY
 
-        #: Signed horizontal distance from the first wire to a common reference point. 
+        #: Signed horizontal distance from the first wire to a common reference point.
         self.mountingPointX = mountingPointX
 
         self._WireType = None

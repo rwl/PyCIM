@@ -27,10 +27,10 @@ class RecloseSequence(IdentifiedObject):
         @param recloseDelay: Indicates the time lapse before the reclose step will execute a reclose. 
         @param ProtectedSwitch: A breaker may have zero or more automatic reclosures after a trip occurs.
         """
-        #: Indicates the ordinal position of the reclose step relative to other steps in the sequence. 
+        #: Indicates the ordinal position of the reclose step relative to other steps in the sequence.
         self.recloseStep = recloseStep
 
-        #: Indicates the time lapse before the reclose step will execute a reclose. 
+        #: Indicates the time lapse before the reclose step will execute a reclose.
         self.recloseDelay = recloseDelay
 
         self._ProtectedSwitch = None

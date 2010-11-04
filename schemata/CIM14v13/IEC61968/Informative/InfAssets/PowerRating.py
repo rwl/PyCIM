@@ -28,13 +28,13 @@ class PowerRating(IdentifiedObject):
         @param stage: Stage of cooling and associated power rating. 
         @param TransformerAssets:
         """
-        #: Kind of cooling system. Values are: "other", "forcedAir", "forcedOilAndAir", "selfCooling"
+        #: Kind of cooling system.Values are: "other", "forcedAir", "forcedOilAndAir", "selfCooling"
         self.coolingKind = coolingKind
 
-        #: The power rating associated with type of cooling specified for this stage. 
+        #: The power rating associated with type of cooling specified for this stage.
         self.powerRating = powerRating
 
-        #: Stage of cooling and associated power rating. 
+        #: Stage of cooling and associated power rating.
         self.stage = stage
 
         self._TransformerAssets = []

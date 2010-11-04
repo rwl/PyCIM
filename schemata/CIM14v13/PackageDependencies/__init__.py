@@ -19,3 +19,5 @@
 
 ns_prefix = "cimPackageDependencies"
 ns_uri = "http://iec.ch/TC57/CIM-generic#PackageDependencies"
+
+from CIM14v13.PackageDependencies.PackageDependenciesCIMVeresion import PackageDependenciesCIMVeresion

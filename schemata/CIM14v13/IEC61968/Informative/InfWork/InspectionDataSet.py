@@ -26,7 +26,7 @@ class InspectionDataSet(ProcedureDataSet):
         @param locationCondition: Description of the conditions of the location where the asset resides. 
         @param AccordingToSchedules:
         """
-        #: Description of the conditions of the location where the asset resides. 
+        #: Description of the conditions of the location where the asset resides.
         self.locationCondition = locationCondition
 
         self._AccordingToSchedules = []

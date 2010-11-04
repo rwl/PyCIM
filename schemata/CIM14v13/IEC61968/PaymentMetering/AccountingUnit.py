@@ -28,16 +28,16 @@ class AccountingUnit(Element):
         @param energyUnit: Unit of service. 
         @param value: Value expressed in applicable units. 
         """
-        #: Unit of currency. Values are: "EUR", "other", "JPY", "DKK", "NOK", "CNY", "USD", "INR", "SEK", "AUD", "CHF", "CAD", "RUR", "GBP"
+        #: Unit of currency.Values are: "EUR", "other", "JPY", "DKK", "NOK", "CNY", "USD", "INR", "SEK", "AUD", "CHF", "CAD", "RUR", "GBP"
         self.monetaryUnit = monetaryUnit
 
-        #: Multiplier for the 'energyUnit' or 'monetaryUnit'. Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
+        #: Multiplier for the 'energyUnit' or 'monetaryUnit'.Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
         self.multiplier = multiplier
 
-        #: Unit of service. 
+        #: Unit of service.
         self.energyUnit = energyUnit
 
-        #: Value expressed in applicable units. 
+        #: Value expressed in applicable units.
         self.value = value
 
         super(AccountingUnit, self).__init__(*args, **kw_args)

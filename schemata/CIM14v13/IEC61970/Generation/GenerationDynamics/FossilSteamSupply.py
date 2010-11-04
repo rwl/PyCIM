@@ -50,82 +50,82 @@ class FossilSteamSupply(SteamSupply):
         @param throttlePressureSP: Throttle Pressure Setpoint 
         @param minErrorRateP: Active power Minimum Error Rate Limit 
         """
-        #: The control mode of the boiler Values are: "following", "coordinated"
+        #: The control mode of the boilerValues are: "following", "coordinated"
         self.boilerControlMode = boilerControlMode
 
-        #: Fuel Supply Time Constant 
+        #: Fuel Supply Time Constant
         self.fuelSupplyTC = fuelSupplyTC
 
-        #: Pressure Control Derivative Gain ratio 
+        #: Pressure Control Derivative Gain ratio
         self.pressureCtrlDG = pressureCtrlDG
 
-        #: Secondary Superheater Capacity 
+        #: Secondary Superheater Capacity
         self.superHeater2Capacity = superHeater2Capacity
 
-        #: Time Constant 
+        #: Time Constant
         self.controlTC = controlTC
 
-        #: Active power Error Bias ratio 
+        #: Active power Error Bias ratio
         self.controlErrorBiasP = controlErrorBiasP
 
-        #: Pressure Control Proportional Gain ratio 
+        #: Pressure Control Proportional Gain ratio
         self.pressureCtrlPG = pressureCtrlPG
 
-        #: Pressure Control Integral Gain ratio 
+        #: Pressure Control Integral Gain ratio
         self.pressureCtrlIG = pressureCtrlIG
 
-        #: Feedwater Integral Gain ratio 
+        #: Feedwater Integral Gain ratio
         self.feedWaterIG = feedWaterIG
 
-        #: Drum/Primary Superheater Capacity 
+        #: Drum/Primary Superheater Capacity
         self.superHeater1Capacity = superHeater1Capacity
 
-        #: Mechanical Power Sensor Lag 
+        #: Mechanical Power Sensor Lag
         self.mechPowerSensorLag = mechPowerSensorLag
 
-        #: Integral Constant 
+        #: Integral Constant
         self.controlIC = controlIC
 
-        #: Proportional Constant 
+        #: Proportional Constant
         self.controlPC = controlPC
 
-        #: Pressure Feedback Indicator 
+        #: Pressure Feedback Indicator
         self.pressureFeedback = pressureFeedback
 
-        #: Feedwater Proportional Gain ratio 
+        #: Feedwater Proportional Gain ratio
         self.feedWaterPG = feedWaterPG
 
-        #: Fuel Demand Limit 
+        #: Fuel Demand Limit
         self.fuelDemandLimit = fuelDemandLimit
 
-        #: Pressure Error Deadband 
+        #: Pressure Error Deadband
         self.controlPED = controlPED
 
-        #: Off nominal frequency effect on auxiliary real power. Per unit active power variation versus per unit frequency variation. 
+        #: Off nominal frequency effect on auxiliary real power. Per unit active power variation versus per unit frequency variation.
         self.auxPowerVersusFrequency = auxPowerVersusFrequency
 
-        #: Off nominal voltage effect on auxiliary real power. Per unit active power variation versus per unit voltage variation. 
+        #: Off nominal voltage effect on auxiliary real power. Per unit active power variation versus per unit voltage variation.
         self.auxPowerVersusVoltage = auxPowerVersusVoltage
 
-        #: Active power Maximum Error Rate Limit 
+        #: Active power Maximum Error Rate Limit
         self.maxErrorRateP = maxErrorRateP
 
-        #: Fuel Delay 
+        #: Fuel Delay
         self.fuelSupplyDelay = fuelSupplyDelay
 
-        #: Superheater Pipe Pressure Drop Constant 
+        #: Superheater Pipe Pressure Drop Constant
         self.superHeaterPipePD = superHeaterPipePD
 
-        #: Pressure Error Bias ratio 
+        #: Pressure Error Bias ratio
         self.controlPEB = controlPEB
 
-        #: Feedwater Time Constant rato 
+        #: Feedwater Time Constant rato
         self.feedWaterTC = feedWaterTC
 
-        #: Throttle Pressure Setpoint 
+        #: Throttle Pressure Setpoint
         self.throttlePressureSP = throttlePressureSP
 
-        #: Active power Minimum Error Rate Limit 
+        #: Active power Minimum Error Rate Limit
         self.minErrorRateP = minErrorRateP
 
         super(FossilSteamSupply, self).__init__(*args, **kw_args)

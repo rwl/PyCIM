@@ -28,7 +28,7 @@ class BreakerInfo(SwitchInfo):
         @param BreakerAssetModels:
         @param BreakerTypeAsset:
         """
-        #: Phase trip rating. 
+        #: Phase trip rating.
         self.phaseTrip = phaseTrip
 
         self._BreakerAssets = []

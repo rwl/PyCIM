@@ -29,13 +29,13 @@ class PotentialTransformer(Equipment):
         @param PotentialTransformerAsset:
         @param PotentialTransformerTypeAsset:
         """
-        #: PT accuracy classification. 
+        #: PT accuracy classification.
         self.accuracyClass = accuracyClass
 
-        #: PT classification. 
+        #: PT classification.
         self.ptClass = ptClass
 
-        #: Nominal ratio between the primary and secondary voltage. 
+        #: Nominal ratio between the primary and secondary voltage.
         self.nominalRatio = nominalRatio
 
         self._PotentialTransformerAsset = None

@@ -19,3 +19,11 @@
 
 ns_prefix = "cimReservation"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Reservation"
+
+from CIM14v13.IEC61968.Informative.Reservation.ReservationVersion import ReservationVersion
+from CIM14v13.IEC61968.Informative.Reservation.TiePoint import TiePoint
+from CIM14v13.IEC61968.Informative.Reservation.TransmissionService import TransmissionService
+from CIM14v13.IEC61968.Informative.Reservation.ServicePoint import ServicePoint
+from CIM14v13.IEC61968.Informative.Reservation.ServiceReservation import ServiceReservation
+from CIM14v13.IEC61968.Informative.Reservation.TransmissionPath import TransmissionPath
+from CIM14v13.IEC61968.Informative.Reservation.AncillaryService import AncillaryService

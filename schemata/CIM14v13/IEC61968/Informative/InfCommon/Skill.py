@@ -30,10 +30,10 @@ class Skill(Document):
         @param ErpPerson:
         @param certificationPeriod: Interval between the certification and its expiry.
         """
-        #: Level of skill for a Craft. Values are: "master", "other", "standard", "apprentice"
+        #: Level of skill for a Craft.Values are: "master", "other", "standard", "apprentice"
         self.level = level
 
-        #: Date and time the skill became effective. 
+        #: Date and time the skill became effective.
         self.effectiveDateTime = effectiveDateTime
 
         self._Crafts = []

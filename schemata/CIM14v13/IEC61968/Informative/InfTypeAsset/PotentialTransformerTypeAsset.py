@@ -30,10 +30,10 @@ class PotentialTransformerTypeAsset(ElectricalTypeAsset):
         @param PotentialTransformerAssetModels:
         @param PotentialTransformerInfo:
         """
- 
+
         self.ptClass = ptClass
 
- 
+
         self.accuracyClass = accuracyClass
 
         self.nominalRatio = nominalRatio

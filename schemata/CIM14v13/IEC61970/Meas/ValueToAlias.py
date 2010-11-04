@@ -26,7 +26,7 @@ class ValueToAlias(IdentifiedObject):
         @param value: The value that is mapped 
         @param ValueAliasSet: The ValueAliasSet having the ValueToAlias mappings
         """
-        #: The value that is mapped 
+        #: The value that is mapped
         self.value = value
 
         self._ValueAliasSet = None

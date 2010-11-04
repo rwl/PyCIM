@@ -33,16 +33,16 @@ class SwitchingStep(IdentifiedObject):
         @param ErpPersonRole:
         @param PowerSystemResources:
         """
-        #: Status of this SwitchingStep. Values are: "confirmed", "skipped", "aborted", "instructed", "proposed"
+        #: Status of this SwitchingStep.Values are: "confirmed", "skipped", "aborted", "instructed", "proposed"
         self.statusKind = statusKind
 
-        #: Desired end state for the associated PowerSystemResource as a result of this schedule step. 
+        #: Desired end state for the associated PowerSystemResource as a result of this schedule step.
         self.desiredEndState = desiredEndState
 
-        #: Information regarding this switching schedule step. 
+        #: Information regarding this switching schedule step.
         self.text = text
 
-        #: Control actions required to perform this step. 
+        #: Control actions required to perform this step.
         self.requiredControlAction = requiredControlAction
 
         self.requiredControlActionInterval = requiredControlActionInterval

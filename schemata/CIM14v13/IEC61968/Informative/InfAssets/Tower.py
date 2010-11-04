@@ -26,7 +26,7 @@ class Tower(Structure):
         @param constructionKind: Construction structure on the tower. Values are: "suspension", "tension"
         @param TowerAssetModel:
         """
-        #: Construction structure on the tower. Values are: "suspension", "tension"
+        #: Construction structure on the tower.Values are: "suspension", "tension"
         self.constructionKind = constructionKind
 
         self._TowerAssetModel = None

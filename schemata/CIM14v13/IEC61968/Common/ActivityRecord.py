@@ -36,16 +36,16 @@ class ActivityRecord(IdentifiedObject):
         @param Locations:
         @param status: Information on consequence of event resulting in this activity record.
         """
-        #: Reason for event resulting in this activity record, typically supplied when user initiated. 
+        #: Reason for event resulting in this activity record, typically supplied when user initiated.
         self.reason = reason
 
-        #: Category of event resulting in this activity record. 
+        #: Category of event resulting in this activity record.
         self.category = category
 
-        #: Severity level of event resulting in this activity record. 
+        #: Severity level of event resulting in this activity record.
         self.severity = severity
 
-        #: Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable). 
+        #: Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable).
         self.createdDateTime = createdDateTime
 
         self.MarketFactors = [] if MarketFactors is None else MarketFactors

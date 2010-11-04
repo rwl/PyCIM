@@ -32,13 +32,13 @@ class MeterAsset(EndDeviceAsset):
         @param MeterReplacementWorks: All works on replacement of this old meter asset.
         @param MeterAssetModel:
         """
-        #: Meter form designation per ANSI C12.10 or other applicable standard. An alphanumeric designation denoting the circuit arrangement for which the meter is applicable and its specific terminal arrangement. 
+        #: Meter form designation per ANSI C12.10 or other applicable standard. An alphanumeric designation denoting the circuit arrangement for which the meter is applicable and its specific terminal arrangement.
         self.formNumber = formNumber
 
-        #: Meter kh (watthour) constant. It is the number of watthours that must be applied to the meter to cause one disk revolution for an electromechanical meter or the number of watthours represented by one increment pulse for an electronic meter. 
+        #: Meter kh (watthour) constant. It is the number of watthours that must be applied to the meter to cause one disk revolution for an electromechanical meter or the number of watthours represented by one increment pulse for an electronic meter.
         self.kH = kH
 
-        #: Display multiplier used to produce a displayed value from a register value. 
+        #: Display multiplier used to produce a displayed value from a register value.
         self.kR = kR
 
         self._MeterReadings = []

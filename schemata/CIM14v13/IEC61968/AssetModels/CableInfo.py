@@ -34,34 +34,34 @@ class CableInfo(ConductorInfo):
         @param sheathAsNeutral: True if sheath / shield is used as a neutral (i.e., bonded). 
         @param diameterOverScreen: Diameter over the outer screen; should be the shield's inside diameter.. 
         """
-        #: Kind of construction of this cable. Values are: "compacted", "sector", "segmental", "solid", "stranded", "other", "compressed"
+        #: Kind of construction of this cable.Values are: "compacted", "sector", "segmental", "solid", "stranded", "other", "compressed"
         self.constructionKind = constructionKind
 
-        #: Material of the shield. Values are: "other", "aluminum", "steel", "lead", "copper"
+        #: Material of the shield.Values are: "other", "aluminum", "steel", "lead", "copper"
         self.shieldMaterial = shieldMaterial
 
-        #: Kind of outer jacket of this cable. Values are: "linearLowDensityPolyethylene", "semiconducting", "none", "other", "pvc", "insulating", "polyethylene"
+        #: Kind of outer jacket of this cable.Values are: "linearLowDensityPolyethylene", "semiconducting", "none", "other", "pvc", "insulating", "polyethylene"
         self.outerJacketKind = outerJacketKind
 
-        #: Diameter over the core, including any semi-con screen; should be the insulating layer's inside diameter. 
+        #: Diameter over the core, including any semi-con screen; should be the insulating layer's inside diameter.
         self.diameterOverCore = diameterOverCore
 
-        #: True if wire strands are extruded in a way to fill the voids in the cable. 
+        #: True if wire strands are extruded in a way to fill the voids in the cable.
         self.isStrandFill = isStrandFill
 
-        #: Diameter over the insulating layer, excluding outer screen. 
+        #: Diameter over the insulating layer, excluding outer screen.
         self.diameterOverInsulation = diameterOverInsulation
 
-        #: Diameter over the outermost jacketing layer. 
+        #: Diameter over the outermost jacketing layer.
         self.diameterOverJacket = diameterOverJacket
 
-        #: Maximum nominal design operating temperature. 
+        #: Maximum nominal design operating temperature.
         self.nominalTemperature = nominalTemperature
 
-        #: True if sheath / shield is used as a neutral (i.e., bonded). 
+        #: True if sheath / shield is used as a neutral (i.e., bonded).
         self.sheathAsNeutral = sheathAsNeutral
 
-        #: Diameter over the outer screen; should be the shield's inside diameter.. 
+        #: Diameter over the outer screen; should be the shield's inside diameter..
         self.diameterOverScreen = diameterOverScreen
 
         super(CableInfo, self).__init__(*args, **kw_args)

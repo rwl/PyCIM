@@ -30,10 +30,10 @@ class ConditionFactor(IdentifiedObject):
         @param DesignLocations:
         @param Designs:
         """
-        #: Kind of this condition factor. Values are: "labor", "accountAllocation", "travel", "other", "material"
+        #: Kind of this condition factor.Values are: "labor", "accountAllocation", "travel", "other", "material"
         self.kind = kind
 
-        #: The actual value of the condition factor, such as labor flat fee or percentage. 
+        #: The actual value of the condition factor, such as labor flat fee or percentage.
         self.cfValue = cfValue
 
         self.status = status

@@ -31,19 +31,19 @@ class FuelAllocationSchedule(Curve):
         @param ThermalGeneratingUnit: A thermal generating unit may have one or more fuel allocation schedules
         @param FossilFuel: A fuel allocation schedule must have a fossil fuel
         """
-        #: The type of fuel, which also indicates the corresponding measurement unit Values are: "gas", "oil", "coal", "lignite"
+        #: The type of fuel, which also indicates the corresponding measurement unitValues are: "gas", "oil", "coal", "lignite"
         self.fuelType = fuelType
 
-        #: The minimum amount fuel that is allocated for consumption for the scheduled time period, e.g., based on a 'take-or-pay' contract 
+        #: The minimum amount fuel that is allocated for consumption for the scheduled time period, e.g., based on a 'take-or-pay' contract
         self.minFuelAllocation = minFuelAllocation
 
-        #: The start time and date of the fuel allocation schedule 
+        #: The start time and date of the fuel allocation schedule
         self.fuelAllocationStartDate = fuelAllocationStartDate
 
-        #: The maximum amount fuel that is allocated for consumption for the scheduled time period 
+        #: The maximum amount fuel that is allocated for consumption for the scheduled time period
         self.maxFuelAllocation = maxFuelAllocation
 
-        #: The end time and date of the fuel allocation schedule 
+        #: The end time and date of the fuel allocation schedule
         self.fuelAllocationEndDate = fuelAllocationEndDate
 
         self._ThermalGeneratingUnit = None

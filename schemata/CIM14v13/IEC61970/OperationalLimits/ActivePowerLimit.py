@@ -25,7 +25,7 @@ class ActivePowerLimit(OperationalLimit):
 
         @param value: Value of active power limit. 
         """
-        #: Value of active power limit. 
+        #: Value of active power limit.
         self.value = value
 
         super(ActivePowerLimit, self).__init__(*args, **kw_args)

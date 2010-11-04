@@ -19,3 +19,5 @@
 
 ns_prefix = "cimWork"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Work"
+
+from CIM14v13.IEC61968.Work.Work import Work

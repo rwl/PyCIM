@@ -26,7 +26,7 @@ class TransmissionProduct(IdentifiedObject):
         @param TransmissionProvider: A TransmissionProvider offers a TransmissionProduct.
         @param LocationFor: A transmission product is located on a transmission path.
         """
-        #: Type of the transmission product. This could be a transmission service class (firm, total transmission capability, or non-firm), transmission service period (on-peak, full-period, off-peak), transmission service increments (yearly extended, hourly fixed, monthly sliding, etc.), transmission service type (network, available transmission capability, or point-to-point, or a transmission service window (fixed hourly, sliding weekly, extended monthly, etc.). 
+        #: Type of the transmission product. This could be a transmission service class (firm, total transmission capability, or non-firm), transmission service period (on-peak, full-period, off-peak), transmission service increments (yearly extended, hourly fixed, monthly sliding, etc.), transmission service type (network, available transmission capability, or point-to-point, or a transmission service window (fixed hourly, sliding weekly, extended monthly, etc.).
         self.transmissionProductType = transmissionProductType
 
         self._Offers = []

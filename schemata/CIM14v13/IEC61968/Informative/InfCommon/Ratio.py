@@ -26,10 +26,10 @@ class Ratio(Element):
         @param denominator: The part of a fraction that is below the line and that functions as the divisor of the numerator. 
         @param numerator: The part of a fraction that is above the line and signifies the number to be divided by the denominator. 
         """
-        #: The part of a fraction that is below the line and that functions as the divisor of the numerator. 
+        #: The part of a fraction that is below the line and that functions as the divisor of the numerator.
         self.denominator = denominator
 
-        #: The part of a fraction that is above the line and signifies the number to be divided by the denominator. 
+        #: The part of a fraction that is above the line and signifies the number to be divided by the denominator.
         self.numerator = numerator
 
         super(Ratio, self).__init__(*args, **kw_args)

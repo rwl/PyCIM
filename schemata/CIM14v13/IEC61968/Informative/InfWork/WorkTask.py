@@ -43,10 +43,10 @@ class WorkTask(Document):
         @param SwitchingSchedules:
         @param Design:
         """
-        #: If specified, override schedule and perform this task in accordance with instructions specified here. 
+        #: If specified, override schedule and perform this task in accordance with instructions specified here.
         self.schedOverride = schedOverride
 
-        #: The priority of this work task. 
+        #: The priority of this work task.
         self.priority = priority
 
         self._ContractorItems = []

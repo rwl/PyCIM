@@ -27,7 +27,7 @@ class Tool(Asset):
         @param ToolAssetModel:
         @param Crew:
         """
-        #: Date the tool was last caibrated, if applicable. 
+        #: Date the tool was last caibrated, if applicable.
         self.lastCalibrationDate = lastCalibrationDate
 
         self._ToolAssetModel = None

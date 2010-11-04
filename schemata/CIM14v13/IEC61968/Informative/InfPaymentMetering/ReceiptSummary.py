@@ -27,7 +27,7 @@ class ReceiptSummary(Element):
         @param Shift: Shift for which this summary is given.
         @param line: Totalised amount receipted during the shift for 'tenderKind', i.e., sum of ('Tender.amount' - 'Tender.change') per 'Tender.kind'.
         """
-        #: 'Tender.kind' for which 'receiptsTotal' is given. Values are: "cheque", "card", "other", "unspecified", "cash"
+        #: 'Tender.kind' for which 'receiptsTotal' is given.Values are: "cheque", "card", "other", "unspecified", "cash"
         self.tenderKind = tenderKind
 
         self._Shift = None

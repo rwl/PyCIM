@@ -24,10 +24,10 @@ class ReservationVersion(Element):
         @param version: 
         @param date: 
         """
- 
+
         self.version = version
 
- 
+
         self.date = date
 
         super(ReservationVersion, self).__init__(*args, **kw_args)

@@ -41,16 +41,16 @@ class WorkCostDetail(Document):
         @param MaterialItems:
         @param PropertyUnits:
         """
-        #: Amount in designated currency for work, either a total or an individual element. As defined in the attribute 'type,' multiple instances are applicable to each work for: planned cost, actual cost, authorized cost, budgeted cost, forecasted cost, other. 
+        #: Amount in designated currency for work, either a total or an individual element. As defined in the attribute 'type,' multiple instances are applicable to each work for: planned cost, actual cost, authorized cost, budgeted cost, forecasted cost, other.
         self.amount = amount
 
-        #: True if 'amount' is a debit, false if it is a credit. 
+        #: True if 'amount' is a debit, false if it is a credit.
         self.isDebit = isDebit
 
-        #: Date and time that 'amount' is posted to the work. 
+        #: Date and time that 'amount' is posted to the work.
         self.transactionDateTime = transactionDateTime
 
-        #: Type of work cost. 
+        #: Type of work cost.
         self.type = type
 
         self._OverheadCost = None

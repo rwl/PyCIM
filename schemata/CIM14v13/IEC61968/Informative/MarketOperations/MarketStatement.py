@@ -30,19 +30,19 @@ class MarketStatement(Document):
         @param transactionDate: The date of which this statement is issued. 
         @param MarketStatementLineItem:
         """
-        #: The date of which Settlement is run. 
+        #: The date of which Settlement is run.
         self.tradeDate = tradeDate
 
-        #: The version number of previous statement (in the case of true up). 
+        #: The version number of previous statement (in the case of true up).
         self.referenceNumber = referenceNumber
 
-        #: The start of a bill period. 
+        #: The start of a bill period.
         self.start = start
 
-        #: The end of a bill period. 
+        #: The end of a bill period.
         self.end = end
 
-        #: The date of which this statement is issued. 
+        #: The date of which this statement is issued.
         self.transactionDate = transactionDate
 
         self._MarketStatementLineItem = []

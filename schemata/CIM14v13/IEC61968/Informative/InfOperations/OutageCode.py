@@ -27,7 +27,7 @@ class OutageCode(IdentifiedObject):
         @param OutageRecords:
         @param OutageSteps:
         """
-        #: The main code is stored in the inherited .name. This sub-code provides an additional level of classification detail. 
+        #: The main code is stored in the inherited .name. This sub-code provides an additional level of classification detail.
         self.subCode = subCode
 
         self._OutageRecords = []

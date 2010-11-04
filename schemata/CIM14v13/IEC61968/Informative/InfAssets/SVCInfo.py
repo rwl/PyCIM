@@ -29,10 +29,10 @@ class SVCInfo(ElectricalInfo):
         @param SVCAsset:
         @param SVCAssetModel:
         """
-        #: Maximum capacitive reactive power 
+        #: Maximum capacitive reactive power
         self.capacitiveRating = capacitiveRating
 
-        #: Maximum inductive reactive power 
+        #: Maximum inductive reactive power
         self.inductiveRating = inductiveRating
 
         self._SVCTypeAssets = []

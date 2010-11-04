@@ -25,7 +25,7 @@ class LimitSet(IdentifiedObject):
 
         @param isPercentageLimits: Tells if the limit values are in percentage of normalValue or the specified Unit for Measurements and Controls. 
         """
-        #: Tells if the limit values are in percentage of normalValue or the specified Unit for Measurements and Controls. 
+        #: Tells if the limit values are in percentage of normalValue or the specified Unit for Measurements and Controls.
         self.isPercentageLimits = isPercentageLimits
 
         super(LimitSet, self).__init__(*args, **kw_args)

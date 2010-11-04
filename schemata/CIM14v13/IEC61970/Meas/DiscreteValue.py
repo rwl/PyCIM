@@ -26,7 +26,7 @@ class DiscreteValue(MeasurementValue):
         @param value: The value to supervise. 
         @param Discrete: Measurement to which this value is connected.
         """
-        #: The value to supervise. 
+        #: The value to supervise.
         self.value = value
 
         self._Discrete = None

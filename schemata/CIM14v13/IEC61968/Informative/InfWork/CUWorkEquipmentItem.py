@@ -29,10 +29,10 @@ class CUWorkEquipmentItem(IdentifiedObject):
         @param TypeAsset:
         @param status:
         """
-        #: The equipment type code. 
+        #: The equipment type code.
         self.equipCode = equipCode
 
-        #: Standard usage rate for the type of vehicle. 
+        #: Standard usage rate for the type of vehicle.
         self.rate = rate
 
         self._CompatibleUnits = []

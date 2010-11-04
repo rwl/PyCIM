@@ -30,13 +30,13 @@ class Discrete(Measurement):
         @param ValueAliasSet: The ValueAliasSet used for translation of a MeasurementValue.value to a name
         @param DiscreteValues: The values connected to this measurement.
         """
-        #: Normal measurement value, e.g., used for percentage calculations. 
+        #: Normal measurement value, e.g., used for percentage calculations.
         self.normalValue = normalValue
 
-        #: Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values 
+        #: Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values
         self.minValue = minValue
 
-        #: Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values. 
+        #: Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.
         self.maxValue = maxValue
 
         self._Command = None

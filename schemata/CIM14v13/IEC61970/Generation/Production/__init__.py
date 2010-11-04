@@ -19,3 +19,39 @@
 
 ns_prefix = "cimProduction"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Production"
+
+from CIM14v13.IEC61970.Generation.Production.PenstockLossCurve import PenstockLossCurve
+from CIM14v13.IEC61970.Generation.Production.GeneratingUnit import GeneratingUnit
+from CIM14v13.IEC61970.Generation.Production.ThermalGeneratingUnit import ThermalGeneratingUnit
+from CIM14v13.IEC61970.Generation.Production.IncrementalHeatRateCurve import IncrementalHeatRateCurve
+from CIM14v13.IEC61970.Generation.Production.HeatInputCurve import HeatInputCurve
+from CIM14v13.IEC61970.Generation.Production.Reservoir import Reservoir
+from CIM14v13.IEC61970.Generation.Production.GenUnitOpCostCurve import GenUnitOpCostCurve
+from CIM14v13.IEC61970.Generation.Production.WindGeneratingUnit import WindGeneratingUnit
+from CIM14v13.IEC61970.Generation.Production.StartMainFuelCurve import StartMainFuelCurve
+from CIM14v13.IEC61970.Generation.Production.CogenerationPlant import CogenerationPlant
+from CIM14v13.IEC61970.Generation.Production.GrossToNetActivePowerCurve import GrossToNetActivePowerCurve
+from CIM14v13.IEC61970.Generation.Production.AirCompressor import AirCompressor
+from CIM14v13.IEC61970.Generation.Production.ShutdownCurve import ShutdownCurve
+from CIM14v13.IEC61970.Generation.Production.FuelAllocationSchedule import FuelAllocationSchedule
+from CIM14v13.IEC61970.Generation.Production.TailbayLossCurve import TailbayLossCurve
+from CIM14v13.IEC61970.Generation.Production.HydroPumpOpSchedule import HydroPumpOpSchedule
+from CIM14v13.IEC61970.Generation.Production.FossilFuel import FossilFuel
+from CIM14v13.IEC61970.Generation.Production.TargetLevelSchedule import TargetLevelSchedule
+from CIM14v13.IEC61970.Generation.Production.HydroPump import HydroPump
+from CIM14v13.IEC61970.Generation.Production.HydroPowerPlant import HydroPowerPlant
+from CIM14v13.IEC61970.Generation.Production.InflowForecast import InflowForecast
+from CIM14v13.IEC61970.Generation.Production.CombinedCyclePlant import CombinedCyclePlant
+from CIM14v13.IEC61970.Generation.Production.HydroGeneratingEfficiencyCurve import HydroGeneratingEfficiencyCurve
+from CIM14v13.IEC61970.Generation.Production.NuclearGeneratingUnit import NuclearGeneratingUnit
+from CIM14v13.IEC61970.Generation.Production.StartIgnFuelCurve import StartIgnFuelCurve
+from CIM14v13.IEC61970.Generation.Production.CAESPlant import CAESPlant
+from CIM14v13.IEC61970.Generation.Production.GenUnitOpSchedule import GenUnitOpSchedule
+from CIM14v13.IEC61970.Generation.Production.SteamSendoutSchedule import SteamSendoutSchedule
+from CIM14v13.IEC61970.Generation.Production.StartRampCurve import StartRampCurve
+from CIM14v13.IEC61970.Generation.Production.HeatRateCurve import HeatRateCurve
+from CIM14v13.IEC61970.Generation.Production.LevelVsVolumeCurve import LevelVsVolumeCurve
+from CIM14v13.IEC61970.Generation.Production.EmissionCurve import EmissionCurve
+from CIM14v13.IEC61970.Generation.Production.StartupModel import StartupModel
+from CIM14v13.IEC61970.Generation.Production.HydroGeneratingUnit import HydroGeneratingUnit
+from CIM14v13.IEC61970.Generation.Production.EmissionAccount import EmissionAccount

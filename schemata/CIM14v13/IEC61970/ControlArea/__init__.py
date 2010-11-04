@@ -19,3 +19,9 @@
 
 ns_prefix = "cimControlArea"
 ns_uri = "http://iec.ch/TC57/CIM-generic#ControlArea"
+
+from CIM14v13.IEC61970.ControlArea.TieFlow import TieFlow
+from CIM14v13.IEC61970.ControlArea.ControlArea import ControlArea
+from CIM14v13.IEC61970.ControlArea.ControlAreaGeneratingUnit import ControlAreaGeneratingUnit
+from CIM14v13.IEC61970.ControlArea.AltGeneratingUnitMeas import AltGeneratingUnitMeas
+from CIM14v13.IEC61970.ControlArea.AltTieMeas import AltTieMeas

@@ -52,19 +52,19 @@ class Location(IdentifiedObject):
         @param Hazards:
         @param ActivityRecords:
         """
-        #: Utility-specific code for the location. 
+        #: Utility-specific code for the location.
         self.corporateCode = corporateCode
 
-        #: (if applicable) Direction that allows field crews to quickly find a given asset. For a given location, such as a street address, this is the relative direction in which to find the asset. For example, a Streetlight may be located at the 'NW' (northwest) corner of the customer's site, or a ServiceDeliveryPoint may be located on the second floor of an apartment building. 
+        #: (if applicable) Direction that allows field crews to quickly find a given asset. For a given location, such as a street address, this is the relative direction in which to find the asset. For example, a Streetlight may be located at the 'NW' (northwest) corner of the customer's site, or a ServiceDeliveryPoint may be located on the second floor of an apartment building.
         self.direction = direction
 
-        #: True if the first and last point in the sequence of associated PositionPoints are to be connected, thus forming a polygon rather than merely a sequence of line segments. 
+        #: True if the first and last point in the sequence of associated PositionPoints are to be connected, thus forming a polygon rather than merely a sequence of line segments.
         self.isPolygon = isPolygon
 
-        #: Category by utility's corporate standards and practices, relative to the location itself (e.g., geographical, functional accounting, etc., not a given property that happens to exist at that location). 
+        #: Category by utility's corporate standards and practices, relative to the location itself (e.g., geographical, functional accounting, etc., not a given property that happens to exist at that location).
         self.category = category
 
-        #: (if applicable) Reference to geographical information source, often external to the utility. 
+        #: (if applicable) Reference to geographical information source, often external to the utility.
         self.geoInfoReference = geoInfoReference
 
         self._DocumentRoles = []

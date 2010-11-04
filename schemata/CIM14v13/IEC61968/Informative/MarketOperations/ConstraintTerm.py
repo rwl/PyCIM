@@ -27,10 +27,10 @@ class ConstraintTerm(IdentifiedObject):
         @param function: The function is an enumerated value that can be 'active', 'reactive', or 'VA' to indicate the type of flow. 
         @param SecurityConstraintSum:
         """
- 
+
         self.factor = factor
 
-        #: The function is an enumerated value that can be 'active', 'reactive', or 'VA' to indicate the type of flow. 
+        #: The function is an enumerated value that can be 'active', 'reactive', or 'VA' to indicate the type of flow.
         self.function = function
 
         self._SecurityConstraintSum = None

@@ -26,10 +26,10 @@ class Breaker(ProtectedSwitch):
         @param inTransitTime: The transition time from open to close. 
         @param ratedCurrent: Fault interrupting current rating. 
         """
-        #: The transition time from open to close. 
+        #: The transition time from open to close.
         self.inTransitTime = inTransitTime
 
-        #: Fault interrupting current rating. 
+        #: Fault interrupting current rating.
         self.ratedCurrent = ratedCurrent
 
         super(Breaker, self).__init__(*args, **kw_args)

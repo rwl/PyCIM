@@ -36,25 +36,25 @@ class GmlFeatureStyle(IdentifiedObject):
         @param GmlSymbols:
         @param GmlTobologyStyles:
         """
-        #: Grammar used in the content of the gml:featureConstraint element. Values are: "xpath", "other", "xquery"
+        #: Grammar used in the content of the gml:featureConstraint element.Values are: "xpath", "other", "xquery"
         self.queryGrammar = queryGrammar
 
-        #: Allows version numbers to be identified when the SLD pieces are used independently. 
+        #: Allows version numbers to be identified when the SLD pieces are used independently.
         self.version = version
 
-        #: Identifies the specific feature type that the feature-type style is for. 
+        #: Identifies the specific feature type that the feature-type style is for.
         self.featureTypeName = featureTypeName
 
-        #: Another way of selecting the feature instances to which the style applies is to specify, as the value of this attribute, the name of the base type from which feature or features derive. 
+        #: Another way of selecting the feature instances to which the style applies is to specify, as the value of this attribute, the name of the base type from which feature or features derive.
         self.baseType = baseType
 
-        #: The simplest and most common way of relating features and styles is by using this attribute. Its value will be the declared name of a feature, instances of which we want to style. For example, if the featureType = Switch, this FeatureStyle object will simply apply to all Switch features. 
+        #: The simplest and most common way of relating features and styles is by using this attribute. Its value will be the declared name of a feature, instances of which we want to style. For example, if the featureType = Switch, this FeatureStyle object will simply apply to all Switch features.
         self.featureType = featureType
 
-        #: The SemanticTypeIdentifier is experimental in GML and is intended to be used to identify what the feature style is suitable to be used for using community-controlled name(s). For example, a single style may be suitable to use with many different feature types. 
+        #: The SemanticTypeIdentifier is experimental in GML and is intended to be used to identify what the feature style is suitable to be used for using community-controlled name(s). For example, a single style may be suitable to use with many different feature types.
         self.semanticTypeIdentifier = semanticTypeIdentifier
 
-        #: This property is used to further constrain the feature instance set to which the style applies. It is optional and its value is an XPath expression. If the property does not exist, the style applies to all feature instances selected by 'featureType' or 'baseType'. 
+        #: This property is used to further constrain the feature instance set to which the style applies. It is optional and its value is an XPath expression. If the property does not exist, the style applies to all feature instances selected by 'featureType' or 'baseType'.
         self.featureConstraint = featureConstraint
 
         self._GmlGeometryStyles = []

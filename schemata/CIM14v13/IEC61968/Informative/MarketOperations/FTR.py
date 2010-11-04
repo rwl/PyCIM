@@ -20,14 +20,14 @@ class FTR(Agreement):
     """Financial Transmission Rights (FTR) regarding transmission capacity at a flowgate.
     """
 
-    def __init__(self, action='', klass='', baseEnergy=0.0, optimized='', ftrType='', Pnodes=None, EnergyPriceCurve=None, Flowgate=None, *args, **kw_args):
+    def __init__(self, action='', class='', baseEnergy=0.0, optimized='', ftrType='', Pnodes=None, EnergyPriceCurve=None, Flowgate=None, *args, **kw_args):
         """Initializes a new 'FTR' instance.
 
-        @param action: Buy, Sell
-        @param class: Peak, Off-peak, 24-hour
-        @param baseEnergy: Quantity, typically MWs - Seller owns all rights being offered, MWs over time on same Point of Receipt, Point of Delivery, or Resource.
-        @param optimized: Fixed (covers re-configuration, grandfathering) or Optimized (up for sale/purchase
-        @param ftrType: Type of rights being offered (product) allowed to be auctioned (option, obligation).
+        @param action: Buy, Sell 
+        @param class: Peak, Off-peak, 24-hour 
+        @param baseEnergy: Quantity, typically MWs - Seller owns all rights being offered, MWs over time on same Point of Receipt, Point of Delivery, or Resource. 
+        @param optimized: Fixed (covers re-configuration, grandfathering) or Optimized (up for sale/purchase 
+        @param ftrType: Type of rights being offered (product) allowed to be auctioned (option, obligation). 
         @param Pnodes:
         @param EnergyPriceCurve:
         @param Flowgate:
@@ -36,7 +36,7 @@ class FTR(Agreement):
         self.action = action
 
         #: Peak, Off-peak, 24-hour
-        self.klass = klass
+        self.class = class
 
         #: Quantity, typically MWs - Seller owns all rights being offered, MWs over time on same Point of Receipt, Point of Delivery, or Resource.
         self.baseEnergy = baseEnergy
@@ -59,7 +59,7 @@ class FTR(Agreement):
         super(FTR, self).__init__(*args, **kw_args)
 
     def getPnodes(self):
-
+        
         return self._Pnodes
 
     def setPnodes(self, value):
@@ -86,7 +86,7 @@ class FTR(Agreement):
             self._Pnodes.remove(obj)
 
     def getEnergyPriceCurve(self):
-
+        
         return self._EnergyPriceCurve
 
     def setEnergyPriceCurve(self, value):
@@ -101,7 +101,7 @@ class FTR(Agreement):
     EnergyPriceCurve = property(getEnergyPriceCurve, setEnergyPriceCurve)
 
     def getFlowgate(self):
-
+        
         return self._Flowgate
 
     def setFlowgate(self, value):

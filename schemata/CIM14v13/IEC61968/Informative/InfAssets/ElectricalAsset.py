@@ -28,10 +28,10 @@ class ElectricalAsset(Asset):
         @param ElectricalInfos:
         @param ConductingEquipment:
         """
-        #: If 'isConnected' is true, then this is the as-built phase(s) that the asset is associatied with. Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
+        #: If 'isConnected' is true, then this is the as-built phase(s) that the asset is associatied with.Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
         self.phaseCode = phaseCode
 
-        #: True if the asset is physically connected to electrical network (as opposed to being in a warehouse, being refurbished, etc.). Note that this attribute is not intended to imply energization status and/or whether the asset is actually being used. 
+        #: True if the asset is physically connected to electrical network (as opposed to being in a warehouse, being refurbished, etc.). Note that this attribute is not intended to imply energization status and/or whether the asset is actually being used.
         self.isConnected = isConnected
 
         self._ElectricalInfos = []

@@ -36,16 +36,16 @@ class Customer(Organisation):
         @param PlannedOutage:
         @param status: Status of this customer.
         """
-        #: Kind of customer. Values are: "windMachine", "residentialFarmService", "residential", "energyServiceSupplier", "residentialStreetlightOthers", "other", "pumpingLoad", "commercialIndustrial", "residentialAndStreetlight", "residentialAndCommercial", "energyServiceScheduler", "internalUse"
+        #: Kind of customer.Values are: "windMachine", "residentialFarmService", "residential", "energyServiceSupplier", "residentialStreetlightOthers", "other", "pumpingLoad", "commercialIndustrial", "residentialAndStreetlight", "residentialAndCommercial", "energyServiceScheduler", "internalUse"
         self.kind = kind
 
-        #: (if applicable) Public Utility Commission identification number. 
+        #: (if applicable) Public Utility Commission identification number.
         self.pucNumber = pucNumber
 
-        #: True if customer organisation has special service needs such as life support, hospitals, etc. 
+        #: True if customer organisation has special service needs such as life support, hospitals, etc.
         self.specialNeed = specialNeed
 
-        #: True if this is an important customer. Importance is for matters different than those in 'specialNeed' attribute. 
+        #: True if this is an important customer. Importance is for matters different than those in 'specialNeed' attribute.
         self.vip = vip
 
         self._TroubleTickets = []

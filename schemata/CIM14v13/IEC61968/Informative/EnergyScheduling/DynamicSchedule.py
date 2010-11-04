@@ -29,10 +29,10 @@ class DynamicSchedule(RegularIntervalSchedule):
         @param Receive_HostControlArea: A control area can receive dynamic schedules from other control areas
         @param Send_HostControlArea: A control area can send dynamic schedules to other control areas
         """
-        #: The 'active' or 'inactive' status of the dynamic schedule 
+        #: The 'active' or 'inactive' status of the dynamic schedule
         self.dynSchedStatus = dynSchedStatus
 
-        #: Dynamic schedule sign reversal required (yes/no) 
+        #: Dynamic schedule sign reversal required (yes/no)
         self.dynSchedSignRev = dynSchedSignRev
 
         self._Measurement = None

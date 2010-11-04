@@ -26,7 +26,7 @@ class HeatRecoveryBoiler(FossilSteamSupply):
         @param steamSupplyRating2: The steam supply rating in kilopounds per hour, if dual pressure boiler 
         @param CombustionTurbines: A combustion turbine may have a heat recovery boiler for making steam
         """
-        #: The steam supply rating in kilopounds per hour, if dual pressure boiler 
+        #: The steam supply rating in kilopounds per hour, if dual pressure boiler
         self.steamSupplyRating2 = steamSupplyRating2
 
         self._CombustionTurbines = []

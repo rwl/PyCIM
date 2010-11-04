@@ -44,37 +44,37 @@ class EndDeviceAsset(AssetContainer):
         @param Customer: Customer owning this end device asset.
         @param ServiceDeliveryPoint: Service delivery point to which this end device asset belongs.
         """
-        #: True if this end device asset is capable of supporting on-request reads for this end device. 
+        #: True if this end device asset is capable of supporting on-request reads for this end device.
         self.readRequest = readRequest
 
-        #: True if this end device asset is capable of supporting the presentation of metered values to a user or another system (always true for a meter, but might not be true for a load control unit.) 
+        #: True if this end device asset is capable of supporting the presentation of metered values to a user or another system (always true for a meter, but might not be true for a load control unit.)
         self.metrology = metrology
 
-        #: True if this end device asset is capable of supporting remote whole-house disconnect capability. To determine whether this functionality is installed and enabled, check the 'DeviceFunction.disabled' attribute of the ConnectDisconnectFunction contained by this end device asset. 
+        #: True if this end device asset is capable of supporting remote whole-house disconnect capability. To determine whether this functionality is installed and enabled, check the 'DeviceFunction.disabled' attribute of the ConnectDisconnectFunction contained by this end device asset.
         self.disconnect = disconnect
 
-        #: True if this end device asset is capable of supporting one or more relays. The relays may be programmable in the meter and tied to TOU, time pulse, load control or other functions. To determine whether this functionality is installed and enabled, check the 'DeviceFunction.disabled' attribute of the respective function contained by this end device asset. 
+        #: True if this end device asset is capable of supporting one or more relays. The relays may be programmable in the meter and tied to TOU, time pulse, load control or other functions. To determine whether this functionality is installed and enabled, check the 'DeviceFunction.disabled' attribute of the respective function contained by this end device asset.
         self.relayCapable = relayCapable
 
-        #: True if this end device asset is capable of supporting the means to report historical power interruption data. 
+        #: True if this end device asset is capable of supporting the means to report historical power interruption data.
         self.outageReport = outageReport
 
-        #: Automated meter reading (AMR) system responsible for communications to this end device. 
+        #: Automated meter reading (AMR) system responsible for communications to this end device.
         self.amrSystem = amrSystem
 
-        #: True if this EndDeviceAsset is capable of supporting detection and monitoring of reverse flow. 
+        #: True if this EndDeviceAsset is capable of supporting detection and monitoring of reverse flow.
         self.reverseFlowHandling = reverseFlowHandling
 
-        #: True if this end device asset is capable of supporting load control functions through either the meter or the AMR option. To determine whether this functionality is installed and enabled, check the 'DeviceFunction.disabled' attribute of the respective function contained by this end device asset. 
+        #: True if this end device asset is capable of supporting load control functions through either the meter or the AMR option. To determine whether this functionality is installed and enabled, check the 'DeviceFunction.disabled' attribute of the respective function contained by this end device asset.
         self.loadControl = loadControl
 
-        #: True if this end device asset is capable of supporting the autonomous application of daylight savings time (DST). 
+        #: True if this end device asset is capable of supporting the autonomous application of daylight savings time (DST).
         self.dstEnabled = dstEnabled
 
-        #: Time zone offset relative to GMT for the location of this end device. 
+        #: Time zone offset relative to GMT for the location of this end device.
         self.timeZoneOffset = timeZoneOffset
 
-        #: True if this end device asset is capable of supporting demand response functions. To determine whether this functionality is installed and enabled, check the 'DeviceFunction.disabled' attribute of the respective function contained by this end device asset. 
+        #: True if this end device asset is capable of supporting demand response functions. To determine whether this functionality is installed and enabled, check the 'DeviceFunction.disabled' attribute of the respective function contained by this end device asset.
         self.demandResponse = demandResponse
 
         self._EndDeviceGroups = []

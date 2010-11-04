@@ -24,10 +24,10 @@ class FinancialVersion(Element):
         @param version: 
         @param date: 
         """
- 
+
         self.version = version
 
- 
+
         self.date = date
 
         super(FinancialVersion, self).__init__(*args, **kw_args)

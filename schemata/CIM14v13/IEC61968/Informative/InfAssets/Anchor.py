@@ -25,7 +25,7 @@ class Anchor(StructureSupport):
 
         @param kind: Kind of this anchor. Values are: "other", "concrete", "rod", "screw", "multiHelix", "helix", "unknown"
         """
-        #: Kind of this anchor. Values are: "other", "concrete", "rod", "screw", "multiHelix", "helix", "unknown"
+        #: Kind of this anchor.Values are: "other", "concrete", "rod", "screw", "multiHelix", "helix", "unknown"
         self.kind = kind
 
         super(Anchor, self).__init__(*args, **kw_args)

@@ -35,13 +35,13 @@ class HostControlArea(IdentifiedObject):
         @param Send_DynamicSchedules: A control area can send dynamic schedules to other control areas
         @param Controls: A ControlAreaCompany controls a ControlArea.
         """
-        #: The area's present control mode: (CF = constant frequency) or (CTL = constant tie-line) or (TLB = tie-line bias) or (OFF = off control) Values are: "OFF", "TLB", "CF", "CTL"
+        #: The area's present control mode: (CF = constant frequency) or (CTL = constant tie-line) or (TLB = tie-line bias) or (OFF = off control)Values are: "OFF", "TLB", "CF", "CTL"
         self.areaControlMode = areaControlMode
 
-        #: The control area's frequency bias factor, in active power per frequency, for automatic generation control (AGC) 
+        #: The control area's frequency bias factor, in active power per frequency, for automatic generation control (AGC)
         self.frequencyBiasFactor = frequencyBiasFactor
 
-        #: The present power system frequency set point for automatic generation control 
+        #: The present power system frequency set point for automatic generation control
         self.freqSetPoint = freqSetPoint
 
         self._InadvertentAccounts = []

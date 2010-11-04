@@ -46,46 +46,46 @@ class Flowgate(PowerSystemResource):
         @param CapacityBenefitMargin: A flowgate may have 0 to n CBM profile Each season may be a CBM which contains a set of profile data
         @param FTRs:
         """
-        #: Flag to indicate if Flowgate qualified as coordinated Flowgate 
+        #: Flag to indicate if Flowgate qualified as coordinated Flowgate
         self.coordinatedFlag = coordinatedFlag
 
-        #: Percentage of counterflow to remove/exclude from the AFC calculation.  Integer.  Must be 100 or less. 
+        #: Percentage of counterflow to remove/exclude from the AFC calculation.  Integer.  Must be 100 or less.
         self.counterFlowValue = counterFlowValue
 
-        #: Flag to indicate if Flowgate qualified as reciprocal Flowgate 
+        #: Flag to indicate if Flowgate qualified as reciprocal Flowgate
         self.reciprocalFlag = reciprocalFlag
 
-        #: Standard Reliabilty Entity (e.g. in North America NERC) that has agreed per a reciprocal agreement to manage coordination on the Flowgate.  Will always be either True or False - if not a reciprocal Flowgate, will be false. 
+        #: Standard Reliabilty Entity (e.g. in North America NERC) that has agreed per a reciprocal agreement to manage coordination on the Flowgate.  Will always be either True or False - if not a reciprocal Flowgate, will be false.
         self.managingEntityFlag = managingEntityFlag
 
-        #: Used to indicate if FG should be used only for certain types of AFC Calculations.  Values are 'FIRM,'  'NONFIRM,' and 'BOTH.' 
+        #: Used to indicate if FG should be used only for certain types of AFC Calculations.  Values are 'FIRM,'  'NONFIRM,' and 'BOTH.'
         self.AfcUseCode = AfcUseCode
 
-        #: Date at which point Flowgate becomes inactive. Used to insert outage condition. 
+        #: Date at which point Flowgate becomes inactive. Used to insert outage condition.
         self.outOfServiceDate = outOfServiceDate
 
-        #: Date upon which study of Flowgate to determine coordinated status was performed.  May be null is no study undertaken yet. 
+        #: Date upon which study of Flowgate to determine coordinated status was performed.  May be null is no study undertaken yet.
         self.coordinationStudyDate = coordinationStudyDate
 
-        #: Flag to indicate if Flowgate is utilized for coordination of ATC. 
+        #: Flag to indicate if Flowgate is utilized for coordination of ATC.
         self.AtcFlag = AtcFlag
 
-        #: Date at which point Flowgate becomes active.  Used to insert future Flowgates or Flowgates returning from an outage condition. 
+        #: Date at which point Flowgate becomes active.  Used to insert future Flowgates or Flowgates returning from an outage condition.
         self.inServiceDate = inServiceDate
 
-        #: The registered Flowgate ID Assigned by the IDC and/or Book of Flowgate. 
+        #: The registered Flowgate ID Assigned by the IDC and/or Book of Flowgate.
         self.IdcAssignedId = IdcAssignedId
 
-        #: The Registered Name utilized in the IDC and/or Book of Flowgates 
+        #: The Registered Name utilized in the IDC and/or Book of Flowgates
         self.IdcOperationalName = IdcOperationalName
 
-        #: Percentage of positive impact to include in the AFC calculation.  Integer.  Must be 100 or less. 
+        #: Percentage of positive impact to include in the AFC calculation.  Integer.  Must be 100 or less.
         self.positiveImpactValue = positiveImpactValue
 
-        #: The type of Flowgate.  Values are 'PERMANENT' (in Book of Flowgates) or 'TEMPORARY'. 
+        #: The type of Flowgate.  Values are 'PERMANENT' (in Book of Flowgates) or 'TEMPORARY'.
         self.IdcType = IdcType
 
-        #: Date at which point Flowgate should be removed from the Interchange Distribution Calculatin (IDC). 
+        #: Date at which point Flowgate should be removed from the Interchange Distribution Calculatin (IDC).
         self.deletionDate = deletionDate
 
         self._SubControlArea = None

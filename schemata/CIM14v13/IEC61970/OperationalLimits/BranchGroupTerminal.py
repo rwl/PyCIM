@@ -27,7 +27,7 @@ class BranchGroupTerminal(Element):
         @param BranchGroup: The branch group to which the directed branch group terminals belong.
         @param Terminal: The terminal to be summed.
         """
-        #: The flow into the terminal is summed if set true.   The flow out of the terminanl is summed if set false. 
+        #: The flow into the terminal is summed if set true.   The flow out of the terminanl is summed if set false.
         self.positiveFlowIn = positiveFlowIn
 
         self._BranchGroup = None

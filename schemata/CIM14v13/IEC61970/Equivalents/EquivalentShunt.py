@@ -26,10 +26,10 @@ class EquivalentShunt(EquivalentEquipment):
         @param b: Positive sequence shunt susceptance. 
         @param g: Positive sequence shunt conductance. 
         """
-        #: Positive sequence shunt susceptance. 
+        #: Positive sequence shunt susceptance.
         self.b = b
 
-        #: Positive sequence shunt conductance. 
+        #: Positive sequence shunt conductance.
         self.g = g
 
         super(EquivalentShunt, self).__init__(*args, **kw_args)

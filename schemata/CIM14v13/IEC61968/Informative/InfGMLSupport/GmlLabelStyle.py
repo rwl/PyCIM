@@ -30,13 +30,13 @@ class GmlLabelStyle(IdentifiedObject):
         @param GmlFeatureStyle:
         @param GmlTopologyStyles:
         """
-        #: Allows us to specify a transformation expression that will be applied to the symbol in the rendering phase. Its type is xsd:string and the value is specified in the SVG specification (transform attribute). 
+        #: Allows us to specify a transformation expression that will be applied to the symbol in the rendering phase. Its type is xsd:string and the value is specified in the SVG specification (transform attribute).
         self.transform = transform
 
-        #: Used to specify the style of the rendered text. The CSS2 styling expressions grammar should be used to express graphic properties. 
+        #: Used to specify the style of the rendered text. The CSS2 styling expressions grammar should be used to express graphic properties.
         self.style = style
 
-        #: Allows both text content and unbounded number of gml:LabelExpression elements. The value of gml:LabelExpression element is an XPath expression that selects the value of some property of the feature. 
+        #: Allows both text content and unbounded number of gml:LabelExpression elements. The value of gml:LabelExpression element is an XPath expression that selects the value of some property of the feature.
         self.labelExpression = labelExpression
 
         self._GmlGeometryStyles = []

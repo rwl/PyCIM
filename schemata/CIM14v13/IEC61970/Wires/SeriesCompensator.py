@@ -26,10 +26,10 @@ class SeriesCompensator(ConductingEquipment):
         @param r: Positive sequence resistance. 
         @param x: Positive sequence reactance. 
         """
-        #: Positive sequence resistance. 
+        #: Positive sequence resistance.
         self.r = r
 
-        #: Positive sequence reactance. 
+        #: Positive sequence reactance.
         self.x = x
 
         super(SeriesCompensator, self).__init__(*args, **kw_args)

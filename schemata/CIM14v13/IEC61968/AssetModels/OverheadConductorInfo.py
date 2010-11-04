@@ -27,13 +27,13 @@ class OverheadConductorInfo(ConductorInfo):
         @param phaseConductorCount: Number of conductor strands in the symmetrical bundle (1-12). 
         @param phaseConductorSpacing: Distance between conductor strands in a symmetrical bundle. 
         """
-        #: (if applicable) Insulation thickness of the neutral conductor. 
+        #: (if applicable) Insulation thickness of the neutral conductor.
         self.neutralInsulationThickness = neutralInsulationThickness
 
-        #: Number of conductor strands in the symmetrical bundle (1-12). 
+        #: Number of conductor strands in the symmetrical bundle (1-12).
         self.phaseConductorCount = phaseConductorCount
 
-        #: Distance between conductor strands in a symmetrical bundle. 
+        #: Distance between conductor strands in a symmetrical bundle.
         self.phaseConductorSpacing = phaseConductorSpacing
 
         super(OverheadConductorInfo, self).__init__(*args, **kw_args)

@@ -27,10 +27,10 @@ class PowerCutZone(PowerSystemResource):
         @param cutLevel2: Second level (amount) of load to cut as a percentage of total zone load 
         @param EnergyConsumers: An energy consumer is assigned to a power cut zone
         """
-        #: First level (amount) of load to cut as a percentage of total zone load 
+        #: First level (amount) of load to cut as a percentage of total zone load
         self.cutLevel1 = cutLevel1
 
-        #: Second level (amount) of load to cut as a percentage of total zone load 
+        #: Second level (amount) of load to cut as a percentage of total zone load
         self.cutLevel2 = cutLevel2
 
         self._EnergyConsumers = []

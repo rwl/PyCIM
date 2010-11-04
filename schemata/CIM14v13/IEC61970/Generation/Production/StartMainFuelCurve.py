@@ -26,7 +26,7 @@ class StartMainFuelCurve(Curve):
         @param mainFuelType: Type of main fuel Values are: "gas", "oil", "coal", "lignite"
         @param StartupModel: The unit's startup model may have a startup main fuel curve
         """
-        #: Type of main fuel Values are: "gas", "oil", "coal", "lignite"
+        #: Type of main fuelValues are: "gas", "oil", "coal", "lignite"
         self.mainFuelType = mainFuelType
 
         self._StartupModel = None

@@ -36,40 +36,40 @@ class RectifierInverter(ConductingEquipment):
         @param maxU: The maximum voltage on the DC side at which the converter should operate. 
         @param frequency: Frequency on the AC side. 
         """
-        #: Rectifier/inverter primary base voltage 
+        #: Rectifier/inverter primary base voltage
         self.ratedU = ratedU
 
-        #: The maximum active power on the DC side at which the fconverter should operate. 
+        #: The maximum active power on the DC side at which the fconverter should operate.
         self.maxP = maxP
 
-        #: The minimum active power on the DC side at which the converter should operate. 
+        #: The minimum active power on the DC side at which the converter should operate.
         self.minP = minP
 
-        #: Commutating resistance. 
+        #: Commutating resistance.
         self.commutatingResistance = commutatingResistance
 
-        #: Number of bridges 
+        #: Number of bridges
         self.bridges = bridges
 
-        #: Compounding resistance. 
+        #: Compounding resistance.
         self.compoundResistance = compoundResistance
 
-        #: Minimum compounded DC voltage 
+        #: Minimum compounded DC voltage
         self.minCompoundVoltage = minCompoundVoltage
 
-        #: Commutating reactance at AC bus frequency. 
+        #: Commutating reactance at AC bus frequency.
         self.commutatingReactance = commutatingReactance
 
-        #: The minimum voltage on the DC side at which the converter should operate. 
+        #: The minimum voltage on the DC side at which the converter should operate.
         self.minU = minU
 
-        #: Operating mode for the converter. 
+        #: Operating mode for the converter.
         self.operatingMode = operatingMode
 
-        #: The maximum voltage on the DC side at which the converter should operate. 
+        #: The maximum voltage on the DC side at which the converter should operate.
         self.maxU = maxU
 
-        #: Frequency on the AC side. 
+        #: Frequency on the AC side.
         self.frequency = frequency
 
         super(RectifierInverter, self).__init__(*args, **kw_args)

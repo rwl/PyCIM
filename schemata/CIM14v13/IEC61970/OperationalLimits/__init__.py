@@ -19,3 +19,13 @@
 
 ns_prefix = "cimOperationalLimits"
 ns_uri = "http://iec.ch/TC57/CIM-generic#OperationalLimits"
+
+from CIM14v13.IEC61970.OperationalLimits.OperationalLimit import OperationalLimit
+from CIM14v13.IEC61970.OperationalLimits.VoltageLimit import VoltageLimit
+from CIM14v13.IEC61970.OperationalLimits.ApparentPowerLimit import ApparentPowerLimit
+from CIM14v13.IEC61970.OperationalLimits.BranchGroup import BranchGroup
+from CIM14v13.IEC61970.OperationalLimits.ActivePowerLimit import ActivePowerLimit
+from CIM14v13.IEC61970.OperationalLimits.BranchGroupTerminal import BranchGroupTerminal
+from CIM14v13.IEC61970.OperationalLimits.OperationalLimitSet import OperationalLimitSet
+from CIM14v13.IEC61970.OperationalLimits.CurrentLimit import CurrentLimit
+from CIM14v13.IEC61970.OperationalLimits.OperationalLimitType import OperationalLimitType

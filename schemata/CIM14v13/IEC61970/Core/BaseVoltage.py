@@ -29,10 +29,10 @@ class BaseVoltage(IdentifiedObject):
         @param ConductingEquipment: Use association to ConductingEquipment only when there is no VoltageLevel container used.
         @param TopologicalNode: The topological nodes at the base voltage.
         """
-        #: If true, this is a direct current base voltage and items assigned to this base voltage are also associated with a direct current capabilities.   False indicates alternating current. 
+        #: If true, this is a direct current base voltage and items assigned to this base voltage are also associated with a direct current capabilities.   False indicates alternating current.
         self.isDC = isDC
 
-        #: The PowerSystemResource's base voltage. 
+        #: The PowerSystemResource's base voltage.
         self.nominalVoltage = nominalVoltage
 
         self._VoltageLevel = []

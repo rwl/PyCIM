@@ -37,40 +37,40 @@ class SteamTurbine(PrimeMover):
         @param shaft1PowerLP1: Fraction Of Power From Shaft 1 First Low Pressure Turbine output 
         @param SteamSupplys: Steam turbines may have steam supplied by a steam supply
         """
-        #: Crossover Time Constant 
+        #: Crossover Time Constant
         self.crossoverTC = crossoverTC
 
-        #: Fraction Of Power From Shaft 2 First Low Pressure Turbine output 
+        #: Fraction Of Power From Shaft 2 First Low Pressure Turbine output
         self.shaft2PowerLP1 = shaft2PowerLP1
 
-        #: Fraction Of Power From Shaft 1 Intermediate Pressure Turbine output 
+        #: Fraction Of Power From Shaft 1 Intermediate Pressure Turbine output
         self.shaft1PowerIP = shaft1PowerIP
 
-        #: Fraction Of Power From Shaft 2 Intermediate Pressure Turbine output 
+        #: Fraction Of Power From Shaft 2 Intermediate Pressure Turbine output
         self.shaft2PowerIP = shaft2PowerIP
 
-        #: First Reheater Time Constant 
+        #: First Reheater Time Constant
         self.reheater1TC = reheater1TC
 
-        #: Fraction Of Power From Shaft 2 Second Low Pressure Turbine output 
+        #: Fraction Of Power From Shaft 2 Second Low Pressure Turbine output
         self.shaft2PowerLP2 = shaft2PowerLP2
 
-        #: Steam Chest Time Constant 
+        #: Steam Chest Time Constant
         self.steamChestTC = steamChestTC
 
-        #: Fraction Of Power From Shaft 1 High Pressure Turbine output 
+        #: Fraction Of Power From Shaft 1 High Pressure Turbine output
         self.shaft1PowerHP = shaft1PowerHP
 
-        #: Fraction Of Power From Shaft 1 Second Low Pressure Turbine output 
+        #: Fraction Of Power From Shaft 1 Second Low Pressure Turbine output
         self.shaft1PowerLP2 = shaft1PowerLP2
 
-        #: Fraction Of Power From Shaft 2 High Pressure Turbine output 
+        #: Fraction Of Power From Shaft 2 High Pressure Turbine output
         self.shaft2PowerHP = shaft2PowerHP
 
-        #: Second Reheater Time Constant 
+        #: Second Reheater Time Constant
         self.reheater2TC = reheater2TC
 
-        #: Fraction Of Power From Shaft 1 First Low Pressure Turbine output 
+        #: Fraction Of Power From Shaft 1 First Low Pressure Turbine output
         self.shaft1PowerLP1 = shaft1PowerLP1
 
         self._SteamSupplys = []

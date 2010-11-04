@@ -31,10 +31,10 @@ class CustomerAccount(Document):
         @param CustomerBillingInfos:
         @param ErpInvoicees:
         """
-        #: Budget bill code. 
+        #: Budget bill code.
         self.budgetBill = budgetBill
 
-        #: Cycle day on which this customer account will normally be billed, used to determine when to produce the CustomerBillingInfo for this customer account. 
+        #: Cycle day on which this customer account will normally be billed, used to determine when to produce the CustomerBillingInfo for this customer account.
         self.billingCycle = billingCycle
 
         self._WorkBillingInfos = []

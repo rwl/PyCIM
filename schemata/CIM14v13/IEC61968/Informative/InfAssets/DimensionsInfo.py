@@ -32,19 +32,19 @@ class DimensionsInfo(IdentifiedObject):
         @param Specifications:
         @param Locations:
         """
-        #: Length measurement. 
+        #: Length measurement.
         self.sizeLength = sizeLength
 
-        #: Depth measurement. 
+        #: Depth measurement.
         self.sizeDepth = sizeDepth
 
-        #: Diameter measurement. 
+        #: Diameter measurement.
         self.sizeDiameter = sizeDiameter
 
-        #: A description of the orientation of the object relative to the dimensions. As an example, a vault may have north-south orientation for the sizeLength measurement and sizeDepth may be the height of the vault. 
+        #: A description of the orientation of the object relative to the dimensions. As an example, a vault may have north-south orientation for the sizeLength measurement and sizeDepth may be the height of the vault.
         self.orientation = orientation
 
-        #: Width measurement. 
+        #: Width measurement.
         self.sizeWidth = sizeWidth
 
         self._Assets = []

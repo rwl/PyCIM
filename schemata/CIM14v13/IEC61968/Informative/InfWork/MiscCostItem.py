@@ -33,19 +33,19 @@ class MiscCostItem(IdentifiedObject):
         @param WorkTask:
         @param status:
         """
-        #: The cost per unit for this misc. item. 
+        #: The cost per unit for this misc. item.
         self.costPerUnit = costPerUnit
 
-        #: External Reference ID (e.g. PO#, Serial #) 
+        #: External Reference ID (e.g. PO#, Serial #)
         self.externalRefID = externalRefID
 
-        #: The cost category for accounting, such as material, labor, vehicle, contractor, equipment, overhead. 
+        #: The cost category for accounting, such as material, labor, vehicle, contractor, equipment, overhead.
         self.costType = costType
 
-        #: The quantity of the misc. item being assigned to this location. 
+        #: The quantity of the misc. item being assigned to this location.
         self.quantity = quantity
 
-        #: This drives the accounting treatment for this misc. item. 
+        #: This drives the accounting treatment for this misc. item.
         self.account = account
 
         self._WorkCostDetail = None

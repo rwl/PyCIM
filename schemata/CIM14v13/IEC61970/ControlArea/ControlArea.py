@@ -30,13 +30,13 @@ class ControlArea(PowerSystemResource):
         @param ControlAreaGeneratingUnit: The generating unit specificaitons for the control area.
         @param TieFlow: The tie flows associated with the control area.
         """
-        #: The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes. Values are: "Interchange", "AGC", "Forecast"
+        #: The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.Values are: "Interchange", "AGC", "Forecast"
         self.type = type
 
-        #: Active power net interchange tolerance 
+        #: Active power net interchange tolerance
         self.pTolerance = pTolerance
 
-        #: The specified positive net interchange into the control area. 
+        #: The specified positive net interchange into the control area.
         self.netInterchange = netInterchange
 
         self._EnergyArea = None

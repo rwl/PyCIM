@@ -26,7 +26,7 @@ class DistributionWindingTest(IdentifiedObject):
         @param fromTapStep: Tap step number for the 'from' winding of the test pair. 
         @param FromWinding: Winding that voltage or current is applied to during the test.
         """
-        #: Tap step number for the 'from' winding of the test pair. 
+        #: Tap step number for the 'from' winding of the test pair.
         self.fromTapStep = fromTapStep
 
         self._FromWinding = None

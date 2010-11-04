@@ -32,10 +32,10 @@ class ScheduledEvent(IdentifiedObject):
         @param status:
         @param TimePoint:
         """
-        #: Duration of the scheduled event, for example, the time to ramp between values. 
+        #: Duration of the scheduled event, for example, the time to ramp between values.
         self.duration = duration
 
-        #: Category of scheduled event. 
+        #: Category of scheduled event.
         self.category = category
 
         self._Document = None

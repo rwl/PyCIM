@@ -26,7 +26,7 @@ class SteamSupply(PowerSystemResource):
         @param steamSupplyRating: Rating of steam supply 
         @param SteamTurbines: Steam turbines may have steam supplied by a steam supply
         """
-        #: Rating of steam supply 
+        #: Rating of steam supply
         self.steamSupplyRating = steamSupplyRating
 
         self._SteamTurbines = []

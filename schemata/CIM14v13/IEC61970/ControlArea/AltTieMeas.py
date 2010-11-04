@@ -27,7 +27,7 @@ class AltTieMeas(Element):
         @param AnalogValue: The specific analog value used as a source.
         @param TieFlow: The tie flow of the alternate measurements.
         """
-        #: Priority of a measurement usage.   Lower numbers have first priority. 
+        #: Priority of a measurement usage.   Lower numbers have first priority.
         self.priority = priority
 
         self._AnalogValue = None

@@ -36,34 +36,34 @@ class FossilFuel(IdentifiedObject):
         @param FuelAllocationSchedules: A fuel allocation schedule must have a fossil fuel
         @param ThermalGeneratingUnit: A thermal generating unit may have one or more fossil fuels
         """
-        #: The type of fossil fuel, such as coal, oil, or gas. Values are: "gas", "oil", "coal", "lignite"
+        #: The type of fossil fuel, such as coal, oil, or gas.Values are: "gas", "oil", "coal", "lignite"
         self.fossilFuelType = fossilFuelType
 
-        #: The cost of fuel used for economic dispatching which includes: fuel cost, transportation cost,  and incremental maintenance cost 
+        #: The cost of fuel used for economic dispatching which includes: fuel cost, transportation cost,  and incremental maintenance cost
         self.fuelDispatchCost = fuelDispatchCost
 
-        #: The efficiency factor for the fuel (per unit) in terms of the effective energy absorbed 
+        #: The efficiency factor for the fuel (per unit) in terms of the effective energy absorbed
         self.fuelEffFactor = fuelEffFactor
 
-        #: The cost in terms of heat value for the given type of fuel 
+        #: The cost in terms of heat value for the given type of fuel
         self.fuelCost = fuelCost
 
-        #: The active power output level of the unit at which the given type of fuel is switched off. This fuel (e.g., oil) is sometimes used to stabilize the base fuel (e.g., coal) at low active power output levels. 
+        #: The active power output level of the unit at which the given type of fuel is switched off. This fuel (e.g., oil) is sometimes used to stabilize the base fuel (e.g., coal) at low active power output levels.
         self.lowBreakpointP = lowBreakpointP
 
-        #: The active power output level of the unit at which the given type of fuel is switched on. This fuel (e.g., oil) is sometimes used to supplement the base fuel (e.g., coal) at high active power output levels. 
+        #: The active power output level of the unit at which the given type of fuel is switched on. This fuel (e.g., oil) is sometimes used to supplement the base fuel (e.g., coal) at high active power output levels.
         self.highBreakpointP = highBreakpointP
 
-        #: The fuel's fraction of pollution credit per unit of heat content 
+        #: The fuel's fraction of pollution credit per unit of heat content
         self.fuelSulfur = fuelSulfur
 
-        #: Handling and processing cost associated with this fuel 
+        #: Handling and processing cost associated with this fuel
         self.fuelHandlingCost = fuelHandlingCost
 
-        #: The amount of heat per weight (or volume) of the given type of fuel 
+        #: The amount of heat per weight (or volume) of the given type of fuel
         self.fuelHeatContent = fuelHeatContent
 
-        #: Relative amount of the given type of fuel, when multiple fuels are being consumed. 
+        #: Relative amount of the given type of fuel, when multiple fuels are being consumed.
         self.fuelMixture = fuelMixture
 
         self._FuelAllocationSchedules = []

@@ -25,7 +25,7 @@ class Facility(AssetContainer):
 
         @param kind: Kind of this facility. 
         """
-        #: Kind of this facility. 
+        #: Kind of this facility.
         self.kind = kind
 
         super(Facility, self).__init__(*args, **kw_args)

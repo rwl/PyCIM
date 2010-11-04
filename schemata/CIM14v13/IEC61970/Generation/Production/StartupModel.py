@@ -38,34 +38,34 @@ class StartupModel(IdentifiedObject):
         @param StartRampCurve: The unit's startup model may have a startup ramp curve
         @param ThermalGeneratingUnit: A thermal generating unit may have a startup model
         """
-        #: Incremental Maintenance Cost 
+        #: Incremental Maintenance Cost
         self.incrementalMaintCost = incrementalMaintCost
 
-        #: The date and time of the most recent generating unit startup 
+        #: The date and time of the most recent generating unit startup
         self.startupDate = startupDate
 
-        #: Total miscellaneous start up costs 
+        #: Total miscellaneous start up costs
         self.startupCost = startupCost
 
-        #: The unit's auxiliary active power consumption to maintain standby mode 
+        #: The unit's auxiliary active power consumption to maintain standby mode
         self.stbyAuxP = stbyAuxP
 
-        #: Startup priority within control area where lower numbers indicate higher priorities.  More than one unit in an area may be assigned the same priority. 
+        #: Startup priority within control area where lower numbers indicate higher priorities.  More than one unit in an area may be assigned the same priority.
         self.startupPriority = startupPriority
 
-        #: Fixed Maintenance Cost 
+        #: Fixed Maintenance Cost
         self.fixedMaintCost = fixedMaintCost
 
-        #: The minimum number of hours the unit must be down before restart 
+        #: The minimum number of hours the unit must be down before restart
         self.minimumDownTime = minimumDownTime
 
-        #: The opportunity cost associated with the return in monetary unit. This represents the restart's 'share' of the unit depreciation and risk of an event which would damage the unit. 
+        #: The opportunity cost associated with the return in monetary unit. This represents the restart's 'share' of the unit depreciation and risk of an event which would damage the unit.
         self.riskFactorCost = riskFactorCost
 
-        #: The minimum number of hours the unit must be operating before being allowed to shut down 
+        #: The minimum number of hours the unit must be operating before being allowed to shut down
         self.minimumRunTime = minimumRunTime
 
-        #: The amount of heat input per time uint required for hot standby operation 
+        #: The amount of heat input per time uint required for hot standby operation
         self.hotStandbyHeat = hotStandbyHeat
 
         self._StartMainFuelCurve = None

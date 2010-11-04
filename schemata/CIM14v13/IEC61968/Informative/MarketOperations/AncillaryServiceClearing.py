@@ -28,13 +28,13 @@ class AncillaryServiceClearing(MarketFactors):
         @param commodityType: Requirement type:  'En' - Energy  'Ru' - Regulation Up  'Rd' - Regulation Dn  'Sr' - Spinning Reserve  'Nr' - Non-Spinning Reserve  'Or' - Operating Reserve 
         @param MarketCaseClearing:
         """
-        #: Cleared MWs. 
+        #: Cleared MWs.
         self.clearedMW = clearedMW
 
-        #: Market clearing price (MCP) in monetary units. 
+        #: Market clearing price (MCP) in monetary units.
         self.mcp = mcp
 
-        #: Requirement type:  'En' - Energy  'Ru' - Regulation Up  'Rd' - Regulation Dn  'Sr' - Spinning Reserve  'Nr' - Non-Spinning Reserve  'Or' - Operating Reserve 
+        #: Requirement type:  'En' - Energy  'Ru' - Regulation Up  'Rd' - Regulation Dn  'Sr' - Spinning Reserve  'Nr' - Non-Spinning Reserve  'Or' - Operating Reserve
         self.commodityType = commodityType
 
         self._MarketCaseClearing = None

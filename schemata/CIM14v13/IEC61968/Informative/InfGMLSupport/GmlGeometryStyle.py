@@ -29,13 +29,13 @@ class GmlGeometryStyle(IdentifiedObject):
         @param GmlFeatureStyle:
         @param GmlLabelStyle:
         """
-        #: Graphical symbol used to render a geometry or a topology. A symbol is a description of graphical attributes of a graphical object without a particular, implicit meaning. It can be a description of a line, circle, polygon or more complex drawing. 
+        #: Graphical symbol used to render a geometry or a topology. A symbol is a description of graphical attributes of a graphical object without a particular, implicit meaning. It can be a description of a line, circle, polygon or more complex drawing.
         self.symbol = symbol
 
-        #: It is necessary to specify the geometry type using this attribute as well since the application schema of the geometry property may allow different geometries as its value. 
+        #: It is necessary to specify the geometry type using this attribute as well since the application schema of the geometry property may allow different geometries as its value.
         self.geometryType = geometryType
 
-        #: The name of the geometry property of a feature to which this GeometryStyle applies. 
+        #: The name of the geometry property of a feature to which this GeometryStyle applies.
         self.geometryProperty = geometryProperty
 
         self._GmlFeatureStyle = None

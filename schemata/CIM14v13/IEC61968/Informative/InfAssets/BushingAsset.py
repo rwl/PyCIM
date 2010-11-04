@@ -31,16 +31,16 @@ class BushingAsset(Asset):
         @param BushingInsulationPFs:
         @param BushingModel:
         """
-        #: Factory measured capacitance measured between the power factor tap and ground. 
+        #: Factory measured capacitance measured between the power factor tap and ground.
         self.c2Capacitance = c2Capacitance
 
-        #: Factory measured insulation power factor, measured between the power factor tap and the bushing conductor. 
+        #: Factory measured insulation power factor, measured between the power factor tap and the bushing conductor.
         self.c1PowerFactor = c1PowerFactor
 
-        #: Factory measured insulation power factor, measured between the power factor tap and ground. 
+        #: Factory measured insulation power factor, measured between the power factor tap and ground.
         self.c2PowerFactor = c2PowerFactor
 
-        #: Factory measured capacitance, measured between the power factor tap and the bushing conductor. 
+        #: Factory measured capacitance, measured between the power factor tap and the bushing conductor.
         self.c1Capacitance = c1Capacitance
 
         self._Terminal = None

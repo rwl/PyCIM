@@ -27,7 +27,7 @@ class MarketFactors(Document):
         @param ErpInvoices:
         @param Market:
         """
-        #: The start of the time interval for which requirement is defined. 
+        #: The start of the time interval for which requirement is defined.
         self.intervalStartTime = intervalStartTime
 
         self._ErpInvoices = []

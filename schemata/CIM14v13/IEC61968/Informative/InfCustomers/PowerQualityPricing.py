@@ -35,31 +35,31 @@ class PowerQualityPricing(Document):
         @param PricingStructure:
         @param ServiceDeliveryPoints:
         """
-        #: Emergency low voltage limit. 
+        #: Emergency low voltage limit.
         self.emergencyLowVoltLimit = emergencyLowVoltLimit
 
-        #: Emergency high voltage limit. 
+        #: Emergency high voltage limit.
         self.emergencyHighVoltLimit = emergencyHighVoltLimit
 
-        #: Voltage limit violation cost (Cost per unit Voltage). 
+        #: Voltage limit violation cost (Cost per unit Voltage).
         self.voltLimitViolCost = voltLimitViolCost
 
-        #: Value of uninterrupted service (Cost per active power). 
+        #: Value of uninterrupted service (Cost per active power).
         self.valueUninterruptedServiceP = valueUninterruptedServiceP
 
-        #: Normal low voltage limit. 
+        #: Normal low voltage limit.
         self.normalLowVoltLimit = normalLowVoltLimit
 
-        #: Voltage imbalance violation cost (Cost per unit Voltage). 
+        #: Voltage imbalance violation cost (Cost per unit Voltage).
         self.voltImbalanceViolCost = voltImbalanceViolCost
 
-        #: Normal high voltage limit. 
+        #: Normal high voltage limit.
         self.normalHighVoltLimit = normalHighVoltLimit
 
-        #: Threshold minimum power factor for this PricingStructure, specified in instances where a special charge is levied if the actual power factor for a Service falls below the value specified here. 
+        #: Threshold minimum power factor for this PricingStructure, specified in instances where a special charge is levied if the actual power factor for a Service falls below the value specified here.
         self.powerFactorMin = powerFactorMin
 
-        #: Value of uninterrupted service (Cost per energy). 
+        #: Value of uninterrupted service (Cost per energy).
         self.valueUninterruptedServiceEnergy = valueUninterruptedServiceEnergy
 
         self._PricingStructure = None

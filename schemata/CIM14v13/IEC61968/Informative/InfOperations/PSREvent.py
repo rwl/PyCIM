@@ -26,7 +26,7 @@ class PSREvent(ActivityRecord):
         @param kind: Kind of event. Values are: "inService", "unknown", "pendingAdd", "outOfService", "pendingRemove", "other", "pendingReplace"
         @param PowerSystemResource: Power system resource that generated this event.
         """
-        #: Kind of event. Values are: "inService", "unknown", "pendingAdd", "outOfService", "pendingRemove", "other", "pendingReplace"
+        #: Kind of event.Values are: "inService", "unknown", "pendingAdd", "outOfService", "pendingRemove", "other", "pendingReplace"
         self.kind = kind
 
         self._PowerSystemResource = None

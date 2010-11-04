@@ -17,3 +17,8 @@
 
 ns_prefix = "cimInfMetering"
 ns_uri = "http://iec.ch/TC57/CIM-generic#InfMetering"
+
+from CIM14v13.IEC61968.Informative.InfMetering.ComPort import ComPort
+from CIM14v13.IEC61968.Informative.InfMetering.WaterMeteringFunction import WaterMeteringFunction
+from CIM14v13.IEC61968.Informative.InfMetering.GasMeteringFunction import GasMeteringFunction
+from CIM14v13.IEC61968.Informative.InfMetering.MeteringFunctionConfiguration import MeteringFunctionConfiguration

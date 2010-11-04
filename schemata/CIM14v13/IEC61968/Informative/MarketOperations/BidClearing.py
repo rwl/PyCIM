@@ -28,13 +28,13 @@ class BidClearing(Element):
         @param lostOpCost: Energy lost opportunity cost in monetary units. 
         @param Bid:
         """
-        #: No-load cost in monetary units. 
+        #: No-load cost in monetary units.
         self.noLoadCost = noLoadCost
 
-        #: Start up cost in case of energy commodity in monetary units. 
+        #: Start up cost in case of energy commodity in monetary units.
         self.startUpCost = startUpCost
 
-        #: Energy lost opportunity cost in monetary units. 
+        #: Energy lost opportunity cost in monetary units.
         self.lostOpCost = lostOpCost
 
         self._Bid = None

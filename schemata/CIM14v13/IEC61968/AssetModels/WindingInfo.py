@@ -37,31 +37,31 @@ class WindingInfo(IdentifiedObject):
         @param Windings: All windings described by this winding data.
         @param ToWindingSpecs: Tap steps and induced voltage/angle measurements for tests in which this winding was not excited.
         """
-        #: Kind of connection of this winding. Values are: "Y", "Yn", "Zn", "I", "A", "D", "Z"
+        #: Kind of connection of this winding.Values are: "Y", "Yn", "Zn", "I", "A", "D", "Z"
         self.connectionKind = connectionKind
 
-        #: Apparent power that this winding can carry for a short period of time. 
+        #: Apparent power that this winding can carry for a short period of time.
         self.shortTermS = shortTermS
 
-        #: Basic insulation level voltage rating. 
+        #: Basic insulation level voltage rating.
         self.insulationU = insulationU
 
-        #: Sequence number for this winding, corresponding to the winding's order in the TransformerBank.vectorGroup attribute. Highest voltage winding should be '1'. 
+        #: Sequence number for this winding, corresponding to the winding's order in the TransformerBank.vectorGroup attribute. Highest voltage winding should be '1'.
         self.sequenceNumber = sequenceNumber
 
-        #: Winding phase angle where 360 degrees are represented with clock hours, so the valid values are {0, ..., 11}. For example, to express winding code 'Dyn11', set attributes as follows: 'connectionKind' = Yn and 'phaseAngle' = 11. 
+        #: Winding phase angle where 360 degrees are represented with clock hours, so the valid values are {0, ..., 11}. For example, to express winding code 'Dyn11', set attributes as follows: 'connectionKind' = Yn and 'phaseAngle' = 11.
         self.phaseAngle = phaseAngle
 
-        #: Apparent power that the winding can carry under emergency conditions. 
+        #: Apparent power that the winding can carry under emergency conditions.
         self.emergencyS = emergencyS
 
-        #: Rated voltage of this winding: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings. 
+        #: Rated voltage of this winding: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings.
         self.ratedU = ratedU
 
-        #: DC resistance of this winding. 
+        #: DC resistance of this winding.
         self.r = r
 
-        #: Normal apparent power rating of this winding. 
+        #: Normal apparent power rating of this winding.
         self.ratedS = ratedS
 
         self._TransformerInfo = None

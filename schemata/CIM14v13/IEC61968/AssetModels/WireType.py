@@ -38,40 +38,40 @@ class WireType(IdentifiedObject):
         @param WireArrangements: All wire arrangements using this wire type.
         @param ConcentricNeutralCableInfos: All concentric neutral cables using this wire type.
         """
-        #: Wire material. Values are: "aluminum", "steel", "other", "copper", "acsr"
+        #: Wire material.Values are: "aluminum", "steel", "other", "copper", "acsr"
         self.material = material
 
-        #: Number of strands in the wire. 
+        #: Number of strands in the wire.
         self.strandCount = strandCount
 
-        #: AC resistance per unit length of the conductor at 25 degrees C. 
+        #: AC resistance per unit length of the conductor at 25 degrees C.
         self.rAC25 = rAC25
 
-        #: (if used) Number of strands in the steel core. 
+        #: (if used) Number of strands in the steel core.
         self.coreStrandCount = coreStrandCount
 
-        #: Current carrying capacity of the wire under stated thermal conditions. 
+        #: Current carrying capacity of the wire under stated thermal conditions.
         self.ratedCurrent = ratedCurrent
 
-        #: Describes the wire guage or cross section (e.g., 4/0, #2, 336.5). 
+        #: Describes the wire guage or cross section (e.g., 4/0, #2, 336.5).
         self.sizeDescription = sizeDescription
 
-        #: Geometric Mean Radius. If we replace the conductor by a thin walled tube of radius GMR, then its reactance is identical to the reactance of the actual conductor. 
+        #: Geometric Mean Radius. If we replace the conductor by a thin walled tube of radius GMR, then its reactance is identical to the reactance of the actual conductor.
         self.gmr = gmr
 
-        #: AC resistance per unit length of the conductor at 75 degrees C. 
+        #: AC resistance per unit length of the conductor at 75 degrees C.
         self.rAC75 = rAC75
 
-        #: Outside radius of the wire. 
+        #: Outside radius of the wire.
         self.radius = radius
 
-        #: DC resistance per unit length of the conductor at 20 degrees C. 
+        #: DC resistance per unit length of the conductor at 20 degrees C.
         self.rDC20 = rDC20
 
-        #: AC resistance per unit length of the conductor at 50 degrees C. 
+        #: AC resistance per unit length of the conductor at 50 degrees C.
         self.rAC50 = rAC50
 
-        #: (if there is a different core material) Radius of the central core. 
+        #: (if there is a different core material) Radius of the central core.
         self.coreRadius = coreRadius
 
         self._WireArrangements = []

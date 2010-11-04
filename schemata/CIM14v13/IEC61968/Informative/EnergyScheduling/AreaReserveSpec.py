@@ -32,22 +32,22 @@ class AreaReserveSpec(Element):
         @param HostControlAreas: A control area has one or more area reserve specifications
         @param ReserveEnergyTransaction: A Reserve type of energy transaction can count towards an area reserve specification.
         """
-        #: The Identification or name of the control area's reserve specification. A particular specification could correspond to pre-defined power system conditions, e.g., emergency situations. 
+        #: The Identification or name of the control area's reserve specification. A particular specification could correspond to pre-defined power system conditions, e.g., emergency situations.
         self.areaReserveSpecName = areaReserveSpecName
 
-        #: Raise active power regulating margin requirement, the amount of generation that can be picked up by control in 10 minutes 
+        #: Raise active power regulating margin requirement, the amount of generation that can be picked up by control in 10 minutes
         self.raiseRegMarginReqt = raiseRegMarginReqt
 
-        #: Lower active power regulating margin requirement, the amount of generation that can be dropped by control in 10 minutes 
+        #: Lower active power regulating margin requirement, the amount of generation that can be dropped by control in 10 minutes
         self.lowerRegMarginReqt = lowerRegMarginReqt
 
-        #: Primary active power reserve requirement, where primary reserve is generating capability that is fully available within 10 minutes. Primary reserve is composed of spinning reserve and quick-start reserve. 
+        #: Primary active power reserve requirement, where primary reserve is generating capability that is fully available within 10 minutes. Primary reserve is composed of spinning reserve and quick-start reserve.
         self.primaryReserveReqt = primaryReserveReqt
 
-        #: Operating active power reserve requirement, where operating reserve is the generating capability that is fully available within 30 minutes. Operating reserve is composed of primary reserve (t less than 10 min) and secondary reserve (10 less than t less than 30 min). 
+        #: Operating active power reserve requirement, where operating reserve is the generating capability that is fully available within 30 minutes. Operating reserve is composed of primary reserve (t less than 10 min) and secondary reserve (10 less than t less than 30 min).
         self.opReserveReqt = opReserveReqt
 
-        #: Spinning active power reserve requirement, spinning reserve is generating capability that is presently synchronized to the network and is fully available within 10 minutes 
+        #: Spinning active power reserve requirement, spinning reserve is generating capability that is presently synchronized to the network and is fully available within 10 minutes
         self.spinningReserveReqt = spinningReserveReqt
 
         self._HostControlAreas = []

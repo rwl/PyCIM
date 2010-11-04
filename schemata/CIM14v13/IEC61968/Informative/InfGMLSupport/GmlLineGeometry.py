@@ -25,7 +25,7 @@ class GmlLineGeometry(GmlDiagramObject):
 
         @param sourceSide: For dynamic network update (i.e. colouring) purposes 
         """
-        #: For dynamic network update (i.e. colouring) purposes 
+        #: For dynamic network update (i.e. colouring) purposes
         self.sourceSide = sourceSide
 
         super(GmlLineGeometry, self).__init__(*args, **kw_args)

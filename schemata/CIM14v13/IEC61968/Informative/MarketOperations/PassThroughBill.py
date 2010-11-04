@@ -50,73 +50,73 @@ class PassThroughBill(Document):
         @param UserAttributes:
         @param ChargeProfiles:
         """
-        #: The date the transaction occurs. 
+        #: The date the transaction occurs.
         self.transactionDate = transactionDate
 
-        #: The type of transaction. For example, charge customer, bill customer, matching AR/AP, or bill determinant 
+        #: The type of transaction. For example, charge customer, bill customer, matching AR/AP, or bill determinant
         self.transactionType = transactionType
 
-        #: The settlement run type, for example: prelim, final, and rerun. 
+        #: The settlement run type, for example: prelim, final, and rerun.
         self.billRunType = billRunType
 
-        #: The time zone code 
+        #: The time zone code
         self.timeZone = timeZone
 
-        #: The tax on services taken. 
+        #: The tax on services taken.
         self.taxAmount = taxAmount
 
-        #: The effective date of the transaction 
+        #: The effective date of the transaction
         self.effectiveDate = effectiveDate
 
-        #: The trade date 
+        #: The trade date
         self.tradeDate = tradeDate
 
-        #: Bill period start date 
+        #: Bill period start date
         self.billStart = billStart
 
-        #: The price of product/service. 
+        #: The price of product/service.
         self.price = price
 
-        #: The company to which the PTB transaction is sold. 
+        #: The company to which the PTB transaction is sold.
         self.soldTo = soldTo
 
-        #: The previous bill period start date 
+        #: The previous bill period start date
         self.previousStart = previousStart
 
-        #: The company by which the PTB transaction service is provided. 
+        #: The company by which the PTB transaction service is provided.
         self.providedBy = providedBy
 
-        #: The product identifier for determining the charge type of the transaction. 
+        #: The product identifier for determining the charge type of the transaction.
         self.productCode = productCode
 
-        #: A flag indicating whether there is a profile data associated with the PTB. 
+        #: A flag indicating whether there is a profile data associated with the PTB.
         self.isProfiled = isProfiled
 
-        #: The product quantity. 
+        #: The product quantity.
         self.quantity = quantity
 
-        #: The previous bill period end date 
+        #: The previous bill period end date
         self.previousEnd = previousEnd
 
-        #: The start date of service provided, if periodic. 
+        #: The start date of service provided, if periodic.
         self.serviceStart = serviceStart
 
-        #: The company to which the PTB transaction is paid. 
+        #: The company to which the PTB transaction is paid.
         self.paidTo = paidTo
 
-        #: Bill period end date 
+        #: Bill period end date
         self.billEnd = billEnd
 
-        #: The charge amount of the product/service. 
+        #: The charge amount of the product/service.
         self.amount = amount
 
-        #: The end date of service provided, if periodic. 
+        #: The end date of service provided, if periodic.
         self.serviceEnd = serviceEnd
 
-        #: The company to which the PTB transaction is billed. 
+        #: The company to which the PTB transaction is billed.
         self.billedTo = billedTo
 
-        #: Disputed transaction indicator 
+        #: Disputed transaction indicator
         self.isDisputed = isDisputed
 
         self._MarketStatementLineItem = None

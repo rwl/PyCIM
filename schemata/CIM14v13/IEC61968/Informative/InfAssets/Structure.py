@@ -31,22 +31,22 @@ class Structure(AssetContainer):
         @param fumigantName: Name of fumigant. 
         @param StructureSupports:
         """
-        #: Material this structure is made of. Values are: "concrete", "wood", "other", "steel"
+        #: Material this structure is made of.Values are: "concrete", "wood", "other", "steel"
         self.materialKind = materialKind
 
-        #: Visible height of structure above ground level for overhead construction (e.g., Pole or Tower) or below ground level for an underground vault, manhole, etc. Refer to associated DimensionPropertiesInfo for other types of dimensions. 
+        #: Visible height of structure above ground level for overhead construction (e.g., Pole or Tower) or below ground level for an underground vault, manhole, etc. Refer to associated DimensionPropertiesInfo for other types of dimensions.
         self.height = height
 
-        #: True if weeds are to be removed around asset. 
+        #: True if weeds are to be removed around asset.
         self.removeWeed = removeWeed
 
-        #: Date weed were last removed. 
+        #: Date weed were last removed.
         self.weedRemovedDate = weedRemovedDate
 
-        #: Date fumigant was last applied. 
+        #: Date fumigant was last applied.
         self.fumigantAppliedDate = fumigantAppliedDate
 
-        #: Name of fumigant. 
+        #: Name of fumigant.
         self.fumigantName = fumigantName
 
         self._StructureSupports = []

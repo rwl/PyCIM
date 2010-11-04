@@ -30,16 +30,16 @@ class OutageReport(Document):
         @param OutageRecord: reference to related document
         @param OutageHistory: OutageHistory of a customer, which may include this OutageReport.
         """
-        #: Average Customer Minutes Lost (CML) for this outage. 
+        #: Average Customer Minutes Lost (CML) for this outage.
         self.averageCml = averageCml
 
-        #: Total outage duration. 
+        #: Total outage duration.
         self.outageDuration = outageDuration
 
-        #: Total number of outaged customers. 
+        #: Total number of outaged customers.
         self.customerCount = customerCount
 
-        #: Total Customer Minutes Lost (CML). 
+        #: Total Customer Minutes Lost (CML).
         self.totalCml = totalCml
 
         self._OutageRecord = None

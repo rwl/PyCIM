@@ -28,7 +28,7 @@ class GmlMark(IdentifiedObject):
         @param GmlGraphics:
         @param GmlStrokes:
         """
-        #: Gives the well-known name of the shape of the mark. Allowed values include at least square, circle, triangle, star, cross, and x. 
+        #: Gives the well-known name of the shape of the mark. Allowed values include at least square, circle, triangle, star, cross, and x.
         self.wellKnownName = wellKnownName
 
         self._GmlFIlls = []

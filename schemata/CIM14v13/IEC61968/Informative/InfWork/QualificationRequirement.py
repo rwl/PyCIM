@@ -29,7 +29,7 @@ class QualificationRequirement(IdentifiedObject):
         @param CULaborItems:
         @param Skills:
         """
-        #: Qualification identifier. 
+        #: Qualification identifier.
         self.qualificationID = qualificationID
 
         self._Specifications = []

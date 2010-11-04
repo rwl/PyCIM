@@ -30,10 +30,10 @@ class Control(IdentifiedObject):
         @param RegulatingCondEq: Regulating device governed by this control output.
         @param ControlType: The type of Control
         """
-        #: The last time a control output was sent 
+        #: The last time a control output was sent
         self.timeStamp = timeStamp
 
-        #: Indicates that a client is currently sending control commands that has not completed 
+        #: Indicates that a client is currently sending control commands that has not completed
         self.operationInProgress = operationInProgress
 
         self._RemoteControl = None

@@ -26,7 +26,7 @@ class ContingencyEquipment(ContingencyElement):
         @param contingentStatus: The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied. Values are: "inService", "outOfService"
         @param Equipment: The single piece of equipment to which to apply the contingency.
         """
-        #: The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied. Values are: "inService", "outOfService"
+        #: The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied.Values are: "inService", "outOfService"
         self.contingentStatus = contingentStatus
 
         self._Equipment = None

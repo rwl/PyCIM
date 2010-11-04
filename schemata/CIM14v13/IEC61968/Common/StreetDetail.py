@@ -34,34 +34,34 @@ class StreetDetail(Element):
         @param addressGeneral: Additional address information, for example a mailstop. 
         @param suiteNumber: Number of the apartment or suite. 
         """
-        #: (if applicable) In certain cases the physical location of the place of interest does not have a direct point of entry from the street, but may be located inside a larger structure such as a building, complex, office block, apartment, etc. 
+        #: (if applicable) In certain cases the physical location of the place of interest does not have a direct point of entry from the street, but may be located inside a larger structure such as a building, complex, office block, apartment, etc.
         self.buildingName = buildingName
 
-        #: Type of street. Examples include: street, circle, boulevard, avenue, road, drive, etc. 
+        #: Type of street. Examples include: street, circle, boulevard, avenue, road, drive, etc.
         self.type = type
 
-        #: Name of the street. 
+        #: Name of the street.
         self.name = name
 
-        #: True if this street is within the legal geographical boundaries of the specified town (default). 
+        #: True if this street is within the legal geographical boundaries of the specified town (default).
         self.withinTownLimits = withinTownLimits
 
-        #: Designator of the specific location on the street. 
+        #: Designator of the specific location on the street.
         self.number = number
 
-        #: Suffix to the street name. For example: North, South, East, West. 
+        #: Suffix to the street name. For example: North, South, East, West.
         self.suffix = suffix
 
-        #: Prefix to the street name. For example: North, South, East, West. 
+        #: Prefix to the street name. For example: North, South, East, West.
         self.prefix = prefix
 
-        #: (if applicable) Utilities often make use of external reference systems, such as those of the town-planner's department or surveyor general's mapping system, that allocate global reference codes to streets. 
+        #: (if applicable) Utilities often make use of external reference systems, such as those of the town-planner's department or surveyor general's mapping system, that allocate global reference codes to streets.
         self.code = code
 
-        #: Additional address information, for example a mailstop. 
+        #: Additional address information, for example a mailstop.
         self.addressGeneral = addressGeneral
 
-        #: Number of the apartment or suite. 
+        #: Number of the apartment or suite.
         self.suiteNumber = suiteNumber
 
         super(StreetDetail, self).__init__(*args, **kw_args)

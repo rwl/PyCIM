@@ -31,16 +31,16 @@ class BankStatement(Document):
         @param MerchantAccount:
         @param BankAccount: BankAccount that generated this bank statement.
         """
-        #: The amount that is deposited into the bank via BankAccount. 
+        #: The amount that is deposited into the bank via BankAccount.
         self.depositAmount = depositAmount
 
-        #: True if mechantCreditAmount has been cerdited to MerchantAccount; typically happens when bank statement details are captured into payment system. 
+        #: True if mechantCreditAmount has been cerdited to MerchantAccount; typically happens when bank statement details are captured into payment system.
         self.posted = posted
 
-        #: The date and time the deposit is made. 
+        #: The date and time the deposit is made.
         self.depositDateTime = depositDateTime
 
-        #: The amount on this statement that is to be credited to MerchantAccount. 
+        #: The amount on this statement that is to be credited to MerchantAccount.
         self.merchantCreditAmount = merchantCreditAmount
 
         self._Vendor = None

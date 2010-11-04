@@ -26,7 +26,7 @@ class FACTSDeviceAsset(ElectricalAsset):
         @param kind: Kind of FACTS device. Values are: "tsbr", "statcom", "tcvl", "tssc", "tcpar", "svc", "upfc", "tcsc"
         @param FACTSDeviceAssetModel:
         """
-        #: Kind of FACTS device. Values are: "tsbr", "statcom", "tcvl", "tssc", "tcpar", "svc", "upfc", "tcsc"
+        #: Kind of FACTS device.Values are: "tsbr", "statcom", "tcvl", "tssc", "tcpar", "svc", "upfc", "tcsc"
         self.kind = kind
 
         self._FACTSDeviceAssetModel = None

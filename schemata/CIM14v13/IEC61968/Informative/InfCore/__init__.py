@@ -17,3 +17,6 @@
 
 ns_prefix = "cimInfCore"
 ns_uri = "http://iec.ch/TC57/CIM-generic#InfCore"
+
+from CIM14v13.IEC61968.Informative.InfCore.ModelingAuthority import ModelingAuthority
+from CIM14v13.IEC61968.Informative.InfCore.ModelingAuthoritySet import ModelingAuthoritySet

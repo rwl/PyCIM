@@ -27,7 +27,7 @@ class OrgOrgRole(Role):
         @param ChildOrganisation:
         @param ParentOrganisation:
         """
-        #: Identifiers of the organisation held by another organisation, such as a government agency (federal, state, province, city, county), financial institution (Dun and Bradstreet), etc. 
+        #: Identifiers of the organisation held by another organisation, such as a government agency (federal, state, province, city, county), financial institution (Dun and Bradstreet), etc.
         self.clientID = clientID
 
         self._ChildOrganisation = None

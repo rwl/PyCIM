@@ -26,7 +26,7 @@ class AnalogLimit(Limit):
         @param value: The value to supervise against. 
         @param LimitSet: The set of limits.
         """
-        #: The value to supervise against. 
+        #: The value to supervise against.
         self.value = value
 
         self._LimitSet = None

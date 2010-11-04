@@ -28,10 +28,10 @@ class SwitchingOperation(IdentifiedObject):
         @param OutageSchedule: An OutageSchedule may operate many switches.
         @param Switches: A switch may be operated by many schedules.
         """
-        #: The switch position that shall result from this SwitchingOperation Values are: "open", "close"
+        #: The switch position that shall result from this SwitchingOperationValues are: "open", "close"
         self.newState = newState
 
-        #: Time of operation in same units as OutageSchedule.xAxixUnits. 
+        #: Time of operation in same units as OutageSchedule.xAxixUnits.
         self.operationTime = operationTime
 
         self._OutageSchedule = None

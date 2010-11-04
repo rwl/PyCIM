@@ -26,7 +26,7 @@ class LocationGrant(Agreement):
         @param propertyData: Property related information that describes the Grant's land parcel. For example, it may be a deed book number, deed book page number, and parcel number. 
         @param LandProperty: Land property this location grant applies to.
         """
-        #: Property related information that describes the Grant's land parcel. For example, it may be a deed book number, deed book page number, and parcel number. 
+        #: Property related information that describes the Grant's land parcel. For example, it may be a deed book number, deed book page number, and parcel number.
         self.propertyData = propertyData
 
         self._LandProperty = None

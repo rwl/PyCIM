@@ -29,19 +29,19 @@ class TownDetail(Element):
         @param section: Town section. For example, it is common for there to be 36 sections per township. 
         @param country: Name of the country. 
         """
-        #: Name of the state or province. 
+        #: Name of the state or province.
         self.stateOrProvince = stateOrProvince
 
-        #: Town code. 
+        #: Town code.
         self.code = code
 
-        #: Town name. 
+        #: Town name.
         self.name = name
 
-        #: Town section. For example, it is common for there to be 36 sections per township. 
+        #: Town section. For example, it is common for there to be 36 sections per township.
         self.section = section
 
-        #: Name of the country. 
+        #: Name of the country.
         self.country = country
 
         super(TownDetail, self).__init__(*args, **kw_args)

@@ -28,7 +28,7 @@ class BushingInsulationPF(IdentifiedObject):
         @param TransformerObservation:
         @param status:
         """
-        #: Kind of test for this bushing. Values are: "c1", "c2"
+        #: Kind of test for this bushing.Values are: "c1", "c2"
         self.testKind = testKind
 
         self._BushingAsset = None

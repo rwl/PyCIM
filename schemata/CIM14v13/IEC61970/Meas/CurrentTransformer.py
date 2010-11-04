@@ -32,22 +32,22 @@ class CurrentTransformer(Equipment):
         @param CurrentTransformerTypeAsset:
         @param CurrentTransformerAsset:
         """
-        #: CT accuracy classification. 
+        #: CT accuracy classification.
         self.accuracyClass = accuracyClass
 
-        #: Percent of rated current for which the CT remains accurate within specified limits. 
+        #: Percent of rated current for which the CT remains accurate within specified limits.
         self.accuracyLimit = accuracyLimit
 
-        #: Intended usage of the CT; i.e. metering, protection. 
+        #: Intended usage of the CT; i.e. metering, protection.
         self.usage = usage
 
-        #: Number of cores. 
+        #: Number of cores.
         self.coreCount = coreCount
 
-        #: For multi-ratio CT's, the maximum permissable ratio attainable. 
+        #: For multi-ratio CT's, the maximum permissable ratio attainable.
         self.maxRatio = maxRatio
 
-        #: CT classification; i.e. class 10P. 
+        #: CT classification; i.e. class 10P.
         self.ctClass = ctClass
 
         self._CurrentTransformerTypeAsset = None

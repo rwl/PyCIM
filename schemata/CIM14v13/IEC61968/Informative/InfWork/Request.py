@@ -31,13 +31,13 @@ class Request(Document):
         @param ErpQuoteLineItem:
         @param Works:
         """
-        #: The corporate code for this request. 
+        #: The corporate code for this request.
         self.corporateCode = corporateCode
 
-        #: The priority of this request. 
+        #: The priority of this request.
         self.priority = priority
 
-        #: Based on the current 'Status.status', the action that is needed before this Request can transition to the desired state, such as initiating the requested Work. For example, missing or additionally needed information may be required from the requesting organisation before a work Design may be created. 
+        #: Based on the current 'Status.status', the action that is needed before this Request can transition to the desired state, such as initiating the requested Work. For example, missing or additionally needed information may be required from the requesting organisation before a work Design may be created.
         self.actionNeeded = actionNeeded
 
         self._Organisation = None

@@ -30,7 +30,7 @@ class Receipt(IdentifiedObject):
         @param Tenders: All payments received in the form of tenders recorded by this receipt.
         @param line: Receipted amount with rounding, date and note.
         """
-        #: True if this receipted payment is manually bankable, otherwise it is an electronic funds transfer. 
+        #: True if this receipted payment is manually bankable, otherwise it is an electronic funds transfer.
         self.isBankable = isBankable
 
         self._Transactions = []

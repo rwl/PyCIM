@@ -47,28 +47,28 @@ class ErpOrganisation(Organisation):
         @param ChildOrganisationRoles:
         @param Crews:
         """
-        #: Designated code for organisation. 
+        #: Designated code for organisation.
         self.code = code
 
-        #: Category by utility's corporate standards and practices. 
+        #: Category by utility's corporate standards and practices.
         self.category = category
 
-        #: Operational mode of the organisation, often required for outage reporting purposes. Some utilities use text to describe various modes (like nominal, emergency, storm, other), while others use severity ratings (for example, 0 is a nominal condition and 5 is the most severe condition). 
+        #: Operational mode of the organisation, often required for outage reporting purposes. Some utilities use text to describe various modes (like nominal, emergency, storm, other), while others use severity ratings (for example, 0 is a nominal condition and 5 is the most severe condition).
         self.mode = mode
 
-        #: True if organisation 'opted out', i.e., has requested that their contact information not be shared with other organisations for purposes of solicitation. 
+        #: True if organisation 'opted out', i.e., has requested that their contact information not be shared with other organisations for purposes of solicitation.
         self.optOut = optOut
 
-        #: Unique identifier for a given organisation (business). In the USA, this is a 'Dunns' or D&amp;B number. This identifier is typically in addition to the identifiers that organizations assign (on an internal basis) to each of their locations. Note that a unique identifier can be set up for each location of an organisation. This requirement is supported through the recursive Organisation-Organisation relationship, where each child Organisation can have a specified physical location. 
+        #: Unique identifier for a given organisation (business). In the USA, this is a 'Dunns' or D&amp;B number. This identifier is typically in addition to the identifiers that organizations assign (on an internal basis) to each of their locations. Note that a unique identifier can be set up for each location of an organisation. This requirement is supported through the recursive Organisation-Organisation relationship, where each child Organisation can have a specified physical location.
         self.industryID = industryID
 
-        #: True if organisation is profit center. 
+        #: True if organisation is profit center.
         self.isProfitCenter = isProfitCenter
 
-        #: True if organisation is cost center. 
+        #: True if organisation is cost center.
         self.isCostCenter = isCostCenter
 
-        #: Unique identifier for organisation relative to its governing authority, for example a federal tax identifier. 
+        #: Unique identifier for organisation relative to its governing authority, for example a federal tax identifier.
         self.governmentID = governmentID
 
         self._DocumentRoles = []

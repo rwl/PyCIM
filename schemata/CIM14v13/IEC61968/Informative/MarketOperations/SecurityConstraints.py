@@ -28,13 +28,13 @@ class SecurityConstraints(IdentifiedObject):
         @param minMW: Minimum MW limit (only for transmission constraints). 
         @param RTO:
         """
-        #: Maximum MW limit 
+        #: Maximum MW limit
         self.maxMW = maxMW
 
-        #: Actual branch or group of branches MW flow (only for transmission constraints) 
+        #: Actual branch or group of branches MW flow (only for transmission constraints)
         self.actualMW = actualMW
 
-        #: Minimum MW limit (only for transmission constraints). 
+        #: Minimum MW limit (only for transmission constraints).
         self.minMW = minMW
 
         self._RTO = None

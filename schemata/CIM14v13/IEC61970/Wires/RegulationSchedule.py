@@ -29,13 +29,13 @@ class RegulationSchedule(SeasonDayTypeSchedule):
         @param RegulatingControl: Regulating controls that have this Schedule.
         @param VoltageControlZones: A VoltageControlZone may have a  voltage regulation schedule.
         """
-        #: Flag to indicate that line drop compensation is to be applied 
+        #: Flag to indicate that line drop compensation is to be applied
         self.lineDropCompensation = lineDropCompensation
 
-        #: Line drop reactance. 
+        #: Line drop reactance.
         self.lineDropX = lineDropX
 
-        #: Line drop resistance. 
+        #: Line drop resistance.
         self.lineDropR = lineDropR
 
         self._RegulatingControl = None

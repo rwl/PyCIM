@@ -27,13 +27,13 @@ class ComFunction(DeviceFunction):
         @param amrAddress: Communication ID number (e.g. serial number, IP address, telephone number, etc.) of the AMR module which serves this meter. 
         @param amrRouter: Communication ID number (e.g. port number, serial number, data collector ID, etc.) of the parent device associated to this AMR module. Note: If someone swaps out a meter, they may inadvertently disrupt the AMR system. Some technologies route readings from nearby meters through a common collection point on an electricity meter. Removal of such a meter disrupts AMR for numerous nearby meters. 
         """
-        #: True when the AMR module can both send and receive messages. Default is false (i.e., module can only send). 
+        #: True when the AMR module can both send and receive messages. Default is false (i.e., module can only send).
         self.twoWay = twoWay
 
-        #: Communication ID number (e.g. serial number, IP address, telephone number, etc.) of the AMR module which serves this meter. 
+        #: Communication ID number (e.g. serial number, IP address, telephone number, etc.) of the AMR module which serves this meter.
         self.amrAddress = amrAddress
 
-        #: Communication ID number (e.g. port number, serial number, data collector ID, etc.) of the parent device associated to this AMR module. Note: If someone swaps out a meter, they may inadvertently disrupt the AMR system. Some technologies route readings from nearby meters through a common collection point on an electricity meter. Removal of such a meter disrupts AMR for numerous nearby meters. 
+        #: Communication ID number (e.g. port number, serial number, data collector ID, etc.) of the parent device associated to this AMR module. Note: If someone swaps out a meter, they may inadvertently disrupt the AMR system. Some technologies route readings from nearby meters through a common collection point on an electricity meter. Removal of such a meter disrupts AMR for numerous nearby meters.
         self.amrRouter = amrRouter
 
         super(ComFunction, self).__init__(*args, **kw_args)

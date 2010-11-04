@@ -27,7 +27,7 @@ class ReadingQuality(Element):
         @param Reading: Reading value to which this quality applies.
         @param IntervalReading: Interval reading value to which this quality applies.
         """
-        #: Quality, to be specified if different than 'Good'. 
+        #: Quality, to be specified if different than 'Good'.
         self.quality = quality
 
         self._Reading = None

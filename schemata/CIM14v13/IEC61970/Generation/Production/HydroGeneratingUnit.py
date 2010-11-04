@@ -30,10 +30,10 @@ class HydroGeneratingUnit(GeneratingUnit):
         @param PenstockLossCurve: A hydro generating unit has a penstock loss curve
         @param HydroGeneratingEfficiencyCurves: A hydro generating unit has an efficiency curve
         """
-        #: Energy conversion capability for generating. Values are: "generator", "pumpAndGenerator"
+        #: Energy conversion capability for generating.Values are: "generator", "pumpAndGenerator"
         self.energyConversionCapability = energyConversionCapability
 
-        #: The equivalent cost of water that drives the hydro turbine, expressed as cost per volume. 
+        #: The equivalent cost of water that drives the hydro turbine, expressed as cost per volume.
         self.hydroUnitWaterCost = hydroUnitWaterCost
 
         self._TailbayLossCurve = []

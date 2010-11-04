@@ -29,16 +29,16 @@ class Card(Element):
         @param cvNumber: The card verification number. 
         @param Tender: Payment tender this card is being used for.
         """
-        #: The primary account number. 
+        #: The primary account number.
         self.pan = pan
 
-        #: The date when this card expires. 
+        #: The date when this card expires.
         self.expiryDate = expiryDate
 
-        #: Name of account holder. 
+        #: Name of account holder.
         self.accountHolderName = accountHolderName
 
-        #: The card verification number. 
+        #: The card verification number.
         self.cvNumber = cvNumber
 
         self._Tender = None

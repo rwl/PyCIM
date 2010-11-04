@@ -24,7 +24,7 @@ class ReadingType(IdentifiedObject):
         """Initializes a new 'ReadingType' instance.
 
         @param kind: Kind of reading. Values are: "power", "voltageAngle", "other", "energy", "phaseAngle", "date", "time", "volume", "voltage", "demand", "powerFactor", "currentAngle", "pressure", "current"
-        @param unit: Unit for the reading value. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "ºC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
+        @param unit: Unit for the reading value. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "oC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
         @param multiplier: Multiplier for 'unit'. Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
         @param channelNumber: Logical positioning of this measurement data. 
         @param defaultQuality: Characteristics of a data value conveyed by a specific Reading, which allow an application to understand how a specific Reading is to be interpreted. 
@@ -37,31 +37,31 @@ class ReadingType(IdentifiedObject):
         @param IntervalBlocks: All blocks containing interval reading values with this type information.
         @param Register: Register displaying values with this type information.
         """
-        #: Kind of reading. Values are: "power", "voltageAngle", "other", "energy", "phaseAngle", "date", "time", "volume", "voltage", "demand", "powerFactor", "currentAngle", "pressure", "current"
+        #: Kind of reading.Values are: "power", "voltageAngle", "other", "energy", "phaseAngle", "date", "time", "volume", "voltage", "demand", "powerFactor", "currentAngle", "pressure", "current"
         self.kind = kind
 
-        #: Unit for the reading value. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "ºC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
+        #: Unit for the reading value.Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "oC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
         self.unit = unit
 
-        #: Multiplier for 'unit'. Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
+        #: Multiplier for 'unit'.Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
         self.multiplier = multiplier
 
-        #: Logical positioning of this measurement data. 
+        #: Logical positioning of this measurement data.
         self.channelNumber = channelNumber
 
-        #: Characteristics of a data value conveyed by a specific Reading, which allow an application to understand how a specific Reading is to be interpreted. 
+        #: Characteristics of a data value conveyed by a specific Reading, which allow an application to understand how a specific Reading is to be interpreted.
         self.defaultQuality = defaultQuality
 
-        #: Demand configuration such as block, rolling, logarithmic and sizes such as 15 min, 30 min, 5 min subinterval. 
+        #: Demand configuration such as block, rolling, logarithmic and sizes such as 15 min, 30 min, 5 min subinterval.
         self.dynamicConfiguration = dynamicConfiguration
 
-        #: (if incremental reading value) Length of increment interval. 
+        #: (if incremental reading value) Length of increment interval.
         self.intervalLength = intervalLength
 
-        #: True for systems that must operate in 'reverse' chronological order. 
+        #: True for systems that must operate in 'reverse' chronological order.
         self.reverseChronology = reverseChronology
 
-        #: Numeric type to be expected for the associated IntervalBlock.value (e.g. unsignedInteger). 
+        #: Numeric type to be expected for the associated IntervalBlock.value (e.g. unsignedInteger).
         self.defaultValueDataType = defaultValueDataType
 
         self._Pending = None

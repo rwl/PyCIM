@@ -32,25 +32,25 @@ class GmlLabelPlacement(IdentifiedObject):
         @param anchorY: Y-coordinate location inside of a label to use for anchoring the label to the main-geometry point. 
         @param GmlTextSymbols:
         """
-        #: Type of 'LabelPlacement' which in turn specifies where and how a text label should be rendered relative to a geometry. 
+        #: Type of 'LabelPlacement' which in turn specifies where and how a text label should be rendered relative to a geometry.
         self.type = type
 
-        #: Perpendicular distance away from a line to draw a label. The distance is in pixels and is positive to the left-hand side of the line string. Negative numbers mean right. The default offset is 0. 
+        #: Perpendicular distance away from a line to draw a label. The distance is in pixels and is positive to the left-hand side of the line string. Negative numbers mean right. The default offset is 0.
         self.offset = offset
 
-        #: X-coordinate location inside of a label to use for anchoring the label to the main-geometry point. 
+        #: X-coordinate location inside of a label to use for anchoring the label to the main-geometry point.
         self.anchorX = anchorX
 
-        #: Clockwise rotation of the label in degrees from the normal direction for a font. 
+        #: Clockwise rotation of the label in degrees from the normal direction for a font.
         self.rotation = rotation
 
-        #: Y displacement from the main-geometry point to render a text label. 
+        #: Y displacement from the main-geometry point to render a text label.
         self.displacementY = displacementY
 
-        #: X displacement from the main-geometry point to render a text label. 
+        #: X displacement from the main-geometry point to render a text label.
         self.displacementX = displacementX
 
-        #: Y-coordinate location inside of a label to use for anchoring the label to the main-geometry point. 
+        #: Y-coordinate location inside of a label to use for anchoring the label to the main-geometry point.
         self.anchorY = anchorY
 
         self._GmlTextSymbols = []

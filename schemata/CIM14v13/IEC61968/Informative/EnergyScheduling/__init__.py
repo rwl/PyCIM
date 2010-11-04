@@ -19,3 +19,24 @@
 
 ns_prefix = "cimEnergyScheduling"
 ns_uri = "http://iec.ch/TC57/CIM-generic#EnergyScheduling"
+
+from CIM14v13.IEC61968.Informative.EnergyScheduling.EnergyTransaction import EnergyTransaction
+from CIM14v13.IEC61968.Informative.EnergyScheduling.Reserve import Reserve
+from CIM14v13.IEC61968.Informative.EnergyScheduling.AvailableTransmissionCapacity import AvailableTransmissionCapacity
+from CIM14v13.IEC61968.Informative.EnergyScheduling.Block import Block
+from CIM14v13.IEC61968.Informative.EnergyScheduling.ProfileData import ProfileData
+from CIM14v13.IEC61968.Informative.EnergyScheduling.Profile import Profile
+from CIM14v13.IEC61968.Informative.EnergyScheduling.LossProfile import LossProfile
+from CIM14v13.IEC61968.Informative.EnergyScheduling.CurtailmentProfile import CurtailmentProfile
+from CIM14v13.IEC61968.Informative.EnergyScheduling.SubControlArea import SubControlArea
+from CIM14v13.IEC61968.Informative.EnergyScheduling.TransmissionRightOfWay import TransmissionRightOfWay
+from CIM14v13.IEC61968.Informative.EnergyScheduling.EnergySchedulingVersion import EnergySchedulingVersion
+from CIM14v13.IEC61968.Informative.EnergyScheduling.Dynamic import Dynamic
+from CIM14v13.IEC61968.Informative.EnergyScheduling.EnergyProfile import EnergyProfile
+from CIM14v13.IEC61968.Informative.EnergyScheduling.HostControlArea import HostControlArea
+from CIM14v13.IEC61968.Informative.EnergyScheduling.InadvertentAccount import InadvertentAccount
+from CIM14v13.IEC61968.Informative.EnergyScheduling.TransmissionCorridor import TransmissionCorridor
+from CIM14v13.IEC61968.Informative.EnergyScheduling.AreaReserveSpec import AreaReserveSpec
+from CIM14v13.IEC61968.Informative.EnergyScheduling.EnergyProduct import EnergyProduct
+from CIM14v13.IEC61968.Informative.EnergyScheduling.TieLine import TieLine
+from CIM14v13.IEC61968.Informative.EnergyScheduling.DynamicSchedule import DynamicSchedule

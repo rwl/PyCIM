@@ -34,25 +34,25 @@ class PhaseTapChanger(TapChanger):
         @param Winding: Transformer winding to which this phase tap changer belongs.
         @param TransformerWinding: The transformer winding to which the phase tap changer belongs.
         """
-        #: The type of phase shifter construction. Values are: "symmetrical", "unknown", "asymmetrical"
+        #: The type of phase shifter construction.Values are: "symmetrical", "unknown", "asymmetrical"
         self.phaseTapChangerType = phaseTapChangerType
 
-        #: The phase angle between the in-phase winding and the out-of -phase winding used for creating phase shift.   It is only possible to have a symmemtrical transformer if this angle is 90 degrees. 
+        #: The phase angle between the in-phase winding and the out-of -phase winding used for creating phase shift.   It is only possible to have a symmemtrical transformer if this angle is 90 degrees.
         self.windingConnectionAngle = windingConnectionAngle
 
-        #: Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer). The actual phase shift increment might be more accurately computed from the symmetrical or asymmetrical models or a tap step table lookup if those are available. 
+        #: Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer). The actual phase shift increment might be more accurately computed from the symmetrical or asymmetrical models or a tap step table lookup if those are available.
         self.stepPhaseShiftIncrement = stepPhaseShiftIncrement
 
-        #: The reactance at the maximum tap step. 
+        #: The reactance at the maximum tap step.
         self.xStepMax = xStepMax
 
-        #: The reactance at the minimum tap step. 
+        #: The reactance at the minimum tap step.
         self.xStepMin = xStepMin
 
-        #: The voltage step increment on the out of phase winding.    This voltage step on the out of phase winding of the phase shifter.  Similar to TapChanger.voltageStepIncrement, but it is applied only to the out of phase winding. 
+        #: The voltage step increment on the out of phase winding.    This voltage step on the out of phase winding of the phase shifter.  Similar to TapChanger.voltageStepIncrement, but it is applied only to the out of phase winding.
         self.voltageStepIncrementOutOfPhase = voltageStepIncrementOutOfPhase
 
-        #: Similar to TapChanger.nominalVoltage, but this is the nominal voltage in the out of phase winding at the nominal tap step. A typical case may have zero voltage at the nominal step, indicating no phase shift at the nominal voltage. 
+        #: Similar to TapChanger.nominalVoltage, but this is the nominal voltage in the out of phase winding at the nominal tap step. A typical case may have zero voltage at the nominal step, indicating no phase shift at the nominal voltage.
         self.nominalVoltageOutOfPhase = nominalVoltageOutOfPhase
 
         self._PhaseVariationCurve = None

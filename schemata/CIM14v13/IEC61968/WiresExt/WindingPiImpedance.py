@@ -33,28 +33,28 @@ class WindingPiImpedance(IdentifiedObject):
         @param r: DC resistance of the winding. 
         @param Windings: All windings having this Pi impedance.
         """
-        #: Positive sequence series reactance of the winding.  For a two winding transformer, the full reactance of the transformer should be entered on the primary (high voltage) winding. 
+        #: Positive sequence series reactance of the winding.  For a two winding transformer, the full reactance of the transformer should be entered on the primary (high voltage) winding.
         self.x = x
 
-        #: Zero sequence series resistance of the winding. 
+        #: Zero sequence series resistance of the winding.
         self.r0 = r0
 
-        #: Zero sequence magnetizing branch susceptance. 
+        #: Zero sequence magnetizing branch susceptance.
         self.b0 = b0
 
-        #: Magnetizing branch conductance (G mag). 
+        #: Magnetizing branch conductance (G mag).
         self.g = g
 
-        #: Zero sequence magnetizing branch conductance. 
+        #: Zero sequence magnetizing branch conductance.
         self.g0 = g0
 
-        #: Zero sequence series reactance of the winding. 
+        #: Zero sequence series reactance of the winding.
         self.x0 = x0
 
-        #: Magnetizing branch susceptance (B mag).  The value can be positive or negative. 
+        #: Magnetizing branch susceptance (B mag).  The value can be positive or negative.
         self.b = b
 
-        #: DC resistance of the winding. 
+        #: DC resistance of the winding.
         self.r = r
 
         self._Windings = []

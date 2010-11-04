@@ -27,13 +27,13 @@ class SynchrocheckRelay(ProtectionEquipment):
         @param maxVoltDiff: The maximum allowable difference voltage across the open device 
         @param maxAngleDiff: The maximum allowable voltage vector phase angle difference across the open device 
         """
-        #: The maximum allowable frequency difference across the open device 
+        #: The maximum allowable frequency difference across the open device
         self.maxFreqDiff = maxFreqDiff
 
-        #: The maximum allowable difference voltage across the open device 
+        #: The maximum allowable difference voltage across the open device
         self.maxVoltDiff = maxVoltDiff
 
-        #: The maximum allowable voltage vector phase angle difference across the open device 
+        #: The maximum allowable voltage vector phase angle difference across the open device
         self.maxAngleDiff = maxAngleDiff
 
         super(SynchrocheckRelay, self).__init__(*args, **kw_args)

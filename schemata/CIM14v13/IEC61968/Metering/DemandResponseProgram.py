@@ -29,7 +29,7 @@ class DemandResponseProgram(IdentifiedObject):
         @param CustomerAgreements: All customer agreements with this demand response program.
         @param EndDeviceControls: All end device controls with this demand response program.
         """
-        #: Type of demand response program; examples are CPP (critical-peak pricing), RTP (real-time pricing), DLC (direct load control), DBP (demand bidding program), BIP (base interruptible program). Note that possible types change a lot and it would be impossible to enumerate them all. 
+        #: Type of demand response program; examples are CPP (critical-peak pricing), RTP (real-time pricing), DLC (direct load control), DBP (demand bidding program), BIP (base interruptible program). Note that possible types change a lot and it would be impossible to enumerate them all.
         self.type = type
 
         self._EndDeviceGroups = []

@@ -31,16 +31,16 @@ class Analog(Measurement):
         @param LimitSets: A measurement may have zero or more limit ranges defined for it.
         @param SetPoint: The Control variable associated with the Measurement
         """
-        #: Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values. 
+        #: Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values.
         self.maxValue = maxValue
 
-        #: If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource. 
+        #: If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource.
         self.positiveFlowIn = positiveFlowIn
 
-        #: Normal measurement value, e.g., used for percentage calculations. 
+        #: Normal measurement value, e.g., used for percentage calculations.
         self.normalValue = normalValue
 
-        #: Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values 
+        #: Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values
         self.minValue = minValue
 
         self._AnalogValues = []

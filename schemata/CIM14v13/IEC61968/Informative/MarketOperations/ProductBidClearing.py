@@ -26,7 +26,7 @@ class ProductBidClearing(MarketFactors):
         @param clearedMW: Cleared MWs. 
         @param ProductBids:
         """
-        #: Cleared MWs. 
+        #: Cleared MWs.
         self.clearedMW = clearedMW
 
         self._ProductBids = []

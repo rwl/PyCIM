@@ -29,16 +29,16 @@ class SetPoint(Control):
         @param maxValue: Normal value range maximum for any of the Control.value. Used for scaling, e.g. in bar graphs. 
         @param Analog: The Measurement variable used for control
         """
-        #: Normal value range minimum for any of the Control.value. Used for scaling, e.g. in bar graphs. 
+        #: Normal value range minimum for any of the Control.value. Used for scaling, e.g. in bar graphs.
         self.minValue = minValue
 
-        #: Normal value for Control.value e.g. used for percentage scaling 
+        #: Normal value for Control.value e.g. used for percentage scaling
         self.normalValue = normalValue
 
-        #: The value representing the actuator output 
+        #: The value representing the actuator output
         self.value = value
 
-        #: Normal value range maximum for any of the Control.value. Used for scaling, e.g. in bar graphs. 
+        #: Normal value range maximum for any of the Control.value. Used for scaling, e.g. in bar graphs.
         self.maxValue = maxValue
 
         self._Analog = None

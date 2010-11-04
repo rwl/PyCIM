@@ -26,7 +26,7 @@ class SubstationAsset(AssetContainer):
         @param function: Function of this substation asset. Values are: "industrial", "subTransmission", "generation", "distribution", "transmission", "other"
         @param Substation:
         """
-        #: Function of this substation asset. Values are: "industrial", "subTransmission", "generation", "distribution", "transmission", "other"
+        #: Function of this substation asset.Values are: "industrial", "subTransmission", "generation", "distribution", "transmission", "other"
         self.function = function
 
         self._Substation = None

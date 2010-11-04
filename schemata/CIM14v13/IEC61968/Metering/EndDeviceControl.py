@@ -33,16 +33,16 @@ class EndDeviceControl(IdentifiedObject):
         @param CustomerAgreement: Could be deprecated in the future.
         @param DemandResponseProgram: Demand response program for this end device control.
         """
-        #: Type of control. 
+        #: Type of control.
         self.type = type
 
-        #: Whether a demand response program request is mandatory. Note: Attribute is not defined on DemandResponseProgram as it is not its inherent property (it serves to control it). 
+        #: Whether a demand response program request is mandatory. Note: Attribute is not defined on DemandResponseProgram as it is not its inherent property (it serves to control it).
         self.drProgramMandatory = drProgramMandatory
 
-        #: (if applicable) Price signal used as parameter for this end device control. 
+        #: (if applicable) Price signal used as parameter for this end device control.
         self.priceSignal = priceSignal
 
-        #: Level of a demand response program request, where 0=emergency. Note: Attribute is not defined on DemandResponseProgram as it is not its inherent property (it serves to control it). 
+        #: Level of a demand response program request, where 0=emergency. Note: Attribute is not defined on DemandResponseProgram as it is not its inherent property (it serves to control it).
         self.drProgramLevel = drProgramLevel
 
         self._EndDeviceAsset = None

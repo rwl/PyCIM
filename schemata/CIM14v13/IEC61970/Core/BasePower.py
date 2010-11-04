@@ -25,7 +25,7 @@ class BasePower(IdentifiedObject):
 
         @param basePower: Definition of base power. 
         """
-        #: Definition of base power. 
+        #: Definition of base power.
         self.basePower = basePower
 
         super(BasePower, self).__init__(*args, **kw_args)

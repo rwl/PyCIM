@@ -30,19 +30,19 @@ class ProfileData(Element):
         @param sequenceNumber: Sequence to provide item numbering for the profile. { greater than or equal to 1 } 
         @param Profile: A profile has profile data associated with it.
         """
-        #: Stop date/time for this profile. 
+        #: Stop date/time for this profile.
         self.stopDateTime = stopDateTime
 
-        #: Energy level for the profile 
+        #: Energy level for the profile
         self.energyLevel = energyLevel
 
-        #: Start date/time for this profile. 
+        #: Start date/time for this profile.
         self.startDateTime = startDateTime
 
-        #: Active power capacity level for the profile. 
+        #: Active power capacity level for the profile.
         self.capacityLevel = capacityLevel
 
-        #: Sequence to provide item numbering for the profile. { greater than or equal to 1 } 
+        #: Sequence to provide item numbering for the profile. { greater than or equal to 1 }
         self.sequenceNumber = sequenceNumber
 
         self._Profile = []

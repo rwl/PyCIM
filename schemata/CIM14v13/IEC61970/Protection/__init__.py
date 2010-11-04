@@ -19,3 +19,10 @@
 
 ns_prefix = "cimProtection"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Protection"
+
+from CIM14v13.IEC61970.Protection.FaultIndicator import FaultIndicator
+from CIM14v13.IEC61970.Protection.SurgeProtector import SurgeProtector
+from CIM14v13.IEC61970.Protection.RecloseSequence import RecloseSequence
+from CIM14v13.IEC61970.Protection.ProtectionEquipment import ProtectionEquipment
+from CIM14v13.IEC61970.Protection.SynchrocheckRelay import SynchrocheckRelay
+from CIM14v13.IEC61970.Protection.CurrentRelay import CurrentRelay

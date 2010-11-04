@@ -33,19 +33,19 @@ class CallBack(IdentifiedObject):
         @param status:
         @param TroubleTickets:
         """
-        #: Advice already given to the customer during this call back. 
+        #: Advice already given to the customer during this call back.
         self.advice = advice
 
-        #: Additional contact details that are not provided for ErpPerson with ErpTelephoneNumber. 
+        #: Additional contact details that are not provided for ErpPerson with ErpTelephoneNumber.
         self.contactDetail = contactDetail
 
-        #: Comments by customer during this call back. 
+        #: Comments by customer during this call back.
         self.comment = comment
 
-        #: Descriptiion of the problem reported during this call back. 
+        #: Descriptiion of the problem reported during this call back.
         self.problemInfo = problemInfo
 
-        #: (if callback already occured) Date and time when this call back occurred. 
+        #: (if callback already occured) Date and time when this call back occurred.
         self.dateTime = dateTime
 
         self._ErpPersons = []

@@ -26,39 +26,39 @@ class Curve(IdentifiedObject):
         @param y3Multiplier: Multiplier for Y3-axis. Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
         @param y2Multiplier: Multiplier for Y2-axis. Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
         @param xMultiplier: Multiplier for X-axis. Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
-        @param y2Unit: The Y2-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "ºC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
+        @param y2Unit: The Y2-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "oC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
         @param curveStyle: The style or shape of the curve. Values are: "constantYValue", "rampYValue", "formula", "straightLineYValues"
-        @param y1Unit: The Y1-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "ºC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
+        @param y1Unit: The Y1-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "oC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
         @param y1Multiplier: Multiplier for Y1-axis Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
-        @param y3Unit: The Y3-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "ºC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
-        @param xUnit: The X-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "ºC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
+        @param y3Unit: The Y3-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "oC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
+        @param xUnit: The X-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "oC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
         @param CurveDatas: The point data values that define a curve
         """
-        #: Multiplier for Y3-axis. Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
+        #: Multiplier for Y3-axis.Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
         self.y3Multiplier = y3Multiplier
 
-        #: Multiplier for Y2-axis. Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
+        #: Multiplier for Y2-axis.Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
         self.y2Multiplier = y2Multiplier
 
-        #: Multiplier for X-axis. Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
+        #: Multiplier for X-axis.Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
         self.xMultiplier = xMultiplier
 
-        #: The Y2-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "ºC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
+        #: The Y2-axis units of measure.Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "oC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
         self.y2Unit = y2Unit
 
-        #: The style or shape of the curve. Values are: "constantYValue", "rampYValue", "formula", "straightLineYValues"
+        #: The style or shape of the curve.Values are: "constantYValue", "rampYValue", "formula", "straightLineYValues"
         self.curveStyle = curveStyle
 
-        #: The Y1-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "ºC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
+        #: The Y1-axis units of measure.Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "oC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
         self.y1Unit = y1Unit
 
-        #: Multiplier for Y1-axis Values are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
+        #: Multiplier for Y1-axisValues are: "m", "T", "p", "k", "M", "micro", "n", "d", "G", "c", "none"
         self.y1Multiplier = y1Multiplier
 
-        #: The Y3-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "ºC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
+        #: The Y3-axis units of measure.Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "oC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
         self.y3Unit = y3Unit
 
-        #: The X-axis units of measure. Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "ºC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
+        #: The X-axis units of measure.Values are: "m2", "VAr", "m3", "g", "VArh", "F", "Hz", "deg", "W/s", "V", "V/VAr", "rad", "min", "ohm", "m", "H", "s", "W/Hz", "kg/J", "Wh", "VA", "S", "none", "oC", "s-1", "J", "N", "h", "J/s", "Hz-1", "Pa", "W", "A", "VAh"
         self.xUnit = xUnit
 
         self._CurveDatas = []

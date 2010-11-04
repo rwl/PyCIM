@@ -27,7 +27,7 @@ class OrgAssetRole(Role):
         @param Asset:
         @param ErpOrganisation:
         """
-        #: If the role type is 'owner,' this indicate the percentage of ownership. 
+        #: If the role type is 'owner,' this indicate the percentage of ownership.
         self.percentOwnership = percentOwnership
 
         self._Asset = None

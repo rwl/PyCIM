@@ -25,7 +25,7 @@ class LoadShedFunction(LoadMgmtFunction):
 
         @param switchedLoad: The value of the load that is connected to the shedding switch. Typically this is a noted nominal value rather than a measured value. 
         """
-        #: The value of the load that is connected to the shedding switch. Typically this is a noted nominal value rather than a measured value. 
+        #: The value of the load that is connected to the shedding switch. Typically this is a noted nominal value rather than a measured value.
         self.switchedLoad = switchedLoad
 
         super(LoadShedFunction, self).__init__(*args, **kw_args)

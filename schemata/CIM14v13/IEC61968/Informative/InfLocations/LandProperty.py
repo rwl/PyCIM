@@ -35,13 +35,13 @@ class LandProperty(IdentifiedObject):
         @param ErpOrganisationRoles:
         @param status:
         """
-        #: Kind of (land) property, categorised according to its main functional use from the utility's perspective. Values are: "store", "depot", "customerPremise", "external", "gridSupplyPoint", "substation", "building"
+        #: Kind of (land) property, categorised according to its main functional use from the utility's perspective.Values are: "store", "depot", "customerPremise", "external", "gridSupplyPoint", "substation", "building"
         self.kind = kind
 
-        #: Demographics around the site. Values are: "other", "urban", "rural"
+        #: Demographics around the site.Values are: "other", "urban", "rural"
         self.demographicKind = demographicKind
 
-        #: Reference allocated by the governing organisation (such as municipality) to this piece of land that has a formal reference to Surveyor General's records. The governing organisation is specified in associated Organisation. 
+        #: Reference allocated by the governing organisation (such as municipality) to this piece of land that has a formal reference to Surveyor General's records. The governing organisation is specified in associated Organisation.
         self.externalRecordReference = externalRecordReference
 
         self._LocationGrants = []

@@ -26,10 +26,10 @@ class TapeShieldCableInfo(CableInfo):
         @param tapeThickness: Thickness of the tape shield, before wrapping. 
         @param tapeLap: Percentage of the tape shield width that overlaps in each wrap, typically 10% to 25%. 
         """
-        #: Thickness of the tape shield, before wrapping. 
+        #: Thickness of the tape shield, before wrapping.
         self.tapeThickness = tapeThickness
 
-        #: Percentage of the tape shield width that overlaps in each wrap, typically 10% to 25%. 
+        #: Percentage of the tape shield width that overlaps in each wrap, typically 10% to 25%.
         self.tapeLap = tapeLap
 
         super(TapeShieldCableInfo, self).__init__(*args, **kw_args)

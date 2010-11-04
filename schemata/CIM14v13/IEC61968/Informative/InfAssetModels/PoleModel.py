@@ -28,10 +28,10 @@ class PoleModel(AssetModel):
         @param PoleTypeAsset:
         @param Poles:
         """
-        #: Pole species. Aluminum, Aluminum Davit, Concrete, Fiberglass, Galvanized Davit, Galvanized, Steel Davit Primed, Steel Davit, Steel Standard Primed, Steel, Truncated, Wood-Treated, Wood-Hard, Wood-Salt Treated, Wood-Soft, Wood, Other, Unknown. 
+        #: Pole species. Aluminum, Aluminum Davit, Concrete, Fiberglass, Galvanized Davit, Galvanized, Steel Davit Primed, Steel Davit, Steel Standard Primed, Steel, Truncated, Wood-Treated, Wood-Hard, Wood-Salt Treated, Wood-Soft, Wood, Other, Unknown.
         self.speciesType = speciesType
 
-        #: Pole class: 1, 2, 3, 4, 5, 6, 7, H1, H2, Other, Unknown. 
+        #: Pole class: 1, 2, 3, 4, 5, 6, 7, H1, H2, Other, Unknown.
         self.classification = classification
 
         self._PoleTypeAsset = None

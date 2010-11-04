@@ -28,13 +28,13 @@ class EmissionCurve(Curve):
         @param emissionContent: The emission content per quantity of fuel burned 
         @param ThermalGeneratingUnit: A thermal generating unit may have  one or more emission curves
         """
-        #: The type of emission, which also gives the production rate measurement unit. The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide). Values are: "nitrogenOxide", "carbonDisulfide", "hydrogenSulfide", "sulfurDioxide", "chlorine", "carbonDioxide"
+        #: The type of emission, which also gives the production rate measurement unit. The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfer dioxide).Values are: "nitrogenOxide", "carbonDisulfide", "hydrogenSulfide", "sulfurDioxide", "chlorine", "carbonDioxide"
         self.emissionType = emissionType
 
-        #: Flag is set to true when output is expressed in net active power 
+        #: Flag is set to true when output is expressed in net active power
         self.isNetGrossP = isNetGrossP
 
-        #: The emission content per quantity of fuel burned 
+        #: The emission content per quantity of fuel burned
         self.emissionContent = emissionContent
 
         self._ThermalGeneratingUnit = None

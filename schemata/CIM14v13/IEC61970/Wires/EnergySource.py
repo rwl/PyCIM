@@ -34,34 +34,34 @@ class EnergySource(ConductingEquipment):
         @param activePower: High voltage source load 
         @param nominalVoltage: Phase-to-phase nominal voltage. 
         """
-        #: Negative sequence Thevenin resistance. 
+        #: Negative sequence Thevenin resistance.
         self.rn = rn
 
-        #: Positive sequence Thevenin resistance. 
+        #: Positive sequence Thevenin resistance.
         self.r = r
 
-        #: Zero sequence Thevenin resistance. 
+        #: Zero sequence Thevenin resistance.
         self.r0 = r0
 
-        #: Phase-to-phase open circuit voltage magnitude. 
+        #: Phase-to-phase open circuit voltage magnitude.
         self.voltageMagnitude = voltageMagnitude
 
-        #: Positive sequence Thevenin reactance. 
+        #: Positive sequence Thevenin reactance.
         self.x = x
 
-        #: Phase angle of a-phase open circuit. 
+        #: Phase angle of a-phase open circuit.
         self.voltageAngle = voltageAngle
 
-        #: Negative sequence Thevenin reactance. 
+        #: Negative sequence Thevenin reactance.
         self.xn = xn
 
-        #: Zero sequence Thevenin reactance. 
+        #: Zero sequence Thevenin reactance.
         self.x0 = x0
 
-        #: High voltage source load 
+        #: High voltage source load
         self.activePower = activePower
 
-        #: Phase-to-phase nominal voltage. 
+        #: Phase-to-phase nominal voltage.
         self.nominalVoltage = nominalVoltage
 
         super(EnergySource, self).__init__(*args, **kw_args)

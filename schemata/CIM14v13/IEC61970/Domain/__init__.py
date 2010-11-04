@@ -19,3 +19,4 @@
 
 ns_prefix = "cimDomain"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Domain"
+

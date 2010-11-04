@@ -37,7 +37,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
         @param StartupModel: A thermal generating unit may have a startup model
         @param FossilFuels: A thermal generating unit may have one or more fossil fuels
         """
-        #: Operating and maintenance cost for the thermal unit 
+        #: Operating and maintenance cost for the thermal unit
         self.oMCost = oMCost
 
         self._HeatRateCurve = None

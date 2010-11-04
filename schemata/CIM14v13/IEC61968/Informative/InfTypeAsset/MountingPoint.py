@@ -24,8 +24,8 @@ class MountingPoint(IdentifiedObject):
         """Initializes a new 'MountingPoint' instance.
 
         @param phaseCode: Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
-        @param yCoord:
-        @param xCoord:
+        @param yCoord: 
+        @param xCoord: 
         @param OverheadConductors:
         @param Connections:
         """
@@ -47,7 +47,7 @@ class MountingPoint(IdentifiedObject):
         super(MountingPoint, self).__init__(*args, **kw_args)
 
     def getOverheadConductors(self):
-
+        
         return self._OverheadConductors
 
     def setOverheadConductors(self, value):
@@ -70,7 +70,7 @@ class MountingPoint(IdentifiedObject):
             self._OverheadConductors.remove(obj)
 
     def getConnections(self):
-
+        
         return self._Connections
 
     def setConnections(self, value):

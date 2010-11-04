@@ -41,46 +41,46 @@ class GeneratingBid(ResourceBid):
         @param BidSet:
         @param StartUpTimeCurve:
         """
-        #: Power rating available for unit under emergency conditions greater than or equal to maximum economic limit. 
+        #: Power rating available for unit under emergency conditions greater than or equal to maximum economic limit.
         self.maxEmergencyMW = maxEmergencyMW
 
-        #: Maximum high economic MW limit, that should not exceed the maximum operating MW limit 
+        #: Maximum high economic MW limit, that should not exceed the maximum operating MW limit
         self.maximumEconomicMW = maximumEconomicMW
 
-        #: Low economic MW limit that must be greater than or equal to the minimum operating MW limit 
+        #: Low economic MW limit that must be greater than or equal to the minimum operating MW limit
         self.minimumEconomicMW = minimumEconomicMW
 
-        #: Resource startup ramp rate (MW/minute) 
+        #: Resource startup ramp rate (MW/minute)
         self.startUpRampRate = startUpRampRate
 
-        #: Maximum down time. 
+        #: Maximum down time.
         self.downTimeMax = downTimeMax
 
-        #: Bid operating mode ('C' - cycling, 'F' - fixed, 'M' - must run, 'U' - unavailable) 
+        #: Bid operating mode ('C' - cycling, 'F' - fixed, 'M' - must run, 'U' - unavailable)
         self.operatingMode = operatingMode
 
-        #: Time it takes to get the unit on-line, from the time that the prime mover mechanical power is applied 
+        #: Time it takes to get the unit on-line, from the time that the prime mover mechanical power is applied
         self.startupTime = startupTime
 
-        #: Minimum power rating for unit under emergency conditions, which is less than or equal to the economic minimum. 
+        #: Minimum power rating for unit under emergency conditions, which is less than or equal to the economic minimum.
         self.minEmergencyMW = minEmergencyMW
 
-        #: Resource fixed no load cost. 
+        #: Resource fixed no load cost.
         self.noLoadCost = noLoadCost
 
-        #: Minimum time interval between unit shutdown and startup 
+        #: Minimum time interval between unit shutdown and startup
         self.minimumDownTime = minimumDownTime
 
-        #: Resource startup type:  1 - Fixed startup time and fixed startup cost  2 - Startup time as a function of down time and fixed startup cost  3 - Startup cost as a function of down time 
+        #: Resource startup type:  1 - Fixed startup time and fixed startup cost  2 - Startup time as a function of down time and fixed startup cost  3 - Startup cost as a function of down time
         self.startUpType = startUpType
 
-        #: Minimum up time. 
+        #: Minimum up time.
         self.upTimeMin = upTimeMin
 
-        #: Maximum up time. 
+        #: Maximum up time.
         self.upTimeMax = upTimeMax
 
-        #: Time required for crew notification prior to start up of the unit. 
+        #: Time required for crew notification prior to start up of the unit.
         self.notificationTime = notificationTime
 
         self._NotificationTimeCurve = None

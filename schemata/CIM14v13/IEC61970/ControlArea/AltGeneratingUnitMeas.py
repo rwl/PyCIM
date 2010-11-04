@@ -27,7 +27,7 @@ class AltGeneratingUnitMeas(Element):
         @param ControlAreaGeneratingUnit: The control aread generating unit to which the prioritized measurement assignment is applied.
         @param AnalogValue: The specific analog value used as a source.
         """
-        #: Priority of a measurement usage.   Lower numbers have first priority. 
+        #: Priority of a measurement usage.   Lower numbers have first priority.
         self.priority = priority
 
         self._ControlAreaGeneratingUnit = None

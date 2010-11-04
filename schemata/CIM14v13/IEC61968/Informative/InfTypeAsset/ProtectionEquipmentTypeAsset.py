@@ -27,10 +27,10 @@ class ProtectionEquipmentTypeAsset(ElectricalTypeAsset):
         @param defaultGroundTrip: Default ground trip setting for this type of relay, if applicable. 
         @param ProtectionEquipmentAssetModels:
         """
-        #: Default phase trip setting for this type of relay, if applicable. 
+        #: Default phase trip setting for this type of relay, if applicable.
         self.defaultPhaseTrip = defaultPhaseTrip
 
-        #: Default ground trip setting for this type of relay, if applicable. 
+        #: Default ground trip setting for this type of relay, if applicable.
         self.defaultGroundTrip = defaultGroundTrip
 
         self._ProtectionEquipmentAssetModels = []

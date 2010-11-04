@@ -28,10 +28,10 @@ class Register(IdentifiedObject):
         @param ReadingType: Reading type for values displayed by this register.
         @param DeviceFunction: Device function metering quantities displayed by this register.
         """
-        #: Number of digits (dials on a mechanical meter) to the right of the decimal place. 
+        #: Number of digits (dials on a mechanical meter) to the right of the decimal place.
         self.rightDigitCount = rightDigitCount
 
-        #: Number of digits (dials on a mechanical meter) to the left of the decimal place; default is 5. 
+        #: Number of digits (dials on a mechanical meter) to the left of the decimal place; default is 5.
         self.leftDigitCount = leftDigitCount
 
         self._ReadingType = None

@@ -33,13 +33,13 @@ class CurrentTransformerInfo(ElectricalInfo):
         @param primaryRatio: Ratio for the primary winding tap changer.
         @param tertiaryRatio: Ratio for the tertiary winding tap changer.
         """
-        #: Full load secondary (FLS) rating for tertiary winding. 
+        #: Full load secondary (FLS) rating for tertiary winding.
         self.tertiaryFlsRating = tertiaryFlsRating
 
-        #: Full load secondary (FLS) rating for secondary winding. 
+        #: Full load secondary (FLS) rating for secondary winding.
         self.secondaryFlsRating = secondaryFlsRating
 
-        #: Full load secondary (FLS) rating for primary winding. 
+        #: Full load secondary (FLS) rating for primary winding.
         self.primaryFlsRating = primaryFlsRating
 
         self._CurrentTransformerTypeAsset = None

@@ -28,7 +28,7 @@ class Hazard(IdentifiedObject):
         @param Locations: The point or polygon location of a given hazard.
         @param status:
         """
-        #: Category by utility's corporate standards and practices. 
+        #: Category by utility's corporate standards and practices.
         self.category = category
 
         self._Assets = []

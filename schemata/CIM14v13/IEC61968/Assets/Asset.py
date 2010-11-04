@@ -63,40 +63,40 @@ class Asset(IdentifiedObject):
         @param acceptanceTest: Information on acceptance test.
         @param status: Status of this asset.
         """
-        #: Condition of asset in inventory or at time of installation. Examples include new, rebuilt, overhaul required, other. Refer to inspection data for information on the most current condition of the asset. 
+        #: Condition of asset in inventory or at time of installation. Examples include new, rebuilt, overhaul required, other. Refer to inspection data for information on the most current condition of the asset.
         self.initialCondition = initialCondition
 
-        #: Extension mechanism to accommodate utility-specific categorisation of Asset and its subtypes, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.). 
+        #: Extension mechanism to accommodate utility-specific categorisation of Asset and its subtypes, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).
         self.category = category
 
-        #: Lot number for this asset. Even for the same model and version number, many assets are manufactured in lots. 
+        #: Lot number for this asset. Even for the same model and version number, many assets are manufactured in lots.
         self.lotNumber = lotNumber
 
-        #: The way this particular asset is being used in this installation. For example, the application of a bushing when attached to a specific transformer winding would be one of the following: H1, H2, H3, H0, X1, X2, X3, X0, Y1, Y2, Y3, Y0. 
+        #: The way this particular asset is being used in this installation. For example, the application of a bushing when attached to a specific transformer winding would be one of the following: H1, H2, H3, H0, X1, X2, X3, X0, Y1, Y2, Y3, Y0.
         self.application = application
 
-        #: Serial number of this asset. 
+        #: Serial number of this asset.
         self.serialNumber = serialNumber
 
-        #: (if applicable) Date current installation was completed, which may not be the same as the in-service date. Asset may have been installed at other locations previously. Ignored if asset is (1) not currently installed (e.g., stored in a depot) or (2) not intended to be installed (e.g., vehicle, tool). 
+        #: (if applicable) Date current installation was completed, which may not be the same as the in-service date. Asset may have been installed at other locations previously. Ignored if asset is (1) not currently installed (e.g., stored in a depot) or (2) not intended to be installed (e.g., vehicle, tool).
         self.installationDate = installationDate
 
-        #: Code for this type of asset. 
+        #: Code for this type of asset.
         self.corporateCode = corporateCode
 
-        #: Purchase price of asset. 
+        #: Purchase price of asset.
         self.purchasePrice = purchasePrice
 
-        #: Date this asset was manufactured. 
+        #: Date this asset was manufactured.
         self.manufacturedDate = manufacturedDate
 
-        #: Whenever an asset is reconditioned, percentage of expected life for the asset when it was new; zero for new devices. 
+        #: Whenever an asset is reconditioned, percentage of expected life for the asset when it was new; zero for new devices.
         self.initialLossOfLife = initialLossOfLife
 
-        #: Uniquely Tracked Commodity (UTC) number. 
+        #: Uniquely Tracked Commodity (UTC) number.
         self.utcNumber = utcNumber
 
-        #: True if asset is considered critical for some reason (for example, a pole with critical attachments). 
+        #: True if asset is considered critical for some reason (for example, a pole with critical attachments).
         self.critical = critical
 
         self._Measurements = []

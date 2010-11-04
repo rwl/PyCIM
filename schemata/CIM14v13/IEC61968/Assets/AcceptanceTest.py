@@ -27,13 +27,13 @@ class AcceptanceTest(Element):
         @param success: True if asset has passed acceptance test and may be placed in or is in service. It is set to false if asset is removed from service and is required to be tested again before being placed back in service, possibly in a new location. Since asset may go through multiple tests during its life cycle, the date of each acceptance test may be recorded in Asset.ActivityRecord.status.dateTime. 
         @param type: Type of test or group of tests that was conducted on 'dateTime'. 
         """
-        #: Date and time the asset was last tested using the 'type' of test and yielding the current status in 'success' attribute. 
+        #: Date and time the asset was last tested using the 'type' of test and yielding the current status in 'success' attribute.
         self.dateTime = dateTime
 
-        #: True if asset has passed acceptance test and may be placed in or is in service. It is set to false if asset is removed from service and is required to be tested again before being placed back in service, possibly in a new location. Since asset may go through multiple tests during its life cycle, the date of each acceptance test may be recorded in Asset.ActivityRecord.status.dateTime. 
+        #: True if asset has passed acceptance test and may be placed in or is in service. It is set to false if asset is removed from service and is required to be tested again before being placed back in service, possibly in a new location. Since asset may go through multiple tests during its life cycle, the date of each acceptance test may be recorded in Asset.ActivityRecord.status.dateTime.
         self.success = success
 
-        #: Type of test or group of tests that was conducted on 'dateTime'. 
+        #: Type of test or group of tests that was conducted on 'dateTime'.
         self.type = type
 
         super(AcceptanceTest, self).__init__(*args, **kw_args)

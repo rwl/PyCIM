@@ -28,7 +28,7 @@ class CurrentTransformerAsset(ElectricalAsset):
         @param CurrentTransformerAssetModel:
         @param CurrentTransformer:
         """
-        #: Type of CT as categorized by the utility's asset management standards and practices. 
+        #: Type of CT as categorized by the utility's asset management standards and practices.
         self.typeCT = typeCT
 
         self._CurrentTransformerInfo = None

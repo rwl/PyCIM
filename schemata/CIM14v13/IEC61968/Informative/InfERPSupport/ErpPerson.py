@@ -52,28 +52,28 @@ class ErpPerson(IdentifiedObject):
         @param LandPropertyRoles:
         @param status:
         """
-        #: A prefix or title for the person's name, such as Miss, Mister, Doctor, etc. 
+        #: A prefix or title for the person's name, such as Miss, Mister, Doctor, etc.
         self.prefix = prefix
 
-        #: Unique identifier for person relative to its governing authority, for example a federal tax identifier (such as a Social Security number in the United States). 
+        #: Unique identifier for person relative to its governing authority, for example a federal tax identifier (such as a Social Security number in the United States).
         self.governmentID = governmentID
 
-        #: Person's last (family, sir) name. 
+        #: Person's last (family, sir) name.
         self.lastName = lastName
 
-        #: Category of this person relative to utility operations, classified according to the utility's corporate standards and practices. Examples include employee, contractor, agent, not affiliated, etc. Note that this field is not used to indicate whether this person is a customer of the utility. Often an employee or contractor is also a customer. Customer information is gained with relationship to Organisation and CustomerData. In similar fashion, this field does not indicate the various roles this person may fill as part of utility operations. 
+        #: Category of this person relative to utility operations, classified according to the utility's corporate standards and practices. Examples include employee, contractor, agent, not affiliated, etc. Note that this field is not used to indicate whether this person is a customer of the utility. Often an employee or contractor is also a customer. Customer information is gained with relationship to Organisation and CustomerData. In similar fashion, this field does not indicate the various roles this person may fill as part of utility operations.
         self.category = category
 
-        #: Person's first name. 
+        #: Person's first name.
         self.firstName = firstName
 
-        #: A suffix for the person's name, such as II, III, etc. 
+        #: A suffix for the person's name, such as II, III, etc.
         self.suffix = suffix
 
-        #: Special service needs for the person (contact) are described; examples include life support, etc. 
+        #: Special service needs for the person (contact) are described; examples include life support, etc.
         self.specialNeed = specialNeed
 
-        #: Middle name(s) or initial(s). 
+        #: Middle name(s) or initial(s).
         self.mName = mName
 
         self._ErpTelephoneNumbers = []

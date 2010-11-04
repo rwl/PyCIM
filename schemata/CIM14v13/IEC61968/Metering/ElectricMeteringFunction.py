@@ -36,37 +36,37 @@ class ElectricMeteringFunction(DeviceFunction):
         @param voltageRating: The service voltage at which the meter is designed to operate. Typical voltage ratings in North America are 120 V, 240 V, 277 V or 480 V. 
         @param MeteringFunctionConfiguration: Configuration for this electric metering function.
         """
-        #: Meter kW (pulse) multiplier, used as a multiplier for a meter register reading to determine the actual amount of usage for which to bill a customer. 
+        #: Meter kW (pulse) multiplier, used as a multiplier for a meter register reading to determine the actual amount of usage for which to bill a customer.
         self.kWMultiplier = kWMultiplier
 
-        #: Customer billing value = meter multiplier * transformer ratios * reading value. The multiplier identifies the scaling value to apply to the reported value after delivery of the tagged item. 
+        #: Customer billing value = meter multiplier * transformer ratios * reading value. The multiplier identifies the scaling value to apply to the reported value after delivery of the tagged item.
         self.billingMultiplier = billingMultiplier
 
-        #: True if the billingMultiplier ratio has already been applied to the associated quantities. 
+        #: True if the billingMultiplier ratio has already been applied to the associated quantities.
         self.billingMultiplierApplied = billingMultiplierApplied
 
-        #: Current transformer ratio used to convert associated quantities to real measurements. 
+        #: Current transformer ratio used to convert associated quantities to real measurements.
         self.transformerCTRatio = transformerCTRatio
 
-        #: An additional multiplier that may be used for normalization of the demand value to an hourly value. For example, if the demand interval were set to 15 min, the demand multiplier would be 4. If the meter design is such that the demand value reported and displayed is compensated for by the meter itself and no additional scaling is required outside of the meter, the value of the demand multiplier should be '1'. 
+        #: An additional multiplier that may be used for normalization of the demand value to an hourly value. For example, if the demand interval were set to 15 min, the demand multiplier would be 4. If the meter design is such that the demand value reported and displayed is compensated for by the meter itself and no additional scaling is required outside of the meter, the value of the demand multiplier should be '1'.
         self.demandMultiplier = demandMultiplier
 
-        #: True if transformer ratios have been already applied to the associated quantities. 
+        #: True if transformer ratios have been already applied to the associated quantities.
         self.transformerRatiosApplied = transformerRatiosApplied
 
-        #: Voltage transformer ratio used to convert associated quantities to real measurements. 
+        #: Voltage transformer ratio used to convert associated quantities to real measurements.
         self.transformerVTRatio = transformerVTRatio
 
-        #: True if the demandMultiplier ratio has already been applied to the associated quantities. 
+        #: True if the demandMultiplier ratio has already been applied to the associated quantities.
         self.demandMultiplierApplied = demandMultiplierApplied
 
-        #: The current class of the meter. Typical current classes in North America are 10 A, 20 A, 100 A, 200 A, or 320 A. 
+        #: The current class of the meter. Typical current classes in North America are 10 A, 20 A, 100 A, 200 A, or 320 A.
         self.currentRating = currentRating
 
-        #: Meter kWh multiplier, used as a multiplier for a meter register reading to determine the actual amount of usage for which to bill a customer. 
+        #: Meter kWh multiplier, used as a multiplier for a meter register reading to determine the actual amount of usage for which to bill a customer.
         self.kWhMultiplier = kWhMultiplier
 
-        #: The service voltage at which the meter is designed to operate. Typical voltage ratings in North America are 120 V, 240 V, 277 V or 480 V. 
+        #: The service voltage at which the meter is designed to operate. Typical voltage ratings in North America are 120 V, 240 V, 277 V or 480 V.
         self.voltageRating = voltageRating
 
         self._MeteringFunctionConfiguration = None

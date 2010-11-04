@@ -40,49 +40,49 @@ class TapChangerAssetModel(AssetModel):
         @param bil: Basic Insulation Level (BIL) for switchgear, insulators, etc. A reference insulation level expressed as the impulse crest voltage of a nominal wave, typically 1.2 X 50 microsecond. This is a measure of the ability of the insulation to withstand very high voltage surges. 
         @param TapChangerAssets:
         """
-        #: Switching kind of tap changer. Values are: "vacuum", "reactive", "other", "resistive"
+        #: Switching kind of tap changer.Values are: "vacuum", "reactive", "other", "resistive"
         self.switchingKind = switchingKind
 
-        #: The neutral tap step position for this type of winding. 
+        #: The neutral tap step position for this type of winding.
         self.neutralStep = neutralStep
 
-        #: Lowest possible tap step position, retard from neutral 
+        #: Lowest possible tap step position, retard from neutral
         self.lowStep = lowStep
 
-        #: Frequency at which stated device ratings apply, typically 50Hz or 60Hz. 
+        #: Frequency at which stated device ratings apply, typically 50Hz or 60Hz.
         self.frequency = frequency
 
-        #: Tap step increment, in per cent of nominal voltage, per step position. 
+        #: Tap step increment, in per cent of nominal voltage, per step position.
         self.stepVoltageIncrement = stepVoltageIncrement
 
-        #: Rated current. 
+        #: Rated current.
         self.ratedCurrent = ratedCurrent
 
-        #: Maximum allowed delay for initial tap changer operation (first step change) 
+        #: Maximum allowed delay for initial tap changer operation (first step change)
         self.initialDelay = initialDelay
 
-        #: Number of taps. 
+        #: Number of taps.
         self.tapCount = tapCount
 
-        #: Rated voltage. 
+        #: Rated voltage.
         self.ratedVoltage = ratedVoltage
 
-        #: Phase shift, in degrees, per step position 
+        #: Phase shift, in degrees, per step position
         self.stepPhaseIncrement = stepPhaseIncrement
 
-        #: Maximum allowed delay for isubsequent tap changer operations 
+        #: Maximum allowed delay for isubsequent tap changer operations
         self.subsequentDelay = subsequentDelay
 
-        #: Highest possible tap step position, advance from neutral 
+        #: Highest possible tap step position, advance from neutral
         self.highStep = highStep
 
-        #: Rated apparent power. 
+        #: Rated apparent power.
         self.ratedApparentPower = ratedApparentPower
 
-        #: Number of potential phases the asset supports, typically 0, 1 or 3. The actual phases connected are determined from 'ConductingEquipment.phases' attribute in the ConductingEquipment subclass associated with the asset or from 'ElectricalAsset.phaseCode' attribute. 
+        #: Number of potential phases the asset supports, typically 0, 1 or 3. The actual phases connected are determined from 'ConductingEquipment.phases' attribute in the ConductingEquipment subclass associated with the asset or from 'ElectricalAsset.phaseCode' attribute.
         self.phaseCount = phaseCount
 
-        #: Basic Insulation Level (BIL) for switchgear, insulators, etc. A reference insulation level expressed as the impulse crest voltage of a nominal wave, typically 1.2 X 50 microsecond. This is a measure of the ability of the insulation to withstand very high voltage surges. 
+        #: Basic Insulation Level (BIL) for switchgear, insulators, etc. A reference insulation level expressed as the impulse crest voltage of a nominal wave, typically 1.2 X 50 microsecond. This is a measure of the ability of the insulation to withstand very high voltage surges.
         self.bil = bil
 
         self._TapChangerAssets = []

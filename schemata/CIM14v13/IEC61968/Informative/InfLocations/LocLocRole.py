@@ -27,7 +27,7 @@ class LocLocRole(Role):
         @param ToLocation:
         @param FromLocation:
         """
-        #: Detailed directional information. 
+        #: Detailed directional information.
         self.directionInfo = directionInfo
 
         self._ToLocation = None

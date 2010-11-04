@@ -30,7 +30,7 @@ class GmlFill(IdentifiedObject):
         @param GmlMarks:
         @param GmlTextSymbols:
         """
-        #: Specifies the level of translucency to use when rendering the Fill. The value is encoded as a floating-point value between 0.0 and 1.0 with 0.0 representing completely transparent and 1.0 representing completely opaque, with a linear scale of translucency for intermediate values. The default value is 1.0 
+        #: Specifies the level of translucency to use when rendering the Fill. The value is encoded as a floating-point value between 0.0 and 1.0 with 0.0 representing completely transparent and 1.0 representing completely opaque, with a linear scale of translucency for intermediate values. The default value is 1.0
         self.opacity = opacity
 
         self._GmlColour = None

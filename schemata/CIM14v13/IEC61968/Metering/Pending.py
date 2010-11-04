@@ -31,19 +31,19 @@ class Pending(Element):
         @param ReadingType: Reading type resulting from this pending conversion.
         @param IntervalBlocks: All blocks of interval reading values to which this pending conversion applies.
         """
-        #: (if applicable) Offset to be added as well as multiplication using scalars. 
+        #: (if applicable) Offset to be added as well as multiplication using scalars.
         self.offset = offset
 
-        #: (if scalar is integer or rational number)  When the scalar is a simple integer, and this attribute is presented alone and multiplied with 'IntervalReading.value', it causes a unit of measure conversion to occur, resulting in the 'ReadingType.unit'. It is never used in conjunction with 'scalarFloat', only with 'scalarDenominator'. 
+        #: (if scalar is integer or rational number)  When the scalar is a simple integer, and this attribute is presented alone and multiplied with 'IntervalReading.value', it causes a unit of measure conversion to occur, resulting in the 'ReadingType.unit'. It is never used in conjunction with 'scalarFloat', only with 'scalarDenominator'.
         self.scalarNumerator = scalarNumerator
 
-        #: (if scalar is floating number) When multiplied with 'IntervalReading.value', it causes a unit of measure conversion to occur, resulting in the 'ReadingType.unit'. 
+        #: (if scalar is floating number) When multiplied with 'IntervalReading.value', it causes a unit of measure conversion to occur, resulting in the 'ReadingType.unit'.
         self.scalarFloat = scalarFloat
 
-        #: (if scalar is rational number) When 'IntervalReading.value' is multiplied by this attribute and divided by 'scalarDenominator, it causes a unit of measure conversion to occur, resulting in the 'ReadingType.unit'. 
+        #: (if scalar is rational number) When 'IntervalReading.value' is multiplied by this attribute and divided by 'scalarDenominator, it causes a unit of measure conversion to occur, resulting in the 'ReadingType.unit'.
         self.scalarDenominator = scalarDenominator
 
-        #: Whether scalars should be applied before adding the 'offset'. 
+        #: Whether scalars should be applied before adding the 'offset'.
         self.multiplyBeforeAdd = multiplyBeforeAdd
 
         self._ReadingType = None

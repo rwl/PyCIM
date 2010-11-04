@@ -25,7 +25,7 @@ class ErpBankAccount(BankAccount):
 
         @param bankABA: Bank ABA. 
         """
-        #: Bank ABA. 
+        #: Bank ABA.
         self.bankABA = bankABA
 
         super(ErpBankAccount, self).__init__(*args, **kw_args)

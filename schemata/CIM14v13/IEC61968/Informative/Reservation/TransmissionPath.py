@@ -32,13 +32,13 @@ class TransmissionPath(Element):
         @param LocatedOn: A transmission product is located on a transmission path.
         @param For: A TransmissionPath is contained in a TransmissionCorridor.
         """
-        #: The total transmission capability of a transmission path in the reference direction 
+        #: The total transmission capability of a transmission path in the reference direction
         self.totalTransferCapability = totalTransferCapability
 
-        #: Flag which indicates if the transmission path is also a designated interconnection 'parallel path' 
+        #: Flag which indicates if the transmission path is also a designated interconnection 'parallel path'
         self.parallelPathFlag = parallelPathFlag
 
-        #: The available transmission capability of a transmission path for the reference direction 
+        #: The available transmission capability of a transmission path for the reference direction
         self.availTransferCapability = availTransferCapability
 
         self._OfferedOn = []

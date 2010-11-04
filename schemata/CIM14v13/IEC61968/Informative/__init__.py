@@ -19,3 +19,4 @@
 
 ns_prefix = "cimInformative"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Informative"
+

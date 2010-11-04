@@ -31,22 +31,22 @@ class BranchGroup(IdentifiedObject):
         @param maximumReactivePower: The maximum reactive power flow. 
         @param BranchGroupTerminal: The directed branch group terminals to be summed.
         """
-        #: The maximum active power flow. 
+        #: The maximum active power flow.
         self.maximumActivePower = maximumActivePower
 
-        #: Monitor the reactive power flow. 
+        #: Monitor the reactive power flow.
         self.monitorReactivePower = monitorReactivePower
 
-        #: The minimum active power flow. 
+        #: The minimum active power flow.
         self.minimumActivePower = minimumActivePower
 
-        #: The minimum reactive power flow. 
+        #: The minimum reactive power flow.
         self.minimumReactivePower = minimumReactivePower
 
-        #: Monitor the active power flow. 
+        #: Monitor the active power flow.
         self.monitorActivePower = monitorActivePower
 
-        #: The maximum reactive power flow. 
+        #: The maximum reactive power flow.
         self.maximumReactivePower = maximumReactivePower
 
         self._BranchGroupTerminal = []

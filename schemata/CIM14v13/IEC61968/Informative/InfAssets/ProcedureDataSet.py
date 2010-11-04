@@ -29,7 +29,7 @@ class ProcedureDataSet(Document):
         @param MeasurementValues:
         @param TransformerObservations:
         """
-        #: Date and time procedure was completed. 
+        #: Date and time procedure was completed.
         self.completedDateTime = completedDateTime
 
         self._Procedure = None

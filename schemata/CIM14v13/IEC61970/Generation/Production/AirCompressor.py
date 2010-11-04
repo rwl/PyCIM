@@ -27,7 +27,7 @@ class AirCompressor(PowerSystemResource):
         @param CombustionTurbine: A CAES air compressor is driven by combustion turbine
         @param CAESPlant: An air compressor may be a member of a compressed air energy storage plant
         """
-        #: Rating of the CAES air compressor 
+        #: Rating of the CAES air compressor
         self.airCompressorRating = airCompressorRating
 
         self._CombustionTurbine = None

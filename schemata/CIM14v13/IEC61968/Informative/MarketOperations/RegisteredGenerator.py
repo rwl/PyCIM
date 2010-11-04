@@ -37,34 +37,34 @@ class RegisteredGenerator(RegisteredResource):
         @param StartUpCostCurves:
         @param GeneratingUnit:
         """
- 
+
         self.lowerRampRate = lowerRampRate
 
-        #: Maximum allowable spinning reserve. Spinning reserve will never be considered greater than this value regardless of the current operating point. 
+        #: Maximum allowable spinning reserve. Spinning reserve will never be considered greater than this value regardless of the current operating point.
         self.maximumAllowableSpinningReserve = maximumAllowableSpinningReserve
 
-        #: Regulation down response rate in MW per minute 
+        #: Regulation down response rate in MW per minute
         self.lowerControlRate = lowerControlRate
 
-        #: Regulation up response rate in MW per minute 
+        #: Regulation up response rate in MW per minute
         self.raiseControlRate = raiseControlRate
 
-        #: High limit for secondary (AGC) control 
+        #: High limit for secondary (AGC) control
         self.highControlLimit = highControlLimit
 
-        #: This is the maximum operating MW limit the dispatcher can enter for this unit 
+        #: This is the maximum operating MW limit the dispatcher can enter for this unit
         self.maximumOperatingMW = maximumOperatingMW
 
- 
+
         self.raiseRampRate = raiseRampRate
 
- 
+
         self.spinReserveRamp = spinReserveRamp
 
-        #: Low limit for secondary (AGC) control 
+        #: Low limit for secondary (AGC) control
         self.lowControlLImit = lowControlLImit
 
-        #: This is the minimum operating MW limit the dispatcher can enter for this unit. 
+        #: This is the minimum operating MW limit the dispatcher can enter for this unit.
         self.minimumOperatingMW = minimumOperatingMW
 
         self._UnitInitialConditions = []

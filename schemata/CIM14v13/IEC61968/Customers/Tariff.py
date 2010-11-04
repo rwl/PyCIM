@@ -28,10 +28,10 @@ class Tariff(Document):
         @param PricingStructures: All pricing structures using this tariff.
         @param TariffProfiles: All tariff profiles using this tariff.
         """
-        #: Date tariff was activated. 
+        #: Date tariff was activated.
         self.startDate = startDate
 
-        #: (if tariff became inactive) Date tariff was terminated. 
+        #: (if tariff became inactive) Date tariff was terminated.
         self.endDate = endDate
 
         self._PricingStructures = []

@@ -30,10 +30,10 @@ class CUMaterialItem(IdentifiedObject):
         @param CompatibleUnits:
         @param PropertyUnits:
         """
-        #: Code for material. 
+        #: Code for material.
         self.corporateCode = corporateCode
 
-        #: Quantity of the TypeMaterial for this CU, used to determine estimated costs based on a per unit cost or a cost per unit length specified in the TypeMaterial. 
+        #: Quantity of the TypeMaterial for this CU, used to determine estimated costs based on a per unit cost or a cost per unit length specified in the TypeMaterial.
         self.quantity = quantity
 
         self.status = status

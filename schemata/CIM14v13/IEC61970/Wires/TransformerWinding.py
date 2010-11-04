@@ -47,58 +47,58 @@ class TransformerWinding(ConductingEquipment):
         @param RatioTapChanger: The ratio tap changer associated with the transformer winding.
         @param PhaseTapChanger: The phase tap changer associated with the transformer winding.
         """
-        #: The type of winding. Values are: "tertiary", "secondary", "primary", "quaternary"
+        #: The type of winding.Values are: "tertiary", "secondary", "primary", "quaternary"
         self.windingType = windingType
 
-        #: The type of connection of the winding. Values are: "Y", "Yn", "Zn", "I", "A", "D", "Z"
+        #: The type of connection of the winding.Values are: "Y", "Yn", "Zn", "I", "A", "D", "Z"
         self.connectionType = connectionType
 
-        #: Apparent power that the winding can carry for a short period of time. 
+        #: Apparent power that the winding can carry for a short period of time.
         self.shortTermS = shortTermS
 
-        #: The rated voltage (phase-to-phase) of the winding, usually the same as the neutral voltage. 
+        #: The rated voltage (phase-to-phase) of the winding, usually the same as the neutral voltage.
         self.ratedU = ratedU
 
-        #: Set if the winding is grounded. 
+        #: Set if the winding is grounded.
         self.grounded = grounded
 
-        #: Zero sequence series resistance of the winding. 
+        #: Zero sequence series resistance of the winding.
         self.r0 = r0
 
-        #: The normal apparent power rating for the winding 
+        #: The normal apparent power rating for the winding
         self.ratedS = ratedS
 
-        #: The apparent power that the winding can carry  under emergency conditions. 
+        #: The apparent power that the winding can carry  under emergency conditions.
         self.emergencyS = emergencyS
 
-        #: Zero sequence magnetizing branch susceptance. 
+        #: Zero sequence magnetizing branch susceptance.
         self.b0 = b0
 
-        #: Ground reactance path through connected grounding transformer. 
+        #: Ground reactance path through connected grounding transformer.
         self.xground = xground
 
-        #: Zero sequence magnetizing branch conductance. 
+        #: Zero sequence magnetizing branch conductance.
         self.g0 = g0
 
-        #: Magnetizing branch susceptance (B mag).  The value can be positive or negative. 
+        #: Magnetizing branch susceptance (B mag).  The value can be positive or negative.
         self.b = b
 
-        #: Positive sequence series resistance of the winding.  For a two winding transformer, the full resistance of the transformer should be entered on the primary (high voltage) winding. 
+        #: Positive sequence series resistance of the winding.  For a two winding transformer, the full resistance of the transformer should be entered on the primary (high voltage) winding.
         self.r = r
 
-        #: Ground resistance path through connected grounding transformer. 
+        #: Ground resistance path through connected grounding transformer.
         self.rground = rground
 
-        #: Positive sequence series reactance of the winding.  For a two winding transformer, the full reactance of the transformer should be entered on the primary (high voltage) winding. 
+        #: Positive sequence series reactance of the winding.  For a two winding transformer, the full reactance of the transformer should be entered on the primary (high voltage) winding.
         self.x = x
 
-        #: Basic insulation level voltage rating 
+        #: Basic insulation level voltage rating
         self.insulationU = insulationU
 
-        #: Magnetizing branch conductance (G mag). 
+        #: Magnetizing branch conductance (G mag).
         self.g = g
 
-        #: Zero sequence series reactance of the winding. 
+        #: Zero sequence series reactance of the winding.
         self.x0 = x0
 
         self._To_WindingTest = []

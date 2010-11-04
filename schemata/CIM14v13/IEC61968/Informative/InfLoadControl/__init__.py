@@ -17,3 +17,8 @@
 
 ns_prefix = "cimInfLoadControl"
 ns_uri = "http://iec.ch/TC57/CIM-generic#InfLoadControl"
+
+from CIM14v13.IEC61968.Informative.InfLoadControl.LoadMgmtFunction import LoadMgmtFunction
+from CIM14v13.IEC61968.Informative.InfLoadControl.LoadLimitFunction import LoadLimitFunction
+from CIM14v13.IEC61968.Informative.InfLoadControl.LoadMgmtRecord import LoadMgmtRecord
+from CIM14v13.IEC61968.Informative.InfLoadControl.LoadShedFunction import LoadShedFunction

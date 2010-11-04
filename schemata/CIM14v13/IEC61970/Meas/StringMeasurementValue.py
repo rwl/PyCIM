@@ -26,7 +26,7 @@ class StringMeasurementValue(MeasurementValue):
         @param value: The value to supervise. 
         @param StringMeasurement: Measurement to which this value is connected.
         """
-        #: The value to supervise. 
+        #: The value to supervise.
         self.value = value
 
         self._StringMeasurement = None

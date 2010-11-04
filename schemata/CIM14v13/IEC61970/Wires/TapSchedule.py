@@ -28,13 +28,13 @@ class TapSchedule(SeasonDayTypeSchedule):
         @param lineDropR: Line drop resistance. 
         @param TapChanger: A TapSchedule is associated with a TapChanger.
         """
-        #: Line drop reactance. 
+        #: Line drop reactance.
         self.lineDropX = lineDropX
 
-        #: Flag to indicate that line drop compensation is to be applied 
+        #: Flag to indicate that line drop compensation is to be applied
         self.lineDropCompensation = lineDropCompensation
 
-        #: Line drop resistance. 
+        #: Line drop resistance.
         self.lineDropR = lineDropR
 
         self._TapChanger = None

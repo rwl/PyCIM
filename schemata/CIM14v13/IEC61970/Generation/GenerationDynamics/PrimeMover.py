@@ -26,7 +26,7 @@ class PrimeMover(PowerSystemResource):
         @param primeMoverRating: Rating of prime mover 
         @param SynchronousMachines: Synchronous machines this Prime mover drives.
         """
-        #: Rating of prime mover 
+        #: Rating of prime mover
         self.primeMoverRating = primeMoverRating
 
         self._SynchronousMachines = []

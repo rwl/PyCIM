@@ -25,7 +25,7 @@ class Conductor(ConductingEquipment):
 
         @param length: Segment length for calculating line section capabilities 
         """
-        #: Segment length for calculating line section capabilities 
+        #: Segment length for calculating line section capabilities
         self.length = length
 
         super(Conductor, self).__init__(*args, **kw_args)

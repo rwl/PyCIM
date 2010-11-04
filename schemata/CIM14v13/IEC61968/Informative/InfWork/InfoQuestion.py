@@ -31,25 +31,25 @@ class InfoQuestion(Document):
         @param questionText: For non-coded questions, the question is provided here. 
         @param answerRemark: Remarks to qualify the answer. 
         """
-        #: Remarks to qualify the question in this situation. 
+        #: Remarks to qualify the question in this situation.
         self.questionRemark = questionRemark
 
-        #: Answer to question. 
+        #: Answer to question.
         self.answer = answer
 
-        #: The category of the question. 
+        #: The category of the question.
         self.questionCategory = questionCategory
 
-        #: The question code. If blank, refer to questionText. 
+        #: The question code. If blank, refer to questionText.
         self.questionCode = questionCode
 
-        #: The date and time the quesiton was answered. 
+        #: The date and time the quesiton was answered.
         self.answerDateTime = answerDateTime
 
-        #: For non-coded questions, the question is provided here. 
+        #: For non-coded questions, the question is provided here.
         self.questionText = questionText
 
-        #: Remarks to qualify the answer. 
+        #: Remarks to qualify the answer.
         self.answerRemark = answerRemark
 
         super(InfoQuestion, self).__init__(*args, **kw_args)

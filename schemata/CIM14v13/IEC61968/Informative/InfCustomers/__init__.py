@@ -19,3 +19,12 @@
 
 ns_prefix = "cimInfCustomers"
 ns_uri = "http://iec.ch/TC57/CIM-generic#InfCustomers"
+
+from CIM14v13.IEC61968.Informative.InfCustomers.ExternalCustomerAgreement import ExternalCustomerAgreement
+from CIM14v13.IEC61968.Informative.InfCustomers.StandardIndustryCode import StandardIndustryCode
+from CIM14v13.IEC61968.Informative.InfCustomers.CustomerBillingInfo import CustomerBillingInfo
+from CIM14v13.IEC61968.Informative.InfCustomers.OutageHistory import OutageHistory
+from CIM14v13.IEC61968.Informative.InfCustomers.WorkBillingInfo import WorkBillingInfo
+from CIM14v13.IEC61968.Informative.InfCustomers.PowerQualityPricing import PowerQualityPricing
+from CIM14v13.IEC61968.Informative.InfCustomers.ServiceGuarantee import ServiceGuarantee
+from CIM14v13.IEC61968.Informative.InfCustomers.SubscribePowerCurve import SubscribePowerCurve

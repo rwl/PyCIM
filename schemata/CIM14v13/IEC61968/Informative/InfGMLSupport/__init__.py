@@ -19,3 +19,34 @@
 
 ns_prefix = "cimInfGMLSupport"
 ns_uri = "http://iec.ch/TC57/CIM-generic#InfGMLSupport"
+
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlPosition import GmlPosition
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlLabelPlacement import GmlLabelPlacement
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlTopologyStyle import GmlTopologyStyle
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlSvgParameter import GmlSvgParameter
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlMark import GmlMark
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlFont import GmlFont
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlSymbol import GmlSymbol
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlPointSymbol import GmlPointSymbol
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlSelector import GmlSelector
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlGeometryStyle import GmlGeometryStyle
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlDiagramObject import GmlDiagramObject
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlPolygonGeometry import GmlPolygonGeometry
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlFeatureType import GmlFeatureType
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlHalo import GmlHalo
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlObservation import GmlObservation
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlPolygonSymbol import GmlPolygonSymbol
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlLineSymbol import GmlLineSymbol
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlBaseSymbol import GmlBaseSymbol
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlValue import GmlValue
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlFill import GmlFill
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlPointGeometry import GmlPointGeometry
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlRasterSymbol import GmlRasterSymbol
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlColour import GmlColour
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlLineGeometry import GmlLineGeometry
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlTextSymbol import GmlTextSymbol
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlLabelStyle import GmlLabelStyle
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlGraphic import GmlGraphic
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlStroke import GmlStroke
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlCoordinateSystem import GmlCoordinateSystem
+from CIM14v13.IEC61968.Informative.InfGMLSupport.GmlFeatureStyle import GmlFeatureStyle

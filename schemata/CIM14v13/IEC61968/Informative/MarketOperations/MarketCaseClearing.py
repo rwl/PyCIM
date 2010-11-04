@@ -28,13 +28,13 @@ class MarketCaseClearing(MarketFactors):
         @param caseType: Settlement period:  'DA - Bid-in'  'DA - Reliability'  'DA - Amp1'  'DA - Amp2'  'RT - Ex-Ante'  'RT - Ex-Post'  'RT - Amp1'  'RT - Amp2' 
         @param AncillaryServiceClearing:
         """
-        #: Last time and date clearing results were manually modified. 
+        #: Last time and date clearing results were manually modified.
         self.modifiedDate = modifiedDate
 
-        #: Bid clearing results posted time and date. 
+        #: Bid clearing results posted time and date.
         self.postedDate = postedDate
 
-        #: Settlement period:  'DA - Bid-in'  'DA - Reliability'  'DA - Amp1'  'DA - Amp2'  'RT - Ex-Ante'  'RT - Ex-Post'  'RT - Amp1'  'RT - Amp2' 
+        #: Settlement period:  'DA - Bid-in'  'DA - Reliability'  'DA - Amp1'  'DA - Amp2'  'RT - Ex-Ante'  'RT - Ex-Post'  'RT - Amp1'  'RT - Amp2'
         self.caseType = caseType
 
         self._AncillaryServiceClearing = []

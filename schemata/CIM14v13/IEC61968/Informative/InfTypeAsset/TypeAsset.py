@@ -34,13 +34,13 @@ class TypeAsset(Document):
         @param ErpReqLineItems:
         @param ErpBomItemDatas:
         """
-        #: The value, unit of measure, and multiplier for the quantity. 
+        #: The value, unit of measure, and multiplier for the quantity.
         self.quantity = quantity
 
-        #: True if item is a stock item (default). 
+        #: True if item is a stock item (default).
         self.stockItem = stockItem
 
-        #: Estimated unit cost (or cost per unit length) of this type of asset. It does not include labor to install/construct or configure it. 
+        #: Estimated unit cost (or cost per unit length) of this type of asset. It does not include labor to install/construct or configure it.
         self.estimatedUnitCost = estimatedUnitCost
 
         self._CUWorkEquipmentAsset = None

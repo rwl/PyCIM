@@ -26,10 +26,10 @@ class NonStandardItem(Document):
         @param amount: The projected cost for this item. 
         @param code: The category of non-standard work. 
         """
-        #: The projected cost for this item. 
+        #: The projected cost for this item.
         self.amount = amount
 
-        #: The category of non-standard work. 
+        #: The category of non-standard work.
         self.code = code
 
         super(NonStandardItem, self).__init__(*args, **kw_args)

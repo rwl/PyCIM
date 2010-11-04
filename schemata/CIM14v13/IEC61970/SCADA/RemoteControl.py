@@ -28,13 +28,13 @@ class RemoteControl(RemotePoint):
         @param remoteControlled: Set to true if the actuator is remotely controlled. 
         @param Control: The Control for the RemoteControl point.
         """
-        #: The maximum set point value accepted by the remote control point. 
+        #: The maximum set point value accepted by the remote control point.
         self.actuatorMaximum = actuatorMaximum
 
-        #: The minimum set point value accepted by the remote control point. 
+        #: The minimum set point value accepted by the remote control point.
         self.actuatorMinimum = actuatorMinimum
 
-        #: Set to true if the actuator is remotely controlled. 
+        #: Set to true if the actuator is remotely controlled.
         self.remoteControlled = remoteControlled
 
         self._Control = None

@@ -29,13 +29,13 @@ class GmlValue(IdentifiedObject):
         @param MeasurementValue:
         @param GmlObservation:
         """
- 
+
         self.value = value
 
- 
+
         self.timePeriod = timePeriod
 
- 
+
         self.dateTime = dateTime
 
         self._MeasurementValue = None

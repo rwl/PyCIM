@@ -19,3 +19,9 @@
 
 ns_prefix = "cimEquivalents"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Equivalents"
+
+from CIM14v13.IEC61970.Equivalents.EquivalentEquipment import EquivalentEquipment
+from CIM14v13.IEC61970.Equivalents.EquivalentBranch import EquivalentBranch
+from CIM14v13.IEC61970.Equivalents.EquivalentShunt import EquivalentShunt
+from CIM14v13.IEC61970.Equivalents.EquivalentInjection import EquivalentInjection
+from CIM14v13.IEC61970.Equivalents.EquivalentNetwork import EquivalentNetwork

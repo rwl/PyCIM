@@ -32,19 +32,19 @@ class GmlFont(IdentifiedObject):
         @param GmlColour:
         @param GmlSvgParameters:
         """
-        #: True if 'size' is expressed in absolute values. Default is false. 
+        #: True if 'size' is expressed in absolute values. Default is false.
         self.absoluteSize = absoluteSize
 
-        #: The style to use for a font. The allowed values are 'normal', 'italic', and 'oblique'. 
+        #: The style to use for a font. The allowed values are 'normal', 'italic', and 'oblique'.
         self.style = style
 
-        #: The size to use for the font in pixels. The default is defined to be 10 pixels, though various systems may have restrictions on what sizes are available. 
+        #: The size to use for the font in pixels. The default is defined to be 10 pixels, though various systems may have restrictions on what sizes are available.
         self.size = size
 
-        #: Family name of a font to use. Allowed values are system-dependent. Any number of font-family attributes may be given and they are assumed to be in preferred order. 
+        #: Family name of a font to use. Allowed values are system-dependent. Any number of font-family attributes may be given and they are assumed to be in preferred order.
         self.family = family
 
-        #: The amount of weight or boldness to use for a font. Allowed values are 'normal' and 'bold'. 
+        #: The amount of weight or boldness to use for a font. Allowed values are 'normal' and 'bold'.
         self.weight = weight
 
         self._GmlTextSymbols = []

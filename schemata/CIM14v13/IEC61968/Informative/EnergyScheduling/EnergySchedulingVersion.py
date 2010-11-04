@@ -24,10 +24,10 @@ class EnergySchedulingVersion(Element):
         @param date: 
         @param version: v 4 moved SubControlArea 
         """
- 
+
         self.date = date
 
-        #: v 4 moved SubControlArea 
+        #: v 4 moved SubControlArea
         self.version = version
 
         super(EnergySchedulingVersion, self).__init__(*args, **kw_args)

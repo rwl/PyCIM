@@ -29,19 +29,19 @@ class Due(Element):
         @param arrears: Part of 'current' that constitutes the arrears portion. 
         @param interest: Part of 'current' that constitutes the interest portion. 
         """
-        #: Part of 'current' that constitutes the portion of the principle amount currently due. 
+        #: Part of 'current' that constitutes the portion of the principle amount currently due.
         self.principle = principle
 
-        #: Current total amount now due: current = principle + arrears + interest + charges. Typically the rule for settlement priority is: interest dues, then arrears dues, then current dues, then charge dues. 
+        #: Current total amount now due: current = principle + arrears + interest + charges. Typically the rule for settlement priority is: interest dues, then arrears dues, then current dues, then charge dues.
         self.current = current
 
-        #: Part of 'current' that constitutes the charge portion: 'charges' = 'Charge.fixedPortion' + 'Charge.variablePortion'. 
+        #: Part of 'current' that constitutes the charge portion: 'charges' = 'Charge.fixedPortion' + 'Charge.variablePortion'.
         self.charges = charges
 
-        #: Part of 'current' that constitutes the arrears portion. 
+        #: Part of 'current' that constitutes the arrears portion.
         self.arrears = arrears
 
-        #: Part of 'current' that constitutes the interest portion. 
+        #: Part of 'current' that constitutes the interest portion.
         self.interest = interest
 
         super(Due, self).__init__(*args, **kw_args)

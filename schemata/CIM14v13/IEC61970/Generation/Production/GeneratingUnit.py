@@ -75,133 +75,133 @@ class GeneratingUnit(Equipment):
         @param GenUnitOpSchedule: A generating unit may have an operating schedule, indicating the planned operation of the unit
         @param GrossToNetActivePowerCurves: A generating unit may have a gross active power to net active power curve, describing the losses and auxiliary power requirements of the unit
         """
-        #: Operating mode for secondary control. Values are: "off", "AGC", "manual", "MRN", "LFC", "EDC", "fixed", "REG"
+        #: Operating mode for secondary control.Values are: "off", "AGC", "manual", "MRN", "LFC", "EDC", "fixed", "REG"
         self.genOperatingMode = genOperatingMode
 
-        #: The unit control mode. Values are: "setpoint", "pulse"
+        #: The unit control mode.Values are: "setpoint", "pulse"
         self.genControlMode = genControlMode
 
-        #: The source of controls for a generating unit. Values are: "onAGC", "plantControl", "unavailable", "offAGC"
+        #: The source of controls for a generating unit.Values are: "onAGC", "plantControl", "unavailable", "offAGC"
         self.genControlSource = genControlSource
 
-        #: The variable cost component of production per unit of ActivePower. 
+        #: The variable cost component of production per unit of ActivePower.
         self.variableCost = variableCost
 
-        #: Generating unit economic participation factor 
+        #: Generating unit economic participation factor
         self.shortPF = shortPF
 
-        #: The gross rated minimum generation level which the unit can safely operate at while delivering power to the transmission grid 
+        #: The gross rated minimum generation level which the unit can safely operate at while delivering power to the transmission grid
         self.ratedGrossMinP = ratedGrossMinP
 
-        #: This is the maximum operating active power limit the dispatcher can enter for this unit 
+        #: This is the maximum operating active power limit the dispatcher can enter for this unit
         self.maxOperatingP = maxOperatingP
 
-        #: Maximum allowable spinning reserve. Spinning reserve will never be considered greater than this value regardless of the current operating point. 
+        #: Maximum allowable spinning reserve. Spinning reserve will never be considered greater than this value regardless of the current operating point.
         self.maximumAllowableSpinningReserve = maximumAllowableSpinningReserve
 
-        #: Time it takes to get the unit on-line, from the time that the prime mover mechanical power is applied 
+        #: Time it takes to get the unit on-line, from the time that the prime mover mechanical power is applied
         self.startupTime = startupTime
 
-        #: Generating unit economic participation factor 
+        #: Generating unit economic participation factor
         self.longPF = longPF
 
-        #: Default Initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration 
+        #: Default Initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration
         self.initialP = initialP
 
- 
+
         self.lowerRampRate = lowerRampRate
 
-        #: Minimum time interval between unit shutdown and startup 
+        #: Minimum time interval between unit shutdown and startup
         self.minimumOffTime = minimumOffTime
 
- 
+
         self.spinReserveRamp = spinReserveRamp
 
- 
+
         self.fuelPriority = fuelPriority
 
-        #: The unit's gross rated maximum capacity (Book Value). 
+        #: The unit's gross rated maximum capacity (Book Value).
         self.ratedGrossMaxP = ratedGrossMaxP
 
-        #: Detail level of the generator model data 
+        #: Detail level of the generator model data
         self.modelDetail = modelDetail
 
-        #: The efficiency of the unit in converting mechanical energy, from the prime mover, into electrical energy. 
+        #: The efficiency of the unit in converting mechanical energy, from the prime mover, into electrical energy.
         self.efficiency = efficiency
 
- 
+
         self.raiseRampRate = raiseRampRate
 
-        #: Generating unit economic participation factor 
+        #: Generating unit economic participation factor
         self.tieLinePF = tieLinePF
 
-        #: Defined as: 1 / ( 1 - Incremental Transmission Loss); with the Incremental Transmission Loss expressed as a plus or minus value. The typical range of penalty factors is (0.9 to 1.1). 
+        #: Defined as: 1 / ( 1 - Incremental Transmission Loss); with the Incremental Transmission Loss expressed as a plus or minus value. The typical range of penalty factors is (0.9 to 1.1).
         self.penaltyFactor = penaltyFactor
 
-        #: This is the minimum operating active power limit the dispatcher can enter for this unit. 
+        #: This is the minimum operating active power limit the dispatcher can enter for this unit.
         self.minOperatingP = minOperatingP
 
-        #: The planned unused capacity which can be used to support automatic control overruns. 
+        #: The planned unused capacity which can be used to support automatic control overruns.
         self.autoCntrlMarginP = autoCntrlMarginP
 
-        #: Low economic active power limit that must be greater than or equal to the minimum operating active power limit 
+        #: Low economic active power limit that must be greater than or equal to the minimum operating active power limit
         self.minEconomicP = minEconomicP
 
-        #: Unit control error deadband. When a unit's desired active power change is less than this deadband, then no control pulses will be sent to the unit. 
+        #: Unit control error deadband. When a unit's desired active power change is less than this deadband, then no control pulses will be sent to the unit.
         self.controlDeadband = controlDeadband
 
- 
+
         self.dispReserveFlag = dispReserveFlag
 
-        #: Generating unit economic participation factor 
+        #: Generating unit economic participation factor
         self.normalPF = normalPF
 
-        #: High limit for secondary (AGC) control 
+        #: High limit for secondary (AGC) control
         self.highControlLimit = highControlLimit
 
-        #: The planned unused capacity (spinning reserve) which can be used to support emergency load 
+        #: The planned unused capacity (spinning reserve) which can be used to support emergency load
         self.allocSpinResP = allocSpinResP
 
-        #: Low limit for secondary (AGC) control 
+        #: Low limit for secondary (AGC) control
         self.lowControlLimit = lowControlLimit
 
-        #: Governor Motor Position Limit 
+        #: Governor Motor Position Limit
         self.governorMPL = governorMPL
 
-        #: Pulse low limit which is the smallest control pulse that the unit can respond to 
+        #: Pulse low limit which is the smallest control pulse that the unit can respond to
         self.controlPulseLow = controlPulseLow
 
- 
+
         self.fastStartFlag = fastStartFlag
 
-        #: The nominal power of the generating unit.  Used to give precise meaning to percentage based attributes such as the govenor speed change droop (govenorSCD attribute). 
+        #: The nominal power of the generating unit.  Used to give precise meaning to percentage based attributes such as the govenor speed change droop (govenorSCD attribute).
         self.nominalP = nominalP
 
-        #: For dispatchable units, this value represents the economic active power basepoint, for units that are not dispatchable, this value represents the fixed generation value. The value must be between the operating low and high limits. 
+        #: For dispatchable units, this value represents the economic active power basepoint, for units that are not dispatchable, this value represents the fixed generation value. The value must be between the operating low and high limits.
         self.baseP = baseP
 
-        #: The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity 
+        #: The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity
         self.ratedNetMaxP = ratedNetMaxP
 
-        #: Maximum high economic active power limit, that should not exceed the maximum operating active power limit 
+        #: Maximum high economic active power limit, that should not exceed the maximum operating active power limit
         self.maxEconomicP = maxEconomicP
 
-        #: Unit response rate which specifies the active power change for a control pulse of one second in the most responsive loading level of the unit. 
+        #: Unit response rate which specifies the active power change for a control pulse of one second in the most responsive loading level of the unit.
         self.controlResponseRate = controlResponseRate
 
- 
+
         self.stepChange = stepChange
 
- 
+
         self.energyMinP = energyMinP
 
-        #: The initial startup cost incurred for each start of the GeneratingUnit. 
+        #: The initial startup cost incurred for each start of the GeneratingUnit.
         self.startupCost = startupCost
 
-        #: Governor Speed Changer Droop.   This is the change in generator power output divided by the change in frequency normalized by the nominal power of the generator and the nominal frequency and expressed in percent and negated. A positive value of speed change droop provides additional generator output upon a drop in frequency. 
+        #: Governor Speed Changer Droop.   This is the change in generator power output divided by the change in frequency normalized by the nominal power of the generator and the nominal frequency and expressed in percent and negated. A positive value of speed change droop provides additional generator output upon a drop in frequency.
         self.governorSCD = governorSCD
 
-        #: Pulse high limit which is the largest control pulse that the unit can respond to 
+        #: Pulse high limit which is the largest control pulse that the unit can respond to
         self.controlPulseHigh = controlPulseHigh
 
         self._OperatedBy_GenerationProvider = None

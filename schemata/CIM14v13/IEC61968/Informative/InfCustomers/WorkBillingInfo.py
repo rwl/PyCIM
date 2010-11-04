@@ -34,25 +34,25 @@ class WorkBillingInfo(Document):
         @param CustomerAccount:
         @param Works:
         """
-        #: Date and time by which payment for bill is expected from client. 
+        #: Date and time by which payment for bill is expected from client.
         self.dueDateTime = dueDateTime
 
-        #: Date payment was received from client. 
+        #: Date payment was received from client.
         self.receivedDateTime = receivedDateTime
 
-        #: Amount of price on deposit. 
+        #: Amount of price on deposit.
         self.deposit = deposit
 
-        #: Amount of bill. 
+        #: Amount of bill.
         self.workPrice = workPrice
 
-        #: Discount from standard price. 
+        #: Discount from standard price.
         self.discount = discount
 
-        #: Estimated cost for work. 
+        #: Estimated cost for work.
         self.costEstimate = costEstimate
 
-        #: Date and time bill was issued to client. 
+        #: Date and time bill was issued to client.
         self.issueDateTime = issueDateTime
 
         self._ErpLineItems = []

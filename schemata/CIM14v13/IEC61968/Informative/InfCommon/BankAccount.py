@@ -28,7 +28,7 @@ class BankAccount(Document):
         @param Bank: Bank that provides this BankAccount.
         @param BankStatements: All bank statements generated from this bank account.
         """
-        #: Account reference number. 
+        #: Account reference number.
         self.accountNumber = accountNumber
 
         self._ServiceSupplier = None

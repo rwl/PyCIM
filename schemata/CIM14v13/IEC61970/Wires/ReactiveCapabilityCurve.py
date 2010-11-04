@@ -28,10 +28,10 @@ class ReactiveCapabilityCurve(Curve):
         @param SynchronousMachines: Synchronous machines using this curve.
         @param InitiallyUsedBySynchronousMachines: Synchronous machines using this curve as default.
         """
-        #: The machine's coolant temperature (e.g., ambient air or stator circulating water). 
+        #: The machine's coolant temperature (e.g., ambient air or stator circulating water).
         self.coolantTemperature = coolantTemperature
 
-        #: The hydrogen coolant pressure 
+        #: The hydrogen coolant pressure
         self.hydrogenPressure = hydrogenPressure
 
         self._SynchronousMachines = []

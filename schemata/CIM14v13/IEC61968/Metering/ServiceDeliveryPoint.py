@@ -48,46 +48,46 @@ class ServiceDeliveryPoint(IdentifiedObject):
         @param ServiceLocation: Service location where the service delivered by this service delivery point is consumed.
         @param EndDeviceAssets: All end device assets at this service delivery point.
         """
-        #: Phase configuration kind. Values are: "other", "twoPhaseTwoWire", "threePhaseTwoWire", "threePhaseFourWire", "twoPhaseThreeWire", "threePhaseThreeWire", "onePhaseThreeWire", "onePhaseTwoWire"
+        #: Phase configuration kind.Values are: "other", "twoPhaseTwoWire", "threePhaseTwoWire", "threePhaseFourWire", "twoPhaseThreeWire", "threePhaseThreeWire", "onePhaseThreeWire", "onePhaseTwoWire"
         self.phaseConfig = phaseConfig
 
-        #: Billing cycle. 
+        #: Billing cycle.
         self.billingCycle = billingCycle
 
-        #: Load management code. 
+        #: Load management code.
         self.loadMgmt = loadMgmt
 
-        #: Power that this service delivery point is configured to deliver. 
+        #: Power that this service delivery point is configured to deliver.
         self.ratedPower = ratedPower
 
-        #: Nominal service voltage. 
+        #: Nominal service voltage.
         self.nominalServiceVoltage = nominalServiceVoltage
 
-        #: Current that this service delivery point is configured to deliver. 
+        #: Current that this service delivery point is configured to deliver.
         self.ratedCurrent = ratedCurrent
 
-        #: Estimated load. 
+        #: Estimated load.
         self.estimatedLoad = estimatedLoad
 
-        #: True if as a result of an inspection or otherwise, there is a reason to suspect that a previous billing may have been performed with erroneous data. Value should be reset once this potential discrepancy has been resolved. 
+        #: True if as a result of an inspection or otherwise, there is a reason to suspect that a previous billing may have been performed with erroneous data. Value should be reset once this potential discrepancy has been resolved.
         self.checkBilling = checkBilling
 
-        #: Remarks about this service delivery point, for example the reason for it being rated with a non-nominal priority. 
+        #: Remarks about this service delivery point, for example the reason for it being rated with a non-nominal priority.
         self.serviceDeliveryRemark = serviceDeliveryRemark
 
-        #: Priority of service for this service delivery point. Note that service delivery points at the same service location can have different priorities. 
+        #: Priority of service for this service delivery point. Note that service delivery points at the same service location can have different priorities.
         self.servicePriority = servicePriority
 
-        #: Budget bill code. 
+        #: Budget bill code.
         self.budgetBill = budgetBill
 
-        #: True if grounded. 
+        #: True if grounded.
         self.grounded = grounded
 
-        #: Cumulative totalizing register of consumed service at this service delivery point over its lifetime. 
+        #: Cumulative totalizing register of consumed service at this service delivery point over its lifetime.
         self.consumptionRealEnergy = consumptionRealEnergy
 
-        #: (optional for medium voltage connections) Reference to the low side terminal of a CT or PT that obtain readings from a medium or high voltage point. 
+        #: (optional for medium voltage connections) Reference to the low side terminal of a CT or PT that obtain readings from a medium or high voltage point.
         self.ctptReference = ctptReference
 
         self._ServiceSupplier = None

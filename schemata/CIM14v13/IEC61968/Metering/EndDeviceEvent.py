@@ -27,7 +27,7 @@ class EndDeviceEvent(ActivityRecord):
         @param DeviceFunction: Device function that reported this end device event.
         @param MeterReading: Set of measured values to which this event applies.
         """
-        #: (if user initiated) ID of user who initiated this end device event. 
+        #: (if user initiated) ID of user who initiated this end device event.
         self.userID = userID
 
         self._DeviceFunction = None

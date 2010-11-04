@@ -27,10 +27,10 @@ class Token(IdentifiedObject):
         @param comment: Free-format note relevant to this token. 
         @param PointOfSale: PointOfSale tha sold or dispensed this Token.
         """
-        #: Coded representation of the token that is transferred to the payment meter. 
+        #: Coded representation of the token that is transferred to the payment meter.
         self.code = code
 
-        #: Free-format note relevant to this token. 
+        #: Free-format note relevant to this token.
         self.comment = comment
 
         self._PointOfSale = None

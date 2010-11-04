@@ -30,22 +30,22 @@ class FrequencyConverter(RegulatingCondEq):
         @param maxP: The maximum active power on the DC side at which the frequence converter should operate. 
         @param operatingMode: Operating mode for the frequency converter 
         """
-        #: The maximum voltage on the DC side at which the frequency converter should operate. 
+        #: The maximum voltage on the DC side at which the frequency converter should operate.
         self.maxU = maxU
 
-        #: The minimum voltage on the DC side at which the frequency converter should operate. 
+        #: The minimum voltage on the DC side at which the frequency converter should operate.
         self.minU = minU
 
-        #: The minimum active power on the DC side at which the frequence converter should operate. 
+        #: The minimum active power on the DC side at which the frequence converter should operate.
         self.minP = minP
 
-        #: Frequency on the AC side. 
+        #: Frequency on the AC side.
         self.frequency = frequency
 
-        #: The maximum active power on the DC side at which the frequence converter should operate. 
+        #: The maximum active power on the DC side at which the frequence converter should operate.
         self.maxP = maxP
 
-        #: Operating mode for the frequency converter 
+        #: Operating mode for the frequency converter
         self.operatingMode = operatingMode
 
         super(FrequencyConverter, self).__init__(*args, **kw_args)

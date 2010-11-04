@@ -27,7 +27,7 @@ class CompositeSwitchAsset(Asset):
         @param CompositeSwitchInfo:
         @param CompositeSwitchAssetModel:
         """
-        #: Kind of composite switch. Values are: "ugMultiSwitch", "throwOver", "escoThrowOver", "gral", "ral", "other", "regulatorBypass"
+        #: Kind of composite switch.Values are: "ugMultiSwitch", "throwOver", "escoThrowOver", "gral", "ral", "other", "regulatorBypass"
         self.kind = kind
 
         self._CompositeSwitchInfo = None

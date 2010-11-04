@@ -30,13 +30,13 @@ class PowerTransformer(Equipment):
         @param Flowgates:
         @param HeatExchanger: A transformer may have a heat exchanger
         """
-        #: Core shunt magnetizing susceptance in the saturation region. 
+        #: Core shunt magnetizing susceptance in the saturation region.
         self.bmagSat = bmagSat
 
-        #: The reference voltage at which the magnetizing saturation measurements were made 
+        #: The reference voltage at which the magnetizing saturation measurements were made
         self.magBaseU = magBaseU
 
-        #: Core magnetizing saturation curve knee flux level. 
+        #: Core magnetizing saturation curve knee flux level.
         self.magSatFlux = magSatFlux
 
         self._TransformerWindings = []

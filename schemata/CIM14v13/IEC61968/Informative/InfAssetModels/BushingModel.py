@@ -26,7 +26,7 @@ class BushingModel(ElectricalAssetModel):
         @param insulationKind: Kind of insulation used in this bushing model. Values are: "paperoil", "compound", "other", "solidPorcelain"
         @param BushingAsset:
         """
-        #: Kind of insulation used in this bushing model. Values are: "paperoil", "compound", "other", "solidPorcelain"
+        #: Kind of insulation used in this bushing model.Values are: "paperoil", "compound", "other", "solidPorcelain"
         self.insulationKind = insulationKind
 
         self._BushingAsset = None

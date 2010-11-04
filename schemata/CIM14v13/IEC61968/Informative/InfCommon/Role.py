@@ -26,7 +26,7 @@ class Role(IdentifiedObject):
         @param category: Category of role. 
         @param status:
         """
-        #: Category of role. 
+        #: Category of role.
         self.category = category
 
         self.status = status

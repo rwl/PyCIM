@@ -27,7 +27,7 @@ class Contingency(IdentifiedObject):
         @param ContingencyConstraintLimit:
         @param ContingencyElement: A contingency can have any number of contingency elements.
         """
-        #: Set true if must study this contingency. 
+        #: Set true if must study this contingency.
         self.mustStudy = mustStudy
 
         self._ContingencyConstraintLimit = []

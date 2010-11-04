@@ -40,46 +40,46 @@ class TransformerAssetModel(AssetModel):
         @param TransformerAssets:
         @param TransformerInfo:
         """
-        #: Function of this transformer. Values are: "other", "voltageRegulator", "secondaryTransformer", "autotransformer", "powerTransformer"
+        #: Function of this transformer.Values are: "other", "voltageRegulator", "secondaryTransformer", "autotransformer", "powerTransformer"
         self.function = function
 
-        #: Kind of construction for this transformer. Values are: "padmountDeadFront", "onePhase", "unknown", "valut", "padmounted", "aerial", "underground", "padmountLiveFront", "network", "vaultThreePhase", "subway", "dryType", "padmountLoopThrough", "overhead", "threePhase", "padmountFeedThrough"
+        #: Kind of construction for this transformer.Values are: "padmountDeadFront", "onePhase", "unknown", "valut", "padmounted", "aerial", "underground", "padmountLiveFront", "network", "vaultThreePhase", "subway", "dryType", "padmountLoopThrough", "overhead", "threePhase", "padmountFeedThrough"
         self.constructionKind = constructionKind
 
-        #: Type of insultation used for transformer windings: Paper, Thermally Upgraded Paper, Nomex, other Values are: "other", "nomex", "paper", "thermallyUpgradedPaper"
+        #: Type of insultation used for transformer windings: Paper, Thermally Upgraded Paper, Nomex, otherValues are: "other", "nomex", "paper", "thermallyUpgradedPaper"
         self.windingInsulationKind = windingInsulationKind
 
-        #: Kind of oil preservation system. Values are: "nitrogenBlanket", "freeBreathing", "conservator", "other"
+        #: Kind of oil preservation system.Values are: "nitrogenBlanket", "freeBreathing", "conservator", "other"
         self.oilPreservationKind = oilPreservationKind
 
-        #: Core kind of this transformer product. Values are: "core", "shell"
+        #: Core kind of this transformer product.Values are: "core", "shell"
         self.coreKind = coreKind
 
-        #: True if this is an autotransformer, false otherwise. 
+        #: True if this is an autotransformer, false otherwise.
         self.autoTransformer = autoTransformer
 
-        #: True if windings can be re-configured to result in a different input or output voltage. 
+        #: True if windings can be re-configured to result in a different input or output voltage.
         self.reconfigWinding = reconfigWinding
 
-        #: 24-hour overload rating. 
+        #: 24-hour overload rating.
         self.dayOverLoadRating = dayOverLoadRating
 
-        #: Nominal voltage rating for alternate configuration for secondary winding. 
+        #: Nominal voltage rating for alternate configuration for secondary winding.
         self.altSecondaryNomVoltage = altSecondaryNomVoltage
 
-        #: Nominal voltage rating for alternate configuration for primary winding. 
+        #: Nominal voltage rating for alternate configuration for primary winding.
         self.altPrimaryNomVoltage = altPrimaryNomVoltage
 
-        #: Weight of core and coils in transformer. 
+        #: Weight of core and coils in transformer.
         self.coreCoilsWeight = coreCoilsWeight
 
-        #: Weight of solid insultation in transformer. 
+        #: Weight of solid insultation in transformer.
         self.solidInsulationWeight = solidInsulationWeight
 
-        #: 1-hour overload rating. 
+        #: 1-hour overload rating.
         self.hourOverLoadRating = hourOverLoadRating
 
-        #: Basic Insulation Level of Neutral 
+        #: Basic Insulation Level of Neutral
         self.neutralBIL = neutralBIL
 
         self._TransformerAssets = []

@@ -30,13 +30,13 @@ class ConductorAsset(Asset):
         @param ConductorAssetModel:
         @param ConductorSegment:
         """
-        #: Description of the method used for grounding the conductor. For a cable, the grounding/bonding shield may be multi-point, single-point, cross cable, or other. 
+        #: Description of the method used for grounding the conductor. For a cable, the grounding/bonding shield may be multi-point, single-point, cross cable, or other.
         self.groundingMethod = groundingMethod
 
-        #: True when orientation is horizontal (e.g., transmission and distribution lines), false if vertical (e.g. a riser for underground to overhead service). 
+        #: True when orientation is horizontal (e.g., transmission and distribution lines), false if vertical (e.g. a riser for underground to overhead service).
         self.isHorizontal = isHorizontal
 
-        #: True if conductor asset has an insulator around the core material. 
+        #: True if conductor asset has an insulator around the core material.
         self.insulated = insulated
 
         self._CircuitSection = None

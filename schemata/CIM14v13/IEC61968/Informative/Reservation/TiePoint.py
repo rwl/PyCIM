@@ -28,7 +28,7 @@ class TiePoint(IdentifiedObject):
         @param For_Measurements: A measurement is made on the A side of a tie point
         @param By_Measurements: A measurement is made on the B side of a tie point
         """
-        #: The MW rating of the tie point 
+        #: The MW rating of the tie point
         self.tiePointMWRating = tiePointMWRating
 
         self._Declared_ServicePoint = None

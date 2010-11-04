@@ -29,10 +29,10 @@ class VoltageLevel(EquipmentContainer):
         @param Substation: The association is used in the naming hierarchy.
         @param BaseVoltage: The base voltage used for all equipment within the VoltageLevel.
         """
-        #: The bus bar's low voltage limit 
+        #: The bus bar's low voltage limit
         self.lowVoltageLimit = lowVoltageLimit
 
-        #: The bus bar's high voltage limit 
+        #: The bus bar's high voltage limit
         self.highVoltageLimit = highVoltageLimit
 
         self._Bays = []

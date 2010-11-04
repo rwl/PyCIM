@@ -37,43 +37,43 @@ class DiagnosisDataSet(ProcedureDataSet):
         @param finalRemark: Remarks pertaining to findings during problem diagnosis. 
         @param preliminaryDateTime: Date and time preliminary assessment of problem was performed. 
         """
-        #: Phase(s) diagnosed. Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
+        #: Phase(s) diagnosed.Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
         self.phaseCode = phaseCode
 
-        #: Failuer mode, for example: Failure to Insulate; Failure to conduct; Failure to contain oil; Failure to provide ground plane; Other. 
+        #: Failuer mode, for example: Failure to Insulate; Failure to conduct; Failure to contain oil; Failure to provide ground plane; Other.
         self.failureMode = failureMode
 
-        #: Remarks pertaining to root cause findings during problem diagnosis. 
+        #: Remarks pertaining to root cause findings during problem diagnosis.
         self.rootRemark = rootRemark
 
-        #: Root cause of problem determined during diagnosis. 
+        #: Root cause of problem determined during diagnosis.
         self.rootCause = rootCause
 
-        #: Origin of problem determined during diagnosis. 
+        #: Origin of problem determined during diagnosis.
         self.finalOrigin = finalOrigin
 
-        #: Cause of problem determined during diagnosis. 
+        #: Cause of problem determined during diagnosis.
         self.finalCause = finalCause
 
-        #: Code for problem category determined during preliminary assessment. 
+        #: Code for problem category determined during preliminary assessment.
         self.preliminaryCode = preliminaryCode
 
-        #: Effect of problem. 
+        #: Effect of problem.
         self.effect = effect
 
-        #: Remarks pertaining to preliminary assessment of problem. 
+        #: Remarks pertaining to preliminary assessment of problem.
         self.preliminaryRemark = preliminaryRemark
 
-        #: Root origin of problem determined during diagnosis. 
+        #: Root origin of problem determined during diagnosis.
         self.rootOrigin = rootOrigin
 
-        #: Code for diagnosed probem category. 
+        #: Code for diagnosed probem category.
         self.finalCode = finalCode
 
-        #: Remarks pertaining to findings during problem diagnosis. 
+        #: Remarks pertaining to findings during problem diagnosis.
         self.finalRemark = finalRemark
 
-        #: Date and time preliminary assessment of problem was performed. 
+        #: Date and time preliminary assessment of problem was performed.
         self.preliminaryDateTime = preliminaryDateTime
 
         super(DiagnosisDataSet, self).__init__(*args, **kw_args)

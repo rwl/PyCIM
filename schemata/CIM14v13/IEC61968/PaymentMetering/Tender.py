@@ -30,13 +30,13 @@ class Tender(IdentifiedObject):
         @param Card: Card used to tender payment.
         @param Receipt: Receipt that recorded this receiving of a payment in the form of tenders.
         """
-        #: Kind of tender from customer. Values are: "cheque", "card", "other", "unspecified", "cash"
+        #: Kind of tender from customer.Values are: "cheque", "card", "other", "unspecified", "cash"
         self.kind = kind
 
-        #: Amount tendered by customer. 
+        #: Amount tendered by customer.
         self.amount = amount
 
-        #: Difference between amount tendered by customer and the amount charged by point of sale. 
+        #: Difference between amount tendered by customer and the amount charged by point of sale.
         self.change = change
 
         self._Cheque = None

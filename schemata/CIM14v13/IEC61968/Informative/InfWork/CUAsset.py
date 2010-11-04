@@ -29,10 +29,10 @@ class CUAsset(IdentifiedObject):
         @param TypeAsset:
         @param status:
         """
-        #: Quantity of the type asset within the CU. 
+        #: Quantity of the type asset within the CU.
         self.quantity = quantity
 
-        #: The code for this type of asset. 
+        #: The code for this type of asset.
         self.typeAssetCode = typeAssetCode
 
         self._CompatibleUnits = []

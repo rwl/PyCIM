@@ -28,10 +28,10 @@ class DuctTypeAsset(StructureTypeAsset):
         @param CableAssets:
         @param DuctBankTypeAsset:
         """
-        #: X position of the duct within the duct bank. 
+        #: X position of the duct within the duct bank.
         self.xCoord = xCoord
 
-        #: Y position of the duct within the duct bank. 
+        #: Y position of the duct within the duct bank.
         self.yCoord = yCoord
 
         self._CableAssets = []

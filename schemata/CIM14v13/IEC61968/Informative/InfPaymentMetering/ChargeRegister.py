@@ -27,7 +27,7 @@ class ChargeRegister(IdentifiedObject):
         @param chargeAmount: Charge amount in favour of the supplier. The units are either in currency units or service units, depending on the value of 'AccountingUnit.accountingMode'.
         @param SPAccountingFunction:
         """
-        #: Several different types of charges are typically implemented in the case of a prepayment meter. For example: a charge according to a tariff for consumption and possibly a demand component, or a charge for a debt that is loaded in the meter to be recovered on a time basis, or a standing charge to be levied at the end of each billing period, or a tax charge loaded in the meter to be recovered on a consumption basis or a time basis. Values are: "other", "auxiliaryCharge", "demandCharge", "taxCharge", "consumptionCharge"
+        #: Several different types of charges are typically implemented in the case of a prepayment meter. For example: a charge according to a tariff for consumption and possibly a demand component, or a charge for a debt that is loaded in the meter to be recovered on a time basis, or a standing charge to be levied at the end of each billing period, or a tax charge loaded in the meter to be recovered on a consumption basis or a time basis.Values are: "other", "auxiliaryCharge", "demandCharge", "taxCharge", "consumptionCharge"
         self.chargeKind = chargeKind
 
         self.chargeAmount = chargeAmount

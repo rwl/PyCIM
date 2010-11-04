@@ -40,49 +40,49 @@ class ShuntCompensator(RegulatingCondEq):
         @param g0PerSection: Zero sequence shunt (charging) conductance per section 
         @param SvShuntCompensatorSections: The state for the number of shunt compensator sections in service.
         """
-        #: Zero sequence shunt (charging) susceptance per section 
+        #: Zero sequence shunt (charging) susceptance per section
         self.b0PerSection = b0PerSection
 
-        #: For a capacitor bank, the maximum number of sections that may be switched in. 
+        #: For a capacitor bank, the maximum number of sections that may be switched in.
         self.maximumSections = maximumSections
 
-        #: For a capacitor bank, the normal number of sections switched in. This number should correspond to the nominal reactive power (nomQ). 
+        #: For a capacitor bank, the normal number of sections switched in. This number should correspond to the nominal reactive power (nomQ).
         self.normalSections = normalSections
 
-        #: Nominal reactive power output of the capacitor bank at the nominal voltage. This number should be positive. 
+        #: Nominal reactive power output of the capacitor bank at the nominal voltage. This number should be positive.
         self.nomQ = nomQ
 
-        #: The switch on count since the capacitor count was last reset or initialized. 
+        #: The switch on count since the capacitor count was last reset or initialized.
         self.switchOnCount = switchOnCount
 
-        #: The maximum voltage at which the capacitor bank should operate. 
+        #: The maximum voltage at which the capacitor bank should operate.
         self.maxU = maxU
 
-        #: For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage. 
+        #: For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage.
         self.reactivePerSection = reactivePerSection
 
-        #: Time delay required for the device to be connected or disconnected by automatic voltage regulation (AVR). 
+        #: Time delay required for the device to be connected or disconnected by automatic voltage regulation (AVR).
         self.aVRDelay = aVRDelay
 
-        #: Positive sequence shunt (charging) susceptance per section 
+        #: Positive sequence shunt (charging) susceptance per section
         self.bPerSection = bPerSection
 
-        #: Voltage sensitivity required for the device to regulate the bus voltage, in voltage/reactive power. 
+        #: Voltage sensitivity required for the device to regulate the bus voltage, in voltage/reactive power.
         self.voltageSensitivity = voltageSensitivity
 
-        #: The nominal voltage at which the nominal reactive power was measured. This should normally be within 10% of the voltage at which the capacitor is connected to the network. 
+        #: The nominal voltage at which the nominal reactive power was measured. This should normally be within 10% of the voltage at which the capacitor is connected to the network.
         self.nomU = nomU
 
-        #: Positive sequence shunt (charging) conductance per section 
+        #: Positive sequence shunt (charging) conductance per section
         self.gPerSection = gPerSection
 
-        #: The minimum voltage at which the capacitor bank should operate. 
+        #: The minimum voltage at which the capacitor bank should operate.
         self.minU = minU
 
-        #: The date and time when the capacitor bank was last switched on. 
+        #: The date and time when the capacitor bank was last switched on.
         self.switchOnDate = switchOnDate
 
-        #: Zero sequence shunt (charging) conductance per section 
+        #: Zero sequence shunt (charging) conductance per section
         self.g0PerSection = g0PerSection
 
         self._SvShuntCompensatorSections = None

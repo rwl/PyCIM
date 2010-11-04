@@ -19,3 +19,32 @@
 
 ns_prefix = "cimCore"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Core"
+
+from CIM14v13.IEC61970.Core.IdentifiedObject import IdentifiedObject
+from CIM14v13.IEC61970.Core.GeographicalRegion import GeographicalRegion
+from CIM14v13.IEC61970.Core.PowerSystemResource import PowerSystemResource
+from CIM14v13.IEC61970.Core.Equipment import Equipment
+from CIM14v13.IEC61970.Core.ConductingEquipment import ConductingEquipment
+from CIM14v13.IEC61970.Core.Curve import Curve
+from CIM14v13.IEC61970.Core.ReportingSuperGroup import ReportingSuperGroup
+from CIM14v13.IEC61970.Core.ConnectivityNodeContainer import ConnectivityNodeContainer
+from CIM14v13.IEC61970.Core.EquipmentContainer import EquipmentContainer
+from CIM14v13.IEC61970.Core.Substation import Substation
+from CIM14v13.IEC61970.Core.BasicIntervalSchedule import BasicIntervalSchedule
+from CIM14v13.IEC61970.Core.IrregularIntervalSchedule import IrregularIntervalSchedule
+from CIM14v13.IEC61970.Core.IrregularTimePoint import IrregularTimePoint
+from CIM14v13.IEC61970.Core.PsrList import PsrList
+from CIM14v13.IEC61970.Core.RegularIntervalSchedule import RegularIntervalSchedule
+from CIM14v13.IEC61970.Core.RegularTimePoint import RegularTimePoint
+from CIM14v13.IEC61970.Core.OperatingParticipant import OperatingParticipant
+from CIM14v13.IEC61970.Core.Bay import Bay
+from CIM14v13.IEC61970.Core.VoltageLevel import VoltageLevel
+from CIM14v13.IEC61970.Core.Terminal import Terminal
+from CIM14v13.IEC61970.Core.Unit import Unit
+from CIM14v13.IEC61970.Core.CurveData import CurveData
+from CIM14v13.IEC61970.Core.OperatingShare import OperatingShare
+from CIM14v13.IEC61970.Core.ReportingGroup import ReportingGroup
+from CIM14v13.IEC61970.Core.PSRType import PSRType
+from CIM14v13.IEC61970.Core.SubGeographicalRegion import SubGeographicalRegion
+from CIM14v13.IEC61970.Core.BaseVoltage import BaseVoltage
+from CIM14v13.IEC61970.Core.BasePower import BasePower

@@ -19,3 +19,20 @@
 
 ns_prefix = "cimLoadModel"
 ns_uri = "http://iec.ch/TC57/CIM-generic#LoadModel"
+
+from CIM14v13.IEC61970.LoadModel.PowerCutZone import PowerCutZone
+from CIM14v13.IEC61970.LoadModel.SeasonDayTypeSchedule import SeasonDayTypeSchedule
+from CIM14v13.IEC61970.LoadModel.DayType import DayType
+from CIM14v13.IEC61970.LoadModel.EnergyArea import EnergyArea
+from CIM14v13.IEC61970.LoadModel.SubLoadArea import SubLoadArea
+from CIM14v13.IEC61970.LoadModel.StationSupply import StationSupply
+from CIM14v13.IEC61970.LoadModel.NonConformLoad import NonConformLoad
+from CIM14v13.IEC61970.LoadModel.NonConformLoadSchedule import NonConformLoadSchedule
+from CIM14v13.IEC61970.LoadModel.ConformLoad import ConformLoad
+from CIM14v13.IEC61970.LoadModel.ConformLoadSchedule import ConformLoadSchedule
+from CIM14v13.IEC61970.LoadModel.Season import Season
+from CIM14v13.IEC61970.LoadModel.LoadGroup import LoadGroup
+from CIM14v13.IEC61970.LoadModel.LoadResponseCharacteristic import LoadResponseCharacteristic
+from CIM14v13.IEC61970.LoadModel.NonConformLoadGroup import NonConformLoadGroup
+from CIM14v13.IEC61970.LoadModel.LoadArea import LoadArea
+from CIM14v13.IEC61970.LoadModel.ConformLoadGroup import ConformLoadGroup

@@ -34,13 +34,13 @@ class DistributionTransformerWinding(ConductingEquipment):
         @param Transformer: Transformer this winding belongs to.
         @param ToWindingInsulations:
         """
-        #: (for Yn and Zn connections) True if the neutral is solidly grounded. 
+        #: (for Yn and Zn connections) True if the neutral is solidly grounded.
         self.grounded = grounded
 
-        #: (for Yn and Zn connections) Reactive part of neutral impedance where 'grounded' is true. 
+        #: (for Yn and Zn connections) Reactive part of neutral impedance where 'grounded' is true.
         self.xground = xground
 
-        #: (for Yn and Zn connections) Resistance part of neutral impedance where 'grounded' is true. 
+        #: (for Yn and Zn connections) Resistance part of neutral impedance where 'grounded' is true.
         self.rground = rground
 
         self._FromWindingInsulations = []

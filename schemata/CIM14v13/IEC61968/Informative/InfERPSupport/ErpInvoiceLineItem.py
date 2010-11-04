@@ -47,28 +47,28 @@ class ErpInvoiceLineItem(Document):
         @param ErpQuoteLineItem:
         @param ErpPayableLineItem:
         """
-        #: Kind of line item. Values are: "recalculation", "initial", "other"
+        #: Kind of line item.Values are: "recalculation", "initial", "other"
         self.kind = kind
 
-        #: Line item number on invoice statement. 
+        #: Line item number on invoice statement.
         self.lineNumber = lineNumber
 
-        #: Net line item charge amount. 
+        #: Net line item charge amount.
         self.netAmount = netAmount
 
-        #: General Ledger account code, must be a valid combination. 
+        #: General Ledger account code, must be a valid combination.
         self.glAccount = glAccount
 
-        #: Date and time line item will be posted to the General Ledger. 
+        #: Date and time line item will be posted to the General Ledger.
         self.glDateTime = glDateTime
 
-        #: Amount due for this line item. 
+        #: Amount due for this line item.
         self.lineAmount = lineAmount
 
-        #: Previous line item charge amount. 
+        #: Previous line item charge amount.
         self.previousAmount = previousAmount
 
-        #: Version number of the bill run. 
+        #: Version number of the bill run.
         self.lineVersion = lineVersion
 
         self._WorkBillingInfos = []

@@ -28,13 +28,13 @@ class OneCallRequest(Document):
         @param explosivesUsed: True if explosives have been or are planned to be used. 
         @param WorkLocations:
         """
-        #: Instructions for marking a dig area, if applicable. 
+        #: Instructions for marking a dig area, if applicable.
         self.markingInstruction = markingInstruction
 
-        #: True if work location has been marked, for example for a dig area. 
+        #: True if work location has been marked, for example for a dig area.
         self.markedIndicator = markedIndicator
 
-        #: True if explosives have been or are planned to be used. 
+        #: True if explosives have been or are planned to be used.
         self.explosivesUsed = explosivesUsed
 
         self._WorkLocations = []

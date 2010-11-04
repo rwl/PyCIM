@@ -31,19 +31,19 @@ class CogenerationPlant(PowerSystemResource):
         @param SteamSendoutSchedule: A cogeneration plant has a steam sendout schedule
         @param ThermalGeneratingUnits: A thermal generating unit may be a member of a cogeneration plant
         """
-        #: The high pressure steam sendout 
+        #: The high pressure steam sendout
         self.cogenHPSendoutRating = cogenHPSendoutRating
 
-        #: The rated output active power of the cogeneration plant 
+        #: The rated output active power of the cogeneration plant
         self.ratedP = ratedP
 
-        #: The low pressure steam sendout 
+        #: The low pressure steam sendout
         self.cogenLPSendoutRating = cogenLPSendoutRating
 
-        #: The low pressure steam rating 
+        #: The low pressure steam rating
         self.cogenLPSteamRating = cogenLPSteamRating
 
-        #: The high pressure steam rating 
+        #: The high pressure steam rating
         self.cogenHPSteamRating = cogenHPSteamRating
 
         self._SteamSendoutSchedule = None

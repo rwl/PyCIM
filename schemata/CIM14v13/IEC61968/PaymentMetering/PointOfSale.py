@@ -28,7 +28,7 @@ class PointOfSale(IdentifiedObject):
         @param Tokens: All Tokens sold or dispensed at this PointOfSale.
         @param CashierShifts: All shifts this point of sale operated in.
         """
-        #: Local description for where this point of sale is physically located. 
+        #: Local description for where this point of sale is physically located.
         self.location = location
 
         self._Vendor = None

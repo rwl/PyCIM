@@ -40,25 +40,25 @@ class Transaction(IdentifiedObject):
         @param CashierShift: Cashier shift during which this transaction was recorded.
         @param line: Transaction amount, rounding, date and note for this transaction line.
         """
-        #: Kind of transaction. Values are: "auxiliaryChargePayment", "tokenExchange", "tokenCancellation", "transactionReversal", "diversePayment", "tokenFreeIssue", "other", "meterConfigurationToken", "tokenSalePayment", "accountPayment", "taxChargePayment", "serviceChargePayment", "tokenGrant"
+        #: Kind of transaction.Values are: "auxiliaryChargePayment", "tokenExchange", "tokenCancellation", "transactionReversal", "diversePayment", "tokenFreeIssue", "other", "meterConfigurationToken", "tokenSalePayment", "accountPayment", "taxChargePayment", "serviceChargePayment", "tokenGrant"
         self.kind = kind
 
-        #: Actual amount of service units that is being paid for. 
+        #: Actual amount of service units that is being paid for.
         self.serviceUnitsEnergy = serviceUnitsEnergy
 
-        #: Number of service units not reflected in 'serviceUnitsEnergy' due to process rounding or truncating errors. 
+        #: Number of service units not reflected in 'serviceUnitsEnergy' due to process rounding or truncating errors.
         self.serviceUnitsError = serviceUnitsError
 
-        #: (if 'kind' is transactionReversal) Reference to the original transaction that is being reversed by this transaction. 
+        #: (if 'kind' is transactionReversal) Reference to the original transaction that is being reversed by this transaction.
         self.reversedId = reversedId
 
-        #: Reference to the entity that is the recipient of 'amount' (for example, supplier for service charge payment; or tax receiver for VAT). 
+        #: Reference to the entity that is the recipient of 'amount' (for example, supplier for service charge payment; or tax receiver for VAT).
         self.receiverReference = receiverReference
 
-        #: Formal reference for use with diverse payment (traffic fine for example). 
+        #: Formal reference for use with diverse payment (traffic fine for example).
         self.diverseReference = diverseReference
 
-        #: Reference to the entity that is the source of 'amount' (for example: customer for token purchase; or supplier for free issue token). 
+        #: Reference to the entity that is the source of 'amount' (for example: customer for token purchase; or supplier for free issue token).
         self.donorReference = donorReference
 
         self._VendorShift = None

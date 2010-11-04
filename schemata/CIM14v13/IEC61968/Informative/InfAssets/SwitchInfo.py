@@ -36,31 +36,31 @@ class SwitchInfo(ElectricalInfo):
         @param SwitchAssetModel:
         @param SwitchTypeAsset:
         """
-        #: The highest value of current the switch can make at the rated voltage under specified operating conditions without suffering significant deterioration of its performance. 
+        #: The highest value of current the switch can make at the rated voltage under specified operating conditions without suffering significant deterioration of its performance.
         self.makingCapacity = makingCapacity
 
-        #: Number of poles (i.e. of current carrying conductors that are switched). 
+        #: Number of poles (i.e. of current carrying conductors that are switched).
         self.poleCount = poleCount
 
-        #: Breaking capacity, or short circuit rating, is the maximum rated current which the device can safely interrupt at the rated voltage. 
+        #: Breaking capacity, or short circuit rating, is the maximum rated current which the device can safely interrupt at the rated voltage.
         self.interruptingRating = interruptingRating
 
-        #: The highest value of current the switch can carry in the closed position at the rated voltage under specified operating conditions without suffering significant deterioration of its performance. 
+        #: The highest value of current the switch can carry in the closed position at the rated voltage under specified operating conditions without suffering significant deterioration of its performance.
         self.withstandCurrent = withstandCurrent
 
-        #: The lowest value of current that the switch can make, carry and break in uninterrupted duty at the rated voltage under specified operating conditions without suffering significant deterioration of its performance. 
+        #: The lowest value of current that the switch can make, carry and break in uninterrupted duty at the rated voltage under specified operating conditions without suffering significant deterioration of its performance.
         self.minimumCurrent = minimumCurrent
 
-        #: True if switch has load breaking capabiity. Unless specified false, this is always assumed to be true for breakers and reclosers. 
+        #: True if switch has load breaking capabiity. Unless specified false, this is always assumed to be true for breakers and reclosers.
         self.loadBreak = loadBreak
 
-        #: True if multi-phase switch controls all phases concurrently. 
+        #: True if multi-phase switch controls all phases concurrently.
         self.gang = gang
 
-        #: The maximum rms voltage that may be applied across an open contact without breaking down the dielectric properties of the switch in the open position. 
+        #: The maximum rms voltage that may be applied across an open contact without breaking down the dielectric properties of the switch in the open position.
         self.dielectricStrength = dielectricStrength
 
-        #: True if device is capable of being operated by remote control. 
+        #: True if device is capable of being operated by remote control.
         self.remote = remote
 
         self._SwitchAssets = []

@@ -44,55 +44,55 @@ class ShuntImpedanceInfo(ElectricalInfo):
         @param ShuntCompensatorAssetModel:
         @param ShuntCompensatorAssets:
         """
-        #: Kind of control (if any). Values are: "fixed", "remoteWithLocalOverride", "remoteOnly", "localOnly"
+        #: Kind of control (if any).Values are: "fixed", "remoteWithLocalOverride", "remoteOnly", "localOnly"
         self.controlKind = controlKind
 
-        #: Phases that are measured for controlling the device. Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
+        #: Phases that are measured for controlling the device.Values are: "BC", "AB", "B", "AC", "ABC", "splitSecondary1N", "ABN", "ABCN", "CN", "AN", "splitSecondary12N", "BCN", "splitSecondary2N", "ACN", "A", "C", "N", "BN"
         self.sensingPhaseCode = sensingPhaseCode
 
-        #: (For VAR, amp, or power factor locally controlled shunt impedances) Kind of regulation branch. Values are: "transformer", "line", "fuse", "sectionner", "other", "breaker", "switch", "recloser"
+        #: (For VAR, amp, or power factor locally controlled shunt impedances) Kind of regulation branch.Values are: "transformer", "line", "fuse", "sectionner", "other", "breaker", "switch", "recloser"
         self.regBranchKind = regBranchKind
 
-        #: Kind of local controller. Values are: "none", "current", "reactivePower", "time", "temperature", "voltage", "powerFactor"
+        #: Kind of local controller.Values are: "none", "current", "reactivePower", "time", "temperature", "voltage", "powerFactor"
         self.localControlKind = localControlKind
 
-        #: For VAR, amp, or power factor locally controlled shunt impedances, the index of the regulation branch. 
+        #: For VAR, amp, or power factor locally controlled shunt impedances, the index of the regulation branch.
         self.regBranch = regBranch
 
-        #: For locally controlled shunt impedances which have a voltage override feature, the low voltage override value. If the voltage is below this value, the shunt impedance will be turned on regardless of the other local controller settings. 
+        #: For locally controlled shunt impedances which have a voltage override feature, the low voltage override value. If the voltage is below this value, the shunt impedance will be turned on regardless of the other local controller settings.
         self.lowVoltageOverride = lowVoltageOverride
 
-        #: Time interval between consecutive switching operations. 
+        #: Time interval between consecutive switching operations.
         self.switchOperationCycle = switchOperationCycle
 
-        #: For locally controlled shunt impedances which have a voltage override feature, the high voltage override value. If the voltage is above this value, the shunt impedance will be turned off regardless of the other local controller settings. 
+        #: For locally controlled shunt impedances which have a voltage override feature, the high voltage override value. If the voltage is above this value, the shunt impedance will be turned off regardless of the other local controller settings.
         self.highVoltageOverride = highVoltageOverride
 
-        #: True if the locally controlled capacitor has voltage override capability. 
+        #: True if the locally controlled capacitor has voltage override capability.
         self.localOverride = localOverride
 
-        #: For VAR, amp, or power factor locally controlled shunt impedances, the end of the branch that is regulated. The field has the following values: from side, to side, and tertiary (only if the branch is a transformer). 
+        #: For VAR, amp, or power factor locally controlled shunt impedances, the end of the branch that is regulated. The field has the following values: from side, to side, and tertiary (only if the branch is a transformer).
         self.regBranchEnd = regBranchEnd
 
-        #: Upper control setting. 
+        #: Upper control setting.
         self.localOffLevel = localOffLevel
 
-        #: For VAR, amp, or power factor locally controlled shunt impedances, the flow direction: in, out. 
+        #: For VAR, amp, or power factor locally controlled shunt impedances, the flow direction: in, out.
         self.branchDirect = branchDirect
 
-        #: True if open is normal status for a fixed capacitor bank, otherwise normal status is closed. 
+        #: True if open is normal status for a fixed capacitor bank, otherwise normal status is closed.
         self.normalOpen = normalOpen
 
-        #: The size of the individual units that make up the bank. 
+        #: The size of the individual units that make up the bank.
         self.cellSize = cellSize
 
-        #: Lower control setting. 
+        #: Lower control setting.
         self.localOnLevel = localOnLevel
 
-        #: IdmsShuntImpedanceData.maxNumSwitchOps 
+        #: IdmsShuntImpedanceData.maxNumSwitchOps
         self.maxSwitchOperationCount = maxSwitchOperationCount
 
-        #: True if regulated voltages are measured line to line, otherwise they are measured line to ground. 
+        #: True if regulated voltages are measured line to line, otherwise they are measured line to ground.
         self.vRegLineLine = vRegLineLine
 
         self._ShuntCompensatorTypeAsset = None

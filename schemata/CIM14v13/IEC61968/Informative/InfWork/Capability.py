@@ -31,10 +31,10 @@ class Capability(IdentifiedObject):
         @param validityInterval: Date and time interval for which this capability is valid (when it became effective and when it expires).
         @param Crafts:
         """
-        #: Capability performance factor. 
+        #: Capability performance factor.
         self.performanceFactor = performanceFactor
 
-        #: Category by utility's work management standards and practices. 
+        #: Category by utility's work management standards and practices.
         self.category = category
 
         self._Crew = None

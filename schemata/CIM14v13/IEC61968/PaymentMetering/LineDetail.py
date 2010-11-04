@@ -28,16 +28,16 @@ class LineDetail(Element):
         @param note: Free format note relevant to this line. 
         @param dateTime: Date and time when this line was created in the application process. 
         """
-        #: Amount for this line item. 
+        #: Amount for this line item.
         self.amount = amount
 
-        #: Totalised monetary value of all errors due to process rounding or truncating that is not reflected in 'amount'. 
+        #: Totalised monetary value of all errors due to process rounding or truncating that is not reflected in 'amount'.
         self.rounding = rounding
 
-        #: Free format note relevant to this line. 
+        #: Free format note relevant to this line.
         self.note = note
 
-        #: Date and time when this line was created in the application process. 
+        #: Date and time when this line was created in the application process.
         self.dateTime = dateTime
 
         super(LineDetail, self).__init__(*args, **kw_args)

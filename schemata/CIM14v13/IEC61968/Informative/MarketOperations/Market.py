@@ -40,34 +40,34 @@ class Market(IdentifiedObject):
         @param MarketFactors:
         @param RTO:
         """
-        #: Ramping time interval for non-spinning reserve. 
+        #: Ramping time interval for non-spinning reserve.
         self.rampIntervalNonSpinRes = rampIntervalNonSpinRes
 
-        #: Local time zone. 
+        #: Local time zone.
         self.localTimeZone = localTimeZone
 
-        #: Ramping time interval for energy. 
+        #: Ramping time interval for energy.
         self.rampIntervalEnergy = rampIntervalEnergy
 
-        #: The type of a market. 
+        #: The type of a market.
         self.type = type
 
-        #: Trading time interval length. 
+        #: Trading time interval length.
         self.timeIntervalLength = timeIntervalLength
 
-        #: Ramping time interval for spinning reserve. 
+        #: Ramping time interval for spinning reserve.
         self.rampIntervalSpinRes = rampIntervalSpinRes
 
-        #: True if daylight savings time (DST) is in effect. 
+        #: True if daylight savings time (DST) is in effect.
         self.dst = dst
 
-        #: Ramping time interval for regulation. 
+        #: Ramping time interval for regulation.
         self.rampIntervalReg = rampIntervalReg
 
-        #: Market end time. 
+        #: Market end time.
         self.end = end
 
-        #: Market start time. 
+        #: Market start time.
         self.start = start
 
         self._Bids = []

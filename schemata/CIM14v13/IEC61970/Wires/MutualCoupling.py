@@ -34,28 +34,28 @@ class MutualCoupling(IdentifiedObject):
         @param Second_Terminal: The starting terminal for the calculation of distances along the second branch of the mutual coupling.
         @param First_Terminal: The starting terminal for the calculation of distances along the first branch of the mutual coupling.  Normally MutualCoupling would only be used for terminals of AC line segments.  The first and second terminals of a mutual coupling should point to different AC line segments.
         """
-        #: Distance from the first line's from specified terminal to end of coupled region 
+        #: Distance from the first line's from specified terminal to end of coupled region
         self.distance12 = distance12
 
-        #: Zero sequence mutual coupling shunt (charging) susceptance, uniformly distributed, of the entire line section. 
+        #: Zero sequence mutual coupling shunt (charging) susceptance, uniformly distributed, of the entire line section.
         self.b0ch = b0ch
 
-        #: Zero sequence branch-to-branch mutual impedance coupling, resistance 
+        #: Zero sequence branch-to-branch mutual impedance coupling, resistance
         self.r0 = r0
 
-        #: Zero sequence mutual coupling shunt (charging) conductance, uniformly distributed, of the entire line section. 
+        #: Zero sequence mutual coupling shunt (charging) conductance, uniformly distributed, of the entire line section.
         self.g0ch = g0ch
 
-        #: Distance from the second line's specified terminal to end of coupled region 
+        #: Distance from the second line's specified terminal to end of coupled region
         self.distance22 = distance22
 
-        #: Distance from the second line's specified terminal to start of coupled region 
+        #: Distance from the second line's specified terminal to start of coupled region
         self.distance21 = distance21
 
-        #: Distance from the first line's specified terminal to start of coupled region 
+        #: Distance from the first line's specified terminal to start of coupled region
         self.distance11 = distance11
 
-        #: Zero sequence branch-to-branch mutual impedance coupling, reactance 
+        #: Zero sequence branch-to-branch mutual impedance coupling, reactance
         self.x0 = x0
 
         self._Second_Terminal = None

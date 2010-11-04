@@ -26,7 +26,7 @@ class SvStatus(StateVariable):
         @param inService: The in service status as a result of topology processing. 
         @param ConductingEquipment: The conducting equipment associated with the status state.
         """
-        #: The in service status as a result of topology processing. 
+        #: The in service status as a result of topology processing.
         self.inService = inService
 
         self._ConductingEquipment = None

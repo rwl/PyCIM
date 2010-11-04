@@ -26,7 +26,7 @@ class LoadMgmtRecord(ActivityRecord):
         @param loadReduction: The measured reduction of the total load power as a result of the load shed activation. Thus it is the difference in power before and after the load shed operation. 
         @param LoadMgmtFunction:
         """
-        #: The measured reduction of the total load power as a result of the load shed activation. Thus it is the difference in power before and after the load shed operation. 
+        #: The measured reduction of the total load power as a result of the load shed activation. Thus it is the difference in power before and after the load shed operation.
         self.loadReduction = loadReduction
 
         self._LoadMgmtFunction = None

@@ -29,19 +29,19 @@ class StaticVarCompensator(RegulatingCondEq):
         @param voltageSetPoint: The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero. 
         @param inductiveRating: Maximum available inductive reactive power 
         """
-        #: SVC control mode. Values are: "off", "reactivePower", "voltage"
+        #: SVC control mode.Values are: "off", "reactivePower", "voltage"
         self.sVCControlMode = sVCControlMode
 
-        #: Maximum available capacitive reactive power 
+        #: Maximum available capacitive reactive power
         self.capacitiveRating = capacitiveRating
 
-        #: The characteristics slope of an SVC defines how the reactive power output changes in proportion to the difference between the regulated bus voltage and the voltage setpoint. 
+        #: The characteristics slope of an SVC defines how the reactive power output changes in proportion to the difference between the regulated bus voltage and the voltage setpoint.
         self.slope = slope
 
-        #: The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero. 
+        #: The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero.
         self.voltageSetPoint = voltageSetPoint
 
-        #: Maximum available inductive reactive power 
+        #: Maximum available inductive reactive power
         self.inductiveRating = inductiveRating
 
         super(StaticVarCompensator, self).__init__(*args, **kw_args)

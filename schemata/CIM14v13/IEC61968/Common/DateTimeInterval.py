@@ -26,10 +26,10 @@ class DateTimeInterval(Element):
         @param end: Date and time that this interval ended. 
         @param start: Date and time that this interval started. 
         """
-        #: Date and time that this interval ended. 
+        #: Date and time that this interval ended.
         self.end = end
 
-        #: Date and time that this interval started. 
+        #: Date and time that this interval started.
         self.start = start
 
         super(DateTimeInterval, self).__init__(*args, **kw_args)

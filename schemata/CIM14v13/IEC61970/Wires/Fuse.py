@@ -25,7 +25,7 @@ class Fuse(Switch):
 
         @param ratingCurrent: Fault interrupting current rating. 
         """
-        #: Fault interrupting current rating. 
+        #: Fault interrupting current rating.
         self.ratingCurrent = ratingCurrent
 
         super(Fuse, self).__init__(*args, **kw_args)

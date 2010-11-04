@@ -29,10 +29,10 @@ class ShiftPattern(IdentifiedObject):
         @param Crews:
         @param status:
         """
-        #: Number of cycles for a temporary shift. 
+        #: Number of cycles for a temporary shift.
         self.cycleCount = cycleCount
 
-        #: Type of assignement intended to be worked on this shift, for example, temporary, standard, etc. 
+        #: Type of assignement intended to be worked on this shift, for example, temporary, standard, etc.
         self.assignmentType = assignmentType
 
         self.validityInterval = validityInterval

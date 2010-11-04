@@ -37,22 +37,22 @@ class DesignLocationCU(IdentifiedObject):
         @param CompatibleUnits:
         @param status:
         """
-        #: A code that instructs the crew what action to perform. Values are: "install", "remove", "transfer", "abandon"
+        #: A code that instructs the crew what action to perform.Values are: "install", "remove", "transfer", "abandon"
         self.cuAction = cuAction
 
-        #: Year when a CU that represents an asset is removed. 
+        #: Year when a CU that represents an asset is removed.
         self.removalYear = removalYear
 
-        #: As the same CU can be used for different purposes and accounting purposes, usage must be specified. Examples include: distribution, transmission, substation. 
+        #: As the same CU can be used for different purposes and accounting purposes, usage must be specified. Examples include: distribution, transmission, substation.
         self.cuUsage = cuUsage
 
-        #: A code that helps direct accounting (capital, expense, or accounting treatment). 
+        #: A code that helps direct accounting (capital, expense, or accounting treatment).
         self.cuAccount = cuAccount
 
-        #: The quantity of the CU being assigned to this location. 
+        #: The quantity of the CU being assigned to this location.
         self.cuQuantity = cuQuantity
 
-        #: True if associated electrical equipment is intended to be energized while work is being performed. 
+        #: True if associated electrical equipment is intended to be energized while work is being performed.
         self.energizationFlag = energizationFlag
 
         self._Designs = []

@@ -26,7 +26,7 @@ class StandardIndustryCode(Document):
         @param code: Standard alphanumeric code assigned to a particular product/service within an industry. 
         @param CustomerAgreements:
         """
-        #: Standard alphanumeric code assigned to a particular product/service within an industry. 
+        #: Standard alphanumeric code assigned to a particular product/service within an industry.
         self.code = code
 
         self._CustomerAgreements = []

@@ -27,10 +27,10 @@ class SvVoltage(StateVariable):
         @param angle: The voltage angle in radians of the topological node. 
         @param TopologicalNode: The topological node associated with the voltage state.
         """
-        #: The voltage magnitude of the topological node. 
+        #: The voltage magnitude of the topological node.
         self.v = v
 
-        #: The voltage angle in radians of the topological node. 
+        #: The voltage angle in radians of the topological node.
         self.angle = angle
 
         self._TopologicalNode = None

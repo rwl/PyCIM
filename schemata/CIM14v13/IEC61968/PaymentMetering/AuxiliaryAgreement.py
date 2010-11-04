@@ -36,34 +36,34 @@ class AuxiliaryAgreement(Agreement):
         @param CustomerAgreement: Customer agreement this (non-service related) auxiliary agreement refers to.
         @param AuxiliaryAccounts: All auxiliary accounts regulated by this agreement.
         """
-        #: The coded priority indicating the priority that this AuxiliaryAgreement has above other AuxiliaryAgreements (associated with the same customer agreement) when it comes to competing for settlement from a payment transaction or token purchase. 
+        #: The coded priority indicating the priority that this AuxiliaryAgreement has above other AuxiliaryAgreements (associated with the same customer agreement) when it comes to competing for settlement from a payment transaction or token purchase.
         self.auxPriorityCode = auxPriorityCode
 
-        #: The fixed amount that must be collected from each vending transaction towards settlement of this AuxiliaryAgreement. Note that there may be multiple tokens vended per vending transaction, but this is not relevant. 
+        #: The fixed amount that must be collected from each vending transaction towards settlement of this AuxiliaryAgreement. Note that there may be multiple tokens vended per vending transaction, but this is not relevant.
         self.fixedAmount = fixedAmount
 
-        #: The contractually expected payment frequency (by the customer). Examples are: ad-hoc; on specified date; hourly, daily, weekly, monthly. etc. 
+        #: The contractually expected payment frequency (by the customer). Examples are: ad-hoc; on specified date; hourly, daily, weekly, monthly. etc.
         self.payCycle = payCycle
 
-        #: The percentage of the transaction amount that must be collected from each vending transaction towards settlement of this AuxiliaryAgreement when payments are not in arrears. Note that there may be multiple tokens vended per vending transaction, but this is not relevant. 
+        #: The percentage of the transaction amount that must be collected from each vending transaction towards settlement of this AuxiliaryAgreement when payments are not in arrears. Note that there may be multiple tokens vended per vending transaction, but this is not relevant.
         self.vendPortion = vendPortion
 
-        #: The percentage of the transaction amount that must be collected from each vending transaction towards settlement of this AuxiliaryAgreement when payments are in arrears. Note that there may be multiple tokens vended per vending transaction, but this is not relevant. 
+        #: The percentage of the transaction amount that must be collected from each vending transaction towards settlement of this AuxiliaryAgreement when payments are in arrears. Note that there may be multiple tokens vended per vending transaction, but this is not relevant.
         self.vendPortionArrear = vendPortionArrear
 
-        #: The minimum amount that must be paid at any transaction towards settling this AuxiliryAgreement or reducing the balance. 
+        #: The minimum amount that must be paid at any transaction towards settling this AuxiliryAgreement or reducing the balance.
         self.minAmount = minAmount
 
-        #: The frequency for automatically recurring auxiliary charges, where AuxiliaryAccount.initialCharge is recursively added to AuxiliaryAccount.dueCurrent at the start of each auxCycle. For example: on a specified date and time; hourly; daily; weekly; monthly; 3-monthly; 6-monthly; 12-monthly; etc. 
+        #: The frequency for automatically recurring auxiliary charges, where AuxiliaryAccount.initialCharge is recursively added to AuxiliaryAccount.dueCurrent at the start of each auxCycle. For example: on a specified date and time; hourly; daily; weekly; monthly; 3-monthly; 6-monthly; 12-monthly; etc.
         self.auxCycle = auxCycle
 
-        #: A local reference to this AuxiliaryAgreement defined in the context of the implementation and not related to IdentifiedObject.mRID. 
+        #: A local reference to this AuxiliaryAgreement defined in the context of the implementation and not related to IdentifiedObject.mRID.
         self.auxRef = auxRef
 
-        #: Sub-category of this AuxiliaryAgreement as sub-classification of the inherited 'category'. 
+        #: Sub-category of this AuxiliaryAgreement as sub-classification of the inherited 'category'.
         self.subCategory = subCategory
 
-        #: The interest per annum to be charged prorata on AuxiliaryAccount.dueArrears at the end of each payCycle. 
+        #: The interest per annum to be charged prorata on AuxiliaryAccount.dueArrears at the end of each payCycle.
         self.arrearsInterest = arrearsInterest
 
         self._CustomerAgreement = None

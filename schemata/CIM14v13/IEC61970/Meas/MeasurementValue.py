@@ -32,10 +32,10 @@ class MeasurementValue(IdentifiedObject):
         @param RemoteSource: Link to the physical telemetered point associated with this measurement.
         @param MeasurementValueQuality: A MeasurementValue has a MeasurementValueQuality associated with it.
         """
-        #: The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions. 
+        #: The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions.
         self.sensorAccuracy = sensorAccuracy
 
-        #: The time when the value was last updated 
+        #: The time when the value was last updated
         self.timeStamp = timeStamp
 
         self._GmlValues = []

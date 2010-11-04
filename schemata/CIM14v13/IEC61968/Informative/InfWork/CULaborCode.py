@@ -27,7 +27,7 @@ class CULaborCode(IdentifiedObject):
         @param CULaborItems:
         @param status:
         """
-        #: Labor code. 
+        #: Labor code.
         self.code = code
 
         self._CULaborItems = []

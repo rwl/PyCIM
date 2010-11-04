@@ -28,10 +28,10 @@ class StreetlightAssetModel(ElectricalAssetModel):
         @param Streetlights:
         @param StreetlightTypeAssets:
         """
-        #: Lamp kind supplied from manufacturer (vs. one that has been replaced in the field). Values are: "highPressureSodium", "other", "metalHalide", "mercuryVapor"
+        #: Lamp kind supplied from manufacturer (vs. one that has been replaced in the field).Values are: "highPressureSodium", "other", "metalHalide", "mercuryVapor"
         self.lampKind = lampKind
 
-        #: Power rating of light as supplied by the manufacturer. 
+        #: Power rating of light as supplied by the manufacturer.
         self.lightRating = lightRating
 
         self._Streetlights = []

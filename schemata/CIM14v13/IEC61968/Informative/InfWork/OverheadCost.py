@@ -29,10 +29,10 @@ class OverheadCost(IdentifiedObject):
         @param WorkTasks:
         @param status:
         """
-        #: The overhead cost to be applied. 
+        #: The overhead cost to be applied.
         self.cost = cost
 
-        #: Overhead code. 
+        #: Overhead code.
         self.code = code
 
         self._WorkCostDetails = []

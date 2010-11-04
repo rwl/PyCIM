@@ -26,7 +26,7 @@ class GenUnitOpCostCurve(Curve):
         @param isNetGrossP: Flag is set to true when output is expressed in net active power 
         @param GeneratingUnit: A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.
         """
-        #: Flag is set to true when output is expressed in net active power 
+        #: Flag is set to true when output is expressed in net active power
         self.isNetGrossP = isNetGrossP
 
         self._GeneratingUnit = None

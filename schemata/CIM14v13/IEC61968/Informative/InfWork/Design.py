@@ -35,13 +35,13 @@ class Design(Document):
         @param ConditionFactors:
         @param WorkTasks:
         """
-        #: Kind of this design. Values are: "estimated", "asBuilt", "other"
+        #: Kind of this design.Values are: "estimated", "asBuilt", "other"
         self.kind = kind
 
-        #: Price to customer for implementing design. 
+        #: Price to customer for implementing design.
         self.price = price
 
-        #: Estimated cost (not price) of design. 
+        #: Estimated cost (not price) of design.
         self.costEstimate = costEstimate
 
         self._DesignLocationsCUs = []

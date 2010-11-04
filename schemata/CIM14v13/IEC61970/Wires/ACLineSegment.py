@@ -32,28 +32,28 @@ class ACLineSegment(Conductor):
         @param x: Positive sequence series reactance of the entire line section. 
         @param g0ch: Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section. 
         """
-        #: Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line. 
+        #: Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line.
         self.bch = bch
 
-        #: Positive sequence series resistance of the entire line section. 
+        #: Positive sequence series resistance of the entire line section.
         self.r = r
 
-        #: Positive sequence shunt (charging) conductance, uniformly distributed, of the entire line section. 
+        #: Positive sequence shunt (charging) conductance, uniformly distributed, of the entire line section.
         self.gch = gch
 
-        #: Zero sequence series resistance of the entire line section. 
+        #: Zero sequence series resistance of the entire line section.
         self.r0 = r0
 
-        #: Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section. 
+        #: Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.
         self.b0ch = b0ch
 
-        #: Zero sequence series reactance of the entire line section. 
+        #: Zero sequence series reactance of the entire line section.
         self.x0 = x0
 
-        #: Positive sequence series reactance of the entire line section. 
+        #: Positive sequence series reactance of the entire line section.
         self.x = x
 
-        #: Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section. 
+        #: Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section.
         self.g0ch = g0ch
 
         super(ACLineSegment, self).__init__(*args, **kw_args)

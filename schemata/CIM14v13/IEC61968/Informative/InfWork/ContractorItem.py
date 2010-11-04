@@ -31,13 +31,13 @@ class ContractorItem(IdentifiedObject):
         @param ErpPayables:
         @param status:
         """
-        #: The total amount charged. 
+        #: The total amount charged.
         self.cost = cost
 
-        #: The amount that a given contractor will charge for performing this unit of work. 
+        #: The amount that a given contractor will charge for performing this unit of work.
         self.bidAmount = bidAmount
 
-        #: Activity code identifies a specific and distinguishable unit of work. 
+        #: Activity code identifies a specific and distinguishable unit of work.
         self.activityCode = activityCode
 
         self._WorkTask = None

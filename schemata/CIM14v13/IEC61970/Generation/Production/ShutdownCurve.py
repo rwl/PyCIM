@@ -27,10 +27,10 @@ class ShutdownCurve(Curve):
         @param shutdownCost: Fixed shutdown cost 
         @param ThermalGeneratingUnit: A thermal generating unit may have a shutdown curve
         """
-        #: The date and time of the most recent generating unit shutdown 
+        #: The date and time of the most recent generating unit shutdown
         self.shutdownDate = shutdownDate
 
-        #: Fixed shutdown cost 
+        #: Fixed shutdown cost
         self.shutdownCost = shutdownCost
 
         self._ThermalGeneratingUnit = None

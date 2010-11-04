@@ -26,7 +26,7 @@ class PsrList(IdentifiedObject):
         @param typePSRList: Type of power system resources in this list. 
         @param PowerSystemResources:
         """
-        #: Type of power system resources in this list. 
+        #: Type of power system resources in this list.
         self.typePSRList = typePSRList
 
         self._PowerSystemResources = []

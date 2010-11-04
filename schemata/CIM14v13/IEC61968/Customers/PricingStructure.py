@@ -37,22 +37,22 @@ class PricingStructure(Document):
         @param SubscribePowerCurve: SubscribePowerCurve specifies the cost according to a prcing structure.
         @param ServiceCategory: Service category to which this pricing structure applies.
         """
-        #: (Accounting) Kind of revenue, often used to determine the grace period allowed, before collection actions are taken on a customer (grace periods vary between revenue classes). Values are: "streetLight", "commercial", "other", "irrigation", "nonResidential", "industrial", "residential"
+        #: (Accounting) Kind of revenue, often used to determine the grace period allowed, before collection actions are taken on a customer (grace periods vary between revenue classes).Values are: "streetLight", "commercial", "other", "irrigation", "nonResidential", "industrial", "residential"
         self.revenueKind = revenueKind
 
-        #: Unique user-allocated key for this pricing structure, used by company representatives to identify the correct price structure for allocating to a customer. For rate schedules it is often prefixed by a state code. 
+        #: Unique user-allocated key for this pricing structure, used by company representatives to identify the correct price structure for allocating to a customer. For rate schedules it is often prefixed by a state code.
         self.code = code
 
-        #: Absolute minimum valid non-demand usage quantity used in validating a customer's billed non-demand usage. 
+        #: Absolute minimum valid non-demand usage quantity used in validating a customer's billed non-demand usage.
         self.dailyFloorUsage = dailyFloorUsage
 
-        #: True if this pricing structure is not taxable. 
+        #: True if this pricing structure is not taxable.
         self.taxExemption = taxExemption
 
-        #: Absolute maximum valid non-demand usage quantity used in validating a customer's billed non-demand usage. 
+        #: Absolute maximum valid non-demand usage quantity used in validating a customer's billed non-demand usage.
         self.dailyCeilingUsage = dailyCeilingUsage
 
-        #: Used in place of actual computed estimated average when history of usage is not available, and typically manually entered by customer accounting. 
+        #: Used in place of actual computed estimated average when history of usage is not available, and typically manually entered by customer accounting.
         self.dailyEstimatedUsage = dailyEstimatedUsage
 
         self._Tariffs = []

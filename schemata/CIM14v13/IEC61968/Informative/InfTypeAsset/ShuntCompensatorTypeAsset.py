@@ -27,7 +27,7 @@ class ShuntCompensatorTypeAsset(ElectricalTypeAsset):
         @param ShuntImpedanceInfo:
         @param ShuntCompensatorAssetModels:
         """
-        #: Maximum allowed Apparent Power loss 
+        #: Maximum allowed Apparent Power loss
         self.maxPowerLoss = maxPowerLoss
 
         self._ShuntImpedanceInfo = None

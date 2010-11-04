@@ -26,7 +26,7 @@ class RampRateCurve(Curve):
         @param rampRateType: How ramp rate is applied (e.g., raise or lower, as when applied to a generation resource) 
         @param GeneratingUnit:
         """
-        #: How ramp rate is applied (e.g., raise or lower, as when applied to a generation resource) 
+        #: How ramp rate is applied (e.g., raise or lower, as when applied to a generation resource)
         self.rampRateType = rampRateType
 
         self._GeneratingUnit = []

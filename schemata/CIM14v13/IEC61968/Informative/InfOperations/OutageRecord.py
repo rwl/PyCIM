@@ -32,19 +32,19 @@ class OutageRecord(Document):
         @param OutageCodes: Multiple outage codes may apply to an outage record.
         @param OutageSteps:
         """
-        #: Value of ErpOrganisation.mode at the time of OutageRecord.startDateTime. 
+        #: Value of ErpOrganisation.mode at the time of OutageRecord.startDateTime.
         self.mode = mode
 
-        #: The damage code relative to the associated PowerSystemResource(s) and/or Asset(s). Examples include broken, burnout, failure, flashed (burned), manually operated, wire down, no damage - rolling blackout, none. 
+        #: The damage code relative to the associated PowerSystemResource(s) and/or Asset(s). Examples include broken, burnout, failure, flashed (burned), manually operated, wire down, no damage - rolling blackout, none.
         self.damageCode = damageCode
 
-        #: Overall action taken to resolve outage (details are in 'WorkTasks'). 
+        #: Overall action taken to resolve outage (details are in 'WorkTasks').
         self.actionTaken = actionTaken
 
-        #: Date and time restoration was completed for all customers impacted by this outage. 
+        #: Date and time restoration was completed for all customers impacted by this outage.
         self.endDateTime = endDateTime
 
-        #: True if planned, false otherwise (for example due to a breaker trip). 
+        #: True if planned, false otherwise (for example due to a breaker trip).
         self.isPlanned = isPlanned
 
         self._OutageReport = None

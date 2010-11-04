@@ -31,25 +31,25 @@ class CurrentRelay(ProtectionEquipment):
         @param currentLimit1: Current limit #1 for inverse time pickup 
         @param timeDelay1: Inverse time delay #1 for current limit #1 
         """
-        #: Inverse time delay #2 for current limit #2 
+        #: Inverse time delay #2 for current limit #2
         self.timeDelay2 = timeDelay2
 
-        #: Current limit #2 for inverse time pickup 
+        #: Current limit #2 for inverse time pickup
         self.currentLimit2 = currentLimit2
 
-        #: Current limit #3 for inverse time pickup 
+        #: Current limit #3 for inverse time pickup
         self.currentLimit3 = currentLimit3
 
-        #: Set true if the current relay has inverse time characteristic. 
+        #: Set true if the current relay has inverse time characteristic.
         self.inverseTimeFlag = inverseTimeFlag
 
-        #: Inverse time delay #3 for current limit #3 
+        #: Inverse time delay #3 for current limit #3
         self.timeDelay3 = timeDelay3
 
-        #: Current limit #1 for inverse time pickup 
+        #: Current limit #1 for inverse time pickup
         self.currentLimit1 = currentLimit1
 
-        #: Inverse time delay #1 for current limit #1 
+        #: Inverse time delay #1 for current limit #1
         self.timeDelay1 = timeDelay1
 
         super(CurrentRelay, self).__init__(*args, **kw_args)

@@ -37,10 +37,10 @@ class CompatibleUnit(Document):
         @param CUGroup:
         @param CostType:
         """
-        #: Estimated total cost for perfoming CU. 
+        #: Estimated total cost for perfoming CU.
         self.estCost = estCost
 
-        #: The quantity, unit of measure, and multiplier at the CU level that applies to the materials. 
+        #: The quantity, unit of measure, and multiplier at the CU level that applies to the materials.
         self.quantity = quantity
 
         self._CUWorkEquipmentItems = []

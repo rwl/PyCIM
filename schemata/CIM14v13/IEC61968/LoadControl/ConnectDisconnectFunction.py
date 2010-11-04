@@ -33,25 +33,25 @@ class ConnectDisconnectFunction(DeviceFunction):
         @param rcdInfo: Information on remote connect disconnect switch.
         @param Switches:
         """
-        #: If set true, the switch may disconnect the service at the end of a specified time delay after the disconnect signal had been given. If set false, the switch may disconnect the service immediately after the disconnect signal had been given. This is typically the case for over current circuit-breakers which are classified as either instantaneous or slow acting. 
+        #: If set true, the switch may disconnect the service at the end of a specified time delay after the disconnect signal had been given. If set false, the switch may disconnect the service immediately after the disconnect signal had been given. This is typically the case for over current circuit-breakers which are classified as either instantaneous or slow acting.
         self.isDelayedDiscon = isDelayedDiscon
 
-        #: True if this function is in the connected state. 
+        #: True if this function is in the connected state.
         self.isConnected = isConnected
 
-        #: Running cumulative count of (connect or disconnect) events, for the lifetime of this function or until the value is cleared. 
+        #: Running cumulative count of (connect or disconnect) events, for the lifetime of this function or until the value is cleared.
         self.eventCount = eventCount
 
-        #: (if disconnection can be operated locally) If set true, the operation happens automatically, otherwise it happens manually. 
+        #: (if disconnection can be operated locally) If set true, the operation happens automatically, otherwise it happens manually.
         self.isLocalAutoDisconOp = isLocalAutoDisconOp
 
-        #: If set true and if disconnection can be operated remotely, then the operation happens automatically. If set false and if disconnection can be operated remotely, then the operation happens manually. 
+        #: If set true and if disconnection can be operated remotely, then the operation happens automatically. If set false and if disconnection can be operated remotely, then the operation happens manually.
         self.isRemoteAutoDisconOp = isRemoteAutoDisconOp
 
-        #: If set true and if reconnection can be operated remotely, then the operation happens automatically. If false and if reconnection can be operated remotely, then the operation happens manually. 
+        #: If set true and if reconnection can be operated remotely, then the operation happens automatically. If false and if reconnection can be operated remotely, then the operation happens manually.
         self.isRemoteAutoReconOp = isRemoteAutoReconOp
 
-        #: If set true and if reconnection can be operated locally, then the operation happens automatically. Otherwise, it is manually. 
+        #: If set true and if reconnection can be operated locally, then the operation happens automatically. Otherwise, it is manually.
         self.isLocalAutoReconOp = isLocalAutoReconOp
 
         self.rcdInfo = rcdInfo

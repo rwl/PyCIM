@@ -19,3 +19,13 @@
 
 ns_prefix = "cimWiresExt"
 ns_uri = "http://iec.ch/TC57/CIM-generic#WiresExt"
+
+from CIM14v13.IEC61968.WiresExt.PerLengthPhaseImpedance import PerLengthPhaseImpedance
+from CIM14v13.IEC61968.WiresExt.DistributionTransformerWinding import DistributionTransformerWinding
+from CIM14v13.IEC61968.WiresExt.WindingPiImpedance import WindingPiImpedance
+from CIM14v13.IEC61968.WiresExt.DistributionTransformer import DistributionTransformer
+from CIM14v13.IEC61968.WiresExt.DistributionLineSegment import DistributionLineSegment
+from CIM14v13.IEC61968.WiresExt.PerLengthSequenceImpedance import PerLengthSequenceImpedance
+from CIM14v13.IEC61968.WiresExt.TransformerBank import TransformerBank
+from CIM14v13.IEC61968.WiresExt.DistributionTapChanger import DistributionTapChanger
+from CIM14v13.IEC61968.WiresExt.PhaseImpedanceData import PhaseImpedanceData

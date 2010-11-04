@@ -25,7 +25,7 @@ class VoltageLimit(OperationalLimit):
 
         @param value: Limit on voltage. High or low limit depends on the OperatoinalLimit.limitKind 
         """
-        #: Limit on voltage. High or low limit depends on the OperatoinalLimit.limitKind 
+        #: Limit on voltage. High or low limit depends on the OperatoinalLimit.limitKind
         self.value = value
 
         super(VoltageLimit, self).__init__(*args, **kw_args)

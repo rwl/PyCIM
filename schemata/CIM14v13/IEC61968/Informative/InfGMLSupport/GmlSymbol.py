@@ -29,13 +29,13 @@ class GmlSymbol(IdentifiedObject):
         @param GmlFeatureStyles:
         @param GmlBaseSymbol:
         """
-        #: The level (of the map) where the symbol exists or the zoom levels at which this diagram object is displayed. As a way of de-cluttering displays, for example, some symbols and annotations are only shown when zoomed in. 
+        #: The level (of the map) where the symbol exists or the zoom levels at which this diagram object is displayed. As a way of de-cluttering displays, for example, some symbols and annotations are only shown when zoomed in.
         self.level = level
 
-        #: The Symbol type. 
+        #: The Symbol type.
         self.type = type
 
-        #: The version of the Symbol. 
+        #: The version of the Symbol.
         self.version = version
 
         self._GmlFeatureStyles = []

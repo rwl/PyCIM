@@ -28,7 +28,7 @@ class TieFlow(Element):
         @param ControlArea: The control area of the tie flows.
         @param AltTieMeas: The primary and alternate tie flow measurements associated with the tie flow.
         """
-        #: The flow is positive into the terminal.  A flow is positive if it is an import into the control area. 
+        #: The flow is positive into the terminal.  A flow is positive if it is an import into the control area.
         self.positiveFlowIn = positiveFlowIn
 
         self._Terminal = None

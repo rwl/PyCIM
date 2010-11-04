@@ -27,13 +27,13 @@ class SecurityConstraintsClearing(MarketFactors):
         @param mwFlow: Optimal MW flow 
         @param shadowPrice: Security constraint shadow price. 
         """
-        #: Binding MW limit. 
+        #: Binding MW limit.
         self.mwLimit = mwLimit
 
-        #: Optimal MW flow 
+        #: Optimal MW flow
         self.mwFlow = mwFlow
 
-        #: Security constraint shadow price. 
+        #: Security constraint shadow price.
         self.shadowPrice = shadowPrice
 
         super(SecurityConstraintsClearing, self).__init__(*args, **kw_args)

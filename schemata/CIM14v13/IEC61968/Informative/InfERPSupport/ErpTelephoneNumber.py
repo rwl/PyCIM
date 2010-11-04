@@ -28,7 +28,7 @@ class ErpTelephoneNumber(TelephoneNumber):
         @param ErpPersons:
         @param status:
         """
-        #: The purpose of the telephone: home, mobile, home fax, office, office fax, switchboard, other. 
+        #: The purpose of the telephone: home, mobile, home fax, office, office fax, switchboard, other.
         self.usage = usage
 
         self._ElectronicAddress = None

@@ -27,7 +27,7 @@ class PerLengthPhaseImpedance(IdentifiedObject):
         @param PhaseImpedanceData: All data that belong to this conductor phase impedance.
         @param ConductorSegments: All conductor segments described by this phase impedance.
         """
-        #: Number of phase, neutral, and other wires retained. Constrains the number of matrix elements and the phase codes that can be used with this matrix. 
+        #: Number of phase, neutral, and other wires retained. Constrains the number of matrix elements and the phase codes that can be used with this matrix.
         self.conductorCount = conductorCount
 
         self._PhaseImpedanceData = []

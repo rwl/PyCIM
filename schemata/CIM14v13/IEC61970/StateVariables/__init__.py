@@ -19,3 +19,12 @@
 
 ns_prefix = "cimStateVariables"
 ns_uri = "http://iec.ch/TC57/CIM-generic#StateVariables"
+
+from CIM14v13.IEC61970.StateVariables.StateVariable import StateVariable
+from CIM14v13.IEC61970.StateVariables.SvInjection import SvInjection
+from CIM14v13.IEC61970.StateVariables.SvPowerFlow import SvPowerFlow
+from CIM14v13.IEC61970.StateVariables.SvStatus import SvStatus
+from CIM14v13.IEC61970.StateVariables.SvVoltage import SvVoltage
+from CIM14v13.IEC61970.StateVariables.SvTapStep import SvTapStep
+from CIM14v13.IEC61970.StateVariables.SvShortCircuit import SvShortCircuit
+from CIM14v13.IEC61970.StateVariables.SvShuntCompensatorSections import SvShuntCompensatorSections

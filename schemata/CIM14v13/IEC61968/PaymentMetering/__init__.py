@@ -19,3 +19,30 @@
 
 ns_prefix = "cimPaymentMetering"
 ns_uri = "http://iec.ch/TC57/CIM-generic#PaymentMetering"
+
+from CIM14v13.IEC61968.PaymentMetering.MerchantAccount import MerchantAccount
+from CIM14v13.IEC61968.PaymentMetering.AuxiliaryAccount import AuxiliaryAccount
+from CIM14v13.IEC61968.PaymentMetering.BankAccountDetail import BankAccountDetail
+from CIM14v13.IEC61968.PaymentMetering.AccountMovement import AccountMovement
+from CIM14v13.IEC61968.PaymentMetering.TimeTariffInterval import TimeTariffInterval
+from CIM14v13.IEC61968.PaymentMetering.Due import Due
+from CIM14v13.IEC61968.PaymentMetering.ConsumptionTariffInterval import ConsumptionTariffInterval
+from CIM14v13.IEC61968.PaymentMetering.Cashier import Cashier
+from CIM14v13.IEC61968.PaymentMetering.Shift import Shift
+from CIM14v13.IEC61968.PaymentMetering.VendorShift import VendorShift
+from CIM14v13.IEC61968.PaymentMetering.MerchantAgreement import MerchantAgreement
+from CIM14v13.IEC61968.PaymentMetering.Charge import Charge
+from CIM14v13.IEC61968.PaymentMetering.ServiceSupplier import ServiceSupplier
+from CIM14v13.IEC61968.PaymentMetering.Receipt import Receipt
+from CIM14v13.IEC61968.PaymentMetering.Tender import Tender
+from CIM14v13.IEC61968.PaymentMetering.PointOfSale import PointOfSale
+from CIM14v13.IEC61968.PaymentMetering.CashierShift import CashierShift
+from CIM14v13.IEC61968.PaymentMetering.Transaction import Transaction
+from CIM14v13.IEC61968.PaymentMetering.Transactor import Transactor
+from CIM14v13.IEC61968.PaymentMetering.AccountingUnit import AccountingUnit
+from CIM14v13.IEC61968.PaymentMetering.TariffProfile import TariffProfile
+from CIM14v13.IEC61968.PaymentMetering.LineDetail import LineDetail
+from CIM14v13.IEC61968.PaymentMetering.AuxiliaryAgreement import AuxiliaryAgreement
+from CIM14v13.IEC61968.PaymentMetering.Card import Card
+from CIM14v13.IEC61968.PaymentMetering.Vendor import Vendor
+from CIM14v13.IEC61968.PaymentMetering.Cheque import Cheque

@@ -19,3 +19,11 @@
 
 ns_prefix = "cimCustomers"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Customers"
+
+from CIM14v13.IEC61968.Customers.ServiceCategory import ServiceCategory
+from CIM14v13.IEC61968.Customers.CustomerAccount import CustomerAccount
+from CIM14v13.IEC61968.Customers.Tariff import Tariff
+from CIM14v13.IEC61968.Customers.PricingStructure import PricingStructure
+from CIM14v13.IEC61968.Customers.Customer import Customer
+from CIM14v13.IEC61968.Customers.CustomerAgreement import CustomerAgreement
+from CIM14v13.IEC61968.Customers.ServiceLocation import ServiceLocation

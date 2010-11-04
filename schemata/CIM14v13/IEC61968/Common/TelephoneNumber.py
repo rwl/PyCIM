@@ -31,19 +31,19 @@ class TelephoneNumber(IdentifiedObject):
         @param Organisation: Organisation owning this telephone number.
         @param Location: Location owning this telephone number.
         """
-        #: (if applicable) City code. 
+        #: (if applicable) City code.
         self.cityCode = cityCode
 
-        #: Country code. 
+        #: Country code.
         self.countryCode = countryCode
 
-        #: (if applicable) Extension for this telephone number. 
+        #: (if applicable) Extension for this telephone number.
         self.extension = extension
 
-        #: Area or region code. 
+        #: Area or region code.
         self.areaCode = areaCode
 
-        #: Main (local) part of this telephone number. 
+        #: Main (local) part of this telephone number.
         self.localNumber = localNumber
 
         self._Organisation = None

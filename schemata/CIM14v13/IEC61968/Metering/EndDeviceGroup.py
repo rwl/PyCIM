@@ -28,7 +28,7 @@ class EndDeviceGroup(IdentifiedObject):
         @param EndDeviceAssets: All end device assets this end device group refers to.
         @param EndDeviceControls: All end device controls sending commands to this end device group.
         """
-        #: Address of this end device group. 
+        #: Address of this end device group.
         self.groupAddress = groupAddress
 
         self._DemandResponseProgram = None

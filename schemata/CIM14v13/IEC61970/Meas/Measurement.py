@@ -37,7 +37,7 @@ class Measurement(IdentifiedObject):
         @param By_TiePoint: A measurement is made on the B side of a tie point
         @param Unit: The Unit for the Measurement
         """
-        #: Specifies the type of Measurement, e.g. IndoorTemperature, OutDoorTemperature, BusVoltage, GeneratorVoltage, LineFlow etc. 
+        #: Specifies the type of Measurement, e.g. IndoorTemperature, OutDoorTemperature, BusVoltage, GeneratorVoltage, LineFlow etc.
         self.measurementType = measurementType
 
         self._Asset = None

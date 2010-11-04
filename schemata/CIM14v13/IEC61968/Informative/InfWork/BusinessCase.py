@@ -27,7 +27,7 @@ class BusinessCase(Document):
         @param Works:
         @param Projects:
         """
-        #: A codified representation of the business case (i.e., codes for highway relocation, replace substation transformers, etc.). 
+        #: A codified representation of the business case (i.e., codes for highway relocation, replace substation transformers, etc.).
         self.corporateCode = corporateCode
 
         self._Works = []

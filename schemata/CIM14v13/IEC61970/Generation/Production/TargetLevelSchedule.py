@@ -27,10 +27,10 @@ class TargetLevelSchedule(Curve):
         @param highLevelLimit: High target level limit, above which the reservoir operation will be penalized 
         @param Reservoir: A reservoir may have a water level target schedule.
         """
-        #: Low target level limit, below which the reservoir operation will be penalized 
+        #: Low target level limit, below which the reservoir operation will be penalized
         self.lowLevelLimit = lowLevelLimit
 
-        #: High target level limit, above which the reservoir operation will be penalized 
+        #: High target level limit, above which the reservoir operation will be penalized
         self.highLevelLimit = highLevelLimit
 
         self._Reservoir = None

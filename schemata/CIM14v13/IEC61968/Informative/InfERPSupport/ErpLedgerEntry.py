@@ -35,19 +35,19 @@ class ErpLedgerEntry(IdentifiedObject):
         @param ErpJounalEntry:
         @param status:
         """
-        #: Kind of account for this entry. Values are: "estimate", "reversal", "statistical", "normal"
+        #: Kind of account for this entry.Values are: "estimate", "reversal", "statistical", "normal"
         self.accountKind = accountKind
 
-        #: The amount of the debit or credit for this account. 
+        #: The amount of the debit or credit for this account.
         self.amount = amount
 
-        #: Account identifier for this entry. 
+        #: Account identifier for this entry.
         self.accountID = accountID
 
-        #: Date and time journal entry was recorded. 
+        #: Date and time journal entry was recorded.
         self.transactionDateTime = transactionDateTime
 
-        #: Date and time this entry was posted to the ledger. 
+        #: Date and time this entry was posted to the ledger.
         self.postedDateTime = postedDateTime
 
         self._ErpLedger = None

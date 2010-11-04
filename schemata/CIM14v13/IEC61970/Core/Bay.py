@@ -30,16 +30,16 @@ class Bay(EquipmentContainer):
         @param VoltageLevel: The association is used in the naming hierarchy.
         @param Substation: The association is used in the naming hierarchy.
         """
-        #: Breaker configuration. Values are: "noBreaker", "doubleBreaker", "singleBreaker", "breakerAndAHalf"
+        #: Breaker configuration.Values are: "noBreaker", "doubleBreaker", "singleBreaker", "breakerAndAHalf"
         self.breakerConfiguration = breakerConfiguration
 
-        #: Bus bar configuration. Values are: "ringBus", "doubleBus", "mainWithTransfer", "singleBus"
+        #: Bus bar configuration.Values are: "ringBus", "doubleBus", "mainWithTransfer", "singleBus"
         self.busBarConfiguration = busBarConfiguration
 
-        #: Indicates the presence/absence of energy measurements. 
+        #: Indicates the presence/absence of energy measurements.
         self.bayEnergyMeasFlag = bayEnergyMeasFlag
 
-        #: Indicates the presence/absence of active/reactive power measurements. 
+        #: Indicates the presence/absence of active/reactive power measurements.
         self.bayPowerMeasFlag = bayPowerMeasFlag
 
         self._VoltageLevel = None

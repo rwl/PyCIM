@@ -28,7 +28,7 @@ class RatioTapChanger(TapChanger):
         @param RatioVariationCurve: A RatioTapChanger can have an associated RatioVariationCurve to define tap ratio variations with tap step changes.
         @param TransformerWinding: The transformer winding to which the ratio tap changer belongs.
         """
-        #: Specifies the regulation control mode (voltage or reactive) of the RatioTapChanger. Values are: "volt", "reactive"
+        #: Specifies the regulation control mode (voltage or reactive) of the RatioTapChanger.Values are: "volt", "reactive"
         self.tculControlMode = tculControlMode
 
         self._Winding = None

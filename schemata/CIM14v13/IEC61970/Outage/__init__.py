@@ -19,3 +19,8 @@
 
 ns_prefix = "cimOutage"
 ns_uri = "http://iec.ch/TC57/CIM-generic#Outage"
+
+from CIM14v13.IEC61970.Outage.ClearanceTag import ClearanceTag
+from CIM14v13.IEC61970.Outage.ClearanceTagType import ClearanceTagType
+from CIM14v13.IEC61970.Outage.OutageSchedule import OutageSchedule
+from CIM14v13.IEC61970.Outage.SwitchingOperation import SwitchingOperation

@@ -31,16 +31,16 @@ class HydroPump(PowerSystemResource):
         @param SynchronousMachine: The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating.
         @param HydroPowerPlant: The hydro pump may be a member of a pumped storage plant or a pump for distributing water
         """
-        #: The pumping discharge (m3/sec) under minimum head conditions, usually at full gate 
+        #: The pumping discharge (m3/sec) under minimum head conditions, usually at full gate
         self.pumpDischAtMinHead = pumpDischAtMinHead
 
-        #: The pumping discharge (m3/sec) under maximum head conditions, usually at full gate 
+        #: The pumping discharge (m3/sec) under maximum head conditions, usually at full gate
         self.pumpDischAtMaxHead = pumpDischAtMaxHead
 
-        #: The pumping power under minimum head conditions, usually at full gate. 
+        #: The pumping power under minimum head conditions, usually at full gate.
         self.pumpPowerAtMinHead = pumpPowerAtMinHead
 
-        #: The pumping power under maximum head conditions, usually at full gate 
+        #: The pumping power under maximum head conditions, usually at full gate
         self.pumpPowerAtMaxHead = pumpPowerAtMaxHead
 
         self._HydroPumpOpSchedule = None

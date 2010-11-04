@@ -36,40 +36,40 @@ class RemoteConnectDisconnectInfo(Element):
         @param needsPowerLimitCheck: True if load limit must be checked to issue an immediate disconnect (after a connect) if load is over the limit. 
         @param usePushbutton: True if pushbutton must be used for connect. 
         """
-        #: True if the RCD switch must be armed before a connect action can be initiated. 
+        #: True if the RCD switch must be armed before a connect action can be initiated.
         self.isArmConnect = isArmConnect
 
-        #: Voltage limit on customer side of RCD switch above which the connect should not be made. 
+        #: Voltage limit on customer side of RCD switch above which the connect should not be made.
         self.customerVoltageLimit = customerVoltageLimit
 
-        #: Load limit above which the connect should either not take place or should cause an immediate disconnect. 
+        #: Load limit above which the connect should either not take place or should cause an immediate disconnect.
         self.powerLimit = powerLimit
 
-        #: True if the energy usage is limited and the customer will be disconnected if they go over the limit. 
+        #: True if the energy usage is limited and the customer will be disconnected if they go over the limit.
         self.isEnergyLimiting = isEnergyLimiting
 
-        #: Warning energy limit, used to trigger event code that energy usage is nearing limit. 
+        #: Warning energy limit, used to trigger event code that energy usage is nearing limit.
         self.energyUsageWarning = energyUsageWarning
 
-        #: True if the RCD switch must be armed before a disconnect action can be initiated. 
+        #: True if the RCD switch must be armed before a disconnect action can be initiated.
         self.isArmDisconnect = isArmDisconnect
 
-        #: Start date and time to accumulate energy for energy usage limiting. 
+        #: Start date and time to accumulate energy for energy usage limiting.
         self.energyUsageStartDateTime = energyUsageStartDateTime
 
-        #: True if voltage limit must be checked to prevent connect if voltage is over the limit. 
+        #: True if voltage limit must be checked to prevent connect if voltage is over the limit.
         self.needsVoltageLimitCheck = needsVoltageLimitCheck
 
-        #: Limit of energy before disconnect. 
+        #: Limit of energy before disconnect.
         self.energyLimit = energyLimit
 
-        #: Setting of the timeout elapsed time. 
+        #: Setting of the timeout elapsed time.
         self.armedTimeout = armedTimeout
 
-        #: True if load limit must be checked to issue an immediate disconnect (after a connect) if load is over the limit. 
+        #: True if load limit must be checked to issue an immediate disconnect (after a connect) if load is over the limit.
         self.needsPowerLimitCheck = needsPowerLimitCheck
 
-        #: True if pushbutton must be used for connect. 
+        #: True if pushbutton must be used for connect.
         self.usePushbutton = usePushbutton
 
         super(RemoteConnectDisconnectInfo, self).__init__(*args, **kw_args)

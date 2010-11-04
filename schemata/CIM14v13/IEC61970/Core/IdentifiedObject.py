@@ -31,22 +31,22 @@ class IdentifiedObject(Element):
         @param aliasName: The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy. 
         @param ModelingAuthoritySet: An IdentifiedObject belongs to a Modeling Authority Set for purposes of defining a group of data maintained by the same Modeling Authority.
         """
-        #: The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy. 
+        #: The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.
         self.description = description
 
-        #: A Model Authority issues mRIDs. Given that each Model Authority has a unique id and this id is part of the mRID, then the mRID is globally unique. 
+        #: A Model Authority issues mRIDs. Given that each Model Authority has a unique id and this id is part of the mRID, then the mRID is globally unique.
         self.mRID = mRID
 
-        #: The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy. 
+        #: The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy.
         self.name = name
 
-        #: The pathname is a system unique name composed from all IdentifiedObject.localNames in a naming hierarchy path from the object to the root. 
+        #: The pathname is a system unique name composed from all IdentifiedObject.localNames in a naming hierarchy path from the object to the root.
         self.pathName = pathName
 
-        #: The localName is a human readable name of the object. It is only used with objects organized in a naming hierarchy. The simplest naming hierarchy has just one parent (the root) giving a flat naming hierarchy. However, the naming hierarchy usually has several levels, e.g. Substation, VoltageLevel, Equipment etc. Children of the same parent have names that are unique among them. If the uniqueness requirement cannot be met IdentifiedObject.localName shall not be used, use IdentifiedObject.name  instead. 
+        #: The localName is a human readable name of the object. It is only used with objects organized in a naming hierarchy. The simplest naming hierarchy has just one parent (the root) giving a flat naming hierarchy. However, the naming hierarchy usually has several levels, e.g. Substation, VoltageLevel, Equipment etc. Children of the same parent have names that are unique among them. If the uniqueness requirement cannot be met IdentifiedObject.localName shall not be used, use IdentifiedObject.name  instead.
         self.localName = localName
 
-        #: The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy. 
+        #: The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.
         self.aliasName = aliasName
 
         self._ModelingAuthoritySet = None
