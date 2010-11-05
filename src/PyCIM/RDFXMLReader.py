@@ -18,27 +18,27 @@ import logging
 
 from xml.etree.cElementTree import iterparse
 
-from cim15v01 import ns_uri
-from pycim.cim15v01_pkg_map import pkg_map
+from CIM14v13 import nsURI
+from PyCIM.PackageMap.CIM14v13PackageMap import packageMap
 
-from cpsm import ns_uri as ns_cpsm
-from pycim.cpsm_pkg_map import pkg_map as cpsm_pkg_map
+from CPSM import nsURI as nsCPSM
+from PyCIM.CPSMPackageMap import packageMap as CPSMPackageMap
 
-from entsoe import ns_uri as ns_ucte
-from pycim.entsoe_pkg_map import pkg_map as entsoe_pkg_map
+from ENTSOE import nsURI as nsENTSOE
+from PyCIM.ENTSOEPackageMap import packageMap as ENTSOEPackageMap
 
-from cdpsm import ns_uri as ns_cdpsm
-from pycim.cdpsm_pkg_map import pkg_map as cdpsm_pkg_map
+from CDPSM import nsURI as nsCDPSM
+from PyCIM.CDPSMPackageMap import packageMap as CDPSMPackageMap
 
-from dynamics import ns_uri as ns_dyn
-from pycim.dynamics_pkg_map import pkg_map as dynamics_pkg_map
+from Dynamics import nsURI as nsDynamics
+from PyCIM.DynamicsPackageMap import packageMap as DynamicsPackageMap
 
 logger = logging.getLogger(__name__)
 
-PKG_MAP = {"cpsm": cpsm_pkg_map, "ucte": entsoe_pkg_map,
-           "cdpsm": cdpsm_pkg_map, "dynamics": dynamics_pkg_map}
-NS_MAP = {"cpsm": ns_cpsm, "cdpsm": ns_cdpsm, "dynamics": ns_dyn,
-          "ucte": ns_ucte}
+PKG_MAP = {"CPSM": CPSMPackageMap, "ENTSO-E": ENTSOEPackageMap,
+           "CDPSM": CDPSMPackageMap, "Dynamics": DynamicsPackageMap}
+NS_MAP = {"CPSM": nsCPSM, "CDPSM": nsCDPSM, "Dynamics": nsDynamics,
+          "ENTSO-E": nsENTSOE}
 
 def cimread(file_or_filename, profile=None):
     """ CIM RDF/XML parser.
@@ -47,16 +47,38 @@ def cimread(file_or_filename, profile=None):
     @param file_or_filename: CIM RDF/XML file.
     @type profile: string
     @param profile: CIM profile. If unspecified classes are imported from
-    the full CIM package. Values are: cpsm, ucte, cdpsm, dynamics.
+    the full CIM package. Values are: CPSM, ENTSO-E, CDPSM, Dynamics.
     @rtype: dict
     @return: Map of URIs to CIM objects.
 
     @author: Richard Lincoln <r.w.lincoln@gmail.com>
     """
-    ns_uri = NS_MAP[profile] if profile is not None else ns_uri
-    pkg_map = PKG_MAP[profile] if profile is not None else pkg_map
+    nsURI = NS_MAP[profile] if profile is not None else nsURI
+    packageMap = PKG_MAP[profile] if profile is not None else packageMap
 
     d = {}
-    iterparse
+
+    # get an iterable
+    events = ("start", "end", "start-ns", "end-ns")
+    context = iterparse(file_or_filename, events=events)
+
+    # turn it into an iterator
+    context = iter(context)
+
+    # get the root element
+    event, root = context.next()
+
+    namespaces = []
+
+    for event, elem in context:
+        if event == "start-ns":
+            namespaces.insert(0, elem)
+        elif event == "end-ns":
+            namespaces.pop(0)
+        elif event == "end" and elem.tag == "record":
+            #... process record elements ...
+            pass
+
+        root.clear()
 
     return d

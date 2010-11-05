@@ -17,7 +17,7 @@
 import sys
 import logging
 
-from simple_xml_writer import XMLWriter
+from SimpleXMLWriter import XMLWriter
 
 logger = logging.getLogger(__name__)
 
