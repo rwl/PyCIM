@@ -14,16 +14,17 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, USA
 
+import sys
 import unittest
 
-from PyCIM import cimread
+from PyCIM import cimread, cimwrite
 
 from os.path import dirname, join
 
 RDFXML_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9.xml")
 
-class RDFXMLReaderTestCase(unittest.TestCase):
-    """Test CIM RDF/XML parsing.
+class RDFXMLWriterTestCase(unittest.TestCase):
+    """Test CIM RDF/XML serialisation.
     """
 
     def setUp(self):
@@ -32,12 +33,12 @@ class RDFXMLReaderTestCase(unittest.TestCase):
         pass
 
 
-    def testParse(self):
-        """Test CIM RDF/XML parsing.
+    def testSerialise(self):
+        """Test CIM RDF/XML serialisation.
         """
         d = cimread(RDFXML_FILE)
 
-        self.assertEqual(len(d), 5660)
+        cimwrite(d, sys.stdout)
 
 if __name__ == "__main__":
     import logging

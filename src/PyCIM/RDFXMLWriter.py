@@ -14,42 +14,74 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, USA
 
-import sys
 import logging
 
-from SimpleXMLWriter import XMLWriter
+from time import time
+
+from CIM14 import nsURI, nsPrefix
+
+from PyCIM.SimpleXMLWriter import XMLWriter
+
+nsPrefixRDF = "rdf"
+nsRDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 
 logger = logging.getLogger(__name__)
 
-def cimwrite(d, file_or_filename):
+def cimwrite(d, source, encoding="utf-8"):
     """CIM RDF/XML serializer.
 
     @type d: dict
     @param d: Map of URIs to CIM objects.
-    @type file_or_filename: File-like-object or path to file.
-    @param file_or_filename: CIM RDF/XML file to write.
+    @type source: File or file-like object.
+    @param source: This object must implement a C{write} method
+    that takes an 8-bit string.
+    @type encoding: string
+    @param encoding: Character encoding defaults to "utf-8", but can also
+    be set to "us-ascii".
     @rtype: bool
     @return: Write success.
     """
-    w = XMLWriter(sys.stdout)
+    # Start the clock
+    t0 = time()
 
-    html = w.start("html")
+    w = XMLWriter(source, encoding)
 
-    w.start("head")
-    w.element("title", "my document")
-    w.element("meta", name="generator", value="my application 1.0")
-    w.end()
+    # Write the XML declaration.
+    w.declaration()
 
-    w.start("body")
-    w.element("h1", "this is a heading")
-    w.element("p", "this is a paragraph")
+    # Add a '#' suffix to the CIM namespace URI if not present.
+    nsCIM = nsURI if nsURI[-1] == "#" else nsURI + "#"
 
-    w.start("p")
-    w.data("this is ")
-    w.element("b", "bold")
-    w.data(" and ")
-    w.element("i", "italic")
-    w.data(".")
-    w.end("p")
+    # Start the root RDF element and declare namespaces.
+    xmlns = {u"xmlns:%s" % nsPrefixRDF: nsRDF, u"xmlns:%s" % nsPrefix: nsCIM}
+    rdf = w.start(u"%s:RDF" % nsPrefixRDF, xmlns)
 
-    w.close(html)
+    # Iterate over all UUID, CIM object pairs in the given dictionary.
+    for uuid, obj in d.iteritems():
+        w.start(u"%s:%s" % (nsPrefix, obj.__class__.__name__),
+                {u"%s:ID" % nsPrefixRDF: uuid})
+        w.end()
+
+    # Close the root RDF element.
+    w.close(rdf)
+
+    # Flush the output stream.
+    w.flush()
+
+    logger.info("%d CIM objects serialised in %.2fs.", len(d), time() - t0)
+
+
+if __name__ == "__main__":
+    import sys
+    import xmlpp # XML pretty printing by Fredrik Ekholdt.
+    from RDFXMLReader import cimread
+
+    logging.basicConfig(level=logging.INFO)
+
+    d = cimread("Test/Data/EDF_AIGUE_v9.xml")
+    tmp = "/tmp/cimwrite.xml"
+    cimwrite(d, tmp)
+
+    fd = open(tmp, "r")
+    xmlpp.pprint(fd.read(), output=sys.stdout)
+    fd.close()

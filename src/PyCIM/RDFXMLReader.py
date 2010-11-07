@@ -60,7 +60,7 @@ def cimread(source, profile=None):
     @param profile: CIM profile. If unspecified classes are imported from
     the full CIM package. Values are: CPSM, ENTSO-E, CDPSM, Dynamics.
     @rtype: dict
-    @return: Map of URI to CIM object.
+    @return: Map of uuid to CIM object.
 
     @author: Richard Lincoln <r.w.lincoln@gmail.com>
     """
@@ -68,17 +68,17 @@ def cimread(source, profile=None):
     t0 = time()
 
     # Default to the latest CIM version if no profile is specified.
-    nsURI = NS_MAP[profile] if profile is not None else nsCIM
+    nsuuid = NS_MAP[profile] if profile is not None else nsCIM
 
     # All CIM classes are under the one namespace, but are arranged into
     # sub-packages so we need a map from class name to package.
     packageMap = PKG_MAP[profile] if profile is not None else packageMapCIM
 
-    # A map of URIs to CIM objects to be returned.
+    # A map of uuids to CIM objects to be returned.
     d = {}
 
     # CIM element tag base (e.g. {http://iec.ch/TC57/2009/CIM-schema-cim14#}).
-    base = "{%s#}" % nsURI
+    base = "{%s#}" % nsuuid
     # Length of element tag base.
     m = len(base)
 
@@ -92,19 +92,19 @@ def cimread(source, profile=None):
     _, root = context.next()
 
     for event, elem in context:
-        # Process elements in the CIM namespace.
+        # Process 'end' elements in the CIM namespace.
         if event == "end" and elem.tag[:m] == base:
-#            print elem.tag[m:], elem.get("{%s}ID" % NS_RDF), elem.get("{%s}resource" % NS_RDF)
 
             # Unique resource identifier for the CIM object.
-            uri = elem.get("{%s}ID" % NS_RDF)
-            if uri != None: # class
+            uuid = elem.get("{%s}ID" % NS_RDF)
+            if uuid != None: # class
                 # Element tag without namespace (e.g. VoltageLevel).
                 tag = elem.tag[m:]
                 try:
                     mname = packageMap[tag]
                 except KeyError:
-                    logger.error("Unable to locate module for: %s (%s)", tag, uri)
+                    logger.error("Unable to locate module for: %s (%s)",
+                                 tag, uuid)
                     root.clear()
                     continue
                 # Import the module for the CIM object.
@@ -112,29 +112,30 @@ def cimread(source, profile=None):
                 # Get the CIM class from the module.
                 klass = getattr(module, tag)
 
-#                print "PKG:", tag, klass
-                # Instantiate the class and map it to the URI.
-                d[uri] = klass()
+                # Instantiate the class and map it to the uuid.
+                d[uuid] = klass(UUID=uuid)
 
-        # Clear child elements to reduce memory usage.
+        # Clear children of the root element to minimise memory usage.
         root.clear()
 
 
     ## Second pass sets attributes and references.
     context = iter( iterparse(source, ("start", "end")) )
 
+    # Get the root element ({http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF).
     _, root = context.next()
 
     for event, elem in context:
-
+        # Process 'start' elements in the CIM namespace.
         if event == "start" and elem.tag[:m] == base:
-            uri = elem.get("{%s}ID" % NS_RDF)
-            if uri != None:
-                # Locate the CIM object using the URI.
+            uuid = elem.get("{%s}ID" % NS_RDF)
+            if uuid != None:
+                # Locate the CIM object using the uuid.
                 try:
-                    obj = d[uri]
+                    obj = d[uuid]
                 except KeyError:
-                    logger.error("Missing '%s' object with URI: %s", elem.tag[m:], uri)
+                    logger.error("Missing '%s' object with uuid: %s",
+                                 elem.tag[m:], uuid)
                     root.clear()
                     continue
 
@@ -154,48 +155,49 @@ def cimread(source, profile=None):
 
                             # Use the rdf:resource attribute to distinguish
                             # between attributes and references/enums.
-                            uri2 = elem.get("{%s}resource" % NS_RDF)
+                            uuid2 = elem.get("{%s}resource" % NS_RDF)
 
-                            if uri2 == None: # attribute
+                            if uuid2 == None: # attribute
                                 # Convert value type using the default value.
                                 typ = type( getattr(obj, attr) )
                                 setattr(obj, attr, typ(elem.text))
                             else: # reference or enum
                                 # Use the '#' prefix to distinguish between
                                 # references and enumerations.
-                                if uri2[0] == "#": # reference
+                                if uuid2[0] == "#": # reference
                                     try:
-                                        val = d[uri2[1:]] # remove '#' prefix
+                                        val = d[uuid2[1:]] # remove '#' prefix
                                     except KeyError:
-                                        logger.error("Referenced '%s' [%s] object missing.",
-                                                     obj.__class__.__name__, uri2[1:])
+                                        logger.error("Referenced '%s' [%s] "
+                                                     "object missing.",
+                                                     obj.__class__.__name__,
+                                                     uuid2[1:])
                                         continue
 
                                     default = getattr(obj, attr)
                                     if default == None: # 1..1 or 1..n
-                                        # Rely on property to set any
+                                        # Rely on properties to set any
                                         # bi-directional references.
                                         setattr(obj, attr, val)
-                                    elif isinstance(default, list): # n..1 or n..n
-                                        # Use the 'add...' method to set reference.
+                                    elif isinstance(default, list): # many
+                                        # Use 'add*' method to set reference.
                                         getattr(obj, ("add%s" % attr))(val)
-
-                                    else:
-#                                        logger.error("Unrecognised reference type [%s].", default)
-                                        pass
+#                                    else:
+#                                        logger.error("Reference error [%s].",
+#                                                     default)
 
                                 else: # enum
-                                    # http://iec.ch/TC57/2009/CIM-schema-cim14#RegulatingControlModeKind.voltage
-                                    val = uri2.rsplit(".")[1]
+                                    val = uuid2.rsplit(".")[1]
                                     setattr(obj, attr, val)
 
                         else:
                             # Finished setting object attributes.
                             break
 
+        # Clear children of the root element to minimise memory usage.
         root.clear()
 
-    logger.info("Created %d CIM objects in %.3f seconds.", len(d), time() - t0)
+    logger.info("Created %d CIM objects in %.2fs.", len(d), time() - t0)
 
     return d
 
