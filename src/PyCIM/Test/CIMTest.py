@@ -16,23 +16,23 @@
 
 import unittest
 
-from CIM14v13.IEC61970.LoadModel import \
+from CIM14.IEC61970.LoadModel import \
     ConformLoad, ConformLoadGroup, LoadArea, ConformLoadSchedule
 
-from CIM14v13.IEC61970.Meas import \
+from CIM14.IEC61970.Meas import \
     AnalogLimit, AnalogValue, Analog
 
-from CIM14v13.IEC61970.Protection import \
+from CIM14.IEC61970.Protection import \
     SurgeProtector, CurrentRelay
 
-from CIM14v13.IEC61970.Topology import \
+from CIM14.IEC61970.Topology import \
     ConnectivityNode, TopologicalNode
 
-from CIM14v13.IEC61970.Wires import \
+from CIM14.IEC61970.Wires import \
     Breaker, SynchronousMachine, BusbarSection, ACLineSegment, \
     PowerTransformer, TransformerWinding, ReactiveCapabilityCurve
 
-from CIM14v13.IEC61970.Generation.Production import \
+from CIM14.IEC61970.Generation.Production import \
     ThermalGeneratingUnit, GenUnitOpCostCurve, GenUnitOpSchedule, StartupModel
 
 class CIMTestCase(unittest.TestCase):

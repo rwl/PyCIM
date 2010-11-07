@@ -1,0 +1,28 @@
+# Copyright (C) 2010 Richard Lincoln
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, USA
+
+from CIM14.IEC61970.Core.PowerSystemResource import PowerSystemResource
+
+class ExcitationSystem(PowerSystemResource):
+    """An excitation system provides the field voltage (Efd) for a synchronous machine model. It is linked to a specific generator by the Bus number and Unit ID.
+    """
+
+    def __init__(self, **kw_args):
+        """Initializes a new 'ExcitationSystem' instance.
+
+        """
+        super(ExcitationSystem, self).__init__(**kw_args)
+

@@ -14,5 +14,5 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, USA
 
-from rdfxml_reader import cimread
-from rdfxml_writer import cimwrite
+from RDFXMLReader import cimread
+from RDFXMLWriter import cimwrite
