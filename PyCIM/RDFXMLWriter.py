@@ -65,7 +65,7 @@ def cimwrite(d, source, encoding="utf-8"):
         mro.reverse()
 
         # Serialise attributes.
-        for klass in mro[1:]: # skip 'object'
+        for klass in mro[2:]: # skip 'object' and 'Element'
             attrs = [a for a in klass._attrs if a not in klass._enums]
             for attr in attrs:
                 val = getattr(obj, attr)
@@ -74,7 +74,7 @@ def cimwrite(d, source, encoding="utf-8"):
                               str(val))
 
         # Serialise enumeration data-types.
-        for klass in mro[1:]: # skip 'object'
+        for klass in mro[2:]: # skip 'object' and 'Element'
             enums = [a for a in klass._attrs if a in klass._enums]
             for enum in enums:
                 val = getattr(obj, enum)
@@ -84,7 +84,7 @@ def cimwrite(d, source, encoding="utf-8"):
                                   u"%s%s.%s" % (nsCIM, dt, val)})
 
         # Serialise references.
-        for klass in mro[1:]: # skip 'object'
+        for klass in mro[2:]: # skip 'object' and 'Element'
             # FIXME: serialise 'many' references.
             refs = [r for r in klass._refs if r not in klass._many_refs]
             for ref in refs:

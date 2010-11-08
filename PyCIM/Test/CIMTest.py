@@ -16,6 +16,9 @@
 
 import unittest
 
+from CIM14.IEC61970.Core import \
+    ConnectivityNode, Terminal
+
 from CIM14.IEC61970.LoadModel import \
     ConformLoad, ConformLoadGroup, LoadArea, ConformLoadSchedule
 
@@ -26,7 +29,7 @@ from CIM14.IEC61970.Protection import \
     SurgeProtector, CurrentRelay
 
 from CIM14.IEC61970.Topology import \
-    ConnectivityNode, TopologicalNode
+    TopologicalNode
 
 from CIM14.IEC61970.Wires import \
     Breaker, SynchronousMachine, BusbarSection, ACLineSegment, \
@@ -68,6 +71,7 @@ class CIMTestCase(unittest.TestCase):
         tn = TopologicalNode(name="tn1")
         cn = ConnectivityNode(TopologicalNode=tn)
         self.assertTrue(cn.TopologicalNode, tn)
+        Terminal(connected=True)
 
         Breaker(ratedCurrent=20.0)
         SynchronousMachine(coolantType="water")

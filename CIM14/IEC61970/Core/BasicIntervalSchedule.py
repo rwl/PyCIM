@@ -24,21 +24,21 @@ class BasicIntervalSchedule(IdentifiedObject):
         """Initialises a new 'BasicIntervalSchedule' instance.
 
         @param value2Multiplier: Multiplier for value2. Values are: "k", "d", "n", "M", "none", "G", "micro", "T", "c", "m", "p"
-        @param value2Unit: Value2 units of measure. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "oC", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
+        @param value2Unit: Value2 units of measure. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "_C", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
         @param value1Multiplier: Multiplier for value1. Values are: "k", "d", "n", "M", "none", "G", "micro", "T", "c", "m", "p"
-        @param value1Unit: Value1 units of measure. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "oC", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
+        @param value1Unit: Value1 units of measure. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "_C", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
         @param startTime: The time for the first time point. 
         """
         #: Multiplier for value2. Values are: "k", "d", "n", "M", "none", "G", "micro", "T", "c", "m", "p"
         self.value2Multiplier = value2Multiplier
 
-        #: Value2 units of measure. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "oC", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
+        #: Value2 units of measure. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "_C", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
         self.value2Unit = value2Unit
 
         #: Multiplier for value1. Values are: "k", "d", "n", "M", "none", "G", "micro", "T", "c", "m", "p"
         self.value1Multiplier = value1Multiplier
 
-        #: Value1 units of measure. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "oC", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
+        #: Value1 units of measure. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "_C", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
         self.value1Unit = value1Unit
 
         #: The time for the first time point.
