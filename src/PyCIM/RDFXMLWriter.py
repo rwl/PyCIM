@@ -60,6 +60,40 @@ def cimwrite(d, source, encoding="utf-8"):
     for uuid, obj in d.iteritems():
         w.start(u"%s:%s" % (nsPrefix, obj.__class__.__name__),
                 {u"%s:ID" % nsPrefixRDF: uuid})
+
+        mro = obj.__class__.mro()
+        mro.reverse()
+
+        # Serialise attributes.
+        for klass in mro[1:]: # skip 'object'
+            attrs = [a for a in klass._attrs if a not in klass._enums]
+            for attr in attrs:
+                val = getattr(obj, attr)
+                if val != klass._defaults[attr]:
+                    w.element(u"%s:%s.%s" % (nsPrefix, klass.__name__, attr),
+                              str(val))
+
+        # Serialise enumeration data-types.
+        for klass in mro[1:]: # skip 'object'
+            enums = [a for a in klass._attrs if a in klass._enums]
+            for enum in enums:
+                val = getattr(obj, enum)
+                dt = klass._enums[enum]
+                w.element(u"%s:%s.%s" % (nsPrefix, klass.__name__, enum),
+                          attrib={u"%s:resource" % nsPrefixRDF:
+                                  u"%s%s.%s" % (nsCIM, dt, val)})
+
+        # Serialise references.
+        for klass in mro[1:]: # skip 'object'
+            # FIXME: serialise 'many' references.
+            refs = [r for r in klass._refs if r not in klass._many_refs]
+            for ref in refs:
+                val = getattr(obj, ref)
+                if val is not None:
+                    w.element(u"%s:%s.%s" % (nsPrefix, klass.__name__, ref),
+                          attrib={u"%s:resource" % nsPrefixRDF:
+                                  u"#%s" % obj.UUID})
+
         w.end()
 
     # Close the root RDF element.
@@ -72,16 +106,14 @@ def cimwrite(d, source, encoding="utf-8"):
 
 
 if __name__ == "__main__":
-    import sys
-    import xmlpp # XML pretty printing by Fredrik Ekholdt.
     from RDFXMLReader import cimread
+    from PrettyPrintXML import xmlpp
 
     logging.basicConfig(level=logging.INFO)
 
     d = cimread("Test/Data/EDF_AIGUE_v9.xml")
+#    d = cimread("Test/Data/ENTSOE_16_BE_EQ.xml")
     tmp = "/tmp/cimwrite.xml"
     cimwrite(d, tmp)
 
-    fd = open(tmp, "r")
-    xmlpp.pprint(fd.read(), output=sys.stdout)
-    fd.close()
+    print xmlpp(tmp)
