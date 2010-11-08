@@ -20,9 +20,16 @@ class ExcWT4E(ExcitationSystem):
     """Type 4 standard wind turbine convertor control model
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'ExcWT4E' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'ExcWT4E' instance.
 
         """
-        super(ExcWT4E, self).__init__(**kw_args)
+        super(ExcWT4E, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class DemandResponseProgram(IdentifiedObject):
     """Demand response program.
     """
 
-    def __init__(self, type='', CustomerAgreements=None, EndDeviceControls=None, validityInterval=None, EndDeviceGroups=None, **kw_args):
-        """Initializes a new 'DemandResponseProgram' instance.
+    def __init__(self, type='', CustomerAgreements=None, EndDeviceControls=None, validityInterval=None, EndDeviceGroups=None, *args, **kw_args):
+        """Initialises a new 'DemandResponseProgram' instance.
 
         @param type: Type of demand response program; examples are CPP (critical-peak pricing), RTP (real-time pricing), DLC (direct load control), DBP (demand bidding program), BIP (base interruptible program). Note that possible types change a lot and it would be impossible to enumerate them all. 
         @param CustomerAgreements: All customer agreements with this demand response program.
@@ -43,7 +43,14 @@ class DemandResponseProgram(IdentifiedObject):
         self._EndDeviceGroups = []
         self.EndDeviceGroups = [] if EndDeviceGroups is None else EndDeviceGroups
 
-        super(DemandResponseProgram, self).__init__(**kw_args)
+        super(DemandResponseProgram, self).__init__(*args, **kw_args)
+
+    _attrs = ["type"]
+    _attr_types = {"type": str}
+    _defaults = {"type": ''}
+    _enums = {}
+    _refs = ["CustomerAgreements", "EndDeviceControls", "validityInterval", "EndDeviceGroups"]
+    _many_refs = ["CustomerAgreements", "EndDeviceControls", "EndDeviceGroups"]
 
     def getCustomerAgreements(self):
         """All customer agreements with this demand response program.

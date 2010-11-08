@@ -20,8 +20,8 @@ class TapSchedule(SeasonDayTypeSchedule):
     """A pre-established pattern over time for a tap step.
     """
 
-    def __init__(self, lineDropCompensation=False, lineDropR=0.0, lineDropX=0.0, TapChanger=None, **kw_args):
-        """Initializes a new 'TapSchedule' instance.
+    def __init__(self, lineDropCompensation=False, lineDropR=0.0, lineDropX=0.0, TapChanger=None, *args, **kw_args):
+        """Initialises a new 'TapSchedule' instance.
 
         @param lineDropCompensation: Flag to indicate that line drop compensation is to be applied 
         @param lineDropR: Line drop resistance. 
@@ -40,7 +40,14 @@ class TapSchedule(SeasonDayTypeSchedule):
         self._TapChanger = None
         self.TapChanger = TapChanger
 
-        super(TapSchedule, self).__init__(**kw_args)
+        super(TapSchedule, self).__init__(*args, **kw_args)
+
+    _attrs = ["lineDropCompensation", "lineDropR", "lineDropX"]
+    _attr_types = {"lineDropCompensation": bool, "lineDropR": float, "lineDropX": float}
+    _defaults = {"lineDropCompensation": False, "lineDropR": 0.0, "lineDropX": 0.0}
+    _enums = {}
+    _refs = ["TapChanger"]
+    _many_refs = []
 
     def getTapChanger(self):
         """A TapSchedule is associated with a TapChanger.

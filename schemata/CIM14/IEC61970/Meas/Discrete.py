@@ -20,8 +20,8 @@ class Discrete(Measurement):
     """Discrete represents a discrete Measurement, i.e. a Measurement reprsenting discrete values, e.g. a Breaker position.
     """
 
-    def __init__(self, normalValue=0, minValue=0, maxValue=0, Command=None, DiscreteValues=None, ValueAliasSet=None, **kw_args):
-        """Initializes a new 'Discrete' instance.
+    def __init__(self, normalValue=0, minValue=0, maxValue=0, Command=None, DiscreteValues=None, ValueAliasSet=None, *args, **kw_args):
+        """Initialises a new 'Discrete' instance.
 
         @param normalValue: Normal measurement value, e.g., used for percentage calculations. 
         @param minValue: Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values 
@@ -48,7 +48,14 @@ class Discrete(Measurement):
         self._ValueAliasSet = None
         self.ValueAliasSet = ValueAliasSet
 
-        super(Discrete, self).__init__(**kw_args)
+        super(Discrete, self).__init__(*args, **kw_args)
+
+    _attrs = ["normalValue", "minValue", "maxValue"]
+    _attr_types = {"normalValue": int, "minValue": int, "maxValue": int}
+    _defaults = {"normalValue": 0, "minValue": 0, "maxValue": 0}
+    _enums = {}
+    _refs = ["Command", "DiscreteValues", "ValueAliasSet"]
+    _many_refs = ["DiscreteValues"]
 
     def getCommand(self):
         """The Control variable associated with the Measurement.

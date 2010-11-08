@@ -20,8 +20,8 @@ class Due(Element):
     """Details on amounts due for an account.
     """
 
-    def __init__(self, interest=0.0, principle=0.0, arrears=0.0, current=0.0, charges=0.0, **kw_args):
-        """Initializes a new 'Due' instance.
+    def __init__(self, interest=0.0, principle=0.0, arrears=0.0, current=0.0, charges=0.0, *args, **kw_args):
+        """Initialises a new 'Due' instance.
 
         @param interest: Part of 'current' that constitutes the interest portion. 
         @param principle: Part of 'current' that constitutes the portion of the principle amount currently due. 
@@ -44,5 +44,12 @@ class Due(Element):
         #: Part of 'current' that constitutes the charge portion: 'charges' = 'Charge.fixedPortion' + 'Charge.variablePortion'.
         self.charges = charges
 
-        super(Due, self).__init__(**kw_args)
+        super(Due, self).__init__(*args, **kw_args)
+
+    _attrs = ["interest", "principle", "arrears", "current", "charges"]
+    _attr_types = {"interest": float, "principle": float, "arrears": float, "current": float, "charges": float}
+    _defaults = {"interest": 0.0, "principle": 0.0, "arrears": 0.0, "current": 0.0, "charges": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class ExcAC1A(ExcitationSystem):
     """IEEE (1992/2005) AC1A Model The model represents the field-controlled alternator-rectifier excitation systems designated Type AC1A. These excitation systems consist of an alternator main exciter with non-controlled rectifiers.
     """
 
-    def __init__(self, vrmin=0.0, tr=0.0, vrmax=0.0, ta=0.0, kf=0.0, te=0.0, ka=0.0, vamax=0.0, tb=0.0, e1=0.0, kd=0.0, se1=0.0, vamin=0.0, ke=0.0, kc=0.0, tf=0.0, tc=0.0, e2=0.0, se2=0.0, **kw_args):
-        """Initializes a new 'ExcAC1A' instance.
+    def __init__(self, vrmin=0.0, tr=0.0, vrmax=0.0, ta=0.0, kf=0.0, te=0.0, ka=0.0, vamax=0.0, tb=0.0, e1=0.0, kd=0.0, se1=0.0, vamin=0.0, ke=0.0, kc=0.0, tf=0.0, tc=0.0, e2=0.0, se2=0.0, *args, **kw_args):
+        """Initialises a new 'ExcAC1A' instance.
 
         @param vrmin: Minimum exciter control signal  (&lt; 0.) 
         @param tr: Filter time constant (&gt;= 0.) 
@@ -100,5 +100,12 @@ class ExcAC1A(ExcitationSystem):
         #: Saturation factor at e2   (&gt;= 0.)
         self.se2 = se2
 
-        super(ExcAC1A, self).__init__(**kw_args)
+        super(ExcAC1A, self).__init__(*args, **kw_args)
+
+    _attrs = ["vrmin", "tr", "vrmax", "ta", "kf", "te", "ka", "vamax", "tb", "e1", "kd", "se1", "vamin", "ke", "kc", "tf", "tc", "e2", "se2"]
+    _attr_types = {"vrmin": float, "tr": float, "vrmax": float, "ta": float, "kf": float, "te": float, "ka": float, "vamax": float, "tb": float, "e1": float, "kd": float, "se1": float, "vamin": float, "ke": float, "kc": float, "tf": float, "tc": float, "e2": float, "se2": float}
+    _defaults = {"vrmin": 0.0, "tr": 0.0, "vrmax": 0.0, "ta": 0.0, "kf": 0.0, "te": 0.0, "ka": 0.0, "vamax": 0.0, "tb": 0.0, "e1": 0.0, "kd": 0.0, "se1": 0.0, "vamin": 0.0, "ke": 0.0, "kc": 0.0, "tf": 0.0, "tc": 0.0, "e2": 0.0, "se2": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

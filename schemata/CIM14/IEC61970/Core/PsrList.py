@@ -20,8 +20,8 @@ class PsrList(IdentifiedObject):
     """Arbitrary list of PowerSystemResources. Can be used for various purposes, including grouping for report generation.
     """
 
-    def __init__(self, typePSRList='', PowerSystemResources=None, **kw_args):
-        """Initializes a new 'PsrList' instance.
+    def __init__(self, typePSRList='', PowerSystemResources=None, *args, **kw_args):
+        """Initialises a new 'PsrList' instance.
 
         @param typePSRList: Type of power system resources in this list. 
         @param PowerSystemResources:
@@ -32,7 +32,14 @@ class PsrList(IdentifiedObject):
         self._PowerSystemResources = []
         self.PowerSystemResources = [] if PowerSystemResources is None else PowerSystemResources
 
-        super(PsrList, self).__init__(**kw_args)
+        super(PsrList, self).__init__(*args, **kw_args)
+
+    _attrs = ["typePSRList"]
+    _attr_types = {"typePSRList": str}
+    _defaults = {"typePSRList": ''}
+    _enums = {}
+    _refs = ["PowerSystemResources"]
+    _many_refs = ["PowerSystemResources"]
 
     def getPowerSystemResources(self):
         

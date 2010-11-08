@@ -20,8 +20,8 @@ class ExcSCRX(ExcitationSystem):
     """Simple excitation system model representing generic characteristics of many excitation systems; intended for use where negative field current may be a problem
     """
 
-    def __init__(self, tb=0.0, cswitch=False, emin=0.0, k=0.0, te=0.0, emax=0.0, tatb=0.0, rcrfd=0.0, **kw_args):
-        """Initializes a new 'ExcSCRX' instance.
+    def __init__(self, tb=0.0, cswitch=False, emin=0.0, k=0.0, te=0.0, emax=0.0, tatb=0.0, rcrfd=0.0, *args, **kw_args):
+        """Initialises a new 'ExcSCRX' instance.
 
         @param tb: Denominator time constant of lag-lead block 
         @param cswitch: Power source switch:     1 ? fixed voltage     0 ? generator terminal voltage 
@@ -56,5 +56,12 @@ class ExcSCRX(ExcitationSystem):
         #: Rc/Rfd - ratio of field discharge resistance to field winding resistance
         self.rcrfd = rcrfd
 
-        super(ExcSCRX, self).__init__(**kw_args)
+        super(ExcSCRX, self).__init__(*args, **kw_args)
+
+    _attrs = ["tb", "cswitch", "emin", "k", "te", "emax", "tatb", "rcrfd"]
+    _attr_types = {"tb": float, "cswitch": bool, "emin": float, "k": float, "te": float, "emax": float, "tatb": float, "rcrfd": float}
+    _defaults = {"tb": 0.0, "cswitch": False, "emin": 0.0, "k": 0.0, "te": 0.0, "emax": 0.0, "tatb": 0.0, "rcrfd": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

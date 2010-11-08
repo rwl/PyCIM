@@ -20,8 +20,8 @@ class Unit(IdentifiedObject):
     """Quantity being measured. The Unit.name shall be unique among all specified quantities and describe the quantity. The Unit.aliasName is meant to be used for localization.
     """
 
-    def __init__(self, Controls=None, Measurements=None, MetaBlockConOutput=None, MetaBlockConInput=None, ProtectionEquipments=None, **kw_args):
-        """Initializes a new 'Unit' instance.
+    def __init__(self, Controls=None, Measurements=None, MetaBlockConOutput=None, MetaBlockConInput=None, ProtectionEquipments=None, *args, **kw_args):
+        """Initialises a new 'Unit' instance.
 
         @param Controls: The Controls having the Unit.
         @param Measurements: The Measurements having the Unit
@@ -44,7 +44,14 @@ class Unit(IdentifiedObject):
         self._ProtectionEquipments = []
         self.ProtectionEquipments = [] if ProtectionEquipments is None else ProtectionEquipments
 
-        super(Unit, self).__init__(**kw_args)
+        super(Unit, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["Controls", "Measurements", "MetaBlockConOutput", "MetaBlockConInput", "ProtectionEquipments"]
+    _many_refs = ["Controls", "Measurements", "MetaBlockConOutput", "MetaBlockConInput", "ProtectionEquipments"]
 
     def getControls(self):
         """The Controls having the Unit.

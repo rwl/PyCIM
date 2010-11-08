@@ -20,9 +20,16 @@ class MotorAsync(AsynchronousMachine):
     """An asynchronous (induction) motor with no external connection to the rotor windings, e.g., a squirrel-cage induction motor.
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'MotorAsync' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'MotorAsync' instance.
 
         """
-        super(MotorAsync, self).__init__(**kw_args)
+        super(MotorAsync, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

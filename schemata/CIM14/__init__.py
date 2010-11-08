@@ -14,12 +14,7 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA, USA
 
-"""The IEC 61968 subpackages of the CIM are developed, standardized
-and maintained by IEC TC57 Working Group 14: System Interfaces for
-Distribution Management (WG14). Currently, normative parts of the model
-support the needs of information exchange defined in IEC 61968-9:
-'Interfaces for Meter Reading and Control' and in IEC 61968-13:
-'CIM RDF Model exchange format for distribution.'
+"""The IEC 61968 subpackages of the CIM are developed, standardized and maintained by IEC TC57 Working Group 14: System Interfaces for Distribution Management (WG14). Currently, normative parts of the model support the needs of information exchange defined in IEC 61968-9: 'Interfaces for Meter Reading and Control' and in IEC 61968-13: 'CIM RDF Model exchange format for distribution.'
 """
 
 nsPrefix = "cim"

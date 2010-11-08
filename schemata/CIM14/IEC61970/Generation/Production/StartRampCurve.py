@@ -20,8 +20,8 @@ class StartRampCurve(Curve):
     """Rate in gross active power/minute (Y-axis) at which a unit can be loaded versus the number of hours (X-axis) the unit was off line
     """
 
-    def __init__(self, hotStandbyRamp=0.0, StartupModel=None, **kw_args):
-        """Initializes a new 'StartRampCurve' instance.
+    def __init__(self, hotStandbyRamp=0.0, StartupModel=None, *args, **kw_args):
+        """Initialises a new 'StartRampCurve' instance.
 
         @param hotStandbyRamp: The startup ramp rate in gross for a unit that is on hot standby 
         @param StartupModel: The unit's startup model may have a startup ramp curve
@@ -32,7 +32,14 @@ class StartRampCurve(Curve):
         self._StartupModel = None
         self.StartupModel = StartupModel
 
-        super(StartRampCurve, self).__init__(**kw_args)
+        super(StartRampCurve, self).__init__(*args, **kw_args)
+
+    _attrs = ["hotStandbyRamp"]
+    _attr_types = {"hotStandbyRamp": float}
+    _defaults = {"hotStandbyRamp": 0.0}
+    _enums = {}
+    _refs = ["StartupModel"]
+    _many_refs = []
 
     def getStartupModel(self):
         """The unit's startup model may have a startup ramp curve

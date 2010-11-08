@@ -18,8 +18,8 @@ from CIM14.IEC61970.Core.IdentifiedObject import IdentifiedObject
 
 class BlockInputType(IdentifiedObject):
 
-    def __init__(self, slotInput0=None, metaBlockInput0=None, **kw_args):
-        """Initializes a new 'BlockInputType' instance.
+    def __init__(self, slotInput0=None, metaBlockInput0=None, *args, **kw_args):
+        """Initialises a new 'BlockInputType' instance.
 
         @param slotInput0:
         @param metaBlockInput0:
@@ -30,7 +30,14 @@ class BlockInputType(IdentifiedObject):
         self._metaBlockInput0 = []
         self.metaBlockInput0 = [] if metaBlockInput0 is None else metaBlockInput0
 
-        super(BlockInputType, self).__init__(**kw_args)
+        super(BlockInputType, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["slotInput0", "metaBlockInput0"]
+    _many_refs = ["slotInput0", "metaBlockInput0"]
 
     def getslotInput0(self):
         

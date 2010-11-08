@@ -20,8 +20,8 @@ class TelephoneNumber(Element):
     """Telephone number.
     """
 
-    def __init__(self, countryCode='', cityCode='', areaCode='', localNumber='', extension='', **kw_args):
-        """Initializes a new 'TelephoneNumber' instance.
+    def __init__(self, countryCode='', cityCode='', areaCode='', localNumber='', extension='', *args, **kw_args):
+        """Initialises a new 'TelephoneNumber' instance.
 
         @param countryCode: Country code. 
         @param cityCode: (if applicable) City code. 
@@ -44,5 +44,12 @@ class TelephoneNumber(Element):
         #: (if applicable) Extension for this telephone number.
         self.extension = extension
 
-        super(TelephoneNumber, self).__init__(**kw_args)
+        super(TelephoneNumber, self).__init__(*args, **kw_args)
+
+    _attrs = ["countryCode", "cityCode", "areaCode", "localNumber", "extension"]
+    _attr_types = {"countryCode": str, "cityCode": str, "areaCode": str, "localNumber": str, "extension": str}
+    _defaults = {"countryCode": '', "cityCode": '', "areaCode": '', "localNumber": '', "extension": ''}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

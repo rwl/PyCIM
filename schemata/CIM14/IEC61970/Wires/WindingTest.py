@@ -20,8 +20,8 @@ class WindingTest(IdentifiedObject):
     """Physical winding test data for the winding/tap pairs of a transformer (or phase shifter). This test data can be used to derive other attributes of specific transformer or phase shifter models.
     """
 
-    def __init__(self, fromTapStep=0, leakageImpedance=0.0, noLoadLoss=0.0, phaseShift=0.0, excitingCurrent=0.0, loadLoss=0.0, toTapStep=0, voltage=0.0, From_TransformerWinding=None, To_TransformerWinding=None, **kw_args):
-        """Initializes a new 'WindingTest' instance.
+    def __init__(self, fromTapStep=0, leakageImpedance=0.0, noLoadLoss=0.0, phaseShift=0.0, excitingCurrent=0.0, loadLoss=0.0, toTapStep=0, voltage=0.0, From_TransformerWinding=None, To_TransformerWinding=None, *args, **kw_args):
+        """Initialises a new 'WindingTest' instance.
 
         @param fromTapStep: The tap step number for the 'from' winding of the test pair. 
         @param leakageImpedance: The leakage impedance measured at the 'from' winding  with the 'to' winding short-circuited and all other windings open-circuited.  Leakage impedance is expressed in units based on the apparent power and voltage ratings of the 'from' winding. 
@@ -64,7 +64,14 @@ class WindingTest(IdentifiedObject):
         self._To_TransformerWinding = None
         self.To_TransformerWinding = To_TransformerWinding
 
-        super(WindingTest, self).__init__(**kw_args)
+        super(WindingTest, self).__init__(*args, **kw_args)
+
+    _attrs = ["fromTapStep", "leakageImpedance", "noLoadLoss", "phaseShift", "excitingCurrent", "loadLoss", "toTapStep", "voltage"]
+    _attr_types = {"fromTapStep": int, "leakageImpedance": float, "noLoadLoss": float, "phaseShift": float, "excitingCurrent": float, "loadLoss": float, "toTapStep": int, "voltage": float}
+    _defaults = {"fromTapStep": 0, "leakageImpedance": 0.0, "noLoadLoss": 0.0, "phaseShift": 0.0, "excitingCurrent": 0.0, "loadLoss": 0.0, "toTapStep": 0, "voltage": 0.0}
+    _enums = {}
+    _refs = ["From_TransformerWinding", "To_TransformerWinding"]
+    _many_refs = []
 
     def getFrom_TransformerWinding(self):
         """The winding from which the test was conducted

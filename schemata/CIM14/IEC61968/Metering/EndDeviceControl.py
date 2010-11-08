@@ -20,8 +20,8 @@ class EndDeviceControl(IdentifiedObject):
     """Instructs an EndDeviceAsset (or EndDeviceGroup) to perform a specified action.
     """
 
-    def __init__(self, type='', drProgramMandatory=False, priceSignal=0.0, drProgramLevel=0, EndDeviceGroup=None, DemandResponseProgram=None, CustomerAgreement=None, EndDeviceAsset=None, scheduledInterval=None, **kw_args):
-        """Initializes a new 'EndDeviceControl' instance.
+    def __init__(self, type='', drProgramMandatory=False, priceSignal=0.0, drProgramLevel=0, EndDeviceGroup=None, DemandResponseProgram=None, CustomerAgreement=None, EndDeviceAsset=None, scheduledInterval=None, *args, **kw_args):
+        """Initialises a new 'EndDeviceControl' instance.
 
         @param type: Type of control. 
         @param drProgramMandatory: Whether a demand response program request is mandatory. Note: Attribute is not defined on DemandResponseProgram as it is not its inherent property (it serves to control it). 
@@ -59,7 +59,14 @@ class EndDeviceControl(IdentifiedObject):
 
         self.scheduledInterval = scheduledInterval
 
-        super(EndDeviceControl, self).__init__(**kw_args)
+        super(EndDeviceControl, self).__init__(*args, **kw_args)
+
+    _attrs = ["type", "drProgramMandatory", "priceSignal", "drProgramLevel"]
+    _attr_types = {"type": str, "drProgramMandatory": bool, "priceSignal": float, "drProgramLevel": int}
+    _defaults = {"type": '', "drProgramMandatory": False, "priceSignal": 0.0, "drProgramLevel": 0}
+    _enums = {}
+    _refs = ["EndDeviceGroup", "DemandResponseProgram", "CustomerAgreement", "EndDeviceAsset", "scheduledInterval"]
+    _many_refs = []
 
     def getEndDeviceGroup(self):
         """End device group receiving commands from this end device control.

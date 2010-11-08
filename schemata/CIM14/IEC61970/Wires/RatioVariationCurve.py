@@ -20,15 +20,22 @@ class RatioVariationCurve(Curve):
     """A Ratio Variation Curve describes the change in tap ratio in relationship to tap step changes.  The tap step is represented using the xValue and the ratio using y1value.
     """
 
-    def __init__(self, RatioTapChanger=None, **kw_args):
-        """Initializes a new 'RatioVariationCurve' instance.
+    def __init__(self, RatioTapChanger=None, *args, **kw_args):
+        """Initialises a new 'RatioVariationCurve' instance.
 
         @param RatioTapChanger: A RatioVariationCurve defines tap ratio changes for a RatioTapChanger.
         """
         self._RatioTapChanger = None
         self.RatioTapChanger = RatioTapChanger
 
-        super(RatioVariationCurve, self).__init__(**kw_args)
+        super(RatioVariationCurve, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["RatioTapChanger"]
+    _many_refs = []
 
     def getRatioTapChanger(self):
         """A RatioVariationCurve defines tap ratio changes for a RatioTapChanger.

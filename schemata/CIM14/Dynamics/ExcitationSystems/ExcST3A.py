@@ -20,8 +20,8 @@ class ExcST3A(ExcitationSystem):
     """IEEE (1992/2005) ST3A Model  Some static systems utilize a field voltage control loop to linearize the exciter control characteristic. This also makes the output independent of supply source variations until supply limitations are reached. These systems utilize a variety of controlled-rectifier designs: full thyristor complements or hybrid bridges in either series or shunt configurations. The power source may consist of only a potential source, either fed from the machine terminals or from internal windings. Some designs may have compound power sources utilizing both machine potential and current. These power sources are represented as phasor combinations of machine terminal current and voltage and are accommodated by suitable parameters in the model Type ST3A.
     """
 
-    def __init__(self, kp=0.0, angp=0.0, xl=0.0, tc=0.0, tb=0.0, ki=0.0, vbmax=0.0, kc=0.0, vrmax=0.0, vimax=0.0, vgmax=0.0, km=0.0, vmmax=0.0, ka=0.0, tr=0.0, vrmin=0.0, kg=0.0, vimin=0.0, vmmin=0.0, tm=0.0, ta=0.0, **kw_args):
-        """Initializes a new 'ExcST3A' instance.
+    def __init__(self, kp=0.0, angp=0.0, xl=0.0, tc=0.0, tb=0.0, ki=0.0, vbmax=0.0, kc=0.0, vrmax=0.0, vimax=0.0, vgmax=0.0, km=0.0, vmmax=0.0, ka=0.0, tr=0.0, vrmin=0.0, kg=0.0, vimin=0.0, vmmin=0.0, tm=0.0, ta=0.0, *args, **kw_args):
+        """Initialises a new 'ExcST3A' instance.
 
         @param kp: Potential source gain (&gt; 0.) 
         @param angp: Phase angle of potential source 
@@ -108,5 +108,12 @@ class ExcST3A(ExcitationSystem):
         #: AVR time constant (&gt;= 0.)
         self.ta = ta
 
-        super(ExcST3A, self).__init__(**kw_args)
+        super(ExcST3A, self).__init__(*args, **kw_args)
+
+    _attrs = ["kp", "angp", "xl", "tc", "tb", "ki", "vbmax", "kc", "vrmax", "vimax", "vgmax", "km", "vmmax", "ka", "tr", "vrmin", "kg", "vimin", "vmmin", "tm", "ta"]
+    _attr_types = {"kp": float, "angp": float, "xl": float, "tc": float, "tb": float, "ki": float, "vbmax": float, "kc": float, "vrmax": float, "vimax": float, "vgmax": float, "km": float, "vmmax": float, "ka": float, "tr": float, "vrmin": float, "kg": float, "vimin": float, "vmmin": float, "tm": float, "ta": float}
+    _defaults = {"kp": 0.0, "angp": 0.0, "xl": 0.0, "tc": 0.0, "tb": 0.0, "ki": 0.0, "vbmax": 0.0, "kc": 0.0, "vrmax": 0.0, "vimax": 0.0, "vgmax": 0.0, "km": 0.0, "vmmax": 0.0, "ka": 0.0, "tr": 0.0, "vrmin": 0.0, "kg": 0.0, "vimin": 0.0, "vmmin": 0.0, "tm": 0.0, "ta": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

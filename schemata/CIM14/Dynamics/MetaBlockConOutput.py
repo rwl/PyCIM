@@ -20,8 +20,8 @@ class MetaBlockConOutput(IdentifiedObject):
     """If model uses MeasurementType association, it means the output is pushed back to the steady state model (if reasonable).
     """
 
-    def __init__(self, MetaBlockConSignal=None, MemberOf_MetaBlockConnection=None, Unit=None, **kw_args):
-        """Initializes a new 'MetaBlockConOutput' instance.
+    def __init__(self, MetaBlockConSignal=None, MemberOf_MetaBlockConnection=None, Unit=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockConOutput' instance.
 
         @param MetaBlockConSignal:
         @param MemberOf_MetaBlockConnection:
@@ -36,7 +36,14 @@ class MetaBlockConOutput(IdentifiedObject):
         self._Unit = None
         self.Unit = Unit
 
-        super(MetaBlockConOutput, self).__init__(**kw_args)
+        super(MetaBlockConOutput, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["MetaBlockConSignal", "MemberOf_MetaBlockConnection", "Unit"]
+    _many_refs = ["MetaBlockConSignal"]
 
     def getMetaBlockConSignal(self):
         

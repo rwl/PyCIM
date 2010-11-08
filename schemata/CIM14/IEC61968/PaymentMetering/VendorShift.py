@@ -20,8 +20,8 @@ class VendorShift(Shift):
     """The operating shift for a vendor during which he may transact against the merchant's account. It aggregates transactions and receipts during the shift and periodically debits a merchant account. The totals in VendorShift should always = sum of totals aggregated in all cashier shifts that were open under the particular vendor shift.
     """
 
-    def __init__(self, merchantDebitAmount=0.0, posted=False, MerchantAccount=None, Transactions=None, Receipts=None, Vendor=None, **kw_args):
-        """Initializes a new 'VendorShift' instance.
+    def __init__(self, merchantDebitAmount=0.0, posted=False, MerchantAccount=None, Transactions=None, Receipts=None, Vendor=None, *args, **kw_args):
+        """Initialises a new 'VendorShift' instance.
 
         @param merchantDebitAmount: The amount that is to be debited from the merchant account for this vendor shift. This amount reflects the sum(PaymentTransaction.transactionAmount). 
         @param posted: = true if merchantDebitAmount has been debited from MerchantAccount; typically happens at the end of VendorShift when it closes. 
@@ -48,7 +48,14 @@ class VendorShift(Shift):
         self._Vendor = None
         self.Vendor = Vendor
 
-        super(VendorShift, self).__init__(**kw_args)
+        super(VendorShift, self).__init__(*args, **kw_args)
+
+    _attrs = ["merchantDebitAmount", "posted"]
+    _attr_types = {"merchantDebitAmount": float, "posted": bool}
+    _defaults = {"merchantDebitAmount": 0.0, "posted": False}
+    _enums = {}
+    _refs = ["MerchantAccount", "Transactions", "Receipts", "Vendor"]
+    _many_refs = ["Transactions", "Receipts"]
 
     def getMerchantAccount(self):
         """Merchant account this vendor shift periodically debits (based on aggregated transactions).

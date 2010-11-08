@@ -20,8 +20,8 @@ class CurrentTransformer(Equipment):
     """Instrument transformer used to measure electrical qualities of the circuit that is being protected and/or monitored. Typically used as current transducer for the purpose of metering or protection. A typical secondary current rating would be 5A.
     """
 
-    def __init__(self, maxRatio=0.0, accuracyClass='', coreCount=0, ctClass='', usage='', accuracyLimit='', **kw_args):
-        """Initializes a new 'CurrentTransformer' instance.
+    def __init__(self, maxRatio=0.0, accuracyClass='', coreCount=0, ctClass='', usage='', accuracyLimit='', *args, **kw_args):
+        """Initialises a new 'CurrentTransformer' instance.
 
         @param maxRatio: For multi-ratio CT's, the maximum permissable ratio attainable. 
         @param accuracyClass: CT accuracy classification. 
@@ -48,5 +48,12 @@ class CurrentTransformer(Equipment):
         #: Percent of rated current for which the CT remains accurate within specified limits.
         self.accuracyLimit = accuracyLimit
 
-        super(CurrentTransformer, self).__init__(**kw_args)
+        super(CurrentTransformer, self).__init__(*args, **kw_args)
+
+    _attrs = ["maxRatio", "accuracyClass", "coreCount", "ctClass", "usage", "accuracyLimit"]
+    _attr_types = {"maxRatio": float, "accuracyClass": str, "coreCount": int, "ctClass": str, "usage": str, "accuracyLimit": str}
+    _defaults = {"maxRatio": 0.0, "accuracyClass": '', "coreCount": 0, "ctClass": '', "usage": '', "accuracyLimit": ''}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

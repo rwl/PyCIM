@@ -20,8 +20,8 @@ class FuelAllocationSchedule(Curve):
     """The amount of fuel of a given type which is allocated for consumption over a specified period of time
     """
 
-    def __init__(self, fuelType='lignite', minFuelAllocation=0.0, fuelAllocationStartDate='', maxFuelAllocation=0.0, fuelAllocationEndDate='', FossilFuel=None, ThermalGeneratingUnit=None, **kw_args):
-        """Initializes a new 'FuelAllocationSchedule' instance.
+    def __init__(self, fuelType="lignite", minFuelAllocation=0.0, fuelAllocationStartDate='', maxFuelAllocation=0.0, fuelAllocationEndDate='', FossilFuel=None, ThermalGeneratingUnit=None, *args, **kw_args):
+        """Initialises a new 'FuelAllocationSchedule' instance.
 
         @param fuelType: The type of fuel, which also indicates the corresponding measurement unit Values are: "lignite", "coal", "oil", "gas"
         @param minFuelAllocation: The minimum amount fuel that is allocated for consumption for the scheduled time period, e.g., based on a 'take-or-pay' contract 
@@ -31,7 +31,7 @@ class FuelAllocationSchedule(Curve):
         @param FossilFuel: A fuel allocation schedule must have a fossil fuel
         @param ThermalGeneratingUnit: A thermal generating unit may have one or more fuel allocation schedules
         """
-        #: The type of fuel, which also indicates the corresponding measurement unitValues are: "lignite", "coal", "oil", "gas"
+        #: The type of fuel, which also indicates the corresponding measurement unit Values are: "lignite", "coal", "oil", "gas"
         self.fuelType = fuelType
 
         #: The minimum amount fuel that is allocated for consumption for the scheduled time period, e.g., based on a 'take-or-pay' contract
@@ -52,7 +52,14 @@ class FuelAllocationSchedule(Curve):
         self._ThermalGeneratingUnit = None
         self.ThermalGeneratingUnit = ThermalGeneratingUnit
 
-        super(FuelAllocationSchedule, self).__init__(**kw_args)
+        super(FuelAllocationSchedule, self).__init__(*args, **kw_args)
+
+    _attrs = ["fuelType", "minFuelAllocation", "fuelAllocationStartDate", "maxFuelAllocation", "fuelAllocationEndDate"]
+    _attr_types = {"fuelType": str, "minFuelAllocation": float, "fuelAllocationStartDate": str, "maxFuelAllocation": float, "fuelAllocationEndDate": str}
+    _defaults = {"fuelType": "lignite", "minFuelAllocation": 0.0, "fuelAllocationStartDate": '', "maxFuelAllocation": 0.0, "fuelAllocationEndDate": ''}
+    _enums = {"fuelType": "FuelType"}
+    _refs = ["FossilFuel", "ThermalGeneratingUnit"]
+    _many_refs = []
 
     def getFossilFuel(self):
         """A fuel allocation schedule must have a fossil fuel

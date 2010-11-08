@@ -20,8 +20,8 @@ class CombustionTurbine(PrimeMover):
     """A prime mover that is typically fueled by gas or light oil
     """
 
-    def __init__(self, capabilityVersusFrequency=0.0, heatRecoveryFlag=False, timeConstant=0.0, auxPowerVersusFrequency=0.0, auxPowerVersusVoltage=0.0, referenceTemp=0.0, ambientTemp=0.0, powerVariationByTemp=0.0, HeatRecoveryBoiler=None, CTTempActivePowerCurve=None, AirCompressor=None, **kw_args):
-        """Initializes a new 'CombustionTurbine' instance.
+    def __init__(self, capabilityVersusFrequency=0.0, heatRecoveryFlag=False, timeConstant=0.0, auxPowerVersusFrequency=0.0, auxPowerVersusVoltage=0.0, referenceTemp=0.0, ambientTemp=0.0, powerVariationByTemp=0.0, HeatRecoveryBoiler=None, CTTempActivePowerCurve=None, AirCompressor=None, *args, **kw_args):
+        """Initialises a new 'CombustionTurbine' instance.
 
         @param capabilityVersusFrequency: Off-nominal frequency effect on turbine capability. Per unit reduction in unit active power capability versus per unit reduction in frequency (from rated frequency). 
         @param heatRecoveryFlag: Flag that is set to true if the combustion turbine is associated with a heat recovery boiler 
@@ -68,7 +68,14 @@ class CombustionTurbine(PrimeMover):
         self._AirCompressor = None
         self.AirCompressor = AirCompressor
 
-        super(CombustionTurbine, self).__init__(**kw_args)
+        super(CombustionTurbine, self).__init__(*args, **kw_args)
+
+    _attrs = ["capabilityVersusFrequency", "heatRecoveryFlag", "timeConstant", "auxPowerVersusFrequency", "auxPowerVersusVoltage", "referenceTemp", "ambientTemp", "powerVariationByTemp"]
+    _attr_types = {"capabilityVersusFrequency": float, "heatRecoveryFlag": bool, "timeConstant": float, "auxPowerVersusFrequency": float, "auxPowerVersusVoltage": float, "referenceTemp": float, "ambientTemp": float, "powerVariationByTemp": float}
+    _defaults = {"capabilityVersusFrequency": 0.0, "heatRecoveryFlag": False, "timeConstant": 0.0, "auxPowerVersusFrequency": 0.0, "auxPowerVersusVoltage": 0.0, "referenceTemp": 0.0, "ambientTemp": 0.0, "powerVariationByTemp": 0.0}
+    _enums = {}
+    _refs = ["HeatRecoveryBoiler", "CTTempActivePowerCurve", "AirCompressor"]
+    _many_refs = []
 
     def getHeatRecoveryBoiler(self):
         """A combustion turbine may have a heat recovery boiler for making steam

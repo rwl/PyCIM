@@ -20,8 +20,8 @@ class SDPLocation(Location):
     """Location of an individual service delivery point. For residential or most businesses, it is typically the location of a meter on the customer's premises. For transmission, it is the point(s) of interconnection on the transmission provider's transmission system where capacity and/or energy transmitted by the transmission provider is made available to the receiving party. The point(s) of delivery is specified in the Service Agreement.
     """
 
-    def __init__(self, remark='', siteAccessProblem='', occupancyDate='', accessMethod='', ServiceDeliveryPoints=None, **kw_args):
-        """Initializes a new 'SDPLocation' instance.
+    def __init__(self, remark='', siteAccessProblem='', occupancyDate='', accessMethod='', ServiceDeliveryPoints=None, *args, **kw_args):
+        """Initialises a new 'SDPLocation' instance.
 
         @param remark: Remarks about this location. 
         @param siteAccessProblem: Problems previously encountered when visiting or performing work at this service delivery point location. Examples include: bad dog, violent customer, verbally abusive occupant, obstructions, safety hazards, etc. 
@@ -44,7 +44,14 @@ class SDPLocation(Location):
         self._ServiceDeliveryPoints = []
         self.ServiceDeliveryPoints = [] if ServiceDeliveryPoints is None else ServiceDeliveryPoints
 
-        super(SDPLocation, self).__init__(**kw_args)
+        super(SDPLocation, self).__init__(*args, **kw_args)
+
+    _attrs = ["remark", "siteAccessProblem", "occupancyDate", "accessMethod"]
+    _attr_types = {"remark": str, "siteAccessProblem": str, "occupancyDate": str, "accessMethod": str}
+    _defaults = {"remark": '', "siteAccessProblem": '', "occupancyDate": '', "accessMethod": ''}
+    _enums = {}
+    _refs = ["ServiceDeliveryPoints"]
+    _many_refs = ["ServiceDeliveryPoints"]
 
     def getServiceDeliveryPoints(self):
         """All service delivery points at this location.

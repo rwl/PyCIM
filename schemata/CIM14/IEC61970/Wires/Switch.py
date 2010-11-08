@@ -20,8 +20,8 @@ class Switch(ConductingEquipment):
     """A generic device designed to close, or open, or both, one or more electric circuits.
     """
 
-    def __init__(self, switchOnCount=0, switchOnDate='', retained=False, normalOpen=False, SwitchingOperations=None, CompositeSwitch=None, ConnectDisconnectFunctions=None, SwitchSchedules=None, **kw_args):
-        """Initializes a new 'Switch' instance.
+    def __init__(self, switchOnCount=0, switchOnDate='', retained=False, normalOpen=False, SwitchingOperations=None, CompositeSwitch=None, ConnectDisconnectFunctions=None, SwitchSchedules=None, *args, **kw_args):
+        """Initialises a new 'Switch' instance.
 
         @param switchOnCount: The switch on count since the switch was last reset or initialized. 
         @param switchOnDate: The date and time when the switch was last switched on. 
@@ -56,7 +56,14 @@ class Switch(ConductingEquipment):
         self._SwitchSchedules = []
         self.SwitchSchedules = [] if SwitchSchedules is None else SwitchSchedules
 
-        super(Switch, self).__init__(**kw_args)
+        super(Switch, self).__init__(*args, **kw_args)
+
+    _attrs = ["switchOnCount", "switchOnDate", "retained", "normalOpen"]
+    _attr_types = {"switchOnCount": int, "switchOnDate": str, "retained": bool, "normalOpen": bool}
+    _defaults = {"switchOnCount": 0, "switchOnDate": '', "retained": False, "normalOpen": False}
+    _enums = {}
+    _refs = ["SwitchingOperations", "CompositeSwitch", "ConnectDisconnectFunctions", "SwitchSchedules"]
+    _many_refs = ["SwitchingOperations", "ConnectDisconnectFunctions", "SwitchSchedules"]
 
     def getSwitchingOperations(self):
         """A switch may be operated by many schedules.

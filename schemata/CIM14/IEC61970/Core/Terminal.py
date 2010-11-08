@@ -20,8 +20,8 @@ class Terminal(IdentifiedObject):
     """An electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called 'connectivity nodes'.
     """
 
-    def __init__(self, connected=False, sequenceNumber=0, TopologicalNode=None, Block=None, OperationalLimitSet=None, HasSecond_MutualCoupling=None, RegulatingControl=None, Measurements=None, BranchGroupTerminal=None, ConductingEquipment=None, HasFirst_MutualCoupling=None, SvPowerFlow=None, ConnectivityNode=None, TieFlow=None, **kw_args):
-        """Initializes a new 'Terminal' instance.
+    def __init__(self, connected=False, sequenceNumber=0, TopologicalNode=None, Block=None, OperationalLimitSet=None, HasSecond_MutualCoupling=None, RegulatingControl=None, Measurements=None, BranchGroupTerminal=None, ConductingEquipment=None, HasFirst_MutualCoupling=None, SvPowerFlow=None, ConnectivityNode=None, TieFlow=None, *args, **kw_args):
+        """Initialises a new 'Terminal' instance.
 
         @param connected: The connected status is related to a bus-branch model and the TopologicalNode-Terminal relation.  True implies the Terminal is connected to the related TopologicalNode and false implies it is not.  In a bus-branch model the connected status is used to tell if equipment is disconnected without having to change the connectivity described by the TopologicalNode-Terminal relation. A valid case is that ConductingEquipment can be connected in one end and open in the other. In particular for an ACLineSegment where the charging can be significant this is a relevant case. 
         @param sequenceNumber: The orientation of the terminal connections for a multiple terminal conducting equipment.  The sequence numbering starts with 1 and additional terminals should follow in increasing order.   The first terminal is the 'starting point' for a two terminal branch.   In the case of class TransformerWinding only one terminal is used so its sequenceNumber must be 1. 
@@ -80,7 +80,14 @@ class Terminal(IdentifiedObject):
         self._TieFlow = []
         self.TieFlow = [] if TieFlow is None else TieFlow
 
-        super(Terminal, self).__init__(**kw_args)
+        super(Terminal, self).__init__(*args, **kw_args)
+
+    _attrs = ["connected", "sequenceNumber"]
+    _attr_types = {"connected": bool, "sequenceNumber": int}
+    _defaults = {"connected": False, "sequenceNumber": 0}
+    _enums = {}
+    _refs = ["TopologicalNode", "Block", "OperationalLimitSet", "HasSecond_MutualCoupling", "RegulatingControl", "Measurements", "BranchGroupTerminal", "ConductingEquipment", "HasFirst_MutualCoupling", "SvPowerFlow", "ConnectivityNode", "TieFlow"]
+    _many_refs = ["Block", "OperationalLimitSet", "HasSecond_MutualCoupling", "RegulatingControl", "Measurements", "BranchGroupTerminal", "HasFirst_MutualCoupling", "TieFlow"]
 
     def getTopologicalNode(self):
         """The topological node associated with the terminal.   This can be used as an alternative to the connectivity node path to topological node, thus making it unneccesary to model connedtivity nodes in some cases.   Note that the if connectivity nodes are in the model, this association would proably not be used.

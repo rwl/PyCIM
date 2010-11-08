@@ -20,8 +20,8 @@ class DistributionTapChanger(RatioTapChanger):
     """Additional ratio tap changer parameters common to distribution line regulators. 'tculControlMode' would always be 'volt'. If 'monitoredPhase' is not specified, then if the controlled DistributionTransformerWinding is single-phase, the PT primary is assumed to be connected across that winding, which is the normal case. If the controlled winding is three-phase, then the 'monitoredPhase' is assumed to be 'AN', unless otherwise specified. Whenever 'ctRatio' and 'ptRatio' are specified, it's customary to specify the R and X in 'volts' referred to the PT secondary circuit, otherwise R and X are in feeder primary ohms. If 'ptRatio' is not specified, then 'targetVoltage', 'limitVoltage', and 'bandVoltage' are on the feeder primary base, phase-neutral or phase-phase depending on the 'monitoredPhase'. Otherwise, these attributes are all on the PT secondary base.
     """
 
-    def __init__(self, monitoredPhase='A', ptRatio=0.0, reverseLineDropX=0.0, ctRating=0.0, reverseLineDropR=0.0, lineDropCompensation=False, ctRatio=0.0, targetVoltage=0.0, limitVoltage=0.0, lineDropR=0.0, lineDropX=0.0, bandVoltage=0.0, **kw_args):
-        """Initializes a new 'DistributionTapChanger' instance.
+    def __init__(self, monitoredPhase="A", ptRatio=0.0, reverseLineDropX=0.0, ctRating=0.0, reverseLineDropR=0.0, lineDropCompensation=False, ctRatio=0.0, targetVoltage=0.0, limitVoltage=0.0, lineDropR=0.0, lineDropX=0.0, bandVoltage=0.0, *args, **kw_args):
+        """Initialises a new 'DistributionTapChanger' instance.
 
         @param monitoredPhase: Phase voltage controlling this regulator, measured at regulator location. Values are: "A", "AC", "AN", "ABCN", "B", "C", "BN", "CN", "splitSecondary12N", "ABC", "splitSecondary2N", "N", "ABN", "BC", "BCN", "AB", "splitSecondary1N", "ACN"
         @param ptRatio: Built-in voltage transducer ratio. 
@@ -36,7 +36,7 @@ class DistributionTapChanger(RatioTapChanger):
         @param lineDropX: Line drop compensator reactance setting for normal (forward) power flow. 
         @param bandVoltage: Voltage range (max - min) on the PT secondary base, centered on 'targetVoltage'. 
         """
-        #: Phase voltage controlling this regulator, measured at regulator location.Values are: "A", "AC", "AN", "ABCN", "B", "C", "BN", "CN", "splitSecondary12N", "ABC", "splitSecondary2N", "N", "ABN", "BC", "BCN", "AB", "splitSecondary1N", "ACN"
+        #: Phase voltage controlling this regulator, measured at regulator location. Values are: "A", "AC", "AN", "ABCN", "B", "C", "BN", "CN", "splitSecondary12N", "ABC", "splitSecondary2N", "N", "ABN", "BC", "BCN", "AB", "splitSecondary1N", "ACN"
         self.monitoredPhase = monitoredPhase
 
         #: Built-in voltage transducer ratio.
@@ -72,5 +72,12 @@ class DistributionTapChanger(RatioTapChanger):
         #: Voltage range (max - min) on the PT secondary base, centered on 'targetVoltage'.
         self.bandVoltage = bandVoltage
 
-        super(DistributionTapChanger, self).__init__(**kw_args)
+        super(DistributionTapChanger, self).__init__(*args, **kw_args)
+
+    _attrs = ["monitoredPhase", "ptRatio", "reverseLineDropX", "ctRating", "reverseLineDropR", "lineDropCompensation", "ctRatio", "targetVoltage", "limitVoltage", "lineDropR", "lineDropX", "bandVoltage"]
+    _attr_types = {"monitoredPhase": str, "ptRatio": float, "reverseLineDropX": float, "ctRating": float, "reverseLineDropR": float, "lineDropCompensation": bool, "ctRatio": float, "targetVoltage": float, "limitVoltage": float, "lineDropR": float, "lineDropX": float, "bandVoltage": float}
+    _defaults = {"monitoredPhase": "A", "ptRatio": 0.0, "reverseLineDropX": 0.0, "ctRating": 0.0, "reverseLineDropR": 0.0, "lineDropCompensation": False, "ctRatio": 0.0, "targetVoltage": 0.0, "limitVoltage": 0.0, "lineDropR": 0.0, "lineDropX": 0.0, "bandVoltage": 0.0}
+    _enums = {"monitoredPhase": "PhaseCode"}
+    _refs = []
+    _many_refs = []
 

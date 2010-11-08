@@ -20,8 +20,8 @@ class MerchantAccount(Document):
     """The operating account controlled by MerchantAgreement, against which Vendor may vend tokens or receipt payments. Transactions via VendorShift debit the account and bank deposits via BankStatement credit the account.
     """
 
-    def __init__(self, provisionalBalance=0.0, currentBalance=0.0, VendorShifts=None, MerchantAgreement=None, Vendors=None, Transactors=None, **kw_args):
-        """Initializes a new 'MerchantAccount' instance.
+    def __init__(self, provisionalBalance=0.0, currentBalance=0.0, VendorShifts=None, MerchantAgreement=None, Vendors=None, Transactors=None, *args, **kw_args):
+        """Initialises a new 'MerchantAccount' instance.
 
         @param provisionalBalance: The balance of this account after taking into account any pending debits from VendorShift.merchantDebitAmount and pending credits from BankStatement.merchantCreditAmount or credits (see also BankStatement attributes and VendorShift attributes). 
         @param currentBalance: The current operating balance of this account. 
@@ -48,7 +48,14 @@ class MerchantAccount(Document):
         self._Transactors = []
         self.Transactors = [] if Transactors is None else Transactors
 
-        super(MerchantAccount, self).__init__(**kw_args)
+        super(MerchantAccount, self).__init__(*args, **kw_args)
+
+    _attrs = ["provisionalBalance", "currentBalance"]
+    _attr_types = {"provisionalBalance": float, "currentBalance": float}
+    _defaults = {"provisionalBalance": 0.0, "currentBalance": 0.0}
+    _enums = {}
+    _refs = ["VendorShifts", "MerchantAgreement", "Vendors", "Transactors"]
+    _many_refs = ["VendorShifts", "Vendors", "Transactors"]
 
     def getVendorShifts(self):
         """All vendor shifts that operate on this merchant account.

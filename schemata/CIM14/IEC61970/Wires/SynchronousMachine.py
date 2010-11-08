@@ -20,8 +20,8 @@ class SynchronousMachine(RotatingMachine):
     """An electromechanical device that operates synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump.
     """
 
-    def __init__(self, operatingMode='condenser', type='generator_or_condenser', coolantType='air', xQuadTrans=0.0, condenserP=0.0, referencePriority=0, damping=0.0, x0=0.0, r2=0.0, minQ=0.0, xDirectSync=0.0, maxQ=0.0, r0=0.0, aVRToManualLead=0.0, x=0.0, inertia=0.0, coolantCondition=0.0, manualToAVR=0.0, r=0.0, maxU=0.0, xQuadSync=0.0, qPercent=0.0, xQuadSubtrans=0.0, minU=0.0, aVRToManualLag=0.0, baseQ=0.0, xDirectTrans=0.0, x2=0.0, xDirectSubtrans=0.0, genLoad0=None, HydroPump=None, GeneratingUnit=None, govHydro10=None, PrimeMovers=None, InitialReactiveCapabilityCurve=None, genEquiv0=None, ReactiveCapabilityCurves=None, **kw_args):
-        """Initializes a new 'SynchronousMachine' instance.
+    def __init__(self, operatingMode="condenser", type="generator_or_condenser", coolantType="air", xQuadTrans=0.0, condenserP=0.0, referencePriority=0, damping=0.0, x0=0.0, r2=0.0, minQ=0.0, xDirectSync=0.0, maxQ=0.0, r0=0.0, aVRToManualLead=0.0, x=0.0, inertia=0.0, coolantCondition=0.0, manualToAVR=0.0, r=0.0, maxU=0.0, xQuadSync=0.0, qPercent=0.0, xQuadSubtrans=0.0, minU=0.0, aVRToManualLag=0.0, baseQ=0.0, xDirectTrans=0.0, x2=0.0, xDirectSubtrans=0.0, genLoad0=None, HydroPump=None, GeneratingUnit=None, govHydro10=None, PrimeMovers=None, InitialReactiveCapabilityCurve=None, genEquiv0=None, ReactiveCapabilityCurves=None, *args, **kw_args):
+        """Initialises a new 'SynchronousMachine' instance.
 
         @param operatingMode: Current mode of operation. Values are: "condenser", "generator"
         @param type: Modes that this synchronous machine can operate in. Values are: "generator_or_condenser", "generator", "condenser"
@@ -61,13 +61,13 @@ class SynchronousMachine(RotatingMachine):
         @param genEquiv0:
         @param ReactiveCapabilityCurves: All available Reactive capability curves for this SynchronousMachine.
         """
-        #: Current mode of operation.Values are: "condenser", "generator"
+        #: Current mode of operation. Values are: "condenser", "generator"
         self.operatingMode = operatingMode
 
-        #: Modes that this synchronous machine can operate in.Values are: "generator_or_condenser", "generator", "condenser"
+        #: Modes that this synchronous machine can operate in. Values are: "generator_or_condenser", "generator", "condenser"
         self.type = type
 
-        #: Method of cooling the machine.Values are: "air", "hydrogenGas", "water"
+        #: Method of cooling the machine. Values are: "air", "hydrogenGas", "water"
         self.coolantType = coolantType
 
         #: Quadrature-axis transient reactance, also known as X'q.
@@ -172,7 +172,14 @@ class SynchronousMachine(RotatingMachine):
         self._ReactiveCapabilityCurves = []
         self.ReactiveCapabilityCurves = [] if ReactiveCapabilityCurves is None else ReactiveCapabilityCurves
 
-        super(SynchronousMachine, self).__init__(**kw_args)
+        super(SynchronousMachine, self).__init__(*args, **kw_args)
+
+    _attrs = ["operatingMode", "type", "coolantType", "xQuadTrans", "condenserP", "referencePriority", "damping", "x0", "r2", "minQ", "xDirectSync", "maxQ", "r0", "aVRToManualLead", "x", "inertia", "coolantCondition", "manualToAVR", "r", "maxU", "xQuadSync", "qPercent", "xQuadSubtrans", "minU", "aVRToManualLag", "baseQ", "xDirectTrans", "x2", "xDirectSubtrans"]
+    _attr_types = {"operatingMode": str, "type": str, "coolantType": str, "xQuadTrans": float, "condenserP": float, "referencePriority": int, "damping": float, "x0": float, "r2": float, "minQ": float, "xDirectSync": float, "maxQ": float, "r0": float, "aVRToManualLead": float, "x": float, "inertia": float, "coolantCondition": float, "manualToAVR": float, "r": float, "maxU": float, "xQuadSync": float, "qPercent": float, "xQuadSubtrans": float, "minU": float, "aVRToManualLag": float, "baseQ": float, "xDirectTrans": float, "x2": float, "xDirectSubtrans": float}
+    _defaults = {"operatingMode": "condenser", "type": "generator_or_condenser", "coolantType": "air", "xQuadTrans": 0.0, "condenserP": 0.0, "referencePriority": 0, "damping": 0.0, "x0": 0.0, "r2": 0.0, "minQ": 0.0, "xDirectSync": 0.0, "maxQ": 0.0, "r0": 0.0, "aVRToManualLead": 0.0, "x": 0.0, "inertia": 0.0, "coolantCondition": 0.0, "manualToAVR": 0.0, "r": 0.0, "maxU": 0.0, "xQuadSync": 0.0, "qPercent": 0.0, "xQuadSubtrans": 0.0, "minU": 0.0, "aVRToManualLag": 0.0, "baseQ": 0.0, "xDirectTrans": 0.0, "x2": 0.0, "xDirectSubtrans": 0.0}
+    _enums = {"operatingMode": "SynchronousMachineOperatingMode", "type": "SynchronousMachineType", "coolantType": "CoolantType"}
+    _refs = ["genLoad0", "HydroPump", "GeneratingUnit", "govHydro10", "PrimeMovers", "InitialReactiveCapabilityCurve", "genEquiv0", "ReactiveCapabilityCurves"]
+    _many_refs = ["genLoad0", "govHydro10", "PrimeMovers", "genEquiv0", "ReactiveCapabilityCurves"]
 
     def getgenLoad0(self):
         

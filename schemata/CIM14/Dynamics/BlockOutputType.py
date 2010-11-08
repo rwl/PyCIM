@@ -18,8 +18,8 @@ from CIM14.IEC61970.Core.IdentifiedObject import IdentifiedObject
 
 class BlockOutputType(IdentifiedObject):
 
-    def __init__(self, metaBlockOutput0=None, slotOutput0=None, **kw_args):
-        """Initializes a new 'BlockOutputType' instance.
+    def __init__(self, metaBlockOutput0=None, slotOutput0=None, *args, **kw_args):
+        """Initialises a new 'BlockOutputType' instance.
 
         @param metaBlockOutput0:
         @param slotOutput0:
@@ -30,7 +30,14 @@ class BlockOutputType(IdentifiedObject):
         self._slotOutput0 = []
         self.slotOutput0 = [] if slotOutput0 is None else slotOutput0
 
-        super(BlockOutputType, self).__init__(**kw_args)
+        super(BlockOutputType, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["metaBlockOutput0", "slotOutput0"]
+    _many_refs = ["metaBlockOutput0", "slotOutput0"]
 
     def getmetaBlockOutput0(self):
         

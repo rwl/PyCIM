@@ -20,8 +20,8 @@ class Quality61850(Element):
     """Quality flags in this class are as defined in IEC 61850, except for estimatorReplaced, which has been included in this class for convenience.
     """
 
-    def __init__(self, validity='QUESTIONABLE', source='SUBSTITUTED', failure=False, suspect=False, oldData=False, badReference=False, test=False, outOfRange=False, estimatorReplaced=False, oscillatory=False, operatorBlocked=False, overFlow=False, **kw_args):
-        """Initializes a new 'Quality61850' instance.
+    def __init__(self, validity="QUESTIONABLE", source="SUBSTITUTED", failure=False, suspect=False, oldData=False, badReference=False, test=False, outOfRange=False, estimatorReplaced=False, oscillatory=False, operatorBlocked=False, overFlow=False, *args, **kw_args):
+        """Initialises a new 'Quality61850' instance.
 
         @param validity: Validity of the measurement value. Values are: "QUESTIONABLE", "INVALID", "GOOD"
         @param source: Source gives information related to the origin of a value. The value may be acquired from the process, defaulted or substituted. Values are: "SUBSTITUTED", "DEFAULTED", "PROCESS"
@@ -36,10 +36,10 @@ class Quality61850(Element):
         @param operatorBlocked: Measurement value is blocked and hence unavailable for transmission. 
         @param overFlow: Measurement value is beyond the capability of being  represented properly. For example, a counter value overflows from maximum count back to a value of zero. 
         """
-        #: Validity of the measurement value.Values are: "QUESTIONABLE", "INVALID", "GOOD"
+        #: Validity of the measurement value. Values are: "QUESTIONABLE", "INVALID", "GOOD"
         self.validity = validity
 
-        #: Source gives information related to the origin of a value. The value may be acquired from the process, defaulted or substituted.Values are: "SUBSTITUTED", "DEFAULTED", "PROCESS"
+        #: Source gives information related to the origin of a value. The value may be acquired from the process, defaulted or substituted. Values are: "SUBSTITUTED", "DEFAULTED", "PROCESS"
         self.source = source
 
         #: This identifier indicates that a supervision function has detected an internal or external failure, e.g. communication failure.
@@ -72,5 +72,12 @@ class Quality61850(Element):
         #: Measurement value is beyond the capability of being  represented properly. For example, a counter value overflows from maximum count back to a value of zero.
         self.overFlow = overFlow
 
-        super(Quality61850, self).__init__(**kw_args)
+        super(Quality61850, self).__init__(*args, **kw_args)
+
+    _attrs = ["validity", "source", "failure", "suspect", "oldData", "badReference", "test", "outOfRange", "estimatorReplaced", "oscillatory", "operatorBlocked", "overFlow"]
+    _attr_types = {"validity": str, "source": str, "failure": bool, "suspect": bool, "oldData": bool, "badReference": bool, "test": bool, "outOfRange": bool, "estimatorReplaced": bool, "oscillatory": bool, "operatorBlocked": bool, "overFlow": bool}
+    _defaults = {"validity": "QUESTIONABLE", "source": "SUBSTITUTED", "failure": False, "suspect": False, "oldData": False, "badReference": False, "test": False, "outOfRange": False, "estimatorReplaced": False, "oscillatory": False, "operatorBlocked": False, "overFlow": False}
+    _enums = {"validity": "Validity", "source": "Source"}
+    _refs = []
+    _many_refs = []
 

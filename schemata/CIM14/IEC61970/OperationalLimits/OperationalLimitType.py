@@ -20,14 +20,14 @@ class OperationalLimitType(IdentifiedObject):
     """A type of limit.  The meaning of a specific limit is described in this class.
     """
 
-    def __init__(self, direction='low', acceptableDuration=0.0, OperationalLimit=None, **kw_args):
-        """Initializes a new 'OperationalLimitType' instance.
+    def __init__(self, direction="low", acceptableDuration=0.0, OperationalLimit=None, *args, **kw_args):
+        """Initialises a new 'OperationalLimitType' instance.
 
         @param direction: The direction of the limit. Values are: "low", "absoluteValue", "high"
         @param acceptableDuration: The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed. 
         @param OperationalLimit: The operational limits associated with this type of limit.
         """
-        #: The direction of the limit.Values are: "low", "absoluteValue", "high"
+        #: The direction of the limit. Values are: "low", "absoluteValue", "high"
         self.direction = direction
 
         #: The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed.
@@ -36,7 +36,14 @@ class OperationalLimitType(IdentifiedObject):
         self._OperationalLimit = []
         self.OperationalLimit = [] if OperationalLimit is None else OperationalLimit
 
-        super(OperationalLimitType, self).__init__(**kw_args)
+        super(OperationalLimitType, self).__init__(*args, **kw_args)
+
+    _attrs = ["direction", "acceptableDuration"]
+    _attr_types = {"direction": str, "acceptableDuration": float}
+    _defaults = {"direction": "low", "acceptableDuration": 0.0}
+    _enums = {"direction": "OperationalLimitDirectionKind"}
+    _refs = ["OperationalLimit"]
+    _many_refs = ["OperationalLimit"]
 
     def getOperationalLimit(self):
         """The operational limits associated with this type of limit.

@@ -20,8 +20,8 @@ class PowerSystemResource(IdentifiedObject):
     """A power system resource can be an item of equipment such as a Switch, an EquipmentContainer containing many individual items of equipment such as a  Substation, or an organisational entity such as Company or SubControlArea.  This provides for the nesting of collections of PowerSystemResources within other PowerSystemResources. For example, a Switch could be a member of a Substation and a Substation could be a member of a division of a Company.
     """
 
-    def __init__(self, Location=None, Assets=None, PsrLists=None, Measurements=None, OperatingShare=None, OutageSchedule=None, ReportingGroup=None, Block=None, PSRType=None, **kw_args):
-        """Initializes a new 'PowerSystemResource' instance.
+    def __init__(self, Location=None, Assets=None, PsrLists=None, Measurements=None, OperatingShare=None, OutageSchedule=None, ReportingGroup=None, Block=None, PSRType=None, *args, **kw_args):
+        """Initialises a new 'PowerSystemResource' instance.
 
         @param Location: Location of this power system resource.
         @param Assets: All assets represented by this power system resource. For example, multiple conductor assets are electrically modelled as a single AC line segment.
@@ -60,7 +60,14 @@ class PowerSystemResource(IdentifiedObject):
         self._PSRType = None
         self.PSRType = PSRType
 
-        super(PowerSystemResource, self).__init__(**kw_args)
+        super(PowerSystemResource, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["Location", "Assets", "PsrLists", "Measurements", "OperatingShare", "OutageSchedule", "ReportingGroup", "Block", "PSRType"]
+    _many_refs = ["Assets", "PsrLists", "Measurements", "OperatingShare", "ReportingGroup", "Block"]
 
     def getLocation(self):
         """Location of this power system resource.

@@ -20,9 +20,16 @@ class ExcELIN2(ExcitationSystem):
     """Detailed Excitation System Model - ELIN (VATECH)
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'ExcELIN2' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'ExcELIN2' instance.
 
         """
-        super(ExcELIN2, self).__init__(**kw_args)
+        super(ExcELIN2, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

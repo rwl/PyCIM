@@ -20,8 +20,8 @@ class PerLengthPhaseImpedance(IdentifiedObject):
     """Impedance and admittance parameters per unit length for n-wire unbalanced lines, in matrix form.
     """
 
-    def __init__(self, conductorCount=0, ConductorSegments=None, PhaseImpedanceData=None, **kw_args):
-        """Initializes a new 'PerLengthPhaseImpedance' instance.
+    def __init__(self, conductorCount=0, ConductorSegments=None, PhaseImpedanceData=None, *args, **kw_args):
+        """Initialises a new 'PerLengthPhaseImpedance' instance.
 
         @param conductorCount: Number of phase, neutral, and other wires retained. Constrains the number of matrix elements and the phase codes that can be used with this matrix. 
         @param ConductorSegments: All conductor segments described by this phase impedance.
@@ -36,7 +36,14 @@ class PerLengthPhaseImpedance(IdentifiedObject):
         self._PhaseImpedanceData = []
         self.PhaseImpedanceData = [] if PhaseImpedanceData is None else PhaseImpedanceData
 
-        super(PerLengthPhaseImpedance, self).__init__(**kw_args)
+        super(PerLengthPhaseImpedance, self).__init__(*args, **kw_args)
+
+    _attrs = ["conductorCount"]
+    _attr_types = {"conductorCount": int}
+    _defaults = {"conductorCount": 0}
+    _enums = {}
+    _refs = ["ConductorSegments", "PhaseImpedanceData"]
+    _many_refs = ["ConductorSegments", "PhaseImpedanceData"]
 
     def getConductorSegments(self):
         """All conductor segments described by this phase impedance.

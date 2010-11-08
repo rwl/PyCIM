@@ -20,8 +20,8 @@ class Shift(IdentifiedObject):
     """Generally referring to a period of operation or work performed. Whether shift is open/closed can be derived from attributes 'activiryInterval.start' and 'activityInterval.end'. The grand total for receipts (i.e., cumulative total of all actual receipted amounts during this shift; bankable + non-bankable; excludes rounding error totals) can be derived from Receipt attributes: =sum(Receipt.receiptAmount) ; includes bankable and non-bankable receipts. Must also reconcile against: =sum(receiptsGrandTotalBankable + receiptsGrandTotalNonBankable). Must also reconcile against ReceiptSummary: =sum(ReceiptSummary.receiptsTotal). The attributes with 'GrandTotal' defined in this class may need to be used when the source data is periodically flushed from the system and then these cannot be derived.
     """
 
-    def __init__(self, receiptsGrandTotalNonBankable=0.0, receiptsGrandTotalBankable=0.0, receiptsGrandTotalRounding=0.0, transactionsGrandTotal=0.0, transactionsGrandTotalRounding=0.0, activityInterval=None, **kw_args):
-        """Initializes a new 'Shift' instance.
+    def __init__(self, receiptsGrandTotalNonBankable=0.0, receiptsGrandTotalBankable=0.0, receiptsGrandTotalRounding=0.0, transactionsGrandTotal=0.0, transactionsGrandTotalRounding=0.0, activityInterval=None, *args, **kw_args):
+        """Initialises a new 'Shift' instance.
 
         @param receiptsGrandTotalNonBankable: Total of amounts receipted during this shift that cannot be manually banked (card payments for example). Values are obtained from Receipt attributes: =sum(Receipt.receiptAmount) for all Receipt.bankable = false. 
         @param receiptsGrandTotalBankable: Total of amounts receipted during this shift that can be manually banked (cash and cheques for example). Values are obtained from Receipt attributes: =sum(Receipt.receiptAmount) for all Receipt.bankable = true. 
@@ -47,7 +47,14 @@ class Shift(IdentifiedObject):
 
         self.activityInterval = activityInterval
 
-        super(Shift, self).__init__(**kw_args)
+        super(Shift, self).__init__(*args, **kw_args)
+
+    _attrs = ["receiptsGrandTotalNonBankable", "receiptsGrandTotalBankable", "receiptsGrandTotalRounding", "transactionsGrandTotal", "transactionsGrandTotalRounding"]
+    _attr_types = {"receiptsGrandTotalNonBankable": float, "receiptsGrandTotalBankable": float, "receiptsGrandTotalRounding": float, "transactionsGrandTotal": float, "transactionsGrandTotalRounding": float}
+    _defaults = {"receiptsGrandTotalNonBankable": 0.0, "receiptsGrandTotalBankable": 0.0, "receiptsGrandTotalRounding": 0.0, "transactionsGrandTotal": 0.0, "transactionsGrandTotalRounding": 0.0}
+    _enums = {}
+    _refs = ["activityInterval"]
+    _many_refs = []
 
     # Interval for activity of this shift.
     activityInterval = None

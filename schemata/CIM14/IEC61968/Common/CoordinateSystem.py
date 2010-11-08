@@ -20,8 +20,8 @@ class CoordinateSystem(Element):
     """Coordinate reference system.
     """
 
-    def __init__(self, name='', Location=None, PositionPoints=None, **kw_args):
-        """Initializes a new 'CoordinateSystem' instance.
+    def __init__(self, name='', Location=None, PositionPoints=None, *args, **kw_args):
+        """Initialises a new 'CoordinateSystem' instance.
 
         @param name: Name of this coordinate system. 
         @param Location: Location described by using position points in this coordinate system.
@@ -36,7 +36,14 @@ class CoordinateSystem(Element):
         self._PositionPoints = []
         self.PositionPoints = [] if PositionPoints is None else PositionPoints
 
-        super(CoordinateSystem, self).__init__(**kw_args)
+        super(CoordinateSystem, self).__init__(*args, **kw_args)
+
+    _attrs = ["name"]
+    _attr_types = {"name": str}
+    _defaults = {"name": ''}
+    _enums = {}
+    _refs = ["Location", "PositionPoints"]
+    _many_refs = ["PositionPoints"]
 
     def getLocation(self):
         """Location described by using position points in this coordinate system.

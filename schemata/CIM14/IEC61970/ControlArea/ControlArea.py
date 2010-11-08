@@ -20,8 +20,8 @@ class ControlArea(PowerSystemResource):
     """A <b>control area </b>is a grouping of <b>generating units</b> and/or loads and a cutset of tie lines (as <b>terminals</b>) which may be used for a variety of purposes including automatic generation control, powerflow solution area interchange control specification, and input to load forecasting.   Note that any number of overlapping control area specifications can be superimposed on the physical model.
     """
 
-    def __init__(self, type='Interchange', netInterchange=0.0, pTolerance=0.0, TieFlow=None, EnergyArea=None, ControlAreaGeneratingUnit=None, **kw_args):
-        """Initializes a new 'ControlArea' instance.
+    def __init__(self, type="Interchange", netInterchange=0.0, pTolerance=0.0, TieFlow=None, EnergyArea=None, ControlAreaGeneratingUnit=None, *args, **kw_args):
+        """Initialises a new 'ControlArea' instance.
 
         @param type: The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes. Values are: "Interchange", "Forecast", "AGC"
         @param netInterchange: The specified positive net interchange into the control area. 
@@ -30,7 +30,7 @@ class ControlArea(PowerSystemResource):
         @param EnergyArea: The energy area that is forecast from this control area specification.
         @param ControlAreaGeneratingUnit: The generating unit specificaitons for the control area.
         """
-        #: The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.Values are: "Interchange", "Forecast", "AGC"
+        #: The type of control area defintion used to determine if this is used for automatic generation control, for planning interchange control, or other purposes. Values are: "Interchange", "Forecast", "AGC"
         self.type = type
 
         #: The specified positive net interchange into the control area.
@@ -48,7 +48,14 @@ class ControlArea(PowerSystemResource):
         self._ControlAreaGeneratingUnit = []
         self.ControlAreaGeneratingUnit = [] if ControlAreaGeneratingUnit is None else ControlAreaGeneratingUnit
 
-        super(ControlArea, self).__init__(**kw_args)
+        super(ControlArea, self).__init__(*args, **kw_args)
+
+    _attrs = ["type", "netInterchange", "pTolerance"]
+    _attr_types = {"type": str, "netInterchange": float, "pTolerance": float}
+    _defaults = {"type": "Interchange", "netInterchange": 0.0, "pTolerance": 0.0}
+    _enums = {"type": "ControlAreaTypeKind"}
+    _refs = ["TieFlow", "EnergyArea", "ControlAreaGeneratingUnit"]
+    _many_refs = ["TieFlow", "ControlAreaGeneratingUnit"]
 
     def getTieFlow(self):
         """The tie flows associated with the control area.

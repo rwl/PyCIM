@@ -20,8 +20,8 @@ class AuxiliaryAgreement(Agreement):
     """An ad-hoc auxiliary account agreement associated with a customer agreement, not part of the customer's account, but typically subject to formal agreement between customer and supplier (utility). Typically this is used to collect revenue owing by the customer for other services or arrears accrued with the utility for other services. It is typically linked to a prepaid token purchase transaction, thus forcing the customer to make a payment towards settlement of the auxiliary account balance whenever he needs to purchase a prepaid token for electricity. The present status of AuxiliaryAgreement can be defined in the context of the utility's business rules, for example: enabled, disabled, pending, over recovered, under recovered, written off, etc.
     """
 
-    def __init__(self, arrearsInterest=0.0, vendPortion=0.0, minAmount=0.0, auxPriorityCode='', subCategory='', auxRef='', auxCycle='', vendPortionArrear=0.0, payCycle='', fixedAmount=0.0, AuxiliaryAccounts=None, CustomerAgreement=None, **kw_args):
-        """Initializes a new 'AuxiliaryAgreement' instance.
+    def __init__(self, arrearsInterest=0.0, vendPortion=0.0, minAmount=0.0, auxPriorityCode='', subCategory='', auxRef='', auxCycle='', vendPortionArrear=0.0, payCycle='', fixedAmount=0.0, AuxiliaryAccounts=None, CustomerAgreement=None, *args, **kw_args):
+        """Initialises a new 'AuxiliaryAgreement' instance.
 
         @param arrearsInterest: The interest per annum to be charged prorata on AuxiliaryAccount.dueArrears at the end of each payCycle. 
         @param vendPortion: The percentage of the transaction amount that must be collected from each vending transaction towards settlement of this AuxiliaryAgreement when payments are not in arrears. Note that there may be multiple tokens vended per vending transaction, but this is not relevant. 
@@ -72,7 +72,14 @@ class AuxiliaryAgreement(Agreement):
         self._CustomerAgreement = None
         self.CustomerAgreement = CustomerAgreement
 
-        super(AuxiliaryAgreement, self).__init__(**kw_args)
+        super(AuxiliaryAgreement, self).__init__(*args, **kw_args)
+
+    _attrs = ["arrearsInterest", "vendPortion", "minAmount", "auxPriorityCode", "subCategory", "auxRef", "auxCycle", "vendPortionArrear", "payCycle", "fixedAmount"]
+    _attr_types = {"arrearsInterest": float, "vendPortion": float, "minAmount": float, "auxPriorityCode": str, "subCategory": str, "auxRef": str, "auxCycle": str, "vendPortionArrear": float, "payCycle": str, "fixedAmount": float}
+    _defaults = {"arrearsInterest": 0.0, "vendPortion": 0.0, "minAmount": 0.0, "auxPriorityCode": '', "subCategory": '', "auxRef": '', "auxCycle": '', "vendPortionArrear": 0.0, "payCycle": '', "fixedAmount": 0.0}
+    _enums = {}
+    _refs = ["AuxiliaryAccounts", "CustomerAgreement"]
+    _many_refs = ["AuxiliaryAccounts"]
 
     def getAuxiliaryAccounts(self):
         """All auxiliary accounts regulated by this agreement.

@@ -20,8 +20,8 @@ class ToWindingSpec(IdentifiedObject):
     """For short-circuit tests, specifies the winding and tap for all short-circuited windings.  For open-circuit tests, specifies the winding, tap, induced voltage, and induced angle for any non-excited windings that were measured during the test. This won't apply if only the exciting current and no-load losses were measured.
     """
 
-    def __init__(self, voltage=0.0, phaseShift=0.0, toTapStep=0, ToWinding=None, OpenCircuitTests=None, ShortCircuitTests=None, **kw_args):
-        """Initializes a new 'ToWindingSpec' instance.
+    def __init__(self, voltage=0.0, phaseShift=0.0, toTapStep=0, ToWinding=None, OpenCircuitTests=None, ShortCircuitTests=None, *args, **kw_args):
+        """Initialises a new 'ToWindingSpec' instance.
 
         @param voltage: (if open-circuit test) Voltage measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited. 
         @param phaseShift: (if open-circuit test) Phase shift measured at the open-circuited 'to' winding, with the 'from' winding set to the 'from' winding's rated voltage and all other windings open-circuited. 
@@ -48,7 +48,14 @@ class ToWindingSpec(IdentifiedObject):
         self._ShortCircuitTests = []
         self.ShortCircuitTests = [] if ShortCircuitTests is None else ShortCircuitTests
 
-        super(ToWindingSpec, self).__init__(**kw_args)
+        super(ToWindingSpec, self).__init__(*args, **kw_args)
+
+    _attrs = ["voltage", "phaseShift", "toTapStep"]
+    _attr_types = {"voltage": float, "phaseShift": float, "toTapStep": int}
+    _defaults = {"voltage": 0.0, "phaseShift": 0.0, "toTapStep": 0}
+    _enums = {}
+    _refs = ["ToWinding", "OpenCircuitTests", "ShortCircuitTests"]
+    _many_refs = ["OpenCircuitTests", "ShortCircuitTests"]
 
     def getToWinding(self):
         """Winding short-circuited in a short-circuit test, or measured for induced voltage and angle in an open-circuit test.

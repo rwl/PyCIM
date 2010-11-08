@@ -20,8 +20,8 @@ class BlockType(IdentifiedObject):
     """This is the kind of a block used to specify what kind of blocks could fit into a particular slot.    For example, only blocks of type 'pss' would fit into a 'pss' type block.  Though a cross compound generator configuration would possibly have multple pss blocks playing specific roles such as pss1 and pss2..
     """
 
-    def __init__(self, slot0=None, metaBlock0=None, **kw_args):
-        """Initializes a new 'BlockType' instance.
+    def __init__(self, slot0=None, metaBlock0=None, *args, **kw_args):
+        """Initialises a new 'BlockType' instance.
 
         @param slot0:
         @param metaBlock0:
@@ -32,7 +32,14 @@ class BlockType(IdentifiedObject):
         self._metaBlock0 = []
         self.metaBlock0 = [] if metaBlock0 is None else metaBlock0
 
-        super(BlockType, self).__init__(**kw_args)
+        super(BlockType, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["slot0", "metaBlock0"]
+    _many_refs = ["slot0", "metaBlock0"]
 
     def getslot0(self):
         

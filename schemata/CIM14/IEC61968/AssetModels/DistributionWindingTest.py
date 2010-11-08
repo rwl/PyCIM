@@ -20,8 +20,8 @@ class DistributionWindingTest(IdentifiedObject):
     """Test results for one or more transformer windings. These may include short-circuit or open-circuit (excitation) tests. Short-circuit test results include load losses and leakage impedances. Open-circuit test results may include no-load losses, exciting current, phase shifts, and induced voltage. For three-phase windings, the excitation can be positive sequence (the default) or zero sequence.
     """
 
-    def __init__(self, fromTapStep=0, FromWinding=None, **kw_args):
-        """Initializes a new 'DistributionWindingTest' instance.
+    def __init__(self, fromTapStep=0, FromWinding=None, *args, **kw_args):
+        """Initialises a new 'DistributionWindingTest' instance.
 
         @param fromTapStep: Tap step number for the 'from' winding of the test pair. 
         @param FromWinding: Winding that voltage or current is applied to during the test.
@@ -32,7 +32,14 @@ class DistributionWindingTest(IdentifiedObject):
         self._FromWinding = None
         self.FromWinding = FromWinding
 
-        super(DistributionWindingTest, self).__init__(**kw_args)
+        super(DistributionWindingTest, self).__init__(*args, **kw_args)
+
+    _attrs = ["fromTapStep"]
+    _attr_types = {"fromTapStep": int}
+    _defaults = {"fromTapStep": 0}
+    _enums = {}
+    _refs = ["FromWinding"]
+    _many_refs = []
 
     def getFromWinding(self):
         """Winding that voltage or current is applied to during the test.

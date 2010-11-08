@@ -20,13 +20,20 @@ class MotorSync(SynchronousMachine):
     """A large industrial motor or group of similar motors.  They are represented as <b>generators with negative Pgen</b> in the static (power flow) data.
     """
 
-    def __init__(self, synchronousMotorType='salientPole', **kw_args):
-        """Initializes a new 'MotorSync' instance.
+    def __init__(self, synchronousMotorType="salientPole", *args, **kw_args):
+        """Initialises a new 'MotorSync' instance.
 
         @param synchronousMotorType: The type of synchronous motor, such as round rotor or salient pole. Values are: "salientPole", "roundRotor"
         """
-        #: The type of synchronous motor, such as round rotor or salient pole.Values are: "salientPole", "roundRotor"
+        #: The type of synchronous motor, such as round rotor or salient pole. Values are: "salientPole", "roundRotor"
         self.synchronousMotorType = synchronousMotorType
 
-        super(MotorSync, self).__init__(**kw_args)
+        super(MotorSync, self).__init__(*args, **kw_args)
+
+    _attrs = ["synchronousMotorType"]
+    _attr_types = {"synchronousMotorType": str}
+    _defaults = {"synchronousMotorType": "salientPole"}
+    _enums = {"synchronousMotorType": "SynchronousMotorType"}
+    _refs = []
+    _many_refs = []
 

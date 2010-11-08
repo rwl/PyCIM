@@ -20,8 +20,8 @@ class ConformLoadGroup(LoadGroup):
     """A group of loads conforming to an allocation pattern.
     """
 
-    def __init__(self, ConformLoadSchedules=None, EnergyConsumers=None, **kw_args):
-        """Initializes a new 'ConformLoadGroup' instance.
+    def __init__(self, ConformLoadSchedules=None, EnergyConsumers=None, *args, **kw_args):
+        """Initialises a new 'ConformLoadGroup' instance.
 
         @param ConformLoadSchedules: The ConformLoadSchedules in the ConformLoadGroup.
         @param EnergyConsumers: Conform loads assigned to this ConformLoadGroup.
@@ -32,7 +32,14 @@ class ConformLoadGroup(LoadGroup):
         self._EnergyConsumers = []
         self.EnergyConsumers = [] if EnergyConsumers is None else EnergyConsumers
 
-        super(ConformLoadGroup, self).__init__(**kw_args)
+        super(ConformLoadGroup, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["ConformLoadSchedules", "EnergyConsumers"]
+    _many_refs = ["ConformLoadSchedules", "EnergyConsumers"]
 
     def getConformLoadSchedules(self):
         """The ConformLoadSchedules in the ConformLoadGroup.

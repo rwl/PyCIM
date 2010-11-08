@@ -20,8 +20,8 @@ class ShuntCompensator(RegulatingCondEq):
     """A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  A negative value for reactivePerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied.
     """
 
-    def __init__(self, maxU=0.0, reactivePerSection=0.0, aVRDelay=0.0, voltageSensitivity=0.0, normalSections=0, g0PerSection=0.0, maximumSections=0, bPerSection=0.0, nomQ=0.0, switchOnCount=0, minU=0.0, b0PerSection=0.0, switchOnDate='', nomU=0.0, gPerSection=0.0, SvShuntCompensatorSections=None, **kw_args):
-        """Initializes a new 'ShuntCompensator' instance.
+    def __init__(self, maxU=0.0, reactivePerSection=0.0, aVRDelay=0.0, voltageSensitivity=0.0, normalSections=0, g0PerSection=0.0, maximumSections=0, bPerSection=0.0, nomQ=0.0, switchOnCount=0, minU=0.0, b0PerSection=0.0, switchOnDate='', nomU=0.0, gPerSection=0.0, SvShuntCompensatorSections=None, *args, **kw_args):
+        """Initialises a new 'ShuntCompensator' instance.
 
         @param maxU: The maximum voltage at which the capacitor bank should operate. 
         @param reactivePerSection: For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage. 
@@ -88,7 +88,14 @@ class ShuntCompensator(RegulatingCondEq):
         self._SvShuntCompensatorSections = None
         self.SvShuntCompensatorSections = SvShuntCompensatorSections
 
-        super(ShuntCompensator, self).__init__(**kw_args)
+        super(ShuntCompensator, self).__init__(*args, **kw_args)
+
+    _attrs = ["maxU", "reactivePerSection", "aVRDelay", "voltageSensitivity", "normalSections", "g0PerSection", "maximumSections", "bPerSection", "nomQ", "switchOnCount", "minU", "b0PerSection", "switchOnDate", "nomU", "gPerSection"]
+    _attr_types = {"maxU": float, "reactivePerSection": float, "aVRDelay": float, "voltageSensitivity": float, "normalSections": int, "g0PerSection": float, "maximumSections": int, "bPerSection": float, "nomQ": float, "switchOnCount": int, "minU": float, "b0PerSection": float, "switchOnDate": str, "nomU": float, "gPerSection": float}
+    _defaults = {"maxU": 0.0, "reactivePerSection": 0.0, "aVRDelay": 0.0, "voltageSensitivity": 0.0, "normalSections": 0, "g0PerSection": 0.0, "maximumSections": 0, "bPerSection": 0.0, "nomQ": 0.0, "switchOnCount": 0, "minU": 0.0, "b0PerSection": 0.0, "switchOnDate": '', "nomU": 0.0, "gPerSection": 0.0}
+    _enums = {}
+    _refs = ["SvShuntCompensatorSections"]
+    _many_refs = []
 
     def getSvShuntCompensatorSections(self):
         """The state for the number of shunt compensator sections in service.

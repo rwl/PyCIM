@@ -20,8 +20,8 @@ class UserAttribute(Element):
     """Generic name-value pair class, with optional sequence number and units for value; can be used to model parts of information exchange when concrete types are not known in advance.
     """
 
-    def __init__(self, value='', sequenceNumber=0, name='', PropertyAssets=None, Transaction=None, RatingAssets=None, **kw_args):
-        """Initializes a new 'UserAttribute' instance.
+    def __init__(self, value='', sequenceNumber=0, name='', PropertyAssets=None, Transaction=None, RatingAssets=None, *args, **kw_args):
+        """Initialises a new 'UserAttribute' instance.
 
         @param value: Value of an attribute, including unit information. 
         @param sequenceNumber: Sequence number for this attribute in a list of attributes. 
@@ -48,7 +48,14 @@ class UserAttribute(Element):
         self._RatingAssets = []
         self.RatingAssets = [] if RatingAssets is None else RatingAssets
 
-        super(UserAttribute, self).__init__(**kw_args)
+        super(UserAttribute, self).__init__(*args, **kw_args)
+
+    _attrs = ["value", "sequenceNumber", "name"]
+    _attr_types = {"value": str, "sequenceNumber": int, "name": str}
+    _defaults = {"value": '', "sequenceNumber": 0, "name": ''}
+    _enums = {}
+    _refs = ["PropertyAssets", "Transaction", "RatingAssets"]
+    _many_refs = ["PropertyAssets", "RatingAssets"]
 
     def getPropertyAssets(self):
         

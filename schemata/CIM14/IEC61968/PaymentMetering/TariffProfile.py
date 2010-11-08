@@ -20,8 +20,8 @@ class TariffProfile(Document):
     """A schedule of charges; structure associated with Tariff that allows the definition of complex tarif structures such as step and time of use when used in conjunction with TimeTariffInterval and Charge. Inherited 'status.value' is defined in the context of the utility's business rules, for example: active, inactive, etc.
     """
 
-    def __init__(self, tariffCycle='', ConsumptionTariffIntervals=None, TimeTariffIntervals=None, Tariffs=None, **kw_args):
-        """Initializes a new 'TariffProfile' instance.
+    def __init__(self, tariffCycle='', ConsumptionTariffIntervals=None, TimeTariffIntervals=None, Tariffs=None, *args, **kw_args):
+        """Initialises a new 'TariffProfile' instance.
 
         @param tariffCycle: The frequency at which the tariff charge schedule is repeated Examples are: once off on a specified date and time; hourly; daily; weekly; monthly; 3-monthly; 6-monthly; 12-monthly; etc. At the end of each cycle, the business rules are reset to start from the beginning again. 
         @param ConsumptionTariffIntervals: All consumption tariff intervals used to define this tariff profile.
@@ -40,7 +40,14 @@ class TariffProfile(Document):
         self._Tariffs = []
         self.Tariffs = [] if Tariffs is None else Tariffs
 
-        super(TariffProfile, self).__init__(**kw_args)
+        super(TariffProfile, self).__init__(*args, **kw_args)
+
+    _attrs = ["tariffCycle"]
+    _attr_types = {"tariffCycle": str}
+    _defaults = {"tariffCycle": ''}
+    _enums = {}
+    _refs = ["ConsumptionTariffIntervals", "TimeTariffIntervals", "Tariffs"]
+    _many_refs = ["ConsumptionTariffIntervals", "TimeTariffIntervals", "Tariffs"]
 
     def getConsumptionTariffIntervals(self):
         """All consumption tariff intervals used to define this tariff profile.

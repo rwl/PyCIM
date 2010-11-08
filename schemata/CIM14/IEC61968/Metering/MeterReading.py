@@ -20,8 +20,8 @@ class MeterReading(IdentifiedObject):
     """Set of values obtained from the meter.
     """
 
-    def __init__(self, IntervalBlocks=None, CustomerAgreement=None, MeterAsset=None, EndDeviceEvents=None, Readings=None, ServiceDeliveryPoint=None, valuesInterval=None, **kw_args):
-        """Initializes a new 'MeterReading' instance.
+    def __init__(self, IntervalBlocks=None, CustomerAgreement=None, MeterAsset=None, EndDeviceEvents=None, Readings=None, ServiceDeliveryPoint=None, valuesInterval=None, *args, **kw_args):
+        """Initialises a new 'MeterReading' instance.
 
         @param IntervalBlocks: All interval blocks contained in this meter reading.
         @param CustomerAgreement: (could be deprecated in the future) Customer agreement for this meter reading.
@@ -51,7 +51,14 @@ class MeterReading(IdentifiedObject):
 
         self.valuesInterval = valuesInterval
 
-        super(MeterReading, self).__init__(**kw_args)
+        super(MeterReading, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["IntervalBlocks", "CustomerAgreement", "MeterAsset", "EndDeviceEvents", "Readings", "ServiceDeliveryPoint", "valuesInterval"]
+    _many_refs = ["IntervalBlocks", "EndDeviceEvents", "Readings"]
 
     def getIntervalBlocks(self):
         """All interval blocks contained in this meter reading.

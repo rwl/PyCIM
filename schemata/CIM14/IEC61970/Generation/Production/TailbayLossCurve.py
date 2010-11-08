@@ -20,15 +20,22 @@ class TailbayLossCurve(Curve):
     """Relationship between tailbay head loss hight (y-axis) and the total discharge into the power station's tailbay volume per time unit (x-axis) . There could be more than one curve depending on the level of the tailbay reservoir or river level
     """
 
-    def __init__(self, HydroGeneratingUnit=None, **kw_args):
-        """Initializes a new 'TailbayLossCurve' instance.
+    def __init__(self, HydroGeneratingUnit=None, *args, **kw_args):
+        """Initialises a new 'TailbayLossCurve' instance.
 
         @param HydroGeneratingUnit: A hydro generating unit has a tailbay loss curve
         """
         self._HydroGeneratingUnit = None
         self.HydroGeneratingUnit = HydroGeneratingUnit
 
-        super(TailbayLossCurve, self).__init__(**kw_args)
+        super(TailbayLossCurve, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["HydroGeneratingUnit"]
+    _many_refs = []
 
     def getHydroGeneratingUnit(self):
         """A hydro generating unit has a tailbay loss curve

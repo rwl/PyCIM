@@ -20,15 +20,15 @@ class Work(Document):
     """Document used to request, initiate, track and record work. This is synonymous with Work Breakdown Structure (WBS), which is traversed through the (currently informative) recursive association of Work. Note that the work name is equal to the WBS name, which is given in the inherited 'name' attribute.
     """
 
-    def __init__(self, kind='construction', priority='', requestDateTime='', Customers=None, **kw_args):
-        """Initializes a new 'Work' instance.
+    def __init__(self, kind="construction", priority='', requestDateTime='', Customers=None, *args, **kw_args):
+        """Initialises a new 'Work' instance.
 
         @param kind: Kind of work. Values are: "construction", "maintenance", "reconnect", "meter", "service", "disconnect", "inspection", "other"
         @param priority: Priority of work. 
         @param requestDateTime: Date and time work was requested. 
         @param Customers: All the customers for which this work is performed.
         """
-        #: Kind of work.Values are: "construction", "maintenance", "reconnect", "meter", "service", "disconnect", "inspection", "other"
+        #: Kind of work. Values are: "construction", "maintenance", "reconnect", "meter", "service", "disconnect", "inspection", "other"
         self.kind = kind
 
         #: Priority of work.
@@ -40,7 +40,14 @@ class Work(Document):
         self._Customers = []
         self.Customers = [] if Customers is None else Customers
 
-        super(Work, self).__init__(**kw_args)
+        super(Work, self).__init__(*args, **kw_args)
+
+    _attrs = ["kind", "priority", "requestDateTime"]
+    _attr_types = {"kind": str, "priority": str, "requestDateTime": str}
+    _defaults = {"kind": "construction", "priority": '', "requestDateTime": ''}
+    _enums = {"kind": "WorkKind"}
+    _refs = ["Customers"]
+    _many_refs = ["Customers"]
 
     def getCustomers(self):
         """All the customers for which this work is performed.

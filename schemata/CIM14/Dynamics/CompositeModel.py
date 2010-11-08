@@ -18,15 +18,22 @@ from CIM14.Element import Element
 
 class CompositeModel(Element):
 
-    def __init__(self, slotReference0=None, **kw_args):
-        """Initializes a new 'CompositeModel' instance.
+    def __init__(self, slotReference0=None, *args, **kw_args):
+        """Initialises a new 'CompositeModel' instance.
 
         @param slotReference0:
         """
         self._slotReference0 = []
         self.slotReference0 = [] if slotReference0 is None else slotReference0
 
-        super(CompositeModel, self).__init__(**kw_args)
+        super(CompositeModel, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["slotReference0"]
+    _many_refs = ["slotReference0"]
 
     def getslotReference0(self):
         

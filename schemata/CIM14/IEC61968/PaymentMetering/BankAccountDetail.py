@@ -20,8 +20,8 @@ class BankAccountDetail(Element):
     """Details of a bank account.
     """
 
-    def __init__(self, holderName='', accountNumber='', bankName='', branchCode='', holderID='', **kw_args):
-        """Initializes a new 'BankAccountDetail' instance.
+    def __init__(self, holderName='', accountNumber='', bankName='', branchCode='', holderID='', *args, **kw_args):
+        """Initialises a new 'BankAccountDetail' instance.
 
         @param holderName: Name of account holder. 
         @param accountNumber: Operational account reference number. 
@@ -44,5 +44,12 @@ class BankAccountDetail(Element):
         #: National identity number (or equivalent) of account holder.
         self.holderID = holderID
 
-        super(BankAccountDetail, self).__init__(**kw_args)
+        super(BankAccountDetail, self).__init__(*args, **kw_args)
+
+    _attrs = ["holderName", "accountNumber", "bankName", "branchCode", "holderID"]
+    _attr_types = {"holderName": str, "accountNumber": str, "bankName": str, "branchCode": str, "holderID": str}
+    _defaults = {"holderName": '', "accountNumber": '', "bankName": '', "branchCode": '', "holderID": ''}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class WindingInfo(IdentifiedObject):
     """Winding data.
     """
 
-    def __init__(self, connectionKind='Yn', r=0.0, phaseAngle=0, emergencyS=0.0, ratedU=0.0, insulationU=0.0, ratedS=0.0, sequenceNumber=0, shortTermS=0.0, Windings=None, WindingTests=None, TransformerInfo=None, ToWindingSpecs=None, **kw_args):
-        """Initializes a new 'WindingInfo' instance.
+    def __init__(self, connectionKind="Yn", r=0.0, phaseAngle=0, emergencyS=0.0, ratedU=0.0, insulationU=0.0, ratedS=0.0, sequenceNumber=0, shortTermS=0.0, Windings=None, WindingTests=None, TransformerInfo=None, ToWindingSpecs=None, *args, **kw_args):
+        """Initialises a new 'WindingInfo' instance.
 
         @param connectionKind: Kind of connection of this winding. Values are: "Yn", "Y", "D", "I", "Z", "A", "Zn"
         @param r: DC resistance of this winding. 
@@ -37,7 +37,7 @@ class WindingInfo(IdentifiedObject):
         @param TransformerInfo: Transformer data that this winding description is part of.
         @param ToWindingSpecs: Tap steps and induced voltage/angle measurements for tests in which this winding was not excited.
         """
-        #: Kind of connection of this winding.Values are: "Yn", "Y", "D", "I", "Z", "A", "Zn"
+        #: Kind of connection of this winding. Values are: "Yn", "Y", "D", "I", "Z", "A", "Zn"
         self.connectionKind = connectionKind
 
         #: DC resistance of this winding.
@@ -76,7 +76,14 @@ class WindingInfo(IdentifiedObject):
         self._ToWindingSpecs = []
         self.ToWindingSpecs = [] if ToWindingSpecs is None else ToWindingSpecs
 
-        super(WindingInfo, self).__init__(**kw_args)
+        super(WindingInfo, self).__init__(*args, **kw_args)
+
+    _attrs = ["connectionKind", "r", "phaseAngle", "emergencyS", "ratedU", "insulationU", "ratedS", "sequenceNumber", "shortTermS"]
+    _attr_types = {"connectionKind": str, "r": float, "phaseAngle": int, "emergencyS": float, "ratedU": float, "insulationU": float, "ratedS": float, "sequenceNumber": int, "shortTermS": float}
+    _defaults = {"connectionKind": "Yn", "r": 0.0, "phaseAngle": 0, "emergencyS": 0.0, "ratedU": 0.0, "insulationU": 0.0, "ratedS": 0.0, "sequenceNumber": 0, "shortTermS": 0.0}
+    _enums = {"connectionKind": "WindingConnection"}
+    _refs = ["Windings", "WindingTests", "TransformerInfo", "ToWindingSpecs"]
+    _many_refs = ["Windings", "WindingTests", "ToWindingSpecs"]
 
     def getWindings(self):
         """All windings described by this winding data.

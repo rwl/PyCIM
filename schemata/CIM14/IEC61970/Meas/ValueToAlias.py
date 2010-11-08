@@ -20,8 +20,8 @@ class ValueToAlias(IdentifiedObject):
     """Describes the translation of one particular value into a name, e.g. 1->'Open'
     """
 
-    def __init__(self, value=0, ValueAliasSet=None, **kw_args):
-        """Initializes a new 'ValueToAlias' instance.
+    def __init__(self, value=0, ValueAliasSet=None, *args, **kw_args):
+        """Initialises a new 'ValueToAlias' instance.
 
         @param value: The value that is mapped 
         @param ValueAliasSet: The ValueAliasSet having the ValueToAlias mappings
@@ -32,7 +32,14 @@ class ValueToAlias(IdentifiedObject):
         self._ValueAliasSet = None
         self.ValueAliasSet = ValueAliasSet
 
-        super(ValueToAlias, self).__init__(**kw_args)
+        super(ValueToAlias, self).__init__(*args, **kw_args)
+
+    _attrs = ["value"]
+    _attr_types = {"value": int}
+    _defaults = {"value": 0}
+    _enums = {}
+    _refs = ["ValueAliasSet"]
+    _many_refs = []
 
     def getValueAliasSet(self):
         """The ValueAliasSet having the ValueToAlias mappings

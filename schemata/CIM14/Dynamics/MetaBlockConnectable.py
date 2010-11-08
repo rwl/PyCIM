@@ -20,8 +20,8 @@ class MetaBlockConnectable(IdentifiedObject):
     """This is a source connection for a block input at the dynamics meta-data level.   The subtypes represent different ways to obtain the numbers.  Note that a block output is NOT derived from this class since block outputs can only be computed from references to other blocks via the BlockOutputReference class.
     """
 
-    def __init__(self, StandardControlBlock_MetaBlockStateReference=None, MetaBlockOutputReference=None, MetaBlockStateReference=None, BlockInputReference=None, StandardControlBlock_MetaBlockInputReference=None, StandardControlBlock_MetaBlockParameterReference=None, MetaBlockParameterReference=None, StandardControlBlock_MetaBlockOutputReference=None, MetaBlockInputReference=None, **kw_args):
-        """Initializes a new 'MetaBlockConnectable' instance.
+    def __init__(self, StandardControlBlock_MetaBlockStateReference=None, MetaBlockOutputReference=None, MetaBlockStateReference=None, BlockInputReference=None, StandardControlBlock_MetaBlockInputReference=None, StandardControlBlock_MetaBlockParameterReference=None, MetaBlockParameterReference=None, StandardControlBlock_MetaBlockOutputReference=None, MetaBlockInputReference=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockConnectable' instance.
 
         @param StandardControlBlock_MetaBlockStateReference:
         @param MetaBlockOutputReference:
@@ -60,7 +60,14 @@ class MetaBlockConnectable(IdentifiedObject):
         self._MetaBlockInputReference = []
         self.MetaBlockInputReference = [] if MetaBlockInputReference is None else MetaBlockInputReference
 
-        super(MetaBlockConnectable, self).__init__(**kw_args)
+        super(MetaBlockConnectable, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["StandardControlBlock_MetaBlockStateReference", "MetaBlockOutputReference", "MetaBlockStateReference", "BlockInputReference", "StandardControlBlock_MetaBlockInputReference", "StandardControlBlock_MetaBlockParameterReference", "MetaBlockParameterReference", "StandardControlBlock_MetaBlockOutputReference", "MetaBlockInputReference"]
+    _many_refs = ["StandardControlBlock_MetaBlockStateReference", "MetaBlockOutputReference", "MetaBlockStateReference", "BlockInputReference", "StandardControlBlock_MetaBlockInputReference", "StandardControlBlock_MetaBlockParameterReference", "MetaBlockParameterReference", "StandardControlBlock_MetaBlockOutputReference", "MetaBlockInputReference"]
 
     def getStandardControlBlock_MetaBlockStateReference(self):
         

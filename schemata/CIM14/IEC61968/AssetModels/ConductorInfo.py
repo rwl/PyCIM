@@ -20,8 +20,8 @@ class ConductorInfo(IdentifiedObject):
     """Conductor data.
     """
 
-    def __init__(self, usage='distribution', insulationMaterial='crosslinkedPolyethylene', insulated=False, insulationThickness=0.0, phaseCount=0, ConductorSegments=None, WireArrangements=None, **kw_args):
-        """Initializes a new 'ConductorInfo' instance.
+    def __init__(self, usage="distribution", insulationMaterial="crosslinkedPolyethylene", insulated=False, insulationThickness=0.0, phaseCount=0, ConductorSegments=None, WireArrangements=None, *args, **kw_args):
+        """Initialises a new 'ConductorInfo' instance.
 
         @param usage: Usage of this conductor. Values are: "distribution", "secondary", "transmission", "other"
         @param insulationMaterial: (if insulated conductor) Material used for insulation. Values are: "crosslinkedPolyethylene", "ozoneResistantRubber", "highMolecularWeightPolyethylene", "unbeltedPilc", "treeRetardantCrosslinkedPolyethylene", "butyl", "rubber", "asbestosAndVarnishedCambric", "beltedPilc", "varnishedDacronGlass", "other", "treeResistantHighMolecularWeightPolyethylene", "lowCapacitanceRubber", "varnishedCambricCloth", "highPressureFluidFilled", "ethylenePropyleneRubber", "siliconRubber", "oilPaper"
@@ -31,10 +31,10 @@ class ConductorInfo(IdentifiedObject):
         @param ConductorSegments: All conductor segments described by this conductor data.
         @param WireArrangements: All wire arrangements (single wires) that make this conductor.
         """
-        #: Usage of this conductor.Values are: "distribution", "secondary", "transmission", "other"
+        #: Usage of this conductor. Values are: "distribution", "secondary", "transmission", "other"
         self.usage = usage
 
-        #: (if insulated conductor) Material used for insulation.Values are: "crosslinkedPolyethylene", "ozoneResistantRubber", "highMolecularWeightPolyethylene", "unbeltedPilc", "treeRetardantCrosslinkedPolyethylene", "butyl", "rubber", "asbestosAndVarnishedCambric", "beltedPilc", "varnishedDacronGlass", "other", "treeResistantHighMolecularWeightPolyethylene", "lowCapacitanceRubber", "varnishedCambricCloth", "highPressureFluidFilled", "ethylenePropyleneRubber", "siliconRubber", "oilPaper"
+        #: (if insulated conductor) Material used for insulation. Values are: "crosslinkedPolyethylene", "ozoneResistantRubber", "highMolecularWeightPolyethylene", "unbeltedPilc", "treeRetardantCrosslinkedPolyethylene", "butyl", "rubber", "asbestosAndVarnishedCambric", "beltedPilc", "varnishedDacronGlass", "other", "treeResistantHighMolecularWeightPolyethylene", "lowCapacitanceRubber", "varnishedCambricCloth", "highPressureFluidFilled", "ethylenePropyleneRubber", "siliconRubber", "oilPaper"
         self.insulationMaterial = insulationMaterial
 
         #: True if conductor is insulated.
@@ -52,7 +52,14 @@ class ConductorInfo(IdentifiedObject):
         self._WireArrangements = []
         self.WireArrangements = [] if WireArrangements is None else WireArrangements
 
-        super(ConductorInfo, self).__init__(**kw_args)
+        super(ConductorInfo, self).__init__(*args, **kw_args)
+
+    _attrs = ["usage", "insulationMaterial", "insulated", "insulationThickness", "phaseCount"]
+    _attr_types = {"usage": str, "insulationMaterial": str, "insulated": bool, "insulationThickness": float, "phaseCount": int}
+    _defaults = {"usage": "distribution", "insulationMaterial": "crosslinkedPolyethylene", "insulated": False, "insulationThickness": 0.0, "phaseCount": 0}
+    _enums = {"usage": "ConductorUsageKind", "insulationMaterial": "ConductorInsulationKind"}
+    _refs = ["ConductorSegments", "WireArrangements"]
+    _many_refs = ["ConductorSegments", "WireArrangements"]
 
     def getConductorSegments(self):
         """All conductor segments described by this conductor data.

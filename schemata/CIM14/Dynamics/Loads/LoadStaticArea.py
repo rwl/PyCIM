@@ -20,9 +20,16 @@ class LoadStaticArea(LoadStatic):
     """Static load associated with an Area.
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'LoadStaticArea' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'LoadStaticArea' instance.
 
         """
-        super(LoadStaticArea, self).__init__(**kw_args)
+        super(LoadStaticArea, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class TimeSchedule(Document):
     """Description of anything that changes through time. Time schedule is used to perform a single-valued function of time. Use inherited 'category' attribute to give additional information on this schedule, such as: periodic (hourly, daily, weekly, monthly, etc.), day of the month, by date, calendar (specific times and dates).
     """
 
-    def __init__(self, recurrencePeriod=0.0, disabled=False, offset=0.0, recurrencePattern='', TimePoints=None, scheduleInterval=None, **kw_args):
-        """Initializes a new 'TimeSchedule' instance.
+    def __init__(self, recurrencePeriod=0.0, disabled=False, offset=0.0, recurrencePattern='', TimePoints=None, scheduleInterval=None, *args, **kw_args):
+        """Initialises a new 'TimeSchedule' instance.
 
         @param recurrencePeriod: Duration between time points, from the beginning of one period to the beginning of the next period. Note that a device like a meter may have multiple interval periods (e.g., 1 min, 5 min, 15 min, 30 min, or 60 min). 
         @param disabled: True if this schedule is deactivated (disabled). 
@@ -47,7 +47,14 @@ class TimeSchedule(Document):
 
         self.scheduleInterval = scheduleInterval
 
-        super(TimeSchedule, self).__init__(**kw_args)
+        super(TimeSchedule, self).__init__(*args, **kw_args)
+
+    _attrs = ["recurrencePeriod", "disabled", "offset", "recurrencePattern"]
+    _attr_types = {"recurrencePeriod": float, "disabled": bool, "offset": float, "recurrencePattern": str}
+    _defaults = {"recurrencePeriod": 0.0, "disabled": False, "offset": 0.0, "recurrencePattern": ''}
+    _enums = {}
+    _refs = ["TimePoints", "scheduleInterval"]
+    _many_refs = ["TimePoints"]
 
     def getTimePoints(self):
         """Sequence of time points belonging to this time schedule.

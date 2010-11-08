@@ -20,8 +20,8 @@ class MechLoad1(MechanicalLoad):
     """Mechanical load model 1
     """
 
-    def __init__(self, e=0.0, b=0.0, d=0.0, a=0.0, **kw_args):
-        """Initializes a new 'MechLoad1' instance.
+    def __init__(self, e=0.0, b=0.0, d=0.0, a=0.0, *args, **kw_args):
+        """Initialises a new 'MechLoad1' instance.
 
         @param e: Exponent 
         @param b: Speed squared coefficient 
@@ -40,5 +40,12 @@ class MechLoad1(MechanicalLoad):
         #: Speed squared coefficient
         self.a = a
 
-        super(MechLoad1, self).__init__(**kw_args)
+        super(MechLoad1, self).__init__(*args, **kw_args)
+
+    _attrs = ["e", "b", "d", "a"]
+    _attr_types = {"e": float, "b": float, "d": float, "a": float}
+    _defaults = {"e": 0.0, "b": 0.0, "d": 0.0, "a": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

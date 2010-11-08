@@ -20,8 +20,8 @@ class CogenerationPlant(PowerSystemResource):
     """A set of thermal generating units for the production of electrical energy and process steam (usually from the output of the steam turbines). The steam sendout is typically used for industrial purposes or for municipal heating and cooling.
     """
 
-    def __init__(self, cogenLPSteamRating=0.0, cogenHPSendoutRating=0.0, ratedP=0.0, cogenLPSendoutRating=0.0, cogenHPSteamRating=0.0, ThermalGeneratingUnits=None, SteamSendoutSchedule=None, **kw_args):
-        """Initializes a new 'CogenerationPlant' instance.
+    def __init__(self, cogenLPSteamRating=0.0, cogenHPSendoutRating=0.0, ratedP=0.0, cogenLPSendoutRating=0.0, cogenHPSteamRating=0.0, ThermalGeneratingUnits=None, SteamSendoutSchedule=None, *args, **kw_args):
+        """Initialises a new 'CogenerationPlant' instance.
 
         @param cogenLPSteamRating: The low pressure steam rating 
         @param cogenHPSendoutRating: The high pressure steam sendout 
@@ -52,7 +52,14 @@ class CogenerationPlant(PowerSystemResource):
         self._SteamSendoutSchedule = None
         self.SteamSendoutSchedule = SteamSendoutSchedule
 
-        super(CogenerationPlant, self).__init__(**kw_args)
+        super(CogenerationPlant, self).__init__(*args, **kw_args)
+
+    _attrs = ["cogenLPSteamRating", "cogenHPSendoutRating", "ratedP", "cogenLPSendoutRating", "cogenHPSteamRating"]
+    _attr_types = {"cogenLPSteamRating": float, "cogenHPSendoutRating": float, "ratedP": float, "cogenLPSendoutRating": float, "cogenHPSteamRating": float}
+    _defaults = {"cogenLPSteamRating": 0.0, "cogenHPSendoutRating": 0.0, "ratedP": 0.0, "cogenLPSendoutRating": 0.0, "cogenHPSteamRating": 0.0}
+    _enums = {}
+    _refs = ["ThermalGeneratingUnits", "SteamSendoutSchedule"]
+    _many_refs = ["ThermalGeneratingUnits"]
 
     def getThermalGeneratingUnits(self):
         """A thermal generating unit may be a member of a cogeneration plant

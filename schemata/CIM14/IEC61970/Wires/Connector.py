@@ -20,9 +20,16 @@ class Connector(ConductingEquipment):
     """A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation and are modelled with a single logical terminal.
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'Connector' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'Connector' instance.
 
         """
-        super(Connector, self).__init__(**kw_args)
+        super(Connector, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,14 +20,14 @@ class RemoteUnit(PowerSystemResource):
     """A remote unit can be a RTU, IED, substation control system, control center etc. The communication with the remote unit can be through various standard protocols (e.g. IEC 61870, IEC 61850) or non standard protocols (e.g. DNP, RP570 etc.). A remote unit contain remote data points that might be telemetered, collected or calculated. The RemoteUnit class inherit PowerSystemResource. The intention is to allow RemotUnits to have Measurements. These Measurements can be used to model unit status as operational, out of service, unit failure etc.
     """
 
-    def __init__(self, remoteUnitType='IED', CommunicationLinks=None, RemotePoints=None, **kw_args):
-        """Initializes a new 'RemoteUnit' instance.
+    def __init__(self, remoteUnitType="IED", CommunicationLinks=None, RemotePoints=None, *args, **kw_args):
+        """Initialises a new 'RemoteUnit' instance.
 
         @param remoteUnitType: Type of remote unit. Values are: "IED", "ControlCenter", "RTU", "SubstationControlSystem"
         @param CommunicationLinks: RTUs may be attached to communication links.
         @param RemotePoints: Remote points this Remote unit contains.
         """
-        #: Type of remote unit.Values are: "IED", "ControlCenter", "RTU", "SubstationControlSystem"
+        #: Type of remote unit. Values are: "IED", "ControlCenter", "RTU", "SubstationControlSystem"
         self.remoteUnitType = remoteUnitType
 
         self._CommunicationLinks = []
@@ -36,7 +36,14 @@ class RemoteUnit(PowerSystemResource):
         self._RemotePoints = []
         self.RemotePoints = [] if RemotePoints is None else RemotePoints
 
-        super(RemoteUnit, self).__init__(**kw_args)
+        super(RemoteUnit, self).__init__(*args, **kw_args)
+
+    _attrs = ["remoteUnitType"]
+    _attr_types = {"remoteUnitType": str}
+    _defaults = {"remoteUnitType": "IED"}
+    _enums = {"remoteUnitType": "RemoteUnitType"}
+    _refs = ["CommunicationLinks", "RemotePoints"]
+    _many_refs = ["CommunicationLinks", "RemotePoints"]
 
     def getCommunicationLinks(self):
         """RTUs may be attached to communication links.

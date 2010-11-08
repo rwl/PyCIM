@@ -20,8 +20,8 @@ class FossilSteamSupply(SteamSupply):
     """Fossil fueled boiler (e.g., coal, oil, gas)
     """
 
-    def __init__(self, boilerControlMode='following', superHeater2Capacity=0.0, auxPowerVersusFrequency=0.0, feedWaterIG=0.0, controlPED=0.0, throttlePressureSP=0.0, pressureCtrlIG=0.0, fuelSupplyDelay=0.0, controlPEB=0.0, controlTC=0.0, pressureFeedback=0, feedWaterPG=0.0, controlIC=0.0, controlPC=0.0, minErrorRateP=0.0, fuelSupplyTC=0.0, fuelDemandLimit=0.0, mechPowerSensorLag=0.0, pressureCtrlDG=0.0, maxErrorRateP=0.0, superHeaterPipePD=0.0, controlErrorBiasP=0.0, feedWaterTC=0.0, superHeater1Capacity=0.0, auxPowerVersusVoltage=0.0, pressureCtrlPG=0.0, **kw_args):
-        """Initializes a new 'FossilSteamSupply' instance.
+    def __init__(self, boilerControlMode="following", superHeater2Capacity=0.0, auxPowerVersusFrequency=0.0, feedWaterIG=0.0, controlPED=0.0, throttlePressureSP=0.0, pressureCtrlIG=0.0, fuelSupplyDelay=0.0, controlPEB=0.0, controlTC=0.0, pressureFeedback=0, feedWaterPG=0.0, controlIC=0.0, controlPC=0.0, minErrorRateP=0.0, fuelSupplyTC=0.0, fuelDemandLimit=0.0, mechPowerSensorLag=0.0, pressureCtrlDG=0.0, maxErrorRateP=0.0, superHeaterPipePD=0.0, controlErrorBiasP=0.0, feedWaterTC=0.0, superHeater1Capacity=0.0, auxPowerVersusVoltage=0.0, pressureCtrlPG=0.0, *args, **kw_args):
+        """Initialises a new 'FossilSteamSupply' instance.
 
         @param boilerControlMode: The control mode of the boiler Values are: "following", "coordinated"
         @param superHeater2Capacity: Secondary Superheater Capacity 
@@ -50,7 +50,7 @@ class FossilSteamSupply(SteamSupply):
         @param auxPowerVersusVoltage: Off nominal voltage effect on auxiliary real power. Per unit active power variation versus per unit voltage variation. 
         @param pressureCtrlPG: Pressure Control Proportional Gain ratio 
         """
-        #: The control mode of the boilerValues are: "following", "coordinated"
+        #: The control mode of the boiler Values are: "following", "coordinated"
         self.boilerControlMode = boilerControlMode
 
         #: Secondary Superheater Capacity
@@ -128,5 +128,12 @@ class FossilSteamSupply(SteamSupply):
         #: Pressure Control Proportional Gain ratio
         self.pressureCtrlPG = pressureCtrlPG
 
-        super(FossilSteamSupply, self).__init__(**kw_args)
+        super(FossilSteamSupply, self).__init__(*args, **kw_args)
+
+    _attrs = ["boilerControlMode", "superHeater2Capacity", "auxPowerVersusFrequency", "feedWaterIG", "controlPED", "throttlePressureSP", "pressureCtrlIG", "fuelSupplyDelay", "controlPEB", "controlTC", "pressureFeedback", "feedWaterPG", "controlIC", "controlPC", "minErrorRateP", "fuelSupplyTC", "fuelDemandLimit", "mechPowerSensorLag", "pressureCtrlDG", "maxErrorRateP", "superHeaterPipePD", "controlErrorBiasP", "feedWaterTC", "superHeater1Capacity", "auxPowerVersusVoltage", "pressureCtrlPG"]
+    _attr_types = {"boilerControlMode": str, "superHeater2Capacity": float, "auxPowerVersusFrequency": float, "feedWaterIG": float, "controlPED": float, "throttlePressureSP": float, "pressureCtrlIG": float, "fuelSupplyDelay": float, "controlPEB": float, "controlTC": float, "pressureFeedback": int, "feedWaterPG": float, "controlIC": float, "controlPC": float, "minErrorRateP": float, "fuelSupplyTC": float, "fuelDemandLimit": float, "mechPowerSensorLag": float, "pressureCtrlDG": float, "maxErrorRateP": float, "superHeaterPipePD": float, "controlErrorBiasP": float, "feedWaterTC": float, "superHeater1Capacity": float, "auxPowerVersusVoltage": float, "pressureCtrlPG": float}
+    _defaults = {"boilerControlMode": "following", "superHeater2Capacity": 0.0, "auxPowerVersusFrequency": 0.0, "feedWaterIG": 0.0, "controlPED": 0.0, "throttlePressureSP": 0.0, "pressureCtrlIG": 0.0, "fuelSupplyDelay": 0.0, "controlPEB": 0.0, "controlTC": 0.0, "pressureFeedback": 0, "feedWaterPG": 0.0, "controlIC": 0.0, "controlPC": 0.0, "minErrorRateP": 0.0, "fuelSupplyTC": 0.0, "fuelDemandLimit": 0.0, "mechPowerSensorLag": 0.0, "pressureCtrlDG": 0.0, "maxErrorRateP": 0.0, "superHeaterPipePD": 0.0, "controlErrorBiasP": 0.0, "feedWaterTC": 0.0, "superHeater1Capacity": 0.0, "auxPowerVersusVoltage": 0.0, "pressureCtrlPG": 0.0}
+    _enums = {"boilerControlMode": "BoilerControlMode"}
+    _refs = []
+    _many_refs = []
 

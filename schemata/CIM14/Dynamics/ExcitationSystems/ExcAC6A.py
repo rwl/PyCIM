@@ -20,8 +20,8 @@ class ExcAC6A(ExcitationSystem):
     """IEEE (1992/2005) AC6A Model  The model is used to represent field-controlled alternator-rectifier excitation systems with system-supplied electronic voltage regulators. The maximum output of the regulator, <i>V</i><i><sub>R</sub></i>, is a function of terminal voltage, <i>V</i><i><sub>T</sub></i>. The field current limiter included in the original model AC6A remains in the 2005 update.
     """
 
-    def __init__(self, te=0.0, ka=0.0, vhmax=0.0, kh=0.0, tk=0.0, ke=0.0, se1=0.0, tr=0.0, vrmin=0.0, vrmax=0.0, tc=0.0, e2=0.0, tj=0.0, kc=0.0, vfelim=0.0, ta=0.0, th=0.0, kd=0.0, vamax=0.0, tb=0.0, e1=0.0, vamin=0.0, se2=0.0, **kw_args):
-        """Initializes a new 'ExcAC6A' instance.
+    def __init__(self, te=0.0, ka=0.0, vhmax=0.0, kh=0.0, tk=0.0, ke=0.0, se1=0.0, tr=0.0, vrmin=0.0, vrmax=0.0, tc=0.0, e2=0.0, tj=0.0, kc=0.0, vfelim=0.0, ta=0.0, th=0.0, kd=0.0, vamax=0.0, tb=0.0, e1=0.0, vamin=0.0, se2=0.0, *args, **kw_args):
+        """Initialises a new 'ExcAC6A' instance.
 
         @param te: Exciter time constant (&gt; 0.) 
         @param ka: Gain (&gt; 0.) 
@@ -116,5 +116,12 @@ class ExcAC6A(ExcitationSystem):
         #: Saturation factor at e2  (&gt;= 0.)
         self.se2 = se2
 
-        super(ExcAC6A, self).__init__(**kw_args)
+        super(ExcAC6A, self).__init__(*args, **kw_args)
+
+    _attrs = ["te", "ka", "vhmax", "kh", "tk", "ke", "se1", "tr", "vrmin", "vrmax", "tc", "e2", "tj", "kc", "vfelim", "ta", "th", "kd", "vamax", "tb", "e1", "vamin", "se2"]
+    _attr_types = {"te": float, "ka": float, "vhmax": float, "kh": float, "tk": float, "ke": float, "se1": float, "tr": float, "vrmin": float, "vrmax": float, "tc": float, "e2": float, "tj": float, "kc": float, "vfelim": float, "ta": float, "th": float, "kd": float, "vamax": float, "tb": float, "e1": float, "vamin": float, "se2": float}
+    _defaults = {"te": 0.0, "ka": 0.0, "vhmax": 0.0, "kh": 0.0, "tk": 0.0, "ke": 0.0, "se1": 0.0, "tr": 0.0, "vrmin": 0.0, "vrmax": 0.0, "tc": 0.0, "e2": 0.0, "tj": 0.0, "kc": 0.0, "vfelim": 0.0, "ta": 0.0, "th": 0.0, "kd": 0.0, "vamax": 0.0, "tb": 0.0, "e1": 0.0, "vamin": 0.0, "se2": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

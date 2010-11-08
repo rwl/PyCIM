@@ -20,8 +20,8 @@ class VcompIEEE(VoltageCompensator):
     """IEEE Voltage Compensation Model
     """
 
-    def __init__(self, xcomp=0.0, rcomp=0.0, **kw_args):
-        """Initializes a new 'VcompIEEE' instance.
+    def __init__(self, xcomp=0.0, rcomp=0.0, *args, **kw_args):
+        """Initialises a new 'VcompIEEE' instance.
 
         @param xcomp: Compensating (compounding) reactance 
         @param rcomp: Compensating (compounding) resistance 
@@ -32,5 +32,12 @@ class VcompIEEE(VoltageCompensator):
         #: Compensating (compounding) resistance
         self.rcomp = rcomp
 
-        super(VcompIEEE, self).__init__(**kw_args)
+        super(VcompIEEE, self).__init__(*args, **kw_args)
+
+    _attrs = ["xcomp", "rcomp"]
+    _attr_types = {"xcomp": float, "rcomp": float}
+    _defaults = {"xcomp": 0.0, "rcomp": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

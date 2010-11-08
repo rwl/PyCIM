@@ -18,8 +18,8 @@ from CIM14.IEC61970.Core.IdentifiedObject import IdentifiedObject
 
 class MetaBlockSignal(IdentifiedObject):
 
-    def __init__(self, metaBlockSignal1=None, metaBlockSignal=None, MemberOf_MetaBlock=None, From=None, To=None, **kw_args):
-        """Initializes a new 'MetaBlockSignal' instance.
+    def __init__(self, metaBlockSignal1=None, metaBlockSignal=None, MemberOf_MetaBlock=None, From=None, To=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockSignal' instance.
 
         @param metaBlockSignal1:
         @param metaBlockSignal:
@@ -42,7 +42,14 @@ class MetaBlockSignal(IdentifiedObject):
         self._To = None
         self.To = To
 
-        super(MetaBlockSignal, self).__init__(**kw_args)
+        super(MetaBlockSignal, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["metaBlockSignal1", "metaBlockSignal", "MemberOf_MetaBlock", "From", "To"]
+    _many_refs = ["metaBlockSignal1", "metaBlockSignal"]
 
     def getmetaBlockSignal1(self):
         

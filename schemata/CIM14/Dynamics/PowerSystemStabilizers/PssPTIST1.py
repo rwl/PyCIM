@@ -20,9 +20,16 @@ class PssPTIST1(PowerSystemStabilizer):
     """PTI microprocessor-based stabilizer model type 1
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'PssPTIST1' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'PssPTIST1' instance.
 
         """
-        super(PssPTIST1, self).__init__(**kw_args)
+        super(PssPTIST1, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,9 +20,16 @@ class ExcPIC(ExcitationSystem):
     """Excitation System Model with PI voltage regulator
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'ExcPIC' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'ExcPIC' instance.
 
         """
-        super(ExcPIC, self).__init__(**kw_args)
+        super(ExcPIC, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

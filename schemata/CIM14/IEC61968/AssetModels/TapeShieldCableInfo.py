@@ -20,8 +20,8 @@ class TapeShieldCableInfo(CableInfo):
     """Tape shield cable data.
     """
 
-    def __init__(self, tapeThickness=0.0, tapeLap=0.0, **kw_args):
-        """Initializes a new 'TapeShieldCableInfo' instance.
+    def __init__(self, tapeThickness=0.0, tapeLap=0.0, *args, **kw_args):
+        """Initialises a new 'TapeShieldCableInfo' instance.
 
         @param tapeThickness: Thickness of the tape shield, before wrapping. 
         @param tapeLap: Percentage of the tape shield width that overlaps in each wrap, typically 10% to 25%. 
@@ -32,5 +32,12 @@ class TapeShieldCableInfo(CableInfo):
         #: Percentage of the tape shield width that overlaps in each wrap, typically 10% to 25%.
         self.tapeLap = tapeLap
 
-        super(TapeShieldCableInfo, self).__init__(**kw_args)
+        super(TapeShieldCableInfo, self).__init__(*args, **kw_args)
+
+    _attrs = ["tapeThickness", "tapeLap"]
+    _attr_types = {"tapeThickness": float, "tapeLap": float}
+    _defaults = {"tapeThickness": 0.0, "tapeLap": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

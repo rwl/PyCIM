@@ -20,9 +20,16 @@ class PssIEEE1A(PowerSystemStabilizer):
     """PSS type IEEE PSS1A
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'PssIEEE1A' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'PssIEEE1A' instance.
 
         """
-        super(PssIEEE1A, self).__init__(**kw_args)
+        super(PssIEEE1A, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

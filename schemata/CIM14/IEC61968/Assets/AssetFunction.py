@@ -20,8 +20,8 @@ class AssetFunction(IdentifiedObject):
     """Function performed by an asset.
     """
 
-    def __init__(self, configID='', programID='', firmwareID='', password='', hardwareID='', Asset=None, **kw_args):
-        """Initializes a new 'AssetFunction' instance.
+    def __init__(self, configID='', programID='', firmwareID='', password='', hardwareID='', Asset=None, *args, **kw_args):
+        """Initialises a new 'AssetFunction' instance.
 
         @param configID: Configuration specified for this function. 
         @param programID: Name of program. 
@@ -48,7 +48,14 @@ class AssetFunction(IdentifiedObject):
         self._Asset = None
         self.Asset = Asset
 
-        super(AssetFunction, self).__init__(**kw_args)
+        super(AssetFunction, self).__init__(*args, **kw_args)
+
+    _attrs = ["configID", "programID", "firmwareID", "password", "hardwareID"]
+    _attr_types = {"configID": str, "programID": str, "firmwareID": str, "password": str, "hardwareID": str}
+    _defaults = {"configID": '', "programID": '', "firmwareID": '', "password": '', "hardwareID": ''}
+    _enums = {}
+    _refs = ["Asset"]
+    _many_refs = []
 
     def getAsset(self):
         

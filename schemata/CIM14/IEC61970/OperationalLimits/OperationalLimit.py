@@ -20,8 +20,8 @@ class OperationalLimit(IdentifiedObject):
     """A value associated with a specific kind of limit.
     """
 
-    def __init__(self, type='', OperationalLimitType=None, OperationalLimitSet=None, **kw_args):
-        """Initializes a new 'OperationalLimit' instance.
+    def __init__(self, type='', OperationalLimitType=None, OperationalLimitSet=None, *args, **kw_args):
+        """Initialises a new 'OperationalLimit' instance.
 
         @param type: Used to specify high/low and limit levels. 
         @param OperationalLimitType: The limit type associated with this limit.
@@ -36,7 +36,14 @@ class OperationalLimit(IdentifiedObject):
         self._OperationalLimitSet = None
         self.OperationalLimitSet = OperationalLimitSet
 
-        super(OperationalLimit, self).__init__(**kw_args)
+        super(OperationalLimit, self).__init__(*args, **kw_args)
+
+    _attrs = ["type"]
+    _attr_types = {"type": str}
+    _defaults = {"type": ''}
+    _enums = {}
+    _refs = ["OperationalLimitType", "OperationalLimitSet"]
+    _many_refs = []
 
     def getOperationalLimitType(self):
         """The limit type associated with this limit.

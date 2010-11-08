@@ -20,8 +20,8 @@ class RemoteControl(RemotePoint):
     """Remote controls are ouputs that are sent by the remote unit to actuators in the process.
     """
 
-    def __init__(self, actuatorMinimum=0.0, remoteControlled=False, actuatorMaximum=0.0, Control=None, **kw_args):
-        """Initializes a new 'RemoteControl' instance.
+    def __init__(self, actuatorMinimum=0.0, remoteControlled=False, actuatorMaximum=0.0, Control=None, *args, **kw_args):
+        """Initialises a new 'RemoteControl' instance.
 
         @param actuatorMinimum: The minimum set point value accepted by the remote control point. 
         @param remoteControlled: Set to true if the actuator is remotely controlled. 
@@ -40,7 +40,14 @@ class RemoteControl(RemotePoint):
         self._Control = None
         self.Control = Control
 
-        super(RemoteControl, self).__init__(**kw_args)
+        super(RemoteControl, self).__init__(*args, **kw_args)
+
+    _attrs = ["actuatorMinimum", "remoteControlled", "actuatorMaximum"]
+    _attr_types = {"actuatorMinimum": float, "remoteControlled": bool, "actuatorMaximum": float}
+    _defaults = {"actuatorMinimum": 0.0, "remoteControlled": False, "actuatorMaximum": 0.0}
+    _enums = {}
+    _refs = ["Control"]
+    _many_refs = []
 
     def getControl(self):
         """The Control for the RemoteControl point.

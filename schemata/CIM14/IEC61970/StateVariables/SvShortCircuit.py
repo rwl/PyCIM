@@ -20,8 +20,8 @@ class SvShortCircuit(StateVariable):
     """State variable for short circuit.
     """
 
-    def __init__(self, x0PerX=0.0, sShortCircuit=0.0, r0PerR=0.0, xPerR=0.0, TopologicalNode=None, **kw_args):
-        """Initializes a new 'SvShortCircuit' instance.
+    def __init__(self, x0PerX=0.0, sShortCircuit=0.0, r0PerR=0.0, xPerR=0.0, TopologicalNode=None, *args, **kw_args):
+        """Initialises a new 'SvShortCircuit' instance.
 
         @param x0PerX: The ratio of zero sequence reactance per positive sequence reactance. 
         @param sShortCircuit: The short circuit apparent power drawn at this node when faulted. 
@@ -44,7 +44,14 @@ class SvShortCircuit(StateVariable):
         self._TopologicalNode = None
         self.TopologicalNode = TopologicalNode
 
-        super(SvShortCircuit, self).__init__(**kw_args)
+        super(SvShortCircuit, self).__init__(*args, **kw_args)
+
+    _attrs = ["x0PerX", "sShortCircuit", "r0PerR", "xPerR"]
+    _attr_types = {"x0PerX": float, "sShortCircuit": float, "r0PerR": float, "xPerR": float}
+    _defaults = {"x0PerX": 0.0, "sShortCircuit": 0.0, "r0PerR": 0.0, "xPerR": 0.0}
+    _enums = {}
+    _refs = ["TopologicalNode"]
+    _many_refs = []
 
     def getTopologicalNode(self):
         """The topological node associated with the short circuit state.

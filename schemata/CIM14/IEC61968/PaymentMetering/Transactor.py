@@ -20,15 +20,22 @@ class Transactor(IdentifiedObject):
     """The entity that ultimately executes the transaction and who is in control of the process; typically this is embodied in secure software running on a server that may employ secure hardware encryption devices for secure transaction processing.
     """
 
-    def __init__(self, MerchantAccounts=None, **kw_args):
-        """Initializes a new 'Transactor' instance.
+    def __init__(self, MerchantAccounts=None, *args, **kw_args):
+        """Initialises a new 'Transactor' instance.
 
         @param MerchantAccounts: All merchant accounts registered with this transactor.
         """
         self._MerchantAccounts = []
         self.MerchantAccounts = [] if MerchantAccounts is None else MerchantAccounts
 
-        super(Transactor, self).__init__(**kw_args)
+        super(Transactor, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["MerchantAccounts"]
+    _many_refs = ["MerchantAccounts"]
 
     def getMerchantAccounts(self):
         """All merchant accounts registered with this transactor.

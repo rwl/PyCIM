@@ -20,9 +20,16 @@ class LoadStaticZone(LoadStatic):
     """Static load associated with a zone.
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'LoadStaticZone' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'LoadStaticZone' instance.
 
         """
-        super(LoadStaticZone, self).__init__(**kw_args)
+        super(LoadStaticZone, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

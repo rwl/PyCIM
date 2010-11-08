@@ -20,8 +20,8 @@ class DistributionTransformerWinding(ConductingEquipment):
     """Conducting connection point of a distribution / unbalanced transformer winding instance. This class differs from Wires::TransformerWinding as follows: - the eight Pi model attributes are moved into separate class, that can be optionally referred to from several winding instances. - the three grounding attributes can differ per winding instance, even for windings that use the same TransformerInfo, so they are kept on DistributionTransformerWinding. - 'windingType' attribute is replaced by 'sequenceNumber' attribute on WindingInfo class. - all the other attributes come from the WindingInfo (and its relationships). TransformerInfo is associated to the DistributionTransformer as referenceable data, so it can be defined once and referred to from instances, instead of being specified with each instance.
     """
 
-    def __init__(self, grounded=False, xground=0.0, rground=0.0, Transformer=None, WindingInfo=None, RatioTapChanger=None, PiImpedance=None, PhaseTapChanger=None, **kw_args):
-        """Initializes a new 'DistributionTransformerWinding' instance.
+    def __init__(self, grounded=False, xground=0.0, rground=0.0, Transformer=None, WindingInfo=None, RatioTapChanger=None, PiImpedance=None, PhaseTapChanger=None, *args, **kw_args):
+        """Initialises a new 'DistributionTransformerWinding' instance.
 
         @param grounded: (for Yn and Zn connections) True if the neutral is solidly grounded. 
         @param xground: (for Yn and Zn connections) Reactive part of neutral impedance where 'grounded' is true. 
@@ -56,7 +56,14 @@ class DistributionTransformerWinding(ConductingEquipment):
         self._PhaseTapChanger = None
         self.PhaseTapChanger = PhaseTapChanger
 
-        super(DistributionTransformerWinding, self).__init__(**kw_args)
+        super(DistributionTransformerWinding, self).__init__(*args, **kw_args)
+
+    _attrs = ["grounded", "xground", "rground"]
+    _attr_types = {"grounded": bool, "xground": float, "rground": float}
+    _defaults = {"grounded": False, "xground": 0.0, "rground": 0.0}
+    _enums = {}
+    _refs = ["Transformer", "WindingInfo", "RatioTapChanger", "PiImpedance", "PhaseTapChanger"]
+    _many_refs = []
 
     def getTransformer(self):
         """Transformer this winding belongs to.

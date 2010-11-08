@@ -20,9 +20,16 @@ class ExcitationSystem(PowerSystemResource):
     """An excitation system provides the field voltage (Efd) for a synchronous machine model. It is linked to a specific generator by the Bus number and Unit ID.
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'ExcitationSystem' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'ExcitationSystem' instance.
 
         """
-        super(ExcitationSystem, self).__init__(**kw_args)
+        super(ExcitationSystem, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

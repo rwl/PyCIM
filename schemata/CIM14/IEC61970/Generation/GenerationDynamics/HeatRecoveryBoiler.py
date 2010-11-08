@@ -20,8 +20,8 @@ class HeatRecoveryBoiler(FossilSteamSupply):
     """The heat recovery system associated with combustion turbines in order to produce steam for combined cycle plants
     """
 
-    def __init__(self, steamSupplyRating2=0.0, CombustionTurbines=None, **kw_args):
-        """Initializes a new 'HeatRecoveryBoiler' instance.
+    def __init__(self, steamSupplyRating2=0.0, CombustionTurbines=None, *args, **kw_args):
+        """Initialises a new 'HeatRecoveryBoiler' instance.
 
         @param steamSupplyRating2: The steam supply rating in kilopounds per hour, if dual pressure boiler 
         @param CombustionTurbines: A combustion turbine may have a heat recovery boiler for making steam
@@ -32,7 +32,14 @@ class HeatRecoveryBoiler(FossilSteamSupply):
         self._CombustionTurbines = []
         self.CombustionTurbines = [] if CombustionTurbines is None else CombustionTurbines
 
-        super(HeatRecoveryBoiler, self).__init__(**kw_args)
+        super(HeatRecoveryBoiler, self).__init__(*args, **kw_args)
+
+    _attrs = ["steamSupplyRating2"]
+    _attr_types = {"steamSupplyRating2": float}
+    _defaults = {"steamSupplyRating2": 0.0}
+    _enums = {}
+    _refs = ["CombustionTurbines"]
+    _many_refs = ["CombustionTurbines"]
 
     def getCombustionTurbines(self):
         """A combustion turbine may have a heat recovery boiler for making steam

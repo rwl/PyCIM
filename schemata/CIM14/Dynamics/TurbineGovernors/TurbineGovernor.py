@@ -20,9 +20,16 @@ class TurbineGovernor(PowerSystemResource):
     """The turbine-governor determines the mechanical power (Pm) supplied to the generator model
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'TurbineGovernor' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'TurbineGovernor' instance.
 
         """
-        super(TurbineGovernor, self).__init__(**kw_args)
+        super(TurbineGovernor, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

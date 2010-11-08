@@ -20,15 +20,22 @@ class ControlType(IdentifiedObject):
     """Specifies the type of Control, e.g. BreakerOn/Off, GeneratorVoltageSetPoint, TieLineFlow etc. The ControlType.name shall be unique among all specified types and describe the type. The ControlType.aliasName is meant to be used for localization.
     """
 
-    def __init__(self, Controls=None, **kw_args):
-        """Initializes a new 'ControlType' instance.
+    def __init__(self, Controls=None, *args, **kw_args):
+        """Initialises a new 'ControlType' instance.
 
         @param Controls: The Controls having the ControlType
         """
         self._Controls = []
         self.Controls = [] if Controls is None else Controls
 
-        super(ControlType, self).__init__(**kw_args)
+        super(ControlType, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["Controls"]
+    _many_refs = ["Controls"]
 
     def getControls(self):
         """The Controls having the ControlType

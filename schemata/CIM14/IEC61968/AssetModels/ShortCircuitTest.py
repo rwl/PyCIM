@@ -20,8 +20,8 @@ class ShortCircuitTest(DistributionWindingTest):
     """Short-circuit test results include load losses and leakage impedances. For three-phase windings, the excitation can be positive sequence (the default) or zero sequence. There must be at least one short-circuited ('to') winding.
     """
 
-    def __init__(self, loadLossZero=0.0, leakageImpedanceZero=0.0, leakageImpedance=0.0, loadLoss=0.0, ShortedWindingSpecs=None, **kw_args):
-        """Initializes a new 'ShortCircuitTest' instance.
+    def __init__(self, loadLossZero=0.0, leakageImpedanceZero=0.0, leakageImpedance=0.0, loadLoss=0.0, ShortedWindingSpecs=None, *args, **kw_args):
+        """Initialises a new 'ShortCircuitTest' instance.
 
         @param loadLossZero: Load losses from a zero-sequence short-circuit test. 
         @param leakageImpedanceZero: Leakage impedance measured from a zero-sequence short-circuit test. 
@@ -44,7 +44,14 @@ class ShortCircuitTest(DistributionWindingTest):
         self._ShortedWindingSpecs = []
         self.ShortedWindingSpecs = [] if ShortedWindingSpecs is None else ShortedWindingSpecs
 
-        super(ShortCircuitTest, self).__init__(**kw_args)
+        super(ShortCircuitTest, self).__init__(*args, **kw_args)
+
+    _attrs = ["loadLossZero", "leakageImpedanceZero", "leakageImpedance", "loadLoss"]
+    _attr_types = {"loadLossZero": float, "leakageImpedanceZero": float, "leakageImpedance": float, "loadLoss": float}
+    _defaults = {"loadLossZero": 0.0, "leakageImpedanceZero": 0.0, "leakageImpedance": 0.0, "loadLoss": 0.0}
+    _enums = {}
+    _refs = ["ShortedWindingSpecs"]
+    _many_refs = ["ShortedWindingSpecs"]
 
     def getShortedWindingSpecs(self):
         """All windings short-circuited during this test.

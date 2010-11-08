@@ -20,8 +20,8 @@ class HydroPowerPlant(PowerSystemResource):
     """A hydro power station which can generate or pump. When generating, the generator turbines receive there water from an upper reservoir. When pumping, the pumps receive their water from a lower reservoir.
     """
 
-    def __init__(self, hydroPlantType='runOfRiver', penstockType='', surgeTankCode='', plantRatedHead=0.0, plantDischargeCapacity=0.0, surgeTankCrestLevel=0.0, dischargeTravelDelay=0.0, pumpRatedP=0.0, genRatedP=0.0, HydroGeneratingUnits=None, HydroPumps=None, Reservoir=None, GenSourcePumpDischargeReservoir=None, **kw_args):
-        """Initializes a new 'HydroPowerPlant' instance.
+    def __init__(self, hydroPlantType="runOfRiver", penstockType="", surgeTankCode="", plantRatedHead=0.0, plantDischargeCapacity=0.0, surgeTankCrestLevel=0.0, dischargeTravelDelay=0.0, pumpRatedP=0.0, genRatedP=0.0, HydroGeneratingUnits=None, HydroPumps=None, Reservoir=None, GenSourcePumpDischargeReservoir=None, *args, **kw_args):
+        """Initialises a new 'HydroPowerPlant' instance.
 
         @param hydroPlantType: The type of hydro power plant. Values are: "runOfRiver", "minorStorage", "majorStorage", "pumpedStorage"
         @param penstockType: Type and configuration of hydro plant penstock(s) 
@@ -37,7 +37,7 @@ class HydroPowerPlant(PowerSystemResource):
         @param Reservoir: Generators discharge water to or pumps are supplied water from a downstream reservoir
         @param GenSourcePumpDischargeReservoir: Generators are supplied water from or pumps discharge water to an upstream reservoir
         """
-        #: The type of hydro power plant.Values are: "runOfRiver", "minorStorage", "majorStorage", "pumpedStorage"
+        #: The type of hydro power plant. Values are: "runOfRiver", "minorStorage", "majorStorage", "pumpedStorage"
         self.hydroPlantType = hydroPlantType
 
         #: Type and configuration of hydro plant penstock(s)
@@ -76,7 +76,14 @@ class HydroPowerPlant(PowerSystemResource):
         self._GenSourcePumpDischargeReservoir = None
         self.GenSourcePumpDischargeReservoir = GenSourcePumpDischargeReservoir
 
-        super(HydroPowerPlant, self).__init__(**kw_args)
+        super(HydroPowerPlant, self).__init__(*args, **kw_args)
+
+    _attrs = ["hydroPlantType", "penstockType", "surgeTankCode", "plantRatedHead", "plantDischargeCapacity", "surgeTankCrestLevel", "dischargeTravelDelay", "pumpRatedP", "genRatedP"]
+    _attr_types = {"hydroPlantType": str, "penstockType": str, "surgeTankCode": str, "plantRatedHead": float, "plantDischargeCapacity": float, "surgeTankCrestLevel": float, "dischargeTravelDelay": float, "pumpRatedP": float, "genRatedP": float}
+    _defaults = {"hydroPlantType": "runOfRiver", "penstockType": "", "surgeTankCode": "", "plantRatedHead": 0.0, "plantDischargeCapacity": 0.0, "surgeTankCrestLevel": 0.0, "dischargeTravelDelay": 0.0, "pumpRatedP": 0.0, "genRatedP": 0.0}
+    _enums = {"hydroPlantType": "HydroPlantType", "penstockType": "PenstockType", "surgeTankCode": "SurgeTankCode"}
+    _refs = ["HydroGeneratingUnits", "HydroPumps", "Reservoir", "GenSourcePumpDischargeReservoir"]
+    _many_refs = ["HydroGeneratingUnits", "HydroPumps"]
 
     def getHydroGeneratingUnits(self):
         """The hydro generating unit belongs to a hydro power plant

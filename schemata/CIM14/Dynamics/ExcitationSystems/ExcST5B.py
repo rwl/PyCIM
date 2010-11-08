@@ -20,8 +20,8 @@ class ExcST5B(ExcitationSystem):
     """IEEE (2005) ST5B Model  The Type ST5B excitation system is a variation of the Type ST1A model, with alternative overexcitation and underexcitation inputs and additional limits. The corresponding stabilizer models that can be used with these models are the Type PSS2B, PSS3B, or PSS4B.
     """
 
-    def __init__(self, tb2=0.0, tb1=0.0, tub2=0.0, tuc1=0.0, kr=0.0, tob2=0.0, tob1=0.0, tc1=0.0, toc1=0.0, tub1=0.0, tc2=0.0, kc=0.0, vrmax=0.0, tuc2=0.0, toc2=0.0, t1=0.0, tr=0.0, vrmin=0.0, **kw_args):
-        """Initializes a new 'ExcST5B' instance.
+    def __init__(self, tb2=0.0, tb1=0.0, tub2=0.0, tuc1=0.0, kr=0.0, tob2=0.0, tob1=0.0, tc1=0.0, toc1=0.0, tub1=0.0, tc2=0.0, kc=0.0, vrmax=0.0, tuc2=0.0, toc2=0.0, t1=0.0, tr=0.0, vrmin=0.0, *args, **kw_args):
+        """Initialises a new 'ExcST5B' instance.
 
         @param tb2: Regulator lag time constant (&gt;= 0.) 
         @param tb1: Regulator lag time constant (&gt;= 0.) 
@@ -96,5 +96,12 @@ class ExcST5B(ExcitationSystem):
         #: Minimum regulator output (&lt; 0.)
         self.vrmin = vrmin
 
-        super(ExcST5B, self).__init__(**kw_args)
+        super(ExcST5B, self).__init__(*args, **kw_args)
+
+    _attrs = ["tb2", "tb1", "tub2", "tuc1", "kr", "tob2", "tob1", "tc1", "toc1", "tub1", "tc2", "kc", "vrmax", "tuc2", "toc2", "t1", "tr", "vrmin"]
+    _attr_types = {"tb2": float, "tb1": float, "tub2": float, "tuc1": float, "kr": float, "tob2": float, "tob1": float, "tc1": float, "toc1": float, "tub1": float, "tc2": float, "kc": float, "vrmax": float, "tuc2": float, "toc2": float, "t1": float, "tr": float, "vrmin": float}
+    _defaults = {"tb2": 0.0, "tb1": 0.0, "tub2": 0.0, "tuc1": 0.0, "kr": 0.0, "tob2": 0.0, "tob1": 0.0, "tc1": 0.0, "toc1": 0.0, "tub1": 0.0, "tc2": 0.0, "kc": 0.0, "vrmax": 0.0, "tuc2": 0.0, "toc2": 0.0, "t1": 0.0, "tr": 0.0, "vrmin": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

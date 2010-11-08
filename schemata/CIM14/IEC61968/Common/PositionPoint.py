@@ -20,8 +20,8 @@ class PositionPoint(Element):
     """Set of spatial coordinates that determine a point. Use a single position point instance to desribe a point-oriented location. Use a sequence of position points to describe a line-oriented object (physical location of non-point oriented objects like cables or lines), or area of an object (like a substation or a geographical zone - in this case, have first and last position point with the same values).
     """
 
-    def __init__(self, xPosition='', zPosition='', sequenceNumber=0, yPosition='', Location=None, CoordinateSystem=None, **kw_args):
-        """Initializes a new 'PositionPoint' instance.
+    def __init__(self, xPosition='', zPosition='', sequenceNumber=0, yPosition='', Location=None, CoordinateSystem=None, *args, **kw_args):
+        """Initialises a new 'PositionPoint' instance.
 
         @param xPosition: X axis position. 
         @param zPosition: (if applicable) Z axis position. 
@@ -48,7 +48,14 @@ class PositionPoint(Element):
         self._CoordinateSystem = None
         self.CoordinateSystem = CoordinateSystem
 
-        super(PositionPoint, self).__init__(**kw_args)
+        super(PositionPoint, self).__init__(*args, **kw_args)
+
+    _attrs = ["xPosition", "zPosition", "sequenceNumber", "yPosition"]
+    _attr_types = {"xPosition": str, "zPosition": str, "sequenceNumber": int, "yPosition": str}
+    _defaults = {"xPosition": '', "zPosition": '', "sequenceNumber": 0, "yPosition": ''}
+    _enums = {}
+    _refs = ["Location", "CoordinateSystem"]
+    _many_refs = []
 
     def getLocation(self):
         """Location that this position point describes.

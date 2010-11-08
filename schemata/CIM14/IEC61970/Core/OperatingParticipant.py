@@ -20,15 +20,22 @@ class OperatingParticipant(IdentifiedObject):
     """An operator of multiple PowerSystemResource objects. Note multple OperatingParticipants may operate the same PowerSystemResource object.   This can be used for modeling jointly owned units where each owner operates as a contractual share.
     """
 
-    def __init__(self, OperatingShare=None, **kw_args):
-        """Initializes a new 'OperatingParticipant' instance.
+    def __init__(self, OperatingShare=None, *args, **kw_args):
+        """Initialises a new 'OperatingParticipant' instance.
 
         @param OperatingShare: The operating shares of an operating participant.   An operating participant can be reused for any number of PSR's.
         """
         self._OperatingShare = []
         self.OperatingShare = [] if OperatingShare is None else OperatingShare
 
-        super(OperatingParticipant, self).__init__(**kw_args)
+        super(OperatingParticipant, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["OperatingShare"]
+    _many_refs = ["OperatingShare"]
 
     def getOperatingShare(self):
         """The operating shares of an operating participant.   An operating participant can be reused for any number of PSR's.

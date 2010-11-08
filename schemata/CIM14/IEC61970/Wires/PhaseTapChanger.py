@@ -20,8 +20,8 @@ class PhaseTapChanger(TapChanger):
     """A specialization of a voltage tap changer that has detailed modeling for phase shifting capabilities.   A phase shifting tap changer is also in general a voltage magnitude transformer.    The symmetrical and asymmetrical transformer tap changer models are defined here.
     """
 
-    def __init__(self, phaseTapChangerType='asymmetrical', nominalVoltageOutOfPhase=0.0, xStepMin=0.0, stepPhaseShiftIncrement=0.0, windingConnectionAngle=0.0, xStepMax=0.0, voltageStepIncrementOutOfPhase=0.0, PhaseVariationCurve=None, Winding=None, TransformerWinding=None, **kw_args):
-        """Initializes a new 'PhaseTapChanger' instance.
+    def __init__(self, phaseTapChangerType="asymmetrical", nominalVoltageOutOfPhase=0.0, xStepMin=0.0, stepPhaseShiftIncrement=0.0, windingConnectionAngle=0.0, xStepMax=0.0, voltageStepIncrementOutOfPhase=0.0, PhaseVariationCurve=None, Winding=None, TransformerWinding=None, *args, **kw_args):
+        """Initialises a new 'PhaseTapChanger' instance.
 
         @param phaseTapChangerType: The type of phase shifter construction. Values are: "asymmetrical", "unknown", "symmetrical"
         @param nominalVoltageOutOfPhase: Similar to TapChanger.nominalVoltage, but this is the nominal voltage in the out of phase winding at the nominal tap step. A typical case may have zero voltage at the nominal step, indicating no phase shift at the nominal voltage. 
@@ -34,7 +34,7 @@ class PhaseTapChanger(TapChanger):
         @param Winding: Transformer winding to which this phase tap changer belongs.
         @param TransformerWinding: The transformer winding to which the phase tap changer belongs.
         """
-        #: The type of phase shifter construction.Values are: "asymmetrical", "unknown", "symmetrical"
+        #: The type of phase shifter construction. Values are: "asymmetrical", "unknown", "symmetrical"
         self.phaseTapChangerType = phaseTapChangerType
 
         #: Similar to TapChanger.nominalVoltage, but this is the nominal voltage in the out of phase winding at the nominal tap step. A typical case may have zero voltage at the nominal step, indicating no phase shift at the nominal voltage.
@@ -64,7 +64,14 @@ class PhaseTapChanger(TapChanger):
         self._TransformerWinding = None
         self.TransformerWinding = TransformerWinding
 
-        super(PhaseTapChanger, self).__init__(**kw_args)
+        super(PhaseTapChanger, self).__init__(*args, **kw_args)
+
+    _attrs = ["phaseTapChangerType", "nominalVoltageOutOfPhase", "xStepMin", "stepPhaseShiftIncrement", "windingConnectionAngle", "xStepMax", "voltageStepIncrementOutOfPhase"]
+    _attr_types = {"phaseTapChangerType": str, "nominalVoltageOutOfPhase": float, "xStepMin": float, "stepPhaseShiftIncrement": float, "windingConnectionAngle": float, "xStepMax": float, "voltageStepIncrementOutOfPhase": float}
+    _defaults = {"phaseTapChangerType": "asymmetrical", "nominalVoltageOutOfPhase": 0.0, "xStepMin": 0.0, "stepPhaseShiftIncrement": 0.0, "windingConnectionAngle": 0.0, "xStepMax": 0.0, "voltageStepIncrementOutOfPhase": 0.0}
+    _enums = {"phaseTapChangerType": "PhaseTapChangerKind"}
+    _refs = ["PhaseVariationCurve", "Winding", "TransformerWinding"]
+    _many_refs = []
 
     def getPhaseVariationCurve(self):
         """A PhaseTapChanger can have an associated PhaseVariationCurve to define phase shift variations with tap step changes.

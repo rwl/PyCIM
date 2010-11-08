@@ -18,8 +18,8 @@ from CIM14.IEC61970.Core.IdentifiedObject import IdentifiedObject
 
 class MetaBlockOutputReference(IdentifiedObject):
 
-    def __init__(self, MetaBlockConnectable=None, MemberOf_MetaBlockReference=None, MetaBlockSignal=None, StandardControlBlock_MetaBlockConnectable=None, **kw_args):
-        """Initializes a new 'MetaBlockOutputReference' instance.
+    def __init__(self, MetaBlockConnectable=None, MemberOf_MetaBlockReference=None, MetaBlockSignal=None, StandardControlBlock_MetaBlockConnectable=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockOutputReference' instance.
 
         @param MetaBlockConnectable:
         @param MemberOf_MetaBlockReference:
@@ -38,7 +38,14 @@ class MetaBlockOutputReference(IdentifiedObject):
         self._StandardControlBlock_MetaBlockConnectable = None
         self.StandardControlBlock_MetaBlockConnectable = StandardControlBlock_MetaBlockConnectable
 
-        super(MetaBlockOutputReference, self).__init__(**kw_args)
+        super(MetaBlockOutputReference, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["MetaBlockConnectable", "MemberOf_MetaBlockReference", "MetaBlockSignal", "StandardControlBlock_MetaBlockConnectable"]
+    _many_refs = ["MetaBlockSignal"]
 
     def getMetaBlockConnectable(self):
         

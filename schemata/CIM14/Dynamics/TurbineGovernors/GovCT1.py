@@ -20,8 +20,8 @@ class GovCT1(TurbineGovernor):
     """General model for any prime mover with a PID governor, used primarily for combustion turbine and combined cycle units.
     """
 
-    def __init__(self, tdgov=0.0, tb=0.0, kdgov=0.0, db=0.0, vmin=0.0, kturb=0.0, teng=0.0, minerr=0.0, aset=0.0, maxerr=0.0, tsa=0.0, mwbase=0.0, wfspd=False, kiload=0.0, kpgov=0.0, ldref=0.0, vmax=0.0, rup=0.0, r=0.0, tpelec=0.0, ta=0.0, ropen=0.0, kimw=0.0, ka=0.0, rdown=0.0, rclose=0.0, dm=0.0, tsb=0.0, kigov=0.0, kpload=0.0, tfload=0.0, tact=0.0, tc=0.0, wfnl=0.0, pmwset=0.0, rselect=False, **kw_args):
-        """Initializes a new 'GovCT1' instance.
+    def __init__(self, tdgov=0.0, tb=0.0, kdgov=0.0, db=0.0, vmin=0.0, kturb=0.0, teng=0.0, minerr=0.0, aset=0.0, maxerr=0.0, tsa=0.0, mwbase=0.0, wfspd=False, kiload=0.0, kpgov=0.0, ldref=0.0, vmax=0.0, rup=0.0, r=0.0, tpelec=0.0, ta=0.0, ropen=0.0, kimw=0.0, ka=0.0, rdown=0.0, rclose=0.0, dm=0.0, tsb=0.0, kigov=0.0, kpload=0.0, tfload=0.0, tact=0.0, tc=0.0, wfnl=0.0, pmwset=0.0, rselect=False, *args, **kw_args):
+        """Initialises a new 'GovCT1' instance.
 
         @param tdgov: Governor derivative controller time constant 
         @param tb: Turbine lag time constant, sec.  (&gt;0.) 
@@ -168,5 +168,12 @@ class GovCT1(TurbineGovernor):
         #: Feedback signal for droop  = 1 electrical power = 0 none (isochronous governor) = -1 fuel valve stroke ( true stroke) = -2 governor output ( requested stroke)
         self.rselect = rselect
 
-        super(GovCT1, self).__init__(**kw_args)
+        super(GovCT1, self).__init__(*args, **kw_args)
+
+    _attrs = ["tdgov", "tb", "kdgov", "db", "vmin", "kturb", "teng", "minerr", "aset", "maxerr", "tsa", "mwbase", "wfspd", "kiload", "kpgov", "ldref", "vmax", "rup", "r", "tpelec", "ta", "ropen", "kimw", "ka", "rdown", "rclose", "dm", "tsb", "kigov", "kpload", "tfload", "tact", "tc", "wfnl", "pmwset", "rselect"]
+    _attr_types = {"tdgov": float, "tb": float, "kdgov": float, "db": float, "vmin": float, "kturb": float, "teng": float, "minerr": float, "aset": float, "maxerr": float, "tsa": float, "mwbase": float, "wfspd": bool, "kiload": float, "kpgov": float, "ldref": float, "vmax": float, "rup": float, "r": float, "tpelec": float, "ta": float, "ropen": float, "kimw": float, "ka": float, "rdown": float, "rclose": float, "dm": float, "tsb": float, "kigov": float, "kpload": float, "tfload": float, "tact": float, "tc": float, "wfnl": float, "pmwset": float, "rselect": bool}
+    _defaults = {"tdgov": 0.0, "tb": 0.0, "kdgov": 0.0, "db": 0.0, "vmin": 0.0, "kturb": 0.0, "teng": 0.0, "minerr": 0.0, "aset": 0.0, "maxerr": 0.0, "tsa": 0.0, "mwbase": 0.0, "wfspd": False, "kiload": 0.0, "kpgov": 0.0, "ldref": 0.0, "vmax": 0.0, "rup": 0.0, "r": 0.0, "tpelec": 0.0, "ta": 0.0, "ropen": 0.0, "kimw": 0.0, "ka": 0.0, "rdown": 0.0, "rclose": 0.0, "dm": 0.0, "tsb": 0.0, "kigov": 0.0, "kpload": 0.0, "tfload": 0.0, "tact": 0.0, "tc": 0.0, "wfnl": 0.0, "pmwset": 0.0, "rselect": False}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

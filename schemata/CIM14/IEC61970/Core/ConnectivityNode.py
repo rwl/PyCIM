@@ -20,8 +20,8 @@ class ConnectivityNode(IdentifiedObject):
     """Connectivity nodes are points where terminals of conducting equipment are connected together with zero impedance.
     """
 
-    def __init__(self, TopologicalNode=None, BusNameMarker=None, ConnectivityNodeContainer=None, Terminals=None, **kw_args):
-        """Initializes a new 'ConnectivityNode' instance.
+    def __init__(self, TopologicalNode=None, BusNameMarker=None, ConnectivityNodeContainer=None, Terminals=None, *args, **kw_args):
+        """Initialises a new 'ConnectivityNode' instance.
 
         @param TopologicalNode: Several ConnectivityNode(s) may combine together to form a single TopologicalNode, depending on the current state of the network.
         @param BusNameMarker: The associated name of the bus (TopologicalNode) containing the ConnectivityNode is derived by an algorithm that uses the bus name marker.
@@ -40,7 +40,14 @@ class ConnectivityNode(IdentifiedObject):
         self._Terminals = []
         self.Terminals = [] if Terminals is None else Terminals
 
-        super(ConnectivityNode, self).__init__(**kw_args)
+        super(ConnectivityNode, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["TopologicalNode", "BusNameMarker", "ConnectivityNodeContainer", "Terminals"]
+    _many_refs = ["Terminals"]
 
     def getTopologicalNode(self):
         """Several ConnectivityNode(s) may combine together to form a single TopologicalNode, depending on the current state of the network.

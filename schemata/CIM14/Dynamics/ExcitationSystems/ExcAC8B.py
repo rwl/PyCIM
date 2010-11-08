@@ -20,8 +20,8 @@ class ExcAC8B(ExcitationSystem):
     """IEEE (2005) AC8B Model  The AVR in this model consists of PID control, with separate constants for the proportional (<i>KPR</i>), integral (<i>KIR</i>), and derivative (<i>KDR</i>) gains. The representation of the brushless exciter (<i>TE</i>, <i>KE</i>, <i>SE</i>, <i>KC</i>, <i>KD</i>) is similar to the model Type AC2A. The Type AC8B model can be used to represent static voltage regulators applied to brushless excitation systems. Digitally based voltage regulators feeding dc rotating main exciters can be represented with the AC Type AC8B model with the parameters <i>KC </i>and <i>KD </i>set to 0. For thyristor power stages fed from the generator terminals, the limits <i>VRMAX </i>and <i>VRMIN </i>should be a function of terminal voltage: <i>VT </i>x <i>VRMAX </i>and <i>VT </i>x <i>VRMIN</i>.
     """
 
-    def __init__(self, vfemax=0.0, vrmin=0.0, ta=0.0, tdr=0.0, vtmult=0.0, ka=0.0, kdr=0.0, se1=0.0, e1=0.0, vemin=0.0, te=0.0, ke=0.0, se2=0.0, tr=0.0, kir=0.0, kpr=0.0, vrmax=0.0, kd=0.0, e2=0.0, kc=0.0, **kw_args):
-        """Initializes a new 'ExcAC8B' instance.
+    def __init__(self, vfemax=0.0, vrmin=0.0, ta=0.0, tdr=0.0, vtmult=0.0, ka=0.0, kdr=0.0, se1=0.0, e1=0.0, vemin=0.0, te=0.0, ke=0.0, se2=0.0, tr=0.0, kir=0.0, kpr=0.0, vrmax=0.0, kd=0.0, e2=0.0, kc=0.0, *args, **kw_args):
+        """Initialises a new 'ExcAC8B' instance.
 
         @param vfemax: Exciter field current limit parameter 
         @param vrmin: Minimum controller output (&lt;= 0.) 
@@ -104,5 +104,12 @@ class ExcAC8B(ExcitationSystem):
         #: Rectifier regulation factor (&gt;= 0.)
         self.kc = kc
 
-        super(ExcAC8B, self).__init__(**kw_args)
+        super(ExcAC8B, self).__init__(*args, **kw_args)
+
+    _attrs = ["vfemax", "vrmin", "ta", "tdr", "vtmult", "ka", "kdr", "se1", "e1", "vemin", "te", "ke", "se2", "tr", "kir", "kpr", "vrmax", "kd", "e2", "kc"]
+    _attr_types = {"vfemax": float, "vrmin": float, "ta": float, "tdr": float, "vtmult": float, "ka": float, "kdr": float, "se1": float, "e1": float, "vemin": float, "te": float, "ke": float, "se2": float, "tr": float, "kir": float, "kpr": float, "vrmax": float, "kd": float, "e2": float, "kc": float}
+    _defaults = {"vfemax": 0.0, "vrmin": 0.0, "ta": 0.0, "tdr": 0.0, "vtmult": 0.0, "ka": 0.0, "kdr": 0.0, "se1": 0.0, "e1": 0.0, "vemin": 0.0, "te": 0.0, "ke": 0.0, "se2": 0.0, "tr": 0.0, "kir": 0.0, "kpr": 0.0, "vrmax": 0.0, "kd": 0.0, "e2": 0.0, "kc": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

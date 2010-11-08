@@ -20,8 +20,8 @@ class AnalogValue(MeasurementValue):
     """AnalogValue represents an analog MeasurementValue.
     """
 
-    def __init__(self, value=0.0, AltTieMeas=None, Analog=None, AltGeneratingUnit=None, **kw_args):
-        """Initializes a new 'AnalogValue' instance.
+    def __init__(self, value=0.0, AltTieMeas=None, Analog=None, AltGeneratingUnit=None, *args, **kw_args):
+        """Initialises a new 'AnalogValue' instance.
 
         @param value: The value to supervise. 
         @param AltTieMeas: The usage of the measurement within the control area specification.
@@ -40,7 +40,14 @@ class AnalogValue(MeasurementValue):
         self._AltGeneratingUnit = []
         self.AltGeneratingUnit = [] if AltGeneratingUnit is None else AltGeneratingUnit
 
-        super(AnalogValue, self).__init__(**kw_args)
+        super(AnalogValue, self).__init__(*args, **kw_args)
+
+    _attrs = ["value"]
+    _attr_types = {"value": float}
+    _defaults = {"value": 0.0}
+    _enums = {}
+    _refs = ["AltTieMeas", "Analog", "AltGeneratingUnit"]
+    _many_refs = ["AltTieMeas", "AltGeneratingUnit"]
 
     def getAltTieMeas(self):
         """The usage of the measurement within the control area specification.

@@ -20,8 +20,8 @@ class ComFunction(DeviceFunction):
     """Communication function of communication equipment or a device such as a meter.
     """
 
-    def __init__(self, amrRouter='', twoWay=False, amrAddress='', **kw_args):
-        """Initializes a new 'ComFunction' instance.
+    def __init__(self, amrRouter='', twoWay=False, amrAddress='', *args, **kw_args):
+        """Initialises a new 'ComFunction' instance.
 
         @param amrRouter: Communication ID number (e.g. port number, serial number, data collector ID, etc.) of the parent device associated to this AMR module. Note: If someone swaps out a meter, they may inadvertently disrupt the AMR system. Some technologies route readings from nearby meters through a common collection point on an electricity meter. Removal of such a meter disrupts AMR for numerous nearby meters. 
         @param twoWay: True when the AMR module can both send and receive messages. Default is false (i.e., module can only send). 
@@ -36,5 +36,12 @@ class ComFunction(DeviceFunction):
         #: Communication ID number (e.g. serial number, IP address, telephone number, etc.) of the AMR module which serves this meter.
         self.amrAddress = amrAddress
 
-        super(ComFunction, self).__init__(**kw_args)
+        super(ComFunction, self).__init__(*args, **kw_args)
+
+    _attrs = ["amrRouter", "twoWay", "amrAddress"]
+    _attr_types = {"amrRouter": str, "twoWay": bool, "amrAddress": str}
+    _defaults = {"amrRouter": '', "twoWay": False, "amrAddress": ''}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

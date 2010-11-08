@@ -20,8 +20,8 @@ class StringMeasurementValue(MeasurementValue):
     """StringMeasurementValue represents a measurement value of type string.
     """
 
-    def __init__(self, value='', StringMeasurement=None, **kw_args):
-        """Initializes a new 'StringMeasurementValue' instance.
+    def __init__(self, value='', StringMeasurement=None, *args, **kw_args):
+        """Initialises a new 'StringMeasurementValue' instance.
 
         @param value: The value to supervise. 
         @param StringMeasurement: Measurement to which this value is connected.
@@ -32,7 +32,14 @@ class StringMeasurementValue(MeasurementValue):
         self._StringMeasurement = None
         self.StringMeasurement = StringMeasurement
 
-        super(StringMeasurementValue, self).__init__(**kw_args)
+        super(StringMeasurementValue, self).__init__(*args, **kw_args)
+
+    _attrs = ["value"]
+    _attr_types = {"value": str}
+    _defaults = {"value": ''}
+    _enums = {}
+    _refs = ["StringMeasurement"]
+    _many_refs = []
 
     def getStringMeasurement(self):
         """Measurement to which this value is connected.

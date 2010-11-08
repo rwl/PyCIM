@@ -20,8 +20,8 @@ class TimePoint(IdentifiedObject):
     """A point in time within a sequence of points in time relative to a TimeSchedule.
     """
 
-    def __init__(self, relativeTimeInterval=0.0, sequenceNumber=0, dateTime='', TimeSchedule=None, status=None, window=None, **kw_args):
-        """Initializes a new 'TimePoint' instance.
+    def __init__(self, relativeTimeInterval=0.0, sequenceNumber=0, dateTime='', TimeSchedule=None, status=None, window=None, *args, **kw_args):
+        """Initialises a new 'TimePoint' instance.
 
         @param relativeTimeInterval: (if interval-based) A point in time relative to scheduled start time in 'TimeSchedule.scheduleInterval.start'. 
         @param sequenceNumber: (if sequence-based) Relative sequence number for this time point. 
@@ -46,7 +46,14 @@ class TimePoint(IdentifiedObject):
 
         self.window = window
 
-        super(TimePoint, self).__init__(**kw_args)
+        super(TimePoint, self).__init__(*args, **kw_args)
+
+    _attrs = ["relativeTimeInterval", "sequenceNumber", "dateTime"]
+    _attr_types = {"relativeTimeInterval": float, "sequenceNumber": int, "dateTime": str}
+    _defaults = {"relativeTimeInterval": 0.0, "sequenceNumber": 0, "dateTime": ''}
+    _enums = {}
+    _refs = ["TimeSchedule", "status", "window"]
+    _many_refs = []
 
     def getTimeSchedule(self):
         """Time schedule owning this time point.

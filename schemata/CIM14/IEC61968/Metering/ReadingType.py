@@ -20,8 +20,8 @@ class ReadingType(IdentifiedObject):
     """Type of data conveyed by a specific Reading.
     """
 
-    def __init__(self, multiplier='k', kind='voltageAngle', unit='N', reverseChronology=False, defaultQuality='', defaultValueDataType='', channelNumber=0, intervalLength=0.0, Readings=None, dynamicConfiguration=None, IntervalBlocks=None, Pending=None, Register=None, **kw_args):
-        """Initializes a new 'ReadingType' instance.
+    def __init__(self, multiplier="k", kind="voltageAngle", unit="N", reverseChronology=False, defaultQuality='', defaultValueDataType='', channelNumber=0, intervalLength=0.0, Readings=None, dynamicConfiguration=None, IntervalBlocks=None, Pending=None, Register=None, *args, **kw_args):
+        """Initialises a new 'ReadingType' instance.
 
         @param multiplier: Multiplier for 'unit'. Values are: "k", "d", "n", "M", "none", "G", "micro", "T", "c", "m", "p"
         @param kind: Kind of reading. Values are: "voltageAngle", "current", "time", "powerFactor", "voltage", "frequency", "power", "other", "energy", "demand", "volume", "date", "phaseAngle", "pressure", "currentAngle"
@@ -37,13 +37,13 @@ class ReadingType(IdentifiedObject):
         @param Pending: Pending conversion that produced this reading type.
         @param Register: Register displaying values with this type information.
         """
-        #: Multiplier for 'unit'.Values are: "k", "d", "n", "M", "none", "G", "micro", "T", "c", "m", "p"
+        #: Multiplier for 'unit'. Values are: "k", "d", "n", "M", "none", "G", "micro", "T", "c", "m", "p"
         self.multiplier = multiplier
 
-        #: Kind of reading.Values are: "voltageAngle", "current", "time", "powerFactor", "voltage", "frequency", "power", "other", "energy", "demand", "volume", "date", "phaseAngle", "pressure", "currentAngle"
+        #: Kind of reading. Values are: "voltageAngle", "current", "time", "powerFactor", "voltage", "frequency", "power", "other", "energy", "demand", "volume", "date", "phaseAngle", "pressure", "currentAngle"
         self.kind = kind
 
-        #: Unit for the reading value.Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "oC", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
+        #: Unit for the reading value. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "oC", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
         self.unit = unit
 
         #: True for systems that must operate in 'reverse' chronological order.
@@ -75,7 +75,14 @@ class ReadingType(IdentifiedObject):
         self._Register = None
         self.Register = Register
 
-        super(ReadingType, self).__init__(**kw_args)
+        super(ReadingType, self).__init__(*args, **kw_args)
+
+    _attrs = ["multiplier", "kind", "unit", "reverseChronology", "defaultQuality", "defaultValueDataType", "channelNumber", "intervalLength"]
+    _attr_types = {"multiplier": str, "kind": str, "unit": str, "reverseChronology": bool, "defaultQuality": str, "defaultValueDataType": str, "channelNumber": int, "intervalLength": float}
+    _defaults = {"multiplier": "k", "kind": "voltageAngle", "unit": "N", "reverseChronology": False, "defaultQuality": '', "defaultValueDataType": '', "channelNumber": 0, "intervalLength": 0.0}
+    _enums = {"multiplier": "UnitMultiplier", "kind": "ReadingKind", "unit": "UnitSymbol"}
+    _refs = ["Readings", "dynamicConfiguration", "IntervalBlocks", "Pending", "Register"]
+    _many_refs = ["Readings", "IntervalBlocks"]
 
     def getReadings(self):
         """All reading values with this type information.

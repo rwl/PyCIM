@@ -20,8 +20,8 @@ class MetaBlockParameterReference(IdentifiedObject):
     """References a parameter of a block used in the internal representation of a block.
     """
 
-    def __init__(self, StandardControlBlock_MetaBlockConnectable=None, MetaBlockConnectable=None, MemberOf_MetaBlockReference=None, **kw_args):
-        """Initializes a new 'MetaBlockParameterReference' instance.
+    def __init__(self, StandardControlBlock_MetaBlockConnectable=None, MetaBlockConnectable=None, MemberOf_MetaBlockReference=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockParameterReference' instance.
 
         @param StandardControlBlock_MetaBlockConnectable:
         @param MetaBlockConnectable:
@@ -36,7 +36,14 @@ class MetaBlockParameterReference(IdentifiedObject):
         self._MemberOf_MetaBlockReference = None
         self.MemberOf_MetaBlockReference = MemberOf_MetaBlockReference
 
-        super(MetaBlockParameterReference, self).__init__(**kw_args)
+        super(MetaBlockParameterReference, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["StandardControlBlock_MetaBlockConnectable", "MetaBlockConnectable", "MemberOf_MetaBlockReference"]
+    _many_refs = []
 
     def getStandardControlBlock_MetaBlockConnectable(self):
         

@@ -20,8 +20,8 @@ class GenEquiv(RotatingMachine):
     """An equivalent representation of a synchronous generator as a constant internal voltage behind an impedance Ra plus Xp.
     """
 
-    def __init__(self, xp=0.0, synchronousMachine0=None, **kw_args):
-        """Initializes a new 'GenEquiv' instance.
+    def __init__(self, xp=0.0, synchronousMachine0=None, *args, **kw_args):
+        """Initialises a new 'GenEquiv' instance.
 
         @param xp: Equivalent reactance, also known as Xp. 
         @param synchronousMachine0:
@@ -32,7 +32,14 @@ class GenEquiv(RotatingMachine):
         self._synchronousMachine0 = []
         self.synchronousMachine0 = [] if synchronousMachine0 is None else synchronousMachine0
 
-        super(GenEquiv, self).__init__(**kw_args)
+        super(GenEquiv, self).__init__(*args, **kw_args)
+
+    _attrs = ["xp"]
+    _attr_types = {"xp": float}
+    _defaults = {"xp": 0.0}
+    _enums = {}
+    _refs = ["synchronousMachine0"]
+    _many_refs = ["synchronousMachine0"]
 
     def getsynchronousMachine0(self):
         

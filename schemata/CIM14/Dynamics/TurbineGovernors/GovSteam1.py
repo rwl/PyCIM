@@ -20,8 +20,8 @@ class GovSteam1(TurbineGovernor):
     """IEEE steam turbine/governor model  (with optional deadband and nonlinear valve gain added)
     """
 
-    def __init__(self, gv1=0.0, pgv3=0.0, uo=0.0, k1=0.0, mwbase=0.0, k8=0.0, uc=0.0, gv5=0.0, k7=0.0, gv4=0.0, k=0.0, gv2=0.0, db2=0.0, pgv4=0.0, t6=0.0, k2=0.0, db1=0.0, t5=0.0, k5=0.0, pgv2=0.0, pgv1=0.0, t3=0.0, t1=0.0, k6=0.0, gv3=0.0, eps=0.0, gv6=0.0, t4=0.0, pgv6=0.0, pmin=0.0, k4=0.0, pgv5=0.0, pmax=0.0, t7=0.0, k3=0.0, t2=0.0, **kw_args):
-        """Initializes a new 'GovSteam1' instance.
+    def __init__(self, gv1=0.0, pgv3=0.0, uo=0.0, k1=0.0, mwbase=0.0, k8=0.0, uc=0.0, gv5=0.0, k7=0.0, gv4=0.0, k=0.0, gv2=0.0, db2=0.0, pgv4=0.0, t6=0.0, k2=0.0, db1=0.0, t5=0.0, k5=0.0, pgv2=0.0, pgv1=0.0, t3=0.0, t1=0.0, k6=0.0, gv3=0.0, eps=0.0, gv6=0.0, t4=0.0, pgv6=0.0, pmin=0.0, k4=0.0, pgv5=0.0, pmax=0.0, t7=0.0, k3=0.0, t2=0.0, *args, **kw_args):
+        """Initialises a new 'GovSteam1' instance.
 
         @param gv1: Nonlinear gain valve position point 1 
         @param pgv3: Nonlinear gain power value point 3 
@@ -168,5 +168,12 @@ class GovSteam1(TurbineGovernor):
         #: Governor lead time constant
         self.t2 = t2
 
-        super(GovSteam1, self).__init__(**kw_args)
+        super(GovSteam1, self).__init__(*args, **kw_args)
+
+    _attrs = ["gv1", "pgv3", "uo", "k1", "mwbase", "k8", "uc", "gv5", "k7", "gv4", "k", "gv2", "db2", "pgv4", "t6", "k2", "db1", "t5", "k5", "pgv2", "pgv1", "t3", "t1", "k6", "gv3", "eps", "gv6", "t4", "pgv6", "pmin", "k4", "pgv5", "pmax", "t7", "k3", "t2"]
+    _attr_types = {"gv1": float, "pgv3": float, "uo": float, "k1": float, "mwbase": float, "k8": float, "uc": float, "gv5": float, "k7": float, "gv4": float, "k": float, "gv2": float, "db2": float, "pgv4": float, "t6": float, "k2": float, "db1": float, "t5": float, "k5": float, "pgv2": float, "pgv1": float, "t3": float, "t1": float, "k6": float, "gv3": float, "eps": float, "gv6": float, "t4": float, "pgv6": float, "pmin": float, "k4": float, "pgv5": float, "pmax": float, "t7": float, "k3": float, "t2": float}
+    _defaults = {"gv1": 0.0, "pgv3": 0.0, "uo": 0.0, "k1": 0.0, "mwbase": 0.0, "k8": 0.0, "uc": 0.0, "gv5": 0.0, "k7": 0.0, "gv4": 0.0, "k": 0.0, "gv2": 0.0, "db2": 0.0, "pgv4": 0.0, "t6": 0.0, "k2": 0.0, "db1": 0.0, "t5": 0.0, "k5": 0.0, "pgv2": 0.0, "pgv1": 0.0, "t3": 0.0, "t1": 0.0, "k6": 0.0, "gv3": 0.0, "eps": 0.0, "gv6": 0.0, "t4": 0.0, "pgv6": 0.0, "pmin": 0.0, "k4": 0.0, "pgv5": 0.0, "pmax": 0.0, "t7": 0.0, "k3": 0.0, "t2": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

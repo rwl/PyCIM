@@ -20,8 +20,8 @@ class Charge(IdentifiedObject):
     """A charge element associated with other entities such as tariff structures, auxiliary agreements or other charge elements. The total charge amount applicable to this instance of Charge is the sum of fixedPortion plus percentagePortion.
     """
 
-    def __init__(self, kind='demandCharge', variablePortion=0.0, AuxiliaryAccounts=None, ParentCharge=None, ChildCharges=None, fixedPortion=None, ConsumptionTariffIntervals=None, TimeTariffIntervals=None, **kw_args):
-        """Initializes a new 'Charge' instance.
+    def __init__(self, kind="demandCharge", variablePortion=0.0, AuxiliaryAccounts=None, ParentCharge=None, ChildCharges=None, fixedPortion=None, ConsumptionTariffIntervals=None, TimeTariffIntervals=None, *args, **kw_args):
+        """Initialises a new 'Charge' instance.
 
         @param kind: The kind of charge to be applied. Values are: "demandCharge", "other", "auxiliaryCharge", "taxCharge", "consumptionCharge"
         @param variablePortion: The variable portion of this charge element, calculated as a percentage of the total amount of a parent charge. 
@@ -32,7 +32,7 @@ class Charge(IdentifiedObject):
         @param ConsumptionTariffIntervals: Tariff intervals to which this consumption-based charge must be levied.
         @param TimeTariffIntervals: Tariff intervals to which this time-based charge must be levied.
         """
-        #: The kind of charge to be applied.Values are: "demandCharge", "other", "auxiliaryCharge", "taxCharge", "consumptionCharge"
+        #: The kind of charge to be applied. Values are: "demandCharge", "other", "auxiliaryCharge", "taxCharge", "consumptionCharge"
         self.kind = kind
 
         #: The variable portion of this charge element, calculated as a percentage of the total amount of a parent charge.
@@ -55,7 +55,14 @@ class Charge(IdentifiedObject):
         self._TimeTariffIntervals = []
         self.TimeTariffIntervals = [] if TimeTariffIntervals is None else TimeTariffIntervals
 
-        super(Charge, self).__init__(**kw_args)
+        super(Charge, self).__init__(*args, **kw_args)
+
+    _attrs = ["kind", "variablePortion"]
+    _attr_types = {"kind": str, "variablePortion": float}
+    _defaults = {"kind": "demandCharge", "variablePortion": 0.0}
+    _enums = {"kind": "ChargeKind"}
+    _refs = ["AuxiliaryAccounts", "ParentCharge", "ChildCharges", "fixedPortion", "ConsumptionTariffIntervals", "TimeTariffIntervals"]
+    _many_refs = ["AuxiliaryAccounts", "ChildCharges", "ConsumptionTariffIntervals", "TimeTariffIntervals"]
 
     def getAuxiliaryAccounts(self):
         """All auxiliary accounts to which this charge must be levied.

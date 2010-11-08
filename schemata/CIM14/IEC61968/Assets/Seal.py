@@ -20,8 +20,8 @@ class Seal(IdentifiedObject):
     """Physically controls access to AssetContainers.
     """
 
-    def __init__(self, kind='other', condition='open', sealNumber='', appliedDateTime='', AssetContainer=None, **kw_args):
-        """Initializes a new 'Seal' instance.
+    def __init__(self, kind="other", condition="open", sealNumber='', appliedDateTime='', AssetContainer=None, *args, **kw_args):
+        """Initialises a new 'Seal' instance.
 
         @param kind: Kind of seal. Values are: "other", "lead", "steel", "lock"
         @param condition: Condition of seal. Values are: "open", "broken", "missing", "other", "locked"
@@ -29,10 +29,10 @@ class Seal(IdentifiedObject):
         @param appliedDateTime: Date and time this seal has been applied. 
         @param AssetContainer: Asset container to which this seal is applied.
         """
-        #: Kind of seal.Values are: "other", "lead", "steel", "lock"
+        #: Kind of seal. Values are: "other", "lead", "steel", "lock"
         self.kind = kind
 
-        #: Condition of seal.Values are: "open", "broken", "missing", "other", "locked"
+        #: Condition of seal. Values are: "open", "broken", "missing", "other", "locked"
         self.condition = condition
 
         #: (reserved word) Seal number.
@@ -44,7 +44,14 @@ class Seal(IdentifiedObject):
         self._AssetContainer = None
         self.AssetContainer = AssetContainer
 
-        super(Seal, self).__init__(**kw_args)
+        super(Seal, self).__init__(*args, **kw_args)
+
+    _attrs = ["kind", "condition", "sealNumber", "appliedDateTime"]
+    _attr_types = {"kind": str, "condition": str, "sealNumber": str, "appliedDateTime": str}
+    _defaults = {"kind": "other", "condition": "open", "sealNumber": '', "appliedDateTime": ''}
+    _enums = {"kind": "SealKind", "condition": "SealConditionKind"}
+    _refs = ["AssetContainer"]
+    _many_refs = []
 
     def getAssetContainer(self):
         """Asset container to which this seal is applied.

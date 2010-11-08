@@ -20,8 +20,8 @@ class Receipt(IdentifiedObject):
     """Record of total receipted payment from customer.
     """
 
-    def __init__(self, isBankable=False, CashierShift=None, Tenders=None, VendorShift=None, Transactions=None, line=None, **kw_args):
-        """Initializes a new 'Receipt' instance.
+    def __init__(self, isBankable=False, CashierShift=None, Tenders=None, VendorShift=None, Transactions=None, line=None, *args, **kw_args):
+        """Initialises a new 'Receipt' instance.
 
         @param isBankable: True if this receipted payment is manually bankable, otherwise it is an electronic funds transfer. 
         @param CashierShift: Cashier shift during which this receipt was recorded.
@@ -47,7 +47,14 @@ class Receipt(IdentifiedObject):
 
         self.line = line
 
-        super(Receipt, self).__init__(**kw_args)
+        super(Receipt, self).__init__(*args, **kw_args)
+
+    _attrs = ["isBankable"]
+    _attr_types = {"isBankable": bool}
+    _defaults = {"isBankable": False}
+    _enums = {}
+    _refs = ["CashierShift", "Tenders", "VendorShift", "Transactions", "line"]
+    _many_refs = ["Tenders", "Transactions"]
 
     def getCashierShift(self):
         """Cashier shift during which this receipt was recorded.

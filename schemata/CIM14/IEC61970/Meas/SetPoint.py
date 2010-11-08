@@ -20,8 +20,8 @@ class SetPoint(Control):
     """A SetPoint is an analog control used for supervisory control.
     """
 
-    def __init__(self, minValue=0.0, value=0.0, maxValue=0.0, normalValue=0.0, Analog=None, **kw_args):
-        """Initializes a new 'SetPoint' instance.
+    def __init__(self, minValue=0.0, value=0.0, maxValue=0.0, normalValue=0.0, Analog=None, *args, **kw_args):
+        """Initialises a new 'SetPoint' instance.
 
         @param minValue: Normal value range minimum for any of the Control.value. Used for scaling, e.g. in bar graphs. 
         @param value: The value representing the actuator output 
@@ -44,7 +44,14 @@ class SetPoint(Control):
         self._Analog = None
         self.Analog = Analog
 
-        super(SetPoint, self).__init__(**kw_args)
+        super(SetPoint, self).__init__(*args, **kw_args)
+
+    _attrs = ["minValue", "value", "maxValue", "normalValue"]
+    _attr_types = {"minValue": float, "value": float, "maxValue": float, "normalValue": float}
+    _defaults = {"minValue": 0.0, "value": 0.0, "maxValue": 0.0, "normalValue": 0.0}
+    _enums = {}
+    _refs = ["Analog"]
+    _many_refs = []
 
     def getAnalog(self):
         """The Measurement variable used for control

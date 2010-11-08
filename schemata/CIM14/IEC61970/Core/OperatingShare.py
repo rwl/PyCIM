@@ -20,8 +20,8 @@ class OperatingShare(Element):
     """Specifies the contract relationship between a PowerSystemResource and a contract participant.
     """
 
-    def __init__(self, percentage=0.0, PowerSystemResource=None, OperatingParticipant=None, **kw_args):
-        """Initializes a new 'OperatingShare' instance.
+    def __init__(self, percentage=0.0, PowerSystemResource=None, OperatingParticipant=None, *args, **kw_args):
+        """Initialises a new 'OperatingShare' instance.
 
         @param percentage: Percentage ownership for this device.   The percentage indicates the percentage ownership of the PSROwner for the PowerSystemResource.  The total percentage ownership for a PowerSystemResource should add to 100%. 
         @param PowerSystemResource: The PowerSystemResource to which the attribues apply.   The percentage ownership of all owners of a PowerSystemResource should add to 100%.
@@ -36,7 +36,14 @@ class OperatingShare(Element):
         self._OperatingParticipant = None
         self.OperatingParticipant = OperatingParticipant
 
-        super(OperatingShare, self).__init__(**kw_args)
+        super(OperatingShare, self).__init__(*args, **kw_args)
+
+    _attrs = ["percentage"]
+    _attr_types = {"percentage": float}
+    _defaults = {"percentage": 0.0}
+    _enums = {}
+    _refs = ["PowerSystemResource", "OperatingParticipant"]
+    _many_refs = []
 
     def getPowerSystemResource(self):
         """The PowerSystemResource to which the attribues apply.   The percentage ownership of all owners of a PowerSystemResource should add to 100%.

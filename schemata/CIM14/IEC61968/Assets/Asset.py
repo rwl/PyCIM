@@ -20,8 +20,8 @@ class Asset(IdentifiedObject):
     """Tangible resource of the utility, including power system equipment, cabinets, buildings, etc. For electrical network equipment, the role of the asset is defined through PowerSystemResource and its subclasses, defined mainly in the Wires model (refer to IEC61970-301 and model package IEC61970::Wires). Asset description places emphasis on the physical characteristics of the equipment fulfilling that role.
     """
 
-    def __init__(self, category='', serialNumber='', manufacturedDate='', lotNumber='', critical=False, application='', initialLossOfLife=0.0, corporateCode='', purchasePrice=0.0, utcNumber='', installationDate='', initialCondition='', PowerSystemResources=None, Properties=None, acceptanceTest=None, ActivityRecords=None, Location=None, AssetFunctions=None, Measurements=None, AssetContainer=None, status=None, Ratings=None, electronicAddress=None, **kw_args):
-        """Initializes a new 'Asset' instance.
+    def __init__(self, category='', serialNumber='', manufacturedDate='', lotNumber='', critical=False, application='', initialLossOfLife=0.0, corporateCode='', purchasePrice=0.0, utcNumber='', installationDate='', initialCondition='', PowerSystemResources=None, Properties=None, acceptanceTest=None, ActivityRecords=None, Location=None, AssetFunctions=None, Measurements=None, AssetContainer=None, status=None, Ratings=None, electronicAddress=None, *args, **kw_args):
+        """Initialises a new 'Asset' instance.
 
         @param category: Extension mechanism to accommodate utility-specific categorisation of Asset and its subtypes, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.). 
         @param serialNumber: Serial number of this asset. 
@@ -113,7 +113,14 @@ class Asset(IdentifiedObject):
 
         self.electronicAddress = electronicAddress
 
-        super(Asset, self).__init__(**kw_args)
+        super(Asset, self).__init__(*args, **kw_args)
+
+    _attrs = ["category", "serialNumber", "manufacturedDate", "lotNumber", "critical", "application", "initialLossOfLife", "corporateCode", "purchasePrice", "utcNumber", "installationDate", "initialCondition"]
+    _attr_types = {"category": str, "serialNumber": str, "manufacturedDate": str, "lotNumber": str, "critical": bool, "application": str, "initialLossOfLife": float, "corporateCode": str, "purchasePrice": float, "utcNumber": str, "installationDate": str, "initialCondition": str}
+    _defaults = {"category": '', "serialNumber": '', "manufacturedDate": '', "lotNumber": '', "critical": False, "application": '', "initialLossOfLife": 0.0, "corporateCode": '', "purchasePrice": 0.0, "utcNumber": '', "installationDate": '', "initialCondition": ''}
+    _enums = {}
+    _refs = ["PowerSystemResources", "Properties", "acceptanceTest", "ActivityRecords", "Location", "AssetFunctions", "Measurements", "AssetContainer", "status", "Ratings", "electronicAddress"]
+    _many_refs = ["PowerSystemResources", "Properties", "ActivityRecords", "AssetFunctions", "Measurements", "Ratings"]
 
     def getPowerSystemResources(self):
         """All power system resources used to electrically model this asset. For example, transformer asset is electrically modelled with a transformer and its windings and tap changer.

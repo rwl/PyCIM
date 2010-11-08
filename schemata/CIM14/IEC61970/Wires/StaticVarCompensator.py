@@ -20,8 +20,8 @@ class StaticVarCompensator(RegulatingCondEq):
     """A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.  The SVC may operate in fixed MVar output mode or in voltage control mode.  When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero.
     """
 
-    def __init__(self, sVCControlMode='reactivePower', voltageSetPoint=0.0, capacitiveRating=0.0, inductiveRating=0.0, slope=0.0, **kw_args):
-        """Initializes a new 'StaticVarCompensator' instance.
+    def __init__(self, sVCControlMode="reactivePower", voltageSetPoint=0.0, capacitiveRating=0.0, inductiveRating=0.0, slope=0.0, *args, **kw_args):
+        """Initialises a new 'StaticVarCompensator' instance.
 
         @param sVCControlMode: SVC control mode. Values are: "reactivePower", "off", "voltage"
         @param voltageSetPoint: The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero. 
@@ -29,7 +29,7 @@ class StaticVarCompensator(RegulatingCondEq):
         @param inductiveRating: Maximum available inductive reactive power 
         @param slope: The characteristics slope of an SVC defines how the reactive power output changes in proportion to the difference between the regulated bus voltage and the voltage setpoint. 
         """
-        #: SVC control mode.Values are: "reactivePower", "off", "voltage"
+        #: SVC control mode. Values are: "reactivePower", "off", "voltage"
         self.sVCControlMode = sVCControlMode
 
         #: The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero.
@@ -44,5 +44,12 @@ class StaticVarCompensator(RegulatingCondEq):
         #: The characteristics slope of an SVC defines how the reactive power output changes in proportion to the difference between the regulated bus voltage and the voltage setpoint.
         self.slope = slope
 
-        super(StaticVarCompensator, self).__init__(**kw_args)
+        super(StaticVarCompensator, self).__init__(*args, **kw_args)
+
+    _attrs = ["sVCControlMode", "voltageSetPoint", "capacitiveRating", "inductiveRating", "slope"]
+    _attr_types = {"sVCControlMode": str, "voltageSetPoint": float, "capacitiveRating": float, "inductiveRating": float, "slope": float}
+    _defaults = {"sVCControlMode": "reactivePower", "voltageSetPoint": 0.0, "capacitiveRating": 0.0, "inductiveRating": 0.0, "slope": 0.0}
+    _enums = {"sVCControlMode": "SVCControlMode"}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class MetaBlockReference(IdentifiedObject):
     """References a control block at the internal meta dynamics model level.    These references are contained in other blocks and reference the single instance of the meta model that defines a particular block definition. One would not expect to see bock references contained within a primitive block.
     """
 
-    def __init__(self, equationType='', blockInputReference0=None, MemberOf_MetaBlock=None, MetaBlock=None, blockOutputReference0=None, MetaBlockStateReference=None, MetaBlockInputReference=None, MetaBlockOutputReference=None, BlockParameter=None, MetaBlockParameterReference=None, **kw_args):
-        """Initializes a new 'MetaBlockReference' instance.
+    def __init__(self, equationType='', blockInputReference0=None, MemberOf_MetaBlock=None, MetaBlock=None, blockOutputReference0=None, MetaBlockStateReference=None, MetaBlockInputReference=None, MetaBlockOutputReference=None, BlockParameter=None, MetaBlockParameterReference=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockReference' instance.
 
         @param equationType: should be enum, initial conditions vs. simulation equations 
         @param blockInputReference0:
@@ -63,7 +63,14 @@ class MetaBlockReference(IdentifiedObject):
         self._MetaBlockParameterReference = []
         self.MetaBlockParameterReference = [] if MetaBlockParameterReference is None else MetaBlockParameterReference
 
-        super(MetaBlockReference, self).__init__(**kw_args)
+        super(MetaBlockReference, self).__init__(*args, **kw_args)
+
+    _attrs = ["equationType"]
+    _attr_types = {"equationType": str}
+    _defaults = {"equationType": ''}
+    _enums = {}
+    _refs = ["blockInputReference0", "MemberOf_MetaBlock", "MetaBlock", "blockOutputReference0", "MetaBlockStateReference", "MetaBlockInputReference", "MetaBlockOutputReference", "BlockParameter", "MetaBlockParameterReference"]
+    _many_refs = ["blockInputReference0", "blockOutputReference0", "MetaBlockStateReference", "MetaBlockInputReference", "MetaBlockOutputReference", "BlockParameter", "MetaBlockParameterReference"]
 
     def getblockInputReference0(self):
         

@@ -20,8 +20,8 @@ class Contingency(IdentifiedObject):
     """An event threatening system reliability, consisting of one or more contingency elements.
     """
 
-    def __init__(self, mustStudy=False, ContingencyElement=None, **kw_args):
-        """Initializes a new 'Contingency' instance.
+    def __init__(self, mustStudy=False, ContingencyElement=None, *args, **kw_args):
+        """Initialises a new 'Contingency' instance.
 
         @param mustStudy: Set true if must study this contingency. 
         @param ContingencyElement: A contingency can have any number of contingency elements.
@@ -32,7 +32,14 @@ class Contingency(IdentifiedObject):
         self._ContingencyElement = []
         self.ContingencyElement = [] if ContingencyElement is None else ContingencyElement
 
-        super(Contingency, self).__init__(**kw_args)
+        super(Contingency, self).__init__(*args, **kw_args)
+
+    _attrs = ["mustStudy"]
+    _attr_types = {"mustStudy": bool}
+    _defaults = {"mustStudy": False}
+    _enums = {}
+    _refs = ["ContingencyElement"]
+    _many_refs = ["ContingencyElement"]
 
     def getContingencyElement(self):
         """A contingency can have any number of contingency elements.

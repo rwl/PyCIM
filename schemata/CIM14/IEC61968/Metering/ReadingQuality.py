@@ -20,8 +20,8 @@ class ReadingQuality(Element):
     """Quality of a specific reading value or interval reading value. Note that more than one Quality may be applicable to a given Reading. Typically not used unless problems or unusual conditions occur (i.e., quality for each Reading is assumed to be 'Good' unless stated otherwise in associated ReadingQuality).
     """
 
-    def __init__(self, quality='', IntervalReading=None, Reading=None, **kw_args):
-        """Initializes a new 'ReadingQuality' instance.
+    def __init__(self, quality='', IntervalReading=None, Reading=None, *args, **kw_args):
+        """Initialises a new 'ReadingQuality' instance.
 
         @param quality: Quality, to be specified if different than 'Good'. 
         @param IntervalReading: Interval reading value to which this quality applies.
@@ -36,7 +36,14 @@ class ReadingQuality(Element):
         self._Reading = None
         self.Reading = Reading
 
-        super(ReadingQuality, self).__init__(**kw_args)
+        super(ReadingQuality, self).__init__(*args, **kw_args)
+
+    _attrs = ["quality"]
+    _attr_types = {"quality": str}
+    _defaults = {"quality": ''}
+    _enums = {}
+    _refs = ["IntervalReading", "Reading"]
+    _many_refs = []
 
     def getIntervalReading(self):
         """Interval reading value to which this quality applies.

@@ -20,13 +20,20 @@ class VoltageLimit(OperationalLimit):
     """Operational limit applied to voltage.
     """
 
-    def __init__(self, value=0.0, **kw_args):
-        """Initializes a new 'VoltageLimit' instance.
+    def __init__(self, value=0.0, *args, **kw_args):
+        """Initialises a new 'VoltageLimit' instance.
 
         @param value: Limit on voltage. High or low limit depends on the OperatoinalLimit.limitKind 
         """
         #: Limit on voltage. High or low limit depends on the OperatoinalLimit.limitKind
         self.value = value
 
-        super(VoltageLimit, self).__init__(**kw_args)
+        super(VoltageLimit, self).__init__(*args, **kw_args)
+
+    _attrs = ["value"]
+    _attr_types = {"value": float}
+    _defaults = {"value": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

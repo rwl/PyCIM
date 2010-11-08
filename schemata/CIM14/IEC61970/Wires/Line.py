@@ -20,15 +20,22 @@ class Line(EquipmentContainer):
     """Contains equipment beyond a substation belonging to a power transmission line.
     """
 
-    def __init__(self, Region=None, **kw_args):
-        """Initializes a new 'Line' instance.
+    def __init__(self, Region=None, *args, **kw_args):
+        """Initialises a new 'Line' instance.
 
         @param Region: A Line can be contained by a SubGeographical Region.
         """
         self._Region = None
         self.Region = Region
 
-        super(Line, self).__init__(**kw_args)
+        super(Line, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["Region"]
+    _many_refs = []
 
     def getRegion(self):
         """A Line can be contained by a SubGeographical Region.

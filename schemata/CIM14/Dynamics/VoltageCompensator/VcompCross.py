@@ -20,8 +20,8 @@ class VcompCross(VoltageCompensator):
     """Voltage Compensation Model for Cross-Compound Generating Unit
     """
 
-    def __init__(self, xcomp2=0.0, rcomp2=0.0, **kw_args):
-        """Initializes a new 'VcompCross' instance.
+    def __init__(self, xcomp2=0.0, rcomp2=0.0, *args, **kw_args):
+        """Initialises a new 'VcompCross' instance.
 
         @param xcomp2: Cross-Compensating (compounding) reactance 
         @param rcomp2: Cross-Compensating (compounding) resistance 
@@ -32,5 +32,12 @@ class VcompCross(VoltageCompensator):
         #: Cross-Compensating (compounding) resistance
         self.rcomp2 = rcomp2
 
-        super(VcompCross, self).__init__(**kw_args)
+        super(VcompCross, self).__init__(*args, **kw_args)
+
+    _attrs = ["xcomp2", "rcomp2"]
+    _attr_types = {"xcomp2": float, "rcomp2": float}
+    _defaults = {"xcomp2": 0.0, "rcomp2": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

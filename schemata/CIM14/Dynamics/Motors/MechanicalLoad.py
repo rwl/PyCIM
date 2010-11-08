@@ -20,15 +20,22 @@ class MechanicalLoad(PowerSystemResource):
     """A mechanical load represents the variation in a motor's shaft torque or power as a function of shaft speed.
     """
 
-    def __init__(self, rotatingMachine0=None, **kw_args):
-        """Initializes a new 'MechanicalLoad' instance.
+    def __init__(self, rotatingMachine0=None, *args, **kw_args):
+        """Initialises a new 'MechanicalLoad' instance.
 
         @param rotatingMachine0:
         """
         self._rotatingMachine0 = []
         self.rotatingMachine0 = [] if rotatingMachine0 is None else rotatingMachine0
 
-        super(MechanicalLoad, self).__init__(**kw_args)
+        super(MechanicalLoad, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["rotatingMachine0"]
+    _many_refs = ["rotatingMachine0"]
 
     def getrotatingMachine0(self):
         

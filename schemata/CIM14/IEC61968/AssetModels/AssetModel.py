@@ -20,8 +20,8 @@ class AssetModel(IdentifiedObject):
     """Documentation for a particular product model made by a manufacturer. There are typically many instances of an asset associated with a single asset model.
     """
 
-    def __init__(self, usageKind='streetlight', corporateStandardKind='other', modelNumber='', weightTotal=0.0, modelVersion='', **kw_args):
-        """Initializes a new 'AssetModel' instance.
+    def __init__(self, usageKind="streetlight", corporateStandardKind="other", modelNumber='', weightTotal=0.0, modelVersion='', *args, **kw_args):
+        """Initialises a new 'AssetModel' instance.
 
         @param usageKind: Intended usage for this asset model. Values are: "streetlight", "other", "unknown", "substation", "distributionOverhead", "customerSubstation", "transmission", "distributionUnderground"
         @param corporateStandardKind: Kind of corporate standard for this asset model. Values are: "other", "standard", "experimental", "underEvaluation"
@@ -29,10 +29,10 @@ class AssetModel(IdentifiedObject):
         @param weightTotal: Total manufactured weight of asset. 
         @param modelVersion: Version number for product model, which indicates vintage of the product. 
         """
-        #: Intended usage for this asset model.Values are: "streetlight", "other", "unknown", "substation", "distributionOverhead", "customerSubstation", "transmission", "distributionUnderground"
+        #: Intended usage for this asset model. Values are: "streetlight", "other", "unknown", "substation", "distributionOverhead", "customerSubstation", "transmission", "distributionUnderground"
         self.usageKind = usageKind
 
-        #: Kind of corporate standard for this asset model.Values are: "other", "standard", "experimental", "underEvaluation"
+        #: Kind of corporate standard for this asset model. Values are: "other", "standard", "experimental", "underEvaluation"
         self.corporateStandardKind = corporateStandardKind
 
         #: Manufacturer's model number.
@@ -44,5 +44,12 @@ class AssetModel(IdentifiedObject):
         #: Version number for product model, which indicates vintage of the product.
         self.modelVersion = modelVersion
 
-        super(AssetModel, self).__init__(**kw_args)
+        super(AssetModel, self).__init__(*args, **kw_args)
+
+    _attrs = ["usageKind", "corporateStandardKind", "modelNumber", "weightTotal", "modelVersion"]
+    _attr_types = {"usageKind": str, "corporateStandardKind": str, "modelNumber": str, "weightTotal": float, "modelVersion": str}
+    _defaults = {"usageKind": "streetlight", "corporateStandardKind": "other", "modelNumber": '', "weightTotal": 0.0, "modelVersion": ''}
+    _enums = {"usageKind": "AssetModelUsageKind", "corporateStandardKind": "CorporateStandardKind"}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class TieToMeasurement(IdentifiedObject):
     """Ties a block input to a specific state variable measurment.  Thus giving a unit type, a location in the network (typically a terminal).   A specific value is not given, just enough information to obtain the value from the model during a solution. This has nothing to do with SCADA.
     """
 
-    def __init__(self, measurement0=None, block0=None, metaBlockInput0=None, **kw_args):
-        """Initializes a new 'TieToMeasurement' instance.
+    def __init__(self, measurement0=None, block0=None, metaBlockInput0=None, *args, **kw_args):
+        """Initialises a new 'TieToMeasurement' instance.
 
         @param measurement0:
         @param block0:
@@ -36,7 +36,14 @@ class TieToMeasurement(IdentifiedObject):
         self._metaBlockInput0 = None
         self.metaBlockInput0 = metaBlockInput0
 
-        super(TieToMeasurement, self).__init__(**kw_args)
+        super(TieToMeasurement, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["measurement0", "block0", "metaBlockInput0"]
+    _many_refs = []
 
     def getmeasurement0(self):
         

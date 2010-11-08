@@ -20,8 +20,8 @@ class CableInfo(ConductorInfo):
     """Cable data.
     """
 
-    def __init__(self, constructionKind='sector', shieldMaterial='steel', outerJacketKind='polyethylene', isStrandFill=False, diameterOverScreen=0.0, diameterOverInsulation=0.0, diameterOverJacket=0.0, nominalTemperature=0.0, diameterOverCore=0.0, sheathAsNeutral=False, **kw_args):
-        """Initializes a new 'CableInfo' instance.
+    def __init__(self, constructionKind="sector", shieldMaterial="steel", outerJacketKind="polyethylene", isStrandFill=False, diameterOverScreen=0.0, diameterOverInsulation=0.0, diameterOverJacket=0.0, nominalTemperature=0.0, diameterOverCore=0.0, sheathAsNeutral=False, *args, **kw_args):
+        """Initialises a new 'CableInfo' instance.
 
         @param constructionKind: Kind of construction of this cable. Values are: "sector", "compressed", "segmental", "solid", "stranded", "compacted", "other"
         @param shieldMaterial: Material of the shield. Values are: "steel", "lead", "aluminum", "other", "copper"
@@ -34,13 +34,13 @@ class CableInfo(ConductorInfo):
         @param diameterOverCore: Diameter over the core, including any semi-con screen; should be the insulating layer's inside diameter. 
         @param sheathAsNeutral: True if sheath / shield is used as a neutral (i.e., bonded). 
         """
-        #: Kind of construction of this cable.Values are: "sector", "compressed", "segmental", "solid", "stranded", "compacted", "other"
+        #: Kind of construction of this cable. Values are: "sector", "compressed", "segmental", "solid", "stranded", "compacted", "other"
         self.constructionKind = constructionKind
 
-        #: Material of the shield.Values are: "steel", "lead", "aluminum", "other", "copper"
+        #: Material of the shield. Values are: "steel", "lead", "aluminum", "other", "copper"
         self.shieldMaterial = shieldMaterial
 
-        #: Kind of outer jacket of this cable.Values are: "polyethylene", "pvc", "none", "linearLowDensityPolyethylene", "other", "insulating", "semiconducting"
+        #: Kind of outer jacket of this cable. Values are: "polyethylene", "pvc", "none", "linearLowDensityPolyethylene", "other", "insulating", "semiconducting"
         self.outerJacketKind = outerJacketKind
 
         #: True if wire strands are extruded in a way to fill the voids in the cable.
@@ -64,5 +64,12 @@ class CableInfo(ConductorInfo):
         #: True if sheath / shield is used as a neutral (i.e., bonded).
         self.sheathAsNeutral = sheathAsNeutral
 
-        super(CableInfo, self).__init__(**kw_args)
+        super(CableInfo, self).__init__(*args, **kw_args)
+
+    _attrs = ["constructionKind", "shieldMaterial", "outerJacketKind", "isStrandFill", "diameterOverScreen", "diameterOverInsulation", "diameterOverJacket", "nominalTemperature", "diameterOverCore", "sheathAsNeutral"]
+    _attr_types = {"constructionKind": str, "shieldMaterial": str, "outerJacketKind": str, "isStrandFill": bool, "diameterOverScreen": float, "diameterOverInsulation": float, "diameterOverJacket": float, "nominalTemperature": float, "diameterOverCore": float, "sheathAsNeutral": bool}
+    _defaults = {"constructionKind": "sector", "shieldMaterial": "steel", "outerJacketKind": "polyethylene", "isStrandFill": False, "diameterOverScreen": 0.0, "diameterOverInsulation": 0.0, "diameterOverJacket": 0.0, "nominalTemperature": 0.0, "diameterOverCore": 0.0, "sheathAsNeutral": False}
+    _enums = {"constructionKind": "CableConstructionKind", "shieldMaterial": "CableShieldMaterialKind", "outerJacketKind": "CableOuterJacketKind"}
+    _refs = []
+    _many_refs = []
 

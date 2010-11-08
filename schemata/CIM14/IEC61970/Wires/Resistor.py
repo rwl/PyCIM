@@ -20,9 +20,16 @@ class Resistor(ConductingEquipment):
     """Resistor, typically used in filter configurations or as earthing resistor for transformers.  Used for electrical model of distribution networks.
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'Resistor' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'Resistor' instance.
 
         """
-        super(Resistor, self).__init__(**kw_args)
+        super(Resistor, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

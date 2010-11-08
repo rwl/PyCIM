@@ -18,15 +18,22 @@ from CIM14.Dynamics.MetaBlockConnectable import MetaBlockConnectable
 
 class MetaBlockState(MetaBlockConnectable):
 
-    def __init__(self, MemberOf_MetaBlock=None, **kw_args):
-        """Initializes a new 'MetaBlockState' instance.
+    def __init__(self, MemberOf_MetaBlock=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockState' instance.
 
         @param MemberOf_MetaBlock:
         """
         self._MemberOf_MetaBlock = None
         self.MemberOf_MetaBlock = MemberOf_MetaBlock
 
-        super(MetaBlockState, self).__init__(**kw_args)
+        super(MetaBlockState, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["MemberOf_MetaBlock"]
+    _many_refs = []
 
     def getMemberOf_MetaBlock(self):
         

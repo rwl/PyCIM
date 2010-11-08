@@ -20,8 +20,8 @@ class PssIEEE2B(PowerSystemStabilizer):
     """IEEE (2005) PSS2B Model  This stabilizer model is designed to represent a variety of dual-input stabilizers, which normally use combinations of power and speed or frequency to derive the stabilizing signal.
     """
 
-    def __init__(self, t11=0.0, vsi1max=0.0, t3=0.0, tw3=0.0, vstmax=0.0, t2=0.0, n=0, vsi1min=0.0, t9=0.0, ks2=0.0, vstmin=0.0, j1=0, tw1=0.0, tb=0.0, t7=0.0, vsi2max=0.0, t6=0.0, t1=0.0, m=0, vsi2min=0.0, a=0.0, t4=0.0, tw4=0.0, ks4=0.0, ta=0.0, ks3=0.0, t10=0.0, tw2=0.0, j2=0, ks1=0.0, t8=0.0, **kw_args):
-        """Initializes a new 'PssIEEE2B' instance.
+    def __init__(self, t11=0.0, vsi1max=0.0, t3=0.0, tw3=0.0, vstmax=0.0, t2=0.0, n=0, vsi1min=0.0, t9=0.0, ks2=0.0, vstmin=0.0, j1=0, tw1=0.0, tb=0.0, t7=0.0, vsi2max=0.0, t6=0.0, t1=0.0, m=0, vsi2min=0.0, a=0.0, t4=0.0, tw4=0.0, ks4=0.0, ta=0.0, ks3=0.0, t10=0.0, tw2=0.0, j2=0, ks1=0.0, t8=0.0, *args, **kw_args):
+        """Initialises a new 'PssIEEE2B' instance.
 
         @param t11: Lead/lag time constant 
         @param vsi1max: Input signal #1 max limit 
@@ -148,5 +148,12 @@ class PssIEEE2B(PowerSystemStabilizer):
         #: Lead of ramp tracking filter
         self.t8 = t8
 
-        super(PssIEEE2B, self).__init__(**kw_args)
+        super(PssIEEE2B, self).__init__(*args, **kw_args)
+
+    _attrs = ["t11", "vsi1max", "t3", "tw3", "vstmax", "t2", "n", "vsi1min", "t9", "ks2", "vstmin", "j1", "tw1", "tb", "t7", "vsi2max", "t6", "t1", "m", "vsi2min", "a", "t4", "tw4", "ks4", "ta", "ks3", "t10", "tw2", "j2", "ks1", "t8"]
+    _attr_types = {"t11": float, "vsi1max": float, "t3": float, "tw3": float, "vstmax": float, "t2": float, "n": int, "vsi1min": float, "t9": float, "ks2": float, "vstmin": float, "j1": int, "tw1": float, "tb": float, "t7": float, "vsi2max": float, "t6": float, "t1": float, "m": int, "vsi2min": float, "a": float, "t4": float, "tw4": float, "ks4": float, "ta": float, "ks3": float, "t10": float, "tw2": float, "j2": int, "ks1": float, "t8": float}
+    _defaults = {"t11": 0.0, "vsi1max": 0.0, "t3": 0.0, "tw3": 0.0, "vstmax": 0.0, "t2": 0.0, "n": 0, "vsi1min": 0.0, "t9": 0.0, "ks2": 0.0, "vstmin": 0.0, "j1": 0, "tw1": 0.0, "tb": 0.0, "t7": 0.0, "vsi2max": 0.0, "t6": 0.0, "t1": 0.0, "m": 0, "vsi2min": 0.0, "a": 0.0, "t4": 0.0, "tw4": 0.0, "ks4": 0.0, "ta": 0.0, "ks3": 0.0, "t10": 0.0, "tw2": 0.0, "j2": 0, "ks1": 0.0, "t8": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class DistributionLineSegment(ACLineSegment):
     """Extends ACLineSegment with references to a library of standard types from which electrical parameters can be calculated, as follows: - calculate electrical parameters from asset data, using associated ConductorInfo, with values then multiplied by Conductor.length to produce a matrix model. - calculate unbalanced electrical parameters from associated PerLengthPhaseImpedance, then multiplied by Conductor.length to produce a matrix model. - calculate transposed electrical parameters from associated PerLengthSequenceImpedance, then multiplied by Conductor.length to produce a sequence model. For symmetrical, transposed 3ph lines, it is sufficient to use inherited ACLineSegment attributes, which describe sequence impedances and admittances for the entire length of the segment.  Known issue: Attributes expressing impedances and admittances in PerLengthSequenceImpedance and PhaseImpedanceData use Resistance, etc., which describe pre-calculated, full length of segment, while we should have a longitudinal unit, per length. Taking 'r' as example, its 'unit'=Ohm, but the value is effectively in Ohm/m, so the value needs to be multiplied by Conductor.length. This is against the whole idea of unit data types and is semantically wrong, but base CIM does not have the required data types at this moment. Until the revision of unit modelling in CIM, applications need to deduce and locally handle appending '/m' for units and ensure they multiply the values by Conductor.length.
     """
 
-    def __init__(self, ConductorInfo=None, PhaseImpedance=None, SequenceImpedance=None, **kw_args):
-        """Initializes a new 'DistributionLineSegment' instance.
+    def __init__(self, ConductorInfo=None, PhaseImpedance=None, SequenceImpedance=None, *args, **kw_args):
+        """Initialises a new 'DistributionLineSegment' instance.
 
         @param ConductorInfo: Conductor data of this conductor segment.
         @param PhaseImpedance: Phase impedance of this conductor segment; used for unbalanced model.
@@ -36,7 +36,14 @@ class DistributionLineSegment(ACLineSegment):
         self._SequenceImpedance = None
         self.SequenceImpedance = SequenceImpedance
 
-        super(DistributionLineSegment, self).__init__(**kw_args)
+        super(DistributionLineSegment, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["ConductorInfo", "PhaseImpedance", "SequenceImpedance"]
+    _many_refs = []
 
     def getConductorInfo(self):
         """Conductor data of this conductor segment.

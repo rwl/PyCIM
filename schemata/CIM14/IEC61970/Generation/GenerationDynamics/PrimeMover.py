@@ -20,8 +20,8 @@ class PrimeMover(PowerSystemResource):
     """The machine used to develop mechanical energy used to drive a generator.
     """
 
-    def __init__(self, primeMoverRating=0.0, SynchronousMachines=None, **kw_args):
-        """Initializes a new 'PrimeMover' instance.
+    def __init__(self, primeMoverRating=0.0, SynchronousMachines=None, *args, **kw_args):
+        """Initialises a new 'PrimeMover' instance.
 
         @param primeMoverRating: Rating of prime mover 
         @param SynchronousMachines: Synchronous machines this Prime mover drives.
@@ -32,7 +32,14 @@ class PrimeMover(PowerSystemResource):
         self._SynchronousMachines = []
         self.SynchronousMachines = [] if SynchronousMachines is None else SynchronousMachines
 
-        super(PrimeMover, self).__init__(**kw_args)
+        super(PrimeMover, self).__init__(*args, **kw_args)
+
+    _attrs = ["primeMoverRating"]
+    _attr_types = {"primeMoverRating": float}
+    _defaults = {"primeMoverRating": 0.0}
+    _enums = {}
+    _refs = ["SynchronousMachines"]
+    _many_refs = ["SynchronousMachines"]
 
     def getSynchronousMachines(self):
         """Synchronous machines this Prime mover drives.

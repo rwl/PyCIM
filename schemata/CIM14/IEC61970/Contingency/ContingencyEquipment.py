@@ -20,19 +20,26 @@ class ContingencyEquipment(ContingencyElement):
     """A equipment to which the in service status is to change such as a power transformer or AC line segment.
     """
 
-    def __init__(self, contingentStatus='outOfService', Equipment=None, **kw_args):
-        """Initializes a new 'ContingencyEquipment' instance.
+    def __init__(self, contingentStatus="outOfService", Equipment=None, *args, **kw_args):
+        """Initialises a new 'ContingencyEquipment' instance.
 
         @param contingentStatus: The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied. Values are: "outOfService", "inService"
         @param Equipment: The single piece of equipment to which to apply the contingency.
         """
-        #: The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied.Values are: "outOfService", "inService"
+        #: The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied. Values are: "outOfService", "inService"
         self.contingentStatus = contingentStatus
 
         self._Equipment = None
         self.Equipment = Equipment
 
-        super(ContingencyEquipment, self).__init__(**kw_args)
+        super(ContingencyEquipment, self).__init__(*args, **kw_args)
+
+    _attrs = ["contingentStatus"]
+    _attr_types = {"contingentStatus": str}
+    _defaults = {"contingentStatus": "outOfService"}
+    _enums = {"contingentStatus": "ContingencyEquipmentStatusKind"}
+    _refs = ["Equipment"]
+    _many_refs = []
 
     def getEquipment(self):
         """The single piece of equipment to which to apply the contingency.

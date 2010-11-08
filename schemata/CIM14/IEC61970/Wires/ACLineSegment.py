@@ -20,8 +20,8 @@ class ACLineSegment(Conductor):
     """A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.
     """
 
-    def __init__(self, gch=0.0, r=0.0, x0=0.0, bch=0.0, x=0.0, r0=0.0, g0ch=0.0, b0ch=0.0, **kw_args):
-        """Initializes a new 'ACLineSegment' instance.
+    def __init__(self, gch=0.0, r=0.0, x0=0.0, bch=0.0, x=0.0, r0=0.0, g0ch=0.0, b0ch=0.0, *args, **kw_args):
+        """Initialises a new 'ACLineSegment' instance.
 
         @param gch: Positive sequence shunt (charging) conductance, uniformly distributed, of the entire line section. 
         @param r: Positive sequence series resistance of the entire line section. 
@@ -56,5 +56,12 @@ class ACLineSegment(Conductor):
         #: Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.
         self.b0ch = b0ch
 
-        super(ACLineSegment, self).__init__(**kw_args)
+        super(ACLineSegment, self).__init__(*args, **kw_args)
+
+    _attrs = ["gch", "r", "x0", "bch", "x", "r0", "g0ch", "b0ch"]
+    _attr_types = {"gch": float, "r": float, "x0": float, "bch": float, "x": float, "r0": float, "g0ch": float, "b0ch": float}
+    _defaults = {"gch": 0.0, "r": 0.0, "x0": 0.0, "bch": 0.0, "x": 0.0, "r0": 0.0, "g0ch": 0.0, "b0ch": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

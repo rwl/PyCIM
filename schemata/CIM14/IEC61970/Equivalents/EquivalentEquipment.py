@@ -20,15 +20,22 @@ class EquivalentEquipment(ConductingEquipment):
     """The class represents equivalent objects that are the result of a network reduction. The class is the base for equivalent objects of different types.
     """
 
-    def __init__(self, EquivalentNetwork=None, **kw_args):
-        """Initializes a new 'EquivalentEquipment' instance.
+    def __init__(self, EquivalentNetwork=None, *args, **kw_args):
+        """Initialises a new 'EquivalentEquipment' instance.
 
         @param EquivalentNetwork: The equivalent where the reduced model belongs.
         """
         self._EquivalentNetwork = None
         self.EquivalentNetwork = EquivalentNetwork
 
-        super(EquivalentEquipment, self).__init__(**kw_args)
+        super(EquivalentEquipment, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["EquivalentNetwork"]
+    _many_refs = []
 
     def getEquivalentNetwork(self):
         """The equivalent where the reduced model belongs.

@@ -20,8 +20,8 @@ class EnergySource(ConductingEquipment):
     """A generic equivalent for an energy supplier on a transmission or distribution voltage level.
     """
 
-    def __init__(self, x=0.0, activePower=0.0, r=0.0, nominalVoltage=0.0, voltageMagnitude=0.0, xn=0.0, x0=0.0, rn=0.0, voltageAngle=0.0, r0=0.0, **kw_args):
-        """Initializes a new 'EnergySource' instance.
+    def __init__(self, x=0.0, activePower=0.0, r=0.0, nominalVoltage=0.0, voltageMagnitude=0.0, xn=0.0, x0=0.0, rn=0.0, voltageAngle=0.0, r0=0.0, *args, **kw_args):
+        """Initialises a new 'EnergySource' instance.
 
         @param x: Positive sequence Thevenin reactance. 
         @param activePower: High voltage source load 
@@ -64,5 +64,12 @@ class EnergySource(ConductingEquipment):
         #: Zero sequence Thevenin resistance.
         self.r0 = r0
 
-        super(EnergySource, self).__init__(**kw_args)
+        super(EnergySource, self).__init__(*args, **kw_args)
+
+    _attrs = ["x", "activePower", "r", "nominalVoltage", "voltageMagnitude", "xn", "x0", "rn", "voltageAngle", "r0"]
+    _attr_types = {"x": float, "activePower": float, "r": float, "nominalVoltage": float, "voltageMagnitude": float, "xn": float, "x0": float, "rn": float, "voltageAngle": float, "r0": float}
+    _defaults = {"x": 0.0, "activePower": 0.0, "r": 0.0, "nominalVoltage": 0.0, "voltageMagnitude": 0.0, "xn": 0.0, "x0": 0.0, "rn": 0.0, "voltageAngle": 0.0, "r0": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

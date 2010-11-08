@@ -20,15 +20,22 @@ class GenLoad(RegulatingCondEq):
     """Representation of a small generator as a negative load rather than a dynamic generator model. This practice is also referred to as 'netting' the generation with the load, i.e. taking the net value of load minus generation as the new load value.  For dynamic modeling purposes, each generator that does not have a dynamic load model must have a genLoad record.
     """
 
-    def __init__(self, synchronousMachine0=None, **kw_args):
-        """Initializes a new 'GenLoad' instance.
+    def __init__(self, synchronousMachine0=None, *args, **kw_args):
+        """Initialises a new 'GenLoad' instance.
 
         @param synchronousMachine0:
         """
         self._synchronousMachine0 = []
         self.synchronousMachine0 = [] if synchronousMachine0 is None else synchronousMachine0
 
-        super(GenLoad, self).__init__(**kw_args)
+        super(GenLoad, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["synchronousMachine0"]
+    _many_refs = ["synchronousMachine0"]
 
     def getsynchronousMachine0(self):
         

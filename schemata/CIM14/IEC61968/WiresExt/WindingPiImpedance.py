@@ -20,8 +20,8 @@ class WindingPiImpedance(IdentifiedObject):
     """Transformer Pi-model impedance that accurately reflects impedance for transformers with 2 or 3 windings. For transformers with 4 or more windings, you must use TransformerInfo.
     """
 
-    def __init__(self, g=0.0, b=0.0, r=0.0, x0=0.0, x=0.0, r0=0.0, b0=0.0, g0=0.0, Windings=None, **kw_args):
-        """Initializes a new 'WindingPiImpedance' instance.
+    def __init__(self, g=0.0, b=0.0, r=0.0, x0=0.0, x=0.0, r0=0.0, b0=0.0, g0=0.0, Windings=None, *args, **kw_args):
+        """Initialises a new 'WindingPiImpedance' instance.
 
         @param g: Magnetizing branch conductance (G mag). 
         @param b: Magnetizing branch susceptance (B mag).  The value can be positive or negative. 
@@ -60,7 +60,14 @@ class WindingPiImpedance(IdentifiedObject):
         self._Windings = []
         self.Windings = [] if Windings is None else Windings
 
-        super(WindingPiImpedance, self).__init__(**kw_args)
+        super(WindingPiImpedance, self).__init__(*args, **kw_args)
+
+    _attrs = ["g", "b", "r", "x0", "x", "r0", "b0", "g0"]
+    _attr_types = {"g": float, "b": float, "r": float, "x0": float, "x": float, "r0": float, "b0": float, "g0": float}
+    _defaults = {"g": 0.0, "b": 0.0, "r": 0.0, "x0": 0.0, "x": 0.0, "r0": 0.0, "b0": 0.0, "g0": 0.0}
+    _enums = {}
+    _refs = ["Windings"]
+    _many_refs = ["Windings"]
 
     def getWindings(self):
         """All windings having this Pi impedance.

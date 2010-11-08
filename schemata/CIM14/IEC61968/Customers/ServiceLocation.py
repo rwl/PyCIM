@@ -20,8 +20,8 @@ class ServiceLocation(Location):
     """A customer ServiceLocation has one or more ServiceDeliveryPoint(s), which in turn relate to Meters. The location may be a point or a polygon, depending on the specific circumstances. For distribution, the ServiceLocation is typically the location of the utility customer's premise. Because a customer's premise may have one or more meters, the ServiceDeliveryPoint is used to define the actual conducting equipment that the EndDeviceAsset attaches to at the utility customer's ServiceLocation. For transmission, it is the point(s) of interconnection on the transmission provider's transmission system where capacity and/or energy transmitted by the transmission provider is made available to the receiving party.
     """
 
-    def __init__(self, siteAccessProblem='', accessMethod='', needsInspection=False, EndDeviceAssets=None, CustomerAgreements=None, ServiceDeliveryPoints=None, **kw_args):
-        """Initializes a new 'ServiceLocation' instance.
+    def __init__(self, siteAccessProblem='', accessMethod='', needsInspection=False, EndDeviceAssets=None, CustomerAgreements=None, ServiceDeliveryPoints=None, *args, **kw_args):
+        """Initialises a new 'ServiceLocation' instance.
 
         @param siteAccessProblem: Problems previously encountered when visiting or performing work on this site. Examples include: bad dog, violent customer, verbally abusive occupant, obstructions, safety hazards, etc. 
         @param accessMethod: Method for the service person to access the appropriate service locations. For example, a description of where to obtain a key if the facility is unmanned and secured. 
@@ -48,7 +48,14 @@ class ServiceLocation(Location):
         self._ServiceDeliveryPoints = []
         self.ServiceDeliveryPoints = [] if ServiceDeliveryPoints is None else ServiceDeliveryPoints
 
-        super(ServiceLocation, self).__init__(**kw_args)
+        super(ServiceLocation, self).__init__(*args, **kw_args)
+
+    _attrs = ["siteAccessProblem", "accessMethod", "needsInspection"]
+    _attr_types = {"siteAccessProblem": str, "accessMethod": str, "needsInspection": bool}
+    _defaults = {"siteAccessProblem": '', "accessMethod": '', "needsInspection": False}
+    _enums = {}
+    _refs = ["EndDeviceAssets", "CustomerAgreements", "ServiceDeliveryPoints"]
+    _many_refs = ["EndDeviceAssets", "CustomerAgreements", "ServiceDeliveryPoints"]
 
     def getEndDeviceAssets(self):
         """All end device assets that measure the service delivered to this service location.

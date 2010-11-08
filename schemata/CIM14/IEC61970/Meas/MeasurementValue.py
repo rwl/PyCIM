@@ -20,8 +20,8 @@ class MeasurementValue(IdentifiedObject):
     """The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement.
     """
 
-    def __init__(self, sensorAccuracy=0.0, timeStamp='', MeasurementValueSource=None, RemoteSource=None, MeasurementValueQuality=None, **kw_args):
-        """Initializes a new 'MeasurementValue' instance.
+    def __init__(self, sensorAccuracy=0.0, timeStamp='', MeasurementValueSource=None, RemoteSource=None, MeasurementValueQuality=None, *args, **kw_args):
+        """Initialises a new 'MeasurementValue' instance.
 
         @param sensorAccuracy: The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions. 
         @param timeStamp: The time when the value was last updated 
@@ -44,7 +44,14 @@ class MeasurementValue(IdentifiedObject):
         self._MeasurementValueQuality = None
         self.MeasurementValueQuality = MeasurementValueQuality
 
-        super(MeasurementValue, self).__init__(**kw_args)
+        super(MeasurementValue, self).__init__(*args, **kw_args)
+
+    _attrs = ["sensorAccuracy", "timeStamp"]
+    _attr_types = {"sensorAccuracy": float, "timeStamp": str}
+    _defaults = {"sensorAccuracy": 0.0, "timeStamp": ''}
+    _enums = {}
+    _refs = ["MeasurementValueSource", "RemoteSource", "MeasurementValueQuality"]
+    _many_refs = []
 
     def getMeasurementValueSource(self):
         """A reference to the type of source that updates the MeasurementValue, e.g. SCADA, CCLink, manual, etc. User conventions for the names of sources are contained in the introduction to IEC 61970-301.

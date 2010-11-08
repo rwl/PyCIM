@@ -20,8 +20,8 @@ class Document(IdentifiedObject):
     """Parent class for different groupings of information collected and managed as a part of a business process. It will frequently contain references to other objects, such as assets, people and power system resources.
     """
 
-    def __init__(self, revisionNumber='', subject='', createdDateTime='', title='', category='', lastModifiedDateTime='', electronicAddress=None, status=None, ActivityRecords=None, docStatus=None, Measurements=None, **kw_args):
-        """Initializes a new 'Document' instance.
+    def __init__(self, revisionNumber='', subject='', createdDateTime='', title='', category='', lastModifiedDateTime='', electronicAddress=None, status=None, ActivityRecords=None, docStatus=None, Measurements=None, *args, **kw_args):
+        """Initialises a new 'Document' instance.
 
         @param revisionNumber: Revision number for this document. 
         @param subject: Document subject. 
@@ -65,7 +65,14 @@ class Document(IdentifiedObject):
         self._Measurements = []
         self.Measurements = [] if Measurements is None else Measurements
 
-        super(Document, self).__init__(**kw_args)
+        super(Document, self).__init__(*args, **kw_args)
+
+    _attrs = ["revisionNumber", "subject", "createdDateTime", "title", "category", "lastModifiedDateTime"]
+    _attr_types = {"revisionNumber": str, "subject": str, "createdDateTime": str, "title": str, "category": str, "lastModifiedDateTime": str}
+    _defaults = {"revisionNumber": '', "subject": '', "createdDateTime": '', "title": '', "category": '', "lastModifiedDateTime": ''}
+    _enums = {}
+    _refs = ["electronicAddress", "status", "ActivityRecords", "docStatus", "Measurements"]
+    _many_refs = ["ActivityRecords", "Measurements"]
 
     # Electronic address.
     electronicAddress = None

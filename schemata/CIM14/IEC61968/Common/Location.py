@@ -20,8 +20,8 @@ class Location(IdentifiedObject):
     """The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It is defined with one or more postition points (coordinates) in a given coordinate system.
     """
 
-    def __init__(self, geoInfoReference='', corporateCode='', direction='', category='', PositionPoints=None, PowerSystemResources=None, CoordinateSystems=None, Measurements=None, secondaryAddress=None, Assets=None, phone2=None, electronicAddress=None, phone1=None, mainAddress=None, status=None, **kw_args):
-        """Initializes a new 'Location' instance.
+    def __init__(self, geoInfoReference='', corporateCode='', direction='', category='', PositionPoints=None, PowerSystemResources=None, CoordinateSystems=None, Measurements=None, secondaryAddress=None, Assets=None, phone2=None, electronicAddress=None, phone1=None, mainAddress=None, status=None, *args, **kw_args):
+        """Initialises a new 'Location' instance.
 
         @param geoInfoReference: (if applicable) Reference to geographical information source, often external to the utility. 
         @param corporateCode: Utility-specific code for the location. 
@@ -78,7 +78,14 @@ class Location(IdentifiedObject):
 
         self.status = status
 
-        super(Location, self).__init__(**kw_args)
+        super(Location, self).__init__(*args, **kw_args)
+
+    _attrs = ["geoInfoReference", "corporateCode", "direction", "category"]
+    _attr_types = {"geoInfoReference": str, "corporateCode": str, "direction": str, "category": str}
+    _defaults = {"geoInfoReference": '', "corporateCode": '', "direction": '', "category": ''}
+    _enums = {}
+    _refs = ["PositionPoints", "PowerSystemResources", "CoordinateSystems", "Measurements", "secondaryAddress", "Assets", "phone2", "electronicAddress", "phone1", "mainAddress", "status"]
+    _many_refs = ["PositionPoints", "PowerSystemResources", "CoordinateSystems", "Measurements", "Assets"]
 
     def getPositionPoints(self):
         """Sequence of position points describing this location.

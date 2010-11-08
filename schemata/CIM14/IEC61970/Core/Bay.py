@@ -20,8 +20,8 @@ class Bay(EquipmentContainer):
     """A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.
     """
 
-    def __init__(self, busBarConfiguration='mainWithTransfer', breakerConfiguration='breakerAndAHalf', bayPowerMeasFlag=False, bayEnergyMeasFlag=False, Substation=None, VoltageLevel=None, **kw_args):
-        """Initializes a new 'Bay' instance.
+    def __init__(self, busBarConfiguration="mainWithTransfer", breakerConfiguration="breakerAndAHalf", bayPowerMeasFlag=False, bayEnergyMeasFlag=False, Substation=None, VoltageLevel=None, *args, **kw_args):
+        """Initialises a new 'Bay' instance.
 
         @param busBarConfiguration: Bus bar configuration. Values are: "mainWithTransfer", "ringBus", "singleBus", "doubleBus"
         @param breakerConfiguration: Breaker configuration. Values are: "breakerAndAHalf", "singleBreaker", "noBreaker", "doubleBreaker"
@@ -30,10 +30,10 @@ class Bay(EquipmentContainer):
         @param Substation: The association is used in the naming hierarchy.
         @param VoltageLevel: The association is used in the naming hierarchy.
         """
-        #: Bus bar configuration.Values are: "mainWithTransfer", "ringBus", "singleBus", "doubleBus"
+        #: Bus bar configuration. Values are: "mainWithTransfer", "ringBus", "singleBus", "doubleBus"
         self.busBarConfiguration = busBarConfiguration
 
-        #: Breaker configuration.Values are: "breakerAndAHalf", "singleBreaker", "noBreaker", "doubleBreaker"
+        #: Breaker configuration. Values are: "breakerAndAHalf", "singleBreaker", "noBreaker", "doubleBreaker"
         self.breakerConfiguration = breakerConfiguration
 
         #: Indicates the presence/absence of active/reactive power measurements.
@@ -48,7 +48,14 @@ class Bay(EquipmentContainer):
         self._VoltageLevel = None
         self.VoltageLevel = VoltageLevel
 
-        super(Bay, self).__init__(**kw_args)
+        super(Bay, self).__init__(*args, **kw_args)
+
+    _attrs = ["busBarConfiguration", "breakerConfiguration", "bayPowerMeasFlag", "bayEnergyMeasFlag"]
+    _attr_types = {"busBarConfiguration": str, "breakerConfiguration": str, "bayPowerMeasFlag": bool, "bayEnergyMeasFlag": bool}
+    _defaults = {"busBarConfiguration": "mainWithTransfer", "breakerConfiguration": "breakerAndAHalf", "bayPowerMeasFlag": False, "bayEnergyMeasFlag": False}
+    _enums = {"busBarConfiguration": "BusbarConfiguration", "breakerConfiguration": "BreakerConfiguration"}
+    _refs = ["Substation", "VoltageLevel"]
+    _many_refs = []
 
     def getSubstation(self):
         """The association is used in the naming hierarchy.

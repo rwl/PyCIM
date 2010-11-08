@@ -20,8 +20,8 @@ class RemoteSource(RemotePoint):
     """Remote sources are state variables that are telemetered or calculated within the remote unit.
     """
 
-    def __init__(self, scanInterval=0.0, sensorMaximum=0.0, deadband=0.0, sensorMinimum=0.0, MeasurementValue=None, **kw_args):
-        """Initializes a new 'RemoteSource' instance.
+    def __init__(self, scanInterval=0.0, sensorMaximum=0.0, deadband=0.0, sensorMinimum=0.0, MeasurementValue=None, *args, **kw_args):
+        """Initialises a new 'RemoteSource' instance.
 
         @param scanInterval: The time interval between scans. 
         @param sensorMaximum: The maximum value the telemetry item can return. 
@@ -44,7 +44,14 @@ class RemoteSource(RemotePoint):
         self._MeasurementValue = None
         self.MeasurementValue = MeasurementValue
 
-        super(RemoteSource, self).__init__(**kw_args)
+        super(RemoteSource, self).__init__(*args, **kw_args)
+
+    _attrs = ["scanInterval", "sensorMaximum", "deadband", "sensorMinimum"]
+    _attr_types = {"scanInterval": float, "sensorMaximum": float, "deadband": float, "sensorMinimum": float}
+    _defaults = {"scanInterval": 0.0, "sensorMaximum": 0.0, "deadband": 0.0, "sensorMinimum": 0.0}
+    _enums = {}
+    _refs = ["MeasurementValue"]
+    _many_refs = []
 
     def getMeasurementValue(self):
         """Link to the physical telemetered point associated with this measurement.

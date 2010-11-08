@@ -20,8 +20,8 @@ class ExcST4B(ExcitationSystem):
     """IEEE (2005) ST4B Model  This model is a variation of the Type ST3A model, with a proportional plus integral (PI) regulator block replacing the lag-lead regulator characteristic that was in the ST3A model. Both potential- and compoundsource rectifier excitation systems are modeled. The PI regulator blocks have nonwindup limits that are represented. The voltage regulator of this model is typically implemented digitally.
     """
 
-    def __init__(self, kp=0.0, kim=0.0, vbmax=0.0, kc=0.0, kpr=0.0, xl=0.0, vgmax=0.0, vmmin=0.0, kg=0.0, vmmax=0.0, tr=0.0, ta=0.0, kpm=0.0, angp=0.0, vrmin=0.0, kir=0.0, vrmax=0.0, ki=0.0, **kw_args):
-        """Initializes a new 'ExcST4B' instance.
+    def __init__(self, kp=0.0, kim=0.0, vbmax=0.0, kc=0.0, kpr=0.0, xl=0.0, vgmax=0.0, vmmin=0.0, kg=0.0, vmmax=0.0, tr=0.0, ta=0.0, kpm=0.0, angp=0.0, vrmin=0.0, kir=0.0, vrmax=0.0, ki=0.0, *args, **kw_args):
+        """Initialises a new 'ExcST4B' instance.
 
         @param kp: Potential source gain (&gt; 0.) 
         @param kim: Integral gain of inner loop regulator 
@@ -96,5 +96,12 @@ class ExcST4B(ExcitationSystem):
         #: Current source gain (&gt;= 0.)
         self.ki = ki
 
-        super(ExcST4B, self).__init__(**kw_args)
+        super(ExcST4B, self).__init__(*args, **kw_args)
+
+    _attrs = ["kp", "kim", "vbmax", "kc", "kpr", "xl", "vgmax", "vmmin", "kg", "vmmax", "tr", "ta", "kpm", "angp", "vrmin", "kir", "vrmax", "ki"]
+    _attr_types = {"kp": float, "kim": float, "vbmax": float, "kc": float, "kpr": float, "xl": float, "vgmax": float, "vmmin": float, "kg": float, "vmmax": float, "tr": float, "ta": float, "kpm": float, "angp": float, "vrmin": float, "kir": float, "vrmax": float, "ki": float}
+    _defaults = {"kp": 0.0, "kim": 0.0, "vbmax": 0.0, "kc": 0.0, "kpr": 0.0, "xl": 0.0, "vgmax": 0.0, "vmmin": 0.0, "kg": 0.0, "vmmax": 0.0, "tr": 0.0, "ta": 0.0, "kpm": 0.0, "angp": 0.0, "vrmin": 0.0, "kir": 0.0, "vrmax": 0.0, "ki": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

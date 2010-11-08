@@ -20,8 +20,8 @@ class AsynchronousMachine(RotatingMachine):
     """An asynchronous (induction) machine with no external connection to the rotor windings, e.g squirel-cage induction machine.
     """
 
-    def __init__(self, xm=0.0, xs=0.0, xpp=0.0, xlr2=0.0, rr2=0.0, tpo=0.0, rr1=0.0, xp=0.0, tppo=0.0, xlr1=0.0, **kw_args):
-        """Initializes a new 'AsynchronousMachine' instance.
+    def __init__(self, xm=0.0, xs=0.0, xpp=0.0, xlr2=0.0, rr2=0.0, tpo=0.0, rr1=0.0, xp=0.0, tppo=0.0, xlr1=0.0, *args, **kw_args):
+        """Initialises a new 'AsynchronousMachine' instance.
 
         @param xm: Magnetizing reactance 
         @param xs: Synchronous reactance (&gt;= Xp) 
@@ -64,5 +64,12 @@ class AsynchronousMachine(RotatingMachine):
         #: Damper 1 winding leakage reactance
         self.xlr1 = xlr1
 
-        super(AsynchronousMachine, self).__init__(**kw_args)
+        super(AsynchronousMachine, self).__init__(*args, **kw_args)
+
+    _attrs = ["xm", "xs", "xpp", "xlr2", "rr2", "tpo", "rr1", "xp", "tppo", "xlr1"]
+    _attr_types = {"xm": float, "xs": float, "xpp": float, "xlr2": float, "rr2": float, "tpo": float, "rr1": float, "xp": float, "tppo": float, "xlr1": float}
+    _defaults = {"xm": 0.0, "xs": 0.0, "xpp": 0.0, "xlr2": 0.0, "rr2": 0.0, "tpo": 0.0, "rr1": 0.0, "xp": 0.0, "tppo": 0.0, "xlr1": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

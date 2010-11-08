@@ -20,8 +20,8 @@ class Block(PowerSystemResource):
     """A specific usage of a dynamics block, supplied with parameters and any linkages to the power system static model that are required.     Sometimes a block is used to simply specify a location of input or output from dyanmics equations to the static model.
     """
 
-    def __init__(self, positiveFlowIn=False, inService=False, Terminal=None, MemberOf_BlockConnectivity=None, blockUsageInputReference0=None, BlockUsageOutputReference=None, PowerSystemResource=None, slotReference0=None, tieToMeasurement0=None, MetaBlock=None, BlockConnection=None, BlockParameter=None, **kw_args):
-        """Initializes a new 'Block' instance.
+    def __init__(self, positiveFlowIn=False, inService=False, Terminal=None, MemberOf_BlockConnectivity=None, blockUsageInputReference0=None, BlockUsageOutputReference=None, PowerSystemResource=None, slotReference0=None, tieToMeasurement0=None, MetaBlock=None, BlockConnection=None, BlockParameter=None, *args, **kw_args):
+        """Initialises a new 'Block' instance.
 
         @param positiveFlowIn: If true then any flows associated with a terminal are referenced as positive into the device. 
         @param inService: 
@@ -72,7 +72,14 @@ class Block(PowerSystemResource):
         self._BlockParameter = []
         self.BlockParameter = [] if BlockParameter is None else BlockParameter
 
-        super(Block, self).__init__(**kw_args)
+        super(Block, self).__init__(*args, **kw_args)
+
+    _attrs = ["positiveFlowIn", "inService"]
+    _attr_types = {"positiveFlowIn": bool, "inService": bool}
+    _defaults = {"positiveFlowIn": False, "inService": False}
+    _enums = {}
+    _refs = ["Terminal", "MemberOf_BlockConnectivity", "blockUsageInputReference0", "BlockUsageOutputReference", "PowerSystemResource", "slotReference0", "tieToMeasurement0", "MetaBlock", "BlockConnection", "BlockParameter"]
+    _many_refs = ["blockUsageInputReference0", "BlockUsageOutputReference", "tieToMeasurement0", "BlockConnection", "BlockParameter"]
 
     def getTerminal(self):
         """The optional terminal to which the block applies.  This is used to link a specific terminal flow to the dynamics block.

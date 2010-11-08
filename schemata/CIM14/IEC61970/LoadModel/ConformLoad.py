@@ -20,15 +20,22 @@ class ConformLoad(EnergyConsumer):
     """ConformLoad represent loads that follow a daily load change pattern where the pattern can be used to scale the load with a system load.
     """
 
-    def __init__(self, LoadGroup=None, **kw_args):
-        """Initializes a new 'ConformLoad' instance.
+    def __init__(self, LoadGroup=None, *args, **kw_args):
+        """Initialises a new 'ConformLoad' instance.
 
         @param LoadGroup: Group of this ConformLoad.
         """
         self._LoadGroup = None
         self.LoadGroup = LoadGroup
 
-        super(ConformLoad, self).__init__(**kw_args)
+        super(ConformLoad, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["LoadGroup"]
+    _many_refs = []
 
     def getLoadGroup(self):
         """Group of this ConformLoad.

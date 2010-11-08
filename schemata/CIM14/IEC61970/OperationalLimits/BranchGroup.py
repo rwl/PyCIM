@@ -20,8 +20,8 @@ class BranchGroup(IdentifiedObject):
     """A group of branch terminals whose directed flow summation is to be monitored. Abranch group need not form a cutset of the network.
     """
 
-    def __init__(self, minimumReactivePower=0.0, monitorActivePower=False, minimumActivePower=0.0, maximumReactivePower=0.0, maximumActivePower=0.0, monitorReactivePower=False, BranchGroupTerminal=None, **kw_args):
-        """Initializes a new 'BranchGroup' instance.
+    def __init__(self, minimumReactivePower=0.0, monitorActivePower=False, minimumActivePower=0.0, maximumReactivePower=0.0, maximumActivePower=0.0, monitorReactivePower=False, BranchGroupTerminal=None, *args, **kw_args):
+        """Initialises a new 'BranchGroup' instance.
 
         @param minimumReactivePower: The minimum reactive power flow. 
         @param monitorActivePower: Monitor the active power flow. 
@@ -52,7 +52,14 @@ class BranchGroup(IdentifiedObject):
         self._BranchGroupTerminal = []
         self.BranchGroupTerminal = [] if BranchGroupTerminal is None else BranchGroupTerminal
 
-        super(BranchGroup, self).__init__(**kw_args)
+        super(BranchGroup, self).__init__(*args, **kw_args)
+
+    _attrs = ["minimumReactivePower", "monitorActivePower", "minimumActivePower", "maximumReactivePower", "maximumActivePower", "monitorReactivePower"]
+    _attr_types = {"minimumReactivePower": float, "monitorActivePower": bool, "minimumActivePower": float, "maximumReactivePower": float, "maximumActivePower": float, "monitorReactivePower": bool}
+    _defaults = {"minimumReactivePower": 0.0, "monitorActivePower": False, "minimumActivePower": 0.0, "maximumReactivePower": 0.0, "maximumActivePower": 0.0, "monitorReactivePower": False}
+    _enums = {}
+    _refs = ["BranchGroupTerminal"]
+    _many_refs = ["BranchGroupTerminal"]
 
     def getBranchGroupTerminal(self):
         """The directed branch group terminals to be summed.

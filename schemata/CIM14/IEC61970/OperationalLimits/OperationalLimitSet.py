@@ -20,8 +20,8 @@ class OperationalLimitSet(IdentifiedObject):
     """A set of limits associated with equipmnet.  Sets of limits might apply to a specific temperature, or season for example. A set of limits may contain may different severities of limit levels that would apply to the same equipment.   The set may contain limits of different types such as apparent power and current limits or high and low voltage limits  that are logically applied together as a set.
     """
 
-    def __init__(self, Equipment=None, Terminal=None, OperationalLimitValue=None, **kw_args):
-        """Initializes a new 'OperationalLimitSet' instance.
+    def __init__(self, Equipment=None, Terminal=None, OperationalLimitValue=None, *args, **kw_args):
+        """Initialises a new 'OperationalLimitSet' instance.
 
         @param Equipment: The equpment to which the limit set applies.
         @param Terminal: The terminal specifically associated to this operational limit set.  If no terminal is associated, all terminals of the equipment are implied.
@@ -36,7 +36,14 @@ class OperationalLimitSet(IdentifiedObject):
         self._OperationalLimitValue = []
         self.OperationalLimitValue = [] if OperationalLimitValue is None else OperationalLimitValue
 
-        super(OperationalLimitSet, self).__init__(**kw_args)
+        super(OperationalLimitSet, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["Equipment", "Terminal", "OperationalLimitValue"]
+    _many_refs = ["OperationalLimitValue"]
 
     def getEquipment(self):
         """The equpment to which the limit set applies.

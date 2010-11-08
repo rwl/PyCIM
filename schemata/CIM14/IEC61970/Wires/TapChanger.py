@@ -20,8 +20,8 @@ class TapChanger(PowerSystemResource):
     """Mechanism for changing transformer winding tap positions.
     """
 
-    def __init__(self, stepVoltageIncrement=0.0, normalStep=0, neutralStep=0, subsequentDelay=0.0, regulationStatus=False, ltcFlag=False, highStep=0, initialDelay=0.0, lowStep=0, neutralU=0.0, SvTapStep=None, ImpedanceVariationCurve=None, TapSchedules=None, RegulatingControl=None, **kw_args):
-        """Initializes a new 'TapChanger' instance.
+    def __init__(self, stepVoltageIncrement=0.0, normalStep=0, neutralStep=0, subsequentDelay=0.0, regulationStatus=False, ltcFlag=False, highStep=0, initialDelay=0.0, lowStep=0, neutralU=0.0, SvTapStep=None, ImpedanceVariationCurve=None, TapSchedules=None, RegulatingControl=None, *args, **kw_args):
+        """Initialises a new 'TapChanger' instance.
 
         @param stepVoltageIncrement: Tap step increment, in per cent of nominal voltage, per step position.  For a symmetrical PhaseTapChanger, the stepVoltageIncrement is used in the formula for calculation of the phase angle.  For a symmetrical PhaseTapChanger, the voltage magnitude does not change with tap step. 
         @param normalStep: The tap step position used in 'normal' network operation for this winding. For a 'Fixed' tap changer indicates the current physical tap setting. 
@@ -80,7 +80,14 @@ class TapChanger(PowerSystemResource):
         self._RegulatingControl = None
         self.RegulatingControl = RegulatingControl
 
-        super(TapChanger, self).__init__(**kw_args)
+        super(TapChanger, self).__init__(*args, **kw_args)
+
+    _attrs = ["stepVoltageIncrement", "normalStep", "neutralStep", "subsequentDelay", "regulationStatus", "ltcFlag", "highStep", "initialDelay", "lowStep", "neutralU"]
+    _attr_types = {"stepVoltageIncrement": float, "normalStep": int, "neutralStep": int, "subsequentDelay": float, "regulationStatus": bool, "ltcFlag": bool, "highStep": int, "initialDelay": float, "lowStep": int, "neutralU": float}
+    _defaults = {"stepVoltageIncrement": 0.0, "normalStep": 0, "neutralStep": 0, "subsequentDelay": 0.0, "regulationStatus": False, "ltcFlag": False, "highStep": 0, "initialDelay": 0.0, "lowStep": 0, "neutralU": 0.0}
+    _enums = {}
+    _refs = ["SvTapStep", "ImpedanceVariationCurve", "TapSchedules", "RegulatingControl"]
+    _many_refs = ["TapSchedules"]
 
     def getSvTapStep(self):
         """The tap step state associated with the tap changer.

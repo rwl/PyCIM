@@ -20,8 +20,8 @@ class DCLineSegment(Conductor):
     """A wire or combination of wires not insulated from one another, with consistent electrical characteristics, used to carry direct current between points in the DC region of the power system.
     """
 
-    def __init__(self, dcSegmentInductance=0.0, dcSegmentResistance=0.0, **kw_args):
-        """Initializes a new 'DCLineSegment' instance.
+    def __init__(self, dcSegmentInductance=0.0, dcSegmentResistance=0.0, *args, **kw_args):
+        """Initialises a new 'DCLineSegment' instance.
 
         @param dcSegmentInductance: Inductance of the DC line segment. 
         @param dcSegmentResistance: Resistance of the DC line segment. 
@@ -32,5 +32,12 @@ class DCLineSegment(Conductor):
         #: Resistance of the DC line segment.
         self.dcSegmentResistance = dcSegmentResistance
 
-        super(DCLineSegment, self).__init__(**kw_args)
+        super(DCLineSegment, self).__init__(*args, **kw_args)
+
+    _attrs = ["dcSegmentInductance", "dcSegmentResistance"]
+    _attr_types = {"dcSegmentInductance": float, "dcSegmentResistance": float}
+    _defaults = {"dcSegmentInductance": 0.0, "dcSegmentResistance": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class SlotConnection(IdentifiedObject):
     """Standard connectivity if not specified at the instance level..
     """
 
-    def __init__(self, connectionFrame0=None, slotInput0=None, slotOutput0=None, **kw_args):
-        """Initializes a new 'SlotConnection' instance.
+    def __init__(self, connectionFrame0=None, slotInput0=None, slotOutput0=None, *args, **kw_args):
+        """Initialises a new 'SlotConnection' instance.
 
         @param connectionFrame0:
         @param slotInput0:
@@ -36,7 +36,14 @@ class SlotConnection(IdentifiedObject):
         self._slotOutput0 = None
         self.slotOutput0 = slotOutput0
 
-        super(SlotConnection, self).__init__(**kw_args)
+        super(SlotConnection, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["connectionFrame0", "slotInput0", "slotOutput0"]
+    _many_refs = []
 
     def getconnectionFrame0(self):
         

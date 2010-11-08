@@ -20,8 +20,8 @@ class ReportingGroup(IdentifiedObject):
     """A reporting group is used for various ad-hoc groupings used for reporting.
     """
 
-    def __init__(self, ReportingSuperGroup=None, TopologicalNode=None, BusNameMarker=None, PowerSystemResource=None, **kw_args):
-        """Initializes a new 'ReportingGroup' instance.
+    def __init__(self, ReportingSuperGroup=None, TopologicalNode=None, BusNameMarker=None, PowerSystemResource=None, *args, **kw_args):
+        """Initialises a new 'ReportingGroup' instance.
 
         @param ReportingSuperGroup: Reporting super group to which this reporting group belongs.
         @param TopologicalNode: The topological nodes that belong to the reporting group.
@@ -40,7 +40,14 @@ class ReportingGroup(IdentifiedObject):
         self._PowerSystemResource = []
         self.PowerSystemResource = [] if PowerSystemResource is None else PowerSystemResource
 
-        super(ReportingGroup, self).__init__(**kw_args)
+        super(ReportingGroup, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["ReportingSuperGroup", "TopologicalNode", "BusNameMarker", "PowerSystemResource"]
+    _many_refs = ["TopologicalNode", "BusNameMarker", "PowerSystemResource"]
 
     def getReportingSuperGroup(self):
         """Reporting super group to which this reporting group belongs.

@@ -20,8 +20,8 @@ class Reading(MeasurementValue):
     """Specific value measured by a meter or other asset. Each Reading is associated with a specific ReadingType.
     """
 
-    def __init__(self, value=0.0, ReadingType=None, ReadingQualities=None, EndDeviceAsset=None, MeterReadings=None, **kw_args):
-        """Initializes a new 'Reading' instance.
+    def __init__(self, value=0.0, ReadingType=None, ReadingQualities=None, EndDeviceAsset=None, MeterReadings=None, *args, **kw_args):
+        """Initialises a new 'Reading' instance.
 
         @param value: Value of this reading. 
         @param ReadingType: Type information for this reading value.
@@ -44,7 +44,14 @@ class Reading(MeasurementValue):
         self._MeterReadings = []
         self.MeterReadings = [] if MeterReadings is None else MeterReadings
 
-        super(Reading, self).__init__(**kw_args)
+        super(Reading, self).__init__(*args, **kw_args)
+
+    _attrs = ["value"]
+    _attr_types = {"value": float}
+    _defaults = {"value": 0.0}
+    _enums = {}
+    _refs = ["ReadingType", "ReadingQualities", "EndDeviceAsset", "MeterReadings"]
+    _many_refs = ["ReadingQualities", "MeterReadings"]
 
     def getReadingType(self):
         """Type information for this reading value.

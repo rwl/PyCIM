@@ -20,8 +20,8 @@ class CombinedVersion(Element):
     """The combined version denotes the versions of the subpackages that have been combined into the total CIIMmodel. This is a convenience instead of having to look at each subpackage.
     """
 
-    def __init__(self, version='', date='', **kw_args):
-        """Initializes a new 'CombinedVersion' instance.
+    def __init__(self, version='', date='', *args, **kw_args):
+        """Initialises a new 'CombinedVersion' instance.
 
         @param version: Form is IEC61970CIMXXvYY_IEC61968CIMXXvYY_combined where XX is the major CIM package version and the YY is the minor version, and different packages could have different major and minor versions.   For example IEC61970CIM13v18_IEC61968CIM10v16_combined.  Additional packages might be added in the future. 
         @param date: Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05. 
@@ -32,5 +32,12 @@ class CombinedVersion(Element):
         #: Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05.
         self.date = date
 
-        super(CombinedVersion, self).__init__(**kw_args)
+        super(CombinedVersion, self).__init__(*args, **kw_args)
+
+    _attrs = ["version", "date"]
+    _attr_types = {"version": str, "date": str}
+    _defaults = {"version": '', "date": ''}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

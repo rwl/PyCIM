@@ -20,8 +20,8 @@ class ExcAC4A(ExcitationSystem):
     """IEEE (1992/2005) AC4A Model  The Type AC4A alternator-supplied controlled-rectifier excitation system is quite different from the other type ac systems. This high initial response excitation system utilizes a full thyristor bridge in the exciter output circuit. The voltage regulator controls the firing of the thyristor bridges. The exciter alternator uses an independent voltage regulator to control its output voltage to a constant value. These effects are not modeled; however, transient loading effects on the exciter alternator are included.
     """
 
-    def __init__(self, ka=0.0, vimin=0.0, tb=0.0, tr=0.0, tc=0.0, ta=0.0, kc=0.0, vrmin=0.0, vrmax=0.0, vimax=0.0, **kw_args):
-        """Initializes a new 'ExcAC4A' instance.
+    def __init__(self, ka=0.0, vimin=0.0, tb=0.0, tr=0.0, tc=0.0, ta=0.0, kc=0.0, vrmin=0.0, vrmax=0.0, vimax=0.0, *args, **kw_args):
+        """Initialises a new 'ExcAC4A' instance.
 
         @param ka: Gain (&gt; 0.) 
         @param vimin: Minimum error signal (&lt; 0.) 
@@ -64,5 +64,12 @@ class ExcAC4A(ExcitationSystem):
         #: Maximum error signal ( &gt; 0.)
         self.vimax = vimax
 
-        super(ExcAC4A, self).__init__(**kw_args)
+        super(ExcAC4A, self).__init__(*args, **kw_args)
+
+    _attrs = ["ka", "vimin", "tb", "tr", "tc", "ta", "kc", "vrmin", "vrmax", "vimax"]
+    _attr_types = {"ka": float, "vimin": float, "tb": float, "tr": float, "tc": float, "ta": float, "kc": float, "vrmin": float, "vrmax": float, "vimax": float}
+    _defaults = {"ka": 0.0, "vimin": 0.0, "tb": 0.0, "tr": 0.0, "tc": 0.0, "ta": 0.0, "kc": 0.0, "vrmin": 0.0, "vrmax": 0.0, "vimax": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

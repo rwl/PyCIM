@@ -20,8 +20,8 @@ class SlotReference(IdentifiedObject):
     """The specific role the block usage is playing in a connection frame. This allows connections to be established at the meta dynamics level and not at the instance level.
     """
 
-    def __init__(self, slot0=None, block0=None, compositeModel0=None, **kw_args):
-        """Initializes a new 'SlotReference' instance.
+    def __init__(self, slot0=None, block0=None, compositeModel0=None, *args, **kw_args):
+        """Initialises a new 'SlotReference' instance.
 
         @param slot0:
         @param block0:
@@ -36,7 +36,14 @@ class SlotReference(IdentifiedObject):
         self._compositeModel0 = []
         self.compositeModel0 = [] if compositeModel0 is None else compositeModel0
 
-        super(SlotReference, self).__init__(**kw_args)
+        super(SlotReference, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["slot0", "block0", "compositeModel0"]
+    _many_refs = ["block0", "compositeModel0"]
 
     def getslot0(self):
         

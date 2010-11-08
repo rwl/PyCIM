@@ -20,8 +20,8 @@ class LoadStatic(AggregateLoad):
     """General Static Load Model. A static load model represents the sensitivity of the real and reactive power consumed by the load to the amplitude and frequency of the bus voltage.
     """
 
-    def __init__(self, staticLoadType='ZIP1', ep1=0.0, kp3=0.0, eq3=0.0, kp2=0.0, eq2=0.0, kqf=0.0, kq4=0.0, kq2=0.0, kp1=0.0, ep2=0.0, eq1=0.0, kpf=0.0, kp4=0.0, kq3=0.0, ep3=0.0, kq1=0.0, **kw_args):
-        """Initializes a new 'LoadStatic' instance.
+    def __init__(self, staticLoadType="ZIP1", ep1=0.0, kp3=0.0, eq3=0.0, kp2=0.0, eq2=0.0, kqf=0.0, kq4=0.0, kq2=0.0, kp1=0.0, ep2=0.0, eq1=0.0, kpf=0.0, kp4=0.0, kq3=0.0, ep3=0.0, kq1=0.0, *args, **kw_args):
+        """Initialises a new 'LoadStatic' instance.
 
         @param staticLoadType: Type of static load model Values are: "ZIP1", "exponential", "ZIP2"
         @param ep1: 
@@ -41,7 +41,7 @@ class LoadStatic(AggregateLoad):
         @param ep3: 
         @param kq1: 
         """
-        #: Type of static load modelValues are: "ZIP1", "exponential", "ZIP2"
+        #: Type of static load model Values are: "ZIP1", "exponential", "ZIP2"
         self.staticLoadType = staticLoadType
 
 
@@ -92,5 +92,12 @@ class LoadStatic(AggregateLoad):
 
         self.kq1 = kq1
 
-        super(LoadStatic, self).__init__(**kw_args)
+        super(LoadStatic, self).__init__(*args, **kw_args)
+
+    _attrs = ["staticLoadType", "ep1", "kp3", "eq3", "kp2", "eq2", "kqf", "kq4", "kq2", "kp1", "ep2", "eq1", "kpf", "kp4", "kq3", "ep3", "kq1"]
+    _attr_types = {"staticLoadType": str, "ep1": float, "kp3": float, "eq3": float, "kp2": float, "eq2": float, "kqf": float, "kq4": float, "kq2": float, "kp1": float, "ep2": float, "eq1": float, "kpf": float, "kp4": float, "kq3": float, "ep3": float, "kq1": float}
+    _defaults = {"staticLoadType": "ZIP1", "ep1": 0.0, "kp3": 0.0, "eq3": 0.0, "kp2": 0.0, "eq2": 0.0, "kqf": 0.0, "kq4": 0.0, "kq2": 0.0, "kp1": 0.0, "ep2": 0.0, "eq1": 0.0, "kpf": 0.0, "kp4": 0.0, "kq3": 0.0, "ep3": 0.0, "kq1": 0.0}
+    _enums = {"staticLoadType": "StaticLoadType"}
+    _refs = []
+    _many_refs = []
 

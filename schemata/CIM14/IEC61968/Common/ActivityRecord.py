@@ -20,8 +20,8 @@ class ActivityRecord(IdentifiedObject):
     """Records activity for an entity at a point in time; activity may be for an event that has already occurred or for a planned activity.
     """
 
-    def __init__(self, reason='', createdDateTime='', severity='', category='', Documents=None, Assets=None, status=None, **kw_args):
-        """Initializes a new 'ActivityRecord' instance.
+    def __init__(self, reason='', createdDateTime='', severity='', category='', Documents=None, Assets=None, status=None, *args, **kw_args):
+        """Initialises a new 'ActivityRecord' instance.
 
         @param reason: Reason for event resulting in this activity record, typically supplied when user initiated. 
         @param createdDateTime: Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable). 
@@ -51,7 +51,14 @@ class ActivityRecord(IdentifiedObject):
 
         self.status = status
 
-        super(ActivityRecord, self).__init__(**kw_args)
+        super(ActivityRecord, self).__init__(*args, **kw_args)
+
+    _attrs = ["reason", "createdDateTime", "severity", "category"]
+    _attr_types = {"reason": str, "createdDateTime": str, "severity": str, "category": str}
+    _defaults = {"reason": '', "createdDateTime": '', "severity": '', "category": ''}
+    _enums = {}
+    _refs = ["Documents", "Assets", "status"]
+    _many_refs = ["Documents", "Assets"]
 
     def getDocuments(self):
         """All documents for which this activity record has been created.

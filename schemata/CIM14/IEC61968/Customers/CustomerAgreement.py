@@ -20,8 +20,8 @@ class CustomerAgreement(Agreement):
     """Agreement between the Customer and the ServiceSupplier to pay for service at a specific ServiceLocation. It records certain billing information about the type of service provided at the ServiceLocation and is used during charge creation to determine the type of service.
     """
 
-    def __init__(self, loadMgmt='', budgetBill='', billingCycle='', DemandResponseProgram=None, ServiceSupplier=None, PricingStructures=None, ServiceLocations=None, ServiceCategory=None, MeterReadings=None, CustomerAccount=None, AuxiliaryAgreements=None, EndDeviceControls=None, Customer=None, ServiceDeliveryPoints=None, Equipments=None, **kw_args):
-        """Initializes a new 'CustomerAgreement' instance.
+    def __init__(self, loadMgmt='', budgetBill='', billingCycle='', DemandResponseProgram=None, ServiceSupplier=None, PricingStructures=None, ServiceLocations=None, ServiceCategory=None, MeterReadings=None, CustomerAccount=None, AuxiliaryAgreements=None, EndDeviceControls=None, Customer=None, ServiceDeliveryPoints=None, Equipments=None, *args, **kw_args):
+        """Initialises a new 'CustomerAgreement' instance.
 
         @param loadMgmt: Load management code. 
         @param budgetBill: Budget bill code. 
@@ -84,7 +84,14 @@ class CustomerAgreement(Agreement):
         self._Equipments = []
         self.Equipments = [] if Equipments is None else Equipments
 
-        super(CustomerAgreement, self).__init__(**kw_args)
+        super(CustomerAgreement, self).__init__(*args, **kw_args)
+
+    _attrs = ["loadMgmt", "budgetBill", "billingCycle"]
+    _attr_types = {"loadMgmt": str, "budgetBill": str, "billingCycle": str}
+    _defaults = {"loadMgmt": '', "budgetBill": '', "billingCycle": ''}
+    _enums = {}
+    _refs = ["DemandResponseProgram", "ServiceSupplier", "PricingStructures", "ServiceLocations", "ServiceCategory", "MeterReadings", "CustomerAccount", "AuxiliaryAgreements", "EndDeviceControls", "Customer", "ServiceDeliveryPoints", "Equipments"]
+    _many_refs = ["PricingStructures", "ServiceLocations", "MeterReadings", "AuxiliaryAgreements", "EndDeviceControls", "ServiceDeliveryPoints", "Equipments"]
 
     def getDemandResponseProgram(self):
         """Demand response program for this customer agreement.

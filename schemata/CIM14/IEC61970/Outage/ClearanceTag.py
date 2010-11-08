@@ -20,8 +20,8 @@ class ClearanceTag(IdentifiedObject):
     """A clearance tag that is used to authorize and schedule work on conducting equipment in the field. Tagged equipment is not available for commercial service.
     """
 
-    def __init__(self, workStartTime='', workDescription='', workEndTime='', authorityName='', deenergizeReqFlag=False, groundReqFlag=False, tagIssueTime='', phaseCheckReqFlag=False, ClearanceTagType=None, ConductingEquipment=None, **kw_args):
-        """Initializes a new 'ClearanceTag' instance.
+    def __init__(self, workStartTime='', workDescription='', workEndTime='', authorityName='', deenergizeReqFlag=False, groundReqFlag=False, tagIssueTime='', phaseCheckReqFlag=False, ClearanceTagType=None, ConductingEquipment=None, *args, **kw_args):
+        """Initialises a new 'ClearanceTag' instance.
 
         @param workStartTime: The time at which the clearance tag is scheduled to be set. 
         @param workDescription: Description of the work to be performed 
@@ -64,7 +64,14 @@ class ClearanceTag(IdentifiedObject):
         self._ConductingEquipment = None
         self.ConductingEquipment = ConductingEquipment
 
-        super(ClearanceTag, self).__init__(**kw_args)
+        super(ClearanceTag, self).__init__(*args, **kw_args)
+
+    _attrs = ["workStartTime", "workDescription", "workEndTime", "authorityName", "deenergizeReqFlag", "groundReqFlag", "tagIssueTime", "phaseCheckReqFlag"]
+    _attr_types = {"workStartTime": str, "workDescription": str, "workEndTime": str, "authorityName": str, "deenergizeReqFlag": bool, "groundReqFlag": bool, "tagIssueTime": str, "phaseCheckReqFlag": bool}
+    _defaults = {"workStartTime": '', "workDescription": '', "workEndTime": '', "authorityName": '', "deenergizeReqFlag": False, "groundReqFlag": False, "tagIssueTime": '', "phaseCheckReqFlag": False}
+    _enums = {}
+    _refs = ["ClearanceTagType", "ConductingEquipment"]
+    _many_refs = []
 
     def getClearanceTagType(self):
         """The type of tag, depending on the purpose of the work to be performed and/or the type of supervisory control allowed.

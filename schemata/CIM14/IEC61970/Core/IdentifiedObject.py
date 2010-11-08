@@ -20,8 +20,8 @@ class IdentifiedObject(Element):
     """This is a root class to provide common naming attributes for all classes needing naming attributes
     """
 
-    def __init__(self, pathName='', aliasName='', mRID='', name='', description='', localName='', ModelingAuthoritySet=None, **kw_args):
-        """Initializes a new 'IdentifiedObject' instance.
+    def __init__(self, pathName='', aliasName='', mRID='', name='', description='', localName='', ModelingAuthoritySet=None, *args, **kw_args):
+        """Initialises a new 'IdentifiedObject' instance.
 
         @param pathName: The pathname is a system unique name composed from all IdentifiedObject.localNames in a naming hierarchy path from the object to the root. 
         @param aliasName: The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy. 
@@ -52,7 +52,14 @@ class IdentifiedObject(Element):
         self._ModelingAuthoritySet = None
         self.ModelingAuthoritySet = ModelingAuthoritySet
 
-        super(IdentifiedObject, self).__init__(**kw_args)
+        super(IdentifiedObject, self).__init__(*args, **kw_args)
+
+    _attrs = ["pathName", "aliasName", "mRID", "name", "description", "localName"]
+    _attr_types = {"pathName": str, "aliasName": str, "mRID": str, "name": str, "description": str, "localName": str}
+    _defaults = {"pathName": '', "aliasName": '', "mRID": '', "name": '', "description": '', "localName": ''}
+    _enums = {}
+    _refs = ["ModelingAuthoritySet"]
+    _many_refs = []
 
     def getModelingAuthoritySet(self):
         """An IdentifiedObject belongs to a Modeling Authority Set for purposes of defining a group of data maintained by the same Modeling Authority.

@@ -20,8 +20,8 @@ class IrregularTimePoint(Element):
     """TimePoints for a schedule where the time between the points varies.
     """
 
-    def __init__(self, time=0.0, value2=0.0, value1=0.0, IntervalSchedule=None, **kw_args):
-        """Initializes a new 'IrregularTimePoint' instance.
+    def __init__(self, time=0.0, value2=0.0, value1=0.0, IntervalSchedule=None, *args, **kw_args):
+        """Initialises a new 'IrregularTimePoint' instance.
 
         @param time: The time is relative the BasicTimeSchedule.startTime. 
         @param value2: The second value at the time. The meaning of the value is defined by the class inhering the IrregularIntervalSchedule. 
@@ -40,7 +40,14 @@ class IrregularTimePoint(Element):
         self._IntervalSchedule = None
         self.IntervalSchedule = IntervalSchedule
 
-        super(IrregularTimePoint, self).__init__(**kw_args)
+        super(IrregularTimePoint, self).__init__(*args, **kw_args)
+
+    _attrs = ["time", "value2", "value1"]
+    _attr_types = {"time": float, "value2": float, "value1": float}
+    _defaults = {"time": 0.0, "value2": 0.0, "value1": 0.0}
+    _enums = {}
+    _refs = ["IntervalSchedule"]
+    _many_refs = []
 
     def getIntervalSchedule(self):
         """An IrregularTimePoint belongs to an IrregularIntervalSchedule.

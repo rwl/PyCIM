@@ -20,8 +20,8 @@ class StreetDetail(Element):
     """Street details, in the context of address.
     """
 
-    def __init__(self, number='', type='', suiteNumber='', addressGeneral='', buildingName='', name='', withinTownLimits=False, suffix='', code='', prefix='', **kw_args):
-        """Initializes a new 'StreetDetail' instance.
+    def __init__(self, number='', type='', suiteNumber='', addressGeneral='', buildingName='', name='', withinTownLimits=False, suffix='', code='', prefix='', *args, **kw_args):
+        """Initialises a new 'StreetDetail' instance.
 
         @param number: Designator of the specific location on the street. 
         @param type: Type of street. Examples include: street, circle, boulevard, avenue, road, drive, etc. 
@@ -64,5 +64,12 @@ class StreetDetail(Element):
         #: Prefix to the street name. For example: North, South, East, West.
         self.prefix = prefix
 
-        super(StreetDetail, self).__init__(**kw_args)
+        super(StreetDetail, self).__init__(*args, **kw_args)
+
+    _attrs = ["number", "type", "suiteNumber", "addressGeneral", "buildingName", "name", "withinTownLimits", "suffix", "code", "prefix"]
+    _attr_types = {"number": str, "type": str, "suiteNumber": str, "addressGeneral": str, "buildingName": str, "name": str, "withinTownLimits": bool, "suffix": str, "code": str, "prefix": str}
+    _defaults = {"number": '', "type": '', "suiteNumber": '', "addressGeneral": '', "buildingName": '', "name": '', "withinTownLimits": False, "suffix": '', "code": '', "prefix": ''}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

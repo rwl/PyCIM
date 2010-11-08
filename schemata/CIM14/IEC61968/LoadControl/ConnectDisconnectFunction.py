@@ -20,8 +20,8 @@ class ConnectDisconnectFunction(DeviceFunction):
     """A function that will disconnect or reconnect the customer's load under defined conditions.
     """
 
-    def __init__(self, isLocalAutoReconOp=False, isLocalAutoDisconOp=False, isRemoteAutoReconOp=False, isRemoteAutoDisconOp=False, isConnected=False, eventCount=0, isDelayedDiscon=False, rcdInfo=None, Switches=None, **kw_args):
-        """Initializes a new 'ConnectDisconnectFunction' instance.
+    def __init__(self, isLocalAutoReconOp=False, isLocalAutoDisconOp=False, isRemoteAutoReconOp=False, isRemoteAutoDisconOp=False, isConnected=False, eventCount=0, isDelayedDiscon=False, rcdInfo=None, Switches=None, *args, **kw_args):
+        """Initialises a new 'ConnectDisconnectFunction' instance.
 
         @param isLocalAutoReconOp: If set true and if reconnection can be operated locally, then the operation happens automatically. Otherwise, it is manually. 
         @param isLocalAutoDisconOp: (if disconnection can be operated locally) If set true, the operation happens automatically, otherwise it happens manually. 
@@ -59,7 +59,14 @@ class ConnectDisconnectFunction(DeviceFunction):
         self._Switches = []
         self.Switches = [] if Switches is None else Switches
 
-        super(ConnectDisconnectFunction, self).__init__(**kw_args)
+        super(ConnectDisconnectFunction, self).__init__(*args, **kw_args)
+
+    _attrs = ["isLocalAutoReconOp", "isLocalAutoDisconOp", "isRemoteAutoReconOp", "isRemoteAutoDisconOp", "isConnected", "eventCount", "isDelayedDiscon"]
+    _attr_types = {"isLocalAutoReconOp": bool, "isLocalAutoDisconOp": bool, "isRemoteAutoReconOp": bool, "isRemoteAutoDisconOp": bool, "isConnected": bool, "eventCount": int, "isDelayedDiscon": bool}
+    _defaults = {"isLocalAutoReconOp": False, "isLocalAutoDisconOp": False, "isRemoteAutoReconOp": False, "isRemoteAutoDisconOp": False, "isConnected": False, "eventCount": 0, "isDelayedDiscon": False}
+    _enums = {}
+    _refs = ["rcdInfo", "Switches"]
+    _many_refs = ["Switches"]
 
     # Information on remote connect disconnect switch.
     rcdInfo = None

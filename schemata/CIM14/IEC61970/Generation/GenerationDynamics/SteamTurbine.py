@@ -20,8 +20,8 @@ class SteamTurbine(PrimeMover):
     """Steam turbine
     """
 
-    def __init__(self, reheater2TC=0.0, shaft1PowerIP=0.0, shaft1PowerLP2=0.0, reheater1TC=0.0, steamChestTC=0.0, crossoverTC=0.0, shaft2PowerHP=0.0, shaft2PowerLP2=0.0, shaft2PowerIP=0.0, shaft1PowerHP=0.0, shaft1PowerLP1=0.0, shaft2PowerLP1=0.0, SteamSupplys=None, **kw_args):
-        """Initializes a new 'SteamTurbine' instance.
+    def __init__(self, reheater2TC=0.0, shaft1PowerIP=0.0, shaft1PowerLP2=0.0, reheater1TC=0.0, steamChestTC=0.0, crossoverTC=0.0, shaft2PowerHP=0.0, shaft2PowerLP2=0.0, shaft2PowerIP=0.0, shaft1PowerHP=0.0, shaft1PowerLP1=0.0, shaft2PowerLP1=0.0, SteamSupplys=None, *args, **kw_args):
+        """Initialises a new 'SteamTurbine' instance.
 
         @param reheater2TC: Second Reheater Time Constant 
         @param shaft1PowerIP: Fraction Of Power From Shaft 1 Intermediate Pressure Turbine output 
@@ -76,7 +76,14 @@ class SteamTurbine(PrimeMover):
         self._SteamSupplys = []
         self.SteamSupplys = [] if SteamSupplys is None else SteamSupplys
 
-        super(SteamTurbine, self).__init__(**kw_args)
+        super(SteamTurbine, self).__init__(*args, **kw_args)
+
+    _attrs = ["reheater2TC", "shaft1PowerIP", "shaft1PowerLP2", "reheater1TC", "steamChestTC", "crossoverTC", "shaft2PowerHP", "shaft2PowerLP2", "shaft2PowerIP", "shaft1PowerHP", "shaft1PowerLP1", "shaft2PowerLP1"]
+    _attr_types = {"reheater2TC": float, "shaft1PowerIP": float, "shaft1PowerLP2": float, "reheater1TC": float, "steamChestTC": float, "crossoverTC": float, "shaft2PowerHP": float, "shaft2PowerLP2": float, "shaft2PowerIP": float, "shaft1PowerHP": float, "shaft1PowerLP1": float, "shaft2PowerLP1": float}
+    _defaults = {"reheater2TC": 0.0, "shaft1PowerIP": 0.0, "shaft1PowerLP2": 0.0, "reheater1TC": 0.0, "steamChestTC": 0.0, "crossoverTC": 0.0, "shaft2PowerHP": 0.0, "shaft2PowerLP2": 0.0, "shaft2PowerIP": 0.0, "shaft1PowerHP": 0.0, "shaft1PowerLP1": 0.0, "shaft2PowerLP1": 0.0}
+    _enums = {}
+    _refs = ["SteamSupplys"]
+    _many_refs = ["SteamSupplys"]
 
     def getSteamSupplys(self):
         """Steam turbines may have steam supplied by a steam supply

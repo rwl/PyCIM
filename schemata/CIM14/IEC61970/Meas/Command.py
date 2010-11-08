@@ -20,8 +20,8 @@ class Command(Control):
     """A Command is a discrete control used for supervisory control.
     """
 
-    def __init__(self, value=0, normalValue=0, ValueAliasSet=None, Discrete=None, **kw_args):
-        """Initializes a new 'Command' instance.
+    def __init__(self, value=0, normalValue=0, ValueAliasSet=None, Discrete=None, *args, **kw_args):
+        """Initialises a new 'Command' instance.
 
         @param value: The value representing the actuator output 
         @param normalValue: Normal value for Control.value e.g. used for percentage scaling 
@@ -40,7 +40,14 @@ class Command(Control):
         self._Discrete = None
         self.Discrete = Discrete
 
-        super(Command, self).__init__(**kw_args)
+        super(Command, self).__init__(*args, **kw_args)
+
+    _attrs = ["value", "normalValue"]
+    _attr_types = {"value": int, "normalValue": int}
+    _defaults = {"value": 0, "normalValue": 0}
+    _enums = {}
+    _refs = ["ValueAliasSet", "Discrete"]
+    _many_refs = []
 
     def getValueAliasSet(self):
         """The Commands using the set for translation.

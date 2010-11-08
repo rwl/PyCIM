@@ -20,9 +20,16 @@ class ExcSK(ExcitationSystem):
     """Slovakian Excitation System Model (UEL, secondary voltage control)
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'ExcSK' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'ExcSK' instance.
 
         """
-        super(ExcSK, self).__init__(**kw_args)
+        super(ExcSK, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

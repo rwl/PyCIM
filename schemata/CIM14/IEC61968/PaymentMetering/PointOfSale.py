@@ -20,8 +20,8 @@ class PointOfSale(IdentifiedObject):
     """Logical point where transactions take place with operational interaction between Cashier and the payment system; in certain cases PointOfSale interacts directly with the end customer, in which case Cashier might not be a real person: for example a self-service kiosk or over the internet.
     """
 
-    def __init__(self, location='', Vendor=None, CashierShifts=None, **kw_args):
-        """Initializes a new 'PointOfSale' instance.
+    def __init__(self, location='', Vendor=None, CashierShifts=None, *args, **kw_args):
+        """Initialises a new 'PointOfSale' instance.
 
         @param location: Local description for where this point of sale is physically located. 
         @param Vendor: Vendor that controls this PointOfSale.
@@ -36,7 +36,14 @@ class PointOfSale(IdentifiedObject):
         self._CashierShifts = []
         self.CashierShifts = [] if CashierShifts is None else CashierShifts
 
-        super(PointOfSale, self).__init__(**kw_args)
+        super(PointOfSale, self).__init__(*args, **kw_args)
+
+    _attrs = ["location"]
+    _attr_types = {"location": str}
+    _defaults = {"location": ''}
+    _enums = {}
+    _refs = ["Vendor", "CashierShifts"]
+    _many_refs = ["CashierShifts"]
 
     def getVendor(self):
         """Vendor that controls this PointOfSale.

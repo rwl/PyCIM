@@ -20,8 +20,8 @@ class AccountMovement(Element):
     """Credit/debit movements for an account.
     """
 
-    def __init__(self, dateTime='', amount=0.0, reason='', **kw_args):
-        """Initializes a new 'AccountMovement' instance.
+    def __init__(self, dateTime='', amount=0.0, reason='', *args, **kw_args):
+        """Initialises a new 'AccountMovement' instance.
 
         @param dateTime: Date and time when the credit/debit transaction was performed. 
         @param amount: Amount that was credited to/debited from an account. For example: payment received/interest charge on arrears. 
@@ -36,5 +36,12 @@ class AccountMovement(Element):
         #: Reason for credit/debit transaction on an account. Example: payment received/arrears interest levied.
         self.reason = reason
 
-        super(AccountMovement, self).__init__(**kw_args)
+        super(AccountMovement, self).__init__(*args, **kw_args)
+
+    _attrs = ["dateTime", "amount", "reason"]
+    _attr_types = {"dateTime": str, "amount": float, "reason": str}
+    _defaults = {"dateTime": '', "amount": 0.0, "reason": ''}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

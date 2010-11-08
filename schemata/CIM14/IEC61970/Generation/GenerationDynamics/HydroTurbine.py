@@ -20,8 +20,8 @@ class HydroTurbine(PrimeMover):
     """A water driven prime mover. Typical turbine types are: Francis, Kaplan, and Pelton.
     """
 
-    def __init__(self, turbineType='francis', turbineRating=0.0, maxHeadMaxP=0.0, transientDroopTime=0.0, speedRegulation=0.0, waterStartingTime=0.0, speedRating=0.0, transientRegulation=0.0, gateUpperLimit=0.0, minHeadMaxP=0.0, gateRateLimit=0.0, HydroTurbineGovernor=None, **kw_args):
-        """Initializes a new 'HydroTurbine' instance.
+    def __init__(self, turbineType="francis", turbineRating=0.0, maxHeadMaxP=0.0, transientDroopTime=0.0, speedRegulation=0.0, waterStartingTime=0.0, speedRating=0.0, transientRegulation=0.0, gateUpperLimit=0.0, minHeadMaxP=0.0, gateRateLimit=0.0, HydroTurbineGovernor=None, *args, **kw_args):
+        """Initialises a new 'HydroTurbine' instance.
 
         @param turbineType: Type of turbine. Values are: "francis", "pelton", "kaplan"
         @param turbineRating: Rated turbine active power 
@@ -36,7 +36,7 @@ class HydroTurbine(PrimeMover):
         @param gateRateLimit: Gate Rate Limit 
         @param HydroTurbineGovernor:
         """
-        #: Type of turbine.Values are: "francis", "pelton", "kaplan"
+        #: Type of turbine. Values are: "francis", "pelton", "kaplan"
         self.turbineType = turbineType
 
         #: Rated turbine active power
@@ -72,7 +72,14 @@ class HydroTurbine(PrimeMover):
         self._HydroTurbineGovernor = None
         self.HydroTurbineGovernor = HydroTurbineGovernor
 
-        super(HydroTurbine, self).__init__(**kw_args)
+        super(HydroTurbine, self).__init__(*args, **kw_args)
+
+    _attrs = ["turbineType", "turbineRating", "maxHeadMaxP", "transientDroopTime", "speedRegulation", "waterStartingTime", "speedRating", "transientRegulation", "gateUpperLimit", "minHeadMaxP", "gateRateLimit"]
+    _attr_types = {"turbineType": str, "turbineRating": float, "maxHeadMaxP": float, "transientDroopTime": float, "speedRegulation": float, "waterStartingTime": float, "speedRating": float, "transientRegulation": float, "gateUpperLimit": float, "minHeadMaxP": float, "gateRateLimit": float}
+    _defaults = {"turbineType": "francis", "turbineRating": 0.0, "maxHeadMaxP": 0.0, "transientDroopTime": 0.0, "speedRegulation": 0.0, "waterStartingTime": 0.0, "speedRating": 0.0, "transientRegulation": 0.0, "gateUpperLimit": 0.0, "minHeadMaxP": 0.0, "gateRateLimit": 0.0}
+    _enums = {"turbineType": "TurbineType"}
+    _refs = ["HydroTurbineGovernor"]
+    _many_refs = []
 
     def getHydroTurbineGovernor(self):
         

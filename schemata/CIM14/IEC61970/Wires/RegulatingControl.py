@@ -20,8 +20,8 @@ class RegulatingControl(PowerSystemResource):
     """Specifies a set of equipment that works together to control a power system quantity such as voltage or flow.
     """
 
-    def __init__(self, mode='fixed', targetRange=0.0, discrete=False, targetValue=0.0, RegulationSchedule=None, Terminal=None, TapChanger=None, RegulatingCondEq=None, **kw_args):
-        """Initializes a new 'RegulatingControl' instance.
+    def __init__(self, mode="fixed", targetRange=0.0, discrete=False, targetValue=0.0, RegulationSchedule=None, Terminal=None, TapChanger=None, RegulatingCondEq=None, *args, **kw_args):
+        """Initialises a new 'RegulatingControl' instance.
 
         @param mode: The regulating control mode presently available.  This specifications allows for determining the kind of regualation without need for obtaining the units from a schedule. Values are: "fixed", "voltage", "timeScheduled", "currentFlow", "admittance", "powerFactor", "activePower", "reactivePower", "temperature"
         @param targetRange: This is the case input target range.   This performs the same function as the value2 attribute on the regulation schedule in the case that schedules are not used.   The units of those appropriate for the mode. 
@@ -32,7 +32,7 @@ class RegulatingControl(PowerSystemResource):
         @param TapChanger: copy from reg conduting eq
         @param RegulatingCondEq: The equipment that participates in this regulating control scheme.
         """
-        #: The regulating control mode presently available.  This specifications allows for determining the kind of regualation without need for obtaining the units from a schedule.Values are: "fixed", "voltage", "timeScheduled", "currentFlow", "admittance", "powerFactor", "activePower", "reactivePower", "temperature"
+        #: The regulating control mode presently available.  This specifications allows for determining the kind of regualation without need for obtaining the units from a schedule. Values are: "fixed", "voltage", "timeScheduled", "currentFlow", "admittance", "powerFactor", "activePower", "reactivePower", "temperature"
         self.mode = mode
 
         #: This is the case input target range.   This performs the same function as the value2 attribute on the regulation schedule in the case that schedules are not used.   The units of those appropriate for the mode.
@@ -56,7 +56,14 @@ class RegulatingControl(PowerSystemResource):
         self._RegulatingCondEq = []
         self.RegulatingCondEq = [] if RegulatingCondEq is None else RegulatingCondEq
 
-        super(RegulatingControl, self).__init__(**kw_args)
+        super(RegulatingControl, self).__init__(*args, **kw_args)
+
+    _attrs = ["mode", "targetRange", "discrete", "targetValue"]
+    _attr_types = {"mode": str, "targetRange": float, "discrete": bool, "targetValue": float}
+    _defaults = {"mode": "fixed", "targetRange": 0.0, "discrete": False, "targetValue": 0.0}
+    _enums = {"mode": "RegulatingControlModeKind"}
+    _refs = ["RegulationSchedule", "Terminal", "TapChanger", "RegulatingCondEq"]
+    _many_refs = ["RegulationSchedule", "TapChanger", "RegulatingCondEq"]
 
     def getRegulationSchedule(self):
         """Schedule for this Regulating regulating control.

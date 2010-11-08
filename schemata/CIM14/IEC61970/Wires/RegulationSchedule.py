@@ -20,8 +20,8 @@ class RegulationSchedule(SeasonDayTypeSchedule):
     """A pre-established pattern over time for a controlled variable, e.g., busbar voltage.
     """
 
-    def __init__(self, lineDropX=0.0, lineDropR=0.0, lineDropCompensation=False, RegulatingControl=None, VoltageControlZones=None, **kw_args):
-        """Initializes a new 'RegulationSchedule' instance.
+    def __init__(self, lineDropX=0.0, lineDropR=0.0, lineDropCompensation=False, RegulatingControl=None, VoltageControlZones=None, *args, **kw_args):
+        """Initialises a new 'RegulationSchedule' instance.
 
         @param lineDropX: Line drop reactance. 
         @param lineDropR: Line drop resistance. 
@@ -44,7 +44,14 @@ class RegulationSchedule(SeasonDayTypeSchedule):
         self._VoltageControlZones = []
         self.VoltageControlZones = [] if VoltageControlZones is None else VoltageControlZones
 
-        super(RegulationSchedule, self).__init__(**kw_args)
+        super(RegulationSchedule, self).__init__(*args, **kw_args)
+
+    _attrs = ["lineDropX", "lineDropR", "lineDropCompensation"]
+    _attr_types = {"lineDropX": float, "lineDropR": float, "lineDropCompensation": bool}
+    _defaults = {"lineDropX": 0.0, "lineDropR": 0.0, "lineDropCompensation": False}
+    _enums = {}
+    _refs = ["RegulatingControl", "VoltageControlZones"]
+    _many_refs = ["VoltageControlZones"]
 
     def getRegulatingControl(self):
         """Regulating controls that have this Schedule.

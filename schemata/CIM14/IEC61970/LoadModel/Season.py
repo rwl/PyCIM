@@ -20,15 +20,15 @@ class Season(Element):
     """A specified time period of the year, e.g., Spring, Summer, Fall, Winter
     """
 
-    def __init__(self, name='fall', startDate='', endDate='', SeasonDayTypeSchedules=None, **kw_args):
-        """Initializes a new 'Season' instance.
+    def __init__(self, name="fall", startDate='', endDate='', SeasonDayTypeSchedules=None, *args, **kw_args):
+        """Initialises a new 'Season' instance.
 
         @param name: Name of the Season Values are: "fall", "winter", "summer", "spring"
         @param startDate: Date season starts 
         @param endDate: Date season ends 
         @param SeasonDayTypeSchedules: Schedules that use this Season.
         """
-        #: Name of the SeasonValues are: "fall", "winter", "summer", "spring"
+        #: Name of the Season Values are: "fall", "winter", "summer", "spring"
         self.name = name
 
         #: Date season starts
@@ -40,7 +40,14 @@ class Season(Element):
         self._SeasonDayTypeSchedules = []
         self.SeasonDayTypeSchedules = [] if SeasonDayTypeSchedules is None else SeasonDayTypeSchedules
 
-        super(Season, self).__init__(**kw_args)
+        super(Season, self).__init__(*args, **kw_args)
+
+    _attrs = ["name", "startDate", "endDate"]
+    _attr_types = {"name": str, "startDate": str, "endDate": str}
+    _defaults = {"name": "fall", "startDate": '', "endDate": ''}
+    _enums = {"name": "SeasonName"}
+    _refs = ["SeasonDayTypeSchedules"]
+    _many_refs = ["SeasonDayTypeSchedules"]
 
     def getSeasonDayTypeSchedules(self):
         """Schedules that use this Season.

@@ -20,8 +20,8 @@ class ExcDC4B(ExcitationSystem):
     """IEEE (2005) DC4B Model  These excitation systems utilize a field-controlled dc commutator exciter with a continuously acting voltage regulator having supplies obtained from the generator or auxiliary bus. The replacement of the controls only as an upgrade (retaining the dc commutator exciter) has resulted in a new model. This excitation system typically includes a proportional, integral, and differential (PID) generator voltage regulator (AVR). An alternative rate feedback loop (<i>kf</i>, <i>tf</i>) for stabilization is also shown in the model if the AVR does not include a derivative term. If a PSS control is supplied, the appropriate model is the Type PSS2B model.
     """
 
-    def __init__(self, e1=0.0, se2=0.0, tf=0.0, oelin=0.0, ki=0.0, ta=0.0, vrmax=0.0, tr=0.0, kf=0.0, vrmin=0.0, te=0.0, ka=0.0, kp=0.0, td=0.0, kd=0.0, vemin=0.0, ke=0.0, se1=0.0, e2=0.0, uelin=0.0, **kw_args):
-        """Initializes a new 'ExcDC4B' instance.
+    def __init__(self, e1=0.0, se2=0.0, tf=0.0, oelin=0.0, ki=0.0, ta=0.0, vrmax=0.0, tr=0.0, kf=0.0, vrmin=0.0, te=0.0, ka=0.0, kp=0.0, td=0.0, kd=0.0, vemin=0.0, ke=0.0, se1=0.0, e2=0.0, uelin=0.0, *args, **kw_args):
+        """Initialises a new 'ExcDC4B' instance.
 
         @param e1: Field voltage value 1     (&gt; 0.) 
         @param se2: Saturation factor at e2 (&gt;= 0.) 
@@ -104,5 +104,12 @@ class ExcDC4B(ExcitationSystem):
         #: UEL input: if &lt; 2, HV gate; if = 2, add to error signal
         self.uelin = uelin
 
-        super(ExcDC4B, self).__init__(**kw_args)
+        super(ExcDC4B, self).__init__(*args, **kw_args)
+
+    _attrs = ["e1", "se2", "tf", "oelin", "ki", "ta", "vrmax", "tr", "kf", "vrmin", "te", "ka", "kp", "td", "kd", "vemin", "ke", "se1", "e2", "uelin"]
+    _attr_types = {"e1": float, "se2": float, "tf": float, "oelin": float, "ki": float, "ta": float, "vrmax": float, "tr": float, "kf": float, "vrmin": float, "te": float, "ka": float, "kp": float, "td": float, "kd": float, "vemin": float, "ke": float, "se1": float, "e2": float, "uelin": float}
+    _defaults = {"e1": 0.0, "se2": 0.0, "tf": 0.0, "oelin": 0.0, "ki": 0.0, "ta": 0.0, "vrmax": 0.0, "tr": 0.0, "kf": 0.0, "vrmin": 0.0, "te": 0.0, "ka": 0.0, "kp": 0.0, "td": 0.0, "kd": 0.0, "vemin": 0.0, "ke": 0.0, "se1": 0.0, "e2": 0.0, "uelin": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class Transaction(IdentifiedObject):
     """The record of details of payment for service or token sale.
     """
 
-    def __init__(self, kind='diversePayment', serviceUnitsEnergy=0.0, diverseReference='', receiverReference='', donorReference='', serviceUnitsError=0.0, reversedId='', PricingStructure=None, UserAttributes=None, CustomerAccount=None, CashierShift=None, VendorShift=None, MeterAsset=None, AuxiliaryAccount=None, line=None, Receipt=None, **kw_args):
-        """Initializes a new 'Transaction' instance.
+    def __init__(self, kind="diversePayment", serviceUnitsEnergy=0.0, diverseReference='', receiverReference='', donorReference='', serviceUnitsError=0.0, reversedId='', PricingStructure=None, UserAttributes=None, CustomerAccount=None, CashierShift=None, VendorShift=None, MeterAsset=None, AuxiliaryAccount=None, line=None, Receipt=None, *args, **kw_args):
+        """Initialises a new 'Transaction' instance.
 
         @param kind: Kind of transaction. Values are: "diversePayment", "tokenSalePayment", "serviceChargePayment", "other", "transactionReversal", "taxChargePayment", "meterConfigurationToken", "accountPayment", "tokenFreeIssue", "tokenExchange", "tokenCancellation", "tokenGrant", "auxiliaryChargePayment"
         @param serviceUnitsEnergy: Actual amount of service units that is being paid for. 
@@ -40,7 +40,7 @@ class Transaction(IdentifiedObject):
         @param line: Transaction amount, rounding, date and note for this transaction line.
         @param Receipt: The receipted payment for which this transaction has been recorded.
         """
-        #: Kind of transaction.Values are: "diversePayment", "tokenSalePayment", "serviceChargePayment", "other", "transactionReversal", "taxChargePayment", "meterConfigurationToken", "accountPayment", "tokenFreeIssue", "tokenExchange", "tokenCancellation", "tokenGrant", "auxiliaryChargePayment"
+        #: Kind of transaction. Values are: "diversePayment", "tokenSalePayment", "serviceChargePayment", "other", "transactionReversal", "taxChargePayment", "meterConfigurationToken", "accountPayment", "tokenFreeIssue", "tokenExchange", "tokenCancellation", "tokenGrant", "auxiliaryChargePayment"
         self.kind = kind
 
         #: Actual amount of service units that is being paid for.
@@ -87,7 +87,14 @@ class Transaction(IdentifiedObject):
         self._Receipt = None
         self.Receipt = Receipt
 
-        super(Transaction, self).__init__(**kw_args)
+        super(Transaction, self).__init__(*args, **kw_args)
+
+    _attrs = ["kind", "serviceUnitsEnergy", "diverseReference", "receiverReference", "donorReference", "serviceUnitsError", "reversedId"]
+    _attr_types = {"kind": str, "serviceUnitsEnergy": float, "diverseReference": str, "receiverReference": str, "donorReference": str, "serviceUnitsError": float, "reversedId": str}
+    _defaults = {"kind": "diversePayment", "serviceUnitsEnergy": 0.0, "diverseReference": '', "receiverReference": '', "donorReference": '', "serviceUnitsError": 0.0, "reversedId": ''}
+    _enums = {"kind": "TransactionKind"}
+    _refs = ["PricingStructure", "UserAttributes", "CustomerAccount", "CashierShift", "VendorShift", "MeterAsset", "AuxiliaryAccount", "line", "Receipt"]
+    _many_refs = ["UserAttributes"]
 
     def getPricingStructure(self):
         """Pricing structure applicable for this transaction.

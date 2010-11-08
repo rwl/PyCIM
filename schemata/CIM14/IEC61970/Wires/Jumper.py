@@ -20,9 +20,16 @@ class Jumper(Switch):
     """A short section of conductor with negligible impedance which can be manually removed and replaced if the circuit is de-energized. Note that zero-impedance branches can be modelled by an ACLineSegment with a zero impedance ConductorType
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'Jumper' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'Jumper' instance.
 
         """
-        super(Jumper, self).__init__(**kw_args)
+        super(Jumper, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class BlockParameter(IdentifiedObject):
     """Specification of a paramter for use in a dynamic block. This is a paramters like a time constant that could be unique for each instance of, for example, an exciter in the model.
     """
 
-    def __init__(self, value=0.0, MetaBlockParameter=None, MemberOf_MetaBlockReference=None, UserBlockParameter=None, MemberOf_Block=None, **kw_args):
-        """Initializes a new 'BlockParameter' instance.
+    def __init__(self, value=0.0, MetaBlockParameter=None, MemberOf_MetaBlockReference=None, UserBlockParameter=None, MemberOf_Block=None, *args, **kw_args):
+        """Initialises a new 'BlockParameter' instance.
 
         @param value: The paramter value for this instance of a dynamic block usage. 
         @param MetaBlockParameter:
@@ -44,7 +44,14 @@ class BlockParameter(IdentifiedObject):
         self._MemberOf_Block = None
         self.MemberOf_Block = MemberOf_Block
 
-        super(BlockParameter, self).__init__(**kw_args)
+        super(BlockParameter, self).__init__(*args, **kw_args)
+
+    _attrs = ["value"]
+    _attr_types = {"value": float}
+    _defaults = {"value": 0.0}
+    _enums = {}
+    _refs = ["MetaBlockParameter", "MemberOf_MetaBlockReference", "UserBlockParameter", "MemberOf_Block"]
+    _many_refs = []
 
     def getMetaBlockParameter(self):
         

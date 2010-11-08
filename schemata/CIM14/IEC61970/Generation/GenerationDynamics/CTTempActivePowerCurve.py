@@ -20,15 +20,22 @@ class CTTempActivePowerCurve(Curve):
     """Relationship between the combustion turbine's power output rating in gross active power (X-axis) and the ambient air temperature (Y-axis)
     """
 
-    def __init__(self, CombustionTurbine=None, **kw_args):
-        """Initializes a new 'CTTempActivePowerCurve' instance.
+    def __init__(self, CombustionTurbine=None, *args, **kw_args):
+        """Initialises a new 'CTTempActivePowerCurve' instance.
 
         @param CombustionTurbine: A combustion turbine may have an active power versus ambient temperature relationship
         """
         self._CombustionTurbine = None
         self.CombustionTurbine = CombustionTurbine
 
-        super(CTTempActivePowerCurve, self).__init__(**kw_args)
+        super(CTTempActivePowerCurve, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["CombustionTurbine"]
+    _many_refs = []
 
     def getCombustionTurbine(self):
         """A combustion turbine may have an active power versus ambient temperature relationship

@@ -20,15 +20,15 @@ class RatioTapChanger(TapChanger):
     """A tap changer that changes the voltage ratio impacting the voltage magnitude but not direclty the phase angle across the transformer..
     """
 
-    def __init__(self, tculControlMode='volt', Winding=None, TransformerWinding=None, RatioVariationCurve=None, **kw_args):
-        """Initializes a new 'RatioTapChanger' instance.
+    def __init__(self, tculControlMode="volt", Winding=None, TransformerWinding=None, RatioVariationCurve=None, *args, **kw_args):
+        """Initialises a new 'RatioTapChanger' instance.
 
         @param tculControlMode: Specifies the regulation control mode (voltage or reactive) of the RatioTapChanger. Values are: "volt", "reactive"
         @param Winding: Winding to which this ratio tap changer belongs.
         @param TransformerWinding: The transformer winding to which the ratio tap changer belongs.
         @param RatioVariationCurve: A RatioTapChanger can have an associated RatioVariationCurve to define tap ratio variations with tap step changes.
         """
-        #: Specifies the regulation control mode (voltage or reactive) of the RatioTapChanger.Values are: "volt", "reactive"
+        #: Specifies the regulation control mode (voltage or reactive) of the RatioTapChanger. Values are: "volt", "reactive"
         self.tculControlMode = tculControlMode
 
         self._Winding = None
@@ -40,7 +40,14 @@ class RatioTapChanger(TapChanger):
         self._RatioVariationCurve = None
         self.RatioVariationCurve = RatioVariationCurve
 
-        super(RatioTapChanger, self).__init__(**kw_args)
+        super(RatioTapChanger, self).__init__(*args, **kw_args)
+
+    _attrs = ["tculControlMode"]
+    _attr_types = {"tculControlMode": str}
+    _defaults = {"tculControlMode": "volt"}
+    _enums = {"tculControlMode": "TransformerControlMode"}
+    _refs = ["Winding", "TransformerWinding", "RatioVariationCurve"]
+    _many_refs = []
 
     def getWinding(self):
         """Winding to which this ratio tap changer belongs.

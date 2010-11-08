@@ -20,8 +20,8 @@ class TimeTariffInterval(Element):
     """One of a sequence of time intervals defined in terms of real time. It is typically used in association with TariffProfile to define the intervals in a time of use tariff structure, where startDateTime simultaneously determines the starting point of this interval and the ending point of the previous interval.
     """
 
-    def __init__(self, sequenceNumber=0, startDateTime='', TariffProfiles=None, Charges=None, **kw_args):
-        """Initializes a new 'TimeTariffInterval' instance.
+    def __init__(self, sequenceNumber=0, startDateTime='', TariffProfiles=None, Charges=None, *args, **kw_args):
+        """Initialises a new 'TimeTariffInterval' instance.
 
         @param sequenceNumber: A sequential reference that defines the identity of this interval and its relative position with respect to other intervals in a sequence of intervals. 
         @param startDateTime: A real time marker that defines the starting time (typically it is the time of day) for this interval. The interval extends to the start of the next interval or until it is reset to the start of the first interval by TariffProfile.tariffCycle. 
@@ -40,7 +40,14 @@ class TimeTariffInterval(Element):
         self._Charges = []
         self.Charges = [] if Charges is None else Charges
 
-        super(TimeTariffInterval, self).__init__(**kw_args)
+        super(TimeTariffInterval, self).__init__(*args, **kw_args)
+
+    _attrs = ["sequenceNumber", "startDateTime"]
+    _attr_types = {"sequenceNumber": int, "startDateTime": str}
+    _defaults = {"sequenceNumber": 0, "startDateTime": ''}
+    _enums = {}
+    _refs = ["TariffProfiles", "Charges"]
+    _many_refs = ["TariffProfiles", "Charges"]
 
     def getTariffProfiles(self):
         """All tariff profiles defined by this time tariff interval.

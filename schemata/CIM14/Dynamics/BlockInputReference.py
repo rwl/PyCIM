@@ -20,8 +20,8 @@ class BlockInputReference(IdentifiedObject):
     """Used at the meta dynamics level. This is how the internal definiton of a block references the input of another block.
     """
 
-    def __init__(self, metaBlockReference0=None, metaBlockInput0=None, BlockConnectable=None, **kw_args):
-        """Initializes a new 'BlockInputReference' instance.
+    def __init__(self, metaBlockReference0=None, metaBlockInput0=None, BlockConnectable=None, *args, **kw_args):
+        """Initialises a new 'BlockInputReference' instance.
 
         @param metaBlockReference0:
         @param metaBlockInput0: References the idenfiied input for the block reference.
@@ -36,7 +36,14 @@ class BlockInputReference(IdentifiedObject):
         self._BlockConnectable = None
         self.BlockConnectable = BlockConnectable
 
-        super(BlockInputReference, self).__init__(**kw_args)
+        super(BlockInputReference, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["metaBlockReference0", "metaBlockInput0", "BlockConnectable"]
+    _many_refs = []
 
     def getmetaBlockReference0(self):
         

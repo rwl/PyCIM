@@ -20,8 +20,8 @@ class MetaBlockParameter(MetaBlockConnectable):
     """An identified parameter of a block.   This is meta dynamics model and does not contain specific parameter values. When using a block one would need to supply specific parameter values. These are typically time constants, but are not restricted to this.  Sometimes, for standard blocks, the block paramter may come directly from the attributes of an associated PowerSystemResource object, but such parameters may be specified to enable user defined models to alter the behavior of a standard block.
     """
 
-    def __init__(self, BlockParameter=None, MemberOf_MetaBlock=None, **kw_args):
-        """Initializes a new 'MetaBlockParameter' instance.
+    def __init__(self, BlockParameter=None, MemberOf_MetaBlock=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockParameter' instance.
 
         @param BlockParameter:
         @param MemberOf_MetaBlock: Paramters belong to a block.
@@ -32,7 +32,14 @@ class MetaBlockParameter(MetaBlockConnectable):
         self._MemberOf_MetaBlock = None
         self.MemberOf_MetaBlock = MemberOf_MetaBlock
 
-        super(MetaBlockParameter, self).__init__(**kw_args)
+        super(MetaBlockParameter, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["BlockParameter", "MemberOf_MetaBlock"]
+    _many_refs = ["BlockParameter"]
 
     def getBlockParameter(self):
         

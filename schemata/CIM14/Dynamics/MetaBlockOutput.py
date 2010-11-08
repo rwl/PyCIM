@@ -20,8 +20,8 @@ class MetaBlockOutput(MetaBlockConnectable):
     """Output state of a block.   This is a public interface external to the block.    One or more block outputs should be specified in order to link blocks together.    Certain block kinds might require a specific output. For example, an exciter block might require an output called 'Ea'.
     """
 
-    def __init__(self, BlockOutputReference=None, MemberOf_MetaBlock=None, blockUsageOutputReference0=None, blockOutputType0=None, **kw_args):
-        """Initializes a new 'MetaBlockOutput' instance.
+    def __init__(self, BlockOutputReference=None, MemberOf_MetaBlock=None, blockUsageOutputReference0=None, blockOutputType0=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockOutput' instance.
 
         @param BlockOutputReference: A block output reference for the block output.  The output of the block is passed to the block output reference which is a block connectable and thus can be connected at the dynamics metadata level to another block.
         @param MemberOf_MetaBlock: The block that contains the output.
@@ -40,7 +40,14 @@ class MetaBlockOutput(MetaBlockConnectable):
         self._blockOutputType0 = None
         self.blockOutputType0 = blockOutputType0
 
-        super(MetaBlockOutput, self).__init__(**kw_args)
+        super(MetaBlockOutput, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["BlockOutputReference", "MemberOf_MetaBlock", "blockUsageOutputReference0", "blockOutputType0"]
+    _many_refs = ["BlockOutputReference", "blockUsageOutputReference0"]
 
     def getBlockOutputReference(self):
         """A block output reference for the block output.  The output of the block is passed to the block output reference which is a block connectable and thus can be connected at the dynamics metadata level to another block.

@@ -20,15 +20,15 @@ class ServiceCategory(IdentifiedObject):
     """Category of service provided to the customer.
     """
 
-    def __init__(self, kind='water', CustomerAgreements=None, PricingStructures=None, ServiceDeliveryPoints=None, **kw_args):
-        """Initializes a new 'ServiceCategory' instance.
+    def __init__(self, kind="water", CustomerAgreements=None, PricingStructures=None, ServiceDeliveryPoints=None, *args, **kw_args):
+        """Initialises a new 'ServiceCategory' instance.
 
         @param kind: Kind of service. Values are: "water", "time", "electricity", "heat", "rates", "gas", "internet", "refuse", "other", "tvLicence", "sewerage"
         @param CustomerAgreements:
         @param PricingStructures: All pricing structures applicable to this service category.
         @param ServiceDeliveryPoints: All service delivery points that deliver this category of service.
         """
-        #: Kind of service.Values are: "water", "time", "electricity", "heat", "rates", "gas", "internet", "refuse", "other", "tvLicence", "sewerage"
+        #: Kind of service. Values are: "water", "time", "electricity", "heat", "rates", "gas", "internet", "refuse", "other", "tvLicence", "sewerage"
         self.kind = kind
 
         self._CustomerAgreements = []
@@ -40,7 +40,14 @@ class ServiceCategory(IdentifiedObject):
         self._ServiceDeliveryPoints = []
         self.ServiceDeliveryPoints = [] if ServiceDeliveryPoints is None else ServiceDeliveryPoints
 
-        super(ServiceCategory, self).__init__(**kw_args)
+        super(ServiceCategory, self).__init__(*args, **kw_args)
+
+    _attrs = ["kind"]
+    _attr_types = {"kind": str}
+    _defaults = {"kind": "water"}
+    _enums = {"kind": "ServiceKind"}
+    _refs = ["CustomerAgreements", "PricingStructures", "ServiceDeliveryPoints"]
+    _many_refs = ["CustomerAgreements", "PricingStructures", "ServiceDeliveryPoints"]
 
     def getCustomerAgreements(self):
         

@@ -20,8 +20,8 @@ class Equipment(PowerSystemResource):
     """The parts of a power system that are physical devices, electronic or mechanical
     """
 
-    def __init__(self, normaIlyInService=False, aggregate=False, OperationalLimitSet=None, ContingencyEquipment=None, EquipmentContainer=None, CustomerAgreements=None, **kw_args):
-        """Initializes a new 'Equipment' instance.
+    def __init__(self, normaIlyInService=False, aggregate=False, OperationalLimitSet=None, ContingencyEquipment=None, EquipmentContainer=None, CustomerAgreements=None, *args, **kw_args):
+        """Initialises a new 'Equipment' instance.
 
         @param normaIlyInService: The equipment is normally in service. 
         @param aggregate: The single instance of equipment represents multiple pieces of equipment that have been modeled together as an aggregate.  Examples would be PowerTransformers or SychronousMachines operating in parallel modeled as a single aggregate PowerTransformer or aggregate SynchronousMachine.  This is not to be used to indicate equipment that is part of a group of interdependent equipment produced by a network production program. 
@@ -48,7 +48,14 @@ class Equipment(PowerSystemResource):
         self._CustomerAgreements = []
         self.CustomerAgreements = [] if CustomerAgreements is None else CustomerAgreements
 
-        super(Equipment, self).__init__(**kw_args)
+        super(Equipment, self).__init__(*args, **kw_args)
+
+    _attrs = ["normaIlyInService", "aggregate"]
+    _attr_types = {"normaIlyInService": bool, "aggregate": bool}
+    _defaults = {"normaIlyInService": False, "aggregate": False}
+    _enums = {}
+    _refs = ["OperationalLimitSet", "ContingencyEquipment", "EquipmentContainer", "CustomerAgreements"]
+    _many_refs = ["OperationalLimitSet", "ContingencyEquipment", "CustomerAgreements"]
 
     def getOperationalLimitSet(self):
         """The equipment limit sets associated with the equipment.

@@ -20,8 +20,8 @@ class GovSteam0(TurbineGovernor):
     """A simplified steam turbine-governor model.
     """
 
-    def __init__(self, t2=0.0, t1=0.0, vmin=0.0, dt=0.0, vmax=0.0, mwbase=0.0, r=0.0, t3=0.0, **kw_args):
-        """Initializes a new 'GovSteam0' instance.
+    def __init__(self, t2=0.0, t1=0.0, vmin=0.0, dt=0.0, vmax=0.0, mwbase=0.0, r=0.0, t3=0.0, *args, **kw_args):
+        """Initialises a new 'GovSteam0' instance.
 
         @param t2: Numerator time constant of T2/T3 block 
         @param t1: Steam bowl time constant 
@@ -56,5 +56,12 @@ class GovSteam0(TurbineGovernor):
         #: Reheater time constant
         self.t3 = t3
 
-        super(GovSteam0, self).__init__(**kw_args)
+        super(GovSteam0, self).__init__(*args, **kw_args)
+
+    _attrs = ["t2", "t1", "vmin", "dt", "vmax", "mwbase", "r", "t3"]
+    _attr_types = {"t2": float, "t1": float, "vmin": float, "dt": float, "vmax": float, "mwbase": float, "r": float, "t3": float}
+    _defaults = {"t2": 0.0, "t1": 0.0, "vmin": 0.0, "dt": 0.0, "vmax": 0.0, "mwbase": 0.0, "r": 0.0, "t3": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

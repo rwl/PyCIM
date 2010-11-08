@@ -20,8 +20,8 @@ class Organisation(IdentifiedObject):
     """Organisation that might have roles as utility, contractor, supplier, manufacturer, customer, etc.
     """
 
-    def __init__(self, electronicAddress=None, streetAddress=None, phone2=None, phone1=None, postalAddress=None, **kw_args):
-        """Initializes a new 'Organisation' instance.
+    def __init__(self, electronicAddress=None, streetAddress=None, phone2=None, phone1=None, postalAddress=None, *args, **kw_args):
+        """Initialises a new 'Organisation' instance.
 
         @param electronicAddress: Electronic address.
         @param streetAddress: Street address.
@@ -39,7 +39,14 @@ class Organisation(IdentifiedObject):
 
         self.postalAddress = postalAddress
 
-        super(Organisation, self).__init__(**kw_args)
+        super(Organisation, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["electronicAddress", "streetAddress", "phone2", "phone1", "postalAddress"]
+    _many_refs = []
 
     # Electronic address.
     electronicAddress = None

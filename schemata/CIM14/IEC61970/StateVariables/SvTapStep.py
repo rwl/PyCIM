@@ -20,8 +20,8 @@ class SvTapStep(StateVariable):
     """State variable for transformer tap step.     This class is to be used for taps of LTC (load tap changing) transformers, not fixed tap transformers.  Normally a profile specifies only one of the attributes 'position'or 'tapRatio'.
     """
 
-    def __init__(self, continuousPosition=0.0, position=0, TapChanger=None, **kw_args):
-        """Initializes a new 'SvTapStep' instance.
+    def __init__(self, continuousPosition=0.0, position=0, TapChanger=None, *args, **kw_args):
+        """Initialises a new 'SvTapStep' instance.
 
         @param continuousPosition: The floating point tap position. 
         @param position: The integer tap position. 
@@ -36,7 +36,14 @@ class SvTapStep(StateVariable):
         self._TapChanger = None
         self.TapChanger = TapChanger
 
-        super(SvTapStep, self).__init__(**kw_args)
+        super(SvTapStep, self).__init__(*args, **kw_args)
+
+    _attrs = ["continuousPosition", "position"]
+    _attr_types = {"continuousPosition": float, "position": int}
+    _defaults = {"continuousPosition": 0.0, "position": 0}
+    _enums = {}
+    _refs = ["TapChanger"]
+    _many_refs = []
 
     def getTapChanger(self):
         """The tap changer associated with the tap step state.

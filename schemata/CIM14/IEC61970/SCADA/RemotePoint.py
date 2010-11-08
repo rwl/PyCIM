@@ -20,15 +20,22 @@ class RemotePoint(IdentifiedObject):
     """For a RTU remote points correspond to telemetered values or control outputs. Other units (e.g. control centers) usually also contain calculated values.
     """
 
-    def __init__(self, RemoteUnit=None, **kw_args):
-        """Initializes a new 'RemotePoint' instance.
+    def __init__(self, RemoteUnit=None, *args, **kw_args):
+        """Initialises a new 'RemotePoint' instance.
 
         @param RemoteUnit: Remote unit this point belongs to.
         """
         self._RemoteUnit = None
         self.RemoteUnit = RemoteUnit
 
-        super(RemotePoint, self).__init__(**kw_args)
+        super(RemotePoint, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["RemoteUnit"]
+    _many_refs = []
 
     def getRemoteUnit(self):
         """Remote unit this point belongs to.

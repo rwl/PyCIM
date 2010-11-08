@@ -20,8 +20,8 @@ class BusNameMarker(IdentifiedObject):
     """Used to apply user standard names to topology buses. Typically used for 'bus/branch' case generation. Associated with one or more ConnectivityNodes that are normally a part of the bus name.    The associated ConnectivityNodes are to be connected by non-retained switches. For a ring bus station configuration, all busbar connectivity nodes in the ring are typically associated.   For a breaker and a half scheme, both busbars would be associated.  For a ring bus, all busbars would be associated.  For a 'straight' busbar configuration, only the main connectivity node at the busbar would be associated.
     """
 
-    def __init__(self, ReportingGroup=None, ConnectivityNode=None, **kw_args):
-        """Initializes a new 'BusNameMarker' instance.
+    def __init__(self, ReportingGroup=None, ConnectivityNode=None, *args, **kw_args):
+        """Initialises a new 'BusNameMarker' instance.
 
         @param ReportingGroup: The reporting group to which this BusNameMarker belongs.
         @param ConnectivityNode: The list of nodes which have the same bus name in the normal  topology.  Note that this list of ConnectivityNodes should be connected by objects derived from Switch that are normally closed.
@@ -32,7 +32,14 @@ class BusNameMarker(IdentifiedObject):
         self._ConnectivityNode = []
         self.ConnectivityNode = [] if ConnectivityNode is None else ConnectivityNode
 
-        super(BusNameMarker, self).__init__(**kw_args)
+        super(BusNameMarker, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["ReportingGroup", "ConnectivityNode"]
+    _many_refs = ["ConnectivityNode"]
 
     def getReportingGroup(self):
         """The reporting group to which this BusNameMarker belongs.

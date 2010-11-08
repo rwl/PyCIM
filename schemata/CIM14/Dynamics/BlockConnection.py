@@ -20,8 +20,8 @@ class BlockConnection(IdentifiedObject):
     """A meta-dyanamics model connectivity specification.
     """
 
-    def __init__(self, MetaBlockConnection=None, MemberOf_BlockConnectivity=None, Block=None, **kw_args):
-        """Initializes a new 'BlockConnection' instance.
+    def __init__(self, MetaBlockConnection=None, MemberOf_BlockConnectivity=None, Block=None, *args, **kw_args):
+        """Initialises a new 'BlockConnection' instance.
 
         @param MetaBlockConnection:
         @param MemberOf_BlockConnectivity:
@@ -36,7 +36,14 @@ class BlockConnection(IdentifiedObject):
         self._Block = None
         self.Block = Block
 
-        super(BlockConnection, self).__init__(**kw_args)
+        super(BlockConnection, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["MetaBlockConnection", "MemberOf_BlockConnectivity", "Block"]
+    _many_refs = []
 
     def getMetaBlockConnection(self):
         

@@ -18,8 +18,8 @@ from CIM14.IEC61970.Core.IdentifiedObject import IdentifiedObject
 
 class MetaBlockConnection(IdentifiedObject):
 
-    def __init__(self, slotname='', MetaBlockConOutput=None, MetaBlockConInput=None, metaBlockConnectivity0=None, BlockConnection=None, MemberOf_MetaBlockConnectivity=None, **kw_args):
-        """Initializes a new 'MetaBlockConnection' instance.
+    def __init__(self, slotname='', MetaBlockConOutput=None, MetaBlockConInput=None, metaBlockConnectivity0=None, BlockConnection=None, MemberOf_MetaBlockConnectivity=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockConnection' instance.
 
         @param slotname: Used for standard connection situations where multiple blocks of same class or same MetaBlock::blockkind have to be connected. The slotnames used are defined in the Reference Manual for Exchanging Standard Power System Dynamic Models. Application: Cross-compound or Combined Cycle connections. 
         @param MetaBlockConOutput:
@@ -46,7 +46,14 @@ class MetaBlockConnection(IdentifiedObject):
         self._MemberOf_MetaBlockConnectivity = None
         self.MemberOf_MetaBlockConnectivity = MemberOf_MetaBlockConnectivity
 
-        super(MetaBlockConnection, self).__init__(**kw_args)
+        super(MetaBlockConnection, self).__init__(*args, **kw_args)
+
+    _attrs = ["slotname"]
+    _attr_types = {"slotname": str}
+    _defaults = {"slotname": ''}
+    _enums = {}
+    _refs = ["MetaBlockConOutput", "MetaBlockConInput", "metaBlockConnectivity0", "BlockConnection", "MemberOf_MetaBlockConnectivity"]
+    _many_refs = ["MetaBlockConOutput", "MetaBlockConInput", "BlockConnection"]
 
     def getMetaBlockConOutput(self):
         

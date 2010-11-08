@@ -20,8 +20,8 @@ class ProtectionEquipment(Equipment):
     """An electrical device designed to respond to input conditions in a prescribed manner and after specified conditions are met to cause contact operation or similar abrupt change in associated electric control circuits, or simply to display the detected condition. Protection equipment are associated with conducting equipment and usually operate circuit breakers.
     """
 
-    def __init__(self, lowLimit=0.0, powerDirectionFlag=False, highLimit=0.0, relayDelayTime=0.0, ProtectedSwitches=None, Unit=None, ConductingEquipments=None, **kw_args):
-        """Initializes a new 'ProtectionEquipment' instance.
+    def __init__(self, lowLimit=0.0, powerDirectionFlag=False, highLimit=0.0, relayDelayTime=0.0, ProtectedSwitches=None, Unit=None, ConductingEquipments=None, *args, **kw_args):
+        """Initialises a new 'ProtectionEquipment' instance.
 
         @param lowLimit: The minimum allowable value. 
         @param powerDirectionFlag: Direction same as positive active power flow value. 
@@ -51,7 +51,14 @@ class ProtectionEquipment(Equipment):
         self._ConductingEquipments = []
         self.ConductingEquipments = [] if ConductingEquipments is None else ConductingEquipments
 
-        super(ProtectionEquipment, self).__init__(**kw_args)
+        super(ProtectionEquipment, self).__init__(*args, **kw_args)
+
+    _attrs = ["lowLimit", "powerDirectionFlag", "highLimit", "relayDelayTime"]
+    _attr_types = {"lowLimit": float, "powerDirectionFlag": bool, "highLimit": float, "relayDelayTime": float}
+    _defaults = {"lowLimit": 0.0, "powerDirectionFlag": False, "highLimit": 0.0, "relayDelayTime": 0.0}
+    _enums = {}
+    _refs = ["ProtectedSwitches", "Unit", "ConductingEquipments"]
+    _many_refs = ["ProtectedSwitches", "ConductingEquipments"]
 
     def add_ProtectedSwitches(self, *ProtectedSwitches):
         for obj in ProtectedSwitches:

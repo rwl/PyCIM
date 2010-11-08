@@ -20,15 +20,22 @@ class GenUnitOpSchedule(RegularIntervalSchedule):
     """The generating unit's Operator-approved current operating schedule (or plan), typically produced with the aid of unit commitment type analyses. The X-axis represents absolute time. The Y1-axis represents the status (0=off-line and unavailable: 1=available: 2=must run: 3=must run at fixed power value: etc.). The Y2-axis represents the must run fixed power value where required.
     """
 
-    def __init__(self, GeneratingUnit=None, **kw_args):
-        """Initializes a new 'GenUnitOpSchedule' instance.
+    def __init__(self, GeneratingUnit=None, *args, **kw_args):
+        """Initialises a new 'GenUnitOpSchedule' instance.
 
         @param GeneratingUnit: A generating unit may have an operating schedule, indicating the planned operation of the unit
         """
         self._GeneratingUnit = None
         self.GeneratingUnit = GeneratingUnit
 
-        super(GenUnitOpSchedule, self).__init__(**kw_args)
+        super(GenUnitOpSchedule, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["GeneratingUnit"]
+    _many_refs = []
 
     def getGeneratingUnit(self):
         """A generating unit may have an operating schedule, indicating the planned operation of the unit

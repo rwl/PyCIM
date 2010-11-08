@@ -20,8 +20,8 @@ class Card(Element):
     """Documentation of the tender when it is a type of card (credit, debit, etc).
     """
 
-    def __init__(self, pan='', expiryDate='', cvNumber='', accountHolderName='', Tender=None, **kw_args):
-        """Initializes a new 'Card' instance.
+    def __init__(self, pan='', expiryDate='', cvNumber='', accountHolderName='', Tender=None, *args, **kw_args):
+        """Initialises a new 'Card' instance.
 
         @param pan: The primary account number. 
         @param expiryDate: The date when this card expires. 
@@ -44,7 +44,14 @@ class Card(Element):
         self._Tender = None
         self.Tender = Tender
 
-        super(Card, self).__init__(**kw_args)
+        super(Card, self).__init__(*args, **kw_args)
+
+    _attrs = ["pan", "expiryDate", "cvNumber", "accountHolderName"]
+    _attr_types = {"pan": str, "expiryDate": str, "cvNumber": str, "accountHolderName": str}
+    _defaults = {"pan": '', "expiryDate": '', "cvNumber": '', "accountHolderName": ''}
+    _enums = {}
+    _refs = ["Tender"]
+    _many_refs = []
 
     def getTender(self):
         """Payment tender this card is being used for.

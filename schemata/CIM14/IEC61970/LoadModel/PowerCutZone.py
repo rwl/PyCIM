@@ -20,8 +20,8 @@ class PowerCutZone(PowerSystemResource):
     """An area or zone of the power system which is used for load shedding purposes.
     """
 
-    def __init__(self, cutLevel1=0.0, cutLevel2=0.0, EnergyConsumers=None, **kw_args):
-        """Initializes a new 'PowerCutZone' instance.
+    def __init__(self, cutLevel1=0.0, cutLevel2=0.0, EnergyConsumers=None, *args, **kw_args):
+        """Initialises a new 'PowerCutZone' instance.
 
         @param cutLevel1: First level (amount) of load to cut as a percentage of total zone load 
         @param cutLevel2: Second level (amount) of load to cut as a percentage of total zone load 
@@ -36,7 +36,14 @@ class PowerCutZone(PowerSystemResource):
         self._EnergyConsumers = []
         self.EnergyConsumers = [] if EnergyConsumers is None else EnergyConsumers
 
-        super(PowerCutZone, self).__init__(**kw_args)
+        super(PowerCutZone, self).__init__(*args, **kw_args)
+
+    _attrs = ["cutLevel1", "cutLevel2"]
+    _attr_types = {"cutLevel1": float, "cutLevel2": float}
+    _defaults = {"cutLevel1": 0.0, "cutLevel2": 0.0}
+    _enums = {}
+    _refs = ["EnergyConsumers"]
+    _many_refs = ["EnergyConsumers"]
 
     def getEnergyConsumers(self):
         """An energy consumer is assigned to a power cut zone

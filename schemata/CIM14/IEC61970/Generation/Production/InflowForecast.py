@@ -20,15 +20,22 @@ class InflowForecast(RegularIntervalSchedule):
     """Natural water inflow to a reservoir, usually forecasted from predicted rain and snowmelt. Typically in one hour increments for up to 10 days. The forecast is given in average cubic meters per second over the time increment.
     """
 
-    def __init__(self, Reservoir=None, **kw_args):
-        """Initializes a new 'InflowForecast' instance.
+    def __init__(self, Reservoir=None, *args, **kw_args):
+        """Initialises a new 'InflowForecast' instance.
 
         @param Reservoir: A reservoir may have a 'natural' inflow forecast.
         """
         self._Reservoir = None
         self.Reservoir = Reservoir
 
-        super(InflowForecast, self).__init__(**kw_args)
+        super(InflowForecast, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["Reservoir"]
+    _many_refs = []
 
     def getReservoir(self):
         """A reservoir may have a 'natural' inflow forecast.

@@ -20,8 +20,8 @@ class AirCompressor(PowerSystemResource):
     """Combustion turbine air compressor which is an integral part of a compressed air energy storage (CAES) plant
     """
 
-    def __init__(self, airCompressorRating=0.0, CAESPlant=None, CombustionTurbine=None, **kw_args):
-        """Initializes a new 'AirCompressor' instance.
+    def __init__(self, airCompressorRating=0.0, CAESPlant=None, CombustionTurbine=None, *args, **kw_args):
+        """Initialises a new 'AirCompressor' instance.
 
         @param airCompressorRating: Rating of the CAES air compressor 
         @param CAESPlant: An air compressor may be a member of a compressed air energy storage plant
@@ -36,7 +36,14 @@ class AirCompressor(PowerSystemResource):
         self._CombustionTurbine = None
         self.CombustionTurbine = CombustionTurbine
 
-        super(AirCompressor, self).__init__(**kw_args)
+        super(AirCompressor, self).__init__(*args, **kw_args)
+
+    _attrs = ["airCompressorRating"]
+    _attr_types = {"airCompressorRating": float}
+    _defaults = {"airCompressorRating": 0.0}
+    _enums = {}
+    _refs = ["CAESPlant", "CombustionTurbine"]
+    _many_refs = []
 
     def getCAESPlant(self):
         """An air compressor may be a member of a compressed air energy storage plant

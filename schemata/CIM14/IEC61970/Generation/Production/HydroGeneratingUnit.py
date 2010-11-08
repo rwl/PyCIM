@@ -20,8 +20,8 @@ class HydroGeneratingUnit(GeneratingUnit):
     """A generating unit whose prime mover is a hydraulic turbine (e.g., Francis, Pelton, Kaplan)
     """
 
-    def __init__(self, energyConversionCapability='generator', hydroUnitWaterCost=0.0, HydroPowerPlant=None, PenstockLossCurve=None, HydroGeneratingEfficiencyCurves=None, TailbayLossCurve=None, **kw_args):
-        """Initializes a new 'HydroGeneratingUnit' instance.
+    def __init__(self, energyConversionCapability="generator", hydroUnitWaterCost=0.0, HydroPowerPlant=None, PenstockLossCurve=None, HydroGeneratingEfficiencyCurves=None, TailbayLossCurve=None, *args, **kw_args):
+        """Initialises a new 'HydroGeneratingUnit' instance.
 
         @param energyConversionCapability: Energy conversion capability for generating. Values are: "generator", "pumpAndGenerator"
         @param hydroUnitWaterCost: The equivalent cost of water that drives the hydro turbine, expressed as cost per volume. 
@@ -30,7 +30,7 @@ class HydroGeneratingUnit(GeneratingUnit):
         @param HydroGeneratingEfficiencyCurves: A hydro generating unit has an efficiency curve
         @param TailbayLossCurve: A hydro generating unit has a tailbay loss curve
         """
-        #: Energy conversion capability for generating.Values are: "generator", "pumpAndGenerator"
+        #: Energy conversion capability for generating. Values are: "generator", "pumpAndGenerator"
         self.energyConversionCapability = energyConversionCapability
 
         #: The equivalent cost of water that drives the hydro turbine, expressed as cost per volume.
@@ -48,7 +48,14 @@ class HydroGeneratingUnit(GeneratingUnit):
         self._TailbayLossCurve = []
         self.TailbayLossCurve = [] if TailbayLossCurve is None else TailbayLossCurve
 
-        super(HydroGeneratingUnit, self).__init__(**kw_args)
+        super(HydroGeneratingUnit, self).__init__(*args, **kw_args)
+
+    _attrs = ["energyConversionCapability", "hydroUnitWaterCost"]
+    _attr_types = {"energyConversionCapability": str, "hydroUnitWaterCost": float}
+    _defaults = {"energyConversionCapability": "generator", "hydroUnitWaterCost": 0.0}
+    _enums = {"energyConversionCapability": "HydroEnergyConversionKind"}
+    _refs = ["HydroPowerPlant", "PenstockLossCurve", "HydroGeneratingEfficiencyCurves", "TailbayLossCurve"]
+    _many_refs = ["HydroGeneratingEfficiencyCurves", "TailbayLossCurve"]
 
     def getHydroPowerPlant(self):
         """The hydro generating unit belongs to a hydro power plant

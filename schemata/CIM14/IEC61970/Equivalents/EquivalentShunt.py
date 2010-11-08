@@ -20,8 +20,8 @@ class EquivalentShunt(EquivalentEquipment):
     """The class represents equivalent shunts.
     """
 
-    def __init__(self, b=0.0, g=0.0, **kw_args):
-        """Initializes a new 'EquivalentShunt' instance.
+    def __init__(self, b=0.0, g=0.0, *args, **kw_args):
+        """Initialises a new 'EquivalentShunt' instance.
 
         @param b: Positive sequence shunt susceptance. 
         @param g: Positive sequence shunt conductance. 
@@ -32,5 +32,12 @@ class EquivalentShunt(EquivalentEquipment):
         #: Positive sequence shunt conductance.
         self.g = g
 
-        super(EquivalentShunt, self).__init__(**kw_args)
+        super(EquivalentShunt, self).__init__(*args, **kw_args)
+
+    _attrs = ["b", "g"]
+    _attr_types = {"b": float, "g": float}
+    _defaults = {"b": 0.0, "g": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

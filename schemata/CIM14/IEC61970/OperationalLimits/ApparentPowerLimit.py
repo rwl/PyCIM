@@ -20,13 +20,20 @@ class ApparentPowerLimit(OperationalLimit):
     """Apparent power limit.
     """
 
-    def __init__(self, value=0.0, **kw_args):
-        """Initializes a new 'ApparentPowerLimit' instance.
+    def __init__(self, value=0.0, *args, **kw_args):
+        """Initialises a new 'ApparentPowerLimit' instance.
 
         @param value: The apparent power limit. 
         """
         #: The apparent power limit.
         self.value = value
 
-        super(ApparentPowerLimit, self).__init__(**kw_args)
+        super(ApparentPowerLimit, self).__init__(*args, **kw_args)
+
+    _attrs = ["value"]
+    _attr_types = {"value": float}
+    _defaults = {"value": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

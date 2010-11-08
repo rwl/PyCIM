@@ -20,8 +20,8 @@ class ElectronicAddress(Element):
     """Electronic address information.
     """
 
-    def __init__(self, password='', email='', radio='', userID='', lan='', web='', status=None, **kw_args):
-        """Initializes a new 'ElectronicAddress' instance.
+    def __init__(self, password='', email='', radio='', userID='', lan='', web='', status=None, *args, **kw_args):
+        """Initialises a new 'ElectronicAddress' instance.
 
         @param password: Password needed to log in. 
         @param email: Email address. 
@@ -51,7 +51,14 @@ class ElectronicAddress(Element):
 
         self.status = status
 
-        super(ElectronicAddress, self).__init__(**kw_args)
+        super(ElectronicAddress, self).__init__(*args, **kw_args)
+
+    _attrs = ["password", "email", "radio", "userID", "lan", "web"]
+    _attr_types = {"password": str, "email": str, "radio": str, "userID": str, "lan": str, "web": str}
+    _defaults = {"password": '', "email": '', "radio": '', "userID": '', "lan": '', "web": ''}
+    _enums = {}
+    _refs = ["status"]
+    _many_refs = []
 
     # Status of this electronic address.
     status = None

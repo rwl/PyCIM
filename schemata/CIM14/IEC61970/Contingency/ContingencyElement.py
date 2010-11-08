@@ -20,15 +20,22 @@ class ContingencyElement(IdentifiedObject):
     """An element of a system event to be studied by contingency analysis, representing a change in status of a single piece of equipment.
     """
 
-    def __init__(self, Contingency=None, **kw_args):
-        """Initializes a new 'ContingencyElement' instance.
+    def __init__(self, Contingency=None, *args, **kw_args):
+        """Initialises a new 'ContingencyElement' instance.
 
         @param Contingency: A contingency element belongs to one contingency.
         """
         self._Contingency = None
         self.Contingency = Contingency
 
-        super(ContingencyElement, self).__init__(**kw_args)
+        super(ContingencyElement, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["Contingency"]
+    _many_refs = []
 
     def getContingency(self):
         """A contingency element belongs to one contingency.

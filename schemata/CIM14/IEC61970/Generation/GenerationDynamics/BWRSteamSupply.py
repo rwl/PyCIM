@@ -20,8 +20,8 @@ class BWRSteamSupply(SteamSupply):
     """Boiling water reactor used as a steam supply to a steam turbine
     """
 
-    def __init__(self, lowerLimit=0.0, pressureSetpointGA=0.0, rfAux8=0.0, rfAux3=0.0, rfAux2=0.0, highPowerLimit=0.0, rodPattern=0.0, rodPatternConstant=0.0, integralGain=0.0, rfAux7=0.0, proportionalGain=0.0, rfAux6=0.0, pressureSetpointTC2=0.0, rfAux1=0.0, pressureSetpointTC1=0.0, inCoreThermalTC=0.0, upperLimit=0.0, rfAux4=0.0, pressureLimit=0.0, rfAux5=0.0, lowPowerLimit=0.0, **kw_args):
-        """Initializes a new 'BWRSteamSupply' instance.
+    def __init__(self, lowerLimit=0.0, pressureSetpointGA=0.0, rfAux8=0.0, rfAux3=0.0, rfAux2=0.0, highPowerLimit=0.0, rodPattern=0.0, rodPatternConstant=0.0, integralGain=0.0, rfAux7=0.0, proportionalGain=0.0, rfAux6=0.0, pressureSetpointTC2=0.0, rfAux1=0.0, pressureSetpointTC1=0.0, inCoreThermalTC=0.0, upperLimit=0.0, rfAux4=0.0, pressureLimit=0.0, rfAux5=0.0, lowPowerLimit=0.0, *args, **kw_args):
+        """Initialises a new 'BWRSteamSupply' instance.
 
         @param lowerLimit: Initial Lower Limit 
         @param pressureSetpointGA: Pressure Setpoint Gain Adjuster 
@@ -108,5 +108,12 @@ class BWRSteamSupply(SteamSupply):
         #: Low Power Limit
         self.lowPowerLimit = lowPowerLimit
 
-        super(BWRSteamSupply, self).__init__(**kw_args)
+        super(BWRSteamSupply, self).__init__(*args, **kw_args)
+
+    _attrs = ["lowerLimit", "pressureSetpointGA", "rfAux8", "rfAux3", "rfAux2", "highPowerLimit", "rodPattern", "rodPatternConstant", "integralGain", "rfAux7", "proportionalGain", "rfAux6", "pressureSetpointTC2", "rfAux1", "pressureSetpointTC1", "inCoreThermalTC", "upperLimit", "rfAux4", "pressureLimit", "rfAux5", "lowPowerLimit"]
+    _attr_types = {"lowerLimit": float, "pressureSetpointGA": float, "rfAux8": float, "rfAux3": float, "rfAux2": float, "highPowerLimit": float, "rodPattern": float, "rodPatternConstant": float, "integralGain": float, "rfAux7": float, "proportionalGain": float, "rfAux6": float, "pressureSetpointTC2": float, "rfAux1": float, "pressureSetpointTC1": float, "inCoreThermalTC": float, "upperLimit": float, "rfAux4": float, "pressureLimit": float, "rfAux5": float, "lowPowerLimit": float}
+    _defaults = {"lowerLimit": 0.0, "pressureSetpointGA": 0.0, "rfAux8": 0.0, "rfAux3": 0.0, "rfAux2": 0.0, "highPowerLimit": 0.0, "rodPattern": 0.0, "rodPatternConstant": 0.0, "integralGain": 0.0, "rfAux7": 0.0, "proportionalGain": 0.0, "rfAux6": 0.0, "pressureSetpointTC2": 0.0, "rfAux1": 0.0, "pressureSetpointTC1": 0.0, "inCoreThermalTC": 0.0, "upperLimit": 0.0, "rfAux4": 0.0, "pressureLimit": 0.0, "rfAux5": 0.0, "lowPowerLimit": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class HydroPump(PowerSystemResource):
     """A synchronous motor-driven pump, typically associated with a pumped storage plant
     """
 
-    def __init__(self, pumpPowerAtMaxHead=0.0, pumpPowerAtMinHead=0.0, pumpDischAtMinHead=0.0, pumpDischAtMaxHead=0.0, SynchronousMachine=None, HydroPumpOpSchedule=None, HydroPowerPlant=None, **kw_args):
-        """Initializes a new 'HydroPump' instance.
+    def __init__(self, pumpPowerAtMaxHead=0.0, pumpPowerAtMinHead=0.0, pumpDischAtMinHead=0.0, pumpDischAtMaxHead=0.0, SynchronousMachine=None, HydroPumpOpSchedule=None, HydroPowerPlant=None, *args, **kw_args):
+        """Initialises a new 'HydroPump' instance.
 
         @param pumpPowerAtMaxHead: The pumping power under maximum head conditions, usually at full gate 
         @param pumpPowerAtMinHead: The pumping power under minimum head conditions, usually at full gate. 
@@ -52,7 +52,14 @@ class HydroPump(PowerSystemResource):
         self._HydroPowerPlant = None
         self.HydroPowerPlant = HydroPowerPlant
 
-        super(HydroPump, self).__init__(**kw_args)
+        super(HydroPump, self).__init__(*args, **kw_args)
+
+    _attrs = ["pumpPowerAtMaxHead", "pumpPowerAtMinHead", "pumpDischAtMinHead", "pumpDischAtMaxHead"]
+    _attr_types = {"pumpPowerAtMaxHead": float, "pumpPowerAtMinHead": float, "pumpDischAtMinHead": float, "pumpDischAtMaxHead": float}
+    _defaults = {"pumpPowerAtMaxHead": 0.0, "pumpPowerAtMinHead": 0.0, "pumpDischAtMinHead": 0.0, "pumpDischAtMaxHead": 0.0}
+    _enums = {}
+    _refs = ["SynchronousMachine", "HydroPumpOpSchedule", "HydroPowerPlant"]
+    _many_refs = []
 
     def getSynchronousMachine(self):
         """The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating.

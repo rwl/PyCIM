@@ -18,9 +18,16 @@ from CIM14.Dynamics.TurbineGovernors.TurbineGovernor import TurbineGovernor
 
 class GovGASTWD(TurbineGovernor):
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'GovGASTWD' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'GovGASTWD' instance.
 
         """
-        super(GovGASTWD, self).__init__(**kw_args)
+        super(GovGASTWD, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

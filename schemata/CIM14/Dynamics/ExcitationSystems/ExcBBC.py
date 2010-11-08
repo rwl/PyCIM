@@ -20,9 +20,16 @@ class ExcBBC(ExcitationSystem):
     """Static Excitation System Model with ABB regulator
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'ExcBBC' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'ExcBBC' instance.
 
         """
-        super(ExcBBC, self).__init__(**kw_args)
+        super(ExcBBC, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

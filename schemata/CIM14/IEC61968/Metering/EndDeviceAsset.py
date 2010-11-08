@@ -20,8 +20,8 @@ class EndDeviceAsset(AssetContainer):
     """AssetContainer that performs one or more end device functions. One type of EndDeviceAsset is a MeterAsset which can perform metering, load management, connect/disconnect, accounting functions, etc. Some EndDeviceAssets, such as ones monitoring and controlling air conditioner, refrigerator, pool pumps may be connected to a MeterAsset. All EndDeviceAssets may have communication capability defined by the associated ComFunction(s). An EndDeviceAsset may be owned by a consumer, a service provider, utility or otherwise. There may be a related end device function that identifies a sensor or control point within a metering application or communications systems (e.g., water, gas, electricity). Some devices may use an optical port that conforms to the ANSI C12.18 standard for communications.
     """
 
-    def __init__(self, readRequest=False, demandResponse=False, relayCapable=False, amrSystem='', ratedCurrent=0.0, phaseCount=0, reverseFlowHandling=False, metrology=False, timeZoneOffset=0.0, outageReport=False, dstEnabled=False, disconnect=False, ratedVoltage=0.0, loadControl=False, EndDeviceGroups=None, ServiceLocation=None, EndDeviceModel=None, DeviceFunctions=None, ServiceDeliveryPoint=None, Readings=None, EndDeviceControls=None, Customer=None, **kw_args):
-        """Initializes a new 'EndDeviceAsset' instance.
+    def __init__(self, readRequest=False, demandResponse=False, relayCapable=False, amrSystem='', ratedCurrent=0.0, phaseCount=0, reverseFlowHandling=False, metrology=False, timeZoneOffset=0.0, outageReport=False, dstEnabled=False, disconnect=False, ratedVoltage=0.0, loadControl=False, EndDeviceGroups=None, ServiceLocation=None, EndDeviceModel=None, DeviceFunctions=None, ServiceDeliveryPoint=None, Readings=None, EndDeviceControls=None, Customer=None, *args, **kw_args):
+        """Initialises a new 'EndDeviceAsset' instance.
 
         @param readRequest: True if this end device asset is capable of supporting on-request reads for this end device. 
         @param demandResponse: True if this end device asset is capable of supporting demand response functions. To determine whether this functionality is installed and enabled, check the 'DeviceFunction.disabled' attribute of the respective function contained by this end device asset. 
@@ -112,7 +112,14 @@ class EndDeviceAsset(AssetContainer):
         self._Customer = None
         self.Customer = Customer
 
-        super(EndDeviceAsset, self).__init__(**kw_args)
+        super(EndDeviceAsset, self).__init__(*args, **kw_args)
+
+    _attrs = ["readRequest", "demandResponse", "relayCapable", "amrSystem", "ratedCurrent", "phaseCount", "reverseFlowHandling", "metrology", "timeZoneOffset", "outageReport", "dstEnabled", "disconnect", "ratedVoltage", "loadControl"]
+    _attr_types = {"readRequest": bool, "demandResponse": bool, "relayCapable": bool, "amrSystem": str, "ratedCurrent": float, "phaseCount": int, "reverseFlowHandling": bool, "metrology": bool, "timeZoneOffset": float, "outageReport": bool, "dstEnabled": bool, "disconnect": bool, "ratedVoltage": float, "loadControl": bool}
+    _defaults = {"readRequest": False, "demandResponse": False, "relayCapable": False, "amrSystem": '', "ratedCurrent": 0.0, "phaseCount": 0, "reverseFlowHandling": False, "metrology": False, "timeZoneOffset": 0.0, "outageReport": False, "dstEnabled": False, "disconnect": False, "ratedVoltage": 0.0, "loadControl": False}
+    _enums = {}
+    _refs = ["EndDeviceGroups", "ServiceLocation", "EndDeviceModel", "DeviceFunctions", "ServiceDeliveryPoint", "Readings", "EndDeviceControls", "Customer"]
+    _many_refs = ["EndDeviceGroups", "DeviceFunctions", "Readings", "EndDeviceControls"]
 
     def getEndDeviceGroups(self):
         """All end device groups referring to this end device asset.

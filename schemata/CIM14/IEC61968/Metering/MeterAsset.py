@@ -20,8 +20,8 @@ class MeterAsset(EndDeviceAsset):
     """Physical asset that performs the metering role of the ServiceDeliveryPoint. Used for measuring consumption and detection of events.
     """
 
-    def __init__(self, kH=0.0, kR=0.0, formNumber='', MeterReplacementWorks=None, MeterServiceWorks=None, MeterReadings=None, VendingTransactions=None, **kw_args):
-        """Initializes a new 'MeterAsset' instance.
+    def __init__(self, kH=0.0, kR=0.0, formNumber='', MeterReplacementWorks=None, MeterServiceWorks=None, MeterReadings=None, VendingTransactions=None, *args, **kw_args):
+        """Initialises a new 'MeterAsset' instance.
 
         @param kH: Meter kh (watthour) constant. It is the number of watthours that must be applied to the meter to cause one disk revolution for an electromechanical meter or the number of watthours represented by one increment pulse for an electronic meter. 
         @param kR: Display multiplier used to produce a displayed value from a register value. 
@@ -52,7 +52,14 @@ class MeterAsset(EndDeviceAsset):
         self._VendingTransactions = []
         self.VendingTransactions = [] if VendingTransactions is None else VendingTransactions
 
-        super(MeterAsset, self).__init__(**kw_args)
+        super(MeterAsset, self).__init__(*args, **kw_args)
+
+    _attrs = ["kH", "kR", "formNumber"]
+    _attr_types = {"kH": float, "kR": float, "formNumber": str}
+    _defaults = {"kH": 0.0, "kR": 0.0, "formNumber": ''}
+    _enums = {}
+    _refs = ["MeterReplacementWorks", "MeterServiceWorks", "MeterReadings", "VendingTransactions"]
+    _many_refs = ["MeterReplacementWorks", "MeterServiceWorks", "MeterReadings", "VendingTransactions"]
 
     def getMeterReplacementWorks(self):
         """All works on replacement of this old meter asset.

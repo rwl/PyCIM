@@ -20,8 +20,8 @@ class DateTimeInterval(Element):
     """Interval of date and time.
     """
 
-    def __init__(self, end='', start='', **kw_args):
-        """Initializes a new 'DateTimeInterval' instance.
+    def __init__(self, end='', start='', *args, **kw_args):
+        """Initialises a new 'DateTimeInterval' instance.
 
         @param end: Date and time that this interval ended. 
         @param start: Date and time that this interval started. 
@@ -32,5 +32,12 @@ class DateTimeInterval(Element):
         #: Date and time that this interval started.
         self.start = start
 
-        super(DateTimeInterval, self).__init__(**kw_args)
+        super(DateTimeInterval, self).__init__(*args, **kw_args)
+
+    _attrs = ["end", "start"]
+    _attr_types = {"end": str, "start": str}
+    _defaults = {"end": '', "start": ''}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

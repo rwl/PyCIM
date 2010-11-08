@@ -20,8 +20,8 @@ class Register(IdentifiedObject):
     """Display for quantity that is metered on an end device such as a meter.
     """
 
-    def __init__(self, leftDigitCount=0, rightDigitCount=0, ReadingType=None, DeviceFunction=None, **kw_args):
-        """Initializes a new 'Register' instance.
+    def __init__(self, leftDigitCount=0, rightDigitCount=0, ReadingType=None, DeviceFunction=None, *args, **kw_args):
+        """Initialises a new 'Register' instance.
 
         @param leftDigitCount: Number of digits (dials on a mechanical meter) to the left of the decimal place; default is 5. 
         @param rightDigitCount: Number of digits (dials on a mechanical meter) to the right of the decimal place. 
@@ -40,7 +40,14 @@ class Register(IdentifiedObject):
         self._DeviceFunction = None
         self.DeviceFunction = DeviceFunction
 
-        super(Register, self).__init__(**kw_args)
+        super(Register, self).__init__(*args, **kw_args)
+
+    _attrs = ["leftDigitCount", "rightDigitCount"]
+    _attr_types = {"leftDigitCount": int, "rightDigitCount": int}
+    _defaults = {"leftDigitCount": 0, "rightDigitCount": 0}
+    _enums = {}
+    _refs = ["ReadingType", "DeviceFunction"]
+    _many_refs = []
 
     def getReadingType(self):
         """Reading type for values displayed by this register.

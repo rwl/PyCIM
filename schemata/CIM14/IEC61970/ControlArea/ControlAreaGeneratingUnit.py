@@ -20,8 +20,8 @@ class ControlAreaGeneratingUnit(Element):
     """A control area generating unit. This class is needed so that alternate control area definitions may include the same generating unit.   Note only one instance within a control area should reference a specific generating unit.
     """
 
-    def __init__(self, AltGeneratingUnitMeas=None, ControlArea=None, GeneratingUnit=None, **kw_args):
-        """Initializes a new 'ControlAreaGeneratingUnit' instance.
+    def __init__(self, AltGeneratingUnitMeas=None, ControlArea=None, GeneratingUnit=None, *args, **kw_args):
+        """Initialises a new 'ControlAreaGeneratingUnit' instance.
 
         @param AltGeneratingUnitMeas: The link to prioritized measurements for this GeneratingUnit.
         @param ControlArea: The parent control area for the generating unit specifications.
@@ -36,7 +36,14 @@ class ControlAreaGeneratingUnit(Element):
         self._GeneratingUnit = None
         self.GeneratingUnit = GeneratingUnit
 
-        super(ControlAreaGeneratingUnit, self).__init__(**kw_args)
+        super(ControlAreaGeneratingUnit, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["AltGeneratingUnitMeas", "ControlArea", "GeneratingUnit"]
+    _many_refs = ["AltGeneratingUnitMeas"]
 
     def getAltGeneratingUnitMeas(self):
         """The link to prioritized measurements for this GeneratingUnit.

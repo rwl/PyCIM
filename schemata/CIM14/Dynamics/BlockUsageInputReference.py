@@ -20,8 +20,8 @@ class BlockUsageInputReference(IdentifiedObject):
     """Used at instance level to tie the input of a referenced block to the output of another referenced block. Note that typically an input is only tied to an output of another block at the same PowerSystemResource, but there is no restriction to do so.
     """
 
-    def __init__(self, block0=None, BlockUsageOutputReference=None, metaBlockInput0=None, **kw_args):
-        """Initializes a new 'BlockUsageInputReference' instance.
+    def __init__(self, block0=None, BlockUsageOutputReference=None, metaBlockInput0=None, *args, **kw_args):
+        """Initialises a new 'BlockUsageInputReference' instance.
 
         @param block0:
         @param BlockUsageOutputReference: Can cross BlockUsage objects.
@@ -36,7 +36,14 @@ class BlockUsageInputReference(IdentifiedObject):
         self._metaBlockInput0 = None
         self.metaBlockInput0 = metaBlockInput0
 
-        super(BlockUsageInputReference, self).__init__(**kw_args)
+        super(BlockUsageInputReference, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["block0", "BlockUsageOutputReference", "metaBlockInput0"]
+    _many_refs = []
 
     def getblock0(self):
         

@@ -20,9 +20,16 @@ class ExcHU(ExcitationSystem):
     """Hungarian Excitation System Model
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'ExcHU' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'ExcHU' instance.
 
         """
-        super(ExcHU, self).__init__(**kw_args)
+        super(ExcHU, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

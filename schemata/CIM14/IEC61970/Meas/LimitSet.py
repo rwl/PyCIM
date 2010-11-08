@@ -20,13 +20,20 @@ class LimitSet(IdentifiedObject):
     """Specifies a set of Limits that are associated with a Measurement. A Measurement may have several LimitSets corresponding to seasonal or other changing conditions. The condition is captured in the name and description attributes. The same LimitSet may be used for several Measurements. In particular percentage limits are used this way.
     """
 
-    def __init__(self, isPercentageLimits=False, **kw_args):
-        """Initializes a new 'LimitSet' instance.
+    def __init__(self, isPercentageLimits=False, *args, **kw_args):
+        """Initialises a new 'LimitSet' instance.
 
         @param isPercentageLimits: Tells if the limit values are in percentage of normalValue or the specified Unit for Measurements and Controls. 
         """
         #: Tells if the limit values are in percentage of normalValue or the specified Unit for Measurements and Controls.
         self.isPercentageLimits = isPercentageLimits
 
-        super(LimitSet, self).__init__(**kw_args)
+        super(LimitSet, self).__init__(*args, **kw_args)
+
+    _attrs = ["isPercentageLimits"]
+    _attr_types = {"isPercentageLimits": bool}
+    _defaults = {"isPercentageLimits": False}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,8 +20,8 @@ class ExcSEXS(ExcitationSystem):
     """Simplified Excitation System Model
     """
 
-    def __init__(self, tb=0.0, kc=0.0, emax=0.0, tatb=0.0, tc=0.0, efdmin=0.0, efdmax=0.0, emin=0.0, k=0.0, te=0.0, **kw_args):
-        """Initializes a new 'ExcSEXS' instance.
+    def __init__(self, tb=0.0, kc=0.0, emax=0.0, tatb=0.0, tc=0.0, efdmin=0.0, efdmax=0.0, emin=0.0, k=0.0, te=0.0, *args, **kw_args):
+        """Initialises a new 'ExcSEXS' instance.
 
         @param tb: Denominator time constant of lag-lead block 
         @param kc: PI controller gain (&gt; 0. if Tc &gt; 0.) 
@@ -64,5 +64,12 @@ class ExcSEXS(ExcitationSystem):
         #: Time constant of gain block (&gt; 0.)
         self.te = te
 
-        super(ExcSEXS, self).__init__(**kw_args)
+        super(ExcSEXS, self).__init__(*args, **kw_args)
+
+    _attrs = ["tb", "kc", "emax", "tatb", "tc", "efdmin", "efdmax", "emin", "k", "te"]
+    _attr_types = {"tb": float, "kc": float, "emax": float, "tatb": float, "tc": float, "efdmin": float, "efdmax": float, "emin": float, "k": float, "te": float}
+    _defaults = {"tb": 0.0, "kc": 0.0, "emax": 0.0, "tatb": 0.0, "tc": 0.0, "efdmin": 0.0, "efdmax": 0.0, "emin": 0.0, "k": 0.0, "te": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

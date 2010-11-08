@@ -20,8 +20,8 @@ class SubLoadArea(EnergyArea):
     """The class is the second level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling.
     """
 
-    def __init__(self, LoadGroups=None, LoadArea=None, **kw_args):
-        """Initializes a new 'SubLoadArea' instance.
+    def __init__(self, LoadGroups=None, LoadArea=None, *args, **kw_args):
+        """Initialises a new 'SubLoadArea' instance.
 
         @param LoadGroups: The Loadgroups in the SubLoadArea.
         @param LoadArea: The LoadArea where the SubLoadArea belongs.
@@ -32,7 +32,14 @@ class SubLoadArea(EnergyArea):
         self._LoadArea = None
         self.LoadArea = LoadArea
 
-        super(SubLoadArea, self).__init__(**kw_args)
+        super(SubLoadArea, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["LoadGroups", "LoadArea"]
+    _many_refs = ["LoadGroups"]
 
     def getLoadGroups(self):
         """The Loadgroups in the SubLoadArea.

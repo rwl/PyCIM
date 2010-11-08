@@ -20,8 +20,8 @@ class DistributionTransformer(Equipment):
     """An assembly of two or more coupled windings that transform electrical power between voltage levels. Supports both balanced and unbalanced winding connections. This class differs from Wires::PowerTransformer as follows: - it is part of a TransformerBank - it draws parameters exclusively from TransformerInfo and its associated classes.
     """
 
-    def __init__(self, Windings=None, ServiceDeliveryPoints=None, TransformerBank=None, TransformerInfo=None, **kw_args):
-        """Initializes a new 'DistributionTransformer' instance.
+    def __init__(self, Windings=None, ServiceDeliveryPoints=None, TransformerBank=None, TransformerInfo=None, *args, **kw_args):
+        """Initialises a new 'DistributionTransformer' instance.
 
         @param Windings: All windings of this transformer.
         @param ServiceDeliveryPoints: All service delivery points supplied by this transformer.
@@ -40,7 +40,14 @@ class DistributionTransformer(Equipment):
         self._TransformerInfo = None
         self.TransformerInfo = TransformerInfo
 
-        super(DistributionTransformer, self).__init__(**kw_args)
+        super(DistributionTransformer, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["Windings", "ServiceDeliveryPoints", "TransformerBank", "TransformerInfo"]
+    _many_refs = ["Windings", "ServiceDeliveryPoints"]
 
     def getWindings(self):
         """All windings of this transformer.

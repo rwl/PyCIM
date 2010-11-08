@@ -20,8 +20,8 @@ class HeatRateCurve(Curve):
     """Relationship between unit heat rate per active power (Y-axis) and  unit output (X-axis). The heat input is from all fuels.
     """
 
-    def __init__(self, isNetGrossP=False, ThermalGeneratingUnit=None, **kw_args):
-        """Initializes a new 'HeatRateCurve' instance.
+    def __init__(self, isNetGrossP=False, ThermalGeneratingUnit=None, *args, **kw_args):
+        """Initialises a new 'HeatRateCurve' instance.
 
         @param isNetGrossP: Flag is set to true when output is expressed in net active power 
         @param ThermalGeneratingUnit: A thermal generating unit may have a heat rate curve
@@ -32,7 +32,14 @@ class HeatRateCurve(Curve):
         self._ThermalGeneratingUnit = None
         self.ThermalGeneratingUnit = ThermalGeneratingUnit
 
-        super(HeatRateCurve, self).__init__(**kw_args)
+        super(HeatRateCurve, self).__init__(*args, **kw_args)
+
+    _attrs = ["isNetGrossP"]
+    _attr_types = {"isNetGrossP": bool}
+    _defaults = {"isNetGrossP": False}
+    _enums = {}
+    _refs = ["ThermalGeneratingUnit"]
+    _many_refs = []
 
     def getThermalGeneratingUnit(self):
         """A thermal generating unit may have a heat rate curve

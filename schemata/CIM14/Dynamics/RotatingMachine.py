@@ -20,8 +20,8 @@ class RotatingMachine(RegulatingCondEq):
     """A rotating machine which may be used as a generator or motor.
     """
 
-    def __init__(self, parametersFormType='timeConstantReactance', d=0.0, rs=0.0, h=0.0, s12=0.0, ratedS=0.0, s1=0.0, xls=0.0, mechanicalLoad0=None, **kw_args):
-        """Initializes a new 'RotatingMachine' instance.
+    def __init__(self, parametersFormType="timeConstantReactance", d=0.0, rs=0.0, h=0.0, s12=0.0, ratedS=0.0, s1=0.0, xls=0.0, mechanicalLoad0=None, *args, **kw_args):
+        """Initialises a new 'RotatingMachine' instance.
 
         @param parametersFormType: Values are: "timeConstantReactance", "equivalentCircuit"
         @param d: Damping torque coefficient. <b>D</b> represents a linearized approximation of damping torque effects. This value is often zero when the sources of damping torques (generator damper windings, load damping effects, etc.) are modeled in detail 
@@ -60,7 +60,14 @@ class RotatingMachine(RegulatingCondEq):
         self._mechanicalLoad0 = []
         self.mechanicalLoad0 = [] if mechanicalLoad0 is None else mechanicalLoad0
 
-        super(RotatingMachine, self).__init__(**kw_args)
+        super(RotatingMachine, self).__init__(*args, **kw_args)
+
+    _attrs = ["parametersFormType", "d", "rs", "h", "s12", "ratedS", "s1", "xls"]
+    _attr_types = {"parametersFormType": str, "d": float, "rs": float, "h": float, "s12": float, "ratedS": float, "s1": float, "xls": float}
+    _defaults = {"parametersFormType": "timeConstantReactance", "d": 0.0, "rs": 0.0, "h": 0.0, "s12": 0.0, "ratedS": 0.0, "s1": 0.0, "xls": 0.0}
+    _enums = {"parametersFormType": "ParametersFormType"}
+    _refs = ["mechanicalLoad0"]
+    _many_refs = ["mechanicalLoad0"]
 
     def getmechanicalLoad0(self):
         

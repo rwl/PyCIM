@@ -20,8 +20,8 @@ class ExcST1A(ExcitationSystem):
     """IEEE (1992/2005) ST1A Model  The computer model of the Type ST1A potential-source controlled-rectifier excitation system represents systems in which excitation power is supplied through a transformer from the generator terminals (or the unit's auxiliary bus) and is regulated by a controlled rectifier. The maximum exciter voltage available from such systems is directly related to the generator terminal voltage.
     """
 
-    def __init__(self, ta=0.0, vimin=0.0, vamin=0.0, kf=0.0, vrmin=0.0, ka=0.0, tb=0.0, vamax=0.0, tb1=0.0, uelin=0.0, kc=0.0, tc1=0.0, tf=0.0, klr=0.0, vimax=0.0, tc=0.0, pssin=0.0, vrmax=0.0, tr=0.0, ilr=0.0, **kw_args):
-        """Initializes a new 'ExcST1A' instance.
+    def __init__(self, ta=0.0, vimin=0.0, vamin=0.0, kf=0.0, vrmin=0.0, ka=0.0, tb=0.0, vamax=0.0, tb1=0.0, uelin=0.0, kc=0.0, tc1=0.0, tf=0.0, klr=0.0, vimax=0.0, tc=0.0, pssin=0.0, vrmax=0.0, tr=0.0, ilr=0.0, *args, **kw_args):
+        """Initialises a new 'ExcST1A' instance.
 
         @param ta: Time constant (&gt;= 0.) 
         @param vimin: Minimum error (&lt; 0.) 
@@ -104,5 +104,12 @@ class ExcST1A(ExcitationSystem):
         #: Maximum field current
         self.ilr = ilr
 
-        super(ExcST1A, self).__init__(**kw_args)
+        super(ExcST1A, self).__init__(*args, **kw_args)
+
+    _attrs = ["ta", "vimin", "vamin", "kf", "vrmin", "ka", "tb", "vamax", "tb1", "uelin", "kc", "tc1", "tf", "klr", "vimax", "tc", "pssin", "vrmax", "tr", "ilr"]
+    _attr_types = {"ta": float, "vimin": float, "vamin": float, "kf": float, "vrmin": float, "ka": float, "tb": float, "vamax": float, "tb1": float, "uelin": float, "kc": float, "tc1": float, "tf": float, "klr": float, "vimax": float, "tc": float, "pssin": float, "vrmax": float, "tr": float, "ilr": float}
+    _defaults = {"ta": 0.0, "vimin": 0.0, "vamin": 0.0, "kf": 0.0, "vrmin": 0.0, "ka": 0.0, "tb": 0.0, "vamax": 0.0, "tb1": 0.0, "uelin": 0.0, "kc": 0.0, "tc1": 0.0, "tf": 0.0, "klr": 0.0, "vimax": 0.0, "tc": 0.0, "pssin": 0.0, "vrmax": 0.0, "tr": 0.0, "ilr": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

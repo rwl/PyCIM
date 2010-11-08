@@ -20,8 +20,8 @@ class SvStatus(StateVariable):
     """State variable for status.
     """
 
-    def __init__(self, inService=False, ConductingEquipment=None, **kw_args):
-        """Initializes a new 'SvStatus' instance.
+    def __init__(self, inService=False, ConductingEquipment=None, *args, **kw_args):
+        """Initialises a new 'SvStatus' instance.
 
         @param inService: The in service status as a result of topology processing. 
         @param ConductingEquipment: The conducting equipment associated with the status state.
@@ -32,7 +32,14 @@ class SvStatus(StateVariable):
         self._ConductingEquipment = None
         self.ConductingEquipment = ConductingEquipment
 
-        super(SvStatus, self).__init__(**kw_args)
+        super(SvStatus, self).__init__(*args, **kw_args)
+
+    _attrs = ["inService"]
+    _attr_types = {"inService": bool}
+    _defaults = {"inService": False}
+    _enums = {}
+    _refs = ["ConductingEquipment"]
+    _many_refs = []
 
     def getConductingEquipment(self):
         """The conducting equipment associated with the status state.

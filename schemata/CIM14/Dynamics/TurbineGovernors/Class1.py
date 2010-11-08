@@ -18,9 +18,16 @@ from CIM14.Element import Element
 
 class Class1(Element):
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'Class1' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'Class1' instance.
 
         """
-        super(Class1, self).__init__(**kw_args)
+        super(Class1, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

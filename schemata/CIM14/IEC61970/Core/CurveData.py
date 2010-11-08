@@ -20,8 +20,8 @@ class CurveData(Element):
     """Multi-purpose data points for defining a curve.
     """
 
-    def __init__(self, y3value=0.0, xvalue=0.0, y2value=0.0, y1value=0.0, Curve=None, **kw_args):
-        """Initializes a new 'CurveData' instance.
+    def __init__(self, y3value=0.0, xvalue=0.0, y2value=0.0, y1value=0.0, Curve=None, *args, **kw_args):
+        """Initialises a new 'CurveData' instance.
 
         @param y3value: The data value of the third Y-axis variable (if present), depending on the Y-axis units 
         @param xvalue: The data value of the X-axis variable,  depending on the X-axis units 
@@ -44,7 +44,14 @@ class CurveData(Element):
         self._Curve = None
         self.Curve = Curve
 
-        super(CurveData, self).__init__(**kw_args)
+        super(CurveData, self).__init__(*args, **kw_args)
+
+    _attrs = ["y3value", "xvalue", "y2value", "y1value"]
+    _attr_types = {"y3value": float, "xvalue": float, "y2value": float, "y1value": float}
+    _defaults = {"y3value": 0.0, "xvalue": 0.0, "y2value": 0.0, "y1value": 0.0}
+    _enums = {}
+    _refs = ["Curve"]
+    _many_refs = []
 
     def getCurve(self):
         """The Curve defined by this CurveData.

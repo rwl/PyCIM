@@ -20,8 +20,8 @@ class MutualCoupling(IdentifiedObject):
     """This class represents the zero sequence line mutual coupling.
     """
 
-    def __init__(self, distance22=0.0, g0ch=0.0, distance12=0.0, distance21=0.0, x0=0.0, b0ch=0.0, r0=0.0, distance11=0.0, Second_Terminal=None, First_Terminal=None, **kw_args):
-        """Initializes a new 'MutualCoupling' instance.
+    def __init__(self, distance22=0.0, g0ch=0.0, distance12=0.0, distance21=0.0, x0=0.0, b0ch=0.0, r0=0.0, distance11=0.0, Second_Terminal=None, First_Terminal=None, *args, **kw_args):
+        """Initialises a new 'MutualCoupling' instance.
 
         @param distance22: Distance from the second line's specified terminal to end of coupled region 
         @param g0ch: Zero sequence mutual coupling shunt (charging) conductance, uniformly distributed, of the entire line section. 
@@ -64,7 +64,14 @@ class MutualCoupling(IdentifiedObject):
         self._First_Terminal = None
         self.First_Terminal = First_Terminal
 
-        super(MutualCoupling, self).__init__(**kw_args)
+        super(MutualCoupling, self).__init__(*args, **kw_args)
+
+    _attrs = ["distance22", "g0ch", "distance12", "distance21", "x0", "b0ch", "r0", "distance11"]
+    _attr_types = {"distance22": float, "g0ch": float, "distance12": float, "distance21": float, "x0": float, "b0ch": float, "r0": float, "distance11": float}
+    _defaults = {"distance22": 0.0, "g0ch": 0.0, "distance12": 0.0, "distance21": 0.0, "x0": 0.0, "b0ch": 0.0, "r0": 0.0, "distance11": 0.0}
+    _enums = {}
+    _refs = ["Second_Terminal", "First_Terminal"]
+    _many_refs = []
 
     def getSecond_Terminal(self):
         """The starting terminal for the calculation of distances along the second branch of the mutual coupling.

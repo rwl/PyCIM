@@ -20,8 +20,8 @@ class BlockConstant(MetaBlockConnectable):
     """Used as a constant in the internal definition of a block.   This is meta dynamics model, so you need not specify this paramter in each usage of the block as a normal instance parameter.
     """
 
-    def __init__(self, value=0.0, metaBlock0=None, **kw_args):
-        """Initializes a new 'BlockConstant' instance.
+    def __init__(self, value=0.0, metaBlock0=None, *args, **kw_args):
+        """Initialises a new 'BlockConstant' instance.
 
         @param value: The constant value of used for the internal defintion of a block. 
         @param metaBlock0:
@@ -32,7 +32,14 @@ class BlockConstant(MetaBlockConnectable):
         self._metaBlock0 = None
         self.metaBlock0 = metaBlock0
 
-        super(BlockConstant, self).__init__(**kw_args)
+        super(BlockConstant, self).__init__(*args, **kw_args)
+
+    _attrs = ["value"]
+    _attr_types = {"value": float}
+    _defaults = {"value": 0.0}
+    _enums = {}
+    _refs = ["metaBlock0"]
+    _many_refs = []
 
     def getmetaBlock0(self):
         

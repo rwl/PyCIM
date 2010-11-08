@@ -20,8 +20,8 @@ class Analog(Measurement):
     """Analog represents an analog Measurement.
     """
 
-    def __init__(self, positiveFlowIn=False, minValue=0.0, maxValue=0.0, normalValue=0.0, LimitSets=None, SetPoint=None, AnalogValues=None, **kw_args):
-        """Initializes a new 'Analog' instance.
+    def __init__(self, positiveFlowIn=False, minValue=0.0, maxValue=0.0, normalValue=0.0, LimitSets=None, SetPoint=None, AnalogValues=None, *args, **kw_args):
+        """Initialises a new 'Analog' instance.
 
         @param positiveFlowIn: If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource. 
         @param minValue: Normal value range minimum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values 
@@ -52,7 +52,14 @@ class Analog(Measurement):
         self._AnalogValues = []
         self.AnalogValues = [] if AnalogValues is None else AnalogValues
 
-        super(Analog, self).__init__(**kw_args)
+        super(Analog, self).__init__(*args, **kw_args)
+
+    _attrs = ["positiveFlowIn", "minValue", "maxValue", "normalValue"]
+    _attr_types = {"positiveFlowIn": bool, "minValue": float, "maxValue": float, "normalValue": float}
+    _defaults = {"positiveFlowIn": False, "minValue": 0.0, "maxValue": 0.0, "normalValue": 0.0}
+    _enums = {}
+    _refs = ["LimitSets", "SetPoint", "AnalogValues"]
+    _many_refs = ["LimitSets", "AnalogValues"]
 
     def getLimitSets(self):
         """A measurement may have zero or more limit ranges defined for it.

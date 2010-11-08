@@ -20,8 +20,8 @@ class Cheque(Element):
     """The actual tender when it is a type of cheque.
     """
 
-    def __init__(self, kind='other', micrNumber='', date='', chequeNumber='', Tender=None, bankAccountDetail=None, **kw_args):
-        """Initializes a new 'Cheque' instance.
+    def __init__(self, kind="other", micrNumber='', date='', chequeNumber='', Tender=None, bankAccountDetail=None, *args, **kw_args):
+        """Initialises a new 'Cheque' instance.
 
         @param kind: Kind of cheque. Values are: "other", "postalOrder", "bankOrder"
         @param micrNumber: The magnetic ink character recognition number printed on the cheque. 
@@ -30,7 +30,7 @@ class Cheque(Element):
         @param Tender: Payment tender the cheque is being used for.
         @param bankAccountDetail: Details of the account holder and bank.
         """
-        #: Kind of cheque.Values are: "other", "postalOrder", "bankOrder"
+        #: Kind of cheque. Values are: "other", "postalOrder", "bankOrder"
         self.kind = kind
 
         #: The magnetic ink character recognition number printed on the cheque.
@@ -47,7 +47,14 @@ class Cheque(Element):
 
         self.bankAccountDetail = bankAccountDetail
 
-        super(Cheque, self).__init__(**kw_args)
+        super(Cheque, self).__init__(*args, **kw_args)
+
+    _attrs = ["kind", "micrNumber", "date", "chequeNumber"]
+    _attr_types = {"kind": str, "micrNumber": str, "date": str, "chequeNumber": str}
+    _defaults = {"kind": "other", "micrNumber": '', "date": '', "chequeNumber": ''}
+    _enums = {"kind": "ChequeKind"}
+    _refs = ["Tender", "bankAccountDetail"]
+    _many_refs = []
 
     def getTender(self):
         """Payment tender the cheque is being used for.

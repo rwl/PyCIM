@@ -20,9 +20,16 @@ class PssSH(PowerSystemStabilizer):
     """Siemens H infinity PSS
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'PssSH' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'PssSH' instance.
 
         """
-        super(PssSH, self).__init__(**kw_args)
+        super(PssSH, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

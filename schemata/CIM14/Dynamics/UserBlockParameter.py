@@ -20,15 +20,22 @@ class UserBlockParameter(MetaBlockParameter):
     """Concrete class intended to obtain a parameter value from a user of the block  in the parameter list at the instance level.
     """
 
-    def __init__(self, BlockUsageParameter=None, **kw_args):
-        """Initializes a new 'UserBlockParameter' instance.
+    def __init__(self, BlockUsageParameter=None, *args, **kw_args):
+        """Initialises a new 'UserBlockParameter' instance.
 
         @param BlockUsageParameter:
         """
         self._BlockUsageParameter = []
         self.BlockUsageParameter = [] if BlockUsageParameter is None else BlockUsageParameter
 
-        super(UserBlockParameter, self).__init__(**kw_args)
+        super(UserBlockParameter, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["BlockUsageParameter"]
+    _many_refs = ["BlockUsageParameter"]
 
     def getBlockUsageParameter(self):
         

@@ -18,11 +18,18 @@
 class Element(object):
 
     def __init__(self, UUID=''):
-        """Initializes a new 'Element' instance.
+        """Initialises a new 'Element' instance.
 
-        @param UUID: 
+        @param UUID:
         """
 
         self.UUID = UUID
 
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

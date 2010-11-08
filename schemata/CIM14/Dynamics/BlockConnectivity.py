@@ -20,8 +20,8 @@ class BlockConnectivity(IdentifiedObject):
     """A instance definition of connectivity of BlockUsage objects as defined in a a BlockConnection within the dyanmics-meta-model.
     """
 
-    def __init__(self, MetaBlockConnectivity=None, Block=None, BlockConnection=None, **kw_args):
-        """Initializes a new 'BlockConnectivity' instance.
+    def __init__(self, MetaBlockConnectivity=None, Block=None, BlockConnection=None, *args, **kw_args):
+        """Initialises a new 'BlockConnectivity' instance.
 
         @param MetaBlockConnectivity:
         @param Block:
@@ -36,7 +36,14 @@ class BlockConnectivity(IdentifiedObject):
         self._BlockConnection = []
         self.BlockConnection = [] if BlockConnection is None else BlockConnection
 
-        super(BlockConnectivity, self).__init__(**kw_args)
+        super(BlockConnectivity, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["MetaBlockConnectivity", "Block", "BlockConnection"]
+    _many_refs = ["Block", "BlockConnection"]
 
     def getMetaBlockConnectivity(self):
         

@@ -20,8 +20,8 @@ class ExcAC3A(ExcitationSystem):
     """IEEE (1992/2005) AC3A Model  The model represents the field-controlled alternator-rectifier excitation systems designated Type AC3A. These excitation systems include an alternator main exciter with non-controlled rectifiers. The exciter employs self-excitation, and the voltage regulator power is derived from the exciter output voltage. Therefore, this system has an additional nonlinearity, simulated by the use of a multiplier whose inputs are the voltage regulator command signal, <i>VA</i>, and the exciter output voltage, <i>EFD</i>, times <i>KR</i>. This model is applicable to excitation systems employing static voltage regulators.
     """
 
-    def __init__(self, kf=0.0, e2=0.0, te=0.0, ka=0.0, kr=0.0, tc=0.0, efdn=0.0, ke=0.0, e1=0.0, kd=0.0, se2=0.0, vamax=0.0, tr=0.0, vamin=0.0, tf=0.0, vemin=0.0, kn=0.0, vfemax=0.0, tb=0.0, se1=0.0, kc=0.0, ta=0.0, **kw_args):
-        """Initializes a new 'ExcAC3A' instance.
+    def __init__(self, kf=0.0, e2=0.0, te=0.0, ka=0.0, kr=0.0, tc=0.0, efdn=0.0, ke=0.0, e1=0.0, kd=0.0, se2=0.0, vamax=0.0, tr=0.0, vamin=0.0, tf=0.0, vemin=0.0, kn=0.0, vfemax=0.0, tb=0.0, se1=0.0, kc=0.0, ta=0.0, *args, **kw_args):
+        """Initialises a new 'ExcAC3A' instance.
 
         @param kf: Low level rate feedback gain (&gt;= 0.) 
         @param e2: Field voltage value 2.     (&gt; 0.) 
@@ -112,5 +112,12 @@ class ExcAC3A(ExcitationSystem):
         #: AVR time constant (&gt; 0.)
         self.ta = ta
 
-        super(ExcAC3A, self).__init__(**kw_args)
+        super(ExcAC3A, self).__init__(*args, **kw_args)
+
+    _attrs = ["kf", "e2", "te", "ka", "kr", "tc", "efdn", "ke", "e1", "kd", "se2", "vamax", "tr", "vamin", "tf", "vemin", "kn", "vfemax", "tb", "se1", "kc", "ta"]
+    _attr_types = {"kf": float, "e2": float, "te": float, "ka": float, "kr": float, "tc": float, "efdn": float, "ke": float, "e1": float, "kd": float, "se2": float, "vamax": float, "tr": float, "vamin": float, "tf": float, "vemin": float, "kn": float, "vfemax": float, "tb": float, "se1": float, "kc": float, "ta": float}
+    _defaults = {"kf": 0.0, "e2": 0.0, "te": 0.0, "ka": 0.0, "kr": 0.0, "tc": 0.0, "efdn": 0.0, "ke": 0.0, "e1": 0.0, "kd": 0.0, "se2": 0.0, "vamax": 0.0, "tr": 0.0, "vamin": 0.0, "tf": 0.0, "vemin": 0.0, "kn": 0.0, "vfemax": 0.0, "tb": 0.0, "se1": 0.0, "kc": 0.0, "ta": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

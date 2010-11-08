@@ -20,9 +20,16 @@ class PssPTIST3(PowerSystemStabilizer):
     """PTI microprocessor-based stabilizer model type 3
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'PssPTIST3' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'PssPTIST3' instance.
 
         """
-        super(PssPTIST3, self).__init__(**kw_args)
+        super(PssPTIST3, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

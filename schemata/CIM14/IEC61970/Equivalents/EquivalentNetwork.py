@@ -20,15 +20,22 @@ class EquivalentNetwork(ConnectivityNodeContainer):
     """A class that represents an external meshed network that has been reduced to an electrically equivalent model. The ConnectivityNodes contained in the equivalent are intended to reflect internal nodes of the equivalent. The boundary Connectivity nodes where the equivalent connects outside itself are NOT contained by the equivalent.
     """
 
-    def __init__(self, EquivalentEquipments=None, **kw_args):
-        """Initializes a new 'EquivalentNetwork' instance.
+    def __init__(self, EquivalentEquipments=None, *args, **kw_args):
+        """Initialises a new 'EquivalentNetwork' instance.
 
         @param EquivalentEquipments: The associated reduced equivalents.
         """
         self._EquivalentEquipments = []
         self.EquivalentEquipments = [] if EquivalentEquipments is None else EquivalentEquipments
 
-        super(EquivalentNetwork, self).__init__(**kw_args)
+        super(EquivalentNetwork, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["EquivalentEquipments"]
+    _many_refs = ["EquivalentEquipments"]
 
     def getEquivalentEquipments(self):
         """The associated reduced equivalents.

@@ -20,8 +20,8 @@ class SeriesCompensator(ConductingEquipment):
     """A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.  It is a two terminal device.
     """
 
-    def __init__(self, r=0.0, x=0.0, **kw_args):
-        """Initializes a new 'SeriesCompensator' instance.
+    def __init__(self, r=0.0, x=0.0, *args, **kw_args):
+        """Initialises a new 'SeriesCompensator' instance.
 
         @param r: Positive sequence resistance. 
         @param x: Positive sequence reactance. 
@@ -32,5 +32,12 @@ class SeriesCompensator(ConductingEquipment):
         #: Positive sequence reactance.
         self.x = x
 
-        super(SeriesCompensator, self).__init__(**kw_args)
+        super(SeriesCompensator, self).__init__(*args, **kw_args)
+
+    _attrs = ["r", "x"]
+    _attr_types = {"r": float, "x": float}
+    _defaults = {"r": 0.0, "x": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

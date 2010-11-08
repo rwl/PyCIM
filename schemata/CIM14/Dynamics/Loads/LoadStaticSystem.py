@@ -20,9 +20,16 @@ class LoadStaticSystem(LoadStatic):
     """Static load associated with a specific system.
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'LoadStaticSystem' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'LoadStaticSystem' instance.
 
         """
-        super(LoadStaticSystem, self).__init__(**kw_args)
+        super(LoadStaticSystem, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

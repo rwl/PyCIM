@@ -20,9 +20,16 @@ class PssWSCC(PowerSystemStabilizer):
     """Dual input PSS
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'PssWSCC' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'PssWSCC' instance.
 
         """
-        super(PssWSCC, self).__init__(**kw_args)
+        super(PssWSCC, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

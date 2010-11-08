@@ -18,8 +18,8 @@ from CIM14.Dynamics.TurbineGovernors.TurbineGovernor import TurbineGovernor
 
 class GovHydro2(TurbineGovernor):
 
-    def __init__(self, tg=0.0, uc=0.0, gv1=0.0, db1=0.0, pmax=0.0, pgv4=0.0, gv5=0.0, uo=0.0, rperm=0.0, db2=0.0, pgv5=0.0, tw=0.0, pgv2=0.0, gv3=0.0, gv2=0.0, rtemp=0.0, mwbase=0.0, aturb=0.0, kturb=0.0, pgv3=0.0, pmin=0.0, tr=0.0, eps=0.0, gv6=0.0, pgv1=0.0, tp=0.0, pgv6=0.0, gv4=0.0, bturb=0.0, **kw_args):
-        """Initializes a new 'GovHydro2' instance.
+    def __init__(self, tg=0.0, uc=0.0, gv1=0.0, db1=0.0, pmax=0.0, pgv4=0.0, gv5=0.0, uo=0.0, rperm=0.0, db2=0.0, pgv5=0.0, tw=0.0, pgv2=0.0, gv3=0.0, gv2=0.0, rtemp=0.0, mwbase=0.0, aturb=0.0, kturb=0.0, pgv3=0.0, pmin=0.0, tr=0.0, eps=0.0, gv6=0.0, pgv1=0.0, tp=0.0, pgv6=0.0, gv4=0.0, bturb=0.0, *args, **kw_args):
+        """Initialises a new 'GovHydro2' instance.
 
         @param tg: Gate servo time constant 
         @param uc: Maximum gate closing velocity (&lt;0.) 
@@ -138,5 +138,12 @@ class GovHydro2(TurbineGovernor):
         #: Turbine denominator multiplier
         self.bturb = bturb
 
-        super(GovHydro2, self).__init__(**kw_args)
+        super(GovHydro2, self).__init__(*args, **kw_args)
+
+    _attrs = ["tg", "uc", "gv1", "db1", "pmax", "pgv4", "gv5", "uo", "rperm", "db2", "pgv5", "tw", "pgv2", "gv3", "gv2", "rtemp", "mwbase", "aturb", "kturb", "pgv3", "pmin", "tr", "eps", "gv6", "pgv1", "tp", "pgv6", "gv4", "bturb"]
+    _attr_types = {"tg": float, "uc": float, "gv1": float, "db1": float, "pmax": float, "pgv4": float, "gv5": float, "uo": float, "rperm": float, "db2": float, "pgv5": float, "tw": float, "pgv2": float, "gv3": float, "gv2": float, "rtemp": float, "mwbase": float, "aturb": float, "kturb": float, "pgv3": float, "pmin": float, "tr": float, "eps": float, "gv6": float, "pgv1": float, "tp": float, "pgv6": float, "gv4": float, "bturb": float}
+    _defaults = {"tg": 0.0, "uc": 0.0, "gv1": 0.0, "db1": 0.0, "pmax": 0.0, "pgv4": 0.0, "gv5": 0.0, "uo": 0.0, "rperm": 0.0, "db2": 0.0, "pgv5": 0.0, "tw": 0.0, "pgv2": 0.0, "gv3": 0.0, "gv2": 0.0, "rtemp": 0.0, "mwbase": 0.0, "aturb": 0.0, "kturb": 0.0, "pgv3": 0.0, "pmin": 0.0, "tr": 0.0, "eps": 0.0, "gv6": 0.0, "pgv1": 0.0, "tp": 0.0, "pgv6": 0.0, "gv4": 0.0, "bturb": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

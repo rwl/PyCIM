@@ -20,8 +20,8 @@ class PowerTransformer(Equipment):
     """An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).
     """
 
-    def __init__(self, magSatFlux=0.0, magBaseU=0.0, bmagSat=0.0, TransformerWindings=None, HeatExchanger=None, **kw_args):
-        """Initializes a new 'PowerTransformer' instance.
+    def __init__(self, magSatFlux=0.0, magBaseU=0.0, bmagSat=0.0, TransformerWindings=None, HeatExchanger=None, *args, **kw_args):
+        """Initialises a new 'PowerTransformer' instance.
 
         @param magSatFlux: Core magnetizing saturation curve knee flux level. 
         @param magBaseU: The reference voltage at which the magnetizing saturation measurements were made 
@@ -44,7 +44,14 @@ class PowerTransformer(Equipment):
         self._HeatExchanger = None
         self.HeatExchanger = HeatExchanger
 
-        super(PowerTransformer, self).__init__(**kw_args)
+        super(PowerTransformer, self).__init__(*args, **kw_args)
+
+    _attrs = ["magSatFlux", "magBaseU", "bmagSat"]
+    _attr_types = {"magSatFlux": float, "magBaseU": float, "bmagSat": float}
+    _defaults = {"magSatFlux": 0.0, "magBaseU": 0.0, "bmagSat": 0.0}
+    _enums = {}
+    _refs = ["TransformerWindings", "HeatExchanger"]
+    _many_refs = ["TransformerWindings"]
 
     def getTransformerWindings(self):
         """A transformer has windings

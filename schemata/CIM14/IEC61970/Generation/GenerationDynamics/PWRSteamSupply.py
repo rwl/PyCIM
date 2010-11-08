@@ -20,8 +20,8 @@ class PWRSteamSupply(SteamSupply):
     """Pressurized water reactor used as a steam supply to a steam turbine
     """
 
-    def __init__(self, pressureCG=0.0, throttlePressureSP=0.0, coldLegFBLagTC=0.0, hotLegSteamGain=0.0, coreHTLagTC2=0.0, coreHTLagTC1=0.0, coreNeutronicsHT=0.0, coldLegFBLeadTC1=0.0, feedbackFactor=0.0, coreNeutronicsEffTC=0.0, steamFlowFG=0.0, steamPressureDropLagTC=0.0, steamPressureFG=0.0, coldLegFG1=0.0, throttlePressureFactor=0.0, coldLegFBLeadTC2=0.0, hotLegToColdLegGain=0.0, coldLegFG2=0.0, hotLegLagTC=0.0, coldLegLagTC=0.0, **kw_args):
-        """Initializes a new 'PWRSteamSupply' instance.
+    def __init__(self, pressureCG=0.0, throttlePressureSP=0.0, coldLegFBLagTC=0.0, hotLegSteamGain=0.0, coreHTLagTC2=0.0, coreHTLagTC1=0.0, coreNeutronicsHT=0.0, coldLegFBLeadTC1=0.0, feedbackFactor=0.0, coreNeutronicsEffTC=0.0, steamFlowFG=0.0, steamPressureDropLagTC=0.0, steamPressureFG=0.0, coldLegFG1=0.0, throttlePressureFactor=0.0, coldLegFBLeadTC2=0.0, hotLegToColdLegGain=0.0, coldLegFG2=0.0, hotLegLagTC=0.0, coldLegLagTC=0.0, *args, **kw_args):
+        """Initialises a new 'PWRSteamSupply' instance.
 
         @param pressureCG: Pressure Control Gain 
         @param throttlePressureSP: Throttle Pressure Setpoint 
@@ -104,5 +104,12 @@ class PWRSteamSupply(SteamSupply):
         #: Cold Leg Lag Time Constant
         self.coldLegLagTC = coldLegLagTC
 
-        super(PWRSteamSupply, self).__init__(**kw_args)
+        super(PWRSteamSupply, self).__init__(*args, **kw_args)
+
+    _attrs = ["pressureCG", "throttlePressureSP", "coldLegFBLagTC", "hotLegSteamGain", "coreHTLagTC2", "coreHTLagTC1", "coreNeutronicsHT", "coldLegFBLeadTC1", "feedbackFactor", "coreNeutronicsEffTC", "steamFlowFG", "steamPressureDropLagTC", "steamPressureFG", "coldLegFG1", "throttlePressureFactor", "coldLegFBLeadTC2", "hotLegToColdLegGain", "coldLegFG2", "hotLegLagTC", "coldLegLagTC"]
+    _attr_types = {"pressureCG": float, "throttlePressureSP": float, "coldLegFBLagTC": float, "hotLegSteamGain": float, "coreHTLagTC2": float, "coreHTLagTC1": float, "coreNeutronicsHT": float, "coldLegFBLeadTC1": float, "feedbackFactor": float, "coreNeutronicsEffTC": float, "steamFlowFG": float, "steamPressureDropLagTC": float, "steamPressureFG": float, "coldLegFG1": float, "throttlePressureFactor": float, "coldLegFBLeadTC2": float, "hotLegToColdLegGain": float, "coldLegFG2": float, "hotLegLagTC": float, "coldLegLagTC": float}
+    _defaults = {"pressureCG": 0.0, "throttlePressureSP": 0.0, "coldLegFBLagTC": 0.0, "hotLegSteamGain": 0.0, "coreHTLagTC2": 0.0, "coreHTLagTC1": 0.0, "coreNeutronicsHT": 0.0, "coldLegFBLeadTC1": 0.0, "feedbackFactor": 0.0, "coreNeutronicsEffTC": 0.0, "steamFlowFG": 0.0, "steamPressureDropLagTC": 0.0, "steamPressureFG": 0.0, "coldLegFG1": 0.0, "throttlePressureFactor": 0.0, "coldLegFBLeadTC2": 0.0, "hotLegToColdLegGain": 0.0, "coldLegFG2": 0.0, "hotLegLagTC": 0.0, "coldLegLagTC": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

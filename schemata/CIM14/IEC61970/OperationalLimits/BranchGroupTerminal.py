@@ -20,8 +20,8 @@ class BranchGroupTerminal(Element):
     """A specific directed terminal flow for a branch group.
     """
 
-    def __init__(self, positiveFlowIn=False, BranchGroup=None, Terminal=None, **kw_args):
-        """Initializes a new 'BranchGroupTerminal' instance.
+    def __init__(self, positiveFlowIn=False, BranchGroup=None, Terminal=None, *args, **kw_args):
+        """Initialises a new 'BranchGroupTerminal' instance.
 
         @param positiveFlowIn: The flow into the terminal is summed if set true.   The flow out of the terminanl is summed if set false. 
         @param BranchGroup: The branch group to which the directed branch group terminals belong.
@@ -36,7 +36,14 @@ class BranchGroupTerminal(Element):
         self._Terminal = None
         self.Terminal = Terminal
 
-        super(BranchGroupTerminal, self).__init__(**kw_args)
+        super(BranchGroupTerminal, self).__init__(*args, **kw_args)
+
+    _attrs = ["positiveFlowIn"]
+    _attr_types = {"positiveFlowIn": bool}
+    _defaults = {"positiveFlowIn": False}
+    _enums = {}
+    _refs = ["BranchGroup", "Terminal"]
+    _many_refs = []
 
     def getBranchGroup(self):
         """The branch group to which the directed branch group terminals belong.

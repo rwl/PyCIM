@@ -20,8 +20,8 @@ class ExcAC5A(ExcitationSystem):
     """IEEE (1992/2005) AC5A Model  The model designated as Type AC5A, is a simplified model for brushless excitation systems. The regulator is supplied from a source, such as a permanent magnet generator, which is not affected by system disturbances. Unlike other ac models, this model uses loaded rather than open circuit exciter saturation data in the same way as it is used for the dc models. Because the model has been widely implemented by the industry, it is sometimes used to represent other types of systems when either detailed data for them are not available or simplified models are required.
     """
 
-    def __init__(self, ka=0.0, e1=0.0, kf=0.0, te=0.0, vrmin=0.0, vrmax=0.0, se2=0.0, tf3=0.0, e2=0.0, ke=0.0, tr=0.0, se1=0.0, tf2=0.0, tf1=0.0, ta=0.0, **kw_args):
-        """Initializes a new 'ExcAC5A' instance.
+    def __init__(self, ka=0.0, e1=0.0, kf=0.0, te=0.0, vrmin=0.0, vrmax=0.0, se2=0.0, tf3=0.0, e2=0.0, ke=0.0, tr=0.0, se1=0.0, tf2=0.0, tf1=0.0, ta=0.0, *args, **kw_args):
+        """Initialises a new 'ExcAC5A' instance.
 
         @param ka: Gain  (&gt; 0.) 
         @param e1: Field voltage value 1      (&gt; 0.) 
@@ -84,5 +84,12 @@ class ExcAC5A(ExcitationSystem):
         #: Time constant (&gt; 0.)
         self.ta = ta
 
-        super(ExcAC5A, self).__init__(**kw_args)
+        super(ExcAC5A, self).__init__(*args, **kw_args)
+
+    _attrs = ["ka", "e1", "kf", "te", "vrmin", "vrmax", "se2", "tf3", "e2", "ke", "tr", "se1", "tf2", "tf1", "ta"]
+    _attr_types = {"ka": float, "e1": float, "kf": float, "te": float, "vrmin": float, "vrmax": float, "se2": float, "tf3": float, "e2": float, "ke": float, "tr": float, "se1": float, "tf2": float, "tf1": float, "ta": float}
+    _defaults = {"ka": 0.0, "e1": 0.0, "kf": 0.0, "te": 0.0, "vrmin": 0.0, "vrmax": 0.0, "se2": 0.0, "tf3": 0.0, "e2": 0.0, "ke": 0.0, "tr": 0.0, "se1": 0.0, "tf2": 0.0, "tf1": 0.0, "ta": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

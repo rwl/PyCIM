@@ -20,13 +20,20 @@ class LoadBreakSwitch(ProtectedSwitch):
     """A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions.
     """
 
-    def __init__(self, ratedCurrent=0.0, **kw_args):
-        """Initializes a new 'LoadBreakSwitch' instance.
+    def __init__(self, ratedCurrent=0.0, *args, **kw_args):
+        """Initialises a new 'LoadBreakSwitch' instance.
 
         @param ratedCurrent: Current carrying capacity of a wire or cable under stated thermal conditions. 
         """
         #: Current carrying capacity of a wire or cable under stated thermal conditions.
         self.ratedCurrent = ratedCurrent
 
-        super(LoadBreakSwitch, self).__init__(**kw_args)
+        super(LoadBreakSwitch, self).__init__(*args, **kw_args)
+
+    _attrs = ["ratedCurrent"]
+    _attr_types = {"ratedCurrent": float}
+    _defaults = {"ratedCurrent": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

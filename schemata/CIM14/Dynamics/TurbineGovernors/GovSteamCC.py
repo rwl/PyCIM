@@ -18,9 +18,16 @@ from CIM14.Dynamics.TurbineGovernors.TurbineGovernor import TurbineGovernor
 
 class GovSteamCC(TurbineGovernor):
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'GovSteamCC' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'GovSteamCC' instance.
 
         """
-        super(GovSteamCC, self).__init__(**kw_args)
+        super(GovSteamCC, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

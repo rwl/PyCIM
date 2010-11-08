@@ -20,8 +20,8 @@ class StartupModel(IdentifiedObject):
     """Unit start up characteristics depending on how long the unit has been off line
     """
 
-    def __init__(self, stbyAuxP=0.0, incrementalMaintCost=0.0, hotStandbyHeat=0.0, startupPriority=0, fixedMaintCost=0.0, startupDate='', minimumRunTime=0.0, startupCost=0.0, riskFactorCost=0.0, minimumDownTime=0.0, ThermalGeneratingUnit=None, StartRampCurve=None, StartMainFuelCurve=None, StartIgnFuelCurve=None, **kw_args):
-        """Initializes a new 'StartupModel' instance.
+    def __init__(self, stbyAuxP=0.0, incrementalMaintCost=0.0, hotStandbyHeat=0.0, startupPriority=0, fixedMaintCost=0.0, startupDate='', minimumRunTime=0.0, startupCost=0.0, riskFactorCost=0.0, minimumDownTime=0.0, ThermalGeneratingUnit=None, StartRampCurve=None, StartMainFuelCurve=None, StartIgnFuelCurve=None, *args, **kw_args):
+        """Initialises a new 'StartupModel' instance.
 
         @param stbyAuxP: The unit's auxiliary active power consumption to maintain standby mode 
         @param incrementalMaintCost: Incremental Maintenance Cost 
@@ -80,7 +80,14 @@ class StartupModel(IdentifiedObject):
         self._StartIgnFuelCurve = None
         self.StartIgnFuelCurve = StartIgnFuelCurve
 
-        super(StartupModel, self).__init__(**kw_args)
+        super(StartupModel, self).__init__(*args, **kw_args)
+
+    _attrs = ["stbyAuxP", "incrementalMaintCost", "hotStandbyHeat", "startupPriority", "fixedMaintCost", "startupDate", "minimumRunTime", "startupCost", "riskFactorCost", "minimumDownTime"]
+    _attr_types = {"stbyAuxP": float, "incrementalMaintCost": float, "hotStandbyHeat": float, "startupPriority": int, "fixedMaintCost": float, "startupDate": str, "minimumRunTime": float, "startupCost": float, "riskFactorCost": float, "minimumDownTime": float}
+    _defaults = {"stbyAuxP": 0.0, "incrementalMaintCost": 0.0, "hotStandbyHeat": 0.0, "startupPriority": 0, "fixedMaintCost": 0.0, "startupDate": '', "minimumRunTime": 0.0, "startupCost": 0.0, "riskFactorCost": 0.0, "minimumDownTime": 0.0}
+    _enums = {}
+    _refs = ["ThermalGeneratingUnit", "StartRampCurve", "StartMainFuelCurve", "StartIgnFuelCurve"]
+    _many_refs = []
 
     def getThermalGeneratingUnit(self):
         """A thermal generating unit may have a startup model

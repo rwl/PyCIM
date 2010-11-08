@@ -20,8 +20,8 @@ class TargetLevelSchedule(Curve):
     """Reservoir water level targets from advanced studies or 'rule curves'. Typically in one hour increments for up to 10 days
     """
 
-    def __init__(self, highLevelLimit=0.0, lowLevelLimit=0.0, Reservoir=None, **kw_args):
-        """Initializes a new 'TargetLevelSchedule' instance.
+    def __init__(self, highLevelLimit=0.0, lowLevelLimit=0.0, Reservoir=None, *args, **kw_args):
+        """Initialises a new 'TargetLevelSchedule' instance.
 
         @param highLevelLimit: High target level limit, above which the reservoir operation will be penalized 
         @param lowLevelLimit: Low target level limit, below which the reservoir operation will be penalized 
@@ -36,7 +36,14 @@ class TargetLevelSchedule(Curve):
         self._Reservoir = None
         self.Reservoir = Reservoir
 
-        super(TargetLevelSchedule, self).__init__(**kw_args)
+        super(TargetLevelSchedule, self).__init__(*args, **kw_args)
+
+    _attrs = ["highLevelLimit", "lowLevelLimit"]
+    _attr_types = {"highLevelLimit": float, "lowLevelLimit": float}
+    _defaults = {"highLevelLimit": 0.0, "lowLevelLimit": 0.0}
+    _enums = {}
+    _refs = ["Reservoir"]
+    _many_refs = []
 
     def getReservoir(self):
         """A reservoir may have a water level target schedule.

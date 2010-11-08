@@ -20,8 +20,8 @@ class CustomerAccount(Document):
     """Assignment of a group of products and services purchased by the Customer through a CustomerAgreement, used as a mechanism for customer billing and payment. It contains common information from the various types of CustomerAgreements to create billings (invoices) for a Customer and receive payment.
     """
 
-    def __init__(self, PaymentTransactions=None, CustomerAgreements=None, **kw_args):
-        """Initializes a new 'CustomerAccount' instance.
+    def __init__(self, PaymentTransactions=None, CustomerAgreements=None, *args, **kw_args):
+        """Initialises a new 'CustomerAccount' instance.
 
         @param PaymentTransactions: All payment transactions for this customer account.
         @param CustomerAgreements: All agreements for this customer account.
@@ -32,7 +32,14 @@ class CustomerAccount(Document):
         self._CustomerAgreements = []
         self.CustomerAgreements = [] if CustomerAgreements is None else CustomerAgreements
 
-        super(CustomerAccount, self).__init__(**kw_args)
+        super(CustomerAccount, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["PaymentTransactions", "CustomerAgreements"]
+    _many_refs = ["PaymentTransactions", "CustomerAgreements"]
 
     def getPaymentTransactions(self):
         """All payment transactions for this customer account.

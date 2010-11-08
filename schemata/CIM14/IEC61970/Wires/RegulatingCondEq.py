@@ -20,8 +20,8 @@ class RegulatingCondEq(ConductingEquipment):
     """A type of conducting equipment that can regulate a quanity (i.e. voltage or flow) at a specific point in the network.
     """
 
-    def __init__(self, Controls=None, RegulatingControl=None, **kw_args):
-        """Initializes a new 'RegulatingCondEq' instance.
+    def __init__(self, Controls=None, RegulatingControl=None, *args, **kw_args):
+        """Initialises a new 'RegulatingCondEq' instance.
 
         @param Controls: The controller outputs used to actually govern a regulating device, e.g. the magnetization of a synchronous machine or capacitor bank breaker actuator.
         @param RegulatingControl: The regulating control scheme in which this equipment participates.
@@ -32,7 +32,14 @@ class RegulatingCondEq(ConductingEquipment):
         self._RegulatingControl = None
         self.RegulatingControl = RegulatingControl
 
-        super(RegulatingCondEq, self).__init__(**kw_args)
+        super(RegulatingCondEq, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["Controls", "RegulatingControl"]
+    _many_refs = ["Controls"]
 
     def getControls(self):
         """The controller outputs used to actually govern a regulating device, e.g. the magnetization of a synchronous machine or capacitor bank breaker actuator.

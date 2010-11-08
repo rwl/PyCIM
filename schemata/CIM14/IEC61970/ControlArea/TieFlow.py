@@ -20,8 +20,8 @@ class TieFlow(Element):
     """A flow specification in terms of location and direction for a control area.
     """
 
-    def __init__(self, positiveFlowIn=False, ControlArea=None, AltTieMeas=None, Terminal=None, **kw_args):
-        """Initializes a new 'TieFlow' instance.
+    def __init__(self, positiveFlowIn=False, ControlArea=None, AltTieMeas=None, Terminal=None, *args, **kw_args):
+        """Initialises a new 'TieFlow' instance.
 
         @param positiveFlowIn: The flow is positive into the terminal.  A flow is positive if it is an import into the control area. 
         @param ControlArea: The control area of the tie flows.
@@ -40,7 +40,14 @@ class TieFlow(Element):
         self._Terminal = None
         self.Terminal = Terminal
 
-        super(TieFlow, self).__init__(**kw_args)
+        super(TieFlow, self).__init__(*args, **kw_args)
+
+    _attrs = ["positiveFlowIn"]
+    _attr_types = {"positiveFlowIn": bool}
+    _defaults = {"positiveFlowIn": False}
+    _enums = {}
+    _refs = ["ControlArea", "AltTieMeas", "Terminal"]
+    _many_refs = ["AltTieMeas"]
 
     def getControlArea(self):
         """The control area of the tie flows.

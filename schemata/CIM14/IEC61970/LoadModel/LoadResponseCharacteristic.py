@@ -20,8 +20,8 @@ class LoadResponseCharacteristic(IdentifiedObject):
     """Models the characteristic response of the load demand due to to changes in system conditions such as voltage and frequency. This is not related to demand response.  If LoadResponseCharacteristic.exponentModel is True, the voltage exponents are specified and used as to calculate:  Active power component = Pnominal * (Voltage/cim:BaseVoltage.nominalVoltage) ** cim:LoadResponseCharacteristic.pVoltageExponent  Reactive power component = Qnominal * (Voltage/cim:BaseVoltage.nominalVoltage)** cim:LoadResponseCharacteristic.qVoltageExponent  Where  * means 'multiply' and ** is 'raised to power of'.
     """
 
-    def __init__(self, pFrequencyExponent=0.0, qFrequencyExponent=0.0, pConstantPower=0.0, pConstantCurrent=0.0, pVoltageExponent=0.0, pConstantImpedance=0.0, qConstantImpedance=0.0, qConstantPower=0.0, qVoltageExponent=0.0, exponentModel=False, qConstantCurrent=0.0, EnergyConsumer=None, **kw_args):
-        """Initializes a new 'LoadResponseCharacteristic' instance.
+    def __init__(self, pFrequencyExponent=0.0, qFrequencyExponent=0.0, pConstantPower=0.0, pConstantCurrent=0.0, pVoltageExponent=0.0, pConstantImpedance=0.0, qConstantImpedance=0.0, qConstantPower=0.0, qVoltageExponent=0.0, exponentModel=False, qConstantCurrent=0.0, EnergyConsumer=None, *args, **kw_args):
+        """Initialises a new 'LoadResponseCharacteristic' instance.
 
         @param pFrequencyExponent: Exponent of per unit frequency effecting active power 
         @param qFrequencyExponent: Exponent of per unit frequency effecting reactive power 
@@ -72,7 +72,14 @@ class LoadResponseCharacteristic(IdentifiedObject):
         self._EnergyConsumer = []
         self.EnergyConsumer = [] if EnergyConsumer is None else EnergyConsumer
 
-        super(LoadResponseCharacteristic, self).__init__(**kw_args)
+        super(LoadResponseCharacteristic, self).__init__(*args, **kw_args)
+
+    _attrs = ["pFrequencyExponent", "qFrequencyExponent", "pConstantPower", "pConstantCurrent", "pVoltageExponent", "pConstantImpedance", "qConstantImpedance", "qConstantPower", "qVoltageExponent", "exponentModel", "qConstantCurrent"]
+    _attr_types = {"pFrequencyExponent": float, "qFrequencyExponent": float, "pConstantPower": float, "pConstantCurrent": float, "pVoltageExponent": float, "pConstantImpedance": float, "qConstantImpedance": float, "qConstantPower": float, "qVoltageExponent": float, "exponentModel": bool, "qConstantCurrent": float}
+    _defaults = {"pFrequencyExponent": 0.0, "qFrequencyExponent": 0.0, "pConstantPower": 0.0, "pConstantCurrent": 0.0, "pVoltageExponent": 0.0, "pConstantImpedance": 0.0, "qConstantImpedance": 0.0, "qConstantPower": 0.0, "qVoltageExponent": 0.0, "exponentModel": False, "qConstantCurrent": 0.0}
+    _enums = {}
+    _refs = ["EnergyConsumer"]
+    _many_refs = ["EnergyConsumer"]
 
     def getEnergyConsumer(self):
         """The set of loads that have the response characteristics.

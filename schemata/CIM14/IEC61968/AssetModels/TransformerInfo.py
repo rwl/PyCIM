@@ -20,8 +20,8 @@ class TransformerInfo(IdentifiedObject):
     """Set of transformer data, from an equipment library.
     """
 
-    def __init__(self, WindingInfos=None, Transformers=None, **kw_args):
-        """Initializes a new 'TransformerInfo' instance.
+    def __init__(self, WindingInfos=None, Transformers=None, *args, **kw_args):
+        """Initialises a new 'TransformerInfo' instance.
 
         @param WindingInfos: Data for all the windings described by this transformer data.
         @param Transformers: All transformers that can be described with this transformer data.
@@ -32,7 +32,14 @@ class TransformerInfo(IdentifiedObject):
         self._Transformers = []
         self.Transformers = [] if Transformers is None else Transformers
 
-        super(TransformerInfo, self).__init__(**kw_args)
+        super(TransformerInfo, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["WindingInfos", "Transformers"]
+    _many_refs = ["WindingInfos", "Transformers"]
 
     def getWindingInfos(self):
         """Data for all the windings described by this transformer data.

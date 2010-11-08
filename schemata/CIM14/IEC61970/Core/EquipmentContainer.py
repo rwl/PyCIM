@@ -20,15 +20,22 @@ class EquipmentContainer(ConnectivityNodeContainer):
     """A modeling construct to provide a root class for containing equipment.
     """
 
-    def __init__(self, Equipments=None, **kw_args):
-        """Initializes a new 'EquipmentContainer' instance.
+    def __init__(self, Equipments=None, *args, **kw_args):
+        """Initialises a new 'EquipmentContainer' instance.
 
         @param Equipments: The association is used in the naming hierarchy.
         """
         self._Equipments = []
         self.Equipments = [] if Equipments is None else Equipments
 
-        super(EquipmentContainer, self).__init__(**kw_args)
+        super(EquipmentContainer, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["Equipments"]
+    _many_refs = ["Equipments"]
 
     def getEquipments(self):
         """The association is used in the naming hierarchy.

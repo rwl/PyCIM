@@ -20,8 +20,8 @@ class Tariff(Document):
     """Document, approved by the responsible regulatory agency, listing the terms and conditions, including a schedule of prices, under which utility services will be provided. It has a unique number within the state or province. For Rate Schedules it is frequently allocated by the affiliated Public Utilities Commission.
     """
 
-    def __init__(self, startDate='', endDate='', TariffProfiles=None, PricingStructures=None, **kw_args):
-        """Initializes a new 'Tariff' instance.
+    def __init__(self, startDate='', endDate='', TariffProfiles=None, PricingStructures=None, *args, **kw_args):
+        """Initialises a new 'Tariff' instance.
 
         @param startDate: Date tariff was activated. 
         @param endDate: (if tariff became inactive) Date tariff was terminated. 
@@ -40,7 +40,14 @@ class Tariff(Document):
         self._PricingStructures = []
         self.PricingStructures = [] if PricingStructures is None else PricingStructures
 
-        super(Tariff, self).__init__(**kw_args)
+        super(Tariff, self).__init__(*args, **kw_args)
+
+    _attrs = ["startDate", "endDate"]
+    _attr_types = {"startDate": str, "endDate": str}
+    _defaults = {"startDate": '', "endDate": ''}
+    _enums = {}
+    _refs = ["TariffProfiles", "PricingStructures"]
+    _many_refs = ["TariffProfiles", "PricingStructures"]
 
     def getTariffProfiles(self):
         """All tariff profiles using this tariff.

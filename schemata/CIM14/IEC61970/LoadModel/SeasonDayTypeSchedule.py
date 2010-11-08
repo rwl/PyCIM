@@ -20,8 +20,8 @@ class SeasonDayTypeSchedule(RegularIntervalSchedule):
     """The schedule specialize RegularIntervalSchedule with type curve data for a specific type of day and season. This means that curves of this type cover a 24 hour period.
     """
 
-    def __init__(self, Season=None, DayType=None, **kw_args):
-        """Initializes a new 'SeasonDayTypeSchedule' instance.
+    def __init__(self, Season=None, DayType=None, *args, **kw_args):
+        """Initialises a new 'SeasonDayTypeSchedule' instance.
 
         @param Season: Season for the Schedule.
         @param DayType: DayType for the Schedule.
@@ -32,7 +32,14 @@ class SeasonDayTypeSchedule(RegularIntervalSchedule):
         self._DayType = None
         self.DayType = DayType
 
-        super(SeasonDayTypeSchedule, self).__init__(**kw_args)
+        super(SeasonDayTypeSchedule, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["Season", "DayType"]
+    _many_refs = []
 
     def getSeason(self):
         """Season for the Schedule.

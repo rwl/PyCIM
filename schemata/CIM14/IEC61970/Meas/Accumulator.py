@@ -20,8 +20,8 @@ class Accumulator(Measurement):
     """Accumulator represents a accumulated (counted) Measurement, e.g. an energy value.
     """
 
-    def __init__(self, maxValue=0, LimitSets=None, AccumulatorValues=None, **kw_args):
-        """Initializes a new 'Accumulator' instance.
+    def __init__(self, maxValue=0, LimitSets=None, AccumulatorValues=None, *args, **kw_args):
+        """Initialises a new 'Accumulator' instance.
 
         @param maxValue: Normal value range maximum for any of the MeasurementValue.values. Used for scaling, e.g. in bar graphs or of telemetered raw values. 
         @param LimitSets: A measurement may have zero or more limit ranges defined for it.
@@ -36,7 +36,14 @@ class Accumulator(Measurement):
         self._AccumulatorValues = []
         self.AccumulatorValues = [] if AccumulatorValues is None else AccumulatorValues
 
-        super(Accumulator, self).__init__(**kw_args)
+        super(Accumulator, self).__init__(*args, **kw_args)
+
+    _attrs = ["maxValue"]
+    _attr_types = {"maxValue": int}
+    _defaults = {"maxValue": 0}
+    _enums = {}
+    _refs = ["LimitSets", "AccumulatorValues"]
+    _many_refs = ["LimitSets", "AccumulatorValues"]
 
     def getLimitSets(self):
         """A measurement may have zero or more limit ranges defined for it.

@@ -20,9 +20,16 @@ class GenAsync(AsynchronousMachine):
     """An asynchronous (induction) generator with no external connection to the rotor windings, e.g., squirrel-cage induction machine.
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'GenAsync' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'GenAsync' instance.
 
         """
-        super(GenAsync, self).__init__(**kw_args)
+        super(GenAsync, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

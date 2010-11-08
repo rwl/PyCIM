@@ -20,15 +20,22 @@ class NonConformLoad(EnergyConsumer):
     """NonConformLoad represent loads that do not follow a daily load change pattern and changes are not correlated with the daily load change pattern.
     """
 
-    def __init__(self, LoadGroup=None, **kw_args):
-        """Initializes a new 'NonConformLoad' instance.
+    def __init__(self, LoadGroup=None, *args, **kw_args):
+        """Initialises a new 'NonConformLoad' instance.
 
         @param LoadGroup: Group of this ConformLoad.
         """
         self._LoadGroup = None
         self.LoadGroup = LoadGroup
 
-        super(NonConformLoad, self).__init__(**kw_args)
+        super(NonConformLoad, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["LoadGroup"]
+    _many_refs = []
 
     def getLoadGroup(self):
         """Group of this ConformLoad.

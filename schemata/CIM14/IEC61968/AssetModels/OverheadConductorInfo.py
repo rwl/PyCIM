@@ -20,8 +20,8 @@ class OverheadConductorInfo(ConductorInfo):
     """Overhead conductor data.
     """
 
-    def __init__(self, neutralInsulationThickness=0.0, phaseConductorSpacing=0.0, phaseConductorCount=0, **kw_args):
-        """Initializes a new 'OverheadConductorInfo' instance.
+    def __init__(self, neutralInsulationThickness=0.0, phaseConductorSpacing=0.0, phaseConductorCount=0, *args, **kw_args):
+        """Initialises a new 'OverheadConductorInfo' instance.
 
         @param neutralInsulationThickness: (if applicable) Insulation thickness of the neutral conductor. 
         @param phaseConductorSpacing: Distance between conductor strands in a symmetrical bundle. 
@@ -36,5 +36,12 @@ class OverheadConductorInfo(ConductorInfo):
         #: Number of conductor strands in the symmetrical bundle (1-12).
         self.phaseConductorCount = phaseConductorCount
 
-        super(OverheadConductorInfo, self).__init__(**kw_args)
+        super(OverheadConductorInfo, self).__init__(*args, **kw_args)
+
+    _attrs = ["neutralInsulationThickness", "phaseConductorSpacing", "phaseConductorCount"]
+    _attr_types = {"neutralInsulationThickness": float, "phaseConductorSpacing": float, "phaseConductorCount": int}
+    _defaults = {"neutralInsulationThickness": 0.0, "phaseConductorSpacing": 0.0, "phaseConductorCount": 0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

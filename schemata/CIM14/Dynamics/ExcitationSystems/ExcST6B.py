@@ -20,8 +20,8 @@ class ExcST6B(ExcitationSystem):
     """IEEE (2005) ST6B Model  The AVR consists of a PI voltage regulator with an inner loop field voltage regulator and pre-control. The field voltage regulator implements a proportional control. The pre-control and the delay in the feedback circuit increase the dynamic response.
     """
 
-    def __init__(self, tr=0.0, ilr=0.0, vrmin=0.0, vmult=0.0, vrmax=0.0, oelin=0.0, klr=0.0, kg=0.0, kpa=0.0, vamax=0.0, ts=0.0, kcl=0.0, tg=0.0, vamin=0.0, kia=0.0, kff=0.0, km=0.0, **kw_args):
-        """Initializes a new 'ExcST6B' instance.
+    def __init__(self, tr=0.0, ilr=0.0, vrmin=0.0, vmult=0.0, vrmax=0.0, oelin=0.0, klr=0.0, kg=0.0, kpa=0.0, vamax=0.0, ts=0.0, kcl=0.0, tg=0.0, vamin=0.0, kia=0.0, kff=0.0, km=0.0, *args, **kw_args):
+        """Initialises a new 'ExcST6B' instance.
 
         @param tr: Filter time constant (&gt;= 0.) 
         @param ilr: Field current limiter setpoint (&gt; 0.) 
@@ -92,5 +92,12 @@ class ExcST6B(ExcitationSystem):
         #: Main gain
         self.km = km
 
-        super(ExcST6B, self).__init__(**kw_args)
+        super(ExcST6B, self).__init__(*args, **kw_args)
+
+    _attrs = ["tr", "ilr", "vrmin", "vmult", "vrmax", "oelin", "klr", "kg", "kpa", "vamax", "ts", "kcl", "tg", "vamin", "kia", "kff", "km"]
+    _attr_types = {"tr": float, "ilr": float, "vrmin": float, "vmult": float, "vrmax": float, "oelin": float, "klr": float, "kg": float, "kpa": float, "vamax": float, "ts": float, "kcl": float, "tg": float, "vamin": float, "kia": float, "kff": float, "km": float}
+    _defaults = {"tr": 0.0, "ilr": 0.0, "vrmin": 0.0, "vmult": 0.0, "vrmax": 0.0, "oelin": 0.0, "klr": 0.0, "kg": 0.0, "kpa": 0.0, "vamax": 0.0, "ts": 0.0, "kcl": 0.0, "tg": 0.0, "vamin": 0.0, "kia": 0.0, "kff": 0.0, "km": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

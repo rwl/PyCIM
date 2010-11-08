@@ -20,8 +20,8 @@ class ExcST2A(ExcitationSystem):
     """IEEE (1992/2005) ST2A Model  Some static systems utilize both current and voltage sources (generator terminal quantities) to comprise the power source. These compound-source rectifier excitation systems are designated Type ST2A. The regulator controls the exciter output through controlled saturation of the power transformer components.
     """
 
-    def __init__(self, te=0.0, ka=0.0, tb=0.0, tf=0.0, kf=0.0, ke=0.0, tr=0.0, tc=0.0, ta=0.0, kc=0.0, ki=0.0, kp=0.0, uelin=0.0, vrmax=0.0, efdmax=0.0, vrmin=0.0, **kw_args):
-        """Initializes a new 'ExcST2A' instance.
+    def __init__(self, te=0.0, ka=0.0, tb=0.0, tf=0.0, kf=0.0, ke=0.0, tr=0.0, tc=0.0, ta=0.0, kc=0.0, ki=0.0, kp=0.0, uelin=0.0, vrmax=0.0, efdmax=0.0, vrmin=0.0, *args, **kw_args):
+        """Initialises a new 'ExcST2A' instance.
 
         @param te: Transformer saturation control time constant (&gt; 0.) 
         @param ka: Gain (&gt; 0.) 
@@ -88,5 +88,12 @@ class ExcST2A(ExcitationSystem):
         #: Minimum controller output (&lt; 0.)
         self.vrmin = vrmin
 
-        super(ExcST2A, self).__init__(**kw_args)
+        super(ExcST2A, self).__init__(*args, **kw_args)
+
+    _attrs = ["te", "ka", "tb", "tf", "kf", "ke", "tr", "tc", "ta", "kc", "ki", "kp", "uelin", "vrmax", "efdmax", "vrmin"]
+    _attr_types = {"te": float, "ka": float, "tb": float, "tf": float, "kf": float, "ke": float, "tr": float, "tc": float, "ta": float, "kc": float, "ki": float, "kp": float, "uelin": float, "vrmax": float, "efdmax": float, "vrmin": float}
+    _defaults = {"te": 0.0, "ka": 0.0, "tb": 0.0, "tf": 0.0, "kf": 0.0, "ke": 0.0, "tr": 0.0, "tc": 0.0, "ta": 0.0, "kc": 0.0, "ki": 0.0, "kp": 0.0, "uelin": 0.0, "vrmax": 0.0, "efdmax": 0.0, "vrmin": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

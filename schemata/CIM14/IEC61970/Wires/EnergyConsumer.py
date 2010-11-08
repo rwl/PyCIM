@@ -20,8 +20,8 @@ class EnergyConsumer(ConductingEquipment):
     """Generic user of energy - a  point of consumption on the power system model
     """
 
-    def __init__(self, customerCount=0, qfixedPct=0.0, pfixed=0.0, pfixedPct=0.0, qfixed=0.0, aggregateLoad0=None, PowerCutZone=None, ServiceDeliveryPoints=None, LoadResponse=None, **kw_args):
-        """Initializes a new 'EnergyConsumer' instance.
+    def __init__(self, customerCount=0, qfixedPct=0.0, pfixed=0.0, pfixedPct=0.0, qfixed=0.0, aggregateLoad0=None, PowerCutZone=None, ServiceDeliveryPoints=None, LoadResponse=None, *args, **kw_args):
+        """Initialises a new 'EnergyConsumer' instance.
 
         @param customerCount: Number of individual customers represented by this Demand 
         @param qfixedPct: Fixed reactive power as per cent of load group fixed reactive power. 
@@ -60,7 +60,14 @@ class EnergyConsumer(ConductingEquipment):
         self._LoadResponse = None
         self.LoadResponse = LoadResponse
 
-        super(EnergyConsumer, self).__init__(**kw_args)
+        super(EnergyConsumer, self).__init__(*args, **kw_args)
+
+    _attrs = ["customerCount", "qfixedPct", "pfixed", "pfixedPct", "qfixed"]
+    _attr_types = {"customerCount": int, "qfixedPct": float, "pfixed": float, "pfixedPct": float, "qfixed": float}
+    _defaults = {"customerCount": 0, "qfixedPct": 0.0, "pfixed": 0.0, "pfixedPct": 0.0, "qfixed": 0.0}
+    _enums = {}
+    _refs = ["aggregateLoad0", "PowerCutZone", "ServiceDeliveryPoints", "LoadResponse"]
+    _many_refs = ["aggregateLoad0", "ServiceDeliveryPoints"]
 
     def getaggregateLoad0(self):
         

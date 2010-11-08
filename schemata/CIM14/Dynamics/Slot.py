@@ -18,8 +18,8 @@ from CIM14.IEC61970.Core.IdentifiedObject import IdentifiedObject
 
 class Slot(IdentifiedObject):
 
-    def __init__(self, blockType0=None, slotReference0=None, slotOutput0=None, connectionFrame0=None, slotInput0=None, **kw_args):
-        """Initializes a new 'Slot' instance.
+    def __init__(self, blockType0=None, slotReference0=None, slotOutput0=None, connectionFrame0=None, slotInput0=None, *args, **kw_args):
+        """Initialises a new 'Slot' instance.
 
         @param blockType0:
         @param slotReference0:
@@ -42,7 +42,14 @@ class Slot(IdentifiedObject):
         self._slotInput0 = []
         self.slotInput0 = [] if slotInput0 is None else slotInput0
 
-        super(Slot, self).__init__(**kw_args)
+        super(Slot, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["blockType0", "slotReference0", "slotOutput0", "connectionFrame0", "slotInput0"]
+    _many_refs = ["slotReference0", "slotOutput0", "slotInput0"]
 
     def getblockType0(self):
         

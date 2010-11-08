@@ -20,8 +20,8 @@ class ExcAC7B(ExcitationSystem):
     """IEEE (2005) AC7B Model  These excitation systems consist of an ac alternator with either stationary or rotating rectifiers to produce the dc field requirements. Upgrades to earlier ac excitation systems, which replace only the controls but retain the ac alternator and diode rectifier bridge, have resulted in this new model. Some of the features of this excitation system include a high bandwidth inner loop regulating generator field voltage or exciter current (<i>KF</i>2, <i>KF</i>1), a fast exciter current limit, <i>VFEMAX</i>, to protect the field of the ac alternator, and the PID generator voltage regulator (AVR). An alternative rate feedback loop (<i>KF</i>, <i>TF</i>) is provided for stabilization if the AVR does not include a derivative term. If a PSS control is supplied, the Type PSS2B or PSS3B models are appropriate.
     """
 
-    def __init__(self, kir=0.0, kpr=0.0, vfemax=0.0, te=0.0, vemin=0.0, ke=0.0, kp=0.0, kd=0.0, kdr=0.0, kf3=0.0, e1=0.0, tdr=0.0, se2=0.0, kf1=0.0, e2=0.0, kc=0.0, vamin=0.0, se1=0.0, vrmin=0.0, tf=0.0, vrmax=0.0, kf2=0.0, kl=0.0, kpa=0.0, kia=0.0, tr=0.0, vamax=0.0, **kw_args):
-        """Initializes a new 'ExcAC7B' instance.
+    def __init__(self, kir=0.0, kpr=0.0, vfemax=0.0, te=0.0, vemin=0.0, ke=0.0, kp=0.0, kd=0.0, kdr=0.0, kf3=0.0, e1=0.0, tdr=0.0, se2=0.0, kf1=0.0, e2=0.0, kc=0.0, vamin=0.0, se1=0.0, vrmin=0.0, tf=0.0, vrmax=0.0, kf2=0.0, kl=0.0, kpa=0.0, kia=0.0, tr=0.0, vamax=0.0, *args, **kw_args):
+        """Initialises a new 'ExcAC7B' instance.
 
         @param kir: Regulator integral gain (&gt;= 0.) 
         @param kpr: Regulator proportional gain (&gt; 0. if kir = 0.) 
@@ -132,5 +132,12 @@ class ExcAC7B(ExcitationSystem):
         #: Maximum amplifier output (&gt; 0.)
         self.vamax = vamax
 
-        super(ExcAC7B, self).__init__(**kw_args)
+        super(ExcAC7B, self).__init__(*args, **kw_args)
+
+    _attrs = ["kir", "kpr", "vfemax", "te", "vemin", "ke", "kp", "kd", "kdr", "kf3", "e1", "tdr", "se2", "kf1", "e2", "kc", "vamin", "se1", "vrmin", "tf", "vrmax", "kf2", "kl", "kpa", "kia", "tr", "vamax"]
+    _attr_types = {"kir": float, "kpr": float, "vfemax": float, "te": float, "vemin": float, "ke": float, "kp": float, "kd": float, "kdr": float, "kf3": float, "e1": float, "tdr": float, "se2": float, "kf1": float, "e2": float, "kc": float, "vamin": float, "se1": float, "vrmin": float, "tf": float, "vrmax": float, "kf2": float, "kl": float, "kpa": float, "kia": float, "tr": float, "vamax": float}
+    _defaults = {"kir": 0.0, "kpr": 0.0, "vfemax": 0.0, "te": 0.0, "vemin": 0.0, "ke": 0.0, "kp": 0.0, "kd": 0.0, "kdr": 0.0, "kf3": 0.0, "e1": 0.0, "tdr": 0.0, "se2": 0.0, "kf1": 0.0, "e2": 0.0, "kc": 0.0, "vamin": 0.0, "se1": 0.0, "vrmin": 0.0, "tf": 0.0, "vrmax": 0.0, "kf2": 0.0, "kl": 0.0, "kpa": 0.0, "kia": 0.0, "tr": 0.0, "vamax": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

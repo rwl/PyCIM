@@ -20,9 +20,16 @@ class WindGeneratingUnit(GeneratingUnit):
     """A wind driven generating unit.
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'WindGeneratingUnit' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'WindGeneratingUnit' instance.
 
         """
-        super(WindGeneratingUnit, self).__init__(**kw_args)
+        super(WindGeneratingUnit, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

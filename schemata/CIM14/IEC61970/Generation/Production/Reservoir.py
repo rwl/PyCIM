@@ -20,8 +20,8 @@ class Reservoir(PowerSystemResource):
     """A water storage facility within a hydro system, including: ponds, lakes, lagoons, and rivers. The storage is usually behind some type of dam.
     """
 
-    def __init__(self, spillWayGateType='', fullSupplyLevel=0.0, spillTravelDelay=0.0, spillwayCrestLength=0.0, grossCapacity=0.0, riverOutletWorks='', spillwayCapacity=0.0, spillwayCrestLevel=0.0, normalMinOperateLevel=0.0, energyStorageRating=0.0, activeStorageCapacity=0.0, LevelVsVolumeCurves=None, InflowForecasts=None, TargetLevelSchedule=None, HydroPowerPlants=None, UpstreamFromHydroPowerPlants=None, SpillsFromReservoir=None, SpillsIntoReservoirs=None, **kw_args):
-        """Initializes a new 'Reservoir' instance.
+    def __init__(self, spillWayGateType="", fullSupplyLevel=0.0, spillTravelDelay=0.0, spillwayCrestLength=0.0, grossCapacity=0.0, riverOutletWorks='', spillwayCapacity=0.0, spillwayCrestLevel=0.0, normalMinOperateLevel=0.0, energyStorageRating=0.0, activeStorageCapacity=0.0, LevelVsVolumeCurves=None, InflowForecasts=None, TargetLevelSchedule=None, HydroPowerPlants=None, UpstreamFromHydroPowerPlants=None, SpillsFromReservoir=None, SpillsIntoReservoirs=None, *args, **kw_args):
+        """Initialises a new 'Reservoir' instance.
 
         @param spillWayGateType: Type of spillway gate, including parameters 
         @param fullSupplyLevel: Full supply level, above which water will spill. This can be the spillway crest level or the top of closed gates. 
@@ -96,7 +96,14 @@ class Reservoir(PowerSystemResource):
         self._SpillsIntoReservoirs = []
         self.SpillsIntoReservoirs = [] if SpillsIntoReservoirs is None else SpillsIntoReservoirs
 
-        super(Reservoir, self).__init__(**kw_args)
+        super(Reservoir, self).__init__(*args, **kw_args)
+
+    _attrs = ["spillWayGateType", "fullSupplyLevel", "spillTravelDelay", "spillwayCrestLength", "grossCapacity", "riverOutletWorks", "spillwayCapacity", "spillwayCrestLevel", "normalMinOperateLevel", "energyStorageRating", "activeStorageCapacity"]
+    _attr_types = {"spillWayGateType": str, "fullSupplyLevel": float, "spillTravelDelay": float, "spillwayCrestLength": float, "grossCapacity": float, "riverOutletWorks": str, "spillwayCapacity": float, "spillwayCrestLevel": float, "normalMinOperateLevel": float, "energyStorageRating": float, "activeStorageCapacity": float}
+    _defaults = {"spillWayGateType": "", "fullSupplyLevel": 0.0, "spillTravelDelay": 0.0, "spillwayCrestLength": 0.0, "grossCapacity": 0.0, "riverOutletWorks": '', "spillwayCapacity": 0.0, "spillwayCrestLevel": 0.0, "normalMinOperateLevel": 0.0, "energyStorageRating": 0.0, "activeStorageCapacity": 0.0}
+    _enums = {"spillWayGateType": "SpillwayGateType"}
+    _refs = ["LevelVsVolumeCurves", "InflowForecasts", "TargetLevelSchedule", "HydroPowerPlants", "UpstreamFromHydroPowerPlants", "SpillsFromReservoir", "SpillsIntoReservoirs"]
+    _many_refs = ["LevelVsVolumeCurves", "InflowForecasts", "HydroPowerPlants", "UpstreamFromHydroPowerPlants", "SpillsIntoReservoirs"]
 
     def getLevelVsVolumeCurves(self):
         """A reservoir may have a level versus volume relationship.

@@ -20,15 +20,22 @@ class HydroPumpOpSchedule(RegularIntervalSchedule):
     """The hydro pump's Operator-approved current operating schedule (or plan), typically produced with the aid of unit commitment type analyses.The unit's operating schedule status is typically given as: (0=unavailable)  (1=avilable to startup or shutdown)  (2=must pump)
     """
 
-    def __init__(self, HydroPump=None, **kw_args):
-        """Initializes a new 'HydroPumpOpSchedule' instance.
+    def __init__(self, HydroPump=None, *args, **kw_args):
+        """Initialises a new 'HydroPumpOpSchedule' instance.
 
         @param HydroPump: The hydro pump has a pumping schedule over time, indicating when pumping is to occur.
         """
         self._HydroPump = None
         self.HydroPump = HydroPump
 
-        super(HydroPumpOpSchedule, self).__init__(**kw_args)
+        super(HydroPumpOpSchedule, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["HydroPump"]
+    _many_refs = []
 
     def getHydroPump(self):
         """The hydro pump has a pumping schedule over time, indicating when pumping is to occur.

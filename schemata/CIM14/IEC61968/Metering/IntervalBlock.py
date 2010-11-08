@@ -20,8 +20,8 @@ class IntervalBlock(Element):
     """Time sequence of Readings of the same ReadingType. Contained IntervalReadings may need conversion through the application of an offset and a scalar defined in associated Pending.
     """
 
-    def __init__(self, MeterReading=None, Pending=None, ReadingType=None, IntervalReadings=None, **kw_args):
-        """Initializes a new 'IntervalBlock' instance.
+    def __init__(self, MeterReading=None, Pending=None, ReadingType=None, IntervalReadings=None, *args, **kw_args):
+        """Initialises a new 'IntervalBlock' instance.
 
         @param MeterReading: Meter reading containing this interval block.
         @param Pending: Pending conversion to apply to interval reading values contained by this block (after which the resulting reading type is different than the original because it reflects the conversion result).
@@ -40,7 +40,14 @@ class IntervalBlock(Element):
         self._IntervalReadings = []
         self.IntervalReadings = [] if IntervalReadings is None else IntervalReadings
 
-        super(IntervalBlock, self).__init__(**kw_args)
+        super(IntervalBlock, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["MeterReading", "Pending", "ReadingType", "IntervalReadings"]
+    _many_refs = ["IntervalReadings"]
 
     def getMeterReading(self):
         """Meter reading containing this interval block.

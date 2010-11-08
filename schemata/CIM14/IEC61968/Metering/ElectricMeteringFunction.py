@@ -20,8 +20,8 @@ class ElectricMeteringFunction(DeviceFunction):
     """Functionality performed by an electric meter.
     """
 
-    def __init__(self, billingMultiplierApplied=False, kWMultiplier=0, demandMultiplier=0.0, demandMultiplierApplied=False, transformerRatiosApplied=False, voltageRating=0.0, billingMultiplier=0.0, transformerVTRatio=0.0, kWhMultiplier=0, transformerCTRatio=0.0, currentRating=0.0, **kw_args):
-        """Initializes a new 'ElectricMeteringFunction' instance.
+    def __init__(self, billingMultiplierApplied=False, kWMultiplier=0, demandMultiplier=0.0, demandMultiplierApplied=False, transformerRatiosApplied=False, voltageRating=0.0, billingMultiplier=0.0, transformerVTRatio=0.0, kWhMultiplier=0, transformerCTRatio=0.0, currentRating=0.0, *args, **kw_args):
+        """Initialises a new 'ElectricMeteringFunction' instance.
 
         @param billingMultiplierApplied: True if the billingMultiplier ratio has already been applied to the associated quantities. 
         @param kWMultiplier: Meter kW (pulse) multiplier, used as a multiplier for a meter register reading to determine the actual amount of usage for which to bill a customer. 
@@ -68,5 +68,12 @@ class ElectricMeteringFunction(DeviceFunction):
         #: The current class of the meter. Typical current classes in North America are 10 A, 20 A, 100 A, 200 A, or 320 A.
         self.currentRating = currentRating
 
-        super(ElectricMeteringFunction, self).__init__(**kw_args)
+        super(ElectricMeteringFunction, self).__init__(*args, **kw_args)
+
+    _attrs = ["billingMultiplierApplied", "kWMultiplier", "demandMultiplier", "demandMultiplierApplied", "transformerRatiosApplied", "voltageRating", "billingMultiplier", "transformerVTRatio", "kWhMultiplier", "transformerCTRatio", "currentRating"]
+    _attr_types = {"billingMultiplierApplied": bool, "kWMultiplier": int, "demandMultiplier": float, "demandMultiplierApplied": bool, "transformerRatiosApplied": bool, "voltageRating": float, "billingMultiplier": float, "transformerVTRatio": float, "kWhMultiplier": int, "transformerCTRatio": float, "currentRating": float}
+    _defaults = {"billingMultiplierApplied": False, "kWMultiplier": 0, "demandMultiplier": 0.0, "demandMultiplierApplied": False, "transformerRatiosApplied": False, "voltageRating": 0.0, "billingMultiplier": 0.0, "transformerVTRatio": 0.0, "kWhMultiplier": 0, "transformerCTRatio": 0.0, "currentRating": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

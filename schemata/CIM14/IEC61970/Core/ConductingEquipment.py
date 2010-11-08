@@ -20,8 +20,8 @@ class ConductingEquipment(Equipment):
     """The parts of the power system that are designed to carry current or that are conductively connected therewith. ConductingEquipment is contained within an EquipmentContainer that may be a Substation, or a VoltageLevel or a Bay within a Substation.
     """
 
-    def __init__(self, phases='A', ClearanceTags=None, SvStatus=None, Terminals=None, BaseVoltage=None, ProtectionEquipments=None, **kw_args):
-        """Initializes a new 'ConductingEquipment' instance.
+    def __init__(self, phases="A", ClearanceTags=None, SvStatus=None, Terminals=None, BaseVoltage=None, ProtectionEquipments=None, *args, **kw_args):
+        """Initialises a new 'ConductingEquipment' instance.
 
         @param phases: Describes the phases carried by a conducting equipment. Values are: "A", "AC", "AN", "ABCN", "B", "C", "BN", "CN", "splitSecondary12N", "ABC", "splitSecondary2N", "N", "ABN", "BC", "BCN", "AB", "splitSecondary1N", "ACN"
         @param ClearanceTags: Conducting equipment may have multiple clearance tags for authorized field work
@@ -30,7 +30,7 @@ class ConductingEquipment(Equipment):
         @param BaseVoltage: Use association to ConductingEquipment only when there is no VoltageLevel container used.
         @param ProtectionEquipments: Protection equipment may be used to protect specific Conducting Equipment. Multiple equipment may be protected or monitored by multiple protection equipment.
         """
-        #: Describes the phases carried by a conducting equipment.Values are: "A", "AC", "AN", "ABCN", "B", "C", "BN", "CN", "splitSecondary12N", "ABC", "splitSecondary2N", "N", "ABN", "BC", "BCN", "AB", "splitSecondary1N", "ACN"
+        #: Describes the phases carried by a conducting equipment. Values are: "A", "AC", "AN", "ABCN", "B", "C", "BN", "CN", "splitSecondary12N", "ABC", "splitSecondary2N", "N", "ABN", "BC", "BCN", "AB", "splitSecondary1N", "ACN"
         self.phases = phases
 
         self._ClearanceTags = []
@@ -48,7 +48,14 @@ class ConductingEquipment(Equipment):
         self._ProtectionEquipments = []
         self.ProtectionEquipments = [] if ProtectionEquipments is None else ProtectionEquipments
 
-        super(ConductingEquipment, self).__init__(**kw_args)
+        super(ConductingEquipment, self).__init__(*args, **kw_args)
+
+    _attrs = ["phases"]
+    _attr_types = {"phases": str}
+    _defaults = {"phases": "A"}
+    _enums = {"phases": "PhaseCode"}
+    _refs = ["ClearanceTags", "SvStatus", "Terminals", "BaseVoltage", "ProtectionEquipments"]
+    _many_refs = ["ClearanceTags", "Terminals", "ProtectionEquipments"]
 
     def getClearanceTags(self):
         """Conducting equipment may have multiple clearance tags for authorized field work

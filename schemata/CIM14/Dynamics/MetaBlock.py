@@ -20,8 +20,8 @@ class MetaBlock(IdentifiedObject):
     """A block is a meta-data representation of a control block.   It has an external interface and an optinal internal interface. Blocks internals can be ommitted if the block is well understood by both exchange parties.    When well understood by both partice the block can be treated as a primitive block.   All dynamic models must be defined to the level of primtive blocks in order for the model to be consumed and used for dynamic simulation. Examples of primitive blocks include a well known IEEE exciter model, a summation block, or an integrator block.
     """
 
-    def __init__(self, blockKind='powerSystemStabilizer', internal=False, proprietary=False, primitive=False, MetaBlockReference=None, MetaBlockOutput=None, MetaBlockState=None, MetaBlockSignal=None, blockType0=None, MetaBlockInput=None, blockConstant0=None, Block=None, MetaBlockParameter=None, **kw_args):
-        """Initializes a new 'MetaBlock' instance.
+    def __init__(self, blockKind="powerSystemStabilizer", internal=False, proprietary=False, primitive=False, MetaBlockReference=None, MetaBlockOutput=None, MetaBlockState=None, MetaBlockSignal=None, blockType0=None, MetaBlockInput=None, blockConstant0=None, Block=None, MetaBlockParameter=None, *args, **kw_args):
+        """Initialises a new 'MetaBlock' instance.
 
         @param blockKind: Enumeration type: StandardControlBlock, Excitation System, ... Name used to distinguish which standard control block (Integration, Summation, ...)? Values are: "powerSystemStabilizer", "automaticVoltageControl", "turbine", "govenor", "dotDotDot", "energySource", "exciter"
         @param internal: This block is intended to be used only internally within other blocks.   An example would be a summation or integrator block. Such bocks are typically also primitive, though more complex internal blocks made up of other primitive controls could be built. 
@@ -37,7 +37,7 @@ class MetaBlock(IdentifiedObject):
         @param Block:
         @param MetaBlockParameter: Paramters belong to a block.
         """
-        #: Enumeration type: StandardControlBlock, Excitation System, ... Name used to distinguish which standard control block (Integration, Summation, ...)?Values are: "powerSystemStabilizer", "automaticVoltageControl", "turbine", "govenor", "dotDotDot", "energySource", "exciter"
+        #: Enumeration type: StandardControlBlock, Excitation System, ... Name used to distinguish which standard control block (Integration, Summation, ...)? Values are: "powerSystemStabilizer", "automaticVoltageControl", "turbine", "govenor", "dotDotDot", "energySource", "exciter"
         self.blockKind = blockKind
 
         #: This block is intended to be used only internally within other blocks.   An example would be a summation or integrator block. Such bocks are typically also primitive, though more complex internal blocks made up of other primitive controls could be built.
@@ -76,7 +76,14 @@ class MetaBlock(IdentifiedObject):
         self._MetaBlockParameter = []
         self.MetaBlockParameter = [] if MetaBlockParameter is None else MetaBlockParameter
 
-        super(MetaBlock, self).__init__(**kw_args)
+        super(MetaBlock, self).__init__(*args, **kw_args)
+
+    _attrs = ["blockKind", "internal", "proprietary", "primitive"]
+    _attr_types = {"blockKind": str, "internal": bool, "proprietary": bool, "primitive": bool}
+    _defaults = {"blockKind": "powerSystemStabilizer", "internal": False, "proprietary": False, "primitive": False}
+    _enums = {"blockKind": "BlockKind"}
+    _refs = ["MetaBlockReference", "MetaBlockOutput", "MetaBlockState", "MetaBlockSignal", "blockType0", "MetaBlockInput", "blockConstant0", "Block", "MetaBlockParameter"]
+    _many_refs = ["MetaBlockReference", "MetaBlockOutput", "MetaBlockState", "MetaBlockSignal", "MetaBlockInput", "blockConstant0", "Block", "MetaBlockParameter"]
 
     def getMetaBlockReference(self):
         

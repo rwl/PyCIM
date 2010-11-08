@@ -20,8 +20,8 @@ class CurrentRelay(ProtectionEquipment):
     """A device that checks current flow values in any direction or designated direction
     """
 
-    def __init__(self, currentLimit1=0.0, timeDelay3=0.0, timeDelay2=0.0, currentLimit3=0.0, currentLimit2=0.0, inverseTimeFlag=False, timeDelay1=0.0, **kw_args):
-        """Initializes a new 'CurrentRelay' instance.
+    def __init__(self, currentLimit1=0.0, timeDelay3=0.0, timeDelay2=0.0, currentLimit3=0.0, currentLimit2=0.0, inverseTimeFlag=False, timeDelay1=0.0, *args, **kw_args):
+        """Initialises a new 'CurrentRelay' instance.
 
         @param currentLimit1: Current limit #1 for inverse time pickup 
         @param timeDelay3: Inverse time delay #3 for current limit #3 
@@ -52,5 +52,12 @@ class CurrentRelay(ProtectionEquipment):
         #: Inverse time delay #1 for current limit #1
         self.timeDelay1 = timeDelay1
 
-        super(CurrentRelay, self).__init__(**kw_args)
+        super(CurrentRelay, self).__init__(*args, **kw_args)
+
+    _attrs = ["currentLimit1", "timeDelay3", "timeDelay2", "currentLimit3", "currentLimit2", "inverseTimeFlag", "timeDelay1"]
+    _attr_types = {"currentLimit1": float, "timeDelay3": float, "timeDelay2": float, "currentLimit3": float, "currentLimit2": float, "inverseTimeFlag": bool, "timeDelay1": float}
+    _defaults = {"currentLimit1": 0.0, "timeDelay3": 0.0, "timeDelay2": 0.0, "currentLimit3": 0.0, "currentLimit2": 0.0, "inverseTimeFlag": False, "timeDelay1": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

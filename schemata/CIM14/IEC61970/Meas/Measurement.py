@@ -20,8 +20,8 @@ class Measurement(IdentifiedObject):
     """A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement.  The PSR - Measurement association is intended to capture this use of Measurement and is included in the naming hierarchy based on EquipmentContainer. The naming hierarchy typically has Measurements as leafs, e.g. Substation-VoltageLevel-Bay-Switch-Measurement. Some Measurements represent quantities related to a particular sensor location in the network, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is not captured in the PSR - Measurement association. Instead it is captured by the Measurement - Terminal association that is used to define the sensing location in the network topology. The location is defined by the connection of the Terminal to ConductingEquipment.  Two possible paths exist: 1) Measurement-Terminal- ConnectivityNode-Terminal-ConductingEquipment 2) Measurement-Terminal-ConductingEquipment Alternative 2 is the only allowed use.  When the sensor location is needed both Measurement-PSR and Measurement-Terminal are used. The Measurement-Terminal association is never used alone.
     """
 
-    def __init__(self, measurementType='', PowerSystemResource=None, Locations=None, Terminal=None, Unit=None, tieToMeasurement0=None, Asset=None, Documents=None, **kw_args):
-        """Initializes a new 'Measurement' instance.
+    def __init__(self, measurementType='', PowerSystemResource=None, Locations=None, Terminal=None, Unit=None, tieToMeasurement0=None, Asset=None, Documents=None, *args, **kw_args):
+        """Initialises a new 'Measurement' instance.
 
         @param measurementType: Specifies the type of Measurement, e.g. IndoorTemperature, OutDoorTemperature, BusVoltage, GeneratorVoltage, LineFlow etc. 
         @param PowerSystemResource: The PowerSystemResource that contains the Measurement in the naming hierarchy
@@ -56,7 +56,14 @@ class Measurement(IdentifiedObject):
         self._Documents = []
         self.Documents = [] if Documents is None else Documents
 
-        super(Measurement, self).__init__(**kw_args)
+        super(Measurement, self).__init__(*args, **kw_args)
+
+    _attrs = ["measurementType"]
+    _attr_types = {"measurementType": str}
+    _defaults = {"measurementType": ''}
+    _enums = {}
+    _refs = ["PowerSystemResource", "Locations", "Terminal", "Unit", "tieToMeasurement0", "Asset", "Documents"]
+    _many_refs = ["Locations", "tieToMeasurement0", "Documents"]
 
     def getPowerSystemResource(self):
         """The PowerSystemResource that contains the Measurement in the naming hierarchy

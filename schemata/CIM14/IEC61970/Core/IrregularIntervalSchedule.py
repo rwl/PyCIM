@@ -20,15 +20,22 @@ class IrregularIntervalSchedule(BasicIntervalSchedule):
     """The schedule has TimePoints where the time between them varies.
     """
 
-    def __init__(self, TimePoints=None, **kw_args):
-        """Initializes a new 'IrregularIntervalSchedule' instance.
+    def __init__(self, TimePoints=None, *args, **kw_args):
+        """Initialises a new 'IrregularIntervalSchedule' instance.
 
         @param TimePoints: The point data values that define a curve
         """
         self._TimePoints = []
         self.TimePoints = [] if TimePoints is None else TimePoints
 
-        super(IrregularIntervalSchedule, self).__init__(**kw_args)
+        super(IrregularIntervalSchedule, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["TimePoints"]
+    _many_refs = ["TimePoints"]
 
     def getTimePoints(self):
         """The point data values that define a curve

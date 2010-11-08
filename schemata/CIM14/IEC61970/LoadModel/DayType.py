@@ -20,15 +20,22 @@ class DayType(IdentifiedObject):
     """Group of similar days, e.g., Mon/Tue/Wed, Thu/Fri, Sat/Sun, Holiday1, Holiday2
     """
 
-    def __init__(self, SeasonDayTypeSchedules=None, **kw_args):
-        """Initializes a new 'DayType' instance.
+    def __init__(self, SeasonDayTypeSchedules=None, *args, **kw_args):
+        """Initialises a new 'DayType' instance.
 
         @param SeasonDayTypeSchedules: Schedules that use this DayType.
         """
         self._SeasonDayTypeSchedules = []
         self.SeasonDayTypeSchedules = [] if SeasonDayTypeSchedules is None else SeasonDayTypeSchedules
 
-        super(DayType, self).__init__(**kw_args)
+        super(DayType, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["SeasonDayTypeSchedules"]
+    _many_refs = ["SeasonDayTypeSchedules"]
 
     def getSeasonDayTypeSchedules(self):
         """Schedules that use this DayType.

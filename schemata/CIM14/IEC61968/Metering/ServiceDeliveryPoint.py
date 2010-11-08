@@ -20,8 +20,8 @@ class ServiceDeliveryPoint(IdentifiedObject):
     """Logical point on the network where the ownership of the service changes hands. It is one of potentially many service points within a ServiceLocation, delivering service in accordance with a CustomerAgreement. Used at the place where a meter may be installed.
     """
 
-    def __init__(self, phaseCode='A', ratedPower=0.0, servicePriority='', checkBilling=False, grounded=False, serviceDeliveryRemark='', ratedCurrent=0.0, estimatedLoad=0.0, nominalServiceVoltage=0, ctptReference=0, PricingStructures=None, Transformer=None, SDPLocations=None, EndDeviceAssets=None, EnergyConsumer=None, ServiceLocation=None, CustomerAgreement=None, MeterReadings=None, ServiceSupplier=None, ServiceCategory=None, **kw_args):
-        """Initializes a new 'ServiceDeliveryPoint' instance.
+    def __init__(self, phaseCode="A", ratedPower=0.0, servicePriority='', checkBilling=False, grounded=False, serviceDeliveryRemark='', ratedCurrent=0.0, estimatedLoad=0.0, nominalServiceVoltage=0, ctptReference=0, PricingStructures=None, Transformer=None, SDPLocations=None, EndDeviceAssets=None, EnergyConsumer=None, ServiceLocation=None, CustomerAgreement=None, MeterReadings=None, ServiceSupplier=None, ServiceCategory=None, *args, **kw_args):
+        """Initialises a new 'ServiceDeliveryPoint' instance.
 
         @param phaseCode: Phase code. Number of wires and number of phases can be deduced from enumeration literal values. For example, ABCN is three-phase, four-wire. s12n (splitSecondary12N) is single-phase, three-wire. s1n and s2n are single-phase, two-wire. Values are: "A", "AC", "AN", "ABCN", "B", "C", "BN", "CN", "splitSecondary12N", "ABC", "splitSecondary2N", "N", "ABN", "BC", "BCN", "AB", "splitSecondary1N", "ACN"
         @param ratedPower: Power that this service delivery point is configured to deliver. 
@@ -44,7 +44,7 @@ class ServiceDeliveryPoint(IdentifiedObject):
         @param ServiceSupplier: ServiceSupplier (Utility) utilising this service delivery point to deliver a service.
         @param ServiceCategory: Service category delivered by this service delivery point.
         """
-        #: Phase code. Number of wires and number of phases can be deduced from enumeration literal values. For example, ABCN is three-phase, four-wire. s12n (splitSecondary12N) is single-phase, three-wire. s1n and s2n are single-phase, two-wire.Values are: "A", "AC", "AN", "ABCN", "B", "C", "BN", "CN", "splitSecondary12N", "ABC", "splitSecondary2N", "N", "ABN", "BC", "BCN", "AB", "splitSecondary1N", "ACN"
+        #: Phase code. Number of wires and number of phases can be deduced from enumeration literal values. For example, ABCN is three-phase, four-wire. s12n (splitSecondary12N) is single-phase, three-wire. s1n and s2n are single-phase, two-wire. Values are: "A", "AC", "AN", "ABCN", "B", "C", "BN", "CN", "splitSecondary12N", "ABC", "splitSecondary2N", "N", "ABN", "BC", "BCN", "AB", "splitSecondary1N", "ACN"
         self.phaseCode = phaseCode
 
         #: Power that this service delivery point is configured to deliver.
@@ -104,7 +104,14 @@ class ServiceDeliveryPoint(IdentifiedObject):
         self._ServiceCategory = None
         self.ServiceCategory = ServiceCategory
 
-        super(ServiceDeliveryPoint, self).__init__(**kw_args)
+        super(ServiceDeliveryPoint, self).__init__(*args, **kw_args)
+
+    _attrs = ["phaseCode", "ratedPower", "servicePriority", "checkBilling", "grounded", "serviceDeliveryRemark", "ratedCurrent", "estimatedLoad", "nominalServiceVoltage", "ctptReference"]
+    _attr_types = {"phaseCode": str, "ratedPower": float, "servicePriority": str, "checkBilling": bool, "grounded": bool, "serviceDeliveryRemark": str, "ratedCurrent": float, "estimatedLoad": float, "nominalServiceVoltage": int, "ctptReference": int}
+    _defaults = {"phaseCode": "A", "ratedPower": 0.0, "servicePriority": '', "checkBilling": False, "grounded": False, "serviceDeliveryRemark": '', "ratedCurrent": 0.0, "estimatedLoad": 0.0, "nominalServiceVoltage": 0, "ctptReference": 0}
+    _enums = {"phaseCode": "PhaseCode"}
+    _refs = ["PricingStructures", "Transformer", "SDPLocations", "EndDeviceAssets", "EnergyConsumer", "ServiceLocation", "CustomerAgreement", "MeterReadings", "ServiceSupplier", "ServiceCategory"]
+    _many_refs = ["PricingStructures", "SDPLocations", "EndDeviceAssets", "MeterReadings"]
 
     def getPricingStructures(self):
         """All pricing structures applicable to this service delivery point (with prepayment meter running as a stand-alone device, with no CustomerAgreement or Customer).

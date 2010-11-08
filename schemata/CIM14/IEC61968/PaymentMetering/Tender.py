@@ -20,8 +20,8 @@ class Tender(IdentifiedObject):
     """Tender is what is 'offered' by the customer towards making a payment and is often more than the required payment (hence the need for 'change'). The payment is thus that part of the Tender that goes towards settlement of a particular transaction. Tender is modelled as an aggregation of Cheque and Card. Both these tender types can exist in a single tender bid thus 'accountHolderName' must exist separately in each of Cheque and Card as each could have a different account holder name.
     """
 
-    def __init__(self, kind='cash', amount=0.0, change=0.0, Cheque=None, Receipt=None, Card=None, **kw_args):
-        """Initializes a new 'Tender' instance.
+    def __init__(self, kind="cash", amount=0.0, change=0.0, Cheque=None, Receipt=None, Card=None, *args, **kw_args):
+        """Initialises a new 'Tender' instance.
 
         @param kind: Kind of tender from customer. Values are: "cash", "unspecified", "card", "other", "cheque"
         @param amount: Amount tendered by customer. 
@@ -30,7 +30,7 @@ class Tender(IdentifiedObject):
         @param Receipt: Receipt that recorded this receiving of a payment in the form of tenders.
         @param Card: Card used to tender payment.
         """
-        #: Kind of tender from customer.Values are: "cash", "unspecified", "card", "other", "cheque"
+        #: Kind of tender from customer. Values are: "cash", "unspecified", "card", "other", "cheque"
         self.kind = kind
 
         #: Amount tendered by customer.
@@ -48,7 +48,14 @@ class Tender(IdentifiedObject):
         self._Card = None
         self.Card = Card
 
-        super(Tender, self).__init__(**kw_args)
+        super(Tender, self).__init__(*args, **kw_args)
+
+    _attrs = ["kind", "amount", "change"]
+    _attr_types = {"kind": str, "amount": float, "change": float}
+    _defaults = {"kind": "cash", "amount": 0.0, "change": 0.0}
+    _enums = {"kind": "TenderKind"}
+    _refs = ["Cheque", "Receipt", "Card"]
+    _many_refs = []
 
     def getCheque(self):
         """Cheque used to tender payment.

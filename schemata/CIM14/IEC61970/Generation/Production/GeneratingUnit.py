@@ -20,8 +20,8 @@ class GeneratingUnit(Equipment):
     """A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set.
     """
 
-    def __init__(self, genControlMode='setpoint', genOperatingMode='fixed', genControlSource='unavailable', startupTime=0.0, minimumOffTime=0.0, spinReserveRamp=0.0, controlDeadband=0.0, maxOperatingP=0.0, fastStartFlag=False, lowControlLimit=0.0, baseP=0.0, maxEconomicP=0.0, efficiency=0.0, shortPF=0.0, lowerRampRate=0.0, stepChange=0.0, penaltyFactor=0.0, longPF=0.0, ratedGrossMinP=0.0, ratedGrossMaxP=0.0, dispReserveFlag=False, variableCost=0.0, modelDetail=0, energyMinP=0.0, maximumAllowableSpinningReserve=0.0, fuelPriority=0, raiseRampRate=0.0, nominalP=0.0, normalPF=0.0, governorMPL=0.0, ratedNetMaxP=0.0, controlResponseRate=0.0, tieLinePF=0.0, governorSCD=0.0, controlPulseLow=0.0, highControlLimit=0.0, initialP=0.0, minEconomicP=0.0, autoCntrlMarginP=0.0, allocSpinResP=0.0, startupCost=0.0, minOperatingP=0.0, controlPulseHigh=0.0, SynchronousMachines=None, GrossToNetActivePowerCurves=None, GenUnitOpCostCurves=None, GenUnitOpSchedule=None, ControlAreaGeneratingUnit=None, **kw_args):
-        """Initializes a new 'GeneratingUnit' instance.
+    def __init__(self, genControlMode="setpoint", genOperatingMode="fixed", genControlSource="unavailable", startupTime=0.0, minimumOffTime=0.0, spinReserveRamp=0.0, controlDeadband=0.0, maxOperatingP=0.0, fastStartFlag=False, lowControlLimit=0.0, baseP=0.0, maxEconomicP=0.0, efficiency=0.0, shortPF=0.0, lowerRampRate=0.0, stepChange=0.0, penaltyFactor=0.0, longPF=0.0, ratedGrossMinP=0.0, ratedGrossMaxP=0.0, dispReserveFlag=False, variableCost=0.0, modelDetail=0, energyMinP=0.0, maximumAllowableSpinningReserve=0.0, fuelPriority=0, raiseRampRate=0.0, nominalP=0.0, normalPF=0.0, governorMPL=0.0, ratedNetMaxP=0.0, controlResponseRate=0.0, tieLinePF=0.0, governorSCD=0.0, controlPulseLow=0.0, highControlLimit=0.0, initialP=0.0, minEconomicP=0.0, autoCntrlMarginP=0.0, allocSpinResP=0.0, startupCost=0.0, minOperatingP=0.0, controlPulseHigh=0.0, SynchronousMachines=None, GrossToNetActivePowerCurves=None, GenUnitOpCostCurves=None, GenUnitOpSchedule=None, ControlAreaGeneratingUnit=None, *args, **kw_args):
+        """Initialises a new 'GeneratingUnit' instance.
 
         @param genControlMode: The unit control mode. Values are: "setpoint", "pulse"
         @param genOperatingMode: Operating mode for secondary control. Values are: "fixed", "EDC", "manual", "off", "MRN", "LFC", "AGC", "REG"
@@ -72,13 +72,13 @@ class GeneratingUnit(Equipment):
         @param GenUnitOpSchedule: A generating unit may have an operating schedule, indicating the planned operation of the unit
         @param ControlAreaGeneratingUnit: ControlArea specifications for this generating unit.
         """
-        #: The unit control mode.Values are: "setpoint", "pulse"
+        #: The unit control mode. Values are: "setpoint", "pulse"
         self.genControlMode = genControlMode
 
-        #: Operating mode for secondary control.Values are: "fixed", "EDC", "manual", "off", "MRN", "LFC", "AGC", "REG"
+        #: Operating mode for secondary control. Values are: "fixed", "EDC", "manual", "off", "MRN", "LFC", "AGC", "REG"
         self.genOperatingMode = genOperatingMode
 
-        #: The source of controls for a generating unit.Values are: "unavailable", "onAGC", "plantControl", "offAGC"
+        #: The source of controls for a generating unit. Values are: "unavailable", "onAGC", "plantControl", "offAGC"
         self.genControlSource = genControlSource
 
         #: Time it takes to get the unit on-line, from the time that the prime mover mechanical power is applied
@@ -216,7 +216,14 @@ class GeneratingUnit(Equipment):
         self._ControlAreaGeneratingUnit = []
         self.ControlAreaGeneratingUnit = [] if ControlAreaGeneratingUnit is None else ControlAreaGeneratingUnit
 
-        super(GeneratingUnit, self).__init__(**kw_args)
+        super(GeneratingUnit, self).__init__(*args, **kw_args)
+
+    _attrs = ["genControlMode", "genOperatingMode", "genControlSource", "startupTime", "minimumOffTime", "spinReserveRamp", "controlDeadband", "maxOperatingP", "fastStartFlag", "lowControlLimit", "baseP", "maxEconomicP", "efficiency", "shortPF", "lowerRampRate", "stepChange", "penaltyFactor", "longPF", "ratedGrossMinP", "ratedGrossMaxP", "dispReserveFlag", "variableCost", "modelDetail", "energyMinP", "maximumAllowableSpinningReserve", "fuelPriority", "raiseRampRate", "nominalP", "normalPF", "governorMPL", "ratedNetMaxP", "controlResponseRate", "tieLinePF", "governorSCD", "controlPulseLow", "highControlLimit", "initialP", "minEconomicP", "autoCntrlMarginP", "allocSpinResP", "startupCost", "minOperatingP", "controlPulseHigh"]
+    _attr_types = {"genControlMode": str, "genOperatingMode": str, "genControlSource": str, "startupTime": float, "minimumOffTime": float, "spinReserveRamp": float, "controlDeadband": float, "maxOperatingP": float, "fastStartFlag": bool, "lowControlLimit": float, "baseP": float, "maxEconomicP": float, "efficiency": float, "shortPF": float, "lowerRampRate": float, "stepChange": float, "penaltyFactor": float, "longPF": float, "ratedGrossMinP": float, "ratedGrossMaxP": float, "dispReserveFlag": bool, "variableCost": float, "modelDetail": int, "energyMinP": float, "maximumAllowableSpinningReserve": float, "fuelPriority": int, "raiseRampRate": float, "nominalP": float, "normalPF": float, "governorMPL": float, "ratedNetMaxP": float, "controlResponseRate": float, "tieLinePF": float, "governorSCD": float, "controlPulseLow": float, "highControlLimit": float, "initialP": float, "minEconomicP": float, "autoCntrlMarginP": float, "allocSpinResP": float, "startupCost": float, "minOperatingP": float, "controlPulseHigh": float}
+    _defaults = {"genControlMode": "setpoint", "genOperatingMode": "fixed", "genControlSource": "unavailable", "startupTime": 0.0, "minimumOffTime": 0.0, "spinReserveRamp": 0.0, "controlDeadband": 0.0, "maxOperatingP": 0.0, "fastStartFlag": False, "lowControlLimit": 0.0, "baseP": 0.0, "maxEconomicP": 0.0, "efficiency": 0.0, "shortPF": 0.0, "lowerRampRate": 0.0, "stepChange": 0.0, "penaltyFactor": 0.0, "longPF": 0.0, "ratedGrossMinP": 0.0, "ratedGrossMaxP": 0.0, "dispReserveFlag": False, "variableCost": 0.0, "modelDetail": 0, "energyMinP": 0.0, "maximumAllowableSpinningReserve": 0.0, "fuelPriority": 0, "raiseRampRate": 0.0, "nominalP": 0.0, "normalPF": 0.0, "governorMPL": 0.0, "ratedNetMaxP": 0.0, "controlResponseRate": 0.0, "tieLinePF": 0.0, "governorSCD": 0.0, "controlPulseLow": 0.0, "highControlLimit": 0.0, "initialP": 0.0, "minEconomicP": 0.0, "autoCntrlMarginP": 0.0, "allocSpinResP": 0.0, "startupCost": 0.0, "minOperatingP": 0.0, "controlPulseHigh": 0.0}
+    _enums = {"genControlMode": "GeneratorControlMode", "genOperatingMode": "GeneratorOperatingMode", "genControlSource": "GeneratorControlSource"}
+    _refs = ["SynchronousMachines", "GrossToNetActivePowerCurves", "GenUnitOpCostCurves", "GenUnitOpSchedule", "ControlAreaGeneratingUnit"]
+    _many_refs = ["SynchronousMachines", "GrossToNetActivePowerCurves", "GenUnitOpCostCurves", "ControlAreaGeneratingUnit"]
 
     def getSynchronousMachines(self):
         """A synchronous machine may operate as a generator and as such becomes a member of a generating unit

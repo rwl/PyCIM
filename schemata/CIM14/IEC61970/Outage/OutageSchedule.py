@@ -20,8 +20,8 @@ class OutageSchedule(IrregularIntervalSchedule):
     """The period of time that a piece of equipment is out of service, for example, for maintenance or testing; including the equipment's active power rating while under maintenance. The X-axis represents absolute time and the Y-axis represents the equipment's available rating while out of service.
     """
 
-    def __init__(self, SwitchingOperations=None, PowerSystemResource=None, **kw_args):
-        """Initializes a new 'OutageSchedule' instance.
+    def __init__(self, SwitchingOperations=None, PowerSystemResource=None, *args, **kw_args):
+        """Initialises a new 'OutageSchedule' instance.
 
         @param SwitchingOperations: An OutageSchedule may operate many switches.
         @param PowerSystemResource: A power system resource may have an outage schedule
@@ -32,7 +32,14 @@ class OutageSchedule(IrregularIntervalSchedule):
         self._PowerSystemResource = None
         self.PowerSystemResource = PowerSystemResource
 
-        super(OutageSchedule, self).__init__(**kw_args)
+        super(OutageSchedule, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["SwitchingOperations", "PowerSystemResource"]
+    _many_refs = ["SwitchingOperations"]
 
     def getSwitchingOperations(self):
         """An OutageSchedule may operate many switches.

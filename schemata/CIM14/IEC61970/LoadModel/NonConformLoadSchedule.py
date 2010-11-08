@@ -20,15 +20,22 @@ class NonConformLoadSchedule(SeasonDayTypeSchedule):
     """An active power (Y1-axis) and reactive power (Y2-axis) schedule (curves) versus time (X-axis) for non-conforming loads, e.g., large industrial load or power station service (where modeled)
     """
 
-    def __init__(self, NonConformLoadGroup=None, **kw_args):
-        """Initializes a new 'NonConformLoadSchedule' instance.
+    def __init__(self, NonConformLoadGroup=None, *args, **kw_args):
+        """Initialises a new 'NonConformLoadSchedule' instance.
 
         @param NonConformLoadGroup: The NonConformLoadGroup where the NonConformLoadSchedule belongs.
         """
         self._NonConformLoadGroup = None
         self.NonConformLoadGroup = NonConformLoadGroup
 
-        super(NonConformLoadSchedule, self).__init__(**kw_args)
+        super(NonConformLoadSchedule, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["NonConformLoadGroup"]
+    _many_refs = []
 
     def getNonConformLoadGroup(self):
         """The NonConformLoadGroup where the NonConformLoadSchedule belongs.

@@ -20,8 +20,8 @@ class ConsumptionTariffInterval(Element):
     """One of a sequence of intervals defined in terms of consumption quantity of a service such as electricity, water, gas, etc. It is typically used in association with TariffProfile to define the steps or blocks in a step tariff structure, where startValue simultaneously defines the entry value of this step and the closing value of the previous step. Where consumption is &gt;= startValue it falls within this interval and where consumption is &lt; startValue it falls within the previous interval.
     """
 
-    def __init__(self, sequenceNumber=0, startValue=0.0, TariffProfiles=None, Charges=None, **kw_args):
-        """Initializes a new 'ConsumptionTariffInterval' instance.
+    def __init__(self, sequenceNumber=0, startValue=0.0, TariffProfiles=None, Charges=None, *args, **kw_args):
+        """Initialises a new 'ConsumptionTariffInterval' instance.
 
         @param sequenceNumber: A sequential reference that defines the identity of this interval and its relative position with respect to other intervals in a sequence of intervals. 
         @param startValue: The lowest level of consumption that defines the starting point of this interval. The interval extends to the start of the next interval or until it is reset to the start of the first interval by TariffProfile.tariffCycle. 
@@ -40,7 +40,14 @@ class ConsumptionTariffInterval(Element):
         self._Charges = []
         self.Charges = [] if Charges is None else Charges
 
-        super(ConsumptionTariffInterval, self).__init__(**kw_args)
+        super(ConsumptionTariffInterval, self).__init__(*args, **kw_args)
+
+    _attrs = ["sequenceNumber", "startValue"]
+    _attr_types = {"sequenceNumber": int, "startValue": float}
+    _defaults = {"sequenceNumber": 0, "startValue": 0.0}
+    _enums = {}
+    _refs = ["TariffProfiles", "Charges"]
+    _many_refs = ["TariffProfiles", "Charges"]
 
     def getTariffProfiles(self):
         """All tariff profiles defined by this consumption tariff interval.

@@ -18,9 +18,16 @@ from CIM14.Dynamics.TurbineGovernors.TurbineGovernor import TurbineGovernor
 
 class GovDUM(TurbineGovernor):
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'GovDUM' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'GovDUM' instance.
 
         """
-        super(GovDUM, self).__init__(**kw_args)
+        super(GovDUM, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

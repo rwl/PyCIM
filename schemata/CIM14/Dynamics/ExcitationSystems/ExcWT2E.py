@@ -20,9 +20,16 @@ class ExcWT2E(ExcitationSystem):
     """Type 2 standard wind turbine field resistance control model
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'ExcWT2E' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'ExcWT2E' instance.
 
         """
-        super(ExcWT2E, self).__init__(**kw_args)
+        super(ExcWT2E, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

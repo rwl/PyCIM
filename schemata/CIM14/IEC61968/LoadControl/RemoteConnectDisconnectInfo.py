@@ -20,8 +20,8 @@ class RemoteConnectDisconnectInfo(Element):
     """Details of remote connect disconnect function.
     """
 
-    def __init__(self, needsPowerLimitCheck=False, isEnergyLimiting=False, isArmConnect=False, energyUsageWarning=0.0, armedTimeout=0.0, energyUsageStartDateTime='', isArmDisconnect=False, needsVoltageLimitCheck=False, powerLimit=0.0, usePushbutton=False, customerVoltageLimit=0.0, energyLimit=0.0, **kw_args):
-        """Initializes a new 'RemoteConnectDisconnectInfo' instance.
+    def __init__(self, needsPowerLimitCheck=False, isEnergyLimiting=False, isArmConnect=False, energyUsageWarning=0.0, armedTimeout=0.0, energyUsageStartDateTime='', isArmDisconnect=False, needsVoltageLimitCheck=False, powerLimit=0.0, usePushbutton=False, customerVoltageLimit=0.0, energyLimit=0.0, *args, **kw_args):
+        """Initialises a new 'RemoteConnectDisconnectInfo' instance.
 
         @param needsPowerLimitCheck: True if load limit must be checked to issue an immediate disconnect (after a connect) if load is over the limit. 
         @param isEnergyLimiting: True if the energy usage is limited and the customer will be disconnected if they go over the limit. 
@@ -72,5 +72,12 @@ class RemoteConnectDisconnectInfo(Element):
         #: Limit of energy before disconnect.
         self.energyLimit = energyLimit
 
-        super(RemoteConnectDisconnectInfo, self).__init__(**kw_args)
+        super(RemoteConnectDisconnectInfo, self).__init__(*args, **kw_args)
+
+    _attrs = ["needsPowerLimitCheck", "isEnergyLimiting", "isArmConnect", "energyUsageWarning", "armedTimeout", "energyUsageStartDateTime", "isArmDisconnect", "needsVoltageLimitCheck", "powerLimit", "usePushbutton", "customerVoltageLimit", "energyLimit"]
+    _attr_types = {"needsPowerLimitCheck": bool, "isEnergyLimiting": bool, "isArmConnect": bool, "energyUsageWarning": float, "armedTimeout": float, "energyUsageStartDateTime": str, "isArmDisconnect": bool, "needsVoltageLimitCheck": bool, "powerLimit": float, "usePushbutton": bool, "customerVoltageLimit": float, "energyLimit": float}
+    _defaults = {"needsPowerLimitCheck": False, "isEnergyLimiting": False, "isArmConnect": False, "energyUsageWarning": 0.0, "armedTimeout": 0.0, "energyUsageStartDateTime": '', "isArmDisconnect": False, "needsVoltageLimitCheck": False, "powerLimit": 0.0, "usePushbutton": False, "customerVoltageLimit": 0.0, "energyLimit": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

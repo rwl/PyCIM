@@ -20,8 +20,8 @@ class PricingStructure(Document):
     """Grouping of pricing components and prices used in the creation of customer charges and the eligibility criteria under which these terms may be offered to a customer. The reasons for grouping include state, customer classification, site characteristics, classification (i.e. fee price structure, deposit price structure, electric service price structure, etc.) and accounting requirements.
     """
 
-    def __init__(self, revenueKind='industrial', code='', dailyFloorUsage=0, taxExemption=False, dailyEstimatedUsage=0, dailyCeilingUsage=0, Transactions=None, ServiceDeliveryPoints=None, CustomerAgreements=None, ServiceCategory=None, Tariffs=None, **kw_args):
-        """Initializes a new 'PricingStructure' instance.
+    def __init__(self, revenueKind="industrial", code='', dailyFloorUsage=0, taxExemption=False, dailyEstimatedUsage=0, dailyCeilingUsage=0, Transactions=None, ServiceDeliveryPoints=None, CustomerAgreements=None, ServiceCategory=None, Tariffs=None, *args, **kw_args):
+        """Initialises a new 'PricingStructure' instance.
 
         @param revenueKind: (Accounting) Kind of revenue, often used to determine the grace period allowed, before collection actions are taken on a customer (grace periods vary between revenue classes). Values are: "industrial", "streetLight", "other", "nonResidential", "irrigation", "residential", "commercial"
         @param code: Unique user-allocated key for this pricing structure, used by company representatives to identify the correct price structure for allocating to a customer. For rate schedules it is often prefixed by a state code. 
@@ -35,7 +35,7 @@ class PricingStructure(Document):
         @param ServiceCategory: Service category to which this pricing structure applies.
         @param Tariffs: All tariffs used by this pricing structure.
         """
-        #: (Accounting) Kind of revenue, often used to determine the grace period allowed, before collection actions are taken on a customer (grace periods vary between revenue classes).Values are: "industrial", "streetLight", "other", "nonResidential", "irrigation", "residential", "commercial"
+        #: (Accounting) Kind of revenue, often used to determine the grace period allowed, before collection actions are taken on a customer (grace periods vary between revenue classes). Values are: "industrial", "streetLight", "other", "nonResidential", "irrigation", "residential", "commercial"
         self.revenueKind = revenueKind
 
         #: Unique user-allocated key for this pricing structure, used by company representatives to identify the correct price structure for allocating to a customer. For rate schedules it is often prefixed by a state code.
@@ -68,7 +68,14 @@ class PricingStructure(Document):
         self._Tariffs = []
         self.Tariffs = [] if Tariffs is None else Tariffs
 
-        super(PricingStructure, self).__init__(**kw_args)
+        super(PricingStructure, self).__init__(*args, **kw_args)
+
+    _attrs = ["revenueKind", "code", "dailyFloorUsage", "taxExemption", "dailyEstimatedUsage", "dailyCeilingUsage"]
+    _attr_types = {"revenueKind": str, "code": str, "dailyFloorUsage": int, "taxExemption": bool, "dailyEstimatedUsage": int, "dailyCeilingUsage": int}
+    _defaults = {"revenueKind": "industrial", "code": '', "dailyFloorUsage": 0, "taxExemption": False, "dailyEstimatedUsage": 0, "dailyCeilingUsage": 0}
+    _enums = {"revenueKind": "RevenueKind"}
+    _refs = ["Transactions", "ServiceDeliveryPoints", "CustomerAgreements", "ServiceCategory", "Tariffs"]
+    _many_refs = ["Transactions", "ServiceDeliveryPoints", "CustomerAgreements", "Tariffs"]
 
     def getTransactions(self):
         """All transactions applying this pricing structure.

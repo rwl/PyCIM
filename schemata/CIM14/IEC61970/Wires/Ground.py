@@ -20,9 +20,16 @@ class Ground(ConductingEquipment):
     """A common point for connecting grounded conducting equipment such as shunt capacitors. The power system model can have more than one ground.
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'Ground' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'Ground' instance.
 
         """
-        super(Ground, self).__init__(**kw_args)
+        super(Ground, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

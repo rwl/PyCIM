@@ -20,8 +20,8 @@ class MetaBlockConInput(IdentifiedObject):
     """If model the association to MeasurementType, the it means take the input from the associated PSR or Terminal in the static model.
     """
 
-    def __init__(self, MetaBlockConSignal=None, MemberOf_MetaBlockConnection=None, Unit=None, **kw_args):
-        """Initializes a new 'MetaBlockConInput' instance.
+    def __init__(self, MetaBlockConSignal=None, MemberOf_MetaBlockConnection=None, Unit=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockConInput' instance.
 
         @param MetaBlockConSignal:
         @param MemberOf_MetaBlockConnection:
@@ -36,7 +36,14 @@ class MetaBlockConInput(IdentifiedObject):
         self._Unit = None
         self.Unit = Unit
 
-        super(MetaBlockConInput, self).__init__(**kw_args)
+        super(MetaBlockConInput, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["MetaBlockConSignal", "MemberOf_MetaBlockConnection", "Unit"]
+    _many_refs = []
 
     def getMetaBlockConSignal(self):
         

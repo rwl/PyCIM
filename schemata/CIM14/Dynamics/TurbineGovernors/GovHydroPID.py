@@ -18,9 +18,16 @@ from CIM14.Dynamics.TurbineGovernors.TurbineGovernor import TurbineGovernor
 
 class GovHydroPID(TurbineGovernor):
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'GovHydroPID' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'GovHydroPID' instance.
 
         """
-        super(GovHydroPID, self).__init__(**kw_args)
+        super(GovHydroPID, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

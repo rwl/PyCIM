@@ -20,8 +20,8 @@ class GovHydro1(TurbineGovernor):
     """Hydro turbine-governor model.
     """
 
-    def __init__(self, tf=0.0, velm=0.0, mwbase=0.0, gmin=0.0, gmax=0.0, rperm=0.0, tr=0.0, rtemp=0.0, qnl=0.0, tg=0.0, dturb=0.0, at=0.0, tw=0.0, HydroTurbine=None, synchronousMachine0=None, **kw_args):
-        """Initializes a new 'GovHydro1' instance.
+    def __init__(self, tf=0.0, velm=0.0, mwbase=0.0, gmin=0.0, gmax=0.0, rperm=0.0, tr=0.0, rtemp=0.0, qnl=0.0, tg=0.0, dturb=0.0, at=0.0, tw=0.0, HydroTurbine=None, synchronousMachine0=None, *args, **kw_args):
+        """Initialises a new 'GovHydro1' instance.
 
         @param tf: Filter time constant (&gt;0) 
         @param velm: Maximum gate velocity (&gt;0) 
@@ -84,7 +84,14 @@ class GovHydro1(TurbineGovernor):
         self._synchronousMachine0 = []
         self.synchronousMachine0 = [] if synchronousMachine0 is None else synchronousMachine0
 
-        super(GovHydro1, self).__init__(**kw_args)
+        super(GovHydro1, self).__init__(*args, **kw_args)
+
+    _attrs = ["tf", "velm", "mwbase", "gmin", "gmax", "rperm", "tr", "rtemp", "qnl", "tg", "dturb", "at", "tw"]
+    _attr_types = {"tf": float, "velm": float, "mwbase": float, "gmin": float, "gmax": float, "rperm": float, "tr": float, "rtemp": float, "qnl": float, "tg": float, "dturb": float, "at": float, "tw": float}
+    _defaults = {"tf": 0.0, "velm": 0.0, "mwbase": 0.0, "gmin": 0.0, "gmax": 0.0, "rperm": 0.0, "tr": 0.0, "rtemp": 0.0, "qnl": 0.0, "tg": 0.0, "dturb": 0.0, "at": 0.0, "tw": 0.0}
+    _enums = {}
+    _refs = ["HydroTurbine", "synchronousMachine0"]
+    _many_refs = ["synchronousMachine0"]
 
     def getHydroTurbine(self):
         

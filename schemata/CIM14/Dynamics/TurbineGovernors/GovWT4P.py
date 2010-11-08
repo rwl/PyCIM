@@ -18,9 +18,16 @@ from CIM14.Dynamics.TurbineGovernors.TurbineGovernor import TurbineGovernor
 
 class GovWT4P(TurbineGovernor):
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'GovWT4P' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'GovWT4P' instance.
 
         """
-        super(GovWT4P, self).__init__(**kw_args)
+        super(GovWT4P, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

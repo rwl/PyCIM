@@ -20,8 +20,8 @@ class BaseVoltage(IdentifiedObject):
     """Defines a nominal base voltage which is referenced in the system.
     """
 
-    def __init__(self, nominalVoltage=0.0, isDC=False, ConductingEquipment=None, VoltageLevel=None, TopologicalNode=None, **kw_args):
-        """Initializes a new 'BaseVoltage' instance.
+    def __init__(self, nominalVoltage=0.0, isDC=False, ConductingEquipment=None, VoltageLevel=None, TopologicalNode=None, *args, **kw_args):
+        """Initialises a new 'BaseVoltage' instance.
 
         @param nominalVoltage: The PowerSystemResource's base voltage. 
         @param isDC: If true, this is a direct current base voltage and items assigned to this base voltage are also associated with a direct current capabilities.   False indicates alternating current. 
@@ -44,7 +44,14 @@ class BaseVoltage(IdentifiedObject):
         self._TopologicalNode = []
         self.TopologicalNode = [] if TopologicalNode is None else TopologicalNode
 
-        super(BaseVoltage, self).__init__(**kw_args)
+        super(BaseVoltage, self).__init__(*args, **kw_args)
+
+    _attrs = ["nominalVoltage", "isDC"]
+    _attr_types = {"nominalVoltage": float, "isDC": bool}
+    _defaults = {"nominalVoltage": 0.0, "isDC": False}
+    _enums = {}
+    _refs = ["ConductingEquipment", "VoltageLevel", "TopologicalNode"]
+    _many_refs = ["ConductingEquipment", "VoltageLevel", "TopologicalNode"]
 
     def getConductingEquipment(self):
         """Use association to ConductingEquipment only when there is no VoltageLevel container used.

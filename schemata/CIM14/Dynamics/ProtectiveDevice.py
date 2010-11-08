@@ -18,9 +18,16 @@ from CIM14.Element import Element
 
 class ProtectiveDevice(Element):
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'ProtectiveDevice' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'ProtectiveDevice' instance.
 
         """
-        super(ProtectiveDevice, self).__init__(**kw_args)
+        super(ProtectiveDevice, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

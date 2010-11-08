@@ -20,8 +20,8 @@ class OpenCircuitTest(DistributionWindingTest):
     """Open-circuit test results may include no-load losses, exciting current, phase shifts, and induced voltage. For three-phase windings, the excitation can be positive sequence (the default) or zero sequence. For induced voltage and phase shifts, use the associated ToWindingSpec class.
     """
 
-    def __init__(self, excitingCurrentZero=0.0, noLoadLossZero=0.0, noLoadLoss=0.0, excitingCurrent=0.0, MeasuredWindingSpecs=None, **kw_args):
-        """Initializes a new 'OpenCircuitTest' instance.
+    def __init__(self, excitingCurrentZero=0.0, noLoadLossZero=0.0, noLoadLoss=0.0, excitingCurrent=0.0, MeasuredWindingSpecs=None, *args, **kw_args):
+        """Initialises a new 'OpenCircuitTest' instance.
 
         @param excitingCurrentZero: Exciting current measured from a zero-sequence open-circuit (excitation) test. 
         @param noLoadLossZero: Losses measured from a zero-sequence open-circuit (excitation) test. 
@@ -44,7 +44,14 @@ class OpenCircuitTest(DistributionWindingTest):
         self._MeasuredWindingSpecs = []
         self.MeasuredWindingSpecs = [] if MeasuredWindingSpecs is None else MeasuredWindingSpecs
 
-        super(OpenCircuitTest, self).__init__(**kw_args)
+        super(OpenCircuitTest, self).__init__(*args, **kw_args)
+
+    _attrs = ["excitingCurrentZero", "noLoadLossZero", "noLoadLoss", "excitingCurrent"]
+    _attr_types = {"excitingCurrentZero": float, "noLoadLossZero": float, "noLoadLoss": float, "excitingCurrent": float}
+    _defaults = {"excitingCurrentZero": 0.0, "noLoadLossZero": 0.0, "noLoadLoss": 0.0, "excitingCurrent": 0.0}
+    _enums = {}
+    _refs = ["MeasuredWindingSpecs"]
+    _many_refs = ["MeasuredWindingSpecs"]
 
     def getMeasuredWindingSpecs(self):
         """All other windings measured during this test.

@@ -20,8 +20,8 @@ class CAESPlant(PowerSystemResource):
     """Compressed air energy storage plant
     """
 
-    def __init__(self, energyStorageCapacity=0.0, ratedCapacityP=0.0, AirCompressor=None, ThermalGeneratingUnit=None, **kw_args):
-        """Initializes a new 'CAESPlant' instance.
+    def __init__(self, energyStorageCapacity=0.0, ratedCapacityP=0.0, AirCompressor=None, ThermalGeneratingUnit=None, *args, **kw_args):
+        """Initialises a new 'CAESPlant' instance.
 
         @param energyStorageCapacity: The rated energy storage capacity. 
         @param ratedCapacityP: The CAES plant's gross rated generating capacity 
@@ -40,7 +40,14 @@ class CAESPlant(PowerSystemResource):
         self._ThermalGeneratingUnit = None
         self.ThermalGeneratingUnit = ThermalGeneratingUnit
 
-        super(CAESPlant, self).__init__(**kw_args)
+        super(CAESPlant, self).__init__(*args, **kw_args)
+
+    _attrs = ["energyStorageCapacity", "ratedCapacityP"]
+    _attr_types = {"energyStorageCapacity": float, "ratedCapacityP": float}
+    _defaults = {"energyStorageCapacity": 0.0, "ratedCapacityP": 0.0}
+    _enums = {}
+    _refs = ["AirCompressor", "ThermalGeneratingUnit"]
+    _many_refs = []
 
     def getAirCompressor(self):
         """An air compressor may be a member of a compressed air energy storage plant

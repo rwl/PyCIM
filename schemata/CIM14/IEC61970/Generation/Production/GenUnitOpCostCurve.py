@@ -20,8 +20,8 @@ class GenUnitOpCostCurve(Curve):
     """Relationship between unit operating cost (Y-axis) and unit output active power (X-axis). The operating cost curve for thermal units is derived from heat input and fuel costs. The operating cost curve for hydro units is derived from water flow rates and equivalent water costs.
     """
 
-    def __init__(self, isNetGrossP=False, GeneratingUnit=None, **kw_args):
-        """Initializes a new 'GenUnitOpCostCurve' instance.
+    def __init__(self, isNetGrossP=False, GeneratingUnit=None, *args, **kw_args):
+        """Initialises a new 'GenUnitOpCostCurve' instance.
 
         @param isNetGrossP: Flag is set to true when output is expressed in net active power 
         @param GeneratingUnit: A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.
@@ -32,7 +32,14 @@ class GenUnitOpCostCurve(Curve):
         self._GeneratingUnit = None
         self.GeneratingUnit = GeneratingUnit
 
-        super(GenUnitOpCostCurve, self).__init__(**kw_args)
+        super(GenUnitOpCostCurve, self).__init__(*args, **kw_args)
+
+    _attrs = ["isNetGrossP"]
+    _attr_types = {"isNetGrossP": bool}
+    _defaults = {"isNetGrossP": False}
+    _enums = {}
+    _refs = ["GeneratingUnit"]
+    _many_refs = []
 
     def getGeneratingUnit(self):
         """A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.

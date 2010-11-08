@@ -18,8 +18,8 @@ from CIM14.IEC61970.Core.IdentifiedObject import IdentifiedObject
 
 class ConnectionFrame(IdentifiedObject):
 
-    def __init__(self, slotConnection0=None, slot0=None, **kw_args):
-        """Initializes a new 'ConnectionFrame' instance.
+    def __init__(self, slotConnection0=None, slot0=None, *args, **kw_args):
+        """Initialises a new 'ConnectionFrame' instance.
 
         @param slotConnection0:
         @param slot0:
@@ -30,7 +30,14 @@ class ConnectionFrame(IdentifiedObject):
         self._slot0 = []
         self.slot0 = [] if slot0 is None else slot0
 
-        super(ConnectionFrame, self).__init__(**kw_args)
+        super(ConnectionFrame, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["slotConnection0", "slot0"]
+    _many_refs = ["slotConnection0", "slot0"]
 
     def getslotConnection0(self):
         

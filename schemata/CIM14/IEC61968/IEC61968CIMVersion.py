@@ -20,8 +20,8 @@ class IEC61968CIMVersion(Element):
     """IEC 61968 version number assigned to this UML model.
     """
 
-    def __init__(self, date='', version='', **kw_args):
-        """Initializes a new 'IEC61968CIMVersion' instance.
+    def __init__(self, date='', version='', *args, **kw_args):
+        """Initialises a new 'IEC61968CIMVersion' instance.
 
         @param date: Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05. 
         @param version: Form is IEC61968CIMXXvYY where XX is the major CIM package version and the YY is the minor version.  For example IEC61968CIM10v17. 
@@ -32,5 +32,12 @@ class IEC61968CIMVersion(Element):
         #: Form is IEC61968CIMXXvYY where XX is the major CIM package version and the YY is the minor version.  For example IEC61968CIM10v17.
         self.version = version
 
-        super(IEC61968CIMVersion, self).__init__(**kw_args)
+        super(IEC61968CIMVersion, self).__init__(*args, **kw_args)
+
+    _attrs = ["date", "version"]
+    _attr_types = {"date": str, "version": str}
+    _defaults = {"date": '', "version": ''}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

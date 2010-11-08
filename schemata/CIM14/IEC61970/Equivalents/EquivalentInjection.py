@@ -20,8 +20,8 @@ class EquivalentInjection(EquivalentEquipment):
     """This class represents equivalent injections (generation or load).  Voltage regulation is allowed only at the local connectivity node.
     """
 
-    def __init__(self, maxP=0.0, regulationCapability=False, regulationTarget=0.0, minP=0.0, regulationStatus=False, **kw_args):
-        """Initializes a new 'EquivalentInjection' instance.
+    def __init__(self, maxP=0.0, regulationCapability=False, regulationTarget=0.0, minP=0.0, regulationStatus=False, *args, **kw_args):
+        """Initialises a new 'EquivalentInjection' instance.
 
         @param maxP: Minimum active power of the injection. 
         @param regulationCapability: Specifies whether or not the EquivalentInjection has the capability to regulate the local voltage. 
@@ -44,5 +44,12 @@ class EquivalentInjection(EquivalentEquipment):
         #: Specifies the default regulation status of the EquivalentInjection.  True is regulating.  False is not regulating.
         self.regulationStatus = regulationStatus
 
-        super(EquivalentInjection, self).__init__(**kw_args)
+        super(EquivalentInjection, self).__init__(*args, **kw_args)
+
+    _attrs = ["maxP", "regulationCapability", "regulationTarget", "minP", "regulationStatus"]
+    _attr_types = {"maxP": float, "regulationCapability": bool, "regulationTarget": float, "minP": float, "regulationStatus": bool}
+    _defaults = {"maxP": 0.0, "regulationCapability": False, "regulationTarget": 0.0, "minP": 0.0, "regulationStatus": False}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

@@ -20,9 +20,16 @@ class PssSB4(PowerSystemStabilizer):
     """Power sensitive stabilizer model
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'PssSB4' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'PssSB4' instance.
 
         """
-        super(PssSB4, self).__init__(**kw_args)
+        super(PssSB4, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

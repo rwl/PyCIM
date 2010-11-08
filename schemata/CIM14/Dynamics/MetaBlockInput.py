@@ -20,8 +20,8 @@ class MetaBlockInput(MetaBlockConnectable):
     """Linkage at the dynanics meta model level.    The output of a block could link to this. This is a public interface external to the block.
     """
 
-    def __init__(self, blockInputReference0=None, MemberOf_MetaBlock=None, blockUsageInputReference0=None, blockInputType0=None, tieToMeasurement0=None, **kw_args):
-        """Initializes a new 'MetaBlockInput' instance.
+    def __init__(self, blockInputReference0=None, MemberOf_MetaBlock=None, blockUsageInputReference0=None, blockInputType0=None, tieToMeasurement0=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockInput' instance.
 
         @param blockInputReference0: References the idenfiied input for the block reference.
         @param MemberOf_MetaBlock: Inputs belong to a block.
@@ -44,7 +44,14 @@ class MetaBlockInput(MetaBlockConnectable):
         self._tieToMeasurement0 = []
         self.tieToMeasurement0 = [] if tieToMeasurement0 is None else tieToMeasurement0
 
-        super(MetaBlockInput, self).__init__(**kw_args)
+        super(MetaBlockInput, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["blockInputReference0", "MemberOf_MetaBlock", "blockUsageInputReference0", "blockInputType0", "tieToMeasurement0"]
+    _many_refs = ["blockInputReference0", "blockUsageInputReference0", "tieToMeasurement0"]
 
     def getblockInputReference0(self):
         """References the idenfiied input for the block reference.

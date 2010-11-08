@@ -20,15 +20,22 @@ class AggregateLoad(PowerSystemResource):
     """Aggregate loads are used to represent all or part of the real and reactive load from a load in the static (power flow) data. This load is usually the aggregation of many individual load devices. The load models are approximate representation of the aggregate response of the load devices to system disturbances.   Models of loads for dynamic analysis may themselves be either static or dynamic. A static load model represents the sensitivity of the real and reactive power consumed by the load to the amplitude and frequency of the bus voltage. A dynamic load model can used to represent the aggregate response of the motor components of the load.   Large industrial motors or groups of similar motors may be represented by individual motor models (synchronous or asynchronous) which are usually represented as generators with negative Pgen in the static (power flow) data.
     """
 
-    def __init__(self, energyConsumer0=None, **kw_args):
-        """Initializes a new 'AggregateLoad' instance.
+    def __init__(self, energyConsumer0=None, *args, **kw_args):
+        """Initialises a new 'AggregateLoad' instance.
 
         @param energyConsumer0:
         """
         self._energyConsumer0 = []
         self.energyConsumer0 = [] if energyConsumer0 is None else energyConsumer0
 
-        super(AggregateLoad, self).__init__(**kw_args)
+        super(AggregateLoad, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["energyConsumer0"]
+    _many_refs = ["energyConsumer0"]
 
     def getenergyConsumer0(self):
         

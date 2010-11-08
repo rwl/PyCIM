@@ -20,8 +20,8 @@ class ExcDC1A(ExcitationSystem):
     """IEEE (1992/2005) DC1A Model  This model is used to represent field-controlled dc commutator exciters with continuously acting voltage regulators (especially the direct-acting rheostatic, rotating amplifier, and magnetic amplifier types). Because this model has been widely implemented by the industry, it is sometimes used to represent other types of systems when detailed data for them are not available or when a simplified model is required.
     """
 
-    def __init__(self, ta=0.0, ka=0.0, e1=0.0, tb=0.0, se2=0.0, te=0.0, exclim=0.0, e2=0.0, tr=0.0, uelin=0.0, tf=0.0, vrmax=0.0, kf=0.0, ke=0.0, se1=0.0, vrmin=0.0, tc=0.0, **kw_args):
-        """Initializes a new 'ExcDC1A' instance.
+    def __init__(self, ta=0.0, ka=0.0, e1=0.0, tb=0.0, se2=0.0, te=0.0, exclim=0.0, e2=0.0, tr=0.0, uelin=0.0, tf=0.0, vrmax=0.0, kf=0.0, ke=0.0, se1=0.0, vrmin=0.0, tc=0.0, *args, **kw_args):
+        """Initialises a new 'ExcDC1A' instance.
 
         @param ta: Time constant (&gt; 0.) 
         @param ka: Gain (&gt; 0.) 
@@ -92,5 +92,12 @@ class ExcDC1A(ExcitationSystem):
         #: Lead time constant
         self.tc = tc
 
-        super(ExcDC1A, self).__init__(**kw_args)
+        super(ExcDC1A, self).__init__(*args, **kw_args)
+
+    _attrs = ["ta", "ka", "e1", "tb", "se2", "te", "exclim", "e2", "tr", "uelin", "tf", "vrmax", "kf", "ke", "se1", "vrmin", "tc"]
+    _attr_types = {"ta": float, "ka": float, "e1": float, "tb": float, "se2": float, "te": float, "exclim": float, "e2": float, "tr": float, "uelin": float, "tf": float, "vrmax": float, "kf": float, "ke": float, "se1": float, "vrmin": float, "tc": float}
+    _defaults = {"ta": 0.0, "ka": 0.0, "e1": 0.0, "tb": 0.0, "se2": 0.0, "te": 0.0, "exclim": 0.0, "e2": 0.0, "tr": 0.0, "uelin": 0.0, "tf": 0.0, "vrmax": 0.0, "kf": 0.0, "ke": 0.0, "se1": 0.0, "vrmin": 0.0, "tc": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

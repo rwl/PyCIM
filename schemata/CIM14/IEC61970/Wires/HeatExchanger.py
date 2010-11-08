@@ -20,15 +20,22 @@ class HeatExchanger(Equipment):
     """Equipment for the cooling of electrical equipment and the extraction of heat
     """
 
-    def __init__(self, PowerTransformer=None, **kw_args):
-        """Initializes a new 'HeatExchanger' instance.
+    def __init__(self, PowerTransformer=None, *args, **kw_args):
+        """Initialises a new 'HeatExchanger' instance.
 
         @param PowerTransformer: A transformer may have a heat exchanger
         """
         self._PowerTransformer = None
         self.PowerTransformer = PowerTransformer
 
-        super(HeatExchanger, self).__init__(**kw_args)
+        super(HeatExchanger, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["PowerTransformer"]
+    _many_refs = []
 
     def getPowerTransformer(self):
         """A transformer may have a heat exchanger

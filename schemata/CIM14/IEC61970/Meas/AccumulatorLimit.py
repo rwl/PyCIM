@@ -20,8 +20,8 @@ class AccumulatorLimit(Limit):
     """Limit values for Accumulator measurements
     """
 
-    def __init__(self, value=0, LimitSet=None, **kw_args):
-        """Initializes a new 'AccumulatorLimit' instance.
+    def __init__(self, value=0, LimitSet=None, *args, **kw_args):
+        """Initialises a new 'AccumulatorLimit' instance.
 
         @param value: The value to supervise against. The value is positive. 
         @param LimitSet: The set of limits.
@@ -32,7 +32,14 @@ class AccumulatorLimit(Limit):
         self._LimitSet = None
         self.LimitSet = LimitSet
 
-        super(AccumulatorLimit, self).__init__(**kw_args)
+        super(AccumulatorLimit, self).__init__(*args, **kw_args)
+
+    _attrs = ["value"]
+    _attr_types = {"value": int}
+    _defaults = {"value": 0}
+    _enums = {}
+    _refs = ["LimitSet"]
+    _many_refs = []
 
     def getLimitSet(self):
         """The set of limits.

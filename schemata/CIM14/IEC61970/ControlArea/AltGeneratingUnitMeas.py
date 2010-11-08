@@ -20,8 +20,8 @@ class AltGeneratingUnitMeas(Element):
     """A prioritized measurement to be used for the generating unit in the control area specificaiton.
     """
 
-    def __init__(self, priority=0, ControlAreaGeneratingUnit=None, AnalogValue=None, **kw_args):
-        """Initializes a new 'AltGeneratingUnitMeas' instance.
+    def __init__(self, priority=0, ControlAreaGeneratingUnit=None, AnalogValue=None, *args, **kw_args):
+        """Initialises a new 'AltGeneratingUnitMeas' instance.
 
         @param priority: Priority of a measurement usage.   Lower numbers have first priority. 
         @param ControlAreaGeneratingUnit: The control aread generating unit to which the prioritized measurement assignment is applied.
@@ -36,7 +36,14 @@ class AltGeneratingUnitMeas(Element):
         self._AnalogValue = None
         self.AnalogValue = AnalogValue
 
-        super(AltGeneratingUnitMeas, self).__init__(**kw_args)
+        super(AltGeneratingUnitMeas, self).__init__(*args, **kw_args)
+
+    _attrs = ["priority"]
+    _attr_types = {"priority": int}
+    _defaults = {"priority": 0}
+    _enums = {}
+    _refs = ["ControlAreaGeneratingUnit", "AnalogValue"]
+    _many_refs = []
 
     def getControlAreaGeneratingUnit(self):
         """The control aread generating unit to which the prioritized measurement assignment is applied.

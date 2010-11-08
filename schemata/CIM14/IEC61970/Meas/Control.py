@@ -20,8 +20,8 @@ class Control(IdentifiedObject):
     """Control is used for supervisory/device control. It represents control outputs that are used to change the state in a process, e.g. close or open breaker, a set point value or a raise lower command.
     """
 
-    def __init__(self, timeStamp='', operationInProgress=False, Unit=None, RegulatingCondEq=None, ControlType=None, RemoteControl=None, **kw_args):
-        """Initializes a new 'Control' instance.
+    def __init__(self, timeStamp='', operationInProgress=False, Unit=None, RegulatingCondEq=None, ControlType=None, RemoteControl=None, *args, **kw_args):
+        """Initialises a new 'Control' instance.
 
         @param timeStamp: The last time a control output was sent 
         @param operationInProgress: Indicates that a client is currently sending control commands that has not completed 
@@ -48,7 +48,14 @@ class Control(IdentifiedObject):
         self._RemoteControl = None
         self.RemoteControl = RemoteControl
 
-        super(Control, self).__init__(**kw_args)
+        super(Control, self).__init__(*args, **kw_args)
+
+    _attrs = ["timeStamp", "operationInProgress"]
+    _attr_types = {"timeStamp": str, "operationInProgress": bool}
+    _defaults = {"timeStamp": '', "operationInProgress": False}
+    _enums = {}
+    _refs = ["Unit", "RegulatingCondEq", "ControlType", "RemoteControl"]
+    _many_refs = []
 
     def getUnit(self):
         """The Unit for the Control.

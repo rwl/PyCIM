@@ -20,8 +20,8 @@ class CashierShift(Shift):
     """The operating shift for a cashier, during which he may transact against the CashierShift, subject to VendorShift being open.
     """
 
-    def __init__(self, cashFloat=0.0, Receipts=None, Transactions=None, Cashier=None, PointOfSale=None, **kw_args):
-        """Initializes a new 'CashierShift' instance.
+    def __init__(self, cashFloat=0.0, Receipts=None, Transactions=None, Cashier=None, PointOfSale=None, *args, **kw_args):
+        """Initialises a new 'CashierShift' instance.
 
         @param cashFloat: The amount of cash that the cashier brings with him to start his shift and that he will take away at the end of his shift; i.e. the cash float does not get banked. 
         @param Receipts: All Receipts recorded for this Shift.
@@ -44,7 +44,14 @@ class CashierShift(Shift):
         self._PointOfSale = None
         self.PointOfSale = PointOfSale
 
-        super(CashierShift, self).__init__(**kw_args)
+        super(CashierShift, self).__init__(*args, **kw_args)
+
+    _attrs = ["cashFloat"]
+    _attr_types = {"cashFloat": float}
+    _defaults = {"cashFloat": 0.0}
+    _enums = {}
+    _refs = ["Receipts", "Transactions", "Cashier", "PointOfSale"]
+    _many_refs = ["Receipts", "Transactions"]
 
     def getReceipts(self):
         """All Receipts recorded for this Shift.

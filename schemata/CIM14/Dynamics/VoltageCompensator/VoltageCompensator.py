@@ -20,9 +20,16 @@ class VoltageCompensator(PowerSystemResource):
     """A voltage compensator adjusts the terminal voltage feedback to the excitation system by adding a quantity that is proportional to the terminal current of the generator. It is linked to a specific generator by the Bus number and Unit ID
     """
 
-    def __init__(self, **kw_args):
-        """Initializes a new 'VoltageCompensator' instance.
+    def __init__(self, *args, **kw_args):
+        """Initialises a new 'VoltageCompensator' instance.
 
         """
-        super(VoltageCompensator, self).__init__(**kw_args)
+        super(VoltageCompensator, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

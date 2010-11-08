@@ -20,8 +20,8 @@ class ThermalGeneratingUnit(GeneratingUnit):
     """A generating unit whose prime mover could be a steam turbine, combustion turbine, or diesel engine.
     """
 
-    def __init__(self, oMCost=0.0, StartupModel=None, EmmissionAccounts=None, CombinedCyclePlant=None, CogenerationPlant=None, EmissionCurves=None, HeatRateCurve=None, ShutdownCurve=None, IncrementalHeatRateCurve=None, FuelAllocationSchedules=None, FossilFuels=None, HeatInputCurve=None, CAESPlant=None, **kw_args):
-        """Initializes a new 'ThermalGeneratingUnit' instance.
+    def __init__(self, oMCost=0.0, StartupModel=None, EmmissionAccounts=None, CombinedCyclePlant=None, CogenerationPlant=None, EmissionCurves=None, HeatRateCurve=None, ShutdownCurve=None, IncrementalHeatRateCurve=None, FuelAllocationSchedules=None, FossilFuels=None, HeatInputCurve=None, CAESPlant=None, *args, **kw_args):
+        """Initialises a new 'ThermalGeneratingUnit' instance.
 
         @param oMCost: Operating and maintenance cost for the thermal unit 
         @param StartupModel: A thermal generating unit may have a startup model
@@ -76,7 +76,14 @@ class ThermalGeneratingUnit(GeneratingUnit):
         self._CAESPlant = None
         self.CAESPlant = CAESPlant
 
-        super(ThermalGeneratingUnit, self).__init__(**kw_args)
+        super(ThermalGeneratingUnit, self).__init__(*args, **kw_args)
+
+    _attrs = ["oMCost"]
+    _attr_types = {"oMCost": float}
+    _defaults = {"oMCost": 0.0}
+    _enums = {}
+    _refs = ["StartupModel", "EmmissionAccounts", "CombinedCyclePlant", "CogenerationPlant", "EmissionCurves", "HeatRateCurve", "ShutdownCurve", "IncrementalHeatRateCurve", "FuelAllocationSchedules", "FossilFuels", "HeatInputCurve", "CAESPlant"]
+    _many_refs = ["EmmissionAccounts", "EmissionCurves", "FuelAllocationSchedules", "FossilFuels"]
 
     def getStartupModel(self):
         """A thermal generating unit may have a startup model

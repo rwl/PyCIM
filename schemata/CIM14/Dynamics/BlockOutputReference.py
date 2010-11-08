@@ -20,8 +20,8 @@ class BlockOutputReference(MetaBlockConnectable):
     """References output from another block at the meta dynamics level. The other block must be a BlockReference in containing block.
     """
 
-    def __init__(self, metaBlockOutput0=None, metaBlockReference0=None, **kw_args):
-        """Initializes a new 'BlockOutputReference' instance.
+    def __init__(self, metaBlockOutput0=None, metaBlockReference0=None, *args, **kw_args):
+        """Initialises a new 'BlockOutputReference' instance.
 
         @param metaBlockOutput0:
         @param metaBlockReference0:
@@ -32,7 +32,14 @@ class BlockOutputReference(MetaBlockConnectable):
         self._metaBlockReference0 = []
         self.metaBlockReference0 = [] if metaBlockReference0 is None else metaBlockReference0
 
-        super(BlockOutputReference, self).__init__(**kw_args)
+        super(BlockOutputReference, self).__init__(*args, **kw_args)
+
+    _attrs = []
+    _attr_types = {}
+    _defaults = {}
+    _enums = {}
+    _refs = ["metaBlockOutput0", "metaBlockReference0"]
+    _many_refs = ["metaBlockReference0"]
 
     def getmetaBlockOutput0(self):
         

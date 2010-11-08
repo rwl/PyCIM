@@ -20,15 +20,15 @@ class SwitchingOperation(IdentifiedObject):
     """A SwitchingOperation is used to define individual switch operations for an OutageSchedule. This OutageSchedule may be associated with another item of Substation such as a Transformer, Line, or Generator; or with the Switch itself as a PowerSystemResource. A Switch may be referenced by many OutageSchedules.
     """
 
-    def __init__(self, newState='open', operationTime='', Switches=None, OutageSchedule=None, **kw_args):
-        """Initializes a new 'SwitchingOperation' instance.
+    def __init__(self, newState="open", operationTime='', Switches=None, OutageSchedule=None, *args, **kw_args):
+        """Initialises a new 'SwitchingOperation' instance.
 
         @param newState: The switch position that shall result from this SwitchingOperation Values are: "open", "close"
         @param operationTime: Time of operation in same units as OutageSchedule.xAxixUnits. 
         @param Switches: A switch may be operated by many schedules.
         @param OutageSchedule: An OutageSchedule may operate many switches.
         """
-        #: The switch position that shall result from this SwitchingOperationValues are: "open", "close"
+        #: The switch position that shall result from this SwitchingOperation Values are: "open", "close"
         self.newState = newState
 
         #: Time of operation in same units as OutageSchedule.xAxixUnits.
@@ -40,7 +40,14 @@ class SwitchingOperation(IdentifiedObject):
         self._OutageSchedule = None
         self.OutageSchedule = OutageSchedule
 
-        super(SwitchingOperation, self).__init__(**kw_args)
+        super(SwitchingOperation, self).__init__(*args, **kw_args)
+
+    _attrs = ["newState", "operationTime"]
+    _attr_types = {"newState": str, "operationTime": str}
+    _defaults = {"newState": "open", "operationTime": ''}
+    _enums = {"newState": "SwitchState"}
+    _refs = ["Switches", "OutageSchedule"]
+    _many_refs = ["Switches"]
 
     def getSwitches(self):
         """A switch may be operated by many schedules.

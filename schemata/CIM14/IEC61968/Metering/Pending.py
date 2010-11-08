@@ -20,8 +20,8 @@ class Pending(Element):
     """When present, a scalar conversion that is associated with IntervalBlock and which needs to be applied to every contained IntervalReading value. This conversion results in a new associated ReadingType, reflecting the true dimensions of interval reading values after the conversion.
     """
 
-    def __init__(self, scalarDenominator=0, scalarFloat=0.0, scalarNumerator=0, multiplyBeforeAdd=False, offset=0, IntervalBlocks=None, ReadingType=None, **kw_args):
-        """Initializes a new 'Pending' instance.
+    def __init__(self, scalarDenominator=0, scalarFloat=0.0, scalarNumerator=0, multiplyBeforeAdd=False, offset=0, IntervalBlocks=None, ReadingType=None, *args, **kw_args):
+        """Initialises a new 'Pending' instance.
 
         @param scalarDenominator: (if scalar is rational number) When 'IntervalReading.value' is multiplied by this attribute and divided by 'scalarDenominator, it causes a unit of measure conversion to occur, resulting in the 'ReadingType.unit'. 
         @param scalarFloat: (if scalar is floating number) When multiplied with 'IntervalReading.value', it causes a unit of measure conversion to occur, resulting in the 'ReadingType.unit'. 
@@ -52,7 +52,14 @@ class Pending(Element):
         self._ReadingType = None
         self.ReadingType = ReadingType
 
-        super(Pending, self).__init__(**kw_args)
+        super(Pending, self).__init__(*args, **kw_args)
+
+    _attrs = ["scalarDenominator", "scalarFloat", "scalarNumerator", "multiplyBeforeAdd", "offset"]
+    _attr_types = {"scalarDenominator": int, "scalarFloat": float, "scalarNumerator": int, "multiplyBeforeAdd": bool, "offset": int}
+    _defaults = {"scalarDenominator": 0, "scalarFloat": 0.0, "scalarNumerator": 0, "multiplyBeforeAdd": False, "offset": 0}
+    _enums = {}
+    _refs = ["IntervalBlocks", "ReadingType"]
+    _many_refs = ["IntervalBlocks"]
 
     def getIntervalBlocks(self):
         """All blocks of interval reading values to which this pending conversion applies.

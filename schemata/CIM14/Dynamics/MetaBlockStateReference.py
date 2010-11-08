@@ -18,8 +18,8 @@ from CIM14.IEC61970.Core.IdentifiedObject import IdentifiedObject
 
 class MetaBlockStateReference(IdentifiedObject):
 
-    def __init__(self, positiveFlowIn=False, StandardControlBlock_MetaBlockConnectable=None, MetaBlockConnectable=None, MemberOf_MetaBlockReference=None, **kw_args):
-        """Initializes a new 'MetaBlockStateReference' instance.
+    def __init__(self, positiveFlowIn=False, StandardControlBlock_MetaBlockConnectable=None, MetaBlockConnectable=None, MemberOf_MetaBlockReference=None, *args, **kw_args):
+        """Initialises a new 'MetaBlockStateReference' instance.
 
         @param positiveFlowIn: If true then any flows associated with a terminal are referenced as positive from the system into the device. 
         @param StandardControlBlock_MetaBlockConnectable:
@@ -38,7 +38,14 @@ class MetaBlockStateReference(IdentifiedObject):
         self._MemberOf_MetaBlockReference = None
         self.MemberOf_MetaBlockReference = MemberOf_MetaBlockReference
 
-        super(MetaBlockStateReference, self).__init__(**kw_args)
+        super(MetaBlockStateReference, self).__init__(*args, **kw_args)
+
+    _attrs = ["positiveFlowIn"]
+    _attr_types = {"positiveFlowIn": bool}
+    _defaults = {"positiveFlowIn": False}
+    _enums = {}
+    _refs = ["StandardControlBlock_MetaBlockConnectable", "MetaBlockConnectable", "MemberOf_MetaBlockReference"]
+    _many_refs = []
 
     def getStandardControlBlock_MetaBlockConnectable(self):
         

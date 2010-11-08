@@ -20,8 +20,8 @@ class TownDetail(Element):
     """Town details, in the context of address.
     """
 
-    def __init__(self, code='', country='', stateOrProvince='', name='', section='', **kw_args):
-        """Initializes a new 'TownDetail' instance.
+    def __init__(self, code='', country='', stateOrProvince='', name='', section='', *args, **kw_args):
+        """Initialises a new 'TownDetail' instance.
 
         @param code: Town code. 
         @param country: Name of the country. 
@@ -44,5 +44,12 @@ class TownDetail(Element):
         #: Town section. For example, it is common for there to be 36 sections per township.
         self.section = section
 
-        super(TownDetail, self).__init__(**kw_args)
+        super(TownDetail, self).__init__(*args, **kw_args)
+
+    _attrs = ["code", "country", "stateOrProvince", "name", "section"]
+    _attr_types = {"code": str, "country": str, "stateOrProvince": str, "name": str, "section": str}
+    _defaults = {"code": '', "country": '', "stateOrProvince": '', "name": '', "section": ''}
+    _enums = {}
+    _refs = []
+    _many_refs = []
 

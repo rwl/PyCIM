@@ -20,8 +20,8 @@ class Customer(Organisation):
     """Organisation receiving services from ServiceSupplier.
     """
 
-    def __init__(self, kind='residentialAndCommercial', pucNumber='', specialNeed='', vip=False, status=None, Works=None, CustomerAgreements=None, EndDeviceAssets=None, **kw_args):
-        """Initializes a new 'Customer' instance.
+    def __init__(self, kind="residentialAndCommercial", pucNumber='', specialNeed='', vip=False, status=None, Works=None, CustomerAgreements=None, EndDeviceAssets=None, *args, **kw_args):
+        """Initialises a new 'Customer' instance.
 
         @param kind: Kind of customer. Values are: "residentialAndCommercial", "residentialStreetlightOthers", "residentialAndStreetlight", "pumpingLoad", "energyServiceSupplier", "windMachine", "residential", "internalUse", "residentialFarmService", "other", "energyServiceScheduler", "commercialIndustrial"
         @param pucNumber: (if applicable) Public Utility Commission identification number. 
@@ -32,7 +32,7 @@ class Customer(Organisation):
         @param CustomerAgreements: All agreements of this customer.
         @param EndDeviceAssets: All end device assets of this customer.
         """
-        #: Kind of customer.Values are: "residentialAndCommercial", "residentialStreetlightOthers", "residentialAndStreetlight", "pumpingLoad", "energyServiceSupplier", "windMachine", "residential", "internalUse", "residentialFarmService", "other", "energyServiceScheduler", "commercialIndustrial"
+        #: Kind of customer. Values are: "residentialAndCommercial", "residentialStreetlightOthers", "residentialAndStreetlight", "pumpingLoad", "energyServiceSupplier", "windMachine", "residential", "internalUse", "residentialFarmService", "other", "energyServiceScheduler", "commercialIndustrial"
         self.kind = kind
 
         #: (if applicable) Public Utility Commission identification number.
@@ -55,7 +55,14 @@ class Customer(Organisation):
         self._EndDeviceAssets = []
         self.EndDeviceAssets = [] if EndDeviceAssets is None else EndDeviceAssets
 
-        super(Customer, self).__init__(**kw_args)
+        super(Customer, self).__init__(*args, **kw_args)
+
+    _attrs = ["kind", "pucNumber", "specialNeed", "vip"]
+    _attr_types = {"kind": str, "pucNumber": str, "specialNeed": str, "vip": bool}
+    _defaults = {"kind": "residentialAndCommercial", "pucNumber": '', "specialNeed": '', "vip": False}
+    _enums = {"kind": "CustomerKind"}
+    _refs = ["status", "Works", "CustomerAgreements", "EndDeviceAssets"]
+    _many_refs = ["Works", "CustomerAgreements", "EndDeviceAssets"]
 
     # Status of this customer.
     status = None

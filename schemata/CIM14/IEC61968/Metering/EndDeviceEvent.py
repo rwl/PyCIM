@@ -20,8 +20,8 @@ class EndDeviceEvent(ActivityRecord):
     """Event detected by a DeviceFunction associated with EndDeviceAsset.
     """
 
-    def __init__(self, userID='', MeterReading=None, DeviceFunction=None, **kw_args):
-        """Initializes a new 'EndDeviceEvent' instance.
+    def __init__(self, userID='', MeterReading=None, DeviceFunction=None, *args, **kw_args):
+        """Initialises a new 'EndDeviceEvent' instance.
 
         @param userID: (if user initiated) ID of user who initiated this end device event. 
         @param MeterReading: Set of measured values to which this event applies.
@@ -36,7 +36,14 @@ class EndDeviceEvent(ActivityRecord):
         self._DeviceFunction = None
         self.DeviceFunction = DeviceFunction
 
-        super(EndDeviceEvent, self).__init__(**kw_args)
+        super(EndDeviceEvent, self).__init__(*args, **kw_args)
+
+    _attrs = ["userID"]
+    _attr_types = {"userID": str}
+    _defaults = {"userID": ''}
+    _enums = {}
+    _refs = ["MeterReading", "DeviceFunction"]
+    _many_refs = []
 
     def getMeterReading(self):
         """Set of measured values to which this event applies.

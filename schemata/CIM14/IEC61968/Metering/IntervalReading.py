@@ -20,8 +20,8 @@ class IntervalReading(MeasurementValue):
     """Data captured at regular intervals of time. Interval data could be captured as incremental data, absolute data, or relative data. The source for the data is usually a tariff quantity or an engineering quantity. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min. Note: Interval Data is sometimes also called 'Interval Data Readings' (IDR).
     """
 
-    def __init__(self, value=0.0, ReadingQualities=None, IntervalBlocks=None, **kw_args):
-        """Initializes a new 'IntervalReading' instance.
+    def __init__(self, value=0.0, ReadingQualities=None, IntervalBlocks=None, *args, **kw_args):
+        """Initialises a new 'IntervalReading' instance.
 
         @param value: Value of this interval reading. 
         @param ReadingQualities: Used only if quality of this interval reading value is different than 'Good'.
@@ -36,7 +36,14 @@ class IntervalReading(MeasurementValue):
         self._IntervalBlocks = []
         self.IntervalBlocks = [] if IntervalBlocks is None else IntervalBlocks
 
-        super(IntervalReading, self).__init__(**kw_args)
+        super(IntervalReading, self).__init__(*args, **kw_args)
+
+    _attrs = ["value"]
+    _attr_types = {"value": float}
+    _defaults = {"value": 0.0}
+    _enums = {}
+    _refs = ["ReadingQualities", "IntervalBlocks"]
+    _many_refs = ["ReadingQualities", "IntervalBlocks"]
 
     def getReadingQualities(self):
         """Used only if quality of this interval reading value is different than 'Good'.
