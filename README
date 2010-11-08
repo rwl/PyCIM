@@ -1,19 +1,94 @@
-------------
+============
 Introduction
+============
+
+PyCIM is a Python implementation of the IEC Common Information Model. Current
+features include:
+
+- Support for IEC 61970 14v15 and IEC 61968 10v31.
+- Class and attribute documentation integrated as Python docstrings.
+- Transparent bi-directional reference handling using Python properties.
+- CIM RDF/XML parsing and serialisation according to IEC 61970-552.
+
+Installation
 ------------
 
-PyCIM is a Python implementation of the IEC Common Information Model.
+PyCIM has no dependencies beyond Python_ 2.5 or later. It can be easy_installed
+using setuptools_::
 
--------
+  $ easy_install PyCIM
+
+Alternatively, download and unpack the tarball and install::
+
+  $ tar zxf PyCIM-14.15.tar.gz
+  $ python setup.py install
+
+On UNIX systems, use sudo for the latter command if you need to install the
+scripts to a directory that requires root privileges::
+
+  $ sudo python setup.py install
+
+The development Git_ repository can be cloned from GitHub_::
+
+  $ git clone https://github.com/rwl/PyCIM.git
+
+Using PyCIM
+-----------
+
+To use PyCIM with the Python interpreter, iPython_ is recommended. For example,
+to instantiate a ``ConnecticityNode``::
+
+  In [1]: from CIM14.IEC61970.Core import ConnectivityNode
+
+  In [2]: node = ConnectivityNode(name='Node 1')
+
+To associate the node with a ``Terminal``::
+
+  In [3]: from CIM14.IEC61970.Core import ConnectivityNode
+
+  In [4]: t = Terminal(ConnectivityNode=node)
+
+To view the docstring for an attribute::
+
+  In [5]: t.connected?
+  Type:     bool
+  Base Class: <type 'bool'>
+  String Form:    False
+  Namespace:  Interactive
+  Docstring:
+      bool(x) -> bool
+
+      Returns True when the argument x is true, False otherwise.
+      The builtins True and False are the only two instances of the class bool.
+      The class bool is a subclass of the class int, and cannot be subclassed.
+
+To parse a CIM RDF/XML file::
+
+  In[1]: from PyCIM import cimread
+
+  In[2]: d = cimread('path/to/input_file.xml')
+
+The ``cimread`` function returns a Python dictionary that maps UUIDs to CIM
+objects.  To serialise the dictionary of objects::
+
+  In[3]: from PyCIM import cimwrite
+
+  In[4]: cimwrite(d, 'path/to/output_file.xml')
+
 License
 -------
 
-PyCIM is licensed under the `GNU Lesser General Public License`_ version 2.1.
+PyCIM is licensed under the `GNU Lesser General Public License`_ version 2.1
+to allow commercial use while ensuring it remains free and open source.
 
--------
 Credits
 -------
 
 PyCIM is developed by Richard Lincoln (r.w.lincoln@gmail.com).
 
+.. _Python: http://www.python.org/
+.. _setuptools: http://peak.telecommunity.com/DevCenter/setuptools/
+.. _Git: http://git-scm.com/
+.. _GitHub: http://github.com/
+.. _iPython: http://ipython.scipy.org
 .. _`GNU Lesser General Public License`: http://www.gnu.org/licenses/lgpl-2.1.html

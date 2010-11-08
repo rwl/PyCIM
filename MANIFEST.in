@@ -1,0 +1,3 @@
+include LICENSE
+include README
+include PyCIM/Test/Data/EDF_AIGUE_v9.xml
