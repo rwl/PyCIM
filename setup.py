@@ -8,7 +8,7 @@ kwds = {"long_description": f.read()}
 f.close()
 
 setup(name="PyCIM",
-      version="14.15.1",
+      version="14.15.2",
       author="Richard Lincoln",
       author_email="r.w.lincoln@gmail.com",
       description="Python implementation of the Common Information Model.",
