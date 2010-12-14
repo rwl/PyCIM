@@ -68,7 +68,7 @@ class CogenerationPlant(PowerSystemResource):
 
     def setThermalGeneratingUnits(self, value):
         for x in self._ThermalGeneratingUnits:
-            x._CogenerationPlant = None
+            x.CogenerationPlant = None
         for y in value:
             y._CogenerationPlant = self
         self._ThermalGeneratingUnits = value
@@ -77,13 +77,11 @@ class CogenerationPlant(PowerSystemResource):
 
     def addThermalGeneratingUnits(self, *ThermalGeneratingUnits):
         for obj in ThermalGeneratingUnits:
-            obj._CogenerationPlant = self
-            self._ThermalGeneratingUnits.append(obj)
+            obj.CogenerationPlant = self
 
     def removeThermalGeneratingUnits(self, *ThermalGeneratingUnits):
         for obj in ThermalGeneratingUnits:
-            obj._CogenerationPlant = None
-            self._ThermalGeneratingUnits.remove(obj)
+            obj.CogenerationPlant = None
 
     def getSteamSendoutSchedule(self):
         """A cogeneration plant has a steam sendout schedule
@@ -96,6 +94,7 @@ class CogenerationPlant(PowerSystemResource):
 
         self._SteamSendoutSchedule = value
         if self._SteamSendoutSchedule is not None:
+            self._SteamSendoutSchedule.CogenerationPlant = None
             self._SteamSendoutSchedule._CogenerationPlant = self
 
     SteamSendoutSchedule = property(getSteamSendoutSchedule, setSteamSendoutSchedule)

@@ -80,7 +80,7 @@ class TopologicalNode(IdentifiedObject):
 
     def setTerminal(self, value):
         for x in self._Terminal:
-            x._TopologicalNode = None
+            x.TopologicalNode = None
         for y in value:
             y._TopologicalNode = self
         self._Terminal = value
@@ -89,13 +89,11 @@ class TopologicalNode(IdentifiedObject):
 
     def addTerminal(self, *Terminal):
         for obj in Terminal:
-            obj._TopologicalNode = self
-            self._Terminal.append(obj)
+            obj.TopologicalNode = self
 
     def removeTerminal(self, *Terminal):
         for obj in Terminal:
-            obj._TopologicalNode = None
-            self._Terminal.remove(obj)
+            obj.TopologicalNode = None
 
     def getTopologicalIsland(self):
         """A topological node belongs to a topological island
@@ -109,7 +107,8 @@ class TopologicalNode(IdentifiedObject):
 
         self._TopologicalIsland = value
         if self._TopologicalIsland is not None:
-            self._TopologicalIsland._TopologicalNodes.append(self)
+            if self not in self._TopologicalIsland._TopologicalNodes:
+                self._TopologicalIsland._TopologicalNodes.append(self)
 
     TopologicalIsland = property(getTopologicalIsland, setTopologicalIsland)
 
@@ -125,7 +124,8 @@ class TopologicalNode(IdentifiedObject):
 
         self._ReportingGroup = value
         if self._ReportingGroup is not None:
-            self._ReportingGroup._TopologicalNode.append(self)
+            if self not in self._ReportingGroup._TopologicalNode:
+                self._ReportingGroup._TopologicalNode.append(self)
 
     ReportingGroup = property(getReportingGroup, setReportingGroup)
 
@@ -136,7 +136,7 @@ class TopologicalNode(IdentifiedObject):
 
     def setConnectivityNodes(self, value):
         for x in self._ConnectivityNodes:
-            x._TopologicalNode = None
+            x.TopologicalNode = None
         for y in value:
             y._TopologicalNode = self
         self._ConnectivityNodes = value
@@ -145,13 +145,11 @@ class TopologicalNode(IdentifiedObject):
 
     def addConnectivityNodes(self, *ConnectivityNodes):
         for obj in ConnectivityNodes:
-            obj._TopologicalNode = self
-            self._ConnectivityNodes.append(obj)
+            obj.TopologicalNode = self
 
     def removeConnectivityNodes(self, *ConnectivityNodes):
         for obj in ConnectivityNodes:
-            obj._TopologicalNode = None
-            self._ConnectivityNodes.remove(obj)
+            obj.TopologicalNode = None
 
     def getSvInjection(self):
         """The injection state associated with the topological node.
@@ -164,6 +162,7 @@ class TopologicalNode(IdentifiedObject):
 
         self._SvInjection = value
         if self._SvInjection is not None:
+            self._SvInjection.TopologicalNode = None
             self._SvInjection._TopologicalNode = self
 
     SvInjection = property(getSvInjection, setSvInjection)
@@ -179,6 +178,7 @@ class TopologicalNode(IdentifiedObject):
 
         self._SvVoltage = value
         if self._SvVoltage is not None:
+            self._SvVoltage.TopologicalNode = None
             self._SvVoltage._TopologicalNode = self
 
     SvVoltage = property(getSvVoltage, setSvVoltage)
@@ -194,6 +194,7 @@ class TopologicalNode(IdentifiedObject):
 
         self._SvShortCircuit = value
         if self._SvShortCircuit is not None:
+            self._SvShortCircuit.TopologicalNode = None
             self._SvShortCircuit._TopologicalNode = self
 
     SvShortCircuit = property(getSvShortCircuit, setSvShortCircuit)
@@ -210,7 +211,8 @@ class TopologicalNode(IdentifiedObject):
 
         self._BaseVoltage = value
         if self._BaseVoltage is not None:
-            self._BaseVoltage._TopologicalNode.append(self)
+            if self not in self._BaseVoltage._TopologicalNode:
+                self._BaseVoltage._TopologicalNode.append(self)
 
     BaseVoltage = property(getBaseVoltage, setBaseVoltage)
 
@@ -226,7 +228,8 @@ class TopologicalNode(IdentifiedObject):
 
         self._ConnectivityNodeContainer = value
         if self._ConnectivityNodeContainer is not None:
-            self._ConnectivityNodeContainer._TopologicalNode.append(self)
+            if self not in self._ConnectivityNodeContainer._TopologicalNode:
+                self._ConnectivityNodeContainer._TopologicalNode.append(self)
 
     ConnectivityNodeContainer = property(getConnectivityNodeContainer, setConnectivityNodeContainer)
 
@@ -241,6 +244,7 @@ class TopologicalNode(IdentifiedObject):
 
         self._AngleRef_TopologicalIsland = value
         if self._AngleRef_TopologicalIsland is not None:
+            self._AngleRef_TopologicalIsland.AngleRef_TopologicalNode = None
             self._AngleRef_TopologicalIsland._AngleRef_TopologicalNode = self
 
     AngleRef_TopologicalIsland = property(getAngleRef_TopologicalIsland, setAngleRef_TopologicalIsland)

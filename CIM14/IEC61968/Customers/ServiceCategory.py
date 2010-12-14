@@ -55,7 +55,7 @@ class ServiceCategory(IdentifiedObject):
 
     def setCustomerAgreements(self, value):
         for x in self._CustomerAgreements:
-            x._ServiceCategory = None
+            x.ServiceCategory = None
         for y in value:
             y._ServiceCategory = self
         self._CustomerAgreements = value
@@ -64,13 +64,11 @@ class ServiceCategory(IdentifiedObject):
 
     def addCustomerAgreements(self, *CustomerAgreements):
         for obj in CustomerAgreements:
-            obj._ServiceCategory = self
-            self._CustomerAgreements.append(obj)
+            obj.ServiceCategory = self
 
     def removeCustomerAgreements(self, *CustomerAgreements):
         for obj in CustomerAgreements:
-            obj._ServiceCategory = None
-            self._CustomerAgreements.remove(obj)
+            obj.ServiceCategory = None
 
     def getPricingStructures(self):
         """All pricing structures applicable to this service category.
@@ -79,7 +77,7 @@ class ServiceCategory(IdentifiedObject):
 
     def setPricingStructures(self, value):
         for x in self._PricingStructures:
-            x._ServiceCategory = None
+            x.ServiceCategory = None
         for y in value:
             y._ServiceCategory = self
         self._PricingStructures = value
@@ -88,13 +86,11 @@ class ServiceCategory(IdentifiedObject):
 
     def addPricingStructures(self, *PricingStructures):
         for obj in PricingStructures:
-            obj._ServiceCategory = self
-            self._PricingStructures.append(obj)
+            obj.ServiceCategory = self
 
     def removePricingStructures(self, *PricingStructures):
         for obj in PricingStructures:
-            obj._ServiceCategory = None
-            self._PricingStructures.remove(obj)
+            obj.ServiceCategory = None
 
     def getServiceDeliveryPoints(self):
         """All service delivery points that deliver this category of service.
@@ -103,7 +99,7 @@ class ServiceCategory(IdentifiedObject):
 
     def setServiceDeliveryPoints(self, value):
         for x in self._ServiceDeliveryPoints:
-            x._ServiceCategory = None
+            x.ServiceCategory = None
         for y in value:
             y._ServiceCategory = self
         self._ServiceDeliveryPoints = value
@@ -112,11 +108,9 @@ class ServiceCategory(IdentifiedObject):
 
     def addServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._ServiceCategory = self
-            self._ServiceDeliveryPoints.append(obj)
+            obj.ServiceCategory = self
 
     def removeServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._ServiceCategory = None
-            self._ServiceDeliveryPoints.remove(obj)
+            obj.ServiceCategory = None
 

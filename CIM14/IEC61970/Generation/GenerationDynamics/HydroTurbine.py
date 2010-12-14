@@ -91,6 +91,7 @@ class HydroTurbine(PrimeMover):
 
         self._HydroTurbineGovernor = value
         if self._HydroTurbineGovernor is not None:
+            self._HydroTurbineGovernor.HydroTurbine = None
             self._HydroTurbineGovernor._HydroTurbine = self
 
     HydroTurbineGovernor = property(getHydroTurbineGovernor, setHydroTurbineGovernor)

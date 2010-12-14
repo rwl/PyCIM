@@ -60,7 +60,7 @@ class CashierShift(Shift):
 
     def setReceipts(self, value):
         for x in self._Receipts:
-            x._CashierShift = None
+            x.CashierShift = None
         for y in value:
             y._CashierShift = self
         self._Receipts = value
@@ -69,13 +69,11 @@ class CashierShift(Shift):
 
     def addReceipts(self, *Receipts):
         for obj in Receipts:
-            obj._CashierShift = self
-            self._Receipts.append(obj)
+            obj.CashierShift = self
 
     def removeReceipts(self, *Receipts):
         for obj in Receipts:
-            obj._CashierShift = None
-            self._Receipts.remove(obj)
+            obj.CashierShift = None
 
     def getTransactions(self):
         
@@ -83,7 +81,7 @@ class CashierShift(Shift):
 
     def setTransactions(self, value):
         for x in self._Transactions:
-            x._CashierShift = None
+            x.CashierShift = None
         for y in value:
             y._CashierShift = self
         self._Transactions = value
@@ -92,13 +90,11 @@ class CashierShift(Shift):
 
     def addTransactions(self, *Transactions):
         for obj in Transactions:
-            obj._CashierShift = self
-            self._Transactions.append(obj)
+            obj.CashierShift = self
 
     def removeTransactions(self, *Transactions):
         for obj in Transactions:
-            obj._CashierShift = None
-            self._Transactions.remove(obj)
+            obj.CashierShift = None
 
     def getCashier(self):
         """Cashier operating this shift.
@@ -112,7 +108,8 @@ class CashierShift(Shift):
 
         self._Cashier = value
         if self._Cashier is not None:
-            self._Cashier._CashierShifts.append(self)
+            if self not in self._Cashier._CashierShifts:
+                self._Cashier._CashierShifts.append(self)
 
     Cashier = property(getCashier, setCashier)
 
@@ -128,7 +125,8 @@ class CashierShift(Shift):
 
         self._PointOfSale = value
         if self._PointOfSale is not None:
-            self._PointOfSale._CashierShifts.append(self)
+            if self not in self._PointOfSale._CashierShifts:
+                self._PointOfSale._CashierShifts.append(self)
 
     PointOfSale = property(getPointOfSale, setPointOfSale)
 

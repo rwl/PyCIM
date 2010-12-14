@@ -52,7 +52,7 @@ class PerLengthPhaseImpedance(IdentifiedObject):
 
     def setConductorSegments(self, value):
         for x in self._ConductorSegments:
-            x._PhaseImpedance = None
+            x.PhaseImpedance = None
         for y in value:
             y._PhaseImpedance = self
         self._ConductorSegments = value
@@ -61,13 +61,11 @@ class PerLengthPhaseImpedance(IdentifiedObject):
 
     def addConductorSegments(self, *ConductorSegments):
         for obj in ConductorSegments:
-            obj._PhaseImpedance = self
-            self._ConductorSegments.append(obj)
+            obj.PhaseImpedance = self
 
     def removeConductorSegments(self, *ConductorSegments):
         for obj in ConductorSegments:
-            obj._PhaseImpedance = None
-            self._ConductorSegments.remove(obj)
+            obj.PhaseImpedance = None
 
     def getPhaseImpedanceData(self):
         """All data that belong to this conductor phase impedance.
@@ -76,7 +74,7 @@ class PerLengthPhaseImpedance(IdentifiedObject):
 
     def setPhaseImpedanceData(self, value):
         for x in self._PhaseImpedanceData:
-            x._PhaseImpedance = None
+            x.PhaseImpedance = None
         for y in value:
             y._PhaseImpedance = self
         self._PhaseImpedanceData = value
@@ -85,11 +83,9 @@ class PerLengthPhaseImpedance(IdentifiedObject):
 
     def addPhaseImpedanceData(self, *PhaseImpedanceData):
         for obj in PhaseImpedanceData:
-            obj._PhaseImpedance = self
-            self._PhaseImpedanceData.append(obj)
+            obj.PhaseImpedance = self
 
     def removePhaseImpedanceData(self, *PhaseImpedanceData):
         for obj in PhaseImpedanceData:
-            obj._PhaseImpedance = None
-            self._PhaseImpedanceData.remove(obj)
+            obj.PhaseImpedance = None
 

@@ -93,7 +93,8 @@ class Block(PowerSystemResource):
 
         self._Terminal = value
         if self._Terminal is not None:
-            self._Terminal._Block.append(self)
+            if self not in self._Terminal._Block:
+                self._Terminal._Block.append(self)
 
     Terminal = property(getTerminal, setTerminal)
 
@@ -108,7 +109,8 @@ class Block(PowerSystemResource):
 
         self._MemberOf_BlockConnectivity = value
         if self._MemberOf_BlockConnectivity is not None:
-            self._MemberOf_BlockConnectivity._Block.append(self)
+            if self not in self._MemberOf_BlockConnectivity._Block:
+                self._MemberOf_BlockConnectivity._Block.append(self)
 
     MemberOf_BlockConnectivity = property(getMemberOf_BlockConnectivity, setMemberOf_BlockConnectivity)
 
@@ -118,7 +120,7 @@ class Block(PowerSystemResource):
 
     def setblockUsageInputReference0(self, value):
         for x in self._blockUsageInputReference0:
-            x._block0 = None
+            x.block0 = None
         for y in value:
             y._block0 = self
         self._blockUsageInputReference0 = value
@@ -127,13 +129,11 @@ class Block(PowerSystemResource):
 
     def addblockUsageInputReference0(self, *blockUsageInputReference0):
         for obj in blockUsageInputReference0:
-            obj._block0 = self
-            self._blockUsageInputReference0.append(obj)
+            obj.block0 = self
 
     def removeblockUsageInputReference0(self, *blockUsageInputReference0):
         for obj in blockUsageInputReference0:
-            obj._block0 = None
-            self._blockUsageInputReference0.remove(obj)
+            obj.block0 = None
 
     def getBlockUsageOutputReference(self):
         
@@ -141,7 +141,7 @@ class Block(PowerSystemResource):
 
     def setBlockUsageOutputReference(self, value):
         for x in self._BlockUsageOutputReference:
-            x._block0 = None
+            x.block0 = None
         for y in value:
             y._block0 = self
         self._BlockUsageOutputReference = value
@@ -150,13 +150,11 @@ class Block(PowerSystemResource):
 
     def addBlockUsageOutputReference(self, *BlockUsageOutputReference):
         for obj in BlockUsageOutputReference:
-            obj._block0 = self
-            self._BlockUsageOutputReference.append(obj)
+            obj.block0 = self
 
     def removeBlockUsageOutputReference(self, *BlockUsageOutputReference):
         for obj in BlockUsageOutputReference:
-            obj._block0 = None
-            self._BlockUsageOutputReference.remove(obj)
+            obj.block0 = None
 
     def getPowerSystemResource(self):
         """The power system resource associated with the dyanmics block instance.   This is optional because sometimes no linkage is needed, yet parameters must be specified.  Also the linkage to Terminal can be used instead of the linkage to PowerSystemResource.
@@ -170,7 +168,8 @@ class Block(PowerSystemResource):
 
         self._PowerSystemResource = value
         if self._PowerSystemResource is not None:
-            self._PowerSystemResource._Block.append(self)
+            if self not in self._PowerSystemResource._Block:
+                self._PowerSystemResource._Block.append(self)
 
     PowerSystemResource = property(getPowerSystemResource, setPowerSystemResource)
 
@@ -185,7 +184,8 @@ class Block(PowerSystemResource):
 
         self._slotReference0 = value
         if self._slotReference0 is not None:
-            self._slotReference0._block0.append(self)
+            if self not in self._slotReference0._block0:
+                self._slotReference0._block0.append(self)
 
     slotReference0 = property(getslotReference0, setslotReference0)
 
@@ -195,7 +195,7 @@ class Block(PowerSystemResource):
 
     def settieToMeasurement0(self, value):
         for x in self._tieToMeasurement0:
-            x._block0 = None
+            x.block0 = None
         for y in value:
             y._block0 = self
         self._tieToMeasurement0 = value
@@ -204,13 +204,11 @@ class Block(PowerSystemResource):
 
     def addtieToMeasurement0(self, *tieToMeasurement0):
         for obj in tieToMeasurement0:
-            obj._block0 = self
-            self._tieToMeasurement0.append(obj)
+            obj.block0 = self
 
     def removetieToMeasurement0(self, *tieToMeasurement0):
         for obj in tieToMeasurement0:
-            obj._block0 = None
-            self._tieToMeasurement0.remove(obj)
+            obj.block0 = None
 
     def getMetaBlock(self):
         
@@ -223,7 +221,8 @@ class Block(PowerSystemResource):
 
         self._MetaBlock = value
         if self._MetaBlock is not None:
-            self._MetaBlock._Block.append(self)
+            if self not in self._MetaBlock._Block:
+                self._MetaBlock._Block.append(self)
 
     MetaBlock = property(getMetaBlock, setMetaBlock)
 
@@ -233,7 +232,7 @@ class Block(PowerSystemResource):
 
     def setBlockConnection(self, value):
         for x in self._BlockConnection:
-            x._Block = None
+            x.Block = None
         for y in value:
             y._Block = self
         self._BlockConnection = value
@@ -242,13 +241,11 @@ class Block(PowerSystemResource):
 
     def addBlockConnection(self, *BlockConnection):
         for obj in BlockConnection:
-            obj._Block = self
-            self._BlockConnection.append(obj)
+            obj.Block = self
 
     def removeBlockConnection(self, *BlockConnection):
         for obj in BlockConnection:
-            obj._Block = None
-            self._BlockConnection.remove(obj)
+            obj.Block = None
 
     def getBlockParameter(self):
         
@@ -256,7 +253,7 @@ class Block(PowerSystemResource):
 
     def setBlockParameter(self, value):
         for x in self._BlockParameter:
-            x._MemberOf_Block = None
+            x.MemberOf_Block = None
         for y in value:
             y._MemberOf_Block = self
         self._BlockParameter = value
@@ -265,11 +262,9 @@ class Block(PowerSystemResource):
 
     def addBlockParameter(self, *BlockParameter):
         for obj in BlockParameter:
-            obj._MemberOf_Block = self
-            self._BlockParameter.append(obj)
+            obj.MemberOf_Block = self
 
     def removeBlockParameter(self, *BlockParameter):
         for obj in BlockParameter:
-            obj._MemberOf_Block = None
-            self._BlockParameter.remove(obj)
+            obj.MemberOf_Block = None
 

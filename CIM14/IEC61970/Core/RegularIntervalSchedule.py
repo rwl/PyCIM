@@ -52,7 +52,7 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
 
     def setTimePoints(self, value):
         for x in self._TimePoints:
-            x._IntervalSchedule = None
+            x.IntervalSchedule = None
         for y in value:
             y._IntervalSchedule = self
         self._TimePoints = value
@@ -61,11 +61,9 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
 
     def addTimePoints(self, *TimePoints):
         for obj in TimePoints:
-            obj._IntervalSchedule = self
-            self._TimePoints.append(obj)
+            obj.IntervalSchedule = self
 
     def removeTimePoints(self, *TimePoints):
         for obj in TimePoints:
-            obj._IntervalSchedule = None
-            self._TimePoints.remove(obj)
+            obj.IntervalSchedule = None
 

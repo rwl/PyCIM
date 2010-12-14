@@ -67,6 +67,7 @@ class Cheque(Element):
 
         self._Tender = value
         if self._Tender is not None:
+            self._Tender.Cheque = None
             self._Tender._Cheque = self
 
     Tender = property(getTender, setTender)

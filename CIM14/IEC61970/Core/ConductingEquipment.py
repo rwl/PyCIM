@@ -64,7 +64,7 @@ class ConductingEquipment(Equipment):
 
     def setClearanceTags(self, value):
         for x in self._ClearanceTags:
-            x._ConductingEquipment = None
+            x.ConductingEquipment = None
         for y in value:
             y._ConductingEquipment = self
         self._ClearanceTags = value
@@ -73,13 +73,11 @@ class ConductingEquipment(Equipment):
 
     def addClearanceTags(self, *ClearanceTags):
         for obj in ClearanceTags:
-            obj._ConductingEquipment = self
-            self._ClearanceTags.append(obj)
+            obj.ConductingEquipment = self
 
     def removeClearanceTags(self, *ClearanceTags):
         for obj in ClearanceTags:
-            obj._ConductingEquipment = None
-            self._ClearanceTags.remove(obj)
+            obj.ConductingEquipment = None
 
     def getSvStatus(self):
         """The status state associated with the conducting equipment.
@@ -92,6 +90,7 @@ class ConductingEquipment(Equipment):
 
         self._SvStatus = value
         if self._SvStatus is not None:
+            self._SvStatus.ConductingEquipment = None
             self._SvStatus._ConductingEquipment = self
 
     SvStatus = property(getSvStatus, setSvStatus)
@@ -103,7 +102,7 @@ class ConductingEquipment(Equipment):
 
     def setTerminals(self, value):
         for x in self._Terminals:
-            x._ConductingEquipment = None
+            x.ConductingEquipment = None
         for y in value:
             y._ConductingEquipment = self
         self._Terminals = value
@@ -112,13 +111,11 @@ class ConductingEquipment(Equipment):
 
     def addTerminals(self, *Terminals):
         for obj in Terminals:
-            obj._ConductingEquipment = self
-            self._Terminals.append(obj)
+            obj.ConductingEquipment = self
 
     def removeTerminals(self, *Terminals):
         for obj in Terminals:
-            obj._ConductingEquipment = None
-            self._Terminals.remove(obj)
+            obj.ConductingEquipment = None
 
     def getBaseVoltage(self):
         """Use association to ConductingEquipment only when there is no VoltageLevel container used.
@@ -132,7 +129,8 @@ class ConductingEquipment(Equipment):
 
         self._BaseVoltage = value
         if self._BaseVoltage is not None:
-            self._BaseVoltage._ConductingEquipment.append(self)
+            if self not in self._BaseVoltage._ConductingEquipment:
+                self._BaseVoltage._ConductingEquipment.append(self)
 
     BaseVoltage = property(getBaseVoltage, setBaseVoltage)
 

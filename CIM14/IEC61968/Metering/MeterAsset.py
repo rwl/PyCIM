@@ -68,7 +68,7 @@ class MeterAsset(EndDeviceAsset):
 
     def setMeterReplacementWorks(self, value):
         for x in self._MeterReplacementWorks:
-            x._OldMeterAsset = None
+            x.OldMeterAsset = None
         for y in value:
             y._OldMeterAsset = self
         self._MeterReplacementWorks = value
@@ -77,13 +77,11 @@ class MeterAsset(EndDeviceAsset):
 
     def addMeterReplacementWorks(self, *MeterReplacementWorks):
         for obj in MeterReplacementWorks:
-            obj._OldMeterAsset = self
-            self._MeterReplacementWorks.append(obj)
+            obj.OldMeterAsset = self
 
     def removeMeterReplacementWorks(self, *MeterReplacementWorks):
         for obj in MeterReplacementWorks:
-            obj._OldMeterAsset = None
-            self._MeterReplacementWorks.remove(obj)
+            obj.OldMeterAsset = None
 
     def getMeterServiceWorks(self):
         """All non-replacement works on this meter asset.
@@ -92,7 +90,7 @@ class MeterAsset(EndDeviceAsset):
 
     def setMeterServiceWorks(self, value):
         for x in self._MeterServiceWorks:
-            x._MeterAsset = None
+            x.MeterAsset = None
         for y in value:
             y._MeterAsset = self
         self._MeterServiceWorks = value
@@ -101,13 +99,11 @@ class MeterAsset(EndDeviceAsset):
 
     def addMeterServiceWorks(self, *MeterServiceWorks):
         for obj in MeterServiceWorks:
-            obj._MeterAsset = self
-            self._MeterServiceWorks.append(obj)
+            obj.MeterAsset = self
 
     def removeMeterServiceWorks(self, *MeterServiceWorks):
         for obj in MeterServiceWorks:
-            obj._MeterAsset = None
-            self._MeterServiceWorks.remove(obj)
+            obj.MeterAsset = None
 
     def getMeterReadings(self):
         """All meter readings provided by this meter asset.
@@ -116,7 +112,7 @@ class MeterAsset(EndDeviceAsset):
 
     def setMeterReadings(self, value):
         for x in self._MeterReadings:
-            x._MeterAsset = None
+            x.MeterAsset = None
         for y in value:
             y._MeterAsset = self
         self._MeterReadings = value
@@ -125,13 +121,11 @@ class MeterAsset(EndDeviceAsset):
 
     def addMeterReadings(self, *MeterReadings):
         for obj in MeterReadings:
-            obj._MeterAsset = self
-            self._MeterReadings.append(obj)
+            obj.MeterAsset = self
 
     def removeMeterReadings(self, *MeterReadings):
         for obj in MeterReadings:
-            obj._MeterAsset = None
-            self._MeterReadings.remove(obj)
+            obj.MeterAsset = None
 
     def getVendingTransactions(self):
         """All vending transactions on this meter asset.
@@ -140,7 +134,7 @@ class MeterAsset(EndDeviceAsset):
 
     def setVendingTransactions(self, value):
         for x in self._VendingTransactions:
-            x._MeterAsset = None
+            x.MeterAsset = None
         for y in value:
             y._MeterAsset = self
         self._VendingTransactions = value
@@ -149,11 +143,9 @@ class MeterAsset(EndDeviceAsset):
 
     def addVendingTransactions(self, *VendingTransactions):
         for obj in VendingTransactions:
-            obj._MeterAsset = self
-            self._VendingTransactions.append(obj)
+            obj.MeterAsset = self
 
     def removeVendingTransactions(self, *VendingTransactions):
         for obj in VendingTransactions:
-            obj._MeterAsset = None
-            self._VendingTransactions.remove(obj)
+            obj.MeterAsset = None
 

@@ -56,7 +56,8 @@ class BlockConnectivity(IdentifiedObject):
 
         self._MetaBlockConnectivity = value
         if self._MetaBlockConnectivity is not None:
-            self._MetaBlockConnectivity._BlockConnectivity.append(self)
+            if self not in self._MetaBlockConnectivity._BlockConnectivity:
+                self._MetaBlockConnectivity._BlockConnectivity.append(self)
 
     MetaBlockConnectivity = property(getMetaBlockConnectivity, setMetaBlockConnectivity)
 
@@ -66,7 +67,7 @@ class BlockConnectivity(IdentifiedObject):
 
     def setBlock(self, value):
         for x in self._Block:
-            x._MemberOf_BlockConnectivity = None
+            x.MemberOf_BlockConnectivity = None
         for y in value:
             y._MemberOf_BlockConnectivity = self
         self._Block = value
@@ -75,13 +76,11 @@ class BlockConnectivity(IdentifiedObject):
 
     def addBlock(self, *Block):
         for obj in Block:
-            obj._MemberOf_BlockConnectivity = self
-            self._Block.append(obj)
+            obj.MemberOf_BlockConnectivity = self
 
     def removeBlock(self, *Block):
         for obj in Block:
-            obj._MemberOf_BlockConnectivity = None
-            self._Block.remove(obj)
+            obj.MemberOf_BlockConnectivity = None
 
     def getBlockConnection(self):
         
@@ -89,7 +88,7 @@ class BlockConnectivity(IdentifiedObject):
 
     def setBlockConnection(self, value):
         for x in self._BlockConnection:
-            x._MemberOf_BlockConnectivity = None
+            x.MemberOf_BlockConnectivity = None
         for y in value:
             y._MemberOf_BlockConnectivity = self
         self._BlockConnection = value
@@ -98,11 +97,9 @@ class BlockConnectivity(IdentifiedObject):
 
     def addBlockConnection(self, *BlockConnection):
         for obj in BlockConnection:
-            obj._MemberOf_BlockConnectivity = self
-            self._BlockConnection.append(obj)
+            obj.MemberOf_BlockConnectivity = self
 
     def removeBlockConnection(self, *BlockConnection):
         for obj in BlockConnection:
-            obj._MemberOf_BlockConnectivity = None
-            self._BlockConnection.remove(obj)
+            obj.MemberOf_BlockConnectivity = None
 

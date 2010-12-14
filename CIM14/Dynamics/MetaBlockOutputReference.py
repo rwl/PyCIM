@@ -58,7 +58,8 @@ class MetaBlockOutputReference(IdentifiedObject):
 
         self._MetaBlockConnectable = value
         if self._MetaBlockConnectable is not None:
-            self._MetaBlockConnectable._MetaBlockOutputReference.append(self)
+            if self not in self._MetaBlockConnectable._MetaBlockOutputReference:
+                self._MetaBlockConnectable._MetaBlockOutputReference.append(self)
 
     MetaBlockConnectable = property(getMetaBlockConnectable, setMetaBlockConnectable)
 
@@ -73,7 +74,8 @@ class MetaBlockOutputReference(IdentifiedObject):
 
         self._MemberOf_MetaBlockReference = value
         if self._MemberOf_MetaBlockReference is not None:
-            self._MemberOf_MetaBlockReference._MetaBlockOutputReference.append(self)
+            if self not in self._MemberOf_MetaBlockReference._MetaBlockOutputReference:
+                self._MemberOf_MetaBlockReference._MetaBlockOutputReference.append(self)
 
     MemberOf_MetaBlockReference = property(getMemberOf_MetaBlockReference, setMemberOf_MetaBlockReference)
 
@@ -83,7 +85,7 @@ class MetaBlockOutputReference(IdentifiedObject):
 
     def setMetaBlockSignal(self, value):
         for x in self._MetaBlockSignal:
-            x._To = None
+            x.To = None
         for y in value:
             y._To = self
         self._MetaBlockSignal = value
@@ -92,13 +94,11 @@ class MetaBlockOutputReference(IdentifiedObject):
 
     def addMetaBlockSignal(self, *MetaBlockSignal):
         for obj in MetaBlockSignal:
-            obj._To = self
-            self._MetaBlockSignal.append(obj)
+            obj.To = self
 
     def removeMetaBlockSignal(self, *MetaBlockSignal):
         for obj in MetaBlockSignal:
-            obj._To = None
-            self._MetaBlockSignal.remove(obj)
+            obj.To = None
 
     def getStandardControlBlock_MetaBlockConnectable(self):
         
@@ -111,7 +111,8 @@ class MetaBlockOutputReference(IdentifiedObject):
 
         self._StandardControlBlock_MetaBlockConnectable = value
         if self._StandardControlBlock_MetaBlockConnectable is not None:
-            self._StandardControlBlock_MetaBlockConnectable._StandardControlBlock_MetaBlockOutputReference.append(self)
+            if self not in self._StandardControlBlock_MetaBlockConnectable._StandardControlBlock_MetaBlockOutputReference:
+                self._StandardControlBlock_MetaBlockConnectable._StandardControlBlock_MetaBlockOutputReference.append(self)
 
     StandardControlBlock_MetaBlockConnectable = property(getStandardControlBlock_MetaBlockConnectable, setStandardControlBlock_MetaBlockConnectable)
 

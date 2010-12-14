@@ -91,7 +91,7 @@ class MetaBlock(IdentifiedObject):
 
     def setMetaBlockReference(self, value):
         for x in self._MetaBlockReference:
-            x._MemberOf_MetaBlock = None
+            x.MemberOf_MetaBlock = None
         for y in value:
             y._MemberOf_MetaBlock = self
         self._MetaBlockReference = value
@@ -100,13 +100,11 @@ class MetaBlock(IdentifiedObject):
 
     def addMetaBlockReference(self, *MetaBlockReference):
         for obj in MetaBlockReference:
-            obj._MemberOf_MetaBlock = self
-            self._MetaBlockReference.append(obj)
+            obj.MemberOf_MetaBlock = self
 
     def removeMetaBlockReference(self, *MetaBlockReference):
         for obj in MetaBlockReference:
-            obj._MemberOf_MetaBlock = None
-            self._MetaBlockReference.remove(obj)
+            obj.MemberOf_MetaBlock = None
 
     def getMetaBlockOutput(self):
         """Outputs that belong to the block.
@@ -115,7 +113,7 @@ class MetaBlock(IdentifiedObject):
 
     def setMetaBlockOutput(self, value):
         for x in self._MetaBlockOutput:
-            x._MemberOf_MetaBlock = None
+            x.MemberOf_MetaBlock = None
         for y in value:
             y._MemberOf_MetaBlock = self
         self._MetaBlockOutput = value
@@ -124,13 +122,11 @@ class MetaBlock(IdentifiedObject):
 
     def addMetaBlockOutput(self, *MetaBlockOutput):
         for obj in MetaBlockOutput:
-            obj._MemberOf_MetaBlock = self
-            self._MetaBlockOutput.append(obj)
+            obj.MemberOf_MetaBlock = self
 
     def removeMetaBlockOutput(self, *MetaBlockOutput):
         for obj in MetaBlockOutput:
-            obj._MemberOf_MetaBlock = None
-            self._MetaBlockOutput.remove(obj)
+            obj.MemberOf_MetaBlock = None
 
     def getMetaBlockState(self):
         
@@ -138,7 +134,7 @@ class MetaBlock(IdentifiedObject):
 
     def setMetaBlockState(self, value):
         for x in self._MetaBlockState:
-            x._MemberOf_MetaBlock = None
+            x.MemberOf_MetaBlock = None
         for y in value:
             y._MemberOf_MetaBlock = self
         self._MetaBlockState = value
@@ -147,13 +143,11 @@ class MetaBlock(IdentifiedObject):
 
     def addMetaBlockState(self, *MetaBlockState):
         for obj in MetaBlockState:
-            obj._MemberOf_MetaBlock = self
-            self._MetaBlockState.append(obj)
+            obj.MemberOf_MetaBlock = self
 
     def removeMetaBlockState(self, *MetaBlockState):
         for obj in MetaBlockState:
-            obj._MemberOf_MetaBlock = None
-            self._MetaBlockState.remove(obj)
+            obj.MemberOf_MetaBlock = None
 
     def getMetaBlockSignal(self):
         
@@ -161,7 +155,7 @@ class MetaBlock(IdentifiedObject):
 
     def setMetaBlockSignal(self, value):
         for x in self._MetaBlockSignal:
-            x._MemberOf_MetaBlock = None
+            x.MemberOf_MetaBlock = None
         for y in value:
             y._MemberOf_MetaBlock = self
         self._MetaBlockSignal = value
@@ -170,13 +164,11 @@ class MetaBlock(IdentifiedObject):
 
     def addMetaBlockSignal(self, *MetaBlockSignal):
         for obj in MetaBlockSignal:
-            obj._MemberOf_MetaBlock = self
-            self._MetaBlockSignal.append(obj)
+            obj.MemberOf_MetaBlock = self
 
     def removeMetaBlockSignal(self, *MetaBlockSignal):
         for obj in MetaBlockSignal:
-            obj._MemberOf_MetaBlock = None
-            self._MetaBlockSignal.remove(obj)
+            obj.MemberOf_MetaBlock = None
 
     def getblockType0(self):
         
@@ -189,7 +181,8 @@ class MetaBlock(IdentifiedObject):
 
         self._blockType0 = value
         if self._blockType0 is not None:
-            self._blockType0._metaBlock0.append(self)
+            if self not in self._blockType0._metaBlock0:
+                self._blockType0._metaBlock0.append(self)
 
     blockType0 = property(getblockType0, setblockType0)
 
@@ -200,7 +193,7 @@ class MetaBlock(IdentifiedObject):
 
     def setMetaBlockInput(self, value):
         for x in self._MetaBlockInput:
-            x._MemberOf_MetaBlock = None
+            x.MemberOf_MetaBlock = None
         for y in value:
             y._MemberOf_MetaBlock = self
         self._MetaBlockInput = value
@@ -209,13 +202,11 @@ class MetaBlock(IdentifiedObject):
 
     def addMetaBlockInput(self, *MetaBlockInput):
         for obj in MetaBlockInput:
-            obj._MemberOf_MetaBlock = self
-            self._MetaBlockInput.append(obj)
+            obj.MemberOf_MetaBlock = self
 
     def removeMetaBlockInput(self, *MetaBlockInput):
         for obj in MetaBlockInput:
-            obj._MemberOf_MetaBlock = None
-            self._MetaBlockInput.remove(obj)
+            obj.MemberOf_MetaBlock = None
 
     def getblockConstant0(self):
         
@@ -223,7 +214,7 @@ class MetaBlock(IdentifiedObject):
 
     def setblockConstant0(self, value):
         for x in self._blockConstant0:
-            x._metaBlock0 = None
+            x.metaBlock0 = None
         for y in value:
             y._metaBlock0 = self
         self._blockConstant0 = value
@@ -232,13 +223,11 @@ class MetaBlock(IdentifiedObject):
 
     def addblockConstant0(self, *blockConstant0):
         for obj in blockConstant0:
-            obj._metaBlock0 = self
-            self._blockConstant0.append(obj)
+            obj.metaBlock0 = self
 
     def removeblockConstant0(self, *blockConstant0):
         for obj in blockConstant0:
-            obj._metaBlock0 = None
-            self._blockConstant0.remove(obj)
+            obj.metaBlock0 = None
 
     def getBlock(self):
         
@@ -246,7 +235,7 @@ class MetaBlock(IdentifiedObject):
 
     def setBlock(self, value):
         for x in self._Block:
-            x._MetaBlock = None
+            x.MetaBlock = None
         for y in value:
             y._MetaBlock = self
         self._Block = value
@@ -255,13 +244,11 @@ class MetaBlock(IdentifiedObject):
 
     def addBlock(self, *Block):
         for obj in Block:
-            obj._MetaBlock = self
-            self._Block.append(obj)
+            obj.MetaBlock = self
 
     def removeBlock(self, *Block):
         for obj in Block:
-            obj._MetaBlock = None
-            self._Block.remove(obj)
+            obj.MetaBlock = None
 
     def getMetaBlockParameter(self):
         """Paramters belong to a block.
@@ -270,7 +257,7 @@ class MetaBlock(IdentifiedObject):
 
     def setMetaBlockParameter(self, value):
         for x in self._MetaBlockParameter:
-            x._MemberOf_MetaBlock = None
+            x.MemberOf_MetaBlock = None
         for y in value:
             y._MemberOf_MetaBlock = self
         self._MetaBlockParameter = value
@@ -279,11 +266,9 @@ class MetaBlock(IdentifiedObject):
 
     def addMetaBlockParameter(self, *MetaBlockParameter):
         for obj in MetaBlockParameter:
-            obj._MemberOf_MetaBlock = self
-            self._MetaBlockParameter.append(obj)
+            obj.MemberOf_MetaBlock = self
 
     def removeMetaBlockParameter(self, *MetaBlockParameter):
         for obj in MetaBlockParameter:
-            obj._MemberOf_MetaBlock = None
-            self._MetaBlockParameter.remove(obj)
+            obj.MemberOf_MetaBlock = None
 

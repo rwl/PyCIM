@@ -219,6 +219,7 @@ class SynchronousMachine(RotatingMachine):
 
         self._HydroPump = value
         if self._HydroPump is not None:
+            self._HydroPump.SynchronousMachine = None
             self._HydroPump._SynchronousMachine = self
 
     HydroPump = property(getHydroPump, setHydroPump)
@@ -235,7 +236,8 @@ class SynchronousMachine(RotatingMachine):
 
         self._GeneratingUnit = value
         if self._GeneratingUnit is not None:
-            self._GeneratingUnit._SynchronousMachines.append(self)
+            if self not in self._GeneratingUnit._SynchronousMachines:
+                self._GeneratingUnit._SynchronousMachines.append(self)
 
     GeneratingUnit = property(getGeneratingUnit, setGeneratingUnit)
 
@@ -306,7 +308,8 @@ class SynchronousMachine(RotatingMachine):
 
         self._InitialReactiveCapabilityCurve = value
         if self._InitialReactiveCapabilityCurve is not None:
-            self._InitialReactiveCapabilityCurve._InitiallyUsedBySynchronousMachines.append(self)
+            if self not in self._InitialReactiveCapabilityCurve._InitiallyUsedBySynchronousMachines:
+                self._InitialReactiveCapabilityCurve._InitiallyUsedBySynchronousMachines.append(self)
 
     InitialReactiveCapabilityCurve = property(getInitialReactiveCapabilityCurve, setInitialReactiveCapabilityCurve)
 

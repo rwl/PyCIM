@@ -88,7 +88,7 @@ class LoadResponseCharacteristic(IdentifiedObject):
 
     def setEnergyConsumer(self, value):
         for x in self._EnergyConsumer:
-            x._LoadResponse = None
+            x.LoadResponse = None
         for y in value:
             y._LoadResponse = self
         self._EnergyConsumer = value
@@ -97,11 +97,9 @@ class LoadResponseCharacteristic(IdentifiedObject):
 
     def addEnergyConsumer(self, *EnergyConsumer):
         for obj in EnergyConsumer:
-            obj._LoadResponse = self
-            self._EnergyConsumer.append(obj)
+            obj.LoadResponse = self
 
     def removeEnergyConsumer(self, *EnergyConsumer):
         for obj in EnergyConsumer:
-            obj._LoadResponse = None
-            self._EnergyConsumer.remove(obj)
+            obj.LoadResponse = None
 

@@ -53,7 +53,8 @@ class GenUnitOpCostCurve(Curve):
 
         self._GeneratingUnit = value
         if self._GeneratingUnit is not None:
-            self._GeneratingUnit._GenUnitOpCostCurves.append(self)
+            if self not in self._GeneratingUnit._GenUnitOpCostCurves:
+                self._GeneratingUnit._GenUnitOpCostCurves.append(self)
 
     GeneratingUnit = property(getGeneratingUnit, setGeneratingUnit)
 

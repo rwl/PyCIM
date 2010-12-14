@@ -61,7 +61,8 @@ class Command(Control):
 
         self._ValueAliasSet = value
         if self._ValueAliasSet is not None:
-            self._ValueAliasSet._Commands.append(self)
+            if self not in self._ValueAliasSet._Commands:
+                self._ValueAliasSet._Commands.append(self)
 
     ValueAliasSet = property(getValueAliasSet, setValueAliasSet)
 
@@ -76,6 +77,7 @@ class Command(Control):
 
         self._Discrete = value
         if self._Discrete is not None:
+            self._Discrete.Command = None
             self._Discrete._Command = self
 
     Discrete = property(getDiscrete, setDiscrete)

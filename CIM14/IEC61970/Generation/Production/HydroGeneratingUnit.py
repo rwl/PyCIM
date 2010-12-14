@@ -69,7 +69,8 @@ class HydroGeneratingUnit(GeneratingUnit):
 
         self._HydroPowerPlant = value
         if self._HydroPowerPlant is not None:
-            self._HydroPowerPlant._HydroGeneratingUnits.append(self)
+            if self not in self._HydroPowerPlant._HydroGeneratingUnits:
+                self._HydroPowerPlant._HydroGeneratingUnits.append(self)
 
     HydroPowerPlant = property(getHydroPowerPlant, setHydroPowerPlant)
 
@@ -84,6 +85,7 @@ class HydroGeneratingUnit(GeneratingUnit):
 
         self._PenstockLossCurve = value
         if self._PenstockLossCurve is not None:
+            self._PenstockLossCurve.HydroGeneratingUnit = None
             self._PenstockLossCurve._HydroGeneratingUnit = self
 
     PenstockLossCurve = property(getPenstockLossCurve, setPenstockLossCurve)
@@ -95,7 +97,7 @@ class HydroGeneratingUnit(GeneratingUnit):
 
     def setHydroGeneratingEfficiencyCurves(self, value):
         for x in self._HydroGeneratingEfficiencyCurves:
-            x._HydroGeneratingUnit = None
+            x.HydroGeneratingUnit = None
         for y in value:
             y._HydroGeneratingUnit = self
         self._HydroGeneratingEfficiencyCurves = value
@@ -104,13 +106,11 @@ class HydroGeneratingUnit(GeneratingUnit):
 
     def addHydroGeneratingEfficiencyCurves(self, *HydroGeneratingEfficiencyCurves):
         for obj in HydroGeneratingEfficiencyCurves:
-            obj._HydroGeneratingUnit = self
-            self._HydroGeneratingEfficiencyCurves.append(obj)
+            obj.HydroGeneratingUnit = self
 
     def removeHydroGeneratingEfficiencyCurves(self, *HydroGeneratingEfficiencyCurves):
         for obj in HydroGeneratingEfficiencyCurves:
-            obj._HydroGeneratingUnit = None
-            self._HydroGeneratingEfficiencyCurves.remove(obj)
+            obj.HydroGeneratingUnit = None
 
     def getTailbayLossCurve(self):
         """A hydro generating unit has a tailbay loss curve
@@ -119,7 +119,7 @@ class HydroGeneratingUnit(GeneratingUnit):
 
     def setTailbayLossCurve(self, value):
         for x in self._TailbayLossCurve:
-            x._HydroGeneratingUnit = None
+            x.HydroGeneratingUnit = None
         for y in value:
             y._HydroGeneratingUnit = self
         self._TailbayLossCurve = value
@@ -128,11 +128,9 @@ class HydroGeneratingUnit(GeneratingUnit):
 
     def addTailbayLossCurve(self, *TailbayLossCurve):
         for obj in TailbayLossCurve:
-            obj._HydroGeneratingUnit = self
-            self._TailbayLossCurve.append(obj)
+            obj.HydroGeneratingUnit = self
 
     def removeTailbayLossCurve(self, *TailbayLossCurve):
         for obj in TailbayLossCurve:
-            obj._HydroGeneratingUnit = None
-            self._TailbayLossCurve.remove(obj)
+            obj.HydroGeneratingUnit = None
 

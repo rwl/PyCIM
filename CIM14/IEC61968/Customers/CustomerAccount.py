@@ -48,7 +48,7 @@ class CustomerAccount(Document):
 
     def setPaymentTransactions(self, value):
         for x in self._PaymentTransactions:
-            x._CustomerAccount = None
+            x.CustomerAccount = None
         for y in value:
             y._CustomerAccount = self
         self._PaymentTransactions = value
@@ -57,13 +57,11 @@ class CustomerAccount(Document):
 
     def addPaymentTransactions(self, *PaymentTransactions):
         for obj in PaymentTransactions:
-            obj._CustomerAccount = self
-            self._PaymentTransactions.append(obj)
+            obj.CustomerAccount = self
 
     def removePaymentTransactions(self, *PaymentTransactions):
         for obj in PaymentTransactions:
-            obj._CustomerAccount = None
-            self._PaymentTransactions.remove(obj)
+            obj.CustomerAccount = None
 
     def getCustomerAgreements(self):
         """All agreements for this customer account.
@@ -72,7 +70,7 @@ class CustomerAccount(Document):
 
     def setCustomerAgreements(self, value):
         for x in self._CustomerAgreements:
-            x._CustomerAccount = None
+            x.CustomerAccount = None
         for y in value:
             y._CustomerAccount = self
         self._CustomerAgreements = value
@@ -81,11 +79,9 @@ class CustomerAccount(Document):
 
     def addCustomerAgreements(self, *CustomerAgreements):
         for obj in CustomerAgreements:
-            obj._CustomerAccount = self
-            self._CustomerAgreements.append(obj)
+            obj.CustomerAccount = self
 
     def removeCustomerAgreements(self, *CustomerAgreements):
         for obj in CustomerAgreements:
-            obj._CustomerAccount = None
-            self._CustomerAgreements.remove(obj)
+            obj.CustomerAccount = None
 

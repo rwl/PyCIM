@@ -53,7 +53,8 @@ class MeterServiceWork(Work):
 
         self._OldMeterAsset = value
         if self._OldMeterAsset is not None:
-            self._OldMeterAsset._MeterReplacementWorks.append(self)
+            if self not in self._OldMeterAsset._MeterReplacementWorks:
+                self._OldMeterAsset._MeterReplacementWorks.append(self)
 
     OldMeterAsset = property(getOldMeterAsset, setOldMeterAsset)
 
@@ -69,7 +70,8 @@ class MeterServiceWork(Work):
 
         self._MeterAsset = value
         if self._MeterAsset is not None:
-            self._MeterAsset._MeterServiceWorks.append(self)
+            if self not in self._MeterAsset._MeterServiceWorks:
+                self._MeterAsset._MeterServiceWorks.append(self)
 
     MeterAsset = property(getMeterAsset, setMeterAsset)
 

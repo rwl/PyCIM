@@ -44,7 +44,7 @@ class LoadArea(EnergyArea):
 
     def setSubLoadAreas(self, value):
         for x in self._SubLoadAreas:
-            x._LoadArea = None
+            x.LoadArea = None
         for y in value:
             y._LoadArea = self
         self._SubLoadAreas = value
@@ -53,11 +53,9 @@ class LoadArea(EnergyArea):
 
     def addSubLoadAreas(self, *SubLoadAreas):
         for obj in SubLoadAreas:
-            obj._LoadArea = self
-            self._SubLoadAreas.append(obj)
+            obj.LoadArea = self
 
     def removeSubLoadAreas(self, *SubLoadAreas):
         for obj in SubLoadAreas:
-            obj._LoadArea = None
-            self._SubLoadAreas.remove(obj)
+            obj.LoadArea = None
 

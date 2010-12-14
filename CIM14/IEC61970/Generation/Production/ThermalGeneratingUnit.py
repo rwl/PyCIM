@@ -96,6 +96,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
         self._StartupModel = value
         if self._StartupModel is not None:
+            self._StartupModel.ThermalGeneratingUnit = None
             self._StartupModel._ThermalGeneratingUnit = self
 
     StartupModel = property(getStartupModel, setStartupModel)
@@ -107,7 +108,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
     def setEmmissionAccounts(self, value):
         for x in self._EmmissionAccounts:
-            x._ThermalGeneratingUnit = None
+            x.ThermalGeneratingUnit = None
         for y in value:
             y._ThermalGeneratingUnit = self
         self._EmmissionAccounts = value
@@ -116,13 +117,11 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
     def addEmmissionAccounts(self, *EmmissionAccounts):
         for obj in EmmissionAccounts:
-            obj._ThermalGeneratingUnit = self
-            self._EmmissionAccounts.append(obj)
+            obj.ThermalGeneratingUnit = self
 
     def removeEmmissionAccounts(self, *EmmissionAccounts):
         for obj in EmmissionAccounts:
-            obj._ThermalGeneratingUnit = None
-            self._EmmissionAccounts.remove(obj)
+            obj.ThermalGeneratingUnit = None
 
     def getCombinedCyclePlant(self):
         """A thermal generating unit may be a member of a combined cycle plant
@@ -136,7 +135,8 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
         self._CombinedCyclePlant = value
         if self._CombinedCyclePlant is not None:
-            self._CombinedCyclePlant._ThermalGeneratingUnits.append(self)
+            if self not in self._CombinedCyclePlant._ThermalGeneratingUnits:
+                self._CombinedCyclePlant._ThermalGeneratingUnits.append(self)
 
     CombinedCyclePlant = property(getCombinedCyclePlant, setCombinedCyclePlant)
 
@@ -152,7 +152,8 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
         self._CogenerationPlant = value
         if self._CogenerationPlant is not None:
-            self._CogenerationPlant._ThermalGeneratingUnits.append(self)
+            if self not in self._CogenerationPlant._ThermalGeneratingUnits:
+                self._CogenerationPlant._ThermalGeneratingUnits.append(self)
 
     CogenerationPlant = property(getCogenerationPlant, setCogenerationPlant)
 
@@ -163,7 +164,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
     def setEmissionCurves(self, value):
         for x in self._EmissionCurves:
-            x._ThermalGeneratingUnit = None
+            x.ThermalGeneratingUnit = None
         for y in value:
             y._ThermalGeneratingUnit = self
         self._EmissionCurves = value
@@ -172,13 +173,11 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
     def addEmissionCurves(self, *EmissionCurves):
         for obj in EmissionCurves:
-            obj._ThermalGeneratingUnit = self
-            self._EmissionCurves.append(obj)
+            obj.ThermalGeneratingUnit = self
 
     def removeEmissionCurves(self, *EmissionCurves):
         for obj in EmissionCurves:
-            obj._ThermalGeneratingUnit = None
-            self._EmissionCurves.remove(obj)
+            obj.ThermalGeneratingUnit = None
 
     def getHeatRateCurve(self):
         """A thermal generating unit may have a heat rate curve
@@ -191,6 +190,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
         self._HeatRateCurve = value
         if self._HeatRateCurve is not None:
+            self._HeatRateCurve.ThermalGeneratingUnit = None
             self._HeatRateCurve._ThermalGeneratingUnit = self
 
     HeatRateCurve = property(getHeatRateCurve, setHeatRateCurve)
@@ -206,6 +206,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
         self._ShutdownCurve = value
         if self._ShutdownCurve is not None:
+            self._ShutdownCurve.ThermalGeneratingUnit = None
             self._ShutdownCurve._ThermalGeneratingUnit = self
 
     ShutdownCurve = property(getShutdownCurve, setShutdownCurve)
@@ -221,6 +222,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
         self._IncrementalHeatRateCurve = value
         if self._IncrementalHeatRateCurve is not None:
+            self._IncrementalHeatRateCurve.ThermalGeneratingUnit = None
             self._IncrementalHeatRateCurve._ThermalGeneratingUnit = self
 
     IncrementalHeatRateCurve = property(getIncrementalHeatRateCurve, setIncrementalHeatRateCurve)
@@ -232,7 +234,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
     def setFuelAllocationSchedules(self, value):
         for x in self._FuelAllocationSchedules:
-            x._ThermalGeneratingUnit = None
+            x.ThermalGeneratingUnit = None
         for y in value:
             y._ThermalGeneratingUnit = self
         self._FuelAllocationSchedules = value
@@ -241,13 +243,11 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
     def addFuelAllocationSchedules(self, *FuelAllocationSchedules):
         for obj in FuelAllocationSchedules:
-            obj._ThermalGeneratingUnit = self
-            self._FuelAllocationSchedules.append(obj)
+            obj.ThermalGeneratingUnit = self
 
     def removeFuelAllocationSchedules(self, *FuelAllocationSchedules):
         for obj in FuelAllocationSchedules:
-            obj._ThermalGeneratingUnit = None
-            self._FuelAllocationSchedules.remove(obj)
+            obj.ThermalGeneratingUnit = None
 
     def getFossilFuels(self):
         """A thermal generating unit may have one or more fossil fuels
@@ -256,7 +256,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
     def setFossilFuels(self, value):
         for x in self._FossilFuels:
-            x._ThermalGeneratingUnit = None
+            x.ThermalGeneratingUnit = None
         for y in value:
             y._ThermalGeneratingUnit = self
         self._FossilFuels = value
@@ -265,13 +265,11 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
     def addFossilFuels(self, *FossilFuels):
         for obj in FossilFuels:
-            obj._ThermalGeneratingUnit = self
-            self._FossilFuels.append(obj)
+            obj.ThermalGeneratingUnit = self
 
     def removeFossilFuels(self, *FossilFuels):
         for obj in FossilFuels:
-            obj._ThermalGeneratingUnit = None
-            self._FossilFuels.remove(obj)
+            obj.ThermalGeneratingUnit = None
 
     def getHeatInputCurve(self):
         """A thermal generating unit may have a heat input curve
@@ -284,6 +282,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
         self._HeatInputCurve = value
         if self._HeatInputCurve is not None:
+            self._HeatInputCurve.ThermalGeneratingUnit = None
             self._HeatInputCurve._ThermalGeneratingUnit = self
 
     HeatInputCurve = property(getHeatInputCurve, setHeatInputCurve)
@@ -299,6 +298,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
         self._CAESPlant = value
         if self._CAESPlant is not None:
+            self._CAESPlant.ThermalGeneratingUnit = None
             self._CAESPlant._ThermalGeneratingUnit = self
 
     CAESPlant = property(getCAESPlant, setCAESPlant)

@@ -75,7 +75,7 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def setStandardControlBlock_MetaBlockStateReference(self, value):
         for x in self._StandardControlBlock_MetaBlockStateReference:
-            x._StandardControlBlock_MetaBlockConnectable = None
+            x.StandardControlBlock_MetaBlockConnectable = None
         for y in value:
             y._StandardControlBlock_MetaBlockConnectable = self
         self._StandardControlBlock_MetaBlockStateReference = value
@@ -84,13 +84,11 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def addStandardControlBlock_MetaBlockStateReference(self, *StandardControlBlock_MetaBlockStateReference):
         for obj in StandardControlBlock_MetaBlockStateReference:
-            obj._StandardControlBlock_MetaBlockConnectable = self
-            self._StandardControlBlock_MetaBlockStateReference.append(obj)
+            obj.StandardControlBlock_MetaBlockConnectable = self
 
     def removeStandardControlBlock_MetaBlockStateReference(self, *StandardControlBlock_MetaBlockStateReference):
         for obj in StandardControlBlock_MetaBlockStateReference:
-            obj._StandardControlBlock_MetaBlockConnectable = None
-            self._StandardControlBlock_MetaBlockStateReference.remove(obj)
+            obj.StandardControlBlock_MetaBlockConnectable = None
 
     def getMetaBlockOutputReference(self):
         
@@ -98,7 +96,7 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def setMetaBlockOutputReference(self, value):
         for x in self._MetaBlockOutputReference:
-            x._MetaBlockConnectable = None
+            x.MetaBlockConnectable = None
         for y in value:
             y._MetaBlockConnectable = self
         self._MetaBlockOutputReference = value
@@ -107,13 +105,11 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def addMetaBlockOutputReference(self, *MetaBlockOutputReference):
         for obj in MetaBlockOutputReference:
-            obj._MetaBlockConnectable = self
-            self._MetaBlockOutputReference.append(obj)
+            obj.MetaBlockConnectable = self
 
     def removeMetaBlockOutputReference(self, *MetaBlockOutputReference):
         for obj in MetaBlockOutputReference:
-            obj._MetaBlockConnectable = None
-            self._MetaBlockOutputReference.remove(obj)
+            obj.MetaBlockConnectable = None
 
     def getMetaBlockStateReference(self):
         
@@ -121,7 +117,7 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def setMetaBlockStateReference(self, value):
         for x in self._MetaBlockStateReference:
-            x._MetaBlockConnectable = None
+            x.MetaBlockConnectable = None
         for y in value:
             y._MetaBlockConnectable = self
         self._MetaBlockStateReference = value
@@ -130,13 +126,11 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def addMetaBlockStateReference(self, *MetaBlockStateReference):
         for obj in MetaBlockStateReference:
-            obj._MetaBlockConnectable = self
-            self._MetaBlockStateReference.append(obj)
+            obj.MetaBlockConnectable = self
 
     def removeMetaBlockStateReference(self, *MetaBlockStateReference):
         for obj in MetaBlockStateReference:
-            obj._MetaBlockConnectable = None
-            self._MetaBlockStateReference.remove(obj)
+            obj.MetaBlockConnectable = None
 
     def getBlockInputReference(self):
         """Each block reference input is usually tied to one (sometimes zero for optional inputs) external block inputs or internal block reference outputs.
@@ -145,7 +139,7 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def setBlockInputReference(self, value):
         for x in self._BlockInputReference:
-            x._BlockConnectable = None
+            x.BlockConnectable = None
         for y in value:
             y._BlockConnectable = self
         self._BlockInputReference = value
@@ -154,13 +148,11 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def addBlockInputReference(self, *BlockInputReference):
         for obj in BlockInputReference:
-            obj._BlockConnectable = self
-            self._BlockInputReference.append(obj)
+            obj.BlockConnectable = self
 
     def removeBlockInputReference(self, *BlockInputReference):
         for obj in BlockInputReference:
-            obj._BlockConnectable = None
-            self._BlockInputReference.remove(obj)
+            obj.BlockConnectable = None
 
     def getStandardControlBlock_MetaBlockInputReference(self):
         
@@ -168,7 +160,7 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def setStandardControlBlock_MetaBlockInputReference(self, value):
         for x in self._StandardControlBlock_MetaBlockInputReference:
-            x._StandardControlBlock_MetaBlockConnectable = None
+            x.StandardControlBlock_MetaBlockConnectable = None
         for y in value:
             y._StandardControlBlock_MetaBlockConnectable = self
         self._StandardControlBlock_MetaBlockInputReference = value
@@ -177,13 +169,11 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def addStandardControlBlock_MetaBlockInputReference(self, *StandardControlBlock_MetaBlockInputReference):
         for obj in StandardControlBlock_MetaBlockInputReference:
-            obj._StandardControlBlock_MetaBlockConnectable = self
-            self._StandardControlBlock_MetaBlockInputReference.append(obj)
+            obj.StandardControlBlock_MetaBlockConnectable = self
 
     def removeStandardControlBlock_MetaBlockInputReference(self, *StandardControlBlock_MetaBlockInputReference):
         for obj in StandardControlBlock_MetaBlockInputReference:
-            obj._StandardControlBlock_MetaBlockConnectable = None
-            self._StandardControlBlock_MetaBlockInputReference.remove(obj)
+            obj.StandardControlBlock_MetaBlockConnectable = None
 
     def getStandardControlBlock_MetaBlockParameterReference(self):
         
@@ -191,7 +181,7 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def setStandardControlBlock_MetaBlockParameterReference(self, value):
         for x in self._StandardControlBlock_MetaBlockParameterReference:
-            x._StandardControlBlock_MetaBlockConnectable = None
+            x.StandardControlBlock_MetaBlockConnectable = None
         for y in value:
             y._StandardControlBlock_MetaBlockConnectable = self
         self._StandardControlBlock_MetaBlockParameterReference = value
@@ -200,13 +190,11 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def addStandardControlBlock_MetaBlockParameterReference(self, *StandardControlBlock_MetaBlockParameterReference):
         for obj in StandardControlBlock_MetaBlockParameterReference:
-            obj._StandardControlBlock_MetaBlockConnectable = self
-            self._StandardControlBlock_MetaBlockParameterReference.append(obj)
+            obj.StandardControlBlock_MetaBlockConnectable = self
 
     def removeStandardControlBlock_MetaBlockParameterReference(self, *StandardControlBlock_MetaBlockParameterReference):
         for obj in StandardControlBlock_MetaBlockParameterReference:
-            obj._StandardControlBlock_MetaBlockConnectable = None
-            self._StandardControlBlock_MetaBlockParameterReference.remove(obj)
+            obj.StandardControlBlock_MetaBlockConnectable = None
 
     def getMetaBlockParameterReference(self):
         
@@ -214,7 +202,7 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def setMetaBlockParameterReference(self, value):
         for x in self._MetaBlockParameterReference:
-            x._MetaBlockConnectable = None
+            x.MetaBlockConnectable = None
         for y in value:
             y._MetaBlockConnectable = self
         self._MetaBlockParameterReference = value
@@ -223,13 +211,11 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def addMetaBlockParameterReference(self, *MetaBlockParameterReference):
         for obj in MetaBlockParameterReference:
-            obj._MetaBlockConnectable = self
-            self._MetaBlockParameterReference.append(obj)
+            obj.MetaBlockConnectable = self
 
     def removeMetaBlockParameterReference(self, *MetaBlockParameterReference):
         for obj in MetaBlockParameterReference:
-            obj._MetaBlockConnectable = None
-            self._MetaBlockParameterReference.remove(obj)
+            obj.MetaBlockConnectable = None
 
     def getStandardControlBlock_MetaBlockOutputReference(self):
         
@@ -237,7 +223,7 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def setStandardControlBlock_MetaBlockOutputReference(self, value):
         for x in self._StandardControlBlock_MetaBlockOutputReference:
-            x._StandardControlBlock_MetaBlockConnectable = None
+            x.StandardControlBlock_MetaBlockConnectable = None
         for y in value:
             y._StandardControlBlock_MetaBlockConnectable = self
         self._StandardControlBlock_MetaBlockOutputReference = value
@@ -246,13 +232,11 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def addStandardControlBlock_MetaBlockOutputReference(self, *StandardControlBlock_MetaBlockOutputReference):
         for obj in StandardControlBlock_MetaBlockOutputReference:
-            obj._StandardControlBlock_MetaBlockConnectable = self
-            self._StandardControlBlock_MetaBlockOutputReference.append(obj)
+            obj.StandardControlBlock_MetaBlockConnectable = self
 
     def removeStandardControlBlock_MetaBlockOutputReference(self, *StandardControlBlock_MetaBlockOutputReference):
         for obj in StandardControlBlock_MetaBlockOutputReference:
-            obj._StandardControlBlock_MetaBlockConnectable = None
-            self._StandardControlBlock_MetaBlockOutputReference.remove(obj)
+            obj.StandardControlBlock_MetaBlockConnectable = None
 
     def getMetaBlockInputReference(self):
         
@@ -260,7 +244,7 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def setMetaBlockInputReference(self, value):
         for x in self._MetaBlockInputReference:
-            x._MetaBlockConnectable = None
+            x.MetaBlockConnectable = None
         for y in value:
             y._MetaBlockConnectable = self
         self._MetaBlockInputReference = value
@@ -269,11 +253,9 @@ class MetaBlockConnectable(IdentifiedObject):
 
     def addMetaBlockInputReference(self, *MetaBlockInputReference):
         for obj in MetaBlockInputReference:
-            obj._MetaBlockConnectable = self
-            self._MetaBlockInputReference.append(obj)
+            obj.MetaBlockConnectable = self
 
     def removeMetaBlockInputReference(self, *MetaBlockInputReference):
         for obj in MetaBlockInputReference:
-            obj._MetaBlockConnectable = None
-            self._MetaBlockInputReference.remove(obj)
+            obj.MetaBlockConnectable = None
 

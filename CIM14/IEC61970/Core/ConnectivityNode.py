@@ -61,7 +61,8 @@ class ConnectivityNode(IdentifiedObject):
 
         self._TopologicalNode = value
         if self._TopologicalNode is not None:
-            self._TopologicalNode._ConnectivityNodes.append(self)
+            if self not in self._TopologicalNode._ConnectivityNodes:
+                self._TopologicalNode._ConnectivityNodes.append(self)
 
     TopologicalNode = property(getTopologicalNode, setTopologicalNode)
 
@@ -77,7 +78,8 @@ class ConnectivityNode(IdentifiedObject):
 
         self._BusNameMarker = value
         if self._BusNameMarker is not None:
-            self._BusNameMarker._ConnectivityNode.append(self)
+            if self not in self._BusNameMarker._ConnectivityNode:
+                self._BusNameMarker._ConnectivityNode.append(self)
 
     BusNameMarker = property(getBusNameMarker, setBusNameMarker)
 
@@ -93,7 +95,8 @@ class ConnectivityNode(IdentifiedObject):
 
         self._ConnectivityNodeContainer = value
         if self._ConnectivityNodeContainer is not None:
-            self._ConnectivityNodeContainer._ConnectivityNodes.append(self)
+            if self not in self._ConnectivityNodeContainer._ConnectivityNodes:
+                self._ConnectivityNodeContainer._ConnectivityNodes.append(self)
 
     ConnectivityNodeContainer = property(getConnectivityNodeContainer, setConnectivityNodeContainer)
 
@@ -104,7 +107,7 @@ class ConnectivityNode(IdentifiedObject):
 
     def setTerminals(self, value):
         for x in self._Terminals:
-            x._ConnectivityNode = None
+            x.ConnectivityNode = None
         for y in value:
             y._ConnectivityNode = self
         self._Terminals = value
@@ -113,11 +116,9 @@ class ConnectivityNode(IdentifiedObject):
 
     def addTerminals(self, *Terminals):
         for obj in Terminals:
-            obj._ConnectivityNode = self
-            self._Terminals.append(obj)
+            obj.ConnectivityNode = self
 
     def removeTerminals(self, *Terminals):
         for obj in Terminals:
-            obj._ConnectivityNode = None
-            self._Terminals.remove(obj)
+            obj.ConnectivityNode = None
 

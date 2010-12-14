@@ -68,7 +68,7 @@ class ConductorInfo(IdentifiedObject):
 
     def setConductorSegments(self, value):
         for x in self._ConductorSegments:
-            x._ConductorInfo = None
+            x.ConductorInfo = None
         for y in value:
             y._ConductorInfo = self
         self._ConductorSegments = value
@@ -77,13 +77,11 @@ class ConductorInfo(IdentifiedObject):
 
     def addConductorSegments(self, *ConductorSegments):
         for obj in ConductorSegments:
-            obj._ConductorInfo = self
-            self._ConductorSegments.append(obj)
+            obj.ConductorInfo = self
 
     def removeConductorSegments(self, *ConductorSegments):
         for obj in ConductorSegments:
-            obj._ConductorInfo = None
-            self._ConductorSegments.remove(obj)
+            obj.ConductorInfo = None
 
     def getWireArrangements(self):
         """All wire arrangements (single wires) that make this conductor.
@@ -92,7 +90,7 @@ class ConductorInfo(IdentifiedObject):
 
     def setWireArrangements(self, value):
         for x in self._WireArrangements:
-            x._ConductorInfo = None
+            x.ConductorInfo = None
         for y in value:
             y._ConductorInfo = self
         self._WireArrangements = value
@@ -101,11 +99,9 @@ class ConductorInfo(IdentifiedObject):
 
     def addWireArrangements(self, *WireArrangements):
         for obj in WireArrangements:
-            obj._ConductorInfo = self
-            self._WireArrangements.append(obj)
+            obj.ConductorInfo = self
 
     def removeWireArrangements(self, *WireArrangements):
         for obj in WireArrangements:
-            obj._ConductorInfo = None
-            self._WireArrangements.remove(obj)
+            obj.ConductorInfo = None
 

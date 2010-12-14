@@ -61,7 +61,8 @@ class IrregularTimePoint(Element):
 
         self._IntervalSchedule = value
         if self._IntervalSchedule is not None:
-            self._IntervalSchedule._TimePoints.append(self)
+            if self not in self._IntervalSchedule._TimePoints:
+                self._IntervalSchedule._TimePoints.append(self)
 
     IntervalSchedule = property(getIntervalSchedule, setIntervalSchedule)
 

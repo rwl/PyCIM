@@ -64,7 +64,7 @@ class ControlArea(PowerSystemResource):
 
     def setTieFlow(self, value):
         for x in self._TieFlow:
-            x._ControlArea = None
+            x.ControlArea = None
         for y in value:
             y._ControlArea = self
         self._TieFlow = value
@@ -73,13 +73,11 @@ class ControlArea(PowerSystemResource):
 
     def addTieFlow(self, *TieFlow):
         for obj in TieFlow:
-            obj._ControlArea = self
-            self._TieFlow.append(obj)
+            obj.ControlArea = self
 
     def removeTieFlow(self, *TieFlow):
         for obj in TieFlow:
-            obj._ControlArea = None
-            self._TieFlow.remove(obj)
+            obj.ControlArea = None
 
     def getEnergyArea(self):
         """The energy area that is forecast from this control area specification.
@@ -92,6 +90,7 @@ class ControlArea(PowerSystemResource):
 
         self._EnergyArea = value
         if self._EnergyArea is not None:
+            self._EnergyArea.ControlArea = None
             self._EnergyArea._ControlArea = self
 
     EnergyArea = property(getEnergyArea, setEnergyArea)
@@ -103,7 +102,7 @@ class ControlArea(PowerSystemResource):
 
     def setControlAreaGeneratingUnit(self, value):
         for x in self._ControlAreaGeneratingUnit:
-            x._ControlArea = None
+            x.ControlArea = None
         for y in value:
             y._ControlArea = self
         self._ControlAreaGeneratingUnit = value
@@ -112,11 +111,9 @@ class ControlArea(PowerSystemResource):
 
     def addControlAreaGeneratingUnit(self, *ControlAreaGeneratingUnit):
         for obj in ControlAreaGeneratingUnit:
-            obj._ControlArea = self
-            self._ControlAreaGeneratingUnit.append(obj)
+            obj.ControlArea = self
 
     def removeControlAreaGeneratingUnit(self, *ControlAreaGeneratingUnit):
         for obj in ControlAreaGeneratingUnit:
-            obj._ControlArea = None
-            self._ControlAreaGeneratingUnit.remove(obj)
+            obj.ControlArea = None
 

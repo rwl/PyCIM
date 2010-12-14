@@ -62,7 +62,8 @@ class MetaBlockInputReference(IdentifiedObject):
 
         self._StandardControlBlock_MetaBlockConnectable = value
         if self._StandardControlBlock_MetaBlockConnectable is not None:
-            self._StandardControlBlock_MetaBlockConnectable._StandardControlBlock_MetaBlockInputReference.append(self)
+            if self not in self._StandardControlBlock_MetaBlockConnectable._StandardControlBlock_MetaBlockInputReference:
+                self._StandardControlBlock_MetaBlockConnectable._StandardControlBlock_MetaBlockInputReference.append(self)
 
     StandardControlBlock_MetaBlockConnectable = property(getStandardControlBlock_MetaBlockConnectable, setStandardControlBlock_MetaBlockConnectable)
 
@@ -77,7 +78,8 @@ class MetaBlockInputReference(IdentifiedObject):
 
         self._MemberOf_MetaBlockReference = value
         if self._MemberOf_MetaBlockReference is not None:
-            self._MemberOf_MetaBlockReference._MetaBlockInputReference.append(self)
+            if self not in self._MemberOf_MetaBlockReference._MetaBlockInputReference:
+                self._MemberOf_MetaBlockReference._MetaBlockInputReference.append(self)
 
     MemberOf_MetaBlockReference = property(getMemberOf_MetaBlockReference, setMemberOf_MetaBlockReference)
 
@@ -91,6 +93,7 @@ class MetaBlockInputReference(IdentifiedObject):
 
         self._MetaBlockSignal = value
         if self._MetaBlockSignal is not None:
+            self._MetaBlockSignal.From = None
             self._MetaBlockSignal._From = self
 
     MetaBlockSignal = property(getMetaBlockSignal, setMetaBlockSignal)
@@ -106,7 +109,8 @@ class MetaBlockInputReference(IdentifiedObject):
 
         self._MetaBlockConnectable = value
         if self._MetaBlockConnectable is not None:
-            self._MetaBlockConnectable._MetaBlockInputReference.append(self)
+            if self not in self._MetaBlockConnectable._MetaBlockInputReference:
+                self._MetaBlockConnectable._MetaBlockInputReference.append(self)
 
     MetaBlockConnectable = property(getMetaBlockConnectable, setMetaBlockConnectable)
 

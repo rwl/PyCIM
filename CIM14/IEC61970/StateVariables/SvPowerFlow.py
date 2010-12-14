@@ -56,6 +56,7 @@ class SvPowerFlow(StateVariable):
 
         self._Terminal = value
         if self._Terminal is not None:
+            self._Terminal.SvPowerFlow = None
             self._Terminal._SvPowerFlow = self
 
     Terminal = property(getTerminal, setTerminal)

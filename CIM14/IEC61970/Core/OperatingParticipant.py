@@ -44,7 +44,7 @@ class OperatingParticipant(IdentifiedObject):
 
     def setOperatingShare(self, value):
         for x in self._OperatingShare:
-            x._OperatingParticipant = None
+            x.OperatingParticipant = None
         for y in value:
             y._OperatingParticipant = self
         self._OperatingShare = value
@@ -53,11 +53,9 @@ class OperatingParticipant(IdentifiedObject):
 
     def addOperatingShare(self, *OperatingShare):
         for obj in OperatingShare:
-            obj._OperatingParticipant = self
-            self._OperatingShare.append(obj)
+            obj.OperatingParticipant = self
 
     def removeOperatingShare(self, *OperatingShare):
         for obj in OperatingShare:
-            obj._OperatingParticipant = None
-            self._OperatingShare.remove(obj)
+            obj.OperatingParticipant = None
 

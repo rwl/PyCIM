@@ -48,6 +48,7 @@ class MeasurementValueQuality(Quality61850):
 
         self._MeasurementValue = value
         if self._MeasurementValue is not None:
+            self._MeasurementValue.MeasurementValueQuality = None
             self._MeasurementValue._MeasurementValueQuality = self
 
     MeasurementValue = property(getMeasurementValue, setMeasurementValue)

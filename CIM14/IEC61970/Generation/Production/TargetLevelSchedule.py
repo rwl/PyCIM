@@ -56,6 +56,7 @@ class TargetLevelSchedule(Curve):
 
         self._Reservoir = value
         if self._Reservoir is not None:
+            self._Reservoir.TargetLevelSchedule = None
             self._Reservoir._TargetLevelSchedule = self
 
     Reservoir = property(getReservoir, setReservoir)

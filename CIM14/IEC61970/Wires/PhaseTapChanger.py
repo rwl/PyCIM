@@ -84,6 +84,7 @@ class PhaseTapChanger(TapChanger):
 
         self._PhaseVariationCurve = value
         if self._PhaseVariationCurve is not None:
+            self._PhaseVariationCurve.PhaseTapChanger = None
             self._PhaseVariationCurve._PhaseTapChanger = self
 
     PhaseVariationCurve = property(getPhaseVariationCurve, setPhaseVariationCurve)
@@ -99,6 +100,7 @@ class PhaseTapChanger(TapChanger):
 
         self._Winding = value
         if self._Winding is not None:
+            self._Winding.PhaseTapChanger = None
             self._Winding._PhaseTapChanger = self
 
     Winding = property(getWinding, setWinding)
@@ -114,6 +116,7 @@ class PhaseTapChanger(TapChanger):
 
         self._TransformerWinding = value
         if self._TransformerWinding is not None:
+            self._TransformerWinding.PhaseTapChanger = None
             self._TransformerWinding._PhaseTapChanger = self
 
     TransformerWinding = property(getTransformerWinding, setTransformerWinding)

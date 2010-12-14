@@ -48,6 +48,7 @@ class RatioVariationCurve(Curve):
 
         self._RatioTapChanger = value
         if self._RatioTapChanger is not None:
+            self._RatioTapChanger.RatioVariationCurve = None
             self._RatioTapChanger._RatioVariationCurve = self
 
     RatioTapChanger = property(getRatioTapChanger, setRatioTapChanger)

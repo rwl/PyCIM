@@ -48,7 +48,7 @@ class SubLoadArea(EnergyArea):
 
     def setLoadGroups(self, value):
         for x in self._LoadGroups:
-            x._SubLoadArea = None
+            x.SubLoadArea = None
         for y in value:
             y._SubLoadArea = self
         self._LoadGroups = value
@@ -57,13 +57,11 @@ class SubLoadArea(EnergyArea):
 
     def addLoadGroups(self, *LoadGroups):
         for obj in LoadGroups:
-            obj._SubLoadArea = self
-            self._LoadGroups.append(obj)
+            obj.SubLoadArea = self
 
     def removeLoadGroups(self, *LoadGroups):
         for obj in LoadGroups:
-            obj._SubLoadArea = None
-            self._LoadGroups.remove(obj)
+            obj.SubLoadArea = None
 
     def getLoadArea(self):
         """The LoadArea where the SubLoadArea belongs.
@@ -77,7 +75,8 @@ class SubLoadArea(EnergyArea):
 
         self._LoadArea = value
         if self._LoadArea is not None:
-            self._LoadArea._SubLoadAreas.append(self)
+            if self not in self._LoadArea._SubLoadAreas:
+                self._LoadArea._SubLoadAreas.append(self)
 
     LoadArea = property(getLoadArea, setLoadArea)
 

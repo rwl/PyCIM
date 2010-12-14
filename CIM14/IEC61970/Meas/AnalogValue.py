@@ -56,7 +56,7 @@ class AnalogValue(MeasurementValue):
 
     def setAltTieMeas(self, value):
         for x in self._AltTieMeas:
-            x._AnalogValue = None
+            x.AnalogValue = None
         for y in value:
             y._AnalogValue = self
         self._AltTieMeas = value
@@ -65,13 +65,11 @@ class AnalogValue(MeasurementValue):
 
     def addAltTieMeas(self, *AltTieMeas):
         for obj in AltTieMeas:
-            obj._AnalogValue = self
-            self._AltTieMeas.append(obj)
+            obj.AnalogValue = self
 
     def removeAltTieMeas(self, *AltTieMeas):
         for obj in AltTieMeas:
-            obj._AnalogValue = None
-            self._AltTieMeas.remove(obj)
+            obj.AnalogValue = None
 
     def getAnalog(self):
         """Measurement to which this value is connected.
@@ -85,7 +83,8 @@ class AnalogValue(MeasurementValue):
 
         self._Analog = value
         if self._Analog is not None:
-            self._Analog._AnalogValues.append(self)
+            if self not in self._Analog._AnalogValues:
+                self._Analog._AnalogValues.append(self)
 
     Analog = property(getAnalog, setAnalog)
 
@@ -96,7 +95,7 @@ class AnalogValue(MeasurementValue):
 
     def setAltGeneratingUnit(self, value):
         for x in self._AltGeneratingUnit:
-            x._AnalogValue = None
+            x.AnalogValue = None
         for y in value:
             y._AnalogValue = self
         self._AltGeneratingUnit = value
@@ -105,11 +104,9 @@ class AnalogValue(MeasurementValue):
 
     def addAltGeneratingUnit(self, *AltGeneratingUnit):
         for obj in AltGeneratingUnit:
-            obj._AnalogValue = self
-            self._AltGeneratingUnit.append(obj)
+            obj.AnalogValue = self
 
     def removeAltGeneratingUnit(self, *AltGeneratingUnit):
         for obj in AltGeneratingUnit:
-            obj._AnalogValue = None
-            self._AltGeneratingUnit.remove(obj)
+            obj.AnalogValue = None
 

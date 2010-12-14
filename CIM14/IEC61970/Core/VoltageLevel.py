@@ -65,7 +65,8 @@ class VoltageLevel(EquipmentContainer):
 
         self._Substation = value
         if self._Substation is not None:
-            self._Substation._VoltageLevels.append(self)
+            if self not in self._Substation._VoltageLevels:
+                self._Substation._VoltageLevels.append(self)
 
     Substation = property(getSubstation, setSubstation)
 
@@ -76,7 +77,7 @@ class VoltageLevel(EquipmentContainer):
 
     def setBays(self, value):
         for x in self._Bays:
-            x._VoltageLevel = None
+            x.VoltageLevel = None
         for y in value:
             y._VoltageLevel = self
         self._Bays = value
@@ -85,13 +86,11 @@ class VoltageLevel(EquipmentContainer):
 
     def addBays(self, *Bays):
         for obj in Bays:
-            obj._VoltageLevel = self
-            self._Bays.append(obj)
+            obj.VoltageLevel = self
 
     def removeBays(self, *Bays):
         for obj in Bays:
-            obj._VoltageLevel = None
-            self._Bays.remove(obj)
+            obj.VoltageLevel = None
 
     def getBaseVoltage(self):
         """The base voltage used for all equipment within the VoltageLevel.
@@ -105,7 +104,8 @@ class VoltageLevel(EquipmentContainer):
 
         self._BaseVoltage = value
         if self._BaseVoltage is not None:
-            self._BaseVoltage._VoltageLevel.append(self)
+            if self not in self._BaseVoltage._VoltageLevel:
+                self._BaseVoltage._VoltageLevel.append(self)
 
     BaseVoltage = property(getBaseVoltage, setBaseVoltage)
 

@@ -77,7 +77,8 @@ class DistributionTransformerWinding(ConductingEquipment):
 
         self._Transformer = value
         if self._Transformer is not None:
-            self._Transformer._Windings.append(self)
+            if self not in self._Transformer._Windings:
+                self._Transformer._Windings.append(self)
 
     Transformer = property(getTransformer, setTransformer)
 
@@ -93,7 +94,8 @@ class DistributionTransformerWinding(ConductingEquipment):
 
         self._WindingInfo = value
         if self._WindingInfo is not None:
-            self._WindingInfo._Windings.append(self)
+            if self not in self._WindingInfo._Windings:
+                self._WindingInfo._Windings.append(self)
 
     WindingInfo = property(getWindingInfo, setWindingInfo)
 
@@ -108,6 +110,7 @@ class DistributionTransformerWinding(ConductingEquipment):
 
         self._RatioTapChanger = value
         if self._RatioTapChanger is not None:
+            self._RatioTapChanger.Winding = None
             self._RatioTapChanger._Winding = self
 
     RatioTapChanger = property(getRatioTapChanger, setRatioTapChanger)
@@ -124,7 +127,8 @@ class DistributionTransformerWinding(ConductingEquipment):
 
         self._PiImpedance = value
         if self._PiImpedance is not None:
-            self._PiImpedance._Windings.append(self)
+            if self not in self._PiImpedance._Windings:
+                self._PiImpedance._Windings.append(self)
 
     PiImpedance = property(getPiImpedance, setPiImpedance)
 
@@ -139,6 +143,7 @@ class DistributionTransformerWinding(ConductingEquipment):
 
         self._PhaseTapChanger = value
         if self._PhaseTapChanger is not None:
+            self._PhaseTapChanger.Winding = None
             self._PhaseTapChanger._Winding = self
 
     PhaseTapChanger = property(getPhaseTapChanger, setPhaseTapChanger)

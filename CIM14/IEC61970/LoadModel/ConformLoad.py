@@ -49,7 +49,8 @@ class ConformLoad(EnergyConsumer):
 
         self._LoadGroup = value
         if self._LoadGroup is not None:
-            self._LoadGroup._EnergyConsumers.append(self)
+            if self not in self._LoadGroup._EnergyConsumers:
+                self._LoadGroup._EnergyConsumers.append(self)
 
     LoadGroup = property(getLoadGroup, setLoadGroup)
 

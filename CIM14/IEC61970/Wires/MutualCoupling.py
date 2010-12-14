@@ -85,7 +85,8 @@ class MutualCoupling(IdentifiedObject):
 
         self._Second_Terminal = value
         if self._Second_Terminal is not None:
-            self._Second_Terminal._HasSecond_MutualCoupling.append(self)
+            if self not in self._Second_Terminal._HasSecond_MutualCoupling:
+                self._Second_Terminal._HasSecond_MutualCoupling.append(self)
 
     Second_Terminal = property(getSecond_Terminal, setSecond_Terminal)
 
@@ -101,7 +102,8 @@ class MutualCoupling(IdentifiedObject):
 
         self._First_Terminal = value
         if self._First_Terminal is not None:
-            self._First_Terminal._HasFirst_MutualCoupling.append(self)
+            if self not in self._First_Terminal._HasFirst_MutualCoupling:
+                self._First_Terminal._HasFirst_MutualCoupling.append(self)
 
     First_Terminal = property(getFirst_Terminal, setFirst_Terminal)
 

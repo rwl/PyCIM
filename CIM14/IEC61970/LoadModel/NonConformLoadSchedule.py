@@ -49,7 +49,8 @@ class NonConformLoadSchedule(SeasonDayTypeSchedule):
 
         self._NonConformLoadGroup = value
         if self._NonConformLoadGroup is not None:
-            self._NonConformLoadGroup._NonConformLoadSchedules.append(self)
+            if self not in self._NonConformLoadGroup._NonConformLoadSchedules:
+                self._NonConformLoadGroup._NonConformLoadSchedules.append(self)
 
     NonConformLoadGroup = property(getNonConformLoadGroup, setNonConformLoadGroup)
 

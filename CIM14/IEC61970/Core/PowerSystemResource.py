@@ -81,7 +81,8 @@ class PowerSystemResource(IdentifiedObject):
 
         self._Location = value
         if self._Location is not None:
-            self._Location._PowerSystemResources.append(self)
+            if self not in self._Location._PowerSystemResources:
+                self._Location._PowerSystemResources.append(self)
 
     Location = property(getLocation, setLocation)
 
@@ -147,7 +148,7 @@ class PowerSystemResource(IdentifiedObject):
 
     def setMeasurements(self, value):
         for x in self._Measurements:
-            x._PowerSystemResource = None
+            x.PowerSystemResource = None
         for y in value:
             y._PowerSystemResource = self
         self._Measurements = value
@@ -156,13 +157,11 @@ class PowerSystemResource(IdentifiedObject):
 
     def addMeasurements(self, *Measurements):
         for obj in Measurements:
-            obj._PowerSystemResource = self
-            self._Measurements.append(obj)
+            obj.PowerSystemResource = self
 
     def removeMeasurements(self, *Measurements):
         for obj in Measurements:
-            obj._PowerSystemResource = None
-            self._Measurements.remove(obj)
+            obj.PowerSystemResource = None
 
     def getOperatingShare(self):
         """The linkage to any number of operating share objects.
@@ -171,7 +170,7 @@ class PowerSystemResource(IdentifiedObject):
 
     def setOperatingShare(self, value):
         for x in self._OperatingShare:
-            x._PowerSystemResource = None
+            x.PowerSystemResource = None
         for y in value:
             y._PowerSystemResource = self
         self._OperatingShare = value
@@ -180,13 +179,11 @@ class PowerSystemResource(IdentifiedObject):
 
     def addOperatingShare(self, *OperatingShare):
         for obj in OperatingShare:
-            obj._PowerSystemResource = self
-            self._OperatingShare.append(obj)
+            obj.PowerSystemResource = self
 
     def removeOperatingShare(self, *OperatingShare):
         for obj in OperatingShare:
-            obj._PowerSystemResource = None
-            self._OperatingShare.remove(obj)
+            obj.PowerSystemResource = None
 
     def getOutageSchedule(self):
         """A power system resource may have an outage schedule
@@ -199,6 +196,7 @@ class PowerSystemResource(IdentifiedObject):
 
         self._OutageSchedule = value
         if self._OutageSchedule is not None:
+            self._OutageSchedule.PowerSystemResource = None
             self._OutageSchedule._PowerSystemResource = self
 
     OutageSchedule = property(getOutageSchedule, setOutageSchedule)
@@ -238,7 +236,7 @@ class PowerSystemResource(IdentifiedObject):
 
     def setBlock(self, value):
         for x in self._Block:
-            x._PowerSystemResource = None
+            x.PowerSystemResource = None
         for y in value:
             y._PowerSystemResource = self
         self._Block = value
@@ -247,13 +245,11 @@ class PowerSystemResource(IdentifiedObject):
 
     def addBlock(self, *Block):
         for obj in Block:
-            obj._PowerSystemResource = self
-            self._Block.append(obj)
+            obj.PowerSystemResource = self
 
     def removeBlock(self, *Block):
         for obj in Block:
-            obj._PowerSystemResource = None
-            self._Block.remove(obj)
+            obj.PowerSystemResource = None
 
     def getPSRType(self):
         """PSRType (custom classification) for this PowerSystemResource.
@@ -267,7 +263,8 @@ class PowerSystemResource(IdentifiedObject):
 
         self._PSRType = value
         if self._PSRType is not None:
-            self._PSRType._PowerSystemResources.append(self)
+            if self not in self._PSRType._PowerSystemResources:
+                self._PSRType._PowerSystemResources.append(self)
 
     PSRType = property(getPSRType, setPSRType)
 

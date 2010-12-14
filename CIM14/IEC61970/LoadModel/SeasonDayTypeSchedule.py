@@ -53,7 +53,8 @@ class SeasonDayTypeSchedule(RegularIntervalSchedule):
 
         self._Season = value
         if self._Season is not None:
-            self._Season._SeasonDayTypeSchedules.append(self)
+            if self not in self._Season._SeasonDayTypeSchedules:
+                self._Season._SeasonDayTypeSchedules.append(self)
 
     Season = property(getSeason, setSeason)
 
@@ -69,7 +70,8 @@ class SeasonDayTypeSchedule(RegularIntervalSchedule):
 
         self._DayType = value
         if self._DayType is not None:
-            self._DayType._SeasonDayTypeSchedules.append(self)
+            if self not in self._DayType._SeasonDayTypeSchedules:
+                self._DayType._SeasonDayTypeSchedules.append(self)
 
     DayType = property(getDayType, setDayType)
 

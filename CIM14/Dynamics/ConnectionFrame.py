@@ -45,7 +45,7 @@ class ConnectionFrame(IdentifiedObject):
 
     def setslotConnection0(self, value):
         for x in self._slotConnection0:
-            x._connectionFrame0 = None
+            x.connectionFrame0 = None
         for y in value:
             y._connectionFrame0 = self
         self._slotConnection0 = value
@@ -54,13 +54,11 @@ class ConnectionFrame(IdentifiedObject):
 
     def addslotConnection0(self, *slotConnection0):
         for obj in slotConnection0:
-            obj._connectionFrame0 = self
-            self._slotConnection0.append(obj)
+            obj.connectionFrame0 = self
 
     def removeslotConnection0(self, *slotConnection0):
         for obj in slotConnection0:
-            obj._connectionFrame0 = None
-            self._slotConnection0.remove(obj)
+            obj.connectionFrame0 = None
 
     def getslot0(self):
         
@@ -68,7 +66,7 @@ class ConnectionFrame(IdentifiedObject):
 
     def setslot0(self, value):
         for x in self._slot0:
-            x._connectionFrame0 = None
+            x.connectionFrame0 = None
         for y in value:
             y._connectionFrame0 = self
         self._slot0 = value
@@ -77,11 +75,9 @@ class ConnectionFrame(IdentifiedObject):
 
     def addslot0(self, *slot0):
         for obj in slot0:
-            obj._connectionFrame0 = self
-            self._slot0.append(obj)
+            obj.connectionFrame0 = self
 
     def removeslot0(self, *slot0):
         for obj in slot0:
-            obj._connectionFrame0 = None
-            self._slot0.remove(obj)
+            obj.connectionFrame0 = None
 

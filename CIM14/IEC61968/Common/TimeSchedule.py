@@ -63,7 +63,7 @@ class TimeSchedule(Document):
 
     def setTimePoints(self, value):
         for x in self._TimePoints:
-            x._TimeSchedule = None
+            x.TimeSchedule = None
         for y in value:
             y._TimeSchedule = self
         self._TimePoints = value
@@ -72,13 +72,11 @@ class TimeSchedule(Document):
 
     def addTimePoints(self, *TimePoints):
         for obj in TimePoints:
-            obj._TimeSchedule = self
-            self._TimePoints.append(obj)
+            obj.TimeSchedule = self
 
     def removeTimePoints(self, *TimePoints):
         for obj in TimePoints:
-            obj._TimeSchedule = None
-            self._TimePoints.remove(obj)
+            obj.TimeSchedule = None
 
     # Schedule date and time interval.
     scheduleInterval = None

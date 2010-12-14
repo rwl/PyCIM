@@ -53,7 +53,8 @@ class ContingencyEquipment(ContingencyElement):
 
         self._Equipment = value
         if self._Equipment is not None:
-            self._Equipment._ContingencyEquipment.append(self)
+            if self not in self._Equipment._ContingencyEquipment:
+                self._Equipment._ContingencyEquipment.append(self)
 
     Equipment = property(getEquipment, setEquipment)
 

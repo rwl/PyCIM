@@ -53,7 +53,8 @@ class StringMeasurementValue(MeasurementValue):
 
         self._StringMeasurement = value
         if self._StringMeasurement is not None:
-            self._StringMeasurement._StringMeasurementValues.append(self)
+            if self not in self._StringMeasurement._StringMeasurementValues:
+                self._StringMeasurement._StringMeasurementValues.append(self)
 
     StringMeasurement = property(getStringMeasurement, setStringMeasurement)
 

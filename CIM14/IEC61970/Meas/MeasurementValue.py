@@ -65,7 +65,8 @@ class MeasurementValue(IdentifiedObject):
 
         self._MeasurementValueSource = value
         if self._MeasurementValueSource is not None:
-            self._MeasurementValueSource._MeasurementValues.append(self)
+            if self not in self._MeasurementValueSource._MeasurementValues:
+                self._MeasurementValueSource._MeasurementValues.append(self)
 
     MeasurementValueSource = property(getMeasurementValueSource, setMeasurementValueSource)
 
@@ -80,6 +81,7 @@ class MeasurementValue(IdentifiedObject):
 
         self._RemoteSource = value
         if self._RemoteSource is not None:
+            self._RemoteSource.MeasurementValue = None
             self._RemoteSource._MeasurementValue = self
 
     RemoteSource = property(getRemoteSource, setRemoteSource)
@@ -95,6 +97,7 @@ class MeasurementValue(IdentifiedObject):
 
         self._MeasurementValueQuality = value
         if self._MeasurementValueQuality is not None:
+            self._MeasurementValueQuality.MeasurementValue = None
             self._MeasurementValueQuality._MeasurementValue = self
 
     MeasurementValueQuality = property(getMeasurementValueQuality, setMeasurementValueQuality)

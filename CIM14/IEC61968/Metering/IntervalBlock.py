@@ -61,7 +61,8 @@ class IntervalBlock(Element):
 
         self._MeterReading = value
         if self._MeterReading is not None:
-            self._MeterReading._IntervalBlocks.append(self)
+            if self not in self._MeterReading._IntervalBlocks:
+                self._MeterReading._IntervalBlocks.append(self)
 
     MeterReading = property(getMeterReading, setMeterReading)
 
@@ -77,7 +78,8 @@ class IntervalBlock(Element):
 
         self._Pending = value
         if self._Pending is not None:
-            self._Pending._IntervalBlocks.append(self)
+            if self not in self._Pending._IntervalBlocks:
+                self._Pending._IntervalBlocks.append(self)
 
     Pending = property(getPending, setPending)
 
@@ -93,7 +95,8 @@ class IntervalBlock(Element):
 
         self._ReadingType = value
         if self._ReadingType is not None:
-            self._ReadingType._IntervalBlocks.append(self)
+            if self not in self._ReadingType._IntervalBlocks:
+                self._ReadingType._IntervalBlocks.append(self)
 
     ReadingType = property(getReadingType, setReadingType)
 

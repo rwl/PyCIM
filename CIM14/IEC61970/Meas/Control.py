@@ -69,7 +69,8 @@ class Control(IdentifiedObject):
 
         self._Unit = value
         if self._Unit is not None:
-            self._Unit._Controls.append(self)
+            if self not in self._Unit._Controls:
+                self._Unit._Controls.append(self)
 
     Unit = property(getUnit, setUnit)
 
@@ -85,7 +86,8 @@ class Control(IdentifiedObject):
 
         self._RegulatingCondEq = value
         if self._RegulatingCondEq is not None:
-            self._RegulatingCondEq._Controls.append(self)
+            if self not in self._RegulatingCondEq._Controls:
+                self._RegulatingCondEq._Controls.append(self)
 
     RegulatingCondEq = property(getRegulatingCondEq, setRegulatingCondEq)
 
@@ -101,7 +103,8 @@ class Control(IdentifiedObject):
 
         self._ControlType = value
         if self._ControlType is not None:
-            self._ControlType._Controls.append(self)
+            if self not in self._ControlType._Controls:
+                self._ControlType._Controls.append(self)
 
     ControlType = property(getControlType, setControlType)
 
@@ -116,6 +119,7 @@ class Control(IdentifiedObject):
 
         self._RemoteControl = value
         if self._RemoteControl is not None:
+            self._RemoteControl.Control = None
             self._RemoteControl._Control = self
 
     RemoteControl = property(getRemoteControl, setRemoteControl)

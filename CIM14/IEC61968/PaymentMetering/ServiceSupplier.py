@@ -56,7 +56,7 @@ class ServiceSupplier(Organisation):
 
     def setCustomerAgreements(self, value):
         for x in self._CustomerAgreements:
-            x._ServiceSupplier = None
+            x.ServiceSupplier = None
         for y in value:
             y._ServiceSupplier = self
         self._CustomerAgreements = value
@@ -65,13 +65,11 @@ class ServiceSupplier(Organisation):
 
     def addCustomerAgreements(self, *CustomerAgreements):
         for obj in CustomerAgreements:
-            obj._ServiceSupplier = self
-            self._CustomerAgreements.append(obj)
+            obj.ServiceSupplier = self
 
     def removeCustomerAgreements(self, *CustomerAgreements):
         for obj in CustomerAgreements:
-            obj._ServiceSupplier = None
-            self._CustomerAgreements.remove(obj)
+            obj.ServiceSupplier = None
 
     def getServiceDeliveryPoints(self):
         """All service delivery points this service supplier utilises to deliver a service.
@@ -80,7 +78,7 @@ class ServiceSupplier(Organisation):
 
     def setServiceDeliveryPoints(self, value):
         for x in self._ServiceDeliveryPoints:
-            x._ServiceSupplier = None
+            x.ServiceSupplier = None
         for y in value:
             y._ServiceSupplier = self
         self._ServiceDeliveryPoints = value
@@ -89,11 +87,9 @@ class ServiceSupplier(Organisation):
 
     def addServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._ServiceSupplier = self
-            self._ServiceDeliveryPoints.append(obj)
+            obj.ServiceSupplier = self
 
     def removeServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._ServiceSupplier = None
-            self._ServiceDeliveryPoints.remove(obj)
+            obj.ServiceSupplier = None
 

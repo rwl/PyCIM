@@ -57,7 +57,8 @@ class EndDeviceEvent(ActivityRecord):
 
         self._MeterReading = value
         if self._MeterReading is not None:
-            self._MeterReading._EndDeviceEvents.append(self)
+            if self not in self._MeterReading._EndDeviceEvents:
+                self._MeterReading._EndDeviceEvents.append(self)
 
     MeterReading = property(getMeterReading, setMeterReading)
 
@@ -73,7 +74,8 @@ class EndDeviceEvent(ActivityRecord):
 
         self._DeviceFunction = value
         if self._DeviceFunction is not None:
-            self._DeviceFunction._EndDeviceEvents.append(self)
+            if self not in self._DeviceFunction._EndDeviceEvents:
+                self._DeviceFunction._EndDeviceEvents.append(self)
 
     DeviceFunction = property(getDeviceFunction, setDeviceFunction)
 

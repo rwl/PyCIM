@@ -49,7 +49,8 @@ class GrossToNetActivePowerCurve(Curve):
 
         self._GeneratingUnit = value
         if self._GeneratingUnit is not None:
-            self._GeneratingUnit._GrossToNetActivePowerCurves.append(self)
+            if self not in self._GeneratingUnit._GrossToNetActivePowerCurves:
+                self._GeneratingUnit._GrossToNetActivePowerCurves.append(self)
 
     GeneratingUnit = property(getGeneratingUnit, setGeneratingUnit)
 

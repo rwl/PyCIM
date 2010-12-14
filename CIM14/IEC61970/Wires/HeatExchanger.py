@@ -48,6 +48,7 @@ class HeatExchanger(Equipment):
 
         self._PowerTransformer = value
         if self._PowerTransformer is not None:
+            self._PowerTransformer.HeatExchanger = None
             self._PowerTransformer._HeatExchanger = self
 
     PowerTransformer = property(getPowerTransformer, setPowerTransformer)

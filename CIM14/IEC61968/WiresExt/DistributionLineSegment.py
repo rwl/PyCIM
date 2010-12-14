@@ -57,7 +57,8 @@ class DistributionLineSegment(ACLineSegment):
 
         self._ConductorInfo = value
         if self._ConductorInfo is not None:
-            self._ConductorInfo._ConductorSegments.append(self)
+            if self not in self._ConductorInfo._ConductorSegments:
+                self._ConductorInfo._ConductorSegments.append(self)
 
     ConductorInfo = property(getConductorInfo, setConductorInfo)
 
@@ -73,7 +74,8 @@ class DistributionLineSegment(ACLineSegment):
 
         self._PhaseImpedance = value
         if self._PhaseImpedance is not None:
-            self._PhaseImpedance._ConductorSegments.append(self)
+            if self not in self._PhaseImpedance._ConductorSegments:
+                self._PhaseImpedance._ConductorSegments.append(self)
 
     PhaseImpedance = property(getPhaseImpedance, setPhaseImpedance)
 
@@ -89,7 +91,8 @@ class DistributionLineSegment(ACLineSegment):
 
         self._SequenceImpedance = value
         if self._SequenceImpedance is not None:
-            self._SequenceImpedance._ConductorSegments.append(self)
+            if self not in self._SequenceImpedance._ConductorSegments:
+                self._SequenceImpedance._ConductorSegments.append(self)
 
     SequenceImpedance = property(getSequenceImpedance, setSequenceImpedance)
 

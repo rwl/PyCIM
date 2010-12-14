@@ -44,7 +44,7 @@ class DayType(IdentifiedObject):
 
     def setSeasonDayTypeSchedules(self, value):
         for x in self._SeasonDayTypeSchedules:
-            x._DayType = None
+            x.DayType = None
         for y in value:
             y._DayType = self
         self._SeasonDayTypeSchedules = value
@@ -53,11 +53,9 @@ class DayType(IdentifiedObject):
 
     def addSeasonDayTypeSchedules(self, *SeasonDayTypeSchedules):
         for obj in SeasonDayTypeSchedules:
-            obj._DayType = self
-            self._SeasonDayTypeSchedules.append(obj)
+            obj.DayType = self
 
     def removeSeasonDayTypeSchedules(self, *SeasonDayTypeSchedules):
         for obj in SeasonDayTypeSchedules:
-            obj._DayType = None
-            self._SeasonDayTypeSchedules.remove(obj)
+            obj.DayType = None
 

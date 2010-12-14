@@ -52,6 +52,7 @@ class SvStatus(StateVariable):
 
         self._ConductingEquipment = value
         if self._ConductingEquipment is not None:
+            self._ConductingEquipment.SvStatus = None
             self._ConductingEquipment._SvStatus = self
 
     ConductingEquipment = property(getConductingEquipment, setConductingEquipment)

@@ -85,7 +85,8 @@ class ClearanceTag(IdentifiedObject):
 
         self._ClearanceTagType = value
         if self._ClearanceTagType is not None:
-            self._ClearanceTagType._ClearanceTags.append(self)
+            if self not in self._ClearanceTagType._ClearanceTags:
+                self._ClearanceTagType._ClearanceTags.append(self)
 
     ClearanceTagType = property(getClearanceTagType, setClearanceTagType)
 
@@ -101,7 +102,8 @@ class ClearanceTag(IdentifiedObject):
 
         self._ConductingEquipment = value
         if self._ConductingEquipment is not None:
-            self._ConductingEquipment._ClearanceTags.append(self)
+            if self not in self._ConductingEquipment._ClearanceTags:
+                self._ConductingEquipment._ClearanceTags.append(self)
 
     ConductingEquipment = property(getConductingEquipment, setConductingEquipment)
 

@@ -48,6 +48,7 @@ class EnergyArea(IdentifiedObject):
 
         self._ControlArea = value
         if self._ControlArea is not None:
+            self._ControlArea.EnergyArea = None
             self._ControlArea._EnergyArea = self
 
     ControlArea = property(getControlArea, setControlArea)

@@ -48,7 +48,7 @@ class TransformerBank(Equipment):
 
     def setTransformers(self, value):
         for x in self._Transformers:
-            x._TransformerBank = None
+            x.TransformerBank = None
         for y in value:
             y._TransformerBank = self
         self._Transformers = value
@@ -57,11 +57,9 @@ class TransformerBank(Equipment):
 
     def addTransformers(self, *Transformers):
         for obj in Transformers:
-            obj._TransformerBank = self
-            self._Transformers.append(obj)
+            obj.TransformerBank = self
 
     def removeTransformers(self, *Transformers):
         for obj in Transformers:
-            obj._TransformerBank = None
-            self._Transformers.remove(obj)
+            obj.TransformerBank = None
 

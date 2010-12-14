@@ -53,7 +53,8 @@ class AccumulatorValue(MeasurementValue):
 
         self._Accumulator = value
         if self._Accumulator is not None:
-            self._Accumulator._AccumulatorValues.append(self)
+            if self not in self._Accumulator._AccumulatorValues:
+                self._Accumulator._AccumulatorValues.append(self)
 
     Accumulator = property(getAccumulator, setAccumulator)
 

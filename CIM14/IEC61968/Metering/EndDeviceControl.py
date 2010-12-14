@@ -80,7 +80,8 @@ class EndDeviceControl(IdentifiedObject):
 
         self._EndDeviceGroup = value
         if self._EndDeviceGroup is not None:
-            self._EndDeviceGroup._EndDeviceControls.append(self)
+            if self not in self._EndDeviceGroup._EndDeviceControls:
+                self._EndDeviceGroup._EndDeviceControls.append(self)
 
     EndDeviceGroup = property(getEndDeviceGroup, setEndDeviceGroup)
 
@@ -96,7 +97,8 @@ class EndDeviceControl(IdentifiedObject):
 
         self._DemandResponseProgram = value
         if self._DemandResponseProgram is not None:
-            self._DemandResponseProgram._EndDeviceControls.append(self)
+            if self not in self._DemandResponseProgram._EndDeviceControls:
+                self._DemandResponseProgram._EndDeviceControls.append(self)
 
     DemandResponseProgram = property(getDemandResponseProgram, setDemandResponseProgram)
 
@@ -112,7 +114,8 @@ class EndDeviceControl(IdentifiedObject):
 
         self._CustomerAgreement = value
         if self._CustomerAgreement is not None:
-            self._CustomerAgreement._EndDeviceControls.append(self)
+            if self not in self._CustomerAgreement._EndDeviceControls:
+                self._CustomerAgreement._EndDeviceControls.append(self)
 
     CustomerAgreement = property(getCustomerAgreement, setCustomerAgreement)
 
@@ -128,7 +131,8 @@ class EndDeviceControl(IdentifiedObject):
 
         self._EndDeviceAsset = value
         if self._EndDeviceAsset is not None:
-            self._EndDeviceAsset._EndDeviceControls.append(self)
+            if self not in self._EndDeviceAsset._EndDeviceControls:
+                self._EndDeviceAsset._EndDeviceControls.append(self)
 
     EndDeviceAsset = property(getEndDeviceAsset, setEndDeviceAsset)
 

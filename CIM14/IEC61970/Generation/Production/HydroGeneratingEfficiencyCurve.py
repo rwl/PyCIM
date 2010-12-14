@@ -49,7 +49,8 @@ class HydroGeneratingEfficiencyCurve(Curve):
 
         self._HydroGeneratingUnit = value
         if self._HydroGeneratingUnit is not None:
-            self._HydroGeneratingUnit._HydroGeneratingEfficiencyCurves.append(self)
+            if self not in self._HydroGeneratingUnit._HydroGeneratingEfficiencyCurves:
+                self._HydroGeneratingUnit._HydroGeneratingEfficiencyCurves.append(self)
 
     HydroGeneratingUnit = property(getHydroGeneratingUnit, setHydroGeneratingUnit)
 

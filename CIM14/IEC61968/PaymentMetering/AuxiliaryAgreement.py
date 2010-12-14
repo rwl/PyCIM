@@ -88,7 +88,7 @@ class AuxiliaryAgreement(Agreement):
 
     def setAuxiliaryAccounts(self, value):
         for x in self._AuxiliaryAccounts:
-            x._AuxiliaryAgreement = None
+            x.AuxiliaryAgreement = None
         for y in value:
             y._AuxiliaryAgreement = self
         self._AuxiliaryAccounts = value
@@ -97,13 +97,11 @@ class AuxiliaryAgreement(Agreement):
 
     def addAuxiliaryAccounts(self, *AuxiliaryAccounts):
         for obj in AuxiliaryAccounts:
-            obj._AuxiliaryAgreement = self
-            self._AuxiliaryAccounts.append(obj)
+            obj.AuxiliaryAgreement = self
 
     def removeAuxiliaryAccounts(self, *AuxiliaryAccounts):
         for obj in AuxiliaryAccounts:
-            obj._AuxiliaryAgreement = None
-            self._AuxiliaryAccounts.remove(obj)
+            obj.AuxiliaryAgreement = None
 
     def getCustomerAgreement(self):
         """Customer agreement this (non-service related) auxiliary agreement refers to.
@@ -117,7 +115,8 @@ class AuxiliaryAgreement(Agreement):
 
         self._CustomerAgreement = value
         if self._CustomerAgreement is not None:
-            self._CustomerAgreement._AuxiliaryAgreements.append(self)
+            if self not in self._CustomerAgreement._AuxiliaryAgreements:
+                self._CustomerAgreement._AuxiliaryAgreements.append(self)
 
     CustomerAgreement = property(getCustomerAgreement, setCustomerAgreement)
 

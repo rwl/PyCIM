@@ -64,7 +64,7 @@ class ServiceLocation(Location):
 
     def setEndDeviceAssets(self, value):
         for x in self._EndDeviceAssets:
-            x._ServiceLocation = None
+            x.ServiceLocation = None
         for y in value:
             y._ServiceLocation = self
         self._EndDeviceAssets = value
@@ -73,13 +73,11 @@ class ServiceLocation(Location):
 
     def addEndDeviceAssets(self, *EndDeviceAssets):
         for obj in EndDeviceAssets:
-            obj._ServiceLocation = self
-            self._EndDeviceAssets.append(obj)
+            obj.ServiceLocation = self
 
     def removeEndDeviceAssets(self, *EndDeviceAssets):
         for obj in EndDeviceAssets:
-            obj._ServiceLocation = None
-            self._EndDeviceAssets.remove(obj)
+            obj.ServiceLocation = None
 
     def getCustomerAgreements(self):
         """All customer agreements regulating this service location.
@@ -116,7 +114,7 @@ class ServiceLocation(Location):
 
     def setServiceDeliveryPoints(self, value):
         for x in self._ServiceDeliveryPoints:
-            x._ServiceLocation = None
+            x.ServiceLocation = None
         for y in value:
             y._ServiceLocation = self
         self._ServiceDeliveryPoints = value
@@ -125,11 +123,9 @@ class ServiceLocation(Location):
 
     def addServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._ServiceLocation = self
-            self._ServiceDeliveryPoints.append(obj)
+            obj.ServiceLocation = self
 
     def removeServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._ServiceLocation = None
-            self._ServiceDeliveryPoints.remove(obj)
+            obj.ServiceLocation = None
 

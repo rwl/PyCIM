@@ -47,7 +47,7 @@ class MetaBlockParameter(MetaBlockConnectable):
 
     def setBlockParameter(self, value):
         for x in self._BlockParameter:
-            x._MetaBlockParameter = None
+            x.MetaBlockParameter = None
         for y in value:
             y._MetaBlockParameter = self
         self._BlockParameter = value
@@ -56,13 +56,11 @@ class MetaBlockParameter(MetaBlockConnectable):
 
     def addBlockParameter(self, *BlockParameter):
         for obj in BlockParameter:
-            obj._MetaBlockParameter = self
-            self._BlockParameter.append(obj)
+            obj.MetaBlockParameter = self
 
     def removeBlockParameter(self, *BlockParameter):
         for obj in BlockParameter:
-            obj._MetaBlockParameter = None
-            self._BlockParameter.remove(obj)
+            obj.MetaBlockParameter = None
 
     def getMemberOf_MetaBlock(self):
         """Paramters belong to a block.
@@ -76,7 +74,8 @@ class MetaBlockParameter(MetaBlockConnectable):
 
         self._MemberOf_MetaBlock = value
         if self._MemberOf_MetaBlock is not None:
-            self._MemberOf_MetaBlock._MetaBlockParameter.append(self)
+            if self not in self._MemberOf_MetaBlock._MetaBlockParameter:
+                self._MemberOf_MetaBlock._MetaBlockParameter.append(self)
 
     MemberOf_MetaBlock = property(getMemberOf_MetaBlock, setMemberOf_MetaBlock)
 

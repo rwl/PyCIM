@@ -69,7 +69,8 @@ class Bay(EquipmentContainer):
 
         self._Substation = value
         if self._Substation is not None:
-            self._Substation._Bays.append(self)
+            if self not in self._Substation._Bays:
+                self._Substation._Bays.append(self)
 
     Substation = property(getSubstation, setSubstation)
 
@@ -85,7 +86,8 @@ class Bay(EquipmentContainer):
 
         self._VoltageLevel = value
         if self._VoltageLevel is not None:
-            self._VoltageLevel._Bays.append(self)
+            if self not in self._VoltageLevel._Bays:
+                self._VoltageLevel._Bays.append(self)
 
     VoltageLevel = property(getVoltageLevel, setVoltageLevel)
 

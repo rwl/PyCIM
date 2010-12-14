@@ -68,6 +68,7 @@ class Discrete(Measurement):
 
         self._Command = value
         if self._Command is not None:
+            self._Command.Discrete = None
             self._Command._Discrete = self
 
     Command = property(getCommand, setCommand)
@@ -79,7 +80,7 @@ class Discrete(Measurement):
 
     def setDiscreteValues(self, value):
         for x in self._DiscreteValues:
-            x._Discrete = None
+            x.Discrete = None
         for y in value:
             y._Discrete = self
         self._DiscreteValues = value
@@ -88,13 +89,11 @@ class Discrete(Measurement):
 
     def addDiscreteValues(self, *DiscreteValues):
         for obj in DiscreteValues:
-            obj._Discrete = self
-            self._DiscreteValues.append(obj)
+            obj.Discrete = self
 
     def removeDiscreteValues(self, *DiscreteValues):
         for obj in DiscreteValues:
-            obj._Discrete = None
-            self._DiscreteValues.remove(obj)
+            obj.Discrete = None
 
     def getValueAliasSet(self):
         """The ValueAliasSet used for translation of a MeasurementValue.value to a name
@@ -108,7 +107,8 @@ class Discrete(Measurement):
 
         self._ValueAliasSet = value
         if self._ValueAliasSet is not None:
-            self._ValueAliasSet._Discretes.append(self)
+            if self not in self._ValueAliasSet._Discretes:
+                self._ValueAliasSet._Discretes.append(self)
 
     ValueAliasSet = property(getValueAliasSet, setValueAliasSet)
 

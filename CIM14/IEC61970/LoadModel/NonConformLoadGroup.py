@@ -48,7 +48,7 @@ class NonConformLoadGroup(LoadGroup):
 
     def setEnergyConsumers(self, value):
         for x in self._EnergyConsumers:
-            x._LoadGroup = None
+            x.LoadGroup = None
         for y in value:
             y._LoadGroup = self
         self._EnergyConsumers = value
@@ -57,13 +57,11 @@ class NonConformLoadGroup(LoadGroup):
 
     def addEnergyConsumers(self, *EnergyConsumers):
         for obj in EnergyConsumers:
-            obj._LoadGroup = self
-            self._EnergyConsumers.append(obj)
+            obj.LoadGroup = self
 
     def removeEnergyConsumers(self, *EnergyConsumers):
         for obj in EnergyConsumers:
-            obj._LoadGroup = None
-            self._EnergyConsumers.remove(obj)
+            obj.LoadGroup = None
 
     def getNonConformLoadSchedules(self):
         """The NonConformLoadSchedules in the NonConformLoadGroup.
@@ -72,7 +70,7 @@ class NonConformLoadGroup(LoadGroup):
 
     def setNonConformLoadSchedules(self, value):
         for x in self._NonConformLoadSchedules:
-            x._NonConformLoadGroup = None
+            x.NonConformLoadGroup = None
         for y in value:
             y._NonConformLoadGroup = self
         self._NonConformLoadSchedules = value
@@ -81,11 +79,9 @@ class NonConformLoadGroup(LoadGroup):
 
     def addNonConformLoadSchedules(self, *NonConformLoadSchedules):
         for obj in NonConformLoadSchedules:
-            obj._NonConformLoadGroup = self
-            self._NonConformLoadSchedules.append(obj)
+            obj.NonConformLoadGroup = self
 
     def removeNonConformLoadSchedules(self, *NonConformLoadSchedules):
         for obj in NonConformLoadSchedules:
-            obj._NonConformLoadGroup = None
-            self._NonConformLoadSchedules.remove(obj)
+            obj.NonConformLoadGroup = None
 

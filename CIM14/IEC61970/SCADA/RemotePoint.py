@@ -49,7 +49,8 @@ class RemotePoint(IdentifiedObject):
 
         self._RemoteUnit = value
         if self._RemoteUnit is not None:
-            self._RemoteUnit._RemotePoints.append(self)
+            if self not in self._RemoteUnit._RemotePoints:
+                self._RemoteUnit._RemotePoints.append(self)
 
     RemoteUnit = property(getRemoteUnit, setRemoteUnit)
 

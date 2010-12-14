@@ -94,7 +94,7 @@ class Location(IdentifiedObject):
 
     def setPositionPoints(self, value):
         for x in self._PositionPoints:
-            x._Location = None
+            x.Location = None
         for y in value:
             y._Location = self
         self._PositionPoints = value
@@ -103,13 +103,11 @@ class Location(IdentifiedObject):
 
     def addPositionPoints(self, *PositionPoints):
         for obj in PositionPoints:
-            obj._Location = self
-            self._PositionPoints.append(obj)
+            obj.Location = self
 
     def removePositionPoints(self, *PositionPoints):
         for obj in PositionPoints:
-            obj._Location = None
-            self._PositionPoints.remove(obj)
+            obj.Location = None
 
     def getPowerSystemResources(self):
         """All power system resources at this location.
@@ -118,7 +116,7 @@ class Location(IdentifiedObject):
 
     def setPowerSystemResources(self, value):
         for x in self._PowerSystemResources:
-            x._Location = None
+            x.Location = None
         for y in value:
             y._Location = self
         self._PowerSystemResources = value
@@ -127,13 +125,11 @@ class Location(IdentifiedObject):
 
     def addPowerSystemResources(self, *PowerSystemResources):
         for obj in PowerSystemResources:
-            obj._Location = self
-            self._PowerSystemResources.append(obj)
+            obj.Location = self
 
     def removePowerSystemResources(self, *PowerSystemResources):
         for obj in PowerSystemResources:
-            obj._Location = None
-            self._PowerSystemResources.remove(obj)
+            obj.Location = None
 
     def getCoordinateSystems(self):
         """All coordinate systems used to describe position points of this location.
@@ -142,7 +138,7 @@ class Location(IdentifiedObject):
 
     def setCoordinateSystems(self, value):
         for x in self._CoordinateSystems:
-            x._Location = None
+            x.Location = None
         for y in value:
             y._Location = self
         self._CoordinateSystems = value
@@ -151,13 +147,11 @@ class Location(IdentifiedObject):
 
     def addCoordinateSystems(self, *CoordinateSystems):
         for obj in CoordinateSystems:
-            obj._Location = self
-            self._CoordinateSystems.append(obj)
+            obj.Location = self
 
     def removeCoordinateSystems(self, *CoordinateSystems):
         for obj in CoordinateSystems:
-            obj._Location = None
-            self._CoordinateSystems.remove(obj)
+            obj.Location = None
 
     def getMeasurements(self):
         
@@ -196,7 +190,7 @@ class Location(IdentifiedObject):
 
     def setAssets(self, value):
         for x in self._Assets:
-            x._Location = None
+            x.Location = None
         for y in value:
             y._Location = self
         self._Assets = value
@@ -205,13 +199,11 @@ class Location(IdentifiedObject):
 
     def addAssets(self, *Assets):
         for obj in Assets:
-            obj._Location = self
-            self._Assets.append(obj)
+            obj.Location = self
 
     def removeAssets(self, *Assets):
         for obj in Assets:
-            obj._Location = None
-            self._Assets.remove(obj)
+            obj.Location = None
 
     # Additional phone number.
     phone2 = None

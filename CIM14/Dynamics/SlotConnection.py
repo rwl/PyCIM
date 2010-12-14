@@ -56,7 +56,8 @@ class SlotConnection(IdentifiedObject):
 
         self._connectionFrame0 = value
         if self._connectionFrame0 is not None:
-            self._connectionFrame0._slotConnection0.append(self)
+            if self not in self._connectionFrame0._slotConnection0:
+                self._connectionFrame0._slotConnection0.append(self)
 
     connectionFrame0 = property(getconnectionFrame0, setconnectionFrame0)
 
@@ -70,6 +71,7 @@ class SlotConnection(IdentifiedObject):
 
         self._slotInput0 = value
         if self._slotInput0 is not None:
+            self._slotInput0.slotConnection0 = None
             self._slotInput0._slotConnection0 = self
 
     slotInput0 = property(getslotInput0, setslotInput0)
@@ -85,7 +87,8 @@ class SlotConnection(IdentifiedObject):
 
         self._slotOutput0 = value
         if self._slotOutput0 is not None:
-            self._slotOutput0._slotConnection0.append(self)
+            if self not in self._slotOutput0._slotConnection0:
+                self._slotOutput0._slotConnection0.append(self)
 
     slotOutput0 = property(getslotOutput0, setslotOutput0)
 

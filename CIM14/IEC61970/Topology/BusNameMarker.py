@@ -53,7 +53,8 @@ class BusNameMarker(IdentifiedObject):
 
         self._ReportingGroup = value
         if self._ReportingGroup is not None:
-            self._ReportingGroup._BusNameMarker.append(self)
+            if self not in self._ReportingGroup._BusNameMarker:
+                self._ReportingGroup._BusNameMarker.append(self)
 
     ReportingGroup = property(getReportingGroup, setReportingGroup)
 
@@ -64,7 +65,7 @@ class BusNameMarker(IdentifiedObject):
 
     def setConnectivityNode(self, value):
         for x in self._ConnectivityNode:
-            x._BusNameMarker = None
+            x.BusNameMarker = None
         for y in value:
             y._BusNameMarker = self
         self._ConnectivityNode = value
@@ -73,11 +74,9 @@ class BusNameMarker(IdentifiedObject):
 
     def addConnectivityNode(self, *ConnectivityNode):
         for obj in ConnectivityNode:
-            obj._BusNameMarker = self
-            self._ConnectivityNode.append(obj)
+            obj.BusNameMarker = self
 
     def removeConnectivityNode(self, *ConnectivityNode):
         for obj in ConnectivityNode:
-            obj._BusNameMarker = None
-            self._ConnectivityNode.remove(obj)
+            obj.BusNameMarker = None
 

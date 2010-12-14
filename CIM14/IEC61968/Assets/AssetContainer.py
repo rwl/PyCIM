@@ -48,7 +48,7 @@ class AssetContainer(Asset):
 
     def setSeals(self, value):
         for x in self._Seals:
-            x._AssetContainer = None
+            x.AssetContainer = None
         for y in value:
             y._AssetContainer = self
         self._Seals = value
@@ -57,13 +57,11 @@ class AssetContainer(Asset):
 
     def addSeals(self, *Seals):
         for obj in Seals:
-            obj._AssetContainer = self
-            self._Seals.append(obj)
+            obj.AssetContainer = self
 
     def removeSeals(self, *Seals):
         for obj in Seals:
-            obj._AssetContainer = None
-            self._Seals.remove(obj)
+            obj.AssetContainer = None
 
     def getAssets(self):
         
@@ -71,7 +69,7 @@ class AssetContainer(Asset):
 
     def setAssets(self, value):
         for x in self._Assets:
-            x._AssetContainer = None
+            x.AssetContainer = None
         for y in value:
             y._AssetContainer = self
         self._Assets = value
@@ -80,11 +78,9 @@ class AssetContainer(Asset):
 
     def addAssets(self, *Assets):
         for obj in Assets:
-            obj._AssetContainer = self
-            self._Assets.append(obj)
+            obj.AssetContainer = self
 
     def removeAssets(self, *Assets):
         for obj in Assets:
-            obj._AssetContainer = None
-            self._Assets.remove(obj)
+            obj.AssetContainer = None
 

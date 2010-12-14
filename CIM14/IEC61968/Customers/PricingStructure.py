@@ -84,7 +84,7 @@ class PricingStructure(Document):
 
     def setTransactions(self, value):
         for x in self._Transactions:
-            x._PricingStructure = None
+            x.PricingStructure = None
         for y in value:
             y._PricingStructure = self
         self._Transactions = value
@@ -93,13 +93,11 @@ class PricingStructure(Document):
 
     def addTransactions(self, *Transactions):
         for obj in Transactions:
-            obj._PricingStructure = self
-            self._Transactions.append(obj)
+            obj.PricingStructure = self
 
     def removeTransactions(self, *Transactions):
         for obj in Transactions:
-            obj._PricingStructure = None
-            self._Transactions.remove(obj)
+            obj.PricingStructure = None
 
     def getServiceDeliveryPoints(self):
         """All service delivery points (with prepayment meter running as a stand-alone device, with no CustomerAgreement or Customer) to which this pricing structure applies.
@@ -169,7 +167,8 @@ class PricingStructure(Document):
 
         self._ServiceCategory = value
         if self._ServiceCategory is not None:
-            self._ServiceCategory._PricingStructures.append(self)
+            if self not in self._ServiceCategory._PricingStructures:
+                self._ServiceCategory._PricingStructures.append(self)
 
     ServiceCategory = property(getServiceCategory, setServiceCategory)
 

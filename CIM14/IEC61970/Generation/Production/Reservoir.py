@@ -112,7 +112,7 @@ class Reservoir(PowerSystemResource):
 
     def setLevelVsVolumeCurves(self, value):
         for x in self._LevelVsVolumeCurves:
-            x._Reservoir = None
+            x.Reservoir = None
         for y in value:
             y._Reservoir = self
         self._LevelVsVolumeCurves = value
@@ -121,13 +121,11 @@ class Reservoir(PowerSystemResource):
 
     def addLevelVsVolumeCurves(self, *LevelVsVolumeCurves):
         for obj in LevelVsVolumeCurves:
-            obj._Reservoir = self
-            self._LevelVsVolumeCurves.append(obj)
+            obj.Reservoir = self
 
     def removeLevelVsVolumeCurves(self, *LevelVsVolumeCurves):
         for obj in LevelVsVolumeCurves:
-            obj._Reservoir = None
-            self._LevelVsVolumeCurves.remove(obj)
+            obj.Reservoir = None
 
     def getInflowForecasts(self):
         """A reservoir may have a 'natural' inflow forecast.
@@ -136,7 +134,7 @@ class Reservoir(PowerSystemResource):
 
     def setInflowForecasts(self, value):
         for x in self._InflowForecasts:
-            x._Reservoir = None
+            x.Reservoir = None
         for y in value:
             y._Reservoir = self
         self._InflowForecasts = value
@@ -145,13 +143,11 @@ class Reservoir(PowerSystemResource):
 
     def addInflowForecasts(self, *InflowForecasts):
         for obj in InflowForecasts:
-            obj._Reservoir = self
-            self._InflowForecasts.append(obj)
+            obj.Reservoir = self
 
     def removeInflowForecasts(self, *InflowForecasts):
         for obj in InflowForecasts:
-            obj._Reservoir = None
-            self._InflowForecasts.remove(obj)
+            obj.Reservoir = None
 
     def getTargetLevelSchedule(self):
         """A reservoir may have a water level target schedule.
@@ -164,6 +160,7 @@ class Reservoir(PowerSystemResource):
 
         self._TargetLevelSchedule = value
         if self._TargetLevelSchedule is not None:
+            self._TargetLevelSchedule.Reservoir = None
             self._TargetLevelSchedule._Reservoir = self
 
     TargetLevelSchedule = property(getTargetLevelSchedule, setTargetLevelSchedule)
@@ -175,7 +172,7 @@ class Reservoir(PowerSystemResource):
 
     def setHydroPowerPlants(self, value):
         for x in self._HydroPowerPlants:
-            x._Reservoir = None
+            x.Reservoir = None
         for y in value:
             y._Reservoir = self
         self._HydroPowerPlants = value
@@ -184,13 +181,11 @@ class Reservoir(PowerSystemResource):
 
     def addHydroPowerPlants(self, *HydroPowerPlants):
         for obj in HydroPowerPlants:
-            obj._Reservoir = self
-            self._HydroPowerPlants.append(obj)
+            obj.Reservoir = self
 
     def removeHydroPowerPlants(self, *HydroPowerPlants):
         for obj in HydroPowerPlants:
-            obj._Reservoir = None
-            self._HydroPowerPlants.remove(obj)
+            obj.Reservoir = None
 
     def getUpstreamFromHydroPowerPlants(self):
         """Generators are supplied water from or pumps discharge water to an upstream reservoir
@@ -199,7 +194,7 @@ class Reservoir(PowerSystemResource):
 
     def setUpstreamFromHydroPowerPlants(self, value):
         for x in self._UpstreamFromHydroPowerPlants:
-            x._GenSourcePumpDischargeReservoir = None
+            x.GenSourcePumpDischargeReservoir = None
         for y in value:
             y._GenSourcePumpDischargeReservoir = self
         self._UpstreamFromHydroPowerPlants = value
@@ -208,13 +203,11 @@ class Reservoir(PowerSystemResource):
 
     def addUpstreamFromHydroPowerPlants(self, *UpstreamFromHydroPowerPlants):
         for obj in UpstreamFromHydroPowerPlants:
-            obj._GenSourcePumpDischargeReservoir = self
-            self._UpstreamFromHydroPowerPlants.append(obj)
+            obj.GenSourcePumpDischargeReservoir = self
 
     def removeUpstreamFromHydroPowerPlants(self, *UpstreamFromHydroPowerPlants):
         for obj in UpstreamFromHydroPowerPlants:
-            obj._GenSourcePumpDischargeReservoir = None
-            self._UpstreamFromHydroPowerPlants.remove(obj)
+            obj.GenSourcePumpDischargeReservoir = None
 
     def getSpillsFromReservoir(self):
         """A reservoir may spill into a downstream reservoir
@@ -228,7 +221,8 @@ class Reservoir(PowerSystemResource):
 
         self._SpillsFromReservoir = value
         if self._SpillsFromReservoir is not None:
-            self._SpillsFromReservoir._SpillsIntoReservoirs.append(self)
+            if self not in self._SpillsFromReservoir._SpillsIntoReservoirs:
+                self._SpillsFromReservoir._SpillsIntoReservoirs.append(self)
 
     SpillsFromReservoir = property(getSpillsFromReservoir, setSpillsFromReservoir)
 
@@ -239,7 +233,7 @@ class Reservoir(PowerSystemResource):
 
     def setSpillsIntoReservoirs(self, value):
         for x in self._SpillsIntoReservoirs:
-            x._SpillsFromReservoir = None
+            x.SpillsFromReservoir = None
         for y in value:
             y._SpillsFromReservoir = self
         self._SpillsIntoReservoirs = value
@@ -248,11 +242,9 @@ class Reservoir(PowerSystemResource):
 
     def addSpillsIntoReservoirs(self, *SpillsIntoReservoirs):
         for obj in SpillsIntoReservoirs:
-            obj._SpillsFromReservoir = self
-            self._SpillsIntoReservoirs.append(obj)
+            obj.SpillsFromReservoir = self
 
     def removeSpillsIntoReservoirs(self, *SpillsIntoReservoirs):
         for obj in SpillsIntoReservoirs:
-            obj._SpillsFromReservoir = None
-            self._SpillsIntoReservoirs.remove(obj)
+            obj.SpillsFromReservoir = None
 

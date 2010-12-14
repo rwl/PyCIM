@@ -44,7 +44,7 @@ class GeographicalRegion(IdentifiedObject):
 
     def setRegions(self, value):
         for x in self._Regions:
-            x._Region = None
+            x.Region = None
         for y in value:
             y._Region = self
         self._Regions = value
@@ -53,11 +53,9 @@ class GeographicalRegion(IdentifiedObject):
 
     def addRegions(self, *Regions):
         for obj in Regions:
-            obj._Region = self
-            self._Regions.append(obj)
+            obj.Region = self
 
     def removeRegions(self, *Regions):
         for obj in Regions:
-            obj._Region = None
-            self._Regions.remove(obj)
+            obj.Region = None
 

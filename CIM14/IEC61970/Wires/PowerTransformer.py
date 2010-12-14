@@ -60,7 +60,7 @@ class PowerTransformer(Equipment):
 
     def setTransformerWindings(self, value):
         for x in self._TransformerWindings:
-            x._PowerTransformer = None
+            x.PowerTransformer = None
         for y in value:
             y._PowerTransformer = self
         self._TransformerWindings = value
@@ -69,13 +69,11 @@ class PowerTransformer(Equipment):
 
     def addTransformerWindings(self, *TransformerWindings):
         for obj in TransformerWindings:
-            obj._PowerTransformer = self
-            self._TransformerWindings.append(obj)
+            obj.PowerTransformer = self
 
     def removeTransformerWindings(self, *TransformerWindings):
         for obj in TransformerWindings:
-            obj._PowerTransformer = None
-            self._TransformerWindings.remove(obj)
+            obj.PowerTransformer = None
 
     def getHeatExchanger(self):
         """A transformer may have a heat exchanger
@@ -88,6 +86,7 @@ class PowerTransformer(Equipment):
 
         self._HeatExchanger = value
         if self._HeatExchanger is not None:
+            self._HeatExchanger.PowerTransformer = None
             self._HeatExchanger._PowerTransformer = self
 
     HeatExchanger = property(getHeatExchanger, setHeatExchanger)

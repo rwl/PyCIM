@@ -153,7 +153,8 @@ class ServiceDeliveryPoint(IdentifiedObject):
 
         self._Transformer = value
         if self._Transformer is not None:
-            self._Transformer._ServiceDeliveryPoints.append(self)
+            if self not in self._Transformer._ServiceDeliveryPoints:
+                self._Transformer._ServiceDeliveryPoints.append(self)
 
     Transformer = property(getTransformer, setTransformer)
 
@@ -192,7 +193,7 @@ class ServiceDeliveryPoint(IdentifiedObject):
 
     def setEndDeviceAssets(self, value):
         for x in self._EndDeviceAssets:
-            x._ServiceDeliveryPoint = None
+            x.ServiceDeliveryPoint = None
         for y in value:
             y._ServiceDeliveryPoint = self
         self._EndDeviceAssets = value
@@ -201,13 +202,11 @@ class ServiceDeliveryPoint(IdentifiedObject):
 
     def addEndDeviceAssets(self, *EndDeviceAssets):
         for obj in EndDeviceAssets:
-            obj._ServiceDeliveryPoint = self
-            self._EndDeviceAssets.append(obj)
+            obj.ServiceDeliveryPoint = self
 
     def removeEndDeviceAssets(self, *EndDeviceAssets):
         for obj in EndDeviceAssets:
-            obj._ServiceDeliveryPoint = None
-            self._EndDeviceAssets.remove(obj)
+            obj.ServiceDeliveryPoint = None
 
     def getEnergyConsumer(self):
         
@@ -220,7 +219,8 @@ class ServiceDeliveryPoint(IdentifiedObject):
 
         self._EnergyConsumer = value
         if self._EnergyConsumer is not None:
-            self._EnergyConsumer._ServiceDeliveryPoints.append(self)
+            if self not in self._EnergyConsumer._ServiceDeliveryPoints:
+                self._EnergyConsumer._ServiceDeliveryPoints.append(self)
 
     EnergyConsumer = property(getEnergyConsumer, setEnergyConsumer)
 
@@ -236,7 +236,8 @@ class ServiceDeliveryPoint(IdentifiedObject):
 
         self._ServiceLocation = value
         if self._ServiceLocation is not None:
-            self._ServiceLocation._ServiceDeliveryPoints.append(self)
+            if self not in self._ServiceLocation._ServiceDeliveryPoints:
+                self._ServiceLocation._ServiceDeliveryPoints.append(self)
 
     ServiceLocation = property(getServiceLocation, setServiceLocation)
 
@@ -252,7 +253,8 @@ class ServiceDeliveryPoint(IdentifiedObject):
 
         self._CustomerAgreement = value
         if self._CustomerAgreement is not None:
-            self._CustomerAgreement._ServiceDeliveryPoints.append(self)
+            if self not in self._CustomerAgreement._ServiceDeliveryPoints:
+                self._CustomerAgreement._ServiceDeliveryPoints.append(self)
 
     CustomerAgreement = property(getCustomerAgreement, setCustomerAgreement)
 
@@ -263,7 +265,7 @@ class ServiceDeliveryPoint(IdentifiedObject):
 
     def setMeterReadings(self, value):
         for x in self._MeterReadings:
-            x._ServiceDeliveryPoint = None
+            x.ServiceDeliveryPoint = None
         for y in value:
             y._ServiceDeliveryPoint = self
         self._MeterReadings = value
@@ -272,13 +274,11 @@ class ServiceDeliveryPoint(IdentifiedObject):
 
     def addMeterReadings(self, *MeterReadings):
         for obj in MeterReadings:
-            obj._ServiceDeliveryPoint = self
-            self._MeterReadings.append(obj)
+            obj.ServiceDeliveryPoint = self
 
     def removeMeterReadings(self, *MeterReadings):
         for obj in MeterReadings:
-            obj._ServiceDeliveryPoint = None
-            self._MeterReadings.remove(obj)
+            obj.ServiceDeliveryPoint = None
 
     def getServiceSupplier(self):
         """ServiceSupplier (Utility) utilising this service delivery point to deliver a service.
@@ -292,7 +292,8 @@ class ServiceDeliveryPoint(IdentifiedObject):
 
         self._ServiceSupplier = value
         if self._ServiceSupplier is not None:
-            self._ServiceSupplier._ServiceDeliveryPoints.append(self)
+            if self not in self._ServiceSupplier._ServiceDeliveryPoints:
+                self._ServiceSupplier._ServiceDeliveryPoints.append(self)
 
     ServiceSupplier = property(getServiceSupplier, setServiceSupplier)
 
@@ -308,7 +309,8 @@ class ServiceDeliveryPoint(IdentifiedObject):
 
         self._ServiceCategory = value
         if self._ServiceCategory is not None:
-            self._ServiceCategory._ServiceDeliveryPoints.append(self)
+            if self not in self._ServiceCategory._ServiceDeliveryPoints:
+                self._ServiceCategory._ServiceDeliveryPoints.append(self)
 
     ServiceCategory = property(getServiceCategory, setServiceCategory)
 

@@ -52,7 +52,8 @@ class BlockConstant(MetaBlockConnectable):
 
         self._metaBlock0 = value
         if self._metaBlock0 is not None:
-            self._metaBlock0._blockConstant0.append(self)
+            if self not in self._metaBlock0._blockConstant0:
+                self._metaBlock0._blockConstant0.append(self)
 
     metaBlock0 = property(getmetaBlock0, setmetaBlock0)
 

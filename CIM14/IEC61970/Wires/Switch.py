@@ -105,7 +105,8 @@ class Switch(ConductingEquipment):
 
         self._CompositeSwitch = value
         if self._CompositeSwitch is not None:
-            self._CompositeSwitch._Switches.append(self)
+            if self not in self._CompositeSwitch._Switches:
+                self._CompositeSwitch._Switches.append(self)
 
     CompositeSwitch = property(getCompositeSwitch, setCompositeSwitch)
 
@@ -143,7 +144,7 @@ class Switch(ConductingEquipment):
 
     def setSwitchSchedules(self, value):
         for x in self._SwitchSchedules:
-            x._Switch = None
+            x.Switch = None
         for y in value:
             y._Switch = self
         self._SwitchSchedules = value
@@ -152,11 +153,9 @@ class Switch(ConductingEquipment):
 
     def addSwitchSchedules(self, *SwitchSchedules):
         for obj in SwitchSchedules:
-            obj._Switch = self
-            self._SwitchSchedules.append(obj)
+            obj.Switch = self
 
     def removeSwitchSchedules(self, *SwitchSchedules):
         for obj in SwitchSchedules:
-            obj._Switch = None
-            self._SwitchSchedules.remove(obj)
+            obj.Switch = None
 

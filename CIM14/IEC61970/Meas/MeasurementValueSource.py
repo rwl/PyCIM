@@ -44,7 +44,7 @@ class MeasurementValueSource(IdentifiedObject):
 
     def setMeasurementValues(self, value):
         for x in self._MeasurementValues:
-            x._MeasurementValueSource = None
+            x.MeasurementValueSource = None
         for y in value:
             y._MeasurementValueSource = self
         self._MeasurementValues = value
@@ -53,11 +53,9 @@ class MeasurementValueSource(IdentifiedObject):
 
     def addMeasurementValues(self, *MeasurementValues):
         for obj in MeasurementValues:
-            obj._MeasurementValueSource = self
-            self._MeasurementValues.append(obj)
+            obj.MeasurementValueSource = self
 
     def removeMeasurementValues(self, *MeasurementValues):
         for obj in MeasurementValues:
-            obj._MeasurementValueSource = None
-            self._MeasurementValues.remove(obj)
+            obj.MeasurementValueSource = None
 

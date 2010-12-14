@@ -61,7 +61,8 @@ class ReportingGroup(IdentifiedObject):
 
         self._ReportingSuperGroup = value
         if self._ReportingSuperGroup is not None:
-            self._ReportingSuperGroup._ReportingGroup.append(self)
+            if self not in self._ReportingSuperGroup._ReportingGroup:
+                self._ReportingSuperGroup._ReportingGroup.append(self)
 
     ReportingSuperGroup = property(getReportingSuperGroup, setReportingSuperGroup)
 
@@ -72,7 +73,7 @@ class ReportingGroup(IdentifiedObject):
 
     def setTopologicalNode(self, value):
         for x in self._TopologicalNode:
-            x._ReportingGroup = None
+            x.ReportingGroup = None
         for y in value:
             y._ReportingGroup = self
         self._TopologicalNode = value
@@ -81,13 +82,11 @@ class ReportingGroup(IdentifiedObject):
 
     def addTopologicalNode(self, *TopologicalNode):
         for obj in TopologicalNode:
-            obj._ReportingGroup = self
-            self._TopologicalNode.append(obj)
+            obj.ReportingGroup = self
 
     def removeTopologicalNode(self, *TopologicalNode):
         for obj in TopologicalNode:
-            obj._ReportingGroup = None
-            self._TopologicalNode.remove(obj)
+            obj.ReportingGroup = None
 
     def getBusNameMarker(self):
         """The BusNameMarkers that belong to this reporting group.
@@ -96,7 +95,7 @@ class ReportingGroup(IdentifiedObject):
 
     def setBusNameMarker(self, value):
         for x in self._BusNameMarker:
-            x._ReportingGroup = None
+            x.ReportingGroup = None
         for y in value:
             y._ReportingGroup = self
         self._BusNameMarker = value
@@ -105,13 +104,11 @@ class ReportingGroup(IdentifiedObject):
 
     def addBusNameMarker(self, *BusNameMarker):
         for obj in BusNameMarker:
-            obj._ReportingGroup = self
-            self._BusNameMarker.append(obj)
+            obj.ReportingGroup = self
 
     def removeBusNameMarker(self, *BusNameMarker):
         for obj in BusNameMarker:
-            obj._ReportingGroup = None
-            self._BusNameMarker.remove(obj)
+            obj.ReportingGroup = None
 
     def getPowerSystemResource(self):
         """PSR's which belong to this reporting group.

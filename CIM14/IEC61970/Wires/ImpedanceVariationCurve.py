@@ -48,6 +48,7 @@ class ImpedanceVariationCurve(Curve):
 
         self._TapChanger = value
         if self._TapChanger is not None:
+            self._TapChanger.ImpedanceVariationCurve = None
             self._TapChanger._ImpedanceVariationCurve = self
 
     TapChanger = property(getTapChanger, setTapChanger)

@@ -72,6 +72,7 @@ class HydroPump(PowerSystemResource):
 
         self._SynchronousMachine = value
         if self._SynchronousMachine is not None:
+            self._SynchronousMachine.HydroPump = None
             self._SynchronousMachine._HydroPump = self
 
     SynchronousMachine = property(getSynchronousMachine, setSynchronousMachine)
@@ -87,6 +88,7 @@ class HydroPump(PowerSystemResource):
 
         self._HydroPumpOpSchedule = value
         if self._HydroPumpOpSchedule is not None:
+            self._HydroPumpOpSchedule.HydroPump = None
             self._HydroPumpOpSchedule._HydroPump = self
 
     HydroPumpOpSchedule = property(getHydroPumpOpSchedule, setHydroPumpOpSchedule)
@@ -103,7 +105,8 @@ class HydroPump(PowerSystemResource):
 
         self._HydroPowerPlant = value
         if self._HydroPowerPlant is not None:
-            self._HydroPowerPlant._HydroPumps.append(self)
+            if self not in self._HydroPowerPlant._HydroPumps:
+                self._HydroPowerPlant._HydroPumps.append(self)
 
     HydroPowerPlant = property(getHydroPowerPlant, setHydroPowerPlant)
 

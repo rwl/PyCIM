@@ -92,7 +92,7 @@ class HydroPowerPlant(PowerSystemResource):
 
     def setHydroGeneratingUnits(self, value):
         for x in self._HydroGeneratingUnits:
-            x._HydroPowerPlant = None
+            x.HydroPowerPlant = None
         for y in value:
             y._HydroPowerPlant = self
         self._HydroGeneratingUnits = value
@@ -101,13 +101,11 @@ class HydroPowerPlant(PowerSystemResource):
 
     def addHydroGeneratingUnits(self, *HydroGeneratingUnits):
         for obj in HydroGeneratingUnits:
-            obj._HydroPowerPlant = self
-            self._HydroGeneratingUnits.append(obj)
+            obj.HydroPowerPlant = self
 
     def removeHydroGeneratingUnits(self, *HydroGeneratingUnits):
         for obj in HydroGeneratingUnits:
-            obj._HydroPowerPlant = None
-            self._HydroGeneratingUnits.remove(obj)
+            obj.HydroPowerPlant = None
 
     def getHydroPumps(self):
         """The hydro pump may be a member of a pumped storage plant or a pump for distributing water
@@ -116,7 +114,7 @@ class HydroPowerPlant(PowerSystemResource):
 
     def setHydroPumps(self, value):
         for x in self._HydroPumps:
-            x._HydroPowerPlant = None
+            x.HydroPowerPlant = None
         for y in value:
             y._HydroPowerPlant = self
         self._HydroPumps = value
@@ -125,13 +123,11 @@ class HydroPowerPlant(PowerSystemResource):
 
     def addHydroPumps(self, *HydroPumps):
         for obj in HydroPumps:
-            obj._HydroPowerPlant = self
-            self._HydroPumps.append(obj)
+            obj.HydroPowerPlant = self
 
     def removeHydroPumps(self, *HydroPumps):
         for obj in HydroPumps:
-            obj._HydroPowerPlant = None
-            self._HydroPumps.remove(obj)
+            obj.HydroPowerPlant = None
 
     def getReservoir(self):
         """Generators discharge water to or pumps are supplied water from a downstream reservoir
@@ -145,7 +141,8 @@ class HydroPowerPlant(PowerSystemResource):
 
         self._Reservoir = value
         if self._Reservoir is not None:
-            self._Reservoir._HydroPowerPlants.append(self)
+            if self not in self._Reservoir._HydroPowerPlants:
+                self._Reservoir._HydroPowerPlants.append(self)
 
     Reservoir = property(getReservoir, setReservoir)
 
@@ -161,7 +158,8 @@ class HydroPowerPlant(PowerSystemResource):
 
         self._GenSourcePumpDischargeReservoir = value
         if self._GenSourcePumpDischargeReservoir is not None:
-            self._GenSourcePumpDischargeReservoir._UpstreamFromHydroPowerPlants.append(self)
+            if self not in self._GenSourcePumpDischargeReservoir._UpstreamFromHydroPowerPlants:
+                self._GenSourcePumpDischargeReservoir._UpstreamFromHydroPowerPlants.append(self)
 
     GenSourcePumpDischargeReservoir = property(getGenSourcePumpDischargeReservoir, setGenSourcePumpDischargeReservoir)
 

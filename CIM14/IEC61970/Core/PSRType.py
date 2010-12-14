@@ -44,7 +44,7 @@ class PSRType(IdentifiedObject):
 
     def setPowerSystemResources(self, value):
         for x in self._PowerSystemResources:
-            x._PSRType = None
+            x.PSRType = None
         for y in value:
             y._PSRType = self
         self._PowerSystemResources = value
@@ -53,11 +53,9 @@ class PSRType(IdentifiedObject):
 
     def addPowerSystemResources(self, *PowerSystemResources):
         for obj in PowerSystemResources:
-            obj._PSRType = self
-            self._PowerSystemResources.append(obj)
+            obj.PSRType = self
 
     def removePowerSystemResources(self, *PowerSystemResources):
         for obj in PowerSystemResources:
-            obj._PSRType = None
-            self._PowerSystemResources.remove(obj)
+            obj.PSRType = None
 

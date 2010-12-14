@@ -56,6 +56,7 @@ class SvShuntCompensatorSections(StateVariable):
 
         self._ShuntCompensator = value
         if self._ShuntCompensator is not None:
+            self._ShuntCompensator.SvShuntCompensatorSections = None
             self._ShuntCompensator._SvShuntCompensatorSections = self
 
     ShuntCompensator = property(getShuntCompensator, setShuntCompensator)

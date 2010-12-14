@@ -60,6 +60,7 @@ class Register(IdentifiedObject):
 
         self._ReadingType = value
         if self._ReadingType is not None:
+            self._ReadingType.Register = None
             self._ReadingType._Register = self
 
     ReadingType = property(getReadingType, setReadingType)
@@ -76,7 +77,8 @@ class Register(IdentifiedObject):
 
         self._DeviceFunction = value
         if self._DeviceFunction is not None:
-            self._DeviceFunction._Registers.append(self)
+            if self not in self._DeviceFunction._Registers:
+                self._DeviceFunction._Registers.append(self)
 
     DeviceFunction = property(getDeviceFunction, setDeviceFunction)
 

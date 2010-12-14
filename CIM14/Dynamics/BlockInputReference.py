@@ -56,7 +56,8 @@ class BlockInputReference(IdentifiedObject):
 
         self._metaBlockReference0 = value
         if self._metaBlockReference0 is not None:
-            self._metaBlockReference0._blockInputReference0.append(self)
+            if self not in self._metaBlockReference0._blockInputReference0:
+                self._metaBlockReference0._blockInputReference0.append(self)
 
     metaBlockReference0 = property(getmetaBlockReference0, setmetaBlockReference0)
 
@@ -72,7 +73,8 @@ class BlockInputReference(IdentifiedObject):
 
         self._metaBlockInput0 = value
         if self._metaBlockInput0 is not None:
-            self._metaBlockInput0._blockInputReference0.append(self)
+            if self not in self._metaBlockInput0._blockInputReference0:
+                self._metaBlockInput0._blockInputReference0.append(self)
 
     metaBlockInput0 = property(getmetaBlockInput0, setmetaBlockInput0)
 
@@ -88,7 +90,8 @@ class BlockInputReference(IdentifiedObject):
 
         self._BlockConnectable = value
         if self._BlockConnectable is not None:
-            self._BlockConnectable._BlockInputReference.append(self)
+            if self not in self._BlockConnectable._BlockInputReference:
+                self._BlockConnectable._BlockInputReference.append(self)
 
     BlockConnectable = property(getBlockConnectable, setBlockConnectable)
 

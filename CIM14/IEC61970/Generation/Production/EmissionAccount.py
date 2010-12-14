@@ -57,7 +57,8 @@ class EmissionAccount(Curve):
 
         self._ThermalGeneratingUnit = value
         if self._ThermalGeneratingUnit is not None:
-            self._ThermalGeneratingUnit._EmmissionAccounts.append(self)
+            if self not in self._ThermalGeneratingUnit._EmmissionAccounts:
+                self._ThermalGeneratingUnit._EmmissionAccounts.append(self)
 
     ThermalGeneratingUnit = property(getThermalGeneratingUnit, setThermalGeneratingUnit)
 

@@ -69,7 +69,8 @@ class PositionPoint(Element):
 
         self._Location = value
         if self._Location is not None:
-            self._Location._PositionPoints.append(self)
+            if self not in self._Location._PositionPoints:
+                self._Location._PositionPoints.append(self)
 
     Location = property(getLocation, setLocation)
 
@@ -85,7 +86,8 @@ class PositionPoint(Element):
 
         self._CoordinateSystem = value
         if self._CoordinateSystem is not None:
-            self._CoordinateSystem._PositionPoints.append(self)
+            if self not in self._CoordinateSystem._PositionPoints:
+                self._CoordinateSystem._PositionPoints.append(self)
 
     CoordinateSystem = property(getCoordinateSystem, setCoordinateSystem)
 

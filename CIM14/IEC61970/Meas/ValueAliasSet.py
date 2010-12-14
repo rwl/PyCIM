@@ -52,7 +52,7 @@ class ValueAliasSet(IdentifiedObject):
 
     def setCommands(self, value):
         for x in self._Commands:
-            x._ValueAliasSet = None
+            x.ValueAliasSet = None
         for y in value:
             y._ValueAliasSet = self
         self._Commands = value
@@ -61,13 +61,11 @@ class ValueAliasSet(IdentifiedObject):
 
     def addCommands(self, *Commands):
         for obj in Commands:
-            obj._ValueAliasSet = self
-            self._Commands.append(obj)
+            obj.ValueAliasSet = self
 
     def removeCommands(self, *Commands):
         for obj in Commands:
-            obj._ValueAliasSet = None
-            self._Commands.remove(obj)
+            obj.ValueAliasSet = None
 
     def getValues(self):
         """The ValueToAlias mappings included in the set
@@ -76,7 +74,7 @@ class ValueAliasSet(IdentifiedObject):
 
     def setValues(self, value):
         for x in self._Values:
-            x._ValueAliasSet = None
+            x.ValueAliasSet = None
         for y in value:
             y._ValueAliasSet = self
         self._Values = value
@@ -85,13 +83,11 @@ class ValueAliasSet(IdentifiedObject):
 
     def addValues(self, *Values):
         for obj in Values:
-            obj._ValueAliasSet = self
-            self._Values.append(obj)
+            obj.ValueAliasSet = self
 
     def removeValues(self, *Values):
         for obj in Values:
-            obj._ValueAliasSet = None
-            self._Values.remove(obj)
+            obj.ValueAliasSet = None
 
     def getDiscretes(self):
         """The Measurements using the set for translation
@@ -100,7 +96,7 @@ class ValueAliasSet(IdentifiedObject):
 
     def setDiscretes(self, value):
         for x in self._Discretes:
-            x._ValueAliasSet = None
+            x.ValueAliasSet = None
         for y in value:
             y._ValueAliasSet = self
         self._Discretes = value
@@ -109,11 +105,9 @@ class ValueAliasSet(IdentifiedObject):
 
     def addDiscretes(self, *Discretes):
         for obj in Discretes:
-            obj._ValueAliasSet = self
-            self._Discretes.append(obj)
+            obj.ValueAliasSet = self
 
     def removeDiscretes(self, *Discretes):
         for obj in Discretes:
-            obj._ValueAliasSet = None
-            self._Discretes.remove(obj)
+            obj.ValueAliasSet = None
 

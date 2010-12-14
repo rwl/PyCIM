@@ -68,7 +68,8 @@ class AssetFunction(IdentifiedObject):
 
         self._Asset = value
         if self._Asset is not None:
-            self._Asset._AssetFunctions.append(self)
+            if self not in self._Asset._AssetFunctions:
+                self._Asset._AssetFunctions.append(self)
 
     Asset = property(getAsset, setAsset)
 

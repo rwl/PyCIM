@@ -44,7 +44,7 @@ class EquipmentContainer(ConnectivityNodeContainer):
 
     def setEquipments(self, value):
         for x in self._Equipments:
-            x._EquipmentContainer = None
+            x.EquipmentContainer = None
         for y in value:
             y._EquipmentContainer = self
         self._Equipments = value
@@ -53,11 +53,9 @@ class EquipmentContainer(ConnectivityNodeContainer):
 
     def addEquipments(self, *Equipments):
         for obj in Equipments:
-            obj._EquipmentContainer = self
-            self._Equipments.append(obj)
+            obj.EquipmentContainer = self
 
     def removeEquipments(self, *Equipments):
         for obj in Equipments:
-            obj._EquipmentContainer = None
-            self._Equipments.remove(obj)
+            obj.EquipmentContainer = None
 

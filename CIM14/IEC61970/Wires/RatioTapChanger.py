@@ -60,6 +60,7 @@ class RatioTapChanger(TapChanger):
 
         self._Winding = value
         if self._Winding is not None:
+            self._Winding.RatioTapChanger = None
             self._Winding._RatioTapChanger = self
 
     Winding = property(getWinding, setWinding)
@@ -75,6 +76,7 @@ class RatioTapChanger(TapChanger):
 
         self._TransformerWinding = value
         if self._TransformerWinding is not None:
+            self._TransformerWinding.RatioTapChanger = None
             self._TransformerWinding._RatioTapChanger = self
 
     TransformerWinding = property(getTransformerWinding, setTransformerWinding)
@@ -90,6 +92,7 @@ class RatioTapChanger(TapChanger):
 
         self._RatioVariationCurve = value
         if self._RatioVariationCurve is not None:
+            self._RatioVariationCurve.RatioTapChanger = None
             self._RatioVariationCurve._RatioTapChanger = self
 
     RatioVariationCurve = property(getRatioVariationCurve, setRatioVariationCurve)

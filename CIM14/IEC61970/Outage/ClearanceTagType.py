@@ -44,7 +44,7 @@ class ClearanceTagType(IdentifiedObject):
 
     def setClearanceTags(self, value):
         for x in self._ClearanceTags:
-            x._ClearanceTagType = None
+            x.ClearanceTagType = None
         for y in value:
             y._ClearanceTagType = self
         self._ClearanceTags = value
@@ -53,11 +53,9 @@ class ClearanceTagType(IdentifiedObject):
 
     def addClearanceTags(self, *ClearanceTags):
         for obj in ClearanceTags:
-            obj._ClearanceTagType = self
-            self._ClearanceTags.append(obj)
+            obj.ClearanceTagType = self
 
     def removeClearanceTags(self, *ClearanceTags):
         for obj in ClearanceTags:
-            obj._ClearanceTagType = None
-            self._ClearanceTags.remove(obj)
+            obj.ClearanceTagType = None
 

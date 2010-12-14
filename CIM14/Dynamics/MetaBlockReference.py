@@ -78,7 +78,7 @@ class MetaBlockReference(IdentifiedObject):
 
     def setblockInputReference0(self, value):
         for x in self._blockInputReference0:
-            x._metaBlockReference0 = None
+            x.metaBlockReference0 = None
         for y in value:
             y._metaBlockReference0 = self
         self._blockInputReference0 = value
@@ -87,13 +87,11 @@ class MetaBlockReference(IdentifiedObject):
 
     def addblockInputReference0(self, *blockInputReference0):
         for obj in blockInputReference0:
-            obj._metaBlockReference0 = self
-            self._blockInputReference0.append(obj)
+            obj.metaBlockReference0 = self
 
     def removeblockInputReference0(self, *blockInputReference0):
         for obj in blockInputReference0:
-            obj._metaBlockReference0 = None
-            self._blockInputReference0.remove(obj)
+            obj.metaBlockReference0 = None
 
     def getMemberOf_MetaBlock(self):
         
@@ -106,7 +104,8 @@ class MetaBlockReference(IdentifiedObject):
 
         self._MemberOf_MetaBlock = value
         if self._MemberOf_MetaBlock is not None:
-            self._MemberOf_MetaBlock._MetaBlockReference.append(self)
+            if self not in self._MemberOf_MetaBlock._MetaBlockReference:
+                self._MemberOf_MetaBlock._MetaBlockReference.append(self)
 
     MemberOf_MetaBlock = property(getMemberOf_MetaBlock, setMemberOf_MetaBlock)
 
@@ -145,7 +144,7 @@ class MetaBlockReference(IdentifiedObject):
 
     def setMetaBlockStateReference(self, value):
         for x in self._MetaBlockStateReference:
-            x._MemberOf_MetaBlockReference = None
+            x.MemberOf_MetaBlockReference = None
         for y in value:
             y._MemberOf_MetaBlockReference = self
         self._MetaBlockStateReference = value
@@ -154,13 +153,11 @@ class MetaBlockReference(IdentifiedObject):
 
     def addMetaBlockStateReference(self, *MetaBlockStateReference):
         for obj in MetaBlockStateReference:
-            obj._MemberOf_MetaBlockReference = self
-            self._MetaBlockStateReference.append(obj)
+            obj.MemberOf_MetaBlockReference = self
 
     def removeMetaBlockStateReference(self, *MetaBlockStateReference):
         for obj in MetaBlockStateReference:
-            obj._MemberOf_MetaBlockReference = None
-            self._MetaBlockStateReference.remove(obj)
+            obj.MemberOf_MetaBlockReference = None
 
     def getMetaBlockInputReference(self):
         
@@ -168,7 +165,7 @@ class MetaBlockReference(IdentifiedObject):
 
     def setMetaBlockInputReference(self, value):
         for x in self._MetaBlockInputReference:
-            x._MemberOf_MetaBlockReference = None
+            x.MemberOf_MetaBlockReference = None
         for y in value:
             y._MemberOf_MetaBlockReference = self
         self._MetaBlockInputReference = value
@@ -177,13 +174,11 @@ class MetaBlockReference(IdentifiedObject):
 
     def addMetaBlockInputReference(self, *MetaBlockInputReference):
         for obj in MetaBlockInputReference:
-            obj._MemberOf_MetaBlockReference = self
-            self._MetaBlockInputReference.append(obj)
+            obj.MemberOf_MetaBlockReference = self
 
     def removeMetaBlockInputReference(self, *MetaBlockInputReference):
         for obj in MetaBlockInputReference:
-            obj._MemberOf_MetaBlockReference = None
-            self._MetaBlockInputReference.remove(obj)
+            obj.MemberOf_MetaBlockReference = None
 
     def getMetaBlockOutputReference(self):
         
@@ -191,7 +186,7 @@ class MetaBlockReference(IdentifiedObject):
 
     def setMetaBlockOutputReference(self, value):
         for x in self._MetaBlockOutputReference:
-            x._MemberOf_MetaBlockReference = None
+            x.MemberOf_MetaBlockReference = None
         for y in value:
             y._MemberOf_MetaBlockReference = self
         self._MetaBlockOutputReference = value
@@ -200,13 +195,11 @@ class MetaBlockReference(IdentifiedObject):
 
     def addMetaBlockOutputReference(self, *MetaBlockOutputReference):
         for obj in MetaBlockOutputReference:
-            obj._MemberOf_MetaBlockReference = self
-            self._MetaBlockOutputReference.append(obj)
+            obj.MemberOf_MetaBlockReference = self
 
     def removeMetaBlockOutputReference(self, *MetaBlockOutputReference):
         for obj in MetaBlockOutputReference:
-            obj._MemberOf_MetaBlockReference = None
-            self._MetaBlockOutputReference.remove(obj)
+            obj.MemberOf_MetaBlockReference = None
 
     def getBlockParameter(self):
         
@@ -214,7 +207,7 @@ class MetaBlockReference(IdentifiedObject):
 
     def setBlockParameter(self, value):
         for x in self._BlockParameter:
-            x._MemberOf_MetaBlockReference = None
+            x.MemberOf_MetaBlockReference = None
         for y in value:
             y._MemberOf_MetaBlockReference = self
         self._BlockParameter = value
@@ -223,13 +216,11 @@ class MetaBlockReference(IdentifiedObject):
 
     def addBlockParameter(self, *BlockParameter):
         for obj in BlockParameter:
-            obj._MemberOf_MetaBlockReference = self
-            self._BlockParameter.append(obj)
+            obj.MemberOf_MetaBlockReference = self
 
     def removeBlockParameter(self, *BlockParameter):
         for obj in BlockParameter:
-            obj._MemberOf_MetaBlockReference = None
-            self._BlockParameter.remove(obj)
+            obj.MemberOf_MetaBlockReference = None
 
     def getMetaBlockParameterReference(self):
         
@@ -237,7 +228,7 @@ class MetaBlockReference(IdentifiedObject):
 
     def setMetaBlockParameterReference(self, value):
         for x in self._MetaBlockParameterReference:
-            x._MemberOf_MetaBlockReference = None
+            x.MemberOf_MetaBlockReference = None
         for y in value:
             y._MemberOf_MetaBlockReference = self
         self._MetaBlockParameterReference = value
@@ -246,11 +237,9 @@ class MetaBlockReference(IdentifiedObject):
 
     def addMetaBlockParameterReference(self, *MetaBlockParameterReference):
         for obj in MetaBlockParameterReference:
-            obj._MemberOf_MetaBlockReference = self
-            self._MetaBlockParameterReference.append(obj)
+            obj.MemberOf_MetaBlockReference = self
 
     def removeMetaBlockParameterReference(self, *MetaBlockParameterReference):
         for obj in MetaBlockParameterReference:
-            obj._MemberOf_MetaBlockReference = None
-            self._MetaBlockParameterReference.remove(obj)
+            obj.MemberOf_MetaBlockReference = None
 

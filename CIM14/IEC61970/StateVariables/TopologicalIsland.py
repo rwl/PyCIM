@@ -48,7 +48,7 @@ class TopologicalIsland(IdentifiedObject):
 
     def setTopologicalNodes(self, value):
         for x in self._TopologicalNodes:
-            x._TopologicalIsland = None
+            x.TopologicalIsland = None
         for y in value:
             y._TopologicalIsland = self
         self._TopologicalNodes = value
@@ -57,13 +57,11 @@ class TopologicalIsland(IdentifiedObject):
 
     def addTopologicalNodes(self, *TopologicalNodes):
         for obj in TopologicalNodes:
-            obj._TopologicalIsland = self
-            self._TopologicalNodes.append(obj)
+            obj.TopologicalIsland = self
 
     def removeTopologicalNodes(self, *TopologicalNodes):
         for obj in TopologicalNodes:
-            obj._TopologicalIsland = None
-            self._TopologicalNodes.remove(obj)
+            obj.TopologicalIsland = None
 
     def getAngleRef_TopologicalNode(self):
         """The angle reference for the island.   Normally there is one TopologicalNode that is selected as the angle reference for each island.   Other reference schemes exist, so the association is optional.
@@ -76,6 +74,7 @@ class TopologicalIsland(IdentifiedObject):
 
         self._AngleRef_TopologicalNode = value
         if self._AngleRef_TopologicalNode is not None:
+            self._AngleRef_TopologicalNode.AngleRef_TopologicalIsland = None
             self._AngleRef_TopologicalNode._AngleRef_TopologicalIsland = self
 
     AngleRef_TopologicalNode = property(getAngleRef_TopologicalNode, setAngleRef_TopologicalNode)

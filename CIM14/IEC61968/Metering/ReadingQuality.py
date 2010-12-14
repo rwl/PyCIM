@@ -57,7 +57,8 @@ class ReadingQuality(Element):
 
         self._IntervalReading = value
         if self._IntervalReading is not None:
-            self._IntervalReading._ReadingQualities.append(self)
+            if self not in self._IntervalReading._ReadingQualities:
+                self._IntervalReading._ReadingQualities.append(self)
 
     IntervalReading = property(getIntervalReading, setIntervalReading)
 
@@ -73,7 +74,8 @@ class ReadingQuality(Element):
 
         self._Reading = value
         if self._Reading is not None:
-            self._Reading._ReadingQualities.append(self)
+            if self not in self._Reading._ReadingQualities:
+                self._Reading._ReadingQualities.append(self)
 
     Reading = property(getReading, setReading)
 

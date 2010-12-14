@@ -108,7 +108,8 @@ class EnergyConsumer(ConductingEquipment):
 
         self._PowerCutZone = value
         if self._PowerCutZone is not None:
-            self._PowerCutZone._EnergyConsumers.append(self)
+            if self not in self._PowerCutZone._EnergyConsumers:
+                self._PowerCutZone._EnergyConsumers.append(self)
 
     PowerCutZone = property(getPowerCutZone, setPowerCutZone)
 
@@ -118,7 +119,7 @@ class EnergyConsumer(ConductingEquipment):
 
     def setServiceDeliveryPoints(self, value):
         for x in self._ServiceDeliveryPoints:
-            x._EnergyConsumer = None
+            x.EnergyConsumer = None
         for y in value:
             y._EnergyConsumer = self
         self._ServiceDeliveryPoints = value
@@ -127,13 +128,11 @@ class EnergyConsumer(ConductingEquipment):
 
     def addServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._EnergyConsumer = self
-            self._ServiceDeliveryPoints.append(obj)
+            obj.EnergyConsumer = self
 
     def removeServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._EnergyConsumer = None
-            self._ServiceDeliveryPoints.remove(obj)
+            obj.EnergyConsumer = None
 
     def getLoadResponse(self):
         """The load response characteristic of this load.
@@ -147,7 +146,8 @@ class EnergyConsumer(ConductingEquipment):
 
         self._LoadResponse = value
         if self._LoadResponse is not None:
-            self._LoadResponse._EnergyConsumer.append(self)
+            if self not in self._LoadResponse._EnergyConsumer:
+                self._LoadResponse._EnergyConsumer.append(self)
 
     LoadResponse = property(getLoadResponse, setLoadResponse)
 

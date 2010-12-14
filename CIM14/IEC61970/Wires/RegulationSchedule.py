@@ -65,7 +65,8 @@ class RegulationSchedule(SeasonDayTypeSchedule):
 
         self._RegulatingControl = value
         if self._RegulatingControl is not None:
-            self._RegulatingControl._RegulationSchedule.append(self)
+            if self not in self._RegulatingControl._RegulationSchedule:
+                self._RegulatingControl._RegulationSchedule.append(self)
 
     RegulatingControl = property(getRegulatingControl, setRegulatingControl)
 
@@ -76,7 +77,7 @@ class RegulationSchedule(SeasonDayTypeSchedule):
 
     def setVoltageControlZones(self, value):
         for x in self._VoltageControlZones:
-            x._RegulationSchedule = None
+            x.RegulationSchedule = None
         for y in value:
             y._RegulationSchedule = self
         self._VoltageControlZones = value
@@ -85,11 +86,9 @@ class RegulationSchedule(SeasonDayTypeSchedule):
 
     def addVoltageControlZones(self, *VoltageControlZones):
         for obj in VoltageControlZones:
-            obj._RegulationSchedule = self
-            self._VoltageControlZones.append(obj)
+            obj.RegulationSchedule = self
 
     def removeVoltageControlZones(self, *VoltageControlZones):
         for obj in VoltageControlZones:
-            obj._RegulationSchedule = None
-            self._VoltageControlZones.remove(obj)
+            obj.RegulationSchedule = None
 

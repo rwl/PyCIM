@@ -67,7 +67,8 @@ class TimePoint(IdentifiedObject):
 
         self._TimeSchedule = value
         if self._TimeSchedule is not None:
-            self._TimeSchedule._TimePoints.append(self)
+            if self not in self._TimeSchedule._TimePoints:
+                self._TimeSchedule._TimePoints.append(self)
 
     TimeSchedule = property(getTimeSchedule, setTimeSchedule)
 

@@ -56,7 +56,8 @@ class TieToMeasurement(IdentifiedObject):
 
         self._measurement0 = value
         if self._measurement0 is not None:
-            self._measurement0._tieToMeasurement0.append(self)
+            if self not in self._measurement0._tieToMeasurement0:
+                self._measurement0._tieToMeasurement0.append(self)
 
     measurement0 = property(getmeasurement0, setmeasurement0)
 
@@ -71,7 +72,8 @@ class TieToMeasurement(IdentifiedObject):
 
         self._block0 = value
         if self._block0 is not None:
-            self._block0._tieToMeasurement0.append(self)
+            if self not in self._block0._tieToMeasurement0:
+                self._block0._tieToMeasurement0.append(self)
 
     block0 = property(getblock0, setblock0)
 
@@ -87,7 +89,8 @@ class TieToMeasurement(IdentifiedObject):
 
         self._metaBlockInput0 = value
         if self._metaBlockInput0 is not None:
-            self._metaBlockInput0._tieToMeasurement0.append(self)
+            if self not in self._metaBlockInput0._tieToMeasurement0:
+                self._metaBlockInput0._tieToMeasurement0.append(self)
 
     metaBlockInput0 = property(getmetaBlockInput0, setmetaBlockInput0)
 

@@ -49,7 +49,8 @@ class SwitchSchedule(SeasonDayTypeSchedule):
 
         self._Switch = value
         if self._Switch is not None:
-            self._Switch._SwitchSchedules.append(self)
+            if self not in self._Switch._SwitchSchedules:
+                self._Switch._SwitchSchedules.append(self)
 
     Switch = property(getSwitch, setSwitch)
 

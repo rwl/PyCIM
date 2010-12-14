@@ -56,7 +56,7 @@ class MetaBlockOutput(MetaBlockConnectable):
 
     def setBlockOutputReference(self, value):
         for x in self._BlockOutputReference:
-            x._metaBlockOutput0 = None
+            x.metaBlockOutput0 = None
         for y in value:
             y._metaBlockOutput0 = self
         self._BlockOutputReference = value
@@ -65,13 +65,11 @@ class MetaBlockOutput(MetaBlockConnectable):
 
     def addBlockOutputReference(self, *BlockOutputReference):
         for obj in BlockOutputReference:
-            obj._metaBlockOutput0 = self
-            self._BlockOutputReference.append(obj)
+            obj.metaBlockOutput0 = self
 
     def removeBlockOutputReference(self, *BlockOutputReference):
         for obj in BlockOutputReference:
-            obj._metaBlockOutput0 = None
-            self._BlockOutputReference.remove(obj)
+            obj.metaBlockOutput0 = None
 
     def getMemberOf_MetaBlock(self):
         """The block that contains the output.
@@ -85,7 +83,8 @@ class MetaBlockOutput(MetaBlockConnectable):
 
         self._MemberOf_MetaBlock = value
         if self._MemberOf_MetaBlock is not None:
-            self._MemberOf_MetaBlock._MetaBlockOutput.append(self)
+            if self not in self._MemberOf_MetaBlock._MetaBlockOutput:
+                self._MemberOf_MetaBlock._MetaBlockOutput.append(self)
 
     MemberOf_MetaBlock = property(getMemberOf_MetaBlock, setMemberOf_MetaBlock)
 
@@ -95,7 +94,7 @@ class MetaBlockOutput(MetaBlockConnectable):
 
     def setblockUsageOutputReference0(self, value):
         for x in self._blockUsageOutputReference0:
-            x._metaBlockOutput0 = None
+            x.metaBlockOutput0 = None
         for y in value:
             y._metaBlockOutput0 = self
         self._blockUsageOutputReference0 = value
@@ -104,13 +103,11 @@ class MetaBlockOutput(MetaBlockConnectable):
 
     def addblockUsageOutputReference0(self, *blockUsageOutputReference0):
         for obj in blockUsageOutputReference0:
-            obj._metaBlockOutput0 = self
-            self._blockUsageOutputReference0.append(obj)
+            obj.metaBlockOutput0 = self
 
     def removeblockUsageOutputReference0(self, *blockUsageOutputReference0):
         for obj in blockUsageOutputReference0:
-            obj._metaBlockOutput0 = None
-            self._blockUsageOutputReference0.remove(obj)
+            obj.metaBlockOutput0 = None
 
     def getblockOutputType0(self):
         
@@ -123,7 +120,8 @@ class MetaBlockOutput(MetaBlockConnectable):
 
         self._blockOutputType0 = value
         if self._blockOutputType0 is not None:
-            self._blockOutputType0._metaBlockOutput0.append(self)
+            if self not in self._blockOutputType0._metaBlockOutput0:
+                self._blockOutputType0._metaBlockOutput0.append(self)
 
     blockOutputType0 = property(getblockOutputType0, setblockOutputType0)
 

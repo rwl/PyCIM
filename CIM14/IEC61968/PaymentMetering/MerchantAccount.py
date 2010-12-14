@@ -64,7 +64,7 @@ class MerchantAccount(Document):
 
     def setVendorShifts(self, value):
         for x in self._VendorShifts:
-            x._MerchantAccount = None
+            x.MerchantAccount = None
         for y in value:
             y._MerchantAccount = self
         self._VendorShifts = value
@@ -73,13 +73,11 @@ class MerchantAccount(Document):
 
     def addVendorShifts(self, *VendorShifts):
         for obj in VendorShifts:
-            obj._MerchantAccount = self
-            self._VendorShifts.append(obj)
+            obj.MerchantAccount = self
 
     def removeVendorShifts(self, *VendorShifts):
         for obj in VendorShifts:
-            obj._MerchantAccount = None
-            self._VendorShifts.remove(obj)
+            obj.MerchantAccount = None
 
     def getMerchantAgreement(self):
         """Merchant agreement that instantiated this merchant account.
@@ -93,7 +91,8 @@ class MerchantAccount(Document):
 
         self._MerchantAgreement = value
         if self._MerchantAgreement is not None:
-            self._MerchantAgreement._MerchantAccounts.append(self)
+            if self not in self._MerchantAgreement._MerchantAccounts:
+                self._MerchantAgreement._MerchantAccounts.append(self)
 
     MerchantAgreement = property(getMerchantAgreement, setMerchantAgreement)
 
@@ -104,7 +103,7 @@ class MerchantAccount(Document):
 
     def setVendors(self, value):
         for x in self._Vendors:
-            x._MerchantAccount = None
+            x.MerchantAccount = None
         for y in value:
             y._MerchantAccount = self
         self._Vendors = value
@@ -113,13 +112,11 @@ class MerchantAccount(Document):
 
     def addVendors(self, *Vendors):
         for obj in Vendors:
-            obj._MerchantAccount = self
-            self._Vendors.append(obj)
+            obj.MerchantAccount = self
 
     def removeVendors(self, *Vendors):
         for obj in Vendors:
-            obj._MerchantAccount = None
-            self._Vendors.remove(obj)
+            obj.MerchantAccount = None
 
     def getTransactors(self):
         """All transactors this merchant account is registered with.

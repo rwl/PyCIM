@@ -60,7 +60,7 @@ class BaseVoltage(IdentifiedObject):
 
     def setConductingEquipment(self, value):
         for x in self._ConductingEquipment:
-            x._BaseVoltage = None
+            x.BaseVoltage = None
         for y in value:
             y._BaseVoltage = self
         self._ConductingEquipment = value
@@ -69,13 +69,11 @@ class BaseVoltage(IdentifiedObject):
 
     def addConductingEquipment(self, *ConductingEquipment):
         for obj in ConductingEquipment:
-            obj._BaseVoltage = self
-            self._ConductingEquipment.append(obj)
+            obj.BaseVoltage = self
 
     def removeConductingEquipment(self, *ConductingEquipment):
         for obj in ConductingEquipment:
-            obj._BaseVoltage = None
-            self._ConductingEquipment.remove(obj)
+            obj.BaseVoltage = None
 
     def getVoltageLevel(self):
         """The VoltageLevels having this BaseVoltage.
@@ -84,7 +82,7 @@ class BaseVoltage(IdentifiedObject):
 
     def setVoltageLevel(self, value):
         for x in self._VoltageLevel:
-            x._BaseVoltage = None
+            x.BaseVoltage = None
         for y in value:
             y._BaseVoltage = self
         self._VoltageLevel = value
@@ -93,13 +91,11 @@ class BaseVoltage(IdentifiedObject):
 
     def addVoltageLevel(self, *VoltageLevel):
         for obj in VoltageLevel:
-            obj._BaseVoltage = self
-            self._VoltageLevel.append(obj)
+            obj.BaseVoltage = self
 
     def removeVoltageLevel(self, *VoltageLevel):
         for obj in VoltageLevel:
-            obj._BaseVoltage = None
-            self._VoltageLevel.remove(obj)
+            obj.BaseVoltage = None
 
     def getTopologicalNode(self):
         """The topological nodes at the base voltage.
@@ -108,7 +104,7 @@ class BaseVoltage(IdentifiedObject):
 
     def setTopologicalNode(self, value):
         for x in self._TopologicalNode:
-            x._BaseVoltage = None
+            x.BaseVoltage = None
         for y in value:
             y._BaseVoltage = self
         self._TopologicalNode = value
@@ -117,11 +113,9 @@ class BaseVoltage(IdentifiedObject):
 
     def addTopologicalNode(self, *TopologicalNode):
         for obj in TopologicalNode:
-            obj._BaseVoltage = self
-            self._TopologicalNode.append(obj)
+            obj.BaseVoltage = self
 
     def removeTopologicalNode(self, *TopologicalNode):
         for obj in TopologicalNode:
-            obj._BaseVoltage = None
-            self._TopologicalNode.remove(obj)
+            obj.BaseVoltage = None
 

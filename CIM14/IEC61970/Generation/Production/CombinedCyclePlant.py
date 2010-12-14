@@ -48,7 +48,7 @@ class CombinedCyclePlant(PowerSystemResource):
 
     def setThermalGeneratingUnits(self, value):
         for x in self._ThermalGeneratingUnits:
-            x._CombinedCyclePlant = None
+            x.CombinedCyclePlant = None
         for y in value:
             y._CombinedCyclePlant = self
         self._ThermalGeneratingUnits = value
@@ -57,11 +57,9 @@ class CombinedCyclePlant(PowerSystemResource):
 
     def addThermalGeneratingUnits(self, *ThermalGeneratingUnits):
         for obj in ThermalGeneratingUnits:
-            obj._CombinedCyclePlant = self
-            self._ThermalGeneratingUnits.append(obj)
+            obj.CombinedCyclePlant = self
 
     def removeThermalGeneratingUnits(self, *ThermalGeneratingUnits):
         for obj in ThermalGeneratingUnits:
-            obj._CombinedCyclePlant = None
-            self._ThermalGeneratingUnits.remove(obj)
+            obj.CombinedCyclePlant = None
 

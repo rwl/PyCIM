@@ -53,7 +53,8 @@ class AccumulatorLimit(Limit):
 
         self._LimitSet = value
         if self._LimitSet is not None:
-            self._LimitSet._Limits.append(self)
+            if self not in self._LimitSet._Limits:
+                self._LimitSet._Limits.append(self)
 
     LimitSet = property(getLimitSet, setLimitSet)
 

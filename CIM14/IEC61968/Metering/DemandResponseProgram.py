@@ -59,7 +59,7 @@ class DemandResponseProgram(IdentifiedObject):
 
     def setCustomerAgreements(self, value):
         for x in self._CustomerAgreements:
-            x._DemandResponseProgram = None
+            x.DemandResponseProgram = None
         for y in value:
             y._DemandResponseProgram = self
         self._CustomerAgreements = value
@@ -68,13 +68,11 @@ class DemandResponseProgram(IdentifiedObject):
 
     def addCustomerAgreements(self, *CustomerAgreements):
         for obj in CustomerAgreements:
-            obj._DemandResponseProgram = self
-            self._CustomerAgreements.append(obj)
+            obj.DemandResponseProgram = self
 
     def removeCustomerAgreements(self, *CustomerAgreements):
         for obj in CustomerAgreements:
-            obj._DemandResponseProgram = None
-            self._CustomerAgreements.remove(obj)
+            obj.DemandResponseProgram = None
 
     def getEndDeviceControls(self):
         """All end device controls with this demand response program.
@@ -83,7 +81,7 @@ class DemandResponseProgram(IdentifiedObject):
 
     def setEndDeviceControls(self, value):
         for x in self._EndDeviceControls:
-            x._DemandResponseProgram = None
+            x.DemandResponseProgram = None
         for y in value:
             y._DemandResponseProgram = self
         self._EndDeviceControls = value
@@ -92,13 +90,11 @@ class DemandResponseProgram(IdentifiedObject):
 
     def addEndDeviceControls(self, *EndDeviceControls):
         for obj in EndDeviceControls:
-            obj._DemandResponseProgram = self
-            self._EndDeviceControls.append(obj)
+            obj.DemandResponseProgram = self
 
     def removeEndDeviceControls(self, *EndDeviceControls):
         for obj in EndDeviceControls:
-            obj._DemandResponseProgram = None
-            self._EndDeviceControls.remove(obj)
+            obj.DemandResponseProgram = None
 
     # Interval within which the program is valid.
     validityInterval = None
@@ -110,7 +106,7 @@ class DemandResponseProgram(IdentifiedObject):
 
     def setEndDeviceGroups(self, value):
         for x in self._EndDeviceGroups:
-            x._DemandResponseProgram = None
+            x.DemandResponseProgram = None
         for y in value:
             y._DemandResponseProgram = self
         self._EndDeviceGroups = value
@@ -119,11 +115,9 @@ class DemandResponseProgram(IdentifiedObject):
 
     def addEndDeviceGroups(self, *EndDeviceGroups):
         for obj in EndDeviceGroups:
-            obj._DemandResponseProgram = self
-            self._EndDeviceGroups.append(obj)
+            obj.DemandResponseProgram = self
 
     def removeEndDeviceGroups(self, *EndDeviceGroups):
         for obj in EndDeviceGroups:
-            obj._DemandResponseProgram = None
-            self._EndDeviceGroups.remove(obj)
+            obj.DemandResponseProgram = None
 

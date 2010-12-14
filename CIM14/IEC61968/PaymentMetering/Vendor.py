@@ -56,7 +56,7 @@ class Vendor(IdentifiedObject):
 
     def setPointOfSales(self, value):
         for x in self._PointOfSales:
-            x._Vendor = None
+            x.Vendor = None
         for y in value:
             y._Vendor = self
         self._PointOfSales = value
@@ -65,13 +65,11 @@ class Vendor(IdentifiedObject):
 
     def addPointOfSales(self, *PointOfSales):
         for obj in PointOfSales:
-            obj._Vendor = self
-            self._PointOfSales.append(obj)
+            obj.Vendor = self
 
     def removePointOfSales(self, *PointOfSales):
         for obj in PointOfSales:
-            obj._Vendor = None
-            self._PointOfSales.remove(obj)
+            obj.Vendor = None
 
     def getMerchantAccount(self):
         """Merchant account against which this vendor sells tokens or recept payments.
@@ -85,7 +83,8 @@ class Vendor(IdentifiedObject):
 
         self._MerchantAccount = value
         if self._MerchantAccount is not None:
-            self._MerchantAccount._Vendors.append(self)
+            if self not in self._MerchantAccount._Vendors:
+                self._MerchantAccount._Vendors.append(self)
 
     MerchantAccount = property(getMerchantAccount, setMerchantAccount)
 
@@ -96,7 +95,7 @@ class Vendor(IdentifiedObject):
 
     def setCashiers(self, value):
         for x in self._Cashiers:
-            x._Vendor = None
+            x.Vendor = None
         for y in value:
             y._Vendor = self
         self._Cashiers = value
@@ -105,13 +104,11 @@ class Vendor(IdentifiedObject):
 
     def addCashiers(self, *Cashiers):
         for obj in Cashiers:
-            obj._Vendor = self
-            self._Cashiers.append(obj)
+            obj.Vendor = self
 
     def removeCashiers(self, *Cashiers):
         for obj in Cashiers:
-            obj._Vendor = None
-            self._Cashiers.remove(obj)
+            obj.Vendor = None
 
     def getVendorShifts(self):
         """All vendor shifts opened and owned by this vendor.
@@ -120,7 +117,7 @@ class Vendor(IdentifiedObject):
 
     def setVendorShifts(self, value):
         for x in self._VendorShifts:
-            x._Vendor = None
+            x.Vendor = None
         for y in value:
             y._Vendor = self
         self._VendorShifts = value
@@ -129,11 +126,9 @@ class Vendor(IdentifiedObject):
 
     def addVendorShifts(self, *VendorShifts):
         for obj in VendorShifts:
-            obj._Vendor = self
-            self._VendorShifts.append(obj)
+            obj.Vendor = self
 
     def removeVendorShifts(self, *VendorShifts):
         for obj in VendorShifts:
-            obj._Vendor = None
-            self._VendorShifts.remove(obj)
+            obj.Vendor = None
 

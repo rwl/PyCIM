@@ -61,7 +61,8 @@ class DeviceFunction(AssetFunction):
 
         self._EndDeviceAsset = value
         if self._EndDeviceAsset is not None:
-            self._EndDeviceAsset._DeviceFunctions.append(self)
+            if self not in self._EndDeviceAsset._DeviceFunctions:
+                self._EndDeviceAsset._DeviceFunctions.append(self)
 
     EndDeviceAsset = property(getEndDeviceAsset, setEndDeviceAsset)
 
@@ -72,7 +73,7 @@ class DeviceFunction(AssetFunction):
 
     def setRegisters(self, value):
         for x in self._Registers:
-            x._DeviceFunction = None
+            x.DeviceFunction = None
         for y in value:
             y._DeviceFunction = self
         self._Registers = value
@@ -81,13 +82,11 @@ class DeviceFunction(AssetFunction):
 
     def addRegisters(self, *Registers):
         for obj in Registers:
-            obj._DeviceFunction = self
-            self._Registers.append(obj)
+            obj.DeviceFunction = self
 
     def removeRegisters(self, *Registers):
         for obj in Registers:
-            obj._DeviceFunction = None
-            self._Registers.remove(obj)
+            obj.DeviceFunction = None
 
     def getEndDeviceEvents(self):
         """All events reported by this device function.
@@ -96,7 +95,7 @@ class DeviceFunction(AssetFunction):
 
     def setEndDeviceEvents(self, value):
         for x in self._EndDeviceEvents:
-            x._DeviceFunction = None
+            x.DeviceFunction = None
         for y in value:
             y._DeviceFunction = self
         self._EndDeviceEvents = value
@@ -105,11 +104,9 @@ class DeviceFunction(AssetFunction):
 
     def addEndDeviceEvents(self, *EndDeviceEvents):
         for obj in EndDeviceEvents:
-            obj._DeviceFunction = self
-            self._EndDeviceEvents.append(obj)
+            obj.DeviceFunction = self
 
     def removeEndDeviceEvents(self, *EndDeviceEvents):
         for obj in EndDeviceEvents:
-            obj._DeviceFunction = None
-            self._EndDeviceEvents.remove(obj)
+            obj.DeviceFunction = None
 

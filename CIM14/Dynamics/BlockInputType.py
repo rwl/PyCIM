@@ -45,7 +45,7 @@ class BlockInputType(IdentifiedObject):
 
     def setslotInput0(self, value):
         for x in self._slotInput0:
-            x._blockInputType0 = None
+            x.blockInputType0 = None
         for y in value:
             y._blockInputType0 = self
         self._slotInput0 = value
@@ -54,13 +54,11 @@ class BlockInputType(IdentifiedObject):
 
     def addslotInput0(self, *slotInput0):
         for obj in slotInput0:
-            obj._blockInputType0 = self
-            self._slotInput0.append(obj)
+            obj.blockInputType0 = self
 
     def removeslotInput0(self, *slotInput0):
         for obj in slotInput0:
-            obj._blockInputType0 = None
-            self._slotInput0.remove(obj)
+            obj.blockInputType0 = None
 
     def getmetaBlockInput0(self):
         
@@ -68,7 +66,7 @@ class BlockInputType(IdentifiedObject):
 
     def setmetaBlockInput0(self, value):
         for x in self._metaBlockInput0:
-            x._blockInputType0 = None
+            x.blockInputType0 = None
         for y in value:
             y._blockInputType0 = self
         self._metaBlockInput0 = value
@@ -77,11 +75,9 @@ class BlockInputType(IdentifiedObject):
 
     def addmetaBlockInput0(self, *metaBlockInput0):
         for obj in metaBlockInput0:
-            obj._blockInputType0 = self
-            self._metaBlockInput0.append(obj)
+            obj.blockInputType0 = self
 
     def removemetaBlockInput0(self, *metaBlockInput0):
         for obj in metaBlockInput0:
-            obj._blockInputType0 = None
-            self._metaBlockInput0.remove(obj)
+            obj.blockInputType0 = None
 

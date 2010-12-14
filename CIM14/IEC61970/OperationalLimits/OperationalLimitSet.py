@@ -57,7 +57,8 @@ class OperationalLimitSet(IdentifiedObject):
 
         self._Equipment = value
         if self._Equipment is not None:
-            self._Equipment._OperationalLimitSet.append(self)
+            if self not in self._Equipment._OperationalLimitSet:
+                self._Equipment._OperationalLimitSet.append(self)
 
     Equipment = property(getEquipment, setEquipment)
 
@@ -73,7 +74,8 @@ class OperationalLimitSet(IdentifiedObject):
 
         self._Terminal = value
         if self._Terminal is not None:
-            self._Terminal._OperationalLimitSet.append(self)
+            if self not in self._Terminal._OperationalLimitSet:
+                self._Terminal._OperationalLimitSet.append(self)
 
     Terminal = property(getTerminal, setTerminal)
 
@@ -84,7 +86,7 @@ class OperationalLimitSet(IdentifiedObject):
 
     def setOperationalLimitValue(self, value):
         for x in self._OperationalLimitValue:
-            x._OperationalLimitSet = None
+            x.OperationalLimitSet = None
         for y in value:
             y._OperationalLimitSet = self
         self._OperationalLimitValue = value
@@ -93,11 +95,9 @@ class OperationalLimitSet(IdentifiedObject):
 
     def addOperationalLimitValue(self, *OperationalLimitValue):
         for obj in OperationalLimitValue:
-            obj._OperationalLimitSet = self
-            self._OperationalLimitValue.append(obj)
+            obj.OperationalLimitSet = self
 
     def removeOperationalLimitValue(self, *OperationalLimitValue):
         for obj in OperationalLimitValue:
-            obj._OperationalLimitSet = None
-            self._OperationalLimitValue.remove(obj)
+            obj.OperationalLimitSet = None
 

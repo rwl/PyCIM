@@ -108,7 +108,8 @@ class Transaction(IdentifiedObject):
 
         self._PricingStructure = value
         if self._PricingStructure is not None:
-            self._PricingStructure._Transactions.append(self)
+            if self not in self._PricingStructure._Transactions:
+                self._PricingStructure._Transactions.append(self)
 
     PricingStructure = property(getPricingStructure, setPricingStructure)
 
@@ -119,7 +120,7 @@ class Transaction(IdentifiedObject):
 
     def setUserAttributes(self, value):
         for x in self._UserAttributes:
-            x._Transaction = None
+            x.Transaction = None
         for y in value:
             y._Transaction = self
         self._UserAttributes = value
@@ -128,13 +129,11 @@ class Transaction(IdentifiedObject):
 
     def addUserAttributes(self, *UserAttributes):
         for obj in UserAttributes:
-            obj._Transaction = self
-            self._UserAttributes.append(obj)
+            obj.Transaction = self
 
     def removeUserAttributes(self, *UserAttributes):
         for obj in UserAttributes:
-            obj._Transaction = None
-            self._UserAttributes.remove(obj)
+            obj.Transaction = None
 
     def getCustomerAccount(self):
         """Customer account for this payment transaction.
@@ -148,7 +147,8 @@ class Transaction(IdentifiedObject):
 
         self._CustomerAccount = value
         if self._CustomerAccount is not None:
-            self._CustomerAccount._PaymentTransactions.append(self)
+            if self not in self._CustomerAccount._PaymentTransactions:
+                self._CustomerAccount._PaymentTransactions.append(self)
 
     CustomerAccount = property(getCustomerAccount, setCustomerAccount)
 
@@ -164,7 +164,8 @@ class Transaction(IdentifiedObject):
 
         self._CashierShift = value
         if self._CashierShift is not None:
-            self._CashierShift._Transactions.append(self)
+            if self not in self._CashierShift._Transactions:
+                self._CashierShift._Transactions.append(self)
 
     CashierShift = property(getCashierShift, setCashierShift)
 
@@ -180,7 +181,8 @@ class Transaction(IdentifiedObject):
 
         self._VendorShift = value
         if self._VendorShift is not None:
-            self._VendorShift._Transactions.append(self)
+            if self not in self._VendorShift._Transactions:
+                self._VendorShift._Transactions.append(self)
 
     VendorShift = property(getVendorShift, setVendorShift)
 
@@ -196,7 +198,8 @@ class Transaction(IdentifiedObject):
 
         self._MeterAsset = value
         if self._MeterAsset is not None:
-            self._MeterAsset._VendingTransactions.append(self)
+            if self not in self._MeterAsset._VendingTransactions:
+                self._MeterAsset._VendingTransactions.append(self)
 
     MeterAsset = property(getMeterAsset, setMeterAsset)
 
@@ -212,7 +215,8 @@ class Transaction(IdentifiedObject):
 
         self._AuxiliaryAccount = value
         if self._AuxiliaryAccount is not None:
-            self._AuxiliaryAccount._PaymentTransactions.append(self)
+            if self not in self._AuxiliaryAccount._PaymentTransactions:
+                self._AuxiliaryAccount._PaymentTransactions.append(self)
 
     AuxiliaryAccount = property(getAuxiliaryAccount, setAuxiliaryAccount)
 
@@ -231,7 +235,8 @@ class Transaction(IdentifiedObject):
 
         self._Receipt = value
         if self._Receipt is not None:
-            self._Receipt._Transactions.append(self)
+            if self not in self._Receipt._Transactions:
+                self._Receipt._Transactions.append(self)
 
     Receipt = property(getReceipt, setReceipt)
 

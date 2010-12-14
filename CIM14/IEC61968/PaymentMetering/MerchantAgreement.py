@@ -44,7 +44,7 @@ class MerchantAgreement(Agreement):
 
     def setMerchantAccounts(self, value):
         for x in self._MerchantAccounts:
-            x._MerchantAgreement = None
+            x.MerchantAgreement = None
         for y in value:
             y._MerchantAgreement = self
         self._MerchantAccounts = value
@@ -53,11 +53,9 @@ class MerchantAgreement(Agreement):
 
     def addMerchantAccounts(self, *MerchantAccounts):
         for obj in MerchantAccounts:
-            obj._MerchantAgreement = self
-            self._MerchantAccounts.append(obj)
+            obj.MerchantAgreement = self
 
     def removeMerchantAccounts(self, *MerchantAccounts):
         for obj in MerchantAccounts:
-            obj._MerchantAgreement = None
-            self._MerchantAccounts.remove(obj)
+            obj.MerchantAgreement = None
 

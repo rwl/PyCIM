@@ -44,7 +44,7 @@ class ProtectedSwitch(Switch):
 
     def setRecloseSequences(self, value):
         for x in self._RecloseSequences:
-            x._ProtectedSwitch = None
+            x.ProtectedSwitch = None
         for y in value:
             y._ProtectedSwitch = self
         self._RecloseSequences = value
@@ -53,11 +53,9 @@ class ProtectedSwitch(Switch):
 
     def addRecloseSequences(self, *RecloseSequences):
         for obj in RecloseSequences:
-            obj._ProtectedSwitch = self
-            self._RecloseSequences.append(obj)
+            obj.ProtectedSwitch = self
 
     def removeRecloseSequences(self, *RecloseSequences):
         for obj in RecloseSequences:
-            obj._ProtectedSwitch = None
-            self._RecloseSequences.remove(obj)
+            obj.ProtectedSwitch = None
 

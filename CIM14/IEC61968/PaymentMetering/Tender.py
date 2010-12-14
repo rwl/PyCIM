@@ -68,6 +68,7 @@ class Tender(IdentifiedObject):
 
         self._Cheque = value
         if self._Cheque is not None:
+            self._Cheque.Tender = None
             self._Cheque._Tender = self
 
     Cheque = property(getCheque, setCheque)
@@ -84,7 +85,8 @@ class Tender(IdentifiedObject):
 
         self._Receipt = value
         if self._Receipt is not None:
-            self._Receipt._Tenders.append(self)
+            if self not in self._Receipt._Tenders:
+                self._Receipt._Tenders.append(self)
 
     Receipt = property(getReceipt, setReceipt)
 
@@ -99,6 +101,7 @@ class Tender(IdentifiedObject):
 
         self._Card = value
         if self._Card is not None:
+            self._Card.Tender = None
             self._Card._Tender = self
 
     Card = property(getCard, setCard)

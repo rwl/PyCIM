@@ -49,7 +49,8 @@ class LoadGroup(IdentifiedObject):
 
         self._SubLoadArea = value
         if self._SubLoadArea is not None:
-            self._SubLoadArea._LoadGroups.append(self)
+            if self not in self._SubLoadArea._LoadGroups:
+                self._SubLoadArea._LoadGroups.append(self)
 
     SubLoadArea = property(getSubLoadArea, setSubLoadArea)
 

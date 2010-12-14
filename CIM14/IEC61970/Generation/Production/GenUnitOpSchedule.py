@@ -48,6 +48,7 @@ class GenUnitOpSchedule(RegularIntervalSchedule):
 
         self._GeneratingUnit = value
         if self._GeneratingUnit is not None:
+            self._GeneratingUnit.GenUnitOpSchedule = None
             self._GeneratingUnit._GenUnitOpSchedule = self
 
     GeneratingUnit = property(getGeneratingUnit, setGeneratingUnit)

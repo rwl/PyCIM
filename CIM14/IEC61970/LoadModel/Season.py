@@ -56,7 +56,7 @@ class Season(Element):
 
     def setSeasonDayTypeSchedules(self, value):
         for x in self._SeasonDayTypeSchedules:
-            x._Season = None
+            x.Season = None
         for y in value:
             y._Season = self
         self._SeasonDayTypeSchedules = value
@@ -65,11 +65,9 @@ class Season(Element):
 
     def addSeasonDayTypeSchedules(self, *SeasonDayTypeSchedules):
         for obj in SeasonDayTypeSchedules:
-            obj._Season = self
-            self._SeasonDayTypeSchedules.append(obj)
+            obj.Season = self
 
     def removeSeasonDayTypeSchedules(self, *SeasonDayTypeSchedules):
         for obj in SeasonDayTypeSchedules:
-            obj._Season = None
-            self._SeasonDayTypeSchedules.remove(obj)
+            obj.Season = None
 

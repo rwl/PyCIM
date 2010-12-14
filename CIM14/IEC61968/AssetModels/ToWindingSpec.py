@@ -69,7 +69,8 @@ class ToWindingSpec(IdentifiedObject):
 
         self._ToWinding = value
         if self._ToWinding is not None:
-            self._ToWinding._ToWindingSpecs.append(self)
+            if self not in self._ToWinding._ToWindingSpecs:
+                self._ToWinding._ToWindingSpecs.append(self)
 
     ToWinding = property(getToWinding, setToWinding)
 

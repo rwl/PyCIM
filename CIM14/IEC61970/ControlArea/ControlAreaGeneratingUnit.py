@@ -52,7 +52,7 @@ class ControlAreaGeneratingUnit(Element):
 
     def setAltGeneratingUnitMeas(self, value):
         for x in self._AltGeneratingUnitMeas:
-            x._ControlAreaGeneratingUnit = None
+            x.ControlAreaGeneratingUnit = None
         for y in value:
             y._ControlAreaGeneratingUnit = self
         self._AltGeneratingUnitMeas = value
@@ -61,13 +61,11 @@ class ControlAreaGeneratingUnit(Element):
 
     def addAltGeneratingUnitMeas(self, *AltGeneratingUnitMeas):
         for obj in AltGeneratingUnitMeas:
-            obj._ControlAreaGeneratingUnit = self
-            self._AltGeneratingUnitMeas.append(obj)
+            obj.ControlAreaGeneratingUnit = self
 
     def removeAltGeneratingUnitMeas(self, *AltGeneratingUnitMeas):
         for obj in AltGeneratingUnitMeas:
-            obj._ControlAreaGeneratingUnit = None
-            self._AltGeneratingUnitMeas.remove(obj)
+            obj.ControlAreaGeneratingUnit = None
 
     def getControlArea(self):
         """The parent control area for the generating unit specifications.
@@ -81,7 +79,8 @@ class ControlAreaGeneratingUnit(Element):
 
         self._ControlArea = value
         if self._ControlArea is not None:
-            self._ControlArea._ControlAreaGeneratingUnit.append(self)
+            if self not in self._ControlArea._ControlAreaGeneratingUnit:
+                self._ControlArea._ControlAreaGeneratingUnit.append(self)
 
     ControlArea = property(getControlArea, setControlArea)
 
@@ -97,7 +96,8 @@ class ControlAreaGeneratingUnit(Element):
 
         self._GeneratingUnit = value
         if self._GeneratingUnit is not None:
-            self._GeneratingUnit._ControlAreaGeneratingUnit.append(self)
+            if self not in self._GeneratingUnit._ControlAreaGeneratingUnit:
+                self._GeneratingUnit._ControlAreaGeneratingUnit.append(self)
 
     GeneratingUnit = property(getGeneratingUnit, setGeneratingUnit)
 

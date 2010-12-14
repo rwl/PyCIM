@@ -80,7 +80,7 @@ class RemoteUnit(PowerSystemResource):
 
     def setRemotePoints(self, value):
         for x in self._RemotePoints:
-            x._RemoteUnit = None
+            x.RemoteUnit = None
         for y in value:
             y._RemoteUnit = self
         self._RemotePoints = value
@@ -89,11 +89,9 @@ class RemoteUnit(PowerSystemResource):
 
     def addRemotePoints(self, *RemotePoints):
         for obj in RemotePoints:
-            obj._RemoteUnit = self
-            self._RemotePoints.append(obj)
+            obj.RemoteUnit = self
 
     def removeRemotePoints(self, *RemotePoints):
         for obj in RemotePoints:
-            obj._RemoteUnit = None
-            self._RemotePoints.remove(obj)
+            obj.RemoteUnit = None
 

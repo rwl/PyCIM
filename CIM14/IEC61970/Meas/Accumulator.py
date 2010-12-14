@@ -80,7 +80,7 @@ class Accumulator(Measurement):
 
     def setAccumulatorValues(self, value):
         for x in self._AccumulatorValues:
-            x._Accumulator = None
+            x.Accumulator = None
         for y in value:
             y._Accumulator = self
         self._AccumulatorValues = value
@@ -89,11 +89,9 @@ class Accumulator(Measurement):
 
     def addAccumulatorValues(self, *AccumulatorValues):
         for obj in AccumulatorValues:
-            obj._Accumulator = self
-            self._AccumulatorValues.append(obj)
+            obj.Accumulator = self
 
     def removeAccumulatorValues(self, *AccumulatorValues):
         for obj in AccumulatorValues:
-            obj._Accumulator = None
-            self._AccumulatorValues.remove(obj)
+            obj.Accumulator = None
 

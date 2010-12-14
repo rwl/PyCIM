@@ -65,7 +65,8 @@ class WireArrangement(IdentifiedObject):
 
         self._WireType = value
         if self._WireType is not None:
-            self._WireType._WireArrangements.append(self)
+            if self not in self._WireType._WireArrangements:
+                self._WireType._WireArrangements.append(self)
 
     WireType = property(getWireType, setWireType)
 
@@ -81,7 +82,8 @@ class WireArrangement(IdentifiedObject):
 
         self._ConductorInfo = value
         if self._ConductorInfo is not None:
-            self._ConductorInfo._WireArrangements.append(self)
+            if self not in self._ConductorInfo._WireArrangements:
+                self._ConductorInfo._WireArrangements.append(self)
 
     ConductorInfo = property(getConductorInfo, setConductorInfo)
 

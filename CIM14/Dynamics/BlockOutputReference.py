@@ -52,7 +52,8 @@ class BlockOutputReference(MetaBlockConnectable):
 
         self._metaBlockOutput0 = value
         if self._metaBlockOutput0 is not None:
-            self._metaBlockOutput0._BlockOutputReference.append(self)
+            if self not in self._metaBlockOutput0._BlockOutputReference:
+                self._metaBlockOutput0._BlockOutputReference.append(self)
 
     metaBlockOutput0 = property(getmetaBlockOutput0, setmetaBlockOutput0)
 

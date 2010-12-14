@@ -56,6 +56,7 @@ class SvTapStep(StateVariable):
 
         self._TapChanger = value
         if self._TapChanger is not None:
+            self._TapChanger.SvTapStep = None
             self._TapChanger._SvTapStep = self
 
     TapChanger = property(getTapChanger, setTapChanger)

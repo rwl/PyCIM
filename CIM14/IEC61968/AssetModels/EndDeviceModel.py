@@ -44,7 +44,7 @@ class EndDeviceModel(AssetModel):
 
     def setEndDeviceAssets(self, value):
         for x in self._EndDeviceAssets:
-            x._EndDeviceModel = None
+            x.EndDeviceModel = None
         for y in value:
             y._EndDeviceModel = self
         self._EndDeviceAssets = value
@@ -53,11 +53,9 @@ class EndDeviceModel(AssetModel):
 
     def addEndDeviceAssets(self, *EndDeviceAssets):
         for obj in EndDeviceAssets:
-            obj._EndDeviceModel = self
-            self._EndDeviceAssets.append(obj)
+            obj.EndDeviceModel = self
 
     def removeEndDeviceAssets(self, *EndDeviceAssets):
         for obj in EndDeviceAssets:
-            obj._EndDeviceModel = None
-            self._EndDeviceAssets.remove(obj)
+            obj.EndDeviceModel = None
 

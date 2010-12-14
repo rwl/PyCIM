@@ -61,7 +61,8 @@ class TieFlow(Element):
 
         self._ControlArea = value
         if self._ControlArea is not None:
-            self._ControlArea._TieFlow.append(self)
+            if self not in self._ControlArea._TieFlow:
+                self._ControlArea._TieFlow.append(self)
 
     ControlArea = property(getControlArea, setControlArea)
 
@@ -72,7 +73,7 @@ class TieFlow(Element):
 
     def setAltTieMeas(self, value):
         for x in self._AltTieMeas:
-            x._TieFlow = None
+            x.TieFlow = None
         for y in value:
             y._TieFlow = self
         self._AltTieMeas = value
@@ -81,13 +82,11 @@ class TieFlow(Element):
 
     def addAltTieMeas(self, *AltTieMeas):
         for obj in AltTieMeas:
-            obj._TieFlow = self
-            self._AltTieMeas.append(obj)
+            obj.TieFlow = self
 
     def removeAltTieMeas(self, *AltTieMeas):
         for obj in AltTieMeas:
-            obj._TieFlow = None
-            self._AltTieMeas.remove(obj)
+            obj.TieFlow = None
 
     def getTerminal(self):
         """The terminal to which this tie flow belongs.
@@ -101,7 +100,8 @@ class TieFlow(Element):
 
         self._Terminal = value
         if self._Terminal is not None:
-            self._Terminal._TieFlow.append(self)
+            if self not in self._Terminal._TieFlow:
+                self._Terminal._TieFlow.append(self)
 
     Terminal = property(getTerminal, setTerminal)
 

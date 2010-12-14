@@ -57,7 +57,8 @@ class SubGeographicalRegion(IdentifiedObject):
 
         self._Region = value
         if self._Region is not None:
-            self._Region._Regions.append(self)
+            if self not in self._Region._Regions:
+                self._Region._Regions.append(self)
 
     Region = property(getRegion, setRegion)
 
@@ -68,7 +69,7 @@ class SubGeographicalRegion(IdentifiedObject):
 
     def setSubstations(self, value):
         for x in self._Substations:
-            x._Region = None
+            x.Region = None
         for y in value:
             y._Region = self
         self._Substations = value
@@ -77,13 +78,11 @@ class SubGeographicalRegion(IdentifiedObject):
 
     def addSubstations(self, *Substations):
         for obj in Substations:
-            obj._Region = self
-            self._Substations.append(obj)
+            obj.Region = self
 
     def removeSubstations(self, *Substations):
         for obj in Substations:
-            obj._Region = None
-            self._Substations.remove(obj)
+            obj.Region = None
 
     def getLines(self):
         """A Line can be contained by a SubGeographical Region.
@@ -92,7 +91,7 @@ class SubGeographicalRegion(IdentifiedObject):
 
     def setLines(self, value):
         for x in self._Lines:
-            x._Region = None
+            x.Region = None
         for y in value:
             y._Region = self
         self._Lines = value
@@ -101,11 +100,9 @@ class SubGeographicalRegion(IdentifiedObject):
 
     def addLines(self, *Lines):
         for obj in Lines:
-            obj._Region = self
-            self._Lines.append(obj)
+            obj.Region = self
 
     def removeLines(self, *Lines):
         for obj in Lines:
-            obj._Region = None
-            self._Lines.remove(obj)
+            obj.Region = None
 

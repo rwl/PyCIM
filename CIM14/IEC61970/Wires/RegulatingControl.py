@@ -72,7 +72,7 @@ class RegulatingControl(PowerSystemResource):
 
     def setRegulationSchedule(self, value):
         for x in self._RegulationSchedule:
-            x._RegulatingControl = None
+            x.RegulatingControl = None
         for y in value:
             y._RegulatingControl = self
         self._RegulationSchedule = value
@@ -81,13 +81,11 @@ class RegulatingControl(PowerSystemResource):
 
     def addRegulationSchedule(self, *RegulationSchedule):
         for obj in RegulationSchedule:
-            obj._RegulatingControl = self
-            self._RegulationSchedule.append(obj)
+            obj.RegulatingControl = self
 
     def removeRegulationSchedule(self, *RegulationSchedule):
         for obj in RegulationSchedule:
-            obj._RegulatingControl = None
-            self._RegulationSchedule.remove(obj)
+            obj.RegulatingControl = None
 
     def getTerminal(self):
         """The terminal associated with this regulating control.
@@ -101,7 +99,8 @@ class RegulatingControl(PowerSystemResource):
 
         self._Terminal = value
         if self._Terminal is not None:
-            self._Terminal._RegulatingControl.append(self)
+            if self not in self._Terminal._RegulatingControl:
+                self._Terminal._RegulatingControl.append(self)
 
     Terminal = property(getTerminal, setTerminal)
 
@@ -112,7 +111,7 @@ class RegulatingControl(PowerSystemResource):
 
     def setTapChanger(self, value):
         for x in self._TapChanger:
-            x._RegulatingControl = None
+            x.RegulatingControl = None
         for y in value:
             y._RegulatingControl = self
         self._TapChanger = value
@@ -121,13 +120,11 @@ class RegulatingControl(PowerSystemResource):
 
     def addTapChanger(self, *TapChanger):
         for obj in TapChanger:
-            obj._RegulatingControl = self
-            self._TapChanger.append(obj)
+            obj.RegulatingControl = self
 
     def removeTapChanger(self, *TapChanger):
         for obj in TapChanger:
-            obj._RegulatingControl = None
-            self._TapChanger.remove(obj)
+            obj.RegulatingControl = None
 
     def getRegulatingCondEq(self):
         """The equipment that participates in this regulating control scheme.
@@ -136,7 +133,7 @@ class RegulatingControl(PowerSystemResource):
 
     def setRegulatingCondEq(self, value):
         for x in self._RegulatingCondEq:
-            x._RegulatingControl = None
+            x.RegulatingControl = None
         for y in value:
             y._RegulatingControl = self
         self._RegulatingCondEq = value
@@ -145,11 +142,9 @@ class RegulatingControl(PowerSystemResource):
 
     def addRegulatingCondEq(self, *RegulatingCondEq):
         for obj in RegulatingCondEq:
-            obj._RegulatingControl = self
-            self._RegulatingCondEq.append(obj)
+            obj.RegulatingControl = self
 
     def removeRegulatingCondEq(self, *RegulatingCondEq):
         for obj in RegulatingCondEq:
-            obj._RegulatingControl = None
-            self._RegulatingCondEq.remove(obj)
+            obj.RegulatingControl = None
 

@@ -46,7 +46,8 @@ class MetaBlockState(MetaBlockConnectable):
 
         self._MemberOf_MetaBlock = value
         if self._MemberOf_MetaBlock is not None:
-            self._MemberOf_MetaBlock._MetaBlockState.append(self)
+            if self not in self._MemberOf_MetaBlock._MetaBlockState:
+                self._MemberOf_MetaBlock._MetaBlockState.append(self)
 
     MemberOf_MetaBlock = property(getMemberOf_MetaBlock, setMemberOf_MetaBlock)
 

@@ -62,7 +62,8 @@ class Slot(IdentifiedObject):
 
         self._blockType0 = value
         if self._blockType0 is not None:
-            self._blockType0._slot0.append(self)
+            if self not in self._blockType0._slot0:
+                self._blockType0._slot0.append(self)
 
     blockType0 = property(getblockType0, setblockType0)
 
@@ -72,7 +73,7 @@ class Slot(IdentifiedObject):
 
     def setslotReference0(self, value):
         for x in self._slotReference0:
-            x._slot0 = None
+            x.slot0 = None
         for y in value:
             y._slot0 = self
         self._slotReference0 = value
@@ -81,13 +82,11 @@ class Slot(IdentifiedObject):
 
     def addslotReference0(self, *slotReference0):
         for obj in slotReference0:
-            obj._slot0 = self
-            self._slotReference0.append(obj)
+            obj.slot0 = self
 
     def removeslotReference0(self, *slotReference0):
         for obj in slotReference0:
-            obj._slot0 = None
-            self._slotReference0.remove(obj)
+            obj.slot0 = None
 
     def getslotOutput0(self):
         
@@ -95,7 +94,7 @@ class Slot(IdentifiedObject):
 
     def setslotOutput0(self, value):
         for x in self._slotOutput0:
-            x._slot0 = None
+            x.slot0 = None
         for y in value:
             y._slot0 = self
         self._slotOutput0 = value
@@ -104,13 +103,11 @@ class Slot(IdentifiedObject):
 
     def addslotOutput0(self, *slotOutput0):
         for obj in slotOutput0:
-            obj._slot0 = self
-            self._slotOutput0.append(obj)
+            obj.slot0 = self
 
     def removeslotOutput0(self, *slotOutput0):
         for obj in slotOutput0:
-            obj._slot0 = None
-            self._slotOutput0.remove(obj)
+            obj.slot0 = None
 
     def getconnectionFrame0(self):
         
@@ -123,7 +120,8 @@ class Slot(IdentifiedObject):
 
         self._connectionFrame0 = value
         if self._connectionFrame0 is not None:
-            self._connectionFrame0._slot0.append(self)
+            if self not in self._connectionFrame0._slot0:
+                self._connectionFrame0._slot0.append(self)
 
     connectionFrame0 = property(getconnectionFrame0, setconnectionFrame0)
 
@@ -133,7 +131,7 @@ class Slot(IdentifiedObject):
 
     def setslotInput0(self, value):
         for x in self._slotInput0:
-            x._slot0 = None
+            x.slot0 = None
         for y in value:
             y._slot0 = self
         self._slotInput0 = value
@@ -142,11 +140,9 @@ class Slot(IdentifiedObject):
 
     def addslotInput0(self, *slotInput0):
         for obj in slotInput0:
-            obj._slot0 = self
-            self._slotInput0.append(obj)
+            obj.slot0 = self
 
     def removeslotInput0(self, *slotInput0):
         for obj in slotInput0:
-            obj._slot0 = None
-            self._slotInput0.remove(obj)
+            obj.slot0 = None
 

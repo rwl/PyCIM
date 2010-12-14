@@ -103,6 +103,7 @@ class GovHydro1(TurbineGovernor):
 
         self._HydroTurbine = value
         if self._HydroTurbine is not None:
+            self._HydroTurbine.HydroTurbineGovernor = None
             self._HydroTurbine._HydroTurbineGovernor = self
 
     HydroTurbine = property(getHydroTurbine, setHydroTurbine)

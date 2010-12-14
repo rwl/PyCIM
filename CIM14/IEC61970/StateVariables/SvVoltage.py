@@ -56,6 +56,7 @@ class SvVoltage(StateVariable):
 
         self._TopologicalNode = value
         if self._TopologicalNode is not None:
+            self._TopologicalNode.SvVoltage = None
             self._TopologicalNode._SvVoltage = self
 
     TopologicalNode = property(getTopologicalNode, setTopologicalNode)

@@ -105,7 +105,8 @@ class CustomerAgreement(Agreement):
 
         self._DemandResponseProgram = value
         if self._DemandResponseProgram is not None:
-            self._DemandResponseProgram._CustomerAgreements.append(self)
+            if self not in self._DemandResponseProgram._CustomerAgreements:
+                self._DemandResponseProgram._CustomerAgreements.append(self)
 
     DemandResponseProgram = property(getDemandResponseProgram, setDemandResponseProgram)
 
@@ -121,7 +122,8 @@ class CustomerAgreement(Agreement):
 
         self._ServiceSupplier = value
         if self._ServiceSupplier is not None:
-            self._ServiceSupplier._CustomerAgreements.append(self)
+            if self not in self._ServiceSupplier._CustomerAgreements:
+                self._ServiceSupplier._CustomerAgreements.append(self)
 
     ServiceSupplier = property(getServiceSupplier, setServiceSupplier)
 
@@ -192,7 +194,8 @@ class CustomerAgreement(Agreement):
 
         self._ServiceCategory = value
         if self._ServiceCategory is not None:
-            self._ServiceCategory._CustomerAgreements.append(self)
+            if self not in self._ServiceCategory._CustomerAgreements:
+                self._ServiceCategory._CustomerAgreements.append(self)
 
     ServiceCategory = property(getServiceCategory, setServiceCategory)
 
@@ -203,7 +206,7 @@ class CustomerAgreement(Agreement):
 
     def setMeterReadings(self, value):
         for x in self._MeterReadings:
-            x._CustomerAgreement = None
+            x.CustomerAgreement = None
         for y in value:
             y._CustomerAgreement = self
         self._MeterReadings = value
@@ -212,13 +215,11 @@ class CustomerAgreement(Agreement):
 
     def addMeterReadings(self, *MeterReadings):
         for obj in MeterReadings:
-            obj._CustomerAgreement = self
-            self._MeterReadings.append(obj)
+            obj.CustomerAgreement = self
 
     def removeMeterReadings(self, *MeterReadings):
         for obj in MeterReadings:
-            obj._CustomerAgreement = None
-            self._MeterReadings.remove(obj)
+            obj.CustomerAgreement = None
 
     def getCustomerAccount(self):
         """Customer account owning this agreement.
@@ -232,7 +233,8 @@ class CustomerAgreement(Agreement):
 
         self._CustomerAccount = value
         if self._CustomerAccount is not None:
-            self._CustomerAccount._CustomerAgreements.append(self)
+            if self not in self._CustomerAccount._CustomerAgreements:
+                self._CustomerAccount._CustomerAgreements.append(self)
 
     CustomerAccount = property(getCustomerAccount, setCustomerAccount)
 
@@ -243,7 +245,7 @@ class CustomerAgreement(Agreement):
 
     def setAuxiliaryAgreements(self, value):
         for x in self._AuxiliaryAgreements:
-            x._CustomerAgreement = None
+            x.CustomerAgreement = None
         for y in value:
             y._CustomerAgreement = self
         self._AuxiliaryAgreements = value
@@ -252,13 +254,11 @@ class CustomerAgreement(Agreement):
 
     def addAuxiliaryAgreements(self, *AuxiliaryAgreements):
         for obj in AuxiliaryAgreements:
-            obj._CustomerAgreement = self
-            self._AuxiliaryAgreements.append(obj)
+            obj.CustomerAgreement = self
 
     def removeAuxiliaryAgreements(self, *AuxiliaryAgreements):
         for obj in AuxiliaryAgreements:
-            obj._CustomerAgreement = None
-            self._AuxiliaryAgreements.remove(obj)
+            obj.CustomerAgreement = None
 
     def getEndDeviceControls(self):
         """Could be deprecated in the future.
@@ -267,7 +267,7 @@ class CustomerAgreement(Agreement):
 
     def setEndDeviceControls(self, value):
         for x in self._EndDeviceControls:
-            x._CustomerAgreement = None
+            x.CustomerAgreement = None
         for y in value:
             y._CustomerAgreement = self
         self._EndDeviceControls = value
@@ -276,13 +276,11 @@ class CustomerAgreement(Agreement):
 
     def addEndDeviceControls(self, *EndDeviceControls):
         for obj in EndDeviceControls:
-            obj._CustomerAgreement = self
-            self._EndDeviceControls.append(obj)
+            obj.CustomerAgreement = self
 
     def removeEndDeviceControls(self, *EndDeviceControls):
         for obj in EndDeviceControls:
-            obj._CustomerAgreement = None
-            self._EndDeviceControls.remove(obj)
+            obj.CustomerAgreement = None
 
     def getCustomer(self):
         """Customer for this agreement.
@@ -296,7 +294,8 @@ class CustomerAgreement(Agreement):
 
         self._Customer = value
         if self._Customer is not None:
-            self._Customer._CustomerAgreements.append(self)
+            if self not in self._Customer._CustomerAgreements:
+                self._Customer._CustomerAgreements.append(self)
 
     Customer = property(getCustomer, setCustomer)
 
@@ -307,7 +306,7 @@ class CustomerAgreement(Agreement):
 
     def setServiceDeliveryPoints(self, value):
         for x in self._ServiceDeliveryPoints:
-            x._CustomerAgreement = None
+            x.CustomerAgreement = None
         for y in value:
             y._CustomerAgreement = self
         self._ServiceDeliveryPoints = value
@@ -316,13 +315,11 @@ class CustomerAgreement(Agreement):
 
     def addServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._CustomerAgreement = self
-            self._ServiceDeliveryPoints.append(obj)
+            obj.CustomerAgreement = self
 
     def removeServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._CustomerAgreement = None
-            self._ServiceDeliveryPoints.remove(obj)
+            obj.CustomerAgreement = None
 
     def getEquipments(self):
         

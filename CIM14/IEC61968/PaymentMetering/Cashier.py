@@ -51,7 +51,7 @@ class Cashier(IdentifiedObject):
 
     def setCashierShifts(self, value):
         for x in self._CashierShifts:
-            x._Cashier = None
+            x.Cashier = None
         for y in value:
             y._Cashier = self
         self._CashierShifts = value
@@ -60,13 +60,11 @@ class Cashier(IdentifiedObject):
 
     def addCashierShifts(self, *CashierShifts):
         for obj in CashierShifts:
-            obj._Cashier = self
-            self._CashierShifts.append(obj)
+            obj.Cashier = self
 
     def removeCashierShifts(self, *CashierShifts):
         for obj in CashierShifts:
-            obj._Cashier = None
-            self._CashierShifts.remove(obj)
+            obj.Cashier = None
 
     # Electronic address.
     electronicAddress = None
@@ -83,7 +81,8 @@ class Cashier(IdentifiedObject):
 
         self._Vendor = value
         if self._Vendor is not None:
-            self._Vendor._Cashiers.append(self)
+            if self not in self._Vendor._Cashiers:
+                self._Vendor._Cashiers.append(self)
 
     Vendor = property(getVendor, setVendor)
 

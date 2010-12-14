@@ -96,7 +96,7 @@ class WireType(IdentifiedObject):
 
     def setWireArrangements(self, value):
         for x in self._WireArrangements:
-            x._WireType = None
+            x.WireType = None
         for y in value:
             y._WireType = self
         self._WireArrangements = value
@@ -105,13 +105,11 @@ class WireType(IdentifiedObject):
 
     def addWireArrangements(self, *WireArrangements):
         for obj in WireArrangements:
-            obj._WireType = self
-            self._WireArrangements.append(obj)
+            obj.WireType = self
 
     def removeWireArrangements(self, *WireArrangements):
         for obj in WireArrangements:
-            obj._WireType = None
-            self._WireArrangements.remove(obj)
+            obj.WireType = None
 
     def getConcentricNeutralCableInfos(self):
         """All concentric neutral cables using this wire type.
@@ -120,7 +118,7 @@ class WireType(IdentifiedObject):
 
     def setConcentricNeutralCableInfos(self, value):
         for x in self._ConcentricNeutralCableInfos:
-            x._WireType = None
+            x.WireType = None
         for y in value:
             y._WireType = self
         self._ConcentricNeutralCableInfos = value
@@ -129,11 +127,9 @@ class WireType(IdentifiedObject):
 
     def addConcentricNeutralCableInfos(self, *ConcentricNeutralCableInfos):
         for obj in ConcentricNeutralCableInfos:
-            obj._WireType = self
-            self._ConcentricNeutralCableInfos.append(obj)
+            obj.WireType = self
 
     def removeConcentricNeutralCableInfos(self, *ConcentricNeutralCableInfos):
         for obj in ConcentricNeutralCableInfos:
-            obj._WireType = None
-            self._ConcentricNeutralCableInfos.remove(obj)
+            obj.WireType = None
 

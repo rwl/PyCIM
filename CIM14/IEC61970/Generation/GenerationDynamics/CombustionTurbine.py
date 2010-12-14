@@ -89,7 +89,8 @@ class CombustionTurbine(PrimeMover):
 
         self._HeatRecoveryBoiler = value
         if self._HeatRecoveryBoiler is not None:
-            self._HeatRecoveryBoiler._CombustionTurbines.append(self)
+            if self not in self._HeatRecoveryBoiler._CombustionTurbines:
+                self._HeatRecoveryBoiler._CombustionTurbines.append(self)
 
     HeatRecoveryBoiler = property(getHeatRecoveryBoiler, setHeatRecoveryBoiler)
 
@@ -104,6 +105,7 @@ class CombustionTurbine(PrimeMover):
 
         self._CTTempActivePowerCurve = value
         if self._CTTempActivePowerCurve is not None:
+            self._CTTempActivePowerCurve.CombustionTurbine = None
             self._CTTempActivePowerCurve._CombustionTurbine = self
 
     CTTempActivePowerCurve = property(getCTTempActivePowerCurve, setCTTempActivePowerCurve)
@@ -119,6 +121,7 @@ class CombustionTurbine(PrimeMover):
 
         self._AirCompressor = value
         if self._AirCompressor is not None:
+            self._AirCompressor.CombustionTurbine = None
             self._AirCompressor._CombustionTurbine = self
 
     AirCompressor = property(getAirCompressor, setAirCompressor)

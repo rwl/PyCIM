@@ -57,7 +57,8 @@ class CoordinateSystem(Element):
 
         self._Location = value
         if self._Location is not None:
-            self._Location._CoordinateSystems.append(self)
+            if self not in self._Location._CoordinateSystems:
+                self._Location._CoordinateSystems.append(self)
 
     Location = property(getLocation, setLocation)
 
@@ -68,7 +69,7 @@ class CoordinateSystem(Element):
 
     def setPositionPoints(self, value):
         for x in self._PositionPoints:
-            x._CoordinateSystem = None
+            x.CoordinateSystem = None
         for y in value:
             y._CoordinateSystem = self
         self._PositionPoints = value
@@ -77,11 +78,9 @@ class CoordinateSystem(Element):
 
     def addPositionPoints(self, *PositionPoints):
         for obj in PositionPoints:
-            obj._CoordinateSystem = self
-            self._PositionPoints.append(obj)
+            obj.CoordinateSystem = self
 
     def removePositionPoints(self, *PositionPoints):
         for obj in PositionPoints:
-            obj._CoordinateSystem = None
-            self._PositionPoints.remove(obj)
+            obj.CoordinateSystem = None
 

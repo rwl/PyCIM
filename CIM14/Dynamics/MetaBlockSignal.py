@@ -116,7 +116,8 @@ class MetaBlockSignal(IdentifiedObject):
 
         self._MemberOf_MetaBlock = value
         if self._MemberOf_MetaBlock is not None:
-            self._MemberOf_MetaBlock._MetaBlockSignal.append(self)
+            if self not in self._MemberOf_MetaBlock._MetaBlockSignal:
+                self._MemberOf_MetaBlock._MetaBlockSignal.append(self)
 
     MemberOf_MetaBlock = property(getMemberOf_MetaBlock, setMemberOf_MetaBlock)
 
@@ -130,6 +131,7 @@ class MetaBlockSignal(IdentifiedObject):
 
         self._From = value
         if self._From is not None:
+            self._From.MetaBlockSignal = None
             self._From._MetaBlockSignal = self
 
     From = property(getFrom, setFrom)
@@ -145,7 +147,8 @@ class MetaBlockSignal(IdentifiedObject):
 
         self._To = value
         if self._To is not None:
-            self._To._MetaBlockSignal.append(self)
+            if self not in self._To._MetaBlockSignal:
+                self._To._MetaBlockSignal.append(self)
 
     To = property(getTo, setTo)
 

@@ -48,7 +48,7 @@ class Contingency(IdentifiedObject):
 
     def setContingencyElement(self, value):
         for x in self._ContingencyElement:
-            x._Contingency = None
+            x.Contingency = None
         for y in value:
             y._Contingency = self
         self._ContingencyElement = value
@@ -57,11 +57,9 @@ class Contingency(IdentifiedObject):
 
     def addContingencyElement(self, *ContingencyElement):
         for obj in ContingencyElement:
-            obj._Contingency = self
-            self._ContingencyElement.append(obj)
+            obj.Contingency = self
 
     def removeContingencyElement(self, *ContingencyElement):
         for obj in ContingencyElement:
-            obj._Contingency = None
-            self._ContingencyElement.remove(obj)
+            obj.Contingency = None
 

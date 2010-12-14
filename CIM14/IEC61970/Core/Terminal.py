@@ -101,7 +101,8 @@ class Terminal(IdentifiedObject):
 
         self._TopologicalNode = value
         if self._TopologicalNode is not None:
-            self._TopologicalNode._Terminal.append(self)
+            if self not in self._TopologicalNode._Terminal:
+                self._TopologicalNode._Terminal.append(self)
 
     TopologicalNode = property(getTopologicalNode, setTopologicalNode)
 
@@ -112,7 +113,7 @@ class Terminal(IdentifiedObject):
 
     def setBlock(self, value):
         for x in self._Block:
-            x._Terminal = None
+            x.Terminal = None
         for y in value:
             y._Terminal = self
         self._Block = value
@@ -121,13 +122,11 @@ class Terminal(IdentifiedObject):
 
     def addBlock(self, *Block):
         for obj in Block:
-            obj._Terminal = self
-            self._Block.append(obj)
+            obj.Terminal = self
 
     def removeBlock(self, *Block):
         for obj in Block:
-            obj._Terminal = None
-            self._Block.remove(obj)
+            obj.Terminal = None
 
     def getOperationalLimitSet(self):
         """The operatinal limits sets that applie specifically to this terminal.  Other operational limits sets may apply to this terminal through the association to Equipment.
@@ -136,7 +135,7 @@ class Terminal(IdentifiedObject):
 
     def setOperationalLimitSet(self, value):
         for x in self._OperationalLimitSet:
-            x._Terminal = None
+            x.Terminal = None
         for y in value:
             y._Terminal = self
         self._OperationalLimitSet = value
@@ -145,13 +144,11 @@ class Terminal(IdentifiedObject):
 
     def addOperationalLimitSet(self, *OperationalLimitSet):
         for obj in OperationalLimitSet:
-            obj._Terminal = self
-            self._OperationalLimitSet.append(obj)
+            obj.Terminal = self
 
     def removeOperationalLimitSet(self, *OperationalLimitSet):
         for obj in OperationalLimitSet:
-            obj._Terminal = None
-            self._OperationalLimitSet.remove(obj)
+            obj.Terminal = None
 
     def getHasSecond_MutualCoupling(self):
         """Mutual couplings with the branch associated as the first branch.
@@ -160,7 +157,7 @@ class Terminal(IdentifiedObject):
 
     def setHasSecond_MutualCoupling(self, value):
         for x in self._HasSecond_MutualCoupling:
-            x._Second_Terminal = None
+            x.Second_Terminal = None
         for y in value:
             y._Second_Terminal = self
         self._HasSecond_MutualCoupling = value
@@ -169,13 +166,11 @@ class Terminal(IdentifiedObject):
 
     def addHasSecond_MutualCoupling(self, *HasSecond_MutualCoupling):
         for obj in HasSecond_MutualCoupling:
-            obj._Second_Terminal = self
-            self._HasSecond_MutualCoupling.append(obj)
+            obj.Second_Terminal = self
 
     def removeHasSecond_MutualCoupling(self, *HasSecond_MutualCoupling):
         for obj in HasSecond_MutualCoupling:
-            obj._Second_Terminal = None
-            self._HasSecond_MutualCoupling.remove(obj)
+            obj.Second_Terminal = None
 
     def getRegulatingControl(self):
         """The terminal is regulated by a control.
@@ -184,7 +179,7 @@ class Terminal(IdentifiedObject):
 
     def setRegulatingControl(self, value):
         for x in self._RegulatingControl:
-            x._Terminal = None
+            x.Terminal = None
         for y in value:
             y._Terminal = self
         self._RegulatingControl = value
@@ -193,13 +188,11 @@ class Terminal(IdentifiedObject):
 
     def addRegulatingControl(self, *RegulatingControl):
         for obj in RegulatingControl:
-            obj._Terminal = self
-            self._RegulatingControl.append(obj)
+            obj.Terminal = self
 
     def removeRegulatingControl(self, *RegulatingControl):
         for obj in RegulatingControl:
-            obj._Terminal = None
-            self._RegulatingControl.remove(obj)
+            obj.Terminal = None
 
     def getMeasurements(self):
         """One or more measurements may be associated with a terminal in the network. Measurement-Terminal defines where the measurement is placed in the network topology. Some Measurements represent quantities related to a particular sensor position, e.g. a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is captured by the Measurement - Terminal association that makes it possible to place the sensing position at a  well defined place. The place is defined by the connection of the Terminal to ConductingEquipment.
@@ -208,7 +201,7 @@ class Terminal(IdentifiedObject):
 
     def setMeasurements(self, value):
         for x in self._Measurements:
-            x._Terminal = None
+            x.Terminal = None
         for y in value:
             y._Terminal = self
         self._Measurements = value
@@ -217,13 +210,11 @@ class Terminal(IdentifiedObject):
 
     def addMeasurements(self, *Measurements):
         for obj in Measurements:
-            obj._Terminal = self
-            self._Measurements.append(obj)
+            obj.Terminal = self
 
     def removeMeasurements(self, *Measurements):
         for obj in Measurements:
-            obj._Terminal = None
-            self._Measurements.remove(obj)
+            obj.Terminal = None
 
     def getBranchGroupTerminal(self):
         """The directed branch group terminals for which the terminal is monitored.
@@ -232,7 +223,7 @@ class Terminal(IdentifiedObject):
 
     def setBranchGroupTerminal(self, value):
         for x in self._BranchGroupTerminal:
-            x._Terminal = None
+            x.Terminal = None
         for y in value:
             y._Terminal = self
         self._BranchGroupTerminal = value
@@ -241,13 +232,11 @@ class Terminal(IdentifiedObject):
 
     def addBranchGroupTerminal(self, *BranchGroupTerminal):
         for obj in BranchGroupTerminal:
-            obj._Terminal = self
-            self._BranchGroupTerminal.append(obj)
+            obj.Terminal = self
 
     def removeBranchGroupTerminal(self, *BranchGroupTerminal):
         for obj in BranchGroupTerminal:
-            obj._Terminal = None
-            self._BranchGroupTerminal.remove(obj)
+            obj.Terminal = None
 
     def getConductingEquipment(self):
         """ConductingEquipment has 1 or 2 terminals that may be connected to other ConductingEquipment terminals via ConnectivityNodes
@@ -261,7 +250,8 @@ class Terminal(IdentifiedObject):
 
         self._ConductingEquipment = value
         if self._ConductingEquipment is not None:
-            self._ConductingEquipment._Terminals.append(self)
+            if self not in self._ConductingEquipment._Terminals:
+                self._ConductingEquipment._Terminals.append(self)
 
     ConductingEquipment = property(getConductingEquipment, setConductingEquipment)
 
@@ -272,7 +262,7 @@ class Terminal(IdentifiedObject):
 
     def setHasFirst_MutualCoupling(self, value):
         for x in self._HasFirst_MutualCoupling:
-            x._First_Terminal = None
+            x.First_Terminal = None
         for y in value:
             y._First_Terminal = self
         self._HasFirst_MutualCoupling = value
@@ -281,13 +271,11 @@ class Terminal(IdentifiedObject):
 
     def addHasFirst_MutualCoupling(self, *HasFirst_MutualCoupling):
         for obj in HasFirst_MutualCoupling:
-            obj._First_Terminal = self
-            self._HasFirst_MutualCoupling.append(obj)
+            obj.First_Terminal = self
 
     def removeHasFirst_MutualCoupling(self, *HasFirst_MutualCoupling):
         for obj in HasFirst_MutualCoupling:
-            obj._First_Terminal = None
-            self._HasFirst_MutualCoupling.remove(obj)
+            obj.First_Terminal = None
 
     def getSvPowerFlow(self):
         """The power flow state associated with the terminal.
@@ -300,6 +288,7 @@ class Terminal(IdentifiedObject):
 
         self._SvPowerFlow = value
         if self._SvPowerFlow is not None:
+            self._SvPowerFlow.Terminal = None
             self._SvPowerFlow._Terminal = self
 
     SvPowerFlow = property(getSvPowerFlow, setSvPowerFlow)
@@ -316,7 +305,8 @@ class Terminal(IdentifiedObject):
 
         self._ConnectivityNode = value
         if self._ConnectivityNode is not None:
-            self._ConnectivityNode._Terminals.append(self)
+            if self not in self._ConnectivityNode._Terminals:
+                self._ConnectivityNode._Terminals.append(self)
 
     ConnectivityNode = property(getConnectivityNode, setConnectivityNode)
 
@@ -327,7 +317,7 @@ class Terminal(IdentifiedObject):
 
     def setTieFlow(self, value):
         for x in self._TieFlow:
-            x._Terminal = None
+            x.Terminal = None
         for y in value:
             y._Terminal = self
         self._TieFlow = value
@@ -336,11 +326,9 @@ class Terminal(IdentifiedObject):
 
     def addTieFlow(self, *TieFlow):
         for obj in TieFlow:
-            obj._Terminal = self
-            self._TieFlow.append(obj)
+            obj.Terminal = self
 
     def removeTieFlow(self, *TieFlow):
         for obj in TieFlow:
-            obj._Terminal = None
-            self._TieFlow.remove(obj)
+            obj.Terminal = None
 

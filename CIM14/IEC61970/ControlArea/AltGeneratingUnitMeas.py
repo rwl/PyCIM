@@ -57,7 +57,8 @@ class AltGeneratingUnitMeas(Element):
 
         self._ControlAreaGeneratingUnit = value
         if self._ControlAreaGeneratingUnit is not None:
-            self._ControlAreaGeneratingUnit._AltGeneratingUnitMeas.append(self)
+            if self not in self._ControlAreaGeneratingUnit._AltGeneratingUnitMeas:
+                self._ControlAreaGeneratingUnit._AltGeneratingUnitMeas.append(self)
 
     ControlAreaGeneratingUnit = property(getControlAreaGeneratingUnit, setControlAreaGeneratingUnit)
 
@@ -73,7 +74,8 @@ class AltGeneratingUnitMeas(Element):
 
         self._AnalogValue = value
         if self._AnalogValue is not None:
-            self._AnalogValue._AltGeneratingUnit.append(self)
+            if self not in self._AnalogValue._AltGeneratingUnit:
+                self._AnalogValue._AltGeneratingUnit.append(self)
 
     AnalogValue = property(getAnalogValue, setAnalogValue)
 

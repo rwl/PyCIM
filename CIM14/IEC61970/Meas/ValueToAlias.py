@@ -53,7 +53,8 @@ class ValueToAlias(IdentifiedObject):
 
         self._ValueAliasSet = value
         if self._ValueAliasSet is not None:
-            self._ValueAliasSet._Values.append(self)
+            if self not in self._ValueAliasSet._Values:
+                self._ValueAliasSet._Values.append(self)
 
     ValueAliasSet = property(getValueAliasSet, setValueAliasSet)
 

@@ -68,7 +68,8 @@ class Receipt(IdentifiedObject):
 
         self._CashierShift = value
         if self._CashierShift is not None:
-            self._CashierShift._Receipts.append(self)
+            if self not in self._CashierShift._Receipts:
+                self._CashierShift._Receipts.append(self)
 
     CashierShift = property(getCashierShift, setCashierShift)
 
@@ -79,7 +80,7 @@ class Receipt(IdentifiedObject):
 
     def setTenders(self, value):
         for x in self._Tenders:
-            x._Receipt = None
+            x.Receipt = None
         for y in value:
             y._Receipt = self
         self._Tenders = value
@@ -88,13 +89,11 @@ class Receipt(IdentifiedObject):
 
     def addTenders(self, *Tenders):
         for obj in Tenders:
-            obj._Receipt = self
-            self._Tenders.append(obj)
+            obj.Receipt = self
 
     def removeTenders(self, *Tenders):
         for obj in Tenders:
-            obj._Receipt = None
-            self._Tenders.remove(obj)
+            obj.Receipt = None
 
     def getVendorShift(self):
         """Vendor shift during which this receipt was recorded.
@@ -108,7 +107,8 @@ class Receipt(IdentifiedObject):
 
         self._VendorShift = value
         if self._VendorShift is not None:
-            self._VendorShift._Receipts.append(self)
+            if self not in self._VendorShift._Receipts:
+                self._VendorShift._Receipts.append(self)
 
     VendorShift = property(getVendorShift, setVendorShift)
 
@@ -119,7 +119,7 @@ class Receipt(IdentifiedObject):
 
     def setTransactions(self, value):
         for x in self._Transactions:
-            x._Receipt = None
+            x.Receipt = None
         for y in value:
             y._Receipt = self
         self._Transactions = value
@@ -128,13 +128,11 @@ class Receipt(IdentifiedObject):
 
     def addTransactions(self, *Transactions):
         for obj in Transactions:
-            obj._Receipt = self
-            self._Transactions.append(obj)
+            obj.Receipt = self
 
     def removeTransactions(self, *Transactions):
         for obj in Transactions:
-            obj._Receipt = None
-            self._Transactions.remove(obj)
+            obj.Receipt = None
 
     # Receipted amount with rounding, date and note.
     line = None

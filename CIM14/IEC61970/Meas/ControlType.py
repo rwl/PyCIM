@@ -44,7 +44,7 @@ class ControlType(IdentifiedObject):
 
     def setControls(self, value):
         for x in self._Controls:
-            x._ControlType = None
+            x.ControlType = None
         for y in value:
             y._ControlType = self
         self._Controls = value
@@ -53,11 +53,9 @@ class ControlType(IdentifiedObject):
 
     def addControls(self, *Controls):
         for obj in Controls:
-            obj._ControlType = self
-            self._Controls.append(obj)
+            obj.ControlType = self
 
     def removeControls(self, *Controls):
         for obj in Controls:
-            obj._ControlType = None
-            self._Controls.remove(obj)
+            obj.ControlType = None
 

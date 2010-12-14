@@ -96,7 +96,8 @@ class UserAttribute(Element):
 
         self._Transaction = value
         if self._Transaction is not None:
-            self._Transaction._UserAttributes.append(self)
+            if self not in self._Transaction._UserAttributes:
+                self._Transaction._UserAttributes.append(self)
 
     Transaction = property(getTransaction, setTransaction)
 

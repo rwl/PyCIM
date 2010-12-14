@@ -48,6 +48,7 @@ class CTTempActivePowerCurve(Curve):
 
         self._CombustionTurbine = value
         if self._CombustionTurbine is not None:
+            self._CombustionTurbine.CTTempActivePowerCurve = None
             self._CombustionTurbine._CTTempActivePowerCurve = self
 
     CombustionTurbine = property(getCombustionTurbine, setCombustionTurbine)

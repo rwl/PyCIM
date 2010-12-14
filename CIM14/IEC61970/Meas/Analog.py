@@ -100,6 +100,7 @@ class Analog(Measurement):
 
         self._SetPoint = value
         if self._SetPoint is not None:
+            self._SetPoint.Analog = None
             self._SetPoint._Analog = self
 
     SetPoint = property(getSetPoint, setSetPoint)
@@ -111,7 +112,7 @@ class Analog(Measurement):
 
     def setAnalogValues(self, value):
         for x in self._AnalogValues:
-            x._Analog = None
+            x.Analog = None
         for y in value:
             y._Analog = self
         self._AnalogValues = value
@@ -120,11 +121,9 @@ class Analog(Measurement):
 
     def addAnalogValues(self, *AnalogValues):
         for obj in AnalogValues:
-            obj._Analog = self
-            self._AnalogValues.append(obj)
+            obj.Analog = self
 
     def removeAnalogValues(self, *AnalogValues):
         for obj in AnalogValues:
-            obj._Analog = None
-            self._AnalogValues.remove(obj)
+            obj.Analog = None
 

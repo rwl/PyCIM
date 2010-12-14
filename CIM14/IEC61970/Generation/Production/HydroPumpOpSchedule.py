@@ -48,6 +48,7 @@ class HydroPumpOpSchedule(RegularIntervalSchedule):
 
         self._HydroPump = value
         if self._HydroPump is not None:
+            self._HydroPump.HydroPumpOpSchedule = None
             self._HydroPump._HydroPumpOpSchedule = self
 
     HydroPump = property(getHydroPump, setHydroPump)

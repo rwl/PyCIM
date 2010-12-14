@@ -57,7 +57,8 @@ class ConcentricNeutralCableInfo(CableInfo):
 
         self._WireType = value
         if self._WireType is not None:
-            self._WireType._ConcentricNeutralCableInfos.append(self)
+            if self not in self._WireType._ConcentricNeutralCableInfos:
+                self._WireType._ConcentricNeutralCableInfos.append(self)
 
     WireType = property(getWireType, setWireType)
 

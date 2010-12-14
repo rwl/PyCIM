@@ -57,7 +57,8 @@ class OperatingShare(Element):
 
         self._PowerSystemResource = value
         if self._PowerSystemResource is not None:
-            self._PowerSystemResource._OperatingShare.append(self)
+            if self not in self._PowerSystemResource._OperatingShare:
+                self._PowerSystemResource._OperatingShare.append(self)
 
     PowerSystemResource = property(getPowerSystemResource, setPowerSystemResource)
 
@@ -73,7 +74,8 @@ class OperatingShare(Element):
 
         self._OperatingParticipant = value
         if self._OperatingParticipant is not None:
-            self._OperatingParticipant._OperatingShare.append(self)
+            if self not in self._OperatingParticipant._OperatingShare:
+                self._OperatingParticipant._OperatingShare.append(self)
 
     OperatingParticipant = property(getOperatingParticipant, setOperatingParticipant)
 

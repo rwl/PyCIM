@@ -60,6 +60,7 @@ class CAESPlant(PowerSystemResource):
 
         self._AirCompressor = value
         if self._AirCompressor is not None:
+            self._AirCompressor.CAESPlant = None
             self._AirCompressor._CAESPlant = self
 
     AirCompressor = property(getAirCompressor, setAirCompressor)
@@ -75,6 +76,7 @@ class CAESPlant(PowerSystemResource):
 
         self._ThermalGeneratingUnit = value
         if self._ThermalGeneratingUnit is not None:
+            self._ThermalGeneratingUnit.CAESPlant = None
             self._ThermalGeneratingUnit._CAESPlant = self
 
     ThermalGeneratingUnit = property(getThermalGeneratingUnit, setThermalGeneratingUnit)

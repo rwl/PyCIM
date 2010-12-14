@@ -52,6 +52,7 @@ class StartRampCurve(Curve):
 
         self._StartupModel = value
         if self._StartupModel is not None:
+            self._StartupModel.StartRampCurve = None
             self._StartupModel._StartRampCurve = self
 
     StartupModel = property(getStartupModel, setStartupModel)

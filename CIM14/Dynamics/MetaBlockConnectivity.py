@@ -57,7 +57,7 @@ class MetaBlockConnectivity(IdentifiedObject):
 
     def setBlockConnectivity(self, value):
         for x in self._BlockConnectivity:
-            x._MetaBlockConnectivity = None
+            x.MetaBlockConnectivity = None
         for y in value:
             y._MetaBlockConnectivity = self
         self._BlockConnectivity = value
@@ -66,13 +66,11 @@ class MetaBlockConnectivity(IdentifiedObject):
 
     def addBlockConnectivity(self, *BlockConnectivity):
         for obj in BlockConnectivity:
-            obj._MetaBlockConnectivity = self
-            self._BlockConnectivity.append(obj)
+            obj.MetaBlockConnectivity = self
 
     def removeBlockConnectivity(self, *BlockConnectivity):
         for obj in BlockConnectivity:
-            obj._MetaBlockConnectivity = None
-            self._BlockConnectivity.remove(obj)
+            obj.MetaBlockConnectivity = None
 
     def getMetaBlockConSignal(self):
         
@@ -80,7 +78,7 @@ class MetaBlockConnectivity(IdentifiedObject):
 
     def setMetaBlockConSignal(self, value):
         for x in self._MetaBlockConSignal:
-            x._MemberOf_MetaBlockConnectivity = None
+            x.MemberOf_MetaBlockConnectivity = None
         for y in value:
             y._MemberOf_MetaBlockConnectivity = self
         self._MetaBlockConSignal = value
@@ -89,13 +87,11 @@ class MetaBlockConnectivity(IdentifiedObject):
 
     def addMetaBlockConSignal(self, *MetaBlockConSignal):
         for obj in MetaBlockConSignal:
-            obj._MemberOf_MetaBlockConnectivity = self
-            self._MetaBlockConSignal.append(obj)
+            obj.MemberOf_MetaBlockConnectivity = self
 
     def removeMetaBlockConSignal(self, *MetaBlockConSignal):
         for obj in MetaBlockConSignal:
-            obj._MemberOf_MetaBlockConnectivity = None
-            self._MetaBlockConSignal.remove(obj)
+            obj.MemberOf_MetaBlockConnectivity = None
 
     def getmetaBlockConnection0(self):
         
@@ -103,7 +99,7 @@ class MetaBlockConnectivity(IdentifiedObject):
 
     def setmetaBlockConnection0(self, value):
         for x in self._metaBlockConnection0:
-            x._metaBlockConnectivity0 = None
+            x.metaBlockConnectivity0 = None
         for y in value:
             y._metaBlockConnectivity0 = self
         self._metaBlockConnection0 = value
@@ -112,13 +108,11 @@ class MetaBlockConnectivity(IdentifiedObject):
 
     def addmetaBlockConnection0(self, *metaBlockConnection0):
         for obj in metaBlockConnection0:
-            obj._metaBlockConnectivity0 = self
-            self._metaBlockConnection0.append(obj)
+            obj.metaBlockConnectivity0 = self
 
     def removemetaBlockConnection0(self, *metaBlockConnection0):
         for obj in metaBlockConnection0:
-            obj._metaBlockConnectivity0 = None
-            self._metaBlockConnection0.remove(obj)
+            obj.metaBlockConnectivity0 = None
 
     def getmetaBlockConSignal0(self):
         
@@ -126,7 +120,7 @@ class MetaBlockConnectivity(IdentifiedObject):
 
     def setmetaBlockConSignal0(self, value):
         for x in self._metaBlockConSignal0:
-            x._metaBlockConnectivity0 = None
+            x.metaBlockConnectivity0 = None
         for y in value:
             y._metaBlockConnectivity0 = self
         self._metaBlockConSignal0 = value
@@ -135,13 +129,11 @@ class MetaBlockConnectivity(IdentifiedObject):
 
     def addmetaBlockConSignal0(self, *metaBlockConSignal0):
         for obj in metaBlockConSignal0:
-            obj._metaBlockConnectivity0 = self
-            self._metaBlockConSignal0.append(obj)
+            obj.metaBlockConnectivity0 = self
 
     def removemetaBlockConSignal0(self, *metaBlockConSignal0):
         for obj in metaBlockConSignal0:
-            obj._metaBlockConnectivity0 = None
-            self._metaBlockConSignal0.remove(obj)
+            obj.metaBlockConnectivity0 = None
 
     def getMetaBlockConnection(self):
         
@@ -149,7 +141,7 @@ class MetaBlockConnectivity(IdentifiedObject):
 
     def setMetaBlockConnection(self, value):
         for x in self._MetaBlockConnection:
-            x._MemberOf_MetaBlockConnectivity = None
+            x.MemberOf_MetaBlockConnectivity = None
         for y in value:
             y._MemberOf_MetaBlockConnectivity = self
         self._MetaBlockConnection = value
@@ -158,11 +150,9 @@ class MetaBlockConnectivity(IdentifiedObject):
 
     def addMetaBlockConnection(self, *MetaBlockConnection):
         for obj in MetaBlockConnection:
-            obj._MemberOf_MetaBlockConnectivity = self
-            self._MetaBlockConnection.append(obj)
+            obj.MemberOf_MetaBlockConnectivity = self
 
     def removeMetaBlockConnection(self, *MetaBlockConnection):
         for obj in MetaBlockConnection:
-            obj._MemberOf_MetaBlockConnectivity = None
-            self._MetaBlockConnection.remove(obj)
+            obj.MemberOf_MetaBlockConnectivity = None
 

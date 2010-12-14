@@ -49,7 +49,8 @@ class ContingencyElement(IdentifiedObject):
 
         self._Contingency = value
         if self._Contingency is not None:
-            self._Contingency._ContingencyElement.append(self)
+            if self not in self._Contingency._ContingencyElement:
+                self._Contingency._ContingencyElement.append(self)
 
     Contingency = property(getContingency, setContingency)
 

@@ -64,6 +64,7 @@ class SvShortCircuit(StateVariable):
 
         self._TopologicalNode = value
         if self._TopologicalNode is not None:
+            self._TopologicalNode.SvShortCircuit = None
             self._TopologicalNode._SvShortCircuit = self
 
     TopologicalNode = property(getTopologicalNode, setTopologicalNode)

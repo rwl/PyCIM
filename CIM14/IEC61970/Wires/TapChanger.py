@@ -100,6 +100,7 @@ class TapChanger(PowerSystemResource):
 
         self._SvTapStep = value
         if self._SvTapStep is not None:
+            self._SvTapStep.TapChanger = None
             self._SvTapStep._TapChanger = self
 
     SvTapStep = property(getSvTapStep, setSvTapStep)
@@ -115,6 +116,7 @@ class TapChanger(PowerSystemResource):
 
         self._ImpedanceVariationCurve = value
         if self._ImpedanceVariationCurve is not None:
+            self._ImpedanceVariationCurve.TapChanger = None
             self._ImpedanceVariationCurve._TapChanger = self
 
     ImpedanceVariationCurve = property(getImpedanceVariationCurve, setImpedanceVariationCurve)
@@ -126,7 +128,7 @@ class TapChanger(PowerSystemResource):
 
     def setTapSchedules(self, value):
         for x in self._TapSchedules:
-            x._TapChanger = None
+            x.TapChanger = None
         for y in value:
             y._TapChanger = self
         self._TapSchedules = value
@@ -135,13 +137,11 @@ class TapChanger(PowerSystemResource):
 
     def addTapSchedules(self, *TapSchedules):
         for obj in TapSchedules:
-            obj._TapChanger = self
-            self._TapSchedules.append(obj)
+            obj.TapChanger = self
 
     def removeTapSchedules(self, *TapSchedules):
         for obj in TapSchedules:
-            obj._TapChanger = None
-            self._TapSchedules.remove(obj)
+            obj.TapChanger = None
 
     def getRegulatingControl(self):
         
@@ -154,7 +154,8 @@ class TapChanger(PowerSystemResource):
 
         self._RegulatingControl = value
         if self._RegulatingControl is not None:
-            self._RegulatingControl._TapChanger.append(self)
+            if self not in self._RegulatingControl._TapChanger:
+                self._RegulatingControl._TapChanger.append(self)
 
     RegulatingControl = property(getRegulatingControl, setRegulatingControl)
 

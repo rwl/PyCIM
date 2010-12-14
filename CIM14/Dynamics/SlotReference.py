@@ -56,7 +56,8 @@ class SlotReference(IdentifiedObject):
 
         self._slot0 = value
         if self._slot0 is not None:
-            self._slot0._slotReference0.append(self)
+            if self not in self._slot0._slotReference0:
+                self._slot0._slotReference0.append(self)
 
     slot0 = property(getslot0, setslot0)
 
@@ -66,7 +67,7 @@ class SlotReference(IdentifiedObject):
 
     def setblock0(self, value):
         for x in self._block0:
-            x._slotReference0 = None
+            x.slotReference0 = None
         for y in value:
             y._slotReference0 = self
         self._block0 = value
@@ -75,13 +76,11 @@ class SlotReference(IdentifiedObject):
 
     def addblock0(self, *block0):
         for obj in block0:
-            obj._slotReference0 = self
-            self._block0.append(obj)
+            obj.slotReference0 = self
 
     def removeblock0(self, *block0):
         for obj in block0:
-            obj._slotReference0 = None
-            self._block0.remove(obj)
+            obj.slotReference0 = None
 
     def getcompositeModel0(self):
         

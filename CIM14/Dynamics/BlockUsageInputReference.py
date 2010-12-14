@@ -56,7 +56,8 @@ class BlockUsageInputReference(IdentifiedObject):
 
         self._block0 = value
         if self._block0 is not None:
-            self._block0._blockUsageInputReference0.append(self)
+            if self not in self._block0._blockUsageInputReference0:
+                self._block0._blockUsageInputReference0.append(self)
 
     block0 = property(getblock0, setblock0)
 
@@ -72,7 +73,8 @@ class BlockUsageInputReference(IdentifiedObject):
 
         self._BlockUsageOutputReference = value
         if self._BlockUsageOutputReference is not None:
-            self._BlockUsageOutputReference._BlockUsageInputReference.append(self)
+            if self not in self._BlockUsageOutputReference._BlockUsageInputReference:
+                self._BlockUsageOutputReference._BlockUsageInputReference.append(self)
 
     BlockUsageOutputReference = property(getBlockUsageOutputReference, setBlockUsageOutputReference)
 
@@ -87,7 +89,8 @@ class BlockUsageInputReference(IdentifiedObject):
 
         self._metaBlockInput0 = value
         if self._metaBlockInput0 is not None:
-            self._metaBlockInput0._blockUsageInputReference0.append(self)
+            if self not in self._metaBlockInput0._blockUsageInputReference0:
+                self._metaBlockInput0._blockUsageInputReference0.append(self)
 
     metaBlockInput0 = property(getmetaBlockInput0, setmetaBlockInput0)
 

@@ -56,6 +56,7 @@ class SvInjection(StateVariable):
 
         self._TopologicalNode = value
         if self._TopologicalNode is not None:
+            self._TopologicalNode.SvInjection = None
             self._TopologicalNode._SvInjection = self
 
     TopologicalNode = property(getTopologicalNode, setTopologicalNode)

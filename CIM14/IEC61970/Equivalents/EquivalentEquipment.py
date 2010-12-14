@@ -49,7 +49,8 @@ class EquivalentEquipment(ConductingEquipment):
 
         self._EquivalentNetwork = value
         if self._EquivalentNetwork is not None:
-            self._EquivalentNetwork._EquivalentEquipments.append(self)
+            if self not in self._EquivalentNetwork._EquivalentEquipments:
+                self._EquivalentNetwork._EquivalentEquipments.append(self)
 
     EquivalentNetwork = property(getEquivalentNetwork, setEquivalentNetwork)
 

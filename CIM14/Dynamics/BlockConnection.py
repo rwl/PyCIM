@@ -56,7 +56,8 @@ class BlockConnection(IdentifiedObject):
 
         self._MetaBlockConnection = value
         if self._MetaBlockConnection is not None:
-            self._MetaBlockConnection._BlockConnection.append(self)
+            if self not in self._MetaBlockConnection._BlockConnection:
+                self._MetaBlockConnection._BlockConnection.append(self)
 
     MetaBlockConnection = property(getMetaBlockConnection, setMetaBlockConnection)
 
@@ -71,7 +72,8 @@ class BlockConnection(IdentifiedObject):
 
         self._MemberOf_BlockConnectivity = value
         if self._MemberOf_BlockConnectivity is not None:
-            self._MemberOf_BlockConnectivity._BlockConnection.append(self)
+            if self not in self._MemberOf_BlockConnectivity._BlockConnection:
+                self._MemberOf_BlockConnectivity._BlockConnection.append(self)
 
     MemberOf_BlockConnectivity = property(getMemberOf_BlockConnectivity, setMemberOf_BlockConnectivity)
 
@@ -86,7 +88,8 @@ class BlockConnection(IdentifiedObject):
 
         self._Block = value
         if self._Block is not None:
-            self._Block._BlockConnection.append(self)
+            if self not in self._Block._BlockConnection:
+                self._Block._BlockConnection.append(self)
 
     Block = property(getBlock, setBlock)
 

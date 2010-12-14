@@ -57,7 +57,8 @@ class RecloseSequence(IdentifiedObject):
 
         self._ProtectedSwitch = value
         if self._ProtectedSwitch is not None:
-            self._ProtectedSwitch._RecloseSequences.append(self)
+            if self not in self._ProtectedSwitch._RecloseSequences:
+                self._ProtectedSwitch._RecloseSequences.append(self)
 
     ProtectedSwitch = property(getProtectedSwitch, setProtectedSwitch)
 

@@ -60,6 +60,7 @@ class RemoteControl(RemotePoint):
 
         self._Control = value
         if self._Control is not None:
+            self._Control.RemoteControl = None
             self._Control._RemoteControl = self
 
     Control = property(getControl, setControl)

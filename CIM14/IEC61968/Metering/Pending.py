@@ -68,7 +68,7 @@ class Pending(Element):
 
     def setIntervalBlocks(self, value):
         for x in self._IntervalBlocks:
-            x._Pending = None
+            x.Pending = None
         for y in value:
             y._Pending = self
         self._IntervalBlocks = value
@@ -77,13 +77,11 @@ class Pending(Element):
 
     def addIntervalBlocks(self, *IntervalBlocks):
         for obj in IntervalBlocks:
-            obj._Pending = self
-            self._IntervalBlocks.append(obj)
+            obj.Pending = self
 
     def removeIntervalBlocks(self, *IntervalBlocks):
         for obj in IntervalBlocks:
-            obj._Pending = None
-            self._IntervalBlocks.remove(obj)
+            obj.Pending = None
 
     def getReadingType(self):
         """Reading type resulting from this pending conversion.
@@ -96,6 +94,7 @@ class Pending(Element):
 
         self._ReadingType = value
         if self._ReadingType is not None:
+            self._ReadingType.Pending = None
             self._ReadingType._Pending = self
 
     ReadingType = property(getReadingType, setReadingType)

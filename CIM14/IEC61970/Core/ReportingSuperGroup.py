@@ -44,7 +44,7 @@ class ReportingSuperGroup(IdentifiedObject):
 
     def setReportingGroup(self, value):
         for x in self._ReportingGroup:
-            x._ReportingSuperGroup = None
+            x.ReportingSuperGroup = None
         for y in value:
             y._ReportingSuperGroup = self
         self._ReportingGroup = value
@@ -53,11 +53,9 @@ class ReportingSuperGroup(IdentifiedObject):
 
     def addReportingGroup(self, *ReportingGroup):
         for obj in ReportingGroup:
-            obj._ReportingSuperGroup = self
-            self._ReportingGroup.append(obj)
+            obj.ReportingSuperGroup = self
 
     def removeReportingGroup(self, *ReportingGroup):
         for obj in ReportingGroup:
-            obj._ReportingSuperGroup = None
-            self._ReportingGroup.remove(obj)
+            obj.ReportingSuperGroup = None
 

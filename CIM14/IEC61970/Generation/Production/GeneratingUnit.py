@@ -232,7 +232,7 @@ class GeneratingUnit(Equipment):
 
     def setSynchronousMachines(self, value):
         for x in self._SynchronousMachines:
-            x._GeneratingUnit = None
+            x.GeneratingUnit = None
         for y in value:
             y._GeneratingUnit = self
         self._SynchronousMachines = value
@@ -241,13 +241,11 @@ class GeneratingUnit(Equipment):
 
     def addSynchronousMachines(self, *SynchronousMachines):
         for obj in SynchronousMachines:
-            obj._GeneratingUnit = self
-            self._SynchronousMachines.append(obj)
+            obj.GeneratingUnit = self
 
     def removeSynchronousMachines(self, *SynchronousMachines):
         for obj in SynchronousMachines:
-            obj._GeneratingUnit = None
-            self._SynchronousMachines.remove(obj)
+            obj.GeneratingUnit = None
 
     def getGrossToNetActivePowerCurves(self):
         """A generating unit may have a gross active power to net active power curve, describing the losses and auxiliary power requirements of the unit
@@ -256,7 +254,7 @@ class GeneratingUnit(Equipment):
 
     def setGrossToNetActivePowerCurves(self, value):
         for x in self._GrossToNetActivePowerCurves:
-            x._GeneratingUnit = None
+            x.GeneratingUnit = None
         for y in value:
             y._GeneratingUnit = self
         self._GrossToNetActivePowerCurves = value
@@ -265,13 +263,11 @@ class GeneratingUnit(Equipment):
 
     def addGrossToNetActivePowerCurves(self, *GrossToNetActivePowerCurves):
         for obj in GrossToNetActivePowerCurves:
-            obj._GeneratingUnit = self
-            self._GrossToNetActivePowerCurves.append(obj)
+            obj.GeneratingUnit = self
 
     def removeGrossToNetActivePowerCurves(self, *GrossToNetActivePowerCurves):
         for obj in GrossToNetActivePowerCurves:
-            obj._GeneratingUnit = None
-            self._GrossToNetActivePowerCurves.remove(obj)
+            obj.GeneratingUnit = None
 
     def getGenUnitOpCostCurves(self):
         """A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.
@@ -280,7 +276,7 @@ class GeneratingUnit(Equipment):
 
     def setGenUnitOpCostCurves(self, value):
         for x in self._GenUnitOpCostCurves:
-            x._GeneratingUnit = None
+            x.GeneratingUnit = None
         for y in value:
             y._GeneratingUnit = self
         self._GenUnitOpCostCurves = value
@@ -289,13 +285,11 @@ class GeneratingUnit(Equipment):
 
     def addGenUnitOpCostCurves(self, *GenUnitOpCostCurves):
         for obj in GenUnitOpCostCurves:
-            obj._GeneratingUnit = self
-            self._GenUnitOpCostCurves.append(obj)
+            obj.GeneratingUnit = self
 
     def removeGenUnitOpCostCurves(self, *GenUnitOpCostCurves):
         for obj in GenUnitOpCostCurves:
-            obj._GeneratingUnit = None
-            self._GenUnitOpCostCurves.remove(obj)
+            obj.GeneratingUnit = None
 
     def getGenUnitOpSchedule(self):
         """A generating unit may have an operating schedule, indicating the planned operation of the unit
@@ -308,6 +302,7 @@ class GeneratingUnit(Equipment):
 
         self._GenUnitOpSchedule = value
         if self._GenUnitOpSchedule is not None:
+            self._GenUnitOpSchedule.GeneratingUnit = None
             self._GenUnitOpSchedule._GeneratingUnit = self
 
     GenUnitOpSchedule = property(getGenUnitOpSchedule, setGenUnitOpSchedule)
@@ -319,7 +314,7 @@ class GeneratingUnit(Equipment):
 
     def setControlAreaGeneratingUnit(self, value):
         for x in self._ControlAreaGeneratingUnit:
-            x._GeneratingUnit = None
+            x.GeneratingUnit = None
         for y in value:
             y._GeneratingUnit = self
         self._ControlAreaGeneratingUnit = value
@@ -328,11 +323,9 @@ class GeneratingUnit(Equipment):
 
     def addControlAreaGeneratingUnit(self, *ControlAreaGeneratingUnit):
         for obj in ControlAreaGeneratingUnit:
-            obj._GeneratingUnit = self
-            self._ControlAreaGeneratingUnit.append(obj)
+            obj.GeneratingUnit = self
 
     def removeControlAreaGeneratingUnit(self, *ControlAreaGeneratingUnit):
         for obj in ControlAreaGeneratingUnit:
-            obj._GeneratingUnit = None
-            self._ControlAreaGeneratingUnit.remove(obj)
+            obj.GeneratingUnit = None
 

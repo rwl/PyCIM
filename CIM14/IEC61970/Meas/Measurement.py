@@ -77,7 +77,8 @@ class Measurement(IdentifiedObject):
 
         self._PowerSystemResource = value
         if self._PowerSystemResource is not None:
-            self._PowerSystemResource._Measurements.append(self)
+            if self not in self._PowerSystemResource._Measurements:
+                self._PowerSystemResource._Measurements.append(self)
 
     PowerSystemResource = property(getPowerSystemResource, setPowerSystemResource)
 
@@ -120,7 +121,8 @@ class Measurement(IdentifiedObject):
 
         self._Terminal = value
         if self._Terminal is not None:
-            self._Terminal._Measurements.append(self)
+            if self not in self._Terminal._Measurements:
+                self._Terminal._Measurements.append(self)
 
     Terminal = property(getTerminal, setTerminal)
 
@@ -136,7 +138,8 @@ class Measurement(IdentifiedObject):
 
         self._Unit = value
         if self._Unit is not None:
-            self._Unit._Measurements.append(self)
+            if self not in self._Unit._Measurements:
+                self._Unit._Measurements.append(self)
 
     Unit = property(getUnit, setUnit)
 
@@ -146,7 +149,7 @@ class Measurement(IdentifiedObject):
 
     def settieToMeasurement0(self, value):
         for x in self._tieToMeasurement0:
-            x._measurement0 = None
+            x.measurement0 = None
         for y in value:
             y._measurement0 = self
         self._tieToMeasurement0 = value
@@ -155,13 +158,11 @@ class Measurement(IdentifiedObject):
 
     def addtieToMeasurement0(self, *tieToMeasurement0):
         for obj in tieToMeasurement0:
-            obj._measurement0 = self
-            self._tieToMeasurement0.append(obj)
+            obj.measurement0 = self
 
     def removetieToMeasurement0(self, *tieToMeasurement0):
         for obj in tieToMeasurement0:
-            obj._measurement0 = None
-            self._tieToMeasurement0.remove(obj)
+            obj.measurement0 = None
 
     def getAsset(self):
         
@@ -174,7 +175,8 @@ class Measurement(IdentifiedObject):
 
         self._Asset = value
         if self._Asset is not None:
-            self._Asset._Measurements.append(self)
+            if self not in self._Asset._Measurements:
+                self._Asset._Measurements.append(self)
 
     Asset = property(getAsset, setAsset)
 

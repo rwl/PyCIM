@@ -89,7 +89,8 @@ class SwitchingOperation(IdentifiedObject):
 
         self._OutageSchedule = value
         if self._OutageSchedule is not None:
-            self._OutageSchedule._SwitchingOperations.append(self)
+            if self not in self._OutageSchedule._SwitchingOperations:
+                self._OutageSchedule._SwitchingOperations.append(self)
 
     OutageSchedule = property(getOutageSchedule, setOutageSchedule)
 

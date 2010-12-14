@@ -83,54 +83,78 @@ class CIMTestCase(unittest.TestCase):
         self.assertTrue(tw in pt.TransformerWindings)
 
 
-#    def testOneToOne(self):
-#        """Test one-to-one bidirectional references.
-#        """
-#        sm1 = StartupModel()
-#        tgu1 = ThermalGeneratingUnit(startup_model=sm1)
-#
-#        self.assertEqual(sm1.thermal_generating_unit, tgu1)
-#
-#        tgu2 = ThermalGeneratingUnit()
-#        tgu2.set_startup_model(sm1)
-#
-#        self.assertNotEqual(sm1.thermal_generating_unit, tgu1)
-#        self.assertTrue(sm1.thermal_generating_unit, tgu2)
-#
-#
-#    def testOneToMany(self):
-#        """Test one-to-many bidirectional references.
-#        """
-#        lg1 = ConformLoadGroup(name="CLG1")
-#        lg2 = ConformLoadGroup(name="CLG2")
-#        cl = ConformLoad(name="Load 1", load_group=lg1)
-#
-#        self.assertTrue(cl in lg1.energy_consumers)
-#
-#        cl.set_load_group(lg2)
-#
-#        self.assertFalse(cl in lg1.energy_consumers)
-#        self.assertTrue(cl in lg1.energy_consumers)
-#
-#
-#    def testManyToOne(self):
-#        """Test many-to-one bidirectional references.
-#        """
-#        tw1 = TransformerWinding()
-#        pt1 = PowerTransformer(transformer_windings=[tw1])
-#        tw2 = TransformerWinding()
-#        pt1.add_transformer_windings()
-#
-#        self.assertEqual(tw1.power_transformer, pt1)
-#        self.assertEqual(tw2.power_transformer, pt1)
-#
-#        pt2 = PowerTransformer()
-#        pt2.add_transformer_windings(tw2)
-#
-#        self.assertNotEqual(tw2.power_transformer, pt1)
-#        self.assertEqual(tw2.power_transformer, pt2)
-#
-#
+    def testOneToOne(self):
+        """Test one-to-one bidirectional references.
+        """
+        sm1 = StartupModel()
+        tgu1 = ThermalGeneratingUnit(StartupModel=sm1)
+
+        self.assertEqual(tgu1.StartupModel, sm1)
+        self.assertEqual(sm1.ThermalGeneratingUnit, tgu1)
+
+        tgu2 = ThermalGeneratingUnit()
+        tgu2.setStartupModel(sm1)
+
+        self.assertEqual(tgu1.StartupModel, None)
+        self.assertEqual(tgu2.StartupModel, sm1)
+        self.assertNotEqual(sm1.ThermalGeneratingUnit, tgu1)
+        self.assertTrue(sm1.ThermalGeneratingUnit, tgu2)
+
+
+    def testOneToMany(self):
+        """Test one-to-many bidirectional references.
+        """
+        lg1 = ConformLoadGroup(name="CLG1")
+        lg2 = ConformLoadGroup(name="CLG2")
+        cl = ConformLoad(name="Load 1", LoadGroup=lg1)
+
+        self.assertEqual(cl.LoadGroup, lg1)
+        self.assertTrue(cl in lg1.EnergyConsumers)
+
+        cl.setLoadGroup(lg2)
+
+        self.assertNotEqual(cl.LoadGroup, lg1)
+        self.assertEqual(cl.LoadGroup, lg2)
+        self.assertFalse(cl in lg1.EnergyConsumers)
+        self.assertTrue(cl in lg2.EnergyConsumers)
+
+
+    def testManyToOne(self):
+        """Test many-to-one bidirectional references.
+        """
+        tw1 = TransformerWinding()
+        tw2 = TransformerWinding()
+        pt1 = PowerTransformer(TransformerWindings=[tw1])
+        pt1.addTransformerWindings(tw2)
+
+        self.assertTrue(tw1 in pt1.TransformerWindings)
+        self.assertTrue(tw2 in pt1.TransformerWindings)
+        self.assertEqual(tw1.PowerTransformer, pt1)
+        self.assertEqual(tw2.PowerTransformer, pt1)
+
+        pt2 = PowerTransformer()
+        pt2.addTransformerWindings(tw2)
+
+        self.assertTrue(tw1 in pt1.TransformerWindings)
+        self.assertTrue(tw2 in pt2.TransformerWindings)
+        self.assertFalse(tw2 in pt1.TransformerWindings)
+        self.assertNotEqual(tw2.PowerTransformer, pt1)
+        self.assertEqual(tw2.PowerTransformer, pt2)
+
+        tw3 = TransformerWinding()
+        pt1.setTransformerWindings([tw3])
+
+        self.assertFalse(tw1 in pt1.TransformerWindings)
+        self.assertTrue(tw3 in pt1.TransformerWindings)
+        self.assertEqual(tw1.PowerTransformer, None)
+        self.assertEqual(tw3.PowerTransformer, pt1)
+
+        pt1.removeTransformerWindings(tw3)
+
+        self.assertFalse(tw3 in pt1.TransformerWindings)
+        self.assertEqual(tw3.PowerTransformer, None)
+
+
 #    def testManyToMany(self):
 #        """Test many-to-many bidirectional references.
 #        """

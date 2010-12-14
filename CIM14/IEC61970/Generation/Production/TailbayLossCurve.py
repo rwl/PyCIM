@@ -49,7 +49,8 @@ class TailbayLossCurve(Curve):
 
         self._HydroGeneratingUnit = value
         if self._HydroGeneratingUnit is not None:
-            self._HydroGeneratingUnit._TailbayLossCurve.append(self)
+            if self not in self._HydroGeneratingUnit._TailbayLossCurve:
+                self._HydroGeneratingUnit._TailbayLossCurve.append(self)
 
     HydroGeneratingUnit = property(getHydroGeneratingUnit, setHydroGeneratingUnit)
 

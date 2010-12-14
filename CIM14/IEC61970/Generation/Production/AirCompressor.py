@@ -56,6 +56,7 @@ class AirCompressor(PowerSystemResource):
 
         self._CAESPlant = value
         if self._CAESPlant is not None:
+            self._CAESPlant.AirCompressor = None
             self._CAESPlant._AirCompressor = self
 
     CAESPlant = property(getCAESPlant, setCAESPlant)
@@ -71,6 +72,7 @@ class AirCompressor(PowerSystemResource):
 
         self._CombustionTurbine = value
         if self._CombustionTurbine is not None:
+            self._CombustionTurbine.AirCompressor = None
             self._CombustionTurbine._AirCompressor = self
 
     CombustionTurbine = property(getCombustionTurbine, setCombustionTurbine)

@@ -64,6 +64,7 @@ class Card(Element):
 
         self._Tender = value
         if self._Tender is not None:
+            self._Tender.Card = None
             self._Tender._Card = self
 
     Tender = property(getTender, setTender)

@@ -65,7 +65,8 @@ class CurveData(Element):
 
         self._Curve = value
         if self._Curve is not None:
-            self._Curve._CurveDatas.append(self)
+            if self not in self._Curve._CurveDatas:
+                self._Curve._CurveDatas.append(self)
 
     Curve = property(getCurve, setCurve)
 

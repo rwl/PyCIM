@@ -85,7 +85,8 @@ class WindingTest(IdentifiedObject):
 
         self._From_TransformerWinding = value
         if self._From_TransformerWinding is not None:
-            self._From_TransformerWinding._From_WindingTest.append(self)
+            if self not in self._From_TransformerWinding._From_WindingTest:
+                self._From_TransformerWinding._From_WindingTest.append(self)
 
     From_TransformerWinding = property(getFrom_TransformerWinding, setFrom_TransformerWinding)
 
@@ -101,7 +102,8 @@ class WindingTest(IdentifiedObject):
 
         self._To_TransformerWinding = value
         if self._To_TransformerWinding is not None:
-            self._To_TransformerWinding._To_WindingTest.append(self)
+            if self not in self._To_TransformerWinding._To_WindingTest:
+                self._To_TransformerWinding._To_WindingTest.append(self)
 
     To_TransformerWinding = property(getTo_TransformerWinding, setTo_TransformerWinding)
 

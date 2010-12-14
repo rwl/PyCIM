@@ -61,7 +61,8 @@ class TapSchedule(SeasonDayTypeSchedule):
 
         self._TapChanger = value
         if self._TapChanger is not None:
-            self._TapChanger._TapSchedules.append(self)
+            if self not in self._TapChanger._TapSchedules:
+                self._TapChanger._TapSchedules.append(self)
 
     TapChanger = property(getTapChanger, setTapChanger)
 

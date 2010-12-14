@@ -57,7 +57,8 @@ class PointOfSale(IdentifiedObject):
 
         self._Vendor = value
         if self._Vendor is not None:
-            self._Vendor._PointOfSales.append(self)
+            if self not in self._Vendor._PointOfSales:
+                self._Vendor._PointOfSales.append(self)
 
     Vendor = property(getVendor, setVendor)
 
@@ -68,7 +69,7 @@ class PointOfSale(IdentifiedObject):
 
     def setCashierShifts(self, value):
         for x in self._CashierShifts:
-            x._PointOfSale = None
+            x.PointOfSale = None
         for y in value:
             y._PointOfSale = self
         self._CashierShifts = value
@@ -77,11 +78,9 @@ class PointOfSale(IdentifiedObject):
 
     def addCashierShifts(self, *CashierShifts):
         for obj in CashierShifts:
-            obj._PointOfSale = self
-            self._CashierShifts.append(obj)
+            obj.PointOfSale = self
 
     def removeCashierShifts(self, *CashierShifts):
         for obj in CashierShifts:
-            obj._PointOfSale = None
-            self._CashierShifts.remove(obj)
+            obj.PointOfSale = None
 

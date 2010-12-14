@@ -80,7 +80,8 @@ class ProtectionEquipment(Equipment):
 
         self._Unit = value
         if self._Unit is not None:
-            self._Unit._ProtectionEquipments.append(self)
+            if self not in self._Unit._ProtectionEquipments:
+                self._Unit._ProtectionEquipments.append(self)
 
     Unit = property(getUnit, setUnit)
 

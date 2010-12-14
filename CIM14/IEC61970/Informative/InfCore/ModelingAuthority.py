@@ -44,7 +44,7 @@ class ModelingAuthority(IdentifiedObject):
 
     def setModelingAuthoritySets(self, value):
         for x in self._ModelingAuthoritySets:
-            x._ModelingAuthority = None
+            x.ModelingAuthority = None
         for y in value:
             y._ModelingAuthority = self
         self._ModelingAuthoritySets = value
@@ -53,11 +53,9 @@ class ModelingAuthority(IdentifiedObject):
 
     def addModelingAuthoritySets(self, *ModelingAuthoritySets):
         for obj in ModelingAuthoritySets:
-            obj._ModelingAuthority = self
-            self._ModelingAuthoritySets.append(obj)
+            obj.ModelingAuthority = self
 
     def removeModelingAuthoritySets(self, *ModelingAuthoritySets):
         for obj in ModelingAuthoritySets:
-            obj._ModelingAuthority = None
-            self._ModelingAuthoritySets.remove(obj)
+            obj.ModelingAuthority = None
 

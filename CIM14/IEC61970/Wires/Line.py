@@ -49,7 +49,8 @@ class Line(EquipmentContainer):
 
         self._Region = value
         if self._Region is not None:
-            self._Region._Lines.append(self)
+            if self not in self._Region._Lines:
+                self._Region._Lines.append(self)
 
     Region = property(getRegion, setRegion)
 

@@ -102,7 +102,7 @@ class Customer(Organisation):
 
     def setCustomerAgreements(self, value):
         for x in self._CustomerAgreements:
-            x._Customer = None
+            x.Customer = None
         for y in value:
             y._Customer = self
         self._CustomerAgreements = value
@@ -111,13 +111,11 @@ class Customer(Organisation):
 
     def addCustomerAgreements(self, *CustomerAgreements):
         for obj in CustomerAgreements:
-            obj._Customer = self
-            self._CustomerAgreements.append(obj)
+            obj.Customer = self
 
     def removeCustomerAgreements(self, *CustomerAgreements):
         for obj in CustomerAgreements:
-            obj._Customer = None
-            self._CustomerAgreements.remove(obj)
+            obj.Customer = None
 
     def getEndDeviceAssets(self):
         """All end device assets of this customer.
@@ -126,7 +124,7 @@ class Customer(Organisation):
 
     def setEndDeviceAssets(self, value):
         for x in self._EndDeviceAssets:
-            x._Customer = None
+            x.Customer = None
         for y in value:
             y._Customer = self
         self._EndDeviceAssets = value
@@ -135,11 +133,9 @@ class Customer(Organisation):
 
     def addEndDeviceAssets(self, *EndDeviceAssets):
         for obj in EndDeviceAssets:
-            obj._Customer = self
-            self._EndDeviceAssets.append(obj)
+            obj.Customer = self
 
     def removeEndDeviceAssets(self, *EndDeviceAssets):
         for obj in EndDeviceAssets:
-            obj._Customer = None
-            self._EndDeviceAssets.remove(obj)
+            obj.Customer = None
 

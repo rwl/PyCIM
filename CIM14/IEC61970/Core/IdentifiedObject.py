@@ -73,7 +73,8 @@ class IdentifiedObject(Element):
 
         self._ModelingAuthoritySet = value
         if self._ModelingAuthoritySet is not None:
-            self._ModelingAuthoritySet._IdentifiedObjects.append(self)
+            if self not in self._ModelingAuthoritySet._IdentifiedObjects:
+                self._ModelingAuthoritySet._IdentifiedObjects.append(self)
 
     ModelingAuthoritySet = property(getModelingAuthoritySet, setModelingAuthoritySet)
 

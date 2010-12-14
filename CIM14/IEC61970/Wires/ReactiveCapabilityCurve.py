@@ -56,7 +56,7 @@ class ReactiveCapabilityCurve(Curve):
 
     def setInitiallyUsedBySynchronousMachines(self, value):
         for x in self._InitiallyUsedBySynchronousMachines:
-            x._InitialReactiveCapabilityCurve = None
+            x.InitialReactiveCapabilityCurve = None
         for y in value:
             y._InitialReactiveCapabilityCurve = self
         self._InitiallyUsedBySynchronousMachines = value
@@ -65,13 +65,11 @@ class ReactiveCapabilityCurve(Curve):
 
     def addInitiallyUsedBySynchronousMachines(self, *InitiallyUsedBySynchronousMachines):
         for obj in InitiallyUsedBySynchronousMachines:
-            obj._InitialReactiveCapabilityCurve = self
-            self._InitiallyUsedBySynchronousMachines.append(obj)
+            obj.InitialReactiveCapabilityCurve = self
 
     def removeInitiallyUsedBySynchronousMachines(self, *InitiallyUsedBySynchronousMachines):
         for obj in InitiallyUsedBySynchronousMachines:
-            obj._InitialReactiveCapabilityCurve = None
-            self._InitiallyUsedBySynchronousMachines.remove(obj)
+            obj.InitialReactiveCapabilityCurve = None
 
     def getSynchronousMachines(self):
         """Synchronous machines using this curve.

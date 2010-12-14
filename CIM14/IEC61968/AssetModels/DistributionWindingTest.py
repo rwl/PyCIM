@@ -53,7 +53,8 @@ class DistributionWindingTest(IdentifiedObject):
 
         self._FromWinding = value
         if self._FromWinding is not None:
-            self._FromWinding._WindingTests.append(self)
+            if self not in self._FromWinding._WindingTests:
+                self._FromWinding._WindingTests.append(self)
 
     FromWinding = property(getFromWinding, setFromWinding)
 

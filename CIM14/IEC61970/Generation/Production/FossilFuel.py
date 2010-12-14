@@ -88,7 +88,7 @@ class FossilFuel(IdentifiedObject):
 
     def setFuelAllocationSchedules(self, value):
         for x in self._FuelAllocationSchedules:
-            x._FossilFuel = None
+            x.FossilFuel = None
         for y in value:
             y._FossilFuel = self
         self._FuelAllocationSchedules = value
@@ -97,13 +97,11 @@ class FossilFuel(IdentifiedObject):
 
     def addFuelAllocationSchedules(self, *FuelAllocationSchedules):
         for obj in FuelAllocationSchedules:
-            obj._FossilFuel = self
-            self._FuelAllocationSchedules.append(obj)
+            obj.FossilFuel = self
 
     def removeFuelAllocationSchedules(self, *FuelAllocationSchedules):
         for obj in FuelAllocationSchedules:
-            obj._FossilFuel = None
-            self._FuelAllocationSchedules.remove(obj)
+            obj.FossilFuel = None
 
     def getThermalGeneratingUnit(self):
         """A thermal generating unit may have one or more fossil fuels
@@ -117,7 +115,8 @@ class FossilFuel(IdentifiedObject):
 
         self._ThermalGeneratingUnit = value
         if self._ThermalGeneratingUnit is not None:
-            self._ThermalGeneratingUnit._FossilFuels.append(self)
+            if self not in self._ThermalGeneratingUnit._FossilFuels:
+                self._ThermalGeneratingUnit._FossilFuels.append(self)
 
     ThermalGeneratingUnit = property(getThermalGeneratingUnit, setThermalGeneratingUnit)
 

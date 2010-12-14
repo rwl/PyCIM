@@ -58,7 +58,8 @@ class MetaBlockStateReference(IdentifiedObject):
 
         self._StandardControlBlock_MetaBlockConnectable = value
         if self._StandardControlBlock_MetaBlockConnectable is not None:
-            self._StandardControlBlock_MetaBlockConnectable._StandardControlBlock_MetaBlockStateReference.append(self)
+            if self not in self._StandardControlBlock_MetaBlockConnectable._StandardControlBlock_MetaBlockStateReference:
+                self._StandardControlBlock_MetaBlockConnectable._StandardControlBlock_MetaBlockStateReference.append(self)
 
     StandardControlBlock_MetaBlockConnectable = property(getStandardControlBlock_MetaBlockConnectable, setStandardControlBlock_MetaBlockConnectable)
 
@@ -73,7 +74,8 @@ class MetaBlockStateReference(IdentifiedObject):
 
         self._MetaBlockConnectable = value
         if self._MetaBlockConnectable is not None:
-            self._MetaBlockConnectable._MetaBlockStateReference.append(self)
+            if self not in self._MetaBlockConnectable._MetaBlockStateReference:
+                self._MetaBlockConnectable._MetaBlockStateReference.append(self)
 
     MetaBlockConnectable = property(getMetaBlockConnectable, setMetaBlockConnectable)
 
@@ -88,7 +90,8 @@ class MetaBlockStateReference(IdentifiedObject):
 
         self._MemberOf_MetaBlockReference = value
         if self._MemberOf_MetaBlockReference is not None:
-            self._MemberOf_MetaBlockReference._MetaBlockStateReference.append(self)
+            if self not in self._MemberOf_MetaBlockReference._MetaBlockStateReference:
+                self._MemberOf_MetaBlockReference._MetaBlockStateReference.append(self)
 
     MemberOf_MetaBlockReference = property(getMemberOf_MetaBlockReference, setMemberOf_MetaBlockReference)
 

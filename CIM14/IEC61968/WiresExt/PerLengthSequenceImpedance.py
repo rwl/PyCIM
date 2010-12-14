@@ -76,7 +76,7 @@ class PerLengthSequenceImpedance(IdentifiedObject):
 
     def setConductorSegments(self, value):
         for x in self._ConductorSegments:
-            x._SequenceImpedance = None
+            x.SequenceImpedance = None
         for y in value:
             y._SequenceImpedance = self
         self._ConductorSegments = value
@@ -85,11 +85,9 @@ class PerLengthSequenceImpedance(IdentifiedObject):
 
     def addConductorSegments(self, *ConductorSegments):
         for obj in ConductorSegments:
-            obj._SequenceImpedance = self
-            self._ConductorSegments.append(obj)
+            obj.SequenceImpedance = self
 
     def removeConductorSegments(self, *ConductorSegments):
         for obj in ConductorSegments:
-            obj._SequenceImpedance = None
-            self._ConductorSegments.remove(obj)
+            obj.SequenceImpedance = None
 

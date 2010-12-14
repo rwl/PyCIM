@@ -132,7 +132,7 @@ class TransformerWinding(ConductingEquipment):
 
     def setFrom_WindingTest(self, value):
         for x in self._From_WindingTest:
-            x._From_TransformerWinding = None
+            x.From_TransformerWinding = None
         for y in value:
             y._From_TransformerWinding = self
         self._From_WindingTest = value
@@ -141,13 +141,11 @@ class TransformerWinding(ConductingEquipment):
 
     def addFrom_WindingTest(self, *From_WindingTest):
         for obj in From_WindingTest:
-            obj._From_TransformerWinding = self
-            self._From_WindingTest.append(obj)
+            obj.From_TransformerWinding = self
 
     def removeFrom_WindingTest(self, *From_WindingTest):
         for obj in From_WindingTest:
-            obj._From_TransformerWinding = None
-            self._From_WindingTest.remove(obj)
+            obj.From_TransformerWinding = None
 
     def getTo_WindingTest(self):
         """The winding winding tests for which the transformer winding (terminal) participates as the 'to' end of the test.
@@ -156,7 +154,7 @@ class TransformerWinding(ConductingEquipment):
 
     def setTo_WindingTest(self, value):
         for x in self._To_WindingTest:
-            x._To_TransformerWinding = None
+            x.To_TransformerWinding = None
         for y in value:
             y._To_TransformerWinding = self
         self._To_WindingTest = value
@@ -165,13 +163,11 @@ class TransformerWinding(ConductingEquipment):
 
     def addTo_WindingTest(self, *To_WindingTest):
         for obj in To_WindingTest:
-            obj._To_TransformerWinding = self
-            self._To_WindingTest.append(obj)
+            obj.To_TransformerWinding = self
 
     def removeTo_WindingTest(self, *To_WindingTest):
         for obj in To_WindingTest:
-            obj._To_TransformerWinding = None
-            self._To_WindingTest.remove(obj)
+            obj.To_TransformerWinding = None
 
     def getRatioTapChanger(self):
         """The ratio tap changer associated with the transformer winding.
@@ -184,6 +180,7 @@ class TransformerWinding(ConductingEquipment):
 
         self._RatioTapChanger = value
         if self._RatioTapChanger is not None:
+            self._RatioTapChanger.TransformerWinding = None
             self._RatioTapChanger._TransformerWinding = self
 
     RatioTapChanger = property(getRatioTapChanger, setRatioTapChanger)
@@ -200,7 +197,8 @@ class TransformerWinding(ConductingEquipment):
 
         self._PowerTransformer = value
         if self._PowerTransformer is not None:
-            self._PowerTransformer._TransformerWindings.append(self)
+            if self not in self._PowerTransformer._TransformerWindings:
+                self._PowerTransformer._TransformerWindings.append(self)
 
     PowerTransformer = property(getPowerTransformer, setPowerTransformer)
 
@@ -215,6 +213,7 @@ class TransformerWinding(ConductingEquipment):
 
         self._PhaseTapChanger = value
         if self._PhaseTapChanger is not None:
+            self._PhaseTapChanger.TransformerWinding = None
             self._PhaseTapChanger._TransformerWinding = self
 
     PhaseTapChanger = property(getPhaseTapChanger, setPhaseTapChanger)

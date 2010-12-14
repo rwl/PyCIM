@@ -52,7 +52,7 @@ class OperationalLimitType(IdentifiedObject):
 
     def setOperationalLimit(self, value):
         for x in self._OperationalLimit:
-            x._OperationalLimitType = None
+            x.OperationalLimitType = None
         for y in value:
             y._OperationalLimitType = self
         self._OperationalLimit = value
@@ -61,11 +61,9 @@ class OperationalLimitType(IdentifiedObject):
 
     def addOperationalLimit(self, *OperationalLimit):
         for obj in OperationalLimit:
-            obj._OperationalLimitType = self
-            self._OperationalLimit.append(obj)
+            obj.OperationalLimitType = self
 
     def removeOperationalLimit(self, *OperationalLimit):
         for obj in OperationalLimit:
-            obj._OperationalLimitType = None
-            self._OperationalLimit.remove(obj)
+            obj.OperationalLimitType = None
 

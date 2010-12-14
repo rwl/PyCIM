@@ -64,6 +64,7 @@ class SetPoint(Control):
 
         self._Analog = value
         if self._Analog is not None:
+            self._Analog.SetPoint = None
             self._Analog._SetPoint = self
 
     Analog = property(getAnalog, setAnalog)

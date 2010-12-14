@@ -69,7 +69,8 @@ class VendorShift(Shift):
 
         self._MerchantAccount = value
         if self._MerchantAccount is not None:
-            self._MerchantAccount._VendorShifts.append(self)
+            if self not in self._MerchantAccount._VendorShifts:
+                self._MerchantAccount._VendorShifts.append(self)
 
     MerchantAccount = property(getMerchantAccount, setMerchantAccount)
 
@@ -79,7 +80,7 @@ class VendorShift(Shift):
 
     def setTransactions(self, value):
         for x in self._Transactions:
-            x._VendorShift = None
+            x.VendorShift = None
         for y in value:
             y._VendorShift = self
         self._Transactions = value
@@ -88,13 +89,11 @@ class VendorShift(Shift):
 
     def addTransactions(self, *Transactions):
         for obj in Transactions:
-            obj._VendorShift = self
-            self._Transactions.append(obj)
+            obj.VendorShift = self
 
     def removeTransactions(self, *Transactions):
         for obj in Transactions:
-            obj._VendorShift = None
-            self._Transactions.remove(obj)
+            obj.VendorShift = None
 
     def getReceipts(self):
         
@@ -102,7 +101,7 @@ class VendorShift(Shift):
 
     def setReceipts(self, value):
         for x in self._Receipts:
-            x._VendorShift = None
+            x.VendorShift = None
         for y in value:
             y._VendorShift = self
         self._Receipts = value
@@ -111,13 +110,11 @@ class VendorShift(Shift):
 
     def addReceipts(self, *Receipts):
         for obj in Receipts:
-            obj._VendorShift = self
-            self._Receipts.append(obj)
+            obj.VendorShift = self
 
     def removeReceipts(self, *Receipts):
         for obj in Receipts:
-            obj._VendorShift = None
-            self._Receipts.remove(obj)
+            obj.VendorShift = None
 
     def getVendor(self):
         """Vendor that opens and owns this vendor shift.
@@ -131,7 +128,8 @@ class VendorShift(Shift):
 
         self._Vendor = value
         if self._Vendor is not None:
-            self._Vendor._VendorShifts.append(self)
+            if self not in self._Vendor._VendorShifts:
+                self._Vendor._VendorShifts.append(self)
 
     Vendor = property(getVendor, setVendor)
 

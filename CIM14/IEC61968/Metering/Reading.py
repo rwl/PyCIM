@@ -65,7 +65,8 @@ class Reading(MeasurementValue):
 
         self._ReadingType = value
         if self._ReadingType is not None:
-            self._ReadingType._Readings.append(self)
+            if self not in self._ReadingType._Readings:
+                self._ReadingType._Readings.append(self)
 
     ReadingType = property(getReadingType, setReadingType)
 
@@ -76,7 +77,7 @@ class Reading(MeasurementValue):
 
     def setReadingQualities(self, value):
         for x in self._ReadingQualities:
-            x._Reading = None
+            x.Reading = None
         for y in value:
             y._Reading = self
         self._ReadingQualities = value
@@ -85,13 +86,11 @@ class Reading(MeasurementValue):
 
     def addReadingQualities(self, *ReadingQualities):
         for obj in ReadingQualities:
-            obj._Reading = self
-            self._ReadingQualities.append(obj)
+            obj.Reading = self
 
     def removeReadingQualities(self, *ReadingQualities):
         for obj in ReadingQualities:
-            obj._Reading = None
-            self._ReadingQualities.remove(obj)
+            obj.Reading = None
 
     def getEndDeviceAsset(self):
         
@@ -104,7 +103,8 @@ class Reading(MeasurementValue):
 
         self._EndDeviceAsset = value
         if self._EndDeviceAsset is not None:
-            self._EndDeviceAsset._Readings.append(self)
+            if self not in self._EndDeviceAsset._Readings:
+                self._EndDeviceAsset._Readings.append(self)
 
     EndDeviceAsset = property(getEndDeviceAsset, setEndDeviceAsset)
 

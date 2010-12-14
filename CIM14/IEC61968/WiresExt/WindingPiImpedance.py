@@ -76,7 +76,7 @@ class WindingPiImpedance(IdentifiedObject):
 
     def setWindings(self, value):
         for x in self._Windings:
-            x._PiImpedance = None
+            x.PiImpedance = None
         for y in value:
             y._PiImpedance = self
         self._Windings = value
@@ -85,11 +85,9 @@ class WindingPiImpedance(IdentifiedObject):
 
     def addWindings(self, *Windings):
         for obj in Windings:
-            obj._PiImpedance = self
-            self._Windings.append(obj)
+            obj.PiImpedance = self
 
     def removeWindings(self, *Windings):
         for obj in Windings:
-            obj._PiImpedance = None
-            self._Windings.remove(obj)
+            obj.PiImpedance = None
 

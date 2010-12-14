@@ -67,7 +67,7 @@ class MeterReading(IdentifiedObject):
 
     def setIntervalBlocks(self, value):
         for x in self._IntervalBlocks:
-            x._MeterReading = None
+            x.MeterReading = None
         for y in value:
             y._MeterReading = self
         self._IntervalBlocks = value
@@ -76,13 +76,11 @@ class MeterReading(IdentifiedObject):
 
     def addIntervalBlocks(self, *IntervalBlocks):
         for obj in IntervalBlocks:
-            obj._MeterReading = self
-            self._IntervalBlocks.append(obj)
+            obj.MeterReading = self
 
     def removeIntervalBlocks(self, *IntervalBlocks):
         for obj in IntervalBlocks:
-            obj._MeterReading = None
-            self._IntervalBlocks.remove(obj)
+            obj.MeterReading = None
 
     def getCustomerAgreement(self):
         """(could be deprecated in the future) Customer agreement for this meter reading.
@@ -96,7 +94,8 @@ class MeterReading(IdentifiedObject):
 
         self._CustomerAgreement = value
         if self._CustomerAgreement is not None:
-            self._CustomerAgreement._MeterReadings.append(self)
+            if self not in self._CustomerAgreement._MeterReadings:
+                self._CustomerAgreement._MeterReadings.append(self)
 
     CustomerAgreement = property(getCustomerAgreement, setCustomerAgreement)
 
@@ -112,7 +111,8 @@ class MeterReading(IdentifiedObject):
 
         self._MeterAsset = value
         if self._MeterAsset is not None:
-            self._MeterAsset._MeterReadings.append(self)
+            if self not in self._MeterAsset._MeterReadings:
+                self._MeterAsset._MeterReadings.append(self)
 
     MeterAsset = property(getMeterAsset, setMeterAsset)
 
@@ -123,7 +123,7 @@ class MeterReading(IdentifiedObject):
 
     def setEndDeviceEvents(self, value):
         for x in self._EndDeviceEvents:
-            x._MeterReading = None
+            x.MeterReading = None
         for y in value:
             y._MeterReading = self
         self._EndDeviceEvents = value
@@ -132,13 +132,11 @@ class MeterReading(IdentifiedObject):
 
     def addEndDeviceEvents(self, *EndDeviceEvents):
         for obj in EndDeviceEvents:
-            obj._MeterReading = self
-            self._EndDeviceEvents.append(obj)
+            obj.MeterReading = self
 
     def removeEndDeviceEvents(self, *EndDeviceEvents):
         for obj in EndDeviceEvents:
-            obj._MeterReading = None
-            self._EndDeviceEvents.remove(obj)
+            obj.MeterReading = None
 
     def getReadings(self):
         """All reading values contained within this meter reading.
@@ -180,7 +178,8 @@ class MeterReading(IdentifiedObject):
 
         self._ServiceDeliveryPoint = value
         if self._ServiceDeliveryPoint is not None:
-            self._ServiceDeliveryPoint._MeterReadings.append(self)
+            if self not in self._ServiceDeliveryPoint._MeterReadings:
+                self._ServiceDeliveryPoint._MeterReadings.append(self)
 
     ServiceDeliveryPoint = property(getServiceDeliveryPoint, setServiceDeliveryPoint)
 

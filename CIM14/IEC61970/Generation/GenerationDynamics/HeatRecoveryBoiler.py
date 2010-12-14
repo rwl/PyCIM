@@ -48,7 +48,7 @@ class HeatRecoveryBoiler(FossilSteamSupply):
 
     def setCombustionTurbines(self, value):
         for x in self._CombustionTurbines:
-            x._HeatRecoveryBoiler = None
+            x.HeatRecoveryBoiler = None
         for y in value:
             y._HeatRecoveryBoiler = self
         self._CombustionTurbines = value
@@ -57,11 +57,9 @@ class HeatRecoveryBoiler(FossilSteamSupply):
 
     def addCombustionTurbines(self, *CombustionTurbines):
         for obj in CombustionTurbines:
-            obj._HeatRecoveryBoiler = self
-            self._CombustionTurbines.append(obj)
+            obj.HeatRecoveryBoiler = self
 
     def removeCombustionTurbines(self, *CombustionTurbines):
         for obj in CombustionTurbines:
-            obj._HeatRecoveryBoiler = None
-            self._CombustionTurbines.remove(obj)
+            obj.HeatRecoveryBoiler = None
 

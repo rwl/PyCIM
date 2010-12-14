@@ -57,7 +57,8 @@ class BranchGroupTerminal(Element):
 
         self._BranchGroup = value
         if self._BranchGroup is not None:
-            self._BranchGroup._BranchGroupTerminal.append(self)
+            if self not in self._BranchGroup._BranchGroupTerminal:
+                self._BranchGroup._BranchGroupTerminal.append(self)
 
     BranchGroup = property(getBranchGroup, setBranchGroup)
 
@@ -73,7 +74,8 @@ class BranchGroupTerminal(Element):
 
         self._Terminal = value
         if self._Terminal is not None:
-            self._Terminal._BranchGroupTerminal.append(self)
+            if self not in self._Terminal._BranchGroupTerminal:
+                self._Terminal._BranchGroupTerminal.append(self)
 
     Terminal = property(getTerminal, setTerminal)
 

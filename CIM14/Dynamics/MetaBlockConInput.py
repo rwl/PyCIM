@@ -55,6 +55,7 @@ class MetaBlockConInput(IdentifiedObject):
 
         self._MetaBlockConSignal = value
         if self._MetaBlockConSignal is not None:
+            self._MetaBlockConSignal.MetaBlockConInput = None
             self._MetaBlockConSignal._MetaBlockConInput = self
 
     MetaBlockConSignal = property(getMetaBlockConSignal, setMetaBlockConSignal)
@@ -70,7 +71,8 @@ class MetaBlockConInput(IdentifiedObject):
 
         self._MemberOf_MetaBlockConnection = value
         if self._MemberOf_MetaBlockConnection is not None:
-            self._MemberOf_MetaBlockConnection._MetaBlockConInput.append(self)
+            if self not in self._MemberOf_MetaBlockConnection._MetaBlockConInput:
+                self._MemberOf_MetaBlockConnection._MetaBlockConInput.append(self)
 
     MemberOf_MetaBlockConnection = property(getMemberOf_MetaBlockConnection, setMemberOf_MetaBlockConnection)
 
@@ -85,7 +87,8 @@ class MetaBlockConInput(IdentifiedObject):
 
         self._Unit = value
         if self._Unit is not None:
-            self._Unit._MetaBlockConInput.append(self)
+            if self not in self._Unit._MetaBlockConInput:
+                self._Unit._MetaBlockConInput.append(self)
 
     Unit = property(getUnit, setUnit)
 

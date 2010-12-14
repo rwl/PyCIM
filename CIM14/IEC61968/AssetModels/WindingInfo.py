@@ -92,7 +92,7 @@ class WindingInfo(IdentifiedObject):
 
     def setWindings(self, value):
         for x in self._Windings:
-            x._WindingInfo = None
+            x.WindingInfo = None
         for y in value:
             y._WindingInfo = self
         self._Windings = value
@@ -101,13 +101,11 @@ class WindingInfo(IdentifiedObject):
 
     def addWindings(self, *Windings):
         for obj in Windings:
-            obj._WindingInfo = self
-            self._Windings.append(obj)
+            obj.WindingInfo = self
 
     def removeWindings(self, *Windings):
         for obj in Windings:
-            obj._WindingInfo = None
-            self._Windings.remove(obj)
+            obj.WindingInfo = None
 
     def getWindingTests(self):
         """All winding tests during which voltage or current was applied to this winding.
@@ -116,7 +114,7 @@ class WindingInfo(IdentifiedObject):
 
     def setWindingTests(self, value):
         for x in self._WindingTests:
-            x._FromWinding = None
+            x.FromWinding = None
         for y in value:
             y._FromWinding = self
         self._WindingTests = value
@@ -125,13 +123,11 @@ class WindingInfo(IdentifiedObject):
 
     def addWindingTests(self, *WindingTests):
         for obj in WindingTests:
-            obj._FromWinding = self
-            self._WindingTests.append(obj)
+            obj.FromWinding = self
 
     def removeWindingTests(self, *WindingTests):
         for obj in WindingTests:
-            obj._FromWinding = None
-            self._WindingTests.remove(obj)
+            obj.FromWinding = None
 
     def getTransformerInfo(self):
         """Transformer data that this winding description is part of.
@@ -145,7 +141,8 @@ class WindingInfo(IdentifiedObject):
 
         self._TransformerInfo = value
         if self._TransformerInfo is not None:
-            self._TransformerInfo._WindingInfos.append(self)
+            if self not in self._TransformerInfo._WindingInfos:
+                self._TransformerInfo._WindingInfos.append(self)
 
     TransformerInfo = property(getTransformerInfo, setTransformerInfo)
 
@@ -156,7 +153,7 @@ class WindingInfo(IdentifiedObject):
 
     def setToWindingSpecs(self, value):
         for x in self._ToWindingSpecs:
-            x._ToWinding = None
+            x.ToWinding = None
         for y in value:
             y._ToWinding = self
         self._ToWindingSpecs = value
@@ -165,11 +162,9 @@ class WindingInfo(IdentifiedObject):
 
     def addToWindingSpecs(self, *ToWindingSpecs):
         for obj in ToWindingSpecs:
-            obj._ToWinding = self
-            self._ToWindingSpecs.append(obj)
+            obj.ToWinding = self
 
     def removeToWindingSpecs(self, *ToWindingSpecs):
         for obj in ToWindingSpecs:
-            obj._ToWinding = None
-            self._ToWindingSpecs.remove(obj)
+            obj.ToWinding = None
 

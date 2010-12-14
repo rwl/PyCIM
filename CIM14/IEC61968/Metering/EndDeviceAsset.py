@@ -161,7 +161,8 @@ class EndDeviceAsset(AssetContainer):
 
         self._ServiceLocation = value
         if self._ServiceLocation is not None:
-            self._ServiceLocation._EndDeviceAssets.append(self)
+            if self not in self._ServiceLocation._EndDeviceAssets:
+                self._ServiceLocation._EndDeviceAssets.append(self)
 
     ServiceLocation = property(getServiceLocation, setServiceLocation)
 
@@ -177,7 +178,8 @@ class EndDeviceAsset(AssetContainer):
 
         self._EndDeviceModel = value
         if self._EndDeviceModel is not None:
-            self._EndDeviceModel._EndDeviceAssets.append(self)
+            if self not in self._EndDeviceModel._EndDeviceAssets:
+                self._EndDeviceModel._EndDeviceAssets.append(self)
 
     EndDeviceModel = property(getEndDeviceModel, setEndDeviceModel)
 
@@ -188,7 +190,7 @@ class EndDeviceAsset(AssetContainer):
 
     def setDeviceFunctions(self, value):
         for x in self._DeviceFunctions:
-            x._EndDeviceAsset = None
+            x.EndDeviceAsset = None
         for y in value:
             y._EndDeviceAsset = self
         self._DeviceFunctions = value
@@ -197,13 +199,11 @@ class EndDeviceAsset(AssetContainer):
 
     def addDeviceFunctions(self, *DeviceFunctions):
         for obj in DeviceFunctions:
-            obj._EndDeviceAsset = self
-            self._DeviceFunctions.append(obj)
+            obj.EndDeviceAsset = self
 
     def removeDeviceFunctions(self, *DeviceFunctions):
         for obj in DeviceFunctions:
-            obj._EndDeviceAsset = None
-            self._DeviceFunctions.remove(obj)
+            obj.EndDeviceAsset = None
 
     def getServiceDeliveryPoint(self):
         """Service delivery point to which this end device asset belongs.
@@ -217,7 +217,8 @@ class EndDeviceAsset(AssetContainer):
 
         self._ServiceDeliveryPoint = value
         if self._ServiceDeliveryPoint is not None:
-            self._ServiceDeliveryPoint._EndDeviceAssets.append(self)
+            if self not in self._ServiceDeliveryPoint._EndDeviceAssets:
+                self._ServiceDeliveryPoint._EndDeviceAssets.append(self)
 
     ServiceDeliveryPoint = property(getServiceDeliveryPoint, setServiceDeliveryPoint)
 
@@ -227,7 +228,7 @@ class EndDeviceAsset(AssetContainer):
 
     def setReadings(self, value):
         for x in self._Readings:
-            x._EndDeviceAsset = None
+            x.EndDeviceAsset = None
         for y in value:
             y._EndDeviceAsset = self
         self._Readings = value
@@ -236,13 +237,11 @@ class EndDeviceAsset(AssetContainer):
 
     def addReadings(self, *Readings):
         for obj in Readings:
-            obj._EndDeviceAsset = self
-            self._Readings.append(obj)
+            obj.EndDeviceAsset = self
 
     def removeReadings(self, *Readings):
         for obj in Readings:
-            obj._EndDeviceAsset = None
-            self._Readings.remove(obj)
+            obj.EndDeviceAsset = None
 
     def getEndDeviceControls(self):
         """All end device controls sending commands to this end device asset.
@@ -251,7 +250,7 @@ class EndDeviceAsset(AssetContainer):
 
     def setEndDeviceControls(self, value):
         for x in self._EndDeviceControls:
-            x._EndDeviceAsset = None
+            x.EndDeviceAsset = None
         for y in value:
             y._EndDeviceAsset = self
         self._EndDeviceControls = value
@@ -260,13 +259,11 @@ class EndDeviceAsset(AssetContainer):
 
     def addEndDeviceControls(self, *EndDeviceControls):
         for obj in EndDeviceControls:
-            obj._EndDeviceAsset = self
-            self._EndDeviceControls.append(obj)
+            obj.EndDeviceAsset = self
 
     def removeEndDeviceControls(self, *EndDeviceControls):
         for obj in EndDeviceControls:
-            obj._EndDeviceAsset = None
-            self._EndDeviceControls.remove(obj)
+            obj.EndDeviceAsset = None
 
     def getCustomer(self):
         """Customer owning this end device asset.
@@ -280,7 +277,8 @@ class EndDeviceAsset(AssetContainer):
 
         self._Customer = value
         if self._Customer is not None:
-            self._Customer._EndDeviceAssets.append(self)
+            if self not in self._Customer._EndDeviceAssets:
+                self._Customer._EndDeviceAssets.append(self)
 
     Customer = property(getCustomer, setCustomer)
 

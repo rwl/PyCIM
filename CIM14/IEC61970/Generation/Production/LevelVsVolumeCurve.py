@@ -49,7 +49,8 @@ class LevelVsVolumeCurve(Curve):
 
         self._Reservoir = value
         if self._Reservoir is not None:
-            self._Reservoir._LevelVsVolumeCurves.append(self)
+            if self not in self._Reservoir._LevelVsVolumeCurves:
+                self._Reservoir._LevelVsVolumeCurves.append(self)
 
     Reservoir = property(getReservoir, setReservoir)
 

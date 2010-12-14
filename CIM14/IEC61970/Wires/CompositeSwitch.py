@@ -48,7 +48,7 @@ class CompositeSwitch(Equipment):
 
     def setSwitches(self, value):
         for x in self._Switches:
-            x._CompositeSwitch = None
+            x.CompositeSwitch = None
         for y in value:
             y._CompositeSwitch = self
         self._Switches = value
@@ -57,11 +57,9 @@ class CompositeSwitch(Equipment):
 
     def addSwitches(self, *Switches):
         for obj in Switches:
-            obj._CompositeSwitch = self
-            self._Switches.append(obj)
+            obj.CompositeSwitch = self
 
     def removeSwitches(self, *Switches):
         for obj in Switches:
-            obj._CompositeSwitch = None
-            self._Switches.remove(obj)
+            obj.CompositeSwitch = None
 

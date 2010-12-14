@@ -52,6 +52,7 @@ class StartMainFuelCurve(Curve):
 
         self._StartupModel = value
         if self._StartupModel is not None:
+            self._StartupModel.StartMainFuelCurve = None
             self._StartupModel._StartMainFuelCurve = self
 
     StartupModel = property(getStartupModel, setStartupModel)

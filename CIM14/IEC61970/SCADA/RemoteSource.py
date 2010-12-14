@@ -64,6 +64,7 @@ class RemoteSource(RemotePoint):
 
         self._MeasurementValue = value
         if self._MeasurementValue is not None:
+            self._MeasurementValue.RemoteSource = None
             self._MeasurementValue._RemoteSource = self
 
     MeasurementValue = property(getMeasurementValue, setMeasurementValue)

@@ -108,6 +108,7 @@ class ShuntCompensator(RegulatingCondEq):
 
         self._SvShuntCompensatorSections = value
         if self._SvShuntCompensatorSections is not None:
+            self._SvShuntCompensatorSections.ShuntCompensator = None
             self._SvShuntCompensatorSections._ShuntCompensator = self
 
     SvShuntCompensatorSections = property(getSvShuntCompensatorSections, setSvShuntCompensatorSections)

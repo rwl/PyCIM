@@ -65,7 +65,8 @@ class Seal(IdentifiedObject):
 
         self._AssetContainer = value
         if self._AssetContainer is not None:
-            self._AssetContainer._Seals.append(self)
+            if self not in self._AssetContainer._Seals:
+                self._AssetContainer._Seals.append(self)
 
     AssetContainer = property(getAssetContainer, setAssetContainer)
 

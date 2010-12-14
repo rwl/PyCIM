@@ -52,7 +52,7 @@ class Substation(EquipmentContainer):
 
     def setVoltageLevels(self, value):
         for x in self._VoltageLevels:
-            x._Substation = None
+            x.Substation = None
         for y in value:
             y._Substation = self
         self._VoltageLevels = value
@@ -61,13 +61,11 @@ class Substation(EquipmentContainer):
 
     def addVoltageLevels(self, *VoltageLevels):
         for obj in VoltageLevels:
-            obj._Substation = self
-            self._VoltageLevels.append(obj)
+            obj.Substation = self
 
     def removeVoltageLevels(self, *VoltageLevels):
         for obj in VoltageLevels:
-            obj._Substation = None
-            self._VoltageLevels.remove(obj)
+            obj.Substation = None
 
     def getBays(self):
         """The association is used in the naming hierarchy.
@@ -76,7 +74,7 @@ class Substation(EquipmentContainer):
 
     def setBays(self, value):
         for x in self._Bays:
-            x._Substation = None
+            x.Substation = None
         for y in value:
             y._Substation = self
         self._Bays = value
@@ -85,13 +83,11 @@ class Substation(EquipmentContainer):
 
     def addBays(self, *Bays):
         for obj in Bays:
-            obj._Substation = self
-            self._Bays.append(obj)
+            obj.Substation = self
 
     def removeBays(self, *Bays):
         for obj in Bays:
-            obj._Substation = None
-            self._Bays.remove(obj)
+            obj.Substation = None
 
     def getRegion(self):
         """The association is used in the naming hierarchy.
@@ -105,7 +101,8 @@ class Substation(EquipmentContainer):
 
         self._Region = value
         if self._Region is not None:
-            self._Region._Substations.append(self)
+            if self not in self._Region._Substations:
+                self._Region._Substations.append(self)
 
     Region = property(getRegion, setRegion)
 

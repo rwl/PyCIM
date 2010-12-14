@@ -53,7 +53,8 @@ class ModelingAuthoritySet(IdentifiedObject):
 
         self._ModelingAuthority = value
         if self._ModelingAuthority is not None:
-            self._ModelingAuthority._ModelingAuthoritySets.append(self)
+            if self not in self._ModelingAuthority._ModelingAuthoritySets:
+                self._ModelingAuthority._ModelingAuthoritySets.append(self)
 
     ModelingAuthority = property(getModelingAuthority, setModelingAuthority)
 
@@ -64,7 +65,7 @@ class ModelingAuthoritySet(IdentifiedObject):
 
     def setIdentifiedObjects(self, value):
         for x in self._IdentifiedObjects:
-            x._ModelingAuthoritySet = None
+            x.ModelingAuthoritySet = None
         for y in value:
             y._ModelingAuthoritySet = self
         self._IdentifiedObjects = value
@@ -73,11 +74,9 @@ class ModelingAuthoritySet(IdentifiedObject):
 
     def addIdentifiedObjects(self, *IdentifiedObjects):
         for obj in IdentifiedObjects:
-            obj._ModelingAuthoritySet = self
-            self._IdentifiedObjects.append(obj)
+            obj.ModelingAuthoritySet = self
 
     def removeIdentifiedObjects(self, *IdentifiedObjects):
         for obj in IdentifiedObjects:
-            obj._ModelingAuthoritySet = None
-            self._IdentifiedObjects.remove(obj)
+            obj.ModelingAuthoritySet = None
 

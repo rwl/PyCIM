@@ -56,6 +56,7 @@ class ShutdownCurve(Curve):
 
         self._ThermalGeneratingUnit = value
         if self._ThermalGeneratingUnit is not None:
+            self._ThermalGeneratingUnit.ShutdownCurve = None
             self._ThermalGeneratingUnit._ShutdownCurve = self
 
     ThermalGeneratingUnit = property(getThermalGeneratingUnit, setThermalGeneratingUnit)

@@ -68,6 +68,7 @@ class HeatInputCurve(Curve):
 
         self._ThermalGeneratingUnit = value
         if self._ThermalGeneratingUnit is not None:
+            self._ThermalGeneratingUnit.HeatInputCurve = None
             self._ThermalGeneratingUnit._HeatInputCurve = self
 
     ThermalGeneratingUnit = property(getThermalGeneratingUnit, setThermalGeneratingUnit)

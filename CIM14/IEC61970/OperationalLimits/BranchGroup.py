@@ -68,7 +68,7 @@ class BranchGroup(IdentifiedObject):
 
     def setBranchGroupTerminal(self, value):
         for x in self._BranchGroupTerminal:
-            x._BranchGroup = None
+            x.BranchGroup = None
         for y in value:
             y._BranchGroup = self
         self._BranchGroupTerminal = value
@@ -77,11 +77,9 @@ class BranchGroup(IdentifiedObject):
 
     def addBranchGroupTerminal(self, *BranchGroupTerminal):
         for obj in BranchGroupTerminal:
-            obj._BranchGroup = self
-            self._BranchGroupTerminal.append(obj)
+            obj.BranchGroup = self
 
     def removeBranchGroupTerminal(self, *BranchGroupTerminal):
         for obj in BranchGroupTerminal:
-            obj._BranchGroup = None
-            self._BranchGroupTerminal.remove(obj)
+            obj.BranchGroup = None
 

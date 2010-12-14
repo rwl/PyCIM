@@ -57,7 +57,8 @@ class OperationalLimit(IdentifiedObject):
 
         self._OperationalLimitType = value
         if self._OperationalLimitType is not None:
-            self._OperationalLimitType._OperationalLimit.append(self)
+            if self not in self._OperationalLimitType._OperationalLimit:
+                self._OperationalLimitType._OperationalLimit.append(self)
 
     OperationalLimitType = property(getOperationalLimitType, setOperationalLimitType)
 
@@ -73,7 +74,8 @@ class OperationalLimit(IdentifiedObject):
 
         self._OperationalLimitSet = value
         if self._OperationalLimitSet is not None:
-            self._OperationalLimitSet._OperationalLimitValue.append(self)
+            if self not in self._OperationalLimitSet._OperationalLimitValue:
+                self._OperationalLimitSet._OperationalLimitValue.append(self)
 
     OperationalLimitSet = property(getOperationalLimitSet, setOperationalLimitSet)
 

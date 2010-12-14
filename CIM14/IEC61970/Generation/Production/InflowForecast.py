@@ -49,7 +49,8 @@ class InflowForecast(RegularIntervalSchedule):
 
         self._Reservoir = value
         if self._Reservoir is not None:
-            self._Reservoir._InflowForecasts.append(self)
+            if self not in self._Reservoir._InflowForecasts:
+                self._Reservoir._InflowForecasts.append(self)
 
     Reservoir = property(getReservoir, setReservoir)
 

@@ -48,6 +48,7 @@ class BusbarSection(Connector):
 
         self._VoltageControlZone = value
         if self._VoltageControlZone is not None:
+            self._VoltageControlZone.BusbarSection = None
             self._VoltageControlZone._BusbarSection = self
 
     VoltageControlZone = property(getVoltageControlZone, setVoltageControlZone)

@@ -103,7 +103,8 @@ class Charge(IdentifiedObject):
 
         self._ParentCharge = value
         if self._ParentCharge is not None:
-            self._ParentCharge._ChildCharges.append(self)
+            if self not in self._ParentCharge._ChildCharges:
+                self._ParentCharge._ChildCharges.append(self)
 
     ParentCharge = property(getParentCharge, setParentCharge)
 
@@ -114,7 +115,7 @@ class Charge(IdentifiedObject):
 
     def setChildCharges(self, value):
         for x in self._ChildCharges:
-            x._ParentCharge = None
+            x.ParentCharge = None
         for y in value:
             y._ParentCharge = self
         self._ChildCharges = value
@@ -123,13 +124,11 @@ class Charge(IdentifiedObject):
 
     def addChildCharges(self, *ChildCharges):
         for obj in ChildCharges:
-            obj._ParentCharge = self
-            self._ChildCharges.append(obj)
+            obj.ParentCharge = self
 
     def removeChildCharges(self, *ChildCharges):
         for obj in ChildCharges:
-            obj._ParentCharge = None
-            self._ChildCharges.remove(obj)
+            obj.ParentCharge = None
 
     # The fixed portion of this charge element.
     fixedPortion = None

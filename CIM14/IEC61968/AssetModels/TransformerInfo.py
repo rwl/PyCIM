@@ -48,7 +48,7 @@ class TransformerInfo(IdentifiedObject):
 
     def setWindingInfos(self, value):
         for x in self._WindingInfos:
-            x._TransformerInfo = None
+            x.TransformerInfo = None
         for y in value:
             y._TransformerInfo = self
         self._WindingInfos = value
@@ -57,13 +57,11 @@ class TransformerInfo(IdentifiedObject):
 
     def addWindingInfos(self, *WindingInfos):
         for obj in WindingInfos:
-            obj._TransformerInfo = self
-            self._WindingInfos.append(obj)
+            obj.TransformerInfo = self
 
     def removeWindingInfos(self, *WindingInfos):
         for obj in WindingInfos:
-            obj._TransformerInfo = None
-            self._WindingInfos.remove(obj)
+            obj.TransformerInfo = None
 
     def getTransformers(self):
         """All transformers that can be described with this transformer data.
@@ -72,7 +70,7 @@ class TransformerInfo(IdentifiedObject):
 
     def setTransformers(self, value):
         for x in self._Transformers:
-            x._TransformerInfo = None
+            x.TransformerInfo = None
         for y in value:
             y._TransformerInfo = self
         self._Transformers = value
@@ -81,11 +79,9 @@ class TransformerInfo(IdentifiedObject):
 
     def addTransformers(self, *Transformers):
         for obj in Transformers:
-            obj._TransformerInfo = self
-            self._Transformers.append(obj)
+            obj.TransformerInfo = self
 
     def removeTransformers(self, *Transformers):
         for obj in Transformers:
-            obj._TransformerInfo = None
-            self._Transformers.remove(obj)
+            obj.TransformerInfo = None
 

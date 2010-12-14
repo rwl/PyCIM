@@ -48,7 +48,7 @@ class OutageSchedule(IrregularIntervalSchedule):
 
     def setSwitchingOperations(self, value):
         for x in self._SwitchingOperations:
-            x._OutageSchedule = None
+            x.OutageSchedule = None
         for y in value:
             y._OutageSchedule = self
         self._SwitchingOperations = value
@@ -57,13 +57,11 @@ class OutageSchedule(IrregularIntervalSchedule):
 
     def addSwitchingOperations(self, *SwitchingOperations):
         for obj in SwitchingOperations:
-            obj._OutageSchedule = self
-            self._SwitchingOperations.append(obj)
+            obj.OutageSchedule = self
 
     def removeSwitchingOperations(self, *SwitchingOperations):
         for obj in SwitchingOperations:
-            obj._OutageSchedule = None
-            self._SwitchingOperations.remove(obj)
+            obj.OutageSchedule = None
 
     def getPowerSystemResource(self):
         """A power system resource may have an outage schedule
@@ -76,6 +74,7 @@ class OutageSchedule(IrregularIntervalSchedule):
 
         self._PowerSystemResource = value
         if self._PowerSystemResource is not None:
+            self._PowerSystemResource.OutageSchedule = None
             self._PowerSystemResource._OutageSchedule = self
 
     PowerSystemResource = property(getPowerSystemResource, setPowerSystemResource)

@@ -64,7 +64,7 @@ class Equipment(PowerSystemResource):
 
     def setOperationalLimitSet(self, value):
         for x in self._OperationalLimitSet:
-            x._Equipment = None
+            x.Equipment = None
         for y in value:
             y._Equipment = self
         self._OperationalLimitSet = value
@@ -73,13 +73,11 @@ class Equipment(PowerSystemResource):
 
     def addOperationalLimitSet(self, *OperationalLimitSet):
         for obj in OperationalLimitSet:
-            obj._Equipment = self
-            self._OperationalLimitSet.append(obj)
+            obj.Equipment = self
 
     def removeOperationalLimitSet(self, *OperationalLimitSet):
         for obj in OperationalLimitSet:
-            obj._Equipment = None
-            self._OperationalLimitSet.remove(obj)
+            obj.Equipment = None
 
     def getContingencyEquipment(self):
         """The contingency element associated with the equipment.
@@ -88,7 +86,7 @@ class Equipment(PowerSystemResource):
 
     def setContingencyEquipment(self, value):
         for x in self._ContingencyEquipment:
-            x._Equipment = None
+            x.Equipment = None
         for y in value:
             y._Equipment = self
         self._ContingencyEquipment = value
@@ -97,13 +95,11 @@ class Equipment(PowerSystemResource):
 
     def addContingencyEquipment(self, *ContingencyEquipment):
         for obj in ContingencyEquipment:
-            obj._Equipment = self
-            self._ContingencyEquipment.append(obj)
+            obj.Equipment = self
 
     def removeContingencyEquipment(self, *ContingencyEquipment):
         for obj in ContingencyEquipment:
-            obj._Equipment = None
-            self._ContingencyEquipment.remove(obj)
+            obj.Equipment = None
 
     def getEquipmentContainer(self):
         """The association is used in the naming hierarchy.
@@ -117,7 +113,8 @@ class Equipment(PowerSystemResource):
 
         self._EquipmentContainer = value
         if self._EquipmentContainer is not None:
-            self._EquipmentContainer._Equipments.append(self)
+            if self not in self._EquipmentContainer._Equipments:
+                self._EquipmentContainer._Equipments.append(self)
 
     EquipmentContainer = property(getEquipmentContainer, setEquipmentContainer)
 

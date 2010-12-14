@@ -53,7 +53,8 @@ class VoltageControlZone(PowerSystemResource):
 
         self._RegulationSchedule = value
         if self._RegulationSchedule is not None:
-            self._RegulationSchedule._VoltageControlZones.append(self)
+            if self not in self._RegulationSchedule._VoltageControlZones:
+                self._RegulationSchedule._VoltageControlZones.append(self)
 
     RegulationSchedule = property(getRegulationSchedule, setRegulationSchedule)
 
@@ -68,6 +69,7 @@ class VoltageControlZone(PowerSystemResource):
 
         self._BusbarSection = value
         if self._BusbarSection is not None:
+            self._BusbarSection.VoltageControlZone = None
             self._BusbarSection._VoltageControlZone = self
 
     BusbarSection = property(getBusbarSection, setBusbarSection)

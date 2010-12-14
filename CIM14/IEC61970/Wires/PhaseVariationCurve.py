@@ -48,6 +48,7 @@ class PhaseVariationCurve(Curve):
 
         self._PhaseTapChanger = value
         if self._PhaseTapChanger is not None:
+            self._PhaseTapChanger.PhaseVariationCurve = None
             self._PhaseTapChanger._PhaseVariationCurve = self
 
     PhaseTapChanger = property(getPhaseTapChanger, setPhaseTapChanger)

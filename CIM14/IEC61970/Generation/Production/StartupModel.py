@@ -100,6 +100,7 @@ class StartupModel(IdentifiedObject):
 
         self._ThermalGeneratingUnit = value
         if self._ThermalGeneratingUnit is not None:
+            self._ThermalGeneratingUnit.StartupModel = None
             self._ThermalGeneratingUnit._StartupModel = self
 
     ThermalGeneratingUnit = property(getThermalGeneratingUnit, setThermalGeneratingUnit)
@@ -115,6 +116,7 @@ class StartupModel(IdentifiedObject):
 
         self._StartRampCurve = value
         if self._StartRampCurve is not None:
+            self._StartRampCurve.StartupModel = None
             self._StartRampCurve._StartupModel = self
 
     StartRampCurve = property(getStartRampCurve, setStartRampCurve)
@@ -130,6 +132,7 @@ class StartupModel(IdentifiedObject):
 
         self._StartMainFuelCurve = value
         if self._StartMainFuelCurve is not None:
+            self._StartMainFuelCurve.StartupModel = None
             self._StartMainFuelCurve._StartupModel = self
 
     StartMainFuelCurve = property(getStartMainFuelCurve, setStartMainFuelCurve)
@@ -145,6 +148,7 @@ class StartupModel(IdentifiedObject):
 
         self._StartIgnFuelCurve = value
         if self._StartIgnFuelCurve is not None:
+            self._StartIgnFuelCurve.StartupModel = None
             self._StartIgnFuelCurve._StartupModel = self
 
     StartIgnFuelCurve = property(getStartIgnFuelCurve, setStartIgnFuelCurve)

@@ -102,7 +102,8 @@ class AuxiliaryAccount(Document):
 
         self._AuxiliaryAgreement = value
         if self._AuxiliaryAgreement is not None:
-            self._AuxiliaryAgreement._AuxiliaryAccounts.append(self)
+            if self not in self._AuxiliaryAgreement._AuxiliaryAccounts:
+                self._AuxiliaryAgreement._AuxiliaryAccounts.append(self)
 
     AuxiliaryAgreement = property(getAuxiliaryAgreement, setAuxiliaryAgreement)
 
@@ -113,7 +114,7 @@ class AuxiliaryAccount(Document):
 
     def setPaymentTransactions(self, value):
         for x in self._PaymentTransactions:
-            x._AuxiliaryAccount = None
+            x.AuxiliaryAccount = None
         for y in value:
             y._AuxiliaryAccount = self
         self._PaymentTransactions = value
@@ -122,13 +123,11 @@ class AuxiliaryAccount(Document):
 
     def addPaymentTransactions(self, *PaymentTransactions):
         for obj in PaymentTransactions:
-            obj._AuxiliaryAccount = self
-            self._PaymentTransactions.append(obj)
+            obj.AuxiliaryAccount = self
 
     def removePaymentTransactions(self, *PaymentTransactions):
         for obj in PaymentTransactions:
-            obj._AuxiliaryAccount = None
-            self._PaymentTransactions.remove(obj)
+            obj.AuxiliaryAccount = None
 
     # Details of the last debit transaction performed on this account.
     lastDebit = None

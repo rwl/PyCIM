@@ -48,7 +48,7 @@ class ConformLoadGroup(LoadGroup):
 
     def setConformLoadSchedules(self, value):
         for x in self._ConformLoadSchedules:
-            x._ConformLoadGroup = None
+            x.ConformLoadGroup = None
         for y in value:
             y._ConformLoadGroup = self
         self._ConformLoadSchedules = value
@@ -57,13 +57,11 @@ class ConformLoadGroup(LoadGroup):
 
     def addConformLoadSchedules(self, *ConformLoadSchedules):
         for obj in ConformLoadSchedules:
-            obj._ConformLoadGroup = self
-            self._ConformLoadSchedules.append(obj)
+            obj.ConformLoadGroup = self
 
     def removeConformLoadSchedules(self, *ConformLoadSchedules):
         for obj in ConformLoadSchedules:
-            obj._ConformLoadGroup = None
-            self._ConformLoadSchedules.remove(obj)
+            obj.ConformLoadGroup = None
 
     def getEnergyConsumers(self):
         """Conform loads assigned to this ConformLoadGroup.
@@ -72,7 +70,7 @@ class ConformLoadGroup(LoadGroup):
 
     def setEnergyConsumers(self, value):
         for x in self._EnergyConsumers:
-            x._LoadGroup = None
+            x.LoadGroup = None
         for y in value:
             y._LoadGroup = self
         self._EnergyConsumers = value
@@ -81,11 +79,9 @@ class ConformLoadGroup(LoadGroup):
 
     def addEnergyConsumers(self, *EnergyConsumers):
         for obj in EnergyConsumers:
-            obj._LoadGroup = self
-            self._EnergyConsumers.append(obj)
+            obj.LoadGroup = self
 
     def removeEnergyConsumers(self, *EnergyConsumers):
         for obj in EnergyConsumers:
-            obj._LoadGroup = None
-            self._EnergyConsumers.remove(obj)
+            obj.LoadGroup = None
 

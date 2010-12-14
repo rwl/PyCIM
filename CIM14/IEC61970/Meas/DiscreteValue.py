@@ -53,7 +53,8 @@ class DiscreteValue(MeasurementValue):
 
         self._Discrete = value
         if self._Discrete is not None:
-            self._Discrete._DiscreteValues.append(self)
+            if self not in self._Discrete._DiscreteValues:
+                self._Discrete._DiscreteValues.append(self)
 
     Discrete = property(getDiscrete, setDiscrete)
 

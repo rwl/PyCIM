@@ -65,7 +65,8 @@ class PhaseImpedanceData(Element):
 
         self._PhaseImpedance = value
         if self._PhaseImpedance is not None:
-            self._PhaseImpedance._PhaseImpedanceData.append(self)
+            if self not in self._PhaseImpedance._PhaseImpedanceData:
+                self._PhaseImpedance._PhaseImpedanceData.append(self)
 
     PhaseImpedance = property(getPhaseImpedance, setPhaseImpedance)
 

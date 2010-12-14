@@ -76,7 +76,7 @@ class AnalogLimitSet(LimitSet):
 
     def setLimits(self, value):
         for x in self._Limits:
-            x._LimitSet = None
+            x.LimitSet = None
         for y in value:
             y._LimitSet = self
         self._Limits = value
@@ -85,11 +85,9 @@ class AnalogLimitSet(LimitSet):
 
     def addLimits(self, *Limits):
         for obj in Limits:
-            obj._LimitSet = self
-            self._Limits.append(obj)
+            obj.LimitSet = self
 
     def removeLimits(self, *Limits):
         for obj in Limits:
-            obj._LimitSet = None
-            self._Limits.remove(obj)
+            obj.LimitSet = None
 

@@ -60,7 +60,7 @@ class Unit(IdentifiedObject):
 
     def setControls(self, value):
         for x in self._Controls:
-            x._Unit = None
+            x.Unit = None
         for y in value:
             y._Unit = self
         self._Controls = value
@@ -69,13 +69,11 @@ class Unit(IdentifiedObject):
 
     def addControls(self, *Controls):
         for obj in Controls:
-            obj._Unit = self
-            self._Controls.append(obj)
+            obj.Unit = self
 
     def removeControls(self, *Controls):
         for obj in Controls:
-            obj._Unit = None
-            self._Controls.remove(obj)
+            obj.Unit = None
 
     def getMeasurements(self):
         """The Measurements having the Unit
@@ -84,7 +82,7 @@ class Unit(IdentifiedObject):
 
     def setMeasurements(self, value):
         for x in self._Measurements:
-            x._Unit = None
+            x.Unit = None
         for y in value:
             y._Unit = self
         self._Measurements = value
@@ -93,13 +91,11 @@ class Unit(IdentifiedObject):
 
     def addMeasurements(self, *Measurements):
         for obj in Measurements:
-            obj._Unit = self
-            self._Measurements.append(obj)
+            obj.Unit = self
 
     def removeMeasurements(self, *Measurements):
         for obj in Measurements:
-            obj._Unit = None
-            self._Measurements.remove(obj)
+            obj.Unit = None
 
     def getMetaBlockConOutput(self):
         
@@ -107,7 +103,7 @@ class Unit(IdentifiedObject):
 
     def setMetaBlockConOutput(self, value):
         for x in self._MetaBlockConOutput:
-            x._Unit = None
+            x.Unit = None
         for y in value:
             y._Unit = self
         self._MetaBlockConOutput = value
@@ -116,13 +112,11 @@ class Unit(IdentifiedObject):
 
     def addMetaBlockConOutput(self, *MetaBlockConOutput):
         for obj in MetaBlockConOutput:
-            obj._Unit = self
-            self._MetaBlockConOutput.append(obj)
+            obj.Unit = self
 
     def removeMetaBlockConOutput(self, *MetaBlockConOutput):
         for obj in MetaBlockConOutput:
-            obj._Unit = None
-            self._MetaBlockConOutput.remove(obj)
+            obj.Unit = None
 
     def getMetaBlockConInput(self):
         
@@ -130,7 +124,7 @@ class Unit(IdentifiedObject):
 
     def setMetaBlockConInput(self, value):
         for x in self._MetaBlockConInput:
-            x._Unit = None
+            x.Unit = None
         for y in value:
             y._Unit = self
         self._MetaBlockConInput = value
@@ -139,13 +133,11 @@ class Unit(IdentifiedObject):
 
     def addMetaBlockConInput(self, *MetaBlockConInput):
         for obj in MetaBlockConInput:
-            obj._Unit = self
-            self._MetaBlockConInput.append(obj)
+            obj.Unit = self
 
     def removeMetaBlockConInput(self, *MetaBlockConInput):
         for obj in MetaBlockConInput:
-            obj._Unit = None
-            self._MetaBlockConInput.remove(obj)
+            obj.Unit = None
 
     def getProtectionEquipments(self):
         """The Protection Equipments having the Unit.
@@ -154,7 +146,7 @@ class Unit(IdentifiedObject):
 
     def setProtectionEquipments(self, value):
         for x in self._ProtectionEquipments:
-            x._Unit = None
+            x.Unit = None
         for y in value:
             y._Unit = self
         self._ProtectionEquipments = value
@@ -163,11 +155,9 @@ class Unit(IdentifiedObject):
 
     def addProtectionEquipments(self, *ProtectionEquipments):
         for obj in ProtectionEquipments:
-            obj._Unit = self
-            self._ProtectionEquipments.append(obj)
+            obj.Unit = self
 
     def removeProtectionEquipments(self, *ProtectionEquipments):
         for obj in ProtectionEquipments:
-            obj._Unit = None
-            self._ProtectionEquipments.remove(obj)
+            obj.Unit = None
 

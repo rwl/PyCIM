@@ -52,7 +52,7 @@ class IntervalReading(MeasurementValue):
 
     def setReadingQualities(self, value):
         for x in self._ReadingQualities:
-            x._IntervalReading = None
+            x.IntervalReading = None
         for y in value:
             y._IntervalReading = self
         self._ReadingQualities = value
@@ -61,13 +61,11 @@ class IntervalReading(MeasurementValue):
 
     def addReadingQualities(self, *ReadingQualities):
         for obj in ReadingQualities:
-            obj._IntervalReading = self
-            self._ReadingQualities.append(obj)
+            obj.IntervalReading = self
 
     def removeReadingQualities(self, *ReadingQualities):
         for obj in ReadingQualities:
-            obj._IntervalReading = None
-            self._ReadingQualities.remove(obj)
+            obj.IntervalReading = None
 
     def getIntervalBlocks(self):
         """All blocks containing this interval reading.

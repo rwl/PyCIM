@@ -54,7 +54,8 @@ class SlotInput(IdentifiedObject):
 
         self._blockInputType0 = value
         if self._blockInputType0 is not None:
-            self._blockInputType0._slotInput0.append(self)
+            if self not in self._blockInputType0._slotInput0:
+                self._blockInputType0._slotInput0.append(self)
 
     blockInputType0 = property(getblockInputType0, setblockInputType0)
 
@@ -68,6 +69,7 @@ class SlotInput(IdentifiedObject):
 
         self._slotConnection0 = value
         if self._slotConnection0 is not None:
+            self._slotConnection0.slotInput0 = None
             self._slotConnection0._slotInput0 = self
 
     slotConnection0 = property(getslotConnection0, setslotConnection0)
@@ -83,7 +85,8 @@ class SlotInput(IdentifiedObject):
 
         self._slot0 = value
         if self._slot0 is not None:
-            self._slot0._slotInput0.append(self)
+            if self not in self._slot0._slotInput0:
+                self._slot0._slotInput0.append(self)
 
     slot0 = property(getslot0, setslot0)
 

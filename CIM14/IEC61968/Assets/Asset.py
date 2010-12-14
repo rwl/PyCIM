@@ -221,7 +221,8 @@ class Asset(IdentifiedObject):
 
         self._Location = value
         if self._Location is not None:
-            self._Location._Assets.append(self)
+            if self not in self._Location._Assets:
+                self._Location._Assets.append(self)
 
     Location = property(getLocation, setLocation)
 
@@ -231,7 +232,7 @@ class Asset(IdentifiedObject):
 
     def setAssetFunctions(self, value):
         for x in self._AssetFunctions:
-            x._Asset = None
+            x.Asset = None
         for y in value:
             y._Asset = self
         self._AssetFunctions = value
@@ -240,13 +241,11 @@ class Asset(IdentifiedObject):
 
     def addAssetFunctions(self, *AssetFunctions):
         for obj in AssetFunctions:
-            obj._Asset = self
-            self._AssetFunctions.append(obj)
+            obj.Asset = self
 
     def removeAssetFunctions(self, *AssetFunctions):
         for obj in AssetFunctions:
-            obj._Asset = None
-            self._AssetFunctions.remove(obj)
+            obj.Asset = None
 
     def getMeasurements(self):
         
@@ -254,7 +253,7 @@ class Asset(IdentifiedObject):
 
     def setMeasurements(self, value):
         for x in self._Measurements:
-            x._Asset = None
+            x.Asset = None
         for y in value:
             y._Asset = self
         self._Measurements = value
@@ -263,13 +262,11 @@ class Asset(IdentifiedObject):
 
     def addMeasurements(self, *Measurements):
         for obj in Measurements:
-            obj._Asset = self
-            self._Measurements.append(obj)
+            obj.Asset = self
 
     def removeMeasurements(self, *Measurements):
         for obj in Measurements:
-            obj._Asset = None
-            self._Measurements.remove(obj)
+            obj.Asset = None
 
     def getAssetContainer(self):
         
@@ -282,7 +279,8 @@ class Asset(IdentifiedObject):
 
         self._AssetContainer = value
         if self._AssetContainer is not None:
-            self._AssetContainer._Assets.append(self)
+            if self not in self._AssetContainer._Assets:
+                self._AssetContainer._Assets.append(self)
 
     AssetContainer = property(getAssetContainer, setAssetContainer)
 

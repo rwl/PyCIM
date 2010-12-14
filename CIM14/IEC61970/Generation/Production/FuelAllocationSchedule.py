@@ -73,7 +73,8 @@ class FuelAllocationSchedule(Curve):
 
         self._FossilFuel = value
         if self._FossilFuel is not None:
-            self._FossilFuel._FuelAllocationSchedules.append(self)
+            if self not in self._FossilFuel._FuelAllocationSchedules:
+                self._FossilFuel._FuelAllocationSchedules.append(self)
 
     FossilFuel = property(getFossilFuel, setFossilFuel)
 
@@ -89,7 +90,8 @@ class FuelAllocationSchedule(Curve):
 
         self._ThermalGeneratingUnit = value
         if self._ThermalGeneratingUnit is not None:
-            self._ThermalGeneratingUnit._FuelAllocationSchedules.append(self)
+            if self not in self._ThermalGeneratingUnit._FuelAllocationSchedules:
+                self._ThermalGeneratingUnit._FuelAllocationSchedules.append(self)
 
     ThermalGeneratingUnit = property(getThermalGeneratingUnit, setThermalGeneratingUnit)
 

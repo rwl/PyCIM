@@ -57,7 +57,8 @@ class AltTieMeas(Element):
 
         self._AnalogValue = value
         if self._AnalogValue is not None:
-            self._AnalogValue._AltTieMeas.append(self)
+            if self not in self._AnalogValue._AltTieMeas:
+                self._AnalogValue._AltTieMeas.append(self)
 
     AnalogValue = property(getAnalogValue, setAnalogValue)
 
@@ -73,7 +74,8 @@ class AltTieMeas(Element):
 
         self._TieFlow = value
         if self._TieFlow is not None:
-            self._TieFlow._AltTieMeas.append(self)
+            if self not in self._TieFlow._AltTieMeas:
+                self._TieFlow._AltTieMeas.append(self)
 
     TieFlow = property(getTieFlow, setTieFlow)
 

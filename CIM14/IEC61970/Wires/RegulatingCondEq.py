@@ -48,7 +48,7 @@ class RegulatingCondEq(ConductingEquipment):
 
     def setControls(self, value):
         for x in self._Controls:
-            x._RegulatingCondEq = None
+            x.RegulatingCondEq = None
         for y in value:
             y._RegulatingCondEq = self
         self._Controls = value
@@ -57,13 +57,11 @@ class RegulatingCondEq(ConductingEquipment):
 
     def addControls(self, *Controls):
         for obj in Controls:
-            obj._RegulatingCondEq = self
-            self._Controls.append(obj)
+            obj.RegulatingCondEq = self
 
     def removeControls(self, *Controls):
         for obj in Controls:
-            obj._RegulatingCondEq = None
-            self._Controls.remove(obj)
+            obj.RegulatingCondEq = None
 
     def getRegulatingControl(self):
         """The regulating control scheme in which this equipment participates.
@@ -77,7 +75,8 @@ class RegulatingCondEq(ConductingEquipment):
 
         self._RegulatingControl = value
         if self._RegulatingControl is not None:
-            self._RegulatingControl._RegulatingCondEq.append(self)
+            if self not in self._RegulatingControl._RegulatingCondEq:
+                self._RegulatingControl._RegulatingCondEq.append(self)
 
     RegulatingControl = property(getRegulatingControl, setRegulatingControl)
 

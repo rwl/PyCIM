@@ -47,7 +47,7 @@ class BlockType(IdentifiedObject):
 
     def setslot0(self, value):
         for x in self._slot0:
-            x._blockType0 = None
+            x.blockType0 = None
         for y in value:
             y._blockType0 = self
         self._slot0 = value
@@ -56,13 +56,11 @@ class BlockType(IdentifiedObject):
 
     def addslot0(self, *slot0):
         for obj in slot0:
-            obj._blockType0 = self
-            self._slot0.append(obj)
+            obj.blockType0 = self
 
     def removeslot0(self, *slot0):
         for obj in slot0:
-            obj._blockType0 = None
-            self._slot0.remove(obj)
+            obj.blockType0 = None
 
     def getmetaBlock0(self):
         
@@ -70,7 +68,7 @@ class BlockType(IdentifiedObject):
 
     def setmetaBlock0(self, value):
         for x in self._metaBlock0:
-            x._blockType0 = None
+            x.blockType0 = None
         for y in value:
             y._blockType0 = self
         self._metaBlock0 = value
@@ -79,11 +77,9 @@ class BlockType(IdentifiedObject):
 
     def addmetaBlock0(self, *metaBlock0):
         for obj in metaBlock0:
-            obj._blockType0 = self
-            self._metaBlock0.append(obj)
+            obj.blockType0 = self
 
     def removemetaBlock0(self, *metaBlock0):
         for obj in metaBlock0:
-            obj._blockType0 = None
-            self._metaBlock0.remove(obj)
+            obj.blockType0 = None
 

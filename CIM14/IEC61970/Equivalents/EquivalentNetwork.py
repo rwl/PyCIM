@@ -44,7 +44,7 @@ class EquivalentNetwork(ConnectivityNodeContainer):
 
     def setEquivalentEquipments(self, value):
         for x in self._EquivalentEquipments:
-            x._EquivalentNetwork = None
+            x.EquivalentNetwork = None
         for y in value:
             y._EquivalentNetwork = self
         self._EquivalentEquipments = value
@@ -53,11 +53,9 @@ class EquivalentNetwork(ConnectivityNodeContainer):
 
     def addEquivalentEquipments(self, *EquivalentEquipments):
         for obj in EquivalentEquipments:
-            obj._EquivalentNetwork = self
-            self._EquivalentEquipments.append(obj)
+            obj.EquivalentNetwork = self
 
     def removeEquivalentEquipments(self, *EquivalentEquipments):
         for obj in EquivalentEquipments:
-            obj._EquivalentNetwork = None
-            self._EquivalentEquipments.remove(obj)
+            obj.EquivalentNetwork = None
 

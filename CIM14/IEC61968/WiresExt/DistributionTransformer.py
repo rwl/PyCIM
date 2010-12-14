@@ -56,7 +56,7 @@ class DistributionTransformer(Equipment):
 
     def setWindings(self, value):
         for x in self._Windings:
-            x._Transformer = None
+            x.Transformer = None
         for y in value:
             y._Transformer = self
         self._Windings = value
@@ -65,13 +65,11 @@ class DistributionTransformer(Equipment):
 
     def addWindings(self, *Windings):
         for obj in Windings:
-            obj._Transformer = self
-            self._Windings.append(obj)
+            obj.Transformer = self
 
     def removeWindings(self, *Windings):
         for obj in Windings:
-            obj._Transformer = None
-            self._Windings.remove(obj)
+            obj.Transformer = None
 
     def getServiceDeliveryPoints(self):
         """All service delivery points supplied by this transformer.
@@ -80,7 +78,7 @@ class DistributionTransformer(Equipment):
 
     def setServiceDeliveryPoints(self, value):
         for x in self._ServiceDeliveryPoints:
-            x._Transformer = None
+            x.Transformer = None
         for y in value:
             y._Transformer = self
         self._ServiceDeliveryPoints = value
@@ -89,13 +87,11 @@ class DistributionTransformer(Equipment):
 
     def addServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._Transformer = self
-            self._ServiceDeliveryPoints.append(obj)
+            obj.Transformer = self
 
     def removeServiceDeliveryPoints(self, *ServiceDeliveryPoints):
         for obj in ServiceDeliveryPoints:
-            obj._Transformer = None
-            self._ServiceDeliveryPoints.remove(obj)
+            obj.Transformer = None
 
     def getTransformerBank(self):
         """Bank this transformer belongs to.
@@ -109,7 +105,8 @@ class DistributionTransformer(Equipment):
 
         self._TransformerBank = value
         if self._TransformerBank is not None:
-            self._TransformerBank._Transformers.append(self)
+            if self not in self._TransformerBank._Transformers:
+                self._TransformerBank._Transformers.append(self)
 
     TransformerBank = property(getTransformerBank, setTransformerBank)
 
@@ -125,7 +122,8 @@ class DistributionTransformer(Equipment):
 
         self._TransformerInfo = value
         if self._TransformerInfo is not None:
-            self._TransformerInfo._Transformers.append(self)
+            if self not in self._TransformerInfo._Transformers:
+                self._TransformerInfo._Transformers.append(self)
 
     TransformerInfo = property(getTransformerInfo, setTransformerInfo)
 

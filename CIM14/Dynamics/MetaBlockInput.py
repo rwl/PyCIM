@@ -60,7 +60,7 @@ class MetaBlockInput(MetaBlockConnectable):
 
     def setblockInputReference0(self, value):
         for x in self._blockInputReference0:
-            x._metaBlockInput0 = None
+            x.metaBlockInput0 = None
         for y in value:
             y._metaBlockInput0 = self
         self._blockInputReference0 = value
@@ -69,13 +69,11 @@ class MetaBlockInput(MetaBlockConnectable):
 
     def addblockInputReference0(self, *blockInputReference0):
         for obj in blockInputReference0:
-            obj._metaBlockInput0 = self
-            self._blockInputReference0.append(obj)
+            obj.metaBlockInput0 = self
 
     def removeblockInputReference0(self, *blockInputReference0):
         for obj in blockInputReference0:
-            obj._metaBlockInput0 = None
-            self._blockInputReference0.remove(obj)
+            obj.metaBlockInput0 = None
 
     def getMemberOf_MetaBlock(self):
         """Inputs belong to a block.
@@ -89,7 +87,8 @@ class MetaBlockInput(MetaBlockConnectable):
 
         self._MemberOf_MetaBlock = value
         if self._MemberOf_MetaBlock is not None:
-            self._MemberOf_MetaBlock._MetaBlockInput.append(self)
+            if self not in self._MemberOf_MetaBlock._MetaBlockInput:
+                self._MemberOf_MetaBlock._MetaBlockInput.append(self)
 
     MemberOf_MetaBlock = property(getMemberOf_MetaBlock, setMemberOf_MetaBlock)
 
@@ -99,7 +98,7 @@ class MetaBlockInput(MetaBlockConnectable):
 
     def setblockUsageInputReference0(self, value):
         for x in self._blockUsageInputReference0:
-            x._metaBlockInput0 = None
+            x.metaBlockInput0 = None
         for y in value:
             y._metaBlockInput0 = self
         self._blockUsageInputReference0 = value
@@ -108,13 +107,11 @@ class MetaBlockInput(MetaBlockConnectable):
 
     def addblockUsageInputReference0(self, *blockUsageInputReference0):
         for obj in blockUsageInputReference0:
-            obj._metaBlockInput0 = self
-            self._blockUsageInputReference0.append(obj)
+            obj.metaBlockInput0 = self
 
     def removeblockUsageInputReference0(self, *blockUsageInputReference0):
         for obj in blockUsageInputReference0:
-            obj._metaBlockInput0 = None
-            self._blockUsageInputReference0.remove(obj)
+            obj.metaBlockInput0 = None
 
     def getblockInputType0(self):
         
@@ -127,7 +124,8 @@ class MetaBlockInput(MetaBlockConnectable):
 
         self._blockInputType0 = value
         if self._blockInputType0 is not None:
-            self._blockInputType0._metaBlockInput0.append(self)
+            if self not in self._blockInputType0._metaBlockInput0:
+                self._blockInputType0._metaBlockInput0.append(self)
 
     blockInputType0 = property(getblockInputType0, setblockInputType0)
 
@@ -138,7 +136,7 @@ class MetaBlockInput(MetaBlockConnectable):
 
     def settieToMeasurement0(self, value):
         for x in self._tieToMeasurement0:
-            x._metaBlockInput0 = None
+            x.metaBlockInput0 = None
         for y in value:
             y._metaBlockInput0 = self
         self._tieToMeasurement0 = value
@@ -147,11 +145,9 @@ class MetaBlockInput(MetaBlockConnectable):
 
     def addtieToMeasurement0(self, *tieToMeasurement0):
         for obj in tieToMeasurement0:
-            obj._metaBlockInput0 = self
-            self._tieToMeasurement0.append(obj)
+            obj.metaBlockInput0 = self
 
     def removetieToMeasurement0(self, *tieToMeasurement0):
         for obj in tieToMeasurement0:
-            obj._metaBlockInput0 = None
-            self._tieToMeasurement0.remove(obj)
+            obj.metaBlockInput0 = None
 

@@ -48,6 +48,7 @@ class SteamSendoutSchedule(RegularIntervalSchedule):
 
         self._CogenerationPlant = value
         if self._CogenerationPlant is not None:
+            self._CogenerationPlant.SteamSendoutSchedule = None
             self._CogenerationPlant._SteamSendoutSchedule = self
 
     CogenerationPlant = property(getCogenerationPlant, setCogenerationPlant)

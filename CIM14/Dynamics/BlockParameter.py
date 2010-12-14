@@ -64,7 +64,8 @@ class BlockParameter(IdentifiedObject):
 
         self._MetaBlockParameter = value
         if self._MetaBlockParameter is not None:
-            self._MetaBlockParameter._BlockParameter.append(self)
+            if self not in self._MetaBlockParameter._BlockParameter:
+                self._MetaBlockParameter._BlockParameter.append(self)
 
     MetaBlockParameter = property(getMetaBlockParameter, setMetaBlockParameter)
 
@@ -79,7 +80,8 @@ class BlockParameter(IdentifiedObject):
 
         self._MemberOf_MetaBlockReference = value
         if self._MemberOf_MetaBlockReference is not None:
-            self._MemberOf_MetaBlockReference._BlockParameter.append(self)
+            if self not in self._MemberOf_MetaBlockReference._BlockParameter:
+                self._MemberOf_MetaBlockReference._BlockParameter.append(self)
 
     MemberOf_MetaBlockReference = property(getMemberOf_MetaBlockReference, setMemberOf_MetaBlockReference)
 
@@ -94,7 +96,8 @@ class BlockParameter(IdentifiedObject):
 
         self._UserBlockParameter = value
         if self._UserBlockParameter is not None:
-            self._UserBlockParameter._BlockUsageParameter.append(self)
+            if self not in self._UserBlockParameter._BlockUsageParameter:
+                self._UserBlockParameter._BlockUsageParameter.append(self)
 
     UserBlockParameter = property(getUserBlockParameter, setUserBlockParameter)
 
@@ -109,7 +112,8 @@ class BlockParameter(IdentifiedObject):
 
         self._MemberOf_Block = value
         if self._MemberOf_Block is not None:
-            self._MemberOf_Block._BlockParameter.append(self)
+            if self not in self._MemberOf_Block._BlockParameter:
+                self._MemberOf_Block._BlockParameter.append(self)
 
     MemberOf_Block = property(getMemberOf_Block, setMemberOf_Block)
 

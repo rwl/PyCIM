@@ -51,7 +51,7 @@ class MetaBlockConOutput(IdentifiedObject):
 
     def setMetaBlockConSignal(self, value):
         for x in self._MetaBlockConSignal:
-            x._MetaBlockConOutput = None
+            x.MetaBlockConOutput = None
         for y in value:
             y._MetaBlockConOutput = self
         self._MetaBlockConSignal = value
@@ -60,13 +60,11 @@ class MetaBlockConOutput(IdentifiedObject):
 
     def addMetaBlockConSignal(self, *MetaBlockConSignal):
         for obj in MetaBlockConSignal:
-            obj._MetaBlockConOutput = self
-            self._MetaBlockConSignal.append(obj)
+            obj.MetaBlockConOutput = self
 
     def removeMetaBlockConSignal(self, *MetaBlockConSignal):
         for obj in MetaBlockConSignal:
-            obj._MetaBlockConOutput = None
-            self._MetaBlockConSignal.remove(obj)
+            obj.MetaBlockConOutput = None
 
     def getMemberOf_MetaBlockConnection(self):
         
@@ -79,7 +77,8 @@ class MetaBlockConOutput(IdentifiedObject):
 
         self._MemberOf_MetaBlockConnection = value
         if self._MemberOf_MetaBlockConnection is not None:
-            self._MemberOf_MetaBlockConnection._MetaBlockConOutput.append(self)
+            if self not in self._MemberOf_MetaBlockConnection._MetaBlockConOutput:
+                self._MemberOf_MetaBlockConnection._MetaBlockConOutput.append(self)
 
     MemberOf_MetaBlockConnection = property(getMemberOf_MetaBlockConnection, setMemberOf_MetaBlockConnection)
 
@@ -94,7 +93,8 @@ class MetaBlockConOutput(IdentifiedObject):
 
         self._Unit = value
         if self._Unit is not None:
-            self._Unit._MetaBlockConOutput.append(self)
+            if self not in self._Unit._MetaBlockConOutput:
+                self._Unit._MetaBlockConOutput.append(self)
 
     Unit = property(getUnit, setUnit)
 

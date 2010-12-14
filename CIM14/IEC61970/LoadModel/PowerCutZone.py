@@ -52,7 +52,7 @@ class PowerCutZone(PowerSystemResource):
 
     def setEnergyConsumers(self, value):
         for x in self._EnergyConsumers:
-            x._PowerCutZone = None
+            x.PowerCutZone = None
         for y in value:
             y._PowerCutZone = self
         self._EnergyConsumers = value
@@ -61,11 +61,9 @@ class PowerCutZone(PowerSystemResource):
 
     def addEnergyConsumers(self, *EnergyConsumers):
         for obj in EnergyConsumers:
-            obj._PowerCutZone = self
-            self._EnergyConsumers.append(obj)
+            obj.PowerCutZone = self
 
     def removeEnergyConsumers(self, *EnergyConsumers):
         for obj in EnergyConsumers:
-            obj._PowerCutZone = None
-            self._EnergyConsumers.remove(obj)
+            obj.PowerCutZone = None
 

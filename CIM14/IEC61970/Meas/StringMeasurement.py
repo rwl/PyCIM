@@ -44,7 +44,7 @@ class StringMeasurement(Measurement):
 
     def setStringMeasurementValues(self, value):
         for x in self._StringMeasurementValues:
-            x._StringMeasurement = None
+            x.StringMeasurement = None
         for y in value:
             y._StringMeasurement = self
         self._StringMeasurementValues = value
@@ -53,11 +53,9 @@ class StringMeasurement(Measurement):
 
     def addStringMeasurementValues(self, *StringMeasurementValues):
         for obj in StringMeasurementValues:
-            obj._StringMeasurement = self
-            self._StringMeasurementValues.append(obj)
+            obj.StringMeasurement = self
 
     def removeStringMeasurementValues(self, *StringMeasurementValues):
         for obj in StringMeasurementValues:
-            obj._StringMeasurement = None
-            self._StringMeasurementValues.remove(obj)
+            obj.StringMeasurement = None
 

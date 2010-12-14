@@ -48,7 +48,7 @@ class ConnectivityNodeContainer(PowerSystemResource):
 
     def setConnectivityNodes(self, value):
         for x in self._ConnectivityNodes:
-            x._ConnectivityNodeContainer = None
+            x.ConnectivityNodeContainer = None
         for y in value:
             y._ConnectivityNodeContainer = self
         self._ConnectivityNodes = value
@@ -57,13 +57,11 @@ class ConnectivityNodeContainer(PowerSystemResource):
 
     def addConnectivityNodes(self, *ConnectivityNodes):
         for obj in ConnectivityNodes:
-            obj._ConnectivityNodeContainer = self
-            self._ConnectivityNodes.append(obj)
+            obj.ConnectivityNodeContainer = self
 
     def removeConnectivityNodes(self, *ConnectivityNodes):
         for obj in ConnectivityNodes:
-            obj._ConnectivityNodeContainer = None
-            self._ConnectivityNodes.remove(obj)
+            obj.ConnectivityNodeContainer = None
 
     def getTopologicalNode(self):
         """The topological nodes which belong to this connectivity node container.
@@ -72,7 +70,7 @@ class ConnectivityNodeContainer(PowerSystemResource):
 
     def setTopologicalNode(self, value):
         for x in self._TopologicalNode:
-            x._ConnectivityNodeContainer = None
+            x.ConnectivityNodeContainer = None
         for y in value:
             y._ConnectivityNodeContainer = self
         self._TopologicalNode = value
@@ -81,11 +79,9 @@ class ConnectivityNodeContainer(PowerSystemResource):
 
     def addTopologicalNode(self, *TopologicalNode):
         for obj in TopologicalNode:
-            obj._ConnectivityNodeContainer = self
-            self._TopologicalNode.append(obj)
+            obj.ConnectivityNodeContainer = self
 
     def removeTopologicalNode(self, *TopologicalNode):
         for obj in TopologicalNode:
-            obj._ConnectivityNodeContainer = None
-            self._TopologicalNode.remove(obj)
+            obj.ConnectivityNodeContainer = None
 

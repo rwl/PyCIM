@@ -48,6 +48,7 @@ class PenstockLossCurve(Curve):
 
         self._HydroGeneratingUnit = value
         if self._HydroGeneratingUnit is not None:
+            self._HydroGeneratingUnit.PenstockLossCurve = None
             self._HydroGeneratingUnit._PenstockLossCurve = self
 
     HydroGeneratingUnit = property(getHydroGeneratingUnit, setHydroGeneratingUnit)

@@ -54,7 +54,8 @@ class SlotOutput(IdentifiedObject):
 
         self._slot0 = value
         if self._slot0 is not None:
-            self._slot0._slotOutput0.append(self)
+            if self not in self._slot0._slotOutput0:
+                self._slot0._slotOutput0.append(self)
 
     slot0 = property(getslot0, setslot0)
 
@@ -64,7 +65,7 @@ class SlotOutput(IdentifiedObject):
 
     def setslotConnection0(self, value):
         for x in self._slotConnection0:
-            x._slotOutput0 = None
+            x.slotOutput0 = None
         for y in value:
             y._slotOutput0 = self
         self._slotConnection0 = value
@@ -73,13 +74,11 @@ class SlotOutput(IdentifiedObject):
 
     def addslotConnection0(self, *slotConnection0):
         for obj in slotConnection0:
-            obj._slotOutput0 = self
-            self._slotConnection0.append(obj)
+            obj.slotOutput0 = self
 
     def removeslotConnection0(self, *slotConnection0):
         for obj in slotConnection0:
-            obj._slotOutput0 = None
-            self._slotConnection0.remove(obj)
+            obj.slotOutput0 = None
 
     def getblockOutputType0(self):
         
@@ -92,7 +91,8 @@ class SlotOutput(IdentifiedObject):
 
         self._blockOutputType0 = value
         if self._blockOutputType0 is not None:
-            self._blockOutputType0._slotOutput0.append(self)
+            if self not in self._blockOutputType0._slotOutput0:
+                self._blockOutputType0._slotOutput0.append(self)
 
     blockOutputType0 = property(getblockOutputType0, setblockOutputType0)
 

@@ -84,7 +84,7 @@ class EndDeviceGroup(IdentifiedObject):
 
     def setEndDeviceControls(self, value):
         for x in self._EndDeviceControls:
-            x._EndDeviceGroup = None
+            x.EndDeviceGroup = None
         for y in value:
             y._EndDeviceGroup = self
         self._EndDeviceControls = value
@@ -93,13 +93,11 @@ class EndDeviceGroup(IdentifiedObject):
 
     def addEndDeviceControls(self, *EndDeviceControls):
         for obj in EndDeviceControls:
-            obj._EndDeviceGroup = self
-            self._EndDeviceControls.append(obj)
+            obj.EndDeviceGroup = self
 
     def removeEndDeviceControls(self, *EndDeviceControls):
         for obj in EndDeviceControls:
-            obj._EndDeviceGroup = None
-            self._EndDeviceControls.remove(obj)
+            obj.EndDeviceGroup = None
 
     def getDemandResponseProgram(self):
         """Demand response program for this group of end devices.
@@ -113,7 +111,8 @@ class EndDeviceGroup(IdentifiedObject):
 
         self._DemandResponseProgram = value
         if self._DemandResponseProgram is not None:
-            self._DemandResponseProgram._EndDeviceGroups.append(self)
+            if self not in self._DemandResponseProgram._EndDeviceGroups:
+                self._DemandResponseProgram._EndDeviceGroups.append(self)
 
     DemandResponseProgram = property(getDemandResponseProgram, setDemandResponseProgram)
 

@@ -43,7 +43,7 @@ class UserBlockParameter(MetaBlockParameter):
 
     def setBlockUsageParameter(self, value):
         for x in self._BlockUsageParameter:
-            x._UserBlockParameter = None
+            x.UserBlockParameter = None
         for y in value:
             y._UserBlockParameter = self
         self._BlockUsageParameter = value
@@ -52,11 +52,9 @@ class UserBlockParameter(MetaBlockParameter):
 
     def addBlockUsageParameter(self, *BlockUsageParameter):
         for obj in BlockUsageParameter:
-            obj._UserBlockParameter = self
-            self._BlockUsageParameter.append(obj)
+            obj.UserBlockParameter = self
 
     def removeBlockUsageParameter(self, *BlockUsageParameter):
         for obj in BlockUsageParameter:
-            obj._UserBlockParameter = None
-            self._BlockUsageParameter.remove(obj)
+            obj.UserBlockParameter = None
 
