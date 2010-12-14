@@ -37,3 +37,8 @@ from CIM14.IEC61970.LoadModel.NonConformLoadSchedule import NonConformLoadSchedu
 from CIM14.IEC61970.LoadModel.DayType import DayType
 from CIM14.IEC61970.LoadModel.ConformLoadGroup import ConformLoadGroup
 
+class SeasonName(str):
+    """Name of season
+    Values are: fall, winter, summer, spring
+    """
+    pass

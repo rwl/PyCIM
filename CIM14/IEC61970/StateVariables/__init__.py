@@ -29,4 +29,3 @@ from CIM14.IEC61970.StateVariables.SvPowerFlow import SvPowerFlow
 from CIM14.IEC61970.StateVariables.SvStatus import SvStatus
 from CIM14.IEC61970.StateVariables.SvTapStep import SvTapStep
 from CIM14.IEC61970.StateVariables.SvInjection import SvInjection
-

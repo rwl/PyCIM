@@ -18,4 +18,3 @@
 nsPrefix = "cimInformative"
 nsURI = "http://iec.ch/TC57/2009/CIM-schema-cim14#Informative"
 
-

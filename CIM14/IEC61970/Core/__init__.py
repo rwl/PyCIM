@@ -50,3 +50,32 @@ from CIM14.IEC61970.Core.RegularTimePoint import RegularTimePoint
 from CIM14.IEC61970.Core.IrregularTimePoint import IrregularTimePoint
 from CIM14.IEC61970.Core.OperatingShare import OperatingShare
 
+class PhaseCode(str):
+    """Enumeration of phase identifiers.
+    Values are: A, AC, AN, ABCN, B, C, BN, CN, splitSecondary12N, ABC, splitSecondary2N, N, ABN, BC, BCN, AB, splitSecondary1N, ACN
+    """
+    pass
+
+class BreakerConfiguration(str):
+    """Switching arrangement for Bay.
+    Values are: breakerAndAHalf, singleBreaker, noBreaker, doubleBreaker
+    """
+    pass
+
+class CompanyType(str):
+    """Type of company.
+    Values are: municipal, pool, isPrivate
+    """
+    pass
+
+class CurveStyle(str):
+    """Style or shape of curve.
+    Values are: rampYValue, straightLineYValues, formula, constantYValue
+    """
+    pass
+
+class BusbarConfiguration(str):
+    """Busbar layout for Bay.
+    Values are: mainWithTransfer, ringBus, singleBus, doubleBus
+    """
+    pass

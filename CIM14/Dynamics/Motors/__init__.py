@@ -23,3 +23,8 @@ from CIM14.Dynamics.Motors.MotorSync import MotorSync
 from CIM14.Dynamics.Motors.MechLoad1 import MechLoad1
 from CIM14.Dynamics.Motors.MotorAsync import MotorAsync
 
+class SynchronousMotorType(str):
+    """Type of synchronous motor
+    Values are: salientPole, roundRotor
+    """
+    pass

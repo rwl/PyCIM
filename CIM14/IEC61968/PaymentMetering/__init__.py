@@ -47,3 +47,38 @@ from CIM14.IEC61968.PaymentMetering.Receipt import Receipt
 from CIM14.IEC61968.PaymentMetering.AuxiliaryAgreement import AuxiliaryAgreement
 from CIM14.IEC61968.PaymentMetering.AccountMovement import AccountMovement
 
+class ChequeKind(str):
+    """Kind of cheque.
+    Values are: other, postalOrder, bankOrder
+    """
+    pass
+
+class TransactionKind(str):
+    """Kind of transaction.
+    Values are: diversePayment, tokenSalePayment, serviceChargePayment, other, transactionReversal, taxChargePayment, meterConfigurationToken, accountPayment, tokenFreeIssue, tokenExchange, tokenCancellation, tokenGrant, auxiliaryChargePayment
+    """
+    pass
+
+class ChargeKind(str):
+    """Kind of charge.
+    Values are: demandCharge, other, auxiliaryCharge, taxCharge, consumptionCharge
+    """
+    pass
+
+class CreditKind(str):
+    """Kind of credit.
+    Values are: grantCredit, tokenCredit, reserveCredit, other, advanceCredit, lifelineCredit
+    """
+    pass
+
+class SupplierKind(str):
+    """Kind of supplier.
+    Values are: retailer, utility, other
+    """
+    pass
+
+class TenderKind(str):
+    """Kind of tender.
+    Values are: cash, unspecified, card, other, cheque
+    """
+    pass

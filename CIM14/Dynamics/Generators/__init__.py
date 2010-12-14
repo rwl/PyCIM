@@ -22,3 +22,18 @@ from CIM14.Dynamics.Generators.GenLoad import GenLoad
 from CIM14.Dynamics.Generators.GenEquiv import GenEquiv
 from CIM14.Dynamics.Generators.GenAsync import GenAsync
 
+class IfdBaseType(str):
+    """Values are: other, iffl, ifag, ifnl
+    """
+    pass
+
+class SynchronousGeneratorType(str):
+    """Type of synchronous generator as used in dynamic simulation applications
+    Values are: roundRotor, transient, typeF, typeJ, salientPole
+    """
+    pass
+
+class ParametersFormType(str):
+    """Values are: timeConstantReactance, equivalentCircuit
+    """
+    pass

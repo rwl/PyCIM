@@ -26,3 +26,8 @@ from CIM14.IEC61970.ControlArea.ControlArea import ControlArea
 from CIM14.IEC61970.ControlArea.TieFlow import TieFlow
 from CIM14.IEC61970.ControlArea.ControlAreaGeneratingUnit import ControlAreaGeneratingUnit
 
+class ControlAreaTypeKind(str):
+    """The type of control area.
+    Values are: Interchange, Forecast, AGC
+    """
+    pass

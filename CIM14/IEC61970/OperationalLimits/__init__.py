@@ -30,3 +30,8 @@ from CIM14.IEC61970.OperationalLimits.VoltageLimit import VoltageLimit
 from CIM14.IEC61970.OperationalLimits.ActivePowerLimit import ActivePowerLimit
 from CIM14.IEC61970.OperationalLimits.OperationalLimitType import OperationalLimitType
 
+class OperationalLimitDirectionKind(str):
+    """The direction of an operational limit.
+    Values are: low, absoluteValue, high
+    """
+    pass

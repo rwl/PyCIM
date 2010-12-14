@@ -25,3 +25,8 @@ from CIM14.IEC61970.Outage.ClearanceTagType import ClearanceTagType
 from CIM14.IEC61970.Outage.OutageSchedule import OutageSchedule
 from CIM14.IEC61970.Outage.SwitchingOperation import SwitchingOperation
 
+class SwitchState(str):
+    """Possible states for a switch.
+    Values are: open, close
+    """
+    pass

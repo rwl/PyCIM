@@ -48,3 +48,8 @@ from CIM14.IEC61970.Meas.Quality61850 import Quality61850
 from CIM14.IEC61970.Meas.MeasurementValueQuality import MeasurementValueQuality
 from CIM14.IEC61970.Meas.AccumulatorValue import AccumulatorValue
 
+class Validity(str):
+    """Validity for MeasurementValue.
+    Values are: QUESTIONABLE, INVALID, GOOD
+    """
+    pass

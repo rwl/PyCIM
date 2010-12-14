@@ -21,4 +21,3 @@ nsPrefix = "cimIEC61968"
 nsURI = "http://iec.ch/TC57/2009/CIM-schema-cim14#IEC61968"
 
 from CIM14.IEC61968.IEC61968CIMVersion import IEC61968CIMVersion
-

@@ -66,3 +66,72 @@ from CIM14.IEC61970.Wires.SwitchSchedule import SwitchSchedule
 from CIM14.IEC61970.Wires.Breaker import Breaker
 from CIM14.IEC61970.Wires.BusbarSection import BusbarSection
 
+class PhaseTapChangerKind(str):
+    """The construction type of the phase shifting tap changer.
+    Values are: asymmetrical, unknown, symmetrical
+    """
+    pass
+
+class RegulatingControlModeKind(str):
+    """The kind of regulation model.   For example regulating voltage, reactive power, active power, etc.
+    Values are: fixed, voltage, timeScheduled, currentFlow, admittance, powerFactor, activePower, reactivePower, temperature
+    """
+    pass
+
+class TapChangerKind(str):
+    """Transformer tap changer type. Indicates the capabilities of the tap changer independent of the operating mode.
+    Values are: voltageControl, phaseControl, fixed, voltageAndPhaseControl
+    """
+    pass
+
+class CoolantType(str):
+    """Method of cooling a machine.
+    Values are: air, hydrogenGas, water
+    """
+    pass
+
+class SynchronousMachineType(str):
+    """Synchronous machine type.
+    Values are: generator_or_condenser, generator, condenser
+    """
+    pass
+
+class WindingType(str):
+    """Winding type.
+    Values are: primary, quaternary, secondary, tertiary
+    """
+    pass
+
+class SVCControlMode(str):
+    """Static VAr Compensator control mode.
+    Values are: reactivePower, off, voltage
+    """
+    pass
+
+class WindingConnection(str):
+    """Winding connection type.
+    Values are: Yn, Y, D, I, Z, A, Zn
+    """
+    pass
+
+class TransformerControlMode(str):
+    """Control modes for a transformer.
+    Values are: volt, reactive
+    """
+    pass
+
+class SynchronousMachineOperatingMode(str):
+    """Synchronous machine operating mode.
+    Values are: condenser, generator
+    """
+    pass
+
+class CompositeSwitchType(str):
+    """An alphanumeric code that can be used as a reference to extar information such as the description of the interlocking scheme if any
+    """
+    pass
+
+class OperatingMode(str):
+    """Textual name for an operating mode
+    """
+    pass

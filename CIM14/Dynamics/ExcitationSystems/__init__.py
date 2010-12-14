@@ -53,4 +53,3 @@ from CIM14.Dynamics.ExcitationSystems.ExcELIN2 import ExcELIN2
 from CIM14.Dynamics.ExcitationSystems.ExcST4B import ExcST4B
 from CIM14.Dynamics.ExcitationSystems.ExcAC7B import ExcAC7B
 from CIM14.Dynamics.ExcitationSystems.ExcWT4E import ExcWT4E
-

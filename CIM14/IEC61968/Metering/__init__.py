@@ -42,3 +42,14 @@ from CIM14.IEC61968.Metering.SDPLocation import SDPLocation
 from CIM14.IEC61968.Metering.ReadingQuality import ReadingQuality
 from CIM14.IEC61968.Metering.IntervalBlock import IntervalBlock
 
+class ReadingKind(str):
+    """Kind of reading.
+    Values are: voltageAngle, current, time, powerFactor, voltage, frequency, power, other, energy, demand, volume, date, phaseAngle, pressure, currentAngle
+    """
+    pass
+
+class DemandKind(str):
+    """Kind of demand for dynamic meter configuration.
+    Values are: logarithmic, fixedBlock, rollingBlock
+    """
+    pass

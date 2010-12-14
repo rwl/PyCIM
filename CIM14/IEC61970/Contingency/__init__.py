@@ -24,3 +24,8 @@ from CIM14.IEC61970.Contingency.ContingencyElement import ContingencyElement
 from CIM14.IEC61970.Contingency.ContingencyEquipment import ContingencyEquipment
 from CIM14.IEC61970.Contingency.Contingency import Contingency
 
+class ContingencyEquipmentStatusKind(str):
+    """Indicates the state which the contingency equipment is to be in when the contingency is applied.
+    Values are: outOfService, inService
+    """
+    pass

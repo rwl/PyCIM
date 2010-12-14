@@ -20,4 +20,3 @@ nsURI = "http://iec.ch/TC57/2009/CIM-schema-cim14#InfCore"
 
 from CIM14.IEC61970.Informative.InfCore.ModelingAuthority import ModelingAuthority
 from CIM14.IEC61970.Informative.InfCore.ModelingAuthoritySet import ModelingAuthoritySet
-

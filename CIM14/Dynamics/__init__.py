@@ -66,3 +66,7 @@ from CIM14.Dynamics.MetaBlockConnectivity import MetaBlockConnectivity
 from CIM14.Dynamics.MetaBlockOutputReference import MetaBlockOutputReference
 from CIM14.Dynamics.BlockOutputType import BlockOutputType
 
+class BlockKind(str):
+    """Values are: powerSystemStabilizer, automaticVoltageControl, turbine, govenor, dotDotDot, energySource, exciter
+    """
+    pass

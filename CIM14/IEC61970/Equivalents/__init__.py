@@ -25,4 +25,3 @@ from CIM14.IEC61970.Equivalents.EquivalentShunt import EquivalentShunt
 from CIM14.IEC61970.Equivalents.EquivalentBranch import EquivalentBranch
 from CIM14.IEC61970.Equivalents.EquivalentInjection import EquivalentInjection
 from CIM14.IEC61970.Equivalents.EquivalentNetwork import EquivalentNetwork
-

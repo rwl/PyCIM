@@ -26,3 +26,14 @@ from CIM14.IEC61970.SCADA.RemoteUnit import RemoteUnit
 from CIM14.IEC61970.SCADA.CommunicationLink import CommunicationLink
 from CIM14.IEC61970.SCADA.RemoteSource import RemoteSource
 
+class RemoteUnitType(str):
+    """Type of remote unit.
+    Values are: IED, ControlCenter, RTU, SubstationControlSystem
+    """
+    pass
+
+class Source(str):
+    """Source gives information related to the origin of a value.
+    Values are: SUBSTITUTED, DEFAULTED, PROCESS
+    """
+    pass

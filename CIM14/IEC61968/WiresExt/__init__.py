@@ -29,4 +29,3 @@ from CIM14.IEC61968.WiresExt.WindingPiImpedance import WindingPiImpedance
 from CIM14.IEC61968.WiresExt.DistributionLineSegment import DistributionLineSegment
 from CIM14.IEC61968.WiresExt.DistributionTransformer import DistributionTransformer
 from CIM14.IEC61968.WiresExt.DistributionTransformerWinding import DistributionTransformerWinding
-

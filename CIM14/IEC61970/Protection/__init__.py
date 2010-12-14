@@ -26,4 +26,3 @@ from CIM14.IEC61970.Protection.CurrentRelay import CurrentRelay
 from CIM14.IEC61970.Protection.SurgeProtector import SurgeProtector
 from CIM14.IEC61970.Protection.FaultIndicator import FaultIndicator
 from CIM14.IEC61970.Protection.SynchrocheckRelay import SynchrocheckRelay
-

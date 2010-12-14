@@ -21,4 +21,3 @@ nsURI = "http://iec.ch/TC57/2009/CIM-schema-cim14#VoltageCompensator"
 from CIM14.Dynamics.VoltageCompensator.VoltageCompensator import VoltageCompensator
 from CIM14.Dynamics.VoltageCompensator.VcompCross import VcompCross
 from CIM14.Dynamics.VoltageCompensator.VcompIEEE import VcompIEEE
-

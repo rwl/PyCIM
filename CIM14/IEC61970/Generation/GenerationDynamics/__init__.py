@@ -34,3 +34,14 @@ from CIM14.IEC61970.Generation.GenerationDynamics.SteamTurbine import SteamTurbi
 from CIM14.IEC61970.Generation.GenerationDynamics.DrumBoiler import DrumBoiler
 from CIM14.IEC61970.Generation.GenerationDynamics.BWRSteamSupply import BWRSteamSupply
 
+class BoilerControlMode(str):
+    """Boiler control mode.
+    Values are: following, coordinated
+    """
+    pass
+
+class TurbineType(str):
+    """Type of turbine.
+    Values are: francis, pelton, kaplan
+    """
+    pass

@@ -22,4 +22,3 @@ nsURI = "http://iec.ch/TC57/2009/CIM-schema-cim14#Topology"
 
 from CIM14.IEC61970.Topology.TopologicalNode import TopologicalNode
 from CIM14.IEC61970.Topology.BusNameMarker import BusNameMarker
-

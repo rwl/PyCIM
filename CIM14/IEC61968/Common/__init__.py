@@ -38,4 +38,3 @@ from CIM14.IEC61968.Common.ElectronicAddress import ElectronicAddress
 from CIM14.IEC61968.Common.TelephoneNumber import TelephoneNumber
 from CIM14.IEC61968.Common.UserAttribute import UserAttribute
 from CIM14.IEC61968.Common.CoordinateSystem import CoordinateSystem
-

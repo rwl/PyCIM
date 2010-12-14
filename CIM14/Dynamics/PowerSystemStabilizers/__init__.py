@@ -31,3 +31,7 @@ from CIM14.Dynamics.PowerSystemStabilizers.PssSH import PssSH
 from CIM14.Dynamics.PowerSystemStabilizers.PssPTIST3 import PssPTIST3
 from CIM14.Dynamics.PowerSystemStabilizers.PssWSCC import PssWSCC
 
+class InputSignalCodeJ(str):
+    """Values are: 2, 4, 3, 5, 1, 6
+    """
+    pass

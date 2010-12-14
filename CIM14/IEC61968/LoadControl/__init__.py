@@ -22,4 +22,3 @@ nsURI = "http://iec.ch/TC57/2009/CIM-schema-cim14#LoadControl"
 
 from CIM14.IEC61968.LoadControl.RemoteConnectDisconnectInfo import RemoteConnectDisconnectInfo
 from CIM14.IEC61968.LoadControl.ConnectDisconnectFunction import ConnectDisconnectFunction
-

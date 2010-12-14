@@ -56,3 +56,85 @@ from CIM14.IEC61970.Generation.Production.ThermalGeneratingUnit import ThermalGe
 from CIM14.IEC61970.Generation.Production.TailbayLossCurve import TailbayLossCurve
 from CIM14.IEC61970.Generation.Production.HydroPowerPlant import HydroPowerPlant
 
+class HydroPlantType(str):
+    """The type of hydro power plant.
+    Values are: runOfRiver, minorStorage, majorStorage, pumpedStorage
+    """
+    pass
+
+class EmissionValueSource(str):
+    """The source of the emission value.
+    Values are: measured, calculated
+    """
+    pass
+
+class GeneratorControlMode(str):
+    """Unit control modes.
+    Values are: setpoint, pulse
+    """
+    pass
+
+class FuelType(str):
+    """Type of fuel.
+    Values are: lignite, coal, oil, gas
+    """
+    pass
+
+class GeneratorControlSource(str):
+    """The source of controls for a generating unit.
+    Values are: unavailable, onAGC, plantControl, offAGC
+    """
+    pass
+
+class HydroEnergyConversionKind(str):
+    """Specifies the capability of the hydro generating unit to convert energy as a generator or pump.
+    Values are: generator, pumpAndGenerator
+    """
+    pass
+
+class SpillwayGateType(str):
+    """Type of spillway gate.
+    """
+    pass
+
+class SurgeTankCode(str):
+    """Type (or absence) of surge tank that is associated with the hydro power plant.
+    """
+    pass
+
+class EmissionType(str):
+    """The type of emission
+    Values are: chlorine, carbonDioxide, hydrogenSulfide, nitrogenOxide, sulfurDioxide, carbonDisulfide
+    """
+    pass
+
+class GeneratorOperatingMode(str):
+    """Operating mode for secondary generator control.
+    Values are: fixed, EDC, manual, off, MRN, LFC, AGC, REG
+    """
+    pass
+
+class PenstockType(str):
+    """Type of hydro plant penstock.
+    """
+    pass
+
+class Emission(float):
+    """Quantity of emission per fuel heat content
+    """
+    pass
+
+class HeatRate(float):
+    """Heat generated, in energy pertime unit of elapsed time
+    """
+    pass
+
+class Classification(int):
+    """1..n, with 1 the most detailed, highest priority, etc.
+    """
+    pass
+
+class CostPerHeatUnit(float):
+    """Cost, in units of currency, per quantity of heat generated
+    """
+    pass

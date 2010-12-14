@@ -22,3 +22,8 @@ nsURI = "http://iec.ch/TC57/2009/CIM-schema-cim14#Work"
 
 from CIM14.IEC61968.Work.Work import Work
 
+class WorkKind(str):
+    """Kind of work.
+    Values are: construction, maintenance, reconnect, meter, service, disconnect, inspection, other
+    """
+    pass

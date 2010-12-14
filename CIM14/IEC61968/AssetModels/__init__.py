@@ -36,3 +36,50 @@ from CIM14.IEC61968.AssetModels.WindingInfo import WindingInfo
 from CIM14.IEC61968.AssetModels.ToWindingSpec import ToWindingSpec
 from CIM14.IEC61968.AssetModels.ConcentricNeutralCableInfo import ConcentricNeutralCableInfo
 
+class CorporateStandardKind(str):
+    """Kind of corporate standard.
+    Values are: other, standard, experimental, underEvaluation
+    """
+    pass
+
+class AssetModelUsageKind(str):
+    """Usage for an asset model.
+    Values are: streetlight, other, unknown, substation, distributionOverhead, customerSubstation, transmission, distributionUnderground
+    """
+    pass
+
+class ConductorMaterialKind(str):
+    """Kind of conductor material.
+    Values are: acsr, steel, aluminum, copper, other
+    """
+    pass
+
+class CableConstructionKind(str):
+    """Kind of cable construction.
+    Values are: sector, compressed, segmental, solid, stranded, compacted, other
+    """
+    pass
+
+class ConductorUsageKind(str):
+    """Kind of conductor usage.
+    Values are: distribution, secondary, transmission, other
+    """
+    pass
+
+class ConductorInsulationKind(str):
+    """Kind of conductor insulation.
+    Values are: crosslinkedPolyethylene, ozoneResistantRubber, highMolecularWeightPolyethylene, unbeltedPilc, treeRetardantCrosslinkedPolyethylene, butyl, rubber, asbestosAndVarnishedCambric, beltedPilc, varnishedDacronGlass, other, treeResistantHighMolecularWeightPolyethylene, lowCapacitanceRubber, varnishedCambricCloth, highPressureFluidFilled, ethylenePropyleneRubber, siliconRubber, oilPaper
+    """
+    pass
+
+class CableOuterJacketKind(str):
+    """Kind of cable outer jacket.
+    Values are: polyethylene, pvc, none, linearLowDensityPolyethylene, other, insulating, semiconducting
+    """
+    pass
+
+class CableShieldMaterialKind(str):
+    """Kind of cable shield material.
+    Values are: steel, lead, aluminum, other, copper
+    """
+    pass

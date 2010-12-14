@@ -27,3 +27,14 @@ from CIM14.IEC61968.Assets.AcceptanceTest import AcceptanceTest
 from CIM14.IEC61968.Assets.Seal import Seal
 from CIM14.IEC61968.Assets.ComMediaAsset import ComMediaAsset
 
+class SealKind(str):
+    """Kind of seal.
+    Values are: other, lead, steel, lock
+    """
+    pass
+
+class SealConditionKind(str):
+    """Kind of seal condition.
+    Values are: open, broken, missing, other, locked
+    """
+    pass

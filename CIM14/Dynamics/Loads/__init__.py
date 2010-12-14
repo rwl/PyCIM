@@ -27,3 +27,8 @@ from CIM14.Dynamics.Loads.LoadStaticBus import LoadStaticBus
 from CIM14.Dynamics.Loads.LoadStaticArea import LoadStaticArea
 from CIM14.Dynamics.Loads.LoadMotor import LoadMotor
 
+class StaticLoadType(str):
+    """Type of static load
+    Values are: ZIP1, exponential, ZIP2
+    """
+    pass
