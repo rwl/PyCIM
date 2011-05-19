@@ -12,9 +12,11 @@ setup(name="PyCIM",
       author="Richard Lincoln",
       author_email="r.w.lincoln@gmail.com",
       description="Python implementation of the Common Information Model.",
-      license="LGPL",
-      url="http://github.com/rwl/PyCIM",
+      license="MIT",
+      url="http://www.pycim.com/",
       include_package_data=False,
       packages=find_packages(),
       zip_safe=True,
       **kwds)
+
+# python setup.py sdist bdist_egg bdist_wininst bdist_msi upload
