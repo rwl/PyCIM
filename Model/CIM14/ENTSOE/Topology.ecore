@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Topology"
+    nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile"
+    nsPrefix="cim">
+  <eSubpackages name="ENTSOE" nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile/ENTSOE"
+      nsPrefix="entsoe">
+    <eSubpackages name="Topology" nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile/ENTSOE/Topology"
+        nsPrefix="topo">
+      <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="UUID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMTime" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="HH:mm:ss.SSSZ"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#time"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDateTime" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy-MM-dd'T'HH:mm:ss.SSSZ"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDuration" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="HH:mm:ss.SSS"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#duration"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGYear" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gYear"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDate" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy-MM-dd"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#date"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGMonthDay" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="dd"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gMonthDay"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGMonth" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="MM"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gMonth"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGDay" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="DD"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gDay"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGYearMonth" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="MM"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gYearMonth"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eSubpackages name="Core" nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile#Core"
+          nsPrefix="cimCore">
+        <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+          <details key="Documentation" value="Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it."/>
+        </eAnnotations>
+        <eClassifiers xsi:type="ecore:EClass" name="Terminal" eSuperTypes="#//ENTSOE/Topology/Core/IdentifiedObject">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="An electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called &quot;connectivity nodes&quot;."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="An electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called &quot;connectivity nodes&quot;."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="TopologicalNode"
+              lowerBound="1" eType="#//ENTSOE/Topology/Topology/TopologicalNode" eOpposite="#//ENTSOE/Topology/Topology/TopologicalNode/Terminal">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The topological node associated with the terminal.   This can be used as an alternative to the connectivity node path to topological node, thus making it unneccesary to model connedtivity nodes in some cases.   Note that the if connectivity nodes are in the model, this association would proably not be used."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The topological node associated with the terminal.   This can be used as an alternative to the connectivity node path to topological node, thus making it unneccesary to model connedtivity nodes in some cases.   Note that the if connectivity nodes are in the model, this association would proably not be used."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="connected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+              unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The connected status is related to a bus-branch model and the TopologicalNode-Terminal relation.  True implies the Terminal is connected to the related TopologicalNode and false implies it is not. &#xA;In a bus-branch model the connected status is used to tell if equipment is disconnected without having to change the connectivity described by the TopologicalNode-Terminal relation. A valid case is that ConductingEquipment can be connected in one end and open in the other. In particular for an ACLineSegment where the charging can be significant this is a relevant case."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The connected status is related to a bus-branch model and the TopologicalNode-Terminal relation.  True implies the Terminal is connected to the related TopologicalNode and false implies it is not. &#xA;In a bus-branch model the connected status is used to tell if equipment is disconnected without having to change the connectivity described by the TopologicalNode-Terminal relation. A valid case is that ConductingEquipment can be connected in one end and open in the other. In particular for an ACLineSegment where the charging can be significant this is a relevant case."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="IdentifiedObject" abstract="true"
+            eSuperTypes="#//ENTSOE/Topology/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="This is a root class to provide common naming attributes for all classes needing naming attributes"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="This is a root class to provide common naming attributes for all classes needing naming attributes"/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+              unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The name is a free text human readable name of the object. It may be non unique and may not correlate to a naming hierarchy."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+              unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="BaseVoltage" abstract="true" eSuperTypes="#//ENTSOE/Topology/Core/IdentifiedObject">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="Defines a nominal base voltage which is referenced in the system."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="Defines a nominal base voltage which is referenced in the system."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="TopologicalNode"
+              upperBound="-1" eType="#//ENTSOE/Topology/Topology/TopologicalNode"
+              eOpposite="#//ENTSOE/Topology/Topology/TopologicalNode/BaseVoltage">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The topological nodes at the base voltage."/>
+            </eAnnotations>
+            <eAnnotations source="http://langdale.com.au/2005/UML">
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The topological nodes at the base voltage."/>
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="ConnectivityNodeContainer" abstract="true"
+            eSuperTypes="#//ENTSOE/Topology/Core/IdentifiedObject">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="A base class for all objects that may contain ConnectivityNodes or TopologicalNodes."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="A base class for all objects that may contain ConnectivityNodes or TopologicalNodes."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="TopologicalNode"
+              upperBound="-1" eType="#//ENTSOE/Topology/Topology/TopologicalNode"
+              eOpposite="#//ENTSOE/Topology/Topology/TopologicalNode/ConnectivityNodeContainer">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The topological nodes which belong to this connectivity node container."/>
+            </eAnnotations>
+            <eAnnotations source="http://langdale.com.au/2005/UML">
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The topological nodes which belong to this connectivity node container."/>
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </eSubpackages>
+      <eSubpackages name="Topology" nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile#Topology"
+          nsPrefix="cimTopology">
+        <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+          <details key="Documentation" value="An extension to the Core Package that in association with the Terminal class models Connectivity, that is the physical definition of how equipment is connected together. In addition it models Topology, that is the logical definition of how equipment is connected via closed switches. The Topology definition is independent of the other electrical characteristics."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="An extension to the Core Package that in association with the Terminal class models Connectivity, that is the physical definition of how equipment is connected together. In addition it models Topology, that is the logical definition of how equipment is connected via closed switches. The Topology definition is independent of the other electrical characteristics."/>
+        </eAnnotations>
+        <eClassifiers xsi:type="ecore:EClass" name="TopologicalNode" eSuperTypes="#//ENTSOE/Topology/Core/IdentifiedObject">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="For a detailed substation model a TopologicalNode is a set of connectivity nodes that, in the current network state, are connected together through any type of closed switches, including  jumpers. Topological nodes changes as the current network state changes (i.e., switches, breakers, etc. change state).&#xA;For a planning model switch statuses are not used to form TopologicalNodes. Instead they are manually created or deleted in a model builder tool. TopologialNodes maintained this way are also called &quot;busses&quot;."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="For a detailed substation model a TopologicalNode is a set of connectivity nodes that, in the current network state, are connected together through any type of closed switches, including  jumpers. Topological nodes changes as the current network state changes (i.e., switches, breakers, etc. change state).&#xA;For a planning model switch statuses are not used to form TopologicalNodes. Instead they are manually created or deleted in a model builder tool. TopologialNodes maintained this way are also called &quot;busses&quot;."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="ConnectivityNodeContainer"
+              lowerBound="1" eType="#//ENTSOE/Topology/Core/ConnectivityNodeContainer"
+              eOpposite="#//ENTSOE/Topology/Core/ConnectivityNodeContainer/TopologicalNode">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The connectivity node container to which the toplogical node belongs."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The connectivity node container to which the toplogical node belongs."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="BaseVoltage" lowerBound="1"
+              eType="#//ENTSOE/Topology/Core/BaseVoltage" eOpposite="#//ENTSOE/Topology/Core/BaseVoltage/TopologicalNode">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The base voltage of the topologocial node."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The base voltage of the topologocial node."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="Terminal" upperBound="-1"
+              eType="#//ENTSOE/Topology/Core/Terminal" eOpposite="#//ENTSOE/Topology/Core/Terminal/TopologicalNode">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The terminals associated with the topological node.   This can be used as an alternative to the connectivity node path to terminal, thus making it unneccesary to model connedtivity nodes in some cases.   Note that the if connectivity nodes are in the model, this association would proably not be used."/>
+            </eAnnotations>
+            <eAnnotations source="http://langdale.com.au/2005/UML">
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The terminals associated with the topological node.   This can be used as an alternative to the connectivity node path to terminal, thus making it unneccesary to model connedtivity nodes in some cases.   Note that the if connectivity nodes are in the model, this association would proably not be used."/>
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </eSubpackages>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="CIM14"
+    nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile"
+    nsPrefix="cim">
+  <eSubpackages name="CPSM" nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile/CPSM"
+      nsPrefix="cpsm">
+    <eSubpackages name="StateVariables" nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile/CPSM/StateVariables"
+        nsPrefix="sv">
+      <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="UUID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="ApparentPower" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+          <details key="Documentation" value="Product of the RMS value of the voltage and the RMS value of the current"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Product of the RMS value of the voltage and the RMS value of the current"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Voltage" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+          <details key="Documentation" value="Electrical voltage."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Electrical voltage."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="ReactivePower" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+          <details key="Documentation" value="Product of RMS value of the voltage and the RMS value of the quadrature component of the current."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Product of RMS value of the voltage and the RMS value of the quadrature component of the current."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="AngleRadians" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+          <details key="Documentation" value="Phase angle in radians"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Phase angle in radians"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="ActivePower" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+          <details key="Documentation" value="Product of RMS value of the voltage and the RMS value of the in-phase component of the current"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Product of RMS value of the voltage and the RMS value of the in-phase component of the current"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMTime" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="HH:mm:ss.SSSZ"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#time"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDateTime" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy-MM-dd'T'HH:mm:ss.SSSZ"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDuration" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="HH:mm:ss.SSS"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#duration"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGYear" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gYear"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDate" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy-MM-dd"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#date"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGMonthDay" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="dd"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gMonthDay"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGMonth" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="MM"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gMonth"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGDay" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="DD"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gDay"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGYearMonth" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="MM"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gYearMonth"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eSubpackages name="Topology" nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile#Topology"
+          nsPrefix="cimTopology">
+        <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+          <details key="Documentation" value="An extension to the Core Package that in association with the Terminal class models Connectivity, that is the physical definition of how equipment is connected together. In addition it models Topology, that is the logical definition of how equipment is connected via closed switches. The Topology definition is independent of the other electrical characteristics."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="An extension to the Core Package that in association with the Terminal class models Connectivity, that is the physical definition of how equipment is connected together. In addition it models Topology, that is the logical definition of how equipment is connected via closed switches. The Topology definition is independent of the other electrical characteristics."/>
+        </eAnnotations>
+        <eClassifiers xsi:type="ecore:EClass" name="TopologicalNode" abstract="true"
+            eSuperTypes="#//CPSM/StateVariables/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="For a detailed substation model a TopologicalNode is a set of connectivity nodes that, in the current network state, are connected together through any type of closed switches, including  jumpers. Topological nodes changes as the current network state changes (i.e., switches, breakers, etc. change state).&#xA;For a planning model switch statuses are not used to form TopologicalNodes. Instead they are manually created or deleted in a model builder tool. TopologialNodes maintained this way are also called &quot;busses&quot;."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="For a detailed substation model a TopologicalNode is a set of connectivity nodes that, in the current network state, are connected together through any type of closed switches, including  jumpers. Topological nodes changes as the current network state changes (i.e., switches, breakers, etc. change state).&#xA;For a planning model switch statuses are not used to form TopologicalNodes. Instead they are manually created or deleted in a model builder tool. TopologialNodes maintained this way are also called &quot;busses&quot;."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="TopologicalIsland"
+              eType="#//CPSM/StateVariables/StateVariables/TopologicalIsland" eOpposite="#//CPSM/StateVariables/StateVariables/TopologicalIsland/TopologicalNodes">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="A topological node belongs to a topological island"/>
+            </eAnnotations>
+            <eAnnotations source="http://langdale.com.au/2005/UML">
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A topological node belongs to a topological island"/>
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="SvShortCircuit" eType="#//CPSM/StateVariables/StateVariables/SvShortCircuit"
+              eOpposite="#//CPSM/StateVariables/StateVariables/SvShortCircuit/TopologicalNode">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The short circuit state associated with the topological node."/>
+            </eAnnotations>
+            <eAnnotations source="http://langdale.com.au/2005/UML">
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The short circuit state associated with the topological node."/>
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="SvVoltage" eType="#//CPSM/StateVariables/StateVariables/SvVoltage"
+              eOpposite="#//CPSM/StateVariables/StateVariables/SvVoltage/TopologicalNode">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The state voltage associated with the topological node."/>
+            </eAnnotations>
+            <eAnnotations source="http://langdale.com.au/2005/UML">
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The state voltage associated with the topological node."/>
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="SvInjection" eType="#//CPSM/StateVariables/StateVariables/SvInjection"
+              eOpposite="#//CPSM/StateVariables/StateVariables/SvInjection/TopologicalNode">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The injection state associated with the topological node."/>
+            </eAnnotations>
+            <eAnnotations source="http://langdale.com.au/2005/UML">
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The injection state associated with the topological node."/>
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="AngleRef_TopologicalIsland"
+              eType="#//CPSM/StateVariables/StateVariables/TopologicalIsland" eOpposite="#//CPSM/StateVariables/StateVariables/TopologicalIsland/AngleRef_TopologicalNode">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The island for which the node is an angle reference.   Normally there is one angle reference node for each island."/>
+            </eAnnotations>
+            <eAnnotations source="http://langdale.com.au/2005/UML">
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The island for which the node is an angle reference.   Normally there is one angle reference node for each island."/>
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </eSubpackages>
+      <eSubpackages name="Core" nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile#Core"
+          nsPrefix="cimCore">
+        <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+          <details key="Documentation" value="Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it."/>
+        </eAnnotations>
+        <eClassifiers xsi:type="ecore:EClass" name="Terminal" abstract="true" eSuperTypes="#//CPSM/StateVariables/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="An electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called &quot;connectivity nodes&quot;."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="An electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called &quot;connectivity nodes&quot;."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="SvPowerFlow" eType="#//CPSM/StateVariables/StateVariables/SvPowerFlow"
+              eOpposite="#//CPSM/StateVariables/StateVariables/SvPowerFlow/Terminal">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The power flow state associated with the terminal."/>
+            </eAnnotations>
+            <eAnnotations source="http://langdale.com.au/2005/UML">
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The power flow state associated with the terminal."/>
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </eSubpackages>
+      <eSubpackages name="StateVariables" nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile#StateVariables"
+          nsPrefix="cimStateVariables">
+        <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+          <details key="Documentation" value="State variables for analysis solutions such as powerflow."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="State variables for analysis solutions such as powerflow."/>
+        </eAnnotations>
+        <eClassifiers xsi:type="ecore:EClass" name="SvTapStep" eSuperTypes="#//CPSM/StateVariables/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="State variable for transformer tap step.     This class is to be used for taps of LTC (load tap changing) transformers, not fixed tap transformers.  Normally a profile specifies only one of the attributes &quot;position&quot;or &quot;tapRatio&quot;."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="State variable for transformer tap step.     This class is to be used for taps of LTC (load tap changing) transformers, not fixed tap transformers.  Normally a profile specifies only one of the attributes &quot;position&quot;or &quot;tapRatio&quot;."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+              unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The integer tap position."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The integer tap position."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="TapChanger" lowerBound="1"
+              eType="#//CPSM/StateVariables/Wires/TapChanger" eOpposite="#//CPSM/StateVariables/Wires/TapChanger/SvTapStep">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The tap changer associated with the tap step state."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The tap changer associated with the tap step state."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="continuousPosition"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+              unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The floating point tap position."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The floating point tap position."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="SvInjection" eSuperTypes="#//CPSM/StateVariables/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="Injection state variable."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="Injection state variable."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="qNetInjection" eType="#//CPSM/StateVariables/ReactivePower"
+              unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The reactive power injected into the bus at this location. Positive sign means injection into the bus."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The reactive power injected into the bus at this location. Positive sign means injection into the bus."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="TopologicalNode"
+              lowerBound="1" eType="#//CPSM/StateVariables/Topology/TopologicalNode"
+              eOpposite="#//CPSM/StateVariables/Topology/TopologicalNode/SvInjection">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The topological node associated with the state injection."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The topological node associated with the state injection."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="pNetInjection" lowerBound="1"
+              eType="#//CPSM/StateVariables/ActivePower" unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The active power injected into the bus at this location.  Positive sign means injection into the bus."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The active power injected into the bus at this location.  Positive sign means injection into the bus."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="SvVoltage" eSuperTypes="#//CPSM/StateVariables/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="State variable for voltage."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="State variable for voltage."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" lowerBound="1"
+              eType="#//CPSM/StateVariables/AngleRadians" unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The voltage angle in radians of the topological node."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The voltage angle in radians of the topological node."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="v" lowerBound="1"
+              eType="#//CPSM/StateVariables/Voltage" unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The voltage magnitude of the topological node."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The voltage magnitude of the topological node."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="TopologicalNode"
+              lowerBound="1" eType="#//CPSM/StateVariables/Topology/TopologicalNode"
+              eOpposite="#//CPSM/StateVariables/Topology/TopologicalNode/SvVoltage">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The topological node associated with the voltage state."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The topological node associated with the voltage state."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="TopologicalIsland" eSuperTypes="#//CPSM/StateVariables/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="An electrically connected subset of the network. Topological islands can change as the current network state changes (i.e. switch or Terminal.connected status changes)."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="An electrically connected subset of the network. Topological islands can change as the current network state changes (i.e. switch or Terminal.connected status changes)."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="AngleRef_TopologicalNode"
+              lowerBound="1" eType="#//CPSM/StateVariables/Topology/TopologicalNode"
+              eOpposite="#//CPSM/StateVariables/Topology/TopologicalNode/AngleRef_TopologicalIsland">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The angle reference for the island.   Normally there is one TopologicalNode that is selected as the angle reference for each island.   Other reference schemes exist, so the association is optional."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The angle reference for the island.   Normally there is one TopologicalNode that is selected as the angle reference for each island.   Other reference schemes exist, so the association is optional."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="TopologicalNodes"
+              lowerBound="1" upperBound="-1" eType="#//CPSM/StateVariables/Topology/TopologicalNode"
+              eOpposite="#//CPSM/StateVariables/Topology/TopologicalNode/TopologicalIsland">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="A topological node belongs to a topological island"/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A topological node belongs to a topological island"/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="SvPowerFlow" eSuperTypes="#//CPSM/StateVariables/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="State variable for power flow."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="State variable for power flow."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="p" lowerBound="1"
+              eType="#//CPSM/StateVariables/ActivePower" unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The active power flow into the terminal."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The active power flow into the terminal."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="Terminal" lowerBound="1"
+              eType="#//CPSM/StateVariables/Core/Terminal" eOpposite="#//CPSM/StateVariables/Core/Terminal/SvPowerFlow">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The terminal associated with the power flow state."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The terminal associated with the power flow state."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="q" lowerBound="1"
+              eType="#//CPSM/StateVariables/ReactivePower" unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The reactive power flow into the terminal."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The reactive power flow into the terminal."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="SvShortCircuit" eSuperTypes="#//CPSM/StateVariables/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="State variable for short circuit."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="State variable for short circuit."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="sShortCircuit" lowerBound="1"
+              eType="#//CPSM/StateVariables/ApparentPower" unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The short circuit apparent power drawn at this node when faulted."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The short circuit apparent power drawn at this node when faulted."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="x0PerX" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+              unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The ratio of zero sequence reactance per positive sequence reactance."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The ratio of zero sequence reactance per positive sequence reactance."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="r0PerR" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+              unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The ratio of zero sequence resistance to positive sequence resistance."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The ratio of zero sequence resistance to positive sequence resistance."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="xPerR" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+              unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="Ratio of positive sequence reactance per postive sequence resistance."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Ratio of positive sequence reactance per postive sequence resistance."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="TopologicalNode"
+              lowerBound="1" eType="#//CPSM/StateVariables/Topology/TopologicalNode"
+              eOpposite="#//CPSM/StateVariables/Topology/TopologicalNode/SvShortCircuit">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The topological node associated with the short circuit state."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The topological node associated with the short circuit state."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="SvShuntCompensatorSections" eSuperTypes="#//CPSM/StateVariables/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="State variable for the number of sections in service for a shunt compensator."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="State variable for the number of sections in service for a shunt compensator."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="sections" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+              unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The number of sections in service."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The number of sections in service."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="ShuntCompensator"
+              lowerBound="1" eType="#//CPSM/StateVariables/Wires/ShuntCompensator"
+              eOpposite="#//CPSM/StateVariables/Wires/ShuntCompensator/SvShuntCompensatorSections">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The shunt compensator for which the state applies."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The shunt compensator for which the state applies."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="continuousSections"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+              unsettable="true">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The number of sections in service as a continous variable."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The number of sections in service as a continous variable."/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </eSubpackages>
+      <eSubpackages name="Wires" nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile#Wires"
+          nsPrefix="cimWires">
+        <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+          <details key="Documentation" value="An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow."/>
+        </eAnnotations>
+        <eClassifiers xsi:type="ecore:EClass" name="ShuntCompensator" abstract="true"
+            eSuperTypes="#//CPSM/StateVariables/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  A negative value for reactivePerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  A negative value for reactivePerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="SvShuntCompensatorSections"
+              eType="#//CPSM/StateVariables/StateVariables/SvShuntCompensatorSections"
+              eOpposite="#//CPSM/StateVariables/StateVariables/SvShuntCompensatorSections/ShuntCompensator">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The state for the number of shunt compensator sections in service."/>
+            </eAnnotations>
+            <eAnnotations source="http://langdale.com.au/2005/UML">
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The state for the number of shunt compensator sections in service."/>
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="TapChanger" abstract="true" eSuperTypes="#//CPSM/StateVariables/Element">
+          <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+            <details key="Documentation" value="Mechanism for changing transformer winding tap positions."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="Mechanism for changing transformer winding tap positions."/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="SvTapStep" eType="#//CPSM/StateVariables/StateVariables/SvTapStep"
+              eOpposite="#//CPSM/StateVariables/StateVariables/SvTapStep/TapChanger">
+            <eAnnotations source="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile">
+              <details key="Documentation" value="The tap step state associated with the tap changer."/>
+            </eAnnotations>
+            <eAnnotations source="http://langdale.com.au/2005/UML">
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The tap step state associated with the tap changer."/>
+              <details key="Profile documentation" value=""/>
+            </eAnnotations>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </eSubpackages>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

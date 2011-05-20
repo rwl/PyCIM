@@ -1,0 +1,1438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="CIM15"
+    nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15" nsPrefix="cim">
+  <eSubpackages name="CDPSM" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM"
+      nsPrefix="cdosm">
+    <eSubpackages name="Asset" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset"
+        nsPrefix="asset">
+      <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+        <details key="Documentation" value="The IEC 61968 subpackages of the CIM are developed, standardized and maintained by IEC TC57 Working Group 14: interfaces for distribution management (WG14).&#xA;Currently, normative parts of the model support the needs of information exchange defined in IEC 61968-9 and in IEC 61968-13."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="Documentation" value="The IEC 61968 subpackages of the CIM are developed, standardized and maintained by IEC TC57 Working Group 14: interfaces for distribution management (WG14).&#xA;Currently, normative parts of the model support the needs of information exchange defined in IEC 61968-9 and in IEC 61968-13."/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="UUID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Resistance" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="Resistance (real part of impedance)."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Resistance (real part of impedance)."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="ResistancePerLength" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="Resistance (real part of impedance) per unit of length."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Resistance (real part of impedance) per unit of length."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Temperature" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="Value of temperature in degrees Celsius."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Value of temperature in degrees Celsius."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="PerCent" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="Normally 0 - 100 on a defined base"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Normally 0 - 100 on a defined base"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Length" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="Unit of length."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Unit of length."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Voltage" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="Electrical voltage."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Electrical voltage."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CurrentFlow" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="Electrical current (positive flow is out of the ConductingEquipment into the ConnectivityNode)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Electrical current (positive flow is out of the ConductingEquipment into the ConnectivityNode)"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="ApparentPower" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="Product of the RMS value of the voltage and the RMS value of the current"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Product of the RMS value of the voltage and the RMS value of the current"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Displacement" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="Unit of displacement relative a reference position, hence can be negative."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Unit of displacement relative a reference position, hence can be negative."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="AngleDegrees" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="Measurement of angle in degrees"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Measurement of angle in degrees"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Frequency" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="Cycles per second"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Cycles per second"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMTime" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="HH:mm:ss.SSSZ"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#time"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDateTime" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy-MM-dd'T'HH:mm:ss.SSSZ"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDuration" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="HH:mm:ss.SSS"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#duration"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGYear" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gYear"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDate" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy-MM-dd"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#date"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGMonthDay" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="dd"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gMonthDay"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGMonth" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="MM"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gMonth"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGDay" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="DD"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gDay"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGYearMonth" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="MM"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gYearMonth"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eSubpackages name="IEC61970" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset#IEC61970"
+          nsPrefix="cimIEC61970">
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="The ControlArea package models area specifications which can be used for a variety of purposes.  The package as a whole models potentially overlapping control area specifications for the purpose of actual generation control, load forecast area load capture, or powerflow based analysis."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="The ControlArea package models area specifications which can be used for a variety of purposes.  The package as a whole models potentially overlapping control area specifications for the purpose of actual generation control, load forecast area load capture, or powerflow based analysis."/>
+        </eAnnotations>
+        <eSubpackages name="Wires" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset#Wires"
+            nsPrefix="cimWires">
+          <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+            <details key="Documentation" value="An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow."/>
+          </eAnnotations>
+          <eClassifiers xsi:type="ecore:EClass" name="PerLengthSequenceImpedance"
+              abstract="true" eSuperTypes="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Sequence impedance and admittance parameters per unit length, for transposed lines of 1, 2, or 3 phases. For 1-phase lines, define x=x0=xself. For 2-phase lines, define x=xs-xm and x0=xs+xm."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Sequence impedance and admittance parameters per unit length, for transposed lines of 1, 2, or 3 phases. For 1-phase lines, define x=x0=xself. For 2-phase lines, define x=xs-xm and x0=xs+xm."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="LineSegments" upperBound="-1"
+                eType="#//CDPSM/Asset/IEC61970/Wires/ACLineSegment" eOpposite="#//CDPSM/Asset/IEC61970/Wires/ACLineSegment/SequenceImpedance">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="All line segments described by this sequence impedance."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All line segments described by this sequence impedance."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="ACLineSegment" eSuperTypes="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.&#xA;For symmetrical, transposed 3ph lines, it is sufficient to use ACLineSegment attributes, which describe sequence impedances and admittances for the entire length of the segment.&#xA;If per lenght impedance data is available from a library of standard types, impedances and admittances can be calculated in one of the following ways:&#xA;- calculate electrical parameters from asset data, using associated ConductorInfo, with values then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate unbalanced electrical parameters from associated PerLengthPhaseImpedance, then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate transposed electrical parameters from associated PerLengthSequenceImpedance, then multiplied by Conductor.length to produce a sequence model."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.&#xA;For symmetrical, transposed 3ph lines, it is sufficient to use ACLineSegment attributes, which describe sequence impedances and admittances for the entire length of the segment.&#xA;If per lenght impedance data is available from a library of standard types, impedances and admittances can be calculated in one of the following ways:&#xA;- calculate electrical parameters from asset data, using associated ConductorInfo, with values then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate unbalanced electrical parameters from associated PerLengthPhaseImpedance, then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate transposed electrical parameters from associated PerLengthSequenceImpedance, then multiplied by Conductor.length to produce a sequence model."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="SequenceImpedance"
+                eType="#//CDPSM/Asset/IEC61970/Wires/PerLengthSequenceImpedance" eOpposite="#//CDPSM/Asset/IEC61970/Wires/PerLengthSequenceImpedance/LineSegments">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Sequence impedance of this line segment; used for balanced model."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Sequence impedance of this line segment; used for balanced model."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="ConductorInfo"
+                eType="#//CDPSM/Asset/IEC61968/AssetModels/ConductorInfo" eOpposite="#//CDPSM/Asset/IEC61968/AssetModels/ConductorInfo/LineSegments">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Conductor data for this line segment."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Conductor data for this line segment."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="PhaseImpedance"
+                eType="#//CDPSM/Asset/IEC61970/Wires/PerLengthPhaseImpedance" eOpposite="#//CDPSM/Asset/IEC61970/Wires/PerLengthPhaseImpedance/LineSegments">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Phase impedance of this line segment; used for unbalanced model."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Phase impedance of this line segment; used for unbalanced model."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerCoreAdmittance" abstract="true"
+              eSuperTypes="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject">
+            <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerEnd"
+                upperBound="-1" eType="#//CDPSM/Asset/IEC61970/Wires/TransformerEnd"
+                eOpposite="#//CDPSM/Asset/IEC61970/Wires/TransformerEnd/CoreAdmittance">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="All transformer ends having this core admittance."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All transformer ends having this core admittance."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerTank" eSuperTypes="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="An assembly of two or more coupled windings that transform electrical power between voltage levels. These windings are bound on a common core and place in the same tank. Transformer tank can be used to model both single-phase and 3-phase transformers."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="An assembly of two or more coupled windings that transform electrical power between voltage levels. These windings are bound on a common core and place in the same tank. Transformer tank can be used to model both single-phase and 3-phase transformers."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerTankInfo"
+                eType="#//CDPSM/Asset/IEC61968/AssetModels/TransformerTankInfo" eOpposite="#//CDPSM/Asset/IEC61968/AssetModels/TransformerTankInfo/TransformerTanks">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Transformer tank data."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Transformer tank data."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="WindingConnection">
+            <eLiterals name="Z"/>
+            <eLiterals name="A" value="1"/>
+            <eLiterals name="Yn" value="2"/>
+            <eLiterals name="Y" value="3"/>
+            <eLiterals name="Zn" value="4"/>
+            <eLiterals name="D" value="5"/>
+            <eLiterals name="I" value="6"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerTankEnd" eSuperTypes="#//CDPSM/Asset/IEC61970/Wires/TransformerEnd">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Transformer tank end represents an individual winding for unbalanced models or for transformer tanks connected into a bank (and bank is modelled with the PowerTransformer)."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Transformer tank end represents an individual winding for unbalanced models or for transformer tanks connected into a bank (and bank is modelled with the PowerTransformer)."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerStarImpedance" abstract="true"
+              eSuperTypes="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Transformer star impedance (Pi-model) that accurately reflects impedance for transformers with 2 or 3 windings. For transformers with 4 or more windings, you must use TransformerTank model and related classes.&#xA;For transmission networks use PowerTransformerEnd impedances (r, r0, x, x0, b, b0, g and g0)."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Transformer star impedance (Pi-model) that accurately reflects impedance for transformers with 2 or 3 windings. For transformers with 4 or more windings, you must use TransformerTank model and related classes.&#xA;For transmission networks use PowerTransformerEnd impedances (r, r0, x, x0, b, b0, g and g0)."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerEnd"
+                upperBound="-1" eType="#//CDPSM/Asset/IEC61970/Wires/TransformerEnd"
+                eOpposite="#//CDPSM/Asset/IEC61970/Wires/TransformerEnd/StarImpedance">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="All transformer ends having this star impedance."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All transformer ends having this star impedance."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="PerLengthPhaseImpedance" abstract="true"
+              eSuperTypes="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Impedance and admittance parameters per unit length for n-wire unbalanced lines, in matrix form."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Impedance and admittance parameters per unit length for n-wire unbalanced lines, in matrix form."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="LineSegments" upperBound="-1"
+                eType="#//CDPSM/Asset/IEC61970/Wires/ACLineSegment" eOpposite="#//CDPSM/Asset/IEC61970/Wires/ACLineSegment/PhaseImpedance">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="All line segments described by this phase impedance."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All line segments described by this phase impedance."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerEnd" abstract="true"
+              eSuperTypes="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="TransformerEnd is a conducting connection point of a power transformer. It corresponds to a physical transformer winding terminal.  In earlier CIM versions, the TransformerWinding class served a similar purpose. This successor TransformerEnd class is more flexible and has important differences with TransformerWinding."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="TransformerEnd is a conducting connection point of a power transformer. It corresponds to a physical transformer winding terminal.  In earlier CIM versions, the TransformerWinding class served a similar purpose. This successor TransformerEnd class is more flexible and has important differences with TransformerWinding."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="CoreAdmittance"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61970/Wires/TransformerCoreAdmittance"
+                eOpposite="#//CDPSM/Asset/IEC61970/Wires/TransformerCoreAdmittance/TransformerEnd">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Core admittance of this transformer end, representing magnetising current and core losses. The full values of the transformer should be supplied for one transformer end only."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Core admittance of this transformer end, representing magnetising current and core losses. The full values of the transformer should be supplied for one transformer end only."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerEndInfo"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61968/AssetModels/TransformerEndInfo"
+                eOpposite="#//CDPSM/Asset/IEC61968/AssetModels/TransformerEndInfo/TransformerEnd">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Data for this transformer end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Data for this transformer end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="StarImpedance"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61970/Wires/TransformerStarImpedance"
+                eOpposite="#//CDPSM/Asset/IEC61970/Wires/TransformerStarImpedance/TransformerEnd">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="(accurate for 2- or 3-winding transformers only) Pi-model impedances of this transformer end. By convention, for a two winding transformer, the full values of the transformer should be entered on the high voltage end (endNumber=1)."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="(accurate for 2- or 3-winding transformers only) Pi-model impedances of this transformer end. By convention, for a two winding transformer, the full values of the transformer should be entered on the high voltage end (endNumber=1)."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </eSubpackages>
+        <eSubpackages name="Core" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset#Core"
+            nsPrefix="cimCore">
+          <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+            <details key="Documentation" value="Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it."/>
+          </eAnnotations>
+          <eClassifiers xsi:type="ecore:EClass" name="NameType" abstract="true" eSuperTypes="#//CDPSM/Asset/Element">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName and aliasName as defined in CIM version 14. Their definitions from CIM14 are&#xA;The localName is a human readable name of the object. It is only used with objects organized in a naming hierarchy. localName: A free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.&#xA;aliasName: A free text alternate name typically used in tabular reports where the column width is limited."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName and aliasName as defined in CIM version 14. Their definitions from CIM14 are&#xA;The localName is a human readable name of the object. It is only used with objects organized in a naming hierarchy. localName: A free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.&#xA;aliasName: A free text alternate name typically used in tabular reports where the column width is limited."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="Names" upperBound="-1"
+                eType="#//CDPSM/Asset/IEC61970/Core/Name" eOpposite="#//CDPSM/Asset/IEC61970/Core/Name/NameType">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="All names of this type."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All names of this type."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IdentifiedObject" abstract="true"
+              eSuperTypes="#//CDPSM/Asset/Element">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="This is a root class to provide common identification for all classes needing identification and naming attributes"/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="This is a root class to provide common identification for all classes needing identification and naming attributes"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="The name is any free human readable and possibly non unique text naming the object."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The name is any free human readable and possibly non unique text naming the object."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="Names" upperBound="-1"
+                eType="#//CDPSM/Asset/IEC61970/Core/Name" eOpposite="#//CDPSM/Asset/IEC61970/Core/Name/IdentifiedObject">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="All names of this identified object."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All names of this identified object."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="aliasName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.&#xA;The attribute aliasName is put back because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.&#xA;This was decided at a joint WG13/14 meeting in Minneapolis 2010-10-06."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.&#xA;The attribute aliasName is put back because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.&#xA;This was decided at a joint WG13/14 meeting in Minneapolis 2010-10-06."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Name" eSuperTypes="#//CDPSM/Asset/Element">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b>not&lt;/b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b>not&lt;/b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="IdentifiedObject"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject"
+                eOpposite="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject/Names">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Identified object that this name designates."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Identified object that this name designates."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="NameType" lowerBound="1"
+                eType="#//CDPSM/Asset/IEC61970/Core/NameType" eOpposite="#//CDPSM/Asset/IEC61970/Core/NameType/Names">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Type of this name."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Type of this name."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Any free text that name the object."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Any free text that name the object."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </eSubpackages>
+      </eSubpackages>
+      <eSubpackages name="IEC61968" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset#IEC61968"
+          nsPrefix="cimIEC61968">
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+          <details key="Documentation" value="This package is an extension of the Metering package and contains the information classes that support specialised applications such as prepayment metering. These classes are generally associated with the collection and control of revenue from the customer for a delivered service."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="This package is an extension of the Metering package and contains the information classes that support specialised applications such as prepayment metering. These classes are generally associated with the collection and control of revenue from the customer for a delivered service."/>
+        </eAnnotations>
+        <eSubpackages name="AssetModels" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset#AssetModels"
+            nsPrefix="cimAssetModels">
+          <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+            <details key="Documentation" value="This package is an extension of Assets package and contains the core information classes that support asset management and different network and work planning applications with specialized AssetInfo subclasses. They hold attributes that can be referenced by not only Asset-s or AssetModel-s but also by ConductingEquipment-s."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="This package is an extension of Assets package and contains the core information classes that support asset management and different network and work planning applications with specialized AssetInfo subclasses. They hold attributes that can be referenced by not only Asset-s or AssetModel-s but also by ConductingEquipment-s."/>
+          </eAnnotations>
+          <eClassifiers xsi:type="ecore:EClass" name="ConductorInfo" eSuperTypes="#//CDPSM/Asset/IEC61968/Assets/AssetInfo">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Conductor data."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Conductor data."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="usage" lowerBound="1"
+                eType="#//CDPSM/Asset/IEC61968/AssetModels/ConductorUsageKind" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Usage of this conductor."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Usage of this conductor."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="insulationThickness"
+                lowerBound="1" eType="#//CDPSM/Asset/Length" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="(if insulated conductor) Thickness of the insulation."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="(if insulated conductor) Thickness of the insulation."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="WireArrangements"
+                upperBound="-1" eType="#//CDPSM/Asset/IEC61968/AssetModels/WireArrangement"
+                eOpposite="#//CDPSM/Asset/IEC61968/AssetModels/WireArrangement/ConductorInfo">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="All wire arrangements (single wires) that make this conductor."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All wire arrangements (single wires) that make this conductor."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="insulated" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="True if conductor is insulated."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="True if conductor is insulated."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="insulationMaterial"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61968/AssetModels/ConductorInsulationKind"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="(if insulated conductor) Material used for insulation."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="(if insulated conductor) Material used for insulation."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseCount" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Number of phases (including neutral) to be retained. Any wires beyond this number should be reduced into the earth return."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Number of phases (including neutral) to be retained. Any wires beyond this number should be reduced into the earth return."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="LineSegments" upperBound="-1"
+                eType="#//CDPSM/Asset/IEC61970/Wires/ACLineSegment" eOpposite="#//CDPSM/Asset/IEC61970/Wires/ACLineSegment/ConductorInfo">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="All line segments described by this conductor data."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All line segments described by this conductor data."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="ConductorMaterialKind">
+            <eLiterals name="aluminum"/>
+            <eLiterals name="copper" value="1"/>
+            <eLiterals name="other" value="2"/>
+            <eLiterals name="steel" value="3"/>
+            <eLiterals name="acsr" value="4"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="CableOuterJacketKind">
+            <eLiterals name="pvc"/>
+            <eLiterals name="linearLowDensityPolyethylene" value="1"/>
+            <eLiterals name="none" value="2"/>
+            <eLiterals name="insulating" value="3"/>
+            <eLiterals name="other" value="4"/>
+            <eLiterals name="polyethylene" value="5"/>
+            <eLiterals name="semiconducting" value="6"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="WireArrangement" eSuperTypes="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Identification, spacing and configuration of the wires of a conductor, with reference to their type."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Identification, spacing and configuration of the wires of a conductor, with reference to their type."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="WireType" lowerBound="1"
+                eType="#//CDPSM/Asset/IEC61968/AssetModels/WireType" eOpposite="#//CDPSM/Asset/IEC61968/AssetModels/WireType/WireArrangements">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Wire type used for this wire arrangement."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Wire type used for this wire arrangement."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="ConductorInfo"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61968/AssetModels/ConductorInfo"
+                eOpposite="#//CDPSM/Asset/IEC61968/AssetModels/ConductorInfo/WireArrangements">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Conductor data this wire arrangement belongs to."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Conductor data this wire arrangement belongs to."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="mountingPointY"
+                lowerBound="1" eType="#//CDPSM/Asset/Displacement" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Height above ground of the first wire."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Height above ground of the first wire."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Position number on the structure corresponding to this wire. For example, use 1..3 for phases and 4 for the neutral on a 3-phase structure. The individual phase assignments matter; for example, ABC will produce a different set of unbalanced line parameters, by phase, than BAC."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Position number on the structure corresponding to this wire. For example, use 1..3 for phases and 4 for the neutral on a 3-phase structure. The individual phase assignments matter; for example, ABC will produce a different set of unbalanced line parameters, by phase, than BAC."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="mountingPointX"
+                lowerBound="1" eType="#//CDPSM/Asset/Displacement" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Signed horizontal distance from the first wire to a common reference point."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Signed horizontal distance from the first wire to a common reference point."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="ConductorUsageKind">
+            <eLiterals name="secondary"/>
+            <eLiterals name="other" value="1"/>
+            <eLiterals name="distribution" value="2"/>
+            <eLiterals name="transmission" value="3"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="WireType" eSuperTypes="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Wire conductor (per IEEE specs). A specific type of wire or combination of wires, not insulated from each other, suitable for carrying electrical current."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Wire conductor (per IEEE specs). A specific type of wire or combination of wires, not insulated from each other, suitable for carrying electrical current."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="rDC20" eType="#//CDPSM/Asset/ResistancePerLength"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="DC resistance per unit length of the conductor at 20 °C."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="DC resistance per unit length of the conductor at 20 °C."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="coreRadius" eType="#//CDPSM/Asset/Length"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="(if there is a different core material) Radius of the central core."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="(if there is a different core material) Radius of the central core."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="rAC75" eType="#//CDPSM/Asset/ResistancePerLength"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 75 °C."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 75 °C."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="material" eType="#//CDPSM/Asset/IEC61968/AssetModels/ConductorMaterialKind"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Wire material."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Wire material."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="WireArrangements"
+                upperBound="-1" eType="#//CDPSM/Asset/IEC61968/AssetModels/WireArrangement"
+                eOpposite="#//CDPSM/Asset/IEC61968/AssetModels/WireArrangement/WireType">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="All wire arrangements using this wire type."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All wire arrangements using this wire type."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedCurrent" lowerBound="1"
+                eType="#//CDPSM/Asset/CurrentFlow" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Current carrying capacity of the wire under stated thermal conditions."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Current carrying capacity of the wire under stated thermal conditions."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="strandCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Number of strands in the wire."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Number of strands in the wire."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="rAC25" eType="#//CDPSM/Asset/ResistancePerLength"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 25 °C."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 25 °C."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="rAC50" eType="#//CDPSM/Asset/ResistancePerLength"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 50 °C."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 50 °C."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="radius" eType="#//CDPSM/Asset/Length"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Outside radius of the wire."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Outside radius of the wire."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="gmr" eType="#//CDPSM/Asset/Length"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Geometric mean radius. If we replace the conductor by a thin walled tube of radius GMR, then its reactance is identical to the reactance of the actual conductor."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Geometric mean radius. If we replace the conductor by a thin walled tube of radius GMR, then its reactance is identical to the reactance of the actual conductor."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="coreStrandCount"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="(if used) Number of strands in the steel core."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="(if used) Number of strands in the steel core."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="sizeDescription"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Describes the wire guage or cross section (e.g., 4/0, #2, 336.5)."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Describes the wire guage or cross section (e.g., 4/0, #2, 336.5)."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="CableConstructionKind">
+            <eLiterals name="sector"/>
+            <eLiterals name="other" value="1"/>
+            <eLiterals name="solid" value="2"/>
+            <eLiterals name="compacted" value="3"/>
+            <eLiterals name="stranded" value="4"/>
+            <eLiterals name="segmental" value="5"/>
+            <eLiterals name="compressed" value="6"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="EndDeviceInfo" eSuperTypes="#//CDPSM/Asset/IEC61968/Assets/AssetInfo">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="End device data."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="End device data."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedCurrent" lowerBound="1"
+                eType="#//CDPSM/Asset/CurrentFlow" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Rated current."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Rated current."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedVoltage" lowerBound="1"
+                eType="#//CDPSM/Asset/Voltage" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Rated voltage."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Rated voltage."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseCount" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Number of potential phases the end device supports, typically 0, 1 or 3."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Number of potential phases the end device supports, typically 0, 1 or 3."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="OverheadConductorInfo" eSuperTypes="#//CDPSM/Asset/IEC61968/AssetModels/ConductorInfo">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Overhead conductor data."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Overhead conductor data."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="neutralInsulationThickness"
+                lowerBound="1" eType="#//CDPSM/Asset/Length" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="(if applicable) Insulation thickness of the neutral conductor."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="(if applicable) Insulation thickness of the neutral conductor."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseConductorSpacing"
+                lowerBound="1" eType="#//CDPSM/Asset/Length" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Distance between conductor strands in a symmetrical bundle."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Distance between conductor strands in a symmetrical bundle."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseConductorCount"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Number of conductor strands in the symmetrical bundle (1-12)."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Number of conductor strands in the symmetrical bundle (1-12)."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TapChangerInfo" eSuperTypes="#//CDPSM/Asset/IEC61968/Assets/AssetInfo">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Tap changer data."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Tap changer data."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowStep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Lowest possible tap step position, retard from neutral."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Lowest possible tap step position, retard from neutral."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" eType="#//CDPSM/Asset/Frequency"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Frequency at which the ratings apply."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Frequency at which the ratings apply."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ptRatio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Built-in voltage transducer ratio."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Built-in voltage transducer ratio."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedApparentPower"
+                eType="#//CDPSM/Asset/ApparentPower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Rated apparent power."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Rated apparent power."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepVoltageIncrement"
+                eType="#//CDPSM/Asset/PerCent" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Tap step increment, in per cent of rated voltage, per step position."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Tap step increment, in per cent of rated voltage, per step position."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ctRatio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Built-in current transducer ratio."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Built-in current transducer ratio."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedVoltage" eType="#//CDPSM/Asset/Voltage"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Rated voltage."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Rated voltage."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="neutralStep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="The neutral tap step position for the winding."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The neutral tap step position for the winding."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedCurrent" eType="#//CDPSM/Asset/CurrentFlow"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Rated current."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Rated current."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ctRating" eType="#//CDPSM/Asset/CurrentFlow"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Built-in current transformer primary rating."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Built-in current transformer primary rating."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="highStep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Highest possible tap step position, advance from neutral."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Highest possible tap step position, advance from neutral."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepPhaseIncrement"
+                eType="#//CDPSM/Asset/AngleDegrees" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Phase shift per step position."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Phase shift per step position."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="neutralU" eType="#//CDPSM/Asset/Voltage"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Voltage at which the winding operates at the neutral tap setting."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Voltage at which the winding operates at the neutral tap setting."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTcul" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Whether this tap changer has under load tap changing capabilities."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Whether this tap changer has under load tap changing capabilities."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerTankInfo" eSuperTypes="#//CDPSM/Asset/IEC61968/Assets/AssetInfo">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Set of transformer tank data, from an equipment library."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Set of transformer tank data, from an equipment library."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="PowerTransformerInfo"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61968/AssetModels/PowerTransformerInfo"
+                eOpposite="#//CDPSM/Asset/IEC61968/AssetModels/PowerTransformerInfo/TransformerTankInfo">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Power transformer data that this tank description is part of."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Power transformer data that this tank description is part of."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerEndInfos"
+                upperBound="-1" eType="#//CDPSM/Asset/IEC61968/AssetModels/TransformerEndInfo"
+                eOpposite="#//CDPSM/Asset/IEC61968/AssetModels/TransformerEndInfo/TransformerTankInfo">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Data for all the ends described by this transformer tank data."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Data for all the ends described by this transformer tank data."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerTanks"
+                upperBound="-1" eType="#//CDPSM/Asset/IEC61970/Wires/TransformerTank"
+                eOpposite="#//CDPSM/Asset/IEC61970/Wires/TransformerTank/TransformerTankInfo">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="All transformer tanks that can be described with this transformer tank data."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All transformer tanks that can be described with this transformer tank data."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="CableInfo" eSuperTypes="#//CDPSM/Asset/IEC61968/AssetModels/ConductorInfo">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Cable data."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Cable data."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="diameterOverJacket"
+                lowerBound="1" eType="#//CDPSM/Asset/Length" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Diameter over the outermost jacketing layer."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Diameter over the outermost jacketing layer."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="constructionKind"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61968/AssetModels/CableConstructionKind"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Kind of construction of this cable."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Kind of construction of this cable."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="shieldMaterial"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61968/AssetModels/CableShieldMaterialKind"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Material of the shield."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Material of the shield."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="outerJacketKind"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61968/AssetModels/CableOuterJacketKind"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Kind of outer jacket of this cable."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Kind of outer jacket of this cable."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStrandFill" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="True if wire strands are extruded in a way to fill the voids in the cable."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="True if wire strands are extruded in a way to fill the voids in the cable."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="diameterOverInsulation"
+                lowerBound="1" eType="#//CDPSM/Asset/Length" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Diameter over the insulating layer, excluding outer screen."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Diameter over the insulating layer, excluding outer screen."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="diameterOverScreen"
+                lowerBound="1" eType="#//CDPSM/Asset/Length" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Diameter over the outer screen; should be the shield's inside diameter.."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Diameter over the outer screen; should be the shield's inside diameter.."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheathAsNeutral"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="True if sheath / shield is used as a neutral (i.e., bonded)."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="True if sheath / shield is used as a neutral (i.e., bonded)."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="nominalTemperature"
+                lowerBound="1" eType="#//CDPSM/Asset/Temperature" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Maximum nominal design operating temperature."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Maximum nominal design operating temperature."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="diameterOverCore"
+                lowerBound="1" eType="#//CDPSM/Asset/Length" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Diameter over the core, including any semi-con screen; should be the insulating layer's inside diameter."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Diameter over the core, including any semi-con screen; should be the insulating layer's inside diameter."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="ConductorInsulationKind">
+            <eLiterals name="treeRetardantCrosslinkedPolyethylene"/>
+            <eLiterals name="butyl" value="1"/>
+            <eLiterals name="highPressureFluidFilled" value="2"/>
+            <eLiterals name="other" value="3"/>
+            <eLiterals name="varnishedCambricCloth" value="4"/>
+            <eLiterals name="siliconRubber" value="5"/>
+            <eLiterals name="beltedPilc" value="6"/>
+            <eLiterals name="crosslinkedPolyethylene" value="7"/>
+            <eLiterals name="oilPaper" value="8"/>
+            <eLiterals name="lowCapacitanceRubber" value="9"/>
+            <eLiterals name="asbestosAndVarnishedCambric" value="10"/>
+            <eLiterals name="treeResistantHighMolecularWeightPolyethylene" value="11"/>
+            <eLiterals name="unbeltedPilc" value="12"/>
+            <eLiterals name="ozoneResistantRubber" value="13"/>
+            <eLiterals name="ethylenePropyleneRubber" value="14"/>
+            <eLiterals name="highMolecularWeightPolyethylene" value="15"/>
+            <eLiterals name="varnishedDacronGlass" value="16"/>
+            <eLiterals name="rubber" value="17"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="ConcentricNeutralCableInfo"
+              eSuperTypes="#//CDPSM/Asset/IEC61968/AssetModels/CableInfo">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Concentric neutral cable data."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Concentric neutral cable data."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="diameterOverNeutral"
+                lowerBound="1" eType="#//CDPSM/Asset/Length" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Diameter over the concentric neutral strands."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Diameter over the concentric neutral strands."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="neutralStrandCount"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Number of concentric neutral strands."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Number of concentric neutral strands."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TapeShieldCableInfo" eSuperTypes="#//CDPSM/Asset/IEC61968/AssetModels/CableInfo">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Tape shield cable data."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Tape shield cable data."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="tapeLap" lowerBound="1"
+                eType="#//CDPSM/Asset/PerCent" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Percentage of the tape shield width that overlaps in each wrap, typically 10% to 25%."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Percentage of the tape shield width that overlaps in each wrap, typically 10% to 25%."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="tapeThickness"
+                lowerBound="1" eType="#//CDPSM/Asset/Length" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Thickness of the tape shield, before wrapping."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Thickness of the tape shield, before wrapping."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerEndInfo" eSuperTypes="#//CDPSM/Asset/IEC61968/Assets/AssetInfo">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Transformer end data."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Transformer end data."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedU" lowerBound="1"
+                eType="#//CDPSM/Asset/Voltage" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="endNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Number for this transformer end, corresponding to the end's order in the PowerTransformer.vectorGroup attribute. Highest voltage winding should be 1."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Number for this transformer end, corresponding to the end's order in the PowerTransformer.vectorGroup attribute. Highest voltage winding should be 1."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseAngleClock"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Winding phase angle where 360 degrees are represented with clock hours, so the valid values are {0, ..., 11}. For example, to express winding code 'Dyn11', set attributes as follows: 'connectionKind' = Yn and 'phaseAngleClock' = 11."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Winding phase angle where 360 degrees are represented with clock hours, so the valid values are {0, ..., 11}. For example, to express winding code 'Dyn11', set attributes as follows: 'connectionKind' = Yn and 'phaseAngleClock' = 11."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerTankInfo"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61968/AssetModels/TransformerTankInfo"
+                eOpposite="#//CDPSM/Asset/IEC61968/AssetModels/TransformerTankInfo/TransformerEndInfos">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Transformer tank data that this end description is part of."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Transformer tank data that this end description is part of."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="emergencyS" eType="#//CDPSM/Asset/ApparentPower"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Apparent power that the winding can carry under emergency conditions (also called long-term emergency power)."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Apparent power that the winding can carry under emergency conditions (also called long-term emergency power)."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedS" lowerBound="1"
+                eType="#//CDPSM/Asset/ApparentPower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Normal apparent power rating."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Normal apparent power rating."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortTermS" lowerBound="1"
+                eType="#//CDPSM/Asset/ApparentPower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Apparent power that this winding can carry for a short period of time (in emergency)."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Apparent power that this winding can carry for a short period of time (in emergency)."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" eType="#//CDPSM/Asset/Resistance"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="DC resistance."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="DC resistance."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="insulationU" eType="#//CDPSM/Asset/Voltage"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Basic insulation level voltage rating."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Basic insulation level voltage rating."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectionKind"
+                lowerBound="1" eType="#//CDPSM/Asset/IEC61970/Wires/WindingConnection"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Kind of connection."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Kind of connection."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerEnd"
+                upperBound="-1" eType="#//CDPSM/Asset/IEC61970/Wires/TransformerEnd"
+                eOpposite="#//CDPSM/Asset/IEC61970/Wires/TransformerEnd/TransformerEndInfo">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="All transformer ends described by this end data."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All transformer ends described by this end data."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="CableShieldMaterialKind">
+            <eLiterals name="lead"/>
+            <eLiterals name="aluminum" value="1"/>
+            <eLiterals name="other" value="2"/>
+            <eLiterals name="copper" value="3"/>
+            <eLiterals name="steel" value="4"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="PowerTransformerInfo" eSuperTypes="#//CDPSM/Asset/IEC61968/Assets/AssetInfo">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Set of power transformer data, from an equipment library."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Set of power transformer data, from an equipment library."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerTankInfo"
+                lowerBound="1" upperBound="-1" eType="#//CDPSM/Asset/IEC61968/AssetModels/TransformerTankInfo"
+                eOpposite="#//CDPSM/Asset/IEC61968/AssetModels/TransformerTankInfo/PowerTransformerInfo">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+                <details key="Documentation" value="Data for all the tanks described by this power transformer data."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Data for all the tanks described by this power transformer data."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </eSubpackages>
+        <eSubpackages name="Assets" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset#Assets"
+            nsPrefix="cimAssets">
+          <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+            <details key="Documentation" value="This package contains the core information classes that support asset management applications that deal with the physical and lifecycle aspects of various network resources (as opposed to power system resource models defined in IEC61970::Wires package, which support network applications)."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="This package contains the core information classes that support asset management applications that deal with the physical and lifecycle aspects of various network resources (as opposed to power system resource models defined in IEC61970::Wires package, which support network applications)."/>
+          </eAnnotations>
+          <eClassifiers xsi:type="ecore:EClass" name="AssetInfo" abstract="true" eSuperTypes="#//CDPSM/Asset/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
+              <details key="Documentation" value="Set of attributes of an asset, representing typical data-sheet information of a physical device, that can be instantiated and shared in different data exchange contexts:&#xA;- as attributes of an asset instance (installed or in stock)&#xA;- as attributes of an asset model (product by a manufacturer)&#xA;- as attributes of a type asset (generic type of an asset as used in designs/extension planning)."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Set of attributes of an asset, representing typical data-sheet information of a physical device, that can be instantiated and shared in different data exchange contexts:&#xA;- as attributes of an asset instance (installed or in stock)&#xA;- as attributes of an asset model (product by a manufacturer)&#xA;- as attributes of a type asset (generic type of an asset as used in designs/extension planning)."/>
+            </eAnnotations>
+          </eClassifiers>
+        </eSubpackages>
+      </eSubpackages>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

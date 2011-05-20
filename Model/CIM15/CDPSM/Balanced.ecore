@@ -1,0 +1,1562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="CIM15"
+    nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15" nsPrefix="cim">
+  <eSubpackages name="CDPSM" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM"
+      nsPrefix="cdpsm">
+    <eSubpackages name="Balanced" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced"
+        nsPrefix="balanced">
+      <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+        <details key="Documentation" value="The IEC 61968 subpackages of the CIM are developed, standardized and maintained by IEC TC57 Working Group 14: interfaces for distribution management (WG14).&#xA;Currently, normative parts of the model support the needs of information exchange defined in IEC 61968-9 and in IEC 61968-13."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="Documentation" value="The IEC 61968 subpackages of the CIM are developed, standardized and maintained by IEC TC57 Working Group 14: interfaces for distribution management (WG14).&#xA;Currently, normative parts of the model support the needs of information exchange defined in IEC 61968-9 and in IEC 61968-13."/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="UUID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Resistance" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Resistance (real part of impedance)."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Resistance (real part of impedance)."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Reactance" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Reactance (imaginary part of impedance), at rated frequency."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Reactance (imaginary part of impedance), at rated frequency."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="PerCent" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Normally 0 - 100 on a defined base"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Normally 0 - 100 on a defined base"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Voltage" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Electrical voltage."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Electrical voltage."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Conductance" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Factor by which voltage must be multiplied to give corresponding power lost from a circuit. Real part of admittance."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Factor by which voltage must be multiplied to give corresponding power lost from a circuit. Real part of admittance."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="AngleDegrees" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Measurement of angle in degrees"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Measurement of angle in degrees"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="VoltagePerReactivePower" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Voltage variation with reactive power"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Voltage variation with reactive power"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="AngleRadians" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Phase angle in radians"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Phase angle in radians"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="ActivePower" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Product of RMS value of the voltage and the RMS value of the in-phase component of the current"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Product of RMS value of the voltage and the RMS value of the in-phase component of the current"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="ApparentPower" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Product of the RMS value of the voltage and the RMS value of the current"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Product of the RMS value of the voltage and the RMS value of the current"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CurrentFlow" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Electrical current (positive flow is out of the ConductingEquipment into the ConnectivityNode)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Electrical current (positive flow is out of the ConductingEquipment into the ConnectivityNode)"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Susceptance" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Imaginary part of admittance."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Imaginary part of admittance."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="ReactivePower" instanceClassName="float">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
+        </eAnnotations>
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="Product of RMS value of the voltage and the RMS value of the quadrature component of the current."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="Product of RMS value of the voltage and the RMS value of the quadrature component of the current."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMTime" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="HH:mm:ss.SSSZ"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#time"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDateTime" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy-MM-dd'T'HH:mm:ss.SSSZ"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDuration" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="HH:mm:ss.SSS"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#duration"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGYear" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gYear"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDate" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy-MM-dd"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#date"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGMonthDay" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="dd"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gMonthDay"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGMonth" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="MM"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gMonth"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGDay" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="DD"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gDay"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGYearMonth" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="MM"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gYearMonth"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eSubpackages name="IEC61970" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced#IEC61970"
+          nsPrefix="cimIEC61970">
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+          <details key="Documentation" value="The ControlArea package models area specifications which can be used for a variety of purposes.  The package as a whole models potentially overlapping control area specifications for the purpose of actual generation control, load forecast area load capture, or powerflow based analysis."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="The ControlArea package models area specifications which can be used for a variety of purposes.  The package as a whole models potentially overlapping control area specifications for the purpose of actual generation control, load forecast area load capture, or powerflow based analysis."/>
+        </eAnnotations>
+        <eSubpackages name="Wires" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced#Wires"
+            nsPrefix="cimWires">
+          <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+            <details key="Documentation" value="An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow."/>
+          </eAnnotations>
+          <eClassifiers xsi:type="ecore:EClass" name="PhaseTapChangerLinear" eSuperTypes="#//CDPSM/Balanced/IEC61970/Wires/PhaseTapChanger">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="PhaseTapChangerLinear describes a linear relation between the tap step and the phase angle difference across the transformer. This is a mathematical model that is an approximation of a real phase tap changer."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="PhaseTapChangerLinear describes a linear relation between the tap step and the phase angle difference across the transformer. This is a mathematical model that is an approximation of a real phase tap changer."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepPhaseShiftIncrement"
+                lowerBound="1" eType="#//CDPSM/Balanced/AngleDegrees" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer).&#xA;The actual phase shift increment might be more accurately computed from the symmetrical or asymmetrical models or a tap step table lookup if those are available."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer).&#xA;The actual phase shift increment might be more accurately computed from the symmetrical or asymmetrical models or a tap step table lookup if those are available."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="EnergyConsumer" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="Generic user of energy - a  point of consumption on the power system model"/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Generic user of energy - a  point of consumption on the power system model"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="LoadResponse" eType="#//CDPSM/Balanced/IEC61970/LoadModel/LoadResponseCharacteristic"
+                eOpposite="#//CDPSM/Balanced/IEC61970/LoadModel/LoadResponseCharacteristic/EnergyConsumer">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The load response characteristic of this load."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The load response characteristic of this load."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="customerCount"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Number of individual customers represented by this Demand"/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Number of individual customers represented by this Demand"/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pfixedPct" eType="#//CDPSM/Balanced/PerCent"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Fixed active power as per cent of load group fixed active power. Load sign convention is used, i.e. positive sign means flow out from a node."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Fixed active power as per cent of load group fixed active power. Load sign convention is used, i.e. positive sign means flow out from a node."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="qfixedPct" eType="#//CDPSM/Balanced/PerCent"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Fixed reactive power as per cent of load group fixed reactive power. Load sign convention is used, i.e. positive sign means flow out from a node."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Fixed reactive power as per cent of load group fixed reactive power. Load sign convention is used, i.e. positive sign means flow out from a node."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="qfixed" lowerBound="1"
+                eType="#//CDPSM/Balanced/ReactivePower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Reactive power of the load that is a fixed quantity. Load sign convention is used, i.e. positive sign means flow out from a node."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Reactive power of the load that is a fixed quantity. Load sign convention is used, i.e. positive sign means flow out from a node."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pfixed" lowerBound="1"
+                eType="#//CDPSM/Balanced/ActivePower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Active power of the load that is a fixed quantity. Load sign convention is used, i.e. positive sign means flow out from a node."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Active power of the load that is a fixed quantity. Load sign convention is used, i.e. positive sign means flow out from a node."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="WindingType">
+            <eLiterals name="tertiary"/>
+            <eLiterals name="primary" value="1"/>
+            <eLiterals name="secondary" value="2"/>
+            <eLiterals name="quaternary" value="3"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="SynchronousMachineType">
+            <eLiterals name="condenser"/>
+            <eLiterals name="generator_or_condenser" value="1"/>
+            <eLiterals name="generator" value="2"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="ACLineSegment" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.&#xA;For symmetrical, transposed 3ph lines, it is sufficient to use ACLineSegment attributes, which describe sequence impedances and admittances for the entire length of the segment.&#xA;If per lenght impedance data is available from a library of standard types, impedances and admittances can be calculated in one of the following ways:&#xA;- calculate electrical parameters from asset data, using associated ConductorInfo, with values then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate unbalanced electrical parameters from associated PerLengthPhaseImpedance, then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate transposed electrical parameters from associated PerLengthSequenceImpedance, then multiplied by Conductor.length to produce a sequence model."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.&#xA;For symmetrical, transposed 3ph lines, it is sufficient to use ACLineSegment attributes, which describe sequence impedances and admittances for the entire length of the segment.&#xA;If per lenght impedance data is available from a library of standard types, impedances and admittances can be calculated in one of the following ways:&#xA;- calculate electrical parameters from asset data, using associated ConductorInfo, with values then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate unbalanced electrical parameters from associated PerLengthPhaseImpedance, then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate transposed electrical parameters from associated PerLengthSequenceImpedance, then multiplied by Conductor.length to produce a sequence model."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="x0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Reactance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence series reactance of the entire line section."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence series reactance of the entire line section."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="bch" lowerBound="1"
+                eType="#//CDPSM/Balanced/Susceptance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="b0ch" lowerBound="1"
+                eType="#//CDPSM/Balanced/Susceptance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" lowerBound="1"
+                eType="#//CDPSM/Balanced/Resistance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Positive sequence series resistance of the entire line section."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Positive sequence series resistance of the entire line section."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="r0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Resistance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence series resistance of the entire line section."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence series resistance of the entire line section."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1"
+                eType="#//CDPSM/Balanced/Reactance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Positive sequence series reactance of the entire line section."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Positive sequence series reactance of the entire line section."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerCoreAdmittance" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="g0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Conductance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence magnetizing branch conductance."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence magnetizing branch conductance."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerEnd"
+                upperBound="-1" eType="#//CDPSM/Balanced/IEC61970/Wires/TransformerEnd"
+                eOpposite="#//CDPSM/Balanced/IEC61970/Wires/TransformerEnd/CoreAdmittance">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="All transformer ends having this core admittance."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All transformer ends having this core admittance."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="g" lowerBound="1"
+                eType="#//CDPSM/Balanced/Conductance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Magnetizing branch conductance (G mag)."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Magnetizing branch conductance (G mag)."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="b" lowerBound="1"
+                eType="#//CDPSM/Balanced/Susceptance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Magnetizing branch susceptance (B mag).  The value can be positive or negative."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Magnetizing branch susceptance (B mag).  The value can be positive or negative."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="b0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Susceptance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence magnetizing branch susceptance."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence magnetizing branch susceptance."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="SynchronousMachine" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="An electromechanical device that operates synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="An electromechanical device that operates synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="GeneratingUnit"
+                lowerBound="1" eType="#//CDPSM/Balanced/IEC61970/Generation/Production/GeneratingUnit"
+                eOpposite="#//CDPSM/Balanced/IEC61970/Generation/Production/GeneratingUnit/SynchronousMachines">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="A synchronous machine may operate as a generator and as such becomes a member of a generating unit"/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="A synchronous machine may operate as a generator and as such becomes a member of a generating unit"/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="operatingMode"
+                lowerBound="1" eType="#//CDPSM/Balanced/IEC61970/Wires/SynchronousMachineOperatingMode"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Current mode of operation."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Current mode of operation."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxQ" lowerBound="1"
+                eType="#//CDPSM/Balanced/ReactivePower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Maximum reactive power limit. This is the maximum (nameplate) limit for the unit."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Maximum reactive power limit. This is the maximum (nameplate) limit for the unit."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseQ" lowerBound="1"
+                eType="#//CDPSM/Balanced/ReactivePower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Default base reactive power value. This value represents the initial reactive power that can be used by any application function."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Default base reactive power value. This value represents the initial reactive power that can be used by any application function."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="minQ" lowerBound="1"
+                eType="#//CDPSM/Balanced/ReactivePower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Minimum reactive power limit for the unit."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Minimum reactive power limit for the unit."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
+                eType="#//CDPSM/Balanced/IEC61970/Wires/SynchronousMachineType" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Modes that this synchronous machine can operate in."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Modes that this synchronous machine can operate in."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="PhaseTapChangerKind">
+            <eLiterals name="unknown"/>
+            <eLiterals name="asymmetrical" value="1"/>
+            <eLiterals name="symmetrical" value="2"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="SynchronousMachineOperatingMode">
+            <eLiterals name="condenser"/>
+            <eLiterals name="generator" value="1"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="PowerTransformerEnd" eSuperTypes="#//CDPSM/Balanced/IEC61970/Wires/TransformerEnd">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="A PowerTransformerEnd is associated with each Terminal of a PowerTransformer.&#xA;The impdedance values r, r0, x, and x0 of a PowerTransformerEnd represents a star equivalentas follows&#xA;1) for a two Terminal PowerTransformer the high voltage PowerTransformerEnd has non zero values on r, r0, x, and x0 while the low voltage PowerTransformerEnd has zero values for r, r0, x, and x0.&#xA;2) for a three Terminal PowerTransformer the three PowerTransformerEnds represents a star equivalent with each leg in the star represented by r, r0, x, and x0 values.&#xA;3) for a PowerTransformer with more than three Terminals the PowerTransformerEnd impedance values cannot be used. Instead use the TransformerMeshImpedance or split the transformer into multiple PowerTransformers."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A PowerTransformerEnd is associated with each Terminal of a PowerTransformer.&#xA;The impdedance values r, r0, x, and x0 of a PowerTransformerEnd represents a star equivalentas follows&#xA;1) for a two Terminal PowerTransformer the high voltage PowerTransformerEnd has non zero values on r, r0, x, and x0 while the low voltage PowerTransformerEnd has zero values for r, r0, x, and x0.&#xA;2) for a three Terminal PowerTransformer the three PowerTransformerEnds represents a star equivalent with each leg in the star represented by r, r0, x, and x0 values.&#xA;3) for a PowerTransformer with more than three Terminals the PowerTransformerEnd impedance values cannot be used. Instead use the TransformerMeshImpedance or split the transformer into multiple PowerTransformers."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="g0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Conductance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence magnetizing branch conductance (star-model)."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence magnetizing branch conductance (star-model)."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedS" lowerBound="1"
+                eType="#//CDPSM/Balanced/ApparentPower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Normal apparent power rating."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Normal apparent power rating."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="b0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Susceptance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence magnetizing branch susceptance."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence magnetizing branch susceptance."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="r0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Resistance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence series resistance (star-model) of the transformer end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence series resistance (star-model) of the transformer end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectionKind"
+                lowerBound="1" eType="#//CDPSM/Balanced/IEC61970/Wires/WindingConnection"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Kind of connection."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Kind of connection."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="b" lowerBound="1"
+                eType="#//CDPSM/Balanced/Susceptance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Magnetizing branch susceptance (B mag).  The value can be positive or negative."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Magnetizing branch susceptance (B mag).  The value can be positive or negative."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" lowerBound="1"
+                eType="#//CDPSM/Balanced/Resistance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Resistance (star-model) of the transformer end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Resistance (star-model) of the transformer end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedU" lowerBound="1"
+                eType="#//CDPSM/Balanced/Voltage" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="x0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Reactance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence series reactance of the transformer end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence series reactance of the transformer end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1"
+                eType="#//CDPSM/Balanced/Reactance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Positive sequence series reactance (star-model) of the transformer end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Positive sequence series reactance (star-model) of the transformer end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="g" lowerBound="1"
+                eType="#//CDPSM/Balanced/Conductance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Magnetizing branch conductance (G mag)."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Magnetizing branch conductance (G mag)."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="PhaseTapChangerAsymetrical"
+              eSuperTypes="#//CDPSM/Balanced/IEC61970/Wires/PhaseTapChangerNonLinear">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="In a PhaseTapChangerAsymetrical tranformer the difference voltage vector adds to the primary side voltage. The angle between the primary side voltage and the difference voltage is named the winding connection angle. The phase shift, &amp;alpha;, depends on both the difference voltage magnitude, &amp;Delta;U, and the winding connection angle."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="In a PhaseTapChangerAsymetrical tranformer the difference voltage vector adds to the primary side voltage. The angle between the primary side voltage and the difference voltage is named the winding connection angle. The phase shift, &amp;alpha;, depends on both the difference voltage magnitude, &amp;Delta;U, and the winding connection angle."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="windingConnectionAngle"
+                lowerBound="1" eType="#//CDPSM/Balanced/AngleDegrees" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The phase angle between the in-phase winding and the out-of -phase winding used for creating phase shift.   It is only possible to have a symmemtrical transformer if this angle is 90 degrees."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The phase angle between the in-phase winding and the out-of -phase winding used for creating phase shift.   It is only possible to have a symmemtrical transformer if this angle is 90 degrees."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerMeshImpedance" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="Transformer mesh impedance (Delta-model) between transformer ends.&#xA;The typical case is that TransformerMeshImpedance describe the impedance between two TransformerEnds pare wise, i.e. the cardinalities at both TranformerEnd associations are 1. But in cases where two or more TransformerEnds are operated connected together the cardinality at the ToTransfomerEnd role is larger than 1."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Transformer mesh impedance (Delta-model) between transformer ends.&#xA;The typical case is that TransformerMeshImpedance describe the impedance between two TransformerEnds pare wise, i.e. the cardinalities at both TranformerEnd associations are 1. But in cases where two or more TransformerEnds are operated connected together the cardinality at the ToTransfomerEnd role is larger than 1."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" lowerBound="1"
+                eType="#//CDPSM/Balanced/Resistance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Resistance between the 'from' and the 'to' end, seen from the 'from' end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Resistance between the 'from' and the 'to' end, seen from the 'from' end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1"
+                eType="#//CDPSM/Balanced/Reactance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Reactance between the 'from' and the 'to' end, seen from the 'from' end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Reactance between the 'from' and the 'to' end, seen from the 'from' end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="FromTransformerEnd"
+                eType="#//CDPSM/Balanced/IEC61970/Wires/TransformerEnd" eOpposite="#//CDPSM/Balanced/IEC61970/Wires/TransformerEnd/FromMeshImpedance">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="From end this mesh impedance is connected to. It determines the voltage reference."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="From end this mesh impedance is connected to. It determines the voltage reference."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="x0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Reactance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero-sequence reactance between the 'from' and the 'to' end, seen from the 'from' end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero-sequence reactance between the 'from' and the 'to' end, seen from the 'from' end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="r0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Resistance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero-sequence resistance between the 'from' and the 'to' end, seen from the 'from' end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero-sequence resistance between the 'from' and the 'to' end, seen from the 'from' end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="ToTransformerEnd"
+                upperBound="-1" eType="#//CDPSM/Balanced/IEC61970/Wires/TransformerEnd"
+                eOpposite="#//CDPSM/Balanced/IEC61970/Wires/TransformerEnd/ToMeshImpedance">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="All transformer ends this mesh impedance is connected to."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All transformer ends this mesh impedance is connected to."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="ProtectedSwitch" abstract="true"
+              eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="breakingCapacity"
+                lowerBound="1" eType="#//CDPSM/Balanced/CurrentFlow" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The maximum fault current a breaking device can break safely under prescribed conditions of use."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The maximum fault current a breaking device can break safely under prescribed conditions of use."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="PhaseTapChangerNonLinear" abstract="true"
+              eSuperTypes="#//CDPSM/Balanced/IEC61970/Wires/PhaseTapChanger">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="PhaseTapChangerNonLinear describe the non linear behavior of a phase tap changer. This is a base class for the symmetrical and asymmetrical models. The details of these models can be found in the IEC 61970-301 document."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="PhaseTapChangerNonLinear describe the non linear behavior of a phase tap changer. This is a base class for the symmetrical and asymmetrical models. The details of these models can be found in the IEC 61970-301 document."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="voltageStepIncrement"
+                lowerBound="1" eType="#//CDPSM/Balanced/Voltage" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The voltage step increment on the out of phase winding. This voltage step on the out of phase winding of the phase shifter."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The voltage step increment on the out of phase winding. This voltage step on the out of phase winding of the phase shifter."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="RatioTapChanger" eSuperTypes="#//CDPSM/Balanced/IEC61970/Wires/TapChanger">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="A tap changer that changes the voltage ratio impacting the voltage magnitude but not the phase angle across the transformer."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A tap changer that changes the voltage ratio impacting the voltage magnitude but not the phase angle across the transformer."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepVoltageIncrement"
+                lowerBound="1" eType="#//CDPSM/Balanced/PerCent" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Tap step increment, in per cent of nominal voltage, per step position.  For a symmetrical PhaseTapChanger, the stepVoltageIncrement is used in the formula for calculation of the phase angle.  For a symmetrical PhaseTapChanger, the voltage magnitude does not change with tap step."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Tap step increment, in per cent of nominal voltage, per step position.  For a symmetrical PhaseTapChanger, the stepVoltageIncrement is used in the formula for calculation of the phase angle.  For a symmetrical PhaseTapChanger, the voltage magnitude does not change with tap step."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="tculControlMode"
+                eType="#//CDPSM/Balanced/IEC61970/Wires/TransformerControlMode" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Specifies the regulation control mode (voltage or reactive) of the RatioTapChanger."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Specifies the regulation control mode (voltage or reactive) of the RatioTapChanger."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="SeriesCompensator" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.  It is a two terminal device."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.  It is a two terminal device."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1"
+                eType="#//CDPSM/Balanced/Reactance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Positive sequence reactance."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Positive sequence reactance."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" lowerBound="1"
+                eType="#//CDPSM/Balanced/Resistance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Positive sequence resistance."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Positive sequence resistance."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="TransformerControlMode">
+            <eLiterals name="reactive"/>
+            <eLiterals name="volt" value="1"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="PhaseTapChanger" abstract="true"
+              eSuperTypes="#//CDPSM/Balanced/IEC61970/Wires/TapChanger">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="A PhaseTapChanger controls the phase angle difference across the power transformer and hence the activer power flow through it. A PhaseTapChanger may also impact the voltage magnitude."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A PhaseTapChanger controls the phase angle difference across the power transformer and hence the activer power flow through it. A PhaseTapChanger may also impact the voltage magnitude."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="WindingConnection">
+            <eLiterals name="Z"/>
+            <eLiterals name="A" value="1"/>
+            <eLiterals name="Yn" value="2"/>
+            <eLiterals name="Y" value="3"/>
+            <eLiterals name="Zn" value="4"/>
+            <eLiterals name="D" value="5"/>
+            <eLiterals name="I" value="6"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerTankEnd" eSuperTypes="#//CDPSM/Balanced/IEC61970/Wires/TransformerEnd">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="Transformer tank end represents an individual winding for unbalanced models or for transformer tanks connected into a bank (and bank is modelled with the PowerTransformer)."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Transformer tank end represents an individual winding for unbalanced models or for transformer tanks connected into a bank (and bank is modelled with the PowerTransformer)."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="TapChangerKind">
+            <eLiterals name="voltageAndPhaseControl"/>
+            <eLiterals name="phaseControl" value="1"/>
+            <eLiterals name="fixed" value="2"/>
+            <eLiterals name="voltageControl" value="3"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="DCLineSegment" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="A wire or combination of wires not insulated from one another, with consistent electrical characteristics, used to carry direct current between points in the DC region of the power system."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A wire or combination of wires not insulated from one another, with consistent electrical characteristics, used to carry direct current between points in the DC region of the power system."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TapChanger" abstract="true"
+              eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="Mechanism for changing transformer winding tap positions."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Mechanism for changing transformer winding tap positions."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="neutralU" eType="#//CDPSM/Balanced/Voltage"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Voltage at which the winding operates at the neutral tap setting."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Voltage at which the winding operates at the neutral tap setting."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowStep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Lowest possible tap step position, retard from neutral"/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Lowest possible tap step position, retard from neutral"/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="normalStep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The tap step position used in &quot;normal&quot; network operation for this winding. For a &quot;Fixed&quot; tap changer indicates the current physical tap setting."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The tap step position used in &quot;normal&quot; network operation for this winding. For a &quot;Fixed&quot; tap changer indicates the current physical tap setting."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="neutralStep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The neutral tap step position for this winding."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The neutral tap step position for this winding."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="highStep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Highest possible tap step position, advance from neutral"/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Highest possible tap step position, advance from neutral"/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="PhaseTapChangerSymetrical" eSuperTypes="#//CDPSM/Balanced/IEC61970/Wires/PhaseTapChangerNonLinear">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="In a PhaseTapChangerSymetrical tranformer the secondary side voltage magnitude is the same as at the primary side. The difference voltage magnitude, &amp;Delta;U, is the base in an equal-sided triangle where the sides corresponds to the primary and secondary voltages. The phase angle difference correpsonds the top angle and can be expressed as follows&#xA;&amp;alpha; = 2arctan(&amp;Delta;U/2)"/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="In a PhaseTapChangerSymetrical tranformer the secondary side voltage magnitude is the same as at the primary side. The difference voltage magnitude, &amp;Delta;U, is the base in an equal-sided triangle where the sides corresponds to the primary and secondary voltages. The phase angle difference correpsonds the top angle and can be expressed as follows&#xA;&amp;alpha; = 2arctan(&amp;Delta;U/2)"/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerStarImpedance" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="Transformer star impedance (Pi-model) that accurately reflects impedance for transformers with 2 or 3 windings. For transformers with 4 or more windings, you must use TransformerTank model and related classes.&#xA;For transmission networks use PowerTransformerEnd impedances (r, r0, x, x0, b, b0, g and g0)."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Transformer star impedance (Pi-model) that accurately reflects impedance for transformers with 2 or 3 windings. For transformers with 4 or more windings, you must use TransformerTank model and related classes.&#xA;For transmission networks use PowerTransformerEnd impedances (r, r0, x, x0, b, b0, g and g0)."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="x0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Reactance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence series reactance of the transformer end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence series reactance of the transformer end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1"
+                eType="#//CDPSM/Balanced/Reactance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Positive sequence series reactance of the transformer end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Positive sequence series reactance of the transformer end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="r0" lowerBound="1"
+                eType="#//CDPSM/Balanced/Resistance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence series resistance of the transformer end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence series resistance of the transformer end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerEnd"
+                upperBound="-1" eType="#//CDPSM/Balanced/IEC61970/Wires/TransformerEnd"
+                eOpposite="#//CDPSM/Balanced/IEC61970/Wires/TransformerEnd/StarImpedance">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="All transformer ends having this star impedance."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All transformer ends having this star impedance."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" lowerBound="1"
+                eType="#//CDPSM/Balanced/Resistance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Resistance of the transformer end."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Resistance of the transformer end."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="PowerTransformer" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).&#xA;A power transformer may be composed of separate transformer tanks that need not be identical.&#xA;The same power transformer can be modelled in two ways, namely with and without tanks:&#xA;&lt;ol>&#xA;&#x9;&lt;li>The power transformer that uses power transformer ends directly (without tanks) is suitable for balanced three-phase models. This is typical for transmission and sub-transmission network modelling. Such a transformer will require one power transformer end for each physical winding. There must be a one-to-one association between PowerTransformerEnd and Core::Terminal.&lt;/li>&#xA;&#x9;&lt;li>The power transformer that uses transformer tanks is suitable for an unbalanced transformer, a balanced transformer within a single tank, or a balanced transformer made up of three tanks. This is typical for distribution network modelling and the only choice when modelling an unbalanced transformer, or a transformer that has more than three windings. Power transformer modelled with tanks will require for each tank, one transformer tank end per physical winding in the tank. There may be one, two, or three phases in the transformer tank end.  Examples: 3 phases for 3-phase delta or wye connected windings, 2 for one phase-to-phase winding, and 1 for a phase-to-neutral or phase-to-ground winding.  With 1 or 2 phases, more than one transformer tank end may be associated to the same 3-phase Core::Terminal instance, while with 3 phases there should be a one-to-one association.&lt;/li>&#xA;&lt;/ol>&#xA;This power transformer model is flexible in order to support different kinds of data exchange requirements. There are 5 possible ways to combine available classes and their attributes:&#xA;&lt;ol>&#xA;&#x9;&lt;li>Instance parameters - Use the r, x, r0, x0, b, b0, g, and g0 attributes on PowerTransformerEnd and ignore related TransformerStarImpedance, TransformerMeshImpedance, or TransformerCoreAdmittance. This option assumes a star connection of the series impedances. It is suitable for typical transmission, balanced three-phase transformer models, for transformers with 2 or three windings.&lt;/li>&#xA;&#x9;&lt;li>Star instance parameters by association - Instead of the r, x, r0, x0, b, b0, g, and g0 attributes, use associations to TransformerStarImpedance and TransformerCoreAdmitance. This option is suitable in same scenarios as option 1, but when catalogue data is available for transformers.&lt;/li>&#xA;&#x9;&lt;li>Mesh instance parameters by association: Instead of the r, x, r0, x0, b, b0, g, and g0 attributes, use associations to TransformerMeshImpedance and TransformerCoreAdmittance. This option supports transformers with more than three windings.&lt;/li>&#xA;&#x9;&lt;li>Catalog mesh parameters by association - Instead of attributes r, x, r0, x0, b, b0, g, and g0 and associations to TransformerStarImpedance, TransformerMeshImpedance, or TransformerCoreAdmittance, use the association to TransformerEndInfo. The TransformerEnd.endNumber should match the corresponding TransformerEndInfo.endNumber, following the IEC standard convention of numbering from the highest voltage ends to the lowest, starting at 1. This matching supports higher-level use of a catalog, through just one association between TransformerTank and TransformerTankInfo, with simpler exchanges and incremental updates. The associated TransformerEndInfo will have associations to TransformerMeshImpedance and TransformerCoreAdmittance. This option supports unbalanced transformer, with more than three windings and is suitable whenever the transformer test data has been converted to an electrical model.&lt;/li>&#xA;&#x9;&lt;li>Catalog test data by association - This is the same as option 4, except TransformerEndInfo will have associations to AssetModels::TransformerTest decendents, instead of to TransformerMeshImpedance and TransformerCoreAdmittance.  This option is suitable when the test data is available, and the receiving application is able to interpret the test data.&lt;/li>&#xA;&lt;/ol>&#xA;Every profile should specify which one or more of these options are supported."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).&#xA;A power transformer may be composed of separate transformer tanks that need not be identical.&#xA;The same power transformer can be modelled in two ways, namely with and without tanks:&#xA;&lt;ol>&#xA;&#x9;&lt;li>The power transformer that uses power transformer ends directly (without tanks) is suitable for balanced three-phase models. This is typical for transmission and sub-transmission network modelling. Such a transformer will require one power transformer end for each physical winding. There must be a one-to-one association between PowerTransformerEnd and Core::Terminal.&lt;/li>&#xA;&#x9;&lt;li>The power transformer that uses transformer tanks is suitable for an unbalanced transformer, a balanced transformer within a single tank, or a balanced transformer made up of three tanks. This is typical for distribution network modelling and the only choice when modelling an unbalanced transformer, or a transformer that has more than three windings. Power transformer modelled with tanks will require for each tank, one transformer tank end per physical winding in the tank. There may be one, two, or three phases in the transformer tank end.  Examples: 3 phases for 3-phase delta or wye connected windings, 2 for one phase-to-phase winding, and 1 for a phase-to-neutral or phase-to-ground winding.  With 1 or 2 phases, more than one transformer tank end may be associated to the same 3-phase Core::Terminal instance, while with 3 phases there should be a one-to-one association.&lt;/li>&#xA;&lt;/ol>&#xA;This power transformer model is flexible in order to support different kinds of data exchange requirements. There are 5 possible ways to combine available classes and their attributes:&#xA;&lt;ol>&#xA;&#x9;&lt;li>Instance parameters - Use the r, x, r0, x0, b, b0, g, and g0 attributes on PowerTransformerEnd and ignore related TransformerStarImpedance, TransformerMeshImpedance, or TransformerCoreAdmittance. This option assumes a star connection of the series impedances. It is suitable for typical transmission, balanced three-phase transformer models, for transformers with 2 or three windings.&lt;/li>&#xA;&#x9;&lt;li>Star instance parameters by association - Instead of the r, x, r0, x0, b, b0, g, and g0 attributes, use associations to TransformerStarImpedance and TransformerCoreAdmitance. This option is suitable in same scenarios as option 1, but when catalogue data is available for transformers.&lt;/li>&#xA;&#x9;&lt;li>Mesh instance parameters by association: Instead of the r, x, r0, x0, b, b0, g, and g0 attributes, use associations to TransformerMeshImpedance and TransformerCoreAdmittance. This option supports transformers with more than three windings.&lt;/li>&#xA;&#x9;&lt;li>Catalog mesh parameters by association - Instead of attributes r, x, r0, x0, b, b0, g, and g0 and associations to TransformerStarImpedance, TransformerMeshImpedance, or TransformerCoreAdmittance, use the association to TransformerEndInfo. The TransformerEnd.endNumber should match the corresponding TransformerEndInfo.endNumber, following the IEC standard convention of numbering from the highest voltage ends to the lowest, starting at 1. This matching supports higher-level use of a catalog, through just one association between TransformerTank and TransformerTankInfo, with simpler exchanges and incremental updates. The associated TransformerEndInfo will have associations to TransformerMeshImpedance and TransformerCoreAdmittance. This option supports unbalanced transformer, with more than three windings and is suitable whenever the transformer test data has been converted to an electrical model.&lt;/li>&#xA;&#x9;&lt;li>Catalog test data by association - This is the same as option 4, except TransformerEndInfo will have associations to AssetModels::TransformerTest decendents, instead of to TransformerMeshImpedance and TransformerCoreAdmittance.  This option is suitable when the test data is available, and the receiving application is able to interpret the test data.&lt;/li>&#xA;&lt;/ol>&#xA;Every profile should specify which one or more of these options are supported."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TransformerEnd" abstract="true"
+              eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="TransformerEnd is a conducting connection point of a power transformer. It corresponds to a physical transformer winding terminal.  In earlier CIM versions, the TransformerWinding class served a similar purpose. This successor TransformerEnd class is more flexible and has important differences with TransformerWinding."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="TransformerEnd is a conducting connection point of a power transformer. It corresponds to a physical transformer winding terminal.  In earlier CIM versions, the TransformerWinding class served a similar purpose. This successor TransformerEnd class is more flexible and has important differences with TransformerWinding."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="FromMeshImpedance"
+                upperBound="-1" eType="#//CDPSM/Balanced/IEC61970/Wires/TransformerMeshImpedance"
+                eOpposite="#//CDPSM/Balanced/IEC61970/Wires/TransformerMeshImpedance/FromTransformerEnd">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="All mesh impedances between this 'to' and other 'from' transformer ends."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All mesh impedances between this 'to' and other 'from' transformer ends."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="ToMeshImpedance"
+                upperBound="-1" eType="#//CDPSM/Balanced/IEC61970/Wires/TransformerMeshImpedance"
+                eOpposite="#//CDPSM/Balanced/IEC61970/Wires/TransformerMeshImpedance/ToTransformerEnd">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="All mesh impedances between this 'from' and other 'to' transformer ends."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All mesh impedances between this 'from' and other 'to' transformer ends."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="CoreAdmittance"
+                eType="#//CDPSM/Balanced/IEC61970/Wires/TransformerCoreAdmittance"
+                eOpposite="#//CDPSM/Balanced/IEC61970/Wires/TransformerCoreAdmittance/TransformerEnd">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Core admittance of this transformer end, representing magnetising current and core losses. The full values of the transformer should be supplied for one transformer end only."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Core admittance of this transformer end, representing magnetising current and core losses. The full values of the transformer should be supplied for one transformer end only."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="StarImpedance"
+                eType="#//CDPSM/Balanced/IEC61970/Wires/TransformerStarImpedance"
+                eOpposite="#//CDPSM/Balanced/IEC61970/Wires/TransformerStarImpedance/TransformerEnd">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="(accurate for 2- or 3-winding transformers only) Pi-model impedances of this transformer end. By convention, for a two winding transformer, the full values of the transformer should be entered on the high voltage end (endNumber=1)."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="(accurate for 2- or 3-winding transformers only) Pi-model impedances of this transformer end. By convention, for a two winding transformer, the full values of the transformer should be entered on the high voltage end (endNumber=1)."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="EnergySource" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="A generic equivalent for an energy supplier on a transmission or distribution voltage level."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A generic equivalent for an energy supplier on a transmission or distribution voltage level."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="voltageMagnitude"
+                lowerBound="1" eType="#//CDPSM/Balanced/Voltage" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Phase-to-phase open circuit voltage magnitude."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Phase-to-phase open circuit voltage magnitude."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1"
+                eType="#//CDPSM/Balanced/Reactance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Positive sequence Thevenin reactance."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Positive sequence Thevenin reactance."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" eType="#//CDPSM/Balanced/Resistance"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Positive sequence Thevenin resistance."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Positive sequence Thevenin resistance."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="nominalVoltage"
+                lowerBound="1" eType="#//CDPSM/Balanced/Voltage" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Phase-to-phase nominal voltage."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Phase-to-phase nominal voltage."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="voltageAngle" lowerBound="1"
+                eType="#//CDPSM/Balanced/AngleRadians" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Phase angle of a-phase open circuit."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Phase angle of a-phase open circuit."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="ShuntCompensator" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  A negative value for reactivePerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  A negative value for reactivePerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomQ" lowerBound="1"
+                eType="#//CDPSM/Balanced/ReactivePower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Nominal reactive power output of the capacitor bank at the nominal voltage. This number should be positive."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Nominal reactive power output of the capacitor bank at the nominal voltage. This number should be positive."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxU" lowerBound="1"
+                eType="#//CDPSM/Balanced/Voltage" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The maximum voltage at which the capacitor bank should operate."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The maximum voltage at which the capacitor bank should operate."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="g0PerSection" lowerBound="1"
+                eType="#//CDPSM/Balanced/Conductance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence shunt (charging) conductance per section"/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence shunt (charging) conductance per section"/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="gPerSection" lowerBound="1"
+                eType="#//CDPSM/Balanced/Conductance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Positive sequence shunt (charging) conductance per section"/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Positive sequence shunt (charging) conductance per section"/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="minU" lowerBound="1"
+                eType="#//CDPSM/Balanced/Voltage" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The minimum voltage at which the capacitor bank should operate."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The minimum voltage at which the capacitor bank should operate."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="bPerSection" lowerBound="1"
+                eType="#//CDPSM/Balanced/Susceptance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Positive sequence shunt (charging) susceptance per section"/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Positive sequence shunt (charging) susceptance per section"/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="reactivePerSection"
+                lowerBound="1" eType="#//CDPSM/Balanced/ReactivePower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="For a capacitor bank, the size in reactive power of each switchable section at the nominal voltage."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="voltageSensitivity"
+                lowerBound="1" eType="#//CDPSM/Balanced/VoltagePerReactivePower" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Voltage sensitivity required for the device to regulate the bus voltage, in voltage/reactive power."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Voltage sensitivity required for the device to regulate the bus voltage, in voltage/reactive power."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomU" lowerBound="1"
+                eType="#//CDPSM/Balanced/Voltage" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The nominal voltage at which the nominal reactive power was measured. This should normally be within 10% of the voltage at which the capacitor is connected to the network."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The nominal voltage at which the nominal reactive power was measured. This should normally be within 10% of the voltage at which the capacitor is connected to the network."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="normalSections"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="For a capacitor bank, the normal number of sections switched in. This number should correspond to the nominal reactive power (nomQ)."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="For a capacitor bank, the normal number of sections switched in. This number should correspond to the nominal reactive power (nomQ)."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="b0PerSection" lowerBound="1"
+                eType="#//CDPSM/Balanced/Susceptance" unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Zero sequence shunt (charging) susceptance per section"/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero sequence shunt (charging) susceptance per section"/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumSections"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="For a capacitor bank, the maximum number of sections that may be switched in."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="For a capacitor bank, the maximum number of sections that may be switched in."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </eSubpackages>
+        <eSubpackages name="LoadModel" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced#LoadModel"
+            nsPrefix="cimLoadModel">
+          <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+            <details key="Documentation" value="This package is responsible for modeling the energy consumers and the system load as curves and associated curve data. Special circumstances that may affect the load, such as seasons and daytypes, are also included here.&#xA;&#xA;This information is used by Load Forecasting and Load Management."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="This package is responsible for modeling the energy consumers and the system load as curves and associated curve data. Special circumstances that may affect the load, such as seasons and daytypes, are also included here.&#xA;&#xA;This information is used by Load Forecasting and Load Management."/>
+          </eAnnotations>
+          <eClassifiers xsi:type="ecore:EClass" name="LoadResponseCharacteristic"
+              eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="Models the characteristic response of the load demand due to to changes in system conditions such as voltage and frequency. This is not related to demand response.&#xA;&#xA;If LoadResponseCharacteristic.exponentModel is True, the voltage exponents are specified and used as to calculate:&#xA;&#xA;Active power component = Pnominal * (Voltage/cim:BaseVoltage.nominalVoltage) ** cim:LoadResponseCharacteristic.pVoltageExponent&#xA;&#xA;Reactive power component = Qnominal * (Voltage/cim:BaseVoltage.nominalVoltage)** cim:LoadResponseCharacteristic.qVoltageExponent&#xA;&#xA;Where  * means &quot;multiply&quot; and ** is &quot;raised to power of&quot;."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Models the characteristic response of the load demand due to to changes in system conditions such as voltage and frequency. This is not related to demand response.&#xA;&#xA;If LoadResponseCharacteristic.exponentModel is True, the voltage exponents are specified and used as to calculate:&#xA;&#xA;Active power component = Pnominal * (Voltage/cim:BaseVoltage.nominalVoltage) ** cim:LoadResponseCharacteristic.pVoltageExponent&#xA;&#xA;Reactive power component = Qnominal * (Voltage/cim:BaseVoltage.nominalVoltage)** cim:LoadResponseCharacteristic.qVoltageExponent&#xA;&#xA;Where  * means &quot;multiply&quot; and ** is &quot;raised to power of&quot;."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pFrequencyExponent"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Exponent of per unit frequency effecting active power"/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Exponent of per unit frequency effecting active power"/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pConstantPower"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Portion of active power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Portion of active power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pVoltageExponent"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Exponent of per unit voltage effecting real power.   This model used only when &quot;useExponentModel&quot; is true."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Exponent of per unit voltage effecting real power.   This model used only when &quot;useExponentModel&quot; is true."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="exponentModel"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Indicates the exponential voltage dependency model (pVoltateExponent and qVoltageExponent) is to be used.   If false, the coeficient model (consisting of pConstantImpedance, pConstantCurrent, pConstantPower, qConstantImpedance, qConstantCurrent, and qConstantPower) is to be used."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Indicates the exponential voltage dependency model (pVoltateExponent and qVoltageExponent) is to be used.   If false, the coeficient model (consisting of pConstantImpedance, pConstantCurrent, pConstantPower, qConstantImpedance, qConstantCurrent, and qConstantPower) is to be used."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="qFrequencyExponent"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Exponent of per unit frequency effecting reactive power"/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Exponent of per unit frequency effecting reactive power"/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="qConstantImpedance"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Portion of reactive power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Portion of reactive power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="qConstantPower"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Portion of reactive power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Portion of reactive power load modeled as constant power. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pConstantCurrent"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Portion of active power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Portion of active power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="qVoltageExponent"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Exponent of per unit voltage effecting reactive power.   This model used only when &quot;useExponentModel&quot; is true."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Exponent of per unit voltage effecting reactive power.   This model used only when &quot;useExponentModel&quot; is true."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="EnergyConsumer"
+                upperBound="-1" eType="#//CDPSM/Balanced/IEC61970/Wires/EnergyConsumer"
+                eOpposite="#//CDPSM/Balanced/IEC61970/Wires/EnergyConsumer/LoadResponse">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The set of loads that have the response characteristics."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The set of loads that have the response characteristics."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pConstantImpedance"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Portion of active power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Portion of active power load modeled as constant impedance.  Used only if the useExponentModel is false.    This value is noralized against the sum of pZ, pI, and pP."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="qConstantCurrent"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Portion of reactive power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Portion of reactive power load modeled as constant current. Used only if the useExponentModel is false.    This value is noralized against the sum of qZ, qI, and qP."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </eSubpackages>
+        <eSubpackages name="Generation" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced#Generation"
+            nsPrefix="cimGeneration">
+          <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+            <details key="Documentation" value="This package contains packages that have information for Unit Commitment and Economic Dispatch of Hydro and Thermal Generating Units, Load Forecasting, Automatic Generation Control, and Unit Modeling for Dynamic Training Simulator."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="This package contains packages that have information for Unit Commitment and Economic Dispatch of Hydro and Thermal Generating Units, Load Forecasting, Automatic Generation Control, and Unit Modeling for Dynamic Training Simulator."/>
+          </eAnnotations>
+          <eSubpackages name="Production" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced#Production"
+              nsPrefix="cimProduction">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="The production package is responsible for classes which describe various kinds of generators. These classes also provide production costing information which is used to economically allocate demand among committed units and calculate reserve quantities."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The production package is responsible for classes which describe various kinds of generators. These classes also provide production costing information which is used to economically allocate demand among committed units and calculate reserve quantities."/>
+            </eAnnotations>
+            <eClassifiers xsi:type="ecore:EClass" name="GeneratingUnit" eSuperTypes="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set."/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseP" lowerBound="1"
+                  eType="#//CDPSM/Balanced/ActivePower" unsettable="true">
+                <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                  <details key="Documentation" value="For dispatchable units, this value represents the economic active power basepoint, for units that are not dispatchable, this value represents the fixed generation value. The value must be between the operating low and high limits."/>
+                </eAnnotations>
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="Documentation" value="For dispatchable units, this value represents the economic active power basepoint, for units that are not dispatchable, this value represents the fixed generation value. The value must be between the operating low and high limits."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="SynchronousMachines"
+                  upperBound="-1" eType="#//CDPSM/Balanced/IEC61970/Wires/SynchronousMachine"
+                  eOpposite="#//CDPSM/Balanced/IEC61970/Wires/SynchronousMachine/GeneratingUnit">
+                <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                  <details key="Documentation" value="A synchronous machine may operate as a generator and as such becomes a member of a generating unit"/>
+                </eAnnotations>
+                <eAnnotations source="http://langdale.com.au/2005/UML">
+                  <details key="Profile documentation" value=""/>
+                </eAnnotations>
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="Documentation" value="A synchronous machine may operate as a generator and as such becomes a member of a generating unit"/>
+                  <details key="Profile documentation" value=""/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="genControlSource"
+                  lowerBound="1" eType="#//CDPSM/Balanced/IEC61970/Generation/Production/GeneratorControlSource"
+                  unsettable="true">
+                <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                  <details key="Documentation" value="The source of controls for a generating unit."/>
+                </eAnnotations>
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="Documentation" value="The source of controls for a generating unit."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedNetMaxP"
+                  lowerBound="1" eType="#//CDPSM/Balanced/ActivePower" unsettable="true">
+                <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                  <details key="Documentation" value="The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity"/>
+                </eAnnotations>
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="Documentation" value="The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity"/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialP" lowerBound="1"
+                  eType="#//CDPSM/Balanced/ActivePower" unsettable="true">
+                <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                  <details key="Documentation" value="Default Initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration"/>
+                </eAnnotations>
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="Documentation" value="Default Initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration"/>
+                </eAnnotations>
+              </eStructuralFeatures>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EEnum" name="GeneratorControlSource">
+              <eLiterals name="plantControl"/>
+              <eLiterals name="offAGC" value="1"/>
+              <eLiterals name="unavailable" value="2"/>
+              <eLiterals name="onAGC" value="3"/>
+            </eClassifiers>
+          </eSubpackages>
+        </eSubpackages>
+        <eSubpackages name="Core" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced#Core"
+            nsPrefix="cimCore">
+          <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+            <details key="Documentation" value="Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it."/>
+          </eAnnotations>
+          <eClassifiers xsi:type="ecore:EClass" name="NameType" abstract="true" eSuperTypes="#//CDPSM/Balanced/Element">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName and aliasName as defined in CIM version 14. Their definitions from CIM14 are&#xA;The localName is a human readable name of the object. It is only used with objects organized in a naming hierarchy. localName: A free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.&#xA;aliasName: A free text alternate name typically used in tabular reports where the column width is limited."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName and aliasName as defined in CIM version 14. Their definitions from CIM14 are&#xA;The localName is a human readable name of the object. It is only used with objects organized in a naming hierarchy. localName: A free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.&#xA;aliasName: A free text alternate name typically used in tabular reports where the column width is limited."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="Names" upperBound="-1"
+                eType="#//CDPSM/Balanced/IEC61970/Core/Name" eOpposite="#//CDPSM/Balanced/IEC61970/Core/Name/NameType">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="All names of this type."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All names of this type."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IdentifiedObject" abstract="true"
+              eSuperTypes="#//CDPSM/Balanced/Element">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="This is a root class to provide common identification for all classes needing identification and naming attributes"/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="This is a root class to provide common identification for all classes needing identification and naming attributes"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="Names" upperBound="-1"
+                eType="#//CDPSM/Balanced/IEC61970/Core/Name" eOpposite="#//CDPSM/Balanced/IEC61970/Core/Name/IdentifiedObject">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="All names of this identified object."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All names of this identified object."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The name is any free human readable and possibly non unique text naming the object."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The name is any free human readable and possibly non unique text naming the object."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="aliasName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.&#xA;The attribute aliasName is put back because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.&#xA;This was decided at a joint WG13/14 meeting in Minneapolis 2010-10-06."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.&#xA;The attribute aliasName is put back because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.&#xA;This was decided at a joint WG13/14 meeting in Minneapolis 2010-10-06."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="PhaseCode">
+            <eLiterals name="s12N"/>
+            <eLiterals name="BN" value="1"/>
+            <eLiterals name="BC" value="2"/>
+            <eLiterals name="ABN" value="3"/>
+            <eLiterals name="s2N" value="4"/>
+            <eLiterals name="N" value="5"/>
+            <eLiterals name="ACN" value="6"/>
+            <eLiterals name="BCN" value="7"/>
+            <eLiterals name="ABCN" value="8"/>
+            <eLiterals name="AC" value="9"/>
+            <eLiterals name="s1N" value="10"/>
+            <eLiterals name="AN" value="11"/>
+            <eLiterals name="B" value="12"/>
+            <eLiterals name="AB" value="13"/>
+            <eLiterals name="C" value="14"/>
+            <eLiterals name="A" value="15"/>
+            <eLiterals name="CN" value="16"/>
+            <eLiterals name="ABC" value="17"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Name" eSuperTypes="#//CDPSM/Balanced/Element">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+              <details key="Documentation" value="The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b>not&lt;/b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b>not&lt;/b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="IdentifiedObject"
+                lowerBound="1" eType="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject"
+                eOpposite="#//CDPSM/Balanced/IEC61970/Core/IdentifiedObject/Names">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Identified object that this name designates."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Identified object that this name designates."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="NameType" lowerBound="1"
+                eType="#//CDPSM/Balanced/IEC61970/Core/NameType" eOpposite="#//CDPSM/Balanced/IEC61970/Core/NameType/Names">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Type of this name."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Type of this name."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Balanced">
+                <details key="Documentation" value="Any free text that name the object."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Any free text that name the object."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </eSubpackages>
+      </eSubpackages>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

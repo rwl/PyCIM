@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="CIM15"
+    nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15" nsPrefix="cim">
+  <eSubpackages name="CDPSM" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM"
+      nsPrefix="cdpsm">
+    <eSubpackages name="Geographical" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical"
+        nsPrefix="geo">
+      <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+        <details key="Documentation" value="The IEC 61968 subpackages of the CIM are developed, standardized and maintained by IEC TC57 Working Group 14: interfaces for distribution management (WG14).&#xA;Currently, normative parts of the model support the needs of information exchange defined in IEC 61968-9 and in IEC 61968-13."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="Documentation" value="The IEC 61968 subpackages of the CIM are developed, standardized and maintained by IEC TC57 Working Group 14: interfaces for distribution management (WG14).&#xA;Currently, normative parts of the model support the needs of information exchange defined in IEC 61968-9 and in IEC 61968-13."/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="UUID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMTime" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="HH:mm:ss.SSSZ"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#time"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDateTime" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy-MM-dd'T'HH:mm:ss.SSSZ"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDuration" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="HH:mm:ss.SSS"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#duration"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGYear" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gYear"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMDate" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="yyyy-MM-dd"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#date"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGMonthDay" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="dd"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gMonthDay"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGMonth" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="MM"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gMonth"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGDay" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="DD"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gDay"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="CIMGYearMonth" instanceClassName="java.util.Date">
+        <eAnnotations source="http://cimphony.com/rdf/2010/serialisation">
+          <details key="CIMDatePattern" value="MM"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="http://www.w3.org/2001/XMLSchema#gYearMonth"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eSubpackages name="IEC61970" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical#IEC61970"
+          nsPrefix="cimIEC61970">
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+          <details key="Documentation" value="The ControlArea package models area specifications which can be used for a variety of purposes.  The package as a whole models potentially overlapping control area specifications for the purpose of actual generation control, load forecast area load capture, or powerflow based analysis."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="The ControlArea package models area specifications which can be used for a variety of purposes.  The package as a whole models potentially overlapping control area specifications for the purpose of actual generation control, load forecast area load capture, or powerflow based analysis."/>
+        </eAnnotations>
+        <eSubpackages name="Wires" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical#Wires"
+            nsPrefix="cimWires">
+          <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+            <details key="Documentation" value="An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow."/>
+          </eAnnotations>
+          <eClassifiers xsi:type="ecore:EClass" name="Fuse" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="An overcurrent protective device with a circuit opening fusible part that is heated and severed by the passage of overcurrent through it. A fuse is considered a switching device because it breaks current."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="An overcurrent protective device with a circuit opening fusible part that is heated and severed by the passage of overcurrent through it. A fuse is considered a switching device because it breaks current."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="EnergyConsumer" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="Generic user of energy - a  point of consumption on the power system model"/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Generic user of energy - a  point of consumption on the power system model"/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Disconnector" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="ACLineSegment" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.&#xA;For symmetrical, transposed 3ph lines, it is sufficient to use ACLineSegment attributes, which describe sequence impedances and admittances for the entire length of the segment.&#xA;If per lenght impedance data is available from a library of standard types, impedances and admittances can be calculated in one of the following ways:&#xA;- calculate electrical parameters from asset data, using associated ConductorInfo, with values then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate unbalanced electrical parameters from associated PerLengthPhaseImpedance, then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate transposed electrical parameters from associated PerLengthSequenceImpedance, then multiplied by Conductor.length to produce a sequence model."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.&#xA;For symmetrical, transposed 3ph lines, it is sufficient to use ACLineSegment attributes, which describe sequence impedances and admittances for the entire length of the segment.&#xA;If per lenght impedance data is available from a library of standard types, impedances and admittances can be calculated in one of the following ways:&#xA;- calculate electrical parameters from asset data, using associated ConductorInfo, with values then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate unbalanced electrical parameters from associated PerLengthPhaseImpedance, then multiplied by Conductor.length to produce a matrix model.&#xA;- calculate transposed electrical parameters from associated PerLengthSequenceImpedance, then multiplied by Conductor.length to produce a sequence model."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="SynchronousMachine" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="An electromechanical device that operates synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="An electromechanical device that operates synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="BusbarSection" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation. &#xA;Voltage measurements are typically obtained from VoltageTransformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation. &#xA;Voltage measurements are typically obtained from VoltageTransformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="LoadBreakSwitch" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="GroundDisconnector" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A manually operated or motor operated mechanical switching device used for isolating a circuit or equipment from Ground."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A manually operated or motor operated mechanical switching device used for isolating a circuit or equipment from Ground."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="SeriesCompensator" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.  It is a two terminal device."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.  It is a two terminal device."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Junction" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A point where one or more conducting equipments are connected with zero resistance."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A point where one or more conducting equipments are connected with zero resistance."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Breaker" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="DCLineSegment" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A wire or combination of wires not insulated from one another, with consistent electrical characteristics, used to carry direct current between points in the DC region of the power system."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A wire or combination of wires not insulated from one another, with consistent electrical characteristics, used to carry direct current between points in the DC region of the power system."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/PowerSystemResource">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="Contains equipment beyond a substation belonging to a power transmission line."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Contains equipment beyond a substation belonging to a power transmission line."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="PowerTransformer" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).&#xA;A power transformer may be composed of separate transformer tanks that need not be identical.&#xA;The same power transformer can be modelled in two ways, namely with and without tanks:&#xA;&lt;ol>&#xA;&#x9;&lt;li>The power transformer that uses power transformer ends directly (without tanks) is suitable for balanced three-phase models. This is typical for transmission and sub-transmission network modelling. Such a transformer will require one power transformer end for each physical winding. There must be a one-to-one association between PowerTransformerEnd and Core::Terminal.&lt;/li>&#xA;&#x9;&lt;li>The power transformer that uses transformer tanks is suitable for an unbalanced transformer, a balanced transformer within a single tank, or a balanced transformer made up of three tanks. This is typical for distribution network modelling and the only choice when modelling an unbalanced transformer, or a transformer that has more than three windings. Power transformer modelled with tanks will require for each tank, one transformer tank end per physical winding in the tank. There may be one, two, or three phases in the transformer tank end.  Examples: 3 phases for 3-phase delta or wye connected windings, 2 for one phase-to-phase winding, and 1 for a phase-to-neutral or phase-to-ground winding.  With 1 or 2 phases, more than one transformer tank end may be associated to the same 3-phase Core::Terminal instance, while with 3 phases there should be a one-to-one association.&lt;/li>&#xA;&lt;/ol>&#xA;This power transformer model is flexible in order to support different kinds of data exchange requirements. There are 5 possible ways to combine available classes and their attributes:&#xA;&lt;ol>&#xA;&#x9;&lt;li>Instance parameters - Use the r, x, r0, x0, b, b0, g, and g0 attributes on PowerTransformerEnd and ignore related TransformerStarImpedance, TransformerMeshImpedance, or TransformerCoreAdmittance. This option assumes a star connection of the series impedances. It is suitable for typical transmission, balanced three-phase transformer models, for transformers with 2 or three windings.&lt;/li>&#xA;&#x9;&lt;li>Star instance parameters by association - Instead of the r, x, r0, x0, b, b0, g, and g0 attributes, use associations to TransformerStarImpedance and TransformerCoreAdmitance. This option is suitable in same scenarios as option 1, but when catalogue data is available for transformers.&lt;/li>&#xA;&#x9;&lt;li>Mesh instance parameters by association: Instead of the r, x, r0, x0, b, b0, g, and g0 attributes, use associations to TransformerMeshImpedance and TransformerCoreAdmittance. This option supports transformers with more than three windings.&lt;/li>&#xA;&#x9;&lt;li>Catalog mesh parameters by association - Instead of attributes r, x, r0, x0, b, b0, g, and g0 and associations to TransformerStarImpedance, TransformerMeshImpedance, or TransformerCoreAdmittance, use the association to TransformerEndInfo. The TransformerEnd.endNumber should match the corresponding TransformerEndInfo.endNumber, following the IEC standard convention of numbering from the highest voltage ends to the lowest, starting at 1. This matching supports higher-level use of a catalog, through just one association between TransformerTank and TransformerTankInfo, with simpler exchanges and incremental updates. The associated TransformerEndInfo will have associations to TransformerMeshImpedance and TransformerCoreAdmittance. This option supports unbalanced transformer, with more than three windings and is suitable whenever the transformer test data has been converted to an electrical model.&lt;/li>&#xA;&#x9;&lt;li>Catalog test data by association - This is the same as option 4, except TransformerEndInfo will have associations to AssetModels::TransformerTest decendents, instead of to TransformerMeshImpedance and TransformerCoreAdmittance.  This option is suitable when the test data is available, and the receiving application is able to interpret the test data.&lt;/li>&#xA;&lt;/ol>&#xA;Every profile should specify which one or more of these options are supported."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).&#xA;A power transformer may be composed of separate transformer tanks that need not be identical.&#xA;The same power transformer can be modelled in two ways, namely with and without tanks:&#xA;&lt;ol>&#xA;&#x9;&lt;li>The power transformer that uses power transformer ends directly (without tanks) is suitable for balanced three-phase models. This is typical for transmission and sub-transmission network modelling. Such a transformer will require one power transformer end for each physical winding. There must be a one-to-one association between PowerTransformerEnd and Core::Terminal.&lt;/li>&#xA;&#x9;&lt;li>The power transformer that uses transformer tanks is suitable for an unbalanced transformer, a balanced transformer within a single tank, or a balanced transformer made up of three tanks. This is typical for distribution network modelling and the only choice when modelling an unbalanced transformer, or a transformer that has more than three windings. Power transformer modelled with tanks will require for each tank, one transformer tank end per physical winding in the tank. There may be one, two, or three phases in the transformer tank end.  Examples: 3 phases for 3-phase delta or wye connected windings, 2 for one phase-to-phase winding, and 1 for a phase-to-neutral or phase-to-ground winding.  With 1 or 2 phases, more than one transformer tank end may be associated to the same 3-phase Core::Terminal instance, while with 3 phases there should be a one-to-one association.&lt;/li>&#xA;&lt;/ol>&#xA;This power transformer model is flexible in order to support different kinds of data exchange requirements. There are 5 possible ways to combine available classes and their attributes:&#xA;&lt;ol>&#xA;&#x9;&lt;li>Instance parameters - Use the r, x, r0, x0, b, b0, g, and g0 attributes on PowerTransformerEnd and ignore related TransformerStarImpedance, TransformerMeshImpedance, or TransformerCoreAdmittance. This option assumes a star connection of the series impedances. It is suitable for typical transmission, balanced three-phase transformer models, for transformers with 2 or three windings.&lt;/li>&#xA;&#x9;&lt;li>Star instance parameters by association - Instead of the r, x, r0, x0, b, b0, g, and g0 attributes, use associations to TransformerStarImpedance and TransformerCoreAdmitance. This option is suitable in same scenarios as option 1, but when catalogue data is available for transformers.&lt;/li>&#xA;&#x9;&lt;li>Mesh instance parameters by association: Instead of the r, x, r0, x0, b, b0, g, and g0 attributes, use associations to TransformerMeshImpedance and TransformerCoreAdmittance. This option supports transformers with more than three windings.&lt;/li>&#xA;&#x9;&lt;li>Catalog mesh parameters by association - Instead of attributes r, x, r0, x0, b, b0, g, and g0 and associations to TransformerStarImpedance, TransformerMeshImpedance, or TransformerCoreAdmittance, use the association to TransformerEndInfo. The TransformerEnd.endNumber should match the corresponding TransformerEndInfo.endNumber, following the IEC standard convention of numbering from the highest voltage ends to the lowest, starting at 1. This matching supports higher-level use of a catalog, through just one association between TransformerTank and TransformerTankInfo, with simpler exchanges and incremental updates. The associated TransformerEndInfo will have associations to TransformerMeshImpedance and TransformerCoreAdmittance. This option supports unbalanced transformer, with more than three windings and is suitable whenever the transformer test data has been converted to an electrical model.&lt;/li>&#xA;&#x9;&lt;li>Catalog test data by association - This is the same as option 4, except TransformerEndInfo will have associations to AssetModels::TransformerTest decendents, instead of to TransformerMeshImpedance and TransformerCoreAdmittance.  This option is suitable when the test data is available, and the receiving application is able to interpret the test data.&lt;/li>&#xA;&lt;/ol>&#xA;Every profile should specify which one or more of these options are supported."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="EnergySource" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A generic equivalent for an energy supplier on a transmission or distribution voltage level."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A generic equivalent for an energy supplier on a transmission or distribution voltage level."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="ShuntCompensator" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  A negative value for reactivePerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  A negative value for reactivePerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Jumper" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/ConductingEquipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A short section of conductor with negligible impedance which can be manually removed and replaced if the circuit is de-energized. Note that zero-impedance branches can be modelled by an ACLineSegment with a zero impedance ConductorType"/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A short section of conductor with negligible impedance which can be manually removed and replaced if the circuit is de-energized. Note that zero-impedance branches can be modelled by an ACLineSegment with a zero impedance ConductorType"/>
+            </eAnnotations>
+          </eClassifiers>
+        </eSubpackages>
+        <eSubpackages name="Core" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical#Core"
+            nsPrefix="cimCore">
+          <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+            <details key="Documentation" value="Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it."/>
+          </eAnnotations>
+          <eClassifiers xsi:type="ecore:EClass" name="ConductingEquipment" abstract="true"
+              eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/Equipment">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="The parts of the power system that are designed to carry current or that are conductively connected therewith. ConductingEquipment is contained within an EquipmentContainer that may be a Substation, or a VoltageLevel or a Bay within a Substation."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The parts of the power system that are designed to carry current or that are conductively connected therewith. ConductingEquipment is contained within an EquipmentContainer that may be a Substation, or a VoltageLevel or a Bay within a Substation."/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="NameType" abstract="true" eSuperTypes="#//CDPSM/Geographical/Element">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName and aliasName as defined in CIM version 14. Their definitions from CIM14 are&#xA;The localName is a human readable name of the object. It is only used with objects organized in a naming hierarchy. localName: A free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.&#xA;aliasName: A free text alternate name typically used in tabular reports where the column width is limited."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName and aliasName as defined in CIM version 14. Their definitions from CIM14 are&#xA;The localName is a human readable name of the object. It is only used with objects organized in a naming hierarchy. localName: A free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.&#xA;aliasName: A free text alternate name typically used in tabular reports where the column width is limited."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="Names" upperBound="-1"
+                eType="#//CDPSM/Geographical/IEC61970/Core/Name" eOpposite="#//CDPSM/Geographical/IEC61970/Core/Name/NameType">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="All names of this type."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All names of this type."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Equipment" abstract="true" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/PowerSystemResource">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="The parts of a power system that are physical devices, electronic or mechanical"/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The parts of a power system that are physical devices, electronic or mechanical"/>
+            </eAnnotations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IdentifiedObject" abstract="true"
+              eSuperTypes="#//CDPSM/Geographical/Element">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="This is a root class to provide common identification for all classes needing identification and naming attributes"/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="This is a root class to provide common identification for all classes needing identification and naming attributes"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="aliasName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.&#xA;The attribute aliasName is put back because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.&#xA;This was decided at a joint WG13/14 meeting in Minneapolis 2010-10-06."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.&#xA;The attribute aliasName is put back because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.&#xA;This was decided at a joint WG13/14 meeting in Minneapolis 2010-10-06."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="Names" upperBound="-1"
+                eType="#//CDPSM/Geographical/IEC61970/Core/Name" eOpposite="#//CDPSM/Geographical/IEC61970/Core/Name/IdentifiedObject">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="All names of this identified object."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All names of this identified object."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="The name is any free human readable and possibly non unique text naming the object."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="The name is any free human readable and possibly non unique text naming the object."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Name" eSuperTypes="#//CDPSM/Geographical/Element">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b>not&lt;/b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b>not&lt;/b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="NameType" lowerBound="1"
+                eType="#//CDPSM/Geographical/IEC61970/Core/NameType" eOpposite="#//CDPSM/Geographical/IEC61970/Core/NameType/Names">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="Type of this name."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Type of this name."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="Any free text that name the object."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Any free text that name the object."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="IdentifiedObject"
+                lowerBound="1" eType="#//CDPSM/Geographical/IEC61970/Core/IdentifiedObject"
+                eOpposite="#//CDPSM/Geographical/IEC61970/Core/IdentifiedObject/Names">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="Identified object that this name designates."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Identified object that this name designates."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="PowerSystemResource" abstract="true"
+              eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="A power system resource can be an item of equipment such as a Switch, an EquipmentContainer containing many individual items of equipment such as a &#xA;Substation, or an organisational entity such as Company or SubControlArea.  This provides for the nesting of collections of PowerSystemResources within other PowerSystemResources. For example, a Switch could be a member of a Substation and a Substation could be a member of a division of a Company."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="A power system resource can be an item of equipment such as a Switch, an EquipmentContainer containing many individual items of equipment such as a &#xA;Substation, or an organisational entity such as Company or SubControlArea.  This provides for the nesting of collections of PowerSystemResources within other PowerSystemResources. For example, a Switch could be a member of a Substation and a Substation could be a member of a division of a Company."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="Location" lowerBound="1"
+                eType="#//CDPSM/Geographical/IEC61968/Common/Location" eOpposite="#//CDPSM/Geographical/IEC61968/Common/Location/PowerSystemResources">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="Location of this power system resource."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Location of this power system resource."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </eSubpackages>
+      </eSubpackages>
+      <eSubpackages name="IEC61968" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical#IEC61968"
+          nsPrefix="cimIEC61968">
+        <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+          <details key="Documentation" value="This package is an extension of the Metering package and contains the information classes that support specialised applications such as prepayment metering. These classes are generally associated with the collection and control of revenue from the customer for a delivered service."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="Documentation" value="This package is an extension of the Metering package and contains the information classes that support specialised applications such as prepayment metering. These classes are generally associated with the collection and control of revenue from the customer for a delivered service."/>
+        </eAnnotations>
+        <eSubpackages name="Common" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical#Common"
+            nsPrefix="cimCommon">
+          <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+            <details key="Documentation" value="This package contains the information classes that support distribution management in general."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="Documentation" value="This package contains the information classes that support distribution management in general."/>
+          </eAnnotations>
+          <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more postition points (coordinates) in a given coordinate system."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more postition points (coordinates) in a given coordinate system."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="PowerSystemResources"
+                upperBound="-1" eType="#//CDPSM/Geographical/IEC61970/Core/PowerSystemResource"
+                eOpposite="#//CDPSM/Geographical/IEC61970/Core/PowerSystemResource/Location">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="All power system resources at this location."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All power system resources at this location."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="PositionPoints"
+                upperBound="-1" eType="#//CDPSM/Geographical/IEC61968/Common/PositionPoint"
+                eOpposite="#//CDPSM/Geographical/IEC61968/Common/PositionPoint/Location">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="Sequence of position points describing this location, expressed in coordinate system 'Location.CoordinateSystem'."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Sequence of position points describing this location, expressed in coordinate system 'Location.CoordinateSystem'."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="CoordinateSystem"
+                lowerBound="1" eType="#//CDPSM/Geographical/IEC61968/Common/CoordinateSystem"
+                eOpposite="#//CDPSM/Geographical/IEC61968/Common/CoordinateSystem/Location">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="Coordinate system used to describe position points of this location."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Coordinate system used to describe position points of this location."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="CoordinateSystem" eSuperTypes="#//CDPSM/Geographical/IEC61970/Core/IdentifiedObject">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="Coordinate reference system."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Coordinate reference system."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="Location" upperBound="-1"
+                eType="#//CDPSM/Geographical/IEC61968/Common/Location" eOpposite="#//CDPSM/Geographical/IEC61968/Common/Location/CoordinateSystem">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="All locations described with position points in this coordinate system."/>
+              </eAnnotations>
+              <eAnnotations source="http://langdale.com.au/2005/UML">
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="All locations described with position points in this coordinate system."/>
+                <details key="Profile documentation" value=""/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="crsUrn" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define 'Location.PositionPoints'.&#xA;An example would be the European Petroleum Survey Group (EPSG) code for a coordinate reference system, defined in URN under the Open Geospatial Consortium (OGC) namespace as: urn:ogc :def:uom:EPSG::XXXX, where XXXX is an EPSG code (a full list of codes can be found at the EPSG Registry website http://www.epsg-registry.org/). To define the coordinate system as being WGS84 (latitude, longitude) using an EPSG OGC, this attribute would be urn:ogc:def:uom:EPSG::4236.&#xA;A profile should limit this code to a set of allowed URNs agreed to by all sending and receiving parties."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define 'Location.PositionPoints'.&#xA;An example would be the European Petroleum Survey Group (EPSG) code for a coordinate reference system, defined in URN under the Open Geospatial Consortium (OGC) namespace as: urn:ogc :def:uom:EPSG::XXXX, where XXXX is an EPSG code (a full list of codes can be found at the EPSG Registry website http://www.epsg-registry.org/). To define the coordinate system as being WGS84 (latitude, longitude) using an EPSG OGC, this attribute would be urn:ogc:def:uom:EPSG::4236.&#xA;A profile should limit this code to a set of allowed URNs agreed to by all sending and receiving parties."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="PositionPoint" eSuperTypes="#//CDPSM/Geographical/Element">
+            <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+              <details key="Documentation" value="Set of spatial coordinates that determine a point, defined in coordinate system specified in 'Location.CoordinateSystem'. Use a single position point instance to desribe a point-oriented location. Use a sequence of position points to describe a line-oriented object (physical location of non-point oriented objects like cables or lines), or area of an object (like a substation or a geographical zone - in this case, have first and last position point with the same values)."/>
+            </eAnnotations>
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="Documentation" value="Set of spatial coordinates that determine a point, defined in coordinate system specified in 'Location.CoordinateSystem'. Use a single position point instance to desribe a point-oriented location. Use a sequence of position points to describe a line-oriented object (physical location of non-point oriented objects like cables or lines), or area of an object (like a substation or a geographical zone - in this case, have first and last position point with the same values)."/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="xPosition" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="X axis position."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="X axis position."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="zPosition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="(if applicable) Z axis position."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="(if applicable) Z axis position."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="Location" lowerBound="1"
+                eType="#//CDPSM/Geographical/IEC61968/Common/Location" eOpposite="#//CDPSM/Geographical/IEC61968/Common/Location/PositionPoints">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="Location described by this position point."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Location described by this position point."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="sequenceNumber"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="Zero-relative sequence number of this point within a series of points."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Zero-relative sequence number of this point within a series of points."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="yPosition" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                unsettable="true">
+              <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-13/CDPSM/Geographical">
+                <details key="Documentation" value="Y axis position."/>
+              </eAnnotations>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="Documentation" value="Y axis position."/>
+              </eAnnotations>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </eSubpackages>
+      </eSubpackages>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>
