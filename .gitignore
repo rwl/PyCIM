@@ -1,6 +1,6 @@
 *.pyc
 # .project
-.pydevproject
+# .pydevproject
 build/
 dist/
 PyCIM.egg-info/
