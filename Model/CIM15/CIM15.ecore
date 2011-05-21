@@ -9267,7 +9267,7 @@
           </eStructuralFeatures>
           <eStructuralFeatures xsi:type="ecore:EReference" name="SecuredStructure"
               eType="#//IEC61970/Informative/InfAssets/Structure" eOpposite="#//IEC61970/Informative/InfAssets/Structure/StructureSupportInfos"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//IEC61970/Domain/AngleDegrees"
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//IEC61970/Domain/Anglerees"
               unsettable="true">
             <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
               <details key="Documentation" value="Direction of this support structure."/>
@@ -10327,10 +10327,10 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="furfuralDP" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
               unsettable="true">
             <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-              <details key="Documentation" value="Overall measure of furfural in oil and mechanical strength of paper. DP, the degree of polymerization, is the strength of the paper. Furfural is a measure of furfural compounds, often expressed in parts per million."/>
+              <details key="Documentation" value="Overall measure of furfural in oil and mechanical strength of paper. DP, the ree of polymerization, is the strength of the paper. Furfural is a measure of furfural compounds, often expressed in parts per million."/>
             </eAnnotations>
             <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-              <details key="Documentation" value="Overall measure of furfural in oil and mechanical strength of paper. DP, the degree of polymerization, is the strength of the paper. Furfural is a measure of furfural compounds, often expressed in parts per million."/>
+              <details key="Documentation" value="Overall measure of furfural in oil and mechanical strength of paper. DP, the ree of polymerization, is the strength of the paper. Furfural is a measure of furfural compounds, often expressed in parts per million."/>
             </eAnnotations>
           </eStructuralFeatures>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="oilIFT" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -12889,13 +12889,13 @@
           <eStructuralFeatures xsi:type="ecore:EReference" name="GmlPointSymbols"
               upperBound="-1" eType="#//IEC61970/Informative/InfGMLSupport/GmlPointSymbol"
               eOpposite="#//IEC61970/Informative/InfGMLSupport/GmlPointSymbol/GmlGraphic"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotation" eType="#//IEC61970/Domain/AngleDegrees"
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotation" eType="#//IEC61970/Domain/Anglerees"
               unsettable="true">
             <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-              <details key="Documentation" value="Gives the rotation of a graphic in the clockwise direction about its center point in decimal degrees, encoded as a floating-point number. Negative values mean counter-clockwise rotation. The default value is 0.0 (no rotation). Note that there is no connection between source geometry types and rotations; the point used for plotting has no inherent direction. Also, the point within the graphic about which it is rotated is format dependent. If a format does not include an inherent rotation point, then the point of rotation should be the centroid."/>
+              <details key="Documentation" value="Gives the rotation of a graphic in the clockwise direction about its center point in decimal rees, encoded as a floating-point number. Negative values mean counter-clockwise rotation. The default value is 0.0 (no rotation). Note that there is no connection between source geometry types and rotations; the point used for plotting has no inherent direction. Also, the point within the graphic about which it is rotated is format dependent. If a format does not include an inherent rotation point, then the point of rotation should be the centroid."/>
             </eAnnotations>
             <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-              <details key="Documentation" value="Gives the rotation of a graphic in the clockwise direction about its center point in decimal degrees, encoded as a floating-point number. Negative values mean counter-clockwise rotation. The default value is 0.0 (no rotation). Note that there is no connection between source geometry types and rotations; the point used for plotting has no inherent direction. Also, the point within the graphic about which it is rotated is format dependent. If a format does not include an inherent rotation point, then the point of rotation should be the centroid."/>
+              <details key="Documentation" value="Gives the rotation of a graphic in the clockwise direction about its center point in decimal rees, encoded as a floating-point number. Negative values mean counter-clockwise rotation. The default value is 0.0 (no rotation). Note that there is no connection between source geometry types and rotations; the point used for plotting has no inherent direction. Also, the point within the graphic about which it is rotated is format dependent. If a format does not include an inherent rotation point, then the point of rotation should be the centroid."/>
             </eAnnotations>
           </eStructuralFeatures>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -12976,10 +12976,10 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
               unsettable="true">
             <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-              <details key="Documentation" value="Clockwise rotation of the label in degrees from the normal direction for a font."/>
+              <details key="Documentation" value="Clockwise rotation of the label in rees from the normal direction for a font."/>
             </eAnnotations>
             <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-              <details key="Documentation" value="Clockwise rotation of the label in degrees from the normal direction for a font."/>
+              <details key="Documentation" value="Clockwise rotation of the label in rees from the normal direction for a font."/>
             </eAnnotations>
           </eStructuralFeatures>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="displacementY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -14926,7 +14926,7 @@
           <details key="Profile documentation" value="PhaseTapChangerLinear describes a linear relation between the tap step and the phase angle difference across the transformer. This is a mathematical model that is an approximation of a real phase tap changer."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepPhaseShiftIncrement"
-            eType="#//IEC61970/Domain/AngleDegrees" unsettable="true">
+            eType="#//IEC61970/Domain/Anglerees" unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
             <details key="Documentation" value="Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer).&#xA;The actual phase shift increment might be more accurately computed from the symmetrical or asymmetrical models or a tap step table lookup if those are available."/>
           </eAnnotations>
@@ -15825,12 +15825,12 @@
           <details key="Profile documentation" value="In a PhaseTapChangerAsymetrical tranformer the difference voltage vector adds to the primary side voltage. The angle between the primary side voltage and the difference voltage is named the winding connection angle. The phase shift, &amp;alpha;, depends on both the difference voltage magnitude, &amp;Delta;U, and the winding connection angle."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="windingConnectionAngle"
-            eType="#//IEC61970/Domain/AngleDegrees" unsettable="true">
+            eType="#//IEC61970/Domain/Anglerees" unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-            <details key="Documentation" value="The phase angle between the in-phase winding and the out-of -phase winding used for creating phase shift.   It is only possible to have a symmemtrical transformer if this angle is 90 degrees."/>
+            <details key="Documentation" value="The phase angle between the in-phase winding and the out-of -phase winding used for creating phase shift.   It is only possible to have a symmemtrical transformer if this angle is 90 rees."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="Documentation" value="The phase angle between the in-phase winding and the out-of -phase winding used for creating phase shift.   It is only possible to have a symmemtrical transformer if this angle is 90 degrees."/>
+            <details key="Documentation" value="The phase angle between the in-phase winding and the out-of -phase winding used for creating phase shift.   It is only possible to have a symmemtrical transformer if this angle is 90 rees."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -17548,13 +17548,13 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="PhaseTapChangerTabular"
             eType="#//IEC61970/Wires/PhaseTapChangerTabular" eOpposite="#//IEC61970/Wires/PhaseTapChangerTabular/PhaseTapChangerTabularPoint"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" eType="#//IEC61970/Domain/AngleDegrees"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" eType="#//IEC61970/Domain/Anglerees"
             unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-            <details key="Documentation" value="The angle difference in degrees."/>
+            <details key="Documentation" value="The angle difference in rees."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="Documentation" value="The angle difference in degrees."/>
+            <details key="Documentation" value="The angle difference in rees."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -19978,9 +19978,9 @@
         <eLiterals name="ohm" value="9"/>
         <eLiterals name="H" value="10"/>
         <eLiterals name="m3" value="11"/>
-        <eLiterals name="deg" value="12"/>
+        <eLiterals name="" value="12"/>
         <eLiterals name="V" value="13"/>
-        <eLiterals name="degC" value="14"/>
+        <eLiterals name="C" value="14"/>
         <eLiterals name="F" value="15"/>
         <eLiterals name="Wh" value="16"/>
         <eLiterals name="s" value="17"/>
@@ -20131,15 +20131,15 @@
           <details key="Documentation" value="Electrical current (positive flow is out of the ConductingEquipment into the ConnectivityNode)"/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EDataType" name="AngleDegrees" instanceClassName="float">
+      <eClassifiers xsi:type="ecore:EDataType" name="Anglerees" instanceClassName="float">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
         </eAnnotations>
         <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-          <details key="Documentation" value="Measurement of angle in degrees"/>
+          <details key="Documentation" value="Measurement of angle in rees"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="Documentation" value="Measurement of angle in degrees"/>
+          <details key="Documentation" value="Measurement of angle in rees"/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EDataType" name="CostRate" instanceClassName="float">
@@ -20213,10 +20213,10 @@
           <details key="baseType" value="http://www.w3.org/2001/XMLSchema#float"/>
         </eAnnotations>
         <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-          <details key="Documentation" value="Value of temperature in degrees Celsius."/>
+          <details key="Documentation" value="Value of temperature in rees Celsius."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="Documentation" value="Value of temperature in degrees Celsius."/>
+          <details key="Documentation" value="Value of temperature in rees Celsius."/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EDataType" name="RotationSpeed" instanceClassName="float">
@@ -22186,13 +22186,13 @@
             <details key="Documentation" value="A diagram object can be part of multiple visibility layers"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotation" eType="#//IEC61970/Domain/AngleDegrees"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotation" eType="#//IEC61970/Domain/Anglerees"
             unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-            <details key="Documentation" value="Sets the angle of rotation (in Degrees) of the diagram object in a clockwise direction from the normal"/>
+            <details key="Documentation" value="Sets the angle of rotation (in rees) of the diagram object in a clockwise direction from the normal"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="Documentation" value="Sets the angle of rotation (in Degrees) of the diagram object in a clockwise direction from the normal"/>
+            <details key="Documentation" value="Sets the angle of rotation (in rees) of the diagram object in a clockwise direction from the normal"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="IdentifiedObject" eType="#//IEC61970/Core/IdentifiedObject"
@@ -25024,10 +25024,10 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="rAC50" eType="#//IEC61970/Domain/ResistancePerLength"
             unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-            <details key="Documentation" value="AC resistance per unit length of the conductor at 50 °C."/>
+            <details key="Documentation" value="AC resistance per unit length of the conductor at 50 degC."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="Documentation" value="AC resistance per unit length of the conductor at 50 °C."/>
+            <details key="Documentation" value="AC resistance per unit length of the conductor at 50 degC."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="WireArrangements" upperBound="-1"
@@ -25069,10 +25069,10 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="rDC20" eType="#//IEC61970/Domain/ResistancePerLength"
             unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-            <details key="Documentation" value="DC resistance per unit length of the conductor at 20 °C."/>
+            <details key="Documentation" value="DC resistance per unit length of the conductor at 20 degC."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="Documentation" value="DC resistance per unit length of the conductor at 20 °C."/>
+            <details key="Documentation" value="DC resistance per unit length of the conductor at 20 degC."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="sizeDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -25087,10 +25087,10 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="rAC75" eType="#//IEC61970/Domain/ResistancePerLength"
             unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-            <details key="Documentation" value="AC resistance per unit length of the conductor at 75 °C."/>
+            <details key="Documentation" value="AC resistance per unit length of the conductor at 75 degC."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="Documentation" value="AC resistance per unit length of the conductor at 75 °C."/>
+            <details key="Documentation" value="AC resistance per unit length of the conductor at 75 degC."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="gmr" eType="#//IEC61970/Domain/Length"
@@ -25133,10 +25133,10 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="rAC25" eType="#//IEC61970/Domain/ResistancePerLength"
             unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-            <details key="Documentation" value="AC resistance per unit length of the conductor at 25 °C."/>
+            <details key="Documentation" value="AC resistance per unit length of the conductor at 25 degC."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="Documentation" value="AC resistance per unit length of the conductor at 25 °C."/>
+            <details key="Documentation" value="AC resistance per unit length of the conductor at 25 degC."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -25266,7 +25266,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepPhaseIncrement"
-            eType="#//IEC61970/Domain/AngleDegrees" unsettable="true">
+            eType="#//IEC61970/Domain/Anglerees" unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
             <details key="Documentation" value="Phase shift per step position."/>
           </eAnnotations>
@@ -25539,7 +25539,7 @@
             <details key="Documentation" value="Voltage applied to the winding (end) during test."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseShift" eType="#//IEC61970/Domain/AngleDegrees"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseShift" eType="#//IEC61970/Domain/Anglerees"
             unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
             <details key="Documentation" value="Phase shift measured at the open end with the energised end set to rated voltage and all other ends open."/>
@@ -25862,10 +25862,10 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseAngleClock" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
             unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
-            <details key="Documentation" value="Winding phase angle where 360 degrees are represented with clock hours, so the valid values are {0, ..., 11}. For example, to express winding code 'Dyn11', set attributes as follows: 'connectionKind' = Yn and 'phaseAngleClock' = 11."/>
+            <details key="Documentation" value="Winding phase angle where 360 rees are represented with clock hours, so the valid values are {0, ..., 11}. For example, to express winding code 'Dyn11', set attributes as follows: 'connectionKind' = Yn and 'phaseAngleClock' = 11."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="Documentation" value="Winding phase angle where 360 degrees are represented with clock hours, so the valid values are {0, ..., 11}. For example, to express winding code 'Dyn11', set attributes as follows: 'connectionKind' = Yn and 'phaseAngleClock' = 11."/>
+            <details key="Documentation" value="Winding phase angle where 360 rees are represented with clock hours, so the valid values are {0, ..., 11}. For example, to express winding code 'Dyn11', set attributes as follows: 'connectionKind' = Yn and 'phaseAngleClock' = 11."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
