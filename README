@@ -2,12 +2,19 @@
 Introduction
 ============
 
-PyCIM is a Python implementation of the IEC Common Information Model. Current
-features include:
+PyCIM is a Python implementation of the IEC Common Information Model.
 
-- Support for IEC 61970 14v15 and IEC 61968 10v31.
-- Class and attribute documentation integrated as Python docstrings.
-- Transparent bi-directional reference handling using Python properties.
+Current features include:
+
+- Support for IEC 61970 15v13 and IEC 61968 11v05,
+- Legacy support for IEC 61970 14v15 and IEC 61968 10v31,
+- Profiles of the CIM, including:
+  - Common Power Systems Model (CPSM) (CIM v14)
+  - Common Distribution Power System Model (CDPSM) (CIM v14 and v15)
+  - European Network of Transmission System Operators for Electricity
+  (ENTSO-E) (CIM v14),
+- Class and attribute documentation integrated as Python doc-strings,
+- Transparent bi-directional reference handling using Python properties,
 - CIM RDF/XML parsing and serialisation according to IEC 61970-552.
 
 Installation
@@ -20,7 +27,7 @@ using setuptools_::
 
 Alternatively, download and unpack the tarball and install::
 
-  $ tar zxf PyCIM-14.15.tar.gz
+  $ tar zxf PyCIM-XX.XX.tar.gz
   $ python setup.py install
 
 On UNIX systems, use sudo for the latter command if you need to install the
@@ -32,47 +39,8 @@ The development Git_ repository can be cloned from GitHub_::
 
   $ git clone https://github.com/rwl/PyCIM.git
 
-Using PyCIM
+Quick start
 -----------
-
-To use PyCIM with the Python interpreter, iPython_ is recommended. For example,
-to instantiate a ``ConnecticityNode``::
-
-  In [1]: from CIM14.IEC61970.Core import ConnectivityNode
-
-  In [2]: node = ConnectivityNode(name='Node 1')
-
-To associate the node with a ``Terminal``::
-
-  In [3]: from CIM14.IEC61970.Core import Terminal
-
-  In [4]: t = Terminal(name='T1', ConnectivityNode=node)
-
-  In [5]: node.Terminals[0].name
-  Out[5]: 'T1'
-
-To add a ``Terminal`` to a ``ConnectivityNode``::
-
-  In [6]: t2 = Terminal()
-
-  In [7]: node.addTerminals(t2)
-
-  In [8]: t2.ConnectivityNode.name
-  Out[8]: 'Node 1'
-
-To view the docstring for an attribute::
-
-  In [9]: t.connected?
-  Type:     bool
-  Base Class: <type 'bool'>
-  String Form:    False
-  Namespace:  Interactive
-  Docstring:
-      bool(x) -> bool
-
-      Returns True when the argument x is true, False otherwise.
-      The builtins True and False are the only two instances of the class bool.
-      The class bool is a subclass of the class int, and cannot be subclassed.
 
 To parse a CIM RDF/XML file::
 
@@ -93,7 +61,7 @@ objects.  To serialise the dictionary of objects::
   In[6]: cimwrite(d, 'path/to/output_file.xml')
   INFO:PyCIM.RDFXMLWriter:5660 CIM objects serialised in 1.14s.
 
-For further information refer to the `API documentation`_.
+For further information refer to the website_ and the `API documentation`_.
 
 License
 -------
@@ -126,4 +94,5 @@ PyCIM is developed by Richard Lincoln (r.w.lincoln@gmail.com).
 .. _Git: http://git-scm.com/
 .. _GitHub: http://github.com/
 .. _iPython: http://ipython.scipy.org
+.. _`website`: http://www.pycim.com/
 .. _`API documentation`: http://packages.python.org/PyCIM
