@@ -1,7 +1,8 @@
 *.pyc
-.project
+# .project
 .pydevproject
 build/
 dist/
 PyCIM.egg-info/
-api/
+Docs/API/
+PyCIM/Test/Data/Confidential/
