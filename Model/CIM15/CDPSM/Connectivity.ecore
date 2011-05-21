@@ -13,6 +13,9 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="Documentation" value="The IEC 61968 subpackages of the CIM are developed, standardized and maintained by IEC TC57 Working Group 14: interfaces for distribution management (WG14).&#xA;Currently, normative parts of the model support the needs of information exchange defined in IEC 61968-9 and in IEC 61968-13."/>
       </eAnnotations>
+      <eAnnotations source="http://rwl.github.com/enerate">
+        <details key="mapPackage" value="true"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="UUID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             iD="true"/>

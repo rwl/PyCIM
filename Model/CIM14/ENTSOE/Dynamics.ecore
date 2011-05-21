@@ -8,6 +8,9 @@
       nsPrefix="entsoe">
     <eSubpackages name="Dynamics" nsURI="http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile/ENTSOE/Dynamics"
         nsPrefix="dyn">
+      <eAnnotations source="http://rwl.github.com/enerate">
+        <details key="mapPackage" value="true"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="Element">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="UUID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             iD="true"/>

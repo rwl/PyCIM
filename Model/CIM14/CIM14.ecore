@@ -6,6 +6,9 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="Documentation" value="The IEC 61968 subpackages of the CIM are developed, standardized and maintained by IEC TC57 Working Group 14: System Interfaces for Distribution Management (WG14).&#xA;Currently, normative parts of the model support the needs of information exchange defined in IEC 61968-9: &quot;Interfaces for Meter Reading and Control&quot; and in IEC 61968-13: &quot;CIM RDF Model exchange format for distribution.&quot;"/>
   </eAnnotations>
+  <eAnnotations source="http://rwl.github.com/enerate">
+    <details key="mapPackage" value="true"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="CombinedVersion" eSuperTypes="#//Element">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="Documentation" value="The combined version denotes the versions of the subpackages that have been combined into the total CIIMmodel. This is a convenience instead of having to look at each subpackage."/>

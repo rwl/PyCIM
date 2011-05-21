@@ -9,6 +9,9 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="Documentation" value="This package shows all the root level subpackage dependencies of the combined CIM model."/>
   </eAnnotations>
+  <eAnnotations source="http://rwl.github.com/enerate">
+    <details key="mapPackage" value="true"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="CombinedVersion" eSuperTypes="#//Element">
     <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
       <details key="Documentation" value="The combined version denotes the versions of the subpackages that have been combined into the total CIIMmodel. This is a convenience instead of having to look at each subpackage."/>
