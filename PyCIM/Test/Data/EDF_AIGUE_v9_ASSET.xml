@@ -1,0 +1,3103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2010/CIM-schema-cim15#">
+ <cim:WireArrangement rdf:ID="_febed41eeee94e93b19b49d8f7c6366b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_eb2b767e9c1241e08f6490cfabc5c4d9"/>
+  <cim:WireArrangement.WireType rdf:resource="#_205b57b1db8347369ff4da5d2569ce0"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_33103b57307f48acb99843f6ef5da88f">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_5b01f40180414c7696d542aba647d"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a038b57325a9476db32bde55c04c983a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_bd91b5c7f043441b8710b4740a947a3">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_105e7543706a411a81fcd789c62af051"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5b8fb33f9d294af0abe999782733b8ed"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e7269c2f11304673b6624e6c88ab2c6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a0535cd70754aa19e2f8a70c0ece35d"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5f88de462ccd4f1cb415d02feb13139"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_33c7913f9c944ebad29f671d1b9a130">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_9380f98b8cbc481b94215b31ee26524"/>
+  <cim:WireArrangement.WireType rdf:resource="#_39b3b943d424f68a4b6d279fdc863c"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a78102aad2804f2e83b121e64a5b357">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_50ec6ad393e945c9a56d27c2bbd574c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_3a4ad660cddb4fbab47c38e21a5e1c"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_2fbc6fd9f3b434796ae602365beb990">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_82ec4ded140348c397e566cca696eec5"/>
+  <cim:WireArrangement.WireType rdf:resource="#_9487806a2210459b92b65669c6c26fd8"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_96bcdc5eab3b4e05b9cbcc8a20ccf2">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_9c4b3b2628641c5ae4184819c2397d2"/>
+  <cim:WireArrangement.WireType rdf:resource="#_8c6b19a843e04683b0436839dfabc21"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_fba5becaed4aeeacd5eb941bc617e">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_30f9c2d7e73946509a651795cd6451c9"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a5504d39c4d44989af866b3d8781cf5f"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_b709503685e547d8be1b3f5cb72c966">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_1f49d4a6ed654f57bb1f4b123a68cd"/>
+  <cim:WireArrangement.WireType rdf:resource="#_e6bc5acfe8f1453f8af56a126da58549"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_bc74eee11fa947c2a59f88a28a2a406d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_89cb7faa96f4835a2729a36da13c82"/>
+  <cim:WireArrangement.WireType rdf:resource="#_bc8abc76476948dea33c4a7ec17c4149"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_5c2c67b143a748af81cc50792dfbd6dd">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_47773d81547046478db29ca56acada5b"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d7ccf9e1653e4768a75c997933ee53e"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_3fc5aaaab62448acb517c63284469523">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b937ab204bec4ff6afd0c3427834ea53"/>
+  <cim:WireArrangement.WireType rdf:resource="#_672e1f50bfcc44bcac7e8ce7f321cd1"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_39e285546e8141269bf7243e2f80efbc">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_452deba9fd984d1db3cdc81d2cde6cdb"/>
+  <cim:WireArrangement.WireType rdf:resource="#_c937d46f966d46388fd2e3d3993424"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_bd1bf98c8a974bf6b05e334c4d16b99">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_563f9442c29e47eb8bf5e10a175f73"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b7ddac314bf7499bb4fff332df1d5df7"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f14aeddce74d089198bba8641c819a">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a8554f3d336b45c68fadcb7fd593891"/>
+  <cim:WireArrangement.WireType rdf:resource="#_44763da62ec742d195e33b826d6ffc3"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_cba03b9aca4347c095c45759257976">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_1f27486b9ff6429fb2655c4a7f7cabd"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f3c0a5b26654decbee3ffd4dc3a206b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a23259a9bf56494580273ebcda9621c7">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_78ba880a162e43ac995f8fc9984bb7b"/>
+  <cim:WireArrangement.WireType rdf:resource="#_c38d53c89f44cca8794b697d1e1ed48"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_fc33547bc2bc4334adc099254ac6b830">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_810d64e374a7406db55f95345429a38"/>
+  <cim:WireArrangement.WireType rdf:resource="#_9b93596296af45ab985143bd911b59c"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_79d40ad051aa400096f52c7218b98024">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_4e1c18343f5641e3967f64d398f7523"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f1b6524b617748beba3f919c6eb9c4c5"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_66da03863c1f4264bf1b23eeeadacca3">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_2fda720aea0d4950a481bc929aa4ef50"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5b22c032544941019788f17a9162efb1"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f36690479fba4f14951d7914f86b7144">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_17e6cccea2004761a6111782a85511b"/>
+  <cim:WireArrangement.WireType rdf:resource="#_65129891787640ef82acd0a156d81682"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_d0bca169a1c742cf80859be8b289f2e3">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_1491b397a8464bfb8ca3aedb3c6591a7"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f03934132845fba4962a63a4d4f6ec"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_16c44d8562bb4e6aa678b04c4b11f8b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_3cd628e2386f4cc88df3298d4bc1fc52"/>
+  <cim:WireArrangement.WireType rdf:resource="#_4c9b1a9ef9d64be98843152d77f97b8"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_6ba2d5b8d5284c898077d73eaafa5638">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_e88d7ca96fb8417382e18e5ad5c24efd"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ec40ffcf478a4f4d9d126b7543fcf7db"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_8e759a0fad914e03b66231441c0f5a6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_69e8c5622696443a949e34e3fe10c2"/>
+  <cim:WireArrangement.WireType rdf:resource="#_fd4cf3763cb9487e9bbb15bb73aaa69d"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_ec919456ca374a64b3aef486bfacb924">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_db39f9abe9b64a8899503e09b7f215"/>
+  <cim:WireArrangement.WireType rdf:resource="#_1c3cd5d9be6e46079a2f6974f7f99cc0"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_19f6fe3588624adf96c76418903e2cc8">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b9b48d2bffea47c8a849956d50cacc2c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ff622ee69fb948028e8936bbd9c7f73"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_ec2905df5d4a48dbb1beb268dbee7370">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_bdbc484d2b2747cea8d7a8c3c29cce13"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7794496e231545f99eae446f1c334763"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_b97e94e81e664bd7af2859241993dadf">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_357225b5f16745ea9693f6dcf9cbac49"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a3bd99fd1294989ad67f6d7de6b4dd6"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a7adfedec1f94942931484d71cabf595">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_13f043fc5bf49e38bdfbd2792f3edda"/>
+  <cim:WireArrangement.WireType rdf:resource="#_52a68bd1b93245dbbea7b62dceab9972"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_3c9e18ab5c3e4d8ebf1878a4de360a1">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_5705c7a7f43649669f764c2eeeb3c4d7"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f585e81254c84bf3b8cb5de208f8021"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_d28605e2a7984074ba1485b8d44359">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_47c96fd5d0174543a75f38cf39ab687"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d922b6a6caae408e8bfd107f9cf42bee"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_863b59c5255246469c29cdba24dbd8ea">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_e13c346754a54b279c780d3ecdd67d"/>
+  <cim:WireArrangement.WireType rdf:resource="#_6ba9974c1532428fb43ce1ef9f30d25"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_2eb1f767d5c417ea132818d9d15b8">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_2f8a497667d43749ac6d472b5dd5ab8"/>
+  <cim:WireArrangement.WireType rdf:resource="#_2cef6670f01543ea85c2871e9a63d12a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4e6b62698e9c4a2b9191624543cc6f">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b0fefe77aecc4b2fb69077674b1c667"/>
+  <cim:WireArrangement.WireType rdf:resource="#_76b6cfaafb994f2786303ede8f428bb9"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7a9470f42bc409fa1e385adfe97a1ad">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_ef0c5d8ae2bd4f1d87d1516fba7116b"/>
+  <cim:WireArrangement.WireType rdf:resource="#_c504b6a2d30547bfa58bb217f93e734"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_5f6f4c2c2d234afb94a1f8dd147fd82">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_59ff45f4d01e4beb91c28f114a4c7a66"/>
+  <cim:WireArrangement.WireType rdf:resource="#_35811ef6541046969819943f8fea8cf"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_1d27d650ae584fd486cc23e4862f553b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_10feb6e5bbdf4a0a94daec21db7df112"/>
+  <cim:WireArrangement.WireType rdf:resource="#_9dff29b22832403fa1eead801b9d4866"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_338d67942d064e10b759f63d4e2aaae3">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_368e72ebdcc249a499ce5dc16614186"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7bb4a228cb364b3681eab970d23623e5"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_5ee09c8ab26e4ba4b541c394d1963159">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_8f4c9b6ecf74482d8495f1f15f177fae"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b0622d428774aee93223d2ec163ab43"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_87bea5da647040869767352b02d8d10">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_99bd4369c2bc4044a78e3240e79e14f8"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f44d7f24bc784b5999ca8365d968ae"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_570362269e04ce8ae88bdd23344fa90">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_126a894a5a43428bb04af7c8255334"/>
+  <cim:WireArrangement.WireType rdf:resource="#_aed9773739e44e62be60a0672ac72f8"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_55e1421dbbf749acbded805e3c61c278">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_f913b546a704479aba50bffbe9d2a12"/>
+  <cim:WireArrangement.WireType rdf:resource="#_60ed64f03dd84bb49dc322a89414b36b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7e000e33124b46b3a91cebe54eeb8c7b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_600e1a931d17407caf9b4329e783a541"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b76a2d2dae8a42d497a5fe373636f688"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_fcd1f1165cc5430595a625da66c6fe57">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_4f5c0296beb14111bf9fcd4ceea1e54f"/>
+  <cim:WireArrangement.WireType rdf:resource="#_3f929375e9e54e739cbdf9ebf7dbd2fe"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_259b3c66c1f74391b0e974597e71fc6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a88e97eb4d4c47c4bde097d36e1d96ac"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b8763e3f25e8472b8a2957706a39d89"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_d0682b3b1ff74dce91c46fadd54fe86b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_f8dcc70935694992952d55dd55e6d5e9"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f5626668d60e4b29aeb8ac48f1381739"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_5d47c5e0585443199d386646eb896ace">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_dd44abee58484808bdd366a495f4cba"/>
+  <cim:WireArrangement.WireType rdf:resource="#_dc5409adddc74f549e97ebe8dc66ac1"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_530ddc4e5c204c5cb969ebe2873861">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_ca534b5a792b420897aaae8b5c1a81c0"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b080b9f5be7490b97b92972bfa03835"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_dbda111c87e445b19697e5ae334a612">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_bf06bff5da554160ac7ef5c37a7b758"/>
+  <cim:WireArrangement.WireType rdf:resource="#_51645eac6613496d84364e5ae752d453"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a1bfd7f922df4b8bbccbaac65e05e77">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_6e06180415f44cc09640a81f6d772831"/>
+  <cim:WireArrangement.WireType rdf:resource="#_6e5b64933db44604abe8a721bf201732"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_dd2497f6828940189d425eeb32a9f5a5">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_782836513e7a46c2bd66fd2622ee49f5"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f518eb7cec684ecdb6e91d73d57f853"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_91f4b8bfc41742e3847d1fffa3aee3c">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_122a5fe8ec524e378a9ddf9d4a19814c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_77adc8c760184470adf5c6344c5a3e1b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a576215a96ac4e579c5b2b8f2af7da3">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_eef3193c3c8e464eb7e27cb22165ea53"/>
+  <cim:WireArrangement.WireType rdf:resource="#_485ac880863a4a1bb2af8764d95e41b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_68d6720214034734ad464ecfeb3c4ebd">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_e8ebdf914daa4949a02bc4808599d6c2"/>
+  <cim:WireArrangement.WireType rdf:resource="#_28d71442811b4454859d21f2df97b837"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_5fb6e78c2fc04c1abc9a757929d0d763">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_8a1c175c0054f098c5878cdea3bf1f5"/>
+  <cim:WireArrangement.WireType rdf:resource="#_8919cb79d3940cf81e861e948c28120"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_2cb84954a27a4a46969953dc8c4269d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_11a51ee1bdfc46a1a43c5896932f2a8"/>
+  <cim:WireArrangement.WireType rdf:resource="#_37641f3e720e482488721fbaf8c7b48d"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_d62c35ac2ef54b67bae37bd12cc9d7e9">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_938ae8961234542b4eace24f54eb2fb"/>
+  <cim:WireArrangement.WireType rdf:resource="#_bd4c2ad66682482db3662286891e0d5"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_42cead2e916e429a8a9e0aafe23a862">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_e64276d22ed34418af81d73e0d6449c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_9ac265be79924cdf989474cb92856987"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7a981908289d45a381394fe06911b381">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_f3cf017694ac4d0e9661292183553d7"/>
+  <cim:WireArrangement.WireType rdf:resource="#_2749a19ec9894e1a9eacc31565c495fa"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_46f9d624a102472b929def6de569cc36">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_5be44a4015304ac285c181476add07"/>
+  <cim:WireArrangement.WireType rdf:resource="#_aaa65fcf4021437684724c3a5d5a1ca"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_6eace998271a4f4785bd6326b968732">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_8259f5e5fb44fc6a647493206dbcf0"/>
+  <cim:WireArrangement.WireType rdf:resource="#_8fc84925fa0c4886b124bde2c3404611"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_89de1776103945bf81268b97cdd29d0">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_52d9edba948d4377841ebe5aab183f51"/>
+  <cim:WireArrangement.WireType rdf:resource="#_664c3846c8b46e38b97dcf5551f1a91"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7a0fe4c025c04525b4a8b316bcb2c2c4">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_2b7f9578af8a46b4914ca8fe4f3e807b"/>
+  <cim:WireArrangement.WireType rdf:resource="#_3f269c0c68ea42c4b488a576e73be164"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_2fd566d83cc04d63af3eb7775af3a160">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_762277fd276a46918fc727e0306850a1"/>
+  <cim:WireArrangement.WireType rdf:resource="#_eb9b2478323f4c7aad5618e6d7d19c12"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_98a75be562da45f285db24be1f48d8c">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_6f1ad82542cb4e5a8fd6786d8705121"/>
+  <cim:WireArrangement.WireType rdf:resource="#_4f88745923d54dd59cff4a175d8fc772"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_ff7d26b11b20474ab9625450a2255ea">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_98423147e10d42ce925d32df2248b4ee"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a670d0593a8e45479c5e2ccc584464d8"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f527ac5f7b7345108dd081c7e5d39372">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_8b1fd27cd7b845c49031b232e5e1ae93"/>
+  <cim:WireArrangement.WireType rdf:resource="#_56ac0cae6bec4dc48cc877e011138979"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_dd7e63fa21a84835ac95212cd389c3e3">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_f469ac134ac147b0b2353d58f1e7b69"/>
+  <cim:WireArrangement.WireType rdf:resource="#_948d84de244f4f2fb2bb947ccddffad8"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_6092aa4b76164287aafdb795d52c5f5">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_10244415c5c640c6b4224683e81b1a84"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b29b8156fa29461db9eee72de5bdb8c"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_1f17de3a6f644b3f8639b4dad0ede12">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_7485c85a2cb9422888b3173933c8573"/>
+  <cim:WireArrangement.WireType rdf:resource="#_2c4dc8b1993043f29b28ace92226c356"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_549c23ae8d7c458c8a4b6b951ac52cfd">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_ac33531fa92e4a4097cf6e18a2f6c9a1"/>
+  <cim:WireArrangement.WireType rdf:resource="#_1bc8df6a23e741a886b99e9e19d1714"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_181e74267ee94fccbaa32640b9a621">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_6295cbd59c704f558089c636c76ddf51"/>
+  <cim:WireArrangement.WireType rdf:resource="#_985b1304b53740499d3ec98d1e49cbe7"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f66f0a4d99f4ad6856de2c45df860d1">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_5c5d2b1739bf46d6b2383afe395cd02d"/>
+  <cim:WireArrangement.WireType rdf:resource="#_1bf4f86f53f442faae50914bf766c44"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f28ca87668a34631a3da1eece0b6142d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_1bcc30dd80464e97b75649975edb9f15"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a24a6cad9ff64f518babfc20dd3b794"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_93da877f4b74fe08c6f4c83bcab8dd3">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_3fc72d582b2c4cc79715cd24827327a"/>
+  <cim:WireArrangement.WireType rdf:resource="#_56b0842e7fa745ada3264b4d265782dc"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_b4bbe6be43374a8398496c189ed440e0">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_7214d6349f764827b4b6467217a184df"/>
+  <cim:WireArrangement.WireType rdf:resource="#_165e39cf8bb145fcb8a8427e42b372a0"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a3ed3fc4a6445d5912e488ab26e143">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_4dc77df922e64f4eadbdc97deed535bf"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f7e878dc2e3a4c1a974e2c4ef3174a9"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_b837d3c519734cd29fffbe51baaba2fd">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_54c2a97947fa4846a6fbf214434d059"/>
+  <cim:WireArrangement.WireType rdf:resource="#_43ff56a15eba421693277f904b92fdb"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_c3fd56dec8d147d7a58509923528d9">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_c10b22849e73477bad18b86b786143c8"/>
+  <cim:WireArrangement.WireType rdf:resource="#_cfb287f02da844739c37939f39b522b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_3307aa26e8bd46a098871388acbf981e">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_ddd29bc1b93d4034b02e859cfcec6f3d"/>
+  <cim:WireArrangement.WireType rdf:resource="#_e9f03ab1a7ea4893947dfbe8d69573cd"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_22ad19b9f94c4066b648e1403a6d4fe6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_ea108864335145ceac9586db6c9354e"/>
+  <cim:WireArrangement.WireType rdf:resource="#_57c314f4ff64461d8af1fda338bf56be"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_9bae9324f1f54e25864fab8a35e995a7">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_8adc6daa6d86484f8b936274d34ca240"/>
+  <cim:WireArrangement.WireType rdf:resource="#_911f51e0ea2b4b9ea5ec8832d07d7d56"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_6627afd4cd2947aaae266fb1d32a1af1">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a70f971b902243d1971ad6e7c2aa238a"/>
+  <cim:WireArrangement.WireType rdf:resource="#_1a35b8ca94f944a980afdacc979feb2"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e20aa3b1e09541cbb296df2c7e23a12">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_37ee2ceffd8e4d469fef966bc3c5ac65"/>
+  <cim:WireArrangement.WireType rdf:resource="#_4295e3f4dc334f128e7f299d2ec38a5"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_ad4a7ef66b84d26ab38315cfc118f22">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b008d7cec43c443281d2d5b824f4f2ef"/>
+  <cim:WireArrangement.WireType rdf:resource="#_60bfe58d49b6405882783d1b12caea5"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_c46a3507ba7b42ed9cbe1579b064553">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_2fd2a66489bd4f50aad652923293778"/>
+  <cim:WireArrangement.WireType rdf:resource="#_1e67260c19684ecfb074c272cdf7767"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a2fef5ab6d2a4b8997999fb7b918859a">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_dd9c86b84407459f91a456337c25cf59"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d767a10276684bdabcbe1c9185a3d5a5"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_66a5c51d46f14973a0a376a79745eff">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_98f7d47ba8b3418fa646dc8de8cb5db3"/>
+  <cim:WireArrangement.WireType rdf:resource="#_2641d3047dc744b2abb731a99b356e"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a46ad59d3ad445db5f8474598393b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_c2b46a5abbf04611b81bc9a5f3b48a5"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b3a9cf13a97a42d48ad28ddda16d3cb"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7c866cf3c26943d590663f9e72eafb13">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_4e530de52f0b4a56843dee443d8ea37c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_9315975c433040d8a9c34cc1841c2344"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_9df0557e38b4fe0801ba194eb2a5ac1">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_36a409bf4d454e059aebbebd7dfe321"/>
+  <cim:WireArrangement.WireType rdf:resource="#_91a82869f62148039a48adce4e82a5a8"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_b536185b99ce4e1ca7b6a85fe585fa55">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_41435b70da6745a89f281f3b4141e2ae"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b0bf5c5127ed4599adbaac527e1dfa3c"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_c28c1c577087470d8ba94bc6539ca3">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_25eeb1cff4e9460fa0bf95faf1c63d3"/>
+  <cim:WireArrangement.WireType rdf:resource="#_e9961cca9cda49baae803030c4914264"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_92b457aa60ca4fcc8567c6972a92627">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_6670b4d643d44ce4a13e5f146aacb14"/>
+  <cim:WireArrangement.WireType rdf:resource="#_e57907494d984e4ea1e795d113365f27"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f36b354f2bff49029263f48fd8c82b86">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_99dc3dfdbc714ed9a78abd875f4f5985"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ff169a6ac1404efb93ad796692dff883"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7262fd5bd17a442ea1b45bf8a8cbf34">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_234a3b9b34364f2eb16170c4ffaf76"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a382f168f1c84c0588dd9062e34fea82"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_200f560288a34bdd9d4d3d517822a54">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_48341d03efd245e39327a1b1bd354e"/>
+  <cim:WireArrangement.WireType rdf:resource="#_efe6aeee771486eab50ee74ddc17814"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_2a9d4fc4acb1421f9f5699d9a86ea55c">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_ab4c8ddf4d504922bdc798a0642bf738"/>
+  <cim:WireArrangement.WireType rdf:resource="#_977e1a67f27442bb871a2342a5cd48a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_47d87cbb7e964995a6c8e7a2e09e7a6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_42703f4c9ef847d4ac2d1703c92a22"/>
+  <cim:WireArrangement.WireType rdf:resource="#_1b622c17489540a997437185dee5fbf1"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_beeabcf42d3d492da5ad19a3f8e1210">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_c47ed5b2c1e54a3187347cf1feccaca0"/>
+  <cim:WireArrangement.WireType rdf:resource="#_98fbe6e017fe4a0c862d685cd1f56ce7"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4bb0fb0b3aa240d19748d94e9cd64e2">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_e17f2395712a4df3ac8e77323ba1f7"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f6210d74d68c4b15bcb33ea050d485d3"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_d3c5f60ec95f4dd28b80bae678a0feeb">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b40e2ddace2740519ad9fe341acb4fb5"/>
+  <cim:WireArrangement.WireType rdf:resource="#_72e32682f65a443abe1b7f94ab5f1d8b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4ce20137e10445c1a0b2f0ed10e72697">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_f3e5e242acf2480a96e9aa897aa9c441"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ee3b5e918824476b9ed9ff3c915cd3ca"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_199a3b229c0e4558bdd8bb89231519">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_cee2fe22453147dca1bf5dc6d53934"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7a55671b674147548efc5d9f94ac511"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_39f15f055f5f4eacabeac2f57ca15fae">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_24ba5a3bb7ce4bda89add64ee8b71d0"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7d81bc3862544d2a9589ab581ca2dff"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7effe3cbc7c9490bbf7daf7531fc271">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_5b8934bed86846c39e8a59243437dc95"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ecc3b5031d7a4ccfa3c3d167efc9028"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e86bbd46a588471a89ed424b5546eb2a">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_85fe879529cb4d2e8f457e3539ee47"/>
+  <cim:WireArrangement.WireType rdf:resource="#_508b589a98654360bd597ded43c27ea0"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4d8d25dc4b8c45cea7494cae5a80d444">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b6e1d02ed6f74073b114a0efc77be8"/>
+  <cim:WireArrangement.WireType rdf:resource="#_c5da40a95d9743069485dbca675a5998"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_880d2a6f9801449d8599b6efb3e4c3fb">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_2f272585ed434559be6bd28e9a44149"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ec2f89f8a9a4802b9a65d6ca85af329"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_c971d1b843b74b538de3b856773e78c">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_65c05c1324f641859a58d12d90a6267"/>
+  <cim:WireArrangement.WireType rdf:resource="#_e7ca56c6a0cc43248e4fee65e696f242"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_1944229ab7fe497aae416c93ceed3515">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_264a433a86c7493cac64a5cfbdb6b9e"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ec48be4111ed417490a986b53f3522f"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_9340115c3f4602ac7872c117f3f793">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d4382f4a921c4416ae2a4f7e4dfe0fc"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a315b885fb294520a24cb037c02f270"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_94c423df716a45e48e7e15f673a74940">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_cc98c9a2a01417db1238298826384c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d9e64bc155b4853be8a034b5edebae"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_624904dcccd74c399a4bb549233fd478">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_3d9c22f17304cd283d589d564649cf4"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a00606bdceaa4afb97c6277772a308a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_b98c9f6568401cbaba9b4c1351d265">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_faae8c461ed94e9a8ccad42450677c74"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f70981d344f3400ca71eda30e6714727"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_b789db1e3f6044b2a7296e9473d893a">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_be83b8c6a0e04f189a69f8c1b1f3e26"/>
+  <cim:WireArrangement.WireType rdf:resource="#_56478ed983324d648dc2a3aa2da6b8ee"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_58e4b501f594db19f7849fe653b795">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_fc708c02b88a44559d3a519861889ed"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7b58d4c21624703a49a5cbe81734e1"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_d0ae7ea9d51c4e4b9a99e03bd8cf1cb0">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_429ebcf1123d4d5fb7c3267c39b016af"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ebdda8616444f7fac34a35bfeb1fcba"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_566121739c7d408695c9df53537e339">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_286fe44441b141f7802a3267aad7a6b3"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d226c51dfd54e31b2ac784ecc6a5a7d"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_9ad9c13a6d8d42659738a6259fab24ed">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_fcf15b81afe4bdeb984a6b378a26071"/>
+  <cim:WireArrangement.WireType rdf:resource="#_55882e54424e44f0b3ae118b6af0d67c"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_9281dd4558d4401cbfa885ff28d71af">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_e0a0c13340f5455b883143e692bd14d7"/>
+  <cim:WireArrangement.WireType rdf:resource="#_9c880871839f4b25afc69124ed7f19d"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_c6f09355cc04df2b2e9f739af22d2a">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_4e551f8db9f24bd19b2545c38579aa0"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5578ebd7f50b407fb4f67dcd6573e3ea"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_d5ea50b7d8054de489b425738b8bb89d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a4d35a2f269145d2802cf9699e5b475"/>
+  <cim:WireArrangement.WireType rdf:resource="#_c02699b4d184da8bb4a4da84d9f8c20"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_96d0e48b838c438ebb8d875ea7861c8">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_8170fc68b66f45a28c2dfdaab08a9795"/>
+  <cim:WireArrangement.WireType rdf:resource="#_3490d96087504529908f9d1d39b3dfe0"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_14ae5f61ceb74704961e6e405336cd93">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_fdb60b35e1946c78880136881364da9"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ec4cd893e2b64e95ac6594a0cad8e5fe"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_191a48b0552641b780fb8b155729851c">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_896d086f1f5e42ce852c1912a96f219e"/>
+  <cim:WireArrangement.WireType rdf:resource="#_db529a127ae84c6d9ba7f046fab4a15b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_290c1104e5b3477d9bee1e14602d4172">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_27bbf6e5ec414e09a7ac19b13d5f4f1"/>
+  <cim:WireArrangement.WireType rdf:resource="#_126d3482eac34bb499ea404f1c59242d"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_25f12afac68742dbbf32514dcaf6da7c">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_e0116529afb453eb092d80c57181"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ba5f9a068dfc46b38dbfbee0481155ca"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_55962cb189ef49a4a5af55b2641db54">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_3c27e0643e3644e790859642acd43a4f"/>
+  <cim:WireArrangement.WireType rdf:resource="#_c977b5ce5034181baf3bbcf3694395e"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a92477369a0747c8b4b26349dbbafbe6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_71d8be3186f94210bc32648cf8829fb"/>
+  <cim:WireArrangement.WireType rdf:resource="#_2e0adb57124a47e496bc8ba597bf8092"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4d5eb1b1998346b49468cea0ab787bb5">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_12f495532f8a4ad59dfe7ab79652b813"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5f06885e20fd44f8bad1129397589"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_fb5ccd90170428298b149e9295f56d6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d9e3686626c64de0bd48a56b29e40d"/>
+  <cim:WireArrangement.WireType rdf:resource="#_406258f834b845d0854ffc258dcae7d"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_ab769b93ca72428bba7fbcb1896ffdaa">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_20c56e9518474a038131f4d07e928549"/>
+  <cim:WireArrangement.WireType rdf:resource="#_6ab195cf1e1740b4b92acdae5d0805a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e2e143e131ed4c3983465f449dae5f7">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a555255d80cf4d73946910d5ad47c9"/>
+  <cim:WireArrangement.WireType rdf:resource="#_6b55652043f41cd9add7a3021da13e8"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e6b47496b1d2448fa3b3d765307a780">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_415d86c4eb924248805886f74c144289"/>
+  <cim:WireArrangement.WireType rdf:resource="#_4bbde7bc252743b6893e9a81b717d024"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a8b38bba8f6e44ddb348b94192e1c1d2">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_39086b4a47e54c6298e0acd9326ce753"/>
+  <cim:WireArrangement.WireType rdf:resource="#_66208ecd17644c499e40f29abd2c6ff"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_42369757a5f144c684d90c086c24bb6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_aa8684577470434e9c738977c214a"/>
+  <cim:WireArrangement.WireType rdf:resource="#_824bc327a97f49f2ba10e481815d1437"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_c739577e47214678a8105bb448f76eee">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_92ce0d9c3cc40168955b481f859986"/>
+  <cim:WireArrangement.WireType rdf:resource="#_9749245362974704ac35cf36118bdfea"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7f247f4dfa4a44cca33b4f1e5af5ebbe">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_9236ba5d21014fec8552574dd04d3e66"/>
+  <cim:WireArrangement.WireType rdf:resource="#_4c5d256bc32a454e8a626e7efb7a540"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_9d6a4985c4034eedb0a0651aeffb34eb">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_ec35c39fd5e4d2ca58bb99da6d78190"/>
+  <cim:WireArrangement.WireType rdf:resource="#_df38a8cc9da4113ac6f6cc4e32dd076"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_158e6d2a9fe84c958d10898deb1e67d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_904da75998d4f039d60f06420cc175b"/>
+  <cim:WireArrangement.WireType rdf:resource="#_82c4a86513294ce4afdaef4a5d9dbfa"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_c622955eb00d4608ac4a3b8f7d42dde">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_96d27fad8b7e46dea58c2946166c70d8"/>
+  <cim:WireArrangement.WireType rdf:resource="#_e1bac1838b984e7e9f5158b7df0b936"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_8bb32abb62341a59d81bb5c3059bbdd">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_501e64836cd24686a53e8b59a44ce3d0"/>
+  <cim:WireArrangement.WireType rdf:resource="#_8a09cce0c17944e49156d1a87c5d7959"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f7c25376cfa542e5b366856f3c17514">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_fde33171abda4df691a9316b97cf757"/>
+  <cim:WireArrangement.WireType rdf:resource="#_9bf0e45e5e724cba98cfb33684c12256"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_11dd40b6aef94f50aed56c4a8d162a6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_c14b50fc30d6417a92d6b823fcf46761"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b49aaf3ce1544a9fb63188e82187339b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_9c62343638a14862a2fa7630148da441">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_f10e70ef96fd47938f6d504eebec2fa"/>
+  <cim:WireArrangement.WireType rdf:resource="#_4568f3f2292947ccb4c14be6ef5f13de"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a710f909b5994420a345643531c7443c">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d653d99fbaa426db99b5d85dac9d2"/>
+  <cim:WireArrangement.WireType rdf:resource="#_28cdcd45f5444a4b8daefa439d5dfff"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_bfb78da81c554405947f1a769e69f375">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_79c1051bbbcc4a41bc561fe7558c663"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b2b7751e5ef43df99b1991b325e71f3"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_438f32d687fd46a9a0aa833646192950">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d5ec8ea8a714893afcef0edb632db93"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a7ca821f865e45ca91e941721e7178c7"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_cacc0664b36d48ff8c9a28dd2a54b6de">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_c614336776be4218a3a9e13dd0a64ee4"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ac267ce211764454bcf79cf8d46fe07a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_39e65df97b8c4c83a01ada3ba147841e">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_eac2a42cef2f4260bd655ed8e7b3f664"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d53ab567d6fb419d801c865b3d8369ab"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_69aac6fef6ae4cdd817f68cedbaedd9e">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_532d780f9977466681c1f26ce3f7f432"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ab2010771be4411fbbc4b5d4634d5da"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_95434115a135495dbab345865d8e696">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_f5c07ed9a470447b8f20e813e51ef136"/>
+  <cim:WireArrangement.WireType rdf:resource="#_2fcd23f13fb749c9b251496fd447e752"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4c520382c8134a39a013d1d1e1f5fc85">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b2e1155f95354fb3856a702847cdacf3"/>
+  <cim:WireArrangement.WireType rdf:resource="#_1d1dcb15c82e4db08efeaf7379f28"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_c9198d6468bb4345b4cc2ae61abfc14d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b28e1191a7a14dec82f9a52713f9521f"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b0a2740e51374f5fba5da41124d17e1"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_368cdcaaef914aee9ce5fe3f42f49936">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_7423baf532ce4da385b06398f7af9d5"/>
+  <cim:WireArrangement.WireType rdf:resource="#_dae235b06da1408080f5fbc0dd9e35b0"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_cfe5dad0b4fb498388c47cb3c5a83c74">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_970ae8d33cfc40c4ad8b58a2b247eaf"/>
+  <cim:WireArrangement.WireType rdf:resource="#_6d22a508a3d4ed5b44bddbcf65db7e7"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_b924136968e541cf9e60fc1f4f7ba8f9">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_723f677aef4d4ca79662c02bbfec2f9d"/>
+  <cim:WireArrangement.WireType rdf:resource="#_45ba740a30414cdfbdb5c8ad3cc77bd"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_6370a96998ba43d58f4df02d2221ce28">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d041e1faa0a14a05ad68c829372d3037"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5f8f4f8c3f174539b0aeac801cd2dde"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_cef19da588b14f828bb2366a65299">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_3d788be3a0254af18dd7c6f3551945ed"/>
+  <cim:WireArrangement.WireType rdf:resource="#_866b818dcc984a6db84e466d92c49081"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_3d0c40355ba044ee9d77e5bfe9badc58">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_1523707551e438796c52d624d5f75ce"/>
+  <cim:WireArrangement.WireType rdf:resource="#_96054235b6eb4dd0aeadab951c455"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_afca0f1a65324f2da89c2976e1ff70b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d1718eb3b7f643ba951520f1ff21d921"/>
+  <cim:WireArrangement.WireType rdf:resource="#_e5c19001a8c43c88fe5b1cfc54e94fb"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_1964c7d7a3814fd9933b1224b4b1984">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_4c435fb3ec4143d8994a36277d918449"/>
+  <cim:WireArrangement.WireType rdf:resource="#_79d7d2fb5f714e2d8fdc562078bfcbf7"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_94d0b6d2fe66430cb2a1e85ee7afa940">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a8632dc956454545ad4f53dc77f55ab"/>
+  <cim:WireArrangement.WireType rdf:resource="#_66e07505278c4f68a2f3a452a5d36f6"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4c9aeba8e50f4142b954d14af4699b51">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_2c7eceb5b5454760b422627b07f8c8a"/>
+  <cim:WireArrangement.WireType rdf:resource="#_4a24f8bac6ce4c98b9caee316c987691"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_aae36f5dda6148639e37a5cc16cacab3">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_c04025afe5dd4ff19cb3599fba62a2"/>
+  <cim:WireArrangement.WireType rdf:resource="#_158377fe7aed4f8089534cc896e2289c"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_93cd1da1ac9e45fc8233a738fcc56060">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_44e4ae015a6b4ef89c6f662dee9e968a"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d6b96a62bcbb4375aef2cf7699ce8e5"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_91c854a064e647b4aa41822953a9a95">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_8a7c0190e162462aad304bc4a121d14"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b1dc971e9ec848dcb7a9c4cd6e14de"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_71ee0a7a9a5c4439b46f3ed4864dee8f">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_f574541559f7464585b11d594f84337"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7676e975ce5940e680448b9745bd5bbe"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_29a1d138654a4cf88780b193c14afa54">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_ab9c280c3f89448580ac176d1624b"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5155cedc730451ab8e585214b16e842"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_584b284d34934e34b8546aed1d9fa1ba">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_8de0c969ae8b428dbb52548eae5e4ad8"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ccbb40dfdb2d4abf8976b542f782091"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7801ff0b59be4a0e90225262323470ed">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_feb6bc22bca04251b569c63e1222d624"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d3655b42ad4545f0be4b9b6f3032a845"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_3778528e297d4984aeb1e0da7664fb66">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_97ccc05d51b04687b8a7b478cc8e446"/>
+  <cim:WireArrangement.WireType rdf:resource="#_afbee899ec5c407a99bd9082f8a5943a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4a8831f3abc844a4b791ef8b9a6f1d9">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_297ac939a3114d16b62e76fe12d513ca"/>
+  <cim:WireArrangement.WireType rdf:resource="#_82d2da33f65d4f8eb69c32dcaf98b56"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_83a73b707f524a06ae70113f0fab6e5">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_3821cb27e3f54d8994bf71e4cf2349ca"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a871bd8a1dbe40d5892036f71c362b69"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_8c50837de2f24a35b5f47c3dc30a874">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_205d9f0e2764be4addcf5d1246625"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b7fa65af2f3b42dba2c0126fb265ba4"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_78ef05cc5c1c4e12b8172196f556a812">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_8deb03cda962438bb781f64c759cf2f7"/>
+  <cim:WireArrangement.WireType rdf:resource="#_85413db8e1854c669ae4d4d72947b532"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_8dd34312c5040dd949ff59039b5eaf0">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_3b4f8165e9d41dbb3f5bb712561f3fe"/>
+  <cim:WireArrangement.WireType rdf:resource="#_c33c4844ae904b27b1df42eda3a52ab"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f33c1f4ffa9844b4a98a3d59d2856ae">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_65b037f76ad64c9f96bc1b6651980f3"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a818464666f4d2ebde623d8d0776510"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_aea1a28c9c1f44cf9d1d72460e1f1ff">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_77221c594104e68bd4cd2ec3c65625c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_9518dae05fa6481e98d28adfb249fa22"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_c4d8795690af4c56818b59e6c15b2e58">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_78d7f5e87b249e6b7efd33455e6e02a"/>
+  <cim:WireArrangement.WireType rdf:resource="#_dae5921ee46c43ccb9b4eeb13d97f834"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_25f88449aa584632824667bee3a13528">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_7eb3634bc990460b8e431edf78f9ca67"/>
+  <cim:WireArrangement.WireType rdf:resource="#_bf6bcb5e641443999cded0308a665d5b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_42897c32ac0b458f8690b43aa5c4d5">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_c42aa8bd33c48889c824210d8e5c8d"/>
+  <cim:WireArrangement.WireType rdf:resource="#_cc158aa3b6e9442f8b23f1c9fc20e1fa"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_936b0b651f9f4b90b290dee926b4822e">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_48989eedf7fa448287afc9fe5a3eba59"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ab440cb6a3754d469b59a7d98acfb7f"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_81564dc38044ab6941a755070ccc9ea">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_e3386e2125814bb0a2bc3b1f3542c666"/>
+  <cim:WireArrangement.WireType rdf:resource="#_90c578a52e0543228fd22861fb9dc3df"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7ad4cb7c157a4ddc9d514dc4e49dc9f">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_378bb7ba915c483d871b14912a769f49"/>
+  <cim:WireArrangement.WireType rdf:resource="#_6535ebdb418f480fa3f1032fd37e352"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7dab17599d5a4c32b883e4d2ad680dc">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_ab386ce7c160410ca3bbd17bca947722"/>
+  <cim:WireArrangement.WireType rdf:resource="#_37ec1068b3384296bc9df6734cd2562"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_2113b58151ab424e80c9d725b03b76fd">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a173d97a4b1a40eb89f020ed6529ecb"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5a7cc421248f4274b2d73f2d86ad73f7"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_df9086241dc74dc084ed642e7c65373a">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a26e43df5a334b4c911d49607bf9a78a"/>
+  <cim:WireArrangement.WireType rdf:resource="#_17634e989acd409c94777ab3632a5643"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_6b429c032cd041c2bb7fddd2bd3b3dc8">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a2634517605d4f56b3b3d52b91c4a8"/>
+  <cim:WireArrangement.WireType rdf:resource="#_dcf6769d6072466ea5ba72b19dac2383"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_db5c4d6dea8842998360868e5c742836">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_3210ed1b1fc34d049f51ffa9d3efc4ef"/>
+  <cim:WireArrangement.WireType rdf:resource="#_8ca9081d30564dba853e204bb2d1ef42"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_81f56985fa4341d198c0e3ac1c1e0">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_f97ce8e2132c486fa25a7916b33dcd5"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7568493a49c4bdc9597d3b73a6d1592"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4123dc9c544c45cbb28c84a77c22ffa">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_aa13d74a96f64243b152a2a09f713dec"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b6673bc1defe4b9fa398fcfd5c65579c"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_128d50949b1746b4926b77b96a507392">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_95859e69f564bd8b758d2ae24b5fdbf"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a33f2ced38fc4d16a195ceab9d2130b8"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_51724e1c1eb4fd19089c58a86ed96ba">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_c3ada088305d490594a0434baf9aa851"/>
+  <cim:WireArrangement.WireType rdf:resource="#_2c59875c23a94168b57f8e55dcf1dd5e"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_d9b53bdbd92c45149719ddf3e4729637">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_227657a95f274865b4e7c6b6a34d55a0"/>
+  <cim:WireArrangement.WireType rdf:resource="#_3fef926f86fa483088283ba8f8d6e023"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4fa83e05c20641cfa82acb24d3a7f07b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_98ac24b22c8f487ab81ec6bfc9eacd"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b67d51c934d943ef8f2a691948ff7012"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_5d006b58cae420f8e2322dca1dad23">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_381b2c7fa59e4917b8f680914d73abda"/>
+  <cim:WireArrangement.WireType rdf:resource="#_bf2cd3c71ece45e89de278e3d2ef5e92"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_c41daef3305e457282512d3d54364add">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_6d485d64e95544feb9422fa340e5ba26"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7ac29a2fcf1b463aa8b8e2db1ac191"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_830e49039878408d8c7c6b38c7f15b7b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b819b4915d0a4f16ab6eaae613b8777"/>
+  <cim:WireArrangement.WireType rdf:resource="#_84f4f22767bc47148818bbc8785ed6d6"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_3f994ac546a44bb4a591e12e562a7c8b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_75e483e8e444604a334b9f81941bcb0"/>
+  <cim:WireArrangement.WireType rdf:resource="#_9440e4e486224092a7ba1083ae878e37"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_da03e38c74bd48a4888f1aad4df7fd6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_7fd6866030d64fbfad759aa27e3db3"/>
+  <cim:WireArrangement.WireType rdf:resource="#_73c72d61ced74676be9a7198db9234d"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_34cf5dc278b546f5a8a243da1ce38542">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_49f13699d4c4016a9a72a56e4d9b7ce"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b91d18c05255467e8f224909d42b0cd"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_8d82de1af90c41c6a32da8347c24418a">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_468023f3955d4e03907daf6ffb759ac7"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5e7593d9b70a4cf2bcb0bbc36a63b2a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e02b2ef53ce432ca16dc23bfbe246f2">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_2b46d8d842b440bba5fc06e63fe3e3c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_93c2332d218a42ff8c923129e734f66b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_182fe061eafe45af929bfd49062104e">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_2755ce114b204e0786fb792576ed9db3"/>
+  <cim:WireArrangement.WireType rdf:resource="#_229ff606687247ad88c7fe4ab9524f3e"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f5dee411fd534ffcb1261b42ec2a63fe">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_31049a919b3245b79f918760a73a6f59"/>
+  <cim:WireArrangement.WireType rdf:resource="#_c9e962727c634c9da9ec47802acac1c7"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f090678d74fb49879688256641b7689">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_c83fa1a253044f03a65db8e5a61b8f40"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5399e65b70ae47488b682645cb5e6bf6"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_ffa02da79ea244859bce77c81bce58cc">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_3c1d8632bd56425e867f1db675e7787"/>
+  <cim:WireArrangement.WireType rdf:resource="#_e0d32739b48841718348195620dddd59"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_beb7a66acd934f609067f7d7445ab60">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a397aa6c1763491db7928bf921cd696c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ab1e664b25514da1918780548007b77"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_6ca9bca08dc6475a825d73d99ff068ad">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a1a7171274f5483bbf5a8c57e124e5d"/>
+  <cim:WireArrangement.WireType rdf:resource="#_72ed520c2ec14051b8773964256a59a6"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_20db833be9164fabb88dadff53985e4d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d3f4941eac8b4435825a3cc879ed341"/>
+  <cim:WireArrangement.WireType rdf:resource="#_36182c939a87497b83a32b4c8c4ee7b9"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_373fc1f68586400bbf4a7e59d8708a23">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b64d2f4143c344c2a4ad6ff3e46175ac"/>
+  <cim:WireArrangement.WireType rdf:resource="#_4fa08370ed724e8e8bfe9cd160e068b7"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e004562394d4561874d4e20364a3049">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_7e7cd451b2174bab954d1fe0838c18c2"/>
+  <cim:WireArrangement.WireType rdf:resource="#_2248b81d1af64bf3b0fc469ace192d"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e0f27a89aafe40cfa0fe4e30fe666fa7">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_1ad37734176c46ac93b42a656af642"/>
+  <cim:WireArrangement.WireType rdf:resource="#_3909cf98bdf4d16bea5a7e2157e7a5d"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_ab8dc0eae98547b0903fb71ae92bbfa4">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_fef354b5c8f147ee966b42c7b65eeef4"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d17e1afa2a4149e9acd048c1357b8d5b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_15e6809f78004ba4a29a117deae9e375">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_9f3e33688e784ca59868cc4c97507a2"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d5d51be232e74b06bd241689457fbc17"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_1dc4c4b7731e473ab36d91af74dd80a4">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_33188774564041cfa76c258f10a28218"/>
+  <cim:WireArrangement.WireType rdf:resource="#_40793df3e84b218d7bc7a7c39be83a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_37f083a6c1cb4cf8a8dfba8d2a3c2b25">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_1508ae838e234ed98f19d3de1ed234"/>
+  <cim:WireArrangement.WireType rdf:resource="#_403b58e3ef45018ceaf41d585ea84"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_bec142d7caf4d15b03b434cdd40df64">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_54681ffc21104403b10747a43a1654"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7c60d55bb3a34d068c585e2e3fb91f5"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_896488d49a4041d3bfd8dbbaa3688e3b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_6dc7468016c04349ba3cd5943b313932"/>
+  <cim:WireArrangement.WireType rdf:resource="#_8e11a9c723014840b1789b1b0fd7e7"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_271cac93c0f64a68bcb78e17e5377345">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_81dc18a857934066ad5dcbf32aa4763e"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b6d098e832e546c59dbd21ecbc673333"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_850b67f2545f4bb3af8c3e41b747e3d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_c7a15ebeeee44417a18674b849372fd5"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b3e4745b9c746ecb0103226d15da3d2"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_361562fbcb414da199a2af643f1577a1">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_57c6ff21904b4f529fb970981af3954"/>
+  <cim:WireArrangement.WireType rdf:resource="#_8313cfe7a2674cc5a5191425645c5e1d"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_2a256b59db9e4138a53bfd432d1546">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_5cd59461479e45b986569edcff17120"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d4981136f02c4ab3bd877731ef06e6"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_aeb47e443b264919a5773e2e3a37cd7b">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_5170f26e5c14228b87ac382a8f3dbc7"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ecc1dcad79694990b168afff1859d1"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_7240adf0ea3a4efbadd7fdca590523d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_659779ea92434161badc9f192a12618f"/>
+  <cim:WireArrangement.WireType rdf:resource="#_476c6d6f3c5d4e74b57af86582d2abf"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f6d614dcce1f4e3ca598581917b13c48">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_859b5b1fc9854eeaa334bbbf338c27cd"/>
+  <cim:WireArrangement.WireType rdf:resource="#_648d69ab45e459ca4b656532392b16"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_6785e424bba247dab3e8ed91b0fbe018">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_3999e9523cd34eb99faf651f25ca1225"/>
+  <cim:WireArrangement.WireType rdf:resource="#_c608c986a2e4672a2a252f64c3674a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_ec1d8e1e58a048e8a994e642213fa6e4">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_f2892751a2a74c259758fa40e2ad2c6f"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5da7ced889c945a48b2e5b42323d544"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_b254888ed5d840948d1f939c8b7cd5a6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b4af2bef96be4561bd9e24b7de41fcb"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f295dc55b466489391784f76dde620e3"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_57d755c0de554a7398142fb21c9381f4">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_abe7a30ddd7c4e63b8ff52135acaf0de"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f2ade3d740184e82865e2625b56c812a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_86ed765987b94f13bd813843922870fc">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_5392b4d344464cb4a1ac206d5d1abdb"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a349657c140c4cc28b87fe8aebee048"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_64384d7cbdd84171baeafa81b7aab6df">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a9aab470e00341c78b80b93e3948392"/>
+  <cim:WireArrangement.WireType rdf:resource="#_de8a78148be64e88959e6254b7b6a"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_dac3d7fdbfb4581b8d9c582b17e9f4d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_bb9813d6b7ac46f39ae6397ffb4925d0"/>
+  <cim:WireArrangement.WireType rdf:resource="#_4ebc1b7791064a5e9551fba757e25e74"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_db477311e07444e592b34bfee4b734">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_7a1acd3d30a4d42a3c6449dda66c7e"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f5ccbc735d1049f4914eaec1efc6c26"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e33a2a0ea334f0a998b6b0a3d5ef4e">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_16613c10ad864e2c96b4d4a1b2ba9ff7"/>
+  <cim:WireArrangement.WireType rdf:resource="#_1b561efd98f44152b13c4c5560a1d58"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_f028df3dae30423b9128f2fb9934db1a">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_9a568cc651ce4bf68b1393f327d56c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_8b9e431eec414155b8ac9c21109b45b0"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_79ce7748adf94e0396882ed2c7fefc61">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_489f8418d8ea4f9e9fac1f9fd3b36324"/>
+  <cim:WireArrangement.WireType rdf:resource="#_8cf7269423a34fabace9e04987c4e44f"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_d8b2c8cdf92049e3a0159b34d5b6908d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_eb332c892ff448c5abfebeba7a3aa5c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_906d86f6f1d647ca803f11a82b1950eb"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_496d18fbb0c548959c48de60f134683">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_e2731e99d5643a1966e6075d87fe2db"/>
+  <cim:WireArrangement.WireType rdf:resource="#_ad6135bf782b4c6aa31989a9b5b24f31"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e617f31575e84ff1972856a51c235731">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_4191bca96cd4e76bf4beed1d49e8ea2"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f8eda7fb63414d58997848a2e65949b"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_b0f6e00695dc499d947d19fd649b52b9">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_1ecf061db7c948c58de86ee7870fee1"/>
+  <cim:WireArrangement.WireType rdf:resource="#_4f1aa605429f49e1b11c8c8c846fda2"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_b70d73851fb944c09af8663fd98ce135">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_326626e0a2ad497b9ad99ae39e1270f8"/>
+  <cim:WireArrangement.WireType rdf:resource="#_b9e389daf3c4dd8a81e72e846a09079"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e863ef36eabe446ebcab10bc6ac735b7">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_ef5f42b24e574e86892fa31ca4c66162"/>
+  <cim:WireArrangement.WireType rdf:resource="#_e0b50fbb216e4261bb562c4383d66869"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a1b695f34daf4617816d44c8e5c4bf4f">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d02f03ebdc1d4bb88f77cf7aa941c8dd"/>
+  <cim:WireArrangement.WireType rdf:resource="#_63a40b59142a4d20ab52a7fd52a6e59"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4ce8ccf3171f45f09f70609baa12ef2">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_165efb34e4ac499d8f30850894d4288"/>
+  <cim:WireArrangement.WireType rdf:resource="#_fd307ee7d7614de7b3678d707df7f9ef"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_8fb39fbe0e144d78285e7937ddcd2fd">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_11bb40a8a2da49fcbbac2f8b5bbb639"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f9af065375b41ac927bfe889b4a6d39"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_25da931936e24d12ab3c95169292944">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_28dd365757ad4c64b089c7c4a4e5d565"/>
+  <cim:WireArrangement.WireType rdf:resource="#_10c865b8b5b845028fa19ed5fff17974"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_6fd8dfc3c8e748cdbc9a2c26332b3277">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_4ad0f87e4b424e4da774ae4680adc76d"/>
+  <cim:WireArrangement.WireType rdf:resource="#_604dac1b99c34e3e924de4bc998afdc9"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_6415e18222f74dd5b0681c03cbc6d9d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_db943e23875147c0ac2f02187faed42"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7e771a9c8de14fc0a0532b5d69c785f"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_ae1a09ef6004e1791a92650b08d1950">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_1227e1fb9d6c4c6690602a133dd414f"/>
+  <cim:WireArrangement.WireType rdf:resource="#_c591687772e9488db2a56e938dc68eae"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_787898c1d90f4d14974e75113e22d7b5">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_87fb8af535e74fbd9acb4df8506f4cb8"/>
+  <cim:WireArrangement.WireType rdf:resource="#_6af22d1dc0ee456db14322d43b3e7f39"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_83c29047951243f9a27d04ce01cfc89">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_14957e5327664041bb525669f53ad"/>
+  <cim:WireArrangement.WireType rdf:resource="#_32fcc6e63c4a13a08715b161cd0b8"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_853505bc64684204a733f88ad84c733d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_adaae032dfd5418b8a8ae941ebd15c7"/>
+  <cim:WireArrangement.WireType rdf:resource="#_10f2deabfa85438a98372139371b2b7d"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_dec865975ceb4a13b319622d67b85d2c">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_9e1fac71a30345feb888bc892d60f9cd"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a7472f5cdd94134bf478fc994e6ee2c"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_6490410b9950435cae122aa59f9c933d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_8c851e60fdf6443d99522b197374f950"/>
+  <cim:WireArrangement.WireType rdf:resource="#_4ad31b382e144841ad2f5fdfc1360da"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e9d1e2c1b6894eb78dd6318066fab5">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_3213e45c70434d10afc2949a6c504dc"/>
+  <cim:WireArrangement.WireType rdf:resource="#_2be84bc38e884e2795a8736d8cc8f16"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_da71ebc79fd144b3ad2d59a1ca8310d4">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_c51218b481864131be5cdd9d4b45562"/>
+  <cim:WireArrangement.WireType rdf:resource="#_91acd52429724513b19f7777b275423"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_596860f25a9143c3a935f1e72e1e4fc3">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d6e0af4242c947ac8d43b33ea8731245"/>
+  <cim:WireArrangement.WireType rdf:resource="#_f2a3bbb5ad3a453084bc16d4f78b2951"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_843861a7c50b4a3c9c593445b7a97b11">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_39ac0af6e1304f5aa3a595afa711fe3d"/>
+  <cim:WireArrangement.WireType rdf:resource="#_a1ad53e1cec84b14887f65e5fe326282"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e12db6323094576ba3a707e4262b15">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_596f82ff50cf42858edd8e301d18d2f5"/>
+  <cim:WireArrangement.WireType rdf:resource="#_3a07a607a03e4ad8bf1fd869545a7497"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e6f270ed3568491cac1cc3d1bbd5523">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_680fdf86948490a99b116fb8f7f81f8"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7c8d5fef3b8a4a0593b6e28226abdfd"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_1f6ce7d1aed545f68f2b6c5843d5708a">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_100984f564a7480eb0ef19cabd94414"/>
+  <cim:WireArrangement.WireType rdf:resource="#_6257e05e862b485e849113f41ad057be"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_8c3d18d9eade4652af402d4b8d8b8dcd">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_4a3533d235554256b56fa34a26b256c6"/>
+  <cim:WireArrangement.WireType rdf:resource="#_1aea6a76ce74867865daa81555812f0"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_4b831d29f9c0448a8791c02de5a158a4">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_682cf6d0d1c94e90a1103625bc17ebcc"/>
+  <cim:WireArrangement.WireType rdf:resource="#_8796858ab0d84df1ba733a92c11b1a6"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_e4b65ac6a9854ffcba3ccad5101b387d">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d2ae57f09d164e7aa94453d93f86f5a0"/>
+  <cim:WireArrangement.WireType rdf:resource="#_fbbb197c67744e4eb8ce659167ae9d4"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_5fe22a6afaec45b490a8d4cd1b1eade">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b6dfad0295204119a9cea758a6dbf6"/>
+  <cim:WireArrangement.WireType rdf:resource="#_74bbff2c79104a67ab1567f8288584d7"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_ce030ca7a7fa4b2caed4d7199834d666">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_b79f46c8570845648088ac8ccf6cf2f3"/>
+  <cim:WireArrangement.WireType rdf:resource="#_3190fbf9710466fa0c51955e8ce5e9"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_8245a80117bc4a128e3ca62186afaab">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_4d68ccf845f842d2816a5a9591641d49"/>
+  <cim:WireArrangement.WireType rdf:resource="#_5459efa7da7346b7ba4bfe56b47064f2"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_806790aae30043649c9a609ab0bb1832">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_199be4c2f3df43f0baa7fd7c5548e630"/>
+  <cim:WireArrangement.WireType rdf:resource="#_448a98d8ec549529393e2e9841a85"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_325e4798cf1a49b7a088219fdea6ade6">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_2ac050afbe344b2386fdfa7275ab44c1"/>
+  <cim:WireArrangement.WireType rdf:resource="#_d6835638e64e4f5daa1acb1341f3770"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a57665b75dc34189ae21c61db5da53a">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_13ee247fb754a0c8363bd26e4b95248"/>
+  <cim:WireArrangement.WireType rdf:resource="#_fb9f6d227bed4a2a96b57ad2ceef4177"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_deba368fd6a744928c147c22c48b09a">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_ba990301745c4a98885da37f8dfda630"/>
+  <cim:WireArrangement.WireType rdf:resource="#_223aa8c81ff34f429842e66730238c45"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_497f5005da274ecb86f25ec169d3778">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d86c9cbd46a141d1917bfd10b33ab53c"/>
+  <cim:WireArrangement.WireType rdf:resource="#_7f5fb14dbad34784a65fc25efd4edd36"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_c40559522e64ad7a6726ecfa85ba14">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_a27cb7f12a56440c8122c3d72d81f5b2"/>
+  <cim:WireArrangement.WireType rdf:resource="#_48882d33357149a4a234f8d34ad253d4"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_72ceb35555884cdd911e1c54f717642">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_704b91817372432295f47fd8219953bc"/>
+  <cim:WireArrangement.WireType rdf:resource="#_56885c075c734a8abdc43aa9ad5183f6"/>
+ </cim:WireArrangement>
+ <cim:WireArrangement rdf:ID="_a93adce44a3b4e0f8949e421597c0fd">
+  <cim:WireArrangement.ConductorInfo rdf:resource="#_d8a27c9c67724d9ca9a5aacaf9c4ce6a"/>
+  <cim:WireArrangement.WireType rdf:resource="#_c600dd33a43d4c08b1ff2ae9a81255c"/>
+ </cim:WireArrangement>
+ <cim:WireType rdf:ID="_44763da62ec742d195e33b826d6ffc3">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_e0b50fbb216e4261bb562c4383d66869">
+  <cim:WireType.ratedCurrent>128</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ab2010771be4411fbbc4b5d4634d5da">
+  <cim:WireType.ratedCurrent>195</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_9315975c433040d8a9c34cc1841c2344">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7c60d55bb3a34d068c585e2e3fb91f5">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_3490d96087504529908f9d1d39b3dfe0">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_eb9b2478323f4c7aad5618e6d7d19c12">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_1bf4f86f53f442faae50914bf766c44">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_906d86f6f1d647ca803f11a82b1950eb">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b6d098e832e546c59dbd21ecbc673333">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a038b57325a9476db32bde55c04c983a">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_df38a8cc9da4113ac6f6cc4e32dd076">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_cfb287f02da844739c37939f39b522b">
+  <cim:WireType.ratedCurrent>202</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_2e0adb57124a47e496bc8ba597bf8092">
+  <cim:WireType.ratedCurrent>128</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f9af065375b41ac927bfe889b4a6d39">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_bd4c2ad66682482db3662286891e0d5">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_e7ca56c6a0cc43248e4fee65e696f242">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7676e975ce5940e680448b9745bd5bbe">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d226c51dfd54e31b2ac784ecc6a5a7d">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_9bf0e45e5e724cba98cfb33684c12256">
+  <cim:WireType.ratedCurrent>130.34999084</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_672e1f50bfcc44bcac7e8ce7f321cd1">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_73c72d61ced74676be9a7198db9234d">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_1b622c17489540a997437185dee5fbf1">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d53ab567d6fb419d801c865b3d8369ab">
+  <cim:WireType.ratedCurrent>493.3500061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_e9f03ab1a7ea4893947dfbe8d69573cd">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7568493a49c4bdc9597d3b73a6d1592">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_2749a19ec9894e1a9eacc31565c495fa">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_bc8abc76476948dea33c4a7ec17c4149">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ecc1dcad79694990b168afff1859d1">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_8ca9081d30564dba853e204bb2d1ef42">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_2641d3047dc744b2abb731a99b356e">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_6b55652043f41cd9add7a3021da13e8">
+  <cim:WireType.ratedCurrent>130.34999084</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a00606bdceaa4afb97c6277772a308a">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_35811ef6541046969819943f8fea8cf">
+  <cim:WireType.ratedCurrent>136</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ecc3b5031d7a4ccfa3c3d167efc9028">
+  <cim:WireType.ratedCurrent>363</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ec40ffcf478a4f4d9d126b7543fcf7db">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_476c6d6f3c5d4e74b57af86582d2abf">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_82c4a86513294ce4afdaef4a5d9dbfa">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_c591687772e9488db2a56e938dc68eae">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d6835638e64e4f5daa1acb1341f3770">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5b8fb33f9d294af0abe999782733b8ed">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b7ddac314bf7499bb4fff332df1d5df7">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_c977b5ce5034181baf3bbcf3694395e">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_c937d46f966d46388fd2e3d3993424">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a24a6cad9ff64f518babfc20dd3b794">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_e0d32739b48841718348195620dddd59">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_158377fe7aed4f8089534cc896e2289c">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_1bc8df6a23e741a886b99e9e19d1714">
+  <cim:WireType.ratedCurrent>202</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b0622d428774aee93223d2ec163ab43">
+  <cim:WireType.ratedCurrent>202</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_2fcd23f13fb749c9b251496fd447e752">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d767a10276684bdabcbe1c9185a3d5a5">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ec2f89f8a9a4802b9a65d6ca85af329">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_dc5409adddc74f549e97ebe8dc66ac1">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b9e389daf3c4dd8a81e72e846a09079">
+  <cim:WireType.ratedCurrent>239.25</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5da7ced889c945a48b2e5b42323d544">
+  <cim:WireType.ratedCurrent>136</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_57c314f4ff64461d8af1fda338bf56be">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_cc158aa3b6e9442f8b23f1c9fc20e1fa">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a670d0593a8e45479c5e2ccc584464d8">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ac267ce211764454bcf79cf8d46fe07a">
+  <cim:WireType.ratedCurrent>493.3500061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b8763e3f25e8472b8a2957706a39d89">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_93c2332d218a42ff8c923129e734f66b">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_de8a78148be64e88959e6254b7b6a">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_3f929375e9e54e739cbdf9ebf7dbd2fe">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_66208ecd17644c499e40f29abd2c6ff">
+  <cim:WireType.ratedCurrent>232</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_911f51e0ea2b4b9ea5ec8832d07d7d56">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f585e81254c84bf3b8cb5de208f8021">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ad6135bf782b4c6aa31989a9b5b24f31">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_37ec1068b3384296bc9df6734cd2562">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_1d1dcb15c82e4db08efeaf7379f28">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f295dc55b466489391784f76dde620e3">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_2be84bc38e884e2795a8736d8cc8f16">
+  <cim:WireType.ratedCurrent>136</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a5504d39c4d44989af866b3d8781cf5f">
+  <cim:WireType.ratedCurrent>169.125</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_664c3846c8b46e38b97dcf5551f1a91">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_efe6aeee771486eab50ee74ddc17814">
+  <cim:WireType.ratedCurrent>493.3500061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_8b9e431eec414155b8ac9c21109b45b0">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_afbee899ec5c407a99bd9082f8a5943a">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5a7cc421248f4274b2d73f2d86ad73f7">
+  <cim:WireType.ratedCurrent>169.125</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_165e39cf8bb145fcb8a8427e42b372a0">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_2248b81d1af64bf3b0fc469ace192d">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_448a98d8ec549529393e2e9841a85">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_1e67260c19684ecfb074c272cdf7767">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b7fa65af2f3b42dba2c0126fb265ba4">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_4c9b1a9ef9d64be98843152d77f97b8">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d4981136f02c4ab3bd877731ef06e6">
+  <cim:WireType.ratedCurrent>368.7749939</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5578ebd7f50b407fb4f67dcd6573e3ea">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_508b589a98654360bd597ded43c27ea0">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_6e5b64933db44604abe8a721bf201732">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_6257e05e862b485e849113f41ad057be">
+  <cim:WireType.ratedCurrent>330</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_84f4f22767bc47148818bbc8785ed6d6">
+  <cim:WireType.ratedCurrent>128</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_e9961cca9cda49baae803030c4914264">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b29b8156fa29461db9eee72de5bdb8c">
+  <cim:WireType.ratedCurrent>345.67498779</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_9dff29b22832403fa1eead801b9d4866">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_17634e989acd409c94777ab3632a5643">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_1aea6a76ce74867865daa81555812f0">
+  <cim:WireType.ratedCurrent>195</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5155cedc730451ab8e585214b16e842">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_dcf6769d6072466ea5ba72b19dac2383">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a1ad53e1cec84b14887f65e5fe326282">
+  <cim:WireType.ratedCurrent>278.0249939</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_c38d53c89f44cca8794b697d1e1ed48">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_65129891787640ef82acd0a156d81682">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d7ccf9e1653e4768a75c997933ee53e">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_66e07505278c4f68a2f3a452a5d36f6">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a382f168f1c84c0588dd9062e34fea82">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_c504b6a2d30547bfa58bb217f93e734">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_fbbb197c67744e4eb8ce659167ae9d4">
+  <cim:WireType.ratedCurrent>195</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_72e32682f65a443abe1b7f94ab5f1d8b">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_485ac880863a4a1bb2af8764d95e41b">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_37641f3e720e482488721fbaf8c7b48d">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a871bd8a1dbe40d5892036f71c362b69">
+  <cim:WireType.ratedCurrent>195</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f1b6524b617748beba3f919c6eb9c4c5">
+  <cim:WireType.ratedCurrent>243.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_1a35b8ca94f944a980afdacc979feb2">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5f88de462ccd4f1cb415d02feb13139">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_79d7d2fb5f714e2d8fdc562078bfcbf7">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d17e1afa2a4149e9acd048c1357b8d5b">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_8fc84925fa0c4886b124bde2c3404611">
+  <cim:WireType.ratedCurrent>202</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_4ebc1b7791064a5e9551fba757e25e74">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_9ac265be79924cdf989474cb92856987">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_32fcc6e63c4a13a08715b161cd0b8">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_bf2cd3c71ece45e89de278e3d2ef5e92">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b49aaf3ce1544a9fb63188e82187339b">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_3909cf98bdf4d16bea5a7e2157e7a5d">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d3655b42ad4545f0be4b9b6f3032a845">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_55882e54424e44f0b3ae118b6af0d67c">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_2c59875c23a94168b57f8e55dcf1dd5e">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b76a2d2dae8a42d497a5fe373636f688">
+  <cim:WireType.ratedCurrent>195</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_866b818dcc984a6db84e466d92c49081">
+  <cim:WireType.ratedCurrent>239.25</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_6ab195cf1e1740b4b92acdae5d0805a">
+  <cim:WireType.ratedCurrent>363</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b1dc971e9ec848dcb7a9c4cd6e14de">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_9b93596296af45ab985143bd911b59c">
+  <cim:WireType.ratedCurrent>195</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7c8d5fef3b8a4a0593b6e28226abdfd">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_c02699b4d184da8bb4a4da84d9f8c20">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_9749245362974704ac35cf36118bdfea">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7d81bc3862544d2a9589ab581ca2dff">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_8796858ab0d84df1ba733a92c11b1a6">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f03934132845fba4962a63a4d4f6ec">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d6b96a62bcbb4375aef2cf7699ce8e5">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_10f2deabfa85438a98372139371b2b7d">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_28cdcd45f5444a4b8daefa439d5dfff">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a33f2ced38fc4d16a195ceab9d2130b8">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a818464666f4d2ebde623d8d0776510">
+  <cim:WireType.ratedCurrent>493.3500061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_977e1a67f27442bb871a2342a5cd48a">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ee3b5e918824476b9ed9ff3c915cd3ca">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_3a4ad660cddb4fbab47c38e21a5e1c">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_40793df3e84b218d7bc7a7c39be83a">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_9c880871839f4b25afc69124ed7f19d">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a315b885fb294520a24cb037c02f270">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_36182c939a87497b83a32b4c8c4ee7b9">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f7e878dc2e3a4c1a974e2c4ef3174a9">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b3a9cf13a97a42d48ad28ddda16d3cb">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f3c0a5b26654decbee3ffd4dc3a206b">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_e57907494d984e4ea1e795d113365f27">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f2a3bbb5ad3a453084bc16d4f78b2951">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_77adc8c760184470adf5c6344c5a3e1b">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ccbb40dfdb2d4abf8976b542f782091">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_fd307ee7d7614de7b3678d707df7f9ef">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_4fa08370ed724e8e8bfe9cd160e068b7">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_aaa65fcf4021437684724c3a5d5a1ca">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_3a07a607a03e4ad8bf1fd869545a7497">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_74bbff2c79104a67ab1567f8288584d7">
+  <cim:WireType.ratedCurrent>493.3500061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_1b561efd98f44152b13c4c5560a1d58">
+  <cim:WireType.ratedCurrent>239.25</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_aed9773739e44e62be60a0672ac72f8">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_52a68bd1b93245dbbea7b62dceab9972">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a3bd99fd1294989ad67f6d7de6b4dd6">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d5d51be232e74b06bd241689457fbc17">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f6210d74d68c4b15bcb33ea050d485d3">
+  <cim:WireType.ratedCurrent>195</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_1c3cd5d9be6e46079a2f6974f7f99cc0">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a7472f5cdd94134bf478fc994e6ee2c">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_985b1304b53740499d3ec98d1e49cbe7">
+  <cim:WireType.ratedCurrent>239.25</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_fd4cf3763cb9487e9bbb15bb73aaa69d">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_72ed520c2ec14051b8773964256a59a6">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_91acd52429724513b19f7777b275423">
+  <cim:WireType.ratedCurrent>239.25</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ebdda8616444f7fac34a35bfeb1fcba">
+  <cim:WireType.ratedCurrent>346</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_229ff606687247ad88c7fe4ab9524f3e">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_56b0842e7fa745ada3264b4d265782dc">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f44d7f24bc784b5999ca8365d968ae">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_6af22d1dc0ee456db14322d43b3e7f39">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_39b3b943d424f68a4b6d279fdc863c">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f5626668d60e4b29aeb8ac48f1381739">
+  <cim:WireType.ratedCurrent>278.0249939</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_85413db8e1854c669ae4d4d72947b532">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_648d69ab45e459ca4b656532392b16">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_406258f834b845d0854ffc258dcae7d">
+  <cim:WireType.ratedCurrent>368.7749939</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_824bc327a97f49f2ba10e481815d1437">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ec48be4111ed417490a986b53f3522f">
+  <cim:WireType.ratedCurrent>195</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_9440e4e486224092a7ba1083ae878e37">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_63a40b59142a4d20ab52a7fd52a6e59">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_8313cfe7a2674cc5a5191425645c5e1d">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_223aa8c81ff34f429842e66730238c45">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_dae235b06da1408080f5fbc0dd9e35b0">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_9487806a2210459b92b65669c6c26fd8">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_4ad31b382e144841ad2f5fdfc1360da">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_8a09cce0c17944e49156d1a87c5d7959">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_60bfe58d49b6405882783d1b12caea5">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_9518dae05fa6481e98d28adfb249fa22">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f2ade3d740184e82865e2625b56c812a">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_56478ed983324d648dc2a3aa2da6b8ee">
+  <cim:WireType.ratedCurrent>278.0249939</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_e6bc5acfe8f1453f8af56a126da58549">
+  <cim:WireType.ratedCurrent>278.0249939</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_8cf7269423a34fabace9e04987c4e44f">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f518eb7cec684ecdb6e91d73d57f853">
+  <cim:WireType.ratedCurrent>330</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ba5f9a068dfc46b38dbfbee0481155ca">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_e5c19001a8c43c88fe5b1cfc54e94fb">
+  <cim:WireType.ratedCurrent>628.64996338</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_51645eac6613496d84364e5ae752d453">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b0bf5c5127ed4599adbaac527e1dfa3c">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_2cef6670f01543ea85c2871e9a63d12a">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ab1e664b25514da1918780548007b77">
+  <cim:WireType.ratedCurrent>239.25</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b67d51c934d943ef8f2a691948ff7012">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_4c5d256bc32a454e8a626e7efb7a540">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_4bbde7bc252743b6893e9a81b717d024">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f8eda7fb63414d58997848a2e65949b">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_10c865b8b5b845028fa19ed5fff17974">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_c9e962727c634c9da9ec47802acac1c7">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b0a2740e51374f5fba5da41124d17e1">
+  <cim:WireType.ratedCurrent>278.0249939</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f5ccbc735d1049f4914eaec1efc6c26">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5f06885e20fd44f8bad1129397589">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5b22c032544941019788f17a9162efb1">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_403b58e3ef45018ceaf41d585ea84">
+  <cim:WireType.ratedCurrent>186.44999695</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7bb4a228cb364b3681eab970d23623e5">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_126d3482eac34bb499ea404f1c59242d">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_8c6b19a843e04683b0436839dfabc21">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_3190fbf9710466fa0c51955e8ce5e9">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_98fbe6e017fe4a0c862d685cd1f56ce7">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_c608c986a2e4672a2a252f64c3674a">
+  <cim:WireType.ratedCurrent>346</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_8e11a9c723014840b1789b1b0fd7e7">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ec4cd893e2b64e95ac6594a0cad8e5fe">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7f5fb14dbad34784a65fc25efd4edd36">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b91d18c05255467e8f224909d42b0cd">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_96054235b6eb4dd0aeadab951c455">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_205b57b1db8347369ff4da5d2569ce0">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_e1bac1838b984e7e9f5158b7df0b936">
+  <cim:WireType.ratedCurrent>195</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_4f1aa605429f49e1b11c8c8c846fda2">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_82d2da33f65d4f8eb69c32dcaf98b56">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b6673bc1defe4b9fa398fcfd5c65579c">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d9e64bc155b4853be8a034b5edebae">
+  <cim:WireType.ratedCurrent>195</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_43ff56a15eba421693277f904b92fdb">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_3f269c0c68ea42c4b488a576e73be164">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_d922b6a6caae408e8bfd107f9cf42bee">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5f8f4f8c3f174539b0aeac801cd2dde">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_56885c075c734a8abdc43aa9ad5183f6">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a7ca821f865e45ca91e941721e7178c7">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_3fef926f86fa483088283ba8f8d6e023">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7794496e231545f99eae446f1c334763">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_4295e3f4dc334f128e7f299d2ec38a5">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5459efa7da7346b7ba4bfe56b47064f2">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_6535ebdb418f480fa3f1032fd37e352">
+  <cim:WireType.ratedCurrent>368.7749939</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ab440cb6a3754d469b59a7d98acfb7f">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_f70981d344f3400ca71eda30e6714727">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_48882d33357149a4a234f8d34ad253d4">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ff169a6ac1404efb93ad796692dff883">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_91a82869f62148039a48adce4e82a5a8">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_2c4dc8b1993043f29b28ace92226c356">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5399e65b70ae47488b682645cb5e6bf6">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b3e4745b9c746ecb0103226d15da3d2">
+  <cim:WireType.ratedCurrent>169.125</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b2b7751e5ef43df99b1991b325e71f3">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_604dac1b99c34e3e924de4bc998afdc9">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7ac29a2fcf1b463aa8b8e2db1ac191">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_fb9f6d227bed4a2a96b57ad2ceef4177">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_c5da40a95d9743069485dbca675a5998">
+  <cim:WireType.ratedCurrent>278.0249939</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_90c578a52e0543228fd22861fb9dc3df">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_ff622ee69fb948028e8936bbd9c7f73">
+  <cim:WireType.ratedCurrent>493.3500061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_c33c4844ae904b27b1df42eda3a52ab">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7e771a9c8de14fc0a0532b5d69c785f">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_45ba740a30414cdfbdb5c8ad3cc77bd">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_5e7593d9b70a4cf2bcb0bbc36a63b2a">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_28d71442811b4454859d21f2df97b837">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_db529a127ae84c6d9ba7f046fab4a15b">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_56ac0cae6bec4dc48cc877e011138979">
+  <cim:WireType.ratedCurrent>258.2250061</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_dae5921ee46c43ccb9b4eeb13d97f834">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_4a24f8bac6ce4c98b9caee316c987691">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_a349657c140c4cc28b87fe8aebee048">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_6ba9974c1532428fb43ce1ef9f30d25">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_4568f3f2292947ccb4c14be6ef5f13de">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_60ed64f03dd84bb49dc322a89414b36b">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_c600dd33a43d4c08b1ff2ae9a81255c">
+  <cim:WireType.ratedCurrent>195</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_8919cb79d3940cf81e861e948c28120">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_76b6cfaafb994f2786303ede8f428bb9">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_b080b9f5be7490b97b92972bfa03835">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7a55671b674147548efc5d9f94ac511">
+  <cim:WireType.ratedCurrent>309.375</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_948d84de244f4f2fb2bb947ccddffad8">
+  <cim:WireType.ratedCurrent>239.25</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_bf6bcb5e641443999cded0308a665d5b">
+  <cim:WireType.ratedCurrent>146</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_7b58d4c21624703a49a5cbe81734e1">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_4f88745923d54dd59cff4a175d8fc772">
+  <cim:WireType.ratedCurrent>299</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:WireType rdf:ID="_6d22a508a3d4ed5b44bddbcf65db7e7">
+  <cim:WireType.ratedCurrent>133</cim:WireType.ratedCurrent>
+ </cim:WireType>
+ <cim:ConductorInfo rdf:ID="_a88e97eb4d4c47c4bde097d36e1d96ac"/>
+ <cim:ConductorInfo rdf:ID="_3210ed1b1fc34d049f51ffa9d3efc4ef"/>
+ <cim:ConductorInfo rdf:ID="_30f9c2d7e73946509a651795cd6451c9"/>
+ <cim:ConductorInfo rdf:ID="_41435b70da6745a89f281f3b4141e2ae"/>
+ <cim:ConductorInfo rdf:ID="_82ec4ded140348c397e566cca696eec5"/>
+ <cim:ConductorInfo rdf:ID="_87fb8af535e74fbd9acb4df8506f4cb8"/>
+ <cim:ConductorInfo rdf:ID="_eb332c892ff448c5abfebeba7a3aa5c"/>
+ <cim:ConductorInfo rdf:ID="_c83fa1a253044f03a65db8e5a61b8f40"/>
+ <cim:ConductorInfo rdf:ID="_810d64e374a7406db55f95345429a38"/>
+ <cim:ConductorInfo rdf:ID="_8259f5e5fb44fc6a647493206dbcf0"/>
+ <cim:ConductorInfo rdf:ID="_54681ffc21104403b10747a43a1654"/>
+ <cim:ConductorInfo rdf:ID="_44e4ae015a6b4ef89c6f662dee9e968a"/>
+ <cim:ConductorInfo rdf:ID="_3821cb27e3f54d8994bf71e4cf2349ca"/>
+ <cim:ConductorInfo rdf:ID="_5cd59461479e45b986569edcff17120"/>
+ <cim:ConductorInfo rdf:ID="_1227e1fb9d6c4c6690602a133dd414f"/>
+ <cim:ConductorInfo rdf:ID="_75e483e8e444604a334b9f81941bcb0"/>
+ <cim:ConductorInfo rdf:ID="_f574541559f7464585b11d594f84337"/>
+ <cim:ConductorInfo rdf:ID="_77221c594104e68bd4cd2ec3c65625c"/>
+ <cim:ConductorInfo rdf:ID="_fcf15b81afe4bdeb984a6b378a26071"/>
+ <cim:ConductorInfo rdf:ID="_1bcc30dd80464e97b75649975edb9f15"/>
+ <cim:ConductorInfo rdf:ID="_782836513e7a46c2bd66fd2622ee49f5"/>
+ <cim:ConductorInfo rdf:ID="_8c851e60fdf6443d99522b197374f950"/>
+ <cim:ConductorInfo rdf:ID="_3999e9523cd34eb99faf651f25ca1225"/>
+ <cim:ConductorInfo rdf:ID="_abe7a30ddd7c4e63b8ff52135acaf0de"/>
+ <cim:ConductorInfo rdf:ID="_9e1fac71a30345feb888bc892d60f9cd"/>
+ <cim:ConductorInfo rdf:ID="_126a894a5a43428bb04af7c8255334"/>
+ <cim:ConductorInfo rdf:ID="_89cb7faa96f4835a2729a36da13c82"/>
+ <cim:ConductorInfo rdf:ID="_596f82ff50cf42858edd8e301d18d2f5"/>
+ <cim:ConductorInfo rdf:ID="_c14b50fc30d6417a92d6b823fcf46761"/>
+ <cim:ConductorInfo rdf:ID="_122a5fe8ec524e378a9ddf9d4a19814c"/>
+ <cim:ConductorInfo rdf:ID="_c614336776be4218a3a9e13dd0a64ee4"/>
+ <cim:ConductorInfo rdf:ID="_d653d99fbaa426db99b5d85dac9d2"/>
+ <cim:ConductorInfo rdf:ID="_59ff45f4d01e4beb91c28f114a4c7a66"/>
+ <cim:ConductorInfo rdf:ID="_f8dcc70935694992952d55dd55e6d5e9"/>
+ <cim:ConductorInfo rdf:ID="_2f272585ed434559be6bd28e9a44149"/>
+ <cim:ConductorInfo rdf:ID="_227657a95f274865b4e7c6b6a34d55a0"/>
+ <cim:ConductorInfo rdf:ID="_dd44abee58484808bdd366a495f4cba"/>
+ <cim:ConductorInfo rdf:ID="_8b1fd27cd7b845c49031b232e5e1ae93"/>
+ <cim:ConductorInfo rdf:ID="_3fc72d582b2c4cc79715cd24827327a"/>
+ <cim:ConductorInfo rdf:ID="_cee2fe22453147dca1bf5dc6d53934"/>
+ <cim:ConductorInfo rdf:ID="_a8632dc956454545ad4f53dc77f55ab"/>
+ <cim:ConductorInfo rdf:ID="_13ee247fb754a0c8363bd26e4b95248"/>
+ <cim:ConductorInfo rdf:ID="_234a3b9b34364f2eb16170c4ffaf76"/>
+ <cim:ConductorInfo rdf:ID="_98ac24b22c8f487ab81ec6bfc9eacd"/>
+ <cim:ConductorInfo rdf:ID="_8f4c9b6ecf74482d8495f1f15f177fae"/>
+ <cim:ConductorInfo rdf:ID="_723f677aef4d4ca79662c02bbfec2f9d"/>
+ <cim:ConductorInfo rdf:ID="_49f13699d4c4016a9a72a56e4d9b7ce"/>
+ <cim:ConductorInfo rdf:ID="_ab386ce7c160410ca3bbd17bca947722"/>
+ <cim:ConductorInfo rdf:ID="_b2e1155f95354fb3856a702847cdacf3"/>
+ <cim:ConductorInfo rdf:ID="_47773d81547046478db29ca56acada5b"/>
+ <cim:ConductorInfo rdf:ID="_762277fd276a46918fc727e0306850a1"/>
+ <cim:ConductorInfo rdf:ID="_368e72ebdcc249a499ce5dc16614186"/>
+ <cim:ConductorInfo rdf:ID="_6d485d64e95544feb9422fa340e5ba26"/>
+ <cim:ConductorInfo rdf:ID="_10244415c5c640c6b4224683e81b1a84"/>
+ <cim:ConductorInfo rdf:ID="_e2731e99d5643a1966e6075d87fe2db"/>
+ <cim:ConductorInfo rdf:ID="_eac2a42cef2f4260bd655ed8e7b3f664"/>
+ <cim:ConductorInfo rdf:ID="_c51218b481864131be5cdd9d4b45562"/>
+ <cim:ConductorInfo rdf:ID="_ddd29bc1b93d4034b02e859cfcec6f3d"/>
+ <cim:ConductorInfo rdf:ID="_1508ae838e234ed98f19d3de1ed234"/>
+ <cim:ConductorInfo rdf:ID="_48341d03efd245e39327a1b1bd354e"/>
+ <cim:ConductorInfo rdf:ID="_52d9edba948d4377841ebe5aab183f51"/>
+ <cim:ConductorInfo rdf:ID="_27bbf6e5ec414e09a7ac19b13d5f4f1"/>
+ <cim:ConductorInfo rdf:ID="_31049a919b3245b79f918760a73a6f59"/>
+ <cim:ConductorInfo rdf:ID="_13f043fc5bf49e38bdfbd2792f3edda"/>
+ <cim:ConductorInfo rdf:ID="_b28e1191a7a14dec82f9a52713f9521f"/>
+ <cim:ConductorInfo rdf:ID="_5be44a4015304ac285c181476add07"/>
+ <cim:ConductorInfo rdf:ID="_2b7f9578af8a46b4914ca8fe4f3e807b"/>
+ <cim:ConductorInfo rdf:ID="_8a7c0190e162462aad304bc4a121d14"/>
+ <cim:ConductorInfo rdf:ID="_f469ac134ac147b0b2353d58f1e7b69"/>
+ <cim:ConductorInfo rdf:ID="_6295cbd59c704f558089c636c76ddf51"/>
+ <cim:ConductorInfo rdf:ID="_7423baf532ce4da385b06398f7af9d5"/>
+ <cim:ConductorInfo rdf:ID="_297ac939a3114d16b62e76fe12d513ca"/>
+ <cim:ConductorInfo rdf:ID="_378bb7ba915c483d871b14912a769f49"/>
+ <cim:ConductorInfo rdf:ID="_5392b4d344464cb4a1ac206d5d1abdb"/>
+ <cim:ConductorInfo rdf:ID="_5b8934bed86846c39e8a59243437dc95"/>
+ <cim:ConductorInfo rdf:ID="_eef3193c3c8e464eb7e27cb22165ea53"/>
+ <cim:ConductorInfo rdf:ID="_4e551f8db9f24bd19b2545c38579aa0"/>
+ <cim:ConductorInfo rdf:ID="_ec35c39fd5e4d2ca58bb99da6d78190"/>
+ <cim:ConductorInfo rdf:ID="_680fdf86948490a99b116fb8f7f81f8"/>
+ <cim:ConductorInfo rdf:ID="_39086b4a47e54c6298e0acd9326ce753"/>
+ <cim:ConductorInfo rdf:ID="_78d7f5e87b249e6b7efd33455e6e02a"/>
+ <cim:ConductorInfo rdf:ID="_2c7eceb5b5454760b422627b07f8c8a"/>
+ <cim:ConductorInfo rdf:ID="_97ccc05d51b04687b8a7b478cc8e446"/>
+ <cim:ConductorInfo rdf:ID="_a0535cd70754aa19e2f8a70c0ece35d"/>
+ <cim:ConductorInfo rdf:ID="_be83b8c6a0e04f189a69f8c1b1f3e26"/>
+ <cim:ConductorInfo rdf:ID="_165efb34e4ac499d8f30850894d4288"/>
+ <cim:ConductorInfo rdf:ID="_bdbc484d2b2747cea8d7a8c3c29cce13"/>
+ <cim:ConductorInfo rdf:ID="_c42aa8bd33c48889c824210d8e5c8d"/>
+ <cim:ConductorInfo rdf:ID="_489f8418d8ea4f9e9fac1f9fd3b36324"/>
+ <cim:ConductorInfo rdf:ID="_d1718eb3b7f643ba951520f1ff21d921"/>
+ <cim:ConductorInfo rdf:ID="_105e7543706a411a81fcd789c62af051"/>
+ <cim:ConductorInfo rdf:ID="_c47ed5b2c1e54a3187347cf1feccaca0"/>
+ <cim:ConductorInfo rdf:ID="_8adc6daa6d86484f8b936274d34ca240"/>
+ <cim:ConductorInfo rdf:ID="_c7a15ebeeee44417a18674b849372fd5"/>
+ <cim:ConductorInfo rdf:ID="_48989eedf7fa448287afc9fe5a3eba59"/>
+ <cim:ConductorInfo rdf:ID="_85fe879529cb4d2e8f457e3539ee47"/>
+ <cim:ConductorInfo rdf:ID="_79c1051bbbcc4a41bc561fe7558c663"/>
+ <cim:ConductorInfo rdf:ID="_a397aa6c1763491db7928bf921cd696c"/>
+ <cim:ConductorInfo rdf:ID="_3d788be3a0254af18dd7c6f3551945ed"/>
+ <cim:ConductorInfo rdf:ID="_47c96fd5d0174543a75f38cf39ab687"/>
+ <cim:ConductorInfo rdf:ID="_28dd365757ad4c64b089c7c4a4e5d565"/>
+ <cim:ConductorInfo rdf:ID="_429ebcf1123d4d5fb7c3267c39b016af"/>
+ <cim:ConductorInfo rdf:ID="_f5c07ed9a470447b8f20e813e51ef136"/>
+ <cim:ConductorInfo rdf:ID="_9236ba5d21014fec8552574dd04d3e66"/>
+ <cim:ConductorInfo rdf:ID="_a27cb7f12a56440c8122c3d72d81f5b2"/>
+ <cim:ConductorInfo rdf:ID="_b4af2bef96be4561bd9e24b7de41fcb"/>
+ <cim:ConductorInfo rdf:ID="_7a1acd3d30a4d42a3c6449dda66c7e"/>
+ <cim:ConductorInfo rdf:ID="_a26e43df5a334b4c911d49607bf9a78a"/>
+ <cim:ConductorInfo rdf:ID="_6dc7468016c04349ba3cd5943b313932"/>
+ <cim:ConductorInfo rdf:ID="_9a568cc651ce4bf68b1393f327d56c"/>
+ <cim:ConductorInfo rdf:ID="_bf06bff5da554160ac7ef5c37a7b758"/>
+ <cim:ConductorInfo rdf:ID="_c04025afe5dd4ff19cb3599fba62a2"/>
+ <cim:ConductorInfo rdf:ID="_326626e0a2ad497b9ad99ae39e1270f8"/>
+ <cim:ConductorInfo rdf:ID="_ac33531fa92e4a4097cf6e18a2f6c9a1"/>
+ <cim:ConductorInfo rdf:ID="_8deb03cda962438bb781f64c759cf2f7"/>
+ <cim:ConductorInfo rdf:ID="_57c6ff21904b4f529fb970981af3954"/>
+ <cim:ConductorInfo rdf:ID="_b6dfad0295204119a9cea758a6dbf6"/>
+ <cim:ConductorInfo rdf:ID="_452deba9fd984d1db3cdc81d2cde6cdb"/>
+ <cim:ConductorInfo rdf:ID="_25eeb1cff4e9460fa0bf95faf1c63d3"/>
+ <cim:ConductorInfo rdf:ID="_33188774564041cfa76c258f10a28218"/>
+ <cim:ConductorInfo rdf:ID="_a70f971b902243d1971ad6e7c2aa238a"/>
+ <cim:ConductorInfo rdf:ID="_ab4c8ddf4d504922bdc798a0642bf738"/>
+ <cim:ConductorInfo rdf:ID="_dd9c86b84407459f91a456337c25cf59"/>
+ <cim:ConductorInfo rdf:ID="_b79f46c8570845648088ac8ccf6cf2f3"/>
+ <cim:ConductorInfo rdf:ID="_904da75998d4f039d60f06420cc175b"/>
+ <cim:ConductorInfo rdf:ID="_381b2c7fa59e4917b8f680914d73abda"/>
+ <cim:ConductorInfo rdf:ID="_11bb40a8a2da49fcbbac2f8b5bbb639"/>
+ <cim:ConductorInfo rdf:ID="_4c435fb3ec4143d8994a36277d918449"/>
+ <cim:ConductorInfo rdf:ID="_92ce0d9c3cc40168955b481f859986"/>
+ <cim:ConductorInfo rdf:ID="_7fd6866030d64fbfad759aa27e3db3"/>
+ <cim:ConductorInfo rdf:ID="_d8a27c9c67724d9ca9a5aacaf9c4ce6a"/>
+ <cim:ConductorInfo rdf:ID="_b937ab204bec4ff6afd0c3427834ea53"/>
+ <cim:ConductorInfo rdf:ID="_2ac050afbe344b2386fdfa7275ab44c1"/>
+ <cim:ConductorInfo rdf:ID="_b6e1d02ed6f74073b114a0efc77be8"/>
+ <cim:ConductorInfo rdf:ID="_ea108864335145ceac9586db6c9354e"/>
+ <cim:ConductorInfo rdf:ID="_e3386e2125814bb0a2bc3b1f3542c666"/>
+ <cim:ConductorInfo rdf:ID="_1ad37734176c46ac93b42a656af642"/>
+ <cim:ConductorInfo rdf:ID="_1491b397a8464bfb8ca3aedb3c6591a7"/>
+ <cim:ConductorInfo rdf:ID="_5170f26e5c14228b87ac382a8f3dbc7"/>
+ <cim:ConductorInfo rdf:ID="_81dc18a857934066ad5dcbf32aa4763e"/>
+ <cim:ConductorInfo rdf:ID="_659779ea92434161badc9f192a12618f"/>
+ <cim:ConductorInfo rdf:ID="_d4382f4a921c4416ae2a4f7e4dfe0fc"/>
+ <cim:ConductorInfo rdf:ID="_98423147e10d42ce925d32df2248b4ee"/>
+ <cim:ConductorInfo rdf:ID="_98f7d47ba8b3418fa646dc8de8cb5db3"/>
+ <cim:ConductorInfo rdf:ID="_b40e2ddace2740519ad9fe341acb4fb5"/>
+ <cim:ConductorInfo rdf:ID="_d6e0af4242c947ac8d43b33ea8731245"/>
+ <cim:ConductorInfo rdf:ID="_42703f4c9ef847d4ac2d1703c92a22"/>
+ <cim:ConductorInfo rdf:ID="_aa13d74a96f64243b152a2a09f713dec"/>
+ <cim:ConductorInfo rdf:ID="_ca534b5a792b420897aaae8b5c1a81c0"/>
+ <cim:ConductorInfo rdf:ID="_cc98c9a2a01417db1238298826384c"/>
+ <cim:ConductorInfo rdf:ID="_f10e70ef96fd47938f6d504eebec2fa"/>
+ <cim:ConductorInfo rdf:ID="_ba990301745c4a98885da37f8dfda630"/>
+ <cim:ConductorInfo rdf:ID="_896d086f1f5e42ce852c1912a96f219e"/>
+ <cim:ConductorInfo rdf:ID="_ef5f42b24e574e86892fa31ca4c66162"/>
+ <cim:ConductorInfo rdf:ID="_aa8684577470434e9c738977c214a"/>
+ <cim:ConductorInfo rdf:ID="_65b037f76ad64c9f96bc1b6651980f3"/>
+ <cim:ConductorInfo rdf:ID="_d3f4941eac8b4435825a3cc879ed341"/>
+ <cim:ConductorInfo rdf:ID="_fc708c02b88a44559d3a519861889ed"/>
+ <cim:ConductorInfo rdf:ID="_3c1d8632bd56425e867f1db675e7787"/>
+ <cim:ConductorInfo rdf:ID="_37ee2ceffd8e4d469fef966bc3c5ac65"/>
+ <cim:ConductorInfo rdf:ID="_357225b5f16745ea9693f6dcf9cbac49"/>
+ <cim:ConductorInfo rdf:ID="_4a3533d235554256b56fa34a26b256c6"/>
+ <cim:ConductorInfo rdf:ID="_a1a7171274f5483bbf5a8c57e124e5d"/>
+ <cim:ConductorInfo rdf:ID="_682cf6d0d1c94e90a1103625bc17ebcc"/>
+ <cim:ConductorInfo rdf:ID="_2b46d8d842b440bba5fc06e63fe3e3c"/>
+ <cim:ConductorInfo rdf:ID="_9f3e33688e784ca59868cc4c97507a2"/>
+ <cim:ConductorInfo rdf:ID="_d2ae57f09d164e7aa94453d93f86f5a0"/>
+ <cim:ConductorInfo rdf:ID="_532d780f9977466681c1f26ce3f7f432"/>
+ <cim:ConductorInfo rdf:ID="_d86c9cbd46a141d1917bfd10b33ab53c"/>
+ <cim:ConductorInfo rdf:ID="_a9aab470e00341c78b80b93e3948392"/>
+ <cim:ConductorInfo rdf:ID="_5b01f40180414c7696d542aba647d"/>
+ <cim:ConductorInfo rdf:ID="_3c27e0643e3644e790859642acd43a4f"/>
+ <cim:ConductorInfo rdf:ID="_4191bca96cd4e76bf4beed1d49e8ea2"/>
+ <cim:ConductorInfo rdf:ID="_199be4c2f3df43f0baa7fd7c5548e630"/>
+ <cim:ConductorInfo rdf:ID="_a173d97a4b1a40eb89f020ed6529ecb"/>
+ <cim:ConductorInfo rdf:ID="_95859e69f564bd8b758d2ae24b5fdbf"/>
+ <cim:ConductorInfo rdf:ID="_1523707551e438796c52d624d5f75ce"/>
+ <cim:ConductorInfo rdf:ID="_563f9442c29e47eb8bf5e10a175f73"/>
+ <cim:ConductorInfo rdf:ID="_4ad0f87e4b424e4da774ae4680adc76d"/>
+ <cim:ConductorInfo rdf:ID="_3b4f8165e9d41dbb3f5bb712561f3fe"/>
+ <cim:ConductorInfo rdf:ID="_7485c85a2cb9422888b3173933c8573"/>
+ <cim:ConductorInfo rdf:ID="_e64276d22ed34418af81d73e0d6449c"/>
+ <cim:ConductorInfo rdf:ID="_39ac0af6e1304f5aa3a595afa711fe3d"/>
+ <cim:ConductorInfo rdf:ID="_8170fc68b66f45a28c2dfdaab08a9795"/>
+ <cim:ConductorInfo rdf:ID="_65c05c1324f641859a58d12d90a6267"/>
+ <cim:ConductorInfo rdf:ID="_f3e5e242acf2480a96e9aa897aa9c441"/>
+ <cim:ConductorInfo rdf:ID="_e13c346754a54b279c780d3ecdd67d"/>
+ <cim:ConductorInfo rdf:ID="_6e06180415f44cc09640a81f6d772831"/>
+ <cim:ConductorInfo rdf:ID="_78ba880a162e43ac995f8fc9984bb7b"/>
+ <cim:ConductorInfo rdf:ID="_71d8be3186f94210bc32648cf8829fb"/>
+ <cim:ConductorInfo rdf:ID="_feb6bc22bca04251b569c63e1222d624"/>
+ <cim:ConductorInfo rdf:ID="_970ae8d33cfc40c4ad8b58a2b247eaf"/>
+ <cim:ConductorInfo rdf:ID="_859b5b1fc9854eeaa334bbbf338c27cd"/>
+ <cim:ConductorInfo rdf:ID="_938ae8961234542b4eace24f54eb2fb"/>
+ <cim:ConductorInfo rdf:ID="_9380f98b8cbc481b94215b31ee26524"/>
+ <cim:ConductorInfo rdf:ID="_14957e5327664041bb525669f53ad"/>
+ <cim:ConductorInfo rdf:ID="_b9b48d2bffea47c8a849956d50cacc2c"/>
+ <cim:ConductorInfo rdf:ID="_2f8a497667d43749ac6d472b5dd5ab8"/>
+ <cim:ConductorInfo rdf:ID="_50ec6ad393e945c9a56d27c2bbd574c"/>
+ <cim:ConductorInfo rdf:ID="_d02f03ebdc1d4bb88f77cf7aa941c8dd"/>
+ <cim:ConductorInfo rdf:ID="_8de0c969ae8b428dbb52548eae5e4ad8"/>
+ <cim:ConductorInfo rdf:ID="_db943e23875147c0ac2f02187faed42"/>
+ <cim:ConductorInfo rdf:ID="_b64d2f4143c344c2a4ad6ff3e46175ac"/>
+ <cim:ConductorInfo rdf:ID="_a4d35a2f269145d2802cf9699e5b475"/>
+ <cim:ConductorInfo rdf:ID="_16613c10ad864e2c96b4d4a1b2ba9ff7"/>
+ <cim:ConductorInfo rdf:ID="_17e6cccea2004761a6111782a85511b"/>
+ <cim:ConductorInfo rdf:ID="_db39f9abe9b64a8899503e09b7f215"/>
+ <cim:ConductorInfo rdf:ID="_96d27fad8b7e46dea58c2946166c70d8"/>
+ <cim:ConductorInfo rdf:ID="_9c4b3b2628641c5ae4184819c2397d2"/>
+ <cim:ConductorInfo rdf:ID="_1ecf061db7c948c58de86ee7870fee1"/>
+ <cim:ConductorInfo rdf:ID="_a8554f3d336b45c68fadcb7fd593891"/>
+ <cim:ConductorInfo rdf:ID="_264a433a86c7493cac64a5cfbdb6b9e"/>
+ <cim:ConductorInfo rdf:ID="_2755ce114b204e0786fb792576ed9db3"/>
+ <cim:ConductorInfo rdf:ID="_d041e1faa0a14a05ad68c829372d3037"/>
+ <cim:ConductorInfo rdf:ID="_24ba5a3bb7ce4bda89add64ee8b71d0"/>
+ <cim:ConductorInfo rdf:ID="_bb9813d6b7ac46f39ae6397ffb4925d0"/>
+ <cim:ConductorInfo rdf:ID="_a2634517605d4f56b3b3d52b91c4a8"/>
+ <cim:ConductorInfo rdf:ID="_468023f3955d4e03907daf6ffb759ac7"/>
+ <cim:ConductorInfo rdf:ID="_b819b4915d0a4f16ab6eaae613b8777"/>
+ <cim:ConductorInfo rdf:ID="_7214d6349f764827b4b6467217a184df"/>
+ <cim:ConductorInfo rdf:ID="_5705c7a7f43649669f764c2eeeb3c4d7"/>
+ <cim:ConductorInfo rdf:ID="_c2b46a5abbf04611b81bc9a5f3b48a5"/>
+ <cim:ConductorInfo rdf:ID="_11a51ee1bdfc46a1a43c5896932f2a8"/>
+ <cim:ConductorInfo rdf:ID="_10feb6e5bbdf4a0a94daec21db7df112"/>
+ <cim:ConductorInfo rdf:ID="_f913b546a704479aba50bffbe9d2a12"/>
+ <cim:ConductorInfo rdf:ID="_1f27486b9ff6429fb2655c4a7f7cabd"/>
+ <cim:ConductorInfo rdf:ID="_fde33171abda4df691a9316b97cf757"/>
+ <cim:ConductorInfo rdf:ID="_20c56e9518474a038131f4d07e928549"/>
+ <cim:ConductorInfo rdf:ID="_fdb60b35e1946c78880136881364da9"/>
+ <cim:ConductorInfo rdf:ID="_2fd2a66489bd4f50aad652923293778"/>
+ <cim:ConductorInfo rdf:ID="_704b91817372432295f47fd8219953bc"/>
+ <cim:ConductorInfo rdf:ID="_b008d7cec43c443281d2d5b824f4f2ef"/>
+ <cim:ConductorInfo rdf:ID="_fef354b5c8f147ee966b42c7b65eeef4"/>
+ <cim:ConductorInfo rdf:ID="_f2892751a2a74c259758fa40e2ad2c6f"/>
+ <cim:ConductorInfo rdf:ID="_1f49d4a6ed654f57bb1f4b123a68cd"/>
+ <cim:ConductorInfo rdf:ID="_c10b22849e73477bad18b86b786143c8"/>
+ <cim:ConductorInfo rdf:ID="_7e7cd451b2174bab954d1fe0838c18c2"/>
+ <cim:ConductorInfo rdf:ID="_e0116529afb453eb092d80c57181"/>
+ <cim:ConductorInfo rdf:ID="_3213e45c70434d10afc2949a6c504dc"/>
+ <cim:ConductorInfo rdf:ID="_a555255d80cf4d73946910d5ad47c9"/>
+ <cim:ConductorInfo rdf:ID="_4e1c18343f5641e3967f64d398f7523"/>
+ <cim:ConductorInfo rdf:ID="_3d9c22f17304cd283d589d564649cf4"/>
+ <cim:ConductorInfo rdf:ID="_4f5c0296beb14111bf9fcd4ceea1e54f"/>
+ <cim:ConductorInfo rdf:ID="_100984f564a7480eb0ef19cabd94414"/>
+ <cim:ConductorInfo rdf:ID="_6f1ad82542cb4e5a8fd6786d8705121"/>
+ <cim:ConductorInfo rdf:ID="_99dc3dfdbc714ed9a78abd875f4f5985"/>
+ <cim:ConductorInfo rdf:ID="_ab9c280c3f89448580ac176d1624b"/>
+ <cim:ConductorInfo rdf:ID="_2fda720aea0d4950a481bc929aa4ef50"/>
+ <cim:ConductorInfo rdf:ID="_99bd4369c2bc4044a78e3240e79e14f8"/>
+ <cim:ConductorInfo rdf:ID="_d5ec8ea8a714893afcef0edb632db93"/>
+ <cim:ConductorInfo rdf:ID="_faae8c461ed94e9a8ccad42450677c74"/>
+ <cim:ConductorInfo rdf:ID="_3cd628e2386f4cc88df3298d4bc1fc52"/>
+ <cim:ConductorInfo rdf:ID="_eb2b767e9c1241e08f6490cfabc5c4d9"/>
+ <cim:ConductorInfo rdf:ID="_e17f2395712a4df3ac8e77323ba1f7"/>
+ <cim:ConductorInfo rdf:ID="_ef0c5d8ae2bd4f1d87d1516fba7116b"/>
+ <cim:ConductorInfo rdf:ID="_e88d7ca96fb8417382e18e5ad5c24efd"/>
+ <cim:ConductorInfo rdf:ID="_4e530de52f0b4a56843dee443d8ea37c"/>
+ <cim:ConductorInfo rdf:ID="_286fe44441b141f7802a3267aad7a6b3"/>
+ <cim:ConductorInfo rdf:ID="_4dc77df922e64f4eadbdc97deed535bf"/>
+ <cim:ConductorInfo rdf:ID="_e8ebdf914daa4949a02bc4808599d6c2"/>
+ <cim:ConductorInfo rdf:ID="_501e64836cd24686a53e8b59a44ce3d0"/>
+ <cim:ConductorInfo rdf:ID="_f97ce8e2132c486fa25a7916b33dcd5"/>
+ <cim:ConductorInfo rdf:ID="_c3ada088305d490594a0434baf9aa851"/>
+ <cim:ConductorInfo rdf:ID="_e0a0c13340f5455b883143e692bd14d7"/>
+ <cim:ConductorInfo rdf:ID="_b0fefe77aecc4b2fb69077674b1c667"/>
+ <cim:ConductorInfo rdf:ID="_36a409bf4d454e059aebbebd7dfe321"/>
+ <cim:ConductorInfo rdf:ID="_5c5d2b1739bf46d6b2383afe395cd02d"/>
+ <cim:ConductorInfo rdf:ID="_205d9f0e2764be4addcf5d1246625"/>
+ <cim:ConductorInfo rdf:ID="_4d68ccf845f842d2816a5a9591641d49"/>
+ <cim:ConductorInfo rdf:ID="_d9e3686626c64de0bd48a56b29e40d"/>
+ <cim:ConductorInfo rdf:ID="_adaae032dfd5418b8a8ae941ebd15c7"/>
+ <cim:ConductorInfo rdf:ID="_12f495532f8a4ad59dfe7ab79652b813"/>
+ <cim:ConductorInfo rdf:ID="_6670b4d643d44ce4a13e5f146aacb14"/>
+ <cim:ConductorInfo rdf:ID="_600e1a931d17407caf9b4329e783a541"/>
+ <cim:ConductorInfo rdf:ID="_8a1c175c0054f098c5878cdea3bf1f5"/>
+ <cim:ConductorInfo rdf:ID="_415d86c4eb924248805886f74c144289"/>
+ <cim:ConductorInfo rdf:ID="_54c2a97947fa4846a6fbf214434d059"/>
+ <cim:ConductorInfo rdf:ID="_7eb3634bc990460b8e431edf78f9ca67"/>
+ <cim:ConductorInfo rdf:ID="_69e8c5622696443a949e34e3fe10c2"/>
+ <cim:ConductorInfo rdf:ID="_f3cf017694ac4d0e9661292183553d7"/>
+ <cim:TransformerEndInfo rdf:ID="_30a5fb19766a44c08e31e6b2c0d534d2_WI">
+  <cim:TransformerEndInfo.shortTermS>22</cim:TransformerEndInfo.shortTermS>
+  <cim:TransformerEndInfo.ratedS>20</cim:TransformerEndInfo.ratedS>
+  <cim:TransformerEndInfo.ratedU>42</cim:TransformerEndInfo.ratedU>
+ </cim:TransformerEndInfo>
+ <cim:TransformerEndInfo rdf:ID="_cbc767eb63ef462e9a81e6d96a1dcaa4_WI">
+  <cim:TransformerEndInfo.shortTermS>22</cim:TransformerEndInfo.shortTermS>
+  <cim:TransformerEndInfo.ratedS>20</cim:TransformerEndInfo.ratedS>
+  <cim:TransformerEndInfo.ratedU>20</cim:TransformerEndInfo.ratedU>
+ </cim:TransformerEndInfo>
+ <cim:TransformerTankEnd rdf:about="#_30a5fb19766a44c08e31e6b2c0d534d2">
+  <cim:TransformerEnd.CoreAdmittance rdf:resource="#_c386a1f0-236e-11e0-8cca-005056c00008"/>
+  <cim:TransformerEnd.TransformerEndInfo rdf:resource="#_30a5fb19766a44c08e31e6b2c0d534d2_WI"/>
+  <cim:TransformerEnd.StarImpedance rdf:resource="#_30a5fb19766a44c08e31e6b2c0d534d2_WPI"/>
+ </cim:TransformerTankEnd>
+ <cim:TransformerTankEnd rdf:about="#_cbc767eb63ef462e9a81e6d96a1dcaa4">
+  <cim:TransformerEnd.CoreAdmittance rdf:resource="#_c387da70-236e-11e0-8cca-005056c00008"/>
+  <cim:TransformerEnd.TransformerEndInfo rdf:resource="#_cbc767eb63ef462e9a81e6d96a1dcaa4_WI"/>
+  <cim:TransformerEnd.StarImpedance rdf:resource="#_cbc767eb63ef462e9a81e6d96a1dcaa4_WPI"/>
+ </cim:TransformerTankEnd>
+ <cim:ACLineSegment rdf:about="#_3a29d73641ca4a2fa1e8be754c2b4959">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_87fb8af535e74fbd9acb4df8506f4cb8"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_81892ffd9cb1489198594acf4562b8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_264a433a86c7493cac64a5cfbdb6b9e"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6f47491fef84b1a91c8e637918d8624">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_85fe879529cb4d2e8f457e3539ee47"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2afdf995a0f4216bb9f2da66a881c3b">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_e0116529afb453eb092d80c57181"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b0d0118762034925a92fc4cfaf2f9e7">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d3f4941eac8b4435825a3cc879ed341"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5e6237dca8f649dbb02db6d9ef81ee2e">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_4c435fb3ec4143d8994a36277d918449"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_584d9801bbf04d449c3b5c67da2416e9">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_33188774564041cfa76c258f10a28218"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_97248e6470d14594b813e29aa432537f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_bb9813d6b7ac46f39ae6397ffb4925d0"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_935b7a4f63e044a7ac9485441ef76a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_75e483e8e444604a334b9f81941bcb0"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8b3f0d6cb8a94b8b8520e58e76121956">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_f8dcc70935694992952d55dd55e6d5e9"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7a5cff51eadb4481bc4b71ebf7c19ae2">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_10feb6e5bbdf4a0a94daec21db7df112"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_eb15dd0d9d484cd792eec322163268f3">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_f97ce8e2132c486fa25a7916b33dcd5"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e2108a0c5d404cea8323d23d1ded5632">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_fcf15b81afe4bdeb984a6b378a26071"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_55652a90cb0649c5a4a6887c72e8acb4">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_205d9f0e2764be4addcf5d1246625"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_16a31cb1dfc84d47b172a71365469a8f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_1523707551e438796c52d624d5f75ce"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a108fca1ec32458aa1a65bb99173e2fe">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d86c9cbd46a141d1917bfd10b33ab53c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_26315b06b2d041d3a47665a053497c3">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d8a27c9c67724d9ca9a5aacaf9c4ce6a"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_597b99ecb5174a44aa47be541e61cdf">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_57c6ff21904b4f529fb970981af3954"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5dfe70ebf622409d8c9d1d34e73cadaa">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_5c5d2b1739bf46d6b2383afe395cd02d"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e7bcb7d7d1cd4cd083ced150efd1e5">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_2fda720aea0d4950a481bc929aa4ef50"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_df650d57f15d43a987d70147d73d9b2">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b6dfad0295204119a9cea758a6dbf6"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_223ba8a75d5945e2beb412c71e5bb18">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_8170fc68b66f45a28c2dfdaab08a9795"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_108309aa685c412fa5c47838333f733c">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_89cb7faa96f4835a2729a36da13c82"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_761b357b90874857b15915e3afc28c3">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_970ae8d33cfc40c4ad8b58a2b247eaf"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_be8c76b0f0474571b88fcc61ce566364">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_eef3193c3c8e464eb7e27cb22165ea53"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_aa34f8837b4d4a0eb9ac8a81a8c6752">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_659779ea92434161badc9f192a12618f"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7a85cfa4e6c241e096fe46563efaca8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_682cf6d0d1c94e90a1103625bc17ebcc"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ff97031bd4af41acb49c3ddcefb21ea">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_54681ffc21104403b10747a43a1654"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_38240995ce1c48bf9bb1e83bc74ec5a0">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_99dc3dfdbc714ed9a78abd875f4f5985"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_46274dd623f48d591ada89475787c7">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_810d64e374a7406db55f95345429a38"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6802c5a49aaf4489949ffbd1bdc6c16">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_bf06bff5da554160ac7ef5c37a7b758"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8312715972040c5a7b82dd0b9e6ab85">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_3c1d8632bd56425e867f1db675e7787"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bec31dfde22a40c7b597f8917906d96">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_c51218b481864131be5cdd9d4b45562"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a0caa261c6dc49f795bebf102f2e8de9">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_3c27e0643e3644e790859642acd43a4f"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bc1fc4fe90d7464ca91b51a66641967">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_8259f5e5fb44fc6a647493206dbcf0"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_40af4987af8343a3b218e4674aaddc33">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a4d35a2f269145d2802cf9699e5b475"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_626530acec03450eb99acac24946308">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_9a568cc651ce4bf68b1393f327d56c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_73413ac8e7e54144b2263fd1678fde88">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_39086b4a47e54c6298e0acd9326ce753"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6215cb62dcc1404c89c6b6aea825878">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_596f82ff50cf42858edd8e301d18d2f5"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e364b4ea50be4014b4c092ef5ab85a43">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b64d2f4143c344c2a4ad6ff3e46175ac"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7c00af8fc2d04f8687ce3acae4b736a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_25eeb1cff4e9460fa0bf95faf1c63d3"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_be299eda751542389435719844188f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b819b4915d0a4f16ab6eaae613b8777"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3a3fa1502c4d4c12836be08bf063fd75">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_41435b70da6745a89f281f3b4141e2ae"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_eb1f3167621d469380738e5a6a1b7c66">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_6295cbd59c704f558089c636c76ddf51"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_61d00d9d2fe646dc83a2bc5a7a666d4">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a70f971b902243d1971ad6e7c2aa238a"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8f602619a7c34ee983385be626302f4e">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_8deb03cda962438bb781f64c759cf2f7"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b2d1255b1d6446cb73345cf5dd5c863">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_297ac939a3114d16b62e76fe12d513ca"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c1e8c56a104d4ccf9399f57c38bb3ce6">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_24ba5a3bb7ce4bda89add64ee8b71d0"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a20987e0b994a8ebb385f47835eb28">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_10244415c5c640c6b4224683e81b1a84"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6af6cea291a647678d74c0f2b43b8e36">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_f574541559f7464585b11d594f84337"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5cf3a7e3397b4bbba116e2c135855f55">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_859b5b1fc9854eeaa334bbbf338c27cd"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_41e434a621164c8898b3612c2c526ff2">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_f3e5e242acf2480a96e9aa897aa9c441"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_33970fc934df393317bcd9d7e5f4">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_4e551f8db9f24bd19b2545c38579aa0"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_52928b3162b84badaaa7dd5d85f2c17">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b008d7cec43c443281d2d5b824f4f2ef"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e7fb12493ca943eea9c392b85bd39a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_7fd6866030d64fbfad759aa27e3db3"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9c47694e43ca4ab5af26451a39f3e2ce">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_7214d6349f764827b4b6467217a184df"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_eb8a5f4dd06d4c0abb7460cf848f4c93">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_65c05c1324f641859a58d12d90a6267"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f406a5f5893249ceb65fa54de792bac6">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_3d9c22f17304cd283d589d564649cf4"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d92538c538cf40d083cec0e0c01d89ec">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_1ad37734176c46ac93b42a656af642"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2b2f8cd4a95f4453bc3c718c41ec3ba">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b4af2bef96be4561bd9e24b7de41fcb"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5370aabcb5dc4a6b8be0df57a78b5df5">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b937ab204bec4ff6afd0c3427834ea53"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_37e22869ee4a43169f7aa45aa910abc9">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_938ae8961234542b4eace24f54eb2fb"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ff0157354468468b85c43ea0abc6b11">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_cc98c9a2a01417db1238298826384c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_592b7092b09548ce86b2162f892b850">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b28e1191a7a14dec82f9a52713f9521f"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_133d902f72fb45fca45ff5e3975aee5f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_14957e5327664041bb525669f53ad"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_83f560ed93164b37b45f1bb8dcfd2cc0">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_7eb3634bc990460b8e431edf78f9ca67"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_711a34a641354d66a19dcd23dea0189">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_abe7a30ddd7c4e63b8ff52135acaf0de"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_374910916c3474a851a6657f8b863">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a1a7171274f5483bbf5a8c57e124e5d"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2d3c406c194d4998869578c719e9bb88">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_44e4ae015a6b4ef89c6f662dee9e968a"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bd8dbf8c6be74187bd743140d769b8ff">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_165efb34e4ac499d8f30850894d4288"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4b1927d8bbcc405db9dbf381558414">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_c04025afe5dd4ff19cb3599fba62a2"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ec6615588cb546179bd237e796ae35f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_600e1a931d17407caf9b4329e783a541"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_be7e1daf324f421bb5841d80e2809a10">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d041e1faa0a14a05ad68c829372d3037"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f5674fbbb93a4d2b9541f6873a819fc3">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_6670b4d643d44ce4a13e5f146aacb14"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bd313f871b84b42ac691072b3c6a64c">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_78d7f5e87b249e6b7efd33455e6e02a"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4384f5866ca74d4e874c8f167bf6924">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_1227e1fb9d6c4c6690602a133dd414f"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3ec44f1e5745418ba86e7345dd27fff3">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_680fdf86948490a99b116fb8f7f81f8"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_dea8b902203d4c5d90c29b172818a8c4">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_c14b50fc30d6417a92d6b823fcf46761"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_78751061613f43c9909d3d4715d2ac43">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_eb332c892ff448c5abfebeba7a3aa5c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2b1cdb7c8dac400699ec614b4a8c3f33">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_49f13699d4c4016a9a72a56e4d9b7ce"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2376168d4ac9457f808373d9b78f52fb">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a88e97eb4d4c47c4bde097d36e1d96ac"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a2416f27fcda492287de221969494564">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_415d86c4eb924248805886f74c144289"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_eaf2797ef47a42ff81f18517c1757c8a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_71d8be3186f94210bc32648cf8829fb"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9f8c7f27b8d84d66b21f9781670a59f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_f3cf017694ac4d0e9661292183553d7"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7d5cc27c89a04d45a3fba47bb92c6ff6">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_723f677aef4d4ca79662c02bbfec2f9d"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a40c88f17482433db33ebe82827253b">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a397aa6c1763491db7928bf921cd696c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_cbc7474fc1c74bdd8ba568bfbc1b3f4">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b40e2ddace2740519ad9fe341acb4fb5"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a17a9cc4918e47b090522038ce42e939">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_54c2a97947fa4846a6fbf214434d059"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_29a10c385eac4c178aa4ef3241cce59">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_5392b4d344464cb4a1ac206d5d1abdb"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b5edd71ffd04c90bbf4e536a43e7fb">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d5ec8ea8a714893afcef0edb632db93"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c622a7e97eeb4732bd3b527abddb843">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_adaae032dfd5418b8a8ae941ebd15c7"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_fdf526115ad421480e76e6761925a9f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_ab4c8ddf4d504922bdc798a0642bf738"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a95ef40a683453f8caa5e23d185406f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_563f9442c29e47eb8bf5e10a175f73"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_599d18f9bae6475f86f87281c6faf1">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_122a5fe8ec524e378a9ddf9d4a19814c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_cbad5fa547e14d029325255c6a675b54">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_3821cb27e3f54d8994bf71e4cf2349ca"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_dbf12a754f814e44b0f131ef7eac161f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_fc708c02b88a44559d3a519861889ed"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d9e6384f4903453b83afaf611d52e52a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_ca534b5a792b420897aaae8b5c1a81c0"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e376291e699f4b8aa9c0db825c76ea8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_97ccc05d51b04687b8a7b478cc8e446"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_da2bfac55b654fff934a7446f9ccec1a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d4382f4a921c4416ae2a4f7e4dfe0fc"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bd09797ef22b447094545024298fce90">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_1f27486b9ff6429fb2655c4a7f7cabd"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_42f65b444254d8991b178d19d112d3">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_5705c7a7f43649669f764c2eeeb3c4d7"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c0805cd79ceb436f8293172d22d91799">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_896d086f1f5e42ce852c1912a96f219e"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_48d336e07ee440b69e72f8763be36b23">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_7423baf532ce4da385b06398f7af9d5"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7c0125b5d5284c129841107e56417317">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_227657a95f274865b4e7c6b6a34d55a0"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3f281ec4a59c458cbd9444bb4ffbe5f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_9e1fac71a30345feb888bc892d60f9cd"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_74d4ba0ce50d4519b97b952cf4a1f72">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_c10b22849e73477bad18b86b786143c8"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ab9cf7f580cb4a2c96248224bf803b30">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_20c56e9518474a038131f4d07e928549"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7caf6105aacf4ce2a8263a7aadf14cc8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_452deba9fd984d1db3cdc81d2cde6cdb"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_511736ae5cbc4b8e92b0f681f0899075">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_ec35c39fd5e4d2ca58bb99da6d78190"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ed25711ac7e840aabc5d6db12825feb5">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_286fe44441b141f7802a3267aad7a6b3"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2ddd964f369746779290435ce5e09594">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_904da75998d4f039d60f06420cc175b"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_73f0c7e910c74c0587e8f85f7af6fd8b">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_8adc6daa6d86484f8b936274d34ca240"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a275f788eff4460cace28fd0cbf3eeac">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_4e530de52f0b4a56843dee443d8ea37c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4adab0587ccf4bb29e6879ee1e4a5e6">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_8f4c9b6ecf74482d8495f1f15f177fae"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7eed950a5f24039a668362b9911a97c">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_13ee247fb754a0c8363bd26e4b95248"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6219bdc163ca43c4b8cd13973ec7eb99">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_11bb40a8a2da49fcbbac2f8b5bbb639"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1f0a6f4df5b4ccc92d279abb8a2333">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_326626e0a2ad497b9ad99ae39e1270f8"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b9e04277f42a47fdb16d1ed61e9af1bd">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_82ec4ded140348c397e566cca696eec5"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9ced2ff5f25d43948e328e54e5b4a81">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_762277fd276a46918fc727e0306850a1"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_68e71e061e814768aef1e252adb4907c">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_6dc7468016c04349ba3cd5943b313932"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9321562cf0404672a262722f85907fce">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_9c4b3b2628641c5ae4184819c2397d2"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_28211e3b35f248378c3bcaed5988c36">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_59ff45f4d01e4beb91c28f114a4c7a66"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7cde10c646b4f73bfd52c244c6cca5f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_13f043fc5bf49e38bdfbd2792f3edda"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c00279c2c17a479f9d6491c1be8693b">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_8b1fd27cd7b845c49031b232e5e1ae93"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5c5e4cbe3e324ed38ee44fa813c42f8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_dd44abee58484808bdd366a495f4cba"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_877ec56d704945e48f466228ed80702b">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_81dc18a857934066ad5dcbf32aa4763e"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_90af04bd12e4a598344216543b6b0bc">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_105e7543706a411a81fcd789c62af051"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_288c54b463254056b58dde66d63721ef">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_429ebcf1123d4d5fb7c3267c39b016af"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_eb918378f01f443a865be38df087eec4">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a555255d80cf4d73946910d5ad47c9"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_fe3360e26c32474ca0196c29a2284838">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_6f1ad82542cb4e5a8fd6786d8705121"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2300df4b6ef48738e94d5c25c5be28">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_ddd29bc1b93d4034b02e859cfcec6f3d"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e6f3064d34e647faa48fe09ab0a54c94">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_5b01f40180414c7696d542aba647d"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5f682a21b05a46939fe9457af1d3b10">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_7485c85a2cb9422888b3173933c8573"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3dc99a33b16e4c98b5d9d64ddcbe41f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a26e43df5a334b4c911d49607bf9a78a"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d8f63ae7d54f768677e0aae6c095e9">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_381b2c7fa59e4917b8f680914d73abda"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_19e965ac35c64e8e9ce2dbf7b3a45dda">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_faae8c461ed94e9a8ccad42450677c74"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_61c8e3adfbc1470985e34afb117768f6">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_199be4c2f3df43f0baa7fd7c5548e630"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b2726bb9b74c4db790335ee973604afa">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_98f7d47ba8b3418fa646dc8de8cb5db3"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d7d3fde442e4f1d8d58f6c0ec5362c7">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_bdbc484d2b2747cea8d7a8c3c29cce13"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ae6323bc95e41c988df904b77615c62">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_12f495532f8a4ad59dfe7ab79652b813"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a9b513a883df464cb5b0826323be6e4">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d1718eb3b7f643ba951520f1ff21d921"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f7a91931dd644e679a788365eb6e8c50">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_69e8c5622696443a949e34e3fe10c2"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3ebe2cae1e74513b0e2e031e5a47e3a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_16613c10ad864e2c96b4d4a1b2ba9ff7"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_24a0588f8d484aa4a0d926fa7c833c56">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_c2b46a5abbf04611b81bc9a5f3b48a5"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1a7c125f352e4d46b3ab6883a71fcc89">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_f913b546a704479aba50bffbe9d2a12"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b5760a80c80a40808cbddaa7bf2dc564">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_39ac0af6e1304f5aa3a595afa711fe3d"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_376198df4edb468795b3c7dbec9ee5e2">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_52d9edba948d4377841ebe5aab183f51"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_548844c4203648e8a47914f1f3cc7c">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_79c1051bbbcc4a41bc561fe7558c663"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1fc10bd3b0ea4c33bc2170283b362885">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_42703f4c9ef847d4ac2d1703c92a22"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3bbbe90ad824823b483c992107e64c7">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_65b037f76ad64c9f96bc1b6651980f3"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3412e00425e140df892412c3ada9dbe8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_ac33531fa92e4a4097cf6e18a2f6c9a1"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4d64cb5879f54f328baca634f915de3">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_78ba880a162e43ac995f8fc9984bb7b"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_64c4344a663f4e0194a4166847809a5">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d02f03ebdc1d4bb88f77cf7aa941c8dd"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e3264e6d41334bfc8e45d876818a847e">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_ab386ce7c160410ca3bbd17bca947722"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e22aef289935475a8454b4db3335e8b">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_eb2b767e9c1241e08f6490cfabc5c4d9"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c441a533a4b4506a620eff6a774ce">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_489f8418d8ea4f9e9fac1f9fd3b36324"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5b987ebb96c24be9883784e2bc8a20">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_468023f3955d4e03907daf6ffb759ac7"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9925c833a9a044479e8dbd6f87f47bb3">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_368e72ebdcc249a499ce5dc16614186"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ee4b8f281f2b44d78585f7a8eb8b41">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b2e1155f95354fb3856a702847cdacf3"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8b6bbfbcd02d45f8a938457325c41d">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_31049a919b3245b79f918760a73a6f59"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1912d5b8765f400895c6ce834c9edc88">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_100984f564a7480eb0ef19cabd94414"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8f6076b234b04c378c2cf49cc3a1813b">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_dd9c86b84407459f91a456337c25cf59"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_15a0bf2c5def41c98e21259d9edaa5">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_501e64836cd24686a53e8b59a44ce3d0"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_50bc3a5c1716420ea8cc6915f3a448b7">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_fdb60b35e1946c78880136881364da9"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c7fa7bc0927f4a1c81ef6f2a6e404056">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_95859e69f564bd8b758d2ae24b5fdbf"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e873df2e1e994a3888d33663edf386d5">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_2fd2a66489bd4f50aad652923293778"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_74bba4a676a84b9891d446e1a5a84181">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_92ce0d9c3cc40168955b481f859986"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f7c7a513307846e7947e1ed18bed046">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_3d788be3a0254af18dd7c6f3551945ed"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_446d7b98602b44768d24e7772a99d4f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_1508ae838e234ed98f19d3de1ed234"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_42febb20cd29450699c3446bd23a863a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_782836513e7a46c2bd66fd2622ee49f5"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5d192f98df3d4c2aa1817522988e53">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_8de0c969ae8b428dbb52548eae5e4ad8"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7b7391359dc74ee8a2881920fe73d5a2">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_3213e45c70434d10afc2949a6c504dc"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2c7319a646234f0192826e8f4f0a2bb">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_704b91817372432295f47fd8219953bc"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_dc9c889683944ce3bf3dc9196f39652">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_27bbf6e5ec414e09a7ac19b13d5f4f1"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a55f9cfff12d49888a7c22dbcd427d2">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_9f3e33688e784ca59868cc4c97507a2"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_72aff0c898d84e5bbed27445ba18f89d">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a27cb7f12a56440c8122c3d72d81f5b2"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_512c80b97c12419582c21fd820d97d">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_f469ac134ac147b0b2353d58f1e7b69"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_73e3d743dff9473b9c4b7ebe1129d6a9">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_2b7f9578af8a46b4914ca8fe4f3e807b"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_57993bca3c65493b9ce6cee84f37556a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_aa8684577470434e9c738977c214a"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f4ab3332a58b48afba861d26a83334ef">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_1bcc30dd80464e97b75649975edb9f15"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4b6177f23e0a4090957bf5426f6ee03e">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_ba990301745c4a98885da37f8dfda630"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_864c471ee269464e88b6468ac342266">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_378bb7ba915c483d871b14912a769f49"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_25446fefe6e74c45b9d7daca8f14759e">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_126a894a5a43428bb04af7c8255334"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9fa5e143d92d48798166a03b866e512">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_48341d03efd245e39327a1b1bd354e"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b0e6f8bd674ad184d5e8e37281d959">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_3cd628e2386f4cc88df3298d4bc1fc52"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4b17b1f44db40e0bb8a32f06ae48a71">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_c42aa8bd33c48889c824210d8e5c8d"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1cf74ccba72d44e6adf2aadaf59397f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d2ae57f09d164e7aa94453d93f86f5a0"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_337b068fb1b74c948e478a9bed8c9f8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_8c851e60fdf6443d99522b197374f950"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7527a6f612f742608a2cf1b2cedabc8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_1ecf061db7c948c58de86ee7870fee1"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_cf71d9dfdea74c34ad939a3740c4f8dd">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_e2731e99d5643a1966e6075d87fe2db"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_42961c60e4224e79bf83522c0dfc2cd">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_1f49d4a6ed654f57bb1f4b123a68cd"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_dc38f4af75d94bebaa17ae2743f5aec8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_37ee2ceffd8e4d469fef966bc3c5ac65"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2412bbef7884b3f82888b11b7ba557e">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_e17f2395712a4df3ac8e77323ba1f7"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_616c47d836bc4761a79dcb278055899">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_4f5c0296beb14111bf9fcd4ceea1e54f"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2676f4c25f0a4c5aa22be41fcda470b5">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_1491b397a8464bfb8ca3aedb3c6591a7"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8adde13fe2134eb9859d375ced03329">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b6e1d02ed6f74073b114a0efc77be8"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1b5c6cb186054b178db8652c536bcb7">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_98423147e10d42ce925d32df2248b4ee"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_65d391f373544b5baee73452ab118f46">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_f2892751a2a74c259758fa40e2ad2c6f"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7fa0d312b22e4a4a9b24a1aaacf53a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_2b46d8d842b440bba5fc06e63fe3e3c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_34093d7120f342e285837d39b74d2f87">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_4d68ccf845f842d2816a5a9591641d49"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_29abf766409b4ce58e13dce95dc6b462">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a0535cd70754aa19e2f8a70c0ece35d"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_267aab8ca9184c518973f02ee042768a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_532d780f9977466681c1f26ce3f7f432"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d8c90ba31c6748a88a562f7e2ce8c94">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a8632dc956454545ad4f53dc77f55ab"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_58cab60730749b9b44834f9d5a07597">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_2755ce114b204e0786fb792576ed9db3"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9a1635f89284cf48aac9d7e9717e947">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_e13c346754a54b279c780d3ecdd67d"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_954fab44519e477b8f5c875e80f0d848">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a9aab470e00341c78b80b93e3948392"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1efda76fec014f3cbdbf81302fb2b7ea">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_4a3533d235554256b56fa34a26b256c6"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_715bb44fae15412a82f598edd2bdc6b4">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_9236ba5d21014fec8552574dd04d3e66"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bf6426e3c71144d9b99e5dd7d6aa51c8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_3fc72d582b2c4cc79715cd24827327a"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_426fa9ab60114b0e97bf571a8bed5ba8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_ef0c5d8ae2bd4f1d87d1516fba7116b"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_740a51251803494e90f3d25840577afb">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_3210ed1b1fc34d049f51ffa9d3efc4ef"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ed7f4c85d1c3449395d0d97de98cb2eb">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_5be44a4015304ac285c181476add07"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_14cc9a2ce6d24ddf9386e826af6ffc7">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_db39f9abe9b64a8899503e09b7f215"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8970fa9e42c04e1e80dd2337ef79289f">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_db943e23875147c0ac2f02187faed42"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bac522858c614b7cbaab1da2795bcf2">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_11a51ee1bdfc46a1a43c5896932f2a8"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ef783544d6d44f4abedb5c16b291fdfc">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d653d99fbaa426db99b5d85dac9d2"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c05366ec692427cb074855e84e733c4">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_fde33171abda4df691a9316b97cf757"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a5ea3a1d6e014826a9eb5055f67aaf63">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_eac2a42cef2f4260bd655ed8e7b3f664"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c34d6ead65ba482b81dbcf1da465f2be">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b0fefe77aecc4b2fb69077674b1c667"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1c09bc513104d5580579112e98ea8c">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_aa13d74a96f64243b152a2a09f713dec"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b5ab9721140348b491765ac4e2f4ae43">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_47773d81547046478db29ca56acada5b"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_689243e74a2c4cb5baab877e5794383c">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_30f9c2d7e73946509a651795cd6451c9"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5edefefd646341a083d633736ea0bf4a">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_47c96fd5d0174543a75f38cf39ab687"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2e141713aeab49c2bef1ba2d4a897f58">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_c3ada088305d490594a0434baf9aa851"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9fa3906216eb4b96ba7eeec496cf17c">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_7e7cd451b2174bab954d1fe0838c18c2"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_12485a9879fc4723be99ead662bc6b0">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_6e06180415f44cc09640a81f6d772831"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3779c3694c804f009c2d5df2d2b143c">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_c614336776be4218a3a9e13dd0a64ee4"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f827f809e64775a1574f2f82b17325">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a173d97a4b1a40eb89f020ed6529ecb"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3b7e171055814e5189669a46aca8b6cf">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_c47ed5b2c1e54a3187347cf1feccaca0"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_465a478ff13d4edd902c317beddf6419">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_be83b8c6a0e04f189a69f8c1b1f3e26"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_dbdf48802b204704a5b884833b90edfd">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_ea108864335145ceac9586db6c9354e"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_39d508beb5384af7916814c1eaeebb7">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_c83fa1a253044f03a65db8e5a61b8f40"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6a570a599e0a41fd828d8d7a8d9a627c">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_e8ebdf914daa4949a02bc4808599d6c2"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_da5ce7d17e6340dea7c44af8a7a6c9cf">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_2f272585ed434559be6bd28e9a44149"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_71d1150a54384a63aeb9ded5806dcec0">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_f5c07ed9a470447b8f20e813e51ef136"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c25ef847b2f34e439d8f4fd72c9d994">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_5b8934bed86846c39e8a59243437dc95"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c9aa5220436e43e2b287fa1d34365d0">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d9e3686626c64de0bd48a56b29e40d"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f4a8ec8745a4acb9342ad888bd09530">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_2ac050afbe344b2386fdfa7275ab44c1"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_be71a6c7374c4263b4bb9030ae5dc5e2">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_50ec6ad393e945c9a56d27c2bbd574c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a0a008de614445c596e099aac2318185">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_234a3b9b34364f2eb16170c4ffaf76"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_de309067cccc48e4bf8358d6be7d01b">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_4191bca96cd4e76bf4beed1d49e8ea2"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_be69c5267ae74ad4baae273565724a50">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_99bd4369c2bc4044a78e3240e79e14f8"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_156b8a664970490bb957b1a73e86835">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_8a7c0190e162462aad304bc4a121d14"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f37c7dbe3c487fac40ed2682d1e3d5">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_e64276d22ed34418af81d73e0d6449c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4a4b21b8c9f0442f8113fec373501aea">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a2634517605d4f56b3b3d52b91c4a8"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_43b0b5e4ddd542c888a2b84245554d1">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_6d485d64e95544feb9422fa340e5ba26"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b1493bf78a1e40e6bcdf65b85db92f16">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_28dd365757ad4c64b089c7c4a4e5d565"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9eb2cde189524ce3a53aa5b369da64ea">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_98ac24b22c8f487ab81ec6bfc9eacd"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_db309e1c49940188986f48e39d7b759">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_8a1c175c0054f098c5878cdea3bf1f5"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_545b8576771c4a6a9732ab35182d5dac">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_feb6bc22bca04251b569c63e1222d624"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3e3c4ca766034709bf49bbdd213deb">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_357225b5f16745ea9693f6dcf9cbac49"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b007e295171142dd8fd813f8d24b5a70">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_17e6cccea2004761a6111782a85511b"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8814e1e359444854ba23d9ab59787c74">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_cee2fe22453147dca1bf5dc6d53934"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ddb1a51fe74d55a1b1d25d1b6c579">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_77221c594104e68bd4cd2ec3c65625c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ebdec2dbc7ff48918e5fd6f52415719">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_e0a0c13340f5455b883143e692bd14d7"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d499276cf7e24f68bd5d1a3414d06bf1">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_3b4f8165e9d41dbb3f5bb712561f3fe"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_87225e0bb82848b7ac71e63dd0e0a74d">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_5170f26e5c14228b87ac382a8f3dbc7"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3f95e8c785bb4ae5beb6fde0c4e49e5">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_36a409bf4d454e059aebbebd7dfe321"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e38ecc54ab2b42cd87e9251b10a418d8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_f10e70ef96fd47938f6d504eebec2fa"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5fe1002e2cb74a93933c1a1d999f38c0">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_9380f98b8cbc481b94215b31ee26524"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_538cac551ccf4be486efd7a82132faad">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b9b48d2bffea47c8a849956d50cacc2c"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e800c987dd924e5795d29fc770af3d44">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_4ad0f87e4b424e4da774ae4680adc76d"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1eb5d7e499054a0e956fa1e64effccb">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_2f8a497667d43749ac6d472b5dd5ab8"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9e12f2ec78c845abba4ff421ef602a12">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_4dc77df922e64f4eadbdc97deed535bf"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_83262c422e844503afd9793d1a4f89c1">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_e88d7ca96fb8417382e18e5ad5c24efd"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_90f69e6354f64bbe88519fb1785b9530">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_d6e0af4242c947ac8d43b33ea8731245"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_484363b55bb247a6b383e0c75433968b">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_3999e9523cd34eb99faf651f25ca1225"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8de47c7437fb46008647645c29a63ffe">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_5cd59461479e45b986569edcff17120"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_808b3fa1bb5a4fda9cd64da8c618fdc">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_e3386e2125814bb0a2bc3b1f3542c666"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_922b6b1fa72640f7ac88881e199cbf5c">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_7a1acd3d30a4d42a3c6449dda66c7e"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3f32fbb4eddc44afaa78b2c57e113a3b">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_fef354b5c8f147ee966b42c7b65eeef4"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3a5e4f898f2f4bc98080351fc2f46878">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_ef5f42b24e574e86892fa31ca4c66162"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1f54c0233ff49f7891111fd987b28a3">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_2c7eceb5b5454760b422627b07f8c8a"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d36770d3910345f58222e37c2a694074">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_96d27fad8b7e46dea58c2946166c70d8"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_677d7640eef7452fac41f7469c89748">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_48989eedf7fa448287afc9fe5a3eba59"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e38af767b4524d9c97e84063d7dad81">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_4e1c18343f5641e3967f64d398f7523"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_34a85f0b3a5147408b5067cc5edb0ba">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_c7a15ebeeee44417a18674b849372fd5"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3b63c491cbc41a1b0d8fc6b717b8962">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_a8554f3d336b45c68fadcb7fd593891"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_15dd75e254fb45f7a37d24f9522412d8">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_b79f46c8570845648088ac8ccf6cf2f3"/>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_cb74ed6a394442e2b3ecd76ef8b6c394">
+  <cim:ACLineSegment.ConductorInfo rdf:resource="#_ab9c280c3f89448580ac176d1624b"/>
+ </cim:ACLineSegment>
+</rdf:RDF>

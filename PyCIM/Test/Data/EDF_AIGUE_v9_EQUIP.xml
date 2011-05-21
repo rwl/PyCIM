@@ -1,0 +1,2270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2010/CIM-schema-cim15#">
+ <cim:TransformerStarImpedance rdf:ID="_30a5fb19766a44c08e31e6b2c0d534d2_WPI">
+  <cim:TransformerStarImpedance.x>5.29199982</cim:TransformerStarImpedance.x>
+  <cim:TransformerStarImpedance.r>0</cim:TransformerStarImpedance.r>
+ </cim:TransformerStarImpedance>
+ <cim:TransformerStarImpedance rdf:ID="_cbc767eb63ef462e9a81e6d96a1dcaa4_WPI">
+  <cim:TransformerStarImpedance.x>1.20000005</cim:TransformerStarImpedance.x>
+  <cim:TransformerStarImpedance.r>0</cim:TransformerStarImpedance.r>
+ </cim:TransformerStarImpedance>
+ <cim:GeneratingUnit rdf:ID="_be90ca0a55a479da8336dfd809fa1cd">
+  <cim:IdentifiedObject.name>73019P9002_GU</cim:IdentifiedObject.name>
+  <cim:GeneratingUnit.ratedNetMaxP>2.04264951</cim:GeneratingUnit.ratedNetMaxP>
+  <cim:GeneratingUnit.genControlSource rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#GeneratorControlSource.offAGC"/>
+  <cim:GeneratingUnit.initialP>1.85695398</cim:GeneratingUnit.initialP>
+ </cim:GeneratingUnit>
+ <cim:GeneratingUnit rdf:ID="_f095b5f31bdf49dcb21d91521c543fe4">
+  <cim:IdentifiedObject.name>73019P9003_GU</cim:IdentifiedObject.name>
+  <cim:GeneratingUnit.ratedNetMaxP>3.43165112</cim:GeneratingUnit.ratedNetMaxP>
+  <cim:GeneratingUnit.genControlSource rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#GeneratorControlSource.offAGC"/>
+  <cim:GeneratingUnit.initialP>3.11968279</cim:GeneratingUnit.initialP>
+ </cim:GeneratingUnit>
+ <cim:GeneratingUnit rdf:ID="_22a8f0962c6241b8a8eaf522afcc9b84">
+  <cim:IdentifiedObject.name>73019P9001_GU</cim:IdentifiedObject.name>
+  <cim:GeneratingUnit.ratedNetMaxP>3.67676902</cim:GeneratingUnit.ratedNetMaxP>
+  <cim:GeneratingUnit.genControlSource rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#GeneratorControlSource.offAGC"/>
+  <cim:GeneratingUnit.initialP>3.34251714</cim:GeneratingUnit.initialP>
+ </cim:GeneratingUnit>
+ <cim:GeneratingUnit rdf:ID="_dcdb320da5af4b53b57fc34b1b37f6a">
+  <cim:IdentifiedObject.name>73019P9004_GU</cim:IdentifiedObject.name>
+  <cim:GeneratingUnit.ratedNetMaxP>6.86330223</cim:GeneratingUnit.ratedNetMaxP>
+  <cim:GeneratingUnit.genControlSource rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#GeneratorControlSource.offAGC"/>
+  <cim:GeneratingUnit.initialP>6.23936558</cim:GeneratingUnit.initialP>
+ </cim:GeneratingUnit>
+ <cim:TransformerCoreAdmittance rdf:ID="_c386a1f0-236e-11e0-8cca-005056c00008">
+  <cim:TransformerCoreAdmittance.g>0</cim:TransformerCoreAdmittance.g>
+  <cim:TransformerCoreAdmittance.b>0.00000822</cim:TransformerCoreAdmittance.b>
+ </cim:TransformerCoreAdmittance>
+ <cim:TransformerCoreAdmittance rdf:ID="_c387da70-236e-11e0-8cca-005056c00008">
+  <cim:TransformerCoreAdmittance.g>0</cim:TransformerCoreAdmittance.g>
+  <cim:TransformerCoreAdmittance.b>0.00003625</cim:TransformerCoreAdmittance.b>
+ </cim:TransformerCoreAdmittance>
+ <cim:EnergySource rdf:about="#_bd97c4dcf1de4b2ea5113f53b4be7aa">
+  <cim:EnergySource.voltageMagnitude>42</cim:EnergySource.voltageMagnitude>
+  <cim:EnergySource.nominalVoltage>42</cim:EnergySource.nominalVoltage>
+  <cim:EnergySource.x>2.46025109</cim:EnergySource.x>
+  <cim:EnergySource.voltageAngle>0</cim:EnergySource.voltageAngle>
+ </cim:EnergySource>
+ <cim:EnergyConsumer rdf:about="#_6697f8dc7c74437983801f587d56dc1">
+  <cim:EnergyConsumer.customerCount>15</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.008</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00375999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_9442e92de794f18b3d27b8acd19d0e9">
+  <cim:EnergyConsumer.customerCount>53</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.09400003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.04417994</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_8a5542e863b5411ca4b917507fb57c77">
+  <cim:EnergyConsumer.customerCount>27</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.02400001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01127998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_adc629d1515d456883b68ea997b6edd">
+  <cim:EnergyConsumer.customerCount>62</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.07800002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.03665994</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_b2fd1c5fe97049ed89ff304635739386">
+  <cim:EnergyConsumer.customerCount>18</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.012</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00563999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_16f013df6a4e558b86dda48e6d5635">
+  <cim:EnergyConsumer.customerCount>18</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.016</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00751999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_93cdf0b99abc44ae912dd6d2ca8ec656">
+  <cim:EnergyConsumer.customerCount>41</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.08500003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.03994994</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_a34d4f404c4442d58bcf97f582e5984">
+  <cim:EnergyConsumer.customerCount>10</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.02400001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01127998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_cba4c31746fb44aa9372a239f8efdda">
+  <cim:EnergyConsumer.customerCount>4</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.004</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00188</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_965c301438b4b7e9eac1da536b956a5">
+  <cim:EnergyConsumer.customerCount>7</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.01</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00469999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_8f2b7e7688f94e1f9d89751222949086">
+  <cim:EnergyConsumer.customerCount>15</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.01400001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00657999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_78c1315b65ca405a99322736a62ec517">
+  <cim:EnergyConsumer.customerCount>54</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_ba21d40446184a12bba4fd661d5c4b63">
+  <cim:EnergyConsumer.customerCount>12</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.07000002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.03289995</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_ad749cb5d316417daaca6740ed1a67e0">
+  <cim:EnergyConsumer.customerCount>60</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.05100002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02396996</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_43601a357e1a42409b29f079bc5d3516">
+  <cim:EnergyConsumer.customerCount>69</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.11500004</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.05404992</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_f9bac7e8689c491d9143183042c3e766">
+  <cim:EnergyConsumer.customerCount>17</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.03000001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01409998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_4fd7a2f5ff9441aba22373e31eb9d4">
+  <cim:EnergyConsumer.customerCount>11</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.011</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00516999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_f9a372f93c094937818c7c5878b4c22">
+  <cim:EnergyConsumer.customerCount>5</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.006</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00282</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_c6f4f504ecd748da99e36ef93b5b6a5e">
+  <cim:EnergyConsumer.customerCount>78</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.13400003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.06297991</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_c5d23fc2f547404cbb4ee2ed87f5611">
+  <cim:EnergyConsumer.pfixed>0.007</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00329</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_ce1e6510fa2044a69eeb29e8c93873dd">
+  <cim:EnergyConsumer.customerCount>13</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.009</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00422999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_78580cb3b2e4409c91afa3ba951b7c4e">
+  <cim:EnergyConsumer.customerCount>12</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.007</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00329</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_845933629fd2454bb3e0ede91851a1a">
+  <cim:EnergyConsumer.customerCount>14</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.011</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00516999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_9dfbc0d51013465ea1beab24a3730b8">
+  <cim:EnergyConsumer.customerCount>9</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.011</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00516999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_6c602561cde4447494617389c95a84d">
+  <cim:EnergyConsumer.customerCount>45</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.10100003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.04746993</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_c5be4a098b3480fae4ff27a26a48b39">
+  <cim:EnergyConsumer.pfixed>0.18699996</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.09350008</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_d577140cfdf24521933ae27939609240">
+  <cim:EnergyConsumer.customerCount>3</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.009</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00422999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_e8f5f280bff34468bc3dda9b39c03f8d">
+  <cim:EnergyConsumer.customerCount>18</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.017</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00798999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_5c7d819855424bd097f4aa6f47cd9cc">
+  <cim:EnergyConsumer.pfixed>0.12400004</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.05827991</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_a3d95331c934478480b93ff75b2f4ffb">
+  <cim:EnergyConsumer.pfixed>0.04000001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01879997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_d53d457514bf473a8ef850e94572435a">
+  <cim:EnergyConsumer.pfixed>0.21300007</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.10010985</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_404032a3ad91488eb94331c1bcde34f">
+  <cim:EnergyConsumer.customerCount>7</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.017</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00798999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_f30e51ac394785956a5318eab868e">
+  <cim:EnergyConsumer.customerCount>75</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.09500003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.04464993</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_f08785dc90814818a5699beee26694c5">
+  <cim:EnergyConsumer.customerCount>66</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.07100002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.03336995</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_ec11511619c34e5991f2ceec75d3fd55">
+  <cim:EnergyConsumer.customerCount>63</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.11100004</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.05216992</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_fc36250827824038b9256cd4995631fe">
+  <cim:EnergyConsumer.customerCount>1</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.02400001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01127998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_e2c14a95607e4acba1a17b214e7b46a">
+  <cim:EnergyConsumer.customerCount>15</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.04900002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02302996</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_badeb20f2b0548e3aaefb91898afac31">
+  <cim:EnergyConsumer.customerCount>56</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.08400003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.03947994</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_90e36b352d1145a0b42acc29afdcbe17">
+  <cim:EnergyConsumer.customerCount>104</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.11700004</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.05498992</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_28b0776a1c04400db6e582c1e6dab3ad">
+  <cim:EnergyConsumer.customerCount>61</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.07100002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.03336995</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_4460a6b7cb6543c280ed2c686f83b99">
+  <cim:EnergyConsumer.customerCount>1</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00047</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_9645e2d1cfb5424a92cc408383969587">
+  <cim:EnergyConsumer.customerCount>41</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.03700001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01738997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_9f735778bfac44a29c1943efcfe3dcce">
+  <cim:EnergyConsumer.pfixed>0.02300001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01080998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_d7158948a02456f99c9b60b11359c">
+  <cim:EnergyConsumer.customerCount>4</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00094</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_ce654cc754ba4adab3d61dec7a964226">
+  <cim:EnergyConsumer.customerCount>22</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.01500001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00704999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_668a632d0454438ad7a36ef6792a85e">
+  <cim:EnergyConsumer.customerCount>16</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.005</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00235</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_cf0d556abdb44301b446ef7764b01ac">
+  <cim:EnergyConsumer.customerCount>4</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.02300001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01080998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_cad686bc417349e585f337fa18ad99c0">
+  <cim:EnergyConsumer.customerCount>37</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.05400002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02537996</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_5a9dc9fca11143c88a96e2258db6be">
+  <cim:EnergyConsumer.customerCount>2</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.04200001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01973997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_b2143521a0574f978bc17d7bff153038">
+  <cim:EnergyConsumer.customerCount>8</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.02600001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01221998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_c6c39c779a0a4b269fefa7488d1ca9b1">
+  <cim:EnergyConsumer.customerCount>28</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.04200001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01973997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_e1ea7f222e8b43a6a1b4dedac8b96a81">
+  <cim:EnergyConsumer.customerCount>35</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.04400001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02067997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_697b0ecb2a244b0dbf8bf479919f4b45">
+  <cim:EnergyConsumer.customerCount>48</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.04400001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02067997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_6012b81592f48009c6983171ce0ef32">
+  <cim:EnergyConsumer.customerCount>39</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.03100001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01456998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_93ad8ef7c5ed4259bc3e639c1230e7e6">
+  <cim:EnergyConsumer.customerCount>7</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.007</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00329</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_7ac51636fd72427ba22a58e3cb9f63ef">
+  <cim:EnergyConsumer.customerCount>21</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.01800001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00845999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_3ef08539e9a74b4f852536babb530e9">
+  <cim:EnergyConsumer.customerCount>18</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.02600001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01221998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_89beedab5d8542148dd57dab1ae2988">
+  <cim:EnergyConsumer.customerCount>82</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.12200004</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.05733991</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_102f38b9cf74983983b60475e728d2c">
+  <cim:EnergyConsumer.pfixed>0.02999999</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01500001</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_a95ef2399bf84974814c1d6118699dcf">
+  <cim:EnergyConsumer.customerCount>19</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.02600001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01221998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_8c9fd4a46a6b466b9bd0166f9a56c3c">
+  <cim:EnergyConsumer.customerCount>40</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.05300002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02490996</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_58a04e3f71dd4bb6acc4dfa6e79720bf">
+  <cim:EnergyConsumer.customerCount>39</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.06800003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.03195995</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_933ef122f8414e77982e7e9d82a26923">
+  <cim:EnergyConsumer.customerCount>26</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.04400001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02067997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_49de88793d7b496dbbb6352231ce420">
+  <cim:EnergyConsumer.customerCount>120</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.17900006</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.08412988</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_5e81c1a0e48a4f9f9b9613d3decd8ed0">
+  <cim:EnergyConsumer.customerCount>18</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.016</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00751999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_c904a419f914d53b0528566bf7921af">
+  <cim:EnergyConsumer.customerCount>120</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.09300003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.04370993</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_42a21ea0dc3447c8951b1238f32c60e6">
+  <cim:EnergyConsumer.customerCount>32</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.04000001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01879997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_95335b7f3a14ff9b6ced1607fff5aaf">
+  <cim:EnergyConsumer.pfixed>0.38599989</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.03088135</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_726a7256f3fa4a3d9be6d7f9604c345c">
+  <cim:EnergyConsumer.customerCount>26</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.05900002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02772996</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_76a548ec53e4394a98d3bb3d6b533c2">
+  <cim:EnergyConsumer.customerCount>63</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.11400004</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.05357992</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_30908b711247f4a84776d7e8366f6">
+  <cim:EnergyConsumer.customerCount>11</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.01800001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00845999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_afd5fce5d9f14ec18535ef1c2014175d">
+  <cim:EnergyConsumer.pfixed>0.011</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00516999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_3acae0f9a51441b3bb3b8eb19153a093">
+  <cim:EnergyConsumer.customerCount>6</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.09400003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.04417994</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_88633110bf6a443688c8b56d8099d479">
+  <cim:EnergyConsumer.customerCount>62</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.06300002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02960996</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_5d3e43ae25448ebbb3a88b2aab86c8">
+  <cim:EnergyConsumer.customerCount>15</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.02800001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01315998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_80edf80550a043e7a319aa07e6a934">
+  <cim:EnergyConsumer.customerCount>179</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.27400008</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.12877981</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_ef8e6e86bc3d4883ad8256ac1a67e577">
+  <cim:EnergyConsumer.customerCount>44</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.04200001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01973997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_95c7cf12bc10439b94d2cb4afb81aa63">
+  <cim:EnergyConsumer.customerCount>21</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.02000001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00939999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_e690d0a5593542969ea57b243dd176a7">
+  <cim:EnergyConsumer.customerCount>20</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.03200001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01503998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_e72b257263b44057bfc071b83dd1e6d2">
+  <cim:EnergyConsumer.customerCount>24</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.03000001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01409998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_af224bf6a2634e30b2f17c3e55badf5">
+  <cim:EnergyConsumer.customerCount>3</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00141</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_c86c3293400f4949a7e31bb383114f1e">
+  <cim:EnergyConsumer.customerCount>42</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.04200001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01973997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_3db80eb0804a44e5a95e36b8199c4ccc">
+  <cim:EnergyConsumer.customerCount>41</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.03100001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01456998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_7484c8c818949c5808eaf45b8235684">
+  <cim:EnergyConsumer.customerCount>14</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.02800001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01315998</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_ad18e1005fc4452cbbfc147286c66a8">
+  <cim:EnergyConsumer.customerCount>21</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.01800001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00845999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_346a54e665bb4878b6ce58e04809f69">
+  <cim:EnergyConsumer.customerCount>50</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.08200002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.03853994</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_b7c998a3d0c84174a240d195eec25d1">
+  <cim:EnergyConsumer.customerCount>14</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.009</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00422999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_789048279cc04e62b158b46df2eb83d">
+  <cim:EnergyConsumer.customerCount>3</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.009</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00422999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_17ea38bcb0e04cae9cbbfe33e52ef0a0">
+  <cim:EnergyConsumer.customerCount>31</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.05300002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02490996</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_bd2cb2247080439eb661f3b0afcce259">
+  <cim:EnergyConsumer.customerCount>57</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.13400003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.06297991</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_d0aa98249b3f4ecdb5872b5e391c3ca8">
+  <cim:EnergyConsumer.customerCount>25</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.06200002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02913996</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_9dd2cb3c5f74463ea2ca14d544e3d2e">
+  <cim:EnergyConsumer.customerCount>22</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.05400002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02537996</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_3720d126ff864d67aa58e1b6b83ab51">
+  <cim:EnergyConsumer.customerCount>3</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00094</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_367c0f25cd9146d38210afdfa239bd8">
+  <cim:EnergyConsumer.customerCount>25</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.05000002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02349997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_45461573b5f4b8480cf1b759166399">
+  <cim:EnergyConsumer.customerCount>40</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.15700005</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.07378989</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_82ef18d1e9444a139328aac58410">
+  <cim:EnergyConsumer.customerCount>95</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.09300003</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.04370993</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_a957c38183ec47cea99459c61c2ee13">
+  <cim:EnergyConsumer.customerCount>9</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.016</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.00751999</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_60458805e2a9408f90f078a3dbfac15a">
+  <cim:EnergyConsumer.pfixed>0.23400009</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.10997984</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_d76a59b9b9b9480ba5b8ac7e30947e3f">
+  <cim:EnergyConsumer.customerCount>20</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.03700001</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.01738997</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_8949b5ffd2184724843785e15da8c118">
+  <cim:EnergyConsumer.pfixed>0.06300002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02960996</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:EnergyConsumer rdf:about="#_27d84d3ba12545859448f01ac8d6ac94">
+  <cim:EnergyConsumer.customerCount>45</cim:EnergyConsumer.customerCount>
+  <cim:EnergyConsumer.pfixed>0.05700002</cim:EnergyConsumer.pfixed>
+  <cim:EnergyConsumer.qfixed>0.02678996</cim:EnergyConsumer.qfixed>
+ </cim:EnergyConsumer>
+ <cim:ShuntCompensator rdf:about="#_e4b19d0f72bb46b9b29ae2967ad294cd">
+  <cim:ShuntCompensator.nomQ>0.89999998</cim:ShuntCompensator.nomQ>
+  <cim:ShuntCompensator.nomU>20</cim:ShuntCompensator.nomU>
+  <cim:ShuntCompensator.maximumSections>1</cim:ShuntCompensator.maximumSections>
+  <cim:ShuntCompensator.normalSections>1</cim:ShuntCompensator.normalSections>
+  <cim:ShuntCompensator.reactivePerSection>0.89999998</cim:ShuntCompensator.reactivePerSection>
+ </cim:ShuntCompensator>
+ <cim:TransformerTankEnd rdf:about="#_30a5fb19766a44c08e31e6b2c0d534d2">
+  <cim:TransformerEnd.CoreAdmittance rdf:resource="#_c386a1f0-236e-11e0-8cca-005056c00008"/>
+  <cim:TransformerEnd.StarImpedance rdf:resource="#_30a5fb19766a44c08e31e6b2c0d534d2_WPI"/>
+ </cim:TransformerTankEnd>
+ <cim:TransformerTankEnd rdf:about="#_cbc767eb63ef462e9a81e6d96a1dcaa4">
+  <cim:TransformerEnd.CoreAdmittance rdf:resource="#_c387da70-236e-11e0-8cca-005056c00008"/>
+  <cim:TransformerEnd.StarImpedance rdf:resource="#_cbc767eb63ef462e9a81e6d96a1dcaa4_WPI"/>
+ </cim:TransformerTankEnd>
+ <cim:ACLineSegment rdf:about="#_3a29d73641ca4a2fa1e8be754c2b4959">
+  <cim:ACLineSegment.r>0.23389684</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.266</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00119381</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_81892ffd9cb1489198594acf4562b8">
+  <cim:ACLineSegment.r>0.02635741</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01505</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00006754</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6f47491fef84b1a91c8e637918d8624">
+  <cim:ACLineSegment.r>0.37251368</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.12530001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00056235</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2afdf995a0f4216bb9f2da66a881c3b">
+  <cim:ACLineSegment.r>0.02239117</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.00805</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00003613</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b0d0118762034925a92fc4cfaf2f9e7">
+  <cim:ACLineSegment.r>0.25820979</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.29365</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0013179</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5e6237dca8f649dbb02db6d9ef81ee2e">
+  <cim:ACLineSegment.r>0.08948652</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0301</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00013509</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_584d9801bbf04d449c3b5c67da2416e9">
+  <cim:ACLineSegment.r>0.36020574</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1295</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00058119</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_97248e6470d14594b813e29aa432537f">
+  <cim:ACLineSegment.r>0.09540529</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1085</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00048695</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_935b7a4f63e044a7ac9485441ef76a">
+  <cim:ACLineSegment.r>0.08012166</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.02695</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00012095</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8b3f0d6cb8a94b8b8520e58e76121956">
+  <cim:ACLineSegment.r>0.02810522</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0089</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00588562</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7a5cff51eadb4481bc4b71ebf7c19ae2">
+  <cim:ACLineSegment.r>0.5033145</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.18095</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0008121</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_eb15dd0d9d484cd792eec322163268f3">
+  <cim:ACLineSegment.r>0.0242</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0121</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01706796</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e2108a0c5d404cea8323d23d1ded5632">
+  <cim:ACLineSegment.r>0.10903525</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0392</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00017593</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_55652a90cb0649c5a4a6887c72e8acb4">
+  <cim:ACLineSegment.r>0.0548</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0274</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02143383</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_16a31cb1dfc84d47b172a71365469a8f">
+  <cim:ACLineSegment.r>0.43614098</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1568</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00070372</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a108fca1ec32458aa1a65bb99173e2fe">
+  <cim:ACLineSegment.r>0.190419</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.06405</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00028746</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_26315b06b2d041d3a47665a053497c3">
+  <cim:ACLineSegment.r>0.15324076</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0875</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0003927</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_597b99ecb5174a44aa47be541e61cdf">
+  <cim:ACLineSegment.r>0.22995956</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.07735</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00034715</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5dfe70ebf622409d8c9d1d34e73cadaa">
+  <cim:ACLineSegment.r>0.22293814</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.08015</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00035971</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e7bcb7d7d1cd4cd083ced150efd1e5">
+  <cim:ACLineSegment.r>0.14151359</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0476</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00021363</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_df650d57f15d43a987d70147d73d9b2">
+  <cim:ACLineSegment.r>0.00025</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0002</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00019604</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_223ba8a75d5945e2beb412c71e5bb18">
+  <cim:ACLineSegment.r>0.17689197</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0595</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00026704</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_108309aa685c412fa5c47838333f733c">
+  <cim:ACLineSegment.r>0.34462926</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1239</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00055606</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_761b357b90874857b15915e3afc28c3">
+  <cim:ACLineSegment.r>0.16440548</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0553</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00024819</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_be8c76b0f0474571b88fcc61ce566364">
+  <cim:ACLineSegment.r>0.07491896</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0252</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0001131</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_aa34f8837b4d4a0eb9ac8a81a8c6752">
+  <cim:ACLineSegment.r>0.20249403</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0728</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00032673</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7a85cfa4e6c241e096fe46563efaca8">
+  <cim:ACLineSegment.r>0.05</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.025</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01955641</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ff97031bd4af41acb49c3ddcefb21ea">
+  <cim:ACLineSegment.r>0.0228919</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0077</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00003456</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_38240995ce1c48bf9bb1e83bc74ec5a0">
+  <cim:ACLineSegment.r>0.23199999</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.116</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.09074176</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_46274dd623f48d591ada89475787c7">
+  <cim:ACLineSegment.r>0.07968519</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0455</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0002042</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6802c5a49aaf4489949ffbd1bdc6c16">
+  <cim:ACLineSegment.r>0.00738622</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0084</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0000377</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8312715972040c5a7b82dd0b9e6ab85">
+  <cim:ACLineSegment.r>0.04890543</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01645</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00007383</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bec31dfde22a40c7b597f8917906d96">
+  <cim:ACLineSegment.r>0.01894734</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.006</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00396783</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a0caa261c6dc49f795bebf102f2e8de9">
+  <cim:ACLineSegment.r>0.01947058</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.007</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00003142</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bc1fc4fe90d7464ca91b51a66641967">
+  <cim:ACLineSegment.r>0.02526312</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.008</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00532814</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_40af4987af8343a3b218e4674aaddc33">
+  <cim:ACLineSegment.r>0.05451762</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0196</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00008796</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_626530acec03450eb99acac24946308">
+  <cim:ACLineSegment.r>0.057</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0285</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02229431</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_73413ac8e7e54144b2263fd1678fde88">
+  <cim:ACLineSegment.r>0.13933346</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.133</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0005969</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6215cb62dcc1404c89c6b6aea825878">
+  <cim:ACLineSegment.r>0.08309493</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0945</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00042412</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e364b4ea50be4014b4c092ef5ab85a43">
+  <cim:ACLineSegment.r>0.0176892</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.00595</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0000267</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7c00af8fc2d04f8687ce3acae4b736a">
+  <cim:ACLineSegment.r>0.05827029</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0196</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00008796</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_be299eda751542389435719844188f">
+  <cim:ACLineSegment.r>0.30876997</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.09065</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00040684</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3a3fa1502c4d4c12836be08bf063fd75">
+  <cim:ACLineSegment.r>0.53067589</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1785</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00080111</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_eb1f3167621d469380738e5a6a1b7c66">
+  <cim:ACLineSegment.r>0.05368413</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.017</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01124219</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_61d00d9d2fe646dc83a2bc5a7a666d4">
+  <cim:ACLineSegment.r>0.27258813</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.098</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00043982</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8f602619a7c34ee983385be626302f4e">
+  <cim:ACLineSegment.r>0.0102</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0051</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00719393</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b2d1255b1d6446cb73345cf5dd5c863">
+  <cim:ACLineSegment.r>0.6473968</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.23275</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00104458</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c1e8c56a104d4ccf9399f57c38bb3ce6">
+  <cim:ACLineSegment.r>0.10509464</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.03535</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00015865</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a20987e0b994a8ebb385f47835eb28">
+  <cim:ACLineSegment.r>0.000625</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0005</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00091735</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6af6cea291a647678d74c0f2b43b8e36">
+  <cim:ACLineSegment.r>0.0012</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0006</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00084635</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5cf3a7e3397b4bbba116e2c135855f55">
+  <cim:ACLineSegment.r>0.0884</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0442</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.03457574</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_41e434a621164c8898b3612c2c526ff2">
+  <cim:ACLineSegment.r>0.0102</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0051</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00719393</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_33970fc934df393317bcd9d7e5f4">
+  <cim:ACLineSegment.r>0.08012166</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.02695</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00012095</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_52928b3162b84badaaa7dd5d85f2c17">
+  <cim:ACLineSegment.r>0.214</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.107</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.08370145</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e7fb12493ca943eea9c392b85bd39a">
+  <cim:ACLineSegment.r>0.01107932</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0126</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00005655</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9c47694e43ca4ab5af26451a39f3e2ce">
+  <cim:ACLineSegment.r>0.04831816</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.05495</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00024662</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_eb8a5f4dd06d4c0abb7460cf848f4c93">
+  <cim:ACLineSegment.r>0.004</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.002</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00282115</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f406a5f5893249ceb65fa54de792bac6">
+  <cim:ACLineSegment.r>0.06971624</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.02345</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00010524</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d92538c538cf40d083cec0e0c01d89ec">
+  <cim:ACLineSegment.r>0.02725881</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0098</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00004398</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2b2f8cd4a95f4453bc3c718c41ec3ba">
+  <cim:ACLineSegment.r>0.03115293</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0112</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00005027</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5370aabcb5dc4a6b8be0df57a78b5df5">
+  <cim:ACLineSegment.r>0.057</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0285</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.04020139</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_37e22869ee4a43169f7aa45aa910abc9">
+  <cim:ACLineSegment.r>0.07009409</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0252</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0001131</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ff0157354468468b85c43ea0abc6b11">
+  <cim:ACLineSegment.r>0.0612963</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.035</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00015708</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_592b7092b09548ce86b2162f892b850">
+  <cim:ACLineSegment.r>0.01515787</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0048</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00317427</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_133d902f72fb45fca45ff5e3975aee5f">
+  <cim:ACLineSegment.r>0.04</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.02</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0282115</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_83f560ed93164b37b45f1bb8dcfd2cc0">
+  <cim:ACLineSegment.r>0.43808806</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1575</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00070686</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_711a34a641354d66a19dcd23dea0189">
+  <cim:ACLineSegment.r>0.04474326</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01505</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00006754</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_374910916c3474a851a6657f8b863">
+  <cim:ACLineSegment.r>0.31944609</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.10745</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00048223</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2d3c406c194d4998869578c719e9bb88">
+  <cim:ACLineSegment.r>0.14567573</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.049</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00021991</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bd8dbf8c6be74187bd743140d769b8ff">
+  <cim:ACLineSegment.r>0.08324328</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.028</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00012566</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4b1927d8bbcc405db9dbf381558414">
+  <cim:ACLineSegment.r>0.0038</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0019</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00268009</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ec6615588cb546179bd237e796ae35f">
+  <cim:ACLineSegment.r>0.1722426</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.09835</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00044139</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_be7e1daf324f421bb5841d80e2809a10">
+  <cim:ACLineSegment.r>0.15880364</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1806</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00081053</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f5674fbbb93a4d2b9541f6873a819fc3">
+  <cim:ACLineSegment.r>0.08844598</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.02975</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00013352</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bd313f871b84b42ac691072b3c6a64c">
+  <cim:ACLineSegment.r>0.0068</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0034</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00265967</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4384f5866ca74d4e874c8f167bf6924">
+  <cim:ACLineSegment.r>0.57229757</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1925</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00086394</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3ec44f1e5745418ba86e7345dd27fff3">
+  <cim:ACLineSegment.r>0.15800001</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.079</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.06179827</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_dea8b902203d4c5d90c29b172818a8c4">
+  <cim:ACLineSegment.r>0.04</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.02</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0282115</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_78751061613f43c9909d3d4715d2ac43">
+  <cim:ACLineSegment.r>0.05646468</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0203</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00009111</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2b1cdb7c8dac400699ec614b4a8c3f33">
+  <cim:ACLineSegment.r>0.04162164</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.014</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00006283</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2376168d4ac9457f808373d9b78f52fb">
+  <cim:ACLineSegment.r>0.09364869</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0315</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00014137</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a2416f27fcda492287de221969494564">
+  <cim:ACLineSegment.r>0.046</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.023</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0179919</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_eaf2797ef47a42ff81f18517c1757c8a">
+  <cim:ACLineSegment.r>0.38149184</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.112</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00050265</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9f8c7f27b8d84d66b21f9781670a59f">
+  <cim:ACLineSegment.r>0.02705407</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0091</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00004084</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7d5cc27c89a04d45a3fba47bb92c6ff6">
+  <cim:ACLineSegment.r>0.74085557</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.26635</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00119538</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a40c88f17482433db33ebe82827253b">
+  <cim:ACLineSegment.r>0.07578936</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.024</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01587133</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_cbc7474fc1c74bdd8ba568bfbc1b3f4">
+  <cim:ACLineSegment.r>0.05827029</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0196</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00008796</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a17a9cc4918e47b090522038ce42e939">
+  <cim:ACLineSegment.r>0.038</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.019</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01486288</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_29a10c385eac4c178aa4ef3241cce59">
+  <cim:ACLineSegment.r>0.094</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.047</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.03676606</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b5edd71ffd04c90bbf4e536a43e7fb">
+  <cim:ACLineSegment.r>0.01040541</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0035</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00001571</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c622a7e97eeb4732bd3b527abddb843">
+  <cim:ACLineSegment.r>0.20541462</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.07385</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00033144</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_fdf526115ad421480e76e6761925a9f">
+  <cim:ACLineSegment.r>0.66297323</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.23835</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00106971</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a95ef40a683453f8caa5e23d185406f">
+  <cim:ACLineSegment.r>0.18497051</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0665</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00029845</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_599d18f9bae6475f86f87281c6faf1">
+  <cim:ACLineSegment.r>0.102</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.051</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.03989508</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_cbad5fa547e14d029325255c6a675b54">
+  <cim:ACLineSegment.r>0.10542964</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0602</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00027018</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_dbf12a754f814e44b0f131ef7eac161f">
+  <cim:ACLineSegment.r>0.0938665</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.10675</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00047909</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d9e6384f4903453b83afaf611d52e52a">
+  <cim:ACLineSegment.r>0.18729737</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.063</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00028274</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e376291e699f4b8aa9c0db825c76ea8">
+  <cim:ACLineSegment.r>0.15284406</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.05495</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00024662</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_da2bfac55b654fff934a7446f9ccec1a">
+  <cim:ACLineSegment.r>0.05159704</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01855</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00008325</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bd09797ef22b447094545024298fce90">
+  <cim:ACLineSegment.r>0.09156761</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0308</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00013823</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_42f65b444254d8991b178d19d112d3">
+  <cim:ACLineSegment.r>0.0988514</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.03325</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00014923</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c0805cd79ceb436f8293172d22d91799">
+  <cim:ACLineSegment.r>0.03796763</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01365</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00006126</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_48d336e07ee440b69e72f8763be36b23">
+  <cim:ACLineSegment.r>0.0614</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0307</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02401528</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7c0125b5d5284c129841107e56417317">
+  <cim:ACLineSegment.r>0.03121623</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0105</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00004712</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3f281ec4a59c458cbd9444bb4ffbe5f">
+  <cim:ACLineSegment.r>0.12002601</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1365</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00061261</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_74d4ba0ce50d4519b97b952cf4a1f72">
+  <cim:ACLineSegment.r>0.15157872</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.048</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.03196885</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ab9cf7f580cb4a2c96248224bf803b30">
+  <cim:ACLineSegment.r>0.20575708</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.322</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00144513</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7caf6105aacf4ce2a8263a7aadf14cc8">
+  <cim:ACLineSegment.r>0.06</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.03</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0234677</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_511736ae5cbc4b8e92b0f681f0899075">
+  <cim:ACLineSegment.r>0.026</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.013</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01833748</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ed25711ac7e840aabc5d6db12825feb5">
+  <cim:ACLineSegment.r>0.12655877</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0455</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0002042</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2ddd964f369746779290435ce5e09594">
+  <cim:ACLineSegment.r>0.06814703</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0245</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00010996</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_73f0c7e910c74c0587e8f85f7af6fd8b">
+  <cim:ACLineSegment.r>0.16648656</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.056</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00025133</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a275f788eff4460cace28fd0cbf3eeac">
+  <cim:ACLineSegment.r>0.18204992</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.06545</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00029374</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4adab0587ccf4bb29e6879ee1e4a5e6">
+  <cim:ACLineSegment.r>0.02052628</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0065</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00432911</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7eed950a5f24039a668362b9911a97c">
+  <cim:ACLineSegment.r>0.05827029</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0196</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00008796</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6219bdc163ca43c4b8cd13973ec7eb99">
+  <cim:ACLineSegment.r>0.05306759</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01785</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00008011</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1f0a6f4df5b4ccc92d279abb8a2333">
+  <cim:ACLineSegment.r>0.01168419</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0037</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00244683</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b9e04277f42a47fdb16d1ed61e9af1bd">
+  <cim:ACLineSegment.r>0.24866927</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.28279999</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0012692</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9ced2ff5f25d43948e328e54e5b4a81">
+  <cim:ACLineSegment.r>0.0624</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0312</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02440641</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_68e71e061e814768aef1e252adb4907c">
+  <cim:ACLineSegment.r>0.15695709</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1785</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00080111</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9321562cf0404672a262722f85907fce">
+  <cim:ACLineSegment.r>0.093</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0465</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.03637493</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_28211e3b35f248378c3bcaed5988c36">
+  <cim:ACLineSegment.r>0.0894</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0149</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00844916</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7cde10c646b4f73bfd52c244c6cca5f">
+  <cim:ACLineSegment.r>0.20054697</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0721</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00032358</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c00279c2c17a479f9d6491c1be8693b">
+  <cim:ACLineSegment.r>0.12</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.06</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.08463451</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5c5e4cbe3e324ed38ee44fa813c42f8">
+  <cim:ACLineSegment.r>0.026</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.013</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01833748</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_877ec56d704945e48f466228ed80702b">
+  <cim:ACLineSegment.r>0.14359467</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0483</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00021677</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_90af04bd12e4a598344216543b6b0bc">
+  <cim:ACLineSegment.r>0.13849156</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1575</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00070686</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_288c54b463254056b58dde66d63721ef">
+  <cim:ACLineSegment.r>0.05391425</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0777</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00034872</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_eb918378f01f443a865be38df087eec4">
+  <cim:ACLineSegment.r>0.0066</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0011</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00095724</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_fe3360e26c32474ca0196c29a2284838">
+  <cim:ACLineSegment.r>0.15018639</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1708</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00076655</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2300df4b6ef48738e94d5c25c5be28">
+  <cim:ACLineSegment.r>0.22267577</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0749</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00033615</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e6f3064d34e647faa48fe09ab0a54c94">
+  <cim:ACLineSegment.r>0.1977028</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0665</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00029845</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5f682a21b05a46939fe9457af1d3b10">
+  <cim:ACLineSegment.r>0.016</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.008</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00625805</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3dc99a33b16e4c98b5d9d64ddcbe41f">
+  <cim:ACLineSegment.r>0.02</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01410575</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d8f63ae7d54f768677e0aae6c095e9">
+  <cim:ACLineSegment.r>0.05306759</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01785</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00008011</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_19e965ac35c64e8e9ce2dbf7b3a45dda">
+  <cim:ACLineSegment.r>0.004</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.002</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00156451</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_61c8e3adfbc1470985e34afb117768f6">
+  <cim:ACLineSegment.r>0.072</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.036</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0507807</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b2726bb9b74c4db790335ee973604afa">
+  <cim:ACLineSegment.r>0.11584995</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.04165</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00018692</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d7d3fde442e4f1d8d58f6c0ec5362c7">
+  <cim:ACLineSegment.r>0.41472334</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.14910001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00066916</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ae6323bc95e41c988df904b77615c62">
+  <cim:ACLineSegment.r>0.05355006</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0609</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00027332</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a9b513a883df464cb5b0826323be6e4">
+  <cim:ACLineSegment.r>0.00142857</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.003</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01101756</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f7a91931dd644e679a788365eb6e8c50">
+  <cim:ACLineSegment.r>0.02823234</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01015</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00004555</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3ebe2cae1e74513b0e2e031e5a47e3a">
+  <cim:ACLineSegment.r>0.00599999</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0019</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00125648</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_24a0588f8d484aa4a0d926fa7c833c56">
+  <cim:ACLineSegment.r>0.2310001</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0777</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00034872</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1a7c125f352e4d46b3ab6883a71fcc89">
+  <cim:ACLineSegment.r>0.03433785</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01155</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00005184</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b5760a80c80a40808cbddaa7bf2dc564">
+  <cim:ACLineSegment.r>0.01231577</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0039</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00257909</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_376198df4edb468795b3c7dbec9ee5e2">
+  <cim:ACLineSegment.r>0.08844598</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.02975</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00013352</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_548844c4203648e8a47914f1f3cc7c">
+  <cim:ACLineSegment.r>0.98851395</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.33250001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00149226</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1fc10bd3b0ea4c33bc2170283b362885">
+  <cim:ACLineSegment.r>0.24143519</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0868</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00038956</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3bbbe90ad824823b483c992107e64c7">
+  <cim:ACLineSegment.r>0.007875</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0063</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00617511</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3412e00425e140df892412c3ada9dbe8">
+  <cim:ACLineSegment.r>0.06631569</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.021</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01398637</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4d64cb5879f54f328baca634f915de3">
+  <cim:ACLineSegment.r>0.076</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.038</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.05360185</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_64c4344a663f4e0194a4166847809a5">
+  <cim:ACLineSegment.r>0.10708819</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0385</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00017279</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e3264e6d41334bfc8e45d876818a847e">
+  <cim:ACLineSegment.r>0.02920587</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0105</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00004712</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e22aef289935475a8454b4db3335e8b">
+  <cim:ACLineSegment.r>0.01557646</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0056</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00002513</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c441a533a4b4506a620eff6a774ce">
+  <cim:ACLineSegment.r>0.04370272</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0147</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00006597</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5b987ebb96c24be9883784e2bc8a20">
+  <cim:ACLineSegment.r>0.037</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0185</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02609564</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9925c833a9a044479e8dbd6f87f47bb3">
+  <cim:ACLineSegment.r>0.74606788</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.25095001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00112626</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ee4b8f281f2b44d78585f7a8eb8b41">
+  <cim:ACLineSegment.r>0.11879497</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.13510001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00060633</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8b6bbfbcd02d45f8a938457325c41d">
+  <cim:ACLineSegment.r>0.00646294</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.00735</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00003299</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1912d5b8765f400895c6ce834c9edc88">
+  <cim:ACLineSegment.r>0.134625</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1077</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.10556505</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8f6076b234b04c378c2cf49cc3a1813b">
+  <cim:ACLineSegment.r>0.21955416</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.07385</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00033144</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_15a0bf2c5def41c98e21259d9edaa5">
+  <cim:ACLineSegment.r>0.9052707</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.30450001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00136659</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_50bc3a5c1716420ea8cc6915f3a448b7">
+  <cim:ACLineSegment.r>0.24922343</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0896</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00040212</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c7fa7bc0927f4a1c81ef6f2a6e404056">
+  <cim:ACLineSegment.r>0.80433822</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.27055001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00121423</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e873df2e1e994a3888d33663edf386d5">
+  <cim:ACLineSegment.r>0.45367587</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.15260001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00068487</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_74bba4a676a84b9891d446e1a5a84181">
+  <cim:ACLineSegment.r>0.04786488</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0161</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00007226</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f7c7a513307846e7947e1ed18bed046">
+  <cim:ACLineSegment.r>0.03789468</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.012</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00793566</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_446d7b98602b44768d24e7772a99d4f">
+  <cim:ACLineSegment.r>0.027</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0045</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00253055</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_42febb20cd29450699c3446bd23a863a">
+  <cim:ACLineSegment.r>0.010375</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0083</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00813547</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5d192f98df3d4c2aa1817522988e53">
+  <cim:ACLineSegment.r>0.4672029</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.15715</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00070529</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7b7391359dc74ee8a2881920fe73d5a2">
+  <cim:ACLineSegment.r>0.222</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.037</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02098113</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2c7319a646234f0192826e8f4f0a2bb">
+  <cim:ACLineSegment.r>0.63577056</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.21385001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00095976</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_dc9c889683944ce3bf3dc9196f39652">
+  <cim:ACLineSegment.r>0.05202705</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0175</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00007854</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a55f9cfff12d49888a7c22dbcd427d2">
+  <cim:ACLineSegment.r>0.04</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.02</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01564513</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_72aff0c898d84e5bbed27445ba18f89d">
+  <cim:ACLineSegment.r>0.02462072</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.028</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00012566</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_512c80b97c12419582c21fd820d97d">
+  <cim:ACLineSegment.r>0.00631578</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.002</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00132261</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_73e3d743dff9473b9c4b7ebe1129d6a9">
+  <cim:ACLineSegment.r>0.22928046</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.26075</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00117024</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_57993bca3c65493b9ce6cee84f37556a">
+  <cim:ACLineSegment.r>0.0026</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0013</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00101693</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f4ab3332a58b48afba861d26a83334ef">
+  <cim:ACLineSegment.r>0.002</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00078226</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4b6177f23e0a4090957bf5426f6ee03e">
+  <cim:ACLineSegment.r>0.016</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.008</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00625805</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_864c471ee269464e88b6468ac342266">
+  <cim:ACLineSegment.r>0.0712</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0356</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02784833</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_25446fefe6e74c45b9d7daca8f14759e">
+  <cim:ACLineSegment.r>0.1577117</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0567</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00025447</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9fa5e143d92d48798166a03b866e512">
+  <cim:ACLineSegment.r>0.04625</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.037</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.03626655</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b0e6f8bd674ad184d5e8e37281d959">
+  <cim:ACLineSegment.r>0.039</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0195</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02750621</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4b17b1f44db40e0bb8a32f06ae48a71">
+  <cim:ACLineSegment.r>0.07283787</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0245</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00010996</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1cf74ccba72d44e6adf2aadaf59397f">
+  <cim:ACLineSegment.r>0.17346853</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.09905</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00044454</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_337b068fb1b74c948e478a9bed8c9f8">
+  <cim:ACLineSegment.r>0.2257974</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.07595</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00034086</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7527a6f612f742608a2cf1b2cedabc8">
+  <cim:ACLineSegment.r>0.034</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.017</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01329836</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_cf71d9dfdea74c34ad939a3740c4f8dd">
+  <cim:ACLineSegment.r>0.49425697</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.16625001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00074613</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_42961c60e4224e79bf83522c0dfc2cd">
+  <cim:ACLineSegment.r>0.08936828</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0283</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01871494</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_dc38f4af75d94bebaa17ae2743f5aec8">
+  <cim:ACLineSegment.r>0.30175689</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1015</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00045553</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2412bbef7884b3f82888b11b7ba557e">
+  <cim:ACLineSegment.r>0.07968519</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0455</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0002042</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_616c47d836bc4761a79dcb278055899">
+  <cim:ACLineSegment.r>0.29447311</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.09905</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00044454</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2676f4c25f0a4c5aa22be41fcda470b5">
+  <cim:ACLineSegment.r>0.028</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.014</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01974805</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8adde13fe2134eb9859d375ced03329">
+  <cim:ACLineSegment.r>0.00726315</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0023</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.001521</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1b5c6cb186054b178db8652c536bcb7">
+  <cim:ACLineSegment.r>0.001</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0005</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00039113</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_65d391f373544b5baee73452ab118f46">
+  <cim:ACLineSegment.r>0.29460001</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0491</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02784252</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_7fa0d312b22e4a4a9b24a1aaacf53a">
+  <cim:ACLineSegment.r>0.04867645</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0175</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00007854</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_34093d7120f342e285837d39b74d2f87">
+  <cim:ACLineSegment.r>0.05841174</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.021</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00009425</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_29abf766409b4ce58e13dce95dc6b462">
+  <cim:ACLineSegment.r>0.04867645</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0175</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00007854</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_267aab8ca9184c518973f02ee042768a">
+  <cim:ACLineSegment.r>0.06742593</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0385</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00017279</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d8c90ba31c6748a88a562f7e2ce8c94">
+  <cim:ACLineSegment.r>0.1040541</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.035</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00015708</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_58cab60730749b9b44834f9d5a07597">
+  <cim:ACLineSegment.r>0.22835718</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.2597</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00116553</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9a1635f89284cf48aac9d7e9717e947">
+  <cim:ACLineSegment.r>0.26559603</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.30204999</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0013556</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_954fab44519e477b8f5c875e80f0d848">
+  <cim:ACLineSegment.r>0.22391167</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0805</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00036128</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1efda76fec014f3cbdbf81302fb2b7ea">
+  <cim:ACLineSegment.r>0.02942222</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0168</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0000754</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_715bb44fae15412a82f598edd2bdc6b4">
+  <cim:ACLineSegment.r>0.15634157</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1778</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00079796</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bf6426e3c71144d9b99e5dd7d6aa51c8">
+  <cim:ACLineSegment.r>0.003</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0015</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00211586</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_426fa9ab60114b0e97bf571a8bed5ba8">
+  <cim:ACLineSegment.r>0.22293814</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.08015</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00035971</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_740a51251803494e90f3d25840577afb">
+  <cim:ACLineSegment.r>0.14894994</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.05355</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00024033</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ed7f4c85d1c3449395d0d97de98cb2eb">
+  <cim:ACLineSegment.r>0.02</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01410575</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_14cc9a2ce6d24ddf9386e826af6ffc7">
+  <cim:ACLineSegment.r>0.017</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0085</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01198989</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8970fa9e42c04e1e80dd2337ef79289f">
+  <cim:ACLineSegment.r>0.026</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.013</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01016933</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_bac522858c614b7cbaab1da2795bcf2">
+  <cim:ACLineSegment.r>0.0042</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0021</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00164274</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ef783544d6d44f4abedb5c16b291fdfc">
+  <cim:ACLineSegment.r>0.02308192</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.02625</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00011781</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c05366ec692427cb074855e84e733c4">
+  <cim:ACLineSegment.r>0.0234</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0039</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00339386</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a5ea3a1d6e014826a9eb5055f67aaf63">
+  <cim:ACLineSegment.r>0.007125</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0057</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00558701</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c34d6ead65ba482b81dbcf1da465f2be">
+  <cim:ACLineSegment.r>0.018</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.009</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00704031</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1c09bc513104d5580579112e98ea8c">
+  <cim:ACLineSegment.r>0.0232</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0116</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01636267</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b5ab9721140348b491765ac4e2f4ae43">
+  <cim:ACLineSegment.r>0.034</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.017</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02397978</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_689243e74a2c4cb5baab877e5794383c">
+  <cim:ACLineSegment.r>0.03</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.005</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00281173</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5edefefd646341a083d633736ea0bf4a">
+  <cim:ACLineSegment.r>0.043</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0215</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01681852</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_2e141713aeab49c2bef1ba2d4a897f58">
+  <cim:ACLineSegment.r>0.13787603</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1568</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00070372</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9fa3906216eb4b96ba7eeec496cf17c">
+  <cim:ACLineSegment.r>0.03641893</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01225</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00005498</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_12485a9879fc4723be99ead662bc6b0">
+  <cim:ACLineSegment.r>0.34073514</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1225</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00054978</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3779c3694c804f009c2d5df2d2b143c">
+  <cim:ACLineSegment.r>0.045</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.036</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.03528637</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f827f809e64775a1574f2f82b17325">
+  <cim:ACLineSegment.r>0.15899999</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0265</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01490214</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3b7e171055814e5189669a46aca8b6cf">
+  <cim:ACLineSegment.r>0.034</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.017</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01329836</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_465a478ff13d4edd902c317beddf6419">
+  <cim:ACLineSegment.r>0.02684207</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0085</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00562109</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_dbdf48802b204704a5b884833b90edfd">
+  <cim:ACLineSegment.r>0.06739922</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.07665</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.000344</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_39d508beb5384af7916814c1eaeebb7">
+  <cim:ACLineSegment.r>0.32777041</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.11025</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0004948</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_6a570a599e0a41fd828d8d7a8d9a627c">
+  <cim:ACLineSegment.r>0.042</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.021</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01642739</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_da5ce7d17e6340dea7c44af8a7a6c9cf">
+  <cim:ACLineSegment.r>0.05202705</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0175</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00007854</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_71d1150a54384a63aeb9ded5806dcec0">
+  <cim:ACLineSegment.r>0.04266218</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01435</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0000644</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c25ef847b2f34e439d8f4fd72c9d994">
+  <cim:ACLineSegment.r>0.69577205</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>1.08885002</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00488675</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_c9aa5220436e43e2b287fa1d34365d0">
+  <cim:ACLineSegment.r>0.054</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.027</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02112093</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f4a8ec8745a4acb9342ad888bd09530">
+  <cim:ACLineSegment.r>0.32126456</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1155</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00051836</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_be71a6c7374c4263b4bb9030ae5dc5e2">
+  <cim:ACLineSegment.r>0.17</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.085</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.11989888</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_a0a008de614445c596e099aac2318185">
+  <cim:ACLineSegment.r>0.04672939</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0168</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0000754</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_de309067cccc48e4bf8358d6be7d01b">
+  <cim:ACLineSegment.r>0.0424</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0212</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02990419</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_be69c5267ae74ad4baae273565724a50">
+  <cim:ACLineSegment.r>0.1196</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0598</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.04677894</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_156b8a664970490bb957b1a73e86835">
+  <cim:ACLineSegment.r>0.038</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.019</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01486288</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_f37c7dbe3c487fac40ed2682d1e3d5">
+  <cim:ACLineSegment.r>0.28</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.14</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.10951592</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_4a4b21b8c9f0442f8113fec373501aea">
+  <cim:ACLineSegment.r>0.046</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.023</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0179919</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_43b0b5e4ddd542c888a2b84245554d1">
+  <cim:ACLineSegment.r>0.04616385</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0525</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00023562</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b1493bf78a1e40e6bcdf65b85db92f16">
+  <cim:ACLineSegment.r>0.11877054</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0427</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00019164</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9eb2cde189524ce3a53aa5b369da64ea">
+  <cim:ACLineSegment.r>0.15608115</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0525</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00023562</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_db309e1c49940188986f48e39d7b759">
+  <cim:ACLineSegment.r>0.01538795</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0175</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00007854</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_545b8576771c4a6a9732ab35182d5dac">
+  <cim:ACLineSegment.r>0.3246488</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1092</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00049009</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3e3c4ca766034709bf49bbdd213deb">
+  <cim:ACLineSegment.r>0.28134987</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.10115</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00045396</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_b007e295171142dd8fd813f8d24b5a70">
+  <cim:ACLineSegment.r>0.046</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.023</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.03244323</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8814e1e359444854ba23d9ab59787c74">
+  <cim:ACLineSegment.r>0.069</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0345</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02698785</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ddb1a51fe74d55a1b1d25d1b6c579">
+  <cim:ACLineSegment.r>0.40789208</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.1372</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00061575</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_ebdec2dbc7ff48918e5fd6f52415719">
+  <cim:ACLineSegment.r>0.0923277</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.105</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00047124</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d499276cf7e24f68bd5d1a3414d06bf1">
+  <cim:ACLineSegment.r>0.10027349</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.03605</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00016179</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_87225e0bb82848b7ac71e63dd0e0a74d">
+  <cim:ACLineSegment.r>0.00769398</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.00875</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00003927</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3f95e8c785bb4ae5beb6fde0c4e49e5">
+  <cim:ACLineSegment.r>0.06</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.03</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0234677</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e38ecc54ab2b42cd87e9251b10a418d8">
+  <cim:ACLineSegment.r>0.32777041</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.11025</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.0004948</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_5fe1002e2cb74a93933c1a1d999f38c0">
+  <cim:ACLineSegment.r>0.34530559</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.39269999</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00176243</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_538cac551ccf4be486efd7a82132faad">
+  <cim:ACLineSegment.r>0.07975</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0638</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.06253529</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e800c987dd924e5795d29fc770af3d44">
+  <cim:ACLineSegment.r>0.07908112</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0266</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00011938</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1eb5d7e499054a0e956fa1e64effccb">
+  <cim:ACLineSegment.r>0.01040541</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0035</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00001571</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_9e12f2ec78c845abba4ff421ef602a12">
+  <cim:ACLineSegment.r>0.064</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.032</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.02503221</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_83262c422e844503afd9793d1a4f89c1">
+  <cim:ACLineSegment.r>0.03537839</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0119</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00005341</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_90f69e6354f64bbe88519fb1785b9530">
+  <cim:ACLineSegment.r>0.1231036</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.14</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00062832</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_484363b55bb247a6b383e0c75433968b">
+  <cim:ACLineSegment.r>0.01335713</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.01925</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00008639</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_8de47c7437fb46008647645c29a63ffe">
+  <cim:ACLineSegment.r>0.115</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0575</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.04497975</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_808b3fa1bb5a4fda9cd64da8c618fdc">
+  <cim:ACLineSegment.r>0.0058</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0029</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00226854</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_922b6b1fa72640f7ac88881e199cbf5c">
+  <cim:ACLineSegment.r>0.00461638</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.00525</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00002356</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3f32fbb4eddc44afaa78b2c57e113a3b">
+  <cim:ACLineSegment.r>0.1</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.05</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.03911283</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3a5e4f898f2f4bc98080351fc2f46878">
+  <cim:ACLineSegment.r>0.56627697</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.16625001</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00074613</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_1f54c0233ff49f7891111fd987b28a3">
+  <cim:ACLineSegment.r>0.0782</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0391</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.03058623</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_d36770d3910345f58222e37c2a694074">
+  <cim:ACLineSegment.r>0.02451852</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.014</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00006283</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_677d7640eef7452fac41f7469c89748">
+  <cim:ACLineSegment.r>0.12</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.06</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.08463451</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_e38af767b4524d9c97e84063d7dad81">
+  <cim:ACLineSegment.r>0.01736839</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0055</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00363718</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_34a85f0b3a5147408b5067cc5edb0ba">
+  <cim:ACLineSegment.r>0.09</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.015</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00843518</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_3b63c491cbc41a1b0d8fc6b717b8962">
+  <cim:ACLineSegment.r>0.0456</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0228</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.01783545</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_15dd75e254fb45f7a37d24f9522412d8">
+  <cim:ACLineSegment.r>0.11445951</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.0385</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00017279</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:ACLineSegment rdf:about="#_cb74ed6a394442e2b3ecd76ef8b6c394">
+  <cim:ACLineSegment.r>0.008</cim:ACLineSegment.r>
+  <cim:ACLineSegment.x>0.004</cim:ACLineSegment.x>
+  <cim:ACLineSegment.bch>0</cim:ACLineSegment.bch>
+  <cim:ACLineSegment.b0ch>0.00312903</cim:ACLineSegment.b0ch>
+ </cim:ACLineSegment>
+ <cim:SynchronousMachine rdf:about="#_e954377e65c04e92a999872c6c22e133">
+  <cim:SynchronousMachine.minQ>2.49574018</cim:SynchronousMachine.minQ>
+  <cim:SynchronousMachine.GeneratingUnit rdf:resource="#_dcdb320da5af4b53b57fc34b1b37f6a"/>
+  <cim:SynchronousMachine.operatingMode rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#SynchronousMachineOperatingMode.generator"/>
+  <cim:SynchronousMachine.maxQ>2.49574018</cim:SynchronousMachine.maxQ>
+  <cim:SynchronousMachine.baseQ>2.49574018</cim:SynchronousMachine.baseQ>
+  <cim:SynchronousMachine.type rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#SynchronousMachineType.generator"/>
+ </cim:SynchronousMachine>
+ <cim:SynchronousMachine rdf:about="#_e9f5e44a3fbd451e9eaf3e2f4553fa74">
+  <cim:SynchronousMachine.minQ>1.33700371</cim:SynchronousMachine.minQ>
+  <cim:SynchronousMachine.GeneratingUnit rdf:resource="#_22a8f0962c6241b8a8eaf522afcc9b84"/>
+  <cim:SynchronousMachine.operatingMode rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#SynchronousMachineOperatingMode.generator"/>
+  <cim:SynchronousMachine.maxQ>1.33700371</cim:SynchronousMachine.maxQ>
+  <cim:SynchronousMachine.baseQ>1.33700371</cim:SynchronousMachine.baseQ>
+  <cim:SynchronousMachine.type rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#SynchronousMachineType.generator"/>
+ </cim:SynchronousMachine>
+ <cim:SynchronousMachine rdf:about="#_7e2be24621ab40518cbd38f0da97ecb1">
+  <cim:SynchronousMachine.minQ>1.24787009</cim:SynchronousMachine.minQ>
+  <cim:SynchronousMachine.GeneratingUnit rdf:resource="#_f095b5f31bdf49dcb21d91521c543fe4"/>
+  <cim:SynchronousMachine.operatingMode rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#SynchronousMachineOperatingMode.generator"/>
+  <cim:SynchronousMachine.maxQ>1.24787009</cim:SynchronousMachine.maxQ>
+  <cim:SynchronousMachine.baseQ>1.24787009</cim:SynchronousMachine.baseQ>
+  <cim:SynchronousMachine.type rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#SynchronousMachineType.generator"/>
+ </cim:SynchronousMachine>
+ <cim:SynchronousMachine rdf:about="#_330e0ba973cf40cca4447c8cf3d7bd8">
+  <cim:SynchronousMachine.minQ>0.74277979</cim:SynchronousMachine.minQ>
+  <cim:SynchronousMachine.GeneratingUnit rdf:resource="#_be90ca0a55a479da8336dfd809fa1cd"/>
+  <cim:SynchronousMachine.operatingMode rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#SynchronousMachineOperatingMode.generator"/>
+  <cim:SynchronousMachine.maxQ>0.74277979</cim:SynchronousMachine.maxQ>
+  <cim:SynchronousMachine.baseQ>0.74277979</cim:SynchronousMachine.baseQ>
+  <cim:SynchronousMachine.type rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#SynchronousMachineType.generator"/>
+ </cim:SynchronousMachine>
+</rdf:RDF>
