@@ -28,16 +28,16 @@ class BasicIntervalSchedule(IdentifiedObject):
         """Initialises a new 'BasicIntervalSchedule' instance.
 
         @param startTime: The time for the first time point. 
-        @param value1Unit: Value1 units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "ºC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
-        @param value2Unit: Value2 units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "ºC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
+        @param value1Unit: Value1 units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "oC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
+        @param value2Unit: Value2 units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "oC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
         """
         #: The time for the first time point.
         self.startTime = startTime
 
-        #: Value1 units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "ºC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
+        #: Value1 units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "oC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
         self.value1Unit = value1Unit
 
-        #: Value2 units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "ºC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
+        #: Value2 units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "oC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
         self.value2Unit = value2Unit
 
         super(BasicIntervalSchedule, self).__init__(*args, **kw_args)

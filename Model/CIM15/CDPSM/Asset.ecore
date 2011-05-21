@@ -717,10 +717,10 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="rDC20" eType="#//CDPSM/Asset/ResistancePerLength"
                 unsettable="true">
               <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
-                <details key="Documentation" value="DC resistance per unit length of the conductor at 20 degC."/>
+                <details key="Documentation" value="DC resistance per unit length of the conductor at 20 oC."/>
               </eAnnotations>
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="Documentation" value="DC resistance per unit length of the conductor at 20 degC."/>
+                <details key="Documentation" value="DC resistance per unit length of the conductor at 20 oC."/>
               </eAnnotations>
             </eStructuralFeatures>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="coreRadius" eType="#//CDPSM/Asset/Length"
@@ -735,10 +735,10 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="rAC75" eType="#//CDPSM/Asset/ResistancePerLength"
                 unsettable="true">
               <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
-                <details key="Documentation" value="AC resistance per unit length of the conductor at 75 degC."/>
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 75 oC."/>
               </eAnnotations>
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="Documentation" value="AC resistance per unit length of the conductor at 75 degC."/>
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 75 oC."/>
               </eAnnotations>
             </eStructuralFeatures>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="material" eType="#//CDPSM/Asset/IEC61968/AssetModels/ConductorMaterialKind"
@@ -785,19 +785,19 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="rAC25" eType="#//CDPSM/Asset/ResistancePerLength"
                 unsettable="true">
               <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
-                <details key="Documentation" value="AC resistance per unit length of the conductor at 25 degC."/>
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 25 oC."/>
               </eAnnotations>
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="Documentation" value="AC resistance per unit length of the conductor at 25 degC."/>
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 25 oC."/>
               </eAnnotations>
             </eStructuralFeatures>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="rAC50" eType="#//CDPSM/Asset/ResistancePerLength"
                 unsettable="true">
               <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15?profile=http://iec.ch/TC57/2011/iec61968-4/CDPSM/Asset">
-                <details key="Documentation" value="AC resistance per unit length of the conductor at 50 degC."/>
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 50 oC."/>
               </eAnnotations>
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="Documentation" value="AC resistance per unit length of the conductor at 50 degC."/>
+                <details key="Documentation" value="AC resistance per unit length of the conductor at 50 oC."/>
               </eAnnotations>
             </eStructuralFeatures>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="radius" eType="#//CDPSM/Asset/Length"

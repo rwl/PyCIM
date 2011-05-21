@@ -6657,7 +6657,7 @@
         <eLiterals name="S" value="23" literal="S"/>
         <eLiterals name="VAh" value="24" literal="VAh"/>
         <eLiterals name="Hz" value="25" literal="Hz"/>
-        <eLiterals name="_C" value="26" literal="degC"/>
+        <eLiterals name="_C" value="26" literal="oC"/>
         <eLiterals name="s_1" value="27" literal="s-1"/>
         <eLiterals name="min" value="28" literal="min"/>
         <eLiterals name="J" value="29" literal="J"/>

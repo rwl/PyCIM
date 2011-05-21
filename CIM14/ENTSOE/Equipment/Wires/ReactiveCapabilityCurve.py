@@ -27,10 +27,10 @@ class ReactiveCapabilityCurve(Curve):
     def __init__(self, y2Unit="A", InitiallyUsedBySynchronousMachines=None, *args, **kw_args):
         """Initialises a new 'ReactiveCapabilityCurve' instance.
 
-        @param y2Unit: The Y2-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "ºC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
+        @param y2Unit: The Y2-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "oC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
         @param InitiallyUsedBySynchronousMachines: Synchronous machines using this curve as default.
         """
-        #: The Y2-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "ºC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
+        #: The Y2-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "oC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
         self.y2Unit = y2Unit
 
         self._InitiallyUsedBySynchronousMachines = []

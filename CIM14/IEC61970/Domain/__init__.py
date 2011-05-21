@@ -46,7 +46,7 @@ class MonetaryAmountRate(str):
 
 class UnitSymbol(str):
     """The units defiend for usage in the CIM
-    Values are: N, VArh, VA, none, m3, kg/J, deg, W/Hz, g, Wh, W/s, Pa, V/VAr, ohm, h, F, H, m2, VAr, A, rad, s, S, VAh, Hz, degC, s-1, min, J, Hz-1, J/s, m, W, V
+    Values are: N, VArh, VA, none, m3, kg/J, deg, W/Hz, g, Wh, W/s, Pa, V/VAr, ohm, h, F, H, m2, VAr, A, rad, s, S, VAh, Hz, oC, s-1, min, J, Hz-1, J/s, m, W, V
     """
     pass
 

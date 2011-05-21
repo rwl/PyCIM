@@ -27,7 +27,7 @@ nsPrefix = "cimDomain"
 
 
 class UnitSymbol(str):
-    """Values are: A, rad, none, g, W/Hz, V, m2, VA, VArh, N, Pa, VAh, F, H, Hz-1, W/s, J, m, S, min, deg, J/s, s, Wh, m3, ºC, V/VAr, s-1, h, W, ohm, Hz, VAr, kg/J
+    """Values are: A, rad, none, g, W/Hz, V, m2, VA, VArh, N, Pa, VAh, F, H, Hz-1, W/s, J, m, S, min, deg, J/s, s, Wh, m3, oC, V/VAr, s-1, h, W, ohm, Hz, VAr, kg/J
     """
     pass
 

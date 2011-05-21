@@ -30,7 +30,7 @@ class ProtectionEquipment(Equipment):
         @param highLimit: The maximum allowable value. 
         @param powerDirectionFlag: Direction same as positive active power flow value. 
         @param lowLimit: The minimum allowable value. 
-        @param unitSymbol: The unit of measure of the value. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "degC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
+        @param unitSymbol: The unit of measure of the value. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "oC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
         @param relayDelayTime: The time delay from detection of abnormal conditions to relay operation. 
         @param unitMultiplier: The unit multiplier of the value. Values are: "M", "G", "d", "micro", "c", "p", "n", "T", "k", "m", "none"
         @param ConductingEquipments: Protection equipment may be used to protect specific Conducting Equipment. Multiple equipment may be protected or monitored by multiple protection equipment.
@@ -45,7 +45,7 @@ class ProtectionEquipment(Equipment):
         #: The minimum allowable value.
         self.lowLimit = lowLimit
 
-        #: The unit of measure of the value. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "degC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
+        #: The unit of measure of the value. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "oC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
         self.unitSymbol = unitSymbol
 
         #: The time delay from detection of abnormal conditions to relay operation.

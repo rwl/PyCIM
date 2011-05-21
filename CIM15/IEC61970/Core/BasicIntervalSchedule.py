@@ -29,8 +29,8 @@ class BasicIntervalSchedule(IdentifiedObject):
 
         @param startTime: The time for the first time point. 
         @param value1Multiplier: Multiplier for value1. Values are: "M", "G", "d", "micro", "c", "p", "n", "T", "k", "m", "none"
-        @param value2Unit: Value2 units of measure. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "degC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
-        @param value1Unit: Value1 units of measure. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "degC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
+        @param value2Unit: Value2 units of measure. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "oC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
+        @param value1Unit: Value1 units of measure. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "oC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
         @param value2Multiplier: Multiplier for value2. Values are: "M", "G", "d", "micro", "c", "p", "n", "T", "k", "m", "none"
         """
         #: The time for the first time point.
@@ -39,10 +39,10 @@ class BasicIntervalSchedule(IdentifiedObject):
         #: Multiplier for value1. Values are: "M", "G", "d", "micro", "c", "p", "n", "T", "k", "m", "none"
         self.value1Multiplier = value1Multiplier
 
-        #: Value2 units of measure. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "degC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
+        #: Value2 units of measure. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "oC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
         self.value2Unit = value2Unit
 
-        #: Value1 units of measure. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "degC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
+        #: Value1 units of measure. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "oC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
         self.value1Unit = value1Unit
 
         #: Multiplier for value2. Values are: "M", "G", "d", "micro", "c", "p", "n", "T", "k", "m", "none"

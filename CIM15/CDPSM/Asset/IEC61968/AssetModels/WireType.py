@@ -27,27 +27,27 @@ class WireType(IdentifiedObject):
     def __init__(self, rDC20=0.0, coreRadius=0.0, rAC75=0.0, material="aluminum", ratedCurrent=0.0, strandCount=0, rAC25=0.0, rAC50=0.0, radius=0.0, gmr=0.0, coreStrandCount=0, sizeDescription='', WireArrangements=None, *args, **kw_args):
         """Initialises a new 'WireType' instance.
 
-        @param rDC20: DC resistance per unit length of the conductor at 20 degC. 
+        @param rDC20: DC resistance per unit length of the conductor at 20 oC. 
         @param coreRadius: (if there is a different core material) Radius of the central core. 
-        @param rAC75: AC resistance per unit length of the conductor at 75 degC. 
+        @param rAC75: AC resistance per unit length of the conductor at 75 oC. 
         @param material: Wire material. Values are: "aluminum", "copper", "other", "steel", "acsr"
         @param ratedCurrent: Current carrying capacity of the wire under stated thermal conditions. 
         @param strandCount: Number of strands in the wire. 
-        @param rAC25: AC resistance per unit length of the conductor at 25 degC. 
-        @param rAC50: AC resistance per unit length of the conductor at 50 degC. 
+        @param rAC25: AC resistance per unit length of the conductor at 25 oC. 
+        @param rAC50: AC resistance per unit length of the conductor at 50 oC. 
         @param radius: Outside radius of the wire. 
         @param gmr: Geometric mean radius. If we replace the conductor by a thin walled tube of radius GMR, then its reactance is identical to the reactance of the actual conductor. 
         @param coreStrandCount: (if used) Number of strands in the steel core. 
         @param sizeDescription: Describes the wire guage or cross section (e.g., 4/0, #2, 336.5). 
         @param WireArrangements: All wire arrangements using this wire type.
         """
-        #: DC resistance per unit length of the conductor at 20 degC.
+        #: DC resistance per unit length of the conductor at 20 oC.
         self.rDC20 = rDC20
 
         #: (if there is a different core material) Radius of the central core.
         self.coreRadius = coreRadius
 
-        #: AC resistance per unit length of the conductor at 75 degC.
+        #: AC resistance per unit length of the conductor at 75 oC.
         self.rAC75 = rAC75
 
         #: Wire material. Values are: "aluminum", "copper", "other", "steel", "acsr"
@@ -59,10 +59,10 @@ class WireType(IdentifiedObject):
         #: Number of strands in the wire.
         self.strandCount = strandCount
 
-        #: AC resistance per unit length of the conductor at 25 degC.
+        #: AC resistance per unit length of the conductor at 25 oC.
         self.rAC25 = rAC25
 
-        #: AC resistance per unit length of the conductor at 50 degC.
+        #: AC resistance per unit length of the conductor at 50 oC.
         self.rAC50 = rAC50
 
         #: Outside radius of the wire.

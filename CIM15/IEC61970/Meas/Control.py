@@ -27,7 +27,7 @@ class Control(IdentifiedObject):
     def __init__(self, unitSymbol="N", unitMultiplier="M", operationInProgress=False, timeStamp='', RemoteControl=None, RegulatingCondEq=None, ControlType=None, *args, **kw_args):
         """Initialises a new 'Control' instance.
 
-        @param unitSymbol: The unit of measure of the controlled quantity. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "degC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
+        @param unitSymbol: The unit of measure of the controlled quantity. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "oC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
         @param unitMultiplier: The unit multiplier of the controlled quantity. Values are: "M", "G", "d", "micro", "c", "p", "n", "T", "k", "m", "none"
         @param operationInProgress: Indicates that a client is currently sending control commands that has not completed 
         @param timeStamp: The last time a control output was sent 
@@ -35,7 +35,7 @@ class Control(IdentifiedObject):
         @param RegulatingCondEq: Regulating device governed by this control output.
         @param ControlType: The type of Control
         """
-        #: The unit of measure of the controlled quantity. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "degC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
+        #: The unit of measure of the controlled quantity. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "oC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
         self.unitSymbol = unitSymbol
 
         #: The unit multiplier of the controlled quantity. Values are: "M", "G", "d", "micro", "c", "p", "n", "T", "k", "m", "none"

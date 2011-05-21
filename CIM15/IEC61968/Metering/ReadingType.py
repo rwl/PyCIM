@@ -28,7 +28,7 @@ class ReadingType(IdentifiedObject):
         """Initialises a new 'ReadingType' instance.
 
         @param multiplier: Multiplier for 'unit'. Values are: "M", "G", "d", "micro", "c", "p", "n", "T", "k", "m", "none"
-        @param unit: Unit for the reading value. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "degC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
+        @param unit: Unit for the reading value. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "oC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
         @param kind: Kind of reading. Values are: "phaseAngle", "volume", "frequency", "energy", "currentAngle", "powerFactor", "date", "other", "demand", "power", "pressure", "voltage", "voltageAngle", "time", "current"
         @param reverseChronology: True for systems that must operate in 'reverse' chronological order. 
         @param defaultQuality: Characteristics of a data value conveyed by a specific Reading, which allow an application to understand how a specific Reading is to be interpreted. 
@@ -44,7 +44,7 @@ class ReadingType(IdentifiedObject):
         #: Multiplier for 'unit'. Values are: "M", "G", "d", "micro", "c", "p", "n", "T", "k", "m", "none"
         self.multiplier = multiplier
 
-        #: Unit for the reading value. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "degC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
+        #: Unit for the reading value. Values are: "N", "A", "rad", "VAh", "Pa", "J", "h", "Hz", "VArh", "ohm", "H", "m3", "deg", "V", "oC", "F", "Wh", "s", "g", "min", "S", "none", "W", "VAr", "m2", "m", "VA"
         self.unit = unit
 
         #: Kind of reading. Values are: "phaseAngle", "volume", "frequency", "energy", "currentAngle", "powerFactor", "date", "other", "demand", "power", "pressure", "voltage", "voltageAngle", "time", "current"

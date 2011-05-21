@@ -29,7 +29,7 @@ class ReadingType(IdentifiedObject):
 
         @param multiplier: Multiplier for 'unit'. Values are: "k", "d", "n", "M", "none", "G", "micro", "T", "c", "m", "p"
         @param kind: Kind of reading. Values are: "voltageAngle", "current", "time", "powerFactor", "voltage", "frequency", "power", "other", "energy", "demand", "volume", "date", "phaseAngle", "pressure", "currentAngle"
-        @param unit: Unit for the reading value. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "degC", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
+        @param unit: Unit for the reading value. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "oC", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
         @param reverseChronology: True for systems that must operate in 'reverse' chronological order. 
         @param defaultQuality: Characteristics of a data value conveyed by a specific Reading, which allow an application to understand how a specific Reading is to be interpreted. 
         @param defaultValueDataType: Numeric type to be expected for the associated IntervalBlock.value (e.g. unsignedInteger). 
@@ -47,7 +47,7 @@ class ReadingType(IdentifiedObject):
         #: Kind of reading. Values are: "voltageAngle", "current", "time", "powerFactor", "voltage", "frequency", "power", "other", "energy", "demand", "volume", "date", "phaseAngle", "pressure", "currentAngle"
         self.kind = kind
 
-        #: Unit for the reading value. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "degC", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
+        #: Unit for the reading value. Values are: "N", "VArh", "VA", "none", "m3", "kg/J", "deg", "W/Hz", "g", "Wh", "W/s", "Pa", "V/VAr", "ohm", "h", "F", "H", "m2", "VAr", "A", "rad", "s", "S", "VAh", "Hz", "oC", "s-1", "min", "J", "Hz-1", "J/s", "m", "W", "V"
         self.unit = unit
 
         #: True for systems that must operate in 'reverse' chronological order.

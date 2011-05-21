@@ -27,18 +27,18 @@ class Curve(IdentifiedObject):
     def __init__(self, y1Unit="A", curveStyle="straightLineYValues", xUnit="A", CurveDatas=None, *args, **kw_args):
         """Initialises a new 'Curve' instance.
 
-        @param y1Unit: The Y1-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "ºC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
+        @param y1Unit: The Y1-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "oC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
         @param curveStyle: The style or shape of the curve. Values are: "straightLineYValues", "rampYValue", "constantYValue", "formula"
-        @param xUnit: The X-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "ºC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
+        @param xUnit: The X-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "oC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
         @param CurveDatas: The point data values that define a curve
         """
-        #: The Y1-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "ºC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
+        #: The Y1-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "oC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
         self.y1Unit = y1Unit
 
         #: The style or shape of the curve. Values are: "straightLineYValues", "rampYValue", "constantYValue", "formula"
         self.curveStyle = curveStyle
 
-        #: The X-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "ºC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
+        #: The X-axis units of measure. Values are: "A", "rad", "none", "g", "W/Hz", "V", "m2", "VA", "VArh", "N", "Pa", "VAh", "F", "H", "Hz-1", "W/s", "J", "m", "S", "min", "deg", "J/s", "s", "Wh", "m3", "oC", "V/VAr", "s-1", "h", "W", "ohm", "Hz", "VAr", "kg/J"
         self.xUnit = xUnit
 
         self._CurveDatas = []
