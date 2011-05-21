@@ -24,52 +24,41 @@ from time import time
 
 from xml.etree.cElementTree import iterparse
 
-from CIM15 import nsURI as nsCIM
-from CIM15 import packageMap as packageMapCIM
+from CIM15 import nsURI as cim15nsURI
+from CIM15 import packageMap as cim15packageMap
 
 logger = logging.getLogger(__name__)
-
-PKG_MAP = {
-#    "CPSM": CPSMPackageMap, "ENTSO-E": ENTSOEPackageMap,
-#    "CDPSM": CDPSMPackageMap, "Dynamics": DynamicsPackageMap
-}
-
-NS_MAP = {
-#    "CPSM": nsCPSM, "CDPSM": nsCDPSM, "Dynamics": nsDynamics,
-#    "ENTSO-E": nsENTSOE
-}
 
 # TODO: Extract RDF namespace from file.
 NS_RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 
-def cimread(source, profile=None):
+def cimread(source, packageMap=cim15packageMap, nsURI=cim15nsURI):
     """ CIM RDF/XML parser.
 
     @type source: File-like object or a path to a file.
     @param source: CIM RDF/XML file.
+    @type profile: dict
+    @param packageMap: Map of class name to PyCIM package name. All CIM
+    classes are under the one namespace, but are arranged into sub-packages
+    so a map from class name to package name is required. Defaults to the
+    latest CIM version, but may be set to a map from a profile to return
+    a profile model.
     @type profile: string
-    @param profile: CIM profile. If unspecified classes are imported from
-    the full CIM package. Values are: CPSM, ENTSO-E, CDPSM, Dynamics.
+    @param nsURI: CIM namespace URI used in the RDF/XML file. For example:
+    http://iec.ch/TC57/2010/CIM-schema-cim15
     @rtype: dict
-    @return: Map of uuid to CIM object.
+    @return: Map of UUID to CIM object.
 
     @author: Richard Lincoln <r.w.lincoln@gmail.com>
     """
     # Start the clock.
     t0 = time()
 
-    # Default to the latest CIM version if no profile is specified.
-    nsuuid = NS_MAP[profile] if profile is not None else nsCIM
-
-    # All CIM classes are under the one namespace, but are arranged into
-    # sub-packages so we need a map from class name to package.
-    packageMap = PKG_MAP[profile] if profile is not None else packageMapCIM
-
     # A map of uuids to CIM objects to be returned.
     d = {}
 
     # CIM element tag base (e.g. {http://iec.ch/TC57/2009/CIM-schema-cim14#}).
-    base = "{%s#}" % nsuuid
+    base = "{%s#}" % nsURI
     # Length of element tag base.
     m = len(base)
 
@@ -109,6 +98,9 @@ def cimread(source, profile=None):
         # Clear children of the root element to minimise memory usage.
         root.clear()
 
+    # Reset stream
+    if hasattr(source, "seek"):
+        source.seek(0)
 
     ## Second pass sets attributes and references.
     context = iter( iterparse(source, ("start", "end")) )
@@ -209,4 +201,4 @@ def xmlns(source):
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    cimread("Test/Data/EDF_AIGUE_v9.xml")
+    cimread("Test/Data/EDF_AIGUE_v9_COMBINED.xml")

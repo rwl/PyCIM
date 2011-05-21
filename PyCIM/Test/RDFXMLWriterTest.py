@@ -18,31 +18,36 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-import sys
 import unittest
+import StringIO
 
 from PyCIM import cimread, cimwrite
 
 from os.path import dirname, join
 
-RDFXML_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9.xml")
+
+RDFXML_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9_COMBINED.xml")
+
 
 class RDFXMLWriterTestCase(unittest.TestCase):
     """Test CIM RDF/XML serialisation.
     """
-
-    def setUp(self):
-        """The test runner will execute this method prior to each test.
-        """
-        pass
-
 
     def testSerialise(self):
         """Test CIM RDF/XML serialisation.
         """
         d = cimread(RDFXML_FILE)
 
-        cimwrite(d, sys.stdout)
+        output = StringIO.StringIO()
+
+        cimwrite(d, output)
+
+        output.seek(0)
+        dd = cimread(output)
+        output.close()
+
+        self.assertEqual(len(dd), 5894)
+
 
 if __name__ == "__main__":
     import logging

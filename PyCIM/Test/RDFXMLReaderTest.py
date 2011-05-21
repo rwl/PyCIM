@@ -20,28 +20,45 @@
 
 import unittest
 
-from PyCIM import cimread
-
 from os.path import dirname, join
 
-RDFXML_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9.xml")
+from PyCIM import cimread
+
+from CIM15.CDPSM.Asset import packageMap as assetMap
+from CIM15.CDPSM.Connectivity import packageMap as connMap
+from CIM15.CDPSM.Balanced import packageMap as equipMap
+from CIM15.CDPSM.Geographical import packageMap as geoMap
+
+
+RDFXML_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9_COMBINED.xml")
+
+ASSET_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9_ASSET.xml")
+CONN_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9_CONN.xml")
+EQUIP_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9_EQUIP.xml")
+GEO_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9_GEO.xml")
+
 
 class RDFXMLReaderTestCase(unittest.TestCase):
     """Test CIM RDF/XML parsing.
     """
 
-    def setUp(self):
-        """The test runner will execute this method prior to each test.
-        """
-        pass
-
-
-    def testParse(self):
+    def testCombined(self):
         """Test CIM RDF/XML parsing.
         """
         d = cimread(RDFXML_FILE)
 
-        self.assertEqual(len(d), 5660)
+        self.assertEqual(len(d), 5894)
+
+    def testProfile(self):
+        d = {}
+
+        d.update(cimread(ASSET_FILE, assetMap))
+        d.update(cimread(CONN_FILE, connMap))
+        d.update(cimread(EQUIP_FILE, equipMap))
+        d.update(cimread(GEO_FILE, geoMap))
+
+        self.assertEqual(len(d), 5894)
+
 
 if __name__ == "__main__":
     import logging

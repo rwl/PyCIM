@@ -16,6 +16,7 @@ setup(name="PyCIM",
       url="http://www.pycim.com/",
       include_package_data=False,
       packages=find_packages(),
+      test_suite="PyCIM.Test",
       zip_safe=True,
       **kwds)
 
