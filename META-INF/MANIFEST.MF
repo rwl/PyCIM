@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PyCIM
+Bundle-SymbolicName: com.pycim.jet
+Bundle-Version: 15.13.0.qualifier
+Bundle-Activator: com.pycim.jet.Activator
+Bundle-Vendor: Richard Lincoln
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: com.github.enerate.python;bundle-version="1.1.0",
+ org.junit,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.jet;bundle-version="1.1.1",
+ org.eclipse.emf.ecore;bundle-version="2.6.1"
+Bundle-ActivationPolicy: lazy
