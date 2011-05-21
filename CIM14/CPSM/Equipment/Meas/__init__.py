@@ -1,0 +1,36 @@
+# Copyright (C) 2010-2011 Richard Lincoln
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
+"""Contains entities that describe dynamic measurement data exchanged between applications.
+"""
+
+from CIM14.CPSM.Equipment.Meas.AccumulatorValue import AccumulatorValue
+from CIM14.CPSM.Equipment.Meas.Accumulator import Accumulator
+from CIM14.CPSM.Equipment.Meas.Discrete import Discrete
+from CIM14.CPSM.Equipment.Meas.AnalogValue import AnalogValue
+from CIM14.CPSM.Equipment.Meas.Analog import Analog
+from CIM14.CPSM.Equipment.Meas.MeasurementValueSource import MeasurementValueSource
+from CIM14.CPSM.Equipment.Meas.Measurement import Measurement
+from CIM14.CPSM.Equipment.Meas.DiscreteValue import DiscreteValue
+from CIM14.CPSM.Equipment.Meas.MeasurementValue import MeasurementValue
+
+nsURI = "http://iec.ch/TC57/2009/CIM-schema-cim14?profile=http://iec.ch/TC57/2007/profile#Meas"
+nsPrefix = "cimMeas"
+

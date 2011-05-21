@@ -1,0 +1,77 @@
+# Copyright (C) 2010-2011 Richard Lincoln
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
+from CIM14.ENTSOE.Dynamics.IEC61970.Dynamics.DynamicsRotatingMachine import DynamicsRotatingMachine
+
+class DynamicsAsynchronousMachine(DynamicsRotatingMachine):
+
+    def __init__(self, rr1=0.0, xp=0.0, tpo=0.0, xm=0.0, xs=0.0, rr2=0.0, xlr1=0.0, xlr2=0.0, tppo=0.0, xpp=0.0, *args, **kw_args):
+        """Initialises a new 'DynamicsAsynchronousMachine' instance.
+
+        @param rr1:  
+        @param xp:  
+        @param tpo:  
+        @param xm:  
+        @param xs:  
+        @param rr2:  
+        @param xlr1:  
+        @param xlr2:  
+        @param tppo:  
+        @param xpp:  
+        """
+        #: 
+        self.rr1 = rr1
+
+        #: 
+        self.xp = xp
+
+        #: 
+        self.tpo = tpo
+
+        #: 
+        self.xm = xm
+
+        #: 
+        self.xs = xs
+
+        #: 
+        self.rr2 = rr2
+
+        #: 
+        self.xlr1 = xlr1
+
+        #: 
+        self.xlr2 = xlr2
+
+        #: 
+        self.tppo = tppo
+
+        #: 
+        self.xpp = xpp
+
+        super(DynamicsAsynchronousMachine, self).__init__(*args, **kw_args)
+
+    _attrs = ["rr1", "xp", "tpo", "xm", "xs", "rr2", "xlr1", "xlr2", "tppo", "xpp"]
+    _attr_types = {"rr1": float, "xp": float, "tpo": float, "xm": float, "xs": float, "rr2": float, "xlr1": float, "xlr2": float, "tppo": float, "xpp": float}
+    _defaults = {"rr1": 0.0, "xp": 0.0, "tpo": 0.0, "xm": 0.0, "xs": 0.0, "rr2": 0.0, "xlr1": 0.0, "xlr2": 0.0, "tppo": 0.0, "xpp": 0.0}
+    _enums = {}
+    _refs = []
+    _many_refs = []
+
