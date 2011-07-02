@@ -3,7 +3,7 @@ PyCIM Documentation
 
 .. only:: html
 
-  Download `PDF <http://www.pycim.com/Docs/manual/pycim_manual.pdf>`_
+  Download `PDF <http://www.pycim.org/PyCIM.pdf>`_
 
   Contents:
 
@@ -14,6 +14,10 @@ PyCIM Documentation
   copyright
   install
   usage
+
+.. only:: html
+
+  `API documentation <http://www.pycim.org/api>`_
 
 Indices and tables
 ==================
