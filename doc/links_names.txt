@@ -1,0 +1,17 @@
+.. This file contains commonly used link targets and name substitutions.
+
+.. _Sphinx: http://sphinx.pocoo.org/
+.. _`Sphinx reST`: http://sphinx.pocoo.org/rest.html
+.. _ReStructuredText: http://docutils.sf.net/rst.html
+
+.. _`GNU General Public License`: http://www.gnu.org/licenses/gpl.html
+
+.. _Virtualenv: http://pypi.python.org/pypi/virtualenv
+.. _Git: http://git.or.cz/
+.. _GitHub: http://www.github.com/
+
+.. _iPython: http://ipython.scipy.org
+
+.. _`Enthought Python Distribution`: https://www.enthought.com/products/epd.php
+.. _Python: http://www.python.org
+.. _setuptools: http://peak.telecommunity.com/DevCenter/setuptools

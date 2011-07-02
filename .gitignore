@@ -4,5 +4,6 @@
 build/
 dist/
 PyCIM.egg-info/
-Docs/API/
+doc/api/
+doc/_build/*
 PyCIM/Test/Data/Confidential/
