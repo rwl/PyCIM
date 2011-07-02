@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Usage &mdash; PyCIM v15.13.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '15.13.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="copyright" title="Copyright" href="copyright.html" />
+    <link rel="top" title="PyCIM v15.13.2 documentation" href="index.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="install.html" title="Installation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">PyCIM v15.13.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>To use PyCIM with the Python interpreter, IPython is recommended.  For example,
+to instantiate a ConnecticityNode:</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">CIM14.IEC61970.Core</span> <span class="kn">import</span> <span class="n">ConnectivityNode</span>
+
+<span class="gp">In [2]: </span><span class="n">node</span> <span class="o">=</span> <span class="n">ConnectivityNode</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;Node 1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To associate the node with a Terminal:</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [3]: </span><span class="kn">from</span> <span class="nn">CIM14.IEC61970.Core</span> <span class="kn">import</span> <span class="n">Terminal</span>
+
+<span class="gp">In [4]: </span><span class="n">t</span> <span class="o">=</span> <span class="n">Terminal</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;T1&#39;</span><span class="p">,</span> <span class="n">ConnectivityNode</span><span class="o">=</span><span class="n">node</span><span class="p">)</span>
+
+<span class="gp">In [5]: </span><span class="n">node</span><span class="o">.</span><span class="n">Terminals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+<span class="go">Out[5]: </span><span class="s">&#39;T1&#39;</span>
+</pre></div>
+</div>
+<p>To add a Terminal to a ConnectivityNode:</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [6]: </span><span class="n">t2</span> <span class="o">=</span> <span class="n">Terminal</span><span class="p">()</span>
+
+<span class="gp">In [7]: </span><span class="n">node</span><span class="o">.</span><span class="n">addTerminals</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+
+<span class="gp">In [8]: </span><span class="n">t2</span><span class="o">.</span><span class="n">ConnectivityNode</span><span class="o">.</span><span class="n">name</span>
+<span class="go">Out[8]: </span><span class="s">&#39;Node 1&#39;</span>
+</pre></div>
+</div>
+<p>To view the docstring for an attribute:</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [9]: </span><span class="n">t</span><span class="o">.</span><span class="n">connected</span><span class="err">?</span>
+<span class="go">Type:     bool</span>
+<span class="go">Base Class: &lt;type &#39;bool&#39;&gt;</span>
+<span class="go">String Form:    False</span>
+<span class="go">Namespace:  Interactive</span>
+<span class="go">Docstring:</span>
+<span class="go">    bool(x) -&gt; bool</span>
+
+<span class="go">    Returns True when the argument x is true, False otherwise.</span>
+<span class="go">    The builtins True and False are the only two instances of the class bool.</span>
+<span class="go">    The class bool is a subclass of the class int, and cannot be subclassed.</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="install.html"
+                                  title="previous chapter">Installation</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/usage.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="install.html" title="Installation"
+             >previous</a> |</li>
+        <li><a href="index.html">PyCIM v15.13.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; <a href="copyright.html">Copyright</a> 2011, Richard Lincoln.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PyCIM Documentation &mdash; PyCIM v15.13.2 documentation</title>
+    <title>Installation &mdash; PyCIM v15.13.2 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -20,8 +20,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="copyright" title="Copyright" href="copyright.html" />
-    <link rel="top" title="PyCIM v15.13.2 documentation" href="#" />
-    <link rel="next" title="Introduction" href="intro.html" /> 
+    <link rel="top" title="PyCIM v15.13.2 documentation" href="index.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="License and Copyright" href="copyright.html" /> 
   </head>
   <body>
     <div class="related">
@@ -31,9 +32,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="intro.html" title="Introduction"
+          <a href="usage.html" title="Usage"
              accesskey="N">next</a> |</li>
-        <li><a href="#">PyCIM v15.13.2 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="copyright.html" title="License and Copyright"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">PyCIM v15.13.2 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -42,25 +46,23 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="pycim-documentation">
-<h1>PyCIM Documentation<a class="headerlink" href="#pycim-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Download <a class="reference external" href="http://www.pycim.org/PyCIM.pdf">PDF</a></p>
-<p>Contents:</p>
-<ul>
-<li class="toctree-l1"><a class="reference external" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference external" href="copyright.html">License and Copyright</a></li>
-<li class="toctree-l1"><a class="reference external" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference external" href="usage.html">Usage</a></li>
-</ul>
-<p><a class="reference external" href="http://www.pycim.org/api">API documentation</a></p>
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>PyCIM has no dependencies beyond <a class="reference external" href="http://www.python.org">Python</a> 2.5 or later. It can be easy_installed
+using <a class="reference external" href="http://peak.telecommunity.com/DevCenter/setuptools">setuptools</a>:</p>
+<div class="highlight-python"><pre>$ easy_install PyCIM</pre>
 </div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference external" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference external" href="modindex.html"><em>Module Index</em></a></li>
-<li><a class="reference external" href="search.html"><em>Search Page</em></a></li>
-</ul>
+<p>Alternatively, download and unpack the tarball and install:</p>
+<div class="highlight-python"><pre>$ tar zxf PyCIM-XX.XX.tar.gz
+$ python setup.py install</pre>
+</div>
+<p>On UNIX systems, use sudo for the latter command if you need to install the
+scripts to a directory that requires root privileges:</p>
+<div class="highlight-python"><pre>$ sudo python setup.py install</pre>
+</div>
+<p>The development <a class="reference external" href="http://git.or.cz/">Git</a> repository can be cloned from <a class="reference external" href="http://www.github.com/">GitHub</a>:</p>
+<div class="highlight-python"><pre>$ git clone https://github.com/rwl/PyCIM.git</pre>
+</div>
 </div>
 
 
@@ -69,20 +71,15 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-            <h3><a href="#">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href="#">PyCIM Documentation</a><ul>
-</ul>
-</li>
-<li><a class="reference external" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="copyright.html"
+                                  title="previous chapter">License and Copyright</a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="intro.html"
-                                  title="next chapter">Introduction</a></p>
+            <p class="topless"><a href="usage.html"
+                                  title="next chapter">Usage</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="_sources/index.txt"
+              <li><a href="_sources/install.txt"
                      rel="nofollow">Show Source</a></li>
             </ul>
           <div id="searchbox" style="display: none">
@@ -109,9 +106,12 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="intro.html" title="Introduction"
+          <a href="usage.html" title="Usage"
              >next</a> |</li>
-        <li><a href="#">PyCIM v15.13.2 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="copyright.html" title="License and Copyright"
+             >previous</a> |</li>
+        <li><a href="index.html">PyCIM v15.13.2 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
