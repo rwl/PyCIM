@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Wires.RegulatingControl'.RegulatingControl</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Wires-module.html">Package&nbsp;Wires</a> ::
+        <a href="CIM15.IEC61970.Wires.RegulatingControl%27-module.html">Module&nbsp;RegulatingControl'</a> ::
+        Class&nbsp;RegulatingControl
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class RegulatingControl</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                           object --+            
+                                    |            
+                     <a href="CIM15.Element%27.Element-class.html">Element'.Element</a> --+        
+                                        |        
+  <a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a> --+    
+                                            |    
+<a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a> --+
+                                                |
+                                               <strong class="uidshort">RegulatingControl</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="CIM15.IEC61970.Wires.TapChangerControl%27.TapChangerControl-class.html">TapChangerControl'.TapChangerControl</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>Specifies a set of equipment that works together to control a power 
+  system quantity such as voltage or flow.Specifies a set of equipment that
+  works together to control a power system quantity such as voltage or 
+  flow.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mode</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">fixed</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">targetRange</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">discrete</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">targetValue</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">monitoredPhase</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">s12N</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">RegulatingCondEq</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Terminal</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">RegulationSchedule</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'RegulatingControl' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addRegulatingCondEq"></a><span class="summary-sig-name">addRegulatingCondEq</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*RegulatingCondEq</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addRegulationSchedule"></a><span class="summary-sig-name">addRegulationSchedule</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*RegulationSchedule</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getRegulatingCondEq"></a><span class="summary-sig-name">getRegulatingCondEq</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The equipment that participates in this regulating control scheme.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getRegulationSchedule"></a><span class="summary-sig-name">getRegulationSchedule</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Schedule for this Regulating regulating control.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTerminal"></a><span class="summary-sig-name">getTerminal</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The terminal associated with this regulating control.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeRegulatingCondEq"></a><span class="summary-sig-name">removeRegulatingCondEq</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*RegulatingCondEq</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeRegulationSchedule"></a><span class="summary-sig-name">removeRegulationSchedule</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*RegulationSchedule</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setRegulatingCondEq"></a><span class="summary-sig-name">setRegulatingCondEq</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setRegulationSchedule"></a><span class="summary-sig-name">setRegulationSchedule</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTerminal"></a><span class="summary-sig-name">setTerminal</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addAssets">addAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addChangeItems">addChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addDocumentRoles">addDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addErpOrganisationRoles">addErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addMeasurements">addMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addNetworkDataSets">addNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addOperatingShare">addOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addPSREvent">addPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addPsrLists">addPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addReportingGroup">addReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addSafetyDocuments">addSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addScheduleSteps">addScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getAssets">getAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getChangeItems">getChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getDocumentRoles">getDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getErpOrganisationRoles">getErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getLocation">getLocation</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getMeasurements">getMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getNetworkDataSets">getNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getOperatingShare">getOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getOutageSchedule">getOutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSREvent">getPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSRType">getPSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPsrLists">getPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getReportingGroup">getReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getSafetyDocuments">getSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getScheduleSteps">getScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeAssets">removeAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeChangeItems">removeChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeDocumentRoles">removeDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeErpOrganisationRoles">removeErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeMeasurements">removeMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeNetworkDataSets">removeNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeOperatingShare">removeOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removePSREvent">removePSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removePsrLists">removePsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeReportingGroup">removeReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeSafetyDocuments">removeSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeScheduleSteps">removeScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setAssets">setAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setChangeItems">setChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setDocumentRoles">setDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setErpOrganisationRoles">setErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setLocation">setLocation</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setMeasurements">setMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setNetworkDataSets">setNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setOperatingShare">setOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setOutageSchedule">setOutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSREvent">setPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSRType">setPSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPsrLists">setPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setReportingGroup">setReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setSafetyDocuments">setSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setScheduleSteps">setScheduleSteps</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addDiagramObjects">addDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addNames">addNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getDiagramObjects">getDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getModelingAuthoritySet">getModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getNames">getNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeDiagramObjects">removeDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeNames">removeNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setDiagramObjects">setDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setModelingAuthoritySet">setModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setNames">setNames</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'discrete': &lt;type 'bool'&gt;,
+ 'mode': &lt;type 'str'&gt;,
+ 'monitoredPhase': &lt;type 'str'&gt;,
+ 'targetRange': &lt;type 'float'&gt;,
+ 'targetValue': &lt;type 'float'&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">discrete</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'bool'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mode</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="['mode', 'targetRange', 'discrete', 'targetValue', 'monitoredPhase']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">mode</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">targetRange</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">discrete</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">targetValue</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">m</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{'discrete': False,
+ 'mode': 'fixed',
+ 'monitoredPhase': 's12N',
+ 'targetRange': 0.0,
+ 'targetValue': 0.0}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">discrete</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mode</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">fixed</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">monitoredPha</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#_enums" class="summary-name" onclick="show_private();">_enums</a> = <code title="{'mode': 'RegulatingControlModeKind', 'monitoredPhase': 'PhaseCode'}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">mode</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">RegulatingControlModeKind</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">monitoredPhase</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_many_refs"></a><span class="summary-name">_many_refs</span> = <code title="['RegulatingCondEq', 'RegulationSchedule']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">RegulatingCondEq</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">RegulationSchedule</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_refs"></a><span class="summary-name">_refs</span> = <code title="['RegulatingCondEq', 'Terminal', 'RegulationSchedule']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">RegulatingCondEq</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Terminal</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">RegulationSchedule</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#RegulatingCondEq" class="summary-name">RegulatingCondEq</a><br />
+      The equipment that participates in this regulating control scheme.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#RegulationSchedule" class="summary-name">RegulationSchedule</a><br />
+      Schedule for this Regulating regulating control.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#Terminal" class="summary-name">Terminal</a><br />
+      The terminal associated with this regulating control.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Assets">Assets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ChangeItems">ChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#DocumentRoles">DocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ErpOrganisationRoles">ErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Location">Location</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Measurements">Measurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#NetworkDataSets">NetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#OperatingShare">OperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#OutageSchedule">OutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSREvent">PSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSRType">PSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PsrLists">PsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ReportingGroup">ReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#SafetyDocuments">SafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ScheduleSteps">ScheduleSteps</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#DiagramObjects">DiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#ModelingAuthoritySet">ModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#Names">Names</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mode</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">fixed</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">targetRange</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">discrete</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">targetValue</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">monitoredPhase</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">s12N</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">RegulatingCondEq</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Terminal</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">RegulationSchedule</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'RegulatingControl' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mode</code></strong> - The regulating control mode presently available.  This 
+          specifications allows for determining the kind of regualation 
+          without need for obtaining the units from a schedule. Values are:
+          &quot;fixed&quot;, &quot;timeScheduled&quot;, 
+          &quot;voltage&quot;, &quot;admittance&quot;, 
+          &quot;reactivePower&quot;, &quot;powerFactor&quot;, 
+          &quot;currentFlow&quot;, &quot;activePower&quot;, 
+          &quot;temperature&quot;</li>
+        <li><strong class="pname"><code>targetRange</code></strong> - This is the case input target range.   This performs the same 
+          function as the value2 attribute on the regulation schedule in 
+          the case that schedules are not used.   The units of those 
+          appropriate for the mode.</li>
+        <li><strong class="pname"><code>discrete</code></strong> - The regulation is performed in a discrete mode.</li>
+        <li><strong class="pname"><code>targetValue</code></strong> - The target value specified for case input.   This value can be 
+          used for the target value wihout the use of schedules. The value 
+          has the units appropriate to the mode attribute.</li>
+        <li><strong class="pname"><code>monitoredPhase</code></strong> - Phase voltage controlling this regulator, measured at regulator 
+          location. Values are: &quot;s12N&quot;, &quot;BN&quot;, 
+          &quot;BC&quot;, &quot;ABN&quot;, &quot;s2N&quot;, &quot;N&quot;, 
+          &quot;ACN&quot;, &quot;BCN&quot;, &quot;ABCN&quot;, 
+          &quot;AC&quot;, &quot;s1N&quot;, &quot;AN&quot;, &quot;B&quot;, 
+          &quot;AB&quot;, &quot;C&quot;, &quot;A&quot;, &quot;CN&quot;, 
+          &quot;ABC&quot;</li>
+        <li><strong class="pname"><code>RegulatingCondEq</code></strong> - The equipment that participates in this regulating control 
+          scheme.</li>
+        <li><strong class="pname"><code>Terminal</code></strong> - The terminal associated with this regulating control.</li>
+        <li><strong class="pname"><code>RegulationSchedule</code></strong> - Schedule for this Regulating regulating control.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">discrete</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'bool'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">mode</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">monitoredPhase</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">targetRange</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">targetValue</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">mode</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">targetRange</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">discrete</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">targetValue</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">monitoredPhase</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">discrete</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">mode</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">fixed</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">monitoredPhase</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">s12N</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">targetRange</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">targetValue</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_enums"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_enums</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">mode</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">RegulatingControlModeKind</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">monitoredPhase</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">PhaseCode</code><code class="variable-quote">'</code><code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="RegulatingCondEq"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RegulatingCondEq</h3>
+  <p>The equipment that participates in this regulating control scheme.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#getRegulatingCondEq" class="summary-sig-name">getRegulatingCondEq</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The equipment that participates in this regulating control scheme.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#setRegulatingCondEq" class="summary-sig-name">setRegulatingCondEq</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RegulationSchedule"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RegulationSchedule</h3>
+  <p>Schedule for this Regulating regulating control.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#getRegulationSchedule" class="summary-sig-name">getRegulationSchedule</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Schedule for this Regulating regulating control.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#setRegulationSchedule" class="summary-sig-name">setRegulationSchedule</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Terminal"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Terminal</h3>
+  <p>The terminal associated with this regulating control.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#getTerminal" class="summary-sig-name">getTerminal</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The terminal associated with this regulating control.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html#setTerminal" class="summary-sig-name">setTerminal</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:53 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

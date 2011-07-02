@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Topology.TopologicalNode'.TopologicalNode</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Topology-module.html">Package&nbsp;Topology</a> ::
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27-module.html">Module&nbsp;TopologicalNode'</a> ::
+        Class&nbsp;TopologicalNode
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class TopologicalNode</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                         object --+        
+                                  |        
+                   <a href="CIM15.Element%27.Element-class.html">Element'.Element</a> --+    
+                                      |    
+<a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a> --+
+                                          |
+                                         <strong class="uidshort">TopologicalNode</strong>
+</pre>
+
+<hr />
+<p>For a detailed substation model a TopologicalNode is a set of 
+  connectivity nodes that, in the current network state, are connected 
+  together through any type of closed switches, including  jumpers. 
+  Topological nodes changes as the current network state changes (i.e., 
+  switches, breakers, etc. change state). For a planning model switch 
+  statuses are not used to form TopologicalNodes. Instead they are manually
+  created or deleted in a model builder tool. TopologialNodes maintained 
+  this way are also called 'busses'.For a detailed substation model a 
+  TopologicalNode is a set of connectivity nodes that, in the current 
+  network state, are connected together through any type of closed 
+  switches, including  jumpers. Topological nodes changes as the current 
+  network state changes (i.e., switches, breakers, etc. change state). For 
+  a planning model switch statuses are not used to form TopologicalNodes. 
+  Instead they are manually created or deleted in a model builder tool. 
+  TopologialNodes maintained this way are also called 'busses'.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">SvShortCircuit</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ConnectivityNodeContainer</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">SvInjection</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ConnectivityNodes</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">SvVoltage</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">BaseVoltage</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">TopologicalIsland</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ReportingGroup</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Terminal</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">AngleRef_TopologicalIsland</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'TopologicalNode' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addConnectivityNodes"></a><span class="summary-sig-name">addConnectivityNodes</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ConnectivityNodes</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addTerminal"></a><span class="summary-sig-name">addTerminal</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Terminal</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getAngleRef_TopologicalIsland" class="summary-sig-name">getAngleRef_TopologicalIsland</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The island for which the node is an angle reference.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getBaseVoltage"></a><span class="summary-sig-name">getBaseVoltage</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The base voltage of the topologocial node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getConnectivityNodeContainer"></a><span class="summary-sig-name">getConnectivityNodeContainer</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The connectivity node container to which the toplogical node belongs.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getConnectivityNodes"></a><span class="summary-sig-name">getConnectivityNodes</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Several ConnectivityNode(s) may combine together to form a single 
+      TopologicalNode, depending on the current state of the network.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getReportingGroup"></a><span class="summary-sig-name">getReportingGroup</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The reporting group to which the topological node belongs.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getSvInjection"></a><span class="summary-sig-name">getSvInjection</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The injection state associated with the topological node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getSvShortCircuit"></a><span class="summary-sig-name">getSvShortCircuit</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The short circuit state associated with the topological node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getSvVoltage"></a><span class="summary-sig-name">getSvVoltage</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The state voltage associated with the topological node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getTerminal" class="summary-sig-name">getTerminal</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The terminals associated with the topological node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTopologicalIsland"></a><span class="summary-sig-name">getTopologicalIsland</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A topological node belongs to a topological island</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeConnectivityNodes"></a><span class="summary-sig-name">removeConnectivityNodes</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ConnectivityNodes</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeTerminal"></a><span class="summary-sig-name">removeTerminal</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Terminal</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setAngleRef_TopologicalIsland"></a><span class="summary-sig-name">setAngleRef_TopologicalIsland</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setBaseVoltage"></a><span class="summary-sig-name">setBaseVoltage</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setConnectivityNodeContainer"></a><span class="summary-sig-name">setConnectivityNodeContainer</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setConnectivityNodes"></a><span class="summary-sig-name">setConnectivityNodes</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setReportingGroup"></a><span class="summary-sig-name">setReportingGroup</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setSvInjection"></a><span class="summary-sig-name">setSvInjection</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setSvShortCircuit"></a><span class="summary-sig-name">setSvShortCircuit</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setSvVoltage"></a><span class="summary-sig-name">setSvVoltage</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTerminal"></a><span class="summary-sig-name">setTerminal</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTopologicalIsland"></a><span class="summary-sig-name">setTopologicalIsland</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addDiagramObjects">addDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addNames">addNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getDiagramObjects">getDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getModelingAuthoritySet">getModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getNames">getNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeDiagramObjects">removeDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeNames">removeNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setDiagramObjects">setDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setModelingAuthoritySet">setModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setNames">setNames</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_attr_types"></a><span class="summary-name">_attr_types</span> = <code title="{}"><code class="variable-group">{</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_attrs"></a><span class="summary-name">_attrs</span> = <code title="[]"><code class="variable-group">[</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_defaults"></a><span class="summary-name">_defaults</span> = <code title="{}"><code class="variable-group">{</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_many_refs"></a><span class="summary-name">_many_refs</span> = <code title="['ConnectivityNodes', 'Terminal']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ConnectivityNodes</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Terminal</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="['SvShortCircuit',
+ 'ConnectivityNodeContainer',
+ 'SvInjection',
+ 'ConnectivityNodes',
+ 'SvVoltage',
+ 'BaseVoltage',
+ 'TopologicalIsland',
+ 'ReportingGroup',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">SvShortCircuit</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ConnectivityNodeContainer</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">SvInj</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.Element%27.Element-class.html">Element'.Element</a></code></b> (private):
+      <code><a href="CIM15.Element%27.Element-class.html#_enums" onclick="show_private();">_enums</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#AngleRef_TopologicalIsland" class="summary-name">AngleRef_TopologicalIsland</a><br />
+      The island for which the node is an angle reference.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#BaseVoltage" class="summary-name">BaseVoltage</a><br />
+      The base voltage of the topologocial node.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#ConnectivityNodeContainer" class="summary-name">ConnectivityNodeContainer</a><br />
+      The connectivity node container to which the toplogical node belongs.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#ConnectivityNodes" class="summary-name">ConnectivityNodes</a><br />
+      Several ConnectivityNode(s) may combine together to form a single 
+      TopologicalNode, depending on the current state of the network.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#ReportingGroup" class="summary-name">ReportingGroup</a><br />
+      The reporting group to which the topological node belongs.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#SvInjection" class="summary-name">SvInjection</a><br />
+      The injection state associated with the topological node.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#SvShortCircuit" class="summary-name">SvShortCircuit</a><br />
+      The short circuit state associated with the topological node.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#SvVoltage" class="summary-name">SvVoltage</a><br />
+      The state voltage associated with the topological node.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#Terminal" class="summary-name">Terminal</a><br />
+      The terminals associated with the topological node.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#TopologicalIsland" class="summary-name">TopologicalIsland</a><br />
+      A topological node belongs to a topological island
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#DiagramObjects">DiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#ModelingAuthoritySet">ModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#Names">Names</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">SvShortCircuit</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ConnectivityNodeContainer</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">SvInjection</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ConnectivityNodes</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">SvVoltage</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">BaseVoltage</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">TopologicalIsland</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ReportingGroup</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Terminal</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">AngleRef_TopologicalIsland</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'TopologicalNode' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>SvShortCircuit</code></strong> - The short circuit state associated with the topological node.</li>
+        <li><strong class="pname"><code>ConnectivityNodeContainer</code></strong> - The connectivity node container to which the toplogical node 
+          belongs.</li>
+        <li><strong class="pname"><code>SvInjection</code></strong> - The injection state associated with the topological node.</li>
+        <li><strong class="pname"><code>ConnectivityNodes</code></strong> - Several ConnectivityNode(s) may combine together to form a single
+          TopologicalNode, depending on the current state of the network.</li>
+        <li><strong class="pname"><code>SvVoltage</code></strong> - The state voltage associated with the topological node.</li>
+        <li><strong class="pname"><code>BaseVoltage</code></strong> - The base voltage of the topologocial node.</li>
+        <li><strong class="pname"><code>TopologicalIsland</code></strong> - A topological node belongs to a topological island</li>
+        <li><strong class="pname"><code>ReportingGroup</code></strong> - The reporting group to which the topological node belongs.</li>
+        <li><strong class="pname"><code>Terminal</code></strong> - The terminals associated with the topological node.   This can be
+          used as an alternative to the connectivity node path to terminal,
+          thus making it unneccesary to model connedtivity nodes in some 
+          cases.   Note that the if connectivity nodes are in the model, 
+          this association would proably not be used.</li>
+        <li><strong class="pname"><code>AngleRef_TopologicalIsland</code></strong> - The island for which the node is an angle reference.   Normally 
+          there is one angle reference node for each island.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getAngleRef_TopologicalIsland"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getAngleRef_TopologicalIsland</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The island for which the node is an angle reference.   Normally there 
+  is one angle reference node for each island.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTerminal"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTerminal</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The terminals associated with the topological node.   This can be used
+  as an alternative to the connectivity node path to terminal, thus making 
+  it unneccesary to model connedtivity nodes in some cases.   Note that the
+  if connectivity nodes are in the model, this association would proably 
+  not be used.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">SvShortCircuit</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ConnectivityNodeContainer</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">SvInjection</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ConnectivityNodes</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">SvVoltage</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">BaseVoltage</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">TopologicalIsland</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ReportingGroup</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="AngleRef_TopologicalIsland"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">AngleRef_TopologicalIsland</h3>
+  <p>The island for which the node is an angle reference.   Normally there 
+  is one angle reference node for each island.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getAngleRef_TopologicalIsland" class="summary-sig-name">getAngleRef_TopologicalIsland</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The island for which the node is an angle reference.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#setAngleRef_TopologicalIsland" class="summary-sig-name">setAngleRef_TopologicalIsland</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="BaseVoltage"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">BaseVoltage</h3>
+  <p>The base voltage of the topologocial node.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getBaseVoltage" class="summary-sig-name">getBaseVoltage</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The base voltage of the topologocial node.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#setBaseVoltage" class="summary-sig-name">setBaseVoltage</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ConnectivityNodeContainer"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ConnectivityNodeContainer</h3>
+  <p>The connectivity node container to which the toplogical node 
+  belongs.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getConnectivityNodeContainer" class="summary-sig-name">getConnectivityNodeContainer</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The connectivity node container to which the toplogical node belongs.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#setConnectivityNodeContainer" class="summary-sig-name">setConnectivityNodeContainer</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ConnectivityNodes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ConnectivityNodes</h3>
+  <p>Several ConnectivityNode(s) may combine together to form a single 
+  TopologicalNode, depending on the current state of the network.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getConnectivityNodes" class="summary-sig-name">getConnectivityNodes</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Several ConnectivityNode(s) may combine together to form a single 
+      TopologicalNode, depending on the current state of the network.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#setConnectivityNodes" class="summary-sig-name">setConnectivityNodes</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ReportingGroup"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ReportingGroup</h3>
+  <p>The reporting group to which the topological node belongs.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getReportingGroup" class="summary-sig-name">getReportingGroup</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The reporting group to which the topological node belongs.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#setReportingGroup" class="summary-sig-name">setReportingGroup</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SvInjection"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">SvInjection</h3>
+  <p>The injection state associated with the topological node.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getSvInjection" class="summary-sig-name">getSvInjection</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The injection state associated with the topological node.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#setSvInjection" class="summary-sig-name">setSvInjection</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SvShortCircuit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">SvShortCircuit</h3>
+  <p>The short circuit state associated with the topological node.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getSvShortCircuit" class="summary-sig-name">getSvShortCircuit</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The short circuit state associated with the topological node.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#setSvShortCircuit" class="summary-sig-name">setSvShortCircuit</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SvVoltage"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">SvVoltage</h3>
+  <p>The state voltage associated with the topological node.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getSvVoltage" class="summary-sig-name">getSvVoltage</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The state voltage associated with the topological node.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#setSvVoltage" class="summary-sig-name">setSvVoltage</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Terminal"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Terminal</h3>
+  <p>The terminals associated with the topological node.   This can be used
+  as an alternative to the connectivity node path to terminal, thus making 
+  it unneccesary to model connedtivity nodes in some cases.   Note that the
+  if connectivity nodes are in the model, this association would proably 
+  not be used.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getTerminal" class="summary-sig-name">getTerminal</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The terminals associated with the topological node.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#setTerminal" class="summary-sig-name">setTerminal</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="TopologicalIsland"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">TopologicalIsland</h3>
+  <p>A topological node belongs to a topological island</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#getTopologicalIsland" class="summary-sig-name">getTopologicalIsland</a>(<span class="summary-sig-arg">self</span>)</span>
+        - A topological node belongs to a topological island
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html#setTopologicalIsland" class="summary-sig-name">setTopologicalIsland</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:52 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

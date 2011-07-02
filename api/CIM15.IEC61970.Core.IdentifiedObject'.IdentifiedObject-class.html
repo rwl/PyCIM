@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Core.IdentifiedObject'.IdentifiedObject</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Core-module.html">Package&nbsp;Core</a> ::
+        <a href="CIM15.IEC61970.Core.IdentifiedObject%27-module.html">Module&nbsp;IdentifiedObject'</a> ::
+        Class&nbsp;IdentifiedObject
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class IdentifiedObject</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+      object --+    
+               |    
+<a href="CIM15.Element%27.Element-class.html">Element'.Element</a> --+
+                   |
+                  <strong class="uidshort">IdentifiedObject</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">PowerSystemResource'.PowerSystemResource</a></li><li>, <a href="CIM15.IEC61968.Common.ActivityRecord%27.ActivityRecord-class.html">IEC61968.Common.ActivityRecord'.ActivityRecord</a></li><li>, <a href="CIM15.IEC61968.Common.Document%27.Document-class.html">IEC61968.Common.Document'.Document</a></li><li>, <a href="CIM15.IEC61970.Informative.InfOperations.ChangeItem%27.ChangeItem-class.html">Informative.InfOperations.ChangeItem'.ChangeItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfCommon.Role%27.Role-class.html">Informative.InfCommon.Role'.Role</a></li><li>, <a href="CIM15.IEC61970.Informative.InfOperations.IncidentCode%27.IncidentCode-class.html">Informative.InfOperations.IncidentCode'.IncidentCode</a></li><li>, <a href="CIM15.IEC61970.Informative.InfOperations.CallBack%27.CallBack-class.html">Informative.InfOperations.CallBack'.CallBack</a></li><li>, <a href="CIM15.IEC61970.Informative.InfOperations.OutageStep%27.OutageStep-class.html">Informative.InfOperations.OutageStep'.OutageStep</a></li><li>, <a href="CIM15.IEC61970.Informative.InfOperations.NetworkDataSet%27.NetworkDataSet-class.html">Informative.InfOperations.NetworkDataSet'.NetworkDataSet</a></li><li>, <a href="CIM15.IEC61970.Informative.InfOperations.OutageCode%27.OutageCode-class.html">Informative.InfOperations.OutageCode'.OutageCode</a></li><li>, <a href="CIM15.IEC61970.Informative.InfOperations.ChangeSet%27.ChangeSet-class.html">Informative.InfOperations.ChangeSet'.ChangeSet</a></li><li>, <a href="CIM15.IEC61970.Informative.InfOperations.SwitchingStep%27.SwitchingStep-class.html">Informative.InfOperations.SwitchingStep'.SwitchingStep</a></li><li>, <a href="CIM15.IEC61970.Informative.InfOperations.CircuitSection%27.CircuitSection-class.html">Informative.InfOperations.CircuitSection'.CircuitSection</a></li><li>, <a href="CIM15.IEC61970.Informative.InfCore.ModelingAuthority%27.ModelingAuthority-class.html">Informative.InfCore.ModelingAuthority'.ModelingAuthority</a></li><li>, <a href="CIM15.IEC61970.Informative.InfCore.ModelingAuthoritySet%27.ModelingAuthoritySet-class.html">Informative.InfCore.ModelingAuthoritySet'.ModelingAuthoritySet</a></li><li>, <a href="CIM15.IEC61970.Informative.InfCommon.ScheduledEvent%27.ScheduledEvent-class.html">Informative.InfCommon.ScheduledEvent'.ScheduledEvent</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.CUAllowableAction%27.CUAllowableAction-class.html">Informative.InfWork.CUAllowableAction'.CUAllowableAction</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.EquipmentItem%27.EquipmentItem-class.html">Informative.InfWork.EquipmentItem'.EquipmentItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.CUAsset%27.CUAsset-class.html">Informative.InfWork.CUAsset'.CUAsset</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.ConditionFactor%27.ConditionFactor-class.html">Informative.InfWork.ConditionFactor'.ConditionFactor</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.MaterialItem%27.MaterialItem-class.html">Informative.InfWork.MaterialItem'.MaterialItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.QualificationRequirement%27.QualificationRequirement-class.html">Informative.InfWork.QualificationRequirement'.QualificationRequirement</a></li><li>, <a href="CIM15.IEC61968.Common.Location%27.Location-class.html">IEC61968.Common.Location'.Location</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.Capability%27.Capability-class.html">Informative.InfWork.Capability'.Capability</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.PropertyUnit%27.PropertyUnit-class.html">Informative.InfWork.PropertyUnit'.PropertyUnit</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.LaborItem%27.LaborItem-class.html">Informative.InfWork.LaborItem'.LaborItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.Usage%27.Usage-class.html">Informative.InfWork.Usage'.Usage</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.CostType%27.CostType-class.html">Informative.InfWork.CostType'.CostType</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.WorkFlowStep%27.WorkFlowStep-class.html">Informative.InfWork.WorkFlowStep'.WorkFlowStep</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.CUWorkEquipmentItem%27.CUWorkEquipmentItem-class.html">Informative.InfWork.CUWorkEquipmentItem'.CUWorkEquipmentItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.ContractorItem%27.ContractorItem-class.html">Informative.InfWork.ContractorItem'.ContractorItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.CUContractorItem%27.CUContractorItem-class.html">Informative.InfWork.CUContractorItem'.CUContractorItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.CULaborCode%27.CULaborCode-class.html">Informative.InfWork.CULaborCode'.CULaborCode</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.Crew%27.Crew-class.html">Informative.InfWork.Crew'.Crew</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.CUGroup%27.CUGroup-class.html">Informative.InfWork.CUGroup'.CUGroup</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.DesignLocationCU%27.DesignLocationCU-class.html">Informative.InfWork.DesignLocationCU'.DesignLocationCU</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.OverheadCost%27.OverheadCost-class.html">Informative.InfWork.OverheadCost'.OverheadCost</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.CUMaterialItem%27.CUMaterialItem-class.html">Informative.InfWork.CUMaterialItem'.CUMaterialItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.DesignLocation%27.DesignLocation-class.html">Informative.InfWork.DesignLocation'.DesignLocation</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.ShiftPattern%27.ShiftPattern-class.html">Informative.InfWork.ShiftPattern'.ShiftPattern</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.MiscCostItem%27.MiscCostItem-class.html">Informative.InfWork.MiscCostItem'.MiscCostItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfWork.CULaborItem%27.CULaborItem-class.html">Informative.InfWork.CULaborItem'.CULaborItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpItemMaster%27.ErpItemMaster-class.html">Informative.InfERPSupport.ErpItemMaster'.ErpItemMaster</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpBomItemData%27.ErpBomItemData-class.html">Informative.InfERPSupport.ErpBomItemData'.ErpBomItemData</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInventory%27.ErpInventory-class.html">Informative.InfERPSupport.ErpInventory'.ErpInventory</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInventoryCount%27.ErpInventoryCount-class.html">Informative.InfERPSupport.ErpInventoryCount'.ErpInventoryCount</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpRecLineItem%27.ErpRecLineItem-class.html">Informative.InfERPSupport.ErpRecLineItem'.ErpRecLineItem</a></li><li>, <a href="CIM15.IEC61968.Common.Organisation%27.Organisation-class.html">IEC61968.Common.Organisation'.Organisation</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpSiteLevelData%27.ErpSiteLevelData-class.html">Informative.InfERPSupport.ErpSiteLevelData'.ErpSiteLevelData</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpIssueInventory%27.ErpIssueInventory-class.html">Informative.InfERPSupport.ErpIssueInventory'.ErpIssueInventory</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpPerson%27.ErpPerson-class.html">Informative.InfERPSupport.ErpPerson'.ErpPerson</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpLedBudLineItem%27.ErpLedBudLineItem-class.html">Informative.InfERPSupport.ErpLedBudLineItem'.ErpLedBudLineItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpJournalEntry%27.ErpJournalEntry-class.html">Informative.InfERPSupport.ErpJournalEntry'.ErpJournalEntry</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpQuoteLineItem%27.ErpQuoteLineItem-class.html">Informative.InfERPSupport.ErpQuoteLineItem'.ErpQuoteLineItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpRecDelvLineItem%27.ErpRecDelvLineItem-class.html">Informative.InfERPSupport.ErpRecDelvLineItem'.ErpRecDelvLineItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpPayableLineItem%27.ErpPayableLineItem-class.html">Informative.InfERPSupport.ErpPayableLineItem'.ErpPayableLineItem</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpLedgerEntry%27.ErpLedgerEntry-class.html">Informative.InfERPSupport.ErpLedgerEntry'.ErpLedgerEntry</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpTimeEntry%27.ErpTimeEntry-class.html">Informative.InfERPSupport.ErpTimeEntry'.ErpTimeEntry</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpPersonnel%27.ErpPersonnel-class.html">Informative.InfERPSupport.ErpPersonnel'.ErpPersonnel</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpCompetency%27.ErpCompetency-class.html">Informative.InfERPSupport.ErpCompetency'.ErpCompetency</a></li><li>, <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpReqLineItem%27.ErpReqLineItem-class.html">Informative.InfERPSupport.ErpReqLineItem'.ErpReqLineItem</a></li><li>, <a href="CIM15.IEC61968.Assets.AssetModel%27.AssetModel-class.html">IEC61968.Assets.AssetModel'.AssetModel</a></li><li>, <a href="CIM15.IEC61970.Informative.InfTypeAsset.TypeAssetCatalogue%27.TypeAssetCatalogue-class.html">Informative.InfTypeAsset.TypeAssetCatalogue'.TypeAssetCatalogue</a></li><li>, <a href="CIM15.IEC61970.Informative.InfAssetModels.AssetModelCatalogue%27.AssetModelCatalogue-class.html">Informative.InfAssetModels.AssetModelCatalogue'.AssetModelCatalogue</a></li><li>, <a href="CIM15.IEC61968.Assets.AssetInfo%27.AssetInfo-class.html">IEC61968.Assets.AssetInfo'.AssetInfo</a></li><li>, <a href="CIM15.IEC61968.Assets.Asset%27.Asset-class.html">IEC61968.Assets.Asset'.Asset</a></li><li>, <a href="CIM15.IEC61970.Informative.InfAssets.WindingInsulation%27.WindingInsulation-class.html">Informative.InfAssets.WindingInsulation'.WindingInsulation</a></li><li>, <a href="CIM15.IEC61970.Informative.InfAssets.FinancialInfo%27.FinancialInfo-class.html">Informative.InfAssets.FinancialInfo'.FinancialInfo</a></li><li>, <a href="CIM15.IEC61970.Informative.InfAssets.DimensionsInfo%27.DimensionsInfo-class.html">Informative.InfAssets.DimensionsInfo'.DimensionsInfo</a></li><li>, <a href="CIM15.IEC61970.Informative.InfAssets.ReliabilityInfo%27.ReliabilityInfo-class.html">Informative.InfAssets.ReliabilityInfo'.ReliabilityInfo</a></li><li>, <a href="CIM15.IEC61970.Core.Curve%27.Curve-class.html">Curve'.Curve</a></li><li>, <a href="CIM15.IEC61970.Informative.InfAssets.Medium%27.Medium-class.html">Informative.InfAssets.Medium'.Medium</a></li><li>, <a href="CIM15.IEC61970.Informative.InfAssets.MountingConnection%27.MountingConnection-class.html">Informative.InfAssets.MountingConnection'.MountingConnection</a></li><li>, <a href="CIM15.IEC61970.Informative.InfAssets.TransformerObservation%27.TransformerObservation-class.html">Informative.InfAssets.TransformerObservation'.TransformerObservation</a></li><li>, <a href="CIM15.IEC61970.Informative.InfAssets.PowerRating%27.PowerRating-class.html">Informative.InfAssets.PowerRating'.PowerRating</a></li><li>, <a href="CIM15.IEC61970.Informative.InfAssets.BushingInsulationPF%27.BushingInsulationPF-class.html">Informative.InfAssets.BushingInsulationPF'.BushingInsulationPF</a></li><li>, <a href="CIM15.IEC61970.Informative.InfAssets.MountingPoint%27.MountingPoint-class.html">Informative.InfAssets.MountingPoint'.MountingPoint</a></li><li>, <a href="CIM15.IEC61968.Assets.AssetFunction%27.AssetFunction-class.html">IEC61968.Assets.AssetFunction'.AssetFunction</a></li><li>, <a href="CIM15.IEC61970.Informative.InfCommon.BusinessRole%27.BusinessRole-class.html">Informative.InfCommon.BusinessRole'.BusinessRole</a></li><li>, <a href="CIM15.IEC61970.Informative.InfCommon.ScheduleParameterInfo%27.ScheduleParameterInfo-class.html">Informative.InfCommon.ScheduleParameterInfo'.ScheduleParameterInfo</a></li><li>, <a href="CIM15.IEC61970.Informative.InfCommon.Craft%27.Craft-class.html">Informative.InfCommon.Craft'.Craft</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlValue%27.GmlValue-class.html">Informative.InfGMLSupport.GmlValue'.GmlValue</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureType%27.GmlFeatureType-class.html">Informative.InfGMLSupport.GmlFeatureType'.GmlFeatureType</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlSymbol%27.GmlSymbol-class.html">Informative.InfGMLSupport.GmlSymbol'.GmlSymbol</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelPlacement%27.GmlLabelPlacement-class.html">Informative.InfGMLSupport.GmlLabelPlacement'.GmlLabelPlacement</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlSvgParameter%27.GmlSvgParameter-class.html">Informative.InfGMLSupport.GmlSvgParameter'.GmlSvgParameter</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlDiagramObject%27.GmlDiagramObject-class.html">Informative.InfGMLSupport.GmlDiagramObject'.GmlDiagramObject</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlBaseSymbol%27.GmlBaseSymbol-class.html">Informative.InfGMLSupport.GmlBaseSymbol'.GmlBaseSymbol</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlSelector%27.GmlSelector-class.html">Informative.InfGMLSupport.GmlSelector'.GmlSelector</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelStyle%27.GmlLabelStyle-class.html">Informative.InfGMLSupport.GmlLabelStyle'.GmlLabelStyle</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlColour%27.GmlColour-class.html">Informative.InfGMLSupport.GmlColour'.GmlColour</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlStroke%27.GmlStroke-class.html">Informative.InfGMLSupport.GmlStroke'.GmlStroke</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlMark%27.GmlMark-class.html">Informative.InfGMLSupport.GmlMark'.GmlMark</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlGeometryStyle%27.GmlGeometryStyle-class.html">Informative.InfGMLSupport.GmlGeometryStyle'.GmlGeometryStyle</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFill%27.GmlFill-class.html">Informative.InfGMLSupport.GmlFill'.GmlFill</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlGraphic%27.GmlGraphic-class.html">Informative.InfGMLSupport.GmlGraphic'.GmlGraphic</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureStyle%27.GmlFeatureStyle-class.html">Informative.InfGMLSupport.GmlFeatureStyle'.GmlFeatureStyle</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFont%27.GmlFont-class.html">Informative.InfGMLSupport.GmlFont'.GmlFont</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlHalo%27.GmlHalo-class.html">Informative.InfGMLSupport.GmlHalo'.GmlHalo</a></li><li>, <a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlTopologyStyle%27.GmlTopologyStyle-class.html">Informative.InfGMLSupport.GmlTopologyStyle'.GmlTopologyStyle</a></li><li>, <a href="CIM15.IEC61970.Informative.InfLocations.RedLine%27.RedLine-class.html">Informative.InfLocations.RedLine'.RedLine</a></li><li>, <a href="CIM15.IEC61970.Informative.InfLocations.LandProperty%27.LandProperty-class.html">Informative.InfLocations.LandProperty'.LandProperty</a></li><li>, <a href="CIM15.IEC61970.Informative.InfLocations.Route%27.Route-class.html">Informative.InfLocations.Route'.Route</a></li><li>, <a href="CIM15.IEC61970.Informative.InfLocations.Hazard%27.Hazard-class.html">Informative.InfLocations.Hazard'.Hazard</a></li><li>, <a href="CIM15.IEC61970.OperationalLimits.OperationalLimitSet%27.OperationalLimitSet-class.html">OperationalLimits.OperationalLimitSet'.OperationalLimitSet</a></li><li>, <a href="CIM15.IEC61970.OperationalLimits.OperationalLimit%27.OperationalLimit-class.html">OperationalLimits.OperationalLimit'.OperationalLimit</a></li><li>, <a href="CIM15.IEC61970.OperationalLimits.BranchGroup%27.BranchGroup-class.html">OperationalLimits.BranchGroup'.BranchGroup</a></li><li>, <a href="CIM15.IEC61970.OperationalLimits.OperationalLimitType%27.OperationalLimitType-class.html">OperationalLimits.OperationalLimitType'.OperationalLimitType</a></li><li>, <a href="CIM15.IEC61970.Meas.MeasurementValue%27.MeasurementValue-class.html">Meas.MeasurementValue'.MeasurementValue</a></li><li>, <a href="CIM15.IEC61970.Meas.Limit%27.Limit-class.html">Meas.Limit'.Limit</a></li><li>, <a href="CIM15.IEC61970.Meas.Control%27.Control-class.html">Meas.Control'.Control</a></li><li>, <a href="CIM15.IEC61970.Meas.Measurement%27.Measurement-class.html">Meas.Measurement'.Measurement</a></li><li>, <a href="CIM15.IEC61970.Meas.LimitSet%27.LimitSet-class.html">Meas.LimitSet'.LimitSet</a></li><li>, <a href="CIM15.IEC61970.Meas.MeasurementValueSource%27.MeasurementValueSource-class.html">Meas.MeasurementValueSource'.MeasurementValueSource</a></li><li>, <a href="CIM15.IEC61970.Meas.ValueAliasSet%27.ValueAliasSet-class.html">Meas.ValueAliasSet'.ValueAliasSet</a></li><li>, <a href="CIM15.IEC61970.Meas.ValueToAlias%27.ValueToAlias-class.html">Meas.ValueToAlias'.ValueToAlias</a></li><li>, <a href="CIM15.IEC61970.Meas.ControlType%27.ControlType-class.html">Meas.ControlType'.ControlType</a></li><li>, <a href="CIM15.IEC61970.Core.PSRType%27.PSRType-class.html">PSRType'.PSRType</a></li><li>, <a href="CIM15.IEC61970.Core.OperatingParticipant%27.OperatingParticipant-class.html">OperatingParticipant'.OperatingParticipant</a></li><li>, <a href="CIM15.IEC61970.Core.ConnectivityNode%27.ConnectivityNode-class.html">ConnectivityNode'.ConnectivityNode</a></li><li>, <a href="CIM15.IEC61970.Core.Terminal%27.Terminal-class.html">Terminal'.Terminal</a></li><li>, <a href="CIM15.IEC61970.Core.ReportingSuperGroup%27.ReportingSuperGroup-class.html">ReportingSuperGroup'.ReportingSuperGroup</a></li><li>, <a href="CIM15.IEC61970.Core.SubGeographicalRegion%27.SubGeographicalRegion-class.html">SubGeographicalRegion'.SubGeographicalRegion</a></li><li>, <a href="CIM15.IEC61970.Core.BaseVoltage%27.BaseVoltage-class.html">BaseVoltage'.BaseVoltage</a></li><li>, <a href="CIM15.IEC61970.Core.BasePower%27.BasePower-class.html">BasePower'.BasePower</a></li><li>, <a href="CIM15.IEC61970.Core.ReportingGroup%27.ReportingGroup-class.html">ReportingGroup'.ReportingGroup</a></li><li>, <a href="CIM15.IEC61970.Core.PsrList%27.PsrList-class.html">PsrList'.PsrList</a></li><li>, <a href="CIM15.IEC61970.Core.GeographicalRegion%27.GeographicalRegion-class.html">GeographicalRegion'.GeographicalRegion</a></li><li>, <a href="CIM15.IEC61970.Core.BasicIntervalSchedule%27.BasicIntervalSchedule-class.html">BasicIntervalSchedule'.BasicIntervalSchedule</a></li><li>, <a href="CIM15.IEC61970.LoadModel.EnergyArea%27.EnergyArea-class.html">LoadModel.EnergyArea'.EnergyArea</a></li><li>, <a href="CIM15.IEC61970.LoadModel.LoadGroup%27.LoadGroup-class.html">LoadModel.LoadGroup'.LoadGroup</a></li><li>, <a href="CIM15.IEC61970.LoadModel.DayType%27.DayType-class.html">LoadModel.DayType'.DayType</a></li><li>, <a href="CIM15.IEC61970.LoadModel.LoadResponseCharacteristic%27.LoadResponseCharacteristic-class.html">LoadModel.LoadResponseCharacteristic'.LoadResponseCharacteristic</a></li><li>, <a href="CIM15.IEC61970.SCADA.RemotePoint%27.RemotePoint-class.html">SCADA.RemotePoint'.RemotePoint</a></li><li>, <a href="CIM15.IEC61970.StateVariables.TopologicalIsland%27.TopologicalIsland-class.html">StateVariables.TopologicalIsland'.TopologicalIsland</a></li><li>, <a href="CIM15.IEC61970.Protection.RecloseSequence%27.RecloseSequence-class.html">Protection.RecloseSequence'.RecloseSequence</a></li><li>, <a href="CIM15.IEC61970.Topology.TopologicalNode%27.TopologicalNode-class.html">Topology.TopologicalNode'.TopologicalNode</a></li><li>, <a href="CIM15.IEC61970.Topology.BusNameMarker%27.BusNameMarker-class.html">Topology.BusNameMarker'.BusNameMarker</a></li><li>, <a href="CIM15.IEC61970.Generation.Production.FossilFuel%27.FossilFuel-class.html">Generation.Production.FossilFuel'.FossilFuel</a></li><li>, <a href="CIM15.IEC61970.Generation.Production.StartupModel%27.StartupModel-class.html">Generation.Production.StartupModel'.StartupModel</a></li><li>, <a href="CIM15.IEC61970.Graphics.VisibilityLayer%27.VisibilityLayer-class.html">Graphics.VisibilityLayer'.VisibilityLayer</a></li><li>, <a href="CIM15.IEC61970.Graphics.DiagramObjectStyle%27.DiagramObjectStyle-class.html">Graphics.DiagramObjectStyle'.DiagramObjectStyle</a></li><li>, <a href="CIM15.IEC61970.Graphics.DiagramObject%27.DiagramObject-class.html">Graphics.DiagramObject'.DiagramObject</a></li><li>, <a href="CIM15.IEC61970.Outage.SwitchingOperation%27.SwitchingOperation-class.html">Outage.SwitchingOperation'.SwitchingOperation</a></li><li>, <a href="CIM15.IEC61970.Outage.ClearanceTag%27.ClearanceTag-class.html">Outage.ClearanceTag'.ClearanceTag</a></li><li>, <a href="CIM15.IEC61970.Outage.ClearanceTagType%27.ClearanceTagType-class.html">Outage.ClearanceTagType'.ClearanceTagType</a></li><li>, <a href="CIM15.IEC61970.Wires.TransformerMeshImpedance%27.TransformerMeshImpedance-class.html">Wires.TransformerMeshImpedance'.TransformerMeshImpedance</a></li><li>, <a href="CIM15.IEC61970.Wires.PerLengthPhaseImpedance%27.PerLengthPhaseImpedance-class.html">Wires.PerLengthPhaseImpedance'.PerLengthPhaseImpedance</a></li><li>, <a href="CIM15.IEC61970.Wires.MutualCoupling%27.MutualCoupling-class.html">Wires.MutualCoupling'.MutualCoupling</a></li><li>, <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html">Wires.TransformerEnd'.TransformerEnd</a></li><li>, <a href="CIM15.IEC61970.Wires.PerLengthSequenceImpedance%27.PerLengthSequenceImpedance-class.html">Wires.PerLengthSequenceImpedance'.PerLengthSequenceImpedance</a></li><li>, <a href="CIM15.IEC61970.Wires.TransformerStarImpedance%27.TransformerStarImpedance-class.html">Wires.TransformerStarImpedance'.TransformerStarImpedance</a></li><li>, <a href="CIM15.IEC61970.Wires.TransformerCoreAdmittance%27.TransformerCoreAdmittance-class.html">Wires.TransformerCoreAdmittance'.TransformerCoreAdmittance</a></li><li>, <a href="CIM15.IEC61970.Contingency.ContingencyElement%27.ContingencyElement-class.html">Contingency.ContingencyElement'.ContingencyElement</a></li><li>, <a href="CIM15.IEC61970.Contingency.Contingency%27.Contingency-class.html">Contingency.Contingency'.Contingency</a></li><li>, <a href="CIM15.IEC61968.Metering.EndDeviceGroup%27.EndDeviceGroup-class.html">IEC61968.Metering.EndDeviceGroup'.EndDeviceGroup</a></li><li>, <a href="CIM15.IEC61968.Metering.EndDeviceControl%27.EndDeviceControl-class.html">IEC61968.Metering.EndDeviceControl'.EndDeviceControl</a></li><li>, <a href="CIM15.IEC61968.Metering.ReadingType%27.ReadingType-class.html">IEC61968.Metering.ReadingType'.ReadingType</a></li><li>, <a href="CIM15.IEC61968.Metering.ServiceDeliveryPoint%27.ServiceDeliveryPoint-class.html">IEC61968.Metering.ServiceDeliveryPoint'.ServiceDeliveryPoint</a></li><li>, <a href="CIM15.IEC61968.Metering.DemandResponseProgram%27.DemandResponseProgram-class.html">IEC61968.Metering.DemandResponseProgram'.DemandResponseProgram</a></li><li>, <a href="CIM15.IEC61968.Metering.MeterReading%27.MeterReading-class.html">IEC61968.Metering.MeterReading'.MeterReading</a></li><li>, <a href="CIM15.IEC61968.Metering.Register%27.Register-class.html">IEC61968.Metering.Register'.Register</a></li><li>, <a href="CIM15.IEC61968.Assets.Seal%27.Seal-class.html">IEC61968.Assets.Seal'.Seal</a></li><li>, <a href="CIM15.IEC61968.Common.CoordinateSystem%27.CoordinateSystem-class.html">IEC61968.Common.CoordinateSystem'.CoordinateSystem</a></li><li>, <a href="CIM15.IEC61968.Common.TimePoint%27.TimePoint-class.html">IEC61968.Common.TimePoint'.TimePoint</a></li><li>, <a href="CIM15.IEC61968.Customers.ServiceCategory%27.ServiceCategory-class.html">IEC61968.Customers.ServiceCategory'.ServiceCategory</a></li><li>, <a href="CIM15.IEC61968.PaymentMetering.Cashier%27.Cashier-class.html">IEC61968.PaymentMetering.Cashier'.Cashier</a></li><li>, <a href="CIM15.IEC61968.PaymentMetering.Transactor%27.Transactor-class.html">IEC61968.PaymentMetering.Transactor'.Transactor</a></li><li>, <a href="CIM15.IEC61968.PaymentMetering.Vendor%27.Vendor-class.html">IEC61968.PaymentMetering.Vendor'.Vendor</a></li><li>, <a href="CIM15.IEC61968.PaymentMetering.Transaction%27.Transaction-class.html">IEC61968.PaymentMetering.Transaction'.Transaction</a></li><li>, <a href="CIM15.IEC61968.PaymentMetering.Shift%27.Shift-class.html">IEC61968.PaymentMetering.Shift'.Shift</a></li><li>, <a href="CIM15.IEC61968.PaymentMetering.Tender%27.Tender-class.html">IEC61968.PaymentMetering.Tender'.Tender</a></li><li>, <a href="CIM15.IEC61968.PaymentMetering.PointOfSale%27.PointOfSale-class.html">IEC61968.PaymentMetering.PointOfSale'.PointOfSale</a></li><li>, <a href="CIM15.IEC61968.PaymentMetering.Receipt%27.Receipt-class.html">IEC61968.PaymentMetering.Receipt'.Receipt</a></li><li>, <a href="CIM15.IEC61968.PaymentMetering.Charge%27.Charge-class.html">IEC61968.PaymentMetering.Charge'.Charge</a></li><li>, <a href="CIM15.IEC61968.AssetModels.TransformerTest%27.TransformerTest-class.html">IEC61968.AssetModels.TransformerTest'.TransformerTest</a></li><li>, <a href="CIM15.IEC61968.AssetModels.WireArrangement%27.WireArrangement-class.html">IEC61968.AssetModels.WireArrangement'.WireArrangement</a></li><li>, <a href="CIM15.IEC61968.AssetModels.WireType%27.WireType-class.html">IEC61968.AssetModels.WireType'.WireType</a></li><li>, <a href="CIM15.IEC62325.MarketRole%27.MarketRole-class.html">IEC62325.MarketRole'.MarketRole</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>This is a root class to provide common identification for all classes 
+  needing identification and naming attributesThis is a root class to 
+  provide common identification for all classes needing identification and 
+  naming attributes</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mRID</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">aliasName</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">Names</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">DiagramObjects</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ModelingAuthoritySet</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'IdentifiedObject' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addDiagramObjects"></a><span class="summary-sig-name">addDiagramObjects</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*DiagramObjects</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addNames"></a><span class="summary-sig-name">addNames</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Names</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getDiagramObjects"></a><span class="summary-sig-name">getDiagramObjects</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The diagram objects that are associated with the domain object</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getModelingAuthoritySet"></a><span class="summary-sig-name">getModelingAuthoritySet</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      An IdentifiedObject belongs to a Modeling Authority Set for purposes 
+      of defining a group of data maintained by the same Modeling 
+      Authority.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getNames"></a><span class="summary-sig-name">getNames</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      All names of this identified object.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeDiagramObjects"></a><span class="summary-sig-name">removeDiagramObjects</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*DiagramObjects</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeNames"></a><span class="summary-sig-name">removeNames</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Names</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setDiagramObjects"></a><span class="summary-sig-name">setDiagramObjects</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setModelingAuthoritySet"></a><span class="summary-sig-name">setModelingAuthoritySet</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setNames"></a><span class="summary-sig-name">setNames</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'aliasName': &lt;type 'str'&gt;,
+ 'mRID': &lt;type 'str'&gt;,
+ 'name': &lt;type 'str'&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">aliasName</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mRID</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_attrs"></a><span class="summary-name">_attrs</span> = <code title="['mRID', 'aliasName', 'name']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">mRID</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">aliasName</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">name</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_defaults"></a><span class="summary-name">_defaults</span> = <code title="{'aliasName': '', 'mRID': '', 'name': ''}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">aliasName</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mRID</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">name</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_many_refs"></a><span class="summary-name">_many_refs</span> = <code title="['Names', 'DiagramObjects']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">Names</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">DiagramObjects</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_refs"></a><span class="summary-name">_refs</span> = <code title="['Names', 'DiagramObjects', 'ModelingAuthoritySet']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">Names</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">DiagramObjects</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ModelingAuthoritySet</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.Element%27.Element-class.html">Element'.Element</a></code></b> (private):
+      <code><a href="CIM15.Element%27.Element-class.html#_enums" onclick="show_private();">_enums</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#DiagramObjects" class="summary-name">DiagramObjects</a><br />
+      The diagram objects that are associated with the domain object
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#ModelingAuthoritySet" class="summary-name">ModelingAuthoritySet</a><br />
+      An IdentifiedObject belongs to a Modeling Authority Set for purposes 
+      of defining a group of data maintained by the same Modeling 
+      Authority.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#Names" class="summary-name">Names</a><br />
+      All names of this identified object.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mRID</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">aliasName</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">name</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">Names</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">DiagramObjects</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ModelingAuthoritySet</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'IdentifiedObject' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mRID</code></strong> - A Model Authority issues mRIDs. Given that each Model Authority 
+          has a unique id and this id is part of the mRID, then the mRID is
+          globally unique. Global uniqeness is easily achived by using a 
+          UUID for the mRID. It is strongly recommended to do this. For 
+          CIMXML data files the mRID is mapped to rdf:ID or rdf:about 
+          attributes that identifies CIM object elements.</li>
+        <li><strong class="pname"><code>aliasName</code></strong> - The aliasName is free text human readable name of the object 
+          alternative to IdentifiedObject.name. It may be non unique and 
+          may not correlate to a naming hierarchy. The attribute aliasName 
+          is put back because of backwards compatibility between CIM 
+          relases. It is however recommended to replace aliasName with the 
+          Name class as aliasName is planned for retirement at a future 
+          time. This was decided at a joint WG13/14 meeting in Minneapolis 
+          2010-10-06.</li>
+        <li><strong class="pname"><code>name</code></strong> - The name is any free human readable and possibly non unique text 
+          naming the object.</li>
+        <li><strong class="pname"><code>Names</code></strong> - All names of this identified object.</li>
+        <li><strong class="pname"><code>DiagramObjects</code></strong> - The diagram objects that are associated with the domain object</li>
+        <li><strong class="pname"><code>ModelingAuthoritySet</code></strong> - An IdentifiedObject belongs to a Modeling Authority Set for 
+          purposes of defining a group of data maintained by the same 
+          Modeling Authority.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">aliasName</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">mRID</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">name</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="DiagramObjects"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">DiagramObjects</h3>
+  <p>The diagram objects that are associated with the domain object</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getDiagramObjects" class="summary-sig-name">getDiagramObjects</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The diagram objects that are associated with the domain object
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setDiagramObjects" class="summary-sig-name">setDiagramObjects</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ModelingAuthoritySet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ModelingAuthoritySet</h3>
+  <p>An IdentifiedObject belongs to a Modeling Authority Set for purposes 
+  of defining a group of data maintained by the same Modeling 
+  Authority.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getModelingAuthoritySet" class="summary-sig-name">getModelingAuthoritySet</a>(<span class="summary-sig-arg">self</span>)</span>
+        - An IdentifiedObject belongs to a Modeling Authority Set for purposes 
+      of defining a group of data maintained by the same Modeling 
+      Authority.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setModelingAuthoritySet" class="summary-sig-name">setModelingAuthoritySet</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Names"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Names</h3>
+  <p>All names of this identified object.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getNames" class="summary-sig-name">getNames</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All names of this identified object.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setNames" class="summary-sig-name">setNames</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:44 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

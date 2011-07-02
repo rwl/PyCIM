@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        CIM14 ::
+        CPSM ::
+        Equipment ::
+        LoadModel ::
+        LoadResponseCharacteristic ::
+        LoadResponseCharacteristic ::
+        Class&nbsp;LoadResponseCharacteristic
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class LoadResponseCharacteristic</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+Core.IdentifiedObject.IdentifiedObject --+
+                                         |
+                                        <strong class="uidshort">LoadResponseCharacteristic</strong>
+</pre>
+
+<hr />
+<p>Models the characteristic response of the load demand due to to 
+  changes in system conditions such as voltage and frequency. This is not 
+  related to demand response.  If LoadResponseCharacteristic.exponentModel 
+  is True, the voltage exponents are specified and used as to calculate:  
+  Active power component = Pnominal * 
+  (Voltage/cim:BaseVoltage.nominalVoltage) ** 
+  cim:LoadResponseCharacteristic.pVoltageExponent  Reactive power component
+  = Qnominal * (Voltage/cim:BaseVoltage.nominalVoltage)** 
+  cim:LoadResponseCharacteristic.qVoltageExponent  Where  * means 
+  'multiply' and ** is 'raised to power of'.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">pVoltageExponent</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">qConstantCurrent</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">pFrequencyExponent</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">exponentModel</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">qConstantImpedance</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">pConstantCurrent</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">qFrequencyExponent</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">pConstantPower</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">qVoltageExponent</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">qConstantPower</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">pConstantImpedance</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">EnergyConsumer</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'LoadResponseCharacteristic' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getEnergyConsumer"></a><span class="summary-sig-name">getEnergyConsumer</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The set of loads that have the response characteristics.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setEnergyConsumer"></a><span class="summary-sig-name">setEnergyConsumer</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addEnergyConsumer"></a><span class="summary-sig-name">addEnergyConsumer</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*EnergyConsumer</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeEnergyConsumer"></a><span class="summary-sig-name">removeEnergyConsumer</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*EnergyConsumer</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="[&quot;pVoltageExponent&quot;, &quot;qConstantCurrent&quot;, &quot;pFrequencyExponent&quot;, &quot;expone\
+ntModel&quot;, &quot;qConstantImpedance&quot;, &quot;pConstantCurrent&quot;, &quot;qFrequencyExponen\
+t&quot;, &quot;pConstantPower&quot;, &quot;qVoltageExponent&quot;, &quot;qConstantPower&quot;, &quot;pConstant\
+Impedance&quot;]">[&quot;pVoltageExponent&quot;, &quot;qConstantCurrent&quot;, &quot;pFrequencyE<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{&quot;pVoltageExponent&quot;: float, &quot;qConstantCurrent&quot;: float, &quot;pFrequencyExpo\
+nent&quot;: float, &quot;exponentModel&quot;: bool, &quot;qConstantImpedance&quot;: float, &quot;pCo\
+nstantCurrent&quot;: float, &quot;qFrequencyExponent&quot;: float, &quot;pConstantPower&quot;: \
+float, &quot;qVoltageExponent&quot;: float, &quot;qConstantPower&quot;: float, &quot;pConstantI\
+mpedance&quot;: float}">{&quot;pVoltageExponent&quot;: float, &quot;qConstantCurrent&quot;: <code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{&quot;pVoltageExponent&quot;: 0.0, &quot;qConstantCurrent&quot;: 0.0, &quot;pFrequencyExponent\
+&quot;: 0.0, &quot;exponentModel&quot;: False, &quot;qConstantImpedance&quot;: 0.0, &quot;pConstantC\
+urrent&quot;: 0.0, &quot;qFrequencyExponent&quot;: 0.0, &quot;pConstantPower&quot;: 0.0, &quot;qVolt\
+ageExponent&quot;: 0.0, &quot;qConstantPower&quot;: 0.0, &quot;pConstantImpedance&quot;: 0.0}">{&quot;pVoltageExponent&quot;: 0.0, &quot;qConstantCurrent&quot;: 0.0,<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_enums"></a><span class="summary-name">_enums</span> = <code title="{}">{}</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_refs"></a><span class="summary-name">_refs</span> = <code title="[&quot;EnergyConsumer&quot;]">[&quot;EnergyConsumer&quot;]</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_many_refs"></a><span class="summary-name">_many_refs</span> = <code title="[&quot;EnergyConsumer&quot;]">[&quot;EnergyConsumer&quot;]</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="EnergyConsumer"></a><span class="summary-name">EnergyConsumer</span> = <code title="property(getEnergyConsumer, setEnergyConsumer)">property(getEnergyConsumer, setEnergyConsumer)</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#pVoltageExponent" class="summary-name">pVoltageExponent</a><br />
+      Exponent of per unit voltage effecting real power.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#qConstantCurrent" class="summary-name">qConstantCurrent</a><br />
+      Portion of reactive power load modeled as constant current.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="pFrequencyExponent"></a><span class="summary-name">pFrequencyExponent</span><br />
+      Exponent of per unit frequency effecting active power
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#exponentModel" class="summary-name">exponentModel</a><br />
+      Indicates the exponential voltage dependency model (pVoltateExponent 
+      and qVoltageExponent) is to be used.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#qConstantImpedance" class="summary-name">qConstantImpedance</a><br />
+      Portion of reactive power load modeled as constant impedance.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#pConstantCurrent" class="summary-name">pConstantCurrent</a><br />
+      Portion of active power load modeled as constant current.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="qFrequencyExponent"></a><span class="summary-name">qFrequencyExponent</span><br />
+      Exponent of per unit frequency effecting reactive power
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#pConstantPower" class="summary-name">pConstantPower</a><br />
+      Portion of active power load modeled as constant power.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#qVoltageExponent" class="summary-name">qVoltageExponent</a><br />
+      Exponent of per unit voltage effecting reactive power.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#qConstantPower" class="summary-name">qConstantPower</a><br />
+      Portion of reactive power load modeled as constant power.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.LoadModel.LoadResponseCharacteristic.LoadResponseCharacteristic-class.html#pConstantImpedance" class="summary-name">pConstantImpedance</a><br />
+      Portion of active power load modeled as constant impedance.
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">pVoltageExponent</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">qConstantCurrent</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">pFrequencyExponent</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">exponentModel</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">qConstantImpedance</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">pConstantCurrent</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">qFrequencyExponent</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">pConstantPower</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">qVoltageExponent</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">qConstantPower</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">pConstantImpedance</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">EnergyConsumer</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'LoadResponseCharacteristic' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>pVoltageExponent</code></strong> - Exponent of per unit voltage effecting real power.   This model 
+          used only when 'useExponentModel' is true.</li>
+        <li><strong class="pname"><code>qConstantCurrent</code></strong> - Portion of reactive power load modeled as constant current. Used 
+          only if the useExponentModel is false.    This value is noralized
+          against the sum of qZ, qI, and qP.</li>
+        <li><strong class="pname"><code>pFrequencyExponent</code></strong> - Exponent of per unit frequency effecting active power</li>
+        <li><strong class="pname"><code>exponentModel</code></strong> - Indicates the exponential voltage dependency model 
+          (pVoltateExponent and qVoltageExponent) is to be used.   If 
+          false, the coeficient model (consisting of pConstantImpedance, 
+          pConstantCurrent, pConstantPower, qConstantImpedance, 
+          qConstantCurrent, and qConstantPower) is to be used.</li>
+        <li><strong class="pname"><code>qConstantImpedance</code></strong> - Portion of reactive power load modeled as constant impedance.  
+          Used only if the useExponentModel is false.    This value is 
+          noralized against the sum of qZ, qI, and qP.</li>
+        <li><strong class="pname"><code>pConstantCurrent</code></strong> - Portion of active power load modeled as constant current. Used 
+          only if the useExponentModel is false.    This value is noralized
+          against the sum of pZ, pI, and pP.</li>
+        <li><strong class="pname"><code>qFrequencyExponent</code></strong> - Exponent of per unit frequency effecting reactive power</li>
+        <li><strong class="pname"><code>pConstantPower</code></strong> - Portion of active power load modeled as constant power. Used only
+          if the useExponentModel is false.    This value is noralized 
+          against the sum of pZ, pI, and pP.</li>
+        <li><strong class="pname"><code>qVoltageExponent</code></strong> - Exponent of per unit voltage effecting reactive power.   This 
+          model used only when 'useExponentModel' is true.</li>
+        <li><strong class="pname"><code>qConstantPower</code></strong> - Portion of reactive power load modeled as constant power. Used 
+          only if the useExponentModel is false.    This value is noralized
+          against the sum of qZ, qI, and qP.</li>
+        <li><strong class="pname"><code>pConstantImpedance</code></strong> - Portion of active power load modeled as constant impedance.  Used
+          only if the useExponentModel is false.    This value is noralized
+          against the sum of pZ, pI, and pP.</li>
+        <li><strong class="pname"><code>EnergyConsumer</code></strong> - The set of loads that have the response characteristics.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;pVoltageExponent&quot;, &quot;qConstantCurrent&quot;, &quot;pFrequencyExponent&quot;, &quot;expone<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ntModel&quot;, &quot;qConstantImpedance&quot;, &quot;pConstantCurrent&quot;, &quot;qFrequencyExponen<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+t&quot;, &quot;pConstantPower&quot;, &quot;qVoltageExponent&quot;, &quot;qConstantPower&quot;, &quot;pConstant<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+Impedance&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;pVoltageExponent&quot;: float, &quot;qConstantCurrent&quot;: float, &quot;pFrequencyExpo<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+nent&quot;: float, &quot;exponentModel&quot;: bool, &quot;qConstantImpedance&quot;: float, &quot;pCo<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+nstantCurrent&quot;: float, &quot;qFrequencyExponent&quot;: float, &quot;pConstantPower&quot;: <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+float, &quot;qVoltageExponent&quot;: float, &quot;qConstantPower&quot;: float, &quot;pConstantI<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+mpedance&quot;: float}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;pVoltageExponent&quot;: 0.0, &quot;qConstantCurrent&quot;: 0.0, &quot;pFrequencyExponent<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+&quot;: 0.0, &quot;exponentModel&quot;: False, &quot;qConstantImpedance&quot;: 0.0, &quot;pConstantC<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+urrent&quot;: 0.0, &quot;qFrequencyExponent&quot;: 0.0, &quot;pConstantPower&quot;: 0.0, &quot;qVolt<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ageExponent&quot;: 0.0, &quot;qConstantPower&quot;: 0.0, &quot;pConstantImpedance&quot;: 0.0}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== INSTANCE VARIABLE DETAILS ==================== -->
+<a name="section-InstanceVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="pVoltageExponent"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">pVoltageExponent</h3>
+  <p>Exponent of per unit voltage effecting real power.   This model used 
+  only when 'useExponentModel' is true.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="qConstantCurrent"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">qConstantCurrent</h3>
+  <p>Portion of reactive power load modeled as constant current. Used only 
+  if the useExponentModel is false.    This value is noralized against the 
+  sum of qZ, qI, and qP.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="exponentModel"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">exponentModel</h3>
+  <p>Indicates the exponential voltage dependency model (pVoltateExponent 
+  and qVoltageExponent) is to be used.   If false, the coeficient model 
+  (consisting of pConstantImpedance, pConstantCurrent, pConstantPower, 
+  qConstantImpedance, qConstantCurrent, and qConstantPower) is to be 
+  used.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="qConstantImpedance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">qConstantImpedance</h3>
+  <p>Portion of reactive power load modeled as constant impedance.  Used 
+  only if the useExponentModel is false.    This value is noralized against
+  the sum of qZ, qI, and qP.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="pConstantCurrent"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">pConstantCurrent</h3>
+  <p>Portion of active power load modeled as constant current. Used only if
+  the useExponentModel is false.    This value is noralized against the sum
+  of pZ, pI, and pP.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="pConstantPower"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">pConstantPower</h3>
+  <p>Portion of active power load modeled as constant power. Used only if 
+  the useExponentModel is false.    This value is noralized against the sum
+  of pZ, pI, and pP.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="qVoltageExponent"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">qVoltageExponent</h3>
+  <p>Exponent of per unit voltage effecting reactive power.   This model 
+  used only when 'useExponentModel' is true.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="qConstantPower"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">qConstantPower</h3>
+  <p>Portion of reactive power load modeled as constant power. Used only if
+  the useExponentModel is false.    This value is noralized against the sum
+  of qZ, qI, and qP.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="pConstantImpedance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">pConstantImpedance</h3>
+  <p>Portion of active power load modeled as constant impedance.  Used only
+  if the useExponentModel is false.    This value is noralized against the 
+  sum of pZ, pI, and pP.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:35 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

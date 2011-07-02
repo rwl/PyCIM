@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo'.WindingInfo</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;CIM14 ::
+        <a href="CIM14.CDPSM-module.html">Package&nbsp;CDPSM</a> ::
+        <a href="CIM14.CDPSM.Unbalanced-module.html">Package&nbsp;Unbalanced</a> ::
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968-module.html">Package&nbsp;IEC61968</a> ::
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels-module.html">Package&nbsp;AssetModels</a> ::
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27-module.html">Module&nbsp;WindingInfo'</a> ::
+        Class&nbsp;WindingInfo
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class WindingInfo</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                                  object --+        
+                                           |        
+                            <a href="CIM14.CDPSM.Unbalanced.Element%27.Element-class.html">Element'.Element</a> --+    
+                                               |    
+<a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">IEC61970.Core.IdentifiedObject'.IdentifiedObject</a> --+
+                                                   |
+                                                  <strong class="uidshort">WindingInfo</strong>
+</pre>
+
+<hr />
+<p>Winding data.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">sequenceNumber</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">ratedS</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">ratedU</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">connectionKind</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">I</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">emergencyS</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">r</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">phaseAngle</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">insulationU</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">shortTermS</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">WindingTests</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ToWindingSpecs</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">TransformerInfo</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Windings</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'WindingInfo' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addToWindingSpecs"></a><span class="summary-sig-name">addToWindingSpecs</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ToWindingSpecs</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addWindingTests"></a><span class="summary-sig-name">addWindingTests</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*WindingTests</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addWindings"></a><span class="summary-sig-name">addWindings</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Windings</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getToWindingSpecs"></a><span class="summary-sig-name">getToWindingSpecs</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Tap steps and induced voltage/angle measurements for tests in which 
+      this winding was not excited.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTransformerInfo"></a><span class="summary-sig-name">getTransformerInfo</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Transformer data that this winding description is part of.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getWindingTests"></a><span class="summary-sig-name">getWindingTests</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      All winding tests during which voltage or current was applied to this
+      winding.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getWindings"></a><span class="summary-sig-name">getWindings</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      All windings described by this winding data.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeToWindingSpecs"></a><span class="summary-sig-name">removeToWindingSpecs</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ToWindingSpecs</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeWindingTests"></a><span class="summary-sig-name">removeWindingTests</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*WindingTests</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeWindings"></a><span class="summary-sig-name">removeWindings</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Windings</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setToWindingSpecs"></a><span class="summary-sig-name">setToWindingSpecs</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTransformerInfo"></a><span class="summary-sig-name">setTransformerInfo</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setWindingTests"></a><span class="summary-sig-name">setWindingTests</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setWindings"></a><span class="summary-sig-name">setWindings</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'connectionKind': &lt;type 'str'&gt;,
+ 'emergencyS': &lt;type 'float'&gt;,
+ 'insulationU': &lt;type 'float'&gt;,
+ 'phaseAngle': &lt;type 'int'&gt;,
+ 'r': &lt;type 'float'&gt;,
+ 'ratedS': &lt;type 'float'&gt;,
+ 'ratedU': &lt;type 'float'&gt;,
+ 'sequenceNumber': &lt;type 'int'&gt;,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">connectionKind</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">emergencyS</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="['sequenceNumber',
+ 'ratedS',
+ 'ratedU',
+ 'connectionKind',
+ 'emergencyS',
+ 'r',
+ 'phaseAngle',
+ 'insulationU',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">sequenceNumber</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ratedS</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ratedU</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">connectionKin</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{'connectionKind': 'I',
+ 'emergencyS': 0.0,
+ 'insulationU': 0.0,
+ 'phaseAngle': 0,
+ 'r': 0.0,
+ 'ratedS': 0.0,
+ 'ratedU': 0.0,
+ 'sequenceNumber': 0,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">connectionKind</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">I</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">emergencyS</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">insula</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_enums"></a><span class="summary-name">_enums</span> = <code title="{'connectionKind': 'WindingConnection'}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">connectionKind</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">WindingConnection</code><code class="variable-quote">'</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_many_refs"></a><span class="summary-name">_many_refs</span> = <code title="['WindingTests', 'ToWindingSpecs', 'Windings']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">WindingTests</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ToWindingSpecs</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Windings</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="['WindingTests', 'ToWindingSpecs', 'TransformerInfo', 'Windings']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">WindingTests</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ToWindingSpecs</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">TransformerInfo</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#ToWindingSpecs" class="summary-name">ToWindingSpecs</a><br />
+      Tap steps and induced voltage/angle measurements for tests in which 
+      this winding was not excited.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#TransformerInfo" class="summary-name">TransformerInfo</a><br />
+      Transformer data that this winding description is part of.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#WindingTests" class="summary-name">WindingTests</a><br />
+      All winding tests during which voltage or current was applied to this
+      winding.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#Windings" class="summary-name">Windings</a><br />
+      All windings described by this winding data.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">sequenceNumber</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">ratedS</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">ratedU</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">connectionKind</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">I</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">emergencyS</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">r</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">phaseAngle</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">insulationU</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">shortTermS</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">WindingTests</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ToWindingSpecs</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">TransformerInfo</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Windings</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'WindingInfo' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>sequenceNumber</code></strong> - Sequence number for this winding, corresponding to the winding's 
+          order in the TransformerBank.vectorGroup attribute. Highest 
+          voltage winding should be '1'.</li>
+        <li><strong class="pname"><code>ratedS</code></strong> - Normal apparent power rating of this winding.</li>
+        <li><strong class="pname"><code>ratedU</code></strong> - Rated voltage of this winding: phase-phase for three-phase 
+          windings, and either phase-phase or phase-neutral for 
+          single-phase windings.</li>
+        <li><strong class="pname"><code>connectionKind</code></strong> - Kind of connection of this winding. Values are: &quot;I&quot;, 
+          &quot;Z&quot;, &quot;Yn&quot;, &quot;Y&quot;, &quot;A&quot;, 
+          &quot;D&quot;, &quot;Zn&quot;</li>
+        <li><strong class="pname"><code>emergencyS</code></strong> - Apparent power that the winding can carry under emergency 
+          conditions.</li>
+        <li><strong class="pname"><code>r</code></strong> - DC resistance of this winding.</li>
+        <li><strong class="pname"><code>phaseAngle</code></strong> - Winding phase angle where 360 degrees are represented with clock 
+          hours, so the valid values are {0, ..., 11}. For example, to 
+          express winding code 'Dyn11', set attributes as follows: 
+          'connectionKind' = Yn and 'phaseAngle' = 11.</li>
+        <li><strong class="pname"><code>insulationU</code></strong> - Basic insulation level voltage rating.</li>
+        <li><strong class="pname"><code>shortTermS</code></strong> - Apparent power that this winding can carry for a short period of 
+          time.</li>
+        <li><strong class="pname"><code>WindingTests</code></strong> - All winding tests during which voltage or current was applied to 
+          this winding.</li>
+        <li><strong class="pname"><code>ToWindingSpecs</code></strong> - Tap steps and induced voltage/angle measurements for tests in 
+          which this winding was not excited.</li>
+        <li><strong class="pname"><code>TransformerInfo</code></strong> - Transformer data that this winding description is part of.</li>
+        <li><strong class="pname"><code>Windings</code></strong> - All windings described by this winding data.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">connectionKind</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">emergencyS</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">insulationU</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">phaseAngle</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'int'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">r</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ratedS</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ratedU</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">sequenceNumber</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'int'&gt;<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">sequenceNumber</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ratedS</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ratedU</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">connectionKind</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">emergencyS</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">r</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">phaseAngle</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">insulationU</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">connectionKind</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">I</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">emergencyS</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">insulationU</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">phaseAngle</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">r</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ratedS</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ratedU</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">sequenceNumber</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">WindingTests</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ToWindingSpecs</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">TransformerInfo</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Windings</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="ToWindingSpecs"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ToWindingSpecs</h3>
+  <p>Tap steps and induced voltage/angle measurements for tests in which 
+  this winding was not excited.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#getToWindingSpecs" class="summary-sig-name">getToWindingSpecs</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Tap steps and induced voltage/angle measurements for tests in which 
+      this winding was not excited.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#setToWindingSpecs" class="summary-sig-name">setToWindingSpecs</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="TransformerInfo"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">TransformerInfo</h3>
+  <p>Transformer data that this winding description is part of.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#getTransformerInfo" class="summary-sig-name">getTransformerInfo</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Transformer data that this winding description is part of.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#setTransformerInfo" class="summary-sig-name">setTransformerInfo</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="WindingTests"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">WindingTests</h3>
+  <p>All winding tests during which voltage or current was applied to this 
+  winding.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#getWindingTests" class="summary-sig-name">getWindingTests</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All winding tests during which voltage or current was applied to this
+      winding.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#setWindingTests" class="summary-sig-name">setWindingTests</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Windings"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Windings</h3>
+  <p>All windings described by this winding data.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#getWindings" class="summary-sig-name">getWindings</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All windings described by this winding data.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.AssetModels.WindingInfo%27.WindingInfo-class.html#setWindings" class="summary-sig-name">setWindings</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:34 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

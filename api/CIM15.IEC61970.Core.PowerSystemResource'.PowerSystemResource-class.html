@@ -1,0 +1,1829 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Core.PowerSystemResource'.PowerSystemResource</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Core-module.html">Package&nbsp;Core</a> ::
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27-module.html">Module&nbsp;PowerSystemResource'</a> ::
+        Class&nbsp;PowerSystemResource
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class PowerSystemResource</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                    object --+        
+                             |        
+              <a href="CIM15.Element%27.Element-class.html">Element'.Element</a> --+    
+                                 |    
+<a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">IdentifiedObject'.IdentifiedObject</a> --+
+                                     |
+                                    <strong class="uidshort">PowerSystemResource</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html">Equipment'.Equipment</a></li><li>, <a href="CIM15.IEC61970.ControlArea.ControlArea%27.ControlArea-class.html">ControlArea.ControlArea'.ControlArea</a></li><li>, <a href="CIM15.IEC61970.Core.ConnectivityNodeContainer%27.ConnectivityNodeContainer-class.html">ConnectivityNodeContainer'.ConnectivityNodeContainer</a></li><li>, <a href="CIM15.IEC61970.WiresPhaseModel.SwitchPhase%27.SwitchPhase-class.html">WiresPhaseModel.SwitchPhase'.SwitchPhase</a></li><li>, <a href="CIM15.IEC61970.WiresPhaseModel.ShuntCompensatorPhase%27.ShuntCompensatorPhase-class.html">WiresPhaseModel.ShuntCompensatorPhase'.ShuntCompensatorPhase</a></li><li>, <a href="CIM15.IEC61970.WiresPhaseModel.EnergyConsumerPhase%27.EnergyConsumerPhase-class.html">WiresPhaseModel.EnergyConsumerPhase'.EnergyConsumerPhase</a></li><li>, <a href="CIM15.IEC61970.LoadModel.PowerCutZone%27.PowerCutZone-class.html">LoadModel.PowerCutZone'.PowerCutZone</a></li><li>, <a href="CIM15.IEC61970.SCADA.CommunicationLink%27.CommunicationLink-class.html">SCADA.CommunicationLink'.CommunicationLink</a></li><li>, <a href="CIM15.IEC61970.SCADA.RemoteUnit%27.RemoteUnit-class.html">SCADA.RemoteUnit'.RemoteUnit</a></li><li>, <a href="CIM15.IEC61970.Generation.Production.HydroPump%27.HydroPump-class.html">Generation.Production.HydroPump'.HydroPump</a></li><li>, <a href="CIM15.IEC61970.Generation.Production.AirCompressor%27.AirCompressor-class.html">Generation.Production.AirCompressor'.AirCompressor</a></li><li>, <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html">Generation.Production.Reservoir'.Reservoir</a></li><li>, <a href="CIM15.IEC61970.Generation.Production.CombinedCyclePlant%27.CombinedCyclePlant-class.html">Generation.Production.CombinedCyclePlant'.CombinedCyclePlant</a></li><li>, <a href="CIM15.IEC61970.Generation.Production.CAESPlant%27.CAESPlant-class.html">Generation.Production.CAESPlant'.CAESPlant</a></li><li>, <a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html">Generation.Production.HydroPowerPlant'.HydroPowerPlant</a></li><li>, <a href="CIM15.IEC61970.Generation.Production.CogenerationPlant%27.CogenerationPlant-class.html">Generation.Production.CogenerationPlant'.CogenerationPlant</a></li><li>, <a href="CIM15.IEC61970.Generation.GenerationDynamics.SteamSupply%27.SteamSupply-class.html">Generation.GenerationDynamics.SteamSupply'.SteamSupply</a></li><li>, <a href="CIM15.IEC61970.Generation.GenerationDynamics.PrimeMover%27.PrimeMover-class.html">Generation.GenerationDynamics.PrimeMover'.PrimeMover</a></li><li>, <a href="CIM15.IEC61970.Wires.TapChanger%27.TapChanger-class.html">Wires.TapChanger'.TapChanger</a></li><li>, <a href="CIM15.IEC61970.Wires.RegulatingControl%27.RegulatingControl-class.html">Wires.RegulatingControl'.RegulatingControl</a></li><li>, <a href="CIM15.IEC61970.Wires.VoltageControlZone%27.VoltageControlZone-class.html">Wires.VoltageControlZone'.VoltageControlZone</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>A power system resource can be an item of equipment such as a Switch, 
+  an EquipmentContainer containing many individual items of equipment such 
+  as a  Substation, or an organisational entity such as Company or 
+  SubControlArea.  This provides for the nesting of collections of 
+  PowerSystemResources within other PowerSystemResources. For example, a 
+  Switch could be a member of a Substation and a Substation could be a 
+  member of a division of a Company.A power system resource can be an item 
+  of equipment such as a Switch, an EquipmentContainer containing many 
+  individual items of equipment such as a  Substation, or an organisational
+  entity such as Company or SubControlArea.  This provides for the nesting 
+  of collections of PowerSystemResources within other PowerSystemResources.
+  For example, a Switch could be a member of a Substation and a Substation 
+  could be a member of a division of a Company.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ChangeItems</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ScheduleSteps</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">SafetyDocuments</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">OperatingShare</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">DocumentRoles</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">PsrLists</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Measurements</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ReportingGroup</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">PSRType</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Assets</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ErpOrganisationRoles</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Location</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">PSREvent</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">NetworkDataSets</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">OutageSchedule</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'PowerSystemResource' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addAssets"></a><span class="summary-sig-name">addAssets</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Assets</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addChangeItems"></a><span class="summary-sig-name">addChangeItems</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ChangeItems</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addDocumentRoles"></a><span class="summary-sig-name">addDocumentRoles</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*DocumentRoles</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addErpOrganisationRoles"></a><span class="summary-sig-name">addErpOrganisationRoles</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ErpOrganisationRoles</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addMeasurements"></a><span class="summary-sig-name">addMeasurements</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Measurements</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addNetworkDataSets"></a><span class="summary-sig-name">addNetworkDataSets</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*NetworkDataSets</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addOperatingShare"></a><span class="summary-sig-name">addOperatingShare</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*OperatingShare</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addPSREvent"></a><span class="summary-sig-name">addPSREvent</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*PSREvent</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addPsrLists"></a><span class="summary-sig-name">addPsrLists</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*PsrLists</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addReportingGroup"></a><span class="summary-sig-name">addReportingGroup</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ReportingGroup</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addSafetyDocuments"></a><span class="summary-sig-name">addSafetyDocuments</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*SafetyDocuments</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addScheduleSteps"></a><span class="summary-sig-name">addScheduleSteps</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ScheduleSteps</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getAssets" class="summary-sig-name">getAssets</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      All assets represented by this power system resource.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getChangeItems"></a><span class="summary-sig-name">getChangeItems</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getDocumentRoles"></a><span class="summary-sig-name">getDocumentRoles</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getErpOrganisationRoles"></a><span class="summary-sig-name">getErpOrganisationRoles</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getLocation"></a><span class="summary-sig-name">getLocation</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Location of this power system resource.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getMeasurements"></a><span class="summary-sig-name">getMeasurements</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The Measurements that are included in the naming hierarchy where the 
+      PSR is the containing object</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getNetworkDataSets"></a><span class="summary-sig-name">getNetworkDataSets</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getOperatingShare"></a><span class="summary-sig-name">getOperatingShare</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The linkage to any number of operating share objects.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getOutageSchedule"></a><span class="summary-sig-name">getOutageSchedule</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A power system resource may have an outage schedule</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getPSREvent"></a><span class="summary-sig-name">getPSREvent</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      All events associated with this power system resource.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getPSRType"></a><span class="summary-sig-name">getPSRType</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      PSRType (custom classification) for this PowerSystemResource.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getPsrLists"></a><span class="summary-sig-name">getPsrLists</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getReportingGroup"></a><span class="summary-sig-name">getReportingGroup</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Reporting groups to which this PSR belongs.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getSafetyDocuments"></a><span class="summary-sig-name">getSafetyDocuments</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getScheduleSteps"></a><span class="summary-sig-name">getScheduleSteps</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeAssets"></a><span class="summary-sig-name">removeAssets</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Assets</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeChangeItems"></a><span class="summary-sig-name">removeChangeItems</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ChangeItems</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeDocumentRoles"></a><span class="summary-sig-name">removeDocumentRoles</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*DocumentRoles</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeErpOrganisationRoles"></a><span class="summary-sig-name">removeErpOrganisationRoles</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ErpOrganisationRoles</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeMeasurements"></a><span class="summary-sig-name">removeMeasurements</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Measurements</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeNetworkDataSets"></a><span class="summary-sig-name">removeNetworkDataSets</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*NetworkDataSets</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeOperatingShare"></a><span class="summary-sig-name">removeOperatingShare</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*OperatingShare</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removePSREvent"></a><span class="summary-sig-name">removePSREvent</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*PSREvent</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removePsrLists"></a><span class="summary-sig-name">removePsrLists</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*PsrLists</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeReportingGroup"></a><span class="summary-sig-name">removeReportingGroup</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ReportingGroup</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeSafetyDocuments"></a><span class="summary-sig-name">removeSafetyDocuments</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*SafetyDocuments</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeScheduleSteps"></a><span class="summary-sig-name">removeScheduleSteps</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ScheduleSteps</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setAssets"></a><span class="summary-sig-name">setAssets</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setChangeItems"></a><span class="summary-sig-name">setChangeItems</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setDocumentRoles"></a><span class="summary-sig-name">setDocumentRoles</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setErpOrganisationRoles"></a><span class="summary-sig-name">setErpOrganisationRoles</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setLocation"></a><span class="summary-sig-name">setLocation</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setMeasurements"></a><span class="summary-sig-name">setMeasurements</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setNetworkDataSets"></a><span class="summary-sig-name">setNetworkDataSets</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setOperatingShare"></a><span class="summary-sig-name">setOperatingShare</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setOutageSchedule"></a><span class="summary-sig-name">setOutageSchedule</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setPSREvent"></a><span class="summary-sig-name">setPSREvent</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setPSRType"></a><span class="summary-sig-name">setPSRType</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setPsrLists"></a><span class="summary-sig-name">setPsrLists</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setReportingGroup"></a><span class="summary-sig-name">setReportingGroup</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setSafetyDocuments"></a><span class="summary-sig-name">setSafetyDocuments</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setScheduleSteps"></a><span class="summary-sig-name">setScheduleSteps</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addDiagramObjects">addDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addNames">addNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getDiagramObjects">getDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getModelingAuthoritySet">getModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getNames">getNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeDiagramObjects">removeDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeNames">removeNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setDiagramObjects">setDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setModelingAuthoritySet">setModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setNames">setNames</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_attr_types"></a><span class="summary-name">_attr_types</span> = <code title="{}"><code class="variable-group">{</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_attrs"></a><span class="summary-name">_attrs</span> = <code title="[]"><code class="variable-group">[</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_defaults"></a><span class="summary-name">_defaults</span> = <code title="{}"><code class="variable-group">{</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#_many_refs" class="summary-name" onclick="show_private();">_many_refs</a> = <code title="['ChangeItems',
+ 'ScheduleSteps',
+ 'SafetyDocuments',
+ 'OperatingShare',
+ 'DocumentRoles',
+ 'PsrLists',
+ 'Measurements',
+ 'ReportingGroup',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ChangeItems</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ScheduleSteps</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">SafetyDocuments</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="['ChangeItems',
+ 'ScheduleSteps',
+ 'SafetyDocuments',
+ 'OperatingShare',
+ 'DocumentRoles',
+ 'PsrLists',
+ 'Measurements',
+ 'ReportingGroup',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ChangeItems</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ScheduleSteps</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">SafetyDocuments</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">O</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.Element%27.Element-class.html">Element'.Element</a></code></b> (private):
+      <code><a href="CIM15.Element%27.Element-class.html#_enums" onclick="show_private();">_enums</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Assets" class="summary-name">Assets</a><br />
+      All assets represented by this power system resource.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ChangeItems" class="summary-name">ChangeItems</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#DocumentRoles" class="summary-name">DocumentRoles</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ErpOrganisationRoles" class="summary-name">ErpOrganisationRoles</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Location" class="summary-name">Location</a><br />
+      Location of this power system resource.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Measurements" class="summary-name">Measurements</a><br />
+      The Measurements that are included in the naming hierarchy where the 
+      PSR is the containing object
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#NetworkDataSets" class="summary-name">NetworkDataSets</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#OperatingShare" class="summary-name">OperatingShare</a><br />
+      The linkage to any number of operating share objects.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#OutageSchedule" class="summary-name">OutageSchedule</a><br />
+      A power system resource may have an outage schedule
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSREvent" class="summary-name">PSREvent</a><br />
+      All events associated with this power system resource.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSRType" class="summary-name">PSRType</a><br />
+      PSRType (custom classification) for this PowerSystemResource.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PsrLists" class="summary-name">PsrLists</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ReportingGroup" class="summary-name">ReportingGroup</a><br />
+      Reporting groups to which this PSR belongs.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#SafetyDocuments" class="summary-name">SafetyDocuments</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ScheduleSteps" class="summary-name">ScheduleSteps</a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#DiagramObjects">DiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#ModelingAuthoritySet">ModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#Names">Names</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">ChangeItems</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ScheduleSteps</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">SafetyDocuments</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">OperatingShare</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">DocumentRoles</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">PsrLists</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Measurements</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ReportingGroup</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">PSRType</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Assets</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ErpOrganisationRoles</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Location</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">PSREvent</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">NetworkDataSets</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">OutageSchedule</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'PowerSystemResource' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ChangeItems</code></strong></li>
+        <li><strong class="pname"><code>ScheduleSteps</code></strong></li>
+        <li><strong class="pname"><code>SafetyDocuments</code></strong></li>
+        <li><strong class="pname"><code>OperatingShare</code></strong> - The linkage to any number of operating share objects.</li>
+        <li><strong class="pname"><code>DocumentRoles</code></strong></li>
+        <li><strong class="pname"><code>PsrLists</code></strong></li>
+        <li><strong class="pname"><code>Measurements</code></strong> - The Measurements that are included in the naming hierarchy where 
+          the PSR is the containing object</li>
+        <li><strong class="pname"><code>ReportingGroup</code></strong> - Reporting groups to which this PSR belongs.</li>
+        <li><strong class="pname"><code>PSRType</code></strong> - PSRType (custom classification) for this PowerSystemResource.</li>
+        <li><strong class="pname"><code>Assets</code></strong> - All assets represented by this power system resource. For 
+          example, multiple conductor assets are electrically modelled as a
+          single AC line segment.</li>
+        <li><strong class="pname"><code>ErpOrganisationRoles</code></strong></li>
+        <li><strong class="pname"><code>Location</code></strong> - Location of this power system resource.</li>
+        <li><strong class="pname"><code>PSREvent</code></strong> - All events associated with this power system resource.</li>
+        <li><strong class="pname"><code>NetworkDataSets</code></strong></li>
+        <li><strong class="pname"><code>OutageSchedule</code></strong> - A power system resource may have an outage schedule</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getAssets"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getAssets</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>All assets represented by this power system resource. For example, 
+  multiple conductor assets are electrically modelled as a single AC line 
+  segment.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_many_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_many_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ChangeItems</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ScheduleSteps</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">SafetyDocuments</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">OperatingShare</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">DocumentRoles</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">PsrLists</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Measurements</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ReportingGroup</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ChangeItems</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ScheduleSteps</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">SafetyDocuments</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">OperatingShare</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">DocumentRoles</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">PsrLists</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Measurements</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ReportingGroup</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="Assets"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Assets</h3>
+  <p>All assets represented by this power system resource. For example, 
+  multiple conductor assets are electrically modelled as a single AC line 
+  segment.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getAssets" class="summary-sig-name">getAssets</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All assets represented by this power system resource.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setAssets" class="summary-sig-name">setAssets</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ChangeItems"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ChangeItems</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getChangeItems" class="summary-sig-name">getChangeItems</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setChangeItems" class="summary-sig-name">setChangeItems</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="DocumentRoles"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">DocumentRoles</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getDocumentRoles" class="summary-sig-name">getDocumentRoles</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setDocumentRoles" class="summary-sig-name">setDocumentRoles</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ErpOrganisationRoles"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ErpOrganisationRoles</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getErpOrganisationRoles" class="summary-sig-name">getErpOrganisationRoles</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setErpOrganisationRoles" class="summary-sig-name">setErpOrganisationRoles</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Location"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Location</h3>
+  <p>Location of this power system resource.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getLocation" class="summary-sig-name">getLocation</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Location of this power system resource.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setLocation" class="summary-sig-name">setLocation</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Measurements"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Measurements</h3>
+  <p>The Measurements that are included in the naming hierarchy where the 
+  PSR is the containing object</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getMeasurements" class="summary-sig-name">getMeasurements</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The Measurements that are included in the naming hierarchy where the 
+      PSR is the containing object
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setMeasurements" class="summary-sig-name">setMeasurements</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="NetworkDataSets"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">NetworkDataSets</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getNetworkDataSets" class="summary-sig-name">getNetworkDataSets</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setNetworkDataSets" class="summary-sig-name">setNetworkDataSets</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="OperatingShare"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">OperatingShare</h3>
+  <p>The linkage to any number of operating share objects.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getOperatingShare" class="summary-sig-name">getOperatingShare</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The linkage to any number of operating share objects.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setOperatingShare" class="summary-sig-name">setOperatingShare</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="OutageSchedule"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">OutageSchedule</h3>
+  <p>A power system resource may have an outage schedule</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getOutageSchedule" class="summary-sig-name">getOutageSchedule</a>(<span class="summary-sig-arg">self</span>)</span>
+        - A power system resource may have an outage schedule
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setOutageSchedule" class="summary-sig-name">setOutageSchedule</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="PSREvent"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PSREvent</h3>
+  <p>All events associated with this power system resource.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSREvent" class="summary-sig-name">getPSREvent</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All events associated with this power system resource.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSREvent" class="summary-sig-name">setPSREvent</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="PSRType"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PSRType</h3>
+  <p>PSRType (custom classification) for this PowerSystemResource.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSRType" class="summary-sig-name">getPSRType</a>(<span class="summary-sig-arg">self</span>)</span>
+        - PSRType (custom classification) for this PowerSystemResource.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSRType" class="summary-sig-name">setPSRType</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="PsrLists"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PsrLists</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPsrLists" class="summary-sig-name">getPsrLists</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPsrLists" class="summary-sig-name">setPsrLists</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ReportingGroup"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ReportingGroup</h3>
+  <p>Reporting groups to which this PSR belongs.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getReportingGroup" class="summary-sig-name">getReportingGroup</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Reporting groups to which this PSR belongs.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setReportingGroup" class="summary-sig-name">setReportingGroup</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SafetyDocuments"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">SafetyDocuments</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getSafetyDocuments" class="summary-sig-name">getSafetyDocuments</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setSafetyDocuments" class="summary-sig-name">setSafetyDocuments</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ScheduleSteps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ScheduleSteps</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getScheduleSteps" class="summary-sig-name">getScheduleSteps</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setScheduleSteps" class="summary-sig-name">setScheduleSteps</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:44 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,1269 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Generation.Production.Reservoir'.Reservoir</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Generation-module.html">Package&nbsp;Generation</a> ::
+        <a href="CIM15.IEC61970.Generation.Production-module.html">Package&nbsp;Production</a> ::
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27-module.html">Module&nbsp;Reservoir'</a> ::
+        Class&nbsp;Reservoir
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Reservoir</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                           object --+            
+                                    |            
+                     <a href="CIM15.Element%27.Element-class.html">Element'.Element</a> --+        
+                                        |        
+  <a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a> --+    
+                                            |    
+<a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a> --+
+                                                |
+                                               <strong class="uidshort">Reservoir</strong>
+</pre>
+
+<hr />
+<p>A water storage facility within a hydro system, including: ponds, 
+  lakes, lagoons, and rivers. The storage is usually behind some type of 
+  dam.A water storage facility within a hydro system, including: ponds, 
+  lakes, lagoons, and rivers. The storage is usually behind some type of 
+  dam.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">spillwayCapacity</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">energyStorageRating</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">grossCapacity</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">riverOutletWorks</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">spillwayCrestLevel</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">normalMinOperateLevel</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">spillwayCrestLength</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">spillTravelDelay</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">activeStorageCapacity</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">spillWayGateType</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">fullSupplyLevel</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">LevelVsVolumeCurves</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">TargetLevelSchedule</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">HydroPowerPlants</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">UpstreamFromHydroPowerPlants</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">InflowForecasts</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">SpillsFromReservoir</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">SpillsIntoReservoirs</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'Reservoir' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addHydroPowerPlants"></a><span class="summary-sig-name">addHydroPowerPlants</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*HydroPowerPlants</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addInflowForecasts"></a><span class="summary-sig-name">addInflowForecasts</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*InflowForecasts</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addLevelVsVolumeCurves"></a><span class="summary-sig-name">addLevelVsVolumeCurves</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*LevelVsVolumeCurves</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addSpillsIntoReservoirs"></a><span class="summary-sig-name">addSpillsIntoReservoirs</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*SpillsIntoReservoirs</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addUpstreamFromHydroPowerPlants"></a><span class="summary-sig-name">addUpstreamFromHydroPowerPlants</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*UpstreamFromHydroPowerPlants</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getHydroPowerPlants"></a><span class="summary-sig-name">getHydroPowerPlants</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Generators discharge water to or pumps are supplied water from a 
+      downstream reservoir</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getInflowForecasts"></a><span class="summary-sig-name">getInflowForecasts</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A reservoir may have a 'natural' inflow forecast.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getLevelVsVolumeCurves"></a><span class="summary-sig-name">getLevelVsVolumeCurves</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A reservoir may have a level versus volume relationship.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getSpillsFromReservoir"></a><span class="summary-sig-name">getSpillsFromReservoir</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A reservoir may spill into a downstream reservoir</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getSpillsIntoReservoirs"></a><span class="summary-sig-name">getSpillsIntoReservoirs</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A reservoir may spill into a downstream reservoir</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTargetLevelSchedule"></a><span class="summary-sig-name">getTargetLevelSchedule</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A reservoir may have a water level target schedule.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getUpstreamFromHydroPowerPlants"></a><span class="summary-sig-name">getUpstreamFromHydroPowerPlants</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Generators are supplied water from or pumps discharge water to an 
+      upstream reservoir</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeHydroPowerPlants"></a><span class="summary-sig-name">removeHydroPowerPlants</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*HydroPowerPlants</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeInflowForecasts"></a><span class="summary-sig-name">removeInflowForecasts</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*InflowForecasts</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeLevelVsVolumeCurves"></a><span class="summary-sig-name">removeLevelVsVolumeCurves</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*LevelVsVolumeCurves</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeSpillsIntoReservoirs"></a><span class="summary-sig-name">removeSpillsIntoReservoirs</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*SpillsIntoReservoirs</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeUpstreamFromHydroPowerPlants"></a><span class="summary-sig-name">removeUpstreamFromHydroPowerPlants</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*UpstreamFromHydroPowerPlants</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setHydroPowerPlants"></a><span class="summary-sig-name">setHydroPowerPlants</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setInflowForecasts"></a><span class="summary-sig-name">setInflowForecasts</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setLevelVsVolumeCurves"></a><span class="summary-sig-name">setLevelVsVolumeCurves</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setSpillsFromReservoir"></a><span class="summary-sig-name">setSpillsFromReservoir</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setSpillsIntoReservoirs"></a><span class="summary-sig-name">setSpillsIntoReservoirs</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTargetLevelSchedule"></a><span class="summary-sig-name">setTargetLevelSchedule</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setUpstreamFromHydroPowerPlants"></a><span class="summary-sig-name">setUpstreamFromHydroPowerPlants</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addAssets">addAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addChangeItems">addChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addDocumentRoles">addDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addErpOrganisationRoles">addErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addMeasurements">addMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addNetworkDataSets">addNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addOperatingShare">addOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addPSREvent">addPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addPsrLists">addPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addReportingGroup">addReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addSafetyDocuments">addSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addScheduleSteps">addScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getAssets">getAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getChangeItems">getChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getDocumentRoles">getDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getErpOrganisationRoles">getErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getLocation">getLocation</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getMeasurements">getMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getNetworkDataSets">getNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getOperatingShare">getOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getOutageSchedule">getOutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSREvent">getPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSRType">getPSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPsrLists">getPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getReportingGroup">getReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getSafetyDocuments">getSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getScheduleSteps">getScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeAssets">removeAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeChangeItems">removeChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeDocumentRoles">removeDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeErpOrganisationRoles">removeErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeMeasurements">removeMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeNetworkDataSets">removeNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeOperatingShare">removeOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removePSREvent">removePSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removePsrLists">removePsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeReportingGroup">removeReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeSafetyDocuments">removeSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeScheduleSteps">removeScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setAssets">setAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setChangeItems">setChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setDocumentRoles">setDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setErpOrganisationRoles">setErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setLocation">setLocation</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setMeasurements">setMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setNetworkDataSets">setNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setOperatingShare">setOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setOutageSchedule">setOutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSREvent">setPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSRType">setPSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPsrLists">setPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setReportingGroup">setReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setSafetyDocuments">setSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setScheduleSteps">setScheduleSteps</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addDiagramObjects">addDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addNames">addNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getDiagramObjects">getDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getModelingAuthoritySet">getModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getNames">getNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeDiagramObjects">removeDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeNames">removeNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setDiagramObjects">setDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setModelingAuthoritySet">setModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setNames">setNames</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'activeStorageCapacity': &lt;type 'float'&gt;,
+ 'energyStorageRating': &lt;type 'float'&gt;,
+ 'fullSupplyLevel': &lt;type 'float'&gt;,
+ 'grossCapacity': &lt;type 'float'&gt;,
+ 'normalMinOperateLevel': &lt;type 'float'&gt;,
+ 'riverOutletWorks': &lt;type 'str'&gt;,
+ 'spillTravelDelay': &lt;type 'float'&gt;,
+ 'spillWayGateType': &lt;type 'str'&gt;,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">activeStorageCapacity</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">energ</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="['spillwayCapacity',
+ 'energyStorageRating',
+ 'grossCapacity',
+ 'riverOutletWorks',
+ 'spillwayCrestLevel',
+ 'normalMinOperateLevel',
+ 'spillwayCrestLength',
+ 'spillTravelDelay',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">spillwayCapacity</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">energyStorageRating</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">grossCap</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{'activeStorageCapacity': 0.0,
+ 'energyStorageRating': 0.0,
+ 'fullSupplyLevel': 0.0,
+ 'grossCapacity': 0.0,
+ 'normalMinOperateLevel': 0.0,
+ 'riverOutletWorks': '',
+ 'spillTravelDelay': 0.0,
+ 'spillWayGateType': '',
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">activeStorageCapacity</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">energyStorageRatin</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_enums"></a><span class="summary-name">_enums</span> = <code title="{'spillWayGateType': 'SpillwayGateType'}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">spillWayGateType</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">SpillwayGateType</code><code class="variable-quote">'</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#_many_refs" class="summary-name" onclick="show_private();">_many_refs</a> = <code title="['LevelVsVolumeCurves',
+ 'HydroPowerPlants',
+ 'UpstreamFromHydroPowerPlants',
+ 'InflowForecasts',
+ 'SpillsIntoReservoirs']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">LevelVsVolumeCurves</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">HydroPowerPlants</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Upst</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="['LevelVsVolumeCurves',
+ 'TargetLevelSchedule',
+ 'HydroPowerPlants',
+ 'UpstreamFromHydroPowerPlants',
+ 'InflowForecasts',
+ 'SpillsFromReservoir',
+ 'SpillsIntoReservoirs']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">LevelVsVolumeCurves</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">TargetLevelSchedule</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">HydroP</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#HydroPowerPlants" class="summary-name">HydroPowerPlants</a><br />
+      Generators discharge water to or pumps are supplied water from a 
+      downstream reservoir
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#InflowForecasts" class="summary-name">InflowForecasts</a><br />
+      A reservoir may have a 'natural' inflow forecast.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#LevelVsVolumeCurves" class="summary-name">LevelVsVolumeCurves</a><br />
+      A reservoir may have a level versus volume relationship.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#SpillsFromReservoir" class="summary-name">SpillsFromReservoir</a><br />
+      A reservoir may spill into a downstream reservoir
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#SpillsIntoReservoirs" class="summary-name">SpillsIntoReservoirs</a><br />
+      A reservoir may spill into a downstream reservoir
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#TargetLevelSchedule" class="summary-name">TargetLevelSchedule</a><br />
+      A reservoir may have a water level target schedule.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#UpstreamFromHydroPowerPlants" class="summary-name">UpstreamFromHydroPowerPlants</a><br />
+      Generators are supplied water from or pumps discharge water to an 
+      upstream reservoir
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Assets">Assets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ChangeItems">ChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#DocumentRoles">DocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ErpOrganisationRoles">ErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Location">Location</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Measurements">Measurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#NetworkDataSets">NetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#OperatingShare">OperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#OutageSchedule">OutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSREvent">PSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSRType">PSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PsrLists">PsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ReportingGroup">ReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#SafetyDocuments">SafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ScheduleSteps">ScheduleSteps</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#DiagramObjects">DiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#ModelingAuthoritySet">ModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#Names">Names</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">spillwayCapacity</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">energyStorageRating</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">grossCapacity</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">riverOutletWorks</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">spillwayCrestLevel</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">normalMinOperateLevel</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">spillwayCrestLength</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">spillTravelDelay</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">activeStorageCapacity</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">spillWayGateType</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">fullSupplyLevel</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">LevelVsVolumeCurves</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">TargetLevelSchedule</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">HydroPowerPlants</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">UpstreamFromHydroPowerPlants</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">InflowForecasts</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">SpillsFromReservoir</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">SpillsIntoReservoirs</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'Reservoir' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>spillwayCapacity</code></strong> - The flow capacity of the spillway in cubic meters per second</li>
+        <li><strong class="pname"><code>energyStorageRating</code></strong> - The reservoir's energy storage rating in energy for given head 
+          conditions</li>
+        <li><strong class="pname"><code>grossCapacity</code></strong> - Total capacity of reservoir</li>
+        <li><strong class="pname"><code>riverOutletWorks</code></strong> - River outlet works for riparian right releases or other purposes</li>
+        <li><strong class="pname"><code>spillwayCrestLevel</code></strong> - Spillway crest level above which water will spill</li>
+        <li><strong class="pname"><code>normalMinOperateLevel</code></strong> - Normal minimum operating level below which the penstocks will 
+          draw air</li>
+        <li><strong class="pname"><code>spillwayCrestLength</code></strong> - The length of the spillway crest</li>
+        <li><strong class="pname"><code>spillTravelDelay</code></strong> - The spillway water travel delay to the next downstream reservoir</li>
+        <li><strong class="pname"><code>activeStorageCapacity</code></strong> - Storage volume between the full supply level and the normal 
+          minimum operating level</li>
+        <li><strong class="pname"><code>spillWayGateType</code></strong> - Type of spillway gate, including parameters</li>
+        <li><strong class="pname"><code>fullSupplyLevel</code></strong> - Full supply level, above which water will spill. This can be the 
+          spillway crest level or the top of closed gates.</li>
+        <li><strong class="pname"><code>LevelVsVolumeCurves</code></strong> - A reservoir may have a level versus volume relationship.</li>
+        <li><strong class="pname"><code>TargetLevelSchedule</code></strong> - A reservoir may have a water level target schedule.</li>
+        <li><strong class="pname"><code>HydroPowerPlants</code></strong> - Generators discharge water to or pumps are supplied water from a 
+          downstream reservoir</li>
+        <li><strong class="pname"><code>UpstreamFromHydroPowerPlants</code></strong> - Generators are supplied water from or pumps discharge water to an
+          upstream reservoir</li>
+        <li><strong class="pname"><code>InflowForecasts</code></strong> - A reservoir may have a 'natural' inflow forecast.</li>
+        <li><strong class="pname"><code>SpillsFromReservoir</code></strong> - A reservoir may spill into a downstream reservoir</li>
+        <li><strong class="pname"><code>SpillsIntoReservoirs</code></strong> - A reservoir may spill into a downstream reservoir</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">activeStorageCapacity</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">energyStorageRating</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">fullSupplyLevel</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">grossCapacity</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">normalMinOperateLevel</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">riverOutletWorks</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">spillTravelDelay</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">spillWayGateType</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">spillwayCapacity</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">energyStorageRating</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">grossCapacity</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">riverOutletWorks</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">spillwayCrestLevel</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">normalMinOperateLevel</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">spillwayCrestLength</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">spillTravelDelay</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">activeStorageCapacity</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">energyStorageRating</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">fullSupplyLevel</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">grossCapacity</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">normalMinOperateLevel</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">riverOutletWorks</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">spillTravelDelay</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">spillWayGateType</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_many_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_many_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">LevelVsVolumeCurves</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">HydroPowerPlants</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">UpstreamFromHydroPowerPlants</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">InflowForecasts</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">SpillsIntoReservoirs</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">LevelVsVolumeCurves</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">TargetLevelSchedule</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">HydroPowerPlants</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">UpstreamFromHydroPowerPlants</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">InflowForecasts</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">SpillsFromReservoir</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">SpillsIntoReservoirs</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="HydroPowerPlants"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">HydroPowerPlants</h3>
+  <p>Generators discharge water to or pumps are supplied water from a 
+  downstream reservoir</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#getHydroPowerPlants" class="summary-sig-name">getHydroPowerPlants</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Generators discharge water to or pumps are supplied water from a 
+      downstream reservoir
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#setHydroPowerPlants" class="summary-sig-name">setHydroPowerPlants</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="InflowForecasts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">InflowForecasts</h3>
+  <p>A reservoir may have a 'natural' inflow forecast.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#getInflowForecasts" class="summary-sig-name">getInflowForecasts</a>(<span class="summary-sig-arg">self</span>)</span>
+        - A reservoir may have a 'natural' inflow forecast.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#setInflowForecasts" class="summary-sig-name">setInflowForecasts</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="LevelVsVolumeCurves"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">LevelVsVolumeCurves</h3>
+  <p>A reservoir may have a level versus volume relationship.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#getLevelVsVolumeCurves" class="summary-sig-name">getLevelVsVolumeCurves</a>(<span class="summary-sig-arg">self</span>)</span>
+        - A reservoir may have a level versus volume relationship.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#setLevelVsVolumeCurves" class="summary-sig-name">setLevelVsVolumeCurves</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SpillsFromReservoir"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">SpillsFromReservoir</h3>
+  <p>A reservoir may spill into a downstream reservoir</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#getSpillsFromReservoir" class="summary-sig-name">getSpillsFromReservoir</a>(<span class="summary-sig-arg">self</span>)</span>
+        - A reservoir may spill into a downstream reservoir
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#setSpillsFromReservoir" class="summary-sig-name">setSpillsFromReservoir</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SpillsIntoReservoirs"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">SpillsIntoReservoirs</h3>
+  <p>A reservoir may spill into a downstream reservoir</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#getSpillsIntoReservoirs" class="summary-sig-name">getSpillsIntoReservoirs</a>(<span class="summary-sig-arg">self</span>)</span>
+        - A reservoir may spill into a downstream reservoir
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#setSpillsIntoReservoirs" class="summary-sig-name">setSpillsIntoReservoirs</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="TargetLevelSchedule"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">TargetLevelSchedule</h3>
+  <p>A reservoir may have a water level target schedule.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#getTargetLevelSchedule" class="summary-sig-name">getTargetLevelSchedule</a>(<span class="summary-sig-arg">self</span>)</span>
+        - A reservoir may have a water level target schedule.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#setTargetLevelSchedule" class="summary-sig-name">setTargetLevelSchedule</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="UpstreamFromHydroPowerPlants"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">UpstreamFromHydroPowerPlants</h3>
+  <p>Generators are supplied water from or pumps discharge water to an 
+  upstream reservoir</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#getUpstreamFromHydroPowerPlants" class="summary-sig-name">getUpstreamFromHydroPowerPlants</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Generators are supplied water from or pumps discharge water to an 
+      upstream reservoir
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.Reservoir%27.Reservoir-class.html#setUpstreamFromHydroPowerPlants" class="summary-sig-name">setUpstreamFromHydroPowerPlants</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:45 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        CIM14 ::
+        CPSM ::
+        Equipment ::
+        Wires ::
+        TransformerWinding ::
+        TransformerWinding ::
+        Class&nbsp;TransformerWinding
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class TransformerWinding</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+Core.ConductingEquipment.ConductingEquipment --+
+                                               |
+                                              <strong class="uidshort">TransformerWinding</strong>
+</pre>
+
+<hr />
+<p>A winding is associated with each defined terminal of a transformer 
+  (or phase shifter).-  [R5.4], [R5.6], and [R5.10] are satisfied by 
+  navigation to ConnectivityNode and Substation -  Each TransformerWinging 
+  must be contained by a PowerTransformer.  Because a TransformerWinding 
+  (or any other object) can not be contained by more than one parent, a 
+  TransformerWinding can not have an association to an EquipmentContainer 
+  (Substation, VoltageLevel, etc). -  The attributes ratedS, b0, g0, r0, 
+  x0, rground, xground, and connectionType are not required.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">x0</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">b0</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">g0</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">rground</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">b</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">connectionType</span>=<span class="summary-sig-default">&quot;I&quot;</span>,
+        <span class="summary-sig-arg">ratedS</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">r</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">r0</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">ratedU</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">xground</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">windingType</span>=<span class="summary-sig-default">&quot;tertiary&quot;</span>,
+        <span class="summary-sig-arg">RatioTapChanger</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">PhaseTapChanger</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">PowerTransformer</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'TransformerWinding' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getRatioTapChanger"></a><span class="summary-sig-name">getRatioTapChanger</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The ratio tap changer associated with the transformer winding.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setRatioTapChanger"></a><span class="summary-sig-name">setRatioTapChanger</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getPhaseTapChanger"></a><span class="summary-sig-name">getPhaseTapChanger</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The phase tap changer associated with the transformer winding.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setPhaseTapChanger"></a><span class="summary-sig-name">setPhaseTapChanger</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getPowerTransformer"></a><span class="summary-sig-name">getPowerTransformer</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A transformer has windings</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setPowerTransformer"></a><span class="summary-sig-name">setPowerTransformer</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="[&quot;x&quot;, &quot;x0&quot;, &quot;b0&quot;, &quot;g0&quot;, &quot;rground&quot;, &quot;b&quot;, &quot;connectionType&quot;, &quot;ratedS&quot;, &quot;r\
+&quot;, &quot;r0&quot;, &quot;ratedU&quot;, &quot;xground&quot;, &quot;windingType&quot;]">[&quot;x&quot;, &quot;x0&quot;, &quot;b0&quot;, &quot;g0&quot;, &quot;rground&quot;, &quot;b&quot;, &quot;connectionTy<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{&quot;x&quot;: float, &quot;x0&quot;: float, &quot;b0&quot;: float, &quot;g0&quot;: float, &quot;rground&quot;: float, \
+&quot;b&quot;: float, &quot;connectionType&quot;: str, &quot;ratedS&quot;: float, &quot;r&quot;: float, &quot;r0&quot;: \
+float, &quot;ratedU&quot;: float, &quot;xground&quot;: float, &quot;windingType&quot;: str}">{&quot;x&quot;: float, &quot;x0&quot;: float, &quot;b0&quot;: float, &quot;g0&quot;: flo<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{&quot;x&quot;: 0.0, &quot;x0&quot;: 0.0, &quot;b0&quot;: 0.0, &quot;g0&quot;: 0.0, &quot;rground&quot;: 0.0, &quot;b&quot;: 0.0, \
+&quot;connectionType&quot;: &quot;I&quot;, &quot;ratedS&quot;: 0.0, &quot;r&quot;: 0.0, &quot;r0&quot;: 0.0, &quot;ratedU&quot;: 0\
+.0, &quot;xground&quot;: 0.0, &quot;windingType&quot;: &quot;tertiary&quot;}">{&quot;x&quot;: 0.0, &quot;x0&quot;: 0.0, &quot;b0&quot;: 0.0, &quot;g0&quot;: 0.0, &quot;rgrou<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#_enums" class="summary-name" onclick="show_private();">_enums</a> = <code title="{&quot;connectionType&quot;: &quot;WindingConnection&quot;, &quot;windingType&quot;: &quot;WindingType&quot;}">{&quot;connectionType&quot;: &quot;WindingConnection&quot;, &quot;windingType&quot;<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="[&quot;RatioTapChanger&quot;, &quot;PhaseTapChanger&quot;, &quot;PowerTransformer&quot;]">[&quot;RatioTapChanger&quot;, &quot;PhaseTapChanger&quot;, &quot;PowerTransform<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_many_refs"></a><span class="summary-name">_many_refs</span> = <code title="[]">[]</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#RatioTapChanger" class="summary-name">RatioTapChanger</a> = <code title="property(getRatioTapChanger, setRatioTapChanger)">property(getRatioTapChanger, setRatioTapChan<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#PhaseTapChanger" class="summary-name">PhaseTapChanger</a> = <code title="property(getPhaseTapChanger, setPhaseTapChanger)">property(getPhaseTapChanger, setPhaseTapChan<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#PowerTransformer" class="summary-name">PowerTransformer</a> = <code title="property(getPowerTransformer, setPowerTransformer)">property(getPowerTransformer, setPowerTrans<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#x" class="summary-name">x</a><br />
+      Positive sequence series reactance of the winding.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="x0"></a><span class="summary-name">x0</span><br />
+      Zero sequence series reactance of the winding.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="b0"></a><span class="summary-name">b0</span><br />
+      Zero sequence magnetizing branch susceptance.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="g0"></a><span class="summary-name">g0</span><br />
+      Zero sequence magnetizing branch conductance.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rground"></a><span class="summary-name">rground</span><br />
+      Ground resistance path through connected grounding transformer.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#b" class="summary-name">b</a><br />
+      Magnetizing branch susceptance (B mag).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#connectionType" class="summary-name">connectionType</a><br />
+      The type of connection of the winding.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ratedS"></a><span class="summary-name">ratedS</span><br />
+      The normal apparent power rating for the winding
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#r" class="summary-name">r</a><br />
+      Positive sequence series resistance of the winding.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="r0"></a><span class="summary-name">r0</span><br />
+      Zero sequence series resistance of the winding.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ratedU"></a><span class="summary-name">ratedU</span><br />
+      The rated voltage (phase-to-phase) of the winding, usually the same 
+      as the neutral voltage.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="xground"></a><span class="summary-name">xground</span><br />
+      Ground reactance path through connected grounding transformer.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.TransformerWinding.TransformerWinding-class.html#windingType" class="summary-name">windingType</a><br />
+      The type of winding.
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">x0</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">b0</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">g0</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">rground</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">b</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">connectionType</span>=<span class="sig-default">&quot;I&quot;</span>,
+        <span class="sig-arg">ratedS</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">r</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">r0</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">ratedU</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">xground</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">windingType</span>=<span class="sig-default">&quot;tertiary&quot;</span>,
+        <span class="sig-arg">RatioTapChanger</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">PhaseTapChanger</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">PowerTransformer</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'TransformerWinding' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>x</code></strong> - Positive sequence series reactance of the winding.  For a two 
+          winding transformer, the full reactance of the transformer should
+          be entered on the primary (high voltage) winding.</li>
+        <li><strong class="pname"><code>x0</code></strong> - Zero sequence series reactance of the winding.</li>
+        <li><strong class="pname"><code>b0</code></strong> - Zero sequence magnetizing branch susceptance.</li>
+        <li><strong class="pname"><code>g0</code></strong> - Zero sequence magnetizing branch conductance.</li>
+        <li><strong class="pname"><code>rground</code></strong> - Ground resistance path through connected grounding transformer.</li>
+        <li><strong class="pname"><code>b</code></strong> - Magnetizing branch susceptance (B mag).  The value can be 
+          positive or negative.</li>
+        <li><strong class="pname"><code>connectionType</code></strong> - The type of connection of the winding. Values are: &quot;I&quot;,
+          &quot;Yn&quot;, &quot;Z&quot;, &quot;Y&quot;, &quot;A&quot;, 
+          &quot;D&quot;, &quot;Zn&quot;</li>
+        <li><strong class="pname"><code>ratedS</code></strong> - The normal apparent power rating for the winding</li>
+        <li><strong class="pname"><code>r</code></strong> - Positive sequence series resistance of the winding.  For a two 
+          winding transformer, the full resistance of the transformer 
+          should be entered on the primary (high voltage) winding.</li>
+        <li><strong class="pname"><code>r0</code></strong> - Zero sequence series resistance of the winding.</li>
+        <li><strong class="pname"><code>ratedU</code></strong> - The rated voltage (phase-to-phase) of the winding, usually the 
+          same as the neutral voltage.</li>
+        <li><strong class="pname"><code>xground</code></strong> - Ground reactance path through connected grounding transformer.</li>
+        <li><strong class="pname"><code>windingType</code></strong> - The type of winding. Values are: &quot;tertiary&quot;, 
+          &quot;primary&quot;, &quot;secondary&quot;</li>
+        <li><strong class="pname"><code>RatioTapChanger</code></strong> - The ratio tap changer associated with the transformer winding.</li>
+        <li><strong class="pname"><code>PhaseTapChanger</code></strong> - The phase tap changer associated with the transformer winding.</li>
+        <li><strong class="pname"><code>PowerTransformer</code></strong> - A transformer has windings</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;x&quot;, &quot;x0&quot;, &quot;b0&quot;, &quot;g0&quot;, &quot;rground&quot;, &quot;b&quot;, &quot;connectionType&quot;, &quot;ratedS&quot;, &quot;r<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+&quot;, &quot;r0&quot;, &quot;ratedU&quot;, &quot;xground&quot;, &quot;windingType&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;x&quot;: float, &quot;x0&quot;: float, &quot;b0&quot;: float, &quot;g0&quot;: float, &quot;rground&quot;: float, <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+&quot;b&quot;: float, &quot;connectionType&quot;: str, &quot;ratedS&quot;: float, &quot;r&quot;: float, &quot;r0&quot;: <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+float, &quot;ratedU&quot;: float, &quot;xground&quot;: float, &quot;windingType&quot;: str}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;x&quot;: 0.0, &quot;x0&quot;: 0.0, &quot;b0&quot;: 0.0, &quot;g0&quot;: 0.0, &quot;rground&quot;: 0.0, &quot;b&quot;: 0.0, <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+&quot;connectionType&quot;: &quot;I&quot;, &quot;ratedS&quot;: 0.0, &quot;r&quot;: 0.0, &quot;r0&quot;: 0.0, &quot;ratedU&quot;: 0<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+.0, &quot;xground&quot;: 0.0, &quot;windingType&quot;: &quot;tertiary&quot;}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_enums"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_enums</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;connectionType&quot;: &quot;WindingConnection&quot;, &quot;windingType&quot;: &quot;WindingType&quot;}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;RatioTapChanger&quot;, &quot;PhaseTapChanger&quot;, &quot;PowerTransformer&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RatioTapChanger"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RatioTapChanger</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+property(getRatioTapChanger, setRatioTapChanger)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="PhaseTapChanger"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PhaseTapChanger</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+property(getPhaseTapChanger, setPhaseTapChanger)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="PowerTransformer"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PowerTransformer</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+property(getPowerTransformer, setPowerTransformer)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== INSTANCE VARIABLE DETAILS ==================== -->
+<a name="section-InstanceVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="x"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">x</h3>
+  <p>Positive sequence series reactance of the winding.  For a two winding 
+  transformer, the full reactance of the transformer should be entered on 
+  the primary (high voltage) winding.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="b"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">b</h3>
+  <p>Magnetizing branch susceptance (B mag).  The value can be positive or 
+  negative.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="connectionType"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">connectionType</h3>
+  <p>The type of connection of the winding. Values are: &quot;I&quot;, 
+  &quot;Yn&quot;, &quot;Z&quot;, &quot;Y&quot;, &quot;A&quot;, 
+  &quot;D&quot;, &quot;Zn&quot;</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="r"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">r</h3>
+  <p>Positive sequence series resistance of the winding.  For a two winding
+  transformer, the full resistance of the transformer should be entered on 
+  the primary (high voltage) winding.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="windingType"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">windingType</h3>
+  <p>The type of winding. Values are: &quot;tertiary&quot;, 
+  &quot;primary&quot;, &quot;secondary&quot;</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:36 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

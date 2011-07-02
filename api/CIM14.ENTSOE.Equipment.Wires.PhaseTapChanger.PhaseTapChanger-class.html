@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        CIM14 ::
+        ENTSOE ::
+        Equipment ::
+        Wires ::
+        PhaseTapChanger ::
+        PhaseTapChanger ::
+        Class&nbsp;PhaseTapChanger
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class PhaseTapChanger</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+Core.PowerSystemResource.PowerSystemResource --+    
+                                               |    
+                           <a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html">TapChanger.TapChanger</a> --+
+                                                   |
+                                                  <strong class="uidshort">PhaseTapChanger</strong>
+</pre>
+
+<hr />
+<p>A specialization of a voltage tap changer that has detailed modeling 
+  for phase shifting capabilities.   A phase shifting tap changer is also 
+  in general a voltage magnitude transformer.    The symmetrical and 
+  asymmetrical transformer tap changer models are defined here.-  The 
+  attribute ltcflag specifies whether or not a TapChanger has load tap 
+  changing capabilities.  If the ltcFlag is true, the attributes 
+  &#226;&#128;&#156;highStep&#226;&#128;&#157;, &#226;&#128;&#156;lowStep&#226;&#128;&#157;, &#226;&#128;&#156;neutralStep&#226;&#128;&#157;, &#226;&#128;&#156;normalStep&#226;&#128;&#157; and 
+  'stepPhaseShiftIncrement' are all required. -  The attributes 
+  voltageStepIncrementOutOfPhase, windingConnectionAngle, xStepMax, and 
+  xStepMin are not required.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nominalVoltageOutOfPhase</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">windingConnectionAngle</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">phaseTapChangerType</span>=<span class="summary-sig-default">&quot;asymmetrical&quot;</span>,
+        <span class="summary-sig-arg">xStepMin</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">xStepMax</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">stepPhaseShiftIncrement</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">voltageStepIncrementOutOfPhase</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">TransformerWinding</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'PhaseTapChanger' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTransformerWinding"></a><span class="summary-sig-name">getTransformerWinding</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The transformer winding to which the phase tap changer belongs.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTransformerWinding"></a><span class="summary-sig-name">setTransformerWinding</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html">TapChanger.TapChanger</a></code></b>:
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#getRegulatingControl">getRegulatingControl</a></code>,
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#setRegulatingControl">setRegulatingControl</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="[&quot;nominalVoltageOutOfPhase&quot;, &quot;windingConnectionAngle&quot;, &quot;phaseTapChange\
+rType&quot;, &quot;xStepMin&quot;, &quot;xStepMax&quot;, &quot;stepPhaseShiftIncrement&quot;, &quot;voltageSte\
+pIncrementOutOfPhase&quot;]">[&quot;nominalVoltageOutOfPhase&quot;, &quot;windingConnectionAngle&quot;<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{&quot;nominalVoltageOutOfPhase&quot;: float, &quot;windingConnectionAngle&quot;: float, &quot;\
+phaseTapChangerType&quot;: str, &quot;xStepMin&quot;: float, &quot;xStepMax&quot;: float, &quot;step\
+PhaseShiftIncrement&quot;: float, &quot;voltageStepIncrementOutOfPhase&quot;: float}">{&quot;nominalVoltageOutOfPhase&quot;: float, &quot;windingConn<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{&quot;nominalVoltageOutOfPhase&quot;: 0.0, &quot;windingConnectionAngle&quot;: 0.0, &quot;phas\
+eTapChangerType&quot;: &quot;asymmetrical&quot;, &quot;xStepMin&quot;: 0.0, &quot;xStepMax&quot;: 0.0, &quot;s\
+tepPhaseShiftIncrement&quot;: 0.0, &quot;voltageStepIncrementOutOfPhase&quot;: 0.0}">{&quot;nominalVoltageOutOfPhase&quot;: 0.0, &quot;windingConnecti<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_enums"></a><span class="summary-name">_enums</span> = <code title="{&quot;phaseTapChangerType&quot;: &quot;PhaseTapChangerKind&quot;}">{&quot;phaseTapChangerType&quot;: &quot;PhaseTapChangerKind&quot;}</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_refs"></a><span class="summary-name">_refs</span> = <code title="[&quot;TransformerWinding&quot;]">[&quot;TransformerWinding&quot;]</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_many_refs"></a><span class="summary-name">_many_refs</span> = <code title="[]">[]</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger-class.html#TransformerWinding" class="summary-name">TransformerWinding</a> = <code title="property(getTransformerWinding, setTransformerWinding)">property(getTransformerWinding, setTransf<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html">TapChanger.TapChanger</a></code></b>:
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#RegulatingControl">RegulatingControl</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger-class.html#nominalVoltageOutOfPhase" class="summary-name">nominalVoltageOutOfPhase</a><br />
+      Similar to TapChanger.nominalVoltage, but this is the nominal voltage
+      in the out of phase winding at the nominal tap step.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger-class.html#windingConnectionAngle" class="summary-name">windingConnectionAngle</a><br />
+      The phase angle between the in-phase winding and the out-of -phase 
+      winding used for creating phase shift.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger-class.html#phaseTapChangerType" class="summary-name">phaseTapChangerType</a><br />
+      The type of phase shifter construction.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="xStepMin"></a><span class="summary-name">xStepMin</span><br />
+      The reactance at the minimum tap step.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="xStepMax"></a><span class="summary-name">xStepMax</span><br />
+      The reactance at the maximum tap step.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger-class.html#stepPhaseShiftIncrement" class="summary-name">stepPhaseShiftIncrement</a><br />
+      Phase shift per step position.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.PhaseTapChanger.PhaseTapChanger-class.html#voltageStepIncrementOutOfPhase" class="summary-name">voltageStepIncrementOutOfPhase</a><br />
+      The voltage step increment on the out of phase winding.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html">TapChanger.TapChanger</a></code></b>:
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#highStep">highStep</a></code>,
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#lowStep">lowStep</a></code>,
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#ltcFlag">ltcFlag</a></code>,
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#neutralStep">neutralStep</a></code>,
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#neutralU">neutralU</a></code>,
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#normalStep">normalStep</a></code>,
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#regulationStatus">regulationStatus</a></code>,
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#stepVoltageIncrement">stepVoltageIncrement</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">nominalVoltageOutOfPhase</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">windingConnectionAngle</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">phaseTapChangerType</span>=<span class="sig-default">&quot;asymmetrical&quot;</span>,
+        <span class="sig-arg">xStepMin</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">xStepMax</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">stepPhaseShiftIncrement</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">voltageStepIncrementOutOfPhase</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">TransformerWinding</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'PhaseTapChanger' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>nominalVoltageOutOfPhase</code></strong> - Similar to TapChanger.nominalVoltage, but this is the nominal 
+          voltage in the out of phase winding at the nominal tap step. A 
+          typical case may have zero voltage at the nominal step, 
+          indicating no phase shift at the nominal voltage.</li>
+        <li><strong class="pname"><code>windingConnectionAngle</code></strong> - The phase angle between the in-phase winding and the out-of 
+          -phase winding used for creating phase shift.   It is only 
+          possible to have a symmemtrical transformer if this angle is 90 
+          degrees.</li>
+        <li><strong class="pname"><code>phaseTapChangerType</code></strong> - The type of phase shifter construction. Values are: 
+          &quot;asymmetrical&quot;, &quot;symmetrical&quot;, 
+          &quot;unknown&quot;</li>
+        <li><strong class="pname"><code>xStepMin</code></strong> - The reactance at the minimum tap step.</li>
+        <li><strong class="pname"><code>xStepMax</code></strong> - The reactance at the maximum tap step.</li>
+        <li><strong class="pname"><code>stepPhaseShiftIncrement</code></strong> - Phase shift per step position. A positive value indicates a 
+          positive phase shift from the winding where the tap is located to
+          the other winding (for a two-winding transformer). The actual 
+          phase shift increment might be more accurately computed from the 
+          symmetrical or asymmetrical models or a tap step table lookup if 
+          those are available.</li>
+        <li><strong class="pname"><code>voltageStepIncrementOutOfPhase</code></strong> - The voltage step increment on the out of phase winding.    This 
+          voltage step on the out of phase winding of the phase shifter.  
+          Similar to TapChanger.voltageStepIncrement, but it is applied 
+          only to the out of phase winding.</li>
+        <li><strong class="pname"><code>TransformerWinding</code></strong> - The transformer winding to which the phase tap changer belongs.</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="CIM14.ENTSOE.Equipment.Wires.TapChanger.TapChanger-class.html#__init__">TapChanger.TapChanger.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;nominalVoltageOutOfPhase&quot;, &quot;windingConnectionAngle&quot;, &quot;phaseTapChange<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+rType&quot;, &quot;xStepMin&quot;, &quot;xStepMax&quot;, &quot;stepPhaseShiftIncrement&quot;, &quot;voltageSte<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+pIncrementOutOfPhase&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;nominalVoltageOutOfPhase&quot;: float, &quot;windingConnectionAngle&quot;: float, &quot;<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+phaseTapChangerType&quot;: str, &quot;xStepMin&quot;: float, &quot;xStepMax&quot;: float, &quot;step<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+PhaseShiftIncrement&quot;: float, &quot;voltageStepIncrementOutOfPhase&quot;: float}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;nominalVoltageOutOfPhase&quot;: 0.0, &quot;windingConnectionAngle&quot;: 0.0, &quot;phas<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+eTapChangerType&quot;: &quot;asymmetrical&quot;, &quot;xStepMin&quot;: 0.0, &quot;xStepMax&quot;: 0.0, &quot;s<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+tepPhaseShiftIncrement&quot;: 0.0, &quot;voltageStepIncrementOutOfPhase&quot;: 0.0}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="TransformerWinding"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">TransformerWinding</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+property(getTransformerWinding, setTransformerWinding)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== INSTANCE VARIABLE DETAILS ==================== -->
+<a name="section-InstanceVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="nominalVoltageOutOfPhase"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">nominalVoltageOutOfPhase</h3>
+  <p>Similar to TapChanger.nominalVoltage, but this is the nominal voltage 
+  in the out of phase winding at the nominal tap step. A typical case may 
+  have zero voltage at the nominal step, indicating no phase shift at the 
+  nominal voltage.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="windingConnectionAngle"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">windingConnectionAngle</h3>
+  <p>The phase angle between the in-phase winding and the out-of -phase 
+  winding used for creating phase shift.   It is only possible to have a 
+  symmemtrical transformer if this angle is 90 degrees.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="phaseTapChangerType"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">phaseTapChangerType</h3>
+  <p>The type of phase shifter construction. Values are: 
+  &quot;asymmetrical&quot;, &quot;symmetrical&quot;, 
+  &quot;unknown&quot;</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="stepPhaseShiftIncrement"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">stepPhaseShiftIncrement</h3>
+  <p>Phase shift per step position. A positive value indicates a positive 
+  phase shift from the winding where the tap is located to the other 
+  winding (for a two-winding transformer). The actual phase shift increment
+  might be more accurately computed from the symmetrical or asymmetrical 
+  models or a tap step table lookup if those are available.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="voltageStepIncrementOutOfPhase"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">voltageStepIncrementOutOfPhase</h3>
+  <p>The voltage step increment on the out of phase winding.    This 
+  voltage step on the out of phase winding of the phase shifter.  Similar 
+  to TapChanger.voltageStepIncrement, but it is applied only to the out of 
+  phase winding.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:38 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

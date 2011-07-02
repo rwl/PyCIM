@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionTapChanger'.DistributionTapChanger</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;CIM14 ::
+        <a href="CIM14.CDPSM-module.html">Package&nbsp;CDPSM</a> ::
+        <a href="CIM14.CDPSM.Balanced-module.html">Package&nbsp;Balanced</a> ::
+        <a href="CIM14.CDPSM.Balanced.IEC61968-module.html">Package&nbsp;IEC61968</a> ::
+        <a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt-module.html">Package&nbsp;WiresExt</a> ::
+        <a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionTapChanger%27-module.html">Module&nbsp;DistributionTapChanger'</a> ::
+        Class&nbsp;DistributionTapChanger
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionTapChanger%27.DistributionTapChanger-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class DistributionTapChanger</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                                    object --+                    
+                                             |                    
+                              <a href="CIM14.CDPSM.Balanced.Element%27.Element-class.html">Element'.Element</a> --+                
+                                                 |                
+  <a href="CIM14.CDPSM.Balanced.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">IEC61970.Core.IdentifiedObject'.IdentifiedObject</a> --+            
+                                                     |            
+<a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">IEC61970.Core.PowerSystemResource'.PowerSystemResource</a> --+        
+                                                         |        
+                     <a href="CIM14.CDPSM.Balanced.IEC61970.Wires.TapChanger%27.TapChanger-class.html">IEC61970.Wires.TapChanger'.TapChanger</a> --+    
+                                                             |    
+               <a href="CIM14.CDPSM.Balanced.IEC61970.Wires.RatioTapChanger%27.RatioTapChanger-class.html">IEC61970.Wires.RatioTapChanger'.RatioTapChanger</a> --+
+                                                                 |
+                                                                <strong class="uidshort">DistributionTapChanger</strong>
+</pre>
+
+<hr />
+<p>Additional ratio tap changer parameters common to distribution line 
+  regulators. 'tculControlMode' would always be 'volt'. If 'monitoredPhase'
+  is not specified, then if the controlled DistributionTransformerWinding 
+  is single-phase, the PT primary is assumed to be connected across that 
+  winding, which is the normal case. If the controlled winding is 
+  three-phase, then the 'monitoredPhase' is assumed to be 'AN', unless 
+  otherwise specified. Whenever 'ctRatio' and 'ptRatio' are specified, it's
+  customary to specify the R and X in 'volts' referred to the PT secondary 
+  circuit, otherwise R and X are in feeder primary ohms. If 'ptRatio' is 
+  not specified, then 'targetVoltage', 'limitVoltage', and 'bandVoltage' 
+  are on the feeder primary base, phase-neutral or phase-phase depending on
+  the 'monitoredPhase'. Otherwise, these attributes are all on the PT 
+  secondary base.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionTapChanger%27.DistributionTapChanger-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lineDropR</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">monitoredPhase</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">ABC</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">lineDropCompensation</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">ptRatio</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">ctRatio</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">reverseLineDropR</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">limitVoltage</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">reverseLineDropX</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">bandVoltage</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">targetVoltage</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">lineDropX</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'DistributionTapChanger' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.RatioTapChanger%27.RatioTapChanger-class.html">IEC61970.Wires.RatioTapChanger'.RatioTapChanger</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.RatioTapChanger%27.RatioTapChanger-class.html#getWinding">getWinding</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.RatioTapChanger%27.RatioTapChanger-class.html#setWinding">setWinding</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.TapChanger%27.TapChanger-class.html">IEC61970.Wires.TapChanger'.TapChanger</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.TapChanger%27.TapChanger-class.html#getSvTapStep">getSvTapStep</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.TapChanger%27.TapChanger-class.html#setSvTapStep">setSvTapStep</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">IEC61970.Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getGeoLocation">getGeoLocation</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSRType">getPSRType</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setGeoLocation">setGeoLocation</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSRType">setPSRType</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionTapChanger%27.DistributionTapChanger-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'bandVoltage': &lt;type 'float'&gt;,
+ 'ctRatio': &lt;type 'float'&gt;,
+ 'limitVoltage': &lt;type 'float'&gt;,
+ 'lineDropCompensation': &lt;type 'bool'&gt;,
+ 'lineDropR': &lt;type 'float'&gt;,
+ 'lineDropX': &lt;type 'float'&gt;,
+ 'monitoredPhase': &lt;type 'str'&gt;,
+ 'ptRatio': &lt;type 'float'&gt;,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">bandVoltage</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ctRatio</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionTapChanger%27.DistributionTapChanger-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="['lineDropR',
+ 'monitoredPhase',
+ 'lineDropCompensation',
+ 'ptRatio',
+ 'ctRatio',
+ 'reverseLineDropR',
+ 'limitVoltage',
+ 'reverseLineDropX',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">lineDropR</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">monitoredPhase</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">lineDropCompensation</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionTapChanger%27.DistributionTapChanger-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{'bandVoltage': 0.0,
+ 'ctRatio': 0.0,
+ 'limitVoltage': 0.0,
+ 'lineDropCompensation': False,
+ 'lineDropR': 0.0,
+ 'lineDropX': 0.0,
+ 'monitoredPhase': 'ABC',
+ 'ptRatio': 0.0,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">bandVoltage</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ctRatio</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">limitVoltage</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_enums"></a><span class="summary-name">_enums</span> = <code title="{'monitoredPhase': 'PhaseCode'}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">monitoredPhase</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">PhaseCode</code><code class="variable-quote">'</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_refs"></a><span class="summary-name">_refs</span> = <code title="[]"><code class="variable-group">[</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.Element%27.Element-class.html">Element'.Element</a></code></b> (private):
+      <code><a href="CIM14.CDPSM.Balanced.Element%27.Element-class.html#_many_refs" onclick="show_private();">_many_refs</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.RatioTapChanger%27.RatioTapChanger-class.html">IEC61970.Wires.RatioTapChanger'.RatioTapChanger</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.RatioTapChanger%27.RatioTapChanger-class.html#Winding">Winding</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.TapChanger%27.TapChanger-class.html">IEC61970.Wires.TapChanger'.TapChanger</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.TapChanger%27.TapChanger-class.html#SvTapStep">SvTapStep</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">IEC61970.Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#GeoLocation">GeoLocation</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSRType">PSRType</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lineDropR</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">monitoredPhase</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">ABC</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">lineDropCompensation</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">ptRatio</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">ctRatio</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">reverseLineDropR</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">limitVoltage</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">reverseLineDropX</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">bandVoltage</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">targetVoltage</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">lineDropX</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'DistributionTapChanger' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lineDropR</code></strong> - Line drop compensator resistance setting for normal (forward) 
+          power flow.</li>
+        <li><strong class="pname"><code>monitoredPhase</code></strong> - Phase voltage controlling this regulator, measured at regulator 
+          location. Values are: &quot;ABC&quot;, 
+          &quot;splitSecondary2N&quot;, &quot;ABN&quot;, &quot;CN&quot;, 
+          &quot;ACN&quot;, &quot;BC&quot;, &quot;AN&quot;, &quot;BN&quot;, 
+          &quot;AB&quot;, &quot;splitSecondary1N&quot;, &quot;N&quot;, 
+          &quot;C&quot;, &quot;AC&quot;, &quot;ABCN&quot;, 
+          &quot;splitSecondary12N&quot;, &quot;A&quot;, &quot;B&quot;, 
+          &quot;BCN&quot;</li>
+        <li><strong class="pname"><code>lineDropCompensation</code></strong> - If true, the line drop compensation is to be applied.</li>
+        <li><strong class="pname"><code>ptRatio</code></strong> - Built-in voltage transducer ratio.</li>
+        <li><strong class="pname"><code>ctRatio</code></strong> - Built-in current transducer ratio.</li>
+        <li><strong class="pname"><code>reverseLineDropR</code></strong> - Line drop compensator resistance setting for reverse power flow.</li>
+        <li><strong class="pname"><code>limitVoltage</code></strong> - Maximum allowed regulated voltage on the PT secondary base, 
+          regardless of line drop compensation. Sometimes referred to as 
+          first-house protection.</li>
+        <li><strong class="pname"><code>reverseLineDropX</code></strong> - Line drop compensator reactance setting for reverse power flow.</li>
+        <li><strong class="pname"><code>bandVoltage</code></strong> - Voltage range (max - min) on the PT secondary base, centered on 
+          'targetVoltage'.</li>
+        <li><strong class="pname"><code>targetVoltage</code></strong> - Target voltage on the PT secondary base.</li>
+        <li><strong class="pname"><code>lineDropX</code></strong> - Line drop compensator reactance setting for normal (forward) 
+          power flow.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">bandVoltage</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ctRatio</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">limitVoltage</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineDropCompensation</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'bool'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineDropR</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineDropX</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">monitoredPhase</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ptRatio</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">lineDropR</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">monitoredPhase</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineDropCompensation</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ptRatio</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ctRatio</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">reverseLineDropR</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">limitVoltage</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">reverseLineDropX</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">bandVoltage</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ctRatio</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">limitVoltage</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineDropCompensation</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineDropR</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineDropX</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">monitoredPhase</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">ABC</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ptRatio</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:31 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

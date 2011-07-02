@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        CIM14 ::
+        CPSM ::
+        Equipment ::
+        Generation ::
+        Production ::
+        GeneratingUnit ::
+        GeneratingUnit ::
+        Class&nbsp;GeneratingUnit
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class GeneratingUnit</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+Core.Equipment.Equipment --+
+                           |
+                          <strong class="uidshort">GeneratingUnit</strong>
+</pre>
+
+<hr />
+<p>A single or set of synchronous machines for converting mechanical 
+  power into alternating-current power. For example, individual machines 
+  within a set may be defined for scheduling purposes while a single 
+  control signal is derived for the set. In this case there would be a 
+  GeneratingUnit for each member of the set and an additional 
+  GeneratingUnit corresponding to the set.-  To define a GeneratingUnit 
+  requires defining the initial real power injection, net real power 
+  limits, and the status of the unit.  The initial injection is defined 
+  using  the attribute &#226;&#128;&#156;initialP&#226;&#128;&#157;. -  The net real power limits can be 
+  defined in three ways; 1) with the attributes &#226;&#128;&#156;maxOperatingP&#226;&#128;&#157; and 
+  &#226;&#128;&#156;minOperatingP&#226;&#128;&#157;, or 2) with the attribute  &#226;&#128;&#156;ratedNetMaxP&#226;&#128;&#157; or 3) 
+  with the attributes &#226;&#128;&#156;ratedGrossMinP&#226;&#128;&#157; and &#226;&#128;&#156;ratedGrossMaxP&#226;&#128;&#157; used in
+  conjunction with an associated GrossToNetActivePowerCurve. -  The control
+  status of the unit is defined with the attribute &#226;&#128;&#156;genControlSource&#226;&#128;&#157;, 
+  but it is not required.  The participation factor attributes 
+  &#226;&#128;&#156;longPF&#226;&#128;&#157;, &#226;&#128;&#156;normalPF&#226;&#128;&#157;, and &#226;&#128;&#156;shortPF&#226;&#128;&#157; are not required. -  The 
+  GeneratingUnit class should only be used in cases where the more specific
+  classes, HydroGeneratingUnit and ThermalGeneratingUnit, do not apply. -  
+  The attributes governorSCD, maximumAllowableSpinningReserve, nominalP, 
+  startupCost, and variableCost are not required.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">maxOperatingP</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">ratedGrossMaxP</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">variableCost</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">minOperatingP</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">ratedGrossMinP</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">shortPF</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">ratedNetMaxP</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">longPF</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">startupCost</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">genControlSource</span>=<span class="summary-sig-default">&quot;onAGC&quot;</span>,
+        <span class="summary-sig-arg">nominalP</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">governorSCD</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">maximumAllowableSpinningReserve</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">initialP</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">normalPF</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">SynchronousMachines</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ControlAreaGeneratingUnit</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">GrossToNetActivePowerCurves</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'GeneratingUnit' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getSynchronousMachines"></a><span class="summary-sig-name">getSynchronousMachines</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A synchronous machine may operate as a generator and as such becomes 
+      a member of a generating unit</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setSynchronousMachines"></a><span class="summary-sig-name">setSynchronousMachines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addSynchronousMachines"></a><span class="summary-sig-name">addSynchronousMachines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*SynchronousMachines</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeSynchronousMachines"></a><span class="summary-sig-name">removeSynchronousMachines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*SynchronousMachines</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getControlAreaGeneratingUnit"></a><span class="summary-sig-name">getControlAreaGeneratingUnit</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      ControlArea specifications for this generating unit.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setControlAreaGeneratingUnit"></a><span class="summary-sig-name">setControlAreaGeneratingUnit</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addControlAreaGeneratingUnit"></a><span class="summary-sig-name">addControlAreaGeneratingUnit</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ControlAreaGeneratingUnit</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeControlAreaGeneratingUnit"></a><span class="summary-sig-name">removeControlAreaGeneratingUnit</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ControlAreaGeneratingUnit</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getGrossToNetActivePowerCurves"></a><span class="summary-sig-name">getGrossToNetActivePowerCurves</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A generating unit may have a gross active power to net active power 
+      curve, describing the losses and auxiliary power requirements of the 
+      unit</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setGrossToNetActivePowerCurves"></a><span class="summary-sig-name">setGrossToNetActivePowerCurves</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addGrossToNetActivePowerCurves"></a><span class="summary-sig-name">addGrossToNetActivePowerCurves</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*GrossToNetActivePowerCurves</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeGrossToNetActivePowerCurves"></a><span class="summary-sig-name">removeGrossToNetActivePowerCurves</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*GrossToNetActivePowerCurves</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="[&quot;maxOperatingP&quot;, &quot;ratedGrossMaxP&quot;, &quot;variableCost&quot;, &quot;minOperatingP&quot;, &quot;\
+ratedGrossMinP&quot;, &quot;shortPF&quot;, &quot;ratedNetMaxP&quot;, &quot;longPF&quot;, &quot;startupCost&quot;, &quot;\
+genControlSource&quot;, &quot;nominalP&quot;, &quot;governorSCD&quot;, &quot;maximumAllowableSpinnin\
+gReserve&quot;, &quot;initialP&quot;, &quot;normalPF&quot;]">[&quot;maxOperatingP&quot;, &quot;ratedGrossMaxP&quot;, &quot;variableCost&quot;, &quot;<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{&quot;maxOperatingP&quot;: float, &quot;ratedGrossMaxP&quot;: float, &quot;variableCost&quot;: floa\
+t, &quot;minOperatingP&quot;: float, &quot;ratedGrossMinP&quot;: float, &quot;shortPF&quot;: float, \
+&quot;ratedNetMaxP&quot;: float, &quot;longPF&quot;: float, &quot;startupCost&quot;: float, &quot;genCont\
+rolSource&quot;: str, &quot;nominalP&quot;: float, &quot;governorSCD&quot;: float, &quot;maximumAllo\
+wableSpinningReserve&quot;: float, &quot;initialP&quot;: float, &quot;normalPF&quot;: float}">{&quot;maxOperatingP&quot;: float, &quot;ratedGrossMaxP&quot;: float<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{&quot;maxOperatingP&quot;: 0.0, &quot;ratedGrossMaxP&quot;: 0.0, &quot;variableCost&quot;: 0.0, &quot;mi\
+nOperatingP&quot;: 0.0, &quot;ratedGrossMinP&quot;: 0.0, &quot;shortPF&quot;: 0.0, &quot;ratedNetMax\
+P&quot;: 0.0, &quot;longPF&quot;: 0.0, &quot;startupCost&quot;: 0.0, &quot;genControlSource&quot;: &quot;onAGC\
+&quot;, &quot;nominalP&quot;: 0.0, &quot;governorSCD&quot;: 0.0, &quot;maximumAllowableSpinningReser\
+ve&quot;: 0.0, &quot;initialP&quot;: 0.0, &quot;normalPF&quot;: 0.0}">{&quot;maxOperatingP&quot;: 0.0, &quot;ratedGrossMaxP&quot;: 0.0, &quot;var<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_enums"></a><span class="summary-name">_enums</span> = <code title="{&quot;genControlSource&quot;: &quot;GeneratorControlSource&quot;}">{&quot;genControlSource&quot;: &quot;GeneratorControlSource&quot;}</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="[&quot;SynchronousMachines&quot;, &quot;ControlAreaGeneratingUnit&quot;, &quot;GrossToNetActive\
+PowerCurves&quot;]">[&quot;SynchronousMachines&quot;, &quot;ControlAreaGeneratingUnit&quot;, &quot;<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#_many_refs" class="summary-name" onclick="show_private();">_many_refs</a> = <code title="[&quot;SynchronousMachines&quot;, &quot;ControlAreaGeneratingUnit&quot;, &quot;GrossToNetActive\
+PowerCurves&quot;]">[&quot;SynchronousMachines&quot;, &quot;ControlAreaGeneratingUni<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#SynchronousMachines" class="summary-name">SynchronousMachines</a> = <code title="property(getSynchronousMachines, setSynchronousMachines)">property(getSynchronousMachines, setSync<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#ControlAreaGeneratingUnit" class="summary-name">ControlAreaGeneratingUnit</a> = <code title="property(getControlAreaGeneratingUnit, setControlAreaGeneratingUnit)">property(getControlAreaGeneratingU<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#GrossToNetActivePowerCurves" class="summary-name">GrossToNetActivePowerCurves</a> = <code title="property(getGrossToNetActivePowerCurves, setGrossToNetActivePowerCurve\
+s)">property(getGrossToNetActivePowe<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="maxOperatingP"></a><span class="summary-name">maxOperatingP</span><br />
+      This is the maximum operating active power limit the dispatcher can 
+      enter for this unit
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ratedGrossMaxP"></a><span class="summary-name">ratedGrossMaxP</span><br />
+      The unit's gross rated maximum capacity (Book Value).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="variableCost"></a><span class="summary-name">variableCost</span><br />
+      The variable cost component of production per unit of ActivePower.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="minOperatingP"></a><span class="summary-name">minOperatingP</span><br />
+      This is the minimum operating active power limit the dispatcher can 
+      enter for this unit.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ratedGrossMinP"></a><span class="summary-name">ratedGrossMinP</span><br />
+      The gross rated minimum generation level which the unit can safely 
+      operate at while delivering power to the transmission grid
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="shortPF"></a><span class="summary-name">shortPF</span><br />
+      Generating unit economic participation factor
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ratedNetMaxP"></a><span class="summary-name">ratedNetMaxP</span><br />
+      The net rated maximum capacity determined by subtracting the 
+      auxiliary power used to operate the internal plant machinery from the
+      rated gross maximum capacity
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="longPF"></a><span class="summary-name">longPF</span><br />
+      Generating unit economic participation factor
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="startupCost"></a><span class="summary-name">startupCost</span><br />
+      The initial startup cost incurred for each start of the 
+      GeneratingUnit.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#genControlSource" class="summary-name">genControlSource</a><br />
+      The source of controls for a generating unit.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#nominalP" class="summary-name">nominalP</a><br />
+      The nominal power of the generating unit.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#governorSCD" class="summary-name">governorSCD</a><br />
+      Governor Speed Changer Droop.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Generation.Production.GeneratingUnit.GeneratingUnit-class.html#maximumAllowableSpinningReserve" class="summary-name">maximumAllowableSpinningReserve</a><br />
+      Maximum allowable spinning reserve.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="initialP"></a><span class="summary-name">initialP</span><br />
+      Default Initial active power  which is used to store a powerflow 
+      result for the initial active power for this unit in this network 
+      configuration
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="normalPF"></a><span class="summary-name">normalPF</span><br />
+      Generating unit economic participation factor
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">maxOperatingP</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">ratedGrossMaxP</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">variableCost</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">minOperatingP</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">ratedGrossMinP</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">shortPF</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">ratedNetMaxP</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">longPF</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">startupCost</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">genControlSource</span>=<span class="sig-default">&quot;onAGC&quot;</span>,
+        <span class="sig-arg">nominalP</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">governorSCD</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">maximumAllowableSpinningReserve</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">initialP</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">normalPF</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">SynchronousMachines</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ControlAreaGeneratingUnit</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">GrossToNetActivePowerCurves</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'GeneratingUnit' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>maxOperatingP</code></strong> - This is the maximum operating active power limit the dispatcher 
+          can enter for this unit</li>
+        <li><strong class="pname"><code>ratedGrossMaxP</code></strong> - The unit's gross rated maximum capacity (Book Value).</li>
+        <li><strong class="pname"><code>variableCost</code></strong> - The variable cost component of production per unit of 
+          ActivePower.</li>
+        <li><strong class="pname"><code>minOperatingP</code></strong> - This is the minimum operating active power limit the dispatcher 
+          can enter for this unit.</li>
+        <li><strong class="pname"><code>ratedGrossMinP</code></strong> - The gross rated minimum generation level which the unit can 
+          safely operate at while delivering power to the transmission grid</li>
+        <li><strong class="pname"><code>shortPF</code></strong> - Generating unit economic participation factor</li>
+        <li><strong class="pname"><code>ratedNetMaxP</code></strong> - The net rated maximum capacity determined by subtracting the 
+          auxiliary power used to operate the internal plant machinery from
+          the rated gross maximum capacity</li>
+        <li><strong class="pname"><code>longPF</code></strong> - Generating unit economic participation factor</li>
+        <li><strong class="pname"><code>startupCost</code></strong> - The initial startup cost incurred for each start of the 
+          GeneratingUnit.</li>
+        <li><strong class="pname"><code>genControlSource</code></strong> - The source of controls for a generating unit. Values are: 
+          &quot;onAGC&quot;, &quot;unavailable&quot;, 
+          &quot;plantControl&quot;, &quot;offAGC&quot;</li>
+        <li><strong class="pname"><code>nominalP</code></strong> - The nominal power of the generating unit.  Used to give precise 
+          meaning to percentage based attributes such as the govenor speed 
+          change droop (govenorSCD attribute).</li>
+        <li><strong class="pname"><code>governorSCD</code></strong> - Governor Speed Changer Droop.   This is the change in generator 
+          power output divided by the change in frequency normalized by the
+          nominal power of the generator and the nominal frequency and 
+          expressed in percent and negated. A positive value of speed 
+          change droop provides additional generator output upon a drop in 
+          frequency.</li>
+        <li><strong class="pname"><code>maximumAllowableSpinningReserve</code></strong> - Maximum allowable spinning reserve. Spinning reserve will never 
+          be considered greater than this value regardless of the current 
+          operating point.</li>
+        <li><strong class="pname"><code>initialP</code></strong> - Default Initial active power  which is used to store a powerflow 
+          result for the initial active power for this unit in this network
+          configuration</li>
+        <li><strong class="pname"><code>normalPF</code></strong> - Generating unit economic participation factor</li>
+        <li><strong class="pname"><code>SynchronousMachines</code></strong> - A synchronous machine may operate as a generator and as such 
+          becomes a member of a generating unit</li>
+        <li><strong class="pname"><code>ControlAreaGeneratingUnit</code></strong> - ControlArea specifications for this generating unit.</li>
+        <li><strong class="pname"><code>GrossToNetActivePowerCurves</code></strong> - A generating unit may have a gross active power to net active 
+          power curve, describing the losses and auxiliary power 
+          requirements of the unit</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;maxOperatingP&quot;, &quot;ratedGrossMaxP&quot;, &quot;variableCost&quot;, &quot;minOperatingP&quot;, &quot;<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ratedGrossMinP&quot;, &quot;shortPF&quot;, &quot;ratedNetMaxP&quot;, &quot;longPF&quot;, &quot;startupCost&quot;, &quot;<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+genControlSource&quot;, &quot;nominalP&quot;, &quot;governorSCD&quot;, &quot;maximumAllowableSpinnin<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+gReserve&quot;, &quot;initialP&quot;, &quot;normalPF&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;maxOperatingP&quot;: float, &quot;ratedGrossMaxP&quot;: float, &quot;variableCost&quot;: floa<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+t, &quot;minOperatingP&quot;: float, &quot;ratedGrossMinP&quot;: float, &quot;shortPF&quot;: float, <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+&quot;ratedNetMaxP&quot;: float, &quot;longPF&quot;: float, &quot;startupCost&quot;: float, &quot;genCont<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+rolSource&quot;: str, &quot;nominalP&quot;: float, &quot;governorSCD&quot;: float, &quot;maximumAllo<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+wableSpinningReserve&quot;: float, &quot;initialP&quot;: float, &quot;normalPF&quot;: float}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;maxOperatingP&quot;: 0.0, &quot;ratedGrossMaxP&quot;: 0.0, &quot;variableCost&quot;: 0.0, &quot;mi<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+nOperatingP&quot;: 0.0, &quot;ratedGrossMinP&quot;: 0.0, &quot;shortPF&quot;: 0.0, &quot;ratedNetMax<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+P&quot;: 0.0, &quot;longPF&quot;: 0.0, &quot;startupCost&quot;: 0.0, &quot;genControlSource&quot;: &quot;onAGC<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+&quot;, &quot;nominalP&quot;: 0.0, &quot;governorSCD&quot;: 0.0, &quot;maximumAllowableSpinningReser<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ve&quot;: 0.0, &quot;initialP&quot;: 0.0, &quot;normalPF&quot;: 0.0}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;SynchronousMachines&quot;, &quot;ControlAreaGeneratingUnit&quot;, &quot;GrossToNetActive<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+PowerCurves&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_many_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_many_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;SynchronousMachines&quot;, &quot;ControlAreaGeneratingUnit&quot;, &quot;GrossToNetActive<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+PowerCurves&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SynchronousMachines"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">SynchronousMachines</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+property(getSynchronousMachines, setSynchronousMachines)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ControlAreaGeneratingUnit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ControlAreaGeneratingUnit</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+property(getControlAreaGeneratingUnit, setControlAreaGeneratingUnit)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="GrossToNetActivePowerCurves"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">GrossToNetActivePowerCurves</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+property(getGrossToNetActivePowerCurves, setGrossToNetActivePowerCurve<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+s)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== INSTANCE VARIABLE DETAILS ==================== -->
+<a name="section-InstanceVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="genControlSource"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">genControlSource</h3>
+  <p>The source of controls for a generating unit. Values are: 
+  &quot;onAGC&quot;, &quot;unavailable&quot;, &quot;plantControl&quot;, 
+  &quot;offAGC&quot;</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="nominalP"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">nominalP</h3>
+  <p>The nominal power of the generating unit.  Used to give precise 
+  meaning to percentage based attributes such as the govenor speed change 
+  droop (govenorSCD attribute).</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="governorSCD"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">governorSCD</h3>
+  <p>Governor Speed Changer Droop.   This is the change in generator power 
+  output divided by the change in frequency normalized by the nominal power
+  of the generator and the nominal frequency and expressed in percent and 
+  negated. A positive value of speed change droop provides additional 
+  generator output upon a drop in frequency.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="maximumAllowableSpinningReserve"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">maximumAllowableSpinningReserve</h3>
+  <p>Maximum allowable spinning reserve. Spinning reserve will never be 
+  considered greater than this value regardless of the current operating 
+  point.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:35 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

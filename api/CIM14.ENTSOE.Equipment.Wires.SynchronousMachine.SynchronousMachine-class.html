@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        CIM14 ::
+        ENTSOE ::
+        Equipment ::
+        Wires ::
+        SynchronousMachine ::
+        SynchronousMachine ::
+        Class&nbsp;SynchronousMachine
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class SynchronousMachine</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+Core.ConductingEquipment.ConductingEquipment --+    
+                                               |    
+               <a href="CIM14.ENTSOE.Equipment.Wires.RegulatingCondEq.RegulatingCondEq-class.html">RegulatingCondEq.RegulatingCondEq</a> --+
+                                                   |
+                                                  <strong class="uidshort">SynchronousMachine</strong>
+</pre>
+
+<hr />
+<p>An electromechanical device that operates synchronously with the 
+  network. It is a single machine operating either as a generator or 
+  synchronous condenser or pump.-  [R7.2] and [R9.3] are satisfied by 
+  navigation to ConnectivityNode and Substation. -  If a SynchronousMachine
+  is not associated with a ReactiveCapabilityCurve, then the minQ and maxQ 
+  attributes will be used.   -  If a ReactiveCapabilityCurve is supplied, 
+  then the minQ and maxQ attributes are not required. -  If a synchronous 
+  condenser is being modeled so that there is no capability for real power 
+  output, the SynchronousMachine is not required to be associated with a 
+  GeneratingUnit.  In this case, the type and operatingMode attributes must
+  both be set to &#226;&#128;&#156;condenser&#226;&#128;&#157;. -  Attributes qPercent, r, r0, r2, x, x0,
+  x2, ratedS and referencePriority are not required.  
+  SynchronousMachine.GeneratingUnit is required for this profile - need to 
+  change UML to reflect this.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x0</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">qPercent</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">x2</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">r</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">referencePriority</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">operatingMode</span>=<span class="summary-sig-default">&quot;condenser&quot;</span>,
+        <span class="summary-sig-arg">r0</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">type</span>=<span class="summary-sig-default">&quot;condenser&quot;</span>,
+        <span class="summary-sig-arg">r2</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">maxQ</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">x</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">ratedS</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">minQ</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">InitialReactiveCapabilityCurve</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">HydroPump</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">GeneratingUnit</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'SynchronousMachine' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getInitialReactiveCapabilityCurve"></a><span class="summary-sig-name">getInitialReactiveCapabilityCurve</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The default ReactiveCapabilityCurve for use by a SynchronousMachine</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setInitialReactiveCapabilityCurve"></a><span class="summary-sig-name">setInitialReactiveCapabilityCurve</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#getHydroPump" class="summary-sig-name">getHydroPump</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The synchronous machine drives the turbine which moves the water from
+      a low elevation to a higher elevation.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setHydroPump"></a><span class="summary-sig-name">setHydroPump</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getGeneratingUnit"></a><span class="summary-sig-name">getGeneratingUnit</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A synchronous machine may operate as a generator and as such becomes 
+      a member of a generating unitFor the 2010 ENTSOE IOP, this is 
+      required for Synchronous Machine.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setGeneratingUnit"></a><span class="summary-sig-name">setGeneratingUnit</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.ENTSOE.Equipment.Wires.RegulatingCondEq.RegulatingCondEq-class.html">RegulatingCondEq.RegulatingCondEq</a></code></b>:
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.RegulatingCondEq.RegulatingCondEq-class.html#getRegulatingControl">getRegulatingControl</a></code>,
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.RegulatingCondEq.RegulatingCondEq-class.html#setRegulatingControl">setRegulatingControl</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="[&quot;x0&quot;, &quot;qPercent&quot;, &quot;x2&quot;, &quot;r&quot;, &quot;referencePriority&quot;, &quot;operatingMode&quot;, &quot;r\
+0&quot;, &quot;type&quot;, &quot;r2&quot;, &quot;maxQ&quot;, &quot;x&quot;, &quot;ratedS&quot;, &quot;minQ&quot;]">[&quot;x0&quot;, &quot;qPercent&quot;, &quot;x2&quot;, &quot;r&quot;, &quot;referencePriority&quot;, &quot;o<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{&quot;x0&quot;: float, &quot;qPercent&quot;: float, &quot;x2&quot;: float, &quot;r&quot;: float, &quot;referencePr\
+iority&quot;: int, &quot;operatingMode&quot;: str, &quot;r0&quot;: float, &quot;type&quot;: str, &quot;r2&quot;: fl\
+oat, &quot;maxQ&quot;: float, &quot;x&quot;: float, &quot;ratedS&quot;: float, &quot;minQ&quot;: float}">{&quot;x0&quot;: float, &quot;qPercent&quot;: float, &quot;x2&quot;: float, &quot;r<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{&quot;x0&quot;: 0.0, &quot;qPercent&quot;: 0.0, &quot;x2&quot;: 0.0, &quot;r&quot;: 0.0, &quot;referencePriority&quot;:\
+ 0, &quot;operatingMode&quot;: &quot;condenser&quot;, &quot;r0&quot;: 0.0, &quot;type&quot;: &quot;condenser&quot;, &quot;r2&quot;\
+: 0.0, &quot;maxQ&quot;: 0.0, &quot;x&quot;: 0.0, &quot;ratedS&quot;: 0.0, &quot;minQ&quot;: 0.0}">{&quot;x0&quot;: 0.0, &quot;qPercent&quot;: 0.0, &quot;x2&quot;: 0.0, &quot;r&quot;: 0.0, <code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#_enums" class="summary-name" onclick="show_private();">_enums</a> = <code title="{&quot;operatingMode&quot;: &quot;SynchronousMachineOperatingMode&quot;, &quot;type&quot;: &quot;Synchron\
+ousMachineType&quot;}">{&quot;operatingMode&quot;: &quot;SynchronousMachineOperatingMode&quot;, <code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="[&quot;InitialReactiveCapabilityCurve&quot;, &quot;HydroPump&quot;, &quot;GeneratingUnit&quot;]">[&quot;InitialReactiveCapabilityCurve&quot;, &quot;HydroPump&quot;, &quot;Gener<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_many_refs"></a><span class="summary-name">_many_refs</span> = <code title="[]">[]</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#InitialReactiveCapabilityCurve" class="summary-name">InitialReactiveCapabilityCurve</a> = <code title="property(getInitialReactiveCapabilityCurve, setInitialReactiveCapabili\
+tyCurve)">property(getInitialReactiveCa<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="HydroPump"></a><span class="summary-name">HydroPump</span> = <code title="property(getHydroPump, setHydroPump)">property(getHydroPump, setHydroPump)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="GeneratingUnit"></a><span class="summary-name">GeneratingUnit</span> = <code title="property(getGeneratingUnit, setGeneratingUnit)">property(getGeneratingUnit, setGeneratingUnit)</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.ENTSOE.Equipment.Wires.RegulatingCondEq.RegulatingCondEq-class.html">RegulatingCondEq.RegulatingCondEq</a></code></b>:
+      <code><a href="CIM14.ENTSOE.Equipment.Wires.RegulatingCondEq.RegulatingCondEq-class.html#RegulatingControl">RegulatingControl</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="x0"></a><span class="summary-name">x0</span><br />
+      Zero sequence reactance of the synchronous machine.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="qPercent"></a><span class="summary-name">qPercent</span><br />
+      Percent of the coordinated reactive control that comes from this 
+      machine.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="x2"></a><span class="summary-name">x2</span><br />
+      Negative sequence reactance.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="r"></a><span class="summary-name">r</span><br />
+      Positive sequence resistance of the synchronous machine.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#referencePriority" class="summary-name">referencePriority</a><br />
+      Priority of unit for reference bus selection.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#operatingMode" class="summary-name">operatingMode</a><br />
+      Current mode of operation.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="r0"></a><span class="summary-name">r0</span><br />
+      Zero sequence resistance of the synchronous machine.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#type" class="summary-name">type</a><br />
+      Modes that this synchronous machine can operate in.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="r2"></a><span class="summary-name">r2</span><br />
+      Negative sequence resistance.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.ENTSOE.Equipment.Wires.SynchronousMachine.SynchronousMachine-class.html#maxQ" class="summary-name">maxQ</a><br />
+      Maximum reactive power limit.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="x"></a><span class="summary-name">x</span><br />
+      Positive sequence reactance of the synchronous machine.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ratedS"></a><span class="summary-name">ratedS</span><br />
+      Nameplate apparent power rating for the unit
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="minQ"></a><span class="summary-name">minQ</span><br />
+      Minimum reactive power limit for the unit.
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x0</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">qPercent</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">x2</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">r</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">referencePriority</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">operatingMode</span>=<span class="sig-default">&quot;condenser&quot;</span>,
+        <span class="sig-arg">r0</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">type</span>=<span class="sig-default">&quot;condenser&quot;</span>,
+        <span class="sig-arg">r2</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">maxQ</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">x</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">ratedS</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">minQ</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">InitialReactiveCapabilityCurve</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">HydroPump</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">GeneratingUnit</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'SynchronousMachine' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>x0</code></strong> - Zero sequence reactance of the synchronous machine.</li>
+        <li><strong class="pname"><code>qPercent</code></strong> - Percent of the coordinated reactive control that comes from this 
+          machine.</li>
+        <li><strong class="pname"><code>x2</code></strong> - Negative sequence reactance.</li>
+        <li><strong class="pname"><code>r</code></strong> - Positive sequence resistance of the synchronous machine.</li>
+        <li><strong class="pname"><code>referencePriority</code></strong> - Priority of unit for reference bus selection. 0 = don t care 
+          (default) 1 = highest priority. 2 is less than 1 and so on.</li>
+        <li><strong class="pname"><code>operatingMode</code></strong> - Current mode of operation. Values are: &quot;condenser&quot;, 
+          &quot;generator&quot;</li>
+        <li><strong class="pname"><code>r0</code></strong> - Zero sequence resistance of the synchronous machine.</li>
+        <li><strong class="pname"><code>type</code></strong> - Modes that this synchronous machine can operate in. Values are: 
+          &quot;condenser&quot;, &quot;generator_or_condenser&quot;, 
+          &quot;generator&quot;</li>
+        <li><strong class="pname"><code>r2</code></strong> - Negative sequence resistance.</li>
+        <li><strong class="pname"><code>maxQ</code></strong> - Maximum reactive power limit. This is the maximum (nameplate) 
+          limit for the unit.</li>
+        <li><strong class="pname"><code>x</code></strong> - Positive sequence reactance of the synchronous machine.</li>
+        <li><strong class="pname"><code>ratedS</code></strong> - Nameplate apparent power rating for the unit</li>
+        <li><strong class="pname"><code>minQ</code></strong> - Minimum reactive power limit for the unit.</li>
+        <li><strong class="pname"><code>InitialReactiveCapabilityCurve</code></strong> - The default ReactiveCapabilityCurve for use by a 
+          SynchronousMachine</li>
+        <li><strong class="pname"><code>HydroPump</code></strong> - The synchronous machine drives the turbine which moves the water 
+          from a low elevation to a higher elevation. The direction of 
+          machine rotation for pumping may or may not be the same as for 
+          generating.</li>
+        <li><strong class="pname"><code>GeneratingUnit</code></strong> - A synchronous machine may operate as a generator and as such 
+          becomes a member of a generating unitFor the 2010 ENTSOE IOP, 
+          this is required for Synchronous Machine.</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="CIM14.ENTSOE.Equipment.Wires.RegulatingCondEq.RegulatingCondEq-class.html#__init__">RegulatingCondEq.RegulatingCondEq.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getHydroPump"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getHydroPump</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The synchronous machine drives the turbine which moves the water from 
+  a low elevation to a higher elevation. The direction of machine rotation 
+  for pumping may or may not be the same as for generating.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;x0&quot;, &quot;qPercent&quot;, &quot;x2&quot;, &quot;r&quot;, &quot;referencePriority&quot;, &quot;operatingMode&quot;, &quot;r<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0&quot;, &quot;type&quot;, &quot;r2&quot;, &quot;maxQ&quot;, &quot;x&quot;, &quot;ratedS&quot;, &quot;minQ&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;x0&quot;: float, &quot;qPercent&quot;: float, &quot;x2&quot;: float, &quot;r&quot;: float, &quot;referencePr<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+iority&quot;: int, &quot;operatingMode&quot;: str, &quot;r0&quot;: float, &quot;type&quot;: str, &quot;r2&quot;: fl<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+oat, &quot;maxQ&quot;: float, &quot;x&quot;: float, &quot;ratedS&quot;: float, &quot;minQ&quot;: float}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;x0&quot;: 0.0, &quot;qPercent&quot;: 0.0, &quot;x2&quot;: 0.0, &quot;r&quot;: 0.0, &quot;referencePriority&quot;:<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ 0, &quot;operatingMode&quot;: &quot;condenser&quot;, &quot;r0&quot;: 0.0, &quot;type&quot;: &quot;condenser&quot;, &quot;r2&quot;<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+: 0.0, &quot;maxQ&quot;: 0.0, &quot;x&quot;: 0.0, &quot;ratedS&quot;: 0.0, &quot;minQ&quot;: 0.0}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_enums"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_enums</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;operatingMode&quot;: &quot;SynchronousMachineOperatingMode&quot;, &quot;type&quot;: &quot;Synchron<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ousMachineType&quot;}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;InitialReactiveCapabilityCurve&quot;, &quot;HydroPump&quot;, &quot;GeneratingUnit&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="InitialReactiveCapabilityCurve"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">InitialReactiveCapabilityCurve</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+property(getInitialReactiveCapabilityCurve, setInitialReactiveCapabili<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+tyCurve)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== INSTANCE VARIABLE DETAILS ==================== -->
+<a name="section-InstanceVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="referencePriority"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">referencePriority</h3>
+  <p>Priority of unit for reference bus selection. 0 = don t care (default)
+  1 = highest priority. 2 is less than 1 and so on.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="operatingMode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">operatingMode</h3>
+  <p>Current mode of operation. Values are: &quot;condenser&quot;, 
+  &quot;generator&quot;</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="type"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">type</h3>
+  <p>Modes that this synchronous machine can operate in. Values are: 
+  &quot;condenser&quot;, &quot;generator_or_condenser&quot;, 
+  &quot;generator&quot;</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="maxQ"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">maxQ</h3>
+  <p>Maximum reactive power limit. This is the maximum (nameplate) limit 
+  for the unit.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:38 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

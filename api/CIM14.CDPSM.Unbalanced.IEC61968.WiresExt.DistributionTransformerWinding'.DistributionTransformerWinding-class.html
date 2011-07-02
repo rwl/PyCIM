@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding'.DistributionTransformerWinding</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;CIM14 ::
+        <a href="CIM14.CDPSM-module.html">Package&nbsp;CDPSM</a> ::
+        <a href="CIM14.CDPSM.Unbalanced-module.html">Package&nbsp;Unbalanced</a> ::
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968-module.html">Package&nbsp;IEC61968</a> ::
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt-module.html">Package&nbsp;WiresExt</a> ::
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27-module.html">Module&nbsp;DistributionTransformerWinding'</a> ::
+        Class&nbsp;DistributionTransformerWinding
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class DistributionTransformerWinding</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                                    object --+                    
+                                             |                    
+                              <a href="CIM14.CDPSM.Unbalanced.Element%27.Element-class.html">Element'.Element</a> --+                
+                                                 |                
+  <a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">IEC61970.Core.IdentifiedObject'.IdentifiedObject</a> --+            
+                                                     |            
+<a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">IEC61970.Core.PowerSystemResource'.PowerSystemResource</a> --+        
+                                                         |        
+                        <a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.Equipment%27.Equipment-class.html">IEC61970.Core.Equipment'.Equipment</a> --+    
+                                                             |    
+        <a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html">IEC61970.Core.ConductingEquipment'.ConductingEquipment</a> --+
+                                                                 |
+                                                                <strong class="uidshort">DistributionTransformerWinding</strong>
+</pre>
+
+<hr />
+<pre class="literalblock">
+Conducting connection point of a distribution / unbalanced transformer winding instance.
+This class differs from Wires::TransformerWinding as follows:
+- the eight Pi model attributes are moved into separate class, that can be optionally referred to from several winding instances.
+- the three grounding attributes can differ per winding instance, even for windings that use the same TransformerInfo, so they are kept on DistributionTransformerWinding.
+- 'windingType' attribute is replaced by 'sequenceNumber' attribute on WindingInfo class.
+- all the other attributes come from the WindingInfo (and its relationships). TransformerInfo is associated to the DistributionTransformer as referenceable data, so it can be defined once and referred to from instances, instead of being specified with each instance.
+   
+
+</pre>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">rground</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">xground</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">grounded</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">WindingInfo</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Transformer</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">RatioTapChanger</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">PiImpedance</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'DistributionTransformerWinding' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getPiImpedance"></a><span class="summary-sig-name">getPiImpedance</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      (accurate for 2- or 3-winding transformers only) Pi-model impedances 
+      of this winding.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getRatioTapChanger"></a><span class="summary-sig-name">getRatioTapChanger</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Ratio tap changer associated with this winding.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTransformer"></a><span class="summary-sig-name">getTransformer</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Transformer this winding belongs to.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getWindingInfo"></a><span class="summary-sig-name">getWindingInfo</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Data for this winding.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setPiImpedance"></a><span class="summary-sig-name">setPiImpedance</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setRatioTapChanger"></a><span class="summary-sig-name">setRatioTapChanger</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTransformer"></a><span class="summary-sig-name">setTransformer</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setWindingInfo"></a><span class="summary-sig-name">setWindingInfo</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html">IEC61970.Core.ConductingEquipment'.ConductingEquipment</a></code></b>:
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#addTerminals">addTerminals</a></code>,
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#getBaseVoltage">getBaseVoltage</a></code>,
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#getTerminals">getTerminals</a></code>,
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#removeTerminals">removeTerminals</a></code>,
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#setBaseVoltage">setBaseVoltage</a></code>,
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#setTerminals">setTerminals</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.Equipment%27.Equipment-class.html">IEC61970.Core.Equipment'.Equipment</a></code></b>:
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.Equipment%27.Equipment-class.html#getEquipmentContainer">getEquipmentContainer</a></code>,
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.Equipment%27.Equipment-class.html#setEquipmentContainer">setEquipmentContainer</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">IEC61970.Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getGeoLocation">getGeoLocation</a></code>,
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSRType">getPSRType</a></code>,
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setGeoLocation">setGeoLocation</a></code>,
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSRType">setPSRType</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'grounded': &lt;type 'bool'&gt;,
+ 'rground': &lt;type 'float'&gt;,
+ 'xground': &lt;type 'float'&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">grounded</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'bool'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">rground</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'fl<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_attrs"></a><span class="summary-name">_attrs</span> = <code title="['rground', 'xground', 'grounded']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">rground</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">xground</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">grounded</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_defaults"></a><span class="summary-name">_defaults</span> = <code title="{'grounded': False, 'rground': 0.0, 'xground': 0.0}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">grounded</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">rground</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">xground</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_enums"></a><span class="summary-name">_enums</span> = <code title="{}"><code class="variable-group">{</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_many_refs"></a><span class="summary-name">_many_refs</span> = <code title="[]"><code class="variable-group">[</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="['WindingInfo', 'Transformer', 'RatioTapChanger', 'PiImpedance']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">WindingInfo</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Transformer</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">RatioTapChanger</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">PiI</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#PiImpedance" class="summary-name">PiImpedance</a><br />
+      (accurate for 2- or 3-winding transformers only) Pi-model impedances 
+      of this winding.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#RatioTapChanger" class="summary-name">RatioTapChanger</a><br />
+      Ratio tap changer associated with this winding.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#Transformer" class="summary-name">Transformer</a><br />
+      Transformer this winding belongs to.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#WindingInfo" class="summary-name">WindingInfo</a><br />
+      Data for this winding.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html">IEC61970.Core.ConductingEquipment'.ConductingEquipment</a></code></b>:
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#BaseVoltage">BaseVoltage</a></code>,
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#Terminals">Terminals</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.Equipment%27.Equipment-class.html">IEC61970.Core.Equipment'.Equipment</a></code></b>:
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.Equipment%27.Equipment-class.html#EquipmentContainer">EquipmentContainer</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">IEC61970.Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#GeoLocation">GeoLocation</a></code>,
+      <code><a href="CIM14.CDPSM.Unbalanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSRType">PSRType</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">rground</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">xground</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">grounded</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">WindingInfo</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Transformer</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">RatioTapChanger</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">PiImpedance</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'DistributionTransformerWinding' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>rground</code></strong> - (for Yn and Zn connections) Resistance part of neutral impedance 
+          where 'grounded' is true.</li>
+        <li><strong class="pname"><code>xground</code></strong> - (for Yn and Zn connections) Reactive part of neutral impedance 
+          where 'grounded' is true.</li>
+        <li><strong class="pname"><code>grounded</code></strong> - (for Yn and Zn connections) True if the neutral is solidly 
+          grounded.</li>
+        <li><strong class="pname"><code>WindingInfo</code></strong> - Data for this winding.</li>
+        <li><strong class="pname"><code>Transformer</code></strong> - Transformer this winding belongs to.</li>
+        <li><strong class="pname"><code>RatioTapChanger</code></strong> - Ratio tap changer associated with this winding.</li>
+        <li><strong class="pname"><code>PiImpedance</code></strong> - (accurate for 2- or 3-winding transformers only) Pi-model 
+          impedances of this winding.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">grounded</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'bool'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">rground</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">xground</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">WindingInfo</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Transformer</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">RatioTapChanger</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">PiImpedance</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="PiImpedance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PiImpedance</h3>
+  <p>(accurate for 2- or 3-winding transformers only) Pi-model impedances 
+  of this winding.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#getPiImpedance" class="summary-sig-name">getPiImpedance</a>(<span class="summary-sig-arg">self</span>)</span>
+        - (accurate for 2- or 3-winding transformers only) Pi-model impedances 
+      of this winding.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#setPiImpedance" class="summary-sig-name">setPiImpedance</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RatioTapChanger"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RatioTapChanger</h3>
+  <p>Ratio tap changer associated with this winding.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#getRatioTapChanger" class="summary-sig-name">getRatioTapChanger</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Ratio tap changer associated with this winding.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#setRatioTapChanger" class="summary-sig-name">setRatioTapChanger</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Transformer"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Transformer</h3>
+  <p>Transformer this winding belongs to.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#getTransformer" class="summary-sig-name">getTransformer</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Transformer this winding belongs to.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#setTransformer" class="summary-sig-name">setTransformer</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="WindingInfo"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">WindingInfo</h3>
+  <p>Data for this winding.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#getWindingInfo" class="summary-sig-name">getWindingInfo</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Data for this winding.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Unbalanced.IEC61968.WiresExt.DistributionTransformerWinding%27.DistributionTransformerWinding-class.html#setWindingInfo" class="summary-sig-name">setWindingInfo</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:34 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

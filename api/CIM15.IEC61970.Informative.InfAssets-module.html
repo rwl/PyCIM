@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Informative.InfAssets</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Informative-module.html">Package&nbsp;Informative</a> ::
+        Package&nbsp;InfAssets
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Informative.InfAssets-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package InfAssets</h1><p class="nomargin-top"></p>
+<p>The package is used to define asset-level models for objects. Assets 
+  may be comprised of other assets and may have relationships to other 
+  assets. Assets also have owners and values. Assets may also have a 
+  relationship to a PowerSystemResource in the Wires model.  TODO: The 
+  following has been copied from a very old version of draft Part 11, so 
+  the references are wrong, but we store the knowledge here to reuse later:
+  'Assets are the basic units which define a physical infrastructure. 
+  PowerSystemResources are logical objects meaningful to operations which 
+  are constructed from one or more Assets, although PowerSystemResources 
+  are not required to specifiy their component Assets. The Asset package is
+  comprosed of several packages. The key concepts of an Asset are as 
+  follows: &lt;ul&gt;        &lt;li&gt;Assets can have names, through 
+  inheritance to the Naming package&lt;/li&gt;       &lt;li&gt;Assets are 
+  physical entities which have a lifecycle&lt;/li&gt;    &lt;li&gt;One or 
+  more assets can be associated to create a PowerSystemResource&lt;/li&gt;
+  &lt;li&gt;Assets can be grouped (aggregated) with other Assets&lt;/li&gt;
+  &lt;li&gt;Assets are typically either 'point' or 'linear' assets, which 
+  relate to physical geometry&lt;/li&gt;      &lt;li&gt;Assets have a close
+  relationship to Work as a consequence of their lifecycle&lt;/li&gt; 
+  &lt;/ul&gt; The following sections describe the packages in the Assets 
+  package. The AssetBasics package defines the relationship between Asset 
+  and other classes, such as Organization, PowerSystemResource and 
+  Document. Point assets are those assets whose physical location can be 
+  described in terms of a single coordinate, such as a pole or a switch. 
+  Linear assets are those assets whose physical location is best described 
+  in terms of a line, plyline or polygon. Asset work triggers are used to 
+  determine when inspection and/or maintenance are required for 
+  assets.'</p>
+
+<!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Submodules</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Submodules"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.AssetAssetRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.AssetAssetRole%27-module.html">CIM15.IEC61970.Informative.InfAssets.AssetAssetRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.AssetPropertyCurve</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.AssetPropertyCurve%27-module.html">CIM15.IEC61970.Informative.InfAssets.AssetPropertyCurve'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.BreakerInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.BreakerInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.BreakerInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Bushing</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Bushing%27-module.html">CIM15.IEC61970.Informative.InfAssets.Bushing'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.BushingInsulationPF</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.BushingInsulationPF%27-module.html">CIM15.IEC61970.Informative.InfAssets.BushingInsulationPF'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Cabinet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Cabinet%27-module.html">CIM15.IEC61970.Informative.InfAssets.Cabinet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ComEquipment</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ComEquipment%27-module.html">CIM15.IEC61970.Informative.InfAssets.ComEquipment'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.CompositeSwitchInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.CompositeSwitchInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.CompositeSwitchInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ConductorAsset</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ConductorAsset%27-module.html">CIM15.IEC61970.Informative.InfAssets.ConductorAsset'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.CurrentTransformerInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.CurrentTransformerInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.CurrentTransformerInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.DimensionsInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.DimensionsInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.DimensionsInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.DocAssetRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.DocAssetRole%27-module.html">CIM15.IEC61970.Informative.InfAssets.DocAssetRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Duct</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Duct%27-module.html">CIM15.IEC61970.Informative.InfAssets.Duct'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.DuctBank</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.DuctBank%27-module.html">CIM15.IEC61970.Informative.InfAssets.DuctBank'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ElectricalInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ElectricalInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.ElectricalInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.FACTSDevice</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.FACTSDevice%27-module.html">CIM15.IEC61970.Informative.InfAssets.FACTSDevice'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Facility</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Facility%27-module.html">CIM15.IEC61970.Informative.InfAssets.Facility'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.FailureEvent</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.FailureEvent%27-module.html">CIM15.IEC61970.Informative.InfAssets.FailureEvent'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.FaultIndicatorInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.FaultIndicatorInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.FaultIndicatorInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.FinancialInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.FinancialInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.FinancialInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.GenericAssetModelOrMaterial</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.GenericAssetModelOrMaterial%27-module.html">CIM15.IEC61970.Informative.InfAssets.GenericAssetModelOrMaterial'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Joint</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Joint%27-module.html">CIM15.IEC61970.Informative.InfAssets.Joint'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Medium</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Medium%27-module.html">CIM15.IEC61970.Informative.InfAssets.Medium'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.MountingConnection</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.MountingConnection%27-module.html">CIM15.IEC61970.Informative.InfAssets.MountingConnection'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.MountingPoint</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.MountingPoint%27-module.html">CIM15.IEC61970.Informative.InfAssets.MountingPoint'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.OrgAssetRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.OrgAssetRole%27-module.html">CIM15.IEC61970.Informative.InfAssets.OrgAssetRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Pole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Pole%27-module.html">CIM15.IEC61970.Informative.InfAssets.Pole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.PotentialTransformerInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.PotentialTransformerInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.PotentialTransformerInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.PowerRating</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.PowerRating%27-module.html">CIM15.IEC61970.Informative.InfAssets.PowerRating'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Procedure</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27-module.html">CIM15.IEC61970.Informative.InfAssets.Procedure'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ProcedureDataSet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ProcedureDataSet%27-module.html">CIM15.IEC61970.Informative.InfAssets.ProcedureDataSet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ProtectionEquipmentInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ProtectionEquipmentInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.ProtectionEquipmentInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.RecloserInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.RecloserInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.RecloserInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ReliabilityInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ReliabilityInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.ReliabilityInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.SVC</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.SVC%27-module.html">CIM15.IEC61970.Informative.InfAssets.SVC'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ShuntCompensatorInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ShuntCompensatorInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.ShuntCompensatorInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ShuntImpedanceInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ShuntImpedanceInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.ShuntImpedanceInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Specification</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Specification%27-module.html">CIM15.IEC61970.Informative.InfAssets.Specification'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Streetlight</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Streetlight%27-module.html">CIM15.IEC61970.Informative.InfAssets.Streetlight'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Structure</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Structure%27-module.html">CIM15.IEC61970.Informative.InfAssets.Structure'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.StructureSupport</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.StructureSupport%27-module.html">CIM15.IEC61970.Informative.InfAssets.StructureSupport'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.SubstationAsset</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.SubstationAsset%27-module.html">CIM15.IEC61970.Informative.InfAssets.SubstationAsset'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.SurgeProtectorInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.SurgeProtectorInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.SurgeProtectorInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.SwitchInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.SwitchInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.SwitchInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.TestDataSet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.TestDataSet%27-module.html">CIM15.IEC61970.Informative.InfAssets.TestDataSet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Tool</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Tool%27-module.html">CIM15.IEC61970.Informative.InfAssets.Tool'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Tower</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Tower%27-module.html">CIM15.IEC61970.Informative.InfAssets.Tower'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.TransformerAsset</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.TransformerAsset%27-module.html">CIM15.IEC61970.Informative.InfAssets.TransformerAsset'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.TransformerObservation</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.TransformerObservation%27-module.html">CIM15.IEC61970.Informative.InfAssets.TransformerObservation'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.UndergroundStructure</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.UndergroundStructure%27-module.html">CIM15.IEC61970.Informative.InfAssets.UndergroundStructure'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Vehicle</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Vehicle%27-module.html">CIM15.IEC61970.Informative.InfAssets.Vehicle'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.WindingInsulation</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.WindingInsulation%27-module.html">CIM15.IEC61970.Informative.InfAssets.WindingInsulation'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.WorkEquipment</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.WorkEquipment%27-module.html">CIM15.IEC61970.Informative.InfAssets.WorkEquipment'</a></strong>    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.AnchorKind-class.html" class="summary-name">AnchorKind</a><br />
+      Values are: concrete, helix, unknown, multiHelix, screw, rod, other
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.TowerConstructionKind-class.html" class="summary-name">TowerConstructionKind</a><br />
+      Values are: suspension, tension
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.ProcedureKind-class.html" class="summary-name">ProcedureKind</a><br />
+      Values are: test, maintenance, other, inspection, diagnosis
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.FacilityKind-class.html" class="summary-name">FacilityKind</a><br />
+      Values are: plant, building, storage, switching, generation
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.MediumKind-class.html" class="summary-name">MediumKind</a><br />
+      Values are: gas, liquid, solid
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.UndergroundStructureKind-class.html" class="summary-name">UndergroundStructureKind</a><br />
+      Values are: trench, pullbox, vault, burd, subsurfaceEnclosure, 
+        handhole, enclosure, tunnel, manhole, pad
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.PolePreservativeKind-class.html" class="summary-name">PolePreservativeKind</a><br />
+      Values are: penta, unknown, chemonite, other, naphthena, creosote, 
+        cellon
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.ShuntImpedanceLocalControlKind-class.html" class="summary-name">ShuntImpedanceLocalControlKind</a><br />
+      Values are: none, temperature, powerFactor, voltage, reactivePower,
+        time, current
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.CoolingKind-class.html" class="summary-name">CoolingKind</a><br />
+      Values are: forcedAir, selfCooling, forcedOilAndAir, other
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.RegulationBranchKind-class.html" class="summary-name">RegulationBranchKind</a><br />
+      Values are: recloser, transformer, breaker, fuse, switch, 
+        sectionner, other, line
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.VehicleUsageKind-class.html" class="summary-name">VehicleUsageKind</a><br />
+      Values are: crew, contractor, user, other
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.SubstationFunctionKind-class.html" class="summary-name">SubstationFunctionKind</a><br />
+      Values are: transmission, distribution, other, generation, 
+        subTransmission, industrial
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.JointFillKind-class.html" class="summary-name">JointFillKind</a><br />
+      Values are: epoxy, noFillPrefab, airNoFilling, other, asphaltic, 
+        insoluseal, oil, noVoid, petrolatum, bluefill254
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.BushingInsulationPfTestKind-class.html" class="summary-name">BushingInsulationPfTestKind</a><br />
+      Values are: c2, c1
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.PoleTreatmentKind-class.html" class="summary-name">PoleTreatmentKind</a><br />
+      Values are: unknown, natural, grayStain, greenStain, penta, butt, 
+        other, full
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.FaultIndicatorResetKind-class.html" class="summary-name">FaultIndicatorResetKind</a><br />
+      Values are: automatic, other, remote, manual
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.ShuntImpedanceControlKind-class.html" class="summary-name">ShuntImpedanceControlKind</a><br />
+      Values are: remoteOnly, remoteWithLocalOverride, localOnly, fixed
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.JointConfigurationKind-class.html" class="summary-name">JointConfigurationKind</a><br />
+      Values are: other, wires2to1, wires3to1, wires1to1
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.PoleBaseKind-class.html" class="summary-name">PoleBaseKind</a><br />
+      Values are: dirt, asphalt, unknown, cement, other
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.FACTSDeviceKind-class.html" class="summary-name">FACTSDeviceKind</a><br />
+      Values are: tcpar, tssc, tsbr, svc, tcsc, tcvl, statcom, upfc
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.StructureSupportKind-class.html" class="summary-name">StructureSupportKind</a><br />
+      Values are: guy, anchor
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.BushingInsulationKind-class.html" class="summary-name">BushingInsulationKind</a><br />
+      Values are: solidPorcelain, compound, other, paperoil
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.StructureMaterialKind-class.html" class="summary-name">StructureMaterialKind</a><br />
+      Values are: wood, concrete, steel, other
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.StreetlightLampKind-class.html" class="summary-name">StreetlightLampKind</a><br />
+      Values are: metalHalide, highPressureSodium, other, mercuryVapor
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.CompositeSwitchKind-class.html" class="summary-name">CompositeSwitchKind</a><br />
+      Values are: throwOver, regulatorBypass, escoThrowOver, ral, other, 
+        gral, ugMultiSwitch
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.FailureIsolationMethodKind-class.html" class="summary-name">FailureIsolationMethodKind</a><br />
+      Values are: fuse, manuallyIsolated, breakerOperation, other, 
+        burnedInTheClear
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="nsURI"></a><span class="summary-name">nsURI</span> = <code title="'http://iec.ch/TC57/2010/CIM-schema-cim15#InfAssets'"><code class="variable-quote">'</code><code class="variable-string">http://iec.ch/TC57/2010/CIM-schema-cim15#InfAssets</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="nsPrefix"></a><span class="summary-name">nsPrefix</span> = <code title="'cimInfAssets'"><code class="variable-quote">'</code><code class="variable-string">cimInfAssets</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'CIM15.IEC61970.Informative.InfAssets'"><code class="variable-quote">'</code><code class="variable-string">CIM15.IEC61970.Informative.InfAssets</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:30 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

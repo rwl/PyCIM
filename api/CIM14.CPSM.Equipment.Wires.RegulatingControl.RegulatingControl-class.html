@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        CIM14 ::
+        CPSM ::
+        Equipment ::
+        Wires ::
+        RegulatingControl ::
+        RegulatingControl ::
+        Class&nbsp;RegulatingControl
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class RegulatingControl</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+Core.PowerSystemResource.PowerSystemResource --+
+                                               |
+                                              <strong class="uidshort">RegulatingControl</strong>
+</pre>
+
+<hr />
+<p>Specifies a set of equipment that works together to control a power 
+  system quantity such as voltage or flow.Although targetRange and 
+  targetValue is optional, at least one must be used.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">targetRange</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">mode</span>=<span class="summary-sig-default">&quot;reactivePower&quot;</span>,
+        <span class="summary-sig-arg">discrete</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">targetValue</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">RegulationSchedule</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Terminal</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">RegulatingCondEq</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">TapChanger</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'RegulatingControl' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getRegulationSchedule"></a><span class="summary-sig-name">getRegulationSchedule</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Schedule for this Regulating regulating control.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setRegulationSchedule"></a><span class="summary-sig-name">setRegulationSchedule</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addRegulationSchedule"></a><span class="summary-sig-name">addRegulationSchedule</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*RegulationSchedule</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeRegulationSchedule"></a><span class="summary-sig-name">removeRegulationSchedule</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*RegulationSchedule</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTerminal"></a><span class="summary-sig-name">getTerminal</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The terminal associated with this regulating control.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTerminal"></a><span class="summary-sig-name">setTerminal</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getRegulatingCondEq"></a><span class="summary-sig-name">getRegulatingCondEq</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The equipment that participates in this regulating control scheme.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setRegulatingCondEq"></a><span class="summary-sig-name">setRegulatingCondEq</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addRegulatingCondEq"></a><span class="summary-sig-name">addRegulatingCondEq</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*RegulatingCondEq</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeRegulatingCondEq"></a><span class="summary-sig-name">removeRegulatingCondEq</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*RegulatingCondEq</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTapChanger"></a><span class="summary-sig-name">getTapChanger</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      copy from reg conduting eq</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTapChanger"></a><span class="summary-sig-name">setTapChanger</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addTapChanger"></a><span class="summary-sig-name">addTapChanger</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*TapChanger</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeTapChanger"></a><span class="summary-sig-name">removeTapChanger</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*TapChanger</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_attrs"></a><span class="summary-name">_attrs</span> = <code title="[&quot;targetRange&quot;, &quot;mode&quot;, &quot;discrete&quot;, &quot;targetValue&quot;]">[&quot;targetRange&quot;, &quot;mode&quot;, &quot;discrete&quot;, &quot;targetValue&quot;]</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{&quot;targetRange&quot;: float, &quot;mode&quot;: str, &quot;discrete&quot;: bool, &quot;targetValue&quot;: f\
+loat}">{&quot;targetRange&quot;: float, &quot;mode&quot;: str, &quot;discrete&quot;: <code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{&quot;targetRange&quot;: 0.0, &quot;mode&quot;: &quot;reactivePower&quot;, &quot;discrete&quot;: False, &quot;targ\
+etValue&quot;: 0.0}">{&quot;targetRange&quot;: 0.0, &quot;mode&quot;: &quot;reactivePower&quot;, &quot;dis<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_enums"></a><span class="summary-name">_enums</span> = <code title="{&quot;mode&quot;: &quot;RegulatingControlModeKind&quot;}">{&quot;mode&quot;: &quot;RegulatingControlModeKind&quot;}</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="[&quot;RegulationSchedule&quot;, &quot;Terminal&quot;, &quot;RegulatingCondEq&quot;, &quot;TapChanger&quot;]">[&quot;RegulationSchedule&quot;, &quot;Terminal&quot;, &quot;RegulatingCondEq&quot;,<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl-class.html#_many_refs" class="summary-name" onclick="show_private();">_many_refs</a> = <code title="[&quot;RegulationSchedule&quot;, &quot;RegulatingCondEq&quot;, &quot;TapChanger&quot;]">[&quot;RegulationSchedule&quot;, &quot;RegulatingCondEq&quot;, &quot;TapCh<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl-class.html#RegulationSchedule" class="summary-name">RegulationSchedule</a> = <code title="property(getRegulationSchedule, setRegulationSchedule)">property(getRegulationSchedule, setRegula<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Terminal"></a><span class="summary-name">Terminal</span> = <code title="property(getTerminal, setTerminal)">property(getTerminal, setTerminal)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl-class.html#RegulatingCondEq" class="summary-name">RegulatingCondEq</a> = <code title="property(getRegulatingCondEq, setRegulatingCondEq)">property(getRegulatingCondEq, setRegulating<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TapChanger"></a><span class="summary-name">TapChanger</span> = <code title="property(getTapChanger, setTapChanger)">property(getTapChanger, setTapChanger)</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl-class.html#targetRange" class="summary-name">targetRange</a><br />
+      This is the case input target range.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl-class.html#mode" class="summary-name">mode</a><br />
+      The regulating control mode presently available.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="discrete"></a><span class="summary-name">discrete</span><br />
+      The regulation is performed in a discrete mode.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CPSM.Equipment.Wires.RegulatingControl.RegulatingControl-class.html#targetValue" class="summary-name">targetValue</a><br />
+      The target value specified for case input.
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">targetRange</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">mode</span>=<span class="sig-default">&quot;reactivePower&quot;</span>,
+        <span class="sig-arg">discrete</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">targetValue</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">RegulationSchedule</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Terminal</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">RegulatingCondEq</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">TapChanger</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'RegulatingControl' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>targetRange</code></strong> - This is the case input target range.   This performs the same 
+          function as the value2 attribute on the regulation schedule in 
+          the case that schedules are not used.   The units of those 
+          appropriate for the mode.</li>
+        <li><strong class="pname"><code>mode</code></strong> - The regulating control mode presently available.  This 
+          specifications allows for determining the kind of regualation 
+          without need for obtaining the units from a schedule. Values are:
+          &quot;reactivePower&quot;, &quot;timeScheduled&quot;, 
+          &quot;voltage&quot;, &quot;activePower&quot;, 
+          &quot;currentFlow&quot;, &quot;fixed&quot;, 
+          &quot;temperature&quot;, &quot;powerFactor&quot;, 
+          &quot;admittance&quot;</li>
+        <li><strong class="pname"><code>discrete</code></strong> - The regulation is performed in a discrete mode.</li>
+        <li><strong class="pname"><code>targetValue</code></strong> - The target value specified for case input.   This value can be 
+          used for the target value wihout the use of schedules. The value 
+          has the units appropriate to the mode attribute.</li>
+        <li><strong class="pname"><code>RegulationSchedule</code></strong> - Schedule for this Regulating regulating control.</li>
+        <li><strong class="pname"><code>Terminal</code></strong> - The terminal associated with this regulating control.</li>
+        <li><strong class="pname"><code>RegulatingCondEq</code></strong> - The equipment that participates in this regulating control 
+          scheme.</li>
+        <li><strong class="pname"><code>TapChanger</code></strong> - copy from reg conduting eq</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;targetRange&quot;: float, &quot;mode&quot;: str, &quot;discrete&quot;: bool, &quot;targetValue&quot;: f<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+loat}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{&quot;targetRange&quot;: 0.0, &quot;mode&quot;: &quot;reactivePower&quot;, &quot;discrete&quot;: False, &quot;targ<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+etValue&quot;: 0.0}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;RegulationSchedule&quot;, &quot;Terminal&quot;, &quot;RegulatingCondEq&quot;, &quot;TapChanger&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_many_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_many_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;RegulationSchedule&quot;, &quot;RegulatingCondEq&quot;, &quot;TapChanger&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RegulationSchedule"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RegulationSchedule</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+property(getRegulationSchedule, setRegulationSchedule)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RegulatingCondEq"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RegulatingCondEq</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+property(getRegulatingCondEq, setRegulatingCondEq)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== INSTANCE VARIABLE DETAILS ==================== -->
+<a name="section-InstanceVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="targetRange"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">targetRange</h3>
+  <p>This is the case input target range.   This performs the same function
+  as the value2 attribute on the regulation schedule in the case that 
+  schedules are not used.   The units of those appropriate for the 
+  mode.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="mode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">mode</h3>
+  <p>The regulating control mode presently available.  This specifications 
+  allows for determining the kind of regualation without need for obtaining
+  the units from a schedule. Values are: &quot;reactivePower&quot;, 
+  &quot;timeScheduled&quot;, &quot;voltage&quot;, &quot;activePower&quot;, 
+  &quot;currentFlow&quot;, &quot;fixed&quot;, &quot;temperature&quot;, 
+  &quot;powerFactor&quot;, &quot;admittance&quot;</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="targetValue"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">targetValue</h3>
+  <p>The target value specified for case input.   This value can be used 
+  for the target value wihout the use of schedules. The value has the units
+  appropriate to the mode attribute.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:35 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

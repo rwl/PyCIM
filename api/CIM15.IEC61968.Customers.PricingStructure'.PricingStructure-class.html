@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61968.Customers.PricingStructure'.PricingStructure</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61968-module.html">Package&nbsp;IEC61968</a> ::
+        <a href="CIM15.IEC61968.Customers-module.html">Package&nbsp;Customers</a> ::
+        <a href="CIM15.IEC61968.Customers.PricingStructure%27-module.html">Module&nbsp;PricingStructure'</a> ::
+        Class&nbsp;PricingStructure
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class PricingStructure</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                                  object --+            
+                                           |            
+                            <a href="CIM15.Element%27.Element-class.html">Element'.Element</a> --+        
+                                               |        
+<a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">IEC61970.Core.IdentifiedObject'.IdentifiedObject</a> --+    
+                                                   |    
+                           <a href="CIM15.IEC61968.Common.Document%27.Document-class.html">Common.Document'.Document</a> --+
+                                                       |
+                                                      <strong class="uidshort">PricingStructure</strong>
+</pre>
+
+<hr />
+<p>Grouping of pricing components and prices used in the creation of 
+  customer charges and the eligibility criteria under which these terms may
+  be offered to a customer. The reasons for grouping include state, 
+  customer classification, site characteristics, classification (i.e. fee 
+  price structure, deposit price structure, electric service price 
+  structure, etc.) and accounting requirements.Grouping of pricing 
+  components and prices used in the creation of customer charges and the 
+  eligibility criteria under which these terms may be offered to a 
+  customer. The reasons for grouping include state, customer 
+  classification, site characteristics, classification (i.e. fee price 
+  structure, deposit price structure, electric service price structure, 
+  etc.) and accounting requirements.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">dailyFloorUsage</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">dailyCeilingUsage</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">taxExemption</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">code</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">dailyEstimatedUsage</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">revenueKind</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">irrigation</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">ServiceCategory</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">CustomerAgreements</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ServiceDeliveryPoints</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Tariffs</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Transactions</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'PricingStructure' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addCustomerAgreements"></a><span class="summary-sig-name">addCustomerAgreements</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*CustomerAgreements</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addServiceDeliveryPoints"></a><span class="summary-sig-name">addServiceDeliveryPoints</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ServiceDeliveryPoints</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addTariffs"></a><span class="summary-sig-name">addTariffs</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Tariffs</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addTransactions"></a><span class="summary-sig-name">addTransactions</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Transactions</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getCustomerAgreements"></a><span class="summary-sig-name">getCustomerAgreements</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      All customer agreements with this pricing structure.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getServiceCategory"></a><span class="summary-sig-name">getServiceCategory</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Service category to which this pricing structure applies.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getServiceDeliveryPoints"></a><span class="summary-sig-name">getServiceDeliveryPoints</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      All service delivery points (with prepayment meter running as a 
+      stand-alone device, with no CustomerAgreement or Customer) to which 
+      this pricing structure applies.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTariffs"></a><span class="summary-sig-name">getTariffs</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      All tariffs used by this pricing structure.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTransactions"></a><span class="summary-sig-name">getTransactions</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      All transactions applying this pricing structure.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeCustomerAgreements"></a><span class="summary-sig-name">removeCustomerAgreements</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*CustomerAgreements</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeServiceDeliveryPoints"></a><span class="summary-sig-name">removeServiceDeliveryPoints</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ServiceDeliveryPoints</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeTariffs"></a><span class="summary-sig-name">removeTariffs</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Tariffs</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeTransactions"></a><span class="summary-sig-name">removeTransactions</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Transactions</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setCustomerAgreements"></a><span class="summary-sig-name">setCustomerAgreements</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setServiceCategory"></a><span class="summary-sig-name">setServiceCategory</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setServiceDeliveryPoints"></a><span class="summary-sig-name">setServiceDeliveryPoints</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTariffs"></a><span class="summary-sig-name">setTariffs</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTransactions"></a><span class="summary-sig-name">setTransactions</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html">Common.Document'.Document</a></code></b>:
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addActivityRecords">addActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addAssetRoles">addAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addChangeItems">addChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addChangeSets">addChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addErpOrganisationRoles">addErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addErpPersonRoles">addErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addFromDocumentRoles">addFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addMeasurements">addMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addNetworkDataSets">addNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addPowerSystemResourceRoles">addPowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addScheduleParameterInfos">addScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addScheduledEvents">addScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addToDocumentRoles">addToDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getActivityRecords">getActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getAssetRoles">getAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getChangeItems">getChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getChangeSets">getChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getErpOrganisationRoles">getErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getErpPersonRoles">getErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getFromDocumentRoles">getFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getMeasurements">getMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getNetworkDataSets">getNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getPowerSystemResourceRoles">getPowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getScheduleParameterInfos">getScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getScheduledEvents">getScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getToDocumentRoles">getToDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeActivityRecords">removeActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeAssetRoles">removeAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeChangeItems">removeChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeChangeSets">removeChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeErpOrganisationRoles">removeErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeErpPersonRoles">removeErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeFromDocumentRoles">removeFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeMeasurements">removeMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeNetworkDataSets">removeNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removePowerSystemResourceRoles">removePowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeScheduleParameterInfos">removeScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeScheduledEvents">removeScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeToDocumentRoles">removeToDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setActivityRecords">setActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setAssetRoles">setAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setChangeItems">setChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setChangeSets">setChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setErpOrganisationRoles">setErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setErpPersonRoles">setErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setFromDocumentRoles">setFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setMeasurements">setMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setNetworkDataSets">setNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setPowerSystemResourceRoles">setPowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setScheduleParameterInfos">setScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setScheduledEvents">setScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setToDocumentRoles">setToDocumentRoles</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">IEC61970.Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addDiagramObjects">addDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addNames">addNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getDiagramObjects">getDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getModelingAuthoritySet">getModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getNames">getNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeDiagramObjects">removeDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeNames">removeNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setDiagramObjects">setDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setModelingAuthoritySet">setModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setNames">setNames</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'code': &lt;type 'str'&gt;,
+ 'dailyCeilingUsage': &lt;type 'int'&gt;,
+ 'dailyEstimatedUsage': &lt;type 'int'&gt;,
+ 'dailyFloorUsage': &lt;type 'int'&gt;,
+ 'revenueKind': &lt;type 'str'&gt;,
+ 'taxExemption': &lt;type 'bool'&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">code</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">dailyCeilingUsage</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;typ<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="['dailyFloorUsage',
+ 'dailyCeilingUsage',
+ 'taxExemption',
+ 'code',
+ 'dailyEstimatedUsage',
+ 'revenueKind']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">dailyFloorUsage</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">dailyCeilingUsage</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">taxExemptio</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{'code': '',
+ 'dailyCeilingUsage': 0,
+ 'dailyEstimatedUsage': 0,
+ 'dailyFloorUsage': 0,
+ 'revenueKind': 'irrigation',
+ 'taxExemption': False}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">code</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">dailyCeilingUsage</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">dailyEstimat</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_enums"></a><span class="summary-name">_enums</span> = <code title="{'revenueKind': 'RevenueKind'}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">revenueKind</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">RevenueKind</code><code class="variable-quote">'</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#_many_refs" class="summary-name" onclick="show_private();">_many_refs</a> = <code title="['CustomerAgreements',
+ 'ServiceDeliveryPoints',
+ 'Tariffs',
+ 'Transactions']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">CustomerAgreements</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ServiceDeliveryPoints</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="['ServiceCategory',
+ 'CustomerAgreements',
+ 'ServiceDeliveryPoints',
+ 'Tariffs',
+ 'Transactions']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ServiceCategory</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">CustomerAgreements</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ServiceDeli</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html">Common.Document'.Document</a></code></b>:
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#docStatus">docStatus</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#electronicAddress">electronicAddress</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#status">status</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#CustomerAgreements" class="summary-name">CustomerAgreements</a><br />
+      All customer agreements with this pricing structure.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#ServiceCategory" class="summary-name">ServiceCategory</a><br />
+      Service category to which this pricing structure applies.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#ServiceDeliveryPoints" class="summary-name">ServiceDeliveryPoints</a><br />
+      All service delivery points (with prepayment meter running as a 
+      stand-alone device, with no CustomerAgreement or Customer) to which 
+      this pricing structure applies.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#Tariffs" class="summary-name">Tariffs</a><br />
+      All tariffs used by this pricing structure.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#Transactions" class="summary-name">Transactions</a><br />
+      All transactions applying this pricing structure.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html">Common.Document'.Document</a></code></b>:
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ActivityRecords">ActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#AssetRoles">AssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ChangeItems">ChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ChangeSets">ChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ErpOrganisationRoles">ErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ErpPersonRoles">ErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#FromDocumentRoles">FromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#Measurements">Measurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#NetworkDataSets">NetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#PowerSystemResourceRoles">PowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ScheduleParameterInfos">ScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ScheduledEvents">ScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ToDocumentRoles">ToDocumentRoles</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">IEC61970.Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#DiagramObjects">DiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#ModelingAuthoritySet">ModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#Names">Names</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">dailyFloorUsage</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">dailyCeilingUsage</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">taxExemption</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">code</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">dailyEstimatedUsage</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">revenueKind</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">irrigation</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">ServiceCategory</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">CustomerAgreements</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ServiceDeliveryPoints</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Tariffs</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Transactions</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'PricingStructure' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>dailyFloorUsage</code></strong> - Absolute minimum valid non-demand usage quantity used in 
+          validating a customer's billed non-demand usage.</li>
+        <li><strong class="pname"><code>dailyCeilingUsage</code></strong> - Absolute maximum valid non-demand usage quantity used in 
+          validating a customer's billed non-demand usage.</li>
+        <li><strong class="pname"><code>taxExemption</code></strong> - True if this pricing structure is not taxable.</li>
+        <li><strong class="pname"><code>code</code></strong> - Unique user-allocated key for this pricing structure, used by 
+          company representatives to identify the correct price structure 
+          for allocating to a customer. For rate schedules it is often 
+          prefixed by a state code.</li>
+        <li><strong class="pname"><code>dailyEstimatedUsage</code></strong> - Used in place of actual computed estimated average when history 
+          of usage is not available, and typically manually entered by 
+          customer accounting.</li>
+        <li><strong class="pname"><code>revenueKind</code></strong> - (Accounting) Kind of revenue, often used to determine the grace 
+          period allowed, before collection actions are taken on a customer
+          (grace periods vary between revenue classes). Values are: 
+          &quot;irrigation&quot;, &quot;residential&quot;, 
+          &quot;nonResidential&quot;, &quot;industrial&quot;, 
+          &quot;other&quot;, &quot;commercial&quot;, 
+          &quot;streetLight&quot;</li>
+        <li><strong class="pname"><code>ServiceCategory</code></strong> - Service category to which this pricing structure applies.</li>
+        <li><strong class="pname"><code>CustomerAgreements</code></strong> - All customer agreements with this pricing structure.</li>
+        <li><strong class="pname"><code>ServiceDeliveryPoints</code></strong> - All service delivery points (with prepayment meter running as a 
+          stand-alone device, with no CustomerAgreement or Customer) to 
+          which this pricing structure applies.</li>
+        <li><strong class="pname"><code>Tariffs</code></strong> - All tariffs used by this pricing structure.</li>
+        <li><strong class="pname"><code>Transactions</code></strong> - All transactions applying this pricing structure.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">code</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">dailyCeilingUsage</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'int'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">dailyEstimatedUsage</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'int'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">dailyFloorUsage</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'int'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">revenueKind</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">taxExemption</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'bool'&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">dailyFloorUsage</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">dailyCeilingUsage</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">taxExemption</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">code</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">dailyEstimatedUsage</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">revenueKind</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">code</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">dailyCeilingUsage</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">dailyEstimatedUsage</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">dailyFloorUsage</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">revenueKind</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">irrigation</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">taxExemption</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_many_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_many_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">CustomerAgreements</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ServiceDeliveryPoints</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Tariffs</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Transactions</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ServiceCategory</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">CustomerAgreements</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ServiceDeliveryPoints</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Tariffs</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Transactions</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="CustomerAgreements"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">CustomerAgreements</h3>
+  <p>All customer agreements with this pricing structure.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#getCustomerAgreements" class="summary-sig-name">getCustomerAgreements</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All customer agreements with this pricing structure.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#setCustomerAgreements" class="summary-sig-name">setCustomerAgreements</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ServiceCategory"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ServiceCategory</h3>
+  <p>Service category to which this pricing structure applies.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#getServiceCategory" class="summary-sig-name">getServiceCategory</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Service category to which this pricing structure applies.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#setServiceCategory" class="summary-sig-name">setServiceCategory</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ServiceDeliveryPoints"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ServiceDeliveryPoints</h3>
+  <p>All service delivery points (with prepayment meter running as a 
+  stand-alone device, with no CustomerAgreement or Customer) to which this 
+  pricing structure applies.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#getServiceDeliveryPoints" class="summary-sig-name">getServiceDeliveryPoints</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All service delivery points (with prepayment meter running as a 
+      stand-alone device, with no CustomerAgreement or Customer) to which 
+      this pricing structure applies.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#setServiceDeliveryPoints" class="summary-sig-name">setServiceDeliveryPoints</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Tariffs"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Tariffs</h3>
+  <p>All tariffs used by this pricing structure.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#getTariffs" class="summary-sig-name">getTariffs</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All tariffs used by this pricing structure.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#setTariffs" class="summary-sig-name">setTariffs</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Transactions"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Transactions</h3>
+  <p>All transactions applying this pricing structure.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#getTransactions" class="summary-sig-name">getTransactions</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All transactions applying this pricing structure.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61968.Customers.PricingStructure%27.PricingStructure-class.html#setTransactions" class="summary-sig-name">setTransactions</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:42 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

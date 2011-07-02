@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Informative</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        Package&nbsp;Informative
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Informative-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package Informative</h1><p class="nomargin-top"></p>
+<p>This package contains functions common for distribution management.  
+  TODO: The following has been copied from a very old version of draft Part
+  11, so the references are wrong, but we store the knowledge here to reuse
+  later: 'Locations are logical entities which are related to a 
+  geographical position. Locations can be defined as points, lines or 
+  polygons. Location serves as a parent class for e.g. Zone, WorkLocation 
+  or ServiceLocation. Both Assets and PowerSystemResources are typically 
+  associated to a location. Aside from coordinates, useful properties of 
+  Locations can include Directions (i.e. driving instructions) and 
+  relationships to Organizations. ActivityRecord is a generalized class 
+  used to track the history of an object (e.g. Asset, PowerSystemResource, 
+  Customer, Location, Organisation or ErpContact). An ActivityRecord is a 
+  type of Document. Key properties of an ActivityRecord include statusDate,
+  status, statusReason and remarks. TODO: Update attribute names. The 
+  graphical and geographical aspects of Assets, Locations and 
+  PowerSystemResources are managed using Graphical Markup Language (GML), 
+  which was defined by the Open GIS Consortium.  Using GML, a diagram is a 
+  collection of presentation objects. This package defines the classes 
+  Diagram and Presentation. TODO: These are now under Common package.'</p>
+
+<!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Submodules</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Submodules"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssetModels-module.html">CIM15.IEC61970.Informative.InfAssetModels</a></strong>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssetModels.AssetModelCatalogue</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssetModels.AssetModelCatalogue%27-module.html">CIM15.IEC61970.Informative.InfAssetModels.AssetModelCatalogue'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssetModels.AssetModelCatalogueItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssetModels.AssetModelCatalogueItem%27-module.html">CIM15.IEC61970.Informative.InfAssetModels.AssetModelCatalogueItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssetModels.TransformerAssetModel</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssetModels.TransformerAssetModel%27-module.html">CIM15.IEC61970.Informative.InfAssetModels.TransformerAssetModel'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets-module.html">CIM15.IEC61970.Informative.InfAssets</a></strong>: <em class="summary">The package is used to define asset-level models for objects.</em>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.AssetAssetRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.AssetAssetRole%27-module.html">CIM15.IEC61970.Informative.InfAssets.AssetAssetRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.AssetPropertyCurve</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.AssetPropertyCurve%27-module.html">CIM15.IEC61970.Informative.InfAssets.AssetPropertyCurve'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.BreakerInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.BreakerInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.BreakerInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Bushing</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Bushing%27-module.html">CIM15.IEC61970.Informative.InfAssets.Bushing'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.BushingInsulationPF</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.BushingInsulationPF%27-module.html">CIM15.IEC61970.Informative.InfAssets.BushingInsulationPF'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Cabinet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Cabinet%27-module.html">CIM15.IEC61970.Informative.InfAssets.Cabinet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ComEquipment</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ComEquipment%27-module.html">CIM15.IEC61970.Informative.InfAssets.ComEquipment'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.CompositeSwitchInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.CompositeSwitchInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.CompositeSwitchInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ConductorAsset</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ConductorAsset%27-module.html">CIM15.IEC61970.Informative.InfAssets.ConductorAsset'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.CurrentTransformerInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.CurrentTransformerInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.CurrentTransformerInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.DimensionsInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.DimensionsInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.DimensionsInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.DocAssetRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.DocAssetRole%27-module.html">CIM15.IEC61970.Informative.InfAssets.DocAssetRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Duct</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Duct%27-module.html">CIM15.IEC61970.Informative.InfAssets.Duct'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.DuctBank</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.DuctBank%27-module.html">CIM15.IEC61970.Informative.InfAssets.DuctBank'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ElectricalInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ElectricalInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.ElectricalInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.FACTSDevice</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.FACTSDevice%27-module.html">CIM15.IEC61970.Informative.InfAssets.FACTSDevice'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Facility</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Facility%27-module.html">CIM15.IEC61970.Informative.InfAssets.Facility'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.FailureEvent</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.FailureEvent%27-module.html">CIM15.IEC61970.Informative.InfAssets.FailureEvent'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.FaultIndicatorInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.FaultIndicatorInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.FaultIndicatorInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.FinancialInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.FinancialInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.FinancialInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.GenericAssetModelOrMaterial</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.GenericAssetModelOrMaterial%27-module.html">CIM15.IEC61970.Informative.InfAssets.GenericAssetModelOrMaterial'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Joint</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Joint%27-module.html">CIM15.IEC61970.Informative.InfAssets.Joint'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Medium</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Medium%27-module.html">CIM15.IEC61970.Informative.InfAssets.Medium'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.MountingConnection</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.MountingConnection%27-module.html">CIM15.IEC61970.Informative.InfAssets.MountingConnection'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.MountingPoint</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.MountingPoint%27-module.html">CIM15.IEC61970.Informative.InfAssets.MountingPoint'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.OrgAssetRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.OrgAssetRole%27-module.html">CIM15.IEC61970.Informative.InfAssets.OrgAssetRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Pole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Pole%27-module.html">CIM15.IEC61970.Informative.InfAssets.Pole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.PotentialTransformerInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.PotentialTransformerInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.PotentialTransformerInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.PowerRating</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.PowerRating%27-module.html">CIM15.IEC61970.Informative.InfAssets.PowerRating'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Procedure</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27-module.html">CIM15.IEC61970.Informative.InfAssets.Procedure'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ProcedureDataSet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ProcedureDataSet%27-module.html">CIM15.IEC61970.Informative.InfAssets.ProcedureDataSet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ProtectionEquipmentInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ProtectionEquipmentInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.ProtectionEquipmentInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.RecloserInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.RecloserInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.RecloserInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ReliabilityInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ReliabilityInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.ReliabilityInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.SVC</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.SVC%27-module.html">CIM15.IEC61970.Informative.InfAssets.SVC'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ShuntCompensatorInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ShuntCompensatorInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.ShuntCompensatorInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.ShuntImpedanceInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.ShuntImpedanceInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.ShuntImpedanceInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Specification</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Specification%27-module.html">CIM15.IEC61970.Informative.InfAssets.Specification'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Streetlight</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Streetlight%27-module.html">CIM15.IEC61970.Informative.InfAssets.Streetlight'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Structure</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Structure%27-module.html">CIM15.IEC61970.Informative.InfAssets.Structure'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.StructureSupport</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.StructureSupport%27-module.html">CIM15.IEC61970.Informative.InfAssets.StructureSupport'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.SubstationAsset</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.SubstationAsset%27-module.html">CIM15.IEC61970.Informative.InfAssets.SubstationAsset'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.SurgeProtectorInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.SurgeProtectorInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.SurgeProtectorInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.SwitchInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.SwitchInfo%27-module.html">CIM15.IEC61970.Informative.InfAssets.SwitchInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.TestDataSet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.TestDataSet%27-module.html">CIM15.IEC61970.Informative.InfAssets.TestDataSet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Tool</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Tool%27-module.html">CIM15.IEC61970.Informative.InfAssets.Tool'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Tower</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Tower%27-module.html">CIM15.IEC61970.Informative.InfAssets.Tower'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.TransformerAsset</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.TransformerAsset%27-module.html">CIM15.IEC61970.Informative.InfAssets.TransformerAsset'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.TransformerObservation</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.TransformerObservation%27-module.html">CIM15.IEC61970.Informative.InfAssets.TransformerObservation'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.UndergroundStructure</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.UndergroundStructure%27-module.html">CIM15.IEC61970.Informative.InfAssets.UndergroundStructure'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.Vehicle</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.Vehicle%27-module.html">CIM15.IEC61970.Informative.InfAssets.Vehicle'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.WindingInsulation</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.WindingInsulation%27-module.html">CIM15.IEC61970.Informative.InfAssets.WindingInsulation'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfAssets.WorkEquipment</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfAssets.WorkEquipment%27-module.html">CIM15.IEC61970.Informative.InfAssets.WorkEquipment'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon-module.html">CIM15.IEC61970.Informative.InfCommon</a></strong>: <em class="summary">This package contains functions common for distribution management.</em>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.Bank</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.Bank%27-module.html">CIM15.IEC61970.Informative.InfCommon.Bank'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.BankAccount</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.BankAccount%27-module.html">CIM15.IEC61970.Informative.InfCommon.BankAccount'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.BusinessPlan</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.BusinessPlan%27-module.html">CIM15.IEC61970.Informative.InfCommon.BusinessPlan'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.BusinessRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.BusinessRole%27-module.html">CIM15.IEC61970.Informative.InfCommon.BusinessRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.Craft</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.Craft%27-module.html">CIM15.IEC61970.Informative.InfCommon.Craft'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.DocDocRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.DocDocRole%27-module.html">CIM15.IEC61970.Informative.InfCommon.DocDocRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.DocPsrRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.DocPsrRole%27-module.html">CIM15.IEC61970.Informative.InfCommon.DocPsrRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.Ratio</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.Ratio%27-module.html">CIM15.IEC61970.Informative.InfCommon.Ratio'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.Role</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.Role%27-module.html">CIM15.IEC61970.Informative.InfCommon.Role'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.ScheduleParameterInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.ScheduleParameterInfo%27-module.html">CIM15.IEC61970.Informative.InfCommon.ScheduleParameterInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.ScheduledEvent</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.ScheduledEvent%27-module.html">CIM15.IEC61970.Informative.InfCommon.ScheduledEvent'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCommon.Skill</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCommon.Skill%27-module.html">CIM15.IEC61970.Informative.InfCommon.Skill'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCore-module.html">CIM15.IEC61970.Informative.InfCore</a></strong>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCore.ModelingAuthority</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCore.ModelingAuthority%27-module.html">CIM15.IEC61970.Informative.InfCore.ModelingAuthority'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCore.ModelingAuthoritySet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCore.ModelingAuthoritySet%27-module.html">CIM15.IEC61970.Informative.InfCore.ModelingAuthoritySet'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCustomers-module.html">CIM15.IEC61970.Informative.InfCustomers</a></strong>: <em class="summary">The package is used to define detailed customer models.</em>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCustomers.ComplianceEvent</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCustomers.ComplianceEvent%27-module.html">CIM15.IEC61970.Informative.InfCustomers.ComplianceEvent'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCustomers.CustomerBillingInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCustomers.CustomerBillingInfo%27-module.html">CIM15.IEC61970.Informative.InfCustomers.CustomerBillingInfo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCustomers.ExternalCustomerAgreement</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCustomers.ExternalCustomerAgreement%27-module.html">CIM15.IEC61970.Informative.InfCustomers.ExternalCustomerAgreement'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCustomers.OutageHistory</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCustomers.OutageHistory%27-module.html">CIM15.IEC61970.Informative.InfCustomers.OutageHistory'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCustomers.PowerQualityPricing</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCustomers.PowerQualityPricing%27-module.html">CIM15.IEC61970.Informative.InfCustomers.PowerQualityPricing'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCustomers.ServiceGuarantee</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCustomers.ServiceGuarantee%27-module.html">CIM15.IEC61970.Informative.InfCustomers.ServiceGuarantee'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCustomers.StandardIndustryCode</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCustomers.StandardIndustryCode%27-module.html">CIM15.IEC61970.Informative.InfCustomers.StandardIndustryCode'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCustomers.SubscribePowerCurve</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCustomers.SubscribePowerCurve%27-module.html">CIM15.IEC61970.Informative.InfCustomers.SubscribePowerCurve'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfCustomers.WorkBillingInfo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfCustomers.WorkBillingInfo%27-module.html">CIM15.IEC61970.Informative.InfCustomers.WorkBillingInfo'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport-module.html">CIM15.IEC61970.Informative.InfERPSupport</a></strong>: <em class="summary">The package contains portions of the model defined byEnterprise 
+        Resource Planning (ERP) standards like those proposed by the Open 
+        Applications Group (OAG).</em>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.DocErpPersonRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.DocErpPersonRole%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.DocErpPersonRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.DocOrgRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.DocOrgRole%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.DocOrgRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpBOM</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpBOM%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpBOM'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpBankAccount</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpBankAccount%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpBankAccount'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpBomItemData</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpBomItemData%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpBomItemData'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpChartOfAccounts</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpChartOfAccounts%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpChartOfAccounts'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpCompetency</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpCompetency%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpCompetency'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpEngChangeOrder</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpEngChangeOrder%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpEngChangeOrder'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpInventory</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInventory%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpInventory'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpInventoryCount</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInventoryCount%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpInventoryCount'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpInvoice</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoice%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpInvoice'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpIssueInventory</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpIssueInventory%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpIssueInventory'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpItemMaster</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpItemMaster%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpItemMaster'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpJournal</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpJournal%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpJournal'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpJournalEntry</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpJournalEntry%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpJournalEntry'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpLedBudLineItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpLedBudLineItem%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpLedBudLineItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpLedger</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpLedger%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpLedger'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpLedgerBudget</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpLedgerBudget%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpLedgerBudget'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpLedgerEntry</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpLedgerEntry%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpLedgerEntry'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpOrganisation</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpOrganisation%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpOrganisation'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpPOLineItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpPOLineItem%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpPOLineItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpPayable</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpPayable%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpPayable'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpPayableLineItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpPayableLineItem%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpPayableLineItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpPayment</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpPayment%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpPayment'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpPerson</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpPerson%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpPerson'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpPersonnel</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpPersonnel%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpPersonnel'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpProjectAccounting</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpProjectAccounting%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpProjectAccounting'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpPurchaseOrder</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpPurchaseOrder%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpPurchaseOrder'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpQuote</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpQuote%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpQuote'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpQuoteLineItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpQuoteLineItem%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpQuoteLineItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpRecDelvLineItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpRecDelvLineItem%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpRecDelvLineItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpRecLineItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpRecLineItem%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpRecLineItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpReceivable</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpReceivable%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpReceivable'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpReceiveDelivery</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpReceiveDelivery%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpReceiveDelivery'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpReqLineItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpReqLineItem%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpReqLineItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpRequisition</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpRequisition%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpRequisition'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpSalesOrder</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpSalesOrder%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpSalesOrder'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpSiteLevelData</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpSiteLevelData%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpSiteLevelData'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpTimeEntry</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpTimeEntry%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpTimeEntry'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.ErpTimeSheet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpTimeSheet%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.ErpTimeSheet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.OrgErpPersonRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.OrgErpPersonRole%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.OrgErpPersonRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfERPSupport.OrgOrgRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfERPSupport.OrgOrgRole%27-module.html">CIM15.IEC61970.Informative.InfERPSupport.OrgOrgRole'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport-module.html">CIM15.IEC61970.Informative.InfGMLSupport</a></strong>: <em class="summary">The package contains portions of the model defined by graphic 
+        standards such as those proposed by OpenGIS Consortium referred to 
+        as the Geography Markup Language (GML).</em>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.Diagram</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.Diagram%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.Diagram'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlBaseSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlBaseSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlBaseSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlColour</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlColour%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlColour'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlDiagramObject</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlDiagramObject%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlDiagramObject'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureStyle</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureStyle%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureStyle'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureType</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureType%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureType'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlFill</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFill%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlFill'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlFont</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFont%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlFont'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlGeometryStyle</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlGeometryStyle%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlGeometryStyle'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlGraphic</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlGraphic%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlGraphic'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlHalo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlHalo%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlHalo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelPlacement</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelPlacement%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelPlacement'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelStyle</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelStyle%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelStyle'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlLineGeometry</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlLineGeometry%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlLineGeometry'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlLineSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlLineSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlLineSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlMark</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlMark%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlMark'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlObservation</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlObservation%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlObservation'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlPointGeometry</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlPointGeometry%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlPointGeometry'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlPointSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlPointSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlPointSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonGeometry</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonGeometry%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonGeometry'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlPosition</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlPosition%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlPosition'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlRasterSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlRasterSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlRasterSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlSelector</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlSelector%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlSelector'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlStroke</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlStroke%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlStroke'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlSvgParameter</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlSvgParameter%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlSvgParameter'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlTextSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlTextSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlTextSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlTopologyStyle</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlTopologyStyle%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlTopologyStyle'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlValue</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlValue%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlValue'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.Map</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.Map%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.Map'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLoadControl-module.html">CIM15.IEC61970.Informative.InfLoadControl</a></strong>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLoadControl.LoadLimitFunction</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLoadControl.LoadLimitFunction%27-module.html">CIM15.IEC61970.Informative.InfLoadControl.LoadLimitFunction'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLoadControl.LoadMgmtFunction</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLoadControl.LoadMgmtFunction%27-module.html">CIM15.IEC61970.Informative.InfLoadControl.LoadMgmtFunction'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLoadControl.LoadMgmtRecord</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLoadControl.LoadMgmtRecord%27-module.html">CIM15.IEC61970.Informative.InfLoadControl.LoadMgmtRecord'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLoadControl.LoadShedFunction</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLoadControl.LoadShedFunction%27-module.html">CIM15.IEC61970.Informative.InfLoadControl.LoadShedFunction'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLocations-module.html">CIM15.IEC61970.Informative.InfLocations</a></strong>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLocations.Direction</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLocations.Direction%27-module.html">CIM15.IEC61970.Informative.InfLocations.Direction'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLocations.Hazard</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLocations.Hazard%27-module.html">CIM15.IEC61970.Informative.InfLocations.Hazard'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLocations.LandProperty</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLocations.LandProperty%27-module.html">CIM15.IEC61970.Informative.InfLocations.LandProperty'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLocations.LocationGrant</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLocations.LocationGrant%27-module.html">CIM15.IEC61970.Informative.InfLocations.LocationGrant'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLocations.OrgPropertyRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLocations.OrgPropertyRole%27-module.html">CIM15.IEC61970.Informative.InfLocations.OrgPropertyRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLocations.PersonPropertyRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLocations.PersonPropertyRole%27-module.html">CIM15.IEC61970.Informative.InfLocations.PersonPropertyRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLocations.RedLine</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLocations.RedLine%27-module.html">CIM15.IEC61970.Informative.InfLocations.RedLine'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLocations.RightOfWay</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLocations.RightOfWay%27-module.html">CIM15.IEC61970.Informative.InfLocations.RightOfWay'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLocations.Route</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLocations.Route%27-module.html">CIM15.IEC61970.Informative.InfLocations.Route'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfLocations.Zone</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfLocations.Zone%27-module.html">CIM15.IEC61970.Informative.InfLocations.Zone'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfMetering-module.html">CIM15.IEC61970.Informative.InfMetering</a></strong>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfMetering.GasMeteringFunction</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfMetering.GasMeteringFunction%27-module.html">CIM15.IEC61970.Informative.InfMetering.GasMeteringFunction'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfMetering.WaterMeteringFunction</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfMetering.WaterMeteringFunction%27-module.html">CIM15.IEC61970.Informative.InfMetering.WaterMeteringFunction'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations-module.html">CIM15.IEC61970.Informative.InfOperations</a></strong>: <em class="summary">TODO: The following has been copied from a very old version of 
+        draft Part 11, so the references are wrong, but we store the 
+        knowledge here to reuse later: 'The Documentation package is used 
+        for the modeling of business documents.</em>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.CallBack</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.CallBack%27-module.html">CIM15.IEC61970.Informative.InfOperations.CallBack'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.ChangeItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.ChangeItem%27-module.html">CIM15.IEC61970.Informative.InfOperations.ChangeItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.ChangeSet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.ChangeSet%27-module.html">CIM15.IEC61970.Informative.InfOperations.ChangeSet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.Circuit</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.Circuit%27-module.html">CIM15.IEC61970.Informative.InfOperations.Circuit'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.CircuitSection</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.CircuitSection%27-module.html">CIM15.IEC61970.Informative.InfOperations.CircuitSection'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.ErpPersonScheduleStepRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.ErpPersonScheduleStepRole%27-module.html">CIM15.IEC61970.Informative.InfOperations.ErpPersonScheduleStepRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.IncidentCode</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.IncidentCode%27-module.html">CIM15.IEC61970.Informative.InfOperations.IncidentCode'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.IncidentRecord</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.IncidentRecord%27-module.html">CIM15.IEC61970.Informative.InfOperations.IncidentRecord'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.LandBase</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.LandBase%27-module.html">CIM15.IEC61970.Informative.InfOperations.LandBase'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.NetworkDataSet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.NetworkDataSet%27-module.html">CIM15.IEC61970.Informative.InfOperations.NetworkDataSet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.OperationalRestriction</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.OperationalRestriction%27-module.html">CIM15.IEC61970.Informative.InfOperations.OperationalRestriction'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.OrgPsrRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.OrgPsrRole%27-module.html">CIM15.IEC61970.Informative.InfOperations.OrgPsrRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.OutageCode</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.OutageCode%27-module.html">CIM15.IEC61970.Informative.InfOperations.OutageCode'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.OutageNotification</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.OutageNotification%27-module.html">CIM15.IEC61970.Informative.InfOperations.OutageNotification'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.OutageRecord</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.OutageRecord%27-module.html">CIM15.IEC61970.Informative.InfOperations.OutageRecord'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.OutageReport</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.OutageReport%27-module.html">CIM15.IEC61970.Informative.InfOperations.OutageReport'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.OutageStep</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.OutageStep%27-module.html">CIM15.IEC61970.Informative.InfOperations.OutageStep'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.OutageStepPsrRole</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.OutageStepPsrRole%27-module.html">CIM15.IEC61970.Informative.InfOperations.OutageStepPsrRole'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.PSREvent</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.PSREvent%27-module.html">CIM15.IEC61970.Informative.InfOperations.PSREvent'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.PlannedOutage</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.PlannedOutage%27-module.html">CIM15.IEC61970.Informative.InfOperations.PlannedOutage'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.SafetyDocument</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.SafetyDocument%27-module.html">CIM15.IEC61970.Informative.InfOperations.SafetyDocument'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.SwitchingSchedule</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.SwitchingSchedule%27-module.html">CIM15.IEC61970.Informative.InfOperations.SwitchingSchedule'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.SwitchingStep</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.SwitchingStep%27-module.html">CIM15.IEC61970.Informative.InfOperations.SwitchingStep'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfOperations.TroubleTicket</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfOperations.TroubleTicket%27-module.html">CIM15.IEC61970.Informative.InfOperations.TroubleTicket'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfTypeAsset-module.html">CIM15.IEC61970.Informative.InfTypeAsset</a></strong>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfTypeAsset.GeneratorTypeAsset</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfTypeAsset.GeneratorTypeAsset%27-module.html">CIM15.IEC61970.Informative.InfTypeAsset.GeneratorTypeAsset'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfTypeAsset.TypeAssetCatalogue</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfTypeAsset.TypeAssetCatalogue%27-module.html">CIM15.IEC61970.Informative.InfTypeAsset.TypeAssetCatalogue'</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork-module.html">CIM15.IEC61970.Informative.InfWork</a></strong>: <em class="summary">The package covers all types of work, including inspection, 
+        maintenance, repair, restoration, and construction.</em>
+    <ul>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.AccessPermit</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.AccessPermit%27-module.html">CIM15.IEC61970.Informative.InfWork.AccessPermit'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.Appointment</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.Appointment%27-module.html">CIM15.IEC61970.Informative.InfWork.Appointment'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.Assignment</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.Assignment%27-module.html">CIM15.IEC61970.Informative.InfWork.Assignment'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.BusinessCase</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.BusinessCase%27-module.html">CIM15.IEC61970.Informative.InfWork.BusinessCase'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.CUAllowableAction</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.CUAllowableAction%27-module.html">CIM15.IEC61970.Informative.InfWork.CUAllowableAction'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.CUAsset</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.CUAsset%27-module.html">CIM15.IEC61970.Informative.InfWork.CUAsset'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.CUContractorItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.CUContractorItem%27-module.html">CIM15.IEC61970.Informative.InfWork.CUContractorItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.CUGroup</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.CUGroup%27-module.html">CIM15.IEC61970.Informative.InfWork.CUGroup'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.CULaborCode</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.CULaborCode%27-module.html">CIM15.IEC61970.Informative.InfWork.CULaborCode'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.CULaborItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.CULaborItem%27-module.html">CIM15.IEC61970.Informative.InfWork.CULaborItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.CUMaterialItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.CUMaterialItem%27-module.html">CIM15.IEC61970.Informative.InfWork.CUMaterialItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.CUWorkEquipmentItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.CUWorkEquipmentItem%27-module.html">CIM15.IEC61970.Informative.InfWork.CUWorkEquipmentItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.Capability</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.Capability%27-module.html">CIM15.IEC61970.Informative.InfWork.Capability'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.CompatibleUnit</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.CompatibleUnit%27-module.html">CIM15.IEC61970.Informative.InfWork.CompatibleUnit'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.ConditionFactor</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.ConditionFactor%27-module.html">CIM15.IEC61970.Informative.InfWork.ConditionFactor'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.ContractorItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.ContractorItem%27-module.html">CIM15.IEC61970.Informative.InfWork.ContractorItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.CostType</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.CostType%27-module.html">CIM15.IEC61970.Informative.InfWork.CostType'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.Crew</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.Crew%27-module.html">CIM15.IEC61970.Informative.InfWork.Crew'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.Design</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.Design%27-module.html">CIM15.IEC61970.Informative.InfWork.Design'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.DesignLocation</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.DesignLocation%27-module.html">CIM15.IEC61970.Informative.InfWork.DesignLocation'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.DesignLocationCU</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.DesignLocationCU%27-module.html">CIM15.IEC61970.Informative.InfWork.DesignLocationCU'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.DiagnosisDataSet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.DiagnosisDataSet%27-module.html">CIM15.IEC61970.Informative.InfWork.DiagnosisDataSet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.EquipmentItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.EquipmentItem%27-module.html">CIM15.IEC61970.Informative.InfWork.EquipmentItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.InfoQuestion</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.InfoQuestion%27-module.html">CIM15.IEC61970.Informative.InfWork.InfoQuestion'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.InspectionDataSet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.InspectionDataSet%27-module.html">CIM15.IEC61970.Informative.InfWork.InspectionDataSet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.LaborItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.LaborItem%27-module.html">CIM15.IEC61970.Informative.InfWork.LaborItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.MaintenanceDataSet</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.MaintenanceDataSet%27-module.html">CIM15.IEC61970.Informative.InfWork.MaintenanceDataSet'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.MaterialItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.MaterialItem%27-module.html">CIM15.IEC61970.Informative.InfWork.MaterialItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.MiscCostItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.MiscCostItem%27-module.html">CIM15.IEC61970.Informative.InfWork.MiscCostItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.NonStandardItem</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.NonStandardItem%27-module.html">CIM15.IEC61970.Informative.InfWork.NonStandardItem'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.OneCallRequest</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.OneCallRequest%27-module.html">CIM15.IEC61970.Informative.InfWork.OneCallRequest'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.OverheadCost</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.OverheadCost%27-module.html">CIM15.IEC61970.Informative.InfWork.OverheadCost'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.Project</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.Project%27-module.html">CIM15.IEC61970.Informative.InfWork.Project'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.PropertyUnit</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.PropertyUnit%27-module.html">CIM15.IEC61970.Informative.InfWork.PropertyUnit'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.QualificationRequirement</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.QualificationRequirement%27-module.html">CIM15.IEC61970.Informative.InfWork.QualificationRequirement'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.Regulation</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.Regulation%27-module.html">CIM15.IEC61970.Informative.InfWork.Regulation'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.Request</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.Request%27-module.html">CIM15.IEC61970.Informative.InfWork.Request'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.ShiftPattern</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.ShiftPattern%27-module.html">CIM15.IEC61970.Informative.InfWork.ShiftPattern'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.TypeMaterial</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.TypeMaterial%27-module.html">CIM15.IEC61970.Informative.InfWork.TypeMaterial'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.Usage</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.Usage%27-module.html">CIM15.IEC61970.Informative.InfWork.Usage'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.WorkCostDetail</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.WorkCostDetail%27-module.html">CIM15.IEC61970.Informative.InfWork.WorkCostDetail'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.WorkCostSummary</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.WorkCostSummary%27-module.html">CIM15.IEC61970.Informative.InfWork.WorkCostSummary'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.WorkFlowStep</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.WorkFlowStep%27-module.html">CIM15.IEC61970.Informative.InfWork.WorkFlowStep'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.WorkLocation</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.WorkLocation%27-module.html">CIM15.IEC61970.Informative.InfWork.WorkLocation'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.WorkStatusEntry</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.WorkStatusEntry%27-module.html">CIM15.IEC61970.Informative.InfWork.WorkStatusEntry'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfWork.WorkTask</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfWork.WorkTask%27-module.html">CIM15.IEC61970.Informative.InfWork.WorkTask'</a></strong>    </li>
+    </ul>
+    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="nsURI"></a><span class="summary-name">nsURI</span> = <code title="'http://iec.ch/TC57/2010/CIM-schema-cim15#Informative'"><code class="variable-quote">'</code><code class="variable-string">http://iec.ch/TC57/2010/CIM-schema-cim15#Informative</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="nsPrefix"></a><span class="summary-name">nsPrefix</span> = <code title="'cimInformative'"><code class="variable-quote">'</code><code class="variable-string">cimInformative</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="None">None</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:30 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

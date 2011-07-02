@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment'.DistributionLineSegment</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;CIM14 ::
+        <a href="CIM14.CDPSM-module.html">Package&nbsp;CDPSM</a> ::
+        <a href="CIM14.CDPSM.Balanced-module.html">Package&nbsp;Balanced</a> ::
+        <a href="CIM14.CDPSM.Balanced.IEC61968-module.html">Package&nbsp;IEC61968</a> ::
+        <a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt-module.html">Package&nbsp;WiresExt</a> ::
+        <a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27-module.html">Module&nbsp;DistributionLineSegment'</a> ::
+        Class&nbsp;DistributionLineSegment
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27.DistributionLineSegment-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class DistributionLineSegment</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                                    object --+                            
+                                             |                            
+                              <a href="CIM14.CDPSM.Balanced.Element%27.Element-class.html">Element'.Element</a> --+                        
+                                                 |                        
+  <a href="CIM14.CDPSM.Balanced.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">IEC61970.Core.IdentifiedObject'.IdentifiedObject</a> --+                    
+                                                     |                    
+<a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">IEC61970.Core.PowerSystemResource'.PowerSystemResource</a> --+                
+                                                         |                
+                        <a href="CIM14.CDPSM.Balanced.IEC61970.Core.Equipment%27.Equipment-class.html">IEC61970.Core.Equipment'.Equipment</a> --+            
+                                                             |            
+        <a href="CIM14.CDPSM.Balanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html">IEC61970.Core.ConductingEquipment'.ConductingEquipment</a> --+        
+                                                                 |        
+                               <a href="CIM14.CDPSM.Balanced.IEC61970.Wires.Conductor%27.Conductor-class.html">IEC61970.Wires.Conductor'.Conductor</a> --+    
+                                                                     |    
+                           <a href="CIM14.CDPSM.Balanced.IEC61970.Wires.ACLineSegment%27.ACLineSegment-class.html">IEC61970.Wires.ACLineSegment'.ACLineSegment</a> --+
+                                                                         |
+                                                                        <strong class="uidshort">DistributionLineSegment</strong>
+</pre>
+
+<hr />
+<p>Extends ACLineSegment with references to a library of standard types 
+  from which electrical parameters can be calculated, as follows:</p>
+  <ul>
+    <li>
+      calculate electrical parameters from asset data, using associated 
+      ConductorInfo, with values then multiplied by Conductor.length to 
+      produce a matrix model.
+    </li>
+    <li>
+      calculate unbalanced electrical parameters from associated 
+      PerLengthPhaseImpedance, then multiplied by Conductor.length to 
+      produce a matrix model.
+    </li>
+    <li>
+      calculate transposed electrical parameters from associated 
+      PerLengthSequenceImpedance, then multiplied by Conductor.length to 
+      produce a sequence model. For symmetrical, transposed 3ph lines, it 
+      is sufficient to use inherited ACLineSegment attributes, which 
+      describe sequence impedances and admittances for the entire length of
+      the segment.
+      <p>Known issue: Attributes expressing impedances and admittances in 
+      PerLengthSequenceImpedance and PhaseImpedanceData use Resistance, 
+      etc., which describe pre-calculated, full length of segment, while we
+      should have a longitudinal unit, per length. Taking 'r' as example, 
+      its 'unit'=Ohm, but the value is effectively in Ohm/m, so the value 
+      needs to be multiplied by Conductor.length. This is against the whole
+      idea of unit data types and is semantically wrong, but base CIM does 
+      not have the required data types at this moment. Until the revision 
+      of unit modelling in CIM, applications need to deduce and locally 
+      handle appending '/m' for units and ensure they multiply the values 
+      by Conductor.length.At least one of the Associations must exist.</p>
+    </li>
+  </ul>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27.DistributionLineSegment-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ConductorInfo</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">SequenceImpedance</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">PhaseImpedance</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'DistributionLineSegment' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getConductorInfo"></a><span class="summary-sig-name">getConductorInfo</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Conductor data of this conductor segment.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getPhaseImpedance"></a><span class="summary-sig-name">getPhaseImpedance</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Phase impedance of this conductor segment; used for unbalanced model.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getSequenceImpedance"></a><span class="summary-sig-name">getSequenceImpedance</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Sequence impedance of this conductor segment; used for balanced 
+      model.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setConductorInfo"></a><span class="summary-sig-name">setConductorInfo</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setPhaseImpedance"></a><span class="summary-sig-name">setPhaseImpedance</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setSequenceImpedance"></a><span class="summary-sig-name">setSequenceImpedance</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html">IEC61970.Core.ConductingEquipment'.ConductingEquipment</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#addTerminals">addTerminals</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#getBaseVoltage">getBaseVoltage</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#getTerminals">getTerminals</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#removeTerminals">removeTerminals</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#setBaseVoltage">setBaseVoltage</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#setTerminals">setTerminals</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.Equipment%27.Equipment-class.html">IEC61970.Core.Equipment'.Equipment</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.Equipment%27.Equipment-class.html#getEquipmentContainer">getEquipmentContainer</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.Equipment%27.Equipment-class.html#setEquipmentContainer">setEquipmentContainer</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">IEC61970.Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getGeoLocation">getGeoLocation</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSRType">getPSRType</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setGeoLocation">setGeoLocation</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSRType">setPSRType</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_attr_types"></a><span class="summary-name">_attr_types</span> = <code title="{}"><code class="variable-group">{</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_attrs"></a><span class="summary-name">_attrs</span> = <code title="[]"><code class="variable-group">[</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_defaults"></a><span class="summary-name">_defaults</span> = <code title="{}"><code class="variable-group">{</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_refs"></a><span class="summary-name">_refs</span> = <code title="['ConductorInfo', 'SequenceImpedance', 'PhaseImpedance']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ConductorInfo</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">SequenceImpedance</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">PhaseImpedance</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.Conductor%27.Conductor-class.html">IEC61970.Wires.Conductor'.Conductor</a></code></b> (private):
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.Conductor%27.Conductor-class.html#_enums" onclick="show_private();">_enums</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Wires.Conductor%27.Conductor-class.html#_many_refs" onclick="show_private();">_many_refs</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27.DistributionLineSegment-class.html#ConductorInfo" class="summary-name">ConductorInfo</a><br />
+      Conductor data of this conductor segment.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27.DistributionLineSegment-class.html#PhaseImpedance" class="summary-name">PhaseImpedance</a><br />
+      Phase impedance of this conductor segment; used for unbalanced model.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27.DistributionLineSegment-class.html#SequenceImpedance" class="summary-name">SequenceImpedance</a><br />
+      Sequence impedance of this conductor segment; used for balanced 
+      model.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html">IEC61970.Core.ConductingEquipment'.ConductingEquipment</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#BaseVoltage">BaseVoltage</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#Terminals">Terminals</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.Equipment%27.Equipment-class.html">IEC61970.Core.Equipment'.Equipment</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.Equipment%27.Equipment-class.html#EquipmentContainer">EquipmentContainer</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">IEC61970.Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#GeoLocation">GeoLocation</a></code>,
+      <code><a href="CIM14.CDPSM.Balanced.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSRType">PSRType</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">ConductorInfo</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">SequenceImpedance</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">PhaseImpedance</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'DistributionLineSegment' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ConductorInfo</code></strong> - Conductor data of this conductor segment.</li>
+        <li><strong class="pname"><code>SequenceImpedance</code></strong> - Sequence impedance of this conductor segment; used for balanced 
+          model.</li>
+        <li><strong class="pname"><code>PhaseImpedance</code></strong> - Phase impedance of this conductor segment; used for unbalanced 
+          model.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="ConductorInfo"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ConductorInfo</h3>
+  <p>Conductor data of this conductor segment.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27.DistributionLineSegment-class.html#getConductorInfo" class="summary-sig-name">getConductorInfo</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Conductor data of this conductor segment.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27.DistributionLineSegment-class.html#setConductorInfo" class="summary-sig-name">setConductorInfo</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="PhaseImpedance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PhaseImpedance</h3>
+  <p>Phase impedance of this conductor segment; used for unbalanced 
+  model.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27.DistributionLineSegment-class.html#getPhaseImpedance" class="summary-sig-name">getPhaseImpedance</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Phase impedance of this conductor segment; used for unbalanced model.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27.DistributionLineSegment-class.html#setPhaseImpedance" class="summary-sig-name">setPhaseImpedance</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SequenceImpedance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">SequenceImpedance</h3>
+  <p>Sequence impedance of this conductor segment; used for balanced 
+  model.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27.DistributionLineSegment-class.html#getSequenceImpedance" class="summary-sig-name">getSequenceImpedance</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Sequence impedance of this conductor segment; used for balanced 
+      model.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM14.CDPSM.Balanced.IEC61968.WiresExt.DistributionLineSegment%27.DistributionLineSegment-class.html#setSequenceImpedance" class="summary-sig-name">setSequenceImpedance</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:31 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

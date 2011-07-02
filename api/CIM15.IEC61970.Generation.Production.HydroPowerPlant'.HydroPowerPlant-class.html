@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Generation.Production.HydroPowerPlant'.HydroPowerPlant</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Generation-module.html">Package&nbsp;Generation</a> ::
+        <a href="CIM15.IEC61970.Generation.Production-module.html">Package&nbsp;Production</a> ::
+        <a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27-module.html">Module&nbsp;HydroPowerPlant'</a> ::
+        Class&nbsp;HydroPowerPlant
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class HydroPowerPlant</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                           object --+            
+                                    |            
+                     <a href="CIM15.Element%27.Element-class.html">Element'.Element</a> --+        
+                                        |        
+  <a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a> --+    
+                                            |    
+<a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a> --+
+                                                |
+                                               <strong class="uidshort">HydroPowerPlant</strong>
+</pre>
+
+<hr />
+<p>A hydro power station which can generate or pump. When generating, the
+  generator turbines receive there water from an upper reservoir. When 
+  pumping, the pumps receive their water from a lower reservoir.A hydro 
+  power station which can generate or pump. When generating, the generator 
+  turbines receive there water from an upper reservoir. When pumping, the 
+  pumps receive their water from a lower reservoir.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">penstockType</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">pumpRatedP</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">hydroPlantType</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">pumpedStorage</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">surgeTankCrestLevel</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">dischargeTravelDelay</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">plantDischargeCapacity</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">plantRatedHead</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">genRatedP</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">surgeTankCode</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">HydroGeneratingUnits</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">GenSourcePumpDischargeReservoir</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Reservoir</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">HydroPumps</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'HydroPowerPlant' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addHydroGeneratingUnits"></a><span class="summary-sig-name">addHydroGeneratingUnits</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*HydroGeneratingUnits</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addHydroPumps"></a><span class="summary-sig-name">addHydroPumps</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*HydroPumps</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getGenSourcePumpDischargeReservoir"></a><span class="summary-sig-name">getGenSourcePumpDischargeReservoir</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Generators are supplied water from or pumps discharge water to an 
+      upstream reservoir</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getHydroGeneratingUnits"></a><span class="summary-sig-name">getHydroGeneratingUnits</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The hydro generating unit belongs to a hydro power plant</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getHydroPumps"></a><span class="summary-sig-name">getHydroPumps</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The hydro pump may be a member of a pumped storage plant or a pump 
+      for distributing water</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getReservoir"></a><span class="summary-sig-name">getReservoir</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Generators discharge water to or pumps are supplied water from a 
+      downstream reservoir</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeHydroGeneratingUnits"></a><span class="summary-sig-name">removeHydroGeneratingUnits</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*HydroGeneratingUnits</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeHydroPumps"></a><span class="summary-sig-name">removeHydroPumps</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*HydroPumps</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setGenSourcePumpDischargeReservoir"></a><span class="summary-sig-name">setGenSourcePumpDischargeReservoir</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setHydroGeneratingUnits"></a><span class="summary-sig-name">setHydroGeneratingUnits</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setHydroPumps"></a><span class="summary-sig-name">setHydroPumps</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setReservoir"></a><span class="summary-sig-name">setReservoir</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addAssets">addAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addChangeItems">addChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addDocumentRoles">addDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addErpOrganisationRoles">addErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addMeasurements">addMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addNetworkDataSets">addNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addOperatingShare">addOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addPSREvent">addPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addPsrLists">addPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addReportingGroup">addReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addSafetyDocuments">addSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addScheduleSteps">addScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getAssets">getAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getChangeItems">getChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getDocumentRoles">getDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getErpOrganisationRoles">getErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getLocation">getLocation</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getMeasurements">getMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getNetworkDataSets">getNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getOperatingShare">getOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getOutageSchedule">getOutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSREvent">getPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSRType">getPSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPsrLists">getPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getReportingGroup">getReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getSafetyDocuments">getSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getScheduleSteps">getScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeAssets">removeAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeChangeItems">removeChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeDocumentRoles">removeDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeErpOrganisationRoles">removeErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeMeasurements">removeMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeNetworkDataSets">removeNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeOperatingShare">removeOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removePSREvent">removePSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removePsrLists">removePsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeReportingGroup">removeReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeSafetyDocuments">removeSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeScheduleSteps">removeScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setAssets">setAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setChangeItems">setChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setDocumentRoles">setDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setErpOrganisationRoles">setErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setLocation">setLocation</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setMeasurements">setMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setNetworkDataSets">setNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setOperatingShare">setOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setOutageSchedule">setOutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSREvent">setPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSRType">setPSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPsrLists">setPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setReportingGroup">setReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setSafetyDocuments">setSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setScheduleSteps">setScheduleSteps</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addDiagramObjects">addDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addNames">addNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getDiagramObjects">getDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getModelingAuthoritySet">getModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getNames">getNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeDiagramObjects">removeDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeNames">removeNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setDiagramObjects">setDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setModelingAuthoritySet">setModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setNames">setNames</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'dischargeTravelDelay': &lt;type 'float'&gt;,
+ 'genRatedP': &lt;type 'float'&gt;,
+ 'hydroPlantType': &lt;type 'str'&gt;,
+ 'penstockType': &lt;type 'str'&gt;,
+ 'plantDischargeCapacity': &lt;type 'float'&gt;,
+ 'plantRatedHead': &lt;type 'float'&gt;,
+ 'pumpRatedP': &lt;type 'float'&gt;,
+ 'surgeTankCode': &lt;type 'str'&gt;,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">dischargeTravelDelay</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">genRat</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="['penstockType',
+ 'pumpRatedP',
+ 'hydroPlantType',
+ 'surgeTankCrestLevel',
+ 'dischargeTravelDelay',
+ 'plantDischargeCapacity',
+ 'plantRatedHead',
+ 'genRatedP',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">penstockType</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">pumpRatedP</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">hydroPlantType</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">sur</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{'dischargeTravelDelay': 0.0,
+ 'genRatedP': 0.0,
+ 'hydroPlantType': 'pumpedStorage',
+ 'penstockType': '',
+ 'plantDischargeCapacity': 0.0,
+ 'plantRatedHead': 0.0,
+ 'pumpRatedP': 0.0,
+ 'surgeTankCode': '',
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">dischargeTravelDelay</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">genRatedP</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">h</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#_enums" class="summary-name" onclick="show_private();">_enums</a> = <code title="{'hydroPlantType': 'HydroPlantType',
+ 'penstockType': 'PenstockType',
+ 'surgeTankCode': 'SurgeTankCode'}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">hydroPlantType</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">HydroPlantType</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">penstockType</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_many_refs"></a><span class="summary-name">_many_refs</span> = <code title="['HydroGeneratingUnits', 'HydroPumps']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">HydroGeneratingUnits</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">HydroPumps</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="['HydroGeneratingUnits',
+ 'GenSourcePumpDischargeReservoir',
+ 'Reservoir',
+ 'HydroPumps']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">HydroGeneratingUnits</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">GenSourcePumpDischargeReserv</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#GenSourcePumpDischargeReservoir" class="summary-name">GenSourcePumpDischargeReservoir</a><br />
+      Generators are supplied water from or pumps discharge water to an 
+      upstream reservoir
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#HydroGeneratingUnits" class="summary-name">HydroGeneratingUnits</a><br />
+      The hydro generating unit belongs to a hydro power plant
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#HydroPumps" class="summary-name">HydroPumps</a><br />
+      The hydro pump may be a member of a pumped storage plant or a pump 
+      for distributing water
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#Reservoir" class="summary-name">Reservoir</a><br />
+      Generators discharge water to or pumps are supplied water from a 
+      downstream reservoir
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Assets">Assets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ChangeItems">ChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#DocumentRoles">DocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ErpOrganisationRoles">ErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Location">Location</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Measurements">Measurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#NetworkDataSets">NetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#OperatingShare">OperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#OutageSchedule">OutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSREvent">PSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSRType">PSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PsrLists">PsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ReportingGroup">ReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#SafetyDocuments">SafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ScheduleSteps">ScheduleSteps</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#DiagramObjects">DiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#ModelingAuthoritySet">ModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#Names">Names</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">penstockType</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">pumpRatedP</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">hydroPlantType</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">pumpedStorage</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">surgeTankCrestLevel</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">dischargeTravelDelay</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">plantDischargeCapacity</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">plantRatedHead</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">genRatedP</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">surgeTankCode</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">HydroGeneratingUnits</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">GenSourcePumpDischargeReservoir</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Reservoir</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">HydroPumps</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'HydroPowerPlant' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>penstockType</code></strong> - Type and configuration of hydro plant penstock(s)</li>
+        <li><strong class="pname"><code>pumpRatedP</code></strong> - The hydro plant's pumping rating active power for rated head 
+          conditions</li>
+        <li><strong class="pname"><code>hydroPlantType</code></strong> - The type of hydro power plant. Values are: 
+          &quot;pumpedStorage&quot;, &quot;runOfRiver&quot;, 
+          &quot;minorStorage&quot;, &quot;majorStorage&quot;</li>
+        <li><strong class="pname"><code>surgeTankCrestLevel</code></strong> - The level at which the surge tank spills</li>
+        <li><strong class="pname"><code>dischargeTravelDelay</code></strong> - Water travel delay from tailbay to next downstream hydro power 
+          station</li>
+        <li><strong class="pname"><code>plantDischargeCapacity</code></strong> - Total plant discharge capacity</li>
+        <li><strong class="pname"><code>plantRatedHead</code></strong> - The plant's rated gross head</li>
+        <li><strong class="pname"><code>genRatedP</code></strong> - The hydro plant's generating rating active power for rated head 
+          conditions</li>
+        <li><strong class="pname"><code>surgeTankCode</code></strong> - A code describing the type (or absence) of surge tank that is 
+          associated with the hydro power plant</li>
+        <li><strong class="pname"><code>HydroGeneratingUnits</code></strong> - The hydro generating unit belongs to a hydro power plant</li>
+        <li><strong class="pname"><code>GenSourcePumpDischargeReservoir</code></strong> - Generators are supplied water from or pumps discharge water to an
+          upstream reservoir</li>
+        <li><strong class="pname"><code>Reservoir</code></strong> - Generators discharge water to or pumps are supplied water from a 
+          downstream reservoir</li>
+        <li><strong class="pname"><code>HydroPumps</code></strong> - The hydro pump may be a member of a pumped storage plant or a 
+          pump for distributing water</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">dischargeTravelDelay</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">genRatedP</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">hydroPlantType</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">penstockType</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">plantDischargeCapacity</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">plantRatedHead</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">pumpRatedP</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">surgeTankCode</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">penstockType</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">pumpRatedP</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">hydroPlantType</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">surgeTankCrestLevel</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">dischargeTravelDelay</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">plantDischargeCapacity</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">plantRatedHead</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">genRatedP</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">dischargeTravelDelay</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">genRatedP</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">hydroPlantType</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">pumpedStorage</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">penstockType</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">plantDischargeCapacity</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">plantRatedHead</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">pumpRatedP</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">surgeTankCode</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_enums"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_enums</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">hydroPlantType</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">HydroPlantType</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">penstockType</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">PenstockType</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">surgeTankCode</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">SurgeTankCode</code><code class="variable-quote">'</code><code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">HydroGeneratingUnits</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">GenSourcePumpDischargeReservoir</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Reservoir</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">HydroPumps</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="GenSourcePumpDischargeReservoir"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">GenSourcePumpDischargeReservoir</h3>
+  <p>Generators are supplied water from or pumps discharge water to an 
+  upstream reservoir</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#getGenSourcePumpDischargeReservoir" class="summary-sig-name">getGenSourcePumpDischargeReservoir</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Generators are supplied water from or pumps discharge water to an 
+      upstream reservoir
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#setGenSourcePumpDischargeReservoir" class="summary-sig-name">setGenSourcePumpDischargeReservoir</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="HydroGeneratingUnits"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">HydroGeneratingUnits</h3>
+  <p>The hydro generating unit belongs to a hydro power plant</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#getHydroGeneratingUnits" class="summary-sig-name">getHydroGeneratingUnits</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The hydro generating unit belongs to a hydro power plant
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#setHydroGeneratingUnits" class="summary-sig-name">setHydroGeneratingUnits</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="HydroPumps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">HydroPumps</h3>
+  <p>The hydro pump may be a member of a pumped storage plant or a pump for
+  distributing water</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#getHydroPumps" class="summary-sig-name">getHydroPumps</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The hydro pump may be a member of a pumped storage plant or a pump 
+      for distributing water
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#setHydroPumps" class="summary-sig-name">setHydroPumps</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Reservoir"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Reservoir</h3>
+  <p>Generators discharge water to or pumps are supplied water from a 
+  downstream reservoir</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#getReservoir" class="summary-sig-name">getReservoir</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Generators discharge water to or pumps are supplied water from a 
+      downstream reservoir
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Generation.Production.HydroPowerPlant%27.HydroPowerPlant-class.html#setReservoir" class="summary-sig-name">setReservoir</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:45 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

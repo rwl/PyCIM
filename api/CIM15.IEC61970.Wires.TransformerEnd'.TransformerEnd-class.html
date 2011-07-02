@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Wires.TransformerEnd'.TransformerEnd</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Wires-module.html">Package&nbsp;Wires</a> ::
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27-module.html">Module&nbsp;TransformerEnd'</a> ::
+        Class&nbsp;TransformerEnd
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class TransformerEnd</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                         object --+        
+                                  |        
+                   <a href="CIM15.Element%27.Element-class.html">Element'.Element</a> --+    
+                                      |    
+<a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a> --+
+                                          |
+                                         <strong class="uidshort">TransformerEnd</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="CIM15.IEC61970.Wires.PowerTransformerEnd%27.PowerTransformerEnd-class.html">PowerTransformerEnd'.PowerTransformerEnd</a></li><li>, <a href="CIM15.IEC61970.Wires.TransformerTankEnd%27.TransformerTankEnd-class.html">TransformerTankEnd'.TransformerTankEnd</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>TransformerEnd is a conducting connection point of a power 
+  transformer. It corresponds to a physical transformer winding terminal.  
+  In earlier CIM versions, the TransformerWinding class served a similar 
+  purpose. This successor TransformerEnd class is more flexible and has 
+  important differences with TransformerWinding.TransformerEnd is a 
+  conducting connection point of a power transformer. It corresponds to a 
+  physical transformer winding terminal.  In earlier CIM versions, the 
+  TransformerWinding class served a similar purpose. This successor 
+  TransformerEnd class is more flexible and has important differences with 
+  TransformerWinding.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">endNumber</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">rground</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">grounded</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">magBaseU</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">magSatFlux</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">bmagSat</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">xground</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">Terminal</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">FromWindingInsulations</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">CoreAdmittance</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">TransformerEndInfo</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">PhaseTapChanger</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">RatioTapChanger</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">FromMeshImpedance</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ToWindingInsulations</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ToMeshImpedance</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">StarImpedance</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'TransformerEnd' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addFromMeshImpedance"></a><span class="summary-sig-name">addFromMeshImpedance</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*FromMeshImpedance</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addFromWindingInsulations"></a><span class="summary-sig-name">addFromWindingInsulations</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*FromWindingInsulations</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addToMeshImpedance"></a><span class="summary-sig-name">addToMeshImpedance</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ToMeshImpedance</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addToWindingInsulations"></a><span class="summary-sig-name">addToWindingInsulations</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ToWindingInsulations</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getCoreAdmittance" class="summary-sig-name">getCoreAdmittance</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Core admittance of this transformer end, representing magnetising 
+      current and core losses.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getFromMeshImpedance"></a><span class="summary-sig-name">getFromMeshImpedance</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      All mesh impedances between this 'to' and other 'from' transformer 
+      ends.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getFromWindingInsulations"></a><span class="summary-sig-name">getFromWindingInsulations</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getPhaseTapChanger"></a><span class="summary-sig-name">getPhaseTapChanger</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Phase tap changer associated with this transformer end.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getRatioTapChanger"></a><span class="summary-sig-name">getRatioTapChanger</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Ratio tap changer associated with this transformer end.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getStarImpedance" class="summary-sig-name">getStarImpedance</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      (accurate for 2- or 3-winding transformers only) Pi-model impedances 
+      of this transformer end.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTerminal"></a><span class="summary-sig-name">getTerminal</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      External terminal of the power transformer to which this end belongs.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getToMeshImpedance"></a><span class="summary-sig-name">getToMeshImpedance</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      All mesh impedances between this 'from' and other 'to' transformer 
+      ends.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getToWindingInsulations"></a><span class="summary-sig-name">getToWindingInsulations</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getTransformerEndInfo"></a><span class="summary-sig-name">getTransformerEndInfo</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Data for this transformer end.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeFromMeshImpedance"></a><span class="summary-sig-name">removeFromMeshImpedance</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*FromMeshImpedance</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeFromWindingInsulations"></a><span class="summary-sig-name">removeFromWindingInsulations</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*FromWindingInsulations</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeToMeshImpedance"></a><span class="summary-sig-name">removeToMeshImpedance</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ToMeshImpedance</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeToWindingInsulations"></a><span class="summary-sig-name">removeToWindingInsulations</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ToWindingInsulations</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setCoreAdmittance"></a><span class="summary-sig-name">setCoreAdmittance</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setFromMeshImpedance"></a><span class="summary-sig-name">setFromMeshImpedance</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setFromWindingInsulations"></a><span class="summary-sig-name">setFromWindingInsulations</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setPhaseTapChanger"></a><span class="summary-sig-name">setPhaseTapChanger</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setRatioTapChanger"></a><span class="summary-sig-name">setRatioTapChanger</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setStarImpedance"></a><span class="summary-sig-name">setStarImpedance</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTerminal"></a><span class="summary-sig-name">setTerminal</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setToMeshImpedance"></a><span class="summary-sig-name">setToMeshImpedance</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setToWindingInsulations"></a><span class="summary-sig-name">setToWindingInsulations</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTransformerEndInfo"></a><span class="summary-sig-name">setTransformerEndInfo</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addDiagramObjects">addDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addNames">addNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getDiagramObjects">getDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getModelingAuthoritySet">getModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getNames">getNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeDiagramObjects">removeDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeNames">removeNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setDiagramObjects">setDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setModelingAuthoritySet">setModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setNames">setNames</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'bmagSat': &lt;type 'float'&gt;,
+ 'endNumber': &lt;type 'int'&gt;,
+ 'grounded': &lt;type 'bool'&gt;,
+ 'magBaseU': &lt;type 'float'&gt;,
+ 'magSatFlux': &lt;type 'float'&gt;,
+ 'rground': &lt;type 'float'&gt;,
+ 'xground': &lt;type 'float'&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">bmagSat</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">endNumber</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type '<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="['endNumber',
+ 'rground',
+ 'grounded',
+ 'magBaseU',
+ 'magSatFlux',
+ 'bmagSat',
+ 'xground']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">endNumber</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">rground</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">grounded</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">magBaseU</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mag</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{'bmagSat': 0.0,
+ 'endNumber': 0,
+ 'grounded': False,
+ 'magBaseU': 0.0,
+ 'magSatFlux': 0.0,
+ 'rground': 0.0,
+ 'xground': 0.0}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">bmagSat</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">endNumber</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">grounded</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#_many_refs" class="summary-name" onclick="show_private();">_many_refs</a> = <code title="['FromWindingInsulations',
+ 'FromMeshImpedance',
+ 'ToWindingInsulations',
+ 'ToMeshImpedance']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">FromWindingInsulations</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">FromMeshImpedance</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="['Terminal',
+ 'FromWindingInsulations',
+ 'CoreAdmittance',
+ 'TransformerEndInfo',
+ 'PhaseTapChanger',
+ 'RatioTapChanger',
+ 'FromMeshImpedance',
+ 'ToWindingInsulations',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">Terminal</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">FromWindingInsulations</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">CoreAdmittance</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.Element%27.Element-class.html">Element'.Element</a></code></b> (private):
+      <code><a href="CIM15.Element%27.Element-class.html#_enums" onclick="show_private();">_enums</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#CoreAdmittance" class="summary-name">CoreAdmittance</a><br />
+      Core admittance of this transformer end, representing magnetising 
+      current and core losses.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#FromMeshImpedance" class="summary-name">FromMeshImpedance</a><br />
+      All mesh impedances between this 'to' and other 'from' transformer 
+      ends.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#FromWindingInsulations" class="summary-name">FromWindingInsulations</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#PhaseTapChanger" class="summary-name">PhaseTapChanger</a><br />
+      Phase tap changer associated with this transformer end.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#RatioTapChanger" class="summary-name">RatioTapChanger</a><br />
+      Ratio tap changer associated with this transformer end.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#StarImpedance" class="summary-name">StarImpedance</a><br />
+      (accurate for 2- or 3-winding transformers only) Pi-model impedances 
+      of this transformer end.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#Terminal" class="summary-name">Terminal</a><br />
+      External terminal of the power transformer to which this end belongs.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#ToMeshImpedance" class="summary-name">ToMeshImpedance</a><br />
+      All mesh impedances between this 'from' and other 'to' transformer 
+      ends.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#ToWindingInsulations" class="summary-name">ToWindingInsulations</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#TransformerEndInfo" class="summary-name">TransformerEndInfo</a><br />
+      Data for this transformer end.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#DiagramObjects">DiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#ModelingAuthoritySet">ModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#Names">Names</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">endNumber</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">rground</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">grounded</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">magBaseU</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">magSatFlux</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">bmagSat</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">xground</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">Terminal</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">FromWindingInsulations</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">CoreAdmittance</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">TransformerEndInfo</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">PhaseTapChanger</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">RatioTapChanger</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">FromMeshImpedance</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ToWindingInsulations</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ToMeshImpedance</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">StarImpedance</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'TransformerEnd' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>endNumber</code></strong> - Number for this transformer end, corresponding to the end's order
+          in the PowerTransformer.vectorGroup attribute. Highest voltage 
+          winding should be 1.</li>
+        <li><strong class="pname"><code>rground</code></strong> - (for Yn and Zn connections) Resistance part of neutral impedance 
+          where 'grounded' is true.</li>
+        <li><strong class="pname"><code>grounded</code></strong> - (for Yn and Zn connections) True if the neutral is solidly 
+          grounded.</li>
+        <li><strong class="pname"><code>magBaseU</code></strong> - The reference voltage at which the magnetizing saturation 
+          measurements were made</li>
+        <li><strong class="pname"><code>magSatFlux</code></strong> - Core magnetizing saturation curve knee flux level.</li>
+        <li><strong class="pname"><code>bmagSat</code></strong> - Core shunt magnetizing susceptance in the saturation region.</li>
+        <li><strong class="pname"><code>xground</code></strong> - (for Yn and Zn connections) Reactive part of neutral impedance 
+          where 'grounded' is true.</li>
+        <li><strong class="pname"><code>Terminal</code></strong> - External terminal of the power transformer to which this end 
+          belongs.</li>
+        <li><strong class="pname"><code>FromWindingInsulations</code></strong></li>
+        <li><strong class="pname"><code>CoreAdmittance</code></strong> - Core admittance of this transformer end, representing magnetising
+          current and core losses. The full values of the transformer 
+          should be supplied for one transformer end only.</li>
+        <li><strong class="pname"><code>TransformerEndInfo</code></strong> - Data for this transformer end.</li>
+        <li><strong class="pname"><code>PhaseTapChanger</code></strong> - Phase tap changer associated with this transformer end.</li>
+        <li><strong class="pname"><code>RatioTapChanger</code></strong> - Ratio tap changer associated with this transformer end.</li>
+        <li><strong class="pname"><code>FromMeshImpedance</code></strong> - All mesh impedances between this 'to' and other 'from' 
+          transformer ends.</li>
+        <li><strong class="pname"><code>ToWindingInsulations</code></strong></li>
+        <li><strong class="pname"><code>ToMeshImpedance</code></strong> - All mesh impedances between this 'from' and other 'to' 
+          transformer ends.</li>
+        <li><strong class="pname"><code>StarImpedance</code></strong> - (accurate for 2- or 3-winding transformers only) Pi-model 
+          impedances of this transformer end. By convention, for a two 
+          winding transformer, the full values of the transformer should be
+          entered on the high voltage end (endNumber=1).</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getCoreAdmittance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getCoreAdmittance</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Core admittance of this transformer end, representing magnetising 
+  current and core losses. The full values of the transformer should be 
+  supplied for one transformer end only.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="getStarImpedance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getStarImpedance</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>(accurate for 2- or 3-winding transformers only) Pi-model impedances 
+  of this transformer end. By convention, for a two winding transformer, 
+  the full values of the transformer should be entered on the high voltage 
+  end (endNumber=1).</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">bmagSat</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">endNumber</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'int'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">grounded</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'bool'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">magBaseU</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">magSatFlux</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">rground</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">xground</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">endNumber</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">rground</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">grounded</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">magBaseU</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">magSatFlux</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">bmagSat</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">xground</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">bmagSat</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">endNumber</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">grounded</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">magBaseU</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">magSatFlux</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">rground</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">xground</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_many_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_many_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">FromWindingInsulations</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">FromMeshImpedance</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ToWindingInsulations</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ToMeshImpedance</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">Terminal</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">FromWindingInsulations</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">CoreAdmittance</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">TransformerEndInfo</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">PhaseTapChanger</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">RatioTapChanger</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">FromMeshImpedance</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ToWindingInsulations</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="CoreAdmittance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">CoreAdmittance</h3>
+  <p>Core admittance of this transformer end, representing magnetising 
+  current and core losses. The full values of the transformer should be 
+  supplied for one transformer end only.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getCoreAdmittance" class="summary-sig-name">getCoreAdmittance</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Core admittance of this transformer end, representing magnetising 
+      current and core losses.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#setCoreAdmittance" class="summary-sig-name">setCoreAdmittance</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="FromMeshImpedance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">FromMeshImpedance</h3>
+  <p>All mesh impedances between this 'to' and other 'from' transformer 
+  ends.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getFromMeshImpedance" class="summary-sig-name">getFromMeshImpedance</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All mesh impedances between this 'to' and other 'from' transformer 
+      ends.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#setFromMeshImpedance" class="summary-sig-name">setFromMeshImpedance</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="FromWindingInsulations"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">FromWindingInsulations</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getFromWindingInsulations" class="summary-sig-name">getFromWindingInsulations</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#setFromWindingInsulations" class="summary-sig-name">setFromWindingInsulations</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="PhaseTapChanger"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PhaseTapChanger</h3>
+  <p>Phase tap changer associated with this transformer end.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getPhaseTapChanger" class="summary-sig-name">getPhaseTapChanger</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Phase tap changer associated with this transformer end.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#setPhaseTapChanger" class="summary-sig-name">setPhaseTapChanger</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RatioTapChanger"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RatioTapChanger</h3>
+  <p>Ratio tap changer associated with this transformer end.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getRatioTapChanger" class="summary-sig-name">getRatioTapChanger</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Ratio tap changer associated with this transformer end.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#setRatioTapChanger" class="summary-sig-name">setRatioTapChanger</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="StarImpedance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">StarImpedance</h3>
+  <p>(accurate for 2- or 3-winding transformers only) Pi-model impedances 
+  of this transformer end. By convention, for a two winding transformer, 
+  the full values of the transformer should be entered on the high voltage 
+  end (endNumber=1).</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getStarImpedance" class="summary-sig-name">getStarImpedance</a>(<span class="summary-sig-arg">self</span>)</span>
+        - (accurate for 2- or 3-winding transformers only) Pi-model impedances 
+      of this transformer end.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#setStarImpedance" class="summary-sig-name">setStarImpedance</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Terminal"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Terminal</h3>
+  <p>External terminal of the power transformer to which this end 
+  belongs.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getTerminal" class="summary-sig-name">getTerminal</a>(<span class="summary-sig-arg">self</span>)</span>
+        - External terminal of the power transformer to which this end belongs.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#setTerminal" class="summary-sig-name">setTerminal</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ToMeshImpedance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ToMeshImpedance</h3>
+  <p>All mesh impedances between this 'from' and other 'to' transformer 
+  ends.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getToMeshImpedance" class="summary-sig-name">getToMeshImpedance</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All mesh impedances between this 'from' and other 'to' transformer 
+      ends.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#setToMeshImpedance" class="summary-sig-name">setToMeshImpedance</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ToWindingInsulations"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ToWindingInsulations</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getToWindingInsulations" class="summary-sig-name">getToWindingInsulations</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#setToWindingInsulations" class="summary-sig-name">setToWindingInsulations</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="TransformerEndInfo"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">TransformerEndInfo</h3>
+  <p>Data for this transformer end.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#getTransformerEndInfo" class="summary-sig-name">getTransformerEndInfo</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Data for this transformer end.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.TransformerEnd%27.TransformerEnd-class.html#setTransformerEndInfo" class="summary-sig-name">setTransformerEndInfo</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:53 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

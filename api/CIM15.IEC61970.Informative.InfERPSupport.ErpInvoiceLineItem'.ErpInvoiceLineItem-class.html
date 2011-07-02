@@ -1,0 +1,1580 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem'.ErpInvoiceLineItem</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Informative-module.html">Package&nbsp;Informative</a> ::
+        <a href="CIM15.IEC61970.Informative.InfERPSupport-module.html">Package&nbsp;InfERPSupport</a> ::
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27-module.html">Module&nbsp;ErpInvoiceLineItem'</a> ::
+        Class&nbsp;ErpInvoiceLineItem
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class ErpInvoiceLineItem</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                         object --+            
+                                  |            
+                   <a href="CIM15.Element%27.Element-class.html">Element'.Element</a> --+        
+                                      |        
+<a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a> --+    
+                                          |    
+         <a href="CIM15.IEC61968.Common.Document%27.Document-class.html">IEC61968.Common.Document'.Document</a> --+
+                                              |
+                                             <strong class="uidshort">ErpInvoiceLineItem</strong>
+</pre>
+
+<hr />
+<p>An individual line item on an invoice.An individual line item on an 
+  invoice.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lineNumber</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">glDateTime</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">lineAmount</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">netAmount</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">kind</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">other</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">lineVersion</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">glAccount</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">previousAmount</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">ErpPayments</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ContainerErpInvoiceLineItem</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">WorkBillingInfos</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ErpQuoteLineItem</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">UserAttributes</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ErpRecDelvLineItem</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ErpPayableLineItem</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ComponentErpInvoiceLineItems</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">billPeriod</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ErpInvoice</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">CustomerBillingInfos</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ErpRecLineItem</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ErpJournalEntries</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'ErpInvoiceLineItem' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addComponentErpInvoiceLineItems"></a><span class="summary-sig-name">addComponentErpInvoiceLineItems</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ComponentErpInvoiceLineItems</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addCustomerBillingInfos"></a><span class="summary-sig-name">addCustomerBillingInfos</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*CustomerBillingInfos</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addErpJournalEntries"></a><span class="summary-sig-name">addErpJournalEntries</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ErpJournalEntries</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addErpPayments"></a><span class="summary-sig-name">addErpPayments</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ErpPayments</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addUserAttributes"></a><span class="summary-sig-name">addUserAttributes</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*UserAttributes</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addWorkBillingInfos"></a><span class="summary-sig-name">addWorkBillingInfos</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*WorkBillingInfos</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getComponentErpInvoiceLineItems"></a><span class="summary-sig-name">getComponentErpInvoiceLineItems</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getContainerErpInvoiceLineItem"></a><span class="summary-sig-name">getContainerErpInvoiceLineItem</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getCustomerBillingInfos"></a><span class="summary-sig-name">getCustomerBillingInfos</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Customer billing for services rendered.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getErpInvoice"></a><span class="summary-sig-name">getErpInvoice</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getErpJournalEntries"></a><span class="summary-sig-name">getErpJournalEntries</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getErpPayableLineItem"></a><span class="summary-sig-name">getErpPayableLineItem</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getErpPayments"></a><span class="summary-sig-name">getErpPayments</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getErpQuoteLineItem"></a><span class="summary-sig-name">getErpQuoteLineItem</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getErpRecDelvLineItem"></a><span class="summary-sig-name">getErpRecDelvLineItem</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getErpRecLineItem"></a><span class="summary-sig-name">getErpRecLineItem</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getUserAttributes"></a><span class="summary-sig-name">getUserAttributes</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getWorkBillingInfos"></a><span class="summary-sig-name">getWorkBillingInfos</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeComponentErpInvoiceLineItems"></a><span class="summary-sig-name">removeComponentErpInvoiceLineItems</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ComponentErpInvoiceLineItems</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeCustomerBillingInfos"></a><span class="summary-sig-name">removeCustomerBillingInfos</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*CustomerBillingInfos</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeErpJournalEntries"></a><span class="summary-sig-name">removeErpJournalEntries</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ErpJournalEntries</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeErpPayments"></a><span class="summary-sig-name">removeErpPayments</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ErpPayments</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeUserAttributes"></a><span class="summary-sig-name">removeUserAttributes</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*UserAttributes</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeWorkBillingInfos"></a><span class="summary-sig-name">removeWorkBillingInfos</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*WorkBillingInfos</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setComponentErpInvoiceLineItems"></a><span class="summary-sig-name">setComponentErpInvoiceLineItems</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setContainerErpInvoiceLineItem"></a><span class="summary-sig-name">setContainerErpInvoiceLineItem</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setCustomerBillingInfos"></a><span class="summary-sig-name">setCustomerBillingInfos</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setErpInvoice"></a><span class="summary-sig-name">setErpInvoice</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setErpJournalEntries"></a><span class="summary-sig-name">setErpJournalEntries</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setErpPayableLineItem"></a><span class="summary-sig-name">setErpPayableLineItem</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setErpPayments"></a><span class="summary-sig-name">setErpPayments</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setErpQuoteLineItem"></a><span class="summary-sig-name">setErpQuoteLineItem</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setErpRecDelvLineItem"></a><span class="summary-sig-name">setErpRecDelvLineItem</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setErpRecLineItem"></a><span class="summary-sig-name">setErpRecLineItem</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setUserAttributes"></a><span class="summary-sig-name">setUserAttributes</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setWorkBillingInfos"></a><span class="summary-sig-name">setWorkBillingInfos</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html">IEC61968.Common.Document'.Document</a></code></b>:
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addActivityRecords">addActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addAssetRoles">addAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addChangeItems">addChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addChangeSets">addChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addErpOrganisationRoles">addErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addErpPersonRoles">addErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addFromDocumentRoles">addFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addMeasurements">addMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addNetworkDataSets">addNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addPowerSystemResourceRoles">addPowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addScheduleParameterInfos">addScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addScheduledEvents">addScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addToDocumentRoles">addToDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getActivityRecords">getActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getAssetRoles">getAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getChangeItems">getChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getChangeSets">getChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getErpOrganisationRoles">getErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getErpPersonRoles">getErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getFromDocumentRoles">getFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getMeasurements">getMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getNetworkDataSets">getNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getPowerSystemResourceRoles">getPowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getScheduleParameterInfos">getScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getScheduledEvents">getScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getToDocumentRoles">getToDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeActivityRecords">removeActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeAssetRoles">removeAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeChangeItems">removeChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeChangeSets">removeChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeErpOrganisationRoles">removeErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeErpPersonRoles">removeErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeFromDocumentRoles">removeFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeMeasurements">removeMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeNetworkDataSets">removeNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removePowerSystemResourceRoles">removePowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeScheduleParameterInfos">removeScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeScheduledEvents">removeScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeToDocumentRoles">removeToDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setActivityRecords">setActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setAssetRoles">setAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setChangeItems">setChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setChangeSets">setChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setErpOrganisationRoles">setErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setErpPersonRoles">setErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setFromDocumentRoles">setFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setMeasurements">setMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setNetworkDataSets">setNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setPowerSystemResourceRoles">setPowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setScheduleParameterInfos">setScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setScheduledEvents">setScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setToDocumentRoles">setToDocumentRoles</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addDiagramObjects">addDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addNames">addNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getDiagramObjects">getDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getModelingAuthoritySet">getModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getNames">getNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeDiagramObjects">removeDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeNames">removeNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setDiagramObjects">setDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setModelingAuthoritySet">setModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setNames">setNames</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'glAccount': &lt;type 'str'&gt;,
+ 'glDateTime': &lt;type 'str'&gt;,
+ 'kind': &lt;type 'str'&gt;,
+ 'lineAmount': &lt;type 'float'&gt;,
+ 'lineNumber': &lt;type 'str'&gt;,
+ 'lineVersion': &lt;type 'str'&gt;,
+ 'netAmount': &lt;type 'float'&gt;,
+ 'previousAmount': &lt;type 'float'&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">glAccount</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">glDateTime</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type <code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="['lineNumber',
+ 'glDateTime',
+ 'lineAmount',
+ 'netAmount',
+ 'kind',
+ 'lineVersion',
+ 'glAccount',
+ 'previousAmount']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">lineNumber</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">glDateTime</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">lineAmount</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">netAmount</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{'glAccount': '',
+ 'glDateTime': '',
+ 'kind': 'other',
+ 'lineAmount': 0.0,
+ 'lineNumber': '',
+ 'lineVersion': '',
+ 'netAmount': 0.0,
+ 'previousAmount': 0.0}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">glAccount</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">glDateTime</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">kind</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">other</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_enums"></a><span class="summary-name">_enums</span> = <code title="{'kind': 'ErpInvoiceLineItemKind'}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">kind</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">ErpInvoiceLineItemKind</code><code class="variable-quote">'</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#_many_refs" class="summary-name" onclick="show_private();">_many_refs</a> = <code title="['ErpPayments',
+ 'WorkBillingInfos',
+ 'UserAttributes',
+ 'ComponentErpInvoiceLineItems',
+ 'CustomerBillingInfos',
+ 'ErpJournalEntries']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ErpPayments</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">WorkBillingInfos</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">UserAttribut</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="['ErpPayments',
+ 'ContainerErpInvoiceLineItem',
+ 'WorkBillingInfos',
+ 'ErpQuoteLineItem',
+ 'UserAttributes',
+ 'ErpRecDelvLineItem',
+ 'ErpPayableLineItem',
+ 'ComponentErpInvoiceLineItems',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ErpPayments</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ContainerErpInvoiceLineItem</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">WorkBi</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="billPeriod"></a><span class="summary-name">billPeriod</span> = <code title="None">None</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html">IEC61968.Common.Document'.Document</a></code></b>:
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#docStatus">docStatus</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#electronicAddress">electronicAddress</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#status">status</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#ComponentErpInvoiceLineItems" class="summary-name">ComponentErpInvoiceLineItems</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#ContainerErpInvoiceLineItem" class="summary-name">ContainerErpInvoiceLineItem</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#CustomerBillingInfos" class="summary-name">CustomerBillingInfos</a><br />
+      Customer billing for services rendered.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#ErpInvoice" class="summary-name">ErpInvoice</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#ErpJournalEntries" class="summary-name">ErpJournalEntries</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#ErpPayableLineItem" class="summary-name">ErpPayableLineItem</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#ErpPayments" class="summary-name">ErpPayments</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#ErpQuoteLineItem" class="summary-name">ErpQuoteLineItem</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#ErpRecDelvLineItem" class="summary-name">ErpRecDelvLineItem</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#ErpRecLineItem" class="summary-name">ErpRecLineItem</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#UserAttributes" class="summary-name">UserAttributes</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#WorkBillingInfos" class="summary-name">WorkBillingInfos</a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html">IEC61968.Common.Document'.Document</a></code></b>:
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ActivityRecords">ActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#AssetRoles">AssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ChangeItems">ChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ChangeSets">ChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ErpOrganisationRoles">ErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ErpPersonRoles">ErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#FromDocumentRoles">FromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#Measurements">Measurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#NetworkDataSets">NetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#PowerSystemResourceRoles">PowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ScheduleParameterInfos">ScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ScheduledEvents">ScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ToDocumentRoles">ToDocumentRoles</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#DiagramObjects">DiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#ModelingAuthoritySet">ModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#Names">Names</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">lineNumber</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">glDateTime</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">lineAmount</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">netAmount</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">kind</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">other</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">lineVersion</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">glAccount</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">previousAmount</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">ErpPayments</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ContainerErpInvoiceLineItem</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">WorkBillingInfos</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ErpQuoteLineItem</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">UserAttributes</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ErpRecDelvLineItem</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ErpPayableLineItem</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ComponentErpInvoiceLineItems</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">billPeriod</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ErpInvoice</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">CustomerBillingInfos</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ErpRecLineItem</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ErpJournalEntries</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'ErpInvoiceLineItem' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lineNumber</code></strong> - Line item number on invoice statement.</li>
+        <li><strong class="pname"><code>glDateTime</code></strong> - Date and time line item will be posted to the General Ledger.</li>
+        <li><strong class="pname"><code>lineAmount</code></strong> - Amount due for this line item.</li>
+        <li><strong class="pname"><code>netAmount</code></strong> - Net line item charge amount.</li>
+        <li><strong class="pname"><code>kind</code></strong> - Kind of line item. Values are: &quot;other&quot;, 
+          &quot;recalculation&quot;, &quot;initial&quot;</li>
+        <li><strong class="pname"><code>lineVersion</code></strong> - Version number of the bill run.</li>
+        <li><strong class="pname"><code>glAccount</code></strong> - General Ledger account code, must be a valid combination.</li>
+        <li><strong class="pname"><code>previousAmount</code></strong> - Previous line item charge amount.</li>
+        <li><strong class="pname"><code>ErpPayments</code></strong></li>
+        <li><strong class="pname"><code>ContainerErpInvoiceLineItem</code></strong></li>
+        <li><strong class="pname"><code>WorkBillingInfos</code></strong></li>
+        <li><strong class="pname"><code>ErpQuoteLineItem</code></strong></li>
+        <li><strong class="pname"><code>UserAttributes</code></strong></li>
+        <li><strong class="pname"><code>ErpRecDelvLineItem</code></strong></li>
+        <li><strong class="pname"><code>ErpPayableLineItem</code></strong></li>
+        <li><strong class="pname"><code>ComponentErpInvoiceLineItems</code></strong></li>
+        <li><strong class="pname"><code>billPeriod</code></strong> - Bill period for the line item.</li>
+        <li><strong class="pname"><code>ErpInvoice</code></strong></li>
+        <li><strong class="pname"><code>CustomerBillingInfos</code></strong> - Customer billing for services rendered.</li>
+        <li><strong class="pname"><code>ErpRecLineItem</code></strong></li>
+        <li><strong class="pname"><code>ErpJournalEntries</code></strong></li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">glAccount</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">glDateTime</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">kind</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineAmount</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineNumber</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineVersion</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">netAmount</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">previousAmount</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">lineNumber</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">glDateTime</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineAmount</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">netAmount</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">kind</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineVersion</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">glAccount</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">previousAmount</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">glAccount</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">glDateTime</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">kind</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">other</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineAmount</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineNumber</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lineVersion</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">netAmount</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">previousAmount</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_many_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_many_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ErpPayments</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">WorkBillingInfos</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">UserAttributes</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ComponentErpInvoiceLineItems</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">CustomerBillingInfos</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ErpJournalEntries</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ErpPayments</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ContainerErpInvoiceLineItem</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">WorkBillingInfos</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ErpQuoteLineItem</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">UserAttributes</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ErpRecDelvLineItem</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ErpPayableLineItem</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ComponentErpInvoiceLineItems</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="ComponentErpInvoiceLineItems"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ComponentErpInvoiceLineItems</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getComponentErpInvoiceLineItems" class="summary-sig-name">getComponentErpInvoiceLineItems</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setComponentErpInvoiceLineItems" class="summary-sig-name">setComponentErpInvoiceLineItems</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ContainerErpInvoiceLineItem"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ContainerErpInvoiceLineItem</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getContainerErpInvoiceLineItem" class="summary-sig-name">getContainerErpInvoiceLineItem</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setContainerErpInvoiceLineItem" class="summary-sig-name">setContainerErpInvoiceLineItem</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="CustomerBillingInfos"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">CustomerBillingInfos</h3>
+  <p>Customer billing for services rendered.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getCustomerBillingInfos" class="summary-sig-name">getCustomerBillingInfos</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Customer billing for services rendered.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setCustomerBillingInfos" class="summary-sig-name">setCustomerBillingInfos</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ErpInvoice"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ErpInvoice</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getErpInvoice" class="summary-sig-name">getErpInvoice</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setErpInvoice" class="summary-sig-name">setErpInvoice</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ErpJournalEntries"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ErpJournalEntries</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getErpJournalEntries" class="summary-sig-name">getErpJournalEntries</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setErpJournalEntries" class="summary-sig-name">setErpJournalEntries</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ErpPayableLineItem"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ErpPayableLineItem</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getErpPayableLineItem" class="summary-sig-name">getErpPayableLineItem</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setErpPayableLineItem" class="summary-sig-name">setErpPayableLineItem</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ErpPayments"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ErpPayments</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getErpPayments" class="summary-sig-name">getErpPayments</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setErpPayments" class="summary-sig-name">setErpPayments</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ErpQuoteLineItem"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ErpQuoteLineItem</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getErpQuoteLineItem" class="summary-sig-name">getErpQuoteLineItem</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setErpQuoteLineItem" class="summary-sig-name">setErpQuoteLineItem</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ErpRecDelvLineItem"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ErpRecDelvLineItem</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getErpRecDelvLineItem" class="summary-sig-name">getErpRecDelvLineItem</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setErpRecDelvLineItem" class="summary-sig-name">setErpRecDelvLineItem</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ErpRecLineItem"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ErpRecLineItem</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getErpRecLineItem" class="summary-sig-name">getErpRecLineItem</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setErpRecLineItem" class="summary-sig-name">setErpRecLineItem</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="UserAttributes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">UserAttributes</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getUserAttributes" class="summary-sig-name">getUserAttributes</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setUserAttributes" class="summary-sig-name">setUserAttributes</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="WorkBillingInfos"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">WorkBillingInfos</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#getWorkBillingInfos" class="summary-sig-name">getWorkBillingInfos</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfERPSupport.ErpInvoiceLineItem%27.ErpInvoiceLineItem-class.html#setWorkBillingInfos" class="summary-sig-name">setWorkBillingInfos</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:48 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Wires.SynchronousMachine'.SynchronousMachine</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Wires-module.html">Package&nbsp;Wires</a> ::
+        <a href="CIM15.IEC61970.Wires.SynchronousMachine%27-module.html">Module&nbsp;SynchronousMachine'</a> ::
+        Class&nbsp;SynchronousMachine
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class SynchronousMachine</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                           object --+                        
+                                    |                        
+                     <a href="CIM15.Element%27.Element-class.html">Element'.Element</a> --+                    
+                                        |                    
+  <a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a> --+                
+                                            |                
+<a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a> --+            
+                                                |            
+                        <a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html">Core.Equipment'.Equipment</a> --+        
+                                                    |        
+        <a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html">Core.ConductingEquipment'.ConductingEquipment</a> --+    
+                                                        |    
+                       <a href="CIM15.IEC61970.Wires.RegulatingCondEq%27.RegulatingCondEq-class.html">RegulatingCondEq'.RegulatingCondEq</a> --+
+                                                            |
+                                                           <strong class="uidshort">SynchronousMachine</strong>
+</pre>
+
+<hr />
+<p>An electromechanical device that operates synchronously with the 
+  network. It is a single machine operating either as a generator or 
+  synchronous condenser or pump.An electromechanical device that operates 
+  synchronously with the network. It is a single machine operating either 
+  as a generator or synchronous condenser or pump.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ratedS</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">r2</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">r0</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">manualToAVR</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">qPercent</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">coolantCondition</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">condenserP</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">xQuadTrans</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">xQuadSubtrans</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">xQuadSync</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">xDirectSync</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">minQ</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">aVRToManualLag</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">damping</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">operatingMode</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">condenser</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">xDirectSubtrans</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">coolantType</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">air</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">aVRToManualLead</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">minU</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">maxQ</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">referencePriority</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">maxU</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">xDirectTrans</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">inertia</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">baseQ</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">type</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">condenser</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">r</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">x0</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">x2</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">x</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">PrimeMovers</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">GeneratingUnit</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ReactiveCapabilityCurves</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">HydroPump</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">InitialReactiveCapabilityCurve</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'SynchronousMachine' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addPrimeMovers"></a><span class="summary-sig-name">addPrimeMovers</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*PrimeMovers</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addReactiveCapabilityCurves"></a><span class="summary-sig-name">addReactiveCapabilityCurves</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ReactiveCapabilityCurves</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getGeneratingUnit"></a><span class="summary-sig-name">getGeneratingUnit</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      A synchronous machine may operate as a generator and as such becomes 
+      a member of a generating unit</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#getHydroPump" class="summary-sig-name">getHydroPump</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The synchronous machine drives the turbine which moves the water from
+      a low elevation to a higher elevation.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getInitialReactiveCapabilityCurve"></a><span class="summary-sig-name">getInitialReactiveCapabilityCurve</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The default ReactiveCapabilityCurve for use by a SynchronousMachine</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getPrimeMovers"></a><span class="summary-sig-name">getPrimeMovers</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Prime movers that drive this SynchronousMachine.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getReactiveCapabilityCurves"></a><span class="summary-sig-name">getReactiveCapabilityCurves</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      All available Reactive capability curves for this SynchronousMachine.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removePrimeMovers"></a><span class="summary-sig-name">removePrimeMovers</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*PrimeMovers</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeReactiveCapabilityCurves"></a><span class="summary-sig-name">removeReactiveCapabilityCurves</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ReactiveCapabilityCurves</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setGeneratingUnit"></a><span class="summary-sig-name">setGeneratingUnit</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setHydroPump"></a><span class="summary-sig-name">setHydroPump</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setInitialReactiveCapabilityCurve"></a><span class="summary-sig-name">setInitialReactiveCapabilityCurve</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setPrimeMovers"></a><span class="summary-sig-name">setPrimeMovers</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setReactiveCapabilityCurves"></a><span class="summary-sig-name">setReactiveCapabilityCurves</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Wires.RegulatingCondEq%27.RegulatingCondEq-class.html">RegulatingCondEq'.RegulatingCondEq</a></code></b>:
+      <code><a href="CIM15.IEC61970.Wires.RegulatingCondEq%27.RegulatingCondEq-class.html#addControls">addControls</a></code>,
+      <code><a href="CIM15.IEC61970.Wires.RegulatingCondEq%27.RegulatingCondEq-class.html#getControls">getControls</a></code>,
+      <code><a href="CIM15.IEC61970.Wires.RegulatingCondEq%27.RegulatingCondEq-class.html#getRegulatingControl">getRegulatingControl</a></code>,
+      <code><a href="CIM15.IEC61970.Wires.RegulatingCondEq%27.RegulatingCondEq-class.html#removeControls">removeControls</a></code>,
+      <code><a href="CIM15.IEC61970.Wires.RegulatingCondEq%27.RegulatingCondEq-class.html#setControls">setControls</a></code>,
+      <code><a href="CIM15.IEC61970.Wires.RegulatingCondEq%27.RegulatingCondEq-class.html#setRegulatingControl">setRegulatingControl</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html">Core.ConductingEquipment'.ConductingEquipment</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#addClearanceTags">addClearanceTags</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#addOutageStepRoles">addOutageStepRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#addProtectionEquipments">addProtectionEquipments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#addTerminals">addTerminals</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#getBaseVoltage">getBaseVoltage</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#getClearanceTags">getClearanceTags</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#getOutageStepRoles">getOutageStepRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#getProtectionEquipments">getProtectionEquipments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#getSvStatus">getSvStatus</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#getTerminals">getTerminals</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#removeClearanceTags">removeClearanceTags</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#removeOutageStepRoles">removeOutageStepRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#removeProtectionEquipments">removeProtectionEquipments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#removeTerminals">removeTerminals</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#setBaseVoltage">setBaseVoltage</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#setClearanceTags">setClearanceTags</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#setOutageStepRoles">setOutageStepRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#setProtectionEquipments">setProtectionEquipments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#setSvStatus">setSvStatus</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#setTerminals">setTerminals</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html">Core.Equipment'.Equipment</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#addContingencyEquipment">addContingencyEquipment</a></code>,
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#addCustomerAgreements">addCustomerAgreements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#getContingencyEquipment">getContingencyEquipment</a></code>,
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#getCustomerAgreements">getCustomerAgreements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#getEquipmentContainer">getEquipmentContainer</a></code>,
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#removeContingencyEquipment">removeContingencyEquipment</a></code>,
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#removeCustomerAgreements">removeCustomerAgreements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#setContingencyEquipment">setContingencyEquipment</a></code>,
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#setCustomerAgreements">setCustomerAgreements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#setEquipmentContainer">setEquipmentContainer</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addAssets">addAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addChangeItems">addChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addDocumentRoles">addDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addErpOrganisationRoles">addErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addMeasurements">addMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addNetworkDataSets">addNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addOperatingShare">addOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addPSREvent">addPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addPsrLists">addPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addReportingGroup">addReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addSafetyDocuments">addSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#addScheduleSteps">addScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getAssets">getAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getChangeItems">getChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getDocumentRoles">getDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getErpOrganisationRoles">getErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getLocation">getLocation</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getMeasurements">getMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getNetworkDataSets">getNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getOperatingShare">getOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getOutageSchedule">getOutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSREvent">getPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPSRType">getPSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getPsrLists">getPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getReportingGroup">getReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getSafetyDocuments">getSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#getScheduleSteps">getScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeAssets">removeAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeChangeItems">removeChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeDocumentRoles">removeDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeErpOrganisationRoles">removeErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeMeasurements">removeMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeNetworkDataSets">removeNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeOperatingShare">removeOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removePSREvent">removePSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removePsrLists">removePsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeReportingGroup">removeReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeSafetyDocuments">removeSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#removeScheduleSteps">removeScheduleSteps</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setAssets">setAssets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setChangeItems">setChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setDocumentRoles">setDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setErpOrganisationRoles">setErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setLocation">setLocation</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setMeasurements">setMeasurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setNetworkDataSets">setNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setOperatingShare">setOperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setOutageSchedule">setOutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSREvent">setPSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPSRType">setPSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setPsrLists">setPsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setReportingGroup">setReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setSafetyDocuments">setSafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#setScheduleSteps">setScheduleSteps</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addDiagramObjects">addDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addNames">addNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getDiagramObjects">getDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getModelingAuthoritySet">getModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getNames">getNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeDiagramObjects">removeDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeNames">removeNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setDiagramObjects">setDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setModelingAuthoritySet">setModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setNames">setNames</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'aVRToManualLag': &lt;type 'float'&gt;,
+ 'aVRToManualLead': &lt;type 'float'&gt;,
+ 'baseQ': &lt;type 'float'&gt;,
+ 'condenserP': &lt;type 'float'&gt;,
+ 'coolantCondition': &lt;type 'float'&gt;,
+ 'coolantType': &lt;type 'str'&gt;,
+ 'damping': &lt;type 'float'&gt;,
+ 'inertia': &lt;type 'float'&gt;,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">aVRToManualLag</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">aVRToManualL</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="['ratedS',
+ 'r2',
+ 'r0',
+ 'manualToAVR',
+ 'qPercent',
+ 'coolantCondition',
+ 'condenserP',
+ 'xQuadTrans',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ratedS</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">r2</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">r0</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">manualToAVR</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">qPercent</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">co</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{'aVRToManualLag': 0.0,
+ 'aVRToManualLead': 0.0,
+ 'baseQ': 0.0,
+ 'condenserP': 0.0,
+ 'coolantCondition': 0.0,
+ 'coolantType': 'air',
+ 'damping': 0.0,
+ 'inertia': 0.0,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">aVRToManualLag</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">aVRToManualLead</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">b</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#_enums" class="summary-name" onclick="show_private();">_enums</a> = <code title="{'coolantType': 'CoolantType',
+ 'operatingMode': 'SynchronousMachineOperatingMode',
+ 'type': 'SynchronousMachineType'}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">coolantType</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">CoolantType</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">operatingMode</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">Sync</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_many_refs"></a><span class="summary-name">_many_refs</span> = <code title="['PrimeMovers', 'ReactiveCapabilityCurves']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">PrimeMovers</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ReactiveCapabilityCurves</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="['PrimeMovers',
+ 'GeneratingUnit',
+ 'ReactiveCapabilityCurves',
+ 'HydroPump',
+ 'InitialReactiveCapabilityCurve']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">PrimeMovers</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">GeneratingUnit</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ReactiveCapabilityC</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#GeneratingUnit" class="summary-name">GeneratingUnit</a><br />
+      A synchronous machine may operate as a generator and as such becomes 
+      a member of a generating unit
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#HydroPump" class="summary-name">HydroPump</a><br />
+      The synchronous machine drives the turbine which moves the water from
+      a low elevation to a higher elevation.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#InitialReactiveCapabilityCurve" class="summary-name">InitialReactiveCapabilityCurve</a><br />
+      The default ReactiveCapabilityCurve for use by a SynchronousMachine
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#PrimeMovers" class="summary-name">PrimeMovers</a><br />
+      Prime movers that drive this SynchronousMachine.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#ReactiveCapabilityCurves" class="summary-name">ReactiveCapabilityCurves</a><br />
+      All available Reactive capability curves for this SynchronousMachine.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Wires.RegulatingCondEq%27.RegulatingCondEq-class.html">RegulatingCondEq'.RegulatingCondEq</a></code></b>:
+      <code><a href="CIM15.IEC61970.Wires.RegulatingCondEq%27.RegulatingCondEq-class.html#Controls">Controls</a></code>,
+      <code><a href="CIM15.IEC61970.Wires.RegulatingCondEq%27.RegulatingCondEq-class.html#RegulatingControl">RegulatingControl</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html">Core.ConductingEquipment'.ConductingEquipment</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#BaseVoltage">BaseVoltage</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#ClearanceTags">ClearanceTags</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#OutageStepRoles">OutageStepRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#ProtectionEquipments">ProtectionEquipments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#SvStatus">SvStatus</a></code>,
+      <code><a href="CIM15.IEC61970.Core.ConductingEquipment%27.ConductingEquipment-class.html#Terminals">Terminals</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html">Core.Equipment'.Equipment</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#ContingencyEquipment">ContingencyEquipment</a></code>,
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#CustomerAgreements">CustomerAgreements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.Equipment%27.Equipment-class.html#EquipmentContainer">EquipmentContainer</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html">Core.PowerSystemResource'.PowerSystemResource</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Assets">Assets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ChangeItems">ChangeItems</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#DocumentRoles">DocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ErpOrganisationRoles">ErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Location">Location</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#Measurements">Measurements</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#NetworkDataSets">NetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#OperatingShare">OperatingShare</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#OutageSchedule">OutageSchedule</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSREvent">PSREvent</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PSRType">PSRType</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#PsrLists">PsrLists</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ReportingGroup">ReportingGroup</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#SafetyDocuments">SafetyDocuments</a></code>,
+      <code><a href="CIM15.IEC61970.Core.PowerSystemResource%27.PowerSystemResource-class.html#ScheduleSteps">ScheduleSteps</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#DiagramObjects">DiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#ModelingAuthoritySet">ModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#Names">Names</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">ratedS</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">r2</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">r0</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">manualToAVR</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">qPercent</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">coolantCondition</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">condenserP</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">xQuadTrans</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">xQuadSubtrans</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">xQuadSync</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">xDirectSync</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">minQ</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">aVRToManualLag</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">damping</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">operatingMode</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">condenser</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">xDirectSubtrans</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">coolantType</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">air</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">aVRToManualLead</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">minU</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">maxQ</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">referencePriority</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">maxU</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">xDirectTrans</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">inertia</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">baseQ</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">type</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">condenser</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">r</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">x0</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">x2</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">x</span>=<span class="sig-default">0.0</span>,
+        <span class="sig-arg">PrimeMovers</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">GeneratingUnit</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ReactiveCapabilityCurves</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">HydroPump</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">InitialReactiveCapabilityCurve</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'SynchronousMachine' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ratedS</code></strong> - Nameplate apparent power rating for the unit</li>
+        <li><strong class="pname"><code>r2</code></strong> - Negative sequence resistance.</li>
+        <li><strong class="pname"><code>r0</code></strong> - Zero sequence resistance of the synchronous machine.</li>
+        <li><strong class="pname"><code>manualToAVR</code></strong> - Time delay required when switching from Manual to Automatic 
+          Voltage Regulation. This value is used in the accelerating power 
+          reference frame for powerflow solutions</li>
+        <li><strong class="pname"><code>qPercent</code></strong> - Percent of the coordinated reactive control that comes from this 
+          machine.</li>
+        <li><strong class="pname"><code>coolantCondition</code></strong> - Temperature or pressure of coolant medium</li>
+        <li><strong class="pname"><code>condenserP</code></strong> - Active power consumed when in condenser mode operation.</li>
+        <li><strong class="pname"><code>xQuadTrans</code></strong> - Quadrature-axis transient reactance, also known as X'q.</li>
+        <li><strong class="pname"><code>xQuadSubtrans</code></strong> - Quadrature-axis subtransient reactance, also known as X'q.</li>
+        <li><strong class="pname"><code>xQuadSync</code></strong> - Quadrature-axis synchronous reactance (Xq) , the ratio of the 
+          component of reactive armature voltage, due to the 
+          quadrature-axis component of armature current, to this component 
+          of current, under steady state conditions and at rated frequency.</li>
+        <li><strong class="pname"><code>xDirectSync</code></strong> - Direct-axis synchronous reactance. The quotient of a sustained 
+          value of that AC component of armature voltage that is produced 
+          by the total direct-axis flux due to direct-axis armature current
+          and the value of the AC component of this current, the machine 
+          running at rated speed. (Xd)</li>
+        <li><strong class="pname"><code>minQ</code></strong> - Minimum reactive power limit for the unit.</li>
+        <li><strong class="pname"><code>aVRToManualLag</code></strong> - Time delay required when switching from Automatic Voltage 
+          Regulation (AVR) to Manual for a lagging MVAr violation.</li>
+        <li><strong class="pname"><code>damping</code></strong> - Damping torque coefficient, a proportionality constant that, when
+          multiplied by the angular velocity of the rotor poles with 
+          respect to the magnetic field (frequency), results in the damping
+          torque.</li>
+        <li><strong class="pname"><code>operatingMode</code></strong> - Current mode of operation. Values are: &quot;condenser&quot;, 
+          &quot;generator&quot;</li>
+        <li><strong class="pname"><code>xDirectSubtrans</code></strong> - Direct-axis subtransient reactance, also known as X'd.</li>
+        <li><strong class="pname"><code>coolantType</code></strong> - Method of cooling the machine. Values are: &quot;air&quot;, 
+          &quot;hydrogenGas&quot;, &quot;water&quot;</li>
+        <li><strong class="pname"><code>aVRToManualLead</code></strong> - Time delay required when switching from Automatic Voltage 
+          Regulation (AVR) to Manual for a leading MVAr violation.</li>
+        <li><strong class="pname"><code>minU</code></strong> - Minimum voltage  limit for the unit.</li>
+        <li><strong class="pname"><code>maxQ</code></strong> - Maximum reactive power limit. This is the maximum (nameplate) 
+          limit for the unit.</li>
+        <li><strong class="pname"><code>referencePriority</code></strong> - Priority of unit for reference bus selection. 0 = don t care 
+          (default) 1 = highest priority. 2 is less than 1 and so on.</li>
+        <li><strong class="pname"><code>maxU</code></strong> - Maximum voltage limit for the unit.</li>
+        <li><strong class="pname"><code>xDirectTrans</code></strong> - Direct-axis transient reactance, also known as X'd.</li>
+        <li><strong class="pname"><code>inertia</code></strong> - The energy stored in the rotor when operating at rated speed. 
+          This value is used in the accelerating power reference frame for
+          operator training simulator solutions.</li>
+        <li><strong class="pname"><code>baseQ</code></strong> - Default base reactive power value. This value represents the 
+          initial reactive power that can be used by any application 
+          function.</li>
+        <li><strong class="pname"><code>type</code></strong> - Modes that this synchronous machine can operate in. Values are: 
+          &quot;condenser&quot;, &quot;generator_or_condenser&quot;, 
+          &quot;generator&quot;</li>
+        <li><strong class="pname"><code>r</code></strong> - Positive sequence resistance of the synchronous machine.</li>
+        <li><strong class="pname"><code>x0</code></strong> - Zero sequence reactance of the synchronous machine.</li>
+        <li><strong class="pname"><code>x2</code></strong> - Negative sequence reactance.</li>
+        <li><strong class="pname"><code>x</code></strong> - Positive sequence reactance of the synchronous machine.</li>
+        <li><strong class="pname"><code>PrimeMovers</code></strong> - Prime movers that drive this SynchronousMachine.</li>
+        <li><strong class="pname"><code>GeneratingUnit</code></strong> - A synchronous machine may operate as a generator and as such 
+          becomes a member of a generating unit</li>
+        <li><strong class="pname"><code>ReactiveCapabilityCurves</code></strong> - All available Reactive capability curves for this 
+          SynchronousMachine.</li>
+        <li><strong class="pname"><code>HydroPump</code></strong> - The synchronous machine drives the turbine which moves the water 
+          from a low elevation to a higher elevation. The direction of 
+          machine rotation for pumping may or may not be the same as for 
+          generating.</li>
+        <li><strong class="pname"><code>InitialReactiveCapabilityCurve</code></strong> - The default ReactiveCapabilityCurve for use by a 
+          SynchronousMachine</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getHydroPump"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getHydroPump</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The synchronous machine drives the turbine which moves the water from 
+  a low elevation to a higher elevation. The direction of machine rotation 
+  for pumping may or may not be the same as for generating.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">aVRToManualLag</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">aVRToManualLead</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">baseQ</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">condenserP</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">coolantCondition</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">coolantType</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">damping</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">inertia</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'float'&gt;<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ratedS</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">r2</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">r0</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">manualToAVR</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">qPercent</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">coolantCondition</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">condenserP</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">xQuadTrans</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">aVRToManualLag</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">aVRToManualLead</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">baseQ</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">condenserP</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">coolantCondition</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">coolantType</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">air</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">damping</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">inertia</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_enums"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_enums</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">coolantType</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">CoolantType</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">operatingMode</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">SynchronousMachineOperatingMode</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">type</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">SynchronousMachineType</code><code class="variable-quote">'</code><code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">PrimeMovers</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">GeneratingUnit</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ReactiveCapabilityCurves</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">HydroPump</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">InitialReactiveCapabilityCurve</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="GeneratingUnit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">GeneratingUnit</h3>
+  <p>A synchronous machine may operate as a generator and as such becomes a
+  member of a generating unit</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#getGeneratingUnit" class="summary-sig-name">getGeneratingUnit</a>(<span class="summary-sig-arg">self</span>)</span>
+        - A synchronous machine may operate as a generator and as such becomes 
+      a member of a generating unit
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#setGeneratingUnit" class="summary-sig-name">setGeneratingUnit</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="HydroPump"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">HydroPump</h3>
+  <p>The synchronous machine drives the turbine which moves the water from 
+  a low elevation to a higher elevation. The direction of machine rotation 
+  for pumping may or may not be the same as for generating.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#getHydroPump" class="summary-sig-name">getHydroPump</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The synchronous machine drives the turbine which moves the water from
+      a low elevation to a higher elevation.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#setHydroPump" class="summary-sig-name">setHydroPump</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="InitialReactiveCapabilityCurve"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">InitialReactiveCapabilityCurve</h3>
+  <p>The default ReactiveCapabilityCurve for use by a 
+  SynchronousMachine</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#getInitialReactiveCapabilityCurve" class="summary-sig-name">getInitialReactiveCapabilityCurve</a>(<span class="summary-sig-arg">self</span>)</span>
+        - The default ReactiveCapabilityCurve for use by a SynchronousMachine
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#setInitialReactiveCapabilityCurve" class="summary-sig-name">setInitialReactiveCapabilityCurve</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="PrimeMovers"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PrimeMovers</h3>
+  <p>Prime movers that drive this SynchronousMachine.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#getPrimeMovers" class="summary-sig-name">getPrimeMovers</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Prime movers that drive this SynchronousMachine.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#setPrimeMovers" class="summary-sig-name">setPrimeMovers</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ReactiveCapabilityCurves"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ReactiveCapabilityCurves</h3>
+  <p>All available Reactive capability curves for this 
+  SynchronousMachine.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#getReactiveCapabilityCurves" class="summary-sig-name">getReactiveCapabilityCurves</a>(<span class="summary-sig-arg">self</span>)</span>
+        - All available Reactive capability curves for this SynchronousMachine.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Wires.SynchronousMachine%27.SynchronousMachine-class.html#setReactiveCapabilityCurves" class="summary-sig-name">setReactiveCapabilityCurves</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:53 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

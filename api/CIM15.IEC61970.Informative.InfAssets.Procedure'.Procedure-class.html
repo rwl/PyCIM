@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Informative.InfAssets.Procedure'.Procedure</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Informative-module.html">Package&nbsp;Informative</a> ::
+        <a href="CIM15.IEC61970.Informative.InfAssets-module.html">Package&nbsp;InfAssets</a> ::
+        <a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27-module.html">Module&nbsp;Procedure'</a> ::
+        Class&nbsp;Procedure
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Procedure</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+                         object --+            
+                                  |            
+                   <a href="CIM15.Element%27.Element-class.html">Element'.Element</a> --+        
+                                      |        
+<a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a> --+    
+                                          |    
+         <a href="CIM15.IEC61968.Common.Document%27.Document-class.html">IEC61968.Common.Document'.Document</a> --+
+                                              |
+                                             <strong class="uidshort">Procedure</strong>
+</pre>
+
+<hr />
+<p>A documented procedure for various types of Work or Work Tasks. One or
+  more procedures guide a compatible unit, a standard way of performing a 
+  unit of work. The type of procedure is defined in Procedure.type. For 
+  example, when type=Inspection, this procedure coupled with Schedule and 
+  other information provides the key items of an inspection plan. Another 
+  type of Procedure is a Diagnosis. Note that each specific values and 
+  settings to be used in a procedure is intended to be described in an 
+  instance of ProcedureValue. A maintenance ticket, a type of Work, is 
+  generated whenever maintenance is determined to be needed as a result of 
+  an inspection or diagnosis.A documented procedure for various types of 
+  Work or Work Tasks. One or more procedures guide a compatible unit, a 
+  standard way of performing a unit of work. The type of procedure is 
+  defined in Procedure.type. For example, when type=Inspection, this 
+  procedure coupled with Schedule and other information provides the key 
+  items of an inspection plan. Another type of Procedure is a Diagnosis. 
+  Note that each specific values and settings to be used in a procedure is 
+  intended to be described in an instance of ProcedureValue. A maintenance 
+  ticket, a type of Work, is generated whenever maintenance is determined 
+  to be needed as a result of an inspection or diagnosis.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">corporateCode</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">sequenceNumber</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">kind</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">test</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">instruction</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">ProcedureValues</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ProcedureDataSets</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">CompatibleUnits</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Limits</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kw_args</span>)</span><br />
+      Initialises a new 'Procedure' instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addCompatibleUnits"></a><span class="summary-sig-name">addCompatibleUnits</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*CompatibleUnits</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addLimits"></a><span class="summary-sig-name">addLimits</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Limits</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addProcedureDataSets"></a><span class="summary-sig-name">addProcedureDataSets</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ProcedureDataSets</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addProcedureValues"></a><span class="summary-sig-name">addProcedureValues</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ProcedureValues</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getCompatibleUnits"></a><span class="summary-sig-name">getCompatibleUnits</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getLimits"></a><span class="summary-sig-name">getLimits</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getProcedureDataSets"></a><span class="summary-sig-name">getProcedureDataSets</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#getProcedureValues" class="summary-sig-name">getProcedureValues</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      UserAttributes used to specify procedure values.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeCompatibleUnits"></a><span class="summary-sig-name">removeCompatibleUnits</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*CompatibleUnits</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeLimits"></a><span class="summary-sig-name">removeLimits</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*Limits</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeProcedureDataSets"></a><span class="summary-sig-name">removeProcedureDataSets</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ProcedureDataSets</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeProcedureValues"></a><span class="summary-sig-name">removeProcedureValues</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*ProcedureValues</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setCompatibleUnits"></a><span class="summary-sig-name">setCompatibleUnits</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setLimits"></a><span class="summary-sig-name">setLimits</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setProcedureDataSets"></a><span class="summary-sig-name">setProcedureDataSets</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setProcedureValues"></a><span class="summary-sig-name">setProcedureValues</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html">IEC61968.Common.Document'.Document</a></code></b>:
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addActivityRecords">addActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addAssetRoles">addAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addChangeItems">addChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addChangeSets">addChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addErpOrganisationRoles">addErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addErpPersonRoles">addErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addFromDocumentRoles">addFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addMeasurements">addMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addNetworkDataSets">addNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addPowerSystemResourceRoles">addPowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addScheduleParameterInfos">addScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addScheduledEvents">addScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#addToDocumentRoles">addToDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getActivityRecords">getActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getAssetRoles">getAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getChangeItems">getChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getChangeSets">getChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getErpOrganisationRoles">getErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getErpPersonRoles">getErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getFromDocumentRoles">getFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getMeasurements">getMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getNetworkDataSets">getNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getPowerSystemResourceRoles">getPowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getScheduleParameterInfos">getScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getScheduledEvents">getScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#getToDocumentRoles">getToDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeActivityRecords">removeActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeAssetRoles">removeAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeChangeItems">removeChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeChangeSets">removeChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeErpOrganisationRoles">removeErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeErpPersonRoles">removeErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeFromDocumentRoles">removeFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeMeasurements">removeMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeNetworkDataSets">removeNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removePowerSystemResourceRoles">removePowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeScheduleParameterInfos">removeScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeScheduledEvents">removeScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#removeToDocumentRoles">removeToDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setActivityRecords">setActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setAssetRoles">setAssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setChangeItems">setChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setChangeSets">setChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setErpOrganisationRoles">setErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setErpPersonRoles">setErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setFromDocumentRoles">setFromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setMeasurements">setMeasurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setNetworkDataSets">setNetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setPowerSystemResourceRoles">setPowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setScheduleParameterInfos">setScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setScheduledEvents">setScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#setToDocumentRoles">setToDocumentRoles</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addDiagramObjects">addDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#addNames">addNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getDiagramObjects">getDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getModelingAuthoritySet">getModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#getNames">getNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeDiagramObjects">removeDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#removeNames">removeNames</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setDiagramObjects">setDiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setModelingAuthoritySet">setModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#setNames">setNames</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#_attr_types" class="summary-name" onclick="show_private();">_attr_types</a> = <code title="{'corporateCode': &lt;type 'str'&gt;,
+ 'instruction': &lt;type 'str'&gt;,
+ 'kind': &lt;type 'str'&gt;,
+ 'sequenceNumber': &lt;type 'str'&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">corporateCode</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">instruction</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#_attrs" class="summary-name" onclick="show_private();">_attrs</a> = <code title="['corporateCode', 'sequenceNumber', 'kind', 'instruction']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">corporateCode</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">sequenceNumber</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">kind</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">instruct</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#_defaults" class="summary-name" onclick="show_private();">_defaults</a> = <code title="{'corporateCode': '',
+ 'instruction': '',
+ 'kind': 'test',
+ 'sequenceNumber': ''}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">corporateCode</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">instruction</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">kind</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_enums"></a><span class="summary-name">_enums</span> = <code title="{'kind': 'ProcedureKind'}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">kind</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">ProcedureKind</code><code class="variable-quote">'</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#_many_refs" class="summary-name" onclick="show_private();">_many_refs</a> = <code title="['ProcedureValues', 'ProcedureDataSets', 'CompatibleUnits', 'Limits']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ProcedureValues</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ProcedureDataSets</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Compati</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#_refs" class="summary-name" onclick="show_private();">_refs</a> = <code title="['ProcedureValues', 'ProcedureDataSets', 'CompatibleUnits', 'Limits']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ProcedureValues</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ProcedureDataSets</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">CompatibleUn</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html">IEC61968.Common.Document'.Document</a></code></b>:
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#docStatus">docStatus</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#electronicAddress">electronicAddress</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#status">status</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#CompatibleUnits" class="summary-name">CompatibleUnits</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#Limits" class="summary-name">Limits</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#ProcedureDataSets" class="summary-name">ProcedureDataSets</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#ProcedureValues" class="summary-name">ProcedureValues</a><br />
+      UserAttributes used to specify procedure values.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html">IEC61968.Common.Document'.Document</a></code></b>:
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ActivityRecords">ActivityRecords</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#AssetRoles">AssetRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ChangeItems">ChangeItems</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ChangeSets">ChangeSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ErpOrganisationRoles">ErpOrganisationRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ErpPersonRoles">ErpPersonRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#FromDocumentRoles">FromDocumentRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#Measurements">Measurements</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#NetworkDataSets">NetworkDataSets</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#PowerSystemResourceRoles">PowerSystemResourceRoles</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ScheduleParameterInfos">ScheduleParameterInfos</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ScheduledEvents">ScheduledEvents</a></code>,
+      <code><a href="CIM15.IEC61968.Common.Document%27.Document-class.html#ToDocumentRoles">ToDocumentRoles</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html">Core.IdentifiedObject'.IdentifiedObject</a></code></b>:
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#DiagramObjects">DiagramObjects</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#ModelingAuthoritySet">ModelingAuthoritySet</a></code>,
+      <code><a href="CIM15.IEC61970.Core.IdentifiedObject%27.IdentifiedObject-class.html#Names">Names</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">corporateCode</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">sequenceNumber</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">kind</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">test</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">instruction</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">ProcedureValues</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ProcedureDataSets</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">CompatibleUnits</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Limits</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kw_args</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialises a new 'Procedure' instance.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>corporateCode</code></strong> - Code for this kind of procedure.</li>
+        <li><strong class="pname"><code>sequenceNumber</code></strong> - Sequence number in a sequence of procedures being performed.</li>
+        <li><strong class="pname"><code>kind</code></strong> - Kind of this procedure. Values are: &quot;test&quot;, 
+          &quot;maintenance&quot;, &quot;other&quot;, 
+          &quot;inspection&quot;, &quot;diagnosis&quot;</li>
+        <li><strong class="pname"><code>instruction</code></strong> - The textual description of the procedure, which references 
+          instances of ProcedureValue as appropriate.</li>
+        <li><strong class="pname"><code>ProcedureValues</code></strong> - UserAttributes used to specify procedure values. An example is to
+          have an instance for each of the following settings when 
+          conducting a test: voltage, current, frequency, temperature 
+          specified in 'name' attribute, and the corresponding value and 
+          units in 'value' attribute.</li>
+        <li><strong class="pname"><code>ProcedureDataSets</code></strong></li>
+        <li><strong class="pname"><code>CompatibleUnits</code></strong></li>
+        <li><strong class="pname"><code>Limits</code></strong></li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getProcedureValues"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getProcedureValues</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>UserAttributes used to specify procedure values. An example is to have
+  an instance for each of the following settings when conducting a test: 
+  voltage, current, frequency, temperature specified in 'name' attribute, 
+  and the corresponding value and units in 'value' attribute.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_attr_types"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attr_types</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">corporateCode</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">instruction</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">kind</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">sequenceNumber</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'str'&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">corporateCode</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">sequenceNumber</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">kind</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">instruction</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_defaults"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_defaults</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">corporateCode</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">instruction</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">kind</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">test</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">sequenceNumber</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_many_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_many_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ProcedureValues</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ProcedureDataSets</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">CompatibleUnits</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Limits</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_refs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_refs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ProcedureValues</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ProcedureDataSets</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">CompatibleUnits</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Limits</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="CompatibleUnits"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">CompatibleUnits</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#getCompatibleUnits" class="summary-sig-name">getCompatibleUnits</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#setCompatibleUnits" class="summary-sig-name">setCompatibleUnits</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Limits"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Limits</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#getLimits" class="summary-sig-name">getLimits</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#setLimits" class="summary-sig-name">setLimits</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ProcedureDataSets"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ProcedureDataSets</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#getProcedureDataSets" class="summary-sig-name">getProcedureDataSets</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#setProcedureDataSets" class="summary-sig-name">setProcedureDataSets</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ProcedureValues"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ProcedureValues</h3>
+  <p>UserAttributes used to specify procedure values. An example is to have
+  an instance for each of the following settings when conducting a test: 
+  voltage, current, frequency, temperature specified in 'name' attribute, 
+  and the corresponding value and units in 'value' attribute.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#getProcedureValues" class="summary-sig-name">getProcedureValues</a>(<span class="summary-sig-arg">self</span>)</span>
+        - UserAttributes used to specify procedure values.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="CIM15.IEC61970.Informative.InfAssets.Procedure%27.Procedure-class.html#setProcedureValues" class="summary-sig-name">setProcedureValues</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:47 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

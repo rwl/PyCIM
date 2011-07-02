@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CIM15.IEC61970.Informative.InfGMLSupport</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="CIM15-module.html">Package&nbsp;CIM15</a> ::
+        <a href="CIM15.IEC61970-module.html">Package&nbsp;IEC61970</a> ::
+        <a href="CIM15.IEC61970.Informative-module.html">Package&nbsp;Informative</a> ::
+        Package&nbsp;InfGMLSupport
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="CIM15.IEC61970.Informative.InfGMLSupport-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package InfGMLSupport</h1><p class="nomargin-top"></p>
+<p>The package contains portions of the model defined by graphic 
+  standards such as those proposed by OpenGIS Consortium referred to as the
+  Geography Markup Language (GML). It facilitates integration among 
+  electric utility applications (CIM) and Geographical Information Systems 
+  (GIS) and other applications. Rather than inventing new CIM classes that 
+  accomplish similar functionality as in existing GML, the preferred 
+  approach is to use and extend 'Gml' classes as appropriate. Note that 
+  care has been taken to separate the geometry of features from how 
+  features can be graphically represented. GML supports the concept of a 
+  geographic feature, which is 'an abstraction of a real world phenomenon; 
+  it is a geographic feature if it is associated with a location relative 
+  to the Earth'. So a digital representation of the real world can be 
+  thought of as a set of features. The state of a feature is defined by a 
+  set of properties, where each property can be thought of as a {name, 
+  type, value} triple. The number of properties a feature may have, 
+  together with their names and types, are determined by its type 
+  definition. Geographic features with geometry are those with properties 
+  that may be geometry-valued.  TODO: The following has been copied from a 
+  very old version of draft Part 11, so the references are wrong, but we 
+  store the knowledge here to reuse later: 'A Geographic Feature is 'an 
+  abstraction of a real world phenomenon; it is a geographic feature if it 
+  can is asociated with a location relative to the Earth. A digital 
+  representation of the real world can be thought of as a set of features. 
+  He state of a feature is defined by a set of properties, whre each 
+  property can be thought of as a (name, type, value) triple. The number of
+  propoerties a feature may have, together with their names and types, are 
+  determined by its type definition. Geographic features with geometry are 
+  those with properties tht may be geometry-valued. Geographic features in 
+  GML include coverages and observations as subtypes. A coverage is a type 
+  of feature that has a coverage function with a spatial domain and a value
+  set range of homogeneous 2 to n dimensional tuples. A coverage can 
+  represent one feature or a collection of features 'to model and make 
+  visible spatial relationships between, and the spatial distribution of, 
+  earth phenomena.' A reference system provides a scale of measurement for 
+  assigning values to a location, time or other descriptive quantity or 
+  quality. A coordinate reference system consists of set of coordinate 
+  system axes that are related to the earth through a datum that defines 
+  the size and shape of the earth. Geometries in GML indicate the 
+  coordinate reference system in which the measurements have ben made. The 
+  'parent' geometry element of a geometric complex or geometric aggregate 
+  makes this indication for its constituent geometries.'</p>
+
+<!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Submodules</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Submodules"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.Diagram</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.Diagram%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.Diagram'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlBaseSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlBaseSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlBaseSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlColour</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlColour%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlColour'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlDiagramObject</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlDiagramObject%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlDiagramObject'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureStyle</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureStyle%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureStyle'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureType</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureType%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlFeatureType'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlFill</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFill%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlFill'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlFont</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlFont%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlFont'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlGeometryStyle</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlGeometryStyle%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlGeometryStyle'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlGraphic</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlGraphic%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlGraphic'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlHalo</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlHalo%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlHalo'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelPlacement</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelPlacement%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelPlacement'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelStyle</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelStyle%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlLabelStyle'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlLineGeometry</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlLineGeometry%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlLineGeometry'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlLineSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlLineSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlLineSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlMark</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlMark%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlMark'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlObservation</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlObservation%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlObservation'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlPointGeometry</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlPointGeometry%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlPointGeometry'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlPointSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlPointSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlPointSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonGeometry</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonGeometry%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonGeometry'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlPolygonSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlPosition</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlPosition%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlPosition'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlRasterSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlRasterSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlRasterSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlSelector</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlSelector%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlSelector'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlStroke</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlStroke%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlStroke'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlSvgParameter</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlSvgParameter%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlSvgParameter'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlTextSymbol</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlTextSymbol%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlTextSymbol'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlTopologyStyle</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlTopologyStyle%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlTopologyStyle'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.GmlValue</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.GmlValue%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.GmlValue'</a></strong>    </li>
+    <li> <strong class="uidlink">CIM15.IEC61970.Informative.InfGMLSupport.Map</strong>    </li>
+    <li> <strong class="uidlink"><a href="CIM15.IEC61970.Informative.InfGMLSupport.Map%27-module.html">CIM15.IEC61970.Informative.InfGMLSupport.Map'</a></strong>    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfGMLSupport.QueryGrammarKind-class.html" class="summary-name">QueryGrammarKind</a><br />
+      Values are: other, xpath, xquery
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="CIM15.IEC61970.Informative.InfGMLSupport.DiagramKind-class.html" class="summary-name">DiagramKind</a><br />
+      Values are: other, geographic, internalView, designSketch, 
+        schematic
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="nsURI"></a><span class="summary-name">nsURI</span> = <code title="'http://iec.ch/TC57/2010/CIM-schema-cim15#InfGMLSupport'"><code class="variable-quote">'</code><code class="variable-string">http://iec.ch/TC57/2010/CIM-schema-cim15#InfGMLSupport</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="nsPrefix"></a><span class="summary-name">nsPrefix</span> = <code title="'cimInfGMLSupport'"><code class="variable-quote">'</code><code class="variable-string">cimInfGMLSupport</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'CIM15.IEC61970.Informative.InfGMLSupport'"><code class="variable-quote">'</code><code class="variable-string">CIM15.IEC61970.Informative.InfGMLSupport</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.pycim.org/">PyCIM</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Jul  2 18:27:30 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
