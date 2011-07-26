@@ -63,7 +63,7 @@ def cimwrite(d, source, encoding="utf-8"):
     # Iterate over all UUID, CIM object pairs in the given dictionary.
     for uuid, obj in d.iteritems():
         w.start(u"%s:%s" % (nsPrefix, obj.__class__.__name__),
-                {u"%s:ID" % nsPrefixRDF: uuid})
+                {u"%s:ID" % nsPrefixRDF: obj.UUID})
 
         mro = obj.__class__.mro()
         mro.reverse()
@@ -96,7 +96,7 @@ def cimwrite(d, source, encoding="utf-8"):
                 if val is not None:
                     w.element(u"%s:%s.%s" % (nsPrefix, klass.__name__, ref),
                           attrib={u"%s:resource" % nsPrefixRDF:
-                                  u"#%s" % obj.UUID})
+                                  u"#%s" % val.UUID})
 
         w.end()
 
