@@ -170,7 +170,7 @@ def cimread(source, packageMap=cim15packageMap, nsURI=cim15nsURI):
 #                                                     default)
 
                                 else: # enum
-                                    val = uuid2.rsplit(".")[1]
+                                    val = uuid2.rsplit(".", 1)[1]
                                     setattr(obj, attr, val)
 
                         else:
