@@ -19,9 +19,9 @@
 # IN THE SOFTWARE.
 
 
-from CIM15.IEC61970.Cuts and jumpers.Cut import Cut
-from CIM15.IEC61970.Cuts and jumpers.Clamp import Clamp
+from CIM15.IEC61970.CutsJumpers.Cut import Cut
+from CIM15.IEC61970.CutsJumpers.Clamp import Clamp
 
-nsURI = "http://iec.ch/TC57/2010/CIM-schema-cim15#Cuts and jumpers"
-nsPrefix = "cimCuts and jumpers"
+nsURI = "http://iec.ch/TC57/2010/CIM-schema-cim15#CutsJumpers"
+nsPrefix = "cimCutsJumpers"
 

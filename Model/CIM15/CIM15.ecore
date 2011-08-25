@@ -15030,7 +15030,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="Cut" upperBound="-1"
-            eType="#//IEC61970/Cuts%20and%20jumpers/Cut" eOpposite="#//IEC61970/Cuts%20and%20jumpers/Cut/ACLineSegment"/>
+            eType="#//IEC61970/CutsJumpers/Cut" eOpposite="#//IEC61970/CutsJumpers/Cut/ACLineSegment"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="PhaseImpedance" eType="#//IEC61970/Wires/PerLengthPhaseImpedance"
             eOpposite="#//IEC61970/Wires/PerLengthPhaseImpedance/LineSegments">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
@@ -15041,7 +15041,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="Clamp" upperBound="-1"
-            eType="#//IEC61970/Cuts%20and%20jumpers/Clamp" eOpposite="#//IEC61970/Cuts%20and%20jumpers/Clamp/ACLineSegment"/>
+            eType="#//IEC61970/CutsJumpers/Clamp" eOpposite="#//IEC61970/CutsJumpers/Clamp/ACLineSegment"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="x0" eType="#//IEC61970/Domain/Reactance"
             unsettable="true">
           <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
@@ -22924,8 +22924,8 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="Cuts and jumpers" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15#Cuts and jumpers"
-        nsPrefix="cimCuts and jumpers">
+    <eSubpackages name="CutsJumpers" nsURI="http://iec.ch/TC57/2010/CIM-schema-cim15#CutsJumpers"
+        nsPrefix="cimCutsJumpers">
       <eClassifiers xsi:type="ecore:EClass" name="Cut" eSuperTypes="#//IEC61970/Wires/Switch">
         <eAnnotations source="http://iec.ch/TC57/2010/CIM-schema-cim15">
           <details key="Documentation" value="A Cut separates a line segment into two parts. The Cut appears as a Switch inserted between these two parts and connects them together. As the Cut is normally &amp;ldquo;open&amp;rdquo; there is no galvanic connection between the two line segment parts. But it is possible to &quot;close&quot; the Cut to get galvanic connection.&#xA;The Cut Terminals are oriented towards the line segment Terminals with the same sequenceNumber. Hence the Cut Terminal with sequenceNumber=1 is oriented to the line segment with Terminal.sequenceNumber=1.&#xA;The Cut Terminals also act as connection points for jumpers and other equipment, e.g. a mobile generator. To enable this ConnectivityNoces are placed at the Cut Terminals. Once the ConnectivityNodes are in place any ConductingEquipment can be connected at them."/>
