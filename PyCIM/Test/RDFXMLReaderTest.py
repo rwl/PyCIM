@@ -1,4 +1,5 @@
 # Copyright (C) 2010-2011 Richard Lincoln
+# Copyright (C) 2011 Stefan Scherfke
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
