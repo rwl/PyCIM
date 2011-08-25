@@ -18,21 +18,15 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
+from xml.etree.cElementTree import iterparse
+from time import time
 import logging
 
-from time import time
-
-from xml.etree.cElementTree import iterparse
-
-from CIM15 import nsURI as cim15nsURI
-from CIM15 import packageMap as cim15packageMap
 
 logger = logging.getLogger(__name__)
 
-# TODO: Extract RDF namespace from file.
-NS_RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 
-def cimread(source, packageMap=cim15packageMap, nsURI=cim15nsURI):
+def cimread(source, packageMap=None, nsURI=None):
     """ CIM RDF/XML parser.
 
     @type source: File-like object or a path to a file.
@@ -57,6 +51,15 @@ def cimread(source, packageMap=cim15packageMap, nsURI=cim15nsURI):
     # A map of uuids to CIM objects to be returned.
     d = {}
 
+    # Obtain the namespaces from the input file
+    namespaces = xmlns(source)
+    ns_rdf = get_rdf_ns(namespaces)
+    if  bool(nsURI) != bool(packageMap):
+        raise ValueError(
+                'Either pass "packageMap" AND "nsURI" or none of them.')
+    elif (nsURI is None) and (packageMap is None):
+        nsURI, packageMap = get_cim_ns(namespaces)
+
     # CIM element tag base (e.g. {http://iec.ch/TC57/2009/CIM-schema-cim14#}).
     base = "{%s#}" % nsURI
     # Length of element tag base.
@@ -76,7 +79,7 @@ def cimread(source, packageMap=cim15packageMap, nsURI=cim15nsURI):
         if event == "end" and elem.tag[:m] == base:
 
             # Unique resource identifier for the CIM object.
-            uuid = elem.get("{%s}ID" % NS_RDF)
+            uuid = elem.get("{%s}ID" % ns_rdf)
             if uuid != None: # class
                 # Element tag without namespace (e.g. VoltageLevel).
                 tag = elem.tag[m:]
@@ -111,7 +114,7 @@ def cimread(source, packageMap=cim15packageMap, nsURI=cim15nsURI):
     for event, elem in context:
         # Process 'start' elements in the CIM namespace.
         if event == "start" and elem.tag[:m] == base:
-            uuid = elem.get("{%s}ID" % NS_RDF)
+            uuid = elem.get("{%s}ID" % ns_rdf)
             if uuid != None:
                 # Locate the CIM object using the uuid.
                 try:
@@ -127,7 +130,7 @@ def cimread(source, packageMap=cim15packageMap, nsURI=cim15nsURI):
                     # Process end events with elements in the CIM namespace.
                     if event == "end" and elem.tag[:m] == base:
                         # Break if class closing element (e.g. </cim:Terminal>).
-                        if elem.get("{%s}ID" % NS_RDF) == None:
+                        if elem.get("{%s}ID" % ns_rdf) == None:
                             # Get the attribute/reference name.
                             attr = elem.tag[m:].rsplit(".")[1]
 
@@ -138,7 +141,7 @@ def cimread(source, packageMap=cim15packageMap, nsURI=cim15nsURI):
 
                             # Use the rdf:resource attribute to distinguish
                             # between attributes and references/enums.
-                            uuid2 = elem.get("{%s}resource" % NS_RDF)
+                            uuid2 = elem.get("{%s}resource" % ns_rdf)
 
                             if uuid2 == None: # attribute
                                 # Convert value type using the default value.
@@ -186,7 +189,9 @@ def cimread(source, packageMap=cim15packageMap, nsURI=cim15nsURI):
 
 
 def xmlns(source):
-    """Returns a map of prefix to namespace for the given XML file.
+    """
+    Returns a map of prefix to namespace for the given XML file.
+
     """
     namespaces = {}
     events=("end", "start-ns", "end-ns")
@@ -197,6 +202,44 @@ def xmlns(source):
         elif event == "end":
             break
     return namespaces
+
+
+def get_rdf_ns(namespaces):
+    try:
+        ns = namespaces['rdf']
+    except KeyError:
+        ns = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        logger.warn('No rdf namespace found. Using %s' % ns)
+
+    return ns
+
+
+def get_cim_ns(namespaces):
+    """
+    Tries to obtain the CIM version from the given map of namespaces and
+    returns the appropriate *nsURI* and *packageMap*.
+
+    """
+    try:
+        ns = namespaces['cim']
+        if ns.endswith('#'):
+            ns = ns[:-1]
+    except KeyError:
+        ns = ''
+        logger.error('No CIM namespace defined in input file.')
+
+    import CIM14, CIM15
+    if ns == CIM14.nsURI:
+        ns = 'CIM14'
+    elif ns == CIM15.nsURI:
+        ns = 'CIM15'
+    else:
+        ns = 'CIM15'
+        logger.warn('Could not detect CIM version. Using %s.' % ns)
+
+    cim = __import__(ns, globals(), locals(), ['nsURI', 'packageMap'])
+
+    return cim.nsURI, cim.packageMap
 
 
 if __name__ == "__main__":
