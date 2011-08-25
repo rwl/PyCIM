@@ -22,8 +22,9 @@ import unittest
 
 from os.path import dirname, join
 
-from PyCIM import cimread
+from PyCIM import cimread, RDFXMLReader
 
+from CIM15 import nsURI as nsURICIM15, packageMap as packageMapCIM15
 from CIM15.CDPSM.Asset import packageMap as assetMap
 from CIM15.CDPSM.Connectivity import packageMap as connMap
 from CIM15.CDPSM.Balanced import packageMap as equipMap
@@ -52,12 +53,25 @@ class RDFXMLReaderTestCase(unittest.TestCase):
     def testProfile(self):
         d = {}
 
-        d.update(cimread(ASSET_FILE, assetMap))
-        d.update(cimread(CONN_FILE, connMap))
-        d.update(cimread(EQUIP_FILE, equipMap))
-        d.update(cimread(GEO_FILE, geoMap))
+        d.update(cimread(ASSET_FILE, assetMap, nsURICIM15))
+        d.update(cimread(CONN_FILE, connMap, nsURICIM15))
+        d.update(cimread(EQUIP_FILE, equipMap, nsURICIM15))
+        d.update(cimread(GEO_FILE, geoMap, nsURICIM15))
 
         self.assertEqual(len(d), 5894)
+
+    def testGetNamespaces(self):
+        ns = RDFXMLReader.xmlns(RDFXML_FILE)
+        self.assertEqual(ns, {
+                'cim': 'http://iec.ch/TC57/2010/CIM-schema-cim15#',
+                'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+            })
+
+        self.assertEqual(RDFXMLReader.get_rdf_ns(ns),
+                'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
+
+        self.assertEqual(RDFXMLReader.get_cim_ns(ns),
+                (nsURICIM15, packageMapCIM15))
 
 
 if __name__ == "__main__":
