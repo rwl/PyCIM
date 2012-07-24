@@ -1,10 +1,35 @@
 import os
-from setuptools import setup, find_packages
+
+kwds = {}
+
+if int(os.getenv('USE_DISTUTILS', 0)) != 0:
+    from distutils.core import setup
+    def find_packages():
+        packages = []
+        basedir = os.getcwd()
+        for root, dirnames, filenames in os.walk(basedir):
+            for dirname in dirnames:
+                initfile = os.path.join(root, dirname, "__init__.py")
+                if os.path.exists(initfile):
+                    # python 2.4+
+                    packages.append(os.path.relpath(initfile, basedir))
+        packages = [ os.path.dirname(p).replace(os.path.sep, ".") for p in packages ]
+        return sorted(packages)
+
+    # To add the test data to the final package
+    if int(os.getenv('INCLUDE_PACKAGE_DATA', 0)) != 0:
+        kwds['package_data'] = { 'PyCIM.Test' : [ 'Data/*'], }
+else:
+    from setuptools import setup, find_packages
+    kwds['include_package_data'] = False
+    kwds['test_suite'] = "PyCIM.Test"
+    kwds['zip_safe'] = True   
+    
 
 # Read the long description from the README.
 thisdir = os.path.abspath(os.path.dirname(__file__))
 f = open(os.path.join(thisdir, "README"))
-kwds = {"long_description": f.read()}
+kwds["long_description"] = f.read()
 f.close()
 
 setup(name="PyCIM",
@@ -14,10 +39,7 @@ setup(name="PyCIM",
       description="Python implementation of the Common Information Model.",
       license="MIT",
       url="http://www.pycim.org/",
-      include_package_data=False,
       packages=find_packages(),
-      test_suite="PyCIM.Test",
-      zip_safe=True,
       **kwds)
 
 # python setup.py sdist bdist_egg bdist_wininst bdist_msi upload
