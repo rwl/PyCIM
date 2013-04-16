@@ -20,3 +20,5 @@
 
 from RDFXMLReader import cimread
 from RDFXMLWriter import cimwrite
+
+__version__ = "15.13.2"
