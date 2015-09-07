@@ -1,5 +1,6 @@
 # Copyright (C) 2010-2011 Richard Lincoln
 # Copyright (C) 2011 Stefan Scherfke
+# Copyright (C) 2015 Wouter Labeeuw
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -27,7 +28,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def cimread(source, packageMap=None, nsURI=None):
+def cimread(source, packageMap=None, nsURI=None, start_dict={}):
     """ CIM RDF/XML parser.
 
     @type source: File-like object or a path to a file.
@@ -50,12 +51,12 @@ def cimread(source, packageMap=None, nsURI=None):
     t0 = time()
 
     # A map of uuids to CIM objects to be returned.
-    d = {}
+    d = start_dict
 
     # Obtain the namespaces from the input file
     namespaces = xmlns(source)
     ns_rdf = get_rdf_ns(namespaces)
-    if  bool(nsURI) != bool(packageMap):
+    if bool(nsURI) != bool(packageMap):
         raise ValueError(
                 'Either pass "packageMap" AND "nsURI" or none of them.')
     elif (nsURI is None) and (packageMap is None):
@@ -66,7 +67,7 @@ def cimread(source, packageMap=None, nsURI=None):
     # Length of element tag base.
     m = len(base)
 
-    ## First pass instantiates the classes.
+    # First pass instantiates the classes.
     context = iterparse(source, ("start", "end"))
 
     # Turn it into an iterator (required for cElementTree).
@@ -81,7 +82,7 @@ def cimread(source, packageMap=None, nsURI=None):
 
             # Unique resource identifier for the CIM object.
             uuid = elem.get("{%s}ID" % ns_rdf)
-            if uuid != None: # class
+            if uuid is not None: # class
                 # Element tag without namespace (e.g. VoltageLevel).
                 tag = elem.tag[m:]
                 try:
@@ -116,7 +117,11 @@ def cimread(source, packageMap=None, nsURI=None):
         # Process 'start' elements in the CIM namespace.
         if event == "start" and elem.tag[:m] == base:
             uuid = elem.get("{%s}ID" % ns_rdf)
-            if uuid != None:
+            if uuid is None:
+                uuid = elem.get("{%s}about" % ns_rdf)
+                if uuid is not None:
+                    uuid = uuid[1:]
+            if uuid is not None:
                 # Locate the CIM object using the uuid.
                 try:
                     obj = d[uuid]
@@ -131,9 +136,10 @@ def cimread(source, packageMap=None, nsURI=None):
                     # Process end events with elements in the CIM namespace.
                     if event == "end" and elem.tag[:m] == base:
                         # Break if class closing element (e.g. </cim:Terminal>).
-                        if elem.get("{%s}ID" % ns_rdf) == None:
+                        if elem.get("{%s}ID" % ns_rdf) is None and \
+                                elem.get("{%s}about" % ns_rdf) is None:
                             # Get the attribute/reference name.
-                            attr = elem.tag[m:].rsplit(".")[1]
+                            attr = elem.tag[m:].rsplit(".")[-1]
 
                             if not hasattr(obj, attr):
                                 logger.error("'%s' has not attribute '%s'",
@@ -144,11 +150,11 @@ def cimread(source, packageMap=None, nsURI=None):
                             # between attributes and references/enums.
                             uuid2 = elem.get("{%s}resource" % ns_rdf)
 
-                            if uuid2 == None: # attribute
+                            if uuid2 is None: # attribute
                                 # Convert value type using the default value.
                                 typ = type( getattr(obj, attr) )
                                 setattr(obj, attr, typ(elem.text))
-                            else: # reference or enum
+                            else:  # reference or enum
                                 # Use the '#' prefix to distinguish between
                                 # references and enumerations.
                                 if uuid2[0] == "#": # reference
@@ -229,18 +235,24 @@ def get_cim_ns(namespaces):
         ns = ''
         logger.error('No CIM namespace defined in input file.')
 
+    CIM16nsURI = 'http://iec.ch/TC57/2013/CIM-schema-cim16'
+
+    nsuri = ns
+
     import CIM14, CIM15
     if ns == CIM14.nsURI:
         ns = 'CIM14'
     elif ns == CIM15.nsURI:
         ns = 'CIM15'
+    elif ns == CIM16nsURI:
+        ns  = 'CIM15'
     else:
         ns = 'CIM15'
         logger.warn('Could not detect CIM version. Using %s.' % ns)
 
     cim = __import__(ns, globals(), locals(), ['nsURI', 'packageMap'])
 
-    return cim.nsURI, cim.packageMap
+    return nsuri, cim.packageMap
 
 
 if __name__ == "__main__":
