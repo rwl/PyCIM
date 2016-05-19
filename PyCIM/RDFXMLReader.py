@@ -1,6 +1,7 @@
 # Copyright (C) 2010-2011 Richard Lincoln
 # Copyright (C) 2011 Stefan Scherfke
 # Copyright (C) 2015 Wouter Labeeuw
+# Copyright (C) 2016 Konstantin Krumov Gerasimov, KKG - kkgerasimov@gmail.com
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -22,9 +23,8 @@
 
 from xml.etree.cElementTree import iterparse
 from time import time
+
 import logging
-
-
 logger = logging.getLogger(__name__)
 
 
@@ -49,6 +49,10 @@ def cimread(source, packageMap=None, nsURI=None, start_dict={}):
     """
     # Start the clock.
     t0 = time()
+
+    #logger.info('##########################################################################')
+    logger.info('START of parsing file \"%s\"', source)
+    logger_errors_grouped = {}
 
     # A map of uuids to CIM objects to be returned.
     d = start_dict
@@ -142,8 +146,13 @@ def cimread(source, packageMap=None, nsURI=None, start_dict={}):
                             attr = elem.tag[m:].rsplit(".")[-1]
 
                             if not hasattr(obj, attr):
-                                logger.error("'%s' has not attribute '%s'",
-                                             obj.__class__.__name__, attr)
+                                error_msg = "'%s' has not attribute '%s'" %(obj.__class__.__name__, attr)
+                                try:
+                                    logger_errors_grouped[error_msg] += 1
+                                except KeyError:
+                                    logger_errors_grouped[error_msg] = 1
+                                # logger.error("'%s' has not attribute '%s'",
+                                #              obj.__class__.__name__, attr)
                                 continue
 
                             # Use the rdf:resource attribute to distinguish
@@ -152,8 +161,19 @@ def cimread(source, packageMap=None, nsURI=None, start_dict={}):
 
                             if uuid2 is None: # attribute
                                 # Convert value type using the default value.
-                                typ = type( getattr(obj, attr) )
-                                setattr(obj, attr, typ(elem.text))
+                                try:
+                                    typ = type( getattr(obj, attr) )
+                                    if typ == type(True): # KKG: Test if it is boolean value
+                                        # KKG: NB: The function bool("false") returns True, because it is called upon non-empty string!
+                                        # This means that it wrongly reads "false" value as boolean True and this is why this special case testing is necessary
+                                        if str.title(elem.text) == 'True':
+                                            setattr(obj, attr, True)
+                                        else:
+                                            setattr(obj, attr, False)
+                                    else:
+                                        setattr(obj, attr, typ(elem.text))
+                                except TypeError:
+                                    pass
                             else:  # reference or enum
                                 # Use the '#' prefix to distinguish between
                                 # references and enumerations.
@@ -190,7 +210,15 @@ def cimread(source, packageMap=None, nsURI=None, start_dict={}):
         # Clear children of the root element to minimise memory usage.
         root.clear()
 
-    logger.info("Created %d CIM objects in %.2fs.", len(d), time() - t0)
+    if logger_errors_grouped:
+        for error, count in logger_errors_grouped.iteritems():
+            logging_message = '%s : %d times' %(error, count)
+            logger.warn(logging_message)
+
+    # logging_message = 'Created totally %d CIM objects in %.2fs.' %(len(d), time() - t0)
+    logger.info('Created totally %d CIM objects in %.2fs.' %(len(d), time() - t0))
+    # logging_message = 'END of parsing file \"%s\"\n' % source
+    logger.info('END of parsing file \"%s\"\n' % source)
 
     return d
 
@@ -235,17 +263,15 @@ def get_cim_ns(namespaces):
         ns = ''
         logger.error('No CIM namespace defined in input file.')
 
-    CIM16nsURI = 'http://iec.ch/TC57/2013/CIM-schema-cim16'
-
     nsuri = ns
 
-    import CIM14, CIM15
+    import CIM14, CIM15, CIM16
     if ns == CIM14.nsURI:
         ns = 'CIM14'
     elif ns == CIM15.nsURI:
         ns = 'CIM15'
-    elif ns == CIM16nsURI:
-        ns  = 'CIM15'
+    elif ns == CIM16.nsURI:
+        ns  = 'CIM16'
     else:
         ns = 'CIM15'
         logger.warn('Could not detect CIM version. Using %s.' % ns)
