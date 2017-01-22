@@ -236,6 +236,11 @@ def xmlns(source):
             namespaces[prefix] = ns
         elif event == "end":
             break
+
+    # Reset stream
+    if hasattr(source, "seek"):
+        source.seek(0)
+
     return namespaces
 
 
