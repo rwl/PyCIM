@@ -236,6 +236,11 @@ def xmlns(source):
             namespaces[prefix] = ns
         elif event == "end":
             break
+
+    # Reset stream
+    if hasattr(source, "seek"):
+        source.seek(0)
+
     return namespaces
 
 
@@ -263,15 +268,17 @@ def get_cim_ns(namespaces):
         ns = ''
         logger.error('No CIM namespace defined in input file.')
 
+    CIM16nsURI = 'http://iec.ch/TC57/2013/CIM-schema-cim16'
+
     nsuri = ns
 
-    import CIM14, CIM15, CIM16
+    import CIM14, CIM15
     if ns == CIM14.nsURI:
         ns = 'CIM14'
     elif ns == CIM15.nsURI:
         ns = 'CIM15'
-    elif ns == CIM16.nsURI:
-        ns  = 'CIM16'
+    elif ns == CIM16nsURI:
+        ns  = 'CIM15'
     else:
         ns = 'CIM15'
         logger.warn('Could not detect CIM version. Using %s.' % ns)
