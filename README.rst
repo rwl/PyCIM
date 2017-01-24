@@ -1,3 +1,5 @@
+.. image:: https://travis-ci.org/rwl/PyCIM.svg?branch=master
+    :target: https://travis-ci.org/rwl/PyCIM
 ============
 Introduction
 ============
