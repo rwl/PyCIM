@@ -28,7 +28,7 @@ else:
 
 # Read the long description from the README.
 thisdir = os.path.abspath(os.path.dirname(__file__))
-f = open(os.path.join(thisdir, "README"))
+f = open(os.path.join(thisdir, "README.rst"))
 kwds["long_description"] = f.read()
 f.close()
 
