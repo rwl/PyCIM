@@ -61,7 +61,7 @@ def cimwrite(d, source, encoding="utf-8"):
     rdf = w.start(u"%s:RDF" % nsPrefixRDF, xmlns)
 
     # Iterate over all UUID, CIM object pairs in the given dictionary.
-    for uuid, obj in d.iteritems():
+    for uuid, obj in d.items():
         w.start(u"%s:%s" % (nsPrefix, obj.__class__.__name__),
                 {u"%s:ID" % nsPrefixRDF: obj.UUID})
 
@@ -120,4 +120,4 @@ if __name__ == "__main__":
     tmp = "/tmp/cimwrite.xml"
     cimwrite(d, tmp)
 
-    print xmlpp(tmp)
+    print(xmlpp(tmp))
