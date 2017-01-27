@@ -37,10 +37,16 @@ from CIM15.IEC61970.Topology import \
 
 from CIM15.IEC61970.Wires import \
     Breaker, SynchronousMachine, BusbarSection, ACLineSegment, \
-    PowerTransformer, PowerTransformerEnd, ReactiveCapabilityCurve
+    PowerTransformer, PowerTransformerEnd, ReactiveCapabilityCurve, \
+    EnergyConsumer
 
 from CIM15.IEC61970.Generation.Production import \
     ThermalGeneratingUnit, GenUnitOpCostCurve, GenUnitOpSchedule, StartupModel
+
+
+from CIM15.IEC61970.WiresPhaseModel import \
+    EnergyConsumerPhase, ACLineSegmentPhase
+
 
 class CIMTestCase(unittest.TestCase):
     """Test the full CIM package.
@@ -51,6 +57,17 @@ class CIMTestCase(unittest.TestCase):
         """
         pass
 
+    def test_energy_consumer_phase_sets_attributes(self):
+        energy_consumer = EnergyConsumer()
+        energy_consumer_phase = EnergyConsumerPhase('A', energy_consumer)
+        assert energy_consumer_phase.phase == 'A'
+        assert energy_consumer_phase.EnergyConsumer == energy_consumer
+
+    def test_ac_line_segment_phases_sets_attributes(self):
+        ac_line_segment = ACLineSegment()
+        ac_line_segment_phase = ACLineSegmentPhase('A', ac_line_segment)
+        assert ac_line_segment_phase.phase == 'A'
+        assert ac_line_segment_phase.ACLineSegment == ac_line_segment
 
     def testInstantiation(self):
         """Test element instantiation.
