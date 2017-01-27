@@ -22,11 +22,13 @@ from CIM15.IEC61970.Core.PowerSystemResource import PowerSystemResource
 
 class EnergyConsumerPhase(PowerSystemResource):
 
-    def __init__(self, EnergyConsumer=None, *args, **kw_args):
+    def __init__(self, phase=None, EnergyConsumer=None, *args, **kw_args):
         """Initialises a new 'EnergyConsumerPhase' instance.
 
+        @param phase:
         @param EnergyConsumer:
         """
+        self.phase = phase
         self._EnergyConsumer = None
         self.EnergyConsumer = EnergyConsumer
 
