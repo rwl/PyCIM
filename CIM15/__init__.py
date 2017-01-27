@@ -347,6 +347,7 @@ packageMap = {
     "RatioTapChanger": "CIM15.IEC61970.Wires",
     "PhaseTapChangerLinear": "CIM15.IEC61970.Wires",
     "ACLineSegment": "CIM15.IEC61970.Wires",
+    "ACLineSegmentPhase": "CIM15.IEC61970.WiresPhaseModel",
     "PowerTransformerEnd": "CIM15.IEC61970.Wires",
     "Junction": "CIM15.IEC61970.Wires",
     "RegulatingCondEq": "CIM15.IEC61970.Wires",

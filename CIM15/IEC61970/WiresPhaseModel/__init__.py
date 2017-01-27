@@ -22,6 +22,7 @@
 from CIM15.IEC61970.WiresPhaseModel.SwitchPhase import SwitchPhase
 from CIM15.IEC61970.WiresPhaseModel.ShuntCompensatorPhase import ShuntCompensatorPhase
 from CIM15.IEC61970.WiresPhaseModel.EnergyConsumerPhase import EnergyConsumerPhase
+from CIM15.IEC61970.WiresPhaseModel.ACLineSegmentPhase import ACLineSegmentPhase
 
 nsURI = "http://iec.ch/TC57/2010/CIM-schema-cim15#WiresPhaseModel"
 nsPrefix = "cimWiresPhaseModel"
