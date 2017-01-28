@@ -19,6 +19,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
+import io
 import unittest
 
 from os.path import dirname, join
@@ -39,6 +40,10 @@ CONN_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9_CONN.xml")
 EQUIP_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9_EQUIP.xml")
 GEO_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9_GEO.xml")
 
+EMPTY_CIM = u'''<?xml version=\'1.0\'?>
+<rdf:RDF xmlns:cim="http://iec.ch/TC57/2010/CIM-schema-cim15#"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />'''
+
 
 class RDFXMLReaderTestCase(unittest.TestCase):
     """Test CIM RDF/XML parsing.
@@ -51,6 +56,12 @@ class RDFXMLReaderTestCase(unittest.TestCase):
 
         self.assertEqual(len(d), 5894)
 
+    def test_cim_reads_are_independent(self):
+        cimread(ASSET_FILE, assetMap, nsURICIM15)
+        sio = io.StringIO(EMPTY_CIM)
+        empty_cim_dict = cimread(sio)
+        self.assertEqual(empty_cim_dict, {})
+
     def testProfile(self):
         d = {}
 
@@ -59,7 +70,7 @@ class RDFXMLReaderTestCase(unittest.TestCase):
         d.update(cimread(EQUIP_FILE, equipMap, nsURICIM15))
         d.update(cimread(GEO_FILE, geoMap, nsURICIM15))
 
-        self.assertEqual(len(d), 5894)
+        self.assertEqual(len(d), 5893)
 
     def testGetNamespaces(self):
         ns = RDFXMLReader.xmlns(RDFXML_FILE)
