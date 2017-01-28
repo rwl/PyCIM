@@ -28,7 +28,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def cimread(source, packageMap=None, nsURI=None, start_dict={}):
+def cimread(source, packageMap=None, nsURI=None, start_dict=None):
     """ CIM RDF/XML parser.
 
     @type source: File-like object or a path to a file.
@@ -55,7 +55,7 @@ def cimread(source, packageMap=None, nsURI=None, start_dict={}):
     logger_errors_grouped = {}
 
     # A map of uuids to CIM objects to be returned.
-    d = start_dict
+    d = start_dict if start_dict is not None else {}
 
     # Obtain the namespaces from the input file
     namespaces = xmlns(source)
