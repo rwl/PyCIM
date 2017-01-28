@@ -1,4 +1,4 @@
-# Copyright (C) 2010-2011 Richard Lincoln
+# Copyright (C) 2017 Emily Ma
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -20,40 +20,40 @@
 
 from CIM15.IEC61970.Core.PowerSystemResource import PowerSystemResource
 
-class EnergyConsumerPhase(PowerSystemResource):
 
-    def __init__(self, phase=None, EnergyConsumer=None, *args, **kw_args):
-        """Initialises a new 'EnergyConsumerPhase' instance.
+class ACLineSegmentPhase(PowerSystemResource):
 
-        @param phase:
-        @param EnergyConsumer:
+    def __init__(self, phase=None, ACLineSegment=None, *args, **kw_args):
+        """Initialises a new 'ACLineSegmentPhase' instance.
+
+        @param phase: 'A', 'B', 'C', 'N'
+        @param ACLineSegment:
         """
+
         self.phase = phase
-        self._EnergyConsumer = None
-        self.EnergyConsumer = EnergyConsumer
+        self._ACLineSegment = None
+        self.ACLineSegment = ACLineSegment
 
-        super(EnergyConsumerPhase, self).__init__(*args, **kw_args)
+        super(ACLineSegmentPhase, self).__init__(*args, **kw_args)
 
-    _attrs = []
-    _attr_types = {}
-    _defaults = {}
-    _enums = {}
-    _refs = ["EnergyConsumer"]
+    _attrs = ["phase"]
+    _attr_types = {"phase": str}
+    _defaults = {"phase": "C"}
+    _enums = {"phase": "SinglePhaseKind"}
+    _refs = ["ACLineSegment"]
     _many_refs = []
 
-    def getEnergyConsumer(self):
-        
-        return self._EnergyConsumer
+    def getACLineSegment(self):
+        return self._ACLineSegment
 
-    def setEnergyConsumer(self, value):
-        if self._EnergyConsumer is not None:
-            filtered = [x for x in self.EnergyConsumer.EnergyConsumerPhases if x != self]
-            self._EnergyConsumer._EnergyConsumerPhases = filtered
+    def setACLineSegment(self, value):
+        if self._ACLineSegment is not None:
+            filtered = [x for x in self.ACLineSegment.ACLineSegmentPhases if x != self]
+            self._ACLineSegment._ACLineSegmentPhases = filtered
 
-        self._EnergyConsumer = value
-        if self._EnergyConsumer is not None:
-            if self not in self._EnergyConsumer._EnergyConsumerPhases:
-                self._EnergyConsumer._EnergyConsumerPhases.append(self)
+        self._ACLineSegment = value
+        if self._ACLineSegment is not None:
+            if self not in self._ACLineSegment._ACLineSegmentPhases:
+                self._ACLineSegment._ACLineSegmentPhases.append(self)
 
-    EnergyConsumer = property(getEnergyConsumer, setEnergyConsumer)
-
+    ACLineSegment = property(getACLineSegment, setACLineSegment)
