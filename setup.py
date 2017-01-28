@@ -40,6 +40,10 @@ setup(name="PyCIM",
       license="MIT",
       url="http://www.pycim.org/",
       packages=find_packages(),
+      extras_require={
+          'test': ['pytest'],
+          'build': ['twine'],
+      },
       **kwds)
 
 # python setup.py sdist bdist_egg bdist_wininst bdist_msi upload
