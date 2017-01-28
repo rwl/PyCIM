@@ -78,7 +78,7 @@ def cimread(source, packageMap=None, nsURI=None, start_dict=None):
     context = iter(context)
 
     # Get the root element ({http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF).
-    _, root = context.next()
+    _, root = next(context)
 
     for event, elem in context:
         # Process 'end' elements in the CIM namespace.
@@ -115,7 +115,7 @@ def cimread(source, packageMap=None, nsURI=None, start_dict=None):
     context = iter( iterparse(source, ("start", "end")) )
 
     # Get the root element ({http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF).
-    _, root = context.next()
+    _, root = next(context)
 
     for event, elem in context:
         # Process 'start' elements in the CIM namespace.
@@ -211,7 +211,7 @@ def cimread(source, packageMap=None, nsURI=None, start_dict=None):
         root.clear()
 
     if logger_errors_grouped:
-        for error, count in logger_errors_grouped.iteritems():
+        for error, count in logger_errors_grouped.items():
             logging_message = '%s : %d times' %(error, count)
             logger.warn(logging_message)
 

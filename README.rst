@@ -1,5 +1,6 @@
 .. image:: https://travis-ci.org/rwl/PyCIM.svg?branch=master
     :target: https://travis-ci.org/rwl/PyCIM
+
 ============
 Introduction
 ============
@@ -22,7 +23,7 @@ Current features include:
 Installation
 ------------
 
-PyCIM has no dependencies beyond Python_ 2.5 or later. It can be easy_installed
+PyCIM has no dependencies beyond Python_ 2.6 or later. It can be easy_installed
 using setuptools_::
 
   $ easy_install PyCIM

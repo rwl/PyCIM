@@ -107,7 +107,7 @@ def encode_entity(text, pattern=_escape):
         out = []
         for char in m.group():
             out.append("&#%d;" % ord(char))
-        return string.join(out, "")
+        return "".join(out)
     return encode(pattern.sub(escape_entities, text), "ascii")
 
 del _escape
@@ -116,10 +116,10 @@ del _escape
 # the following functions assume an ascii-compatible encoding
 # (or "utf-16")
 
-def escape_cdata(s, encoding=None, replace=string.replace):
-    s = replace(s, "&", "&amp;")
-    s = replace(s, "<", "&lt;")
-    s = replace(s, ">", "&gt;")
+def escape_cdata(s, encoding=None):
+    s = s.replace("&", "&amp;")
+    s = s.replace("<", "&lt;")
+    s = s.replace(">", "&gt;")
     if encoding:
         try:
             return encode(s, encoding)
@@ -127,12 +127,12 @@ def escape_cdata(s, encoding=None, replace=string.replace):
             return encode_entity(s)
     return s
 
-def escape_attrib(s, encoding=None, replace=string.replace):
-    s = replace(s, "&", "&amp;")
-    s = replace(s, "'", "&apos;")
-    s = replace(s, "\"", "&quot;")
-    s = replace(s, "<", "&lt;")
-    s = replace(s, ">", "&gt;")
+def escape_attrib(s, encoding=None):
+    s = s.replace("&", "&amp;")
+    s = s.replace("'", "&apos;")
+    s = s.replace("\"", "&quot;")
+    s = s.replace("<", "&lt;")
+    s = s.replace(">", "&gt;")
     if encoding:
         try:
             return encode(s, encoding)
@@ -166,7 +166,7 @@ class XMLWriter:
             self.__write(">")
             self.__open = 0
         if self.__data:
-            data = string.join(self.__data, "")
+            data = "".join(self.__data)
             self.__write(escape_cdata(data, self.__encoding))
             self.__data = []
 
@@ -200,11 +200,9 @@ class XMLWriter:
         self.__tags.append(tag)
         self.__write("<%s" % tag)
         if attrib or extra:
-            attrib = attrib.copy()
-            attrib.update(extra)
-            attrib = attrib.items()
-            attrib.sort()
-            for k, v in attrib:
+            combined_attrib = attrib.copy()
+            combined_attrib.update(extra)
+            for k, v in sorted(attrib.items()):
                 k = escape_cdata(k, self.__encoding)
                 v = escape_attrib(v, self.__encoding)
                 self.__write(" %s=\"%s\"" % (k, v))
@@ -267,7 +265,7 @@ class XMLWriter:
     # can be omitted.
 
     def element(self, tag, text=None, attrib={}, **extra):
-        apply(self.start, (tag, attrib), extra)
+        self.start(tag, attrib, **extra)
         if text:
             self.data(text)
         self.end()

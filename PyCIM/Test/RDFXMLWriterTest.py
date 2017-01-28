@@ -19,7 +19,10 @@
 # IN THE SOFTWARE.
 
 import unittest
-import StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 
 from PyCIM import cimread, cimwrite
 
@@ -38,7 +41,7 @@ class RDFXMLWriterTestCase(unittest.TestCase):
         """
         d = cimread(RDFXML_FILE)
 
-        output = StringIO.StringIO()
+        output = StringIO()
 
         cimwrite(d, output)
 
