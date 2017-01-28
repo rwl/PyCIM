@@ -38,7 +38,7 @@ setup(name="PyCIM",
       author_email="r.w.lincoln@gmail.com",
       description="Python implementation of the Common Information Model.",
       license="MIT",
-      url="http://www.pycim.org/",
+      url="https://github.com/rwl/PyCIM",
       classifiers=[
           'Development Status :: 5 - Production/Stable',
           'Intended Audience :: Developers',
