@@ -16,7 +16,7 @@ deploy:
     secure: U8GuICdcomZmj66lp9fIccBGJbYhU7VXgYSAlqozQn/e6+nQD2rXi0LfyAxx+kegH3d1S0h7bUVuwOIRtvpdMY0QzEpvPZ7YmvC6g5o1u66t0JDnWEBWuUcYRdIlu914vn7c+OEQoCZmA4fQABqlw3PfA9aqLaedOzAXiew8zSI=
   on:
     tags: true
-    distributions: sdist bdist_wheel
+    distributions: "sdist bdist_wheel"
     repo: rwl/PyCIM
     branch: master
     python: "3.6"
