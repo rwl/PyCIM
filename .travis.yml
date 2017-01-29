@@ -19,4 +19,4 @@ deploy:
     distributions: "sdist bdist_wheel"
     repo: rwl/PyCIM
     branch: master
-    python: "3.6"
+    python: "2.7"
