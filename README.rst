@@ -1,5 +1,4 @@
-.. image:: https://travis-ci.org/rwl/PyCIM.svg?branch=master
-    :target: https://travis-ci.org/rwl/PyCIM
+|travis| |pythons| |wheel|
 
 ============
 Introduction
@@ -99,3 +98,11 @@ PyCIM is developed by Richard Lincoln (r.w.lincoln@gmail.com).
 .. _iPython: http://ipython.scipy.org
 .. _`website`: http://www.pycim.com/
 .. _`API documentation`: http://packages.python.org/PyCIM
+
+.. more shields at http://shields.io
+.. |travis| image:: https://travis-ci.org/rwl/PyCIM.svg?branch=master
+    :target: https://travis-ci.org/rwl/PyCIM
+.. |pythons| image:: https://img.shields.io/pypi/pyversions/PyCIM.svg
+    :target: https://pypi.python.org/pypi/PyCIM
+.. |wheel| image:: https://img.shields.io/pypi/format/PyCIM.svg
+    :target: https://pypi.python.org/pypi/PyCIM
