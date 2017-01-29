@@ -33,13 +33,32 @@ kwds["long_description"] = f.read()
 f.close()
 
 setup(name="PyCIM",
-      version="15.13.4",
+      version="15.14.0.dev2",
       author="Richard Lincoln",
       author_email="r.w.lincoln@gmail.com",
       description="Python implementation of the Common Information Model.",
       license="MIT",
-      url="http://www.pycim.org/",
+      url="https://github.com/rwl/PyCIM",
+      classifiers=[
+          'Development Status :: 5 - Production/Stable',
+          'Intended Audience :: Developers',
+          'Intended Audience :: Science/Research',
+          'Topic :: Scientific/Engineering',
+          'Topic :: Scientific/Engineering :: Interface Engine/Protocol Translator',
+          'License :: OSI Approved :: MIT License',
+          'Programming Language :: Python :: 2',
+          'Programming Language :: Python :: 2.6',
+          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3',
+          'Programming Language :: Python :: 3.4',
+          'Programming Language :: Python :: 3.5',
+          'Programming Language :: Python :: 3.6',
+      ],
       packages=find_packages(),
+      extras_require={
+          'test': ['pytest'],
+          'build': ['twine'],
+      },
       **kwds)
 
 # python setup.py sdist bdist_egg bdist_wininst bdist_msi upload
