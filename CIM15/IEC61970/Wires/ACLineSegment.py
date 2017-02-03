@@ -19,12 +19,14 @@
 # IN THE SOFTWARE.
 
 from CIM15.IEC61970.Wires.Conductor import Conductor
+from CIM15.IEC61970.Wires.PerLengthPhaseImpedance import PerLengthPhaseImpedance
+from CIM15.IEC61970.Wires.PerLengthSequenceImpedance import PerLengthSequenceImpedance
 
 class ACLineSegment(Conductor):
     """A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system. For symmetrical, transposed 3ph lines, it is sufficient to use ACLineSegment attributes, which describe sequence impedances and admittances for the entire length of the segment. If per lenght impedance data is available from a library of standard types, impedances and admittances can be calculated in one of the following ways: - calculate electrical parameters from asset data, using associated ConductorInfo, with values then multiplied by Conductor.length to produce a matrix model. - calculate unbalanced electrical parameters from associated PerLengthPhaseImpedance, then multiplied by Conductor.length to produce a matrix model. - calculate transposed electrical parameters from associated PerLengthSequenceImpedance, then multiplied by Conductor.length to produce a sequence model.A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system. For symmetrical, transposed 3ph lines, it is sufficient to use ACLineSegment attributes, which describe sequence impedances and admittances for the entire length of the segment. If per lenght impedance data is available from a library of standard types, impedances and admittances can be calculated in one of the following ways: - calculate electrical parameters from asset data, using associated ConductorInfo, with values then multiplied by Conductor.length to produce a matrix model. - calculate unbalanced electrical parameters from associated PerLengthPhaseImpedance, then multiplied by Conductor.length to produce a matrix model. - calculate transposed electrical parameters from associated PerLengthSequenceImpedance, then multiplied by Conductor.length to produce a sequence model.
     """
 
-    def __init__(self, g0ch=0.0, r=0.0, x=0.0, gch=0.0, r0=0.0, bch=0.0, b0ch=0.0, x0=0.0, SequenceImpedance=None, ConductorAssets=None, ConductorInfo=None, Cut=None, PhaseImpedance=None, Clamp=None, ACLineSegmentPhases=None, *args, **kw_args):
+    def __init__(self, g0ch=0.0, r=0.0, x=0.0, gch=0.0, r0=0.0, bch=0.0, b0ch=0.0, x0=0.0, SequenceImpedance=None, ConductorAssets=None, ConductorInfo=None, Cut=None, PhaseImpedance=None, Clamp=None, ACLineSegmentPhases=None, PerLengthImpedance=None, *args, **kw_args):
         """Initialises a new 'ACLineSegment' instance.
 
         @param g0ch: Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section. 
@@ -54,7 +56,6 @@ class ACLineSegment(Conductor):
 
         #: Positive sequence shunt (charging) conductance, uniformly distributed, of the entire line section.
         self.gch = gch
-
         #: Zero sequence series resistance of the entire line section.
         self.r0 = r0
 
@@ -68,7 +69,21 @@ class ACLineSegment(Conductor):
         self.x0 = x0
 
         self._SequenceImpedance = None
-        self.SequenceImpedance = SequenceImpedance
+        self._PhaseImpedance = None
+        self._PerLengthImpedance = None
+
+        if SequenceImpedance is not None:
+            if PhaseImpedance is not None or PerLengthImpedance is not None:
+                raise ValueError("Too many impedance models specified!")
+            else:
+                self.SequenceImpedance = SequenceImpedance
+        elif PhaseImpedance is not None:
+            if PerLengthImpedance is not None:
+                raise ValueError("Too many impedance models specified!")
+            else:
+                self.PhaseImpedance = PhaseImpedance
+        elif PerLengthImpedance is not None:
+            self.PerLengthImpedance = PerLengthImpedance
 
         self._ConductorAssets = []
         self.ConductorAssets = [] if ConductorAssets is None else ConductorAssets
@@ -78,9 +93,6 @@ class ACLineSegment(Conductor):
 
         self._Cut = []
         self.Cut = [] if Cut is None else Cut
-
-        self._PhaseImpedance = None
-        self.PhaseImpedance = PhaseImpedance
 
         self._Clamp = []
         self.Clamp = [] if Clamp is None else Clamp
@@ -94,28 +106,38 @@ class ACLineSegment(Conductor):
     _attr_types = {"g0ch": float, "r": float, "x": float, "gch": float, "r0": float, "bch": float, "b0ch": float, "x0": float}
     _defaults = {"g0ch": 0.0, "r": 0.0, "x": 0.0, "gch": 0.0, "r0": 0.0, "bch": 0.0, "b0ch": 0.0, "x0": 0.0}
     _enums = {}
-    _refs = ["SequenceImpedance", "ConductorAssets", "ConductorInfo", "Cut", "PhaseImpedance", "Clamp", "ACLineSegmentPhases"]
+    _refs = ["SequenceImpedance", "ConductorAssets", "ConductorInfo", "Cut", "PhaseImpedance", "Clamp", "ACLineSegmentPhases", "PerLengthImpedance"]
     _many_refs = ["ConductorAssets", "Cut", "Clamp", "ACLineSegmentPhases"]
 
     def getSequenceImpedance(self):
         """Sequence impedance of this line segment; used for balanced model.
         """
-        return self._SequenceImpedance
+        if type(self.PerLengthImpedance) is PerLengthSequenceImpedance:
+            return self.PerLengthImpedance
+        else:
+            return None
 
     def setSequenceImpedance(self, value):
-        if self._SequenceImpedance is not None:
-            filtered = [x for x in self.SequenceImpedance.LineSegments if x != self]
-            self._SequenceImpedance._LineSegments = filtered
-
-        self._SequenceImpedance = value
-        if self._SequenceImpedance is not None:
-            if self not in self._SequenceImpedance._LineSegments:
-                self._SequenceImpedance._LineSegments.append(self)
+        self.PerLengthImpedance = value
 
     SequenceImpedance = property(getSequenceImpedance, setSequenceImpedance)
 
+    def getPerLengthImpedance(self):
+        return self._PerLengthImpedance
+
+    def setPerLengthImpedance(self, value):
+        if self._PerLengthImpedance is not None:
+            filtered = [x for x in self.PerLengthImpedance.LineSegments if x != self]
+            self._PerLengthImpedance._LineSegments = filtered
+
+        self._PerLengthImpedance = value
+        if self._PerLengthImpedance is not None:
+            if self not in self._PerLengthImpedance._LineSegments:
+                self._PerLengthImpedance._LineSegments.append(self)
+
+    PerLengthImpedance = property(getPerLengthImpedance, setPerLengthImpedance)
+
     def getConductorAssets(self):
-        
         return self._ConductorAssets
 
     def setConductorAssets(self, value):
@@ -176,17 +198,13 @@ class ACLineSegment(Conductor):
     def getPhaseImpedance(self):
         """Phase impedance of this line segment; used for unbalanced model.
         """
-        return self._PhaseImpedance
+        if type(self.PerLengthImpedance) is PerLengthPhaseImpedance:
+            return self.PerLengthImpedance
+        else:
+            return None
 
     def setPhaseImpedance(self, value):
-        if self._PhaseImpedance is not None:
-            filtered = [x for x in self.PhaseImpedance.LineSegments if x != self]
-            self._PhaseImpedance._LineSegments = filtered
-
-        self._PhaseImpedance = value
-        if self._PhaseImpedance is not None:
-            if self not in self._PhaseImpedance._LineSegments:
-                self._PhaseImpedance._LineSegments.append(self)
+        self.PerLengthImpedance = value
 
     PhaseImpedance = property(getPhaseImpedance, setPhaseImpedance)
 
