@@ -20,6 +20,8 @@
 
 import unittest
 
+import pytest
+
 from CIM15.IEC61970.Core import \
     ConnectivityNode, Terminal
 
@@ -38,7 +40,7 @@ from CIM15.IEC61970.Topology import \
 from CIM15.IEC61970.Wires import \
     Breaker, SynchronousMachine, BusbarSection, ACLineSegment, \
     PowerTransformer, PowerTransformerEnd, ReactiveCapabilityCurve, \
-    EnergyConsumer
+    EnergyConsumer, PerLengthPhaseImpedance, PerLengthSequenceImpedance
 
 from CIM15.IEC61970.Generation.Production import \
     ThermalGeneratingUnit, GenUnitOpCostCurve, GenUnitOpSchedule, StartupModel
@@ -62,12 +64,6 @@ class CIMTestCase(unittest.TestCase):
         energy_consumer_phase = EnergyConsumerPhase('A', energy_consumer)
         assert energy_consumer_phase.phase == 'A'
         assert energy_consumer_phase.EnergyConsumer == energy_consumer
-
-    def test_ac_line_segment_phases_sets_attributes(self):
-        ac_line_segment = ACLineSegment()
-        ac_line_segment_phase = ACLineSegmentPhase('A', ac_line_segment)
-        assert ac_line_segment_phase.phase == 'A'
-        assert ac_line_segment_phase.ACLineSegment == ac_line_segment
 
     def testInstantiation(self):
         """Test element instantiation.
@@ -187,6 +183,57 @@ class CIMTestCase(unittest.TestCase):
 #
 #        self.assertTrue(sm1 in rcc1.synchronous_machines)
 #        self.assertTrue(rcc2 in sm2.reactive_capability_curves)
+
+
+class ACLineSegmentTests(unittest.TestCase):
+
+    def test_ac_line_segment_phases_sets_attributes(self):
+        ac_line_segment = ACLineSegment()
+        ac_line_segment_phase = ACLineSegmentPhase('A', ac_line_segment)
+        assert ac_line_segment_phase.phase == 'A'
+        assert ac_line_segment_phase.ACLineSegment == ac_line_segment
+
+    def test_sets_per_length_impedance_given_phase(self):
+        per_length_phase_impedance = PerLengthPhaseImpedance()
+        ac_line_segment = ACLineSegment(
+                PhaseImpedance=per_length_phase_impedance)
+        assert ac_line_segment.PerLengthImpedance == per_length_phase_impedance
+        assert ac_line_segment.PhaseImpedance == per_length_phase_impedance
+        assert ac_line_segment.SequenceImpedance is None
+
+    def test_sets_per_length_impedance_given_sequence(self):
+        per_length_sequence_impedance = PerLengthSequenceImpedance()
+        ac_line_segment = ACLineSegment(
+                SequenceImpedance=per_length_sequence_impedance)
+        assert ac_line_segment.PerLengthImpedance == \
+                per_length_sequence_impedance
+        assert ac_line_segment.SequenceImpedance == \
+                per_length_sequence_impedance
+        assert ac_line_segment.PhaseImpedance is None
+
+    def test_sets_per_length_impedance_given_phase_via_generic(self):
+        per_length_phase_impedance = PerLengthPhaseImpedance()
+        ac_line_segment = ACLineSegment(
+                PerLengthImpedance=per_length_phase_impedance)
+        assert ac_line_segment.PerLengthImpedance == per_length_phase_impedance
+        assert ac_line_segment.PhaseImpedance == per_length_phase_impedance
+        assert ac_line_segment.SequenceImpedance is None
+
+    def test_sets_per_length_impedance_given_sequence_via_generic(self):
+        per_length_sequence_impedance = PerLengthSequenceImpedance()
+        ac_line_segment = ACLineSegment(
+                PerLengthImpedance=per_length_sequence_impedance)
+        assert ac_line_segment.PerLengthImpedance == per_length_sequence_impedance
+        assert ac_line_segment.SequenceImpedance == per_length_sequence_impedance
+        assert ac_line_segment.PhaseImpedance is None
+
+    def test_more_than_one_impedance_returns_error(self):
+        per_length_sequence_impedance = PerLengthSequenceImpedance()
+        per_length_phase_impedance = PerLengthPhaseImpedance()
+        with pytest.raises(ValueError):
+            ac_line_segment = ACLineSegment(
+                PhaseImpedance=per_length_phase_impedance,
+                SequenceImpedance=per_length_sequence_impedance)
 
 
 if __name__ == "__main__":
