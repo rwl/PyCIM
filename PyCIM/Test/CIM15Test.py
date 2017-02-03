@@ -20,6 +20,8 @@
 
 import unittest
 
+import pytest
+
 from CIM15.IEC61970.Core import \
     ConnectivityNode, Terminal
 
@@ -228,7 +230,7 @@ class ACLineSegmentTests(unittest.TestCase):
     def test_more_than_one_impedance_returns_error(self):
         per_length_sequence_impedance = PerLengthSequenceImpedance()
         per_length_phase_impedance = PerLengthPhaseImpedance()
-        with self.assertRaises(ValueError):
+        with pytest.raises(ValueError):
             ac_line_segment = ACLineSegment(
                 PhaseImpedance=per_length_phase_impedance,
                 SequenceImpedance=per_length_sequence_impedance)
