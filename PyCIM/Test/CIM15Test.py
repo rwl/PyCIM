@@ -61,9 +61,12 @@ class CIMTestCase(unittest.TestCase):
 
     def test_energy_consumer_phase_sets_attributes(self):
         energy_consumer = EnergyConsumer()
-        energy_consumer_phase = EnergyConsumerPhase('A', energy_consumer)
+        energy_consumer_phase = EnergyConsumerPhase(
+                'A', energy_consumer, pfixed=100, qfixed=30)
         assert energy_consumer_phase.phase == 'A'
         assert energy_consumer_phase.EnergyConsumer == energy_consumer
+        assert energy_consumer_phase.pfixed == 100
+        assert energy_consumer_phase.qfixed == 30
 
     def testInstantiation(self):
         """Test element instantiation.
