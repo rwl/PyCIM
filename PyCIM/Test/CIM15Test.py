@@ -72,14 +72,16 @@ class CIMTestCase(unittest.TestCase):
         xfmr_end_2 = TransformerEnd(BaseVoltage=base_voltage)
         assert xfmr_end_1.BaseVoltage == base_voltage
         assert xfmr_end_2.BaseVoltage == base_voltage
-        assert set(base_voltage.TransformerEnd) == {xfmr_end_1, xfmr_end_2}
+        assert set(base_voltage.TransformerEnd) == set(
+                [xfmr_end_1, xfmr_end_2])
 
     def test_base_voltage_add_xfmr_ends(self):
         xfmr_end_1 = TransformerEnd()
         xfmr_end_2 = TransformerEnd()
         base_voltage = BaseVoltage(TransformerEnd=[xfmr_end_1])
         base_voltage.addTransformerEnd(xfmr_end_2)
-        assert set(base_voltage.TransformerEnd) == {xfmr_end_1, xfmr_end_2}
+        assert set(base_voltage.TransformerEnd) == set(
+                [xfmr_end_1, xfmr_end_2])
         assert xfmr_end_1.BaseVoltage == base_voltage
         assert xfmr_end_2.BaseVoltage == base_voltage
 
@@ -89,11 +91,13 @@ class CIMTestCase(unittest.TestCase):
         xfmr_end_3 = TransformerEnd()
         xfmr_end_4 = TransformerEnd()
         base_voltage = BaseVoltage(TransformerEnd=[xfmr_end_1, xfmr_end_2])
-        assert set(base_voltage.TransformerEnd) == {xfmr_end_1, xfmr_end_2}
+        assert set(base_voltage.TransformerEnd) == set(
+                [xfmr_end_1, xfmr_end_2])
         assert xfmr_end_1.BaseVoltage == base_voltage
         assert xfmr_end_2.BaseVoltage == base_voltage
         base_voltage.setTransformerEnd([xfmr_end_3, xfmr_end_4])
-        assert set(base_voltage.TransformerEnd) == {xfmr_end_3, xfmr_end_4}
+        assert set(base_voltage.TransformerEnd) == set(
+                [xfmr_end_3, xfmr_end_4])
         assert xfmr_end_1.BaseVoltage == None
         assert xfmr_end_2.BaseVoltage == None
         assert xfmr_end_3.BaseVoltage == base_voltage
