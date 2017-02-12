@@ -23,7 +23,7 @@ import unittest
 import pytest
 
 from CIM15.IEC61970.Core import \
-    ConnectivityNode, Terminal
+    ConnectivityNode, Terminal, BaseVoltage
 
 from CIM15.IEC61970.LoadModel import \
     ConformLoad, ConformLoadGroup, LoadArea, ConformLoadSchedule
@@ -40,7 +40,8 @@ from CIM15.IEC61970.Topology import \
 from CIM15.IEC61970.Wires import \
     Breaker, SynchronousMachine, BusbarSection, ACLineSegment, \
     PowerTransformer, PowerTransformerEnd, ReactiveCapabilityCurve, \
-    EnergyConsumer, PerLengthPhaseImpedance, PerLengthSequenceImpedance
+    EnergyConsumer, PerLengthPhaseImpedance, PerLengthSequenceImpedance, \
+    TransformerEnd
 
 from CIM15.IEC61970.Generation.Production import \
     ThermalGeneratingUnit, GenUnitOpCostCurve, GenUnitOpSchedule, StartupModel
@@ -67,6 +68,52 @@ class CIMTestCase(unittest.TestCase):
         assert energy_consumer_phase.EnergyConsumer == energy_consumer
         assert energy_consumer_phase.pfixed == 100
         assert energy_consumer_phase.qfixed == 30
+
+    def test_xfmr_end_sets_base_voltage(self):
+        base_voltage = BaseVoltage(nominalVoltage=4160)
+        xfmr_end_1 = TransformerEnd(BaseVoltage=base_voltage)
+        xfmr_end_2 = TransformerEnd(BaseVoltage=base_voltage)
+        assert xfmr_end_1.BaseVoltage == base_voltage
+        assert xfmr_end_2.BaseVoltage == base_voltage
+        assert set(base_voltage.TransformerEnd) == set(
+                [xfmr_end_1, xfmr_end_2])
+
+    def test_base_voltage_add_xfmr_ends(self):
+        xfmr_end_1 = TransformerEnd()
+        xfmr_end_2 = TransformerEnd()
+        base_voltage = BaseVoltage(TransformerEnd=[xfmr_end_1])
+        base_voltage.addTransformerEnd(xfmr_end_2)
+        assert set(base_voltage.TransformerEnd) == set(
+                [xfmr_end_1, xfmr_end_2])
+        assert xfmr_end_1.BaseVoltage == base_voltage
+        assert xfmr_end_2.BaseVoltage == base_voltage
+
+    def test_base_voltage_set_xfmr_ends(self):
+        xfmr_end_1 = TransformerEnd()
+        xfmr_end_2 = TransformerEnd()
+        xfmr_end_3 = TransformerEnd()
+        xfmr_end_4 = TransformerEnd()
+        base_voltage = BaseVoltage(TransformerEnd=[xfmr_end_1, xfmr_end_2])
+        assert set(base_voltage.TransformerEnd) == set(
+                [xfmr_end_1, xfmr_end_2])
+        assert xfmr_end_1.BaseVoltage == base_voltage
+        assert xfmr_end_2.BaseVoltage == base_voltage
+        base_voltage.setTransformerEnd([xfmr_end_3, xfmr_end_4])
+        assert set(base_voltage.TransformerEnd) == set(
+                [xfmr_end_3, xfmr_end_4])
+        assert xfmr_end_1.BaseVoltage == None
+        assert xfmr_end_2.BaseVoltage == None
+        assert xfmr_end_3.BaseVoltage == base_voltage
+        assert xfmr_end_4.BaseVoltage == base_voltage
+
+    def test_base_voltage_remove_xfmr_end(self):
+        xfmr_end_1 = TransformerEnd()
+        xfmr_end_2 = TransformerEnd()
+        base_voltage = BaseVoltage(TransformerEnd=[xfmr_end_1, xfmr_end_2])
+        base_voltage.removeTransformerEnd(xfmr_end_2)
+        assert base_voltage.TransformerEnd == [xfmr_end_1]
+        assert xfmr_end_2.BaseVoltage == None
+        assert xfmr_end_1.BaseVoltage == base_voltage
 
     def testInstantiation(self):
         """Test element instantiation.

@@ -24,7 +24,7 @@ class TransformerEnd(IdentifiedObject):
     """TransformerEnd is a conducting connection point of a power transformer. It corresponds to a physical transformer winding terminal.  In earlier CIM versions, the TransformerWinding class served a similar purpose. This successor TransformerEnd class is more flexible and has important differences with TransformerWinding.TransformerEnd is a conducting connection point of a power transformer. It corresponds to a physical transformer winding terminal.  In earlier CIM versions, the TransformerWinding class served a similar purpose. This successor TransformerEnd class is more flexible and has important differences with TransformerWinding.
     """
 
-    def __init__(self, endNumber=0, rground=0.0, grounded=False, magBaseU=0.0, magSatFlux=0.0, bmagSat=0.0, xground=0.0, Terminal=None, FromWindingInsulations=None, CoreAdmittance=None, TransformerEndInfo=None, PhaseTapChanger=None, RatioTapChanger=None, FromMeshImpedance=None, ToWindingInsulations=None, ToMeshImpedance=None, StarImpedance=None, *args, **kw_args):
+    def __init__(self, endNumber=0, rground=0.0, grounded=False, magBaseU=0.0, magSatFlux=0.0, bmagSat=0.0, xground=0.0, Terminal=None, FromWindingInsulations=None, CoreAdmittance=None, TransformerEndInfo=None, PhaseTapChanger=None, RatioTapChanger=None, FromMeshImpedance=None, ToWindingInsulations=None, ToMeshImpedance=None, StarImpedance=None, BaseVoltage=None, *args, **kw_args):
         """Initialises a new 'TransformerEnd' instance.
 
         @param endNumber: Number for this transformer end, corresponding to the end's order in the PowerTransformer.vectorGroup attribute. Highest voltage winding should be 1. 
@@ -96,14 +96,32 @@ class TransformerEnd(IdentifiedObject):
         self._StarImpedance = None
         self.StarImpedance = StarImpedance
 
+        self._BaseVoltage = None
+        self.BaseVoltage = BaseVoltage
+
         super(TransformerEnd, self).__init__(*args, **kw_args)
 
     _attrs = ["endNumber", "rground", "grounded", "magBaseU", "magSatFlux", "bmagSat", "xground"]
     _attr_types = {"endNumber": int, "rground": float, "grounded": bool, "magBaseU": float, "magSatFlux": float, "bmagSat": float, "xground": float}
     _defaults = {"endNumber": 0, "rground": 0.0, "grounded": False, "magBaseU": 0.0, "magSatFlux": 0.0, "bmagSat": 0.0, "xground": 0.0}
     _enums = {}
-    _refs = ["Terminal", "FromWindingInsulations", "CoreAdmittance", "TransformerEndInfo", "PhaseTapChanger", "RatioTapChanger", "FromMeshImpedance", "ToWindingInsulations", "ToMeshImpedance", "StarImpedance"]
+    _refs = ["Terminal", "FromWindingInsulations", "CoreAdmittance", "TransformerEndInfo", "PhaseTapChanger", "RatioTapChanger", "FromMeshImpedance", "ToWindingInsulations", "ToMeshImpedance", "StarImpedance", "BaseVoltage"]
     _many_refs = ["FromWindingInsulations", "FromMeshImpedance", "ToWindingInsulations", "ToMeshImpedance"]
+
+    def getBaseVoltage(self):
+        return self._BaseVoltage
+
+    def setBaseVoltage(self, value):
+        if self._BaseVoltage is not None:
+            filtered = [x for x in self.BaseVoltage.TransformerEnd if x != self]
+            self._BaseVoltage._TransformerEnd = filtered
+
+        self._BaseVoltage = value
+        if self._BaseVoltage is not None:
+            if self not in self._BaseVoltage._TransformerEnd:
+                self._BaseVoltage._TransformerEnd.append(self)
+
+    BaseVoltage = property(getBaseVoltage, setBaseVoltage)
 
     def getTerminal(self):
         """External terminal of the power transformer to which this end belongs.
