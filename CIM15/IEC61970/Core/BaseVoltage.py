@@ -24,7 +24,7 @@ class BaseVoltage(IdentifiedObject):
     """Defines a nominal base voltage which is referenced in the system.Defines a nominal base voltage which is referenced in the system.
     """
 
-    def __init__(self, nominalVoltage=0.0, isDC=False, TopologicalNode=None, VoltageLevel=None, ConductingEquipment=None, *args, **kw_args):
+    def __init__(self, nominalVoltage=0.0, isDC=False, TopologicalNode=None, VoltageLevel=None, ConductingEquipment=None, TransformerEnd=None, *args, **kw_args):
         """Initialises a new 'BaseVoltage' instance.
 
         @param nominalVoltage: The PowerSystemResource's base voltage. 
@@ -48,14 +48,17 @@ class BaseVoltage(IdentifiedObject):
         self._ConductingEquipment = []
         self.ConductingEquipment = [] if ConductingEquipment is None else ConductingEquipment
 
+        self._TransformerEnd = []
+        self.TransformerEnd = [] if TransformerEnd is None else TransformerEnd
+
         super(BaseVoltage, self).__init__(*args, **kw_args)
 
     _attrs = ["nominalVoltage", "isDC"]
     _attr_types = {"nominalVoltage": float, "isDC": bool}
     _defaults = {"nominalVoltage": 0.0, "isDC": False}
     _enums = {}
-    _refs = ["TopologicalNode", "VoltageLevel", "ConductingEquipment"]
-    _many_refs = ["TopologicalNode", "VoltageLevel", "ConductingEquipment"]
+    _refs = ["TopologicalNode", "VoltageLevel", "ConductingEquipment", "TransformerEnd"]
+    _many_refs = ["TopologicalNode", "VoltageLevel", "ConductingEquipment", "TransformerEnd"]
 
     def getTopologicalNode(self):
         """The topological nodes at the base voltage.
@@ -123,3 +126,22 @@ class BaseVoltage(IdentifiedObject):
         for obj in ConductingEquipment:
             obj.BaseVoltage = None
 
+    def getTransformerEnd(self):
+        return self._TransformerEnd
+
+    def setTransformerEnd(self, value):
+        for x in self._TransformerEnd:
+            x.BaseVoltage = None
+        for y in value:
+            y._BaseVoltage = self
+        self._TransformerEnd = value
+
+    TransformerEnd = property(getTransformerEnd, setTransformerEnd)
+
+    def addTransformerEnd(self, *TransformerEnd):
+        for obj in TransformerEnd:
+            obj.BaseVoltage = self
+
+    def removeTransformerEnd(self, *TransformerEnd):
+        for obj in TransformerEnd:
+            obj.BaseVoltage = None
