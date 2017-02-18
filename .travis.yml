@@ -7,8 +7,11 @@ python:
     - "3.6"
 install:
     - "pip install -e .[dev,build]"
+    - pip install codecov pytest-cov
 script:
-    - pytest
+    - pytest --cov=PyCIM
+after_success:
+    - codecov
 deploy:
   provider: pypi
   user: osirius
