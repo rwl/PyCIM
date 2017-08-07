@@ -21,4 +21,5 @@
 from PyCIM.RDFXMLReader import cimread
 from PyCIM.RDFXMLWriter import cimwrite
 
-__version__ = "15.15.0"
+#__version__ = "15.15.0"
+__version__ = "16.01.0"
