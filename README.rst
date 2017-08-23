@@ -1,5 +1,19 @@
 |travis| |pythons| |wheel|
 
+**Development Status**
+
+PyCIM has proven to be more popular than first anticipated.
+However, it has not received the support and updates it requires. Should
+improvements such as:
+
+- CIM 16/CGMES support,
+- Difference models or
+- Topological processing
+
+be required then the `original author <https://github.com/rwl>`_
+may be available on contract. Please do not hesitate to get in
+`contact <mailto:r.w.lincoln@gmail.com>`_ directly.
+
 ============
 Introduction
 ============
