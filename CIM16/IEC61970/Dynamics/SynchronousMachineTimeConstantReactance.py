@@ -18,7 +18,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-# Modified by Gustav Holm (guholm@kth.se) & Francis J. Gómez (fragom@kth.se)
+# Modified by Gustav Holm (guholm@kth.se) & Francis J. Gomez (fragom@kth.se)
 # Modified date: 05/06/2017
 
 from CIM16.IEC61970.Dynamics.SynchronousMachineDetailed import SynchronousMachineDetailed

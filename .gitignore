@@ -7,3 +7,5 @@ PyCIM.egg-info/
 doc/api/
 doc/_build/*
 PyCIM/Test/Data/Confidential/
+
+\.idea/

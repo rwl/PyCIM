@@ -21,7 +21,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-# Modified by Gustav Holm (guholm@kth.se) & Francis J. Gómez (fragom@kth.se)
+# Modified by Gustav Holm (guholm@kth.se) & Francis J. Gomez (fragom@kth.se)
 # Modified date: 05/06/2017
 
 from xml.etree.cElementTree import iterparse
@@ -257,6 +257,18 @@ def get_rdf_ns(namespaces):
 
     return ns
 
+def get_pti_ns(namespaces):
+    ''' Support for pti namespace. CIM file generated from PSS/E ODMS. 
+    To be extended for newer version of pti, support for CIM 15 / CIM 16'''
+    ''' author: Francis J. Gomez '''
+    ''' date: 18/09/2017 '''
+    try:
+        ns = namespaces['pti']
+    except KeyError:
+        ns = "http://www.pti-us.com/PTI_CIM-schema-cim14#"
+        logger.warn('No pti namespace found. Using %s' % ns)
+
+    return ns
 
 def get_cim_ns(namespaces):
     """
