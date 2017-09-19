@@ -34,9 +34,9 @@ from CIM14.CDPSM.Balanced import packageMap as equipMap
 
 RDFXML_FILE = join(dirname(__file__), "Data", "EDF_AIGUE_v9_COMBINED.xml")
 
-EQUIP_FILE = join(dirname(__file__), "Case6_CSWRG_ES", "Case6_CSWRG_ES_EQ.xml")
-TOPO_FIlE= join(dirname(__file__), "Case6_CSWRG_ES", "Case6_CSWRG_ES_TP.xml")
-STATEV_FILE= join(dirname(__file__),"Case6_CSWRG_ES", "Case6_CSWRG_ES_SV.xml")
+EQUIP_FILE = join(dirname(__file__), "Case6_ODMS", "Case6_ODMS_EQ.xml")
+TOPO_FIlE= join(dirname(__file__), "Case6_ODMS", "Case6_ODMS_TP.xml")
+STATEV_FILE= join(dirname(__file__),"Case6_ODMS", "Case6_ODMS_SV.xml")
 
 EMPTY_CIM = u'''<?xml version=\'1.0\'?>
 <rdf:RDF xmlns:cim="http://iec.ch/TC57/2009/CIM-schema-cim14#"
