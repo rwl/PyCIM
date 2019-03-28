@@ -110,8 +110,8 @@ PyCIM is developed by Richard Lincoln (r.w.lincoln@gmail.com).
 .. _Git: http://git-scm.com/
 .. _GitHub: http://github.com/
 .. _iPython: http://ipython.scipy.org
-.. _`website`: http://www.pycim.com/
-.. _`API documentation`: http://packages.python.org/PyCIM
+.. _`website`: http://rwl.github.io/PyCIM/
+.. _`API documentation`: http://rwl.github.io/PyCIM/api/
 
 .. more shields at http://shields.io
 .. |travis| image:: https://travis-ci.org/rwl/PyCIM.svg?branch=master
