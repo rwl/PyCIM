@@ -1,18 +1,6 @@
 |travis| |pythons| |wheel|
 
-**Development Status**
-
-PyCIM has proven to be more popular than first anticipated.
-However, it has not received the support and updates it requires. Should
-improvements such as:
-
-- CIM 16/CGMES support,
-- Difference models or
-- Topological processing
-
-be required then the `original author <https://github.com/rwl>`_
-may be available on contract. Please do not hesitate to get in
-`contact <mailto:r.w.lincoln@gmail.com>`_ directly.
+**PyCIM is deprecated. See** CIMpy_ **instead.**
 
 ============
 Introduction
@@ -112,6 +100,7 @@ PyCIM is developed by Richard Lincoln (r.w.lincoln@gmail.com).
 .. _iPython: http://ipython.scipy.org
 .. _`website`: http://rwl.github.io/PyCIM/
 .. _`API documentation`: http://rwl.github.io/PyCIM/api/
+.. _`CIMpy`: https://github.com/sogno-platform/cimpy
 
 .. more shields at http://shields.io
 .. |travis| image:: https://travis-ci.org/rwl/PyCIM.svg?branch=master
