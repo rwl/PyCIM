@@ -21,6 +21,9 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
+# Modified by Gustav Holm (guholm@kth.se) & Francis J. Gomez (fragom@kth.se)
+# Modified date: 05/06/2017
+
 from xml.etree.cElementTree import iterparse
 from time import time
 
@@ -29,6 +32,7 @@ logger = logging.getLogger(__name__)
 
 
 def cimread(source, packageMap=None, nsURI=None, start_dict=None):
+    # type: (object, object, object, object) -> object
     """ CIM RDF/XML parser.
 
     @type source: File-like object or a path to a file.
@@ -253,6 +257,18 @@ def get_rdf_ns(namespaces):
 
     return ns
 
+def get_pti_ns(namespaces):
+    ''' Support for pti namespace. CIM file generated from PSS/E ODMS. 
+    To be extended for newer version of pti, support for CIM 15 / CIM 16'''
+    ''' author: Francis J. Gomez '''
+    ''' date: 18/09/2017 '''
+    try:
+        ns = namespaces['pti']
+    except KeyError:
+        ns = "http://www.pti-us.com/PTI_CIM-schema-cim14#"
+        logger.warn('No pti namespace found. Using %s' % ns)
+
+    return ns
 
 def get_cim_ns(namespaces):
     """
@@ -272,15 +288,15 @@ def get_cim_ns(namespaces):
 
     nsuri = ns
 
-    import CIM14, CIM15
+    import CIM14, CIM15, CIM16
     if ns == CIM14.nsURI:
         ns = 'CIM14'
     elif ns == CIM15.nsURI:
         ns = 'CIM15'
     elif ns == CIM16nsURI:
-        ns  = 'CIM15'
+        ns  = 'CIM16'
     else:
-        ns = 'CIM15'
+        ns = 'CIM16'
         logger.warn('Could not detect CIM version. Using %s.' % ns)
 
     cim = __import__(ns, globals(), locals(), ['nsURI', 'packageMap'])
@@ -290,4 +306,5 @@ def get_cim_ns(namespaces):
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    cimread("Test/Data/EDF_AIGUE_v9_COMBINED.xml")
+    cimread("/Users/fran_jo/Desktop/PhD_CODE/edu.smartslab.cim2model/res/network/ieee_9bus_cim16_basic.xml")
+

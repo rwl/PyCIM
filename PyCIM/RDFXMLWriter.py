@@ -22,8 +22,8 @@ import logging
 
 from time import time
 
-from CIM15 import nsURI, nsPrefix
-
+#from CIM15 import nsPrefix, nsURI
+from CIM16 import nsPrefix, nsURI
 from PyCIM.SimpleXMLWriter import XMLWriter
 
 nsPrefixRDF = "rdf"
@@ -53,8 +53,14 @@ def cimwrite(d, source, encoding="utf-8"):
     # Write the XML declaration.
     w.declaration()
 
+    # TODO print the econding in the header tag
+    # TODO add carry return into the XMLWriter
     # Add a '#' suffix to the CIM namespace URI if not present.
     nsCIM = nsURI if nsURI[-1] == "#" else nsURI + "#"
+    # TODO Add ns for
+    # xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#"
+    # xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#"
+    # xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 
     # Start the root RDF element and declare namespaces.
     xmlns = {u"xmlns:%s" % nsPrefixRDF: nsRDF, u"xmlns:%s" % nsPrefix: nsCIM}
@@ -115,9 +121,9 @@ if __name__ == "__main__":
 
     logging.basicConfig(level=logging.INFO)
 
-    d = cimread("Test/Data/EDF_AIGUE_v9.xml")
+    d = cimread("/Users/fran_jo/Desktop/PhD_CODE/cim2modelica/res/network/ieee_9bus_cim16_basic.xml")
 #    d = cimread("Test/Data/ENTSOE_16_BE_EQ.xml")
-    tmp = "/tmp/cimwrite.xml"
+    tmp = "/Users/fran_jo/Desktop/PhD_CODE/cim2modelica/res/network/ieee_9bus_cim16_after.xml"
     cimwrite(d, tmp)
 
     print(xmlpp(tmp))

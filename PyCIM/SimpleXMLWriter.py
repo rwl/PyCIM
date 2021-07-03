@@ -198,6 +198,7 @@ class XMLWriter:
         tag = escape_cdata(tag, self.__encoding)
         self.__data = []
         self.__tags.append(tag)
+        self.__write("\n")
         self.__write("<%s" % tag)
         if attrib or extra:
             combined_attrib = attrib.copy()
@@ -246,6 +247,7 @@ class XMLWriter:
         elif self.__open:
             self.__open = 0
             self.__write(" />")
+            self.__write("\n")
             return
         self.__write("</%s>" % tag)
 
